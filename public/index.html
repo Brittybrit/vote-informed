@@ -891,11 +891,12 @@ function renderMeasureDossier(ri, r, cached){
   html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments — verify anything that would change your vote against the linked sources and official campaign finance filings.</p>';
   html += '</div>';
   $('dossierContent').innerHTML = html;
+  $('dossier').scrollTop = 0;
 }
 
 /* ---------------- dossier rendering ---------------- */
 
-function openDossier(){ $('dossier').classList.add('open'); $('dossierEmpty').style.display='none'; }
+function openDossier(){ $('dossier').classList.add('open'); $('dossierEmpty').style.display='none'; $('dossier').scrollTop = 0; }
 function closeDossier(){ $('dossier').classList.remove('open'); }
 
 function dossierHead(cand, race, cached){
@@ -1125,6 +1126,7 @@ function renderDossier(cand, race, r, cached){
 
   html += '</div>';
   $('dossierContent').innerHTML = html;
+  $('dossier').scrollTop = 0;
 }
 
 /* ---------------- wiring ---------------- */
