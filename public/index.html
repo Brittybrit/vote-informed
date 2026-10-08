@@ -478,6 +478,7 @@ function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
 // Research runs in the background on the server; we poll until the shared
 // cache fills. Keeps every request short so mobile browsers never time out.
 async function research(payload){
+  payload.poll = true;
   for(var i = 0; i < 45; i++){
     var data;
     try{
@@ -487,7 +488,7 @@ async function research(payload){
       if(i > 0 && /load failed|failed to fetch|network/i.test(String(e.message))){ await sleep(4000); continue; }
       throw e;
     }
-    if(!data.pending) return data;
+    if(data.result) return data;
     await sleep(4000);
   }
   throw new Error('Research is taking longer than usual. Tap Retry in a moment — it may already be finished.');

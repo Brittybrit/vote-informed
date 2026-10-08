@@ -165,15 +165,35 @@ async function handleResearch(request, env, ctx) {
   const failed = await env.CACHE.get('fail:' + key);
   if (failed) return json({ error: failed }, 502);
   const pending = await env.CACHE.get('pend:' + key);
-  if (pending) return json({ pending: true });
+  const params = { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode };
 
-  const ip = clientIP(request);
-  const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
-  if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
+  if (!pending) {
+    const ip = clientIP(request);
+    const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
+    if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
+    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 240 });
+    if (body.poll) {
+      ctx.waitUntil(runResearch(env, key, params));
+      return json({ pending: true });
+    }
+    // Legacy client (stale cached page): run synchronously like the old API did.
+    await runResearch(env, key, params);
+    const done = await env.CACHE.get(key, 'json');
+    if (done) return json({ result: done, cached: false });
+    const err = await env.CACHE.get('fail:' + key);
+    return json({ error: err || 'Research failed' }, 502);
+  }
 
-  await env.CACHE.put('pend:' + key, '1', { expirationTtl: 240 });
-  ctx.waitUntil(runResearch(env, key, { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode }));
-  return json({ pending: true });
+  if (body.poll) return json({ pending: true });
+  // Legacy client polling an in-flight research: wait briefly, then report back.
+  for (let i = 0; i < 20; i++) {
+    await new Promise(r => setTimeout(r, 3000));
+    const done = await env.CACHE.get(key, 'json');
+    if (done) return json({ result: done, cached: true });
+    const err = await env.CACHE.get('fail:' + key);
+    if (err) return json({ error: err }, 502);
+  }
+  return json({ error: 'Research is taking longer than usual. Try again in a minute.' }, 504);
 }
 
 async function runResearch(env, key, p) {
