@@ -1,4 +1,4 @@
-# Ballot Intel
+# Vote Informed
 
 A free, nonpartisan voter research tool. Live for Miami-Dade County at
 [ballot305.org](https://ballot305.org).
