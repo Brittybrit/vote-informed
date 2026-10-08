@@ -13,7 +13,7 @@ saved only in the voter's browser; the server never sees anyone's picks.
 Built on Cloudflare Workers with the Anthropic API (web search for research,
 PDF parsing for ballots) and the free openFEC API for federal donor data.
 Research results are cached and shared, so each candidate is researched once,
-not once per user.
+not once per user.(Cache resets every 7 days)
 
 ## Deploy your own
 
@@ -53,7 +53,7 @@ If you deploy a fork, use your own name and domain. Do not present any
 deployment as official or affiliated with an elections authority, and keep
 the independence disclaimer visible.
 
-## Honest limitations
+## Limitations
 
 Research is AI-assisted web search. It preserves source hedges, refuses to
 invent organization names or URLs, and links every claim, but it is a
