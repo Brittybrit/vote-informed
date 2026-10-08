@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BALLOT305.ORG - For an Informed, Engaged Miami-Dade</title>
+<meta name="description" content="Free, nonpartisan research on every race and referendum on the Miami-Dade ballot. See who funds each candidate and measure, who endorses them, with sources. Build your ballot plan and print it.">
+<meta name="theme-color" content="#131F3C">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ballot305.org/">
+<meta property="og:site_name" content="Ballot305">
+<meta property="og:title" content="Ballot305: Follow the money, honey">
+<meta property="og:description" content="Every race and referendum on the Miami-Dade ballot. Who funds them, who endorses them, with sources. Free and nonpartisan.">
+<meta property="og:image" content="https://ballot305.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ballot305 logo with the tagline Follow the money, honey">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ballot305: Follow the money, honey">
+<meta name="twitter:description" content="Every race and referendum on the Miami-Dade ballot. Who funds them, who endorses them, with sources.">
+<meta name="twitter:image" content="https://ballot305.org/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -38,9 +57,13 @@
   }
   header.with-ballot{justify-content:space-between; text-align:left;}
   .masthead h1{
-    font-weight:900; text-transform:uppercase; letter-spacing:.02em;
-    font-size:22px; line-height:1.25;
+    font-weight:900; text-transform:uppercase; letter-spacing:.01em;
+    font-size:34px; line-height:1;
   }
+  .wordmark .o{display:inline-block; width:.86em; height:.56em; background:var(--ink); border-radius:50%; margin:0 .03em; vertical-align:.07em;}
+  .wordmark .dotorg{font-weight:600; font-size:.62em; opacity:.75; margin-left:.04em;}
+  .tagline{font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin-top:8px;}
+  @media (max-width:520px){ .masthead h1{font-size:28px;} }
   .masthead .sub{
     font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); margin-top:8px; letter-spacing:.04em;
   }
@@ -343,7 +366,8 @@
 
 <header>
   <div class="masthead">
-    <h1>BALLOT305.ORG - FOR AN INFORMED, ENGAGED MIAMI-DADE</h1>
+    <h1 class="wordmark" aria-label="Ballot305.org">BALL<span class="o" aria-hidden="true"></span>T305<span class="dotorg">.ORG</span></h1>
+    <div class="tagline">For an informed, engaged Miami-Dade</div>
     <div class="sub">RESEARCH EACH CANDIDATE &middot; FILL THE OVAL TO ADD THEM TO YOUR BALLOT PLAN</div>
   </div>
   <div class="juris" id="jurisBox"></div>

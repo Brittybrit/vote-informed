@@ -1,0 +1,14 @@
+{
+  "name": "Ballot305",
+  "short_name": "Ballot305",
+  "description": "Free, nonpartisan research on every race and referendum on the Miami-Dade ballot.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF7",
+  "theme_color": "#131F3C",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
