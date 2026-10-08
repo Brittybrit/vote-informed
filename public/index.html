@@ -32,8 +32,10 @@
   header{
     border-bottom:4px solid var(--rule);
     padding:28px 24px 18px;
-    display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    display:flex; align-items:flex-end; justify-content:center; gap:16px; flex-wrap:wrap;
+    text-align:center;
   }
+  header.with-ballot{justify-content:space-between; text-align:left;}
   .masthead h1{
     font-weight:900; text-transform:uppercase; letter-spacing:.02em;
     font-size:22px; line-height:1.25;
@@ -612,6 +614,7 @@ function renderBallot(){
   $('uploadStage').style.display = 'none';
   $('workspace').style.display = 'grid';
 
+  document.querySelector('header').classList.add('with-ballot');
   var j = $('jurisBox');
   j.style.display = 'block';
   j.innerHTML = '<strong>' + esc(ballot.jurisdiction || 'Jurisdiction unknown') + '</strong>' +
@@ -1163,6 +1166,7 @@ $('resetBtn').addEventListener('click', function(){
   ballot = null; cache = {}; votes = {}; activeKey = null; currentId = null;
   $('workspace').style.display = 'none';
   $('jurisBox').style.display = 'none';
+  document.querySelector('header').classList.remove('with-ballot');
   $('uploadStage').style.display = 'block';
   $('dossierContent').innerHTML = '';
   $('dossierEmpty').style.display = 'block';
