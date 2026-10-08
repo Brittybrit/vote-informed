@@ -295,6 +295,8 @@
     text-decoration:underline; text-underline-offset:2px; white-space:nowrap;
   }
   .tagrow .srclink{align-self:center;}
+  .srcs{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); overflow-wrap:anywhere; word-break:break-all;}
+  .srcs .srclink{white-space:normal; overflow-wrap:anywhere; word-break:break-all;}
   .ratingval{
     font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.03em;
     border:1.5px solid var(--rule); padding:2px 8px; margin-left:6px; white-space:nowrap;
@@ -888,7 +890,7 @@ function renderMeasureDossier(ri, r, cached){
   html += '<div class="dsec"><h4>Major Opposition</h4>' + sideList(r.opponents, 'No organized opposition found in searched coverage.') + '</div>';
 
   if(r.sources && r.sources.length){
-    html += '<div class="dsec"><h4>Sources Consulted</h4><p style="font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-soft)">' +
+    html += '<div class="dsec"><h4>Sources Consulted</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
   html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments — verify anything that would change your vote against the linked sources and official campaign finance filings.</p>';
@@ -1122,7 +1124,7 @@ function renderDossier(cand, race, r, cached){
   }
 
   if(r.sources && r.sources.length){
-    html += '<div class="dsec"><h4>Sources Consulted</h4><p style="font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-soft)">' +
+    html += '<div class="dsec"><h4>Sources Consulted</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
   html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and Federalist Society findings are best-effort judgments — verify anything that would change your vote against the linked sources and official disclosure filings.</p>';
