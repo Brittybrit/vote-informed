@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ballot Intel — Sample Ballot Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --ink:#131F3C;
+    --ink-soft:#3D4763;
+    --rule:#131F3C;
+    --left-bg:#E3ECFB; --left-fg:#1D4ED8;
+    --right-bg:#FBE5E5; --right-fg:#B91C1C;
+    --nonp-bg:#E8EAED; --nonp-fg:#374151;
+    --group-bg:#F2EFE6; --group-fg:#6B5D3F;
+    --flag-bg:#FDF1D8; --flag-fg:#8A5A0B; --flag-rule:#D9A93F;
+    --ok-bg:#E6F0E8; --ok-fg:#2F6B3C;
+    --vote-bg:#EEF5EF;
+    --panel:#FFFFFF;
+    --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;}
+  button{font-family:inherit; cursor:pointer; color:inherit;}
+  :focus-visible{outline:3px solid var(--left-fg); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important;} }
+
+  header{
+    border-bottom:4px solid var(--rule);
+    padding:28px 24px 18px;
+    display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .masthead h1{
+    font-weight:900; text-transform:uppercase; letter-spacing:.02em;
+    font-size:clamp(24px, 4vw, 38px); line-height:1;
+  }
+  .masthead .sub{
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); margin-top:8px; letter-spacing:.04em;
+  }
+  .juris{
+    font-family:var(--mono); font-size:12.5px; text-align:right; color:var(--ink-soft);
+    border:1.5px solid var(--rule); padding:8px 12px; display:none;
+  }
+  .juris strong{color:var(--ink); display:block; font-size:13px;}
+
+  main{max-width:1180px; margin:0 auto; padding:0 24px 80px;}
+
+  .upload-stage{padding:44px 0 40px; max-width:640px; margin:0 auto;}
+  .countdown{border:3px solid var(--rule); background:var(--panel); text-align:center; padding:26px 20px 22px; margin:30px 0 18px;}
+  .cd-num{font-weight:900; font-size:clamp(64px, 16vw, 120px); line-height:.95; letter-spacing:-.01em;}
+  .cd-label{font-family:var(--mono); font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin-top:10px; line-height:1.7;}
+  .cd-label strong{color:var(--ink);}
+  .regcheck{margin-bottom:26px;}
+  .rc-q{font-weight:900; text-transform:uppercase; letter-spacing:.02em; font-size:20px; text-align:center; margin-bottom:14px;}
+  .rc-opts{display:grid; gap:10px;}
+  .rc-opt{
+    display:block; width:100%; text-align:left; background:var(--panel); border:3px solid var(--rule);
+    padding:14px 18px; text-decoration:none; color:var(--ink); cursor:pointer; transition:background .12s;
+  }
+  .rc-opt:hover{background:#EFF3FA;}
+  .rc-big{display:block; font-weight:900; font-size:19px; letter-spacing:.02em;}
+  .rc-sub{display:block; font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:3px;}
+  .rc-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); text-align:center; margin-top:12px;}
+  .dropzone{
+    border:3px dashed var(--rule); background:var(--panel);
+    padding:56px 32px; text-align:center; transition:background .15s;
+  }
+  .dropzone.dragover{background:#EFF3FA;}
+  .dropzone .oval-demo{width:44px; height:26px; border:3px solid var(--ink); border-radius:50%; margin:0 auto 20px;}
+  .dropzone h2{font-weight:800; font-size:20px; text-transform:uppercase; letter-spacing:.03em;}
+  .dropzone p{color:var(--ink-soft); margin-top:10px; font-size:14.5px; line-height:1.5;}
+  .dropzone .btn{
+    margin-top:22px; background:var(--ink); color:var(--paper); border:none;
+    font-weight:800; text-transform:uppercase; letter-spacing:.06em; font-size:13.5px;
+    padding:13px 26px;
+  }
+  .dropzone .btn:hover{background:#0A1330;}
+  .resume-box{
+    border:3px solid var(--rule); background:var(--vote-bg); padding:18px 22px; margin-bottom:18px;
+    display:none; text-align:center;
+  }
+  .resume-box p{font-size:14px;}
+  .resume-box strong{font-weight:800;}
+  .resume-row{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid #C9D3C9; text-align:left;}
+  .resume-row:first-of-type{margin-top:10px;}
+  .rr-label{font-size:13.5px; font-weight:600; min-width:0; overflow-wrap:anywhere;}
+  .rr-meta{font-family:var(--mono); font-size:11px; font-weight:400; color:var(--ink-soft);}
+  .rr-actions{display:flex; align-items:center; gap:8px; flex:0 0 auto;}
+  .rr-actions .btn2{margin-top:0;}
+  .rr-del{background:none; border:1.5px solid var(--rule); font-family:var(--mono); font-size:11px; padding:6px 9px;}
+  .rr-del:hover{background:var(--right-bg); border-color:var(--right-fg); color:var(--right-fg);}
+  .resume-box .btn2{
+    margin-top:12px; background:var(--ink); color:var(--paper); border:none;
+    font-weight:800; text-transform:uppercase; letter-spacing:.05em; font-size:12.5px; padding:10px 20px;
+  }
+  .getballot{margin-top:22px; text-align:left;}
+  .gb-head{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin-bottom:10px;}
+  .gb-opt{
+    display:block; width:100%; text-align:left; font-family:inherit; cursor:pointer;
+    border:2px solid var(--rule); background:var(--paper); padding:12px 14px;
+    margin-top:8px; text-decoration:none; color:var(--ink); transition:background .12s;
+  }
+  .gb-opt:hover{background:#EFF3FA;}
+  .gb-title{display:block; font-weight:800; font-size:14px;}
+  .gb-desc{display:block; font-size:12.5px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .finehint{font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); margin-top:16px; text-align:center; line-height:1.6;}
+
+  .statusline{
+    display:none; margin:24px auto 0; max-width:640px;
+    font-family:var(--mono); font-size:13px; padding:16px 18px;
+    border:1.5px solid var(--rule); background:var(--panel);
+  }
+  .statusline .dots::after{content:''; animation:dots 1.4s steps(4,end) infinite;}
+  @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
+  .statusline.error{border-color:var(--right-fg); color:var(--right-fg); background:var(--right-bg);}
+
+  .workspace{display:none; grid-template-columns:minmax(0,1fr) 420px; gap:36px; margin-top:32px; align-items:start;}
+  @media (max-width:960px){ .workspace{grid-template-columns:minmax(0,1fr);} }
+
+  /* ---------- plan bar ---------- */
+  .planbar{
+    border:3px solid var(--rule); background:var(--panel); margin-bottom:22px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 16px; flex-wrap:wrap;
+  }
+  .planbar .ptitle{font-weight:800; text-transform:uppercase; font-size:13px; letter-spacing:.06em;}
+  .planbar .pcount{font-family:var(--mono); font-size:12px; color:var(--ink-soft);}
+  .planbar .pmeter{
+    flex:1 1 140px; height:10px; border:1.5px solid var(--rule); background:var(--paper); min-width:0;
+  }
+  @media (max-width:640px){
+    .planbar{display:grid; grid-template-columns:1fr auto; align-items:center;}
+    .planbar .pcount{grid-column:1;}
+    .planbar button{grid-column:2; grid-row:1 / span 2;}
+    .planbar .pmeter{grid-column:1 / -1; width:100%;}
+  }
+  .planbar .pmeter i{display:block; height:100%; background:var(--ink); transition:width .2s;}
+  .planbar button{
+    background:var(--ink); color:var(--paper); border:none; font-weight:800;
+    text-transform:uppercase; letter-spacing:.05em; font-size:12px; padding:9px 16px;
+  }
+
+  /* ---------- plan view ---------- */
+  .planview{display:none; border:3px solid var(--rule); background:var(--panel); margin-bottom:22px;}
+  .planview.open{display:block;}
+  .planview-head{background:var(--ink); color:var(--paper); padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+  .planview-head h3{font-weight:800; text-transform:uppercase; font-size:14px; letter-spacing:.05em;}
+  .planview-head .actions{display:flex; gap:8px;}
+  .planview-head button{
+    background:none; border:1.5px solid rgba(250,250,247,.6); color:var(--paper);
+    font-family:var(--mono); font-size:11.5px; padding:5px 12px;
+  }
+  .plan-row{display:flex; align-items:center; gap:12px; padding:11px 16px; border-bottom:1px solid #D8D8D2; font-size:14.5px;}
+  .plan-row:last-child{border-bottom:none;}
+  .plan-row .pr-office{flex:1; font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);}
+  .plan-row .pr-pick{flex:1.2; font-weight:800;}
+  .plan-row .pr-pick.undecided{font-weight:400; color:var(--ink-soft); font-style:italic;}
+  .plan-row .pr-remove{
+    background:none; border:1.5px solid var(--rule); font-family:var(--mono); font-size:10.5px;
+    padding:4px 10px; white-space:nowrap;
+  }
+  .plan-row .pr-remove:hover{background:var(--right-bg); border-color:var(--right-fg); color:var(--right-fg);}
+
+  .race{border:3px solid var(--rule); background:var(--panel); margin-bottom:22px;}
+  .race-head{
+    background:var(--ink); color:var(--paper); padding:10px 16px;
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:6px 12px;
+  }
+  .race-head h3{min-width:0;}
+  .race-head h3{font-weight:800; text-transform:uppercase; font-size:14.5px; letter-spacing:.05em;}
+  .race-head .jbadge{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    border:1px solid rgba(250,250,247,.6); padding:2.5px 8px; white-space:nowrap;
+  }
+  .race-instr{font-family:var(--mono); font-size:11px; color:var(--ink-soft); padding:8px 16px; border-bottom:1px solid #D8D8D2;}
+
+  .cand{
+    display:flex; align-items:center; gap:14px; width:100%; min-width:0; text-align:left;
+    background:none; border:none; border-bottom:1px solid #D8D8D2;
+    padding:13px 16px; transition:background .12s; position:relative;
+  }
+  .cand > span:nth-of-type(2){flex:1 1 auto; min-width:0; overflow-wrap:anywhere;}
+  .cand:last-child{border-bottom:none;}
+  .cand:hover{background:#F2F4F8;}
+  .cand.active{background:#E9EEF7;}
+  .cand.voted{background:var(--vote-bg); box-shadow:inset 5px 0 0 var(--ok-fg);}
+  .oval-btn{
+    flex:0 0 34px; height:20px; border:2.5px solid var(--ink); border-radius:50%;
+    background:var(--panel); padding:0; transition:background .15s;
+  }
+  .oval-btn:hover{background:#C9D3E8;}
+  .cand.voted .oval-btn{background:var(--ink);}
+  .cand .cname{font-weight:800; font-size:16px;}
+  .cand .cparty{font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; margin-top:2px;}
+  .cand .votetag{
+    font-family:var(--mono); font-size:10px; letter-spacing:.08em; color:var(--ok-fg);
+    font-weight:600; display:none; margin-top:3px;
+  }
+  .cand.voted .votetag{display:block;}
+  .cand .peek{margin-left:auto; flex:0 0 auto; font-family:var(--mono); font-size:11px; color:var(--ink-soft); white-space:nowrap;}
+
+  .dossier{
+    border:3px solid var(--rule); background:var(--panel);
+    position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto;
+  }
+  @media (max-width:960px){
+    .dossier{position:fixed; inset:0; z-index:50; max-height:none; border:none; border-top:6px solid var(--rule); display:none;}
+    .dossier.open{display:block;}
+  }
+  .dossier-empty{padding:48px 28px; text-align:center; color:var(--ink-soft);}
+  .dossier-empty .oval-demo{width:38px; height:22px; border:2.5px solid var(--ink-soft); border-radius:50%; margin:0 auto 16px;}
+  .dossier-empty p{font-size:14px; line-height:1.55;}
+
+  .dossier-head{background:var(--ink); color:var(--paper); padding:16px 20px; position:relative;}
+  .dossier-head .eyebrow{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; opacity:.75;}
+  .dossier-head h2{font-weight:900; font-size:22px; margin-top:4px; line-height:1.15;}
+  .dossier-head .office{font-family:var(--mono); font-size:12px; margin-top:6px; opacity:.85;}
+  .dossier-close{
+    position:absolute; top:12px; right:12px; background:none; border:1.5px solid rgba(250,250,247,.5);
+    color:var(--paper); font-family:var(--mono); font-size:12px; padding:4px 10px;
+  }
+  .cachebadge{
+    display:inline-block; margin-top:8px; font-family:var(--mono); font-size:10px;
+    letter-spacing:.08em; text-transform:uppercase; border:1px solid rgba(250,250,247,.5);
+    padding:2px 8px; opacity:.85;
+  }
+  .votebar{padding:14px 20px; border-bottom:2.5px solid var(--rule); background:var(--vote-bg);}
+  .votebar button{
+    width:100%; border:none; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    font-size:13px; padding:12px;
+  }
+  .votebar button.mark{background:var(--ink); color:var(--paper);}
+  .votebar button.mark:hover{background:#0A1330;}
+  .votebar button.unmark{background:var(--panel); color:var(--right-fg); border:2px solid var(--right-fg);}
+  .votebar .swapnote{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin-top:8px; text-align:center;}
+  .mv-row{display:flex; gap:8px;}
+  .mv-row button{flex:1;}
+  .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
+  .tag.amtchip{background:var(--ink); color:var(--paper);}
+
+  .dossier-body{padding:20px; overflow-wrap:break-word;}
+  .dsec{margin-bottom:26px;}
+  .dsec h4{
+    font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.08em;
+    border-bottom:2.5px solid var(--rule); padding-bottom:6px; margin-bottom:12px;
+  }
+  .donor-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:8px 0; border-bottom:1px dotted #C9C9C1; font-size:14px;}
+  .donor-row:last-child{border-bottom:none;}
+  .donor-row > div{flex:1 1 auto; min-width:0;}
+  .donor-row .dname{font-weight:600; overflow-wrap:anywhere;}
+  .donor-row .damt{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); flex:0 0 auto; max-width:38%; text-align:right; overflow-wrap:anywhere;}
+  .donor-row .dtype{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:flex; align-items:center; gap:8px; margin-top:4px;}
+
+  .endo{padding:10px 0; border-bottom:1px dotted #C9C9C1;}
+  .endo:last-child{border-bottom:none;}
+  .endo .eorg{font-weight:600; font-size:14px;}
+  .endo .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .tagrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;}
+  .tag{
+    font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.07em;
+    padding:3px 8px; font-weight:600;
+  }
+  .tag.left{background:var(--left-bg); color:var(--left-fg);}
+  .tag.right{background:var(--right-bg); color:var(--right-fg);}
+  .tag.nonpartisan{background:var(--nonp-bg); color:var(--nonp-fg);}
+  .tag.group{background:var(--group-bg); color:var(--group-fg);}
+  .tag.kind{border:1.5px solid currentColor;}
+  .tag.kind.kpac{background:#FDF3C8; color:#7A5D00;}
+  .tag.kind.kcorp{background:#FBE9E7; color:#B3261E;}
+  .tag.kind.kindiv{background:#E2F2E4; color:#1E7A34;}
+  .tag:not(.amtchip){cursor:help; text-decoration:underline dashed 1px; text-underline-offset:2.5px;}
+  #tagpop{
+    display:none; position:fixed; z-index:200; max-width:290px;
+    background:var(--ink); color:var(--paper); border:1.5px solid var(--paper);
+    box-shadow:4px 4px 0 rgba(19,31,60,.35); padding:12px 14px;
+  }
+  #tagpop .tp-title{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; opacity:.8;}
+  #tagpop .tp-body{font-size:13px; line-height:1.5; margin-top:5px;}
+
+  .fedsoc{border:2px solid var(--flag-rule); background:var(--flag-bg); padding:14px 16px;}
+  .fedsoc.none{border-color:#9DB8A4; background:var(--ok-bg);}
+  .fedsoc .fstatus{font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.06em; color:var(--flag-fg);}
+  .fedsoc.none .fstatus{color:var(--ok-fg);}
+  .fedsoc ul{margin-top:10px; padding-left:18px;}
+  .fedsoc li{font-size:13.5px; line-height:1.5; margin-bottom:8px;}
+  .fedsoc li .src{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:block;}
+  .fedsoc a{color:inherit;}
+  .srclink{
+    font-family:var(--mono); font-size:10.5px; color:var(--left-fg);
+    text-decoration:underline; text-underline-offset:2px; white-space:nowrap;
+  }
+  .tagrow .srclink{align-self:center;}
+  .ratingval{
+    font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.03em;
+    border:1.5px solid var(--rule); padding:2px 8px; margin-left:6px; white-space:nowrap;
+  }
+
+  .d-loading{padding:40px 24px; text-align:center;}
+  .d-loading .oval-anim{width:44px; height:26px; border:3px solid var(--ink); border-radius:50%; margin:0 auto 18px; position:relative; overflow:hidden;}
+  .d-loading .oval-anim::after{content:''; position:absolute; inset:0; background:var(--ink); transform:translateX(-100%); animation:fillslide 1.6s ease-in-out infinite;}
+  @keyframes fillslide{0%{transform:translateX(-100%)}55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+  .d-loading p{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft);}
+  .d-error{padding:24px; font-size:14px; color:var(--right-fg);}
+  .d-error button{margin-top:12px; background:var(--ink); color:var(--paper); border:none; padding:9px 18px; font-weight:700; font-size:13px;}
+
+  .disclaimer{
+    font-family:var(--mono); font-size:11px; color:var(--ink-soft); line-height:1.65;
+    border-top:1px solid #D8D8D2; padding-top:14px; margin-top:6px;
+  }
+  .reset-row{margin:24px 0 0; text-align:right;}
+  .reset-row button{background:none; border:1.5px solid var(--rule); font-family:var(--mono); font-size:12px; padding:7px 14px;}
+  .sitefoot{font-family:var(--mono); font-size:11px; color:var(--ink-soft); text-align:center; line-height:1.7; border-top:1.5px solid var(--rule); margin-top:40px; padding-top:16px;}
+
+  /* ---------- print: only the ballot plan ---------- */
+  #printPlan{display:none;}
+  @media print{
+    body *{visibility:hidden;}
+    #printPlan, #printPlan *{visibility:visible;}
+    #printPlan{
+      display:block; position:absolute; top:0; left:0; width:100%;
+      font-family:Georgia, serif; color:#000; padding:24px;
+    }
+    #printPlan h1{font-size:20px; border-bottom:3px solid #000; padding-bottom:8px; margin-bottom:4px;}
+    #printPlan .pj{font-size:12px; margin-bottom:18px;}
+    #printPlan table{width:100%; border-collapse:collapse;}
+    #printPlan td{border-bottom:1px solid #999; padding:8px 4px; font-size:13px; vertical-align:top;}
+    #printPlan td.of{width:45%; text-transform:uppercase; font-size:11px; letter-spacing:.03em;}
+    #printPlan td.pk{font-weight:bold;}
+    #printPlan .pnote{font-size:10px; margin-top:16px; color:#333;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <h1>Ballot Intel &mdash; Sample Ballot Researcher</h1>
+    <div class="sub">RESEARCH EACH CANDIDATE &middot; FILL THE OVAL TO ADD THEM TO YOUR BALLOT PLAN</div>
+  </div>
+  <div class="juris" id="jurisBox"></div>
+</header>
+
+<main>
+  <div class="statusline" id="statusLine"></div>
+
+  <section class="upload-stage" id="uploadStage">
+    <div class="resume-box" id="resumeBox"></div>
+    <div id="uploadFlow">
+    <div class="dropzone" id="dropzone">
+      <div class="oval-demo"></div>
+      <h2>Drop your sample ballot PDF here</h2>
+      <p>This tool uses your ballot to build a clickable list of every race and referendum. Click a candidate to see their top donors, their endorsements, and, for judges, any ties to the Federalist Society. Click a referendum to see who is funding each side and who supports or opposes it. Fill in an oval when you decide. Your filled in ballot plan is saved on this device, so you can return to it later. You can also print your finished plan and take it with you to vote.</p>
+      <button class="btn" id="pickBtn">Choose PDF</button>
+      <input type="file" id="fileInput" accept="application/pdf" hidden>
+      <div class="getballot">
+        <p class="gb-head">Don&rsquo;t have your ballot PDF yet?</p>
+        <a class="gb-opt" href="https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD" target="_blank" rel="noopener">
+          <span class="gb-title">Get YOUR exact ballot &rarr;</span>
+          <span class="gb-desc">Look yourself up on the county&rsquo;s voter portal for your precinct-specific sample ballot &mdash; only the races you&rsquo;ll actually vote on. Save it as a PDF and upload it here.</span>
+        </a>
+        <button class="gb-opt" id="loadMaster" type="button">
+          <span class="gb-title">Load the countywide master ballot &rarr;</span>
+          <span class="gb-desc">Every race in Miami-Dade for the November 3 General Election &mdash; loads right here, no download needed.</span>
+        </button>
+      </div>
+    </div>
+    <p class="finehint">Research runs once per candidate and is shared: if someone already looked a candidate up this week, your result is instant. Your ballot plan is saved only on this device.</p>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-num" id="cdNum"></div>
+      <div class="cd-label" id="cdLabel"></div>
+    </div>
+
+    <div class="regcheck" id="regCheck">
+      <div class="rc-opts">
+        <a class="rc-opt" href="https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD" target="_blank" rel="noopener">
+          <span class="rc-big">Check your registration &amp; precinct</span>
+          <span class="rc-sub">County voter lookup &mdash; also where you get your precinct-specific sample ballot &rarr;</span>
+        </a>
+        <a class="rc-opt" href="https://registertovoteflorida.gov/" target="_blank" rel="noopener">
+          <span class="rc-big">Not registered?</span>
+          <span class="rc-sub">Registration for November 3 closed October 5 &mdash; register now so you&rsquo;re ready for the next election &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="workspace" id="workspace">
+    <div>
+      <div class="planbar">
+        <span class="ptitle">Ballot Plan</span>
+        <span class="pcount" id="planCount">0 of 0 races decided</span>
+        <span class="pmeter"><i id="planMeter" style="width:0%"></i></span>
+        <button id="planToggle">View plan</button>
+      </div>
+      <div class="planview" id="planView">
+        <div class="planview-head">
+          <h3>Your Ballot Plan</h3>
+          <div class="actions">
+            <button id="printBtn">Print / Save</button>
+            <button id="clearBtn">Clear all</button>
+          </div>
+        </div>
+        <div id="planRows"></div>
+      </div>
+      <div id="races"></div>
+      <div class="reset-row"><button id="resetBtn">Switch ballot &mdash; plan stays saved</button></div>
+    </div>
+    <aside class="dossier" id="dossier" aria-live="polite">
+      <div class="dossier-empty" id="dossierEmpty">
+        <div class="oval-demo"></div>
+        <p>No candidate selected.<br>Click a name to research. Fill an oval to add them to your ballot plan.</p>
+      </div>
+      <div id="dossierContent"></div>
+    </aside>
+  </section>
+  <p class="sitefoot">Independent voter research tool. Not affiliated with the Miami-Dade Supervisor of Elections or any government agency. This is not an official ballot and does not record votes.</p>
+</main>
+
+<div id="tagpop" role="tooltip"></div>
+
+<div id="printPlan"></div>
+
+<script>
+// Next election — update these three lines each cycle.
+var ELECTION = {
+  name: 'November 3, 2026 General Election',
+  date: '2026-11-03T00:00:00',
+  regDeadline: '2026-10-05T23:59:59'
+};
+// Countywide master ballot, bundled with the site. Drop the new PDF into
+// public/ballots/ and update this path each election.
+var FEATURED_BALLOT_PATH = '/ballots/2026-11-03-general.pdf';
+
+var ballot = null;
+var cache = {};        // key -> {result, cached}
+var votes = {};        // raceIndex -> candIndex
+var activeKey = null;
+var currentId = null;  // id of the ballot currently loaded
+var STORE = 'ballotIntel.v2';   // { ballots: { id: {ballot, votes, ts} } }
+
+function $(id){ return document.getElementById(id); }
+
+function setStatus(msg, isError, working){
+  var el = $('statusLine');
+  if(!msg){ el.style.display='none'; return; }
+  el.style.display='block';
+  el.classList.toggle('error', !!isError);
+  el.innerHTML = working ? msg + '<span class="dots"></span>' : msg;
+  try{ el.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){}
+}
+
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+async function api(path, payload){
+  var res = await fetch(path, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  });
+  var data = await res.json().catch(function(){ return {error:'Bad response from server'}; });
+  if(!res.ok) throw new Error(data.error || ('Server error ' + res.status));
+  return data;
+}
+
+/* ---------------- persistence ---------------- */
+
+function ballotId(b){
+  return [(b.jurisdiction||''), (b.electionName||''), (b.electionDate||'')].join('|').toLowerCase().replace(/\s+/g,' ').trim() || 'unknown';
+}
+
+function loadStore(){
+  try{
+    var raw = localStorage.getItem(STORE);
+    if(raw){
+      var st = JSON.parse(raw);
+      if(st && st.ballots) return st;
+    }
+    // migrate single-ballot v1 store if present
+    var old1 = localStorage.getItem('ballotIntel.v1');
+    if(old1){
+      var s1 = JSON.parse(old1);
+      if(s1 && s1.ballot && s1.ballot.races){
+        var st2 = { ballots:{} };
+        st2.ballots[ballotId(s1.ballot)] = { ballot:s1.ballot, votes:s1.votes||{}, ts:s1.ts||Date.now() };
+        localStorage.setItem(STORE, JSON.stringify(st2));
+        localStorage.removeItem('ballotIntel.v1');
+        return st2;
+      }
+    }
+  }catch(e){}
+  return { ballots:{} };
+}
+
+function saveStore(st){
+  try{ localStorage.setItem(STORE, JSON.stringify(st)); }catch(e){}
+}
+
+function saveState(){
+  if(!ballot) return;
+  var st = loadStore();
+  st.ballots[currentId || ballotId(ballot)] = { ballot: ballot, votes: votes, ts: Date.now() };
+  saveStore(st);
+}
+
+function deletePlan(id){
+  var st = loadStore();
+  delete st.ballots[id];
+  saveStore(st);
+  renderResumeList();
+}
+
+/* ---------------- upload + parse ---------------- */
+
+async function handleFile(file){
+  if(!file || file.type !== 'application/pdf'){
+    setStatus('That is not a PDF. Upload a sample ballot in PDF format.', true);
+    return;
+  }
+  setStatus('Reading ' + esc(file.name), false, true);
+
+  var base64;
+  try{
+    base64 = await new Promise(function(resolve, reject){
+      var r = new FileReader();
+      r.onload = function(){ resolve(r.result.split(',')[1]); };
+      r.onerror = function(){ reject(new Error('Could not read the file')); };
+      r.readAsDataURL(file);
+    });
+  }catch(e){
+    setStatus('Could not read the file: ' + esc(e.message), true);
+    return;
+  }
+
+  setStatus('Parsing ballot structure', false, true);
+  try{
+    var data = await api('/api/parse', { pdf: base64 });
+    applyParsed(data);
+  }catch(e){
+    setStatus('Could not parse this ballot: ' + esc(e.message), true);
+  }
+}
+
+function applyParsed(data){
+  ballot = data.ballot;
+  currentId = ballotId(ballot);
+  var existing = loadStore().ballots[currentId];
+  votes = (existing && existing.votes) ? existing.votes : {};
+  saveState();
+  renderBallot();
+  setStatus('');
+}
+
+function bufToB64(buf){
+  var bytes = new Uint8Array(buf);
+  var bin = '';
+  var chunk = 0x8000;
+  for(var i = 0; i < bytes.length; i += chunk){
+    bin += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+  }
+  return btoa(bin);
+}
+
+async function loadFeaturedBallot(){
+  setStatus('Loading the countywide master ballot', false, true);
+  try{
+    var res = await fetch(FEATURED_BALLOT_PATH);
+    if(!res.ok) throw new Error('Bundled ballot missing (HTTP ' + res.status + ')');
+    var b64 = bufToB64(await res.arrayBuffer());
+    setStatus('Parsing ballot structure', false, true);
+    var data = await api('/api/parse', { pdf: b64 });
+    applyParsed(data);
+  }catch(e){
+    setStatus('Could not load the master ballot: ' + esc(e.message), true);
+  }
+}
+
+/* ---------------- render ballot ---------------- */
+
+function renderBallot(){
+  $('uploadStage').style.display = 'none';
+  $('workspace').style.display = 'grid';
+
+  var j = $('jurisBox');
+  j.style.display = 'block';
+  j.innerHTML = '<strong>' + esc(ballot.jurisdiction || 'Jurisdiction unknown') + '</strong>' +
+    esc([ballot.electionName, ballot.electionDate].filter(Boolean).join(' · '));
+
+  var wrap = $('races');
+  wrap.innerHTML = '';
+  ballot.races.forEach(function(race, ri){
+    var div = document.createElement('div');
+    div.className = 'race';
+    div.innerHTML =
+      '<div class="race-head"><h3>' + esc(race.office) + '</h3>' +
+      (race.isMeasure ? '<span class="jbadge">Ballot measure · Finance check</span>' :
+       race.isJudicial ? '<span class="jbadge">Judicial · Federalist Society check</span>' : '') +
+      '</div>' +
+      (race.isMeasure
+        ? '<div class="race-instr">CLICK TO SEE WHO IS FUNDING EACH SIDE · FILL AN OVAL TO MARK YES OR NO</div>'
+        : '<div class="race-instr">CLICK A NAME TO RESEARCH · FILL THE OVAL TO MARK YOUR VOTE</div>');
+    race.candidates.forEach(function(c, ci){
+      var key = ri + ':' + ci;
+      var btn = document.createElement('button');
+      btn.className = 'cand';
+      btn.dataset.key = key;
+      btn.innerHTML =
+        '<span class="oval-btn" role="checkbox" aria-checked="false" aria-label="Mark ' + esc(c.name) + ' as your vote" tabindex="0"></span>' +
+        '<span><span class="cname">' + esc(c.name) + '</span><br>' +
+        '<span class="cparty">' + esc(c.party || '') + '</span>' +
+        '<span class="votetag">✓ ON MY BALLOT</span></span>' +
+        '<span class="peek">RESEARCH →</span>';
+      btn.addEventListener('click', function(){ selectCandidate(ri, ci); });
+      var oval = btn.querySelector('.oval-btn');
+      oval.addEventListener('click', function(e){ e.stopPropagation(); toggleVote(ri, ci); });
+      oval.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); e.stopPropagation(); toggleVote(ri, ci); }
+      });
+      div.appendChild(btn);
+    });
+    wrap.appendChild(div);
+  });
+  refreshVoteUI();
+}
+
+function markActive(key){
+  document.querySelectorAll('.cand').forEach(function(el){
+    el.classList.toggle('active', el.dataset.key === key);
+  });
+}
+
+/* ---------------- ballot plan ---------------- */
+
+function toggleVote(ri, ci){
+  if(votes[ri] === ci){
+    delete votes[ri];             // remove from plan
+  } else {
+    votes[ri] = ci;               // one pick per race — replaces any prior pick
+  }
+  saveState();
+  refreshVoteUI();
+  // if the dossier for this race is open, refresh its vote button
+  if(activeKey){
+    var parts = activeKey.split(':');
+    if(parts[0] === 'm'){
+      if(parseInt(parts[1],10) === ri && cache[activeKey]){
+        renderMeasureDossier(ri, cache[activeKey].result, cache[activeKey].cached);
+      }
+    } else if(parseInt(parts[0],10) === ri && cache[activeKey]){
+      var race = ballot.races[ri];
+      var cand = race.candidates[parseInt(parts[1],10)];
+      renderDossier(cand, race, cache[activeKey].result, cache[activeKey].cached);
+    }
+  }
+}
+
+function refreshVoteUI(){
+  document.querySelectorAll('.cand').forEach(function(el){
+    var parts = el.dataset.key.split(':');
+    var voted = votes[parseInt(parts[0],10)] === parseInt(parts[1],10);
+    el.classList.toggle('voted', voted);
+    var oval = el.querySelector('.oval-btn');
+    if(oval) oval.setAttribute('aria-checked', voted ? 'true' : 'false');
+  });
+  var total = ballot ? ballot.races.length : 0;
+  var decided = Object.keys(votes).length;
+  $('planCount').textContent = decided + ' of ' + total + ' races decided';
+  $('planMeter').style.width = (total ? Math.round(decided/total*100) : 0) + '%';
+  renderPlanView();
+}
+
+function renderPlanView(){
+  var rows = $('planRows');
+  if(!ballot){ rows.innerHTML=''; return; }
+  var html = '';
+  ballot.races.forEach(function(race, ri){
+    var ci = votes[ri];
+    var picked = (ci !== undefined) ? race.candidates[ci] : null;
+    html += '<div class="plan-row">' +
+      '<span class="pr-office">' + esc(race.office) + '</span>' +
+      (picked
+        ? '<span class="pr-pick">' + esc(picked.name) + (picked.party ? ' <span style="font-weight:400;font-family:var(--mono);font-size:11px;color:var(--ink-soft)">(' + esc(picked.party) + ')</span>' : '') + '</span>' +
+          '<button class="pr-remove" data-ri="' + ri + '">Remove</button>'
+        : '<span class="pr-pick undecided">Undecided</span><span style="width:62px"></span>') +
+      '</div>';
+  });
+  rows.innerHTML = html;
+  rows.querySelectorAll('.pr-remove').forEach(function(b){
+    b.addEventListener('click', function(){
+      delete votes[parseInt(b.dataset.ri,10)];
+      saveState(); refreshVoteUI();
+    });
+  });
+}
+
+function buildPrintPlan(){
+  var el = $('printPlan');
+  var html = '<h1>My Ballot Plan</h1>' +
+    '<div class="pj">' + esc([ballot.jurisdiction, ballot.electionName, ballot.electionDate].filter(Boolean).join(' · ')) + '</div>' +
+    '<table>';
+  ballot.races.forEach(function(race, ri){
+    var ci = votes[ri];
+    var picked = (ci !== undefined) ? race.candidates[ci] : null;
+    html += '<tr><td class="of">' + esc(race.office) + '</td><td class="pk">' +
+      (picked ? esc(picked.name) + (picked.party ? ' (' + esc(picked.party) + ')' : '') : '—') +
+      '</td></tr>';
+  });
+  html += '</table><p class="pnote">Personal research notes prepared with Ballot Intel. This is not an official ballot. Verify races and names against your official ballot when voting.</p>';
+  el.innerHTML = html;
+}
+
+/* ---------------- research ---------------- */
+
+async function selectCandidate(ri, ci){
+  var race = ballot.races[ri];
+  if(race.isMeasure) return selectMeasure(ri);
+  var cand = race.candidates[ci];
+  var key = ri + ':' + ci;
+  activeKey = key;
+  markActive(key);
+  openDossier();
+
+  if(cache[key]){
+    renderDossier(cand, race, cache[key].result, cache[key].cached);
+    return;
+  }
+
+  renderDossierLoading(cand, race);
+
+  try{
+    var data = await api('/api/research', {
+      name: cand.name,
+      office: race.office,
+      jurisdiction: ballot.jurisdiction || '',
+      election: [ballot.electionName, ballot.electionDate].filter(Boolean).join(' '),
+      isJudicial: !!race.isJudicial
+    });
+    cache[key] = data;
+    if(activeKey === key) renderDossier(cand, race, data.result, data.cached);
+    var el = document.querySelector('.cand[data-key="' + key + '"] .peek');
+    if(el) el.textContent = 'RESEARCHED';
+  }catch(e){
+    if(activeKey === key) renderDossierError(cand, race, ri, ci, e.message);
+  }
+}
+
+/* ---------------- ballot measures ---------------- */
+
+async function selectMeasure(ri){
+  var race = ballot.races[ri];
+  var key = 'm:' + ri;
+  activeKey = key;
+  markActive(key);
+  openDossier();
+
+  if(cache[key]){
+    renderMeasureDossier(ri, cache[key].result, cache[key].cached);
+    return;
+  }
+
+  $('dossierContent').innerHTML = measureHead(race, null) +
+    '<div class="d-loading"><div class="oval-anim"></div>' +
+    '<p>SEARCHING: FINANCING · SUPPORTERS · OPPOSITION</p>' +
+    '<p style="margin-top:8px">Live web research — usually 20–60 seconds. Instant if someone beat you to it.</p></div>';
+
+  try{
+    var data = await api('/api/research', {
+      name: race.office,
+      office: 'Ballot measure',
+      jurisdiction: ballot.jurisdiction || '',
+      election: [ballot.electionName, ballot.electionDate].filter(Boolean).join(' '),
+      isJudicial: false,
+      isMeasure: true,
+      summary: race.summary || ''
+    });
+    cache[key] = data;
+    if(activeKey === key) renderMeasureDossier(ri, data.result, data.cached);
+    var el = document.querySelector('.cand[data-key="' + ri + ':0"] .peek');
+    var el2 = document.querySelector('.cand[data-key="' + ri + ':1"] .peek');
+    if(el) el.textContent = 'RESEARCHED';
+    if(el2) el2.textContent = 'RESEARCHED';
+  }catch(e){
+    if(activeKey === key){
+      $('dossierContent').innerHTML = measureHead(race, null) +
+        '<div class="d-error">Research failed: ' + esc(e.message) +
+        '<br><button onclick="selectMeasure(' + ri + ')">Retry</button></div>';
+    }
+  }
+}
+
+function measureHead(race, cached){
+  return '<div class="dossier-head">' +
+    '<div class="eyebrow">Ballot Measure</div>' +
+    '<h2>' + esc(race.office) + '</h2>' +
+    (cached === true ? '<span class="cachebadge">Shared cache · researched this week</span>' :
+     cached === false ? '<span class="cachebadge">Fresh research · just now</span>' : '') +
+    '<button class="dossier-close" onclick="closeDossier()">CLOSE</button>' +
+    '</div>';
+}
+
+function measureVoteBar(ri, race){
+  var sel = votes[ri];
+  var yesLabel = (race.candidates[0] && race.candidates[0].name) || 'YES';
+  var noLabel = (race.candidates[1] && race.candidates[1].name) || 'NO';
+  return '<div class="votebar"><div class="mv-row">' +
+    '<button class="' + (sel === 0 ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',0)">' +
+      (sel === 0 ? '✓ ' : '') + esc(yesLabel) + '</button>' +
+    '<button class="' + (sel === 1 ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',1)">' +
+      (sel === 1 ? '✓ ' : '') + esc(noLabel) + '</button>' +
+    '</div><div class="swapnote">' + (sel === undefined ? 'Mark your position — it joins your ballot plan' : 'Tap your pick again to remove it from your plan') + '</div></div>';
+}
+
+function funderRows(list){
+  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">No organized funding found on this side.</p>';
+  return list.map(function(d){
+    return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
+    (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
+    '<div class="tagrow">' + leanTag(d.lean) +
+    kindTag(d.kind) +
+    (d.amount ? '<span class="tag amtchip">' + esc(fmtAmount(d.amount)) + '</span>' : '') +
+    srcLink(d.url) +
+    '</div></div>';
+  }).join('');
+}
+
+function sideList(list, emptyMsg){
+  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">' + emptyMsg + '</p>';
+  return list.map(function(e){
+    return '<div class="endo"><div class="eorg">' + esc(e.name) + '</div>' +
+    (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+    '<div class="tagrow">' + leanTag(e.lean) +
+    (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+    srcLink(e.url) +
+    '</div></div>';
+  }).join('');
+}
+
+function renderMeasureDossier(ri, r, cached){
+  var race = ballot.races[ri];
+  var html = measureHead(race, cached) + measureVoteBar(ri, race) + '<div class="dossier-body">';
+
+  if(r.summary){
+    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p></div>';
+  }
+
+  var fin = r.financing || {};
+  html += '<div class="dsec"><h4>Who Is Financing It</h4>' +
+    '<div class="fin-side">BACKING YES</div>' + funderRows(fin.support) +
+    '<div class="fin-side">BACKING NO</div>' + funderRows(fin.oppose);
+  if(fin.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(fin.note) + '</p>';
+  html += '</div>';
+
+  html += '<div class="dsec"><h4>Major Supporters</h4>' + sideList(r.supporters, 'No organized support found in searched coverage.') + '</div>';
+  html += '<div class="dsec"><h4>Major Opposition</h4>' + sideList(r.opponents, 'No organized opposition found in searched coverage.') + '</div>';
+
+  if(r.sources && r.sources.length){
+    html += '<div class="dsec"><h4>Sources Consulted</h4><p style="font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-soft)">' +
+      r.sources.map(linkifySource).join(' · ') + '</p></div>';
+  }
+  html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments — verify anything that would change your vote against the linked sources and official campaign finance filings.</p>';
+  html += '</div>';
+  $('dossierContent').innerHTML = html;
+}
+
+/* ---------------- dossier rendering ---------------- */
+
+function openDossier(){ $('dossier').classList.add('open'); $('dossierEmpty').style.display='none'; }
+function closeDossier(){ $('dossier').classList.remove('open'); }
+
+function dossierHead(cand, race, cached){
+  return '<div class="dossier-head">' +
+    '<div class="eyebrow">Candidate Dossier</div>' +
+    '<h2>' + esc(cand.name) + '</h2>' +
+    '<div class="office">' + esc(race.office) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div>' +
+    (cached === true ? '<span class="cachebadge">Shared cache · researched this week</span>' :
+     cached === false ? '<span class="cachebadge">Fresh research · just now</span>' : '') +
+    '<button class="dossier-close" onclick="closeDossier()">CLOSE</button>' +
+    '</div>';
+}
+
+function voteBar(ri, ci){
+  var isVoted = votes[ri] === ci;
+  var race = ballot.races[ri];
+  var otherPick = (votes[ri] !== undefined && votes[ri] !== ci) ? race.candidates[votes[ri]] : null;
+  var html = '<div class="votebar">';
+  if(isVoted){
+    html += '<button class="unmark" onclick="toggleVote(' + ri + ',' + ci + ')">✓ On my ballot — remove</button>';
+  } else {
+    html += '<button class="mark" onclick="toggleVote(' + ri + ',' + ci + ')">Add to my ballot plan</button>';
+    if(otherPick){
+      html += '<div class="swapnote">Replaces your current pick for this race: ' + esc(otherPick.name) + '</div>';
+    }
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderDossierLoading(cand, race){
+  $('dossierContent').innerHTML = dossierHead(cand, race, null) +
+    '<div class="d-loading"><div class="oval-anim"></div>' +
+    '<p>SEARCHING: DONORS · ENDORSEMENTS' + (race.isJudicial ? ' · FEDERALIST SOCIETY' : '') + '</p>' +
+    '<p style="margin-top:8px">Live web research — usually 15–45 seconds. Instant if someone beat you to it.</p></div>';
+}
+
+function renderDossierError(cand, race, ri, ci, msg){
+  $('dossierContent').innerHTML = dossierHead(cand, race, null) +
+    '<div class="d-error">Research failed: ' + esc(msg) +
+    '<br><button onclick="selectCandidate(' + ri + ',' + ci + ')">Retry</button></div>';
+}
+
+function srcLink(url){
+  if(!url) return '';
+  return ' <a class="srclink" href="' + esc(url) + '" target="_blank" rel="noopener">source ↗</a>';
+}
+
+function linkifySource(sname){
+  var t = String(sname||'').trim();
+  var m = t.match(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,}(?:\/[^\s()]*)?)$/i);
+  if(m){
+    var href = t.indexOf('http') === 0 ? t : 'https://' + t;
+    return '<a class="srclink" href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(t) + '</a>';
+  }
+  return esc(t);
+}
+
+function fmtAmount(a){
+  var t = String(a||'').trim();
+  if(!t) return '';
+  if(/undisclosed|unknown|not disclosed|unavailable|not available/i.test(t)) return 'undisclosed';
+  if(t.length > 18) return t.slice(0, 18) + '…';
+  return t;
+}
+
+var TAG_DEFS = [
+  [/^left$/i, 'Lean: Left', 'This organization or person generally aligns with liberal or progressive politics. The tag describes the endorser or funder, not the candidate or measure.'],
+  [/^right$/i, 'Lean: Right', 'This organization or person generally aligns with conservative politics. The tag describes the endorser or funder, not the candidate or measure.'],
+  [/^nonpartisan$/i, 'Lean: Nonpartisan', 'No consistent alignment with either major party, or officially neutral.'],
+  [/pac|committee/i, 'PAC / Committee', 'A Political Action Committee: a group registered to raise and spend money to influence elections. Money given through a PAC can make the original source harder to see; the source link shows its filings.'],
+  [/corp/i, 'Corporation', 'A business giving money directly or through a company-linked committee. Corporate giving usually tracks the company\u2019s regulatory and business interests.'],
+  [/individual/i, 'Individual', 'A named person giving their own money. Their employer is shown when disclosed, which can hint at an industry interest behind the gift.'],
+  [/self.?funded/i, 'Self-Funded', 'The candidate\u2019s own money.'],
+  [/union|labor/i, 'Labor Union', 'A union giving through its political arm, funded by member dues. Generally supports worker-protection and collective-bargaining policies.'],
+  [/lobby|trade|industry/i, 'Lobbying / Trade Group', 'An association that represents an industry\u2019s interests to government. Its money and endorsements usually track that industry\u2019s policy goals.'],
+  [/nonprofit/i, 'Nonprofit', 'A nonprofit organization. Some kinds are not required to disclose their own donors, so the original source of the money may be hidden (sometimes called dark money).'],
+  [/party/i, 'Party Organization', 'An official political party organization: local, state, or national.'],
+  [/law enforcement|police/i, 'Law Enforcement', 'A police union or law-enforcement association.'],
+  [/newspaper|editorial/i, 'Editorial Board', 'The opinion side of a newspaper, which endorses candidates. It operates separately from the paper\u2019s news reporting.'],
+  [/business association|chamber/i, 'Business Association', 'A chamber-of-commerce-style group representing local business interests.'],
+  [/environment/i, 'Environmental Group', 'An organization focused on environmental and conservation policy.'],
+  [/religious/i, 'Religious Organization', 'A faith-based organization or advocacy group.'],
+  [/civil rights/i, 'Civil Rights Organization', 'A group focused on civil rights and liberties.'],
+  [/professional association|bar association/i, 'Professional Association', 'A membership body for a profession, such as a bar association. Often rates candidates rather than endorsing.'],
+  [/elected official/i, 'Elected Official', 'A current or former officeholder endorsing personally.']
+];
+
+function tagDef(txt){
+  for(var i = 0; i < TAG_DEFS.length; i++){
+    if(TAG_DEFS[i][0].test(txt)) return [TAG_DEFS[i][1], TAG_DEFS[i][2]];
+  }
+  return [txt, 'Category assigned by the research model based on how sources describe this group.'];
+}
+
+function showTagPop(tagEl){
+  var pop = $('tagpop');
+  var d = tagDef(tagEl.textContent.trim());
+  pop.innerHTML = '<div class="tp-title">' + esc(d[0]) + '</div><div class="tp-body">' + esc(d[1]) + '</div>';
+  pop.style.display = 'block';
+  var r = tagEl.getBoundingClientRect();
+  var pw = Math.min(290, window.innerWidth - 16);
+  pop.style.maxWidth = pw + 'px';
+  var left = Math.max(8, Math.min(r.left, window.innerWidth - pop.offsetWidth - 8));
+  var top = r.bottom + 8;
+  if(top + pop.offsetHeight > window.innerHeight - 8) top = Math.max(8, r.top - pop.offsetHeight - 8);
+  pop.style.left = left + 'px';
+  pop.style.top = top + 'px';
+}
+
+function hideTagPop(){ $('tagpop').style.display = 'none'; }
+
+document.addEventListener('click', function(e){
+  var t = e.target.closest ? e.target.closest('.tag') : null;
+  if(t && !t.classList.contains('amtchip')){
+    e.stopPropagation();
+    showTagPop(t);
+    return;
+  }
+  if(!(e.target.closest && e.target.closest('#tagpop'))) hideTagPop();
+});
+window.addEventListener('scroll', hideTagPop, true);
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hideTagPop(); });
+
+function kindTag(t){
+  var s = String(t||'').trim();
+  if(!s) return '';
+  var l = s.toLowerCase();
+  var cls = 'tag group';
+  if(/pac|committee/.test(l)) cls = 'tag kind kpac';
+  else if(/corp/.test(l)) cls = 'tag kind kcorp';
+  else if(/individual/.test(l)) cls = 'tag kind kindiv';
+  return '<span class="' + cls + '">' + esc(s) + '</span>';
+}
+
+function leanTag(lean){
+  var l = String(lean||'').toLowerCase();
+  if(l==='left') return '<span class="tag left">Left</span>';
+  if(l==='right') return '<span class="tag right">Right</span>';
+  return '<span class="tag nonpartisan">Nonpartisan</span>';
+}
+
+function renderDossier(cand, race, r, cached){
+  var ri = -1, ci = -1;
+  if(activeKey){
+    var parts = activeKey.split(':');
+    ri = parseInt(parts[0],10); ci = parseInt(parts[1],10);
+  }
+  var html = dossierHead(cand, race, cached);
+  if(ri >= 0) html += voteBar(ri, ci);
+  html += '<div class="dossier-body">';
+
+  if(r.summary){
+    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p></div>';
+  }
+
+  if(race.isJudicial && r.federalistSociety){
+    var fs = r.federalistSociety;
+    var status = fs.status || 'none_found';
+    var label = status==='documented' ? '⚑ Federalist Society: documented ties'
+              : status==='possible'   ? '⚑ Federalist Society: possible ties'
+              : '○ Federalist Society: no ties found';
+    html += '<div class="dsec"><h4>Judicial Screen</h4>' +
+      '<div class="fedsoc' + (status==='none_found' ? ' none' : '') + '">' +
+      '<div class="fstatus">' + esc(label) + '</div>';
+    if(fs.evidence && fs.evidence.length){
+      html += '<ul>' + fs.evidence.map(function(ev){
+        return '<li>' + esc(ev.summary) +
+        '<span class="src">' + esc(ev.source||'') +
+        (ev.url ? ' — <a href="' + esc(ev.url) + '" target="_blank" rel="noopener">source</a>' : '') +
+        '</span></li>';
+      }).join('') + '</ul>';
+    } else if(status==='none_found'){
+      html += '<p style="font-size:13px;margin-top:8px">Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.</p>';
+    }
+    html += '</div></div>';
+  }
+
+  html += '<div class="dsec"><h4>Top Campaign Donors</h4>';
+  if(r.donors && r.donors.length){
+    html += r.donors.map(function(d){
+      return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+      '<span class="dtype">' + kindTag(d.type) + srcLink(d.url) + '</span></div>' +
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+    }).join('');
+  } else {
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">No donor data found.</p>';
+  }
+  if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
+  html += '</div>';
+
+  html += '<div class="dsec"><h4>Endorsements</h4>';
+  if(r.endorsements && r.endorsements.length){
+    html += r.endorsements.map(function(e){
+      return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
+      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+      '<div class="tagrow">' + leanTag(e.lean) +
+      (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+      srcLink(e.url) +
+      '</div></div>';
+    }).join('');
+  } else {
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">No endorsements found in searched coverage.</p>';
+  }
+  html += '</div>';
+
+  if(r.ratings && r.ratings.length){
+    html += '<div class="dsec"><h4>Ratings &amp; Evaluations</h4>' +
+      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">Assessments by outside groups — not endorsements.</p>';
+    html += r.ratings.map(function(e){
+      return '<div class="endo"><div class="eorg">' + esc(e.org) +
+      (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
+      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+      '<div class="tagrow">' + leanTag(e.lean) +
+      (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+      srcLink(e.url) +
+      '</div></div>';
+    }).join('');
+    html += '</div>';
+  }
+
+  if(r.sources && r.sources.length){
+    html += '<div class="dsec"><h4>Sources Consulted</h4><p style="font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-soft)">' +
+      r.sources.map(linkifySource).join(' · ') + '</p></div>';
+  }
+  html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and Federalist Society findings are best-effort judgments — verify anything that would change your vote against the linked sources and official disclosure filings.</p>';
+
+  html += '</div>';
+  $('dossierContent').innerHTML = html;
+}
+
+/* ---------------- wiring ---------------- */
+
+$('pickBtn').addEventListener('click', function(){ $('fileInput').click(); });
+$('loadMaster').addEventListener('click', loadFeaturedBallot);
+$('fileInput').addEventListener('change', function(e){ handleFile(e.target.files[0]); });
+
+var dz = $('dropzone');
+['dragenter','dragover'].forEach(function(ev){ dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.add('dragover'); }); });
+['dragleave','drop'].forEach(function(ev){ dz.addEventListener(ev, function(e){ e.preventDefault(); dz.classList.remove('dragover'); }); });
+dz.addEventListener('drop', function(e){ handleFile(e.dataTransfer.files[0]); });
+
+$('planToggle').addEventListener('click', function(){
+  var pv = $('planView');
+  pv.classList.toggle('open');
+  $('planToggle').textContent = pv.classList.contains('open') ? 'Hide plan' : 'View plan';
+});
+
+$('printBtn').addEventListener('click', function(){
+  buildPrintPlan();
+  window.print();
+});
+
+$('clearBtn').addEventListener('click', function(){
+  if(!confirm('Clear all picks from your ballot plan?')) return;
+  votes = {};
+  saveState();
+  refreshVoteUI();
+});
+
+$('resetBtn').addEventListener('click', function(){
+  saveState();  // current plan is kept
+  ballot = null; cache = {}; votes = {}; activeKey = null; currentId = null;
+  $('workspace').style.display = 'none';
+  $('jurisBox').style.display = 'none';
+  $('uploadStage').style.display = 'block';
+  $('dossierContent').innerHTML = '';
+  $('dossierEmpty').style.display = 'block';
+  $('fileInput').value = '';
+  setStatus('');
+  renderResumeList();
+});
+
+/* countdown + registration triage */
+function daysUntil(iso){
+  return Math.ceil((new Date(iso).getTime() - Date.now()) / 86400000);
+}
+
+function renderCountdown(){
+  var dReg = daysUntil(ELECTION.regDeadline);
+  var dVote = daysUntil(ELECTION.date);
+  var num = $('cdNum'), lab = $('cdLabel');
+  if(dReg > 0){
+    num.textContent = dReg;
+    lab.innerHTML = (dReg === 1 ? 'DAY' : 'DAYS') + ' LEFT TO REGISTER<br><strong>' + esc(ELECTION.name) + '</strong> · registration deadline ' +
+      new Date(ELECTION.regDeadline).toLocaleDateString('en-US', {month:'long', day:'numeric'});
+  } else if(dVote > 0){
+    num.textContent = dVote;
+    lab.innerHTML = (dVote === 1 ? 'DAY' : 'DAYS') + ' UNTIL ELECTION DAY<br><strong>' + esc(ELECTION.name) + '</strong> · registration for this election has closed';
+  } else {
+    num.textContent = '\u2713';
+    lab.innerHTML = '<strong>' + esc(ELECTION.name) + '</strong> has passed &mdash; check back for the next election.';
+  }
+}
+
+renderCountdown();
+
+/* resume: list all saved ballot plans */
+function renderResumeList(){
+  var st = loadStore();
+  var ids = Object.keys(st.ballots).sort(function(a,b){ return (st.ballots[b].ts||0) - (st.ballots[a].ts||0); });
+  var box = $('resumeBox');
+  if(!ids.length){ box.style.display = 'none'; return; }
+  var html = '<p><strong>Your saved ballot plans</strong></p>';
+  ids.forEach(function(id){
+    var e = st.ballots[id];
+    var decided = Object.keys(e.votes||{}).length;
+    var label = [e.ballot.jurisdiction, e.ballot.electionName, e.ballot.electionDate].filter(Boolean).join(' · ') || 'Saved ballot';
+    html += '<div class="resume-row">' +
+      '<span class="rr-label">' + esc(label) + '<br><span class="rr-meta">' + decided + ' of ' + e.ballot.races.length + ' races decided</span></span>' +
+      '<span class="rr-actions"><button class="btn2" data-resume="' + esc(id) + '">Resume</button>' +
+      '<button class="rr-del" data-del="' + esc(id) + '" title="Delete this plan">✕</button></span>' +
+      '</div>';
+  });
+  box.innerHTML = html;
+  box.style.display = 'block';
+  box.querySelectorAll('[data-resume]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var e = loadStore().ballots[b.dataset.resume];
+      if(!e) return;
+      ballot = e.ballot;
+      currentId = b.dataset.resume;
+      votes = e.votes || {};
+      renderBallot();
+    });
+  });
+  box.querySelectorAll('[data-del]').forEach(function(b){
+    b.addEventListener('click', function(){
+      if(confirm('Delete this saved ballot plan?')) deletePlan(b.dataset.del);
+    });
+  });
+}
+renderResumeList();
+</script>
+</body>
+</html>
