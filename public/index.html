@@ -24,7 +24,8 @@
     --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden;}
+  html{overflow-x:hidden;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
   button{font-family:inherit; cursor:pointer; color:inherit;}
   :focus-visible{outline:3px solid var(--left-fg); outline-offset:2px;}
   @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important;} }
@@ -206,7 +207,7 @@
 
   .dossier{
     border:3px solid var(--rule); background:var(--panel);
-    position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto;
+    position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto;
   }
   @media (max-width:960px){
     .dossier{position:fixed; inset:0; z-index:50; max-height:none; border:none; border-top:6px solid var(--rule); display:none;}
