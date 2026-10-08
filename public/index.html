@@ -473,6 +473,26 @@ async function api(path, payload){
   return data;
 }
 
+function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+
+// Research runs in the background on the server; we poll until the shared
+// cache fills. Keeps every request short so mobile browsers never time out.
+async function research(payload){
+  for(var i = 0; i < 45; i++){
+    var data;
+    try{
+      data = await api('/api/research', payload);
+    }catch(e){
+      // brief network blips on cellular: retry the poll, not the research
+      if(i > 0 && /load failed|failed to fetch|network/i.test(String(e.message))){ await sleep(4000); continue; }
+      throw e;
+    }
+    if(!data.pending) return data;
+    await sleep(4000);
+  }
+  throw new Error('Research is taking longer than usual. Tap Retry in a moment — it may already be finished.');
+}
+
 /* ---------------- persistence ---------------- */
 
 function ballotId(b){
@@ -738,7 +758,7 @@ async function selectCandidate(ri, ci){
   renderDossierLoading(cand, race);
 
   try{
-    var data = await api('/api/research', {
+    var data = await research({
       name: cand.name,
       office: race.office,
       jurisdiction: ballot.jurisdiction || '',
@@ -774,7 +794,7 @@ async function selectMeasure(ri){
     '<p style="margin-top:8px">Live web research — usually 20–60 seconds. Instant if someone beat you to it.</p></div>';
 
   try{
-    var data = await api('/api/research', {
+    var data = await research({
       name: race.office,
       office: 'Ballot measure',
       jurisdiction: ballot.jurisdiction || '',

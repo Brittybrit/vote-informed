@@ -26,7 +26,7 @@ const MAX_PDF_BASE64_CHARS = 44 * 1024 * 1024; // ~32MB PDF
 const FEATURED_BALLOT_URL = 'https://www.miamidade.gov/elections/library/2026-11-03-general-election-sample-ballot.pdf';
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     try {
       if (request.method === 'POST' && url.pathname === '/api/parse') {
@@ -36,7 +36,7 @@ export default {
         return await handleFeatured(request, env);
       }
       if (request.method === 'POST' && url.pathname === '/api/research') {
-        return await handleResearch(request, env);
+        return await handleResearch(request, env, ctx);
       }
       return json({ error: 'Not found' }, 404);
     } catch (e) {
@@ -138,7 +138,7 @@ async function parseBallot(env, pdfB64, ip) {
   return json({ ballot, cached: false });
 }
 
-async function handleResearch(request, env) {
+async function handleResearch(request, env, ctx) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.name) || !isStr(body.office)) {
     return json({ error: 'Missing candidate name or office' }, 400);
@@ -159,10 +159,26 @@ async function handleResearch(request, env) {
   const cached = await env.CACHE.get(key, 'json');
   if (cached) return json({ result: cached, cached: true });
 
+  // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
+  // can take 90s. Start the research in the background, respond immediately,
+  // and let the client poll this same endpoint until the cache fills.
+  const failed = await env.CACHE.get('fail:' + key);
+  if (failed) return json({ error: failed }, 502);
+  const pending = await env.CACHE.get('pend:' + key);
+  if (pending) return json({ pending: true });
+
   const ip = clientIP(request);
   const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
   if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
 
+  await env.CACHE.put('pend:' + key, '1', { expirationTtl: 240 });
+  ctx.waitUntil(runResearch(env, key, { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode }));
+  return json({ pending: true });
+}
+
+async function runResearch(env, key, p) {
+  const { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode } = p;
+  try {
   const fedsocSchema = isJudicial ? [
     '  "federalistSociety": {',
     '    "status": "documented" or "possible" or "none_found",',
@@ -258,7 +274,11 @@ async function handleResearch(request, env) {
   }
 
   await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
-  return json({ result, cached: false });
+  } catch (e) {
+    await env.CACHE.put('fail:' + key, 'Research failed: ' + (e && e.message ? e.message : String(e)), { expirationTtl: 90 });
+  } finally {
+    await env.CACHE.delete('pend:' + key);
+  }
 }
 
 function federalOfficeCode(office) {
