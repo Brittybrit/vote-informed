@@ -155,9 +155,22 @@ async function handleResearch(request, env, ctx) {
 
   // Shared cache: the whole point. 500 users, one bill.
   // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
-  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res7:' : 'resl4:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  const prefix = isMeasure ? 'resm1:' : (officeCode ? 'res7:' : 'resl4:');
+  const key = prefix + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  // Alias on a normalized key so ballots that print the same race slightly differently
+  // ("Tuesday, November 3, 2026" vs "November 3, 2026", "Moe" with or without quotes, accents)
+  // share one cached result.
+  const alias = 'alias:' + prefix + await sha256([normPart(name), normPart(office), normPart(jurisdiction), normElection(election)].join('|'));
   const cached = await env.CACHE.get(key, 'json');
-  if (cached) return json({ result: cached, cached: true });
+  if (cached) {
+    if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
+    return json({ result: cached, cached: true });
+  }
+  const target = await env.CACHE.get(alias);
+  if (target && target !== key) {
+    const hit = await env.CACHE.get(target, 'json');
+    if (hit) return json({ result: hit, cached: true });
+  }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
   // can take 90s. Start the research in the background, respond immediately,
@@ -165,7 +178,7 @@ async function handleResearch(request, env, ctx) {
   const failed = await env.CACHE.get('fail:' + key);
   if (failed) return json({ error: failed }, 502);
   const pending = await env.CACHE.get('pend:' + key);
-  const params = { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode };
+  const params = { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode, alias };
 
   if (!pending) {
     const ip = clientIP(request);
@@ -309,6 +322,7 @@ async function runResearch(env, key, p) {
   }
 
   await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: ttl });
+  if (p.alias) await env.CACHE.put(p.alias, key, { expirationTtl: ttl });
   } catch (e) {
     await env.CACHE.put('fail:' + key, 'Research failed: ' + (e && e.message ? e.message : String(e)), { expirationTtl: 90 });
   } finally {
@@ -499,6 +513,20 @@ async function rateLimit(env, kind, ip, limit) {
   if (current >= limit) return false;
   await env.CACHE.put(key, String(current + 1), { expirationTtl: 86400 });
   return true;
+}
+
+// Lowercase, strip accents, quotes and punctuation, collapse spaces.
+function normPart(s) {
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+}
+// Reduce an election label to its date ("november 3 2026"), else its year.
+function normElection(e) {
+  const s = normPart(e);
+  const m = s.match(/(january|february|march|april|may|june|july|august|september|october|november|december) (\d{1,2}) (\d{4})/);
+  if (m) return m[1] + ' ' + m[2] + ' ' + m[3];
+  const y = s.match(/\b(20\d\d)\b/);
+  return y ? y[1] : s;
 }
 
 function isStr(v) { return typeof v === 'string' && v.trim().length > 0; }
