@@ -164,12 +164,12 @@ async function handleResearch(request, env, ctx) {
   const cached = await env.CACHE.get(key, 'json');
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
-    return json({ result: cached, cached: true });
+    return json({ result: await refreshFec(env, key, cached, name, officeCode), cached: true });
   }
   const target = await env.CACHE.get(alias);
   if (target && target !== key) {
     const hit = await env.CACHE.get(target, 'json');
-    if (hit) return json({ result: hit, cached: true });
+    if (hit) return json({ result: await refreshFec(env, target, hit, name, officeCode), cached: true });
   }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
@@ -314,6 +314,7 @@ async function runResearch(env, key, p) {
         result.donors = fec.donors;
         result.donorDataNote = fec.note;
         result.donorListUrl = fec.listUrl || '';
+        result.fecV = FEC_DATA_VERSION;
         fecOk = true;
       }
     } catch (e) { console.log('FEC error for ' + name + ': ' + (e && e.message ? e.message : e)); }
@@ -330,6 +331,24 @@ async function runResearch(env, key, p) {
   }
 }
 
+// Bump when the FEC donor logic changes. Cached federal results from an older version get their
+// donor list rebuilt from FEC on next read: free API, no AI call, no rate-limit cost.
+const FEC_DATA_VERSION = 2;
+async function refreshFec(env, key, result, name, officeCode) {
+  if (!officeCode || result.fecV === FEC_DATA_VERSION) return result;
+  try {
+    const fec = await fecTopDonors(env, name, officeCode);
+    if (fec && (fec.donors.length || fec.definitive)) {
+      result.donors = fec.donors;
+      result.donorDataNote = fec.note;
+      result.donorListUrl = fec.listUrl || '';
+      result.fecV = FEC_DATA_VERSION;
+      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    }
+  } catch (e) { console.log('FEC refresh error for ' + name + ': ' + e.message); }
+  return result;
+}
+
 function federalOfficeCode(office) {
   const o = String(office || '').toLowerCase();
   if (/\b(united states|u\.?s\.?)\s+senat/.test(o)) return 'S';
@@ -344,6 +363,7 @@ function federalOfficeCode(office) {
 //   A traditional PAC with an organization_type (corporation, labor, membership, trade, cooperative)
 //   is a connected PAC; without one it is nonconnected.
 function committeeKind(n, reg, entity) {
+  if (/\b(WINRED|ACTBLUE)\b/i.test(n)) return 'online donation platform';
   if (reg) {
     const t = reg.committee_type;
     if (t === 'O' || t === 'V' || t === 'W' || t === 'U') return 'super PAC';
@@ -411,6 +431,9 @@ async function fecTopDonors(env, name, officeCode) {
 
   const agg = {};
   for (const r of rows) {
+    // Memo lines (memo_code X) document money already reported on another line,
+    // e.g. gifts earmarked through WinRed/ActBlue or joint fundraising. Counting them double-counts.
+    if (r.memo_code === 'X') continue;
     const n = String(r.contributor_name || '').trim();
     if (!n) continue;
     if (!agg[n]) agg[n] = { amount: 0, type: r.entity_type, employer: r.contributor_employer || '', cid: r.contributor_id || (r.contributor && r.contributor.committee_id) || '' };
