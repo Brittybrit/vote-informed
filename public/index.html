@@ -1135,7 +1135,7 @@ function renderDossier(cand, race, r, cached){
   html += '</div>';
 
   // drop grades from voter-guide / tracker sites; keep only org scorecards and bar/official reviews
-  var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|tracker/i;
+  var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|election tracker/i;
   if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'')); });
   if(r.ratings && r.ratings.length){
     html += '<div class="dsec"><h4>Ratings &amp; Evaluations</h4>' +
