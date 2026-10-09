@@ -363,7 +363,7 @@ function federalOfficeCode(office) {
 //   A traditional PAC with an organization_type (corporation, labor, membership, trade, cooperative)
 //   is a connected PAC; without one it is nonconnected.
 function committeeKind(n, reg, entity) {
-  if (/\b(WINRED|ACTBLUE)\b/i.test(n)) return 'online donation platform';
+  if (/\bact\s*blue\b|\bwin\s*red\b/i.test(n)) return 'online donation platform';
   if (reg) {
     const t = reg.committee_type;
     if (t === 'O' || t === 'V' || t === 'W' || t === 'U') return 'super PAC';

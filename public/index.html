@@ -1117,6 +1117,8 @@ function renderDossier(cand, race, r, cached){
   html += '<div class="dsec"><h4>Top Campaign Donors</h4>';
   if(r.donors && r.donors.length){
     html += r.donors.map(function(d){
+      // WinRed / ActBlue process online donations; they are not PACs giving their own money
+      if(/\bact\s*blue\b|\bwin\s*red\b/i.test(d.name||'')) d.type = 'online donation platform';
       if(/^committee$/i.test(d.type||'')){   // results cached before the server-side fix
         var s = String(d.name||'').toUpperCase();
         d.type = /\b(REPUBLICAN|DEMOCRATIC|LIBERTARIAN)\b.*\b(COMMITTEE|PARTY)\b|\bPARTY\b/.test(s) ? 'party committee'
