@@ -262,6 +262,7 @@ async function runResearch(env, key, p) {
     '  "summary": "2-3 sentence neutral overview of who this candidate is",',
     '  "donors": [ {"name": "donor name", "amount": "dollar amount like $1,000, or the single word unknown (named in a source, amount not reported) or undisclosed (source says it is hidden) — never a phrase", "type": "individual | PAC | industry group | party committee | self-funded | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
+    '  "donorListUrl": "link to the page listing this candidate\u2019s full campaign contributions on an official disclosure portal (Florida Division of Elections, Miami-Dade County or city clerk filings), taken directly from your search results, else empty string",',
     '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     fedsocSchema,
@@ -292,6 +293,7 @@ async function runResearch(env, key, p) {
         // FEC is authoritative for federal races: an empty official record replaces web-search guesses too
         result.donors = fec.donors;
         result.donorDataNote = fec.note;
+        result.donorListUrl = fec.listUrl || '';
         fecOk = true;
       }
     } catch (e) { console.log('FEC error for ' + name + ': ' + (e && e.message ? e.message : e)); }
@@ -419,6 +421,7 @@ async function fecTopDonors(env, name, officeCode) {
 
   return {
     donors,
+    listUrl: 'https://www.fec.gov/data/receipts/?committee_id=' + committee.committee_id + '&two_year_transaction_period=' + cycle,
     note: 'Itemized contributions from official FEC filings (openFEC API, committee ' + committee.committee_id +
       '). Amounts sum the largest itemized receipts reported this cycle and may lag the most recent filings.'
   };

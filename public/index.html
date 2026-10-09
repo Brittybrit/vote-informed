@@ -319,6 +319,8 @@
     text-decoration:underline; text-underline-offset:2px; white-space:nowrap;
   }
   .tagrow .srclink{align-self:center;}
+  .fulllist{display:inline-block; margin-top:12px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); border:2px solid var(--ink); padding:8px 12px; text-decoration:none;}
+  .fulllist:hover{background:var(--ink); color:var(--paper);}
   .srcs{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); overflow-wrap:anywhere; word-break:break-all;}
   .srcs .srclink{white-space:normal; overflow-wrap:anywhere; word-break:break-all;}
   .ratingval{
@@ -1128,6 +1130,13 @@ function renderDossier(cand, race, r, cached){
     html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? 'No donors on record with the FEC.' : 'No donor data found.') + '</p>';
   }
   if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
+  var listUrl = r.donorListUrl || '';
+  if(!listUrl){   // federal results cached before this field existed: rebuild from the committee ID in the note
+    var cm = String(r.donorDataNote||'').match(/committee (C\d{8})/);
+    if(cm && r.donors && r.donors.length) listUrl = 'https://www.fec.gov/data/receipts/?committee_id=' + cm[1];
+  }
+  if(/^https:\/\//i.test(listUrl))
+    html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">See full donor list &#8599;</a>';
   html += '</div>';
 
   html += '<div class="dsec"><h4>Endorsements</h4>';
