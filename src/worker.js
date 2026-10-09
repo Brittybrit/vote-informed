@@ -314,6 +314,14 @@ function federalOfficeCode(office) {
   return null;
 }
 
+// FEC codes most PACs as COM ("other committee"), not PAC. Tell party and candidate committees apart by name.
+function committeeKind(n) {
+  const s = String(n).toUpperCase();
+  if (/\b(REPUBLICAN|DEMOCRATIC|LIBERTARIAN)\b.*\b(COMMITTEE|PARTY)\b|\bPARTY\b/.test(s)) return 'party committee';
+  if (/\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s)) return 'candidate committee';
+  return 'PAC';
+}
+
 async function fecTopDonors(env, name, officeCode) {
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
@@ -366,7 +374,7 @@ async function fecTopDonors(env, name, officeCode) {
     .map(([n, v]) => ({
       name: n + (v.employer && v.type === 'IND' ? ' (' + v.employer + ')' : ''),
       amount: '$' + Math.round(v.amount).toLocaleString('en-US'),
-      type: typeMap[v.type] || 'contributor',
+      type: v.type === 'COM' ? committeeKind(n) : (typeMap[v.type] || 'contributor'),
       url: 'https://www.fec.gov/data/committee/' + committee.committee_id + '/?tab=receipts'
     }));
 

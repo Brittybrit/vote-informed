@@ -1109,6 +1109,11 @@ function renderDossier(cand, race, r, cached){
   html += '<div class="dsec"><h4>Top Campaign Donors</h4>';
   if(r.donors && r.donors.length){
     html += r.donors.map(function(d){
+      if(/^committee$/i.test(d.type||'')){   // results cached before the server-side fix
+        var s = String(d.name||'').toUpperCase();
+        d.type = /\b(REPUBLICAN|DEMOCRATIC|LIBERTARIAN)\b.*\b(COMMITTEE|PARTY)\b|\bPARTY\b/.test(s) ? 'party committee'
+               : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
+      }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       '<span class="dtype">' + kindTag(d.type) + srcLink(d.url) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
