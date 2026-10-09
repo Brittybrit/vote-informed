@@ -155,7 +155,7 @@ async function handleResearch(request, env, ctx) {
 
   // Shared cache: the whole point. 500 users, one bill.
   // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
-  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res5:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res6:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
   const cached = await env.CACHE.get(key, 'json');
   if (cached) return json({ result: cached, cached: true });
 
@@ -251,7 +251,7 @@ async function runResearch(env, key, p) {
     'Election: ' + election,
     '',
     'Find:',
-    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
+    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to this candidate's campaign for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to the candidate's past campaigns for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
@@ -324,7 +324,23 @@ async function fecTopDonors(env, name, officeCode) {
     '&office=' + officeCode + '&cycle=' + cycle + '&per_page=5&api_key=' + apiKey);
   if (!cRes.ok) { console.log('FEC candidate search ' + cRes.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); return null; }
   const cJson = await cRes.json();
-  const cand = (cJson.results || [])[0];
+  let cand = (cJson.results || [])[0];
+  if (!cand) {
+    // ballot names often use nicknames (Angie vs Angela); FEC uses legal names. Retry on last name, Florida only.
+    const parts = name.replace(/\b(jr|sr|ii|iii|iv)\.?$/i, '').trim().split(/\s+/);
+    const last = parts[parts.length - 1];
+    const r2 = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(last) +
+      '&office=' + officeCode + '&state=FL&cycle=' + cycle + '&per_page=20&api_key=' + apiKey);
+    if (r2.ok) {
+      const first = (parts[0] || '').toUpperCase().slice(0, 3);
+      const hits = ((await r2.json()).results || []).filter(c => {
+        const n = String(c.name || '').toUpperCase();      // FEC format: "LAST, FIRST MIDDLE"
+        return n.startsWith(last.toUpperCase() + ',') && n.split(',')[1].trim().startsWith(first);
+      });
+      if (hits.length === 1) cand = hits[0];
+      else console.log('FEC: last-name fallback found ' + hits.length + ' matches for ' + name);
+    }
+  }
   if (!cand) { console.log('FEC: no candidate match for ' + name); return null; }
   const committee = (cand.principal_committees || [])[0];
   if (!committee) { console.log('FEC: no principal committee for ' + name + ' (' + cand.candidate_id + ')'); return null; }
