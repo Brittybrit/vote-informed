@@ -77,8 +77,9 @@
   }
   .juris strong{color:var(--ink); display:block; font-size:13px;}
 
-  .votenow{display:none; margin:22px 0 0; border:3px solid var(--rule); background:var(--panel); padding:16px 18px;}
+  .votenow{display:none; max-width:640px; margin:22px auto 0; border:3px solid var(--rule); background:var(--panel); padding:16px 18px;}
   .votenow.show{display:block;}
+  main.with-ballot .votenow{max-width:none;}
   .vb-row{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
   .vb-kicker{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);}
   .vb-head{font-weight:900; font-size:20px; letter-spacing:.01em; margin-top:2px;}
@@ -1277,6 +1278,7 @@ function renderBallot(){
   $('workspace').style.display = 'grid';
 
   document.querySelector('header').classList.add('with-ballot');
+  document.querySelector('main').classList.add('with-ballot');
   var j = $('jurisBox');
   j.style.display = 'block';
   j.innerHTML = '<strong>' + (ballot.jurisdiction ? esc(ballot.jurisdiction) : t('juris.unknown')) + '</strong>' +
@@ -1866,6 +1868,7 @@ $('resetBtn').addEventListener('click', function(){
   $('workspace').style.display = 'none';
   $('jurisBox').style.display = 'none';
   document.querySelector('header').classList.remove('with-ballot');
+  document.querySelector('main').classList.remove('with-ballot');
   $('uploadStage').style.display = 'block';
   $('dossierContent').innerHTML = '';
   $('dossierEmpty').style.display = 'block';
