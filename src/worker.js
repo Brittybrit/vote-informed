@@ -20,7 +20,7 @@ const API_URL = 'https://api.anthropic.com/v1/messages';
 const CACHE_TTL = 60 * 60 * 24 * 7;        // research: 7 days (endorsements and money move weekly)
 const PARSE_TTL = 60 * 60 * 24 * 30;       // parses: 30 days (a published ballot PDF doesn't change)
 const LIMIT_PARSE_PER_DAY = 10;
-const LIMIT_RESEARCH_PER_DAY = 500; // TEMPORARY for the state/local re-warm (Oct 8); revert to 60 right after
+const LIMIT_RESEARCH_PER_DAY = 60; // fresh (uncached) lookups per IP per day; cached hits are free
 const MAX_PDF_BASE64_CHARS = 44 * 1024 * 1024; // ~32MB PDF
 // Countywide master ballot, fetched and parsed server-side. Update each election.
 const FEATURED_BALLOT_URL = 'https://www.miamidade.gov/elections/library/2026-11-03-general-election-sample-ballot.pdf';
