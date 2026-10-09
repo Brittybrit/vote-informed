@@ -288,7 +288,8 @@ async function runResearch(env, key, p) {
     let fecOk = false;
     try {
       const fec = await fecTopDonors(env, name, officeCode);
-      if (fec && fec.donors.length) {
+      if (fec && (fec.donors.length || fec.definitive)) {
+        // FEC is authoritative for federal races: an empty official record replaces web-search guesses too
         result.donors = fec.donors;
         result.donorDataNote = fec.note;
         fecOk = true;
@@ -346,6 +347,7 @@ async function fecTopDonors(env, name, officeCode) {
   if (!cRes.ok) { console.log('FEC candidate search ' + cRes.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); return null; }
   const cJson = await cRes.json();
   let cand = (cJson.results || [])[0];
+  let fallbackHits = -1;
   if (!cand) {
     // ballot names often use nicknames (Angie vs Angela); FEC uses legal names. Retry on last name, Florida only.
     const parts = name.replace(/\b(jr|sr|ii|iii|iv)\.?$/i, '').trim().split(/\s+/);
@@ -358,11 +360,18 @@ async function fecTopDonors(env, name, officeCode) {
         const n = String(c.name || '').toUpperCase();      // FEC format: "LAST, FIRST MIDDLE"
         return n.startsWith(last.toUpperCase() + ',') && n.split(',')[1].trim().startsWith(first);
       });
+      fallbackHits = hits.length;
       if (hits.length === 1) cand = hits[0];
       else console.log('FEC: last-name fallback found ' + hits.length + ' matches for ' + name);
     }
   }
-  if (!cand) { console.log('FEC: no candidate match for ' + name); return null; }
+  if (!cand) {
+    console.log('FEC: no candidate match for ' + name);
+    // both the full-name and last-name searches came back empty: not registered with the FEC
+    if (fallbackHits === 0) return { donors: [], definitive: true,
+      note: 'Not registered with the FEC for this race. Federal candidates only have to register after raising or spending $5,000, so this campaign has likely raised little or nothing.' };
+    return null;
+  }
   const committee = (cand.principal_committees || [])[0];
   if (!committee) { console.log('FEC: no principal committee for ' + name + ' (' + cand.candidate_id + ')'); return null; }
 
@@ -371,7 +380,11 @@ async function fecTopDonors(env, name, officeCode) {
   if (!sRes.ok) { console.log('FEC receipts ' + sRes.status + ' for ' + committee.committee_id); return null; }
   const sJson = await sRes.json();
   const rows = sJson.results || [];
-  if (!rows.length) { console.log('FEC: no itemized receipts for ' + committee.committee_id); return null; }
+  if (!rows.length) {
+    console.log('FEC: no itemized receipts for ' + committee.committee_id);
+    return { donors: [], definitive: true,
+      note: 'No itemized contributions reported to the FEC (committee ' + committee.committee_id + '). Gifts under $200 do not have to be listed by name, so this campaign has likely raised only small amounts, if any.' };
+  }
 
   const agg = {};
   for (const r of rows) {

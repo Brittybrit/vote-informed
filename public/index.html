@@ -1124,7 +1124,8 @@ function renderDossier(cand, race, r, cached){
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
   } else {
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">No donor data found.</p>';
+    var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote||'');
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? 'No donors on record with the FEC.' : 'No donor data found.') + '</p>';
   }
   if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
   html += '</div>';
