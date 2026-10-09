@@ -36,9 +36,11 @@ const LIMIT_RESEARCH_PER_DAY = 60; // fresh (uncached) lookups per IP per day; c
 const MAX_PDF_BASE64_CHARS = 44 * 1024 * 1024; // ~32MB PDF
 // Countywide master ballot, fetched and parsed server-side. Update each election.
 const FEATURED_BALLOT_URL = 'https://www.miamidade.gov/elections/library/2026-11-03-general-election-sample-ballot.pdf';
-// Points at the parse of the master ballot fetched straight from the county site. Research
-// reads measure summaries from it instead of trusting the summary a browser sends.
+// Points at the parse of the master ballot: the copy bundled with the site (public/ballots/)
+// or one fetched straight from the county. Research reads measure summaries from it instead of
+// trusting the summary a browser sends.
 const FEATURED_KEY = 'featured:parse';
+const BUNDLED_BALLOT_PATH = '/ballots/2026-11-03-general.pdf';   // keep in sync with index.html
 
 export default {
   async fetch(request, env, ctx) {
@@ -689,13 +691,29 @@ async function legacyFingerprint(pdfB64) {
 // The county's own printed summary for a measure, from the master ballot fetched from the
 // county site. null when the master ballot hasn't been parsed or the measure isn't on it.
 async function trustedMeasureSummary(env, ...titles) {
-  const pk = await env.CACHE.get(FEATURED_KEY);
+  let pk = await env.CACHE.get(FEATURED_KEY);
+  if (!pk) pk = await bundledParseKey(env);
   if (!pk) return null;
   const master = await env.CACHE.get(pk, 'json');
   if (!master || !Array.isArray(master.races)) return null;
   const want = new Set(titles.map(normPart).filter(Boolean));
   const hit = master.races.find(r => r && r.isMeasure && want.has(normPart(r.office)));
   return hit ? String(hit.summary || '') : null;
+}
+
+// Cache key of the parse of the master ballot bundled with the site. The page parses that file
+// through /api/parse (the county site blocks Cloudflare), so fingerprint the deployed copy and
+// point at its parse. The file ships with the deploy, so nobody else can choose what it says.
+async function bundledParseKey(env) {
+  if (!env.ASSETS) return null;
+  try {
+    const res = await env.ASSETS.fetch(new Request('https://assets.local' + BUNDLED_BALLOT_PATH));
+    if (!res.ok) return null;
+    const pk = 'parse4:' + await pdfFingerprint(bufToBase64(await res.arrayBuffer()));
+    if (!(await env.CACHE.get(pk))) return null;   // not parsed yet under the new key
+    await env.CACHE.put(FEATURED_KEY, pk, { expirationTtl: 60 * 60 * 6 });
+    return pk;
+  } catch (e) { console.log('bundled ballot lookup failed: ' + (e && e.message ? e.message : e)); return null; }
 }
 
 async function sha256(str) {

@@ -10,6 +10,8 @@ routes = [
 
 [assets]
 directory = "./public"
+# Lets the Worker read the bundled master ballot (trusted measure summaries).
+binding = "ASSETS"
 
 # Forks: create your own namespace with `npx wrangler kv namespace create CACHE`
 # and replace the id below. Also replace or delete the routes above.
