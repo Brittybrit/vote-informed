@@ -430,6 +430,20 @@ async function fecTopDonors(env, name, officeCode) {
 /* ---------------- utilities ---------------- */
 
 async function callAnthropic(env, payload) {
+  // Web search turns can come back with stop_reason "pause_turn" (no final answer yet).
+  // Hand the partial turn back so the model finishes, up to 3 times.
+  payload = { ...payload, messages: [...payload.messages] };
+  let text = '';
+  for (let turn = 0; turn < 4; turn++) {
+    const data = await callAnthropicOnce(env, payload);
+    text += (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
+    if (data.stop_reason !== 'pause_turn') return text;
+    payload.messages.push({ role: 'assistant', content: data.content });
+  }
+  return text;
+}
+
+async function callAnthropicOnce(env, payload) {
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: {
@@ -447,7 +461,7 @@ async function callAnthropic(env, payload) {
   if (data.stop_reason === 'max_tokens') {
     throw new Error('The AI response was cut off before finishing. Try again; if it persists, the document is too large.');
   }
-  return (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
+  return data;
 }
 
 function extractJSON(text) {
