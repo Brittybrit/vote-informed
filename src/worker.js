@@ -1,3 +1,4 @@
+import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
 /**
  * Ballot Intel — Cloudflare Worker backend
  *
@@ -37,6 +38,12 @@ export default {
       }
       if (request.method === 'POST' && url.pathname === '/api/research') {
         return await handleResearch(request, env, ctx);
+      }
+      if (request.method === 'GET' && url.pathname === '/api/evsites') {
+        return handleEarlyVotingSites();
+      }
+      if (request.method === 'GET' && url.pathname === '/api/pollingplace') {
+        return handlePollingPlace(url.searchParams.get('p'));
       }
       return json({ error: 'Not found' }, 404);
     } catch (e) {
@@ -83,7 +90,7 @@ async function parseBallot(env, pdfB64, ip) {
 
   // Fingerprint the PDF cheaply: length + head + tail. Distinct PDFs won't collide in practice.
   const fp = await sha256(pdfB64.length + '|' + pdfB64.slice(0, 10000) + '|' + pdfB64.slice(-10000));
-  const cacheKey = 'parse2:' + fp;  // v2: measures included
+  const cacheKey = 'parse3:' + fp;  // v3: precinct extracted
 
   const cached = await env.CACHE.get(cacheKey, 'json');
   if (cached) return json({ ballot: cached, cached: true });
@@ -103,6 +110,7 @@ async function parseBallot(env, pdfB64, ip) {
     '  "jurisdiction": "county/city, state as printed on the ballot",',
     '  "electionDate": "as printed, or empty string",',
     '  "electionName": "e.g. General Election, or empty string",',
+    '  "precinct": "the voter precinct number exactly as printed on a precinct-specific ballot (e.g. 0123 or 123.0), or empty string if this is a countywide/master ballot with no single precinct",',
     '  "races": [',
     '    {',
     '      "office": "exact office title as printed (for a measure: its number and title, e.g. Amendment 2: Property Tax Exemption)",',
@@ -590,4 +598,65 @@ export class ResearchRunner {
       await this.state.storage.deleteAll();
     }
   }
+}
+
+
+/* ---------------- early voting sites ---------------- */
+// Source: Miami-Dade Elections, Early Voting Schedule for the General Election 11/3/2026
+// https://www.miamidade.gov/elections/library/early-voting/2026-11-03-general-election-early-voting-schedule.pdf
+// Oct 19 - Nov 1, 2026, 7:00 AM - 7:00 PM daily at every site. Verified against the county PDF and
+// Caribbean National Weekly's published list (Oct 2026). Columns: name, address, city, zip, lat, lon.
+const EV_SOURCE = 'https://www.miamidade.gov/elections/library/early-voting/2026-11-03-general-election-early-voting-schedule.pdf';
+const EV_SITES = [
+  ['Arcola Lakes Branch Library', '8240 NW 7th Avenue', 'Miami', '33150', 25.850232334738, -80.209938893192],
+  ['Miami Dade College Kendall Campus (Fascell Conference Center)', '11011 SW 104th Street, Building K', 'Miami', '33176', 25.672201186188, -80.375880531328],
+  ['Coral Gables Branch Library', '3443 Segovia Street', 'Coral Gables', '33134', 25.739708701732, -80.266275994737],
+  ['Miami Lakes Community Center', '15151 NW 82nd Avenue', 'Miami Lakes', '33016', 25.91147290818, -80.33211678282],
+  ['Coral Reef Branch Library', '9211 SW 152nd Street', 'Miami', '33157', 25.629329707301, -80.342929354097],
+  ['Naranja Branch Library', '14850 SW 280th Street', 'Homestead', '33032', 25.50675078025, -80.431305317998],
+  ['FIU Student Academic Success Center', '11200 SW 8th Street', 'Miami', '33199', 25.761088025072, -80.376252884803],
+  ['North Dade Regional Library', '2455 NW 183rd Street', 'Miami Gardens', '33056', 25.941105475368, -80.242428006811],
+  ['Hispanic Branch Library', '1398 SW 1st Street #100', 'Miami', '33135', 25.772349421732, -80.217934626894],
+  ['North Miami Public Library', '835 NE 132nd Street', 'North Miami', '33161', 25.896922886582, -80.181839893763],
+  ['Historic Garage', '3250 S Miami Avenue', 'Miami', '33129', 25.747344096074, -80.210830057138],
+  ['North Shore Branch Library', '7501 Collins Avenue', 'Miami Beach', '33141', 25.860767093719, -80.120968221416],
+  ['Homestead Community Center', '1601 N Krome Avenue', 'Homestead', '33030', 25.48588064289, -80.47652767062],
+  ['Northeast Dade-Aventura Branch Library', '2930 Aventura Boulevard', 'Aventura', '33180', 25.961167128371, -80.142319042724],
+  ['International Mall Branch Library', '10315 NW 12th Street', 'Doral', '33172', 25.782747783399, -80.361714988685],
+  ['Office of the Supervisor of Elections', '2700 NW 87th Avenue', 'Doral', '33172', 25.799754274, -80.337180727363],
+  ['John F. Kennedy Library', '190 W 49th Street', 'Hialeah', '33012', 25.866735877974, -80.286529720844],
+  ['Rebeca Sosa Multipurpose Facility', '1700 SW 62nd Avenue', 'West Miami', '33155', 25.754679067725, -80.295677902037],
+  ['Joseph Caleb Center Community Meeting Room', '5400 NW 22nd Avenue, Building A', 'Miami', '33142', 25.824231656498, -80.232733471178],
+  ['Shenandoah Branch Library', '2111 SW 19th Street', 'Miami', '33145', 25.75446176083, -80.228515215374],
+  ['Kendale Lakes Branch Library', '15205 SW 88th Street', 'Miami', '33196', 25.684660945982, -80.441227058847],
+  ['South Dade Government Center (lobby)', '10710 SW 211th Street', 'Miami', '33189', 25.572025059129, -80.36582653967],
+  ['Kendall Branch Library', '9101 SW 97th Avenue', 'Miami', '33176', 25.684870936693, -80.351333867577],
+  ['Stephen P. Clark Government Center (Elections Branch Office, lobby)', '111 NW 1st Street', 'Miami', '33128', 25.775078850443, -80.196332709513],
+  ['Lemon City Branch Library', '430 NE 61st Street', 'Miami', '33137', 25.832522968083, -80.187054212651],
+  ['West Kendall Regional Library', '10201 Hammocks Boulevard', 'Miami', '33196', 25.672927759468, -80.4440908898],
+  ['Miami Beach City Hall', '1700 Convention Center Drive', 'Miami Beach', '33139', 25.79225090196, -80.134933306983],
+  ['Westchester Regional Library', '9445 SW 24th Street', 'Miami', '33165', 25.747378225294, -80.34784837746]
+];
+
+// Coordinates are for sorting by distance only; directions always use the street address.
+// Geocoded Oct 9, 2026 (US Census geocoder; Esri World Geocoder for 5 the Census could not match),
+// each match checked against the exact street address.
+function handleEarlyVotingSites() {
+  const sites = EV_SITES.map(([name, address, city, zip, lat, lon]) => ({ name, address, city, zip, lat, lon }));
+  return json({ sites, start: '2026-10-19', end: '2026-11-01', openHour: 7, closeHour: 19, source: EV_SOURCE });
+}
+
+/* ---------------- Election Day polling place ---------------- */
+// Precinct as printed on a sample ballot ("PRECINCT 033.0", "33", "0033.0") -> "033.0"
+function normPrecinct(p) {
+  const m = String(p || '').match(/(\d{1,4})(?:\.(\d))?/);
+  if (!m) return '';
+  return String(parseInt(m[1], 10)).padStart(3, '0') + '.' + (m[2] || '0');
+}
+function handlePollingPlace(p) {
+  const key = normPrecinct(p);
+  const row = POLLING_PLACES[key];
+  if (!row) return json({ error: 'Precinct not found', precinct: key }, 404);
+  const [name, address, city, zip] = row;
+  return json({ precinct: key, name, address, city, zip, openHour: 7, closeHour: 19, date: '2026-11-03', source: PP_SOURCE });
 }

@@ -73,6 +73,23 @@
   }
   .juris strong{color:var(--ink); display:block; font-size:13px;}
 
+  .votebar{display:none; margin:22px 0 0; border:3px solid var(--rule); background:var(--panel); padding:16px 18px;}
+  .votebar.show{display:block;}
+  .vb-row{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+  .vb-kicker{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);}
+  .vb-head{font-weight:900; font-size:20px; letter-spacing:.01em; margin-top:2px;}
+  .vb-head .live{display:inline-block; width:10px; height:10px; border-radius:50%; background:#1F7A3A; margin-right:8px; vertical-align:2px;}
+  .vb-sub{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:4px; line-height:1.6;}
+  .vb-btn{display:inline-block; background:var(--ink); color:var(--paper); border:none; font-weight:800; font-size:14px; letter-spacing:.04em; text-transform:uppercase; padding:12px 16px; cursor:pointer; text-decoration:none; font-family:inherit;}
+  .vb-btn.ghost{background:transparent; color:var(--ink); border:2px solid var(--ink);}
+  .vb-sites{margin-top:14px; border-top:1.5px solid var(--rule);}
+  .vb-site{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; border-bottom:1px dotted var(--rule);}
+  .vb-site .nm{font-weight:800; font-size:15px;}
+  .vb-site .ad{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .vb-site .dist{font-family:var(--mono); font-size:12px; color:var(--ink); margin-top:2px;}
+  .vb-site .vb-btn{padding:9px 12px; font-size:12px; white-space:nowrap;}
+  .vb-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:10px; line-height:1.6;}
+  .vb-note a{color:inherit;}
   main{max-width:1180px; margin:0 auto; padding:0 24px 80px;}
 
   .upload-stage{padding:44px 0 40px; max-width:640px; margin:0 auto;}
@@ -378,6 +395,7 @@
 </header>
 
 <main>
+  <section class="votebar" id="voteBar" aria-live="polite"></section>
   <div class="statusline" id="statusLine"></div>
 
   <section class="upload-stage" id="uploadStage">
@@ -642,6 +660,7 @@ async function loadFeaturedBallot(){
 /* ---------------- render ballot ---------------- */
 
 function renderBallot(){
+  try { renderVoteBar(); } catch(e){}
   $('uploadStage').style.display = 'none';
   $('workspace').style.display = 'grid';
 
@@ -1263,6 +1282,155 @@ function renderCountdown(){
 }
 
 renderCountdown();
+
+/* ---------------- vote banner: early voting + Election Day polling place ---------------- */
+// All times are Miami (America/New_York). Early voting: Oct 19 - Nov 1, 7am-7pm at all 28 county sites.
+// Election Day: Nov 3, 7am-7pm at the voter's assigned precinct polling place.
+var VOTE = { evStart:'2026-10-19', evEnd:'2026-11-01', eday:'2026-11-03', open:7, close:19,
+  lookup:'https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD' };
+var evSites = null, myPlace = null, myPlaceFor = null;
+
+function miamiNow(){
+  var parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/New_York', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false}).formatToParts(new Date());
+  var o = {}; parts.forEach(function(p){ o[p.type] = p.value; });
+  var hour = parseInt(o.hour, 10) % 24;
+  return { date: o.year + '-' + o.month + '-' + o.day, hour: hour + parseInt(o.minute, 10) / 60 };
+}
+function addDays(iso, n){ var d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+function niceDay(iso){ return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', {weekday:'long', month:'short', day:'numeric', timeZone:'UTC'}); }
+function mapsDir(addr){ return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(addr); }
+
+// Where are we in the voting calendar?
+function votePhase(){
+  var n = miamiNow(), d = n.date, h = n.hour;
+  if(d < VOTE.evStart) return {kind:'pre-ev'};
+  if(d <= VOTE.evEnd){
+    if(h < VOTE.open) return {kind:'ev', status:'opens', when:'today'};
+    if(h < VOTE.close) return {kind:'ev', status:'open'};
+    if(d < VOTE.evEnd) return {kind:'ev', status:'opens', when:'tomorrow'};
+    return {kind:'pre-eday'};
+  }
+  if(d < VOTE.eday) return {kind:'pre-eday'};
+  if(d === VOTE.eday && h < VOTE.close) return {kind:'eday', status: h < VOTE.open ? 'opens' : 'open'};
+  return {kind:'over'};
+}
+
+function evStatusLine(ph){
+  if(ph.status === 'open') return {live:true, head:'Early voting is open now', sub:'Every site is open until 7pm today. Vote at any of the 28 sites in Miami-Dade.'};
+  if(ph.when === 'today') return {live:false, head:'Early voting opens today at 7am', sub:'Open 7am to 7pm through Sunday, Nov 1. Any of the 28 sites in Miami-Dade.'};
+  return {live:false, head:'Early voting opens tomorrow at 7am', sub:'Open 7am to 7pm through Sunday, Nov 1. Any of the 28 sites in Miami-Dade.'};
+}
+
+function renderVoteBar(){
+  var bar = $('voteBar'), ph = votePhase(), html = '';
+  var precinct = ballot && ballot.precinct ? ballot.precinct : '';
+  if(ph.kind === 'over'){ bar.className = 'votebar'; bar.innerHTML = ''; return; }
+
+  if(ph.kind === 'pre-ev' || ph.kind === 'ev'){
+    var s = ph.kind === 'pre-ev'
+      ? {live:false, head:'Go vote early: starts Monday, Oct 19', sub:'Early voting runs Oct 19 to Nov 1, 7am to 7pm daily, at 28 sites. Any registered Miami-Dade voter can use any site.'}
+      : evStatusLine(ph);
+    html = '<div class="vb-row"><div><div class="vb-kicker">Early voting</div>' +
+      '<div class="vb-head">' + (s.live ? '<span class="live"></span>' : '') + esc(s.head) + '</div>' +
+      '<div class="vb-sub">' + esc(s.sub) + '</div></div>' +
+      '<button class="vb-btn" id="vbNearest" type="button">' + (ph.kind === 'ev' ? 'Go vote early: nearest site' : 'Find your nearest site') + ' &rarr;</button></div>' +
+      '<div id="vbSites"></div>';
+  } else {
+    // Election Day (or the day before): your precinct polling place
+    var head = ph.kind === 'pre-eday' ? 'Election Day is Tuesday, Nov 3, 7am to 7pm' :
+      (ph.status === 'open' ? 'Polls are open until 7pm' : 'Polls open at 7am today');
+    var sub = ph.kind === 'eday' && ph.status === 'open'
+      ? 'If you are in line by 7pm, you can vote. On Election Day you must vote at your assigned polling place.'
+      : 'Early voting is over. On Election Day you must vote at your assigned polling place, not an early voting site.';
+    html = '<div class="vb-kicker">Election Day</div>' +
+      '<div class="vb-head">' + (ph.kind === 'eday' && ph.status === 'open' ? '<span class="live"></span>' : '') + esc(head) + '</div>' +
+      '<div class="vb-sub">' + esc(sub) + '</div><div id="vbPlace"></div>';
+  }
+  bar.innerHTML = html;
+  bar.className = 'votebar show';
+
+  var nb = $('vbNearest');
+  if(nb) nb.addEventListener('click', showNearestSites);
+  if($('vbPlace')) renderMyPlace(precinct);
+}
+
+async function getEvSites(){
+  if(evSites) return evSites;
+  var r = await fetch('/api/evsites'); evSites = await r.json(); return evSites;
+}
+function milesBetween(a, b, c, d){
+  var R = 3958.8, toR = Math.PI / 180, dLat = (c - a) * toR, dLon = (d - b) * toR;
+  var x = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a*toR)*Math.cos(c*toR)*Math.sin(dLon/2)*Math.sin(dLon/2);
+  return 2 * R * Math.asin(Math.sqrt(x));
+}
+function siteRow(s, dist){
+  var full = s.address + ', ' + s.city + ', FL ' + s.zip;
+  return '<div class="vb-site"><div><div class="nm">' + esc(s.name) + '</div>' +
+    '<div class="ad">' + esc(full) + '</div>' +
+    (dist != null ? '<div class="dist">' + dist.toFixed(1) + ' mi away</div>' : '') + '</div>' +
+    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">Directions &#8599;</a></div>';
+}
+async function showNearestSites(){
+  var box = $('vbSites');
+  box.innerHTML = '<div class="vb-note">Finding sites near you&hellip;</div>';
+  var data;
+  try { data = await getEvSites(); } catch(e){ box.innerHTML = '<div class="vb-note">Could not load sites. <a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">See the county list &#8599;</a></div>'; return; }
+  var sites = data.sites.slice();
+  var finish = function(pos){
+    var note = '';
+    if(pos){
+      var la = pos.coords.latitude, lo = pos.coords.longitude;
+      sites.forEach(function(s){ s._d = (s.lat != null) ? milesBetween(la, lo, s.lat, s.lon) : null; });
+      sites.sort(function(a, b){ return (a._d == null) - (b._d == null) || (a._d || 0) - (b._d || 0); });
+    } else {
+      sites.sort(function(a, b){ return a.name.localeCompare(b.name); });
+      note = 'Location is off, so here are all 28 sites A to Z. Turn on location for this site to sort by distance.';
+    }
+    var top = pos ? sites.slice(0, 3) : sites;
+    var html = '<div class="vb-sites">' + top.map(function(s){ return siteRow(s, pos ? s._d : null); }).join('') + '</div>';
+    if(pos) html += '<button class="vb-btn ghost" id="vbAll" type="button" style="margin-top:12px">All 28 sites by distance</button>';
+    html += '<div class="vb-note">' + (note ? esc(note) + '<br>' : '') + 'All early voting sites have the same hours. Source: <a href="' + esc(data.source) + '" target="_blank" rel="noopener">Miami-Dade Elections early voting schedule &#8599;</a></div>';
+    box.innerHTML = html;
+    var all = $('vbAll');
+    if(all) all.addEventListener('click', function(){
+      box.querySelector('.vb-sites').innerHTML = sites.map(function(s){ return siteRow(s, s._d); }).join('');
+      all.remove();
+    });
+  };
+  if(!navigator.geolocation) return finish(null);
+  navigator.geolocation.getCurrentPosition(finish, function(){ finish(null); }, {enableHighAccuracy:false, timeout:10000, maximumAge:600000});
+}
+
+async function renderMyPlace(precinct){
+  var box = $('vbPlace');
+  var lookupLink = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">county voter lookup &#8599;</a>';
+  if(!precinct){
+    box.innerHTML = '<div class="vb-note" style="font-size:12px">Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the ' + lookupLink + '</div>' +
+      '<a class="vb-btn" style="margin-top:10px" href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">Find my polling place &#8599;</a>';
+    return;
+  }
+  try {
+    if(myPlaceFor !== precinct){
+      var r = await fetch('/api/pollingplace?p=' + encodeURIComponent(precinct));
+      myPlace = r.ok ? await r.json() : null; myPlaceFor = precinct;
+    }
+  } catch(e){ myPlace = null; }
+  if(!myPlace){
+    box.innerHTML = '<div class="vb-note">We could not match precinct ' + esc(precinct) + ' to a polling place. Check the ' + lookupLink + '</div>';
+    return;
+  }
+  var full = myPlace.address + ', ' + myPlace.city + ', FL ' + myPlace.zip;
+  box.innerHTML = '<div class="vb-sites"><div class="vb-site"><div>' +
+    '<div class="vb-kicker">Your polling place &middot; Precinct ' + esc(myPlace.precinct) + '</div>' +
+    '<div class="nm" style="margin-top:4px">' + esc(myPlace.name) + '</div>' +
+    '<div class="ad">' + esc(full) + '</div><div class="dist">Tuesday, Nov 3 &middot; 7am to 7pm</div></div>' +
+    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">Directions &#8599;</a></div></div>' +
+    '<div class="vb-note">From the county&rsquo;s official precinct list (Sept 30, 2026). Locations can change, so confirm with the ' + lookupLink + '</div>';
+}
+
+renderVoteBar();
+setInterval(renderVoteBarIfIdle, 5 * 60 * 1000);   // flip open/closed status as the day goes on
+function renderVoteBarIfIdle(){ if(!$('vbSites') || !$('vbSites').innerHTML) renderVoteBar(); }
 
 /* resume: list all saved ballot plans */
 function renderResumeList(){
