@@ -1,6 +1,7 @@
 import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
 /**
- * Ballot305.org (vote-informed): Cloudflare Worker backend
+ * Ballot305.org (vote-informed): Cloudflare Worker backend for a free, nonpartisan
+ * Miami-Dade voter research tool in English, Spanish and Haitian Creole.
  *
  * Routes:
  *   POST /api/parse            { pdf: base64 }  -> parsed ballot JSON (cached by PDF fingerprint)
