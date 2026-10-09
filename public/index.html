@@ -988,7 +988,8 @@ function linkifySource(sname){
 function fmtAmount(a){
   var t = String(a||'').trim();
   if(!t) return '';
-  if(/undisclosed|unknown|not disclosed|unavailable|not available/i.test(t)) return 'undisclosed';
+  if(/undisclosed|not disclosed/i.test(t)) return 'undisclosed';
+  if(/unknown|unavailable|not available|not found/i.test(t)) return 'amount n/a';
   if(t.length > 18) return t.slice(0, 18) + '…';
   return t;
 }

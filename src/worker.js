@@ -155,7 +155,7 @@ async function handleResearch(request, env, ctx) {
 
   // Shared cache: the whole point. 500 users, one bill.
   // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
-  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res4:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res5:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
   const cached = await env.CACHE.get(key, 'json');
   if (cached) return json({ result: cached, cached: true });
 
@@ -251,7 +251,7 @@ async function runResearch(env, key, p) {
     'Election: ' + election,
     '',
     'Find:',
-    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If donor data is unavailable, return an empty array — do not guess.',
+    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
@@ -260,7 +260,7 @@ async function runResearch(env, key, p) {
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences. Write plain text inside all JSON string values — no XML, no cite tags, no citation markup of any kind. When summarizing evidence, preserve the source hedges and caveats: never state a claim more strongly than the source does.',
     '{',
     '  "summary": "2-3 sentence neutral overview of who this candidate is",',
-    '  "donors": [ {"name": "donor name", "amount": "dollar amount like $1,000, or the single word undisclosed — never a phrase", "type": "individual | PAC | industry group | party committee | self-funded | other", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "donors": [ {"name": "donor name", "amount": "dollar amount like $1,000, or the single word unknown (named in a source, amount not reported) or undisclosed (source says it is hidden) — never a phrase", "type": "individual | PAC | industry group | party committee | self-funded | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
     '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
@@ -283,17 +283,22 @@ async function runResearch(env, key, p) {
   const result = extractJSON(text);
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
+  let ttl = CACHE_TTL;
   if (officeCode) {
+    let fecOk = false;
     try {
       const fec = await fecTopDonors(env, name, officeCode);
       if (fec && fec.donors.length) {
         result.donors = fec.donors;
         result.donorDataNote = fec.note;
+        fecOk = true;
       }
-    } catch (e) { /* keep model donors on FEC failure */ }
+    } catch (e) { console.log('FEC error for ' + name + ': ' + (e && e.message ? e.message : e)); }
+    // federal race without FEC data: cache briefly so the next visitor retries FEC
+    if (!fecOk) ttl = 60 * 60 * 6;
   }
 
-  await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+  await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: ttl });
   } catch (e) {
     await env.CACHE.put('fail:' + key, 'Research failed: ' + (e && e.message ? e.message : String(e)), { expirationTtl: 90 });
   } finally {
@@ -317,19 +322,19 @@ async function fecTopDonors(env, name, officeCode) {
 
   const cRes = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(name) +
     '&office=' + officeCode + '&cycle=' + cycle + '&per_page=5&api_key=' + apiKey);
-  if (!cRes.ok) return null;
+  if (!cRes.ok) { console.log('FEC candidate search ' + cRes.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); return null; }
   const cJson = await cRes.json();
   const cand = (cJson.results || [])[0];
-  if (!cand) return null;
+  if (!cand) { console.log('FEC: no candidate match for ' + name); return null; }
   const committee = (cand.principal_committees || [])[0];
-  if (!committee) return null;
+  if (!committee) { console.log('FEC: no principal committee for ' + name + ' (' + cand.candidate_id + ')'); return null; }
 
   const sRes = await fetch(base + '/schedules/schedule_a/?committee_id=' + committee.committee_id +
     '&two_year_transaction_period=' + cycle + '&sort=-contribution_receipt_amount&per_page=100&api_key=' + apiKey);
-  if (!sRes.ok) return null;
+  if (!sRes.ok) { console.log('FEC receipts ' + sRes.status + ' for ' + committee.committee_id); return null; }
   const sJson = await sRes.json();
   const rows = sJson.results || [];
-  if (!rows.length) return null;
+  if (!rows.length) { console.log('FEC: no itemized receipts for ' + committee.committee_id); return null; }
 
   const agg = {};
   for (const r of rows) {
