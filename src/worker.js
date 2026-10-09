@@ -36,6 +36,9 @@ const LIMIT_RESEARCH_PER_DAY = 60; // fresh (uncached) lookups per IP per day; c
 const MAX_PDF_BASE64_CHARS = 44 * 1024 * 1024; // ~32MB PDF
 // Countywide master ballot, fetched and parsed server-side. Update each election.
 const FEATURED_BALLOT_URL = 'https://www.miamidade.gov/elections/library/2026-11-03-general-election-sample-ballot.pdf';
+// Points at the parse of the master ballot fetched straight from the county site. Research
+// reads measure summaries from it instead of trusting the summary a browser sends.
+const FEATURED_KEY = 'featured:parse';
 
 export default {
   async fetch(request, env, ctx) {
@@ -85,7 +88,7 @@ async function handleParse(request, env) {
   if (!body || typeof body.pdf !== 'string' || body.pdf.length < 100) {
     return json({ error: 'Missing PDF data' }, 400);
   }
-  return parseBallot(env, body.pdf, clientIP(request));
+  return parseBallot(env, body.pdf, clientIP(request), false);
 }
 
 async function handleFeatured(request, env) {
@@ -96,7 +99,7 @@ async function handleFeatured(request, env) {
   const buf = await res.arrayBuffer();
   const b64 = bufToBase64(buf);
   if (b64.length < 100) return json({ error: 'The elections site returned an empty file.' }, 502);
-  return parseBallot(env, b64, clientIP(request));
+  return parseBallot(env, b64, clientIP(request), true);
 }
 
 function bufToBase64(buf) {
@@ -109,22 +112,36 @@ function bufToBase64(buf) {
   return btoa(bin);
 }
 
-async function parseBallot(env, pdfB64, ip) {
+async function parseBallot(env, pdfB64, ip, isFeatured) {
   if (pdfB64.length > MAX_PDF_BASE64_CHARS) {
     return json({ error: 'PDF too large (32MB max). Try compressing it or splitting the pages.' }, 413);
   }
 
-  // Fingerprint the PDF cheaply: length + head + tail. Distinct PDFs won't collide in practice.
-  const fp = await sha256(pdfB64.length + '|' + pdfB64.slice(0, 10000) + '|' + pdfB64.slice(-10000));
-  const cacheKey = 'parse3:' + fp;  // v3: precinct extracted
+  // Fingerprint the whole file. The old head+tail+length fingerprint let a doctored PDF with
+  // the same first/last bytes and size claim another ballot's shared cache slot.
+  const fp = await pdfFingerprint(pdfB64);
+  const cacheKey = 'parse4:' + fp;  // v4: full-content fingerprint (v3 added precinct)
 
   const cached = await env.CACHE.get(cacheKey, 'json');
-  if (cached) return json({ ballot: cached, cached: true });
+  if (cached) {
+    if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
+    return json({ ballot: cached, cached: true });
+  }
+
+  // One-time migration: entries written under the old fingerprint. Nothing writes those keys
+  // anymore, so they only expire; reuse them instead of re-reading the PDF.
+  const oldFp = await legacyFingerprint(pdfB64);
+  const v3 = await env.CACHE.get('parse3:' + oldFp, 'json');
+  if (v3) {
+    await env.CACHE.put(cacheKey, JSON.stringify(v3), { expirationTtl: PARSE_TTL });
+    if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
+    return json({ ballot: v3, cached: true });
+  }
 
   // Ballots parsed before precinct extraction existed: reuse that parse instead of re-reading
   // the whole PDF (slow for the 131-contest master ballot). Only a precinct-specific ballot
   // needs a precinct, and that is one quick, tiny call.
-  const older = await env.CACHE.get('parse2:' + fp, 'json');
+  const older = await env.CACHE.get('parse2:' + oldFp, 'json');
   if (older) {
     older.precinct = '';
     if ((older.races || []).length < 100) {
@@ -141,6 +158,7 @@ async function parseBallot(env, pdfB64, ip) {
       } catch (e) { /* keep the parse; polling place falls back to the county lookup link */ }
     }
     await env.CACHE.put(cacheKey, JSON.stringify(older), { expirationTtl: PARSE_TTL });
+    if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
     return json({ ballot: older, cached: true });
   }
 
@@ -192,6 +210,7 @@ async function parseBallot(env, pdfB64, ip) {
   }
 
   await env.CACHE.put(cacheKey, JSON.stringify(ballot), { expirationTtl: PARSE_TTL });
+  if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
   return json({ ballot, cached: false });
 }
 
@@ -206,20 +225,41 @@ async function handleResearch(request, env, ctx) {
   const election = isStr(body.election) ? body.election.slice(0, 120) : 'upcoming';
   const isJudicial = !!body.isJudicial;
   const isMeasure = !!body.isMeasure;
-  const measureSummary = isStr(body.summary) ? body.summary.slice(0, 800) : '';
+  let measureSummary = isStr(body.summary) ? body.summary.slice(0, 800) : '';
 
   const officeCode = isMeasure ? null : federalOfficeCode(office);
   const lang = TR_LANGS[body.lang] ? body.lang : 'en';
 
+  // Everything that shapes the research prompt has to be part of the shared cache key, or one
+  // visitor can seed everyone's result with a prompt of their choosing.
+  //  - isJudicial picks its own prefix, so sending false for a judge can't strip the FedSoc screen.
+  //  - A measure found on the county master ballot uses the county's printed summary and the
+  //    browser's is ignored. Any other measure keys on a hash of the summary it was researched
+  //    with, so a slanted summary only ever lands in its own cache slot.
+  let summaryTag = '';
+  if (isMeasure) {
+    const trusted = await trustedMeasureSummary(env, office);
+    if (trusted !== null) measureSummary = trusted.slice(0, 800);
+    else if (measureSummary) summaryTag = '|s:' + (await sha256(normPart(measureSummary))).slice(0, 16);
+  }
+
   // Shared cache: the whole point. 500 users, one bill.
-  // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
-  const prefix = isMeasure ? 'resm1:' : (officeCode ? 'res7:' : 'resl4:');
-  const key = prefix + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  const prefix = isMeasure ? 'resm2:' : officeCode ? 'res7:' : isJudicial ? 'resj1:' : 'resl4:';
+  const key = prefix + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' ') + summaryTag);
   // Alias on a normalized key so ballots that print the same race slightly differently
   // ("Tuesday, November 3, 2026" vs "November 3, 2026", "Moe" with or without quotes, accents)
   // share one cached result.
-  const alias = 'alias:' + prefix + await sha256([normPart(name), normPart(office), normPart(jurisdiction), normElection(election)].join('|'));
-  const cached = await env.CACHE.get(key, 'json');
+  const alias = 'alias:' + prefix + await sha256([normPart(name), normPart(office), normPart(jurisdiction), normElection(election)].join('|') + summaryTag);
+  let cached = await env.CACHE.get(key, 'json');
+  if (!cached && prefix === 'resj1:') {
+    // Judges used to share resl4 with every local race. Reuse an old entry only if it was
+    // researched as judicial (it carries the FedSoc screen); otherwise research fresh.
+    const old = await env.CACHE.get('resl4:' + key.slice(prefix.length), 'json');
+    if (old && old.federalistSociety) {
+      cached = old;
+      ctx.waitUntil(env.CACHE.put(key, JSON.stringify(old), { expirationTtl: CACHE_TTL }));
+    }
+  }
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
     return json({ result: await localize(env, await refreshFec(env, key, cached, name, officeCode), lang), cached: true });
@@ -353,15 +393,19 @@ async function runResearch(env, key, p) {
   ].join('\n');
 
   const deep = isJudicial || isMeasure;
+  const seen = new Map();
   const text = await callAnthropic(env, {
     model: deep ? MODEL_JUDICIAL : MODEL,
     max_tokens: 6000,
     temperature: 0,
     messages: [{ role: 'user', content: isMeasure ? measurePrompt : prompt }],
     tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: deep ? 5 : 3 }]
-  });
+  }, seen);
 
   const result = extractJSON(text);
+  // Links must be pages the search actually returned. A link the model wrote from memory or
+  // made up is dropped, and so is anything that isn't plain https.
+  result._links = verifyUrls(result, seen);
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
   let ttl = CACHE_TTL;
@@ -534,13 +578,14 @@ async function fecTopDonors(env, name, officeCode) {
 
 /* ---------------- utilities ---------------- */
 
-async function callAnthropic(env, payload) {
+async function callAnthropic(env, payload, seenUrls) {
   // Web search turns can come back with stop_reason "pause_turn" (no final answer yet).
   // Hand the partial turn back so the model finishes, up to 3 times.
   payload = { ...payload, messages: [...payload.messages] };
   let text = '';
   for (let turn = 0; turn < 4; turn++) {
     const data = await callAnthropicOnce(env, payload);
+    if (seenUrls) collectUrls(data.content, seenUrls);
     text += (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
     if (data.stop_reason !== 'pause_turn') return text;
     payload.messages.push({ role: 'assistant', content: data.content });
@@ -569,6 +614,55 @@ async function callAnthropicOnce(env, payload) {
   return data;
 }
 
+// Every URL the web search tool returned in this response, plus any URL the API attached as a
+// citation. These are the only links a dossier is allowed to show.
+function collectUrls(content, seen) {
+  for (const b of (content || [])) {
+    if (b.type === 'web_search_tool_result' && Array.isArray(b.content)) {
+      for (const r of b.content) if (r && r.url) remember(seen, r.url);
+    }
+    if (b.type === 'text' && Array.isArray(b.citations)) {
+      for (const c of b.citations) if (c && c.url) remember(seen, c.url);
+    }
+  }
+}
+
+function remember(seen, url) {
+  const n = normUrl(url);
+  if (n && !seen.has(n)) seen.set(n, String(url).trim());
+}
+
+// Compare URLs loosely enough that http/https, "www.", a trailing slash or a #fragment
+// don't matter, and strictly enough that a different page doesn't match.
+function normUrl(u) {
+  try {
+    const x = new URL(String(u).trim());
+    const path = x.pathname.replace(/\/+$/, '');
+    return x.hostname.toLowerCase().replace(/^www\./, '') + path + x.search;
+  } catch (e) { return ''; }
+}
+
+// Replace every url/donorListUrl in the result with the exact URL the search returned for that
+// page, or blank it if the search never returned that page or the page isn't https.
+// Returns counts so a dossier records how many links it lost.
+function verifyUrls(result, seen) {
+  let kept = 0, removed = 0;
+  (function walk(o) {
+    if (Array.isArray(o)) { o.forEach(walk); return; }
+    if (!o || typeof o !== 'object') return;
+    for (const k of Object.keys(o)) {
+      const v = o[k];
+      if ((k === 'url' || k === 'donorListUrl') && typeof v === 'string') {
+        if (!v) continue;
+        const real = seen.get(normUrl(v));
+        if (real && /^https:\/\//i.test(real)) { o[k] = real; kept++; }
+        else { o[k] = ''; removed++; }
+      } else if (v && typeof v === 'object') walk(v);
+    }
+  })(result);
+  return { kept, removed };
+}
+
 function extractJSON(text) {
   const cleaned = String(text)
     .replace(/<\/?(?:antml:)?cite[^>]*>/gi, '')   // strip API citation markup before parsing
@@ -579,6 +673,28 @@ function extractJSON(text) {
   const end = cleaned.lastIndexOf('}');
   if (start === -1 || end === -1) throw new Error('Model response contained no JSON');
   return JSON.parse(cleaned.slice(start, end + 1));
+}
+
+// Whole-file fingerprint for PDFs (cache keys for parses and printed ballot text).
+async function pdfFingerprint(pdfB64) {
+  return sha256('pdf|' + pdfB64);
+}
+// The old head+tail+length fingerprint. Only read for migrating existing cache entries;
+// nothing is written under it anymore.
+async function legacyFingerprint(pdfB64) {
+  return sha256(pdfB64.length + '|' + pdfB64.slice(0, 10000) + '|' + pdfB64.slice(-10000));
+}
+
+// The county's own printed summary for a measure, from the master ballot fetched from the
+// county site. null when the master ballot hasn't been parsed or the measure isn't on it.
+async function trustedMeasureSummary(env, office) {
+  const pk = await env.CACHE.get(FEATURED_KEY);
+  if (!pk) return null;
+  const master = await env.CACHE.get(pk, 'json');
+  if (!master || !Array.isArray(master.races)) return null;
+  const want = normPart(office);
+  const hit = master.races.find(r => r && r.isMeasure && normPart(r.office) === want);
+  return hit ? String(hit.summary || '') : null;
 }
 
 async function sha256(str) {
@@ -830,13 +946,19 @@ async function handleBallotText(request, env) {
     return json({ error: 'Bad request' }, 400);
   }
   const pdf = body.pdf;
-  const fp = await sha256(pdf.length + '|' + pdf.slice(0, 10000) + '|' + pdf.slice(-10000));
+  const fp = await pdfFingerprint(pdf);
   const offices = body.offices.map(s => String(s || '').slice(0, 300));
   const options = (Array.isArray(body.measureOptions) ? body.measureOptions : []).slice(0, 250)
     .map(o => Array.isArray(o) ? o.slice(0, 4).map(s => String(s || '').slice(0, 80)) : null);
   const electionName = String(body.electionName || '').slice(0, 120);
-  const ck = 'btx1:' + fp + ':' + await sha256(JSON.stringify([offices, options, electionName]));
-  const hit = await env.CACHE.get(ck, 'json');
+  const contentKey = await sha256(JSON.stringify([offices, options, electionName]));
+  const ck = 'btx2:' + fp + ':' + contentKey;
+  let hit = await env.CACHE.get(ck, 'json');
+  if (!hit) {
+    // One-time migration from the old fingerprint (see parseBallot)
+    hit = await env.CACHE.get('btx1:' + await legacyFingerprint(pdf) + ':' + contentKey, 'json');
+    if (hit) await env.CACHE.put(ck, JSON.stringify(hit), { expirationTtl: 60 * 60 * 24 * 60 });
+  }
   if (hit) return json(hit);
   const allowed = await rateLimit(env, 'btext', clientIP(request), 10);
   if (!allowed) return json({ error: 'Daily limit reached for your connection.' }, 429);

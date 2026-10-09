@@ -1669,9 +1669,21 @@ function summarySourcesHtml(r){
   }).join(' · ') + '</p>';
 }
 
+// Only plain https links ever become clickable: research text comes from the open web, and a
+// javascript: or data: URL in it would run on this page for everyone who opens that dossier.
+function safeUrl(url){
+  var u = String(url || '').trim();
+  return /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : '';
+}
+// The site a link points to, so voters can see whether a claim comes from a newspaper or a blog.
+function hostOf(url){
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch(e){ return ''; }
+}
 function srcLink(url){
-  if(!url) return '';
-  return ' <a class="srclink" href="' + esc(url) + '" target="_blank" rel="noopener">' + t('src') + ' ↗</a>';
+  var u = safeUrl(url);
+  if(!u) return '';
+  var h = hostOf(u);
+  return ' <a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + (h ? esc(h) : t('src')) + ' ↗</a>';
 }
 
 function linkifySource(sname){
@@ -1805,7 +1817,7 @@ function renderDossier(cand, race, r, cached){
       html += '<ul>' + fs.evidence.map(function(ev){
         return '<li>' + esc(ev.summary) +
         '<span class="src">' + esc(ev.source||'') +
-        (ev.url ? ' · <a href="' + esc(ev.url) + '" target="_blank" rel="noopener">' + t('src') + '</a>' : '') +
+        (safeUrl(ev.url) ? ' · <a href="' + esc(safeUrl(ev.url)) + '" target="_blank" rel="noopener noreferrer">' + (esc(hostOf(ev.url)) || t('src')) + '</a>' : '') +
         '</span></li>';
       }).join('') + '</ul>';
     } else if(status==='none_found'){
