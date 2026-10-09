@@ -238,7 +238,8 @@ async function handleResearch(request, env, ctx) {
   //    with, so a slanted summary only ever lands in its own cache slot.
   let summaryTag = '';
   if (isMeasure) {
-    const trusted = await trustedMeasureSummary(env, office);
+    // The page sends a measure's title as name (office is just "Ballot measure"); check both.
+    const trusted = await trustedMeasureSummary(env, name, office);
     if (trusted !== null) measureSummary = trusted.slice(0, 800);
     else if (measureSummary) summaryTag = '|s:' + (await sha256(normPart(measureSummary))).slice(0, 16);
   }
@@ -687,13 +688,13 @@ async function legacyFingerprint(pdfB64) {
 
 // The county's own printed summary for a measure, from the master ballot fetched from the
 // county site. null when the master ballot hasn't been parsed or the measure isn't on it.
-async function trustedMeasureSummary(env, office) {
+async function trustedMeasureSummary(env, ...titles) {
   const pk = await env.CACHE.get(FEATURED_KEY);
   if (!pk) return null;
   const master = await env.CACHE.get(pk, 'json');
   if (!master || !Array.isArray(master.races)) return null;
-  const want = normPart(office);
-  const hit = master.races.find(r => r && r.isMeasure && normPart(r.office) === want);
+  const want = new Set(titles.map(normPart).filter(Boolean));
+  const hit = master.races.find(r => r && r.isMeasure && want.has(normPart(r.office)));
   return hit ? String(hit.summary || '') : null;
 }
 
