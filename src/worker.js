@@ -42,6 +42,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
+      if (request.method === 'POST' && url.pathname === '/api/ballot-text') {
+        return await handleBallotText(request, env);
+      }
       if (request.method === 'POST' && url.pathname === '/api/translate-ballot') {
         return await handleTranslateBallot(request, env);
       }
@@ -703,8 +706,10 @@ const TR_TAG_KEYS = { type: 'type_tr', kind: 'kind_tr' }; // keep English for ta
 
 async function translateStrings(env, lang, items) {
   const out = {};
-  for (let i = 0; i < items.length; i += 60) {
-    const chunk = items.slice(i, i + 60);
+  const chunks = [];
+  for (let i = 0; i < items.length; i += 40) chunks.push(items.slice(i, i + 40));
+  // chunks run in parallel so a 131-race ballot takes one call's time, not three
+  await Promise.all(chunks.map(async chunk => {
     const prompt = [
       'Translate the "text" of each item into ' + TR_LANGS[lang] + '.',
       'Rules:',
@@ -719,7 +724,7 @@ async function translateStrings(env, lang, items) {
     const text = await callAnthropic(env, { model: TR_MODEL[lang], max_tokens: 8000, temperature: 0, messages: [{ role: 'user', content: prompt }] });
     const parsed = extractJSON(text);
     for (const it of (parsed.items || [])) if (it && typeof it.text === 'string') out[it.id] = it.text;
-  }
+  }));
   return out;
 }
 
@@ -790,6 +795,82 @@ async function handleTranslateBallot(request, env) {
     measureOptions: options.map((o, i) => o ? o.map((s, j) => tr['m' + i + '_' + j] || s) : null),
     electionName: tr.e || electionName
   };
+  await env.CACHE.put(ck, JSON.stringify(out), { expirationTtl: 60 * 60 * 24 * 60 });
+  return json(out);
+}
+
+
+// Spanish and Haitian Creole race titles copied from the ballot PDF itself (Miami-Dade prints
+// ballots in all three languages), so voters see the county's official wording. Anything the
+// PDF does not print in a language is machine-translated. Cached per PDF, shared by everyone.
+async function handleBallotText(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body || typeof body.pdf !== 'string' || body.pdf.length < 100 || body.pdf.length > MAX_PDF_BASE64_CHARS ||
+      !Array.isArray(body.offices) || body.offices.length > 250) {
+    return json({ error: 'Bad request' }, 400);
+  }
+  const pdf = body.pdf;
+  const fp = await sha256(pdf.length + '|' + pdf.slice(0, 10000) + '|' + pdf.slice(-10000));
+  const offices = body.offices.map(s => String(s || '').slice(0, 300));
+  const options = (Array.isArray(body.measureOptions) ? body.measureOptions : []).slice(0, 250)
+    .map(o => Array.isArray(o) ? o.slice(0, 4).map(s => String(s || '').slice(0, 80)) : null);
+  const electionName = String(body.electionName || '').slice(0, 120);
+  const ck = 'btx1:' + fp + ':' + await sha256(JSON.stringify([offices, options, electionName]));
+  const hit = await env.CACHE.get(ck, 'json');
+  if (hit) return json(hit);
+  const allowed = await rateLimit(env, 'btext', clientIP(request), 10);
+  if (!allowed) return json({ error: 'Daily limit reached for your connection.' }, 429);
+
+  const items = [];
+  offices.forEach((s, i) => { if (s) items.push({ id: 'o' + i, en: s }); });
+  options.forEach((o, i) => { if (o) o.forEach((s, j) => { if (s) items.push({ id: 'm' + i + '_' + j, en: s }); }); });
+  if (electionName) items.push({ id: 'e', en: electionName });
+
+  // Copy, don't translate. Chunked and run in parallel to keep it quick on a 131-race ballot.
+  const printed = {};
+  const chunks = [];
+  for (let i = 0; i < items.length; i += 45) chunks.push(items.slice(i, i + 45));
+  await Promise.all(chunks.map(async chunk => {
+    const prompt = [
+      'This sample ballot is printed in English, Spanish and Haitian Creole.',
+      'For each item below, find that same item on the ballot and copy its Spanish ("es") and Haitian Creole ("ht") text EXACTLY as printed.',
+      'Items are office titles, ballot measure titles, measure answer choices (YES/NO or similar), or the election name.',
+      'Do not translate anything yourself. If the ballot does not print that item in a language, return an empty string for that language.',
+      'Respond with ONLY a JSON object {"items": [{"id": "...", "es": "...", "ht": "..."}]} with every id exactly once.',
+      '',
+      JSON.stringify({ items: chunk })
+    ].join('\n');
+    try {
+      const text = await callAnthropic(env, {
+        model: MODEL_JUDICIAL, max_tokens: 8000, temperature: 0,
+        messages: [{ role: 'user', content: [
+          { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: pdf } },
+          { type: 'text', text: prompt }
+        ] }]
+      });
+      for (const it of (extractJSON(text).items || [])) if (it && it.id) printed[it.id] = it;
+    } catch (e) { console.log('ballot-text chunk failed: ' + (e && e.message ? e.message : e)); }
+  }));
+
+  const out = {};
+  let fromBallot = 0;
+  for (const lang of ['es', 'ht']) {
+    const got = {}, missing = [];
+    for (const it of items) {
+      const v = printed[it.id] && typeof printed[it.id][lang] === 'string' ? printed[it.id][lang].trim() : '';
+      if (v) { got[it.id] = v; fromBallot++; } else missing.push({ id: it.id, text: it.en });
+    }
+    if (missing.length) {
+      try { Object.assign(got, await translateStrings(env, lang, missing)); } catch (e) { /* English fallback below */ }
+    }
+    out[lang] = {
+      offices: offices.map((s, i) => got['o' + i] || s),
+      measureOptions: options.map((o, i) => o ? o.map((s, j) => got['m' + i + '_' + j] || s) : null),
+      electionName: got.e || electionName,
+      source: 'ballot'
+    };
+  }
+  console.log('ballot-text: ' + fromBallot + ' of ' + (items.length * 2) + ' strings copied from the printed ballot');
   await env.CACHE.put(ck, JSON.stringify(out), { expirationTtl: 60 * 60 * 24 * 60 });
   return json(out);
 }

@@ -1106,9 +1106,50 @@ function candName(ri, ci){
 }
 function bt(field){ var tr = trBallot(); return (tr && tr[field]) || ballot[field]; }
 
-async function ensureBallotTranslation(){
+// Fetch translated titles without blocking: the ballot shows in English first and
+// re-renders when the translation arrives. Returns immediately.
+var trPending = {};
+function translateBallotInBackground(){
   if(LANG === 'en' || !ballot || (ballot.tr && ballot.tr[LANG])) return;
-  setStatus(t('status.translating'), false, true);
+  var want = LANG, forBallot = ballot, k = currentId + '|' + (lastPdf ? 'pdf' : want);
+  if(trPending[k]) return;
+  trPending[k] = true;
+  ensureBallotTranslation(true).then(function(){
+    delete trPending[k];
+    if(ballot === forBallot && LANG === want && ballot.tr && ballot.tr[want]){
+      renderBallot();
+      if(activeKey){
+        var parts = activeKey.split(':');
+        if(parts[0] === 'm') selectMeasure(parseInt(parts[1], 10));
+        else if(cache[activeKey]) renderDossier(ballot.races[parseInt(parts[0],10)].candidates[parseInt(parts[1],10)], ballot.races[parseInt(parts[0],10)], cache[activeKey].result, cache[activeKey].cached);
+      }
+    }
+  });
+}
+
+var lastPdf = null;   // the PDF behind the current ballot, while this page is open
+
+async function ensureBallotTranslation(quiet){
+  if(LANG === 'en' || !ballot || (ballot.tr && ballot.tr[LANG])) return;
+  if(!quiet) setStatus(t('status.translating'), false, true);
+  // Best: the Spanish and Kreyol printed on the ballot itself (official county wording).
+  if(lastPdf){
+    try{
+      var both = await api('/api/ballot-text', {
+        pdf: lastPdf,
+        electionName: ballot.electionName || '',
+        offices: ballot.races.map(function(r){ return r.office; }),
+        measureOptions: ballot.races.map(function(r){ return r.isMeasure ? r.candidates.map(function(c){ return c.name; }) : null; })
+      });
+      if(both && both.es && both.ht){
+        ballot.tr = ballot.tr || {};
+        ballot.tr.es = both.es; ballot.tr.ht = both.ht;
+        saveState();
+        if(!quiet) setStatus('');
+        return;
+      }
+    }catch(e){ /* fall through to machine translation */ }
+  }
   try{
     var data = await api('/api/translate-ballot', {
       lang: LANG,
@@ -1120,7 +1161,7 @@ async function ensureBallotTranslation(){
     ballot.tr[LANG] = data;
     saveState();
   }catch(e){ /* fall back to English titles */ }
-  setStatus('');
+  if(!quiet) setStatus('');
 }
 
 async function api(path, payload){
@@ -1227,6 +1268,7 @@ async function handleFile(file){
 
   setStatus(t('status.parsing'), false, true);
   try{
+    lastPdf = base64;
     var data = await api('/api/parse', { pdf: base64 });
     applyParsed(data);
   }catch(e){
@@ -1241,9 +1283,9 @@ async function applyParsed(data){
   votes = (existing && existing.votes) ? existing.votes : {};
   if(existing && existing.ballot && existing.ballot.tr) ballot.tr = existing.ballot.tr;
   saveState();
-  await ensureBallotTranslation();
   renderBallot();
   setStatus('');
+  translateBallotInBackground();
 }
 
 function bufToB64(buf){
@@ -1263,6 +1305,7 @@ async function loadFeaturedBallot(){
     if(!res.ok) throw new Error('Bundled ballot missing (HTTP ' + res.status + ')');
     var b64 = bufToB64(await res.arrayBuffer());
     setStatus(t('status.parsing'), false, true);
+    lastPdf = b64;
     var data = await api('/api/parse', { pdf: b64 });
     applyParsed(data);
   }catch(e){
@@ -1916,8 +1959,8 @@ async function setLang(l){
   $('planToggle').innerHTML = $('planView').classList.contains('open') ? t('plan.hide') : t('plan.view');
   if(ballot){
     cache = {};                       // research is fetched again in the new language (served from the shared cache)
-    await ensureBallotTranslation();
     renderBallot();
+    translateBallotInBackground();
     if(activeKey){
       var parts = activeKey.split(':');
       if(parts[0] === 'm') selectMeasure(parseInt(parts[1], 10));
@@ -2105,7 +2148,8 @@ function renderResumeList(){
       ballot = e.ballot;
       currentId = b.dataset.resume;
       votes = e.votes || {};
-      ensureBallotTranslation().then(renderBallot);
+      renderBallot();
+      translateBallotInBackground();
     });
   });
   box.querySelectorAll('[data-del]').forEach(function(b){
