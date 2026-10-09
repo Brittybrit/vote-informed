@@ -16,3 +16,12 @@ directory = "./public"
 [[kv_namespaces]]
 binding = "CACHE"
 id = "2a7520dcd23f421eaecb6bdfb98ef282"
+
+# Background research runs in a Durable Object alarm (15-minute limit) instead of ctx.waitUntil (~30s).
+[[durable_objects.bindings]]
+name = "RESEARCH"
+class_name = "ResearchRunner"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ResearchRunner"]

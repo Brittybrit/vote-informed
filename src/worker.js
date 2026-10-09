@@ -171,9 +171,16 @@ async function handleResearch(request, env, ctx) {
     const ip = clientIP(request);
     const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
     if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
-    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 120 }); // short: if Cloudflare cancels the background task, the next poll after 2 min restarts it
+    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 300 }); // covers a long research run; ResearchRunner also dedupes
     if (body.poll) {
-      ctx.waitUntil(runResearch(env, key, params));
+      if (env.RESEARCH) {
+        // Durable Object alarm: runs up to 15 minutes. ctx.waitUntil gets cancelled after ~30s,
+        // which killed most fresh research (a thorough web search takes 30-90s).
+        const stub = env.RESEARCH.get(env.RESEARCH.idFromName(key));
+        await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ key, params }) });
+      } else {
+        ctx.waitUntil(runResearch(env, key, params));
+      }
       return json({ pending: true });
     }
     // Legacy client (stale cached page): run synchronously like the old API did.
@@ -501,4 +508,32 @@ function json(obj, status = 200) {
     status,
     headers: { 'Content-Type': 'application/json' }
   });
+}
+
+
+/* ---------------- background research runner ---------------- */
+// One Durable Object per research key. fetch() records the job and sets an alarm for now;
+// the alarm handler has a 15-minute wall-clock limit, unlike ctx.waitUntil (~30s).
+export class ResearchRunner {
+  constructor(state, env) { this.state = state; this.env = env; }
+
+  async fetch(request) {
+    const job = await request.json();
+    const running = await this.state.storage.get('running');
+    if (running && Date.now() - running < 10 * 60 * 1000) return new Response('already running');
+    await this.state.storage.put('job', job);
+    await this.state.storage.setAlarm(Date.now());
+    return new Response('scheduled');
+  }
+
+  async alarm() {
+    const job = await this.state.storage.get('job');
+    if (!job) return;
+    await this.state.storage.put('running', Date.now());
+    try {
+      await runResearch(this.env, job.key, job.params);   // writes result or fail: key to KV itself
+    } finally {
+      await this.state.storage.deleteAll();
+    }
+  }
 }
