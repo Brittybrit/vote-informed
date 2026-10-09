@@ -1071,7 +1071,7 @@ var cache = {};        // key -> {result, cached}
 var votes = {};        // raceIndex -> candIndex
 var activeKey = null;
 var currentId = null;  // id of the ballot currently loaded
-var STORE = 'ballotIntel.v2';   // { ballots: { id: {ballot, votes, ts} } }
+var STORE = 'ballot305.plans';   // { ballots: { id: {ballot, votes, ts} } }
 
 function $(id){ return document.getElementById(id); }
 
@@ -1209,6 +1209,16 @@ function loadStore(){
     if(raw){
       var st = JSON.parse(raw);
       if(st && st.ballots) return st;
+    }
+    // move plans saved under the app's earlier name, so nobody loses their ballot plan
+    var old2 = localStorage.getItem('ballotIntel.v2');
+    if(old2){
+      var s2 = JSON.parse(old2);
+      if(s2 && s2.ballots){
+        localStorage.setItem(STORE, old2);
+        localStorage.removeItem('ballotIntel.v2');
+        return s2;
+      }
     }
     // migrate single-ballot v1 store if present
     var old1 = localStorage.getItem('ballotIntel.v1');

@@ -1,10 +1,20 @@
 import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
 /**
- * Ballot Intel — Cloudflare Worker backend
+ * Ballot305.org (vote-informed): Cloudflare Worker backend
  *
  * Routes:
- *   POST /api/parse     { pdf: base64 }  -> parsed ballot JSON (cached by PDF fingerprint)
- *   POST /api/research  { name, office, jurisdiction, election, isJudicial } -> dossier JSON (shared cache)
+ *   POST /api/parse            { pdf: base64 }  -> parsed ballot JSON (cached by PDF fingerprint)
+ *   POST /api/research         { name, office, jurisdiction, election, isJudicial, lang } -> dossier JSON (shared cache)
+ *   POST /api/ballot-text      { pdf, offices, measureOptions, electionName } -> official Spanish/Kreyol titles
+ *   POST /api/translate-ballot { lang, offices, measureOptions, electionName } -> machine-translated titles
+ *   GET  /api/evsites          early voting sites with coordinates
+ *   GET  /api/pollingplace?p=  Election Day polling place for a precinct
+ *   POST /api/voterinfo        { address } -> Google Civic voter info (polling place, contests when published)
+ *   GET  /api/civic-status     whether Google's Nov 3 data is live (fixed public test address)
+ *   GET  /api/elections        elections Google currently lists
+ *
+ * The Worker is deployed under the name "ballot-intel" (wrangler.toml). Renaming it would create a
+ * separate Worker without this one's custom domain, secrets and Durable Object, so the name stays.
  *
  * Static frontend is served from /public via the assets binding.
  *
