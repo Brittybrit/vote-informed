@@ -62,6 +62,10 @@
   }
   .wordmark .o{display:inline-block; width:.86em; height:.56em; background:var(--ink); border-radius:50%; margin:0 .03em; vertical-align:.07em;}
   .wordmark .dotorg{font-weight:600; font-size:.62em; opacity:.75; margin-left:.04em;}
+  .langs{display:flex; gap:6px; justify-content:center; margin-top:12px;}
+  header.with-ballot .langs{justify-content:flex-start;}
+  .langs button{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; background:transparent; border:1.5px solid var(--rule); color:var(--ink); padding:5px 10px; cursor:pointer;}
+  .langs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .tagline{font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin-top:8px;}
   @media (max-width:520px){ .masthead h1{font-size:28px;} }
   .masthead .sub{
@@ -216,7 +220,7 @@
   .race-head h3{font-weight:800; text-transform:uppercase; font-size:14.5px; letter-spacing:.05em;}
   .race-head .jbadge{
     font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
-    border:1px solid rgba(250,250,247,.6); padding:2.5px 8px; white-space:nowrap;
+    border:1px solid rgba(250,250,247,.6); padding:2.5px 8px; white-space:normal; max-width:100%; line-height:1.45;
   }
   .race-instr{font-family:var(--mono); font-size:11px; color:var(--ink-soft); padding:8px 16px; border-bottom:1px solid #D8D8D2;}
 
@@ -388,8 +392,9 @@
 <header>
   <div class="masthead">
     <h1 class="wordmark" aria-label="Ballot305.org">BALL<span class="o" aria-hidden="true"></span>T305<span class="dotorg">.ORG</span></h1>
-    <div class="tagline">For an informed, engaged Miami-Dade</div>
-    <div class="sub">RESEARCH EACH CANDIDATE &middot; FILL THE OVAL TO ADD THEM TO YOUR BALLOT PLAN</div>
+    <div class="tagline" data-i18n="tagline"></div>
+    <div class="sub" data-i18n="sub"></div>
+    <div class="langs" role="group" aria-label="Language / Idioma / Lang"><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="ht">KREYÒL</button></div>
   </div>
   <div class="juris" id="jurisBox"></div>
 </header>
@@ -403,23 +408,23 @@
     <div id="uploadFlow">
     <div class="dropzone" id="dropzone">
       <div class="oval-demo"></div>
-      <h2>Drop your sample ballot PDF here</h2>
-      <p>This tool uses your ballot to build a clickable list of every race and referendum. Click a candidate to see their top donors, their endorsements, and, for judges, any ties to the Federalist Society. Click a referendum to see who is funding each side and who supports or opposes it. Fill in an oval when you decide. Your filled in ballot plan is saved on this device, so you can return to it later. You can also print your finished plan and take it with you to vote.</p>
-      <button class="btn" id="pickBtn">Choose PDF</button>
+      <h2 data-i18n="dz.h2"></h2>
+      <p data-i18n="dz.p"></p>
+      <button class="btn" id="pickBtn" data-i18n="dz.pick"></button>
       <input type="file" id="fileInput" accept="application/pdf" hidden>
       <div class="getballot">
-        <p class="gb-head">Don&rsquo;t have your ballot PDF yet?</p>
+        <p class="gb-head" data-i18n="gb.head"></p>
         <a class="gb-opt" href="https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD" target="_blank" rel="noopener">
-          <span class="gb-title">Get YOUR exact ballot &rarr;</span>
-          <span class="gb-desc">Look yourself up on the county&rsquo;s voter portal for your precinct-specific sample ballot &mdash; only the races you&rsquo;ll actually vote on. Save it as a PDF and upload it here.</span>
+          <span class="gb-title" data-i18n="gb.exact.t"></span>
+          <span class="gb-desc" data-i18n="gb.exact.d"></span>
         </a>
         <button class="gb-opt" id="loadMaster" type="button">
-          <span class="gb-title">Load the countywide master ballot &rarr;</span>
-          <span class="gb-desc">Every race in Miami-Dade for the November 3 General Election &mdash; loads right here, no download needed.</span>
+          <span class="gb-title" data-i18n="gb.master.t"></span>
+          <span class="gb-desc" data-i18n="gb.master.d"></span>
         </button>
       </div>
     </div>
-    <p class="finehint">Research runs once per candidate and is shared: if someone already looked a candidate up this week, your result is instant. Your ballot plan is saved only on this device.</p>
+    <p class="finehint" data-i18n="finehint"></p>
     </div>
 
     <div class="countdown" id="countdown">
@@ -430,12 +435,12 @@
     <div class="regcheck" id="regCheck">
       <div class="rc-opts">
         <a class="rc-opt" href="https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD" target="_blank" rel="noopener">
-          <span class="rc-big">Check your registration &amp; precinct</span>
-          <span class="rc-sub">County voter lookup &mdash; also where you get your precinct-specific sample ballot &rarr;</span>
+          <span class="rc-big" data-i18n="rc.check.big"></span>
+          <span class="rc-sub" data-i18n="rc.check.sub"></span>
         </a>
         <a class="rc-opt" href="https://registertovoteflorida.gov/" target="_blank" rel="noopener">
-          <span class="rc-big">Not registered?</span>
-          <span class="rc-sub">Registration for November 3 closed October 5 &mdash; register now so you&rsquo;re ready for the next election &rarr;</span>
+          <span class="rc-big" data-i18n="rc.reg.big"></span>
+          <span class="rc-sub" data-i18n="rc.reg.sub"></span>
         </a>
       </div>
     </div>
@@ -444,40 +449,611 @@
   <section class="workspace" id="workspace">
     <div>
       <div class="planbar">
-        <span class="ptitle">Ballot Plan</span>
+        <span class="ptitle" data-i18n="plan.title"></span>
         <span class="pcount" id="planCount">0 of 0 races decided</span>
         <span class="pmeter"><i id="planMeter" style="width:0%"></i></span>
-        <button id="planToggle">View plan</button>
+        <button id="planToggle" data-i18n="plan.view"></button>
       </div>
       <div class="planview" id="planView">
         <div class="planview-head">
-          <h3>Your Ballot Plan</h3>
+          <h3 data-i18n="plan.yours"></h3>
           <div class="actions">
-            <button id="printBtn">Print / Save</button>
-            <button id="clearBtn">Clear all</button>
+            <button id="printBtn" data-i18n="plan.print"></button>
+            <button id="clearBtn" data-i18n="plan.clear"></button>
           </div>
         </div>
         <div id="planRows"></div>
       </div>
       <div id="races"></div>
-      <div class="reset-row"><button id="resetBtn">Switch ballot &mdash; plan stays saved</button></div>
+      <div class="reset-row"><button id="resetBtn" data-i18n="plan.reset"></button></div>
     </div>
     <aside class="dossier" id="dossier" aria-live="polite">
       <div class="dossier-empty" id="dossierEmpty">
         <div class="oval-demo"></div>
-        <p>No candidate selected.<br>Click a name to research. Fill an oval to add them to your ballot plan.</p>
+        <p data-i18n="dossier.empty"></p>
       </div>
       <div id="dossierContent"></div>
     </aside>
   </section>
-  <p class="sitefoot">Independent voter research tool. Not affiliated with the Miami-Dade Supervisor of Elections or any government agency. This is not an official ballot and does not record votes.<br>
-  Made with love by <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; Found a bug? <a href="https://github.com/Brittybrit/vote-informed/issues" target="_blank" rel="noopener">Report it on GitHub</a> or DM me.</p>
+  <p class="sitefoot" data-i18n="foot"></p>
 </main>
 
 <div id="tagpop" role="tooltip"></div>
 
 <div id="printPlan"></div>
 
+<script>
+/* Ballot305.org interface text in English, Spanish and Haitian Creole.
+ * Keys are shared across languages; {name} placeholders are filled in by t().
+ * Research content (descriptions, notes) is translated separately on the server.
+ * Spanish and Kreyol were machine-drafted: have a native speaker review before relying on them.
+ */
+var I18N = {
+en: {
+  'lang.name': 'English',
+  'tagline': 'For an informed, engaged Miami-Dade',
+  'sub': 'RESEARCH EACH CANDIDATE &middot; FILL THE OVAL TO ADD THEM TO YOUR BALLOT PLAN',
+  'dz.h2': 'Drop your sample ballot PDF here',
+  'dz.p': 'This tool uses your ballot to build a clickable list of every race and referendum. Click a candidate to see their top donors, their endorsements, and, for judges, any ties to the Federalist Society. Click a referendum to see who is funding each side and who supports or opposes it. Fill in an oval when you decide. Your filled in ballot plan is saved on this device, so you can return to it later. You can also print your finished plan and take it with you to vote.',
+  'dz.pick': 'Choose PDF',
+  'gb.head': 'Don&rsquo;t have your ballot PDF yet?',
+  'gb.exact.t': 'Get YOUR exact ballot &rarr;',
+  'gb.exact.d': 'Look yourself up on the county&rsquo;s voter portal for your precinct-specific sample ballot, with only the races you&rsquo;ll actually vote on. Save it as a PDF and upload it here.',
+  'gb.master.t': 'Load the countywide master ballot &rarr;',
+  'gb.master.d': 'Every race in Miami-Dade for the November 3 General Election. Loads right here, no download needed.',
+  'finehint': 'Research runs once per candidate and is shared: if someone already looked a candidate up this week, your result is instant. Your ballot plan is saved only on this device.',
+  'rc.check.big': 'Check your registration &amp; precinct',
+  'rc.check.sub': 'County voter lookup, also where you get your precinct-specific sample ballot &rarr;',
+  'rc.reg.big': 'Not registered?',
+  'rc.reg.sub': 'Registration for November 3 closed October 5. Register now so you&rsquo;re ready for the next election &rarr;',
+  'plan.title': 'Ballot Plan',
+  'plan.view': 'View plan',
+  'plan.hide': 'Hide plan',
+  'plan.yours': 'Your Ballot Plan',
+  'plan.print': 'Print / Save',
+  'plan.clear': 'Clear all',
+  'plan.reset': 'Switch ballot (plan stays saved)',
+  'plan.count': '{d} of {t} races decided',
+  'plan.remove': 'Remove',
+  'plan.undecided': 'Undecided',
+  'plan.confirmClear': 'Clear all picks from your ballot plan?',
+  'print.title': 'My Ballot Plan',
+  'print.note': 'Personal research notes prepared with Ballot305.org. This is not an official ballot. Verify races and names against your official ballot when voting.',
+  'dossier.empty': 'No candidate selected.<br>Click a name to research. Fill an oval to add them to your ballot plan.',
+  'foot': 'Independent voter research tool. Not affiliated with the Miami-Dade Supervisor of Elections or any government agency. This is not an official ballot and does not record votes.<br>Made with love by <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; Found a bug? <a href="https://github.com/Brittybrit/vote-informed/issues" target="_blank" rel="noopener">Report it on GitHub</a> or DM me.',
+
+  'status.notpdf': 'That is not a PDF. Upload a sample ballot in PDF format.',
+  'status.reading': 'Reading {name}',
+  'status.cantread': 'Could not read the file: {msg}',
+  'status.parsing': 'Parsing ballot structure',
+  'status.cantparse': 'Could not parse this ballot: {msg}',
+  'status.loadingMaster': 'Loading the countywide master ballot',
+  'status.cantMaster': 'Could not load the master ballot: {msg}',
+  'status.translating': 'Translating the ballot',
+  'err.slow': 'Research is taking longer than usual. Tap Retry in a moment. It may already be finished.',
+  'juris.unknown': 'Jurisdiction unknown',
+
+  'race.badge.measure': 'Ballot measure &middot; Finance check',
+  'race.badge.judicial': 'Judicial &middot; Federalist Society check',
+  'race.instr.measure': 'CLICK TO SEE WHO IS FUNDING EACH SIDE &middot; FILL AN OVAL TO MARK YES OR NO',
+  'race.instr.cand': 'CLICK A NAME TO RESEARCH &middot; FILL THE OVAL TO MARK YOUR VOTE',
+  'cand.markAria': 'Mark {name} as your vote',
+  'cand.onBallot': '✓ ON MY BALLOT',
+  'cand.research': 'RESEARCH →',
+  'cand.researched': 'RESEARCHED',
+
+  'head.cand': 'Candidate Dossier',
+  'head.measure': 'Ballot Measure',
+  'badge.cached': 'Shared cache &middot; researched this week',
+  'badge.fresh': 'Fresh research &middot; just now',
+  'btn.close': 'CLOSE',
+  'btn.retry': 'Retry',
+  'err.failed': 'Research failed: {msg}',
+  'load.cand': 'SEARCHING: DONORS &middot; ENDORSEMENTS',
+  'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
+  'load.cand2': 'Live web research, usually 15 to 45 seconds. Instant if someone beat you to it.',
+  'load.measure': 'SEARCHING: FINANCING &middot; SUPPORTERS &middot; OPPOSITION',
+  'load.measure2': 'Live web research, usually 20 to 60 seconds. Instant if someone beat you to it.',
+  'load.translating': 'Translating&hellip;',
+
+  'vote.remove': '✓ On my ballot (remove)',
+  'vote.add': 'Add to my ballot plan',
+  'vote.replaces': 'Replaces your current pick for this race: {name}',
+  'mv.mark': 'Mark your position. It joins your ballot plan.',
+  'mv.unmark': 'Tap your pick again to remove it from your plan',
+
+  'sec.judicial': 'Judicial Screen',
+  'fs.documented': '⚑ Federalist Society: documented ties',
+  'fs.possible': '⚑ Federalist Society: possible ties',
+  'fs.none': '○ Federalist Society: no ties found',
+  'fs.noneText': 'Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.',
+  'sec.donors': 'Top Campaign Donors',
+  'donors.noFec': 'No donors on record with the FEC.',
+  'donors.none': 'No donor data found.',
+  'donors.full': 'See full donor list',
+  'sec.endorse': 'Endorsements',
+  'endorse.none': 'No endorsements found in searched coverage.',
+  'sec.ratings': 'Ratings &amp; Evaluations',
+  'ratings.sub': 'Assessments by outside groups, not endorsements.',
+  'sec.sources': 'Sources Consulted',
+  'sec.financing': 'Who Is Financing It',
+  'fin.yes': 'BACKING YES',
+  'fin.no': 'BACKING NO',
+  'fin.none': 'No organized funding found on this side.',
+  'sec.supporters': 'Major Supporters',
+  'sec.opponents': 'Major Opposition',
+  'none.support': 'No organized support found in searched coverage.',
+  'none.oppose': 'No organized opposition found in searched coverage.',
+  'disc.cand': 'AI-assisted research compiled from live web search. Lean classifications and Federalist Society findings are best-effort judgments. Verify anything that would change your vote against the linked sources and official disclosure filings.',
+  'disc.measure': 'AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments. Verify anything that would change your vote against the linked sources and official campaign finance filings.',
+  'disc.translated': 'Translated automatically from English research. Names, amounts and sources are unchanged.',
+  'sum.sources': 'Sources:',
+  'src': 'source',
+  'amt.undisclosed': 'undisclosed',
+  'amt.na': 'amount n/a',
+  'lean.left': 'Left',
+  'lean.right': 'Right',
+  'lean.nonpartisan': 'Nonpartisan',
+
+  'resume.title': 'Your saved ballot plans',
+  'resume.decided': '{d} of {t} races decided',
+  'resume.btn': 'Resume',
+  'resume.del': 'Delete this plan',
+  'resume.confirm': 'Delete this saved ballot plan?',
+  'resume.default': 'Saved ballot',
+
+  'election.name': 'November 3, 2026 General Election',
+  'cd.day': 'DAY', 'cd.days': 'DAYS',
+  'cd.toReg': '{days} LEFT TO REGISTER',
+  'cd.regDeadline': 'registration deadline {date}',
+  'cd.toVote': '{days} UNTIL ELECTION DAY',
+  'cd.regClosed': 'registration for this election has closed',
+  'cd.passed': 'has passed. Check back for the next election.',
+
+  'vb.kicker.ev': 'Early voting',
+  'vb.kicker.eday': 'Election Day',
+  'vb.pre.head': 'Go vote early: starts Monday, Oct 19',
+  'vb.pre.sub': 'Early voting runs Oct 19 to Nov 1, 7am to 7pm daily, at 28 sites. Any registered Miami-Dade voter can use any site.',
+  'vb.open.head': 'Early voting is open now',
+  'vb.open.sub': 'Every site is open until 7pm today. Vote at any of the 28 sites in Miami-Dade.',
+  'vb.today.head': 'Early voting opens today at 7am',
+  'vb.tomorrow.head': 'Early voting opens tomorrow at 7am',
+  'vb.later.sub': 'Open 7am to 7pm through Sunday, Nov 1. Any of the 28 sites in Miami-Dade.',
+  'vb.btn.go': 'Go vote early: nearest site',
+  'vb.btn.find': 'Find your nearest site',
+  'vb.eve.head': 'Election Day is Tuesday, Nov 3, 7am to 7pm',
+  'vb.polls.open': 'Polls are open until 7pm',
+  'vb.polls.opens': 'Polls open at 7am today',
+  'vb.eday.sub.open': 'If you are in line by 7pm, you can vote. On Election Day you must vote at your assigned polling place.',
+  'vb.eday.sub': 'Early voting is over. On Election Day you must vote at your assigned polling place, not an early voting site.',
+  'vb.finding': 'Finding sites near you&hellip;',
+  'vb.loadFail': 'Could not load sites.',
+  'vb.countyList': 'See the county list',
+  'vb.locOff': 'Location is off, so here are all 28 sites A to Z. Turn on location for this site to sort by distance.',
+  'vb.allBtn': 'All 28 sites by distance',
+  'vb.sameHours': 'All early voting sites have the same hours.',
+  'vb.source': 'Source:',
+  'vb.sourceName': 'Miami-Dade Elections early voting schedule',
+  'vb.miAway': '{n} mi away',
+  'vb.directions': 'Directions',
+  'vb.lookup': 'county voter lookup',
+  'vb.noPrecinct': 'Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the',
+  'vb.findMine': 'Find my polling place',
+  'vb.noMatch': 'We could not match precinct {p} to a polling place. Check the',
+  'vb.yourPlace': 'Your polling place &middot; Precinct {p}',
+  'vb.hours': 'Tuesday, Nov 3 &middot; 7am to 7pm',
+  'vb.official': 'From the county&rsquo;s official precinct list (Sept 30, 2026). Locations can change, so confirm with the',
+
+  'tag.default': 'Category assigned by the research model based on how sources describe this group.',
+  'tag.left.l': 'Lean: Left', 'tag.left.d': 'This organization or person generally aligns with liberal or progressive politics. The tag describes the endorser or funder, not the candidate or measure.',
+  'tag.right.l': 'Lean: Right', 'tag.right.d': 'This organization or person generally aligns with conservative politics. The tag describes the endorser or funder, not the candidate or measure.',
+  'tag.np.l': 'Lean: Nonpartisan', 'tag.np.d': 'No consistent alignment with either major party, or officially neutral.',
+  'tag.platform.l': 'Online Donation Platform', 'tag.platform.d': 'A service like WinRed (Republican) or ActBlue (Democratic) that processes online donations. This total is many individual donors giving through it, often in small amounts, not one group giving its own money.',
+  'tag.super.l': 'Super PAC', 'tag.super.d': 'A committee that can raise unlimited money from people, companies and unions, but cannot give it directly to candidates. It spends on its own ads instead. One appearing here usually means a hybrid super PAC giving from a separate, limited account.',
+  'tag.noncon.l': 'Nonconnected PAC', 'tag.noncon.d': 'A PAC not tied to any company, union or association. Usually an ideological, issue or leadership PAC that raises from individuals. Limited to $5,000 per election to a candidate.',
+  'tag.con.l': 'Connected PAC', 'tag.con.d': 'A PAC run by a corporation, union, trade group or membership association, funded by its employees or members. Shows which industries or organized interests back the candidate. Limited to $5,000 per election.',
+  'tag.party.l': 'Party Organization', 'tag.party.d': 'An official political party organization: local, state, or national.',
+  'tag.candcom.l': 'Candidate Committee', 'tag.candcom.d': 'Another candidate&rsquo;s own campaign committee giving to this one.',
+  'tag.pac.l': 'PAC / Committee', 'tag.pac.d': 'A Political Action Committee: a group registered to raise and spend money to influence elections. Money given through a PAC can make the original source harder to see; the source link shows its filings.',
+  'tag.corp.l': 'Corporation', 'tag.corp.d': 'A business giving money directly or through a company-linked committee. Corporate giving usually tracks the company&rsquo;s regulatory and business interests.',
+  'tag.indiv.l': 'Individual', 'tag.indiv.d': 'A named person giving their own money. Their employer is shown when disclosed, which can hint at an industry interest behind the gift.',
+  'tag.self.l': 'Self-Funded', 'tag.self.d': 'The candidate&rsquo;s own money.',
+  'tag.union.l': 'Labor Union', 'tag.union.d': 'A union giving through its political arm, funded by member dues. Generally supports worker-protection and collective-bargaining policies.',
+  'tag.lobby.l': 'Lobbying / Trade Group', 'tag.lobby.d': 'An association that represents an industry&rsquo;s interests to government. Its money and endorsements usually track that industry&rsquo;s policy goals.',
+  'tag.nonprofit.l': 'Nonprofit', 'tag.nonprofit.d': 'A nonprofit organization. Some kinds are not required to disclose their own donors, so the original source of the money may be hidden (sometimes called dark money).',
+  'tag.police.l': 'Law Enforcement', 'tag.police.d': 'A police union or law-enforcement association.',
+  'tag.editorial.l': 'Editorial Board', 'tag.editorial.d': 'The opinion side of a newspaper, which endorses candidates. It operates separately from the paper&rsquo;s news reporting.',
+  'tag.business.l': 'Business Association', 'tag.business.d': 'A chamber-of-commerce-style group representing local business interests.',
+  'tag.env.l': 'Environmental Group', 'tag.env.d': 'An organization focused on environmental and conservation policy.',
+  'tag.religious.l': 'Religious Organization', 'tag.religious.d': 'A faith-based organization or advocacy group.',
+  'tag.civil.l': 'Civil Rights Organization', 'tag.civil.d': 'A group focused on civil rights and liberties.',
+  'tag.prof.l': 'Professional Association', 'tag.prof.d': 'A membership body for a profession, such as a bar association. Often rates candidates rather than endorsing.',
+  'tag.official.l': 'Elected Official', 'tag.official.d': 'A current or former officeholder endorsing personally.'
+},
+
+es: {
+  'lang.name': 'Español',
+  'tagline': 'Por un Miami-Dade informado y participativo',
+  'sub': 'INVESTIGUE A CADA CANDIDATO &middot; RELLENE EL ÓVALO PARA AGREGARLO A SU PLAN DE VOTO',
+  'dz.h2': 'Suelte aquí el PDF de su boleta de muestra',
+  'dz.p': 'Esta herramienta usa su boleta para crear una lista interactiva de cada contienda y referéndum. Haga clic en un candidato para ver sus principales donantes, sus respaldos y, en el caso de los jueces, cualquier vínculo con la Federalist Society. Haga clic en un referéndum para ver quién financia cada lado y quién lo apoya o se opone. Rellene un óvalo cuando decida. Su plan de voto se guarda en este dispositivo para que pueda volver a él más tarde. También puede imprimir su plan terminado y llevarlo cuando vaya a votar.',
+  'dz.pick': 'Elegir PDF',
+  'gb.head': '¿Todavía no tiene el PDF de su boleta?',
+  'gb.exact.t': 'Obtenga SU boleta exacta &rarr;',
+  'gb.exact.d': 'Búsquese en el portal de votantes del condado para obtener la boleta de muestra de su precinto, solo con las contiendas en las que realmente votará. Guárdela como PDF y súbala aquí.',
+  'gb.master.t': 'Cargar la boleta maestra de todo el condado &rarr;',
+  'gb.master.d': 'Todas las contiendas de Miami-Dade para las Elecciones Generales del 3 de noviembre. Se carga aquí mismo, sin descargar nada.',
+  'finehint': 'La investigación se hace una vez por candidato y se comparte: si alguien ya buscó a un candidato esta semana, su resultado es instantáneo. Su plan de voto se guarda solo en este dispositivo.',
+  'rc.check.big': 'Verifique su inscripción y su precinto',
+  'rc.check.sub': 'Búsqueda de votantes del condado, también donde obtiene la boleta de muestra de su precinto &rarr;',
+  'rc.reg.big': '¿No está inscrito?',
+  'rc.reg.sub': 'La inscripción para el 3 de noviembre cerró el 5 de octubre. Inscríbase ahora para estar listo para la próxima elección &rarr;',
+  'plan.title': 'Plan de voto',
+  'plan.view': 'Ver plan',
+  'plan.hide': 'Ocultar plan',
+  'plan.yours': 'Su plan de voto',
+  'plan.print': 'Imprimir / Guardar',
+  'plan.clear': 'Borrar todo',
+  'plan.reset': 'Cambiar de boleta (su plan queda guardado)',
+  'plan.count': '{d} de {t} contiendas decididas',
+  'plan.remove': 'Quitar',
+  'plan.undecided': 'Sin decidir',
+  'plan.confirmClear': '¿Borrar todas las selecciones de su plan de voto?',
+  'print.title': 'Mi plan de voto',
+  'print.note': 'Notas personales de investigación preparadas con Ballot305.org. Esta no es una boleta oficial. Verifique las contiendas y los nombres con su boleta oficial al votar.',
+  'dossier.empty': 'Ningún candidato seleccionado.<br>Haga clic en un nombre para investigar. Rellene un óvalo para agregarlo a su plan de voto.',
+  'foot': 'Herramienta independiente de investigación para votantes. No está afiliada a la Supervisora de Elecciones de Miami-Dade ni a ninguna agencia gubernamental. Esta no es una boleta oficial y no registra votos.<br>Hecho con amor por <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; ¿Encontró un error? <a href="https://github.com/Brittybrit/vote-informed/issues" target="_blank" rel="noopener">Repórtelo en GitHub</a> o envíeme un mensaje.',
+
+  'status.notpdf': 'Eso no es un PDF. Suba una boleta de muestra en formato PDF.',
+  'status.reading': 'Leyendo {name}',
+  'status.cantread': 'No se pudo leer el archivo: {msg}',
+  'status.parsing': 'Analizando la estructura de la boleta',
+  'status.cantparse': 'No se pudo analizar esta boleta: {msg}',
+  'status.loadingMaster': 'Cargando la boleta maestra del condado',
+  'status.cantMaster': 'No se pudo cargar la boleta maestra: {msg}',
+  'status.translating': 'Traduciendo la boleta',
+  'err.slow': 'La investigación está tardando más de lo normal. Toque Reintentar en un momento. Puede que ya haya terminado.',
+  'juris.unknown': 'Jurisdicción desconocida',
+
+  'race.badge.measure': 'Medida electoral &middot; Revisión de financiamiento',
+  'race.badge.judicial': 'Judicial &middot; Revisión de Federalist Society',
+  'race.instr.measure': 'HAGA CLIC PARA VER QUIÉN FINANCIA CADA LADO &middot; RELLENE UN ÓVALO PARA MARCAR SÍ O NO',
+  'race.instr.cand': 'HAGA CLIC EN UN NOMBRE PARA INVESTIGAR &middot; RELLENE EL ÓVALO PARA MARCAR SU VOTO',
+  'cand.markAria': 'Marcar a {name} como su voto',
+  'cand.onBallot': '✓ EN MI PLAN',
+  'cand.research': 'INVESTIGAR →',
+  'cand.researched': 'INVESTIGADO',
+
+  'head.cand': 'Expediente del candidato',
+  'head.measure': 'Medida electoral',
+  'badge.cached': 'Caché compartido &middot; investigado esta semana',
+  'badge.fresh': 'Investigación nueva &middot; ahora mismo',
+  'btn.close': 'CERRAR',
+  'btn.retry': 'Reintentar',
+  'err.failed': 'La investigación falló: {msg}',
+  'load.cand': 'BUSCANDO: DONANTES &middot; RESPALDOS',
+  'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
+  'load.cand2': 'Investigación en vivo en la web, normalmente de 15 a 45 segundos. Instantánea si alguien ya la hizo.',
+  'load.measure': 'BUSCANDO: FINANCIAMIENTO &middot; PARTIDARIOS &middot; OPOSICIÓN',
+  'load.measure2': 'Investigación en vivo en la web, normalmente de 20 a 60 segundos. Instantánea si alguien ya la hizo.',
+  'load.translating': 'Traduciendo&hellip;',
+
+  'vote.remove': '✓ En mi plan (quitar)',
+  'vote.add': 'Agregar a mi plan de voto',
+  'vote.replaces': 'Reemplaza su selección actual para esta contienda: {name}',
+  'mv.mark': 'Marque su posición. Se agrega a su plan de voto.',
+  'mv.unmark': 'Toque su selección otra vez para quitarla de su plan',
+
+  'sec.judicial': 'Revisión judicial',
+  'fs.documented': '⚑ Federalist Society: vínculos documentados',
+  'fs.possible': '⚑ Federalist Society: posibles vínculos',
+  'fs.none': '○ Federalist Society: no se encontraron vínculos',
+  'fs.noneText': 'Nada en la cobertura revisada, biografías o registros de eventos vinculó a este candidato con la Federalist Society.',
+  'sec.donors': 'Principales donantes de campaña',
+  'donors.noFec': 'No hay donantes registrados ante la FEC.',
+  'donors.none': 'No se encontraron datos de donantes.',
+  'donors.full': 'Ver lista completa de donantes',
+  'sec.endorse': 'Respaldos',
+  'endorse.none': 'No se encontraron respaldos en la cobertura revisada.',
+  'sec.ratings': 'Calificaciones y evaluaciones',
+  'ratings.sub': 'Evaluaciones de grupos externos, no respaldos.',
+  'sec.sources': 'Fuentes consultadas',
+  'sec.financing': 'Quién la financia',
+  'fin.yes': 'A FAVOR DEL SÍ',
+  'fin.no': 'A FAVOR DEL NO',
+  'fin.none': 'No se encontró financiamiento organizado en este lado.',
+  'sec.supporters': 'Principales partidarios',
+  'sec.opponents': 'Principal oposición',
+  'none.support': 'No se encontró apoyo organizado en la cobertura revisada.',
+  'none.oppose': 'No se encontró oposición organizada en la cobertura revisada.',
+  'disc.cand': 'Investigación asistida por IA a partir de búsquedas en vivo en la web. Las clasificaciones de tendencia y los hallazgos sobre la Federalist Society son juicios aproximados. Verifique todo lo que podría cambiar su voto con las fuentes enlazadas y los registros oficiales.',
+  'disc.measure': 'Investigación asistida por IA a partir de búsquedas en vivo en la web. Las clasificaciones de tendencia y la identificación de financiadores son juicios aproximados. Verifique todo lo que podría cambiar su voto con las fuentes enlazadas y los registros oficiales de financiamiento de campañas.',
+  'disc.translated': 'Traducido automáticamente de la investigación en inglés. Los nombres, montos y fuentes no cambian.',
+  'sum.sources': 'Fuentes:',
+  'src': 'fuente',
+  'amt.undisclosed': 'no divulgado',
+  'amt.na': 'monto n/d',
+  'lean.left': 'Izquierda',
+  'lean.right': 'Derecha',
+  'lean.nonpartisan': 'No partidista',
+
+  'resume.title': 'Sus planes de voto guardados',
+  'resume.decided': '{d} de {t} contiendas decididas',
+  'resume.btn': 'Continuar',
+  'resume.del': 'Eliminar este plan',
+  'resume.confirm': '¿Eliminar este plan de voto guardado?',
+  'resume.default': 'Boleta guardada',
+
+  'election.name': 'Elecciones Generales del 3 de noviembre de 2026',
+  'cd.day': 'DÍA', 'cd.days': 'DÍAS',
+  'cd.toReg': 'QUEDAN {days} PARA INSCRIBIRSE',
+  'cd.regDeadline': 'fecha límite de inscripción: {date}',
+  'cd.toVote': '{days} PARA EL DÍA DE LAS ELECCIONES',
+  'cd.regClosed': 'la inscripción para esta elección ya cerró',
+  'cd.passed': 'ya pasó. Vuelva para la próxima elección.',
+
+  'vb.kicker.ev': 'Votación anticipada',
+  'vb.kicker.eday': 'Día de las Elecciones',
+  'vb.pre.head': 'Vote temprano: comienza el lunes 19 de octubre',
+  'vb.pre.sub': 'La votación anticipada es del 19 de octubre al 1 de noviembre, de 7am a 7pm todos los días, en 28 centros. Cualquier votante inscrito en Miami-Dade puede usar cualquier centro.',
+  'vb.open.head': 'La votación anticipada está abierta ahora',
+  'vb.open.sub': 'Todos los centros están abiertos hasta las 7pm hoy. Vote en cualquiera de los 28 centros de Miami-Dade.',
+  'vb.today.head': 'La votación anticipada abre hoy a las 7am',
+  'vb.tomorrow.head': 'La votación anticipada abre mañana a las 7am',
+  'vb.later.sub': 'Abierta de 7am a 7pm hasta el domingo 1 de noviembre. En cualquiera de los 28 centros de Miami-Dade.',
+  'vb.btn.go': 'Vote temprano: centro más cercano',
+  'vb.btn.find': 'Encuentre el centro más cercano',
+  'vb.eve.head': 'El Día de las Elecciones es el martes 3 de noviembre, de 7am a 7pm',
+  'vb.polls.open': 'Las urnas están abiertas hasta las 7pm',
+  'vb.polls.opens': 'Las urnas abren hoy a las 7am',
+  'vb.eday.sub.open': 'Si está en la fila a más tardar a las 7pm, puede votar. El Día de las Elecciones debe votar en su lugar de votación asignado.',
+  'vb.eday.sub': 'La votación anticipada terminó. El Día de las Elecciones debe votar en su lugar de votación asignado, no en un centro de votación anticipada.',
+  'vb.finding': 'Buscando centros cerca de usted&hellip;',
+  'vb.loadFail': 'No se pudieron cargar los centros.',
+  'vb.countyList': 'Ver la lista del condado',
+  'vb.locOff': 'La ubicación está desactivada, así que aquí están los 28 centros en orden alfabético. Active la ubicación para este sitio web para ordenarlos por distancia.',
+  'vb.allBtn': 'Los 28 centros por distancia',
+  'vb.sameHours': 'Todos los centros de votación anticipada tienen el mismo horario.',
+  'vb.source': 'Fuente:',
+  'vb.sourceName': 'Calendario de votación anticipada de Elecciones de Miami-Dade',
+  'vb.miAway': 'a {n} millas',
+  'vb.directions': 'Cómo llegar',
+  'vb.lookup': 'búsqueda de votantes del condado',
+  'vb.noPrecinct': 'Cargue su propia boleta de muestra (indica su precinto) para ver aquí su lugar de votación, o encuéntrelo con la',
+  'vb.findMine': 'Encontrar mi lugar de votación',
+  'vb.noMatch': 'No pudimos encontrar el lugar de votación del precinto {p}. Consulte la',
+  'vb.yourPlace': 'Su lugar de votación &middot; Precinto {p}',
+  'vb.hours': 'Martes 3 de noviembre &middot; 7am a 7pm',
+  'vb.official': 'De la lista oficial de precintos del condado (30 de septiembre de 2026). Los lugares pueden cambiar, así que confirme con la',
+
+  'tag.default': 'Categoría asignada por el modelo de investigación según cómo describen las fuentes a este grupo.',
+  'tag.left.l': 'Tendencia: Izquierda', 'tag.left.d': 'Esta organización o persona generalmente se alinea con la política liberal o progresista. La etiqueta describe a quien respalda o financia, no al candidato ni a la medida.',
+  'tag.right.l': 'Tendencia: Derecha', 'tag.right.d': 'Esta organización o persona generalmente se alinea con la política conservadora. La etiqueta describe a quien respalda o financia, no al candidato ni a la medida.',
+  'tag.np.l': 'Tendencia: No partidista', 'tag.np.d': 'Sin alineación constante con ninguno de los partidos principales, u oficialmente neutral.',
+  'tag.platform.l': 'Plataforma de donaciones en línea', 'tag.platform.d': 'Un servicio como WinRed (republicano) o ActBlue (demócrata) que procesa donaciones en línea. Este total es de muchos donantes individuales que dan a través de él, a menudo en montos pequeños, no un grupo que da su propio dinero.',
+  'tag.super.l': 'Super PAC', 'tag.super.d': 'Un comité que puede recaudar dinero ilimitado de personas, empresas y sindicatos, pero no puede darlo directamente a los candidatos. En cambio, paga sus propios anuncios. Si aparece aquí, normalmente es un super PAC híbrido que da desde una cuenta separada y limitada.',
+  'tag.noncon.l': 'PAC no vinculado', 'tag.noncon.d': 'Un PAC que no está ligado a ninguna empresa, sindicato o asociación. Suele ser un PAC ideológico, temático o de liderazgo que recauda de individuos. Limitado a $5,000 por elección para un candidato.',
+  'tag.con.l': 'PAC vinculado', 'tag.con.d': 'Un PAC dirigido por una corporación, sindicato, gremio o asociación de miembros, financiado por sus empleados o miembros. Muestra qué industrias o intereses organizados respaldan al candidato. Limitado a $5,000 por elección.',
+  'tag.party.l': 'Organización de partido', 'tag.party.d': 'Una organización oficial de un partido político: local, estatal o nacional.',
+  'tag.candcom.l': 'Comité de candidato', 'tag.candcom.d': 'El comité de campaña de otro candidato que le da a este.',
+  'tag.pac.l': 'PAC / Comité', 'tag.pac.d': 'Un Comité de Acción Política: un grupo registrado para recaudar y gastar dinero para influir en las elecciones. El dinero dado a través de un PAC puede hacer más difícil ver la fuente original; el enlace de la fuente muestra sus registros.',
+  'tag.corp.l': 'Corporación', 'tag.corp.d': 'Una empresa que da dinero directamente o a través de un comité ligado a la empresa. Las donaciones corporativas suelen seguir los intereses regulatorios y comerciales de la empresa.',
+  'tag.indiv.l': 'Individuo', 'tag.indiv.d': 'Una persona identificada que da su propio dinero. Se muestra su empleador cuando se divulga, lo que puede indicar un interés de alguna industria detrás de la donación.',
+  'tag.self.l': 'Autofinanciado', 'tag.self.d': 'El propio dinero del candidato.',
+  'tag.union.l': 'Sindicato', 'tag.union.d': 'Un sindicato que da a través de su brazo político, financiado con las cuotas de sus miembros. Generalmente apoya políticas de protección de los trabajadores y de negociación colectiva.',
+  'tag.lobby.l': 'Grupo de cabildeo / gremial', 'tag.lobby.d': 'Una asociación que representa los intereses de una industria ante el gobierno. Su dinero y sus respaldos suelen seguir los objetivos de política de esa industria.',
+  'tag.nonprofit.l': 'Organización sin fines de lucro', 'tag.nonprofit.d': 'Una organización sin fines de lucro. Algunos tipos no están obligados a revelar sus propios donantes, así que la fuente original del dinero puede estar oculta (a veces llamado dinero oscuro).',
+  'tag.police.l': 'Fuerzas del orden', 'tag.police.d': 'Un sindicato policial o una asociación de agentes del orden.',
+  'tag.editorial.l': 'Junta editorial', 'tag.editorial.d': 'La sección de opinión de un periódico, que respalda candidatos. Funciona por separado de la parte de noticias del periódico.',
+  'tag.business.l': 'Asociación empresarial', 'tag.business.d': 'Un grupo tipo cámara de comercio que representa los intereses de los negocios locales.',
+  'tag.env.l': 'Grupo ambientalista', 'tag.env.d': 'Una organización enfocada en la política ambiental y de conservación.',
+  'tag.religious.l': 'Organización religiosa', 'tag.religious.d': 'Una organización o grupo de defensa basado en la fe.',
+  'tag.civil.l': 'Organización de derechos civiles', 'tag.civil.d': 'Un grupo enfocado en los derechos y libertades civiles.',
+  'tag.prof.l': 'Asociación profesional', 'tag.prof.d': 'Una entidad de miembros de una profesión, como un colegio de abogados. A menudo califica a los candidatos en vez de respaldarlos.',
+  'tag.official.l': 'Funcionario electo', 'tag.official.d': 'Un funcionario actual o anterior que da su respaldo personal.'
+},
+
+ht: {
+  'lang.name': 'Kreyòl',
+  'tagline': 'Pou yon Miami-Dade ki enfòme e ki angaje',
+  'sub': 'FÈ RECHÈCH SOU CHAK KANDIDA &middot; RANPLI OVAL LA POU AJOUTE L NAN PLAN VÒT OU',
+  'dz.h2': 'Mete PDF echantiyon bilten vòt ou a la a',
+  'dz.p': 'Zouti sa a sèvi ak bilten vòt ou pou fè yon lis ou ka klike sou chak eleksyon ak chak referandòm. Klike sou yon kandida pou wè pi gwo donatè l yo, moun ak gwoup ki apiye l yo, epi pou jij yo, nenpòt lyen yo genyen ak Federalist Society. Klike sou yon referandòm pou wè kiyès k ap finanse chak bò ak kiyès ki pou oswa kont li. Ranpli yon oval lè ou deside. Plan vòt ou sove sou aparèy sa a, konsa ou ka retounen sou li pita. Ou ka enprime plan ou lè ou fini epi pote l avè w lè w al vote.',
+  'dz.pick': 'Chwazi PDF',
+  'gb.head': 'Ou poko gen PDF bilten vòt ou a?',
+  'gb.exact.t': 'Jwenn bilten vòt EGZAK ou a &rarr;',
+  'gb.exact.d': 'Chèche non w sou pòtay votè konte a pou jwenn echantiyon bilten vòt pou pwesen w lan, ak sèlman eleksyon ou pral vote yo. Sove l kòm PDF epi voye l isit la.',
+  'gb.master.t': 'Chaje bilten vòt prensipal tout konte a &rarr;',
+  'gb.master.d': 'Tout eleksyon nan Miami-Dade pou Eleksyon Jeneral 3 novanm nan. Li chaje isit la, ou pa bezwen telechaje anyen.',
+  'finehint': 'Rechèch la fèt yon sèl fwa pou chak kandida epi tout moun pataje l: si yon moun deja chèche yon kandida semèn sa a, rezilta w ap parèt touswit. Plan vòt ou sove sèlman sou aparèy sa a.',
+  'rc.check.big': 'Verifye enskripsyon w ak pwesen w',
+  'rc.check.sub': 'Rechèch votè konte a, se la tou ou jwenn echantiyon bilten vòt pou pwesen w &rarr;',
+  'rc.reg.big': 'Ou pa enskri?',
+  'rc.reg.sub': 'Enskripsyon pou 3 novanm nan fèmen 5 oktòb. Enskri kounye a pou w pare pou pwochen eleksyon an &rarr;',
+  'plan.title': 'Plan vòt',
+  'plan.view': 'Gade plan an',
+  'plan.hide': 'Kache plan an',
+  'plan.yours': 'Plan vòt ou',
+  'plan.print': 'Enprime / Sove',
+  'plan.clear': 'Efase tout',
+  'plan.reset': 'Chanje bilten vòt (plan ou rete sove)',
+  'plan.count': '{d} sou {t} eleksyon deside',
+  'plan.remove': 'Retire',
+  'plan.undecided': 'Poko deside',
+  'plan.confirmClear': 'Efase tout chwa ki nan plan vòt ou?',
+  'print.title': 'Plan vòt mwen',
+  'print.note': 'Nòt rechèch pèsonèl ki prepare ak Ballot305.org. Sa a se pa yon bilten vòt ofisyèl. Verifye eleksyon yo ak non yo sou bilten vòt ofisyèl ou lè w ap vote.',
+  'dossier.empty': 'Ou poko chwazi okenn kandida.<br>Klike sou yon non pou fè rechèch. Ranpli yon oval pou ajoute l nan plan vòt ou.',
+  'foot': 'Zouti rechèch endepandan pou votè. Li pa gen okenn rapò ak Sipèvizè Eleksyon Miami-Dade oswa okenn ajans gouvènman. Sa a se pa yon bilten vòt ofisyèl epi li pa anrejistre vòt.<br>Fèt ak lanmou pa <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; Ou jwenn yon pwoblèm? <a href="https://github.com/Brittybrit/vote-informed/issues" target="_blank" rel="noopener">Rapòte l sou GitHub</a> oswa voye m yon mesaj.',
+
+  'status.notpdf': 'Sa a se pa yon PDF. Voye yon echantiyon bilten vòt an fòma PDF.',
+  'status.reading': 'N ap li {name}',
+  'status.cantread': 'Nou pa t ka li fichye a: {msg}',
+  'status.parsing': 'N ap analize estrikti bilten vòt la',
+  'status.cantparse': 'Nou pa t ka analize bilten vòt sa a: {msg}',
+  'status.loadingMaster': 'N ap chaje bilten vòt prensipal konte a',
+  'status.cantMaster': 'Nou pa t ka chaje bilten vòt prensipal la: {msg}',
+  'status.translating': 'N ap tradui bilten vòt la',
+  'err.slow': 'Rechèch la ap pran plis tan pase nòmal. Peze Eseye ankò nan yon ti moman. Li ka gentan fini.',
+  'juris.unknown': 'Nou pa konnen jiridiksyon an',
+
+  'race.badge.measure': 'Mezi sou bilten vòt &middot; Verifikasyon finansman',
+  'race.badge.judicial': 'Jidisyè &middot; Verifikasyon Federalist Society',
+  'race.instr.measure': 'KLIKE POU WÈ KIYÈS K AP FINANSE CHAK BÒ &middot; RANPLI YON OVAL POU MAKE WI OSWA NON',
+  'race.instr.cand': 'KLIKE SOU YON NON POU FÈ RECHÈCH &middot; RANPLI OVAL LA POU MAKE VÒT OU',
+  'cand.markAria': 'Make {name} kòm vòt ou',
+  'cand.onBallot': '✓ NAN PLAN MWEN',
+  'cand.research': 'RECHÈCH →',
+  'cand.researched': 'RECHÈCH FÈT',
+
+  'head.cand': 'Dosye kandida',
+  'head.measure': 'Mezi sou bilten vòt',
+  'badge.cached': 'Rechèch pataje &middot; fèt semèn sa a',
+  'badge.fresh': 'Nouvo rechèch &middot; kounye a',
+  'btn.close': 'FÈMEN',
+  'btn.retry': 'Eseye ankò',
+  'err.failed': 'Rechèch la pa mache: {msg}',
+  'load.cand': 'N AP CHÈCHE: DONATÈ &middot; SIPÒ',
+  'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
+  'load.cand2': 'Rechèch an dirèk sou entènèt, anjeneral 15 a 45 segonn. Touswit si yon lòt moun deja fè l.',
+  'load.measure': 'N AP CHÈCHE: FINANSMAN &middot; MOUN KI POU &middot; MOUN KI KONT',
+  'load.measure2': 'Rechèch an dirèk sou entènèt, anjeneral 20 a 60 segonn. Touswit si yon lòt moun deja fè l.',
+  'load.translating': 'N ap tradui&hellip;',
+
+  'vote.remove': '✓ Nan plan mwen (retire)',
+  'vote.add': 'Ajoute nan plan vòt mwen',
+  'vote.replaces': 'Sa ranplase chwa ou te fè deja pou eleksyon sa a: {name}',
+  'mv.mark': 'Make pozisyon w. L ap ajoute nan plan vòt ou.',
+  'mv.unmark': 'Peze chwa w la ankò pou retire l nan plan ou',
+
+  'sec.judicial': 'Verifikasyon jidisyè',
+  'fs.documented': '⚑ Federalist Society: lyen ki dokimante',
+  'fs.possible': '⚑ Federalist Society: lyen ki posib',
+  'fs.none': '○ Federalist Society: nou pa jwenn okenn lyen',
+  'fs.noneText': 'Anyen nan sous nou chèche yo, nan biyografi oswa nan dosye evènman pa konekte kandida sa a ak Federalist Society.',
+  'sec.donors': 'Pi gwo donatè kanpay la',
+  'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
+  'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
+  'donors.full': 'Gade tout lis donatè yo',
+  'sec.endorse': 'Sipò ofisyèl',
+  'endorse.none': 'Nou pa jwenn okenn sipò ofisyèl nan sous nou chèche yo.',
+  'sec.ratings': 'Evalyasyon ak nòt',
+  'ratings.sub': 'Evalyasyon gwoup deyò fè, se pa sipò ofisyèl.',
+  'sec.sources': 'Sous nou konsilte',
+  'sec.financing': 'Kiyès k ap finanse l',
+  'fin.yes': 'POU WI',
+  'fin.no': 'POU NON',
+  'fin.none': 'Nou pa jwenn okenn finansman òganize sou bò sa a.',
+  'sec.supporters': 'Pi gwo moun ki pou li',
+  'sec.opponents': 'Pi gwo opozisyon',
+  'none.support': 'Nou pa jwenn okenn sipò òganize nan sous nou chèche yo.',
+  'none.oppose': 'Nou pa jwenn okenn opozisyon òganize nan sous nou chèche yo.',
+  'disc.cand': 'Rechèch ki fèt ak èd entèlijans atifisyèl nan rechèch an dirèk sou entènèt. Klasifikasyon tandans yo ak rezilta sou Federalist Society se pi bon jijman nou ka fè. Verifye nenpòt bagay ki ta ka chanje vòt ou nan sous ki gen lyen yo ak dosye ofisyèl yo.',
+  'disc.measure': 'Rechèch ki fèt ak èd entèlijans atifisyèl nan rechèch an dirèk sou entènèt. Klasifikasyon tandans yo ak idantifikasyon moun k ap finanse yo se pi bon jijman nou ka fè. Verifye nenpòt bagay ki ta ka chanje vòt ou nan sous ki gen lyen yo ak dosye ofisyèl finansman kanpay yo.',
+  'disc.translated': 'Tradiksyon otomatik soti nan rechèch an angle. Non, montan ak sous yo pa chanje.',
+  'sum.sources': 'Sous:',
+  'src': 'sous',
+  'amt.undisclosed': 'pa devwale',
+  'amt.na': 'montan pa disponib',
+  'lean.left': 'Gòch',
+  'lean.right': 'Dwat',
+  'lean.nonpartisan': 'San pati',
+
+  'resume.title': 'Plan vòt ou sove yo',
+  'resume.decided': '{d} sou {t} eleksyon deside',
+  'resume.btn': 'Kontinye',
+  'resume.del': 'Efase plan sa a',
+  'resume.confirm': 'Efase plan vòt ou te sove a?',
+  'resume.default': 'Bilten vòt ki sove',
+
+  'election.name': 'Eleksyon Jeneral 3 novanm 2026',
+  'cd.day': 'JOU', 'cd.days': 'JOU',
+  'cd.toReg': 'RETE {days} POU ENSKRI',
+  'cd.regDeadline': 'dènye dat pou enskri: {date}',
+  'cd.toVote': '{days} ANVAN JOU ELEKSYON AN',
+  'cd.regClosed': 'enskripsyon pou eleksyon sa a fèmen',
+  'cd.passed': 'fin pase. Tounen pou pwochen eleksyon an.',
+
+  'vb.kicker.ev': 'Vote pi Bonè',
+  'vb.kicker.eday': 'Jou eleksyon an',
+  'vb.pre.head': 'Al Vote pi Bonè: sa kòmanse lendi 19 oktòb',
+  'vb.pre.sub': 'Vote pi Bonè se soti 19 oktòb rive 1ye novanm, 7am a 7pm chak jou, nan 28 lokal. Nenpòt votè ki enskri nan Miami-Dade ka vote nan nenpòt lokal.',
+  'vb.open.head': 'Vote pi Bonè ouvè kounye a',
+  'vb.open.sub': 'Tout lokal yo ouvè jiska 7pm jodi a. Vote nan nenpòt nan 28 lokal yo nan Miami-Dade.',
+  'vb.today.head': 'Vote pi Bonè ap ouvè jodi a, a 7am',
+  'vb.tomorrow.head': 'Vote pi Bonè ap ouvè demen a 7am',
+  'vb.later.sub': 'Ouvè 7am a 7pm jiska dimanch 1ye novanm. Nenpòt nan 28 lokal yo nan Miami-Dade.',
+  'vb.btn.go': 'Al Vote pi Bonè: lokal ki pi pre a',
+  'vb.btn.find': 'Jwenn lokal ki pi pre w la',
+  'vb.eve.head': 'Jou eleksyon an se madi 3 novanm, 7am a 7pm',
+  'vb.polls.open': 'Biwo vòt yo ouvè jiska 7pm',
+  'vb.polls.opens': 'Biwo vòt yo ap ouvè a 7am jodi a',
+  'vb.eday.sub.open': 'Si w nan liy la pa pita pase 7pm, ou ka vote. Jou eleksyon an, ou dwe vote nan biwo vòt yo ba ou a.',
+  'vb.eday.sub': 'Vote pi Bonè fini. Jou eleksyon an, ou dwe vote nan biwo vòt yo ba ou a, pa nan yon lokal Vote pi Bonè.',
+  'vb.finding': 'N ap chèche lokal ki pre w&hellip;',
+  'vb.loadFail': 'Nou pa t ka chaje lokal yo.',
+  'vb.countyList': 'Gade lis konte a',
+  'vb.locOff': 'Lokalizasyon an fèmen, kidonk men tout 28 lokal yo nan lòd alfabetik. Ouvè lokalizasyon pou sit entènèt sa a pou ranje yo selon distans.',
+  'vb.allBtn': 'Tout 28 lokal yo selon distans',
+  'vb.sameHours': 'Tout lokal Vote pi Bonè yo gen menm lè.',
+  'vb.source': 'Sous:',
+  'vb.sourceName': 'Orè Vote pi Bonè Eleksyon Miami-Dade',
+  'vb.miAway': '{n} mil lwen',
+  'vb.directions': 'Direksyon',
+  'vb.lookup': 'rechèch votè konte a',
+  'vb.noPrecinct': 'Chaje pwòp echantiyon bilten vòt ou (li gen pwesen w sou li) pou w wè biwo vòt ou isit la, oswa jwenn li ak',
+  'vb.findMine': 'Jwenn biwo vòt mwen',
+  'vb.noMatch': 'Nou pa t ka jwenn biwo vòt pou pwesen {p}. Gade',
+  'vb.yourPlace': 'Biwo vòt ou &middot; Pwesen {p}',
+  'vb.hours': 'Madi 3 novanm &middot; 7am a 7pm',
+  'vb.official': 'Soti nan lis ofisyèl pwesen konte a (30 septanm 2026). Kote yo ka chanje, kidonk konfime ak',
+
+  'tag.default': 'Kategori modèl rechèch la bay selon fason sous yo dekri gwoup sa a.',
+  'tag.left.l': 'Tandans: Gòch', 'tag.left.d': 'Òganizasyon oswa moun sa a jeneralman dakò ak politik liberal oswa pwogresis. Etikèt la dekri moun ki bay sipò a oswa lajan an, pa kandida a oswa mezi a.',
+  'tag.right.l': 'Tandans: Dwat', 'tag.right.d': 'Òganizasyon oswa moun sa a jeneralman dakò ak politik konsèvatè. Etikèt la dekri moun ki bay sipò a oswa lajan an, pa kandida a oswa mezi a.',
+  'tag.np.l': 'Tandans: San pati', 'tag.np.d': 'Li pa toujou dakò ak okenn nan de gwo pati yo, oswa li ofisyèlman net.',
+  'tag.platform.l': 'Platfòm don sou entènèt', 'tag.platform.d': 'Yon sèvis tankou WinRed (Repibliken) oswa ActBlue (Demokrat) ki trete don sou entènèt. Total sa a se anpil moun ki bay atravè l, souvan ti kòb, se pa yon sèl gwoup k ap bay pwòp lajan l.',
+  'tag.super.l': 'Super PAC', 'tag.super.d': 'Yon komite ki ka ranmase lajan san limit nan men moun, konpayi ak sendika, men ki pa ka bay lajan sa a dirèkteman bay kandida yo. Li peye pwòp piblisite pa l pito. Si li parèt isit la, anjeneral se yon super PAC ibrid k ap bay nan yon kont apa ki gen limit.',
+  'tag.noncon.l': 'PAC ki pa konekte', 'tag.noncon.d': 'Yon PAC ki pa mare ak okenn konpayi, sendika oswa asosyasyon. Anjeneral se yon PAC ideyolojik, sou yon kesyon, oswa yon PAC lidèchip ki ranmase lajan nan men moun. Limit la se $5,000 pa eleksyon pou yon kandida.',
+  'tag.con.l': 'PAC ki konekte', 'tag.con.d': 'Yon PAC yon konpayi, sendika, gwoup komèsyal oswa asosyasyon manm dirije, ak lajan anplwaye oswa manm yo. Li montre ki endistri oswa ki enterè òganize ki dèyè kandida a. Limit la se $5,000 pa eleksyon.',
+  'tag.party.l': 'Òganizasyon pati', 'tag.party.d': 'Yon òganizasyon ofisyèl yon pati politik: lokal, eta oswa nasyonal.',
+  'tag.candcom.l': 'Komite kandida', 'tag.candcom.d': 'Komite kanpay yon lòt kandida k ap bay kandida sa a lajan.',
+  'tag.pac.l': 'PAC / Komite', 'tag.pac.d': 'Yon Komite Aksyon Politik: yon gwoup ki anrejistre pou ranmase ak depanse lajan pou enfliyanse eleksyon yo. Lajan ki pase nan yon PAC ka fè li pi difisil pou wè ki kote li soti; lyen sous la montre dosye li yo.',
+  'tag.corp.l': 'Konpayi', 'tag.corp.d': 'Yon biznis k ap bay lajan dirèkteman oswa atravè yon komite ki mare ak konpayi an. Lajan konpayi bay anjeneral swiv enterè règleman ak biznis konpayi an.',
+  'tag.indiv.l': 'Moun', 'tag.indiv.d': 'Yon moun nou konnen non l k ap bay pwòp lajan l. Nou montre ki kote li travay lè sa devwale, sa ka montre yon enterè endistri dèyè don an.',
+  'tag.self.l': 'Pwòp lajan l', 'tag.self.d': 'Pwòp lajan kandida a.',
+  'tag.union.l': 'Sendika', 'tag.union.d': 'Yon sendika k ap bay atravè branch politik li, ak kotizasyon manm yo. Anjeneral li sipòte politik ki pwoteje travayè ak negosyasyon kolektif.',
+  'tag.lobby.l': 'Gwoup lobi / komèsyal', 'tag.lobby.d': 'Yon asosyasyon ki reprezante enterè yon endistri devan gouvènman an. Lajan l ak sipò l anjeneral swiv objektif politik endistri sa a.',
+  'tag.nonprofit.l': 'Òganizasyon san bi likratif', 'tag.nonprofit.d': 'Yon òganizasyon san bi likratif. Gen kèk kalite ki pa oblije devwale pwòp donatè yo, kidonk sous orijinal lajan an ka kache (sa yo rele pafwa lajan nwa).',
+  'tag.police.l': 'Fòs lòd', 'tag.police.d': 'Yon sendika polis oswa yon asosyasyon fòs lòd.',
+  'tag.editorial.l': 'Komite editoryal', 'tag.editorial.d': 'Pati opinyon yon jounal ki bay sipò ofisyèl pou kandida. Li travay apa de pati nouvèl jounal la.',
+  'tag.business.l': 'Asosyasyon biznis', 'tag.business.d': 'Yon gwoup tankou yon chanm komès ki reprezante enterè biznis lokal yo.',
+  'tag.env.l': 'Gwoup anviwònman', 'tag.env.d': 'Yon òganizasyon ki konsantre sou politik anviwònman ak konsèvasyon.',
+  'tag.religious.l': 'Òganizasyon relijye', 'tag.religious.d': 'Yon òganizasyon oswa gwoup defans ki baze sou lafwa.',
+  'tag.civil.l': 'Òganizasyon dwa sivil', 'tag.civil.d': 'Yon gwoup ki konsantre sou dwa sivil ak libète.',
+  'tag.prof.l': 'Asosyasyon pwofesyonèl', 'tag.prof.d': 'Yon gwoup manm yon pwofesyon, tankou yon asosyasyon avoka. Souvan li bay nòt kandida yo olye li bay sipò ofisyèl.',
+  'tag.official.l': 'Ofisyèl eli', 'tag.official.d': 'Yon moun ki gen oswa ki te gen yon pòs eli k ap bay sipò pèsonèl.'
+}
+};
+
+var LANGS = ['en', 'es', 'ht'];
+var LANG = (function(){
+  try { var s = localStorage.getItem('ballot305.lang'); if (LANGS.indexOf(s) >= 0) return s; } catch(e){}
+  var n = (navigator.language || 'en').toLowerCase();
+  if (n.indexOf('es') === 0) return 'es';
+  if (n.indexOf('ht') === 0) return 'ht';
+  return 'en';
+})();
+
+// Translated string with {placeholders} filled in. Values in vars are inserted as given,
+// so escape untrusted text before passing it.
+function t(key, vars){
+  var s = (I18N[LANG] && I18N[LANG][key] != null) ? I18N[LANG][key] : I18N.en[key];
+  if (s == null) return key;
+  if (vars) s = s.replace(/\{(\w+)\}/g, function(m, k){ return vars[k] != null ? vars[k] : m; });
+  return s;
+}
+</script>
 <script>
 // Next election — update these three lines each cycle.
 var ELECTION = {
@@ -513,6 +1089,39 @@ function esc(s){
   });
 }
 
+// Plain-text version of t() (decodes entities) for confirm() dialogs and escaped labels.
+function T(key, vars){ var d = document.createElement('textarea'); d.innerHTML = t(key, vars); return d.value; }
+
+// Translated ballot text (office titles, measure options, election name), English fallback.
+// Candidate names are never translated.
+function trBallot(){ return (ballot && ballot.tr && ballot.tr[LANG]) || null; }
+function officeOf(ri){ var tr = trBallot(); return (tr && tr.offices && tr.offices[ri]) || ballot.races[ri].office; }
+function candName(ri, ci){
+  var race = ballot.races[ri], c = race.candidates[ci];
+  if(!c) return '';
+  var tr = trBallot();
+  if(race.isMeasure && tr && tr.measureOptions && tr.measureOptions[ri] && tr.measureOptions[ri][ci]) return tr.measureOptions[ri][ci];
+  return c.name;
+}
+function bt(field){ var tr = trBallot(); return (tr && tr[field]) || ballot[field]; }
+
+async function ensureBallotTranslation(){
+  if(LANG === 'en' || !ballot || (ballot.tr && ballot.tr[LANG])) return;
+  setStatus(t('status.translating'), false, true);
+  try{
+    var data = await api('/api/translate-ballot', {
+      lang: LANG,
+      electionName: ballot.electionName || '',
+      offices: ballot.races.map(function(r){ return r.office; }),
+      measureOptions: ballot.races.map(function(r){ return r.isMeasure ? r.candidates.map(function(c){ return c.name; }) : null; })
+    });
+    ballot.tr = ballot.tr || {};
+    ballot.tr[LANG] = data;
+    saveState();
+  }catch(e){ /* fall back to English titles */ }
+  setStatus('');
+}
+
 async function api(path, payload){
   var res = await fetch(path, {
     method:'POST',
@@ -530,6 +1139,7 @@ function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
 // cache fills. Keeps every request short so mobile browsers never time out.
 async function research(payload){
   payload.poll = true;
+  payload.lang = LANG;
   for(var i = 0; i < 45; i++){
     var data;
     try{
@@ -542,7 +1152,7 @@ async function research(payload){
     if(data.result) return data;
     await sleep(4000);
   }
-  throw new Error('Research is taking longer than usual. Tap Retry in a moment — it may already be finished.');
+  throw new Error(t('err.slow'));
 }
 
 /* ---------------- persistence ---------------- */
@@ -596,10 +1206,10 @@ function deletePlan(id){
 
 async function handleFile(file){
   if(!file || file.type !== 'application/pdf'){
-    setStatus('That is not a PDF. Upload a sample ballot in PDF format.', true);
+    setStatus(t('status.notpdf'), true);
     return;
   }
-  setStatus('Reading ' + esc(file.name), false, true);
+  setStatus(t('status.reading', {name: esc(file.name)}), false, true);
 
   var base64;
   try{
@@ -610,25 +1220,27 @@ async function handleFile(file){
       r.readAsDataURL(file);
     });
   }catch(e){
-    setStatus('Could not read the file: ' + esc(e.message), true);
+    setStatus(t('status.cantread', {msg: esc(e.message)}), true);
     return;
   }
 
-  setStatus('Parsing ballot structure', false, true);
+  setStatus(t('status.parsing'), false, true);
   try{
     var data = await api('/api/parse', { pdf: base64 });
     applyParsed(data);
   }catch(e){
-    setStatus('Could not parse this ballot: ' + esc(e.message), true);
+    setStatus(t('status.cantparse', {msg: esc(e.message)}), true);
   }
 }
 
-function applyParsed(data){
+async function applyParsed(data){
   ballot = data.ballot;
   currentId = ballotId(ballot);
   var existing = loadStore().ballots[currentId];
   votes = (existing && existing.votes) ? existing.votes : {};
+  if(existing && existing.ballot && existing.ballot.tr) ballot.tr = existing.ballot.tr;
   saveState();
+  await ensureBallotTranslation();
   renderBallot();
   setStatus('');
 }
@@ -644,16 +1256,16 @@ function bufToB64(buf){
 }
 
 async function loadFeaturedBallot(){
-  setStatus('Loading the countywide master ballot', false, true);
+  setStatus(t('status.loadingMaster'), false, true);
   try{
     var res = await fetch(FEATURED_BALLOT_PATH);
     if(!res.ok) throw new Error('Bundled ballot missing (HTTP ' + res.status + ')');
     var b64 = bufToB64(await res.arrayBuffer());
-    setStatus('Parsing ballot structure', false, true);
+    setStatus(t('status.parsing'), false, true);
     var data = await api('/api/parse', { pdf: b64 });
     applyParsed(data);
   }catch(e){
-    setStatus('Could not load the master ballot: ' + esc(e.message), true);
+    setStatus(t('status.cantMaster', {msg: esc(e.message)}), true);
   }
 }
 
@@ -667,8 +1279,8 @@ function renderBallot(){
   document.querySelector('header').classList.add('with-ballot');
   var j = $('jurisBox');
   j.style.display = 'block';
-  j.innerHTML = '<strong>' + esc(ballot.jurisdiction || 'Jurisdiction unknown') + '</strong>' +
-    esc([ballot.electionName, ballot.electionDate].filter(Boolean).join(' · '));
+  j.innerHTML = '<strong>' + (ballot.jurisdiction ? esc(ballot.jurisdiction) : t('juris.unknown')) + '</strong>' +
+    esc([bt('electionName'), ballot.electionDate].filter(Boolean).join(' · '));
 
   var wrap = $('races');
   wrap.innerHTML = '';
@@ -676,24 +1288,24 @@ function renderBallot(){
     var div = document.createElement('div');
     div.className = 'race';
     div.innerHTML =
-      '<div class="race-head"><h3>' + esc(race.office) + '</h3>' +
-      (race.isMeasure ? '<span class="jbadge">Ballot measure · Finance check</span>' :
-       race.isJudicial ? '<span class="jbadge">Judicial · Federalist Society check</span>' : '') +
+      '<div class="race-head"><h3>' + esc(officeOf(ri)) + '</h3>' +
+      (race.isMeasure ? '<span class="jbadge">' + t('race.badge.measure') + '</span>' :
+       race.isJudicial ? '<span class="jbadge">' + t('race.badge.judicial') + '</span>' : '') +
       '</div>' +
       (race.isMeasure
-        ? '<div class="race-instr">CLICK TO SEE WHO IS FUNDING EACH SIDE · FILL AN OVAL TO MARK YES OR NO</div>'
-        : '<div class="race-instr">CLICK A NAME TO RESEARCH · FILL THE OVAL TO MARK YOUR VOTE</div>');
+        ? '<div class="race-instr">' + t('race.instr.measure') + '</div>'
+        : '<div class="race-instr">' + t('race.instr.cand') + '</div>');
     race.candidates.forEach(function(c, ci){
       var key = ri + ':' + ci;
       var btn = document.createElement('button');
       btn.className = 'cand';
       btn.dataset.key = key;
       btn.innerHTML =
-        '<span class="oval-btn" role="checkbox" aria-checked="false" aria-label="Mark ' + esc(c.name) + ' as your vote" tabindex="0"></span>' +
-        '<span><span class="cname">' + esc(c.name) + '</span><br>' +
+        '<span class="oval-btn" role="checkbox" aria-checked="false" aria-label="' + t('cand.markAria', {name: esc(candName(ri, ci))}) + '" tabindex="0"></span>' +
+        '<span><span class="cname">' + esc(candName(ri, ci)) + '</span><br>' +
         '<span class="cparty">' + esc(c.party || '') + '</span>' +
-        '<span class="votetag">✓ ON MY BALLOT</span></span>' +
-        '<span class="peek">RESEARCH →</span>';
+        '<span class="votetag">' + t('cand.onBallot') + '</span></span>' +
+        '<span class="peek">' + (cache[key] || cache['m:' + ri] ? t('cand.researched') : t('cand.research')) + '</span>';
       btn.addEventListener('click', function(){ selectCandidate(ri, ci); });
       var oval = btn.querySelector('.oval-btn');
       oval.addEventListener('click', function(e){ e.stopPropagation(); toggleVote(ri, ci); });
@@ -748,7 +1360,7 @@ function refreshVoteUI(){
   });
   var total = ballot ? ballot.races.length : 0;
   var decided = Object.keys(votes).length;
-  $('planCount').textContent = decided + ' of ' + total + ' races decided';
+  $('planCount').innerHTML = t('plan.count', {d: decided, t: total});
   $('planMeter').style.width = (total ? Math.round(decided/total*100) : 0) + '%';
   renderPlanView();
 }
@@ -761,11 +1373,11 @@ function renderPlanView(){
     var ci = votes[ri];
     var picked = (ci !== undefined) ? race.candidates[ci] : null;
     html += '<div class="plan-row">' +
-      '<span class="pr-office">' + esc(race.office) + '</span>' +
+      '<span class="pr-office">' + esc(officeOf(ri)) + '</span>' +
       (picked
-        ? '<span class="pr-pick">' + esc(picked.name) + (picked.party ? ' <span style="font-weight:400;font-family:var(--mono);font-size:11px;color:var(--ink-soft)">(' + esc(picked.party) + ')</span>' : '') + '</span>' +
-          '<button class="pr-remove" data-ri="' + ri + '">Remove</button>'
-        : '<span class="pr-pick undecided">Undecided</span><span style="width:62px"></span>') +
+        ? '<span class="pr-pick">' + esc(candName(ri, ci)) + (picked.party ? ' <span style="font-weight:400;font-family:var(--mono);font-size:11px;color:var(--ink-soft)">(' + esc(picked.party) + ')</span>' : '') + '</span>' +
+          '<button class="pr-remove" data-ri="' + ri + '">' + t('plan.remove') + '</button>'
+        : '<span class="pr-pick undecided">' + t('plan.undecided') + '</span><span style="width:62px"></span>') +
       '</div>';
   });
   rows.innerHTML = html;
@@ -779,17 +1391,17 @@ function renderPlanView(){
 
 function buildPrintPlan(){
   var el = $('printPlan');
-  var html = '<h1>My Ballot Plan</h1>' +
-    '<div class="pj">' + esc([ballot.jurisdiction, ballot.electionName, ballot.electionDate].filter(Boolean).join(' · ')) + '</div>' +
+  var html = '<h1>' + t('print.title') + '</h1>' +
+    '<div class="pj">' + esc([ballot.jurisdiction, bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + '</div>' +
     '<table>';
   ballot.races.forEach(function(race, ri){
     var ci = votes[ri];
     var picked = (ci !== undefined) ? race.candidates[ci] : null;
-    html += '<tr><td class="of">' + esc(race.office) + '</td><td class="pk">' +
-      (picked ? esc(picked.name) + (picked.party ? ' (' + esc(picked.party) + ')' : '') : '—') +
+    html += '<tr><td class="of">' + esc(officeOf(ri)) + '</td><td class="pk">' +
+      (picked ? esc(candName(ri, ci)) + (picked.party ? ' (' + esc(picked.party) + ')' : '') : '—') +
       '</td></tr>';
   });
-  html += '</table><p class="pnote">Personal research notes prepared with Ballot Intel. This is not an official ballot. Verify races and names against your official ballot when voting.</p>';
+  html += '</table><p class="pnote">' + t('print.note') + '</p>';
   el.innerHTML = html;
 }
 
@@ -822,7 +1434,7 @@ async function selectCandidate(ri, ci){
     cache[key] = data;
     if(activeKey === key) renderDossier(cand, race, data.result, data.cached);
     var el = document.querySelector('.cand[data-key="' + key + '"] .peek');
-    if(el) el.textContent = 'RESEARCHED';
+    if(el) el.innerHTML = t('cand.researched');
   }catch(e){
     if(activeKey === key) renderDossierError(cand, race, ri, ci, e.message);
   }
@@ -844,8 +1456,8 @@ async function selectMeasure(ri){
 
   $('dossierContent').innerHTML = measureHead(race, null) +
     '<div class="d-loading"><div class="oval-anim"></div>' +
-    '<p>SEARCHING: FINANCING · SUPPORTERS · OPPOSITION</p>' +
-    '<p style="margin-top:8px">Live web research — usually 20–60 seconds. Instant if someone beat you to it.</p></div>';
+    '<p>' + t('load.measure') + '</p>' +
+    '<p style="margin-top:8px">' + t('load.measure2') + '</p></div>';
 
   try{
     var data = await research({
@@ -861,46 +1473,46 @@ async function selectMeasure(ri){
     if(activeKey === key) renderMeasureDossier(ri, data.result, data.cached);
     var el = document.querySelector('.cand[data-key="' + ri + ':0"] .peek');
     var el2 = document.querySelector('.cand[data-key="' + ri + ':1"] .peek');
-    if(el) el.textContent = 'RESEARCHED';
-    if(el2) el2.textContent = 'RESEARCHED';
+    if(el) el.innerHTML = t('cand.researched');
+    if(el2) el2.innerHTML = t('cand.researched');
   }catch(e){
     if(activeKey === key){
       $('dossierContent').innerHTML = measureHead(race, null) +
-        '<div class="d-error">Research failed: ' + esc(e.message) +
-        '<br><button onclick="selectMeasure(' + ri + ')">Retry</button></div>';
+        '<div class="d-error">' + t('err.failed', {msg: esc(e.message)}) +
+        '<br><button onclick="selectMeasure(' + ri + ')">' + t('btn.retry') + '</button></div>';
     }
   }
 }
 
 function measureHead(race, cached){
   return '<div class="dossier-head">' +
-    '<div class="eyebrow">Ballot Measure</div>' +
-    '<h2>' + esc(race.office) + '</h2>' +
-    (cached === true ? '<span class="cachebadge">Shared cache · researched this week</span>' :
-     cached === false ? '<span class="cachebadge">Fresh research · just now</span>' : '') +
-    '<button class="dossier-close" onclick="closeDossier()">CLOSE</button>' +
+    '<div class="eyebrow">' + t('head.measure') + '</div>' +
+    '<h2>' + esc(officeOf(ballot.races.indexOf(race))) + '</h2>' +
+    (cached === true ? '<span class="cachebadge">' + t('badge.cached') + '</span>' :
+     cached === false ? '<span class="cachebadge">' + t('badge.fresh') + '</span>' : '') +
+    '<button class="dossier-close" onclick="closeDossier()">' + t('btn.close') + '</button>' +
     '</div>';
 }
 
 function measureVoteBar(ri, race){
   var sel = votes[ri];
-  var yesLabel = (race.candidates[0] && race.candidates[0].name) || 'YES';
-  var noLabel = (race.candidates[1] && race.candidates[1].name) || 'NO';
+  var yesLabel = candName(ri, 0) || 'YES';
+  var noLabel = candName(ri, 1) || 'NO';
   return '<div class="votebar"><div class="mv-row">' +
     '<button class="' + (sel === 0 ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',0)">' +
       (sel === 0 ? '✓ ' : '') + esc(yesLabel) + '</button>' +
     '<button class="' + (sel === 1 ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',1)">' +
       (sel === 1 ? '✓ ' : '') + esc(noLabel) + '</button>' +
-    '</div><div class="swapnote">' + (sel === undefined ? 'Mark your position — it joins your ballot plan' : 'Tap your pick again to remove it from your plan') + '</div></div>';
+    '</div><div class="swapnote">' + (sel === undefined ? t('mv.mark') : t('mv.unmark')) + '</div></div>';
 }
 
 function funderRows(list){
-  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">No organized funding found on this side.</p>';
+  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('fin.none') + '</p>';
   return list.map(function(d){
     return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
     (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
     '<div class="tagrow">' + leanTag(d.lean) +
-    kindTag(d.kind) +
+    kindTag(d.kind, d.kind_tr) +
     (d.amount ? '<span class="tag amtchip">' + esc(fmtAmount(d.amount)) + '</span>' : '') +
     srcLink(d.url) +
     '</div></div>';
@@ -913,7 +1525,7 @@ function sideList(list, emptyMsg){
     return '<div class="endo"><div class="eorg">' + esc(e.name) + '</div>' +
     (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
     '<div class="tagrow">' + leanTag(e.lean) +
-    (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+    groupTag(e) +
     srcLink(e.url) +
     '</div></div>';
   }).join('');
@@ -928,20 +1540,20 @@ function renderMeasureDossier(ri, r, cached){
   }
 
   var fin = r.financing || {};
-  html += '<div class="dsec"><h4>Who Is Financing It</h4>' +
-    '<div class="fin-side">BACKING YES</div>' + funderRows(fin.support) +
-    '<div class="fin-side">BACKING NO</div>' + funderRows(fin.oppose);
+  html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
+    '<div class="fin-side">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
+    '<div class="fin-side">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
   if(fin.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(fin.note) + '</p>';
   html += '</div>';
 
-  html += '<div class="dsec"><h4>Major Supporters</h4>' + sideList(r.supporters, 'No organized support found in searched coverage.') + '</div>';
-  html += '<div class="dsec"><h4>Major Opposition</h4>' + sideList(r.opponents, 'No organized opposition found in searched coverage.') + '</div>';
+  html += '<div class="dsec"><h4>' + t('sec.supporters') + '</h4>' + sideList(r.supporters, t('none.support')) + '</div>';
+  html += '<div class="dsec"><h4>' + t('sec.opponents') + '</h4>' + sideList(r.opponents, t('none.oppose')) + '</div>';
 
   if(r.sources && r.sources.length){
-    html += '<div class="dsec"><h4>Sources Consulted</h4><p class="srcs">' +
+    html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments — verify anything that would change your vote against the linked sources and official campaign finance filings.</p>';
+  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>';
   html += '</div>';
   $('dossierContent').innerHTML = html;
   $('dossier').scrollTop = 0;
@@ -954,12 +1566,12 @@ function closeDossier(){ $('dossier').classList.remove('open'); }
 
 function dossierHead(cand, race, cached){
   return '<div class="dossier-head">' +
-    '<div class="eyebrow">Candidate Dossier</div>' +
+    '<div class="eyebrow">' + t('head.cand') + '</div>' +
     '<h2>' + esc(cand.name) + '</h2>' +
-    '<div class="office">' + esc(race.office) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div>' +
-    (cached === true ? '<span class="cachebadge">Shared cache · researched this week</span>' :
-     cached === false ? '<span class="cachebadge">Fresh research · just now</span>' : '') +
-    '<button class="dossier-close" onclick="closeDossier()">CLOSE</button>' +
+    '<div class="office">' + esc(officeOf(ballot.races.indexOf(race))) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div>' +
+    (cached === true ? '<span class="cachebadge">' + t('badge.cached') + '</span>' :
+     cached === false ? '<span class="cachebadge">' + t('badge.fresh') + '</span>' : '') +
+    '<button class="dossier-close" onclick="closeDossier()">' + t('btn.close') + '</button>' +
     '</div>';
 }
 
@@ -969,11 +1581,11 @@ function voteBar(ri, ci){
   var otherPick = (votes[ri] !== undefined && votes[ri] !== ci) ? race.candidates[votes[ri]] : null;
   var html = '<div class="votebar">';
   if(isVoted){
-    html += '<button class="unmark" onclick="toggleVote(' + ri + ',' + ci + ')">✓ On my ballot — remove</button>';
+    html += '<button class="unmark" onclick="toggleVote(' + ri + ',' + ci + ')">' + t('vote.remove') + '</button>';
   } else {
-    html += '<button class="mark" onclick="toggleVote(' + ri + ',' + ci + ')">Add to my ballot plan</button>';
+    html += '<button class="mark" onclick="toggleVote(' + ri + ',' + ci + ')">' + t('vote.add') + '</button>';
     if(otherPick){
-      html += '<div class="swapnote">Replaces your current pick for this race: ' + esc(otherPick.name) + '</div>';
+      html += '<div class="swapnote">' + t('vote.replaces', {name: esc(otherPick.name)}) + '</div>';
     }
   }
   html += '</div>';
@@ -983,28 +1595,28 @@ function voteBar(ri, ci){
 function renderDossierLoading(cand, race){
   $('dossierContent').innerHTML = dossierHead(cand, race, null) +
     '<div class="d-loading"><div class="oval-anim"></div>' +
-    '<p>SEARCHING: DONORS · ENDORSEMENTS' + (race.isJudicial ? ' · FEDERALIST SOCIETY' : '') + '</p>' +
-    '<p style="margin-top:8px">Live web research — usually 15–45 seconds. Instant if someone beat you to it.</p></div>';
+    '<p>' + t('load.cand') + (race.isJudicial ? t('load.fedsoc') : '') + '</p>' +
+    '<p style="margin-top:8px">' + t('load.cand2') + '</p></div>';
 }
 
 function renderDossierError(cand, race, ri, ci, msg){
   $('dossierContent').innerHTML = dossierHead(cand, race, null) +
-    '<div class="d-error">Research failed: ' + esc(msg) +
-    '<br><button onclick="selectCandidate(' + ri + ',' + ci + ')">Retry</button></div>';
+    '<div class="d-error">' + t('err.failed', {msg: esc(msg)}) +
+    '<br><button onclick="selectCandidate(' + ri + ',' + ci + ')">' + t('btn.retry') + '</button></div>';
 }
 
 // Sources behind the AI-written description. Only real https links are shown.
 function summarySourcesHtml(r){
   var s = (r.summarySources || []).filter(function(x){ return x && /^https:\/\//i.test(x.url || ''); }).slice(0, 4);
   if(!s.length) return '';
-  return '<p class="sumsrc">Sources: ' + s.map(function(x){
-    return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name || 'source') + ' ↗</a>';
+  return '<p class="sumsrc">' + t('sum.sources') + ' ' + s.map(function(x){
+    return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name || t('src')) + ' ↗</a>';
   }).join(' · ') + '</p>';
 }
 
 function srcLink(url){
   if(!url) return '';
-  return ' <a class="srclink" href="' + esc(url) + '" target="_blank" rel="noopener">source ↗</a>';
+  return ' <a class="srclink" href="' + esc(url) + '" target="_blank" rel="noopener">' + t('src') + ' ↗</a>';
 }
 
 function linkifySource(sname){
@@ -1020,50 +1632,42 @@ function linkifySource(sname){
 function fmtAmount(a){
   var t = String(a||'').trim();
   if(!t) return '';
-  if(/undisclosed|not disclosed/i.test(t)) return 'undisclosed';
-  if(/unknown|unavailable|not available|not found/i.test(t)) return 'amount n/a';
+  if(/undisclosed|not disclosed/i.test(t)) return T('amt.undisclosed');
+  if(/unknown|unavailable|not available|not found/i.test(t)) return T('amt.na');
   if(t.length > 18) return t.slice(0, 18) + '…';
   return t;
 }
 
 var TAG_DEFS = [
-  [/^left$/i, 'Lean: Left', 'This organization or person generally aligns with liberal or progressive politics. The tag describes the endorser or funder, not the candidate or measure.'],
-  [/^right$/i, 'Lean: Right', 'This organization or person generally aligns with conservative politics. The tag describes the endorser or funder, not the candidate or measure.'],
-  [/^nonpartisan$/i, 'Lean: Nonpartisan', 'No consistent alignment with either major party, or officially neutral.'],
-  [/donation platform|conduit/i, 'Online Donation Platform', 'A service like WinRed (Republican) or ActBlue (Democratic) that processes online donations. This total is many individual donors giving through it, often in small amounts, not one group giving its own money.'],
-  [/super\s*pac/i, 'Super PAC', 'A committee that can raise unlimited money from people, companies and unions, but cannot give it directly to candidates. It spends on its own ads instead. One appearing here usually means a hybrid super PAC giving from a separate, limited account.'],
-  [/nonconnected\s*pac/i, 'Nonconnected PAC', 'A PAC not tied to any company, union or association. Usually an ideological, issue or leadership PAC that raises from individuals. Limited to $5,000 per election to a candidate.'],
-  [/connected\s*pac/i, 'Connected PAC', 'A PAC run by a corporation, union, trade group or membership association, funded by its employees or members. Shows which industries or organized interests back the candidate. Limited to $5,000 per election.'],
-  [/party/i, 'Party Organization', 'An official political party organization: local, state, or national.'],
-  [/candidate committee/i, 'Candidate Committee', 'Another candidate\u2019s own campaign committee giving to this one.'],
-  [/pac|committee/i, 'PAC / Committee', 'A Political Action Committee: a group registered to raise and spend money to influence elections. Money given through a PAC can make the original source harder to see; the source link shows its filings.'],
-  [/corp/i, 'Corporation', 'A business giving money directly or through a company-linked committee. Corporate giving usually tracks the company\u2019s regulatory and business interests.'],
-  [/individual/i, 'Individual', 'A named person giving their own money. Their employer is shown when disclosed, which can hint at an industry interest behind the gift.'],
-  [/self.?funded/i, 'Self-Funded', 'The candidate\u2019s own money.'],
-  [/union|labor/i, 'Labor Union', 'A union giving through its political arm, funded by member dues. Generally supports worker-protection and collective-bargaining policies.'],
-  [/lobby|trade|industry/i, 'Lobbying / Trade Group', 'An association that represents an industry\u2019s interests to government. Its money and endorsements usually track that industry\u2019s policy goals.'],
-  [/nonprofit/i, 'Nonprofit', 'A nonprofit organization. Some kinds are not required to disclose their own donors, so the original source of the money may be hidden (sometimes called dark money).'],
-  [/party/i, 'Party Organization', 'An official political party organization: local, state, or national.'],
-  [/law enforcement|police/i, 'Law Enforcement', 'A police union or law-enforcement association.'],
-  [/newspaper|editorial/i, 'Editorial Board', 'The opinion side of a newspaper, which endorses candidates. It operates separately from the paper\u2019s news reporting.'],
-  [/business association|chamber/i, 'Business Association', 'A chamber-of-commerce-style group representing local business interests.'],
-  [/environment/i, 'Environmental Group', 'An organization focused on environmental and conservation policy.'],
-  [/religious/i, 'Religious Organization', 'A faith-based organization or advocacy group.'],
-  [/civil rights/i, 'Civil Rights Organization', 'A group focused on civil rights and liberties.'],
-  [/professional association|bar association/i, 'Professional Association', 'A membership body for a profession, such as a bar association. Often rates candidates rather than endorsing.'],
-  [/elected official/i, 'Elected Official', 'A current or former officeholder endorsing personally.']
+  [/^left$/i, 'left'], [/^right$/i, 'right'], [/^nonpartisan$/i, 'np'],
+  [/donation platform|conduit/i, 'platform'], [/super\s*pac/i, 'super'],
+  [/nonconnected\s*pac/i, 'noncon'], [/connected\s*pac/i, 'con'],
+  [/party/i, 'party'], [/candidate committee/i, 'candcom'], [/pac|committee/i, 'pac'],
+  [/corp/i, 'corp'], [/individual/i, 'indiv'], [/self.?funded/i, 'self'],
+  [/union|labor/i, 'union'], [/lobby|trade|industry/i, 'lobby'], [/nonprofit/i, 'nonprofit'],
+  [/law enforcement|police/i, 'police'], [/newspaper|editorial/i, 'editorial'],
+  [/business association|chamber/i, 'business'], [/environment/i, 'env'],
+  [/religious/i, 'religious'], [/civil rights/i, 'civil'],
+  [/professional association|bar association/i, 'prof'], [/elected official/i, 'official']
 ];
+// The canonical (English) category of a tag, e.g. 'pac'. Null when no known category matches.
+function tagKey(txt){
+  for(var i = 0; i < TAG_DEFS.length; i++) if(TAG_DEFS[i][0].test(txt)) return TAG_DEFS[i][1];
+  return null;
+}
 
-function tagDef(txt){
-  for(var i = 0; i < TAG_DEFS.length; i++){
-    if(TAG_DEFS[i][0].test(txt)) return [TAG_DEFS[i][1], TAG_DEFS[i][2]];
-  }
-  return [txt, 'Category assigned by the research model based on how sources describe this group.'];
+// Definition shown when a tag is tapped. Looks up the tag's English category (data-k),
+// so it works whatever language the label is displayed in.
+function tagDef(tagEl){
+  var raw = tagEl.getAttribute('data-k') || tagEl.textContent.trim();
+  var k = tagKey(raw);
+  if(k) return [T('tag.' + k + '.l'), T('tag.' + k + '.d')];
+  return [tagEl.textContent.trim(), T('tag.default')];
 }
 
 function showTagPop(tagEl){
   var pop = $('tagpop');
-  var d = tagDef(tagEl.textContent.trim());
+  var d = tagDef(tagEl);
   pop.innerHTML = '<div class="tp-title">' + esc(d[0]) + '</div><div class="tp-body">' + esc(d[1]) + '</div>';
   pop.style.display = 'block';
   var r = tagEl.getBoundingClientRect();
@@ -1090,22 +1694,33 @@ document.addEventListener('click', function(e){
 window.addEventListener('scroll', hideTagPop, true);
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hideTagPop(); });
 
-function kindTag(t){
-  var s = String(t||'').trim();
+// Donor/funder kind tag. Shows the translated category name when the kind is a known
+// category, otherwise the server-translated text (kindTr), otherwise the original.
+function kindTag(kind, kindTr){
+  var s = String(kind||'').trim();
   if(!s) return '';
   var l = s.toLowerCase();
   var cls = 'tag group';
   if(/pac|committee/.test(l)) cls = 'tag kind kpac';
   else if(/corp/.test(l)) cls = 'tag kind kcorp';
   else if(/individual/.test(l)) cls = 'tag kind kindiv';
-  return '<span class="' + cls + '">' + esc(s) + '</span>';
+  var k = tagKey(s);
+  var label = LANG === 'en' ? s : (k ? T('tag.' + k + '.l') : (kindTr || s));
+  return '<span class="' + cls + '" data-k="' + esc(s) + '">' + esc(label) + '</span>';
+}
+// Group-type tag on endorsements, ratings, supporters (free text from research).
+function groupTag(e){
+  if(!e.type) return '';
+  var k = tagKey(e.type);
+  var label = LANG === 'en' ? e.type : (k ? T('tag.' + k + '.l') : (e.type_tr || e.type));
+  return '<span class="tag group" data-k="' + esc(e.type) + '">' + esc(label) + '</span>';
 }
 
 function leanTag(lean){
   var l = String(lean||'').toLowerCase();
-  if(l==='left') return '<span class="tag left">Left</span>';
-  if(l==='right') return '<span class="tag right">Right</span>';
-  return '<span class="tag nonpartisan">Nonpartisan</span>';
+  if(l==='left') return '<span class="tag left" data-k="left">' + t('lean.left') + '</span>';
+  if(l==='right') return '<span class="tag right" data-k="right">' + t('lean.right') + '</span>';
+  return '<span class="tag nonpartisan" data-k="nonpartisan">' + t('lean.nonpartisan') + '</span>';
 }
 
 function renderDossier(cand, race, r, cached){
@@ -1125,26 +1740,26 @@ function renderDossier(cand, race, r, cached){
   if(race.isJudicial && r.federalistSociety){
     var fs = r.federalistSociety;
     var status = fs.status || 'none_found';
-    var label = status==='documented' ? '⚑ Federalist Society: documented ties'
-              : status==='possible'   ? '⚑ Federalist Society: possible ties'
-              : '○ Federalist Society: no ties found';
-    html += '<div class="dsec"><h4>Judicial Screen</h4>' +
+    var label = status==='documented' ? t('fs.documented')
+              : status==='possible'   ? t('fs.possible')
+              : t('fs.none');
+    html += '<div class="dsec"><h4>' + t('sec.judicial') + '</h4>' +
       '<div class="fedsoc' + (status==='none_found' ? ' none' : '') + '">' +
-      '<div class="fstatus">' + esc(label) + '</div>';
+      '<div class="fstatus">' + label + '</div>';
     if(fs.evidence && fs.evidence.length){
       html += '<ul>' + fs.evidence.map(function(ev){
         return '<li>' + esc(ev.summary) +
         '<span class="src">' + esc(ev.source||'') +
-        (ev.url ? ' — <a href="' + esc(ev.url) + '" target="_blank" rel="noopener">source</a>' : '') +
+        (ev.url ? ' · <a href="' + esc(ev.url) + '" target="_blank" rel="noopener">' + t('src') + '</a>' : '') +
         '</span></li>';
       }).join('') + '</ul>';
     } else if(status==='none_found'){
-      html += '<p style="font-size:13px;margin-top:8px">Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.</p>';
+      html += '<p style="font-size:13px;margin-top:8px">' + t('fs.noneText') + '</p>';
     }
     html += '</div></div>';
   }
 
-  html += '<div class="dsec"><h4>Top Campaign Donors</h4>';
+  html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
     html += r.donors.map(function(d){
       // WinRed / ActBlue process online donations; they are not PACs giving their own money
@@ -1155,12 +1770,12 @@ function renderDossier(cand, race, r, cached){
                : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-      '<span class="dtype">' + kindTag(d.type) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + srcLink(d.url) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
   } else {
-    var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote||'');
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? 'No donors on record with the FEC.' : 'No donor data found.') + '</p>';
+    var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote_en || r.donorDataNote || '');
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : t('donors.none')) + '</p>';
   }
   if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
   var listUrl = r.donorListUrl || '';
@@ -1169,36 +1784,36 @@ function renderDossier(cand, race, r, cached){
     if(cm && r.donors && r.donors.length) listUrl = 'https://www.fec.gov/data/receipts/?committee_id=' + cm[1];
   }
   if(/^https:\/\//i.test(listUrl))
-    html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">See full donor list &#8599;</a>';
+    html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
 
-  html += '<div class="dsec"><h4>Endorsements</h4>';
+  html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
     html += r.endorsements.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
       '<div class="tagrow">' + leanTag(e.lean) +
-      (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+      groupTag(e) +
       srcLink(e.url) +
       '</div></div>';
     }).join('');
   } else {
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">No endorsements found in searched coverage.</p>';
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('endorse.none') + '</p>';
   }
   html += '</div>';
 
   // drop grades from voter-guide / tracker sites; keep only org scorecards and bar/official reviews
   var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|election tracker/i;
-  if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'')); });
+  if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'') + ' ' + (e.type_en||'')); });
   if(r.ratings && r.ratings.length){
-    html += '<div class="dsec"><h4>Ratings &amp; Evaluations</h4>' +
-      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">Assessments by outside groups — not endorsements.</p>';
+    html += '<div class="dsec"><h4>' + t('sec.ratings') + '</h4>' +
+      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('ratings.sub') + '</p>';
     html += r.ratings.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) +
       (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
       '<div class="tagrow">' + leanTag(e.lean) +
-      (e.type ? '<span class="tag group">' + esc(e.type) + '</span>' : '') +
+      groupTag(e) +
       srcLink(e.url) +
       '</div></div>';
     }).join('');
@@ -1206,10 +1821,10 @@ function renderDossier(cand, race, r, cached){
   }
 
   if(r.sources && r.sources.length){
-    html += '<div class="dsec"><h4>Sources Consulted</h4><p class="srcs">' +
+    html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">AI-assisted research compiled from live web search. Lean classifications and Federalist Society findings are best-effort judgments — verify anything that would change your vote against the linked sources and official disclosure filings.</p>';
+  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>';
 
   html += '</div>';
   $('dossierContent').innerHTML = html;
@@ -1230,7 +1845,7 @@ dz.addEventListener('drop', function(e){ handleFile(e.dataTransfer.files[0]); })
 $('planToggle').addEventListener('click', function(){
   var pv = $('planView');
   pv.classList.toggle('open');
-  $('planToggle').textContent = pv.classList.contains('open') ? 'Hide plan' : 'View plan';
+  $('planToggle').innerHTML = pv.classList.contains('open') ? t('plan.hide') : t('plan.view');
 });
 
 $('printBtn').addEventListener('click', function(){
@@ -1239,7 +1854,7 @@ $('printBtn').addEventListener('click', function(){
 });
 
 $('clearBtn').addEventListener('click', function(){
-  if(!confirm('Clear all picks from your ballot plan?')) return;
+  if(!confirm(T('plan.confirmClear'))) return;
   votes = {};
   saveState();
   refreshVoteUI();
@@ -1270,16 +1885,47 @@ function renderCountdown(){
   var num = $('cdNum'), lab = $('cdLabel');
   if(dReg > 0){
     num.textContent = dReg;
-    lab.innerHTML = (dReg === 1 ? 'DAY' : 'DAYS') + ' LEFT TO REGISTER<br><strong>' + esc(ELECTION.name) + '</strong> · registration deadline ' +
-      new Date(ELECTION.regDeadline).toLocaleDateString('en-US', {month:'long', day:'numeric'});
+    lab.innerHTML = t('cd.toReg', {days: dReg === 1 ? t('cd.day') : t('cd.days')}) + '<br><strong>' + t('election.name') + '</strong> · ' +
+      t('cd.regDeadline', {date: new Date(ELECTION.regDeadline).toLocaleDateString(LANG === 'en' ? 'en-US' : LANG === 'es' ? 'es-US' : 'fr-HT', {month:'long', day:'numeric'})});
   } else if(dVote > 0){
     num.textContent = dVote;
-    lab.innerHTML = (dVote === 1 ? 'DAY' : 'DAYS') + ' UNTIL ELECTION DAY<br><strong>' + esc(ELECTION.name) + '</strong> · registration for this election has closed';
+    lab.innerHTML = t('cd.toVote', {days: dVote === 1 ? t('cd.day') : t('cd.days')}) + '<br><strong>' + t('election.name') + '</strong> · ' + t('cd.regClosed');
   } else {
     num.textContent = '\u2713';
-    lab.innerHTML = '<strong>' + esc(ELECTION.name) + '</strong> has passed &mdash; check back for the next election.';
+    lab.innerHTML = '<strong>' + t('election.name') + '</strong> ' + t('cd.passed');
   }
 }
+
+/* ---------------- language ---------------- */
+function applyStatic(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('on', b.dataset.lang === LANG);
+    b.setAttribute('aria-pressed', b.dataset.lang === LANG ? 'true' : 'false');
+  });
+}
+async function setLang(l){
+  if(l === LANG) return;
+  LANG = l;
+  try{ localStorage.setItem('ballot305.lang', l); }catch(e){}
+  applyStatic(); renderCountdown(); renderResumeList(); renderVoteBar();
+  $('planToggle').innerHTML = $('planView').classList.contains('open') ? t('plan.hide') : t('plan.view');
+  if(ballot){
+    cache = {};                       // research is fetched again in the new language (served from the shared cache)
+    await ensureBallotTranslation();
+    renderBallot();
+    if(activeKey){
+      var parts = activeKey.split(':');
+      if(parts[0] === 'm') selectMeasure(parseInt(parts[1], 10));
+      else selectCandidate(parseInt(parts[0], 10), parseInt(parts[1], 10));
+    }
+  }
+}
+document.querySelectorAll('.langs button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+});
+applyStatic();
 
 renderCountdown();
 
@@ -1316,9 +1962,9 @@ function votePhase(){
 }
 
 function evStatusLine(ph){
-  if(ph.status === 'open') return {live:true, head:'Early voting is open now', sub:'Every site is open until 7pm today. Vote at any of the 28 sites in Miami-Dade.'};
-  if(ph.when === 'today') return {live:false, head:'Early voting opens today at 7am', sub:'Open 7am to 7pm through Sunday, Nov 1. Any of the 28 sites in Miami-Dade.'};
-  return {live:false, head:'Early voting opens tomorrow at 7am', sub:'Open 7am to 7pm through Sunday, Nov 1. Any of the 28 sites in Miami-Dade.'};
+  if(ph.status === 'open') return {live:true, head:t('vb.open.head'), sub:t('vb.open.sub')};
+  if(ph.when === 'today') return {live:false, head:t('vb.today.head'), sub:t('vb.later.sub')};
+  return {live:false, head:t('vb.tomorrow.head'), sub:t('vb.later.sub')};
 }
 
 function renderVoteBar(){
@@ -1328,23 +1974,21 @@ function renderVoteBar(){
 
   if(ph.kind === 'pre-ev' || ph.kind === 'ev'){
     var s = ph.kind === 'pre-ev'
-      ? {live:false, head:'Go vote early: starts Monday, Oct 19', sub:'Early voting runs Oct 19 to Nov 1, 7am to 7pm daily, at 28 sites. Any registered Miami-Dade voter can use any site.'}
+      ? {live:false, head:t('vb.pre.head'), sub:t('vb.pre.sub')}
       : evStatusLine(ph);
-    html = '<div class="vb-row"><div><div class="vb-kicker">Early voting</div>' +
-      '<div class="vb-head">' + (s.live ? '<span class="live"></span>' : '') + esc(s.head) + '</div>' +
-      '<div class="vb-sub">' + esc(s.sub) + '</div></div>' +
-      '<button class="vb-btn" id="vbNearest" type="button">' + (ph.kind === 'ev' ? 'Go vote early: nearest site' : 'Find your nearest site') + ' &rarr;</button></div>' +
+    html = '<div class="vb-row"><div><div class="vb-kicker">' + t('vb.kicker.ev') + '</div>' +
+      '<div class="vb-head">' + (s.live ? '<span class="live"></span>' : '') + s.head + '</div>' +
+      '<div class="vb-sub">' + s.sub + '</div></div>' +
+      '<button class="vb-btn" id="vbNearest" type="button">' + (ph.kind === 'ev' ? t('vb.btn.go') : t('vb.btn.find')) + ' &rarr;</button></div>' +
       '<div id="vbSites"></div>';
   } else {
     // Election Day (or the day before): your precinct polling place
-    var head = ph.kind === 'pre-eday' ? 'Election Day is Tuesday, Nov 3, 7am to 7pm' :
-      (ph.status === 'open' ? 'Polls are open until 7pm' : 'Polls open at 7am today');
-    var sub = ph.kind === 'eday' && ph.status === 'open'
-      ? 'If you are in line by 7pm, you can vote. On Election Day you must vote at your assigned polling place.'
-      : 'Early voting is over. On Election Day you must vote at your assigned polling place, not an early voting site.';
-    html = '<div class="vb-kicker">Election Day</div>' +
-      '<div class="vb-head">' + (ph.kind === 'eday' && ph.status === 'open' ? '<span class="live"></span>' : '') + esc(head) + '</div>' +
-      '<div class="vb-sub">' + esc(sub) + '</div><div id="vbPlace"></div>';
+    var head = ph.kind === 'pre-eday' ? t('vb.eve.head') :
+      (ph.status === 'open' ? t('vb.polls.open') : t('vb.polls.opens'));
+    var sub = ph.kind === 'eday' && ph.status === 'open' ? t('vb.eday.sub.open') : t('vb.eday.sub');
+    html = '<div class="vb-kicker">' + t('vb.kicker.eday') + '</div>' +
+      '<div class="vb-head">' + (ph.kind === 'eday' && ph.status === 'open' ? '<span class="live"></span>' : '') + head + '</div>' +
+      '<div class="vb-sub">' + sub + '</div><div id="vbPlace"></div>';
   }
   bar.innerHTML = html;
   bar.className = 'votenow show';
@@ -1367,14 +2011,14 @@ function siteRow(s, dist){
   var full = s.address + ', ' + s.city + ', FL ' + s.zip;
   return '<div class="vb-site"><div><div class="nm">' + esc(s.name) + '</div>' +
     '<div class="ad">' + esc(full) + '</div>' +
-    (dist != null ? '<div class="dist">' + dist.toFixed(1) + ' mi away</div>' : '') + '</div>' +
-    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">Directions &#8599;</a></div>';
+    (dist != null ? '<div class="dist">' + t('vb.miAway', {n: dist.toFixed(1)}) + '</div>' : '') + '</div>' +
+    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">' + t('vb.directions') + ' &#8599;</a></div>';
 }
 async function showNearestSites(){
   var box = $('vbSites');
-  box.innerHTML = '<div class="vb-note">Finding sites near you&hellip;</div>';
+  box.innerHTML = '<div class="vb-note">' + t('vb.finding') + '</div>';
   var data;
-  try { data = await getEvSites(); } catch(e){ box.innerHTML = '<div class="vb-note">Could not load sites. <a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">See the county list &#8599;</a></div>'; return; }
+  try { data = await getEvSites(); } catch(e){ box.innerHTML = '<div class="vb-note">' + t('vb.loadFail') + ' <a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.countyList') + ' &#8599;</a></div>'; return; }
   var sites = data.sites.slice();
   var finish = function(pos){
     var note = '';
@@ -1384,12 +2028,12 @@ async function showNearestSites(){
       sites.sort(function(a, b){ return (a._d == null) - (b._d == null) || (a._d || 0) - (b._d || 0); });
     } else {
       sites.sort(function(a, b){ return a.name.localeCompare(b.name); });
-      note = 'Location is off, so here are all 28 sites A to Z. Turn on location for this site to sort by distance.';
+      note = t('vb.locOff');
     }
     var top = pos ? sites.slice(0, 3) : sites;
     var html = '<div class="vb-sites">' + top.map(function(s){ return siteRow(s, pos ? s._d : null); }).join('') + '</div>';
-    if(pos) html += '<button class="vb-btn ghost" id="vbAll" type="button" style="margin-top:12px">All 28 sites by distance</button>';
-    html += '<div class="vb-note">' + (note ? esc(note) + '<br>' : '') + 'All early voting sites have the same hours. Source: <a href="' + esc(data.source) + '" target="_blank" rel="noopener">Miami-Dade Elections early voting schedule &#8599;</a></div>';
+    if(pos) html += '<button class="vb-btn ghost" id="vbAll" type="button" style="margin-top:12px">' + t('vb.allBtn') + '</button>';
+    html += '<div class="vb-note">' + (note ? note + '<br>' : '') + t('vb.sameHours') + ' ' + t('vb.source') + ' <a href="' + esc(data.source) + '" target="_blank" rel="noopener">' + t('vb.sourceName') + ' &#8599;</a></div>';
     box.innerHTML = html;
     var all = $('vbAll');
     if(all) all.addEventListener('click', function(){
@@ -1403,10 +2047,10 @@ async function showNearestSites(){
 
 async function renderMyPlace(precinct){
   var box = $('vbPlace');
-  var lookupLink = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">county voter lookup &#8599;</a>';
+  var lookupLink = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.lookup') + ' &#8599;</a>';
   if(!precinct){
-    box.innerHTML = '<div class="vb-note" style="font-size:12px">Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the ' + lookupLink + '</div>' +
-      '<a class="vb-btn" style="margin-top:10px" href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">Find my polling place &#8599;</a>';
+    box.innerHTML = '<div class="vb-note" style="font-size:12px">' + t('vb.noPrecinct') + ' ' + lookupLink + '</div>' +
+      '<a class="vb-btn" style="margin-top:10px" href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.findMine') + ' &#8599;</a>';
     return;
   }
   try {
@@ -1416,16 +2060,16 @@ async function renderMyPlace(precinct){
     }
   } catch(e){ myPlace = null; }
   if(!myPlace){
-    box.innerHTML = '<div class="vb-note">We could not match precinct ' + esc(precinct) + ' to a polling place. Check the ' + lookupLink + '</div>';
+    box.innerHTML = '<div class="vb-note">' + t('vb.noMatch', {p: esc(precinct)}) + ' ' + lookupLink + '</div>';
     return;
   }
   var full = myPlace.address + ', ' + myPlace.city + ', FL ' + myPlace.zip;
   box.innerHTML = '<div class="vb-sites"><div class="vb-site"><div>' +
-    '<div class="vb-kicker">Your polling place &middot; Precinct ' + esc(myPlace.precinct) + '</div>' +
+    '<div class="vb-kicker">' + t('vb.yourPlace', {p: esc(myPlace.precinct)}) + '</div>' +
     '<div class="nm" style="margin-top:4px">' + esc(myPlace.name) + '</div>' +
-    '<div class="ad">' + esc(full) + '</div><div class="dist">Tuesday, Nov 3 &middot; 7am to 7pm</div></div>' +
-    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">Directions &#8599;</a></div></div>' +
-    '<div class="vb-note">From the county&rsquo;s official precinct list (Sept 30, 2026). Locations can change, so confirm with the ' + lookupLink + '</div>';
+    '<div class="ad">' + esc(full) + '</div><div class="dist">' + t('vb.hours') + '</div></div>' +
+    '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">' + t('vb.directions') + ' &#8599;</a></div></div>' +
+    '<div class="vb-note">' + t('vb.official') + ' ' + lookupLink + '</div>';
 }
 
 renderVoteBar();
@@ -1438,15 +2082,15 @@ function renderResumeList(){
   var ids = Object.keys(st.ballots).sort(function(a,b){ return (st.ballots[b].ts||0) - (st.ballots[a].ts||0); });
   var box = $('resumeBox');
   if(!ids.length){ box.style.display = 'none'; return; }
-  var html = '<p><strong>Your saved ballot plans</strong></p>';
+  var html = '<p><strong>' + t('resume.title') + '</strong></p>';
   ids.forEach(function(id){
     var e = st.ballots[id];
     var decided = Object.keys(e.votes||{}).length;
-    var label = [e.ballot.jurisdiction, e.ballot.electionName, e.ballot.electionDate].filter(Boolean).join(' · ') || 'Saved ballot';
+    var label = [e.ballot.jurisdiction, e.ballot.electionName, e.ballot.electionDate].filter(Boolean).join(' · ') || T('resume.default');
     html += '<div class="resume-row">' +
-      '<span class="rr-label">' + esc(label) + '<br><span class="rr-meta">' + decided + ' of ' + e.ballot.races.length + ' races decided</span></span>' +
-      '<span class="rr-actions"><button class="btn2" data-resume="' + esc(id) + '">Resume</button>' +
-      '<button class="rr-del" data-del="' + esc(id) + '" title="Delete this plan">✕</button></span>' +
+      '<span class="rr-label">' + esc(label) + '<br><span class="rr-meta">' + t('resume.decided', {d: decided, t: e.ballot.races.length}) + '</span></span>' +
+      '<span class="rr-actions"><button class="btn2" data-resume="' + esc(id) + '">' + t('resume.btn') + '</button>' +
+      '<button class="rr-del" data-del="' + esc(id) + '" title="' + t('resume.del') + '">✕</button></span>' +
       '</div>';
   });
   box.innerHTML = html;
@@ -1458,12 +2102,12 @@ function renderResumeList(){
       ballot = e.ballot;
       currentId = b.dataset.resume;
       votes = e.votes || {};
-      renderBallot();
+      ensureBallotTranslation().then(renderBallot);
     });
   });
   box.querySelectorAll('[data-del]').forEach(function(b){
     b.addEventListener('click', function(){
-      if(confirm('Delete this saved ballot plan?')) deletePlan(b.dataset.del);
+      if(confirm(T('resume.confirm'))) deletePlan(b.dataset.del);
     });
   });
 }

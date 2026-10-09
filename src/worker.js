@@ -42,6 +42,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
+      if (request.method === 'POST' && url.pathname === '/api/translate-ballot') {
+        return await handleTranslateBallot(request, env);
+      }
       if (request.method === 'GET' && url.pathname === '/api/pollingplace') {
         return handlePollingPlace(url.searchParams.get('p'));
       }
@@ -183,6 +186,7 @@ async function handleResearch(request, env, ctx) {
   const measureSummary = isStr(body.summary) ? body.summary.slice(0, 800) : '';
 
   const officeCode = isMeasure ? null : federalOfficeCode(office);
+  const lang = TR_LANGS[body.lang] ? body.lang : 'en';
 
   // Shared cache: the whole point. 500 users, one bill.
   // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
@@ -195,12 +199,12 @@ async function handleResearch(request, env, ctx) {
   const cached = await env.CACHE.get(key, 'json');
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
-    return json({ result: await refreshFec(env, key, cached, name, officeCode), cached: true });
+    return json({ result: await localize(env, await refreshFec(env, key, cached, name, officeCode), lang), cached: true });
   }
   const target = await env.CACHE.get(alias);
   if (target && target !== key) {
     const hit = await env.CACHE.get(target, 'json');
-    if (hit) return json({ result: await refreshFec(env, target, hit, name, officeCode), cached: true });
+    if (hit) return json({ result: await localize(env, await refreshFec(env, target, hit, name, officeCode), lang), cached: true });
   }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
@@ -230,7 +234,7 @@ async function handleResearch(request, env, ctx) {
     // Legacy client (stale cached page): run synchronously like the old API did.
     await runResearch(env, key, params);
     const done = await env.CACHE.get(key, 'json');
-    if (done) return json({ result: done, cached: false });
+    if (done) return json({ result: await localize(env, done, lang), cached: false });
     const err = await env.CACHE.get('fail:' + key);
     return json({ error: err || 'Research failed' }, 502);
   }
@@ -240,7 +244,7 @@ async function handleResearch(request, env, ctx) {
   for (let i = 0; i < 20; i++) {
     await new Promise(r => setTimeout(r, 3000));
     const done = await env.CACHE.get(key, 'json');
-    if (done) return json({ result: done, cached: true });
+    if (done) return json({ result: await localize(env, done, lang), cached: true });
     const err = await env.CACHE.get('fail:' + key);
     if (err) return json({ error: err }, 502);
   }
@@ -682,4 +686,110 @@ function handlePollingPlace(p) {
   if (!row) return json({ error: 'Precinct not found', precinct: key }, 404);
   const [name, address, city, zip] = row;
   return json({ precinct: key, name, address, city, zip, openHour: 7, closeHour: 19, date: '2026-11-03', source: PP_SOURCE });
+}
+
+
+/* ---------------- translation (Spanish, Haitian Creole) ---------------- */
+// Research is done once in English. Each result is translated once per language and cached,
+// keyed by a hash of the English content, so a refreshed result gets a fresh translation.
+// Names, organizations, amounts, URLs and lean/status codes are never sent for translation.
+const TR_LANGS = {
+  es: 'Spanish, as used in Miami-Dade County official election materials',
+  ht: 'Haitian Creole (Kreyòl ayisyen), as used in Miami-Dade County official election materials'
+};
+const TR_MODEL = { es: MODEL, ht: MODEL_JUDICIAL };   // Kreyòl gets the stronger model
+const TR_KEYS = new Set(['summary', 'note', 'rating']);   // plus any key ending in "Note"
+const TR_TAG_KEYS = { type: 'type_tr', kind: 'kind_tr' }; // keep English for tag definitions, add a translated label
+
+async function translateStrings(env, lang, items) {
+  const out = {};
+  for (let i = 0; i < items.length; i += 60) {
+    const chunk = items.slice(i, i + 60);
+    const prompt = [
+      'Translate the "text" of each item into ' + TR_LANGS[lang] + '.',
+      'Rules:',
+      '- Keep names of people, organizations, PACs, companies, unions, newspapers and places exactly as written. Do not translate them.',
+      '- Keep numbers, dollar amounts, percentages, letter grades, dates in digits, URLs and acronyms (FEC, PAC, DSA, NRA) unchanged.',
+      '- Use plain, clear language a voter would understand. Use the standard election terms that Miami-Dade County uses in its official ' + (lang === 'es' ? 'Spanish' : 'Haitian Creole') + ' materials.',
+      '- Do not add, remove or soften any information. Keep hedges like "reportedly" or "according to".',
+      'Respond with ONLY a JSON object {"items": [{"id": "...", "text": "..."}]} containing every id exactly once.',
+      '',
+      JSON.stringify({ items: chunk })
+    ].join('\n');
+    const text = await callAnthropic(env, { model: TR_MODEL[lang], max_tokens: 8000, temperature: 0, messages: [{ role: 'user', content: prompt }] });
+    const parsed = extractJSON(text);
+    for (const it of (parsed.items || [])) if (it && typeof it.text === 'string') out[it.id] = it.text;
+  }
+  return out;
+}
+
+// Return the result translated into lang (cached). English or any failure returns the English result.
+async function localize(env, result, lang) {
+  if (!result || !TR_LANGS[lang]) return result;
+  const ck = 'tr1:' + lang + ':' + await sha256(JSON.stringify(result));
+  const hit = await env.CACHE.get(ck, 'json');
+  if (hit) return hit;
+
+  const copy = JSON.parse(JSON.stringify(result));
+  const items = [], setters = {};
+  let n = 0;
+  (function walk(o) {
+    if (Array.isArray(o)) { o.forEach(walk); return; }
+    if (!o || typeof o !== 'object') return;
+    for (const k of Object.keys(o)) {
+      const v = o[k];
+      if (typeof v === 'string' && v.trim() && v.length < 4000) {
+        if (k === 'rating' && /^[\d\s%.\/A-F+\-()]+$/.test(v)) continue;   // grades and percentages stay as is
+        if (TR_KEYS.has(k) || /Note$/.test(k)) {
+          const id = 's' + (n++); items.push({ id, text: v }); setters[id] = t => { o[k] = t; };
+        } else if (TR_TAG_KEYS[k]) {
+          const id = 's' + (n++); items.push({ id, text: v }); setters[id] = t => { o[TR_TAG_KEYS[k]] = t; };
+        }
+      } else if (v && typeof v === 'object') walk(v);
+    }
+  })(copy);
+  if (!items.length) return result;
+  try {
+    const tr = await translateStrings(env, lang, items);
+    for (const id of Object.keys(setters)) if (tr[id]) setters[id](tr[id]);
+    if (result.donorDataNote) copy.donorDataNote_en = result.donorDataNote;   // page checks the English wording
+    copy._translated = true;
+    await env.CACHE.put(ck, JSON.stringify(copy), { expirationTtl: CACHE_TTL });
+    return copy;
+  } catch (e) {
+    console.log('translate ' + lang + ' failed: ' + (e && e.message ? e.message : e));
+    return result;
+  }
+}
+
+// Ballot titles: office names, measure YES/NO wording, election name. Candidate names are not sent.
+async function handleTranslateBallot(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body || !TR_LANGS[body.lang] || !Array.isArray(body.offices) || body.offices.length > 250) {
+    return json({ error: 'Bad request' }, 400);
+  }
+  const lang = body.lang;
+  const offices = body.offices.map(s => String(s || '').slice(0, 300));
+  const options = (Array.isArray(body.measureOptions) ? body.measureOptions : []).slice(0, 250)
+    .map(o => Array.isArray(o) ? o.slice(0, 4).map(s => String(s || '').slice(0, 80)) : null);
+  const electionName = String(body.electionName || '').slice(0, 120);
+
+  const ck = 'trb1:' + lang + ':' + await sha256(JSON.stringify([offices, options, electionName]));
+  const hit = await env.CACHE.get(ck, 'json');
+  if (hit) return json(hit);
+  const allowed = await rateLimit(env, 'trballot', clientIP(request), 20);
+  if (!allowed) return json({ error: 'Daily translation limit reached for your connection.' }, 429);
+
+  const items = [];
+  offices.forEach((s, i) => { if (s) items.push({ id: 'o' + i, text: s }); });
+  options.forEach((o, i) => { if (o) o.forEach((s, j) => { if (s) items.push({ id: 'm' + i + '_' + j, text: s }); }); });
+  if (electionName) items.push({ id: 'e', text: electionName });
+  const tr = await translateStrings(env, lang, items);
+  const out = {
+    offices: offices.map((s, i) => tr['o' + i] || s),
+    measureOptions: options.map((o, i) => o ? o.map((s, j) => tr['m' + i + '_' + j] || s) : null),
+    electionName: tr.e || electionName
+  };
+  await env.CACHE.put(ck, JSON.stringify(out), { expirationTtl: 60 * 60 * 24 * 60 });
+  return json(out);
 }
