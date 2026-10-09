@@ -155,7 +155,7 @@ async function handleResearch(request, env, ctx) {
 
   // Shared cache: the whole point. 500 users, one bill.
   // res4 for federal races (adds itemized FEC donor data); res3 for the rest.
-  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res6:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
+  const key = (isMeasure ? 'resm1:' : (officeCode ? 'res7:' : 'res3:')) + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' '));
   const cached = await env.CACHE.get(key, 'json');
   if (cached) return json({ result: cached, cached: true });
 
@@ -314,8 +314,21 @@ function federalOfficeCode(office) {
   return null;
 }
 
-// FEC codes most PACs as COM ("other committee"), not PAC. Tell party and candidate committees apart by name.
-function committeeKind(n) {
+// Classify a committee donor from its FEC registration.
+//   committee_type: O = super PAC, V/W = hybrid (super PAC with a separate contribution account),
+//   X/Y/Z = party, H/S/P = candidate; N/Q = traditional PAC.
+//   A traditional PAC with an organization_type (corporation, labor, membership, trade, cooperative)
+//   is a connected PAC; without one it is nonconnected.
+function committeeKind(n, reg, entity) {
+  if (reg) {
+    const t = reg.committee_type;
+    if (t === 'O' || t === 'V' || t === 'W' || t === 'U') return 'super PAC';
+    if (t === 'X' || t === 'Y' || t === 'Z') return 'party committee';
+    if (t === 'H' || t === 'S' || t === 'P') return 'candidate committee';
+    if (t === 'N' || t === 'Q') return reg.organization_type ? 'connected PAC' : 'nonconnected PAC';
+  }
+  if (entity === 'PTY') return 'party committee';
+  if (entity === 'CCM') return 'candidate committee';
   const s = String(n).toUpperCase();
   if (/\b(REPUBLICAN|DEMOCRATIC|LIBERTARIAN)\b.*\b(COMMITTEE|PARTY)\b|\bPARTY\b/.test(s)) return 'party committee';
   if (/\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s)) return 'candidate committee';
@@ -364,18 +377,31 @@ async function fecTopDonors(env, name, officeCode) {
   for (const r of rows) {
     const n = String(r.contributor_name || '').trim();
     if (!n) continue;
-    if (!agg[n]) agg[n] = { amount: 0, type: r.entity_type, employer: r.contributor_employer || '' };
+    if (!agg[n]) agg[n] = { amount: 0, type: r.entity_type, employer: r.contributor_employer || '', cid: r.contributor_id || (r.contributor && r.contributor.committee_id) || '' };
     agg[n].amount += (r.contribution_receipt_amount || 0);
   }
   const typeMap = { IND: 'individual', PAC: 'PAC', COM: 'committee', ORG: 'organization', PTY: 'party committee', CAN: 'self-funded', CCM: 'candidate committee' };
-  const donors = Object.entries(agg)
-    .sort((a, b) => b[1].amount - a[1].amount)
-    .slice(0, 8)
-    .map(([n, v]) => ({
+  const top = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8);
+
+  // Look up each committee donor's FEC registration to tell connected, nonconnected and super PACs apart
+  const COMMITTEE_ENTITIES = { COM: 1, PAC: 1, PTY: 1, CCM: 1 };
+  const ids = [...new Set(top.filter(([, v]) => COMMITTEE_ENTITIES[v.type] && /^C\d{8}$/.test(v.cid)).map(([, v]) => v.cid))];
+  const reg = {};
+  if (ids.length) {
+    try {
+      const q = ids.map(id => 'committee_id=' + id).join('&');
+      const cr = await fetch(base + '/committees/?' + q + '&per_page=20&api_key=' + apiKey);
+      if (cr.ok) for (const c of ((await cr.json()).results || [])) reg[c.committee_id] = c;
+      else console.log('FEC committee lookup ' + cr.status);
+    } catch (e) { console.log('FEC committee lookup error: ' + e.message); }
+  }
+
+  const donors = top.map(([n, v]) => ({
       name: n + (v.employer && v.type === 'IND' ? ' (' + v.employer + ')' : ''),
       amount: '$' + Math.round(v.amount).toLocaleString('en-US'),
-      type: v.type === 'COM' ? committeeKind(n) : (typeMap[v.type] || 'contributor'),
-      url: 'https://www.fec.gov/data/committee/' + committee.committee_id + '/?tab=receipts'
+      type: COMMITTEE_ENTITIES[v.type] ? committeeKind(n, reg[v.cid], v.type) : (typeMap[v.type] || 'contributor'),
+      url: COMMITTEE_ENTITIES[v.type] && reg[v.cid] ? 'https://www.fec.gov/data/committee/' + v.cid + '/'
+         : 'https://www.fec.gov/data/committee/' + committee.committee_id + '/?tab=receipts'
     }));
 
   return {
