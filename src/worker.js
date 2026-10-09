@@ -42,6 +42,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
+      if (request.method === 'POST' && url.pathname === '/api/voterinfo') {
+        return await handleVoterInfo(request, env);
+      }
       if (request.method === 'POST' && url.pathname === '/api/ballot-text') {
         return await handleBallotText(request, env);
       }
@@ -873,4 +876,51 @@ async function handleBallotText(request, env) {
   console.log('ballot-text: ' + fromBallot + ' of ' + (items.length * 2) + ' strings copied from the printed ballot');
   await env.CACHE.put(ck, JSON.stringify(out), { expirationTtl: 60 * 60 * 24 * 60 });
   return json(out);
+}
+
+
+/* ---------------- address lookup (Google Civic Information API) ---------------- */
+// Address -> the voter's election info from Google's Voting Information Project data:
+// polling place, early vote sites, drop-off sites and, when published, the contests on
+// that voter's ballot. The address is passed through and never stored or logged.
+async function handleVoterInfo(request, env) {
+  if (!env.GOOGLE_CIVIC_KEY) return json({ error: 'Address lookup is not configured.' }, 503);
+  const body = await request.json().catch(() => null);
+  const address = body && isStr(body.address) ? body.address.trim().slice(0, 200) : '';
+  if (address.length < 8) return json({ error: 'Enter a full street address.' }, 400);
+  const allowed = await rateLimit(env, 'voterinfo', clientIP(request), 30);
+  if (!allowed) return json({ error: 'Daily address-lookup limit reached for your connection.' }, 429);
+
+  const u = 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=' + env.GOOGLE_CIVIC_KEY +
+            '&address=' + encodeURIComponent(address);
+  const r = await fetch(u);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    const msg = (data.error && data.error.message) || ('HTTP ' + r.status);
+    return json({ error: 'Lookup failed: ' + msg, status: r.status }, r.status === 400 ? 404 : 502);
+  }
+  const place = l => ({
+    name: (l.address && l.address.locationName) || '',
+    address: l.address ? [l.address.line1, l.address.line2, l.address.city, l.address.state, l.address.zip].filter(Boolean).join(', ') : '',
+    hours: l.pollingHours || '', notes: l.notes || '', start: l.startDate || '', end: l.endDate || ''
+  });
+  const contests = (data.contests || []).map(c => ({
+    office: c.office || c.referendumTitle || c.referendumSubtitle || '',
+    district: c.district ? c.district.name : '',
+    type: c.type || '',
+    candidates: (c.candidates || []).map(x => ({ name: x.name, party: x.party || '' })),
+    isMeasure: c.type === 'Referendum' || !!c.referendumTitle
+  }));
+  return json({
+    election: data.election ? { name: data.election.name, date: data.election.electionDay, id: data.election.id } : null,
+    normalizedAddress: data.normalizedInput ? [data.normalizedInput.line1, data.normalizedInput.city, data.normalizedInput.state, data.normalizedInput.zip].filter(Boolean).join(', ') : '',
+    pollingLocations: (data.pollingLocations || []).map(place),
+    earlyVoteSites: (data.earlyVoteSites || []).map(place),
+    dropOffLocations: (data.dropOffLocations || []).map(place),
+    contests,
+    summary: {
+      contests: contests.length, pollingLocations: (data.pollingLocations || []).length,
+      earlyVoteSites: (data.earlyVoteSites || []).length, dropOffLocations: (data.dropOffLocations || []).length
+    }
+  });
 }
