@@ -233,7 +233,7 @@
     position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto;
   }
   @media (max-width:960px){
-    .dossier{position:fixed; inset:0; z-index:50; max-height:none; border:none; border-top:6px solid var(--rule); display:none;}
+    .dossier{position:fixed; inset:0; z-index:50; align-self:stretch; height:100vh; height:100dvh; max-height:none; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; border:none; border-top:6px solid var(--rule); display:none;}
     .dossier.open{display:block;}
   }
   .dossier-empty{padding:48px 28px; text-align:center; color:var(--ink-soft);}
