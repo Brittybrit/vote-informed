@@ -319,6 +319,8 @@
     text-decoration:underline; text-underline-offset:2px; white-space:nowrap;
   }
   .tagrow .srclink{align-self:center;}
+  .sumsrc{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:8px; line-height:1.7; overflow-wrap:anywhere;}
+  .sumsrc a{color:inherit;}
   .fulllist{display:inline-block; margin-top:12px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); border:2px solid var(--ink); padding:8px 12px; text-decoration:none;}
   .fulllist:hover{background:var(--ink); color:var(--paper);}
   .srcs{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); overflow-wrap:anywhere; word-break:break-all;}
@@ -903,7 +905,7 @@ function renderMeasureDossier(ri, r, cached){
   var html = measureHead(race, cached) + measureVoteBar(ri, race) + '<div class="dossier-body">';
 
   if(r.summary){
-    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p></div>';
+    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p>' + summarySourcesHtml(r) + '</div>';
   }
 
   var fin = r.financing || {};
@@ -970,6 +972,15 @@ function renderDossierError(cand, race, ri, ci, msg){
   $('dossierContent').innerHTML = dossierHead(cand, race, null) +
     '<div class="d-error">Research failed: ' + esc(msg) +
     '<br><button onclick="selectCandidate(' + ri + ',' + ci + ')">Retry</button></div>';
+}
+
+// Sources behind the AI-written description. Only real https links are shown.
+function summarySourcesHtml(r){
+  var s = (r.summarySources || []).filter(function(x){ return x && /^https:\/\//i.test(x.url || ''); }).slice(0, 4);
+  if(!s.length) return '';
+  return '<p class="sumsrc">Sources: ' + s.map(function(x){
+    return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name || 'source') + ' ↗</a>';
+  }).join(' · ') + '</p>';
 }
 
 function srcLink(url){
@@ -1089,7 +1100,7 @@ function renderDossier(cand, race, r, cached){
   html += '<div class="dossier-body">';
 
   if(r.summary){
-    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p></div>';
+    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p>' + summarySourcesHtml(r) + '</div>';
   }
 
   if(race.isJudicial && r.federalistSociety){
