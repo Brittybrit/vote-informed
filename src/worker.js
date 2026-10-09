@@ -171,7 +171,7 @@ async function handleResearch(request, env, ctx) {
     const ip = clientIP(request);
     const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
     if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
-    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 240 });
+    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 120 }); // short: if Cloudflare cancels the background task, the next poll after 2 min restarts it
     if (body.poll) {
       ctx.waitUntil(runResearch(env, key, params));
       return json({ pending: true });
