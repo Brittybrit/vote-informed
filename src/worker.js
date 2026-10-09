@@ -333,7 +333,7 @@ async function runResearch(env, key, p) {
 
 // Bump when the FEC donor logic changes. Cached federal results from an older version get their
 // donor list rebuilt from FEC on next read: free API, no AI call, no rate-limit cost.
-const FEC_DATA_VERSION = 2;
+const FEC_DATA_VERSION = 3;
 async function refreshFec(env, key, result, name, officeCode) {
   if (!officeCode || result.fecV === FEC_DATA_VERSION) return result;
   try {
@@ -459,8 +459,9 @@ async function fecTopDonors(env, name, officeCode) {
       name: n + (v.employer && v.type === 'IND' ? ' (' + v.employer + ')' : ''),
       amount: '$' + Math.round(v.amount).toLocaleString('en-US'),
       type: COMMITTEE_ENTITIES[v.type] ? committeeKind(n, reg[v.cid], v.type) : (typeMap[v.type] || 'contributor'),
-      url: COMMITTEE_ENTITIES[v.type] && reg[v.cid] ? 'https://www.fec.gov/data/committee/' + v.cid + '/'
-         : 'https://www.fec.gov/data/committee/' + committee.committee_id + '/?tab=receipts'
+      // this donor's own contributions to this campaign, not the whole receipts list
+      url: 'https://www.fec.gov/data/receipts/?committee_id=' + committee.committee_id +
+           '&contributor_name=' + encodeURIComponent(n) + '&two_year_transaction_period=' + cycle
     }));
 
   return {
