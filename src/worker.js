@@ -42,6 +42,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
+      if (request.method === 'GET' && url.pathname === '/api/civic-status') {
+        return await handleCivicStatus(env);
+      }
       if (request.method === 'GET' && url.pathname === '/api/elections') {
         return await handleElections(env);
       }
@@ -950,4 +953,32 @@ async function novemberElectionId(env) {
 async function handleElections(env) {
   if (!env.GOOGLE_CIVIC_KEY) return json({ error: 'Address lookup is not configured.' }, 503);
   return json({ elections: await listElections(env) });
+}
+
+// Read-only check of whether Google has loaded Miami-Dade's Nov 3 data yet, using a fixed public
+// address (the Elections branch office downtown). Counts only. Cached for an hour.
+async function handleCivicStatus(env) {
+  if (!env.GOOGLE_CIVIC_KEY) return json({ error: 'Address lookup is not configured.' }, 503);
+  const hit = await env.CACHE.get('civicstatus', 'json');
+  if (hit) return json(hit);
+  const base = 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=' + env.GOOGLE_CIVIC_KEY +
+               '&address=' + encodeURIComponent('111 NW 1st St, Miami, FL 33128');
+  let r = await fetch(base), d = await r.json().catch(() => ({}));
+  if (!r.ok && /election unknown/i.test((d.error && d.error.message) || '')) {
+    const id = await novemberElectionId(env);
+    if (id) { r = await fetch(base + '&electionId=' + id); d = await r.json().catch(() => ({})); }
+  }
+  const out = {
+    checkedAt: new Date().toISOString(),
+    testAddress: '111 NW 1st St, Miami, FL 33128',
+    ok: r.ok, error: r.ok ? '' : ((d.error && d.error.message) || ('HTTP ' + r.status)),
+    election: d.election ? d.election.name + ' (' + d.election.electionDay + ')' : '',
+    pollingLocations: (d.pollingLocations || []).length,
+    earlyVoteSites: (d.earlyVoteSites || []).length,
+    dropOffLocations: (d.dropOffLocations || []).length,
+    contests: (d.contests || []).length,
+    sampleContests: (d.contests || []).slice(0, 5).map(c => c.office || c.referendumTitle || '')
+  };
+  await env.CACHE.put('civicstatus', JSON.stringify(out), { expirationTtl: 3600 });
+  return json(out);
 }
