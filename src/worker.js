@@ -95,6 +95,29 @@ async function parseBallot(env, pdfB64, ip) {
   const cached = await env.CACHE.get(cacheKey, 'json');
   if (cached) return json({ ballot: cached, cached: true });
 
+  // Ballots parsed before precinct extraction existed: reuse that parse instead of re-reading
+  // the whole PDF (slow for the 131-contest master ballot). Only a precinct-specific ballot
+  // needs a precinct, and that is one quick, tiny call.
+  const older = await env.CACHE.get('parse2:' + fp, 'json');
+  if (older) {
+    older.precinct = '';
+    if ((older.races || []).length < 100) {
+      try {
+        const t = await callAnthropic(env, {
+          model: MODEL, max_tokens: 40,
+          messages: [{ role: 'user', content: [
+            { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: pdfB64 } },
+            { type: 'text', text: 'What precinct number is printed on this sample ballot? Reply with only the number exactly as printed (e.g. 033.0), or the word NONE if there is no single precinct.' }
+          ] }]
+        });
+        const m = String(t).match(/\d{1,4}(?:\.\d)?/);
+        if (m && !/NONE/i.test(t)) older.precinct = m[0];
+      } catch (e) { /* keep the parse; polling place falls back to the county lookup link */ }
+    }
+    await env.CACHE.put(cacheKey, JSON.stringify(older), { expirationTtl: PARSE_TTL });
+    return json({ ballot: older, cached: true });
+  }
+
   const allowed = await rateLimit(env, 'parse', ip, LIMIT_PARSE_PER_DAY);
   if (!allowed) return json({ error: 'Daily ballot-upload limit reached for your connection. Try again tomorrow.' }, 429);
 
