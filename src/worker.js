@@ -42,6 +42,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
+      if (request.method === 'GET' && url.pathname === '/api/elections') {
+        return await handleElections(env);
+      }
       if (request.method === 'POST' && url.pathname === '/api/voterinfo') {
         return await handleVoterInfo(request, env);
       }
@@ -891,10 +894,18 @@ async function handleVoterInfo(request, env) {
   const allowed = await rateLimit(env, 'voterinfo', clientIP(request), 30);
   if (!allowed) return json({ error: 'Daily address-lookup limit reached for your connection.' }, 429);
 
-  const u = 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=' + env.GOOGLE_CIVIC_KEY +
+  const base = 'https://www.googleapis.com/civicinfo/v2/voterinfo?key=' + env.GOOGLE_CIVIC_KEY +
             '&address=' + encodeURIComponent(address);
-  const r = await fetch(u);
-  const data = await r.json().catch(() => ({}));
+  let r = await fetch(base);
+  let data = await r.json().catch(() => ({}));
+  // "Election unknown": ask for the Nov 3, 2026 election explicitly by its Google election ID
+  if (!r.ok && /election unknown/i.test((data.error && data.error.message) || '')) {
+    const id = await novemberElectionId(env);
+    if (id) {
+      r = await fetch(base + '&electionId=' + id);
+      data = await r.json().catch(() => ({}));
+    }
+  }
   if (!r.ok) {
     const msg = (data.error && data.error.message) || ('HTTP ' + r.status);
     return json({ error: 'Lookup failed: ' + msg, status: r.status }, r.status === 400 ? 404 : 502);
@@ -923,4 +934,20 @@ async function handleVoterInfo(request, env) {
       earlyVoteSites: (data.earlyVoteSites || []).length, dropOffLocations: (data.dropOffLocations || []).length
     }
   });
+}
+
+async function listElections(env) {
+  const r = await fetch('https://www.googleapis.com/civicinfo/v2/elections?key=' + env.GOOGLE_CIVIC_KEY);
+  const d = await r.json().catch(() => ({}));
+  return (d.elections || []).map(e => ({ id: e.id, name: e.name, date: e.electionDay, division: e.ocdDivisionId }));
+}
+// Google's ID for the Nov 3, 2026 election covering Florida (state-level first, then national).
+async function novemberElectionId(env) {
+  const els = (await listElections(env)).filter(e => e.date === '2026-11-03');
+  const fl = els.find(e => /state:fl$/.test(e.division || '')) || els.find(e => /country:us$/.test(e.division || ''));
+  return fl ? fl.id : null;
+}
+async function handleElections(env) {
+  if (!env.GOOGLE_CIVIC_KEY) return json({ error: 'Address lookup is not configured.' }, 503);
+  return json({ elections: await listElections(env) });
 }
