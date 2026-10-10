@@ -270,12 +270,12 @@ async function handleResearch(request, env, ctx) {
   }
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
-    return json({ result: await localize(env, await refreshCached(env, key, cached, name, officeCode), lang), cached: true });
+    return json({ result: await localize(env, await refreshCached(env, key, cached, name, officeCode, office), lang), cached: true });
   }
   const target = await env.CACHE.get(alias);
   if (target && target !== key) {
     const hit = await env.CACHE.get(target, 'json');
-    if (hit) return json({ result: await localize(env, await refreshCached(env, target, hit, name, officeCode), lang), cached: true });
+    if (hit) return json({ result: await localize(env, await refreshCached(env, target, hit, name, officeCode, office), lang), cached: true });
   }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
@@ -378,7 +378,8 @@ async function runResearch(env, key, p) {
     'Election: ' + election,
     '',
     'Find:',
-    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
+    '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess. Florida caps direct gifts to a campaign at $3,000 per election for statewide offices and Supreme Court justices and $1,000 for other offices, so a gift above that went to a committee, not the campaign.',
+    '1b. Top donors to political committees (Florida political committees, super PACs) that the candidate controls or that exist to support them, e.g. "Friends of [candidate]". These are NOT campaign donors and go in committeeDonors with the committee name. Never put committee money in donors.',
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies, and only when you found the rating on that body\u2019s own website: its url must be a page on the rating organization\u2019s own site, not a blog, news story or aggregator repeating it. If you cannot find it on their own site, leave it out. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
@@ -389,6 +390,7 @@ async function runResearch(env, key, p) {
     '  "summary": "1-3 neutral sentences with ONLY these facts: the office sought, party, current or most recent job or office, prior offices, professional background, education. Every fact must come from a source you cite in summarySources. Nothing else: no adjectives or value judgments, no ideology labels besides party, no positions, priorities, record, accomplishments or controversies, no endorsements, fundraising, polling or vote shares, even when a source says them. If sources disagree or you are unsure, leave the fact out.",',
     '  "summarySources": [ {"name": "publication or site name", "url": "direct link taken from your search results"} ],',
     '  "donors": [ {"name": "donor name", "amount": "dollar amount like $1,000, or the single word unknown (named in a source, amount not reported) or undisclosed (source says it is hidden) — never a phrase", "type": "individual | PAC | industry group | party committee | self-funded | other", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "committeeDonors": [ {"name": "donor name", "amount": "dollar amount, or unknown", "committee": "the committee that received it, as named in the source", "type": "individual | PAC | corporation | party committee | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
     '  "donorListUrl": "link to the page listing this candidate\u2019s full campaign contributions on an official disclosure portal (Florida Division of Elections, Miami-Dade County or city clerk filings), taken directly from your search results, else empty string",',
     '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
@@ -422,6 +424,7 @@ async function runResearch(env, key, p) {
     try { await splitOpposition(env, result); result.oppV = OPPOSITION_VERSION; }
     catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
     ownSiteRatings(result);
+    separateCommitteeMoney(result, office, officeCode);
   }
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
@@ -538,12 +541,46 @@ function ownSiteRatings(result) {
   return result;
 }
 
+// Campaign gifts are capped by law. Anything listed as a campaign donation above twice the cap
+// (primary plus general) must have gone to a committee, so it moves to committeeDonors.
+// Florida: $3,000 per election for statewide offices and Supreme Court justices, $1,000 for
+// everything else. Federal: $3,500 per election (2025-2026).
+function contributionCap(office, officeCode) {
+  if (officeCode) return 3500;
+  const o = String(office || '').toLowerCase();
+  return /governor|attorney general|chief financial officer|commissioner of agriculture|supreme court/.test(o) ? 3000 : 1000;
+}
+function parseAmount(a) {
+  const m = String(a || '').replace(/,/g, '').match(/\$?\s*(\d+(?:\.\d+)?)\s*(million|m\b|thousand|k\b)?/i);
+  if (!m) return null;
+  const n = parseFloat(m[1]);
+  const unit = (m[2] || '').toLowerCase();
+  return unit.startsWith('m') ? n * 1e6 : unit.startsWith('t') || unit === 'k' ? n * 1e3 : n;
+}
+function separateCommitteeMoney(result, office, officeCode) {
+  if (!Array.isArray(result.donors)) return result;
+  if (!Array.isArray(result.committeeDonors)) result.committeeDonors = [];
+  const limit = 2 * contributionCap(office, officeCode);
+  const keep = [];
+  for (const d of result.donors) {
+    if (!d) continue;
+    const n = parseAmount(d.amount);
+    // PACs and party committees may give federal candidates more than individuals can; FEC rows are exact
+    const fecRow = officeCode && /fec\.gov/.test(d.url || '');
+    if (n !== null && n > limit && !fecRow) result.committeeDonors.push({ ...d, committee: d.committee || '' });
+    else keep.push(d);
+  }
+  result.donors = keep;
+  return result;
+}
+
 // Bring a cached result up to date: FEC donors for federal races and the neutral description.
 // Saves back to the cache only when something changed.
-async function refreshCached(env, key, result, name, officeCode) {
+async function refreshCached(env, key, result, name, officeCode, office) {
   result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
   if (result.financing) return result;                            // a ballot measure
-  ownSiteRatings(result);                                         // cheap, so it runs on every read
+  ownSiteRatings(result);                                         // cheap, so these run on every read
+  separateCommitteeMoney(result, office, officeCode);
   let changed = false;
   if (result.sumV !== SUMMARY_VERSION) {
     try {

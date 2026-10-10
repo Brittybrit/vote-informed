@@ -631,6 +631,10 @@ en: {
   'sec.donors': 'Top Campaign Donors',
   'donors.noFec': 'No donors on record with the FEC.',
   'donors.none': 'No donor data found.',
+  'donors.committeeOnly': 'No direct campaign donors found. Committee money is listed below.',
+  'sec.committee': 'Money to Allied Committees',
+  'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
+  'committee.to': 'to {name}',
   'donors.full': 'See full donor list',
   'sec.endorse': 'Endorsements',
   'endorse.none': 'No endorsements found in searched coverage.',
@@ -844,6 +848,10 @@ es: {
   'sec.donors': 'Principales donantes de campaña',
   'donors.noFec': 'No hay donantes registrados ante la FEC.',
   'donors.none': 'No se encontraron datos de donantes.',
+  'donors.committeeOnly': 'No se encontraron donantes directos de campaña. El dinero de comités aparece abajo.',
+  'sec.committee': 'Dinero a comités aliados',
+  'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
+  'committee.to': 'a {name}',
   'donors.full': 'Ver lista completa de donantes',
   'sec.endorse': 'Respaldos',
   'endorse.none': 'No se encontraron respaldos en la cobertura revisada.',
@@ -1057,6 +1065,10 @@ ht: {
   'sec.donors': 'Pi gwo donatè kanpay la',
   'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
   'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
+  'donors.committeeOnly': 'Nou pa jwenn donatè dirèk pou kanpay la. Lajan komite yo parèt anba a.',
+  'sec.committee': 'Lajan bay komite alye',
+  'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
+  'committee.to': 'bay {name}',
   'donors.full': 'Gade tout lis donatè yo',
   'sec.endorse': 'Sipò ofisyèl',
   'endorse.none': 'Nou pa jwenn okenn sipò ofisyèl nan sous nou chèche yo.',
@@ -2105,7 +2117,8 @@ function renderDossier(cand, race, r, cached){
     }).join('');
   } else {
     var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote_en || r.donorDataNote || '');
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : t('donors.none')) + '</p>';
+    var hasCommittee = r.committeeDonors && r.committeeDonors.length;
+    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : hasCommittee ? t('donors.committeeOnly') : t('donors.none')) + '</p>';
   }
   if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
   var listUrl = r.donorListUrl || '';
@@ -2116,6 +2129,20 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
+
+  // Money given to political committees backing the candidate. Not campaign donations:
+  // committees take unlimited amounts, campaigns are capped.
+  if(r.committeeDonors && r.committeeDonors.length){
+    html += '<div class="dsec"><h4>' + t('sec.committee') + '</h4>' +
+      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('committee.sub') + '</p>';
+    html += r.committeeDonors.map(function(d){
+      return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+      (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + srcLink(d.url) + '</span></div>' +
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+    }).join('');
+    html += '</div>';
+  }
 
   html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
