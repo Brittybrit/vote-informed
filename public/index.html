@@ -378,7 +378,8 @@
   .srcs .srclink{white-space:normal; overflow-wrap:anywhere; word-break:break-all;}
   .ratingval{
     font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.03em;
-    border:1.5px solid var(--rule); padding:2px 8px; margin-left:6px; white-space:nowrap;
+    border:1.5px solid var(--rule); padding:2px 8px; margin:4px 0 0; display:inline-block;
+    max-width:100%; white-space:normal; overflow-wrap:anywhere; vertical-align:middle;
   }
 
   .d-loading{padding:40px 24px; text-align:center;}
@@ -566,14 +567,14 @@ en: {
   'juris.unknown': 'Jurisdiction unknown',
 
   'race.badge.measure': 'Ballot measure &middot; Finance check',
-  'race.badge.judicial': 'Judicial &middot; Federalist Society check',
+  'race.badge.judicial': 'Judicial',
   'race.instr.measure': 'CLICK TO SEE WHO IS FUNDING EACH SIDE &middot; FILL AN OVAL TO MARK YES OR NO',
   'race.instr.cand': 'CLICK A NAME TO RESEARCH &middot; FILL THE OVAL TO MARK YOUR VOTE',
   'cand.markAria': 'Mark {name} as your vote',
   'cand.onBallot': '✓ ON MY BALLOT',
   'cand.research': 'RESEARCH →',
   'cand.researched': 'RESEARCHED',
-  'race.badge.retention': 'Judicial retention &middot; Federalist Society check',
+  'race.badge.retention': 'Judicial retention',
   'ret.question': 'Should {name} keep their seat?',
   'ret.instr': 'NO ONE IS RUNNING AGAINST THIS JUDGE &middot; YOU VOTE YES OR NO ON KEEPING THEM &middot; CLICK THE NAME TO RESEARCH',
   'ret.yes': 'YES, keep this judge',
@@ -633,6 +634,9 @@ en: {
   'donors.full': 'See full donor list',
   'sec.endorse': 'Endorsements',
   'endorse.none': 'No endorsements found in searched coverage.',
+  'sec.oppose': 'Opposed By',
+  'oppose.sub': 'Groups that urged a vote against this candidate.',
+  'oppose.subRet': 'Groups that urged a NO vote on keeping this judge.',
   'sec.ratings': 'Ratings &amp; Evaluations',
   'ratings.sub': 'Assessments by outside groups, not endorsements.',
   'sec.sources': 'Sources Consulted',
@@ -776,14 +780,14 @@ es: {
   'juris.unknown': 'Jurisdicción desconocida',
 
   'race.badge.measure': 'Medida electoral &middot; Revisión de financiamiento',
-  'race.badge.judicial': 'Judicial &middot; Revisión de Federalist Society',
+  'race.badge.judicial': 'Judicial',
   'race.instr.measure': 'HAGA CLIC PARA VER QUIÉN FINANCIA CADA LADO &middot; RELLENE UN ÓVALO PARA MARCAR SÍ O NO',
   'race.instr.cand': 'HAGA CLIC EN UN NOMBRE PARA INVESTIGAR &middot; RELLENE EL ÓVALO PARA MARCAR SU VOTO',
   'cand.markAria': 'Marcar a {name} como su voto',
   'cand.onBallot': '✓ EN MI PLAN',
   'cand.research': 'INVESTIGAR →',
   'cand.researched': 'INVESTIGADO',
-  'race.badge.retention': 'Retención judicial &middot; Revisión de Federalist Society',
+  'race.badge.retention': 'Retención judicial',
   'ret.question': '¿Debe {name} conservar su cargo?',
   'ret.instr': 'NADIE COMPITE CONTRA ESTE JUEZ &middot; USTED VOTA SÍ O NO A MANTENERLO &middot; HAGA CLIC EN EL NOMBRE PARA INVESTIGAR',
   'ret.yes': 'SÍ, mantener a este juez',
@@ -843,6 +847,9 @@ es: {
   'donors.full': 'Ver lista completa de donantes',
   'sec.endorse': 'Respaldos',
   'endorse.none': 'No se encontraron respaldos en la cobertura revisada.',
+  'sec.oppose': 'En contra',
+  'oppose.sub': 'Grupos que pidieron votar en contra de este candidato.',
+  'oppose.subRet': 'Grupos que pidieron votar NO a mantener a este juez.',
   'sec.ratings': 'Calificaciones y evaluaciones',
   'ratings.sub': 'Evaluaciones de grupos externos, no respaldos.',
   'sec.sources': 'Fuentes consultadas',
@@ -986,14 +993,14 @@ ht: {
   'juris.unknown': 'Nou pa konnen jiridiksyon an',
 
   'race.badge.measure': 'Mezi sou bilten vòt &middot; Verifikasyon finansman',
-  'race.badge.judicial': 'Jidisyè &middot; Verifikasyon Federalist Society',
+  'race.badge.judicial': 'Jidisyè',
   'race.instr.measure': 'KLIKE POU WÈ KIYÈS K AP FINANSE CHAK BÒ &middot; RANPLI YON OVAL POU MAKE WI OSWA NON',
   'race.instr.cand': 'KLIKE SOU YON NON POU FÈ RECHÈCH &middot; RANPLI OVAL LA POU MAKE VÒT OU',
   'cand.markAria': 'Make {name} kòm vòt ou',
   'cand.onBallot': '✓ NAN PLAN MWEN',
   'cand.research': 'RECHÈCH →',
   'cand.researched': 'RECHÈCH FÈT',
-  'race.badge.retention': 'Retansyon jij &middot; Verifikasyon Federalist Society',
+  'race.badge.retention': 'Retansyon jij',
   'ret.question': 'Èske {name} dwe kenbe pòs li?',
   'ret.instr': 'PÈSONN PA KANDIDA KONT JIJ SA A &middot; OU VOTE WI OSWA NON POU KENBE L &middot; KLIKE SOU NON AN POU FÈ RECHÈCH',
   'ret.yes': 'WI, kenbe jij sa a',
@@ -1053,6 +1060,9 @@ ht: {
   'donors.full': 'Gade tout lis donatè yo',
   'sec.endorse': 'Sipò ofisyèl',
   'endorse.none': 'Nou pa jwenn okenn sipò ofisyèl nan sous nou chèche yo.',
+  'sec.oppose': 'Kont li',
+  'oppose.sub': 'Gwoup ki mande moun vote kont kandida sa a.',
+  'oppose.subRet': 'Gwoup ki mande moun vote NON pou kenbe jij sa a.',
   'sec.ratings': 'Evalyasyon ak nòt',
   'ratings.sub': 'Evalyasyon gwoup deyò fè, se pa sipò ofisyèl.',
   'sec.sources': 'Sous nou konsilte',
@@ -2121,6 +2131,20 @@ function renderDossier(cand, race, r, cached){
     html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('endorse.none') + '</p>';
   }
   html += '</div>';
+
+  if(r.opposition && r.opposition.length){
+    html += '<div class="dsec"><h4>' + t('sec.oppose') + '</h4>' +
+      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
+    html += r.opposition.map(function(e){
+      return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
+      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+      '<div class="tagrow">' + leanTag(e.lean) +
+      groupTag(e) +
+      srcLink(e.url) +
+      '</div></div>';
+    }).join('');
+    html += '</div>';
+  }
 
   // drop grades from voter-guide / tracker sites; keep only org scorecards and bar/official reviews
   var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|election tracker/i;
