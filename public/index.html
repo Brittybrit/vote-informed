@@ -613,10 +613,9 @@ en: {
   'mny.pac': 'PACs and other committees',
   'mny.party': 'Party committees',
   'mny.self': 'Candidate&rsquo;s own money and loans',
-  'mny.other': 'Other (transfers, loans, refunds)',
   'mny.donors': 'Donors',
   'mny.sum': '<strong>Grassroots</strong> {g} &middot; <strong>Big money</strong> ($1,000+ gifts and PACs) {b}',
-  'mny.note': 'FEC filings for {period}, through {date}. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
+  'mny.note': 'FEC filings for {period}, through {date}. Raised means money from donors, PACs, parties and the candidate; transfers between committees, refunds and outside loans are left out. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
   'mny.none': 'No FEC filings found for {name} this period.',
   'mny.zero': '{name} has reported raising no money this period.',
   'mny.err': 'Couldn&rsquo;t load FEC totals right now.',
@@ -822,10 +821,9 @@ es: {
   'mny.pac': 'PAC y otros comités',
   'mny.party': 'Comités de partido',
   'mny.self': 'Dinero y préstamos del propio candidato',
-  'mny.other': 'Otros (transferencias, préstamos, reembolsos)',
   'mny.donors': 'Donantes',
   'mny.sum': '<strong>Base popular</strong> {g} &middot; <strong>Dinero grande</strong> (donaciones de $1,000+ y PAC) {b}',
-  'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
+  'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Lo recaudado incluye dinero de donantes, PAC, partidos y del propio candidato; no incluye transferencias entre comités, reembolsos ni préstamos de terceros. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
   'mny.none': 'No se encontraron informes ante la FEC de {name} en este período.',
   'mny.zero': '{name} no ha reportado recaudación en este período.',
   'mny.err': 'No se pudieron cargar los totales de la FEC en este momento.',
@@ -1031,10 +1029,9 @@ ht: {
   'mny.pac': 'PAC ak lòt komite',
   'mny.party': 'Komite pati',
   'mny.self': 'Pwòp lajan ak prè kandida a',
-  'mny.other': 'Lòt (transfè, prè, ranbousman)',
   'mny.donors': 'Donatè',
   'mny.sum': '<strong>Baz popilè</strong> {g} &middot; <strong>Gwo lajan</strong> (don $1,000+ ak PAC) {b}',
-  'mny.note': 'Rapò FEC pou {period}, jiska {date}. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
+  'mny.note': 'Rapò FEC pou {period}, jiska {date}. Lajan ranmase a se lajan ki soti nan donatè, PAC, pati ak kandida a menm; transfè ant komite, ranbousman ak prè lòt moun pa ladan l. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
   'mny.none': 'Nou pa jwenn rapò FEC pou {name} nan peryòd sa a.',
   'mny.zero': '{name} pa deklare li ranmase lajan nan peryòd sa a.',
   'mny.err': 'Nou pa ka chaje total FEC yo kounye a.',
@@ -2109,8 +2106,7 @@ var MONEY_BUCKETS = [
   { k:'large', c:'#D08A2B', group:'big' },
   { k:'pac',   c:'#8A3F12', group:'big' },
   { k:'party', c:'#7C8597' },
-  { k:'self',  c:'#C9C1AE' },
-  { k:'other', c:'#E2E2DC' }
+  { k:'self',  c:'#C9C1AE' }
 ];
 
 function fmtUsd(n){

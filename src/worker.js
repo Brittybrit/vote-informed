@@ -596,10 +596,10 @@ async function fecTopDonors(env, name, officeCode) {
 //   pac    PACs and other non-party committees (corporate, union, trade and issue PACs alike)
 //   party  party committees
 //   self   the candidate's own money and loans
-//   other  everything else in total receipts (transfers, other loans, refunds, interest)
-// Size bins are scaled to the individual-contribution total from the same summary data, so the
-// buckets add up to total receipts.
-const MONEY_VERSION = 1;
+// "Raised" is the sum of these buckets. Transfers between committees, outside loans, refunds and
+// interest are left out: they aren't support from anyone and voters can't read them.
+// Size bins are scaled to the individual-contribution total from the same summary data.
+const MONEY_VERSION = 2;
 async function handleRaceMoney(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
@@ -711,11 +711,12 @@ async function moneyBreakdown(base, c, q) {
   const pac = n(t.other_political_committee_contributions);
   const party = n(t.political_party_committee_contributions);
   const self = n(t.candidate_contribution) + n(t.loans_made_by_candidate);
-  const other = Math.max(0, receipts - small - mid - large - pac - party - self);
-  if (receipts > 0) c.receipts = receipts;   // candidate totals cover every authorized committee
-  if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
   const r = v => Math.round(v);
-  return { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), other: r(other), sized: binSum > 0 };
+  const out = { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), sized: binSum > 0 };
+  // candidate totals cover every authorized committee; "raised" leaves out transfers, refunds and outside loans
+  if (receipts > 0) c.receipts = out.small + out.mid + out.large + out.pac + out.party + out.self;
+  if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
+  return out;
 }
 
 // fec.gov pages filtered to each bucket. Amount ranges follow the FEC's own size bins.
