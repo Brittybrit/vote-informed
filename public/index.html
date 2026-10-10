@@ -2152,8 +2152,11 @@ function renderRaceMoney(ri, cand, d){
   var bd = me && me.breakdown;
   if(me && me.receipts && bd){
     var total = MONEY_BUCKETS.reduce(function(s, b){ return s + (bd[b.k] || 0); }, 0) || me.receipts;
+    // largest share first, in the bar (left to right) and the list (top to bottom); colors stay fixed per source
+    var ranked = MONEY_BUCKETS.filter(function(b){ return (bd[b.k] || 0) > 0; })
+      .sort(function(a, b){ return (bd[b.k] || 0) - (bd[a.k] || 0); });
     html += '<div class="mny-label">' + t('mny.cand', {name: esc(cand.name), amt: fmtUsd(me.receipts)}) + '</div><div class="mny-bar">';
-    MONEY_BUCKETS.forEach(function(b){
+    ranked.forEach(function(b){
       var v = bd[b.k] || 0;
       if(v <= 0) return;
       var u = link(me.links && me.links[b.k]);
@@ -2163,7 +2166,7 @@ function renderRaceMoney(ri, cand, d){
         (u ? '</a>' : '</span>');
     });
     html += '</div><div style="margin-top:6px">';
-    MONEY_BUCKETS.forEach(function(b){
+    ranked.forEach(function(b){
       var v = bd[b.k] || 0;
       if(v <= 0) return;
       var u = link(me.links && me.links[b.k]);
