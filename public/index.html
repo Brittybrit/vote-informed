@@ -596,7 +596,6 @@ en: {
   'fs.noneText': 'Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.',
   'sec.money': 'Money in This Race',
   'mny.loading': 'Loading FEC fundraising totals…',
-  'mny.lead': '{name} raised {amt}, {pct} of the {total} raised by everyone on your ballot in this race.',
   'mny.cand': 'Where {name}&rsquo;s {amt} came from',
   'mny.small': 'Grassroots: gifts of $200 and under',
   'mny.mid': 'Gifts of $200 to $999',
@@ -803,7 +802,6 @@ es: {
   'fs.noneText': 'Nada en la cobertura revisada, biografías o registros de eventos vinculó a este candidato con la Federalist Society.',
   'sec.money': 'Dinero en esta contienda',
   'mny.loading': 'Cargando los totales de recaudación de la FEC…',
-  'mny.lead': '{name} recaudó {amt}, el {pct} de los {total} recaudados por todos los candidatos de su boleta en esta contienda.',
   'mny.cand': 'De dónde vinieron los {amt} de {name}',
   'mny.small': 'Base popular: donaciones de $200 o menos',
   'mny.mid': 'Donaciones de $200 a $999',
@@ -1010,7 +1008,6 @@ ht: {
   'fs.noneText': 'Anyen nan sous nou chèche yo, nan biyografi oswa nan dosye evènman pa konekte kandida sa a ak Federalist Society.',
   'sec.money': 'Lajan nan eleksyon sa a',
   'mny.loading': 'N ap chaje total lajan FEC la…',
-  'mny.lead': '{name} ranmase {amt}, sa fè {pct} nan {total} tout kandida ki sou bilten vòt ou ranmase nan eleksyon sa a.',
   'mny.cand': 'Kote {amt} {name} yo soti',
   'mny.small': 'Baz popilè: don $200 oswa mwens',
   'mny.mid': 'Don $200 rive $999',
@@ -2149,9 +2146,6 @@ function renderRaceMoney(ri, cand, d){
     html += '<p class="mny-lead">' + t('mny.none', {name: esc(cand.name)}) + '</p>';
   } else if(!me.receipts){
     html += '<p class="mny-lead">' + t('mny.zero', {name: esc(cand.name)}) + '</p>';
-  } else {
-    html += '<p class="mny-lead">' + t('mny.lead', {name: '<strong>' + esc(cand.name) + '</strong>',
-      amt: '<strong>' + fmtUsd(me.receipts) + '</strong>', pct: fmtPct(me.receipts, d.raceTotal), total: fmtUsd(d.raceTotal)}) + '</p>';
   }
 
   // Where this candidate's money came from
