@@ -352,14 +352,6 @@
   .mny-bar a, .mny-bar span{display:block; min-width:3px; border-right:2px solid var(--panel); text-decoration:none;}
   .mny-bar > :last-child{border-right:none;}
   .mny-bar a:hover, .mny-bar a:focus-visible{filter:brightness(1.18); outline:none;}
-  .mny-bar .rc{background:#B8BFCC;}
-  .mny-bar .rc.me{background:var(--ink);}
-  .mny-key{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; font-size:12.5px;}
-  .mny-key a{color:var(--ink-soft); text-decoration:none;}
-  .mny-key a.me{color:var(--ink); font-weight:700;}
-  .mny-key a:hover{text-decoration:underline;}
-  .mny-zoom{height:10px; margin:4px 0 0; position:relative;}
-  .mny-zoom div{position:absolute; top:0; height:100%; border-left:1.5px dashed var(--ink-soft); border-right:1.5px dashed var(--ink-soft); border-bottom:1.5px dashed var(--ink-soft);}
   .mrow{display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px dotted #C9C9C1; font-size:13.5px; color:var(--ink); text-decoration:none;}
   .mrow:last-child{border-bottom:none;}
   a.mrow:hover .ml{text-decoration:underline;}
@@ -605,7 +597,6 @@ en: {
   'sec.money': 'Money in This Race',
   'mny.loading': 'Loading FEC fundraising totals…',
   'mny.lead': '{name} raised {amt}, {pct} of the {total} raised by everyone on your ballot in this race.',
-  'mny.race': 'Everyone on your ballot &middot; {total}',
   'mny.cand': 'Where {name}&rsquo;s {amt} came from',
   'mny.small': 'Grassroots: gifts of $200 and under',
   'mny.mid': 'Gifts of $200 to $999',
@@ -813,7 +804,6 @@ es: {
   'sec.money': 'Dinero en esta contienda',
   'mny.loading': 'Cargando los totales de recaudación de la FEC…',
   'mny.lead': '{name} recaudó {amt}, el {pct} de los {total} recaudados por todos los candidatos de su boleta en esta contienda.',
-  'mny.race': 'Todos los de su boleta &middot; {total}',
   'mny.cand': 'De dónde vinieron los {amt} de {name}',
   'mny.small': 'Base popular: donaciones de $200 o menos',
   'mny.mid': 'Donaciones de $200 a $999',
@@ -1021,7 +1011,6 @@ ht: {
   'sec.money': 'Lajan nan eleksyon sa a',
   'mny.loading': 'N ap chaje total lajan FEC la…',
   'mny.lead': '{name} ranmase {amt}, sa fè {pct} nan {total} tout kandida ki sou bilten vòt ou ranmase nan eleksyon sa a.',
-  'mny.race': 'Tout moun ki sou bilten vòt ou &middot; {total}',
   'mny.cand': 'Kote {amt} {name} yo soti',
   'mny.small': 'Baz popilè: don $200 oswa mwens',
   'mny.mid': 'Don $200 rive $999',
@@ -2165,36 +2154,7 @@ function renderRaceMoney(ri, cand, d){
       amt: '<strong>' + fmtUsd(me.receipts) + '</strong>', pct: fmtPct(me.receipts, d.raceTotal), total: fmtUsd(d.raceTotal)}) + '</p>';
   }
 
-  // Bar 1: the race, one segment per candidate on the ballot
-  if(d.raceTotal > 0){
-    var sorted = d.candidates.slice().sort(function(a, b){ return b.receipts - a.receipts; });
-    var before = 0;
-    html += '<div class="mny-label">' + t('mny.race', {total: fmtUsd(d.raceTotal)}) + '</div><div class="mny-bar">';
-    sorted.forEach(function(c){
-      if(!c.receipts) return;
-      if(me && c.name !== me.name && sorted.indexOf(c) < sorted.indexOf(me)) before += c.receipts;
-      var u = link(c.links && c.links.all);
-      var tip = esc(c.name) + ': ' + fmtUsd(c.receipts) + ' (' + fmtPct(c.receipts, d.raceTotal) + ')';
-      html += (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener"' : '<span') +
-        ' class="rc' + (c === me ? ' me' : '') + '" style="flex-grow:' + c.receipts + '" title="' + tip + '" aria-label="' + tip + '">' +
-        (u ? '</a>' : '</span>');
-    });
-    html += '</div><div class="mny-key">';
-    sorted.forEach(function(c){
-      var u = link(c.links && c.links.all);
-      var label = esc(c.name) + ' ' + fmtUsd(c.receipts) + ' &middot; ' + fmtPct(c.receipts, d.raceTotal);
-      html += u ? '<a class="' + (c === me ? 'me' : '') + '" href="' + esc(u) + '" target="_blank" rel="noopener">' + label + '</a>'
-                : '<span>' + label + '</span>';
-    });
-    html += '</div>';
-    // dashed bracket from this candidate's slice down to the zoomed-in bar
-    if(me && me.receipts){
-      html += '<div class="mny-zoom"><div style="left:' + (before / d.raceTotal * 100) + '%;width:' +
-        Math.max(1, me.receipts / d.raceTotal * 100) + '%"></div></div>';
-    }
-  }
-
-  // Bar 2: where this candidate's money came from
+  // Where this candidate's money came from
   var bd = me && me.breakdown;
   if(me && me.receipts && bd){
     var total = MONEY_BUCKETS.reduce(function(s, b){ return s + (bd[b.k] || 0); }, 0) || me.receipts;
