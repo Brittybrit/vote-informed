@@ -212,6 +212,17 @@
   }
   .plan-row .pr-remove:hover{background:var(--right-bg); border-color:var(--right-fg); color:var(--right-fg);}
 
+  .jumprow{display:none; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 18px;}
+  .jumprow .jlabel{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-right:2px;}
+  .jumprow button{font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+    background:var(--panel); color:var(--ink); border:1.5px solid var(--ink); padding:4px 9px; cursor:pointer;}
+  .jumprow button:hover, .jumprow button:focus-visible{background:var(--ink); color:var(--paper);}
+  .race{scroll-margin-top:16px;}
+  .totop{position:fixed; right:16px; bottom:18px; z-index:40; display:none;
+    font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    background:var(--ink); color:var(--paper); border:2px solid var(--paper); box-shadow:3px 3px 0 rgba(19,31,60,.3);
+    padding:9px 12px; cursor:pointer;}
+  .totop.show{display:block;}
   .race{border:3px solid var(--rule); background:var(--panel); margin-bottom:22px;}
   .race-head{
     background:var(--ink); color:var(--paper); padding:10px 16px;
@@ -483,6 +494,7 @@
         </div>
         <div id="planRows"></div>
       </div>
+      <nav class="jumprow" id="jumpRow" aria-label="Jump to section"></nav>
       <div id="races"></div>
       <div class="reset-row"><button id="resetBtn" data-i18n="plan.reset"></button></div>
     </div>
@@ -498,6 +510,7 @@
 </main>
 
 <div id="tagpop" role="tooltip"></div>
+<button class="totop" id="toTop" type="button" data-i18n="jump.top"></button>
 
 <div id="printPlan"></div>
 
@@ -610,6 +623,10 @@ en: {
   'mny.zero': '{name} has reported raising no money this period.',
   'mny.err': 'Couldn&rsquo;t load FEC totals right now.',
   'mny.unmatched': 'Not found in FEC data: {names}.',
+  'jump.label': 'Jump to',
+  'jump.federal': 'Federal', 'jump.state': 'State', 'jump.county': 'County', 'jump.city': 'City',
+  'jump.judicial': 'Judicial', 'jump.amend': 'Amendments', 'jump.ref': 'Referendums', 'jump.measure': 'Measures',
+  'jump.top': '&uarr; Top',
   'sec.donors': 'Top Campaign Donors',
   'donors.noFec': 'No donors on record with the FEC.',
   'donors.none': 'No donor data found.',
@@ -816,6 +833,10 @@ es: {
   'mny.zero': '{name} no ha reportado recaudación en este período.',
   'mny.err': 'No se pudieron cargar los totales de la FEC en este momento.',
   'mny.unmatched': 'No aparece en los datos de la FEC: {names}.',
+  'jump.label': 'Ir a',
+  'jump.federal': 'Federal', 'jump.state': 'Estatal', 'jump.county': 'Condado', 'jump.city': 'Ciudad',
+  'jump.judicial': 'Judicial', 'jump.amend': 'Enmiendas', 'jump.ref': 'Referendos', 'jump.measure': 'Medidas',
+  'jump.top': '&uarr; Arriba',
   'sec.donors': 'Principales donantes de campaña',
   'donors.noFec': 'No hay donantes registrados ante la FEC.',
   'donors.none': 'No se encontraron datos de donantes.',
@@ -1022,6 +1043,10 @@ ht: {
   'mny.zero': '{name} pa deklare li ranmase lajan nan peryòd sa a.',
   'mny.err': 'Nou pa ka chaje total FEC yo kounye a.',
   'mny.unmatched': 'Pa nan done FEC yo: {names}.',
+  'jump.label': 'Ale nan',
+  'jump.federal': 'Federal', 'jump.state': 'Eta', 'jump.county': 'Konte', 'jump.city': 'Vil',
+  'jump.judicial': 'Jidisyè', 'jump.amend': 'Amannman', 'jump.ref': 'Referandòm', 'jump.measure': 'Mezi',
+  'jump.top': '&uarr; Anwo',
   'sec.donors': 'Pi gwo donatè kanpay la',
   'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
   'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
@@ -1491,8 +1516,59 @@ function renderBallot(){
     });
     wrap.appendChild(div);
   });
+  renderJumpRow();
   refreshVoteUI();
 }
+
+/* ---------------- jump-to sections ---------------- */
+
+// Sort each race into a ballot section from its English office title. Order matches the chips.
+var JUMP_ORDER = ['federal', 'state', 'county', 'city', 'judicial', 'amend', 'ref', 'measure'];
+function raceSection(race){
+  var o = String(race.office || '').toLowerCase();
+  if(race.isMeasure){
+    if(/constitutional amendment|^(no\.?|amendment)\s*\d/.test(o)) return 'amend';
+    if(/referend|county|school board|miami-dade/.test(o)) return 'ref';
+    return 'measure';
+  }
+  if(race.isJudicial || /\b(judge|justice)\b/.test(o)) return 'judicial';
+  if(/\b(united states|u\.?s\.?)\s+senat|representative in congress|congressional|president of the united states/.test(o)) return 'federal';
+  if(/governor|attorney general|chief financial officer|commissioner of agriculture|state senat|state representative|state attorney|public defender/.test(o)) return 'state';
+  if(/county|school board|sheriff|property appraiser|tax collector|supervisor of elections|clerk of|soil and water|community council/.test(o)) return 'county';
+  if(/ - |\bcity\b|\btown\b|\bvillage\b|council|commission|mayor/.test(o)) return 'city';
+  return '';
+}
+
+function renderJumpRow(){
+  var row = $('jumpRow');
+  if(!row) return;
+  var first = {};
+  var els = $('races').children;
+  ballot.races.forEach(function(race, ri){
+    var sec = raceSection(race);
+    if(sec && first[sec] === undefined) first[sec] = ri;
+  });
+  var present = JUMP_ORDER.filter(function(k){ return first[k] !== undefined; });
+  // one section, or none recognized: chips would only add noise
+  if(present.length < 2){ row.style.display = 'none'; row.innerHTML = ''; return; }
+  row.innerHTML = '<span class="jlabel">' + t('jump.label') + '</span>' +
+    present.map(function(k){ return '<button type="button" data-ri="' + first[k] + '">' + t('jump.' + k) + '</button>'; }).join('');
+  row.style.display = 'flex';
+  row.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var el = els[parseInt(b.dataset.ri, 10)];
+      if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+  });
+}
+
+(function(){
+  var btn = $('toTop');
+  if(!btn) return;
+  btn.addEventListener('click', function(){ window.scrollTo({top: 0, behavior: 'smooth'}); });
+  function onScroll(){ btn.classList.toggle('show', !!ballot && window.scrollY > 700); }
+  window.addEventListener('scroll', onScroll, {passive: true});
+})();
 
 function renderRetentionRace(div, race, ri){
   var jname = candName(ri, 0), c = race.candidates[0];
