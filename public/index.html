@@ -248,6 +248,9 @@
     font-weight:600; display:none; margin-top:3px;
   }
   .cand.voted .votetag{display:block;}
+  .ret-q{padding:12px 16px 2px; font-weight:800; font-size:17px;}
+  .cand.ret-judge{cursor:pointer;}
+  .cand.ret-opt .cname{font-size:15px;}
   .cand .peek{margin-left:auto; flex:0 0 auto; font-family:var(--mono); font-size:11px; color:var(--ink-soft); white-space:nowrap;}
 
   .dossier{
@@ -542,6 +545,14 @@ en: {
   'cand.onBallot': '✓ ON MY BALLOT',
   'cand.research': 'RESEARCH →',
   'cand.researched': 'RESEARCHED',
+  'race.badge.retention': 'Judicial retention &middot; Federalist Society check',
+  'ret.question': 'Should {name} keep their seat?',
+  'ret.instr': 'NO ONE IS RUNNING AGAINST THIS JUDGE &middot; YOU VOTE YES OR NO ON KEEPING THEM &middot; CLICK THE NAME TO RESEARCH',
+  'ret.yes': 'YES, keep this judge',
+  'ret.no': 'NO, remove this judge',
+  'ret.yesShort': 'YES, keep {name}',
+  'ret.noShort': 'NO, remove {name}',
+  'ret.note': 'This is a retention vote. {name} has no opponent. YES keeps them on the bench for another 6-year term. NO is a vote to remove them; if most voters say NO, the governor appoints a replacement.',
 
   'head.cand': 'Candidate Dossier',
   'head.measure': 'Ballot Measure',
@@ -724,6 +735,14 @@ es: {
   'cand.onBallot': '✓ EN MI PLAN',
   'cand.research': 'INVESTIGAR →',
   'cand.researched': 'INVESTIGADO',
+  'race.badge.retention': 'Retención judicial &middot; Revisión de Federalist Society',
+  'ret.question': '¿Debe {name} conservar su cargo?',
+  'ret.instr': 'NADIE COMPITE CONTRA ESTE JUEZ &middot; USTED VOTA SÍ O NO A MANTENERLO &middot; HAGA CLIC EN EL NOMBRE PARA INVESTIGAR',
+  'ret.yes': 'SÍ, mantener a este juez',
+  'ret.no': 'NO, destituir a este juez',
+  'ret.yesShort': 'SÍ, mantener a {name}',
+  'ret.noShort': 'NO, destituir a {name}',
+  'ret.note': 'Este es un voto de retención. {name} no tiene oponente. SÍ lo mantiene en el cargo por otro período de 6 años. NO es un voto para destituirlo; si la mayoría vota NO, el gobernador nombra a un reemplazo.',
 
   'head.cand': 'Expediente del candidato',
   'head.measure': 'Medida electoral',
@@ -906,6 +925,14 @@ ht: {
   'cand.onBallot': '✓ NAN PLAN MWEN',
   'cand.research': 'RECHÈCH →',
   'cand.researched': 'RECHÈCH FÈT',
+  'race.badge.retention': 'Retansyon jij &middot; Verifikasyon Federalist Society',
+  'ret.question': 'Èske {name} dwe kenbe pòs li?',
+  'ret.instr': 'PÈSONN PA KANDIDA KONT JIJ SA A &middot; OU VOTE WI OSWA NON POU KENBE L &middot; KLIKE SOU NON AN POU FÈ RECHÈCH',
+  'ret.yes': 'WI, kenbe jij sa a',
+  'ret.no': 'NON, retire jij sa a',
+  'ret.yesShort': 'WI, kenbe {name}',
+  'ret.noShort': 'NON, retire {name}',
+  'ret.note': 'Sa a se yon vòt retansyon. {name} pa gen opozan. WI kenbe l nan pòs la pou yon lòt manda 6 an. NON se yon vòt pou retire l; si majorite moun vote NON, gouvènè a nonmen yon lòt moun nan plas li.',
 
   'head.cand': 'Dosye kandida',
   'head.measure': 'Mezi sou bilten vòt',
@@ -1104,6 +1131,33 @@ function candName(ri, ci){
   if(race.isMeasure && tr && tr.measureOptions && tr.measureOptions[ri] && tr.measureOptions[ri][ci]) return tr.measureOptions[ri][ci];
   return c.name;
 }
+// Judicial retention: one judge and a YES/NO question on keeping them. No one runs against them.
+// Older parses may list the judge alone or with YES/NO rows; both become { isRetention, candidates:[judge] }.
+// Retention votes are stored as 'yes' / 'no'. A numeric vote saved before this change is dropped,
+// since filling the judge's oval never said which way the voter meant.
+var YESNO_RE = /^(yes|no|s[ií]|non?|wi)\b/i;
+var RETAIN_RE = /retain|retention|retenerse|rete an fonksyon/i;
+function normalizeBallot(b, v){
+  if(!b || !b.races) return;
+  b.races.forEach(function(race, ri){
+    if(!race || race.isMeasure || !race.isJudicial) return;
+    var people = (race.candidates || []).filter(function(c){ return c && c.name && !YESNO_RE.test(String(c.name).trim()); });
+    if(people.length > 1) return;
+    if(!race.isRetention && people.length !== 1 && !RETAIN_RE.test(race.office || '')) return;
+    var judge = people[0];
+    if(!judge){
+      var m = (race.office || '').match(/shall\s+(?:justice|judge)\s+(.+?)\s+of\s+the/i);
+      if(!m) return;
+      judge = { name: m[1], party: '' };
+    }
+    race.isRetention = true;
+    race.candidates = [judge];
+    if(v && typeof v[ri] === 'number') delete v[ri];
+  });
+}
+function retLabel(ri, v){
+  return t(v === 'yes' ? 'ret.yesShort' : 'ret.noShort', {name: esc(candName(ri, 0))});
+}
 function bt(field){ var tr = trBallot(); return (tr && tr[field]) || ballot[field]; }
 
 // Fetch translated titles without blocking: the ballot shows in English first and
@@ -1292,6 +1346,7 @@ async function applyParsed(data){
   var existing = loadStore().ballots[currentId];
   votes = (existing && existing.votes) ? existing.votes : {};
   if(existing && existing.ballot && existing.ballot.tr) ballot.tr = existing.ballot.tr;
+  normalizeBallot(ballot, votes);
   saveState();
   renderBallot();
   setStatus('');
@@ -1342,6 +1397,7 @@ function renderBallot(){
   ballot.races.forEach(function(race, ri){
     var div = document.createElement('div');
     div.className = 'race';
+    if(race.isRetention){ renderRetentionRace(div, race, ri); wrap.appendChild(div); return; }
     div.innerHTML =
       '<div class="race-head"><h3>' + esc(officeOf(ri)) + '</h3>' +
       (race.isMeasure ? '<span class="jbadge">' + t('race.badge.measure') + '</span>' :
@@ -1372,6 +1428,41 @@ function renderBallot(){
     wrap.appendChild(div);
   });
   refreshVoteUI();
+}
+
+function renderRetentionRace(div, race, ri){
+  var jname = candName(ri, 0), c = race.candidates[0];
+  div.innerHTML =
+    '<div class="race-head"><h3>' + esc(officeOf(ri)) + '</h3>' +
+    '<span class="jbadge">' + t('race.badge.retention') + '</span></div>' +
+    '<div class="ret-q">' + t('ret.question', {name: esc(jname)}) + '</div>' +
+    '<div class="race-instr">' + t('ret.instr') + '</div>';
+  var key = ri + ':0';
+  var jb = document.createElement('button');
+  jb.className = 'cand ret-judge';
+  jb.dataset.key = key;
+  jb.innerHTML =
+    '<span><span class="cname">' + esc(jname) + '</span><br>' +
+    '<span class="cparty">' + esc(c.party || '') + '</span></span>' +
+    '<span class="peek">' + (cache[key] ? t('cand.researched') : t('cand.research')) + '</span>';
+  jb.addEventListener('click', function(){ selectCandidate(ri, 0); });
+  div.appendChild(jb);
+  ['yes', 'no'].forEach(function(v){
+    var b = document.createElement('button');
+    b.className = 'cand ret-opt';
+    b.dataset.key = ri + ':' + v;
+    var label = t(v === 'yes' ? 'ret.yes' : 'ret.no');
+    b.innerHTML =
+      '<span class="oval-btn" role="checkbox" aria-checked="false" aria-label="' + label + '" tabindex="0"></span>' +
+      '<span><span class="cname">' + label + '</span>' +
+      '<span class="votetag">' + t('cand.onBallot') + '</span></span>';
+    b.addEventListener('click', function(){ toggleVote(ri, v); });
+    var oval = b.querySelector('.oval-btn');
+    oval.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); e.stopPropagation(); toggleVote(ri, v); }
+    });
+    div.appendChild(b);
+  });
 }
 
 function markActive(key){
@@ -1408,7 +1499,8 @@ function toggleVote(ri, ci){
 function refreshVoteUI(){
   document.querySelectorAll('.cand').forEach(function(el){
     var parts = el.dataset.key.split(':');
-    var voted = votes[parseInt(parts[0],10)] === parseInt(parts[1],10);
+    var want = /^\d+$/.test(parts[1]) ? parseInt(parts[1],10) : parts[1];
+    var voted = votes[parseInt(parts[0],10)] === want;
     el.classList.toggle('voted', voted);
     var oval = el.querySelector('.oval-btn');
     if(oval) oval.setAttribute('aria-checked', voted ? 'true' : 'false');
@@ -1426,10 +1518,14 @@ function renderPlanView(){
   var html = '';
   ballot.races.forEach(function(race, ri){
     var ci = votes[ri];
-    var picked = (ci !== undefined) ? race.candidates[ci] : null;
+    var ret = race.isRetention && (ci === 'yes' || ci === 'no');
+    var picked = ret ? {} : (ci !== undefined && typeof ci === 'number') ? race.candidates[ci] : null;
     html += '<div class="plan-row">' +
       '<span class="pr-office">' + esc(officeOf(ri)) + '</span>' +
-      (picked
+      (ret
+        ? '<span class="pr-pick">' + retLabel(ri, ci) + '</span>' +
+          '<button class="pr-remove" data-ri="' + ri + '">' + t('plan.remove') + '</button>'
+        : picked
         ? '<span class="pr-pick">' + esc(candName(ri, ci)) + (picked.party ? ' <span style="font-weight:400;font-family:var(--mono);font-size:11px;color:var(--ink-soft)">(' + esc(picked.party) + ')</span>' : '') + '</span>' +
           '<button class="pr-remove" data-ri="' + ri + '">' + t('plan.remove') + '</button>'
         : '<span class="pr-pick undecided">' + t('plan.undecided') + '</span><span style="width:62px"></span>') +
@@ -1451,9 +1547,10 @@ function buildPrintPlan(){
     '<table>';
   ballot.races.forEach(function(race, ri){
     var ci = votes[ri];
-    var picked = (ci !== undefined) ? race.candidates[ci] : null;
+    var ret = race.isRetention && (ci === 'yes' || ci === 'no');
+    var picked = (ci !== undefined && typeof ci === 'number') ? race.candidates[ci] : null;
     html += '<tr><td class="of">' + esc(officeOf(ri)) + '</td><td class="pk">' +
-      (picked ? esc(candName(ri, ci)) + (picked.party ? ' (' + esc(picked.party) + ')' : '') : '—') +
+      (ret ? retLabel(ri, ci) : picked ? esc(candName(ri, ci)) + (picked.party ? ' (' + esc(picked.party) + ')' : '') : '—') +
       '</td></tr>';
   });
   html += '</table><p class="pnote">' + t('print.note') + '</p>';
@@ -1647,6 +1744,19 @@ function voteBar(ri, ci){
   return html;
 }
 
+function retentionVoteBar(ri){
+  var sel = votes[ri];
+  return '<div class="votebar">' +
+    '<p style="font-size:14px;line-height:1.5;margin-bottom:10px"><strong>' + t('ret.question', {name: esc(candName(ri, 0))}) + '</strong><br>' +
+    t('ret.note', {name: esc(candName(ri, 0))}) + '</p>' +
+    '<div class="mv-row">' +
+    '<button class="' + (sel === 'yes' ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',\'yes\')">' +
+      (sel === 'yes' ? '✓ ' : '') + t('ret.yes') + '</button>' +
+    '<button class="' + (sel === 'no' ? 'unmark' : 'mark') + '" onclick="toggleVote(' + ri + ',\'no\')">' +
+      (sel === 'no' ? '✓ ' : '') + t('ret.no') + '</button>' +
+    '</div><div class="swapnote">' + (sel === undefined ? t('mv.mark') : t('mv.unmark')) + '</div></div>';
+}
+
 function renderDossierLoading(cand, race){
   $('dossierContent').innerHTML = dossierHead(cand, race, null) +
     '<div class="d-loading"><div class="oval-anim"></div>' +
@@ -1797,7 +1907,7 @@ function renderDossier(cand, race, r, cached){
     ri = parseInt(parts[0],10); ci = parseInt(parts[1],10);
   }
   var html = dossierHead(cand, race, cached);
-  if(ri >= 0) html += voteBar(ri, ci);
+  if(ri >= 0) html += race.isRetention ? retentionVoteBar(ri) : voteBar(ri, ci);
   html += '<div class="dossier-body">';
 
   if(r.summary){
@@ -2170,6 +2280,8 @@ function renderResumeList(){
       ballot = e.ballot;
       currentId = b.dataset.resume;
       votes = e.votes || {};
+      normalizeBallot(ballot, votes);
+      saveState();
       renderBallot();
       translateBallotInBackground();
     });
