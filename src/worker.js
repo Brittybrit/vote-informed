@@ -379,7 +379,7 @@ async function runResearch(env, key, p) {
     '',
     'Find:',
     '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
-    '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
+    '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies, and only when you found the rating on that body\u2019s own website: its url must be a page on the rating organization\u2019s own site, not a blog, news story or aggregator repeating it. If you cannot find it on their own site, leave it out. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
     fedsocTask,
@@ -421,6 +421,7 @@ async function runResearch(env, key, p) {
     catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
     try { await splitOpposition(env, result); result.oppV = OPPOSITION_VERSION; }
     catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
+    ownSiteRatings(result);
   }
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
@@ -509,11 +510,40 @@ async function splitOpposition(env, result) {
   return result;
 }
 
+// A rating is only shown when its link is on the rating body's own website (floridabar.org for
+// The Florida Bar, not a blog quoting the poll). The site has to match the organization's name:
+// its acronym (dcba.org), its words run together (sierraclub.org), two of its words, or one
+// distinctive word. Anything else, including a rating with no link, is dropped.
+const GENERIC_WORDS = new Set(['the', 'of', 'and', 'for', 'inc', 'florida', 'county', 'miami', 'dade', 'national',
+  'american', 'association', 'council', 'committee', 'league', 'united', 'state', 'south', 'greater', 'group']);
+function siteMatchesOrg(url, org) {
+  let host;
+  try { host = new URL(url).hostname.toLowerCase(); } catch (e) { return false; }
+  const labels = host.replace(/^www\./, '').split('.');
+  labels.pop();                                         // TLD
+  if (labels.length > 1 && /^(co|com|org|gov|net|ac)$/.test(labels[labels.length - 1])) labels.pop();
+  const site = labels.join('').replace(/[^a-z0-9]/g, '');
+  const words = normPart(org).split(' ').filter(w => w && !['the', 'of', 'and', 'for', 'inc'].includes(w));
+  if (!site || !words.length) return false;
+  const acronym = words.map(w => w[0]).join('');
+  if (acronym.length >= 3 && site.includes(acronym)) return true;
+  if (site.includes(words.join(''))) return true;
+  const hits = words.filter(w => w.length >= 3 && site.includes(w));
+  if (hits.length >= 2) return true;
+  return hits.some(w => w.length >= 5 && !GENERIC_WORDS.has(w));
+}
+function ownSiteRatings(result) {
+  if (Array.isArray(result.ratings))
+    result.ratings = result.ratings.filter(r => r && /^https:\/\//i.test(r.url || '') && siteMatchesOrg(r.url, r.org));
+  return result;
+}
+
 // Bring a cached result up to date: FEC donors for federal races and the neutral description.
 // Saves back to the cache only when something changed.
 async function refreshCached(env, key, result, name, officeCode) {
   result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
   if (result.financing) return result;                            // a ballot measure
+  ownSiteRatings(result);                                         // cheap, so it runs on every read
   let changed = false;
   if (result.sumV !== SUMMARY_VERSION) {
     try {
