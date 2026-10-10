@@ -346,6 +346,29 @@
   .tagrow .srclink{align-self:center;}
   .sumsrc{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:8px; line-height:1.7; overflow-wrap:anywhere;}
   .sumsrc a{color:inherit;}
+  .mny-lead{font-size:14px; line-height:1.5; margin-bottom:14px;}
+  .mny-label{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:12px 0 6px;}
+  .mny-bar{display:flex; height:30px; border:2px solid var(--ink); background:var(--paper); overflow:hidden;}
+  .mny-bar a, .mny-bar span{display:block; min-width:3px; border-right:2px solid var(--panel); text-decoration:none;}
+  .mny-bar > :last-child{border-right:none;}
+  .mny-bar a:hover, .mny-bar a:focus-visible{filter:brightness(1.18); outline:none;}
+  .mny-bar .rc{background:#B8BFCC;}
+  .mny-bar .rc.me{background:var(--ink);}
+  .mny-key{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; font-size:12.5px;}
+  .mny-key a{color:var(--ink-soft); text-decoration:none;}
+  .mny-key a.me{color:var(--ink); font-weight:700;}
+  .mny-key a:hover{text-decoration:underline;}
+  .mny-zoom{height:10px; margin:4px 0 0; position:relative;}
+  .mny-zoom div{position:absolute; top:0; height:100%; border-left:1.5px dashed var(--ink-soft); border-right:1.5px dashed var(--ink-soft); border-bottom:1.5px dashed var(--ink-soft);}
+  .mrow{display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px dotted #C9C9C1; font-size:13.5px; color:var(--ink); text-decoration:none;}
+  .mrow:last-child{border-bottom:none;}
+  a.mrow:hover .ml{text-decoration:underline;}
+  .mrow .sw{flex:0 0 14px; height:14px; border:1px solid rgba(19,31,60,.35);}
+  .mrow .ml{flex:1 1 auto; min-width:0;}
+  .mrow .mv{font-family:var(--mono); font-size:12px; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .mrow .mgo{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); white-space:nowrap; min-width:64px; text-align:right;}
+  .mny-sum{font-size:13.5px; margin-top:12px; padding:9px 12px; background:var(--paper); border-left:4px solid var(--ink);}
+  .mny-note{font-family:var(--mono); font-size:11px; line-height:1.5; color:var(--ink-soft); margin-top:10px;}
   .fulllist{display:inline-block; margin-top:12px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); border:2px solid var(--ink); padding:8px 12px; text-decoration:none;}
   .fulllist:hover{background:var(--ink); color:var(--paper);}
   .srcs{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); overflow-wrap:anywhere; word-break:break-all;}
@@ -579,6 +602,25 @@ en: {
   'fs.possible': '⚑ Federalist Society: possible ties',
   'fs.none': '○ Federalist Society: no ties found',
   'fs.noneText': 'Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.',
+  'sec.money': 'Money in This Race',
+  'mny.loading': 'Loading FEC fundraising totals…',
+  'mny.lead': '{name} raised {amt}, {pct} of the {total} raised by everyone on your ballot in this race.',
+  'mny.race': 'Everyone on your ballot &middot; {total}',
+  'mny.cand': 'Where {name}&rsquo;s {amt} came from',
+  'mny.small': 'Grassroots: gifts of $200 and under',
+  'mny.mid': 'Gifts of $200 to $999',
+  'mny.large': 'Big donors: gifts of $1,000 and up',
+  'mny.pac': 'PACs and other committees',
+  'mny.party': 'Party committees',
+  'mny.self': 'Candidate&rsquo;s own money and loans',
+  'mny.other': 'Other (transfers, loans, refunds)',
+  'mny.donors': 'Donors',
+  'mny.sum': '<strong>Grassroots</strong> {g} &middot; <strong>Big money</strong> ($1,000+ gifts and PACs) {b}',
+  'mny.note': 'FEC filings for {period}, through {date}. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
+  'mny.none': 'No FEC filings found for {name} this period.',
+  'mny.zero': '{name} has reported raising no money this period.',
+  'mny.err': 'Couldn&rsquo;t load FEC totals right now.',
+  'mny.unmatched': 'Not found in FEC data: {names}.',
   'sec.donors': 'Top Campaign Donors',
   'donors.noFec': 'No donors on record with the FEC.',
   'donors.none': 'No donor data found.',
@@ -769,6 +811,25 @@ es: {
   'fs.possible': '⚑ Federalist Society: posibles vínculos',
   'fs.none': '○ Federalist Society: no se encontraron vínculos',
   'fs.noneText': 'Nada en la cobertura revisada, biografías o registros de eventos vinculó a este candidato con la Federalist Society.',
+  'sec.money': 'Dinero en esta contienda',
+  'mny.loading': 'Cargando los totales de recaudación de la FEC…',
+  'mny.lead': '{name} recaudó {amt}, el {pct} de los {total} recaudados por todos los candidatos de su boleta en esta contienda.',
+  'mny.race': 'Todos los de su boleta &middot; {total}',
+  'mny.cand': 'De dónde vinieron los {amt} de {name}',
+  'mny.small': 'Base popular: donaciones de $200 o menos',
+  'mny.mid': 'Donaciones de $200 a $999',
+  'mny.large': 'Grandes donantes: donaciones de $1,000 o más',
+  'mny.pac': 'PAC y otros comités',
+  'mny.party': 'Comités de partido',
+  'mny.self': 'Dinero y préstamos del propio candidato',
+  'mny.other': 'Otros (transferencias, préstamos, reembolsos)',
+  'mny.donors': 'Donantes',
+  'mny.sum': '<strong>Base popular</strong> {g} &middot; <strong>Dinero grande</strong> (donaciones de $1,000+ y PAC) {b}',
+  'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
+  'mny.none': 'No se encontraron informes ante la FEC de {name} en este período.',
+  'mny.zero': '{name} no ha reportado recaudación en este período.',
+  'mny.err': 'No se pudieron cargar los totales de la FEC en este momento.',
+  'mny.unmatched': 'No aparece en los datos de la FEC: {names}.',
   'sec.donors': 'Principales donantes de campaña',
   'donors.noFec': 'No hay donantes registrados ante la FEC.',
   'donors.none': 'No se encontraron datos de donantes.',
@@ -959,6 +1020,25 @@ ht: {
   'fs.possible': '⚑ Federalist Society: lyen ki posib',
   'fs.none': '○ Federalist Society: nou pa jwenn okenn lyen',
   'fs.noneText': 'Anyen nan sous nou chèche yo, nan biyografi oswa nan dosye evènman pa konekte kandida sa a ak Federalist Society.',
+  'sec.money': 'Lajan nan eleksyon sa a',
+  'mny.loading': 'N ap chaje total lajan FEC la…',
+  'mny.lead': '{name} ranmase {amt}, sa fè {pct} nan {total} tout kandida ki sou bilten vòt ou ranmase nan eleksyon sa a.',
+  'mny.race': 'Tout moun ki sou bilten vòt ou &middot; {total}',
+  'mny.cand': 'Kote {amt} {name} yo soti',
+  'mny.small': 'Baz popilè: don $200 oswa mwens',
+  'mny.mid': 'Don $200 rive $999',
+  'mny.large': 'Gwo donatè: don $1,000 oswa plis',
+  'mny.pac': 'PAC ak lòt komite',
+  'mny.party': 'Komite pati',
+  'mny.self': 'Pwòp lajan ak prè kandida a',
+  'mny.other': 'Lòt (transfè, prè, ranbousman)',
+  'mny.donors': 'Donatè',
+  'mny.sum': '<strong>Baz popilè</strong> {g} &middot; <strong>Gwo lajan</strong> (don $1,000+ ak PAC) {b}',
+  'mny.note': 'Rapò FEC pou {period}, jiska {date}. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
+  'mny.none': 'Nou pa jwenn rapò FEC pou {name} nan peryòd sa a.',
+  'mny.zero': '{name} pa deklare li ranmase lajan nan peryòd sa a.',
+  'mny.err': 'Nou pa ka chaje total FEC yo kounye a.',
+  'mny.unmatched': 'Pa nan done FEC yo: {names}.',
   'sec.donors': 'Pi gwo donatè kanpay la',
   'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
   'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
@@ -1342,6 +1422,7 @@ async function handleFile(file){
 
 async function applyParsed(data){
   ballot = data.ballot;
+  moneyCache = {};
   currentId = ballotId(ballot);
   var existing = loadStore().ballots[currentId];
   votes = (existing && existing.votes) ? existing.votes : {};
@@ -1936,6 +2017,9 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
+  var fedRace = ri >= 0 && isFederalRace(race);
+  if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
+
   html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
     html += r.donors.map(function(d){
@@ -2006,6 +2090,149 @@ function renderDossier(cand, race, r, cached){
   html += '</div>';
   $('dossierContent').innerHTML = html;
   $('dossier').scrollTop = 0;
+  if(fedRace) loadRaceMoney(ri, cand);
+}
+
+/* ---------------- money in this race (FEC) ---------------- */
+
+// U.S. Senate and House only: the FEC covers them; state and local races file elsewhere.
+function isFederalRace(race){
+  var o = String(race && race.office || '').toLowerCase();
+  return /\b(united states|u\.?s\.?)\s+senat/.test(o) ||
+    /representative in congress|congressional district|\b(united states|u\.?s\.?)\s+representative/.test(o);
+}
+
+var moneyCache = {};   // raceIndex -> response (or a pending promise)
+var MONEY_BUCKETS = [
+  { k:'small', c:'#2F6B3C', group:'grass' },
+  { k:'mid',   c:'#A9C2AF' },
+  { k:'large', c:'#D08A2B', group:'big' },
+  { k:'pac',   c:'#8A3F12', group:'big' },
+  { k:'party', c:'#7C8597' },
+  { k:'self',  c:'#C9C1AE' },
+  { k:'other', c:'#E2E2DC' }
+];
+
+function fmtUsd(n){
+  n = Math.round(n || 0);
+  if(n >= 1e6) return '$' + (n/1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M';
+  if(n >= 1e4) return '$' + Math.round(n/1e3) + 'K';
+  return '$' + n.toLocaleString('en-US');
+}
+function fmtPct(part, whole){
+  if(!whole) return '0%';
+  var p = part / whole * 100;
+  return (p > 0 && p < 1 ? '&lt;1' : Math.round(p)) + '%';
+}
+
+async function loadRaceMoney(ri, cand){
+  var race = ballot.races[ri];
+  var box = $('moneySec');
+  if(!box) return;
+  var hit = moneyCache[ri];
+  if(hit && !hit.then){ renderRaceMoney(ri, cand, hit); return; }
+  box.innerHTML = '<h4>' + t('sec.money') + '</h4><p class="mny-note">' + t('mny.loading') + '</p>';
+  try{
+    if(!hit){
+      hit = moneyCache[ri] = api('/api/race-money', {
+        office: race.office,
+        names: race.candidates.map(function(c){ return c.name; })
+      });
+    }
+    var data = await hit;
+    moneyCache[ri] = data;
+    renderRaceMoney(ri, cand, data);
+  }catch(e){
+    delete moneyCache[ri];
+    var b = $('moneySec');
+    if(b && activeKey && parseInt(activeKey.split(':')[0],10) === ri)
+      b.innerHTML = '<h4>' + t('sec.money') + '</h4><p class="mny-note">' + t('mny.err') + '</p>';
+  }
+}
+
+function renderRaceMoney(ri, cand, d){
+  var box = $('moneySec');
+  // the visitor may have opened another dossier while this loaded
+  if(!box || !activeKey || parseInt(activeKey.split(':')[0],10) !== ri) return;
+  if(!d || !d.available){ box.remove(); return; }
+  var me = null;
+  d.candidates.forEach(function(c){ if(c.name === cand.name) me = c; });
+  var html = '<h4>' + t('sec.money') + '</h4>';
+  var link = function(u){ return /^https:\/\/www\.fec\.gov\//.test(u || '') ? u : ''; };
+
+  if(!me){
+    html += '<p class="mny-lead">' + t('mny.none', {name: esc(cand.name)}) + '</p>';
+  } else if(!me.receipts){
+    html += '<p class="mny-lead">' + t('mny.zero', {name: esc(cand.name)}) + '</p>';
+  } else {
+    html += '<p class="mny-lead">' + t('mny.lead', {name: '<strong>' + esc(cand.name) + '</strong>',
+      amt: '<strong>' + fmtUsd(me.receipts) + '</strong>', pct: fmtPct(me.receipts, d.raceTotal), total: fmtUsd(d.raceTotal)}) + '</p>';
+  }
+
+  // Bar 1: the race, one segment per candidate on the ballot
+  if(d.raceTotal > 0){
+    var sorted = d.candidates.slice().sort(function(a, b){ return b.receipts - a.receipts; });
+    var before = 0;
+    html += '<div class="mny-label">' + t('mny.race', {total: fmtUsd(d.raceTotal)}) + '</div><div class="mny-bar">';
+    sorted.forEach(function(c){
+      if(!c.receipts) return;
+      if(me && c.name !== me.name && sorted.indexOf(c) < sorted.indexOf(me)) before += c.receipts;
+      var u = link(c.links && c.links.all);
+      var tip = esc(c.name) + ': ' + fmtUsd(c.receipts) + ' (' + fmtPct(c.receipts, d.raceTotal) + ')';
+      html += (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener"' : '<span') +
+        ' class="rc' + (c === me ? ' me' : '') + '" style="flex-grow:' + c.receipts + '" title="' + tip + '" aria-label="' + tip + '">' +
+        (u ? '</a>' : '</span>');
+    });
+    html += '</div><div class="mny-key">';
+    sorted.forEach(function(c){
+      var u = link(c.links && c.links.all);
+      var label = esc(c.name) + ' ' + fmtUsd(c.receipts) + ' &middot; ' + fmtPct(c.receipts, d.raceTotal);
+      html += u ? '<a class="' + (c === me ? 'me' : '') + '" href="' + esc(u) + '" target="_blank" rel="noopener">' + label + '</a>'
+                : '<span>' + label + '</span>';
+    });
+    html += '</div>';
+    // dashed bracket from this candidate's slice down to the zoomed-in bar
+    if(me && me.receipts){
+      html += '<div class="mny-zoom"><div style="left:' + (before / d.raceTotal * 100) + '%;width:' +
+        Math.max(1, me.receipts / d.raceTotal * 100) + '%"></div></div>';
+    }
+  }
+
+  // Bar 2: where this candidate's money came from
+  var bd = me && me.breakdown;
+  if(me && me.receipts && bd){
+    var total = MONEY_BUCKETS.reduce(function(s, b){ return s + (bd[b.k] || 0); }, 0) || me.receipts;
+    html += '<div class="mny-label">' + t('mny.cand', {name: esc(cand.name), amt: fmtUsd(me.receipts)}) + '</div><div class="mny-bar">';
+    MONEY_BUCKETS.forEach(function(b){
+      var v = bd[b.k] || 0;
+      if(v <= 0) return;
+      var u = link(me.links && me.links[b.k]);
+      var tip = t('mny.' + b.k).replace(/<[^>]+>/g, '') + ': ' + fmtUsd(v) + ' (' + fmtPct(v, total).replace('&lt;', '<') + ')';
+      html += (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener"' : '<span') +
+        ' style="flex-grow:' + v + ';background:' + b.c + '" title="' + esc(tip) + '" aria-label="' + esc(tip) + '">' +
+        (u ? '</a>' : '</span>');
+    });
+    html += '</div><div style="margin-top:6px">';
+    MONEY_BUCKETS.forEach(function(b){
+      var v = bd[b.k] || 0;
+      if(v <= 0) return;
+      var u = link(me.links && me.links[b.k]);
+      var inner = '<span class="sw" style="background:' + b.c + '"></span>' +
+        '<span class="ml">' + t('mny.' + b.k) + '</span>' +
+        '<span class="mv">' + fmtUsd(v) + ' &middot; ' + fmtPct(v, total) + '</span>' +
+        '<span class="mgo">' + (u ? t('mny.donors') + ' &#8599;' : '') + '</span>';
+      html += u ? '<a class="mrow" href="' + esc(u) + '" target="_blank" rel="noopener">' + inner + '</a>'
+                : '<div class="mrow">' + inner + '</div>';
+    });
+    html += '</div>';
+    var grass = bd.small || 0, big = (bd.large || 0) + (bd.pac || 0);
+    html += '<p class="mny-sum">' + t('mny.sum', {g: fmtPct(grass, total), b: fmtPct(big, total)}) + '</p>';
+  }
+
+  if(d.unmatched && d.unmatched.length)
+    html += '<p class="mny-note">' + t('mny.unmatched', {names: d.unmatched.map(esc).join(', ')}) + '</p>';
+  html += '<p class="mny-note">' + t('mny.note', {period: esc(d.period || ''), date: esc(d.coverageEnd || '')}) + '</p>';
+  box.innerHTML = html;
 }
 
 /* ---------------- wiring ---------------- */
@@ -2039,7 +2266,7 @@ $('clearBtn').addEventListener('click', function(){
 
 $('resetBtn').addEventListener('click', function(){
   saveState();  // current plan is kept
-  ballot = null; cache = {}; votes = {}; activeKey = null; currentId = null;
+  ballot = null; cache = {}; votes = {}; activeKey = null; currentId = null; moneyCache = {};
   $('workspace').style.display = 'none';
   $('jurisBox').style.display = 'none';
   document.querySelector('header').classList.remove('with-ballot');
@@ -2279,6 +2506,7 @@ function renderResumeList(){
       if(!e) return;
       ballot = e.ballot;
       currentId = b.dataset.resume;
+      moneyCache = {};
       votes = e.votes || {};
       normalizeBallot(ballot, votes);
       saveState();

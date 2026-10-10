@@ -6,6 +6,7 @@ import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
  * Routes:
  *   POST /api/parse            { pdf: base64 }  -> parsed ballot JSON (cached by PDF fingerprint)
  *   POST /api/research         { name, office, jurisdiction, election, isJudicial, lang } -> dossier JSON (shared cache)
+ *   POST /api/race-money       { office, names } -> FEC fundraising for a federal race and where each candidate's money came from
  *   POST /api/ballot-text      { pdf, offices, measureOptions, electionName } -> official Spanish/Kreyol titles
  *   POST /api/translate-ballot { lang, offices, measureOptions, electionName } -> machine-translated titles
  *   GET  /api/evsites          early voting sites with coordinates
@@ -32,6 +33,7 @@ const API_URL = 'https://api.anthropic.com/v1/messages';
 const CACHE_TTL = 60 * 60 * 24 * 7;        // research: 7 days (endorsements and money move weekly)
 const PARSE_TTL = 60 * 60 * 24 * 30;       // parses: 30 days (a published ballot PDF doesn't change)
 const LIMIT_PARSE_PER_DAY = 10;
+const LIMIT_MONEY_PER_DAY = 40;    // fresh (uncached) race-money lookups per IP per day; FEC API only, no AI
 const LIMIT_RESEARCH_PER_DAY = 60; // fresh (uncached) lookups per IP per day; cached hits are free
 const MAX_PDF_BASE64_CHARS = 44 * 1024 * 1024; // ~32MB PDF
 // Countywide master ballot, fetched and parsed server-side. Update each election.
@@ -54,6 +56,9 @@ export default {
       }
       if (request.method === 'POST' && url.pathname === '/api/research') {
         return await handleResearch(request, env, ctx);
+      }
+      if (request.method === 'POST' && url.pathname === '/api/race-money') {
+        return await handleRaceMoney(request, env);
       }
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
@@ -576,6 +581,157 @@ async function fecTopDonors(env, name, officeCode) {
     listUrl: 'https://www.fec.gov/data/receipts/?committee_id=' + committee.committee_id + '&two_year_transaction_period=' + cycle,
     note: 'Itemized contributions from official FEC filings (openFEC API, committee ' + committee.committee_id +
       '). Amounts sum the largest itemized receipts reported this cycle and may lag the most recent filings.'
+  };
+}
+
+/* ---------------- race money (FEC) ---------------- */
+// Where a federal race's money comes from, for the dossier chart. Totals and size bins come from
+// FEC summary data (candidate totals and Schedule A by size), so unitemized small gifts are counted.
+// Everything is for the current two-year filing period so it matches the fec.gov receipt links.
+//
+// Buckets for each candidate, in dollars:
+//   small  individual gifts of $200 and under (grassroots)
+//   mid    individual gifts $200.01 to $999.99
+//   large  individual gifts of $1,000 and over
+//   pac    PACs and other non-party committees (corporate, union, trade and issue PACs alike)
+//   party  party committees
+//   self   the candidate's own money and loans
+//   other  everything else in total receipts (transfers, other loans, refunds, interest)
+// Size bins are scaled to the individual-contribution total from the same summary data, so the
+// buckets add up to total receipts.
+const MONEY_VERSION = 1;
+async function handleRaceMoney(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
+  const office = body.office.slice(0, 200);
+  const officeCode = federalOfficeCode(office);
+  if (!officeCode || officeCode === 'P') return json({ available: false, reason: 'not-federal' });
+  let district = '';
+  if (officeCode === 'H') {
+    const m = office.match(/district\s*(\d{1,2})/i);
+    if (!m) return json({ available: false, reason: 'no-district' });
+    district = String(parseInt(m[1], 10)).padStart(2, '0');
+  }
+  const names = [...new Set(body.names.filter(isStr).map(n => n.slice(0, 120).trim()))]
+    .filter(n => !/^write[\s-]*in/i.test(n)).slice(0, 10);
+  if (!names.length) return json({ available: false, reason: 'no-candidates' });
+
+  const y = new Date().getFullYear();
+  const cycle = y + (y % 2 === 0 ? 0 : 1);
+  const key = 'money' + MONEY_VERSION + ':' + await sha256([officeCode, district, cycle, ...names.map(normPart).sort()].join('|'));
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return json(hit);
+
+  if (!(await rateLimit(env, 'money', clientIP(request), LIMIT_MONEY_PER_DAY)))
+    return json({ error: 'Daily limit reached for fundraising lookups from your connection.' }, 429);
+
+  const out = await raceMoney(env, officeCode, district, cycle, names);
+  // Filings land on a schedule; half a day keeps the FEC calls down without going stale.
+  // A failed lookup is cached for 10 minutes so a broken FEC response isn't retried on every tap.
+  await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: out.available ? 60 * 60 * 12 : 600 });
+  return json(out);
+}
+
+async function raceMoney(env, officeCode, district, cycle, names) {
+  const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
+  const base = 'https://api.open.fec.gov/v1';
+  const q = '&cycle=' + cycle + '&election_full=false&api_key=' + apiKey;
+  const eRes = await fetch(base + '/elections/?office=' + (officeCode === 'S' ? 'senate' : 'house') + '&state=FL' +
+    (district ? '&district=' + district : '') + '&per_page=100' + q);
+  if (!eRes.ok) { console.log('FEC elections ' + eRes.status); return { available: false, reason: 'fec-error' }; }
+  const field = ((await eRes.json()).results || []).filter(c => c && c.candidate_id);
+
+  const candidates = [];
+  const unmatched = [];
+  for (const name of names) {
+    const c = matchFecCandidate(name, field);
+    if (!c) { unmatched.push(name); continue; }
+    candidates.push({ name, fecName: c.candidate_name || '', candidateId: c.candidate_id,
+      committeeId: c.candidate_pcc_id || '', party: c.party_full || '', receipts: Math.max(0, c.total_receipts || 0),
+      coverageEnd: c.coverage_end_date || '' });
+  }
+  if (!candidates.length) return { available: false, reason: 'no-match', unmatched };
+
+  await Promise.all(candidates.map(async c => {
+    try { c.breakdown = await moneyBreakdown(base, c, q); } catch (e) { console.log('FEC breakdown error for ' + c.name + ': ' + e.message); }
+    c.links = moneyLinks(c.committeeId, cycle);
+  }));
+
+  const raceTotal = candidates.reduce((sum, c) => sum + c.receipts, 0);
+  const ends = candidates.map(c => c.coverageEnd).filter(Boolean).sort();
+  return { available: true, cycle, period: (cycle - 1) + '\u2013' + cycle, raceTotal,
+    coverageEnd: ends.length ? ends[ends.length - 1].slice(0, 10) : '', candidates, unmatched };
+}
+
+// Ballot names ("Debbie Wasserman Schultz", "Carlos \"Charlie\" Smith Jr.") against FEC names
+// ("WASSERMAN SCHULTZ, DEBBIE"). The FEC surname has to end the ballot name; the first name has
+// to share its first three letters, unless only one candidate in the race has that surname.
+function matchFecCandidate(name, field) {
+  const clean = normPart(name.replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' '))
+    .replace(/\b(jr|sr|ii|iii|iv)$/, '').trim();
+  const first = clean.split(' ')[0] || '';
+  const hits = field.filter(c => {
+    const [last, given] = String(c.candidate_name || '').split(',');
+    const l = normPart(last);
+    return l && (clean === l || clean.endsWith(' ' + l));
+  });
+  if (!hits.length) return null;
+  const byFirst = hits.filter(c => normPart(String(c.candidate_name).split(',')[1] || '').startsWith(first.slice(0, 3)));
+  if (byFirst.length === 1) return byFirst[0];
+  if (byFirst.length > 1) return byFirst.sort((a, b) => (b.total_receipts || 0) - (a.total_receipts || 0))[0];
+  return hits.length === 1 ? hits[0] : null;
+}
+
+async function moneyBreakdown(base, c, q) {
+  const [tRes, sRes] = await Promise.all([
+    fetch(base + '/candidate/' + c.candidateId + '/totals/?per_page=1' + q),
+    fetch(base + '/schedules/schedule_a/by_size/by_candidate/?candidate_id=' + c.candidateId + '&per_page=20' + q)
+  ]);
+  if (!tRes.ok) throw new Error('totals ' + tRes.status);
+  const t = ((await tRes.json()).results || [])[0];
+  if (!t) return null;
+  const n = v => Math.max(0, Number(v) || 0);
+  const receipts = n(t.receipts);
+  const individual = n(t.individual_contributions);
+  const bins = {};
+  if (sRes.ok) for (const r of ((await sRes.json()).results || [])) bins[r.size] = (bins[r.size] || 0) + n(r.total);
+  const binSum = Object.values(bins).reduce((a, b) => a + b, 0);
+  let small, mid, large;
+  if (binSum > 0) {
+    const scale = individual / binSum;
+    small = (bins[0] || 0) * scale;
+    mid = ((bins[200] || 0) + (bins[500] || 0)) * scale;
+    large = ((bins[1000] || 0) + (bins[2000] || 0)) * scale;
+  } else {
+    // No size data yet: unitemized gifts are all $200 and under; itemized ones can't be sized.
+    small = n(t.individual_unitemized_contributions);
+    mid = Math.max(0, individual - small);
+    large = 0;
+  }
+  const pac = n(t.other_political_committee_contributions);
+  const party = n(t.political_party_committee_contributions);
+  const self = n(t.candidate_contribution) + n(t.loans_made_by_candidate);
+  const other = Math.max(0, receipts - small - mid - large - pac - party - self);
+  if (receipts > 0) c.receipts = receipts;   // candidate totals cover every authorized committee
+  if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
+  const r = v => Math.round(v);
+  return { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), other: r(other), sized: binSum > 0 };
+}
+
+// fec.gov pages filtered to each bucket. Amount ranges follow the FEC's own size bins.
+function moneyLinks(committeeId, cycle) {
+  if (!/^C\d{8}$/.test(committeeId)) return {};
+  const base = 'https://www.fec.gov/data/receipts/';
+  const p = '?committee_id=' + committeeId + '&two_year_transaction_period=' + cycle;
+  const ind = base + 'individual-contributions/' + p;
+  return {
+    all: base + p,
+    small: ind + '&max_amount=200',
+    mid: ind + '&min_amount=200.01&max_amount=999.99',
+    large: ind + '&min_amount=1000',
+    pac: base + p + '&line_number=F3-11C',
+    party: base + p + '&line_number=F3-11B',
+    self: base + p + '&line_number=F3-11D'
   };
 }
 
