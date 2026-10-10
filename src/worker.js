@@ -270,12 +270,12 @@ async function handleResearch(request, env, ctx) {
   }
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
-    return json({ result: await localize(env, await refreshFec(env, key, cached, name, officeCode), lang), cached: true });
+    return json({ result: await localize(env, await refreshCached(env, key, cached, name, officeCode), lang), cached: true });
   }
   const target = await env.CACHE.get(alias);
   if (target && target !== key) {
     const hit = await env.CACHE.get(target, 'json');
-    if (hit) return json({ result: await localize(env, await refreshFec(env, target, hit, name, officeCode), lang), cached: true });
+    if (hit) return json({ result: await localize(env, await refreshCached(env, target, hit, name, officeCode), lang), cached: true });
   }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
@@ -386,7 +386,7 @@ async function runResearch(env, key, p) {
     '',
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences. Write plain text inside all JSON string values — no XML, no cite tags, no citation markup of any kind. When summarizing evidence, preserve the source hedges and caveats: never state a claim more strongly than the source does.',
     '{',
-    '  "summary": "2-3 neutral sentences: the office sought, party, current or most recent position, and relevant professional background. Every fact must come from a source you cite in summarySources. No vote shares, polling, fundraising totals, spending comparisons, or characterizations (e.g. underdog, progressive firebrand) unless a cited source states them directly, and then attribute them (e.g. according to the Miami Herald). If sources disagree or you are unsure, leave the fact out.",',
+    '  "summary": "1-3 neutral sentences with ONLY these facts: the office sought, party, current or most recent job or office, prior offices, professional background, education. Every fact must come from a source you cite in summarySources. Nothing else: no adjectives or value judgments, no ideology labels besides party, no positions, priorities, record, accomplishments or controversies, no endorsements, fundraising, polling or vote shares, even when a source says them. If sources disagree or you are unsure, leave the fact out.",',
     '  "summarySources": [ {"name": "publication or site name", "url": "direct link taken from your search results"} ],',
     '  "donors": [ {"name": "donor name", "amount": "dollar amount like $1,000, or the single word unknown (named in a source, amount not reported) or undisclosed (source says it is hidden) — never a phrase", "type": "individual | PAC | industry group | party committee | self-funded | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
@@ -415,6 +415,11 @@ async function runResearch(env, key, p) {
   // made up is dropped, and so is anything that isn't plain https.
   result._links = verifyUrls(result, seen);
 
+  if (!isMeasure) {
+    try { result.summary = await neutralSummary(env, result.summary); result.sumV = SUMMARY_VERSION; }
+    catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
+  }
+
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
   let ttl = CACHE_TTL;
   if (officeCode) {
@@ -441,6 +446,50 @@ async function runResearch(env, key, p) {
   } finally {
     await env.CACHE.delete('pend:' + key);
   }
+}
+
+// Candidate descriptions are rewritten to neutral biographical facts before anyone sees them.
+// Research can still slip in a characterization a source used ("longtime", "progressive firebrand",
+// "known for fighting..."), and results cached before the rules tightened carry them too. This is
+// an edit-only pass: no web search, and it may only remove, never add. Bump to re-run it on every
+// cached result.
+const SUMMARY_VERSION = 1;
+async function neutralSummary(env, summary) {
+  const original = String(summary || '').trim();
+  if (!original) return '';
+  const text = await callAnthropic(env, {
+    model: MODEL,
+    max_tokens: 400,
+    temperature: 0,
+    messages: [{ role: 'user', content: [
+      'You edit candidate descriptions for a nonpartisan voter guide. Rewrite the description below so it keeps ONLY these facts, when they are in it: the office the person is running for, party, current or most recent job or office, prior offices, professional background, education.',
+      'Remove everything else: adjectives and value judgments (for example longtime, prominent, popular, controversial, staunch, rising star, firebrand), ideology labels other than party, what the person is known for, their positions, priorities, record, accomplishments or controversies, endorsements, fundraising, polling and vote shares. Remove these even when the description attributes them to a source.',
+      'Never add a fact, name, number or date that is not in the original. Use plain verbs (is running for, served as, works as). Keep it to 1 to 3 sentences in the same language. If nothing neutral is left, respond with exactly: NONE',
+      'Respond with only the rewritten description, no quotes or commentary.',
+      '',
+      'Description:',
+      original
+    ].join('\n') }]
+  });
+  const out = String(text || '').trim().replace(/^["\u201c]+|["\u201d]+$/g, '').trim();
+  if (!out || /^NONE\.?$/i.test(out)) return '';
+  // An edit that only removes can't come out much longer than it went in; if it did, it added something.
+  if (out.length > original.length + 40) return '';
+  return out;
+}
+
+// Bring a cached result up to date: FEC donors for federal races and the neutral description.
+// Saves back to the cache only when something changed.
+async function refreshCached(env, key, result, name, officeCode) {
+  result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
+  if (result.sumV !== SUMMARY_VERSION && !result.financing) {   // financing = a ballot measure
+    try {
+      result.summary = await neutralSummary(env, result.summary);
+      result.sumV = SUMMARY_VERSION;
+      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    } catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
+  }
+  return result;
 }
 
 // Bump when the FEC donor logic changes. Cached federal results from an older version get their
