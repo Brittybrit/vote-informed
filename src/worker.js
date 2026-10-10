@@ -379,7 +379,7 @@ async function runResearch(env, key, p) {
     '',
     'Find:',
     '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess.',
-    '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
+    '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
     fedsocTask,
@@ -392,6 +392,7 @@ async function runResearch(env, key, p) {
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
     '  "donorListUrl": "link to the page listing this candidate\u2019s full campaign contributions on an official disclosure portal (Florida Division of Elections, Miami-Dade County or city clerk filings), taken directly from your search results, else empty string",',
     '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "opposition": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     fedsocSchema,
     '  "sources": ["site names or URLs actually consulted"]',
@@ -418,6 +419,8 @@ async function runResearch(env, key, p) {
   if (!isMeasure) {
     try { result.summary = await neutralSummary(env, result.summary); result.sumV = SUMMARY_VERSION; }
     catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
+    try { await splitOpposition(env, result); result.oppV = OPPOSITION_VERSION; }
+    catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
   }
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
@@ -478,17 +481,55 @@ async function neutralSummary(env, summary) {
   return out;
 }
 
+// Endorsements that are really opposition ("recommended voting NO on retention", "urged
+// voters to reject") move to their own list. Research is told to keep them apart, but older cached
+// results mixed them, and the model still slips. Bump to re-check every cached result.
+const OPPOSITION_VERSION = 1;
+async function splitOpposition(env, result) {
+  const list = Array.isArray(result.endorsements) ? result.endorsements : [];
+  result.opposition = Array.isArray(result.opposition) ? result.opposition : [];
+  if (!list.length) return result;
+  const text = await callAnthropic(env, {
+    model: MODEL,
+    max_tokens: 200,
+    temperature: 0,
+    messages: [{ role: 'user', content: [
+      'Each numbered item below was listed as an endorsement of a candidate. Some actually OPPOSE the candidate: they urge a vote against them, recommend NO on their retention, call for their defeat, or rescind support.',
+      'Return ONLY a JSON array of the numbers of the items that oppose the candidate, e.g. [2] or []. An item that supports the candidate, or is unclear, is not opposition.',
+      '',
+      list.map((e, i) => i + '. ' + String(e && e.org || '') + ': ' + String(e && e.note || '')).join('\n')
+    ].join('\n') }]
+  });
+  const m = String(text || '').match(/\[[\d,\s]*\]/);
+  const idx = new Set((m ? JSON.parse(m[0]) : []).filter(i => Number.isInteger(i) && i >= 0 && i < list.length));
+  if (idx.size) {
+    result.opposition = result.opposition.concat(list.filter((e, i) => idx.has(i)));
+    result.endorsements = list.filter((e, i) => !idx.has(i));
+  }
+  return result;
+}
+
 // Bring a cached result up to date: FEC donors for federal races and the neutral description.
 // Saves back to the cache only when something changed.
 async function refreshCached(env, key, result, name, officeCode) {
   result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
-  if (result.sumV !== SUMMARY_VERSION && !result.financing) {   // financing = a ballot measure
+  if (result.financing) return result;                            // a ballot measure
+  let changed = false;
+  if (result.sumV !== SUMMARY_VERSION) {
     try {
       result.summary = await neutralSummary(env, result.summary);
       result.sumV = SUMMARY_VERSION;
-      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+      changed = true;
     } catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
   }
+  if (result.oppV !== OPPOSITION_VERSION) {
+    try {
+      await splitOpposition(env, result);
+      result.oppV = OPPOSITION_VERSION;
+      changed = true;
+    } catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
+  }
+  if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
   return result;
 }
 
