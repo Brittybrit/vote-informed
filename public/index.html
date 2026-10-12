@@ -314,6 +314,12 @@
   .og-body .og-body{padding:6px 8px;}
   .og-search{font-size:12px;}
   .og-ok{color:var(--ok-fg); font-size:12px;}
+  .bk-row{border-bottom:1px solid #DDDDD5; padding:2px 0 8px; margin-bottom:6px;}
+  .bk-row > .donor-row{border-bottom:0; padding-bottom:2px;}
+  .bk-paths{margin:0 0 0 2px; padding-left:16px; font-size:12.5px; line-height:1.45; color:var(--ink-soft);}
+  .bk-paths li{margin:2px 0;}
+  .bk-paths li.bk-for, .bk-paths li.bk-yes{list-style:'\2713  ';}
+  .bk-paths li.bk-against, .bk-paths li.bk-no{list-style:'\2717  ';}
   .og-com{margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid #DDDDD5;}
   .og-warn{color:var(--flag-fg); background:var(--flag-bg); padding:4px 6px; font-size:12px;}
   .og-np{margin:6px 0 4px; padding:6px 8px; border-left:3px solid var(--flag-rule); background:var(--flag-bg); font-size:12.5px;}
@@ -667,6 +673,19 @@ en: {
   'donors.noFec': 'No donors on record with the FEC.',
   'donors.none': 'No donor data found.',
   'donors.committeeOnly': 'No direct campaign donors found. Committee money is listed below.',
+  'sec.backers': 'Biggest Backers Behind the Money',
+  'bk.sub': 'The people, companies and groups who gave the most to the committees and outside groups in this race. They gave to those groups, not to the candidate\u2019s campaign. From official filings.',
+  'bk.subm': 'The people, companies and groups who gave the most to the committees for and against this measure. From official filings.',
+  'bk.loading': 'Tracing the money\u2026',
+  'bk.none': 'No large donors found in these groups\u2019 filings yet.',
+  'bk.gave': 'gave {amt} to {org}',
+  'bk.via': 'gave {amt} to {mid}, which gave {amt2} to {org}',
+  'bk.for': 'which spent {amt} to help this candidate',
+  'bk.against': 'which spent {amt} to stop this candidate',
+  'bk.allied': 'a committee backing this candidate',
+  'bk.yes': 'which is paying to pass it',
+  'bk.no': 'which is paying to defeat it',
+  'bk.note': 'Big number = what each backer gave to the groups listed in 2025\u20132026 (gifts of $1,000 or more). Each group\u2019s largest donors only, traced up to two steps back. Nonprofits marked \u201cdonors not disclosed\u201d are where the public trail ends.',
   'sec.outside': 'Outside Spending',
   'outside.sub': 'Groups spending their own money on ads, mail and texts about this candidate. This money does not go to the campaign, and the candidate does not control it.',
   'outside.for': '✓ Spent to help this candidate',
@@ -691,7 +710,7 @@ en: {
   'og.asof': 'FEC reports through {date}',
   'og.tied': 'Connected to: {org}',
   'og.hidden': 'This group files with the FEC as an outside group, not a PAC, and does not have to report who funds it.',
-  'og.funders': 'Its top funders',
+  'og.funders': 'Its top funders, 2025\u20132026',
   'og.nofunders': 'No itemized donors reported to the FEC yet this cycle.',
   'og.alldonors': 'All its donors',
   'og.fecpage': 'FEC record',
@@ -708,7 +727,8 @@ en: {
   'og.flcmatch': 'Its address matches the FEC record for this donor ({city}).',
   'og.flcnomatch': 'A Florida committee has this exact name, but the FEC lists this donor in {city}. It may be a different group.',
   'og.chair': 'Chair', 'og.treasurer': 'Treasurer', 'og.agent': 'Registered agent',
-  'og.flcraised': 'Raised {amt} in {n} reported gifts, {from} to {to} (Florida Division of Elections).',
+  'og.flcraised': 'Raised {amt} in {n} reported gifts in 2025\u20132026 (Florida Division of Elections).',
+  'og.flcnone': 'No gifts reported in 2025\u20132026 (Florida Division of Elections).',
   'og.flcrec': 'State record', 'og.flcdocs': 'Campaign documents',
   'og.search.sunbiz': 'Florida businesses', 'og.search.irs': 'IRS nonprofits', 'og.search.fec': 'FEC committees',
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
@@ -934,6 +954,19 @@ es: {
   'donors.noFec': 'No hay donantes registrados ante la FEC.',
   'donors.none': 'No se encontraron datos de donantes.',
   'donors.committeeOnly': 'No se encontraron donantes directos de campaña. El dinero de comités aparece abajo.',
+  'sec.backers': 'Los mayores financiadores detrás del dinero',
+  'bk.sub': 'Las personas, empresas y grupos que más dieron a los comités y grupos externos en esta contienda. Dieron a esos grupos, no a la campaña del candidato. Según registros oficiales.',
+  'bk.subm': 'Las personas, empresas y grupos que más dieron a los comités a favor y en contra de esta medida. Según registros oficiales.',
+  'bk.loading': 'Rastreando el dinero\u2026',
+  'bk.none': 'Aún no se encontraron grandes donantes en los registros de estos grupos.',
+  'bk.gave': 'dio {amt} a {org}',
+  'bk.via': 'dio {amt} a {mid}, que dio {amt2} a {org}',
+  'bk.for': 'que gastó {amt} para ayudar a este candidato',
+  'bk.against': 'que gastó {amt} para frenar a este candidato',
+  'bk.allied': 'un comité que respalda a este candidato',
+  'bk.yes': 'que paga para aprobarla',
+  'bk.no': 'que paga para rechazarla',
+  'bk.note': 'Cifra grande = lo que cada financiador dio a los grupos mostrados en 2025\u20132026 (aportes de $1,000 o más). Solo los mayores donantes de cada grupo, rastreados hasta dos pasos atrás. Las organizaciones sin fines de lucro marcadas \u201cdonantes no divulgados\u201d son donde termina el rastro público.',
   'sec.outside': 'Gastos externos',
   'outside.sub': 'Grupos que gastan su propio dinero en anuncios, correo y mensajes sobre este candidato. Este dinero no va a la campaña y el candidato no lo controla.',
   'outside.for': '✓ Gastado para ayudar a este candidato',
@@ -958,7 +991,7 @@ es: {
   'og.asof': 'informes de la FEC hasta el {date}',
   'og.tied': 'Vinculado a: {org}',
   'og.hidden': 'Este grupo se registra ante la FEC como grupo externo, no como PAC, y no tiene que informar quién lo financia.',
-  'og.funders': 'Sus principales donantes',
+  'og.funders': 'Sus principales donantes, 2025\u20132026',
   'og.nofunders': 'Todavía no hay donantes detallados reportados a la FEC en este ciclo.',
   'og.alldonors': 'Todos sus donantes',
   'og.fecpage': 'Registro en la FEC',
@@ -975,7 +1008,8 @@ es: {
   'og.flcmatch': 'Su dirección coincide con el registro de la FEC para este donante ({city}).',
   'og.flcnomatch': 'Un comité de Florida tiene exactamente este nombre, pero la FEC ubica a este donante en {city}. Puede ser otro grupo.',
   'og.chair': 'Presidente', 'og.treasurer': 'Tesorero', 'og.agent': 'Agente registrado',
-  'og.flcraised': 'Recaudó {amt} en {n} donaciones reportadas, de {from} a {to} (División de Elecciones de Florida).',
+  'og.flcraised': 'Recaudó {amt} en {n} donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida).',
+  'og.flcnone': 'Sin donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida).',
   'og.flcrec': 'Registro estatal', 'og.flcdocs': 'Documentos de campaña',
   'og.search.sunbiz': 'Empresas de Florida', 'og.search.irs': 'Organizaciones del IRS', 'og.search.fec': 'Comités de la FEC',
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
@@ -1201,6 +1235,19 @@ ht: {
   'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
   'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
   'donors.committeeOnly': 'Nou pa jwenn donatè dirèk pou kanpay la. Lajan komite yo parèt anba a.',
+  'sec.backers': 'Pi gwo moun ki dèyè lajan an',
+  'bk.sub': 'Moun, konpayi ak gwoup ki bay plis lajan bay komite ak gwoup deyò nan eleksyon sa a. Yo bay gwoup sa yo, pa kanpay kandida a. Dapre dosye ofisyèl.',
+  'bk.subm': 'Moun, konpayi ak gwoup ki bay plis lajan bay komite pou ak kont mezi sa a. Dapre dosye ofisyèl.',
+  'bk.loading': 'N ap swiv lajan an\u2026',
+  'bk.none': 'Poko jwenn gwo donatè nan dosye gwoup sa yo.',
+  'bk.gave': 'bay {amt} bay {org}',
+  'bk.via': 'bay {amt} bay {mid}, ki bay {amt2} bay {org}',
+  'bk.for': 'ki depanse {amt} pou ede kandida sa a',
+  'bk.against': 'ki depanse {amt} pou bloke kandida sa a',
+  'bk.allied': 'yon komite ki sipòte kandida sa a',
+  'bk.yes': 'ki peye pou l pase',
+  'bk.no': 'ki peye pou l echwe',
+  'bk.note': 'Gwo chif = sa chak moun bay gwoup ki parèt yo an 2025\u20132026 (don $1,000 oswa plis). Sèlman pi gwo donatè chak gwoup, swiv jiska de etap dèyè. Òganizasyon san bi likratif ki make \u201cdonatè pa divilge\u201d se kote tras piblik la fini.',
   'sec.outside': 'Depans deyò',
   'outside.sub': 'Gwoup k ap depanse pwòp lajan yo sou piblisite, lèt ak mesaj sou kandida sa a. Lajan sa a pa ale nan kanpay la, epi kandida a pa kontwole l.',
   'outside.for': '✓ Depanse pou ede kandida sa a',
@@ -1225,7 +1272,7 @@ ht: {
   'og.asof': 'rapò FEC jiska {date}',
   'og.tied': 'Konekte ak: {org}',
   'og.hidden': 'Gwoup sa a anrejistre nan FEC kòm yon gwoup deyò, pa kòm PAC, epi li pa oblije di ki moun ki finanse l.',
-  'og.funders': 'Pi gwo donatè li yo',
+  'og.funders': 'Pi gwo donatè li yo, 2025\u20132026',
   'og.nofunders': 'Poko gen donatè detaye ki rapòte bay FEC nan sik sa a.',
   'og.alldonors': 'Tout donatè li yo',
   'og.fecpage': 'Dosye FEC',
@@ -1242,7 +1289,8 @@ ht: {
   'og.flcmatch': 'Adrès li koresponn ak dosye FEC pou donatè sa a ({city}).',
   'og.flcnomatch': 'Yon komite Florid gen egzakteman non sa a, men FEC mete donatè sa a nan {city}. Li ka yon lòt gwoup.',
   'og.chair': 'Prezidan', 'og.treasurer': 'Trezorye', 'og.agent': 'Ajan anrejistre',
-  'og.flcraised': 'Ranmase {amt} nan {n} don ki rapòte, soti {from} rive {to} (Divizyon Eleksyon Florid).',
+  'og.flcraised': 'Ranmase {amt} nan {n} don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid).',
+  'og.flcnone': 'Pa gen don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid).',
   'og.flcrec': 'Dosye eta a', 'og.flcdocs': 'Dokiman kanpay',
   'og.search.sunbiz': 'Biznis Florid', 'og.search.irs': 'Òganizasyon IRS', 'og.search.fec': 'Komite FEC',
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
@@ -2047,6 +2095,7 @@ function renderMeasureDossier(ri, r, cached){
   }
 
   var fin = r.financing || {};
+  if((fin.support && fin.support.length) || (fin.oppose && fin.oppose.length)) html += '<div class="dsec" id="backersSec"></div>';
   html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
     '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
     '<div class="fin-side side-no">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
@@ -2063,6 +2112,7 @@ function renderMeasureDossier(ri, r, cached){
   html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>';
   html += '</div>';
   $('dossierContent').innerHTML = html;
+  loadBackers(r, true);
   $('dossier').scrollTop = 0;
 }
 
@@ -2290,7 +2340,8 @@ function flcBlock(c, hint){
   if(c.treasurer) people.push('<li>' + t('og.treasurer') + ': <strong>' + esc(c.treasurer) + '</strong></li>');
   if(c.agent) people.push('<li>' + t('og.agent') + ': <strong>' + esc(c.agent) + '</strong></li>');
   if(people.length) h += '<ul class="og-off">' + people.join('') + '</ul>';
-  if(c.raised) h += '<p>' + t('og.flcraised', {amt: fmtShortUSD(c.raised), n: c.gifts || 0, from: fmtMonth(c.from), to: fmtMonth(c.to)}) + '</p>';
+  if(c.raised) h += '<p>' + t('og.flcraised', {amt: fmtShortUSD(c.raised), n: c.gifts || 0}) + '</p>';
+  else if(c.since) h += '<p>' + t('og.flcnone') + '</p>';
   if(c.funders && c.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + c.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
@@ -2348,6 +2399,139 @@ function loadPanel(el){
 function loadGroups(){
   // top-level outside spenders: load now so the Left/Right tag appears without opening the panel
   document.querySelectorAll('.og-row > details.og[data-fec]').forEach(loadPanel);
+}
+// "Biggest backers": the people and companies whose money sits behind the groups in this race,
+// traced up to two steps back from the official filings, so they aren't buried in nested panels.
+function orgFetch(d){
+  var fec = /^C\d{8}$/.test(d.fecId || '') ? d.fecId : '';
+  var name = String(d.name || '').replace(/\s*\(.*\)\s*$/, '').trim();
+  var k = fec ? 'fec:' + fec : 'org:' + name;
+  if(k === 'org:') return Promise.resolve(null);
+  if(orgCache[k]) return Promise.resolve(orgCache[k]);
+  var url = fec ? '/api/org?fec=' + encodeURIComponent(fec) : '/api/org?name=' + encodeURIComponent(name);
+  return fetch(url).then(function(r){ return r.json(); }).then(function(j){
+    if(j && j.org) orgCache[k] = j.org;
+    return j && j.org;
+  }).catch(function(){ return null; });
+}
+function orgFunders(o){
+  if(!o) return [];
+  if(o.type === 'fec' && o.group && !o.group.hidden) return o.group.funders || [];
+  if(o.type === 'flc' && o.flc) return o.flc.funders || [];
+  return [];
+}
+var BK_SKIP = /\bact\s*blue\b|\bwin\s*red\b/i;
+// Committees and PACs pass money along, so follow them one more step. Nonprofits don't disclose donors,
+// so they are where the trail stops: list them as the backer, tagged "donors not disclosed".
+function isPassThrough(f){
+  if(f.np || f.disclosure === 'not_disclosed') return false;
+  if(/^C\d{8}$/.test(f.fecId || '')) return true;
+  var typ = String(f.type || f.kind || '').toLowerCase();
+  if(/individual|nonprofit|corporation|union|business/.test(typ)) return false;
+  return /\b(pac|political committee|committee|party)\b/i.test(typ + ' ' + (f.name || ''));
+}
+function isBackerType(f){
+  var typ = String(f.type || f.kind || '').toLowerCase();
+  if(BK_SKIP.test(f.name || '')) return false;
+  return !/candidate|self|platform|conduit/.test(typ);
+}
+function backerKey(n){ return String(n || '').toLowerCase().replace(/\s*\(.*\)\s*$/, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
+// groups: [{name, fecId, spent (string), end ('for'|'against'|'yes'|'no'|'allied'), funders (optional, already known)}]
+function traceBackers(groups){
+  var bag = {};
+  function add(f, path, recipient){
+    if(!isBackerType(f)) return;
+    var amt = amountValue(f.amount);
+    if(amt < 1000) return;
+    var k = backerKey(f.name);
+    if(!k) return;
+    var b = bag[k] || (bag[k] = {f: f, total: 0, seen: {}, paths: []});
+    var rk = backerKey(recipient);
+    if(!b.seen[rk]){ b.seen[rk] = 1; b.total += amt; }
+    b.paths.push(path);
+  }
+  function funderList(g){ return g.funders ? Promise.resolve(g.funders) : orgFetch(g).then(orgFunders); }
+  return Promise.all(groups.map(function(g){
+    return funderList(g).then(function(list){
+      var top = byAmount(list.filter(function(f){ return backerKey(f.name) !== backerKey(g.name); })).slice(0, 6);
+      var follow = top.filter(isPassThrough).slice(0, 3);
+      top.forEach(function(f){
+        if(follow.indexOf(f) < 0) add(f, {amt: f.amount, to: g.name, g: g}, g.name);
+      });
+      return Promise.all(follow.map(function(mid){
+        return orgFetch(mid).then(function(o){
+          var inner = byAmount(orgFunders(o).filter(function(f){ return backerKey(f.name) !== backerKey(mid.name); })).slice(0, 5);
+          var ends = inner.filter(function(f){ return !isPassThrough(f); }).slice(0, 4);
+          // nothing past this committee (or it's a dead end itself): it is the backer we can name
+          if(!ends.length){ add(mid, {amt: mid.amount, to: g.name, g: g}, g.name); return; }
+          ends.forEach(function(f){ add(f, {amt: f.amount, mid: mid.name, midAmt: mid.amount, to: g.name, g: g}, mid.name); });
+        });
+      }));
+    }).catch(function(){});
+  })).then(function(){
+    return Object.keys(bag).map(function(k){ return bag[k]; })
+      .sort(function(a, b){ return b.total - a.total; }).slice(0, 10);
+  });
+}
+function backerPath(p){
+  var g = p.g, end = '';
+  if(g.end === 'for' && g.spent) end = t('bk.for', {amt: esc(fmtAmount(g.spent))});
+  else if(g.end === 'against' && g.spent) end = t('bk.against', {amt: esc(fmtAmount(g.spent))});
+  else if(g.end === 'yes') end = t('bk.yes');
+  else if(g.end === 'no') end = t('bk.no');
+  else if(g.end === 'allied') end = t('bk.allied');
+  var s = p.mid
+    ? t('bk.via', {amt: esc(fmtAmount(p.amt)), mid: '<strong>' + esc(p.mid) + '</strong>', amt2: esc(fmtAmount(p.midAmt)), org: '<strong>' + esc(p.to) + '</strong>'})
+    : t('bk.gave', {amt: esc(fmtAmount(p.amt)), org: '<strong>' + esc(p.to) + '</strong>'});
+  return '<li class="bk-' + esc(g.end) + '">' + s + (end ? ', ' + end : '') + '</li>';
+}
+function backerRows(list){
+  return list.map(function(b){
+    var f = b.f;
+    return '<div class="bk-row"><div class="donor-row"><div><span class="dname">' + esc(f.name) + '</span>' +
+      (f.occupation ? '<div class="enote" style="font-size:12px">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
+      '<span class="dtype">' + kindTag(f.type || f.kind) + disclosureTag(f) + srcLink(f.url) + '</span></div>' +
+      '<span class="damt">' + esc(fmtShortUSD(b.total)) + '</span></div>' +
+      '<ul class="bk-paths">' + b.paths.slice(0, 4).map(backerPath).join('') + '</ul></div>';
+  }).join('');
+}
+function backerGroups(r, isMeasure){
+  var groups = [];
+  function take(list, end, n){
+    byAmount(list || []).slice(0, n).forEach(function(d){
+      if(!d || !d.name || BK_SKIP.test(d.name)) return;
+      groups.push({name: String(d.name).replace(/\s*\(.*\)\s*$/, '').trim(), fecId: d.fecId, spent: d.amount, end: end});
+    });
+  }
+  if(isMeasure){
+    var fin = r.financing || {};
+    take(fin.support, 'yes', 5); take(fin.oppose, 'no', 5);
+  } else {
+    var os = r.outsideSpending || {};
+    take(os.support, 'for', 5); take(os.oppose, 'against', 5);
+    // committees backing the candidate: their donors are already in the record, so no lookup needed
+    var byCom = {};
+    (r.committeeDonors || []).forEach(function(d){
+      var c = String(d.committee || '').trim();
+      if(!c) return;
+      (byCom[c] = byCom[c] || []).push(d);
+    });
+    Object.keys(byCom).slice(0, 4).forEach(function(c){ groups.push({name: c, end: 'allied', funders: byCom[c]}); });
+  }
+  return groups;
+}
+function loadBackers(r, isMeasure){
+  var sec = document.getElementById('backersSec');
+  if(!sec) return;
+  var groups = backerGroups(r, isMeasure);
+  if(!groups.length){ sec.remove(); return; }
+  var head = '<h4>' + t('sec.backers') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t(isMeasure ? 'bk.subm' : 'bk.sub') + '</p>';
+  sec.innerHTML = head + '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.loading') + '</p>';
+  traceBackers(groups).then(function(list){
+    if(!document.body.contains(sec)) return;
+    sec.innerHTML = head + (list.length ? backerRows(list) : '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.none') + '</p>') +
+      '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + t('bk.note') + '</p>';
+  });
 }
 document.addEventListener('toggle', function(e){
   var el = e.target;
@@ -2507,6 +2691,8 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
+  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
+
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
 
@@ -2635,6 +2821,7 @@ function renderDossier(cand, race, r, cached){
   html += '</div>';
   $('dossierContent').innerHTML = html;
   if(r.outsideSpending) loadGroups();
+  loadBackers(r, false);
   $('dossier').scrollTop = 0;
   if(fedRace) loadRaceMoney(ri, cand);
 }
