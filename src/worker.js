@@ -464,7 +464,7 @@ async function runResearch(env, key, p) {
   if (officeCode) {
     let fecOk = false;
     try {
-      const fec = await fecTopDonors(env, name, officeCode);
+      const fec = await fecTopDonors(env, name, officeCode, office);
       if (fec && (fec.donors.length || fec.definitive)) {
         // FEC is authoritative for federal races: an empty official record replaces web-search guesses too
         result.donors = fec.donors;
@@ -479,7 +479,7 @@ async function runResearch(env, key, p) {
   }
   if (officeCode) {
     try {
-      const o = await fecOutsideSpending(env, name, officeCode);
+      const o = await fecOutsideSpending(env, name, officeCode, office);
       if (o) { result.outsideSpending = o; result.outV = OUTSIDE_VERSION; }
     } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
   }
@@ -618,8 +618,8 @@ function separateCommitteeMoney(result, office, officeCode) {
 // Bring a cached result up to date: FEC donors for federal races and the neutral description.
 // Saves back to the cache only when something changed.
 async function refreshCached(env, key, result, name, officeCode, office) {
-  result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
-  result = await refreshOutside(env, key, result, name, officeCode); // saves its own changes
+  result = await refreshFec(env, key, result, name, officeCode, office);   // saves its own changes
+  result = await refreshOutside(env, key, result, name, officeCode, office); // saves its own changes
   applyKnownLeans(result);                                        // cheap, so these run on every read
   markDisclosure(result);
   let changed = false;
@@ -957,11 +957,11 @@ async function dropPriorElection(env, result) {
 
 // Bump when the FEC donor logic changes. Cached federal results from an older version get their
 // donor list rebuilt from FEC on next read: free API, no AI call, no rate-limit cost.
-const FEC_DATA_VERSION = 4;
-async function refreshFec(env, key, result, name, officeCode) {
+const FEC_DATA_VERSION = 5;   // bumped: candidate lookup now Florida/district-only with a name check
+async function refreshFec(env, key, result, name, officeCode, office) {
   if (!officeCode || result.fecV === FEC_DATA_VERSION) return result;
   try {
-    const fec = await fecTopDonors(env, name, officeCode);
+    const fec = await fecTopDonors(env, name, officeCode, office);
     if (fec && (fec.donors.length || fec.definitive)) {
       result.donors = fec.donors;
       result.donorDataNote = fec.note;
@@ -1005,41 +1005,48 @@ function committeeKind(n, reg, entity) {
 
 // Find a candidate's FEC record. Returns { cand } or { cand: null, notRegistered: true } when both
 // the full-name and last-name searches came back empty, or null on an API error or ambiguity.
-async function fecFindCandidate(env, name, officeCode) {
+// Find this ballot candidate in the FEC's records. Florida only, and for the House only this district,
+// so a same-name candidate elsewhere can never supply the donors or outside spending. The FEC's
+// surname has to end the ballot name and the first names have to start alike (the same rule as
+// matchFecCandidate). Two plausible matches is treated as no match: no FEC data beats the wrong person's.
+async function fecFindCandidate(env, name, officeCode, office) {
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
   const y = new Date().getFullYear();
   const cycle = y + (y % 2 === 0 ? 0 : 1);
-  const cRes = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(name) +
-    '&office=' + officeCode + '&cycle=' + cycle + '&per_page=5&api_key=' + apiKey);
-  if (!cRes.ok) { console.log('FEC candidate search ' + cRes.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); return null; }
-  const cJson = await cRes.json();
-  let cand = (cJson.results || [])[0];
-  let fallbackHits = -1;
-  if (!cand) {
-    // ballot names often use nicknames (Angie vs Angela); FEC uses legal names. Retry on last name, Florida only.
-    const parts = name.replace(/\b(jr|sr|ii|iii|iv)\.?$/i, '').trim().split(/\s+/);
-    const last = parts[parts.length - 1];
-    const r2 = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(last) +
-      '&office=' + officeCode + '&state=FL&cycle=' + cycle + '&per_page=20&api_key=' + apiKey);
-    if (r2.ok) {
-      const first = (parts[0] || '').toUpperCase().slice(0, 3);
-      const hits = ((await r2.json()).results || []).filter(c => {
-        const n = String(c.name || '').toUpperCase();      // FEC format: "LAST, FIRST MIDDLE"
-        return n.startsWith(last.toUpperCase() + ',') && n.split(',')[1].trim().startsWith(first);
-      });
-      fallbackHits = hits.length;
-      if (hits.length === 1) cand = hits[0];
-      else console.log('FEC: last-name fallback found ' + hits.length + ' matches for ' + name);
-    }
+  const dm = officeCode === 'H' ? String(office || '').match(/district\s*(\d{1,2})/i) : null;
+  const where = '&office=' + officeCode + '&state=FL' + (dm ? '&district=' + String(parseInt(dm[1], 10)).padStart(2, '0') : '') +
+    '&cycle=' + cycle + '&per_page=20&api_key=' + apiKey;
+  const clean = normPart(String(name).split(/\s+and\s+/i)[0].replace(/["“”][^"“”]*["“”]/g, ' '))
+    .replace(/\b(jr|sr|ii|iii|iv)$/, '').trim();
+  const words = clean.split(' ').filter(Boolean);
+  if (words.length < 2) return null;
+  const queries = [...new Set([clean, words[words.length - 1]])];
+  const seen = new Map();
+  let answered = false;
+  for (const q of queries) {
+    const r = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(q) + where);
+    if (!r.ok) { console.log('FEC candidate search ' + r.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); continue; }
+    answered = true;
+    for (const c of ((await r.json()).results || [])) if (c && c.candidate_id && String(c.state || 'FL') === 'FL') seen.set(c.candidate_id, c);
   }
-  if (!cand) {
-    console.log('FEC: no candidate match for ' + name);
-    // both the full-name and last-name searches came back empty: not registered with the FEC
-    if (fallbackHits === 0) return { cand: null, notRegistered: true };
-    return null;
-  }
-  return { cand };
+  if (!answered) return null;
+  const hits = [...seen.values()].filter(c => fecNameMatches(clean, c.name || c.candidate_name || ''));
+  if (hits.length === 1) return { cand: hits[0] };
+  if (hits.length > 1) { console.log('FEC: ' + hits.length + ' possible matches for ' + name + '; showing none'); return null; }
+  console.log('FEC: no candidate match for ' + name);
+  // say "not registered" only when the FEC has nobody by that surname in this race; a name it lists
+  // under a different spelling is "unknown", not "unregistered"
+  return seen.size ? null : { cand: null, notRegistered: true };
+}
+// "WASSERMAN SCHULTZ, DEBBIE" against the cleaned ballot name "debbie wasserman schultz"
+function fecNameMatches(clean, fecName) {
+  const [last, given] = String(fecName || '').split(',');
+  const l = normPart(last), g = normPart(given || '').split(' ')[0] || '';
+  if (!l || !(clean === l || clean.endsWith(' ' + l))) return false;
+  const first = clean.split(' ')[0] || '';
+  const k = Math.min(3, first.length, g.length);
+  return k > 0 && first.slice(0, k) === g.slice(0, k);
 }
 
 // Outside spending: money groups spend on their own ads, mail and texts for or against a federal
@@ -1047,15 +1054,15 @@ async function fecFindCandidate(env, name, officeCode) {
 // so spending reported in 24/48-hour notices after a group's latest regular report is added on;
 // notices dated on or before that report are skipped because the report already includes them.
 // Bump to rebuild every cached federal result's outside spending (free API, no AI cost).
-const OUTSIDE_VERSION = 3;
+const OUTSIDE_VERSION = 4;
 const FEC_COMMITTEE_KIND = { O: 'super PAC', U: 'super PAC', V: 'hybrid PAC', W: 'hybrid PAC', I: 'outside group',
   N: 'PAC', Q: 'PAC', X: 'party committee', Y: 'party committee', Z: 'party committee' };
-async function fecOutsideSpending(env, name, officeCode) {
+async function fecOutsideSpending(env, name, officeCode, office) {
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
   const y = new Date().getFullYear();
   const cycle = y + (y % 2 === 0 ? 0 : 1);
-  const found = await fecFindCandidate(env, name, officeCode);
+  const found = await fecFindCandidate(env, name, officeCode, office);
   if (!found) return null;
   if (!found.cand) return { support: [], oppose: [], source: 'FEC',
     note: 'Not registered with the FEC for this race, so no outside spending is reported for this candidate.' };
@@ -2225,10 +2232,10 @@ function normOrg(n) {
   return normPart(n).replace(/\b(inc|incorporated|corp|corporation|co|llc|the)\b/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-async function refreshOutside(env, key, result, name, officeCode) {
+async function refreshOutside(env, key, result, name, officeCode, office) {
   if (!officeCode || result.outV === OUTSIDE_VERSION) return result;
   try {
-    const o = await fecOutsideSpending(env, name, officeCode);
+    const o = await fecOutsideSpending(env, name, officeCode, office);
     if (o) {
       result.outsideSpending = o;
       result.outV = OUTSIDE_VERSION;
@@ -2265,13 +2272,13 @@ function markDisclosure(result) {
   return result;
 }
 
-async function fecTopDonors(env, name, officeCode) {
+async function fecTopDonors(env, name, officeCode, office) {
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
   const y = new Date().getFullYear();
   const cycle = y + (y % 2 === 0 ? 0 : 1);
 
-  const found = await fecFindCandidate(env, name, officeCode);
+  const found = await fecFindCandidate(env, name, officeCode, office);
   if (!found) return null;
   if (!found.cand) return { donors: [], definitive: true,
     note: 'Not registered with the FEC for this race. Federal candidates only have to register after raising or spending $5,000, so this campaign has likely raised little or nothing.' };
