@@ -78,6 +78,9 @@ export default {
       if (request.method === 'POST' && url.pathname === '/api/translate-ballot') {
         return await handleTranslateBallot(request, env);
       }
+      if (request.method === 'GET' && url.pathname === '/api/fec-group') {
+        return await handleFecGroup(url, request, env);
+      }
       if (request.method === 'GET' && url.pathname === '/api/pollingplace') {
         return handlePollingPlace(url.searchParams.get('p'));
       }
@@ -949,7 +952,7 @@ async function fecFindCandidate(env, name, officeCode) {
 // so spending reported in 24/48-hour notices after a group's latest regular report is added on;
 // notices dated on or before that report are skipped because the report already includes them.
 // Bump to rebuild every cached federal result's outside spending (free API, no AI cost).
-const OUTSIDE_VERSION = 1;
+const OUTSIDE_VERSION = 2;
 const FEC_COMMITTEE_KIND = { O: 'super PAC', U: 'super PAC', V: 'hybrid PAC', W: 'hybrid PAC', I: 'outside group',
   N: 'PAC', Q: 'PAC', X: 'party committee', Y: 'party committee', Z: 'party committee' };
 async function fecOutsideSpending(env, name, officeCode) {
@@ -986,8 +989,10 @@ async function fecOutsideSpending(env, name, officeCode) {
   const add = (r, amt) => {
     const ind = r.support_oppose_indicator === 'O' ? 'O' : 'S';
     const k = r.committee_id + '|' + ind;
-    if (!agg[k]) agg[k] = { id: r.committee_id, ind, name: (r.committee && r.committee.name) || r.committee_name || r.committee_id, amount: 0 };
+    if (!agg[k]) agg[k] = { id: r.committee_id, ind, name: (r.committee && r.committee.name) || r.committee_name || r.committee_id, amount: 0, cats: {} };
     agg[k].amount += amt;
+    const c = spendCategory(r.expenditure_description, r.category_code_full);
+    agg[k].cats[c] = (agg[k].cats[c] || 0) + amt;
   };
   for (const r of regular) {
     if (r.memo_code === 'X' || !r.committee_id) continue;
@@ -1027,6 +1032,9 @@ async function fecOutsideSpending(env, name, officeCode) {
     };
     if (hidden) item.disclosure = 'not_disclosed';
     else item.donorsUrl = 'https://www.fec.gov/data/receipts/?committee_id=' + a.id;
+    // What the money bought in this race: top 3 kinds of spending by share
+    item.bought = Object.entries(a.cats).filter(([, v]) => v > 0).sort((x, y) => y[1] - x[1]).slice(0, 3)
+      .map(([c, v]) => ({ c, p: Math.max(1, Math.round(100 * v / a.amount)) }));
     return item;
   };
   return {
@@ -1038,6 +1046,143 @@ async function fecOutsideSpending(env, name, officeCode) {
       ? 'Independent spending reported to the FEC this election cycle, including recent 24- and 48-hour notices. Totals can lag the newest filings.'
       : 'No outside spending for or against this candidate has been reported to the FEC this election cycle.'
   };
+}
+
+// Sort a spending line into a kind voters recognize, from its FEC description.
+function spendCategory(desc, cat) {
+  const d = String((desc || '') + ' ' + (cat || '')).toLowerCase();
+  if (/\b(tv|television|broadcast|cable|airtime|ott|ctv|streaming|video production)\b/.test(d)) return 'tv';
+  if (/\b(digital|online|internet|social|facebook|meta|google|youtube|programmatic|web|email)\b/.test(d)) return 'digital';
+  if (/\b(mail|mailer|mailers|postage|printing|print)\b/.test(d)) return 'mail';
+  if (/\b(text|texts|texting|sms|p2p|peer to peer)\b/.test(d)) return 'text';
+  if (/\b(phone|phones|call|calls|ivr|robocall|telephone)\b/.test(d)) return 'phone';
+  if (/\b(canvass\w*|field|door|doors|walk\w*|gotv|voter contact|organizing)\b/.test(d)) return 'canvass';
+  if (/\b(radio|audio|podcast)\b/.test(d)) return 'radio';
+  if (/\b(media|advertis\w*|ad buy|ads|placement)\b/.test(d)) return 'ads';
+  return 'other';
+}
+
+// Facts about one outside group, from its own FEC filings, shared across every race it shows up in.
+// Fetched by the page when it shows outside spending, cached for a week. No AI.
+//   lean     which party its spending helped, computed from its own itemized spending this cycle
+//   formed   when it first filed with the FEC
+//   totals   money raised and spent on outside spending nationally, as of its latest report
+//   funders  its top donors, with "donors not disclosed" on nonprofit funders (IRS data via ProPublica)
+const GROUP_VERSION = 1;
+const LIMIT_GROUP_PER_DAY = 200;
+async function handleFecGroup(url, request, env) {
+  const id = String(url.searchParams.get('id') || '');
+  if (!/^C\d{8}$/.test(id)) return json({ error: 'Bad committee id' }, 400);
+  const key = 'fecg' + GROUP_VERSION + ':' + id;
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return json({ group: hit, cached: true });
+  if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
+  try {
+    const g = await fecGroupProfile(env, id);
+    if (g) await env.CACHE.put(key, JSON.stringify(g), { expirationTtl: CACHE_TTL });
+    return json({ group: g, cached: false });
+  } catch (e) {
+    console.log('fec group ' + id + ' error: ' + e.message);
+    return json({ error: 'FEC lookup failed' }, 502);
+  }
+}
+
+async function fecGroupProfile(env, id) {
+  const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
+  const base = 'https://api.open.fec.gov/v1';
+  const y = new Date().getFullYear();
+  const cycle = y + (y % 2 === 0 ? 0 : 1);
+  const get = async (path, params) => {
+    const q = new URLSearchParams({ ...params, api_key: apiKey });
+    const r = await fetch(base + path + '?' + q);
+    if (!r.ok) throw new Error('FEC ' + path + ' ' + r.status);
+    return r.json();
+  };
+
+  const [cj, tj] = await Promise.all([
+    get('/committees/', { committee_id: id, per_page: '1' }),
+    get('/committee/' + id + '/totals/', { cycle: String(cycle), per_page: '1' }).catch(() => ({}))
+  ]);
+  const c = (cj.results || [])[0] || {};
+  const t = (tj.results || [])[0] || {};
+  const hidden = /^C9/.test(id) || c.committee_type === 'I';
+  const g = {
+    id,
+    name: c.name || '',
+    formed: c.first_file_date || '',
+    state: c.state || '',
+    tiedTo: c.affiliated_committee_name || '',
+    hidden,
+    raised: t.receipts || null,
+    spentOutside: t.independent_expenditures || null,
+    asOf: t.coverage_end_date ? String(t.coverage_end_date).slice(0, 10) : '',
+    fecUrl: 'https://www.fec.gov/data/committee/' + id + '/',
+    funders: [],
+    fundersUrl: hidden ? '' : 'https://www.fec.gov/data/receipts/?committee_id=' + id + '&two_year_transaction_period=' + cycle,
+    lean: null
+  };
+
+  // Lean from its own spending: dollars that helped Republicans (for R, against D) vs Democrats.
+  // Largest lines first, up to 300, which covers nearly all the money for most groups.
+  let rRows = [], extra = {};
+  for (let i = 0; i < 3; i++) {
+    const j = await get('/schedules/schedule_e/', { committee_id: id, cycle: String(cycle), most_recent: 'true', per_page: '100', sort: '-expenditure_amount', ...extra });
+    const got = j.results || [];
+    rRows = rRows.concat(got);
+    const li = j.pagination && j.pagination.last_indexes;
+    if (!got.length || !li || rRows.length >= ((j.pagination && j.pagination.count) || 0)) break;
+    extra = li;
+  }
+  let helpR = 0, helpD = 0;
+  for (const r of rRows) {
+    if (r.memo_code === 'X') continue;
+    const amt = r.expenditure_amount || 0, party = String(r.candidate_party || '').toUpperCase(), so = r.support_oppose_indicator;
+    if ((party === 'REP' && so === 'S') || (party === 'DEM' && so === 'O')) helpR += amt;
+    else if ((party === 'DEM' && so === 'S') || (party === 'REP' && so === 'O')) helpD += amt;
+  }
+  if (helpR + helpD >= 10000) {
+    const share = Math.max(helpR, helpD) / (helpR + helpD);
+    g.lean = { side: share >= 0.8 ? (helpR > helpD ? 'right' : 'left') : 'mixed', pctR: Math.round(100 * helpR / (helpR + helpD)) };
+  }
+
+  // Top funders. Groups that aren't PACs (hidden) don't report them, which is the point of the label.
+  if (!hidden) {
+    const aj = await get('/schedules/schedule_a/', { committee_id: id, two_year_transaction_period: String(cycle), sort: '-contribution_receipt_amount', per_page: '100' });
+    const agg = {};
+    for (const r of (aj.results || [])) {
+      if (r.memo_code === 'X') continue;
+      const n = String(r.contributor_name || '').trim();
+      if (!n) continue;
+      if (!agg[n]) agg[n] = { amount: 0, et: r.entity_type, emp: r.contributor_employer || '', cid: r.contributor_id || '' };
+      agg[n].amount += r.contribution_receipt_amount || 0;
+    }
+    const kindOf = { IND: 'individual', ORG: 'organization', COM: 'PAC', PAC: 'PAC', PTY: 'party committee', CCM: 'candidate committee', CAN: 'candidate' };
+    g.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 5).map(([n, v]) => {
+      const f = { name: n + (v.et === 'IND' && v.emp ? ' (' + v.emp + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: kindOf[v.et] || 'contributor' };
+      if (/^C\d{8}$/.test(v.cid)) { f.url = 'https://www.fec.gov/data/committee/' + v.cid + '/'; f.fecId = v.cid; }
+      return f;
+    });
+    // Organizations giving to a super PAC: check the IRS list (via ProPublica) for 501(c)(4), (c)(5), (c)(6).
+    // Exact name match only, so a business is never mislabeled as a nonprofit.
+    await Promise.all(g.funders.filter(f => f.type === 'organization').map(async f => {
+      try {
+        const want = normOrg(f.name);
+        const r = await fetch('https://projects.propublica.org/nonprofits/api/v2/search.json?q=' + encodeURIComponent('"' + want + '"'));
+        if (!r.ok) return;
+        const hitOrg = ((await r.json()).organizations || []).find(o => normOrg(o.name) === want);
+        if (hitOrg && [4, 5, 6].includes(hitOrg.subseccd)) {
+          f.disclosure = 'not_disclosed';
+          f.type = 'nonprofit 501(c)(' + hitOrg.subseccd + ')';
+          f.lookupUrl = 'https://projects.propublica.org/nonprofits/organizations/' + hitOrg.ein;
+        }
+      } catch (e) { /* leave unlabeled */ }
+    }));
+    markDisclosure({ donors: g.funders });   // LLC funders get "owners not listed"
+  }
+  return g;
+}
+function normOrg(n) {
+  return normPart(n).replace(/\b(inc|incorporated|corp|corporation|co|llc|the)\b/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 async function refreshOutside(env, key, result, name, officeCode) {
