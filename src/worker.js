@@ -1101,7 +1101,7 @@ async function handleFecGroup(url, request, env) {
 //                   nonprofit match (501(c)(4)/(5)/(6)), else a business with links to search
 //                   public records. Exact matches only, so a group is never confused with another.
 // Cached a week, shared by everyone. Search links are always included.
-const ORG_VERSION = 3;
+const ORG_VERSION = 4;
 function orgSearchLinks(name) {
   const plain = String(name || '').replace(/\s*\(.*\)\s*$/, '').trim();
   const bare = plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|inc\.?|corp\.?|corporation|co\.?)\s*$/i, '').trim() || plain;
@@ -1169,7 +1169,7 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 2;
+const FLC_VERSION = 3;
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
   const want = normOrg(name);
@@ -1244,7 +1244,7 @@ async function flCommittee(env, name) {
       }
       out.raised = total || null; out.gifts = n; out.from = from; out.to = to;
       out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 6).map(([who, v]) => {
-        const looksOrg = /\b(inc|llc|l\.l\.c|corp|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a)\b\.?/i.test(who);
+        const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a)\b\.?/i.test(who);
         const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
         const org = looksOrg || isCommittee || /corporation|association|union|trust/i.test(v.occ);
         return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: isCommittee ? 'political committee' : org ? 'organization' : 'individual', occupation: org ? '' : v.occ, place: v.place };
