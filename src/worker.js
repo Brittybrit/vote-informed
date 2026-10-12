@@ -1076,7 +1076,7 @@ function spendCategory(desc, cat) {
 //   formed   when it first filed with the FEC
 //   totals   money raised and spent on outside spending nationally, as of its latest report
 //   funders  its top donors, with "donors not disclosed" on nonprofit funders (IRS data via ProPublica)
-const GROUP_VERSION = 4;
+const GROUP_VERSION = 5;
 const LIMIT_GROUP_PER_DAY = 200;
 async function handleFecGroup(url, request, env) {
   const id = String(url.searchParams.get('id') || '');
@@ -1324,7 +1324,10 @@ async function fecGroupProfile(env, id) {
     const kindOf = { IND: 'individual', ORG: 'organization', COM: 'PAC', PAC: 'PAC', PTY: 'party committee', CCM: 'candidate committee', CAN: 'candidate' };
     g.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 5).map(([n, v]) => {
       const f = { name: n + (v.et === 'IND' && v.emp ? ' (' + v.emp + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: kindOf[v.et] || 'contributor', city: v.city, st: v.st };
-      if (/^C\d{8}$/.test(v.cid)) { f.url = 'https://www.fec.gov/data/committee/' + v.cid + '/'; f.fecId = v.cid; }
+      // contributor_id is the giver's committee ID only when the giver is a committee. For people giving
+      // through WinRed or ActBlue it's the conduit's ID, so it must not become their link.
+      if (['COM', 'PAC', 'PTY', 'CCM'].includes(v.et) && /^C\d{8}$/.test(v.cid)) { f.url = 'https://www.fec.gov/data/committee/' + v.cid + '/'; f.fecId = v.cid; }
+      else f.url = 'https://www.fec.gov/data/receipts/?committee_id=' + id + '&contributor_name=' + encodeURIComponent(n) + '&two_year_transaction_period=' + cycle;
       return f;
     });
     // Organizations giving to a super PAC: check the IRS list (via ProPublica) for 501(c)(4), (c)(5), (c)(6).
