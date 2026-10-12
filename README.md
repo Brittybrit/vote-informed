@@ -69,3 +69,7 @@ Fixed labels for recurring groups live in `KNOWN_LEANS` in `src/worker.js`.
 ## License
 
 MIT. See LICENSE.
+
+## Updating records-request status
+
+City data coverage and public records requests live in `public/data/coverage.json`. Change a city's `status` (`official`, `portal`, `pdf`, `requested`, `notfound`), add `reply` (YYYY-MM-DD) and a short `replyNote` when a clerk answers, bump `updated`, and deploy. Candidate pages and the methodology page both read this file.
