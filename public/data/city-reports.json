@@ -1,6 +1,6 @@
 {
  "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)]. A candidate with \"summary\" instead of \"reports\" has only the money-to-date total read from the summary page of their latest report.",
- "updated": "2026-10-12",
+ "updated": "2026-10-12b",
  "cities": [
   {
    "city": "Pinecrest",
@@ -1036,6 +1036,433 @@
       "total": null,
       "note": "His handwritten totals don't add up across reports (26G3 shows $5,000 to date, 26G4 about $3,822), so no total is shown."
      }
+    }
+   ]
+  },
+  {
+   "city": "South Miami",
+   "match": "^\\s*south miami\\b",
+   "label": "City of South Miami",
+   "portal": "https://www.somifl.gov/846/2026-Election-Candidates-Campaign-Treasu",
+   "pending": "The city had not posted later reports (Q3 or general election reports) as of 2026-10-12.",
+   "candidates": [
+    {
+     "name": "Javier E. Fernández",
+     "office": "Mayor",
+     "reports": [
+      {
+       "report": "2026 Q1 (waiver, no activity)",
+       "period": "2026-01-01/2026-03-31",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8859",
+       "rows": []
+      },
+      {
+       "report": "2026 Q2",
+       "period": "2026-04-01/2026-06-30",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8962",
+       "rows": [
+        [
+         "2026-04-15",
+         "Gustavo Cabrera",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-21",
+         "Wesley Hevia",
+         "I",
+         250
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Steve Calle",
+     "office": "Group I",
+     "reports": [
+      {
+       "report": "2026 Q1 (waiver, no activity)",
+       "period": "2026-01-01/2026-03-31",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8858",
+       "rows": []
+      },
+      {
+       "report": "2026 Q2",
+       "period": "2026-04-01/2026-06-30",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8961",
+       "rows": [
+        [
+         "2026-04-06",
+         "Andrew Velo",
+         "I",
+         250
+        ],
+        [
+         "2026-04-06",
+         "Janet Gonzalez",
+         "I",
+         100
+        ],
+        [
+         "2026-04-06",
+         "Alberto Milo Jr",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Alberto Cordoves",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Sandy Calle",
+         "I",
+         50
+        ],
+        [
+         "2026-04-06",
+         "13th Floor Fund V, LP",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Arnaud Karsenti",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Civic Construction Management LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Christopher Korge",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Gil Development Inc",
+         "B",
+         500
+        ],
+        [
+         "2026-04-06",
+         "Sunset Inn of Miami LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "REM Development & Consulting Inc",
+         "B",
+         1000
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Lisa Bonich",
+     "office": "Group IV",
+     "reports": [
+      {
+       "report": "2026 Q1",
+       "period": "2026-01-01/2026-03-31",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8857",
+       "rows": [
+        [
+         "2026-03-29",
+         "Jonathan Alfonso",
+         "I",
+         1000
+        ],
+        [
+         "2026-03-29",
+         "Rob Penafiel",
+         "I",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "Manny Alonso",
+         "I",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "Lisa Bonich",
+         "S",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "The 401K Lab, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "AAS Trust",
+         "B",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "Ewe & Me, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "Christine Quinones",
+         "I",
+         1000
+        ],
+        [
+         "2026-03-31",
+         "Ana Mendoza",
+         "I",
+         500
+        ],
+        [
+         "2026-03-31",
+         "Andres Fernandez",
+         "I",
+         250
+        ]
+       ]
+      },
+      {
+       "report": "2026 Q2",
+       "period": "2026-04-01/2026-06-30",
+       "url": "https://www.somifl.gov/DocumentCenter/View/8960",
+       "rows": [
+        [
+         "2026-04-04",
+         "Laura Bonich",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Manuel Ramos",
+         "I",
+         100
+        ],
+        [
+         "2026-04-06",
+         "Alberto Cordoves",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Alberto Milo Jr",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-06",
+         "Tatiana Velo",
+         "I",
+         250
+        ],
+        [
+         "2026-04-08",
+         "New Leadership Network PC",
+         "F",
+         500
+        ],
+        [
+         "2026-04-08",
+         "Gil Development, Inc.",
+         "B",
+         500
+        ],
+        [
+         "2026-04-08",
+         "Sunset Inn of Miami LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-08",
+         "REM Development and Consulting Inc",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-08",
+         "13th Floor Fund V, LP",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-08",
+         "Arnaud Karsenti",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-08",
+         "Civic Construction Management LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-04-08",
+         "Christopher G. Korge",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-30",
+         "Dick Ortega",
+         "I",
+         500
+        ],
+        [
+         "2026-04-30",
+         "Betsy Guerra",
+         "I",
+         250
+        ],
+        [
+         "2026-04-30",
+         "Jeffrey Bass",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-30",
+         "Ricardo Celorio",
+         "I",
+         250
+        ],
+        [
+         "2026-04-30",
+         "Silvia Celorio",
+         "I",
+         100
+        ],
+        [
+         "2026-04-30",
+         "Maritza Rodriguez",
+         "I",
+         150
+        ],
+        [
+         "2026-04-30",
+         "Javier A. Fernandez",
+         "I",
+         500
+        ],
+        [
+         "2026-04-30",
+         "Vince Vazquez",
+         "I",
+         1000
+        ],
+        [
+         "2026-04-30",
+         "Yamilet Rodriguez",
+         "I",
+         500
+        ],
+        [
+         "2026-05-01",
+         "Citizens for Progress",
+         "F",
+         1000
+        ],
+        [
+         "2026-05-03",
+         "Beatriz Mendoza",
+         "I",
+         100
+        ],
+        [
+         "2026-05-06",
+         "Julio Robaina",
+         "I",
+         100
+        ],
+        [
+         "2026-05-06",
+         "Andrew Korge",
+         "I",
+         1000
+        ],
+        [
+         "2026-05-06",
+         "Evergreen Venture Group Inc",
+         "B",
+         1000
+        ],
+        [
+         "2026-05-06",
+         "Ariel Millan",
+         "I",
+         1000
+        ],
+        [
+         "2026-05-06",
+         "Firezone Sprinklers, Inc",
+         "B",
+         1000
+        ],
+        [
+         "2026-05-06",
+         "David R Custin & Associates, Inc",
+         "B",
+         500
+        ],
+        [
+         "2026-05-06",
+         "Gil Development, Inc.",
+         "B",
+         500
+        ],
+        [
+         "2026-05-06",
+         "FXD Construction, LLC",
+         "B",
+         500
+        ],
+        [
+         "2026-05-07",
+         "Estate General Contractors, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-05-07",
+         "Delta Electrical Contractors, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-05-07",
+         "FL Concrete Structures, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-05-07",
+         "Palma Rentals LLC",
+         "B",
+         1000
+        ]
+       ]
+      }
+     ]
     }
    ]
   }
