@@ -2461,7 +2461,7 @@ function traceBackers(groups){
       return Promise.all(follow.map(function(mid){
         return orgFetch(mid).then(function(o){
           var inner = byAmount(orgFunders(o).filter(function(f){ return backerKey(f.name) !== backerKey(mid.name); })).slice(0, 5);
-          var ends = inner.filter(function(f){ return !isPassThrough(f); }).slice(0, 4);
+          var ends = inner.slice(0, 4);   // committees two steps back are named as they are, not followed further
           // nothing past this committee (or it's a dead end itself): it is the backer we can name
           if(!ends.length){ add(mid, {amt: mid.amount, to: g.name, g: g}, g.name); return; }
           ends.forEach(function(f){ add(f, {amt: f.amount, mid: mid.name, midAmt: mid.amount, to: g.name, g: g}, mid.name); });
