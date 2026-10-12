@@ -726,6 +726,7 @@ en: {
   'tag.corp.l': 'Corporation', 'tag.corp.d': 'A business giving money directly or through a company-linked committee. Corporate giving usually tracks the company&rsquo;s regulatory and business interests.',
   'tag.indiv.l': 'Individual', 'tag.indiv.d': 'A named person giving their own money. Their employer is shown when disclosed, which can hint at an industry interest behind the gift.',
   'tag.self.l': 'Self-Funded', 'tag.self.d': 'The candidate&rsquo;s own money.',
+  'tag.labortype.l': 'Kind of Workers', 'tag.labortype.d': 'The kind of workers this union represents. Ballot305 does not give labor unions a left or right label.',
   'tag.union.l': 'Labor Union', 'tag.union.d': 'A union giving through its political arm, funded by member dues. Generally supports worker-protection and collective-bargaining policies.',
   'tag.lobby.l': 'Lobbying / Trade Group', 'tag.lobby.d': 'An association that represents an industry&rsquo;s interests to government. Its money and endorsements usually track that industry&rsquo;s policy goals.',
   'tag.nonprofit.l': 'Nonprofit', 'tag.nonprofit.d': 'A nonprofit organization. Some kinds are not required to disclose their own donors, so the original source of the money may be hidden (sometimes called dark money).',
@@ -943,6 +944,7 @@ es: {
   'tag.corp.l': 'Corporación', 'tag.corp.d': 'Una empresa que da dinero directamente o a través de un comité ligado a la empresa. Las donaciones corporativas suelen seguir los intereses regulatorios y comerciales de la empresa.',
   'tag.indiv.l': 'Individuo', 'tag.indiv.d': 'Una persona identificada que da su propio dinero. Se muestra su empleador cuando se divulga, lo que puede indicar un interés de alguna industria detrás de la donación.',
   'tag.self.l': 'Autofinanciado', 'tag.self.d': 'El propio dinero del candidato.',
+  'tag.labortype.l': 'Tipo de trabajadores', 'tag.labortype.d': 'El tipo de trabajadores que representa este sindicato. Ballot305 no les asigna a los sindicatos una etiqueta de izquierda o derecha.',
   'tag.union.l': 'Sindicato', 'tag.union.d': 'Un sindicato que da a través de su brazo político, financiado con las cuotas de sus miembros. Generalmente apoya políticas de protección de los trabajadores y de negociación colectiva.',
   'tag.lobby.l': 'Grupo de cabildeo / gremial', 'tag.lobby.d': 'Una asociación que representa los intereses de una industria ante el gobierno. Su dinero y sus respaldos suelen seguir los objetivos de política de esa industria.',
   'tag.nonprofit.l': 'Organización sin fines de lucro', 'tag.nonprofit.d': 'Una organización sin fines de lucro. Algunos tipos no están obligados a revelar sus propios donantes, así que la fuente original del dinero puede estar oculta (a veces llamado dinero oscuro).',
@@ -1160,6 +1162,7 @@ ht: {
   'tag.corp.l': 'Konpayi', 'tag.corp.d': 'Yon biznis k ap bay lajan dirèkteman oswa atravè yon komite ki mare ak konpayi an. Lajan konpayi bay anjeneral swiv enterè règleman ak biznis konpayi an.',
   'tag.indiv.l': 'Moun', 'tag.indiv.d': 'Yon moun nou konnen non l k ap bay pwòp lajan l. Nou montre ki kote li travay lè sa devwale, sa ka montre yon enterè endistri dèyè don an.',
   'tag.self.l': 'Pwòp lajan l', 'tag.self.d': 'Pwòp lajan kandida a.',
+  'tag.labortype.l': 'Kalite travayè', 'tag.labortype.d': 'Kalite travayè sendika sa a reprezante. Ballot305 pa bay sendika yon etikèt gòch oswa dwat.',
   'tag.union.l': 'Sendika', 'tag.union.d': 'Yon sendika k ap bay atravè branch politik li, ak kotizasyon manm yo. Anjeneral li sipòte politik ki pwoteje travayè ak negosyasyon kolektif.',
   'tag.lobby.l': 'Gwoup lobi / komèsyal', 'tag.lobby.d': 'Yon asosyasyon ki reprezante enterè yon endistri devan gouvènman an. Lajan l ak sipò l anjeneral swiv objektif politik endistri sa a.',
   'tag.nonprofit.l': 'Òganizasyon san bi likratif', 'tag.nonprofit.d': 'Yon òganizasyon san bi likratif. Gen kèk kalite ki pa oblije devwale pwòp donatè yo, kidonk sous orijinal lajan an ka kache (sa yo rele pafwa lajan nwa).',
@@ -1825,7 +1828,7 @@ function funderRows(list){
   return list.map(function(d){
     return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
     (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
-    '<div class="tagrow">' + leanTag(d.lean) +
+    '<div class="tagrow">' + leanTag(d.lean, d) +
     kindTag(d.kind, d.kind_tr) +
     (d.amount ? '<span class="tag amtchip">' + esc(fmtAmount(d.amount)) + '</span>' : '') +
     srcLink(d.url) +
@@ -1838,7 +1841,7 @@ function sideList(list, emptyMsg){
   return list.map(function(e){
     return '<div class="endo"><div class="eorg">' + esc(e.name) + '</div>' +
     (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-    '<div class="tagrow">' + leanTag(e.lean) +
+    '<div class="tagrow">' + leanTag(e.lean, e) +
     groupTag(e) +
     srcLink(e.url) +
     '</div></div>';
@@ -1978,6 +1981,7 @@ function fmtAmount(a){
 }
 
 var TAG_DEFS = [
+  [/^labortype$/i, 'labortype'],
   [/^left$/i, 'left'], [/^right$/i, 'right'], [/^nonpartisan$/i, 'np'],
   [/donation platform|conduit/i, 'platform'], [/super\s*pac/i, 'super'],
   [/nonconnected\s*pac/i, 'noncon'], [/connected\s*pac/i, 'con'],
@@ -2055,8 +2059,13 @@ function groupTag(e){
   return '<span class="tag group" data-k="' + esc(e.type) + '">' + esc(label) + '</span>';
 }
 
-function leanTag(lean){
+function leanTag(lean, item){
   var l = String(lean||'').toLowerCase();
+  // Labor unions get no left/right label: show the kind of workers they represent instead.
+  if(l==='labor'){
+    var lt = item && item.laborType ? (LANG === 'en' ? item.laborType : (item.laborType_tr || item.laborType)) : '';
+    return lt ? '<span class="tag group" data-k="labortype">' + esc(lt) + '</span>' : '';
+  }
   if(l==='left') return '<span class="tag left" data-k="left">' + t('lean.left') + '</span>';
   if(l==='right') return '<span class="tag right" data-k="right">' + t('lean.right') + '</span>';
   return '<span class="tag nonpartisan" data-k="nonpartisan">' + t('lean.nonpartisan') + '</span>';
@@ -2149,7 +2158,7 @@ function renderDossier(cand, race, r, cached){
     html += r.endorsements.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean) +
+      '<div class="tagrow">' + leanTag(e.lean, e) +
       groupTag(e) +
       srcLink(e.url) +
       '</div></div>';
@@ -2165,7 +2174,7 @@ function renderDossier(cand, race, r, cached){
     html += r.opposition.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean) +
+      '<div class="tagrow">' + leanTag(e.lean, e) +
       groupTag(e) +
       srcLink(e.url) +
       '</div></div>';
@@ -2183,7 +2192,7 @@ function renderDossier(cand, race, r, cached){
       return '<div class="endo"><div class="eorg">' + esc(e.org) +
       (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean) +
+      '<div class="tagrow">' + leanTag(e.lean, e) +
       groupTag(e) +
       srcLink(e.url) +
       '</div></div>';

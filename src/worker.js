@@ -350,7 +350,7 @@ async function runResearch(env, key, p) {
     '3. Major supporters: organizations and notable public figures backing it.',
     '4. Major opponents: organizations and notable public figures against it.',
     'THIS ELECTION ONLY: list a funder, supporter, or opponent only if they took a position on this measure for this election. Positions on an earlier version or an earlier election do not count, even as precedent; mention them in the relevant note instead.',
-    'For every funder, supporter, and opponent, give "lean": "left", "right", or "nonpartisan" — the general political alignment of that person or organization, not the measure.',
+    'For every funder, supporter, and opponent, give "lean": "left", "right", or "nonpartisan" — the general political alignment of that person or organization, not the measure. EXCEPTION: every labor union (including police, firefighter and teacher unions and labor federations) gets "lean": "labor", never left or right, plus "laborType": the kind of workers it represents (e.g. "Teachers", "Firefighters", "Police").',
     'CRITICAL identity rule: name each organization or person ONLY by a name you verified on their own site or in reliable coverage. If all you have is an acronym or handle, report it exactly as written and note the identity is unverified — NEVER invent an expansion. Preserve source hedges; never state a claim more strongly than the source does.',
     '',
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences. Plain text in all string values — no XML or cite tags:',
@@ -358,11 +358,11 @@ async function runResearch(env, key, p) {
     '  "summary": "2-3 sentence plain-language explanation of what the measure does, based on the ballot text and official or news sources you cite in summarySources. No predictions or characterizations of its effects beyond what a cited source states, and attribute any such claim to its source.",',
     '  "summarySources": [ {"name": "publication or site name", "url": "direct link taken from your search results"} ],',
     '  "financing": {',
-    '    "support": [ {"name": "funder", "amount": "like $250,000 or the single word undisclosed", "kind": "individual|corporation|lobbying or trade group|union|PAC/committee|nonprofit|political party|other", "lean": "left|right|nonpartisan", "note": "one line of context, else empty string", "url": "direct link, else empty string"} ],',
+    '    "support": [ {"name": "funder", "amount": "like $250,000 or the single word undisclosed", "kind": "individual|corporation|lobbying or trade group|union|PAC/committee|nonprofit|political party|other", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "note": "one line of context, else empty string", "url": "direct link, else empty string"} ],',
     '    "oppose": [ same shape ],',
     '    "note": "one sentence on the quality/source of finance data found, or why none was found"',
     '  },',
-    '  "supporters": [ {"name": "org or person", "lean": "left|right|nonpartisan", "type": "kind of group or role", "note": "one line, else empty string", "url": "direct link, else empty string"} ],',
+    '  "supporters": [ {"name": "org or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "kind of group or role", "note": "one line, else empty string", "url": "direct link, else empty string"} ],',
     '  "opponents": [ same shape ],',
     '  "sources": ["site names or URLs actually consulted"]',
     '}',
@@ -382,7 +382,7 @@ async function runResearch(env, key, p) {
     '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess. Florida caps direct gifts to a campaign at $3,000 per election for statewide offices and Supreme Court justices and $1,000 for other offices, so a gift above that went to a committee, not the campaign.',
     '1b. Top donors to political committees (Florida political committees, super PACs) that the candidate controls or that exist to support them, e.g. "Friends of [candidate]". These are NOT campaign donors and go in committeeDonors with the committee name. Never put committee money in donors.',
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies, and only when you found the rating on that body\u2019s own website: its url must be a page on the rating organization\u2019s own site, not a blog, news story or aggregator repeating it. If you cannot find it on their own site, leave it out. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
-    '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
+    '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate. EXCEPTION: every labor union (including police, firefighter and teacher unions and labor federations like the AFL-CIO) gets "lean": "labor", never left or right, plus "laborType": the kind of workers it represents (e.g. "Teachers", "Firefighters", "Police", "Nurses", "Public employees", "Building trades", "Multiple trades (labor federation)"), and "type": "labor union".',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
     '   - "url": link the endorser own announcement (their site or publication) or reliable news coverage of it. Never cite a political party or campaign page that repeats another organization endorsement, unless the endorser is that party or campaign.',
     fedsocTask,
@@ -395,9 +395,9 @@ async function runResearch(env, key, p) {
     '  "committeeDonors": [ {"name": "donor name", "amount": "dollar amount, or unknown", "committee": "the committee that received it, as named in the source", "type": "individual | PAC | corporation | party committee | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
     '  "donorListUrl": "link to the page listing this candidate\u2019s full campaign contributions on an official disclosure portal (Florida Division of Elections, Miami-Dade County or city clerk filings), taken directly from your search results, else empty string",',
-    '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
-    '  "opposition": [ {"org": "organization or person", "lean": "left|right|nonpartisan", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
-    '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "opposition": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     fedsocSchema,
     '  "sources": ["site names or URLs actually consulted"]',
     '}',
@@ -632,12 +632,13 @@ async function refreshCached(env, key, result, name, officeCode, office) {
 // One label per organization, everywhere. Research labels each group's lean inside each dossier,
 // so the same group could come out "left" in one and "nonpartisan" in another. Groups that show up
 // across many races get a fixed label here. The rule: party organizations get their party's side;
-// news organizations, public-safety associations, bar associations and the League of Women Voters
-// are nonpartisan. First match wins. Edit this list, not the prompt, to change a label.
+// news organizations, sheriff and police-chief associations, bar associations and the League of
+// Women Voters are nonpartisan. Labor unions get no left/right label at all: see classifyUnion.
+// First match wins. Edit this list, not the prompt, to change a label.
 const KNOWN_LEANS = [
   [/\b(miami herald|el nuevo herald|sun sentinel|palm beach post|tampa bay times|orlando sentinel|tallahassee democrat|florida times union|miami today|biscayne times|miami new times|miami times|wlrn|axios)\b/, 'nonpartisan'],
   [/\beditorial board\b/, 'nonpartisan'],
-  [/\b(fraternal order of police|police benevolent association|sheriffs association|police chiefs association|fire ?fighters|fire chiefs)\b/, 'nonpartisan'],
+  [/\b(sheriffs association|police chiefs association|fire chiefs)\b/, 'nonpartisan'],
   [/\b(bar association|the florida bar|league of women voters)\b/, 'nonpartisan'],
   [/\b(democratic (party|club|executive committee|caucus)|young democrats|democrats)\b/, 'left'],
   [/\b(republican (party|club|executive committee)|young republicans|republicans|gop)\b/, 'right'],
@@ -648,11 +649,50 @@ function knownLean(name) {
   for (const [re, lean] of KNOWN_LEANS) if (re.test(n)) return lean;
   return null;
 }
+// Labor unions are labeled by the kind of workers they represent, never left or right:
+// lean "labor", laborType "Teachers", type "labor union". First match wins.
+const NOT_UNION = /\b(civil liberties union|credit union|european union|union county|union station)\b/;
+const KNOWN_UNIONS = /\b(afl ?cio|afscme|seiu|teamsters|ibew|unite here|fraternal order of police|police benevolent association|pba|fop|fire ?fighters|iaff|united teachers|teachers union|federation of teachers|education association|nurses union|national nurses|communications workers|cwa|building (and construction )?trades|carpenters|laborers|plumbers|pipefitters|ironworkers|iron workers|electrical workers|labor council|transport workers|utu|smart union|ufcw|uaw)\b/;
+const LABOR_TYPES = [
+  [/\b(teacher|teachers|education association|educators|utd)\b/, 'Teachers'],
+  [/\b(fire ?fighters?|iaff)\b/, 'Firefighters'],
+  [/\b(police|fop|pba|law enforcement|corrections|deputies)\b/, 'Police'],
+  [/\b(nurse|nurses)\b/, 'Nurses'],
+  [/\b(afscme|public employees|government employees|state employees|county employees)\b/, 'Public employees'],
+  [/\b(seiu|service employees)\b/, 'Service workers'],
+  [/\b(unite here|hotel|hospitality|culinary)\b/, 'Hotel and food service workers'],
+  [/\b(ufcw|food and commercial|grocery)\b/, 'Grocery and retail workers'],
+  [/\b(teamsters|transport workers|utu|transit)\b/, 'Transportation workers'],
+  [/\b(ibew|electrical workers)\b/, 'Electrical workers'],
+  [/\b(carpenters|laborers|plumbers|pipefitters|iron ?workers|building (and construction )?trades|construction)\b/, 'Building trades'],
+  [/\b(cwa|communications workers)\b/, 'Communications workers'],
+  [/\b(uaw|auto workers)\b/, 'Auto workers'],
+  [/\b(afl cio|labor council|labor federation|cope|central labor)\b/, 'Multiple trades (labor federation)'],
+];
+function classifyUnion(it) {
+  const name = normPart(it.org || it.name);
+  const tag = normPart([it.type, it.kind].filter(Boolean).join(' '));
+  const all = name + ' ' + tag;
+  if (NOT_UNION.test(all)) return false;
+  const isUnion = it.lean === 'labor' || /\b(labor|labour|trade) union\b|\bunion\b/.test(tag) || KNOWN_UNIONS.test(name);
+  if (!isUnion) return false;
+  let laborType = '';
+  for (const [re, label] of LABOR_TYPES) if (re.test(all)) { laborType = label; break; }
+  if (!laborType && typeof it.laborType === 'string') laborType = it.laborType.trim();
+  it.lean = 'labor';
+  it.laborType = laborType;
+  if ('type' in it || !('kind' in it)) it.type = 'labor union';
+  if ('kind' in it) it.kind = 'union';
+  return true;
+}
+
 function applyKnownLeans(result) {
   const fix = list => {
     if (!Array.isArray(list)) return;
     for (const it of list) {
       if (!it || typeof it !== 'object') continue;
+      if (classifyUnion(it)) continue;
+      if (it.lean === 'labor') it.lean = 'nonpartisan';   // labeled labor but not a union
       const lean = knownLean(it.org || it.name);
       if (lean) it.lean = lean;
     }
@@ -1313,7 +1353,7 @@ const TR_LANGS = {
 };
 const TR_MODEL = { es: MODEL, ht: MODEL_JUDICIAL };   // Kreyòl gets the stronger model
 const TR_KEYS = new Set(['summary', 'note', 'rating']);   // plus any key ending in "Note"
-const TR_TAG_KEYS = { type: 'type_tr', kind: 'kind_tr' }; // keep English for tag definitions, add a translated label
+const TR_TAG_KEYS = { type: 'type_tr', kind: 'kind_tr', laborType: 'laborType_tr' }; // keep English for tag definitions, add a translated label
 
 async function translateStrings(env, lang, items) {
   const out = {};
