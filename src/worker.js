@@ -1425,7 +1425,20 @@ async function flCandidateDonors(env, name, office) {
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 1;
+const MDC_DONOR_VERSION = 2;
+// Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
+// Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
+// Update the election ids each cycle.
+const VF_CITIES = [
+  [/^\s*coral gables\b/i, 'muncoralgables', 8, 'City of Coral Gables'],
+  [/^\s*cutler bay\b/i, 'muncutlerbay', 6, 'Town of Cutler Bay'],
+  [/^\s*doral\b/i, 'mundoral', 9, 'City of Doral'],
+  [/^\s*hialeah\b(?!\s+gardens)/i, 'munhialeah', 4, 'City of Hialeah'],
+];
+function vfJurisdiction(office) {
+  for (const [re, c, el, label] of VF_CITIES) if (re.test(String(office || ''))) return { c, el, label, city: true };
+  return { c: 'miamidade', el: null, label: 'Miami-Dade Elections Department', city: false };
+}
 const VF = 'https://www.voterfocus.com/CampaignFinance/';
 const VF_H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)', 'Accept': 'text/html,text/csv,*/*' };
 function parseCSV(s) {
@@ -1441,19 +1454,23 @@ function parseCSV(s) {
   if (f || row.length) { row.push(f); rows.push(row); }
   return rows;
 }
-async function mdcCandidateList(env) {
-  const key = 'mdcl' + MDC_DONOR_VERSION;
+async function mdcCandidateList(env, j) {
+  j = j || vfJurisdiction('');
+  const key = 'mdcl' + MDC_DONOR_VERSION + ':' + j.c;
   const hit = await env.CACHE.get(key, 'json');
   if (hit) return hit;
-  const r = await fetch(VF + 'candidate_pr.php?c=miamidade', { headers: VF_H });
-  if (!r.ok) throw new Error('county list ' + r.status);
+  const r = await fetch(VF + 'candidate_pr.php?' + (j.el ? 'el=' + j.el + '&' : '') + 'c=' + j.c, { headers: VF_H });
+  if (!r.ok) throw new Error('VoterFocus list ' + j.c + ' ' + r.status);
   const html = await r.text();
   const out = [];
-  // "Office: County Commission District 05" headers, each followed by that office's candidates
-  const parts = html.split(/Office:\s*/);
+  // "Office: County Commission District 05" headers, each followed by that office's candidates.
+  // A page without those headers is read as one block with no office.
+  const parts = /Office:/.test(html) ? html.split(/Office:\s*/) : ['', '<' + html];
+  const linkRe = new RegExp('candidate_pr\\.php\\?op=cv&(?:amp;)?e=(\\d+)&(?:amp;)?c=' + j.c + '&(?:amp;)?ca=(\\d+)[^"]*"[^>]*>([\\s\\S]*?)<\\/a>', 'g');
   for (let i = 1; i < parts.length; i++) {
     const office = decodeEntities(parts[i].split('<')[0]);
-    for (const m of parts[i].matchAll(/candidate_pr\.php\?op=cv&(?:amp;)?e=(\d+)&(?:amp;)?c=miamidade&(?:amp;)?ca=(\d+)[^"]*"[^>]*>([\s\S]*?)<\/a>/g)) {
+    for (const m of parts[i].matchAll(linkRe)) {
+      if (j.el && m[1] !== String(j.el)) continue;   // another election listed on the same page
       // the link wraps the whole row ("Vicki L. Lopez (NOP) status (...) Contributions ..."): keep the name
       const nm = decodeEntities(m[3]).split(/\s*\((?:NOP|NPA|REP|DEM|LPF|GRE|IND|[A-Z]{2,4})\)/)[0].trim();
       if (nm) out.push({ office, e: m[1], ca: m[2], name: nm });
@@ -1465,7 +1482,8 @@ async function mdcCandidateList(env) {
 async function mdcCandidateDonors(env, name, office) {
   const np = flNameParts(name);
   if (!np) return null;
-  const list = await mdcCandidateList(env);
+  const j = vfJurisdiction(office);
+  const list = await mdcCandidateList(env, j);
   let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && p.first === np.first; });
   if (hits.length > 1) {   // same name in two races: use the district or group number
     const num = (String(office).match(/(?:District|Group|Seat)\s+(\d+)/i) || [])[1];
@@ -1473,7 +1491,7 @@ async function mdcCandidateDonors(env, name, office) {
   }
   if (hits.length !== 1) return null;
   const c = hits[0];
-  const r = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&dhc=0&county=miamidade', { headers: VF_H });
+  const r = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&dhc=0&county=' + j.c, { headers: VF_H });
   if (!r.ok) throw new Error('county export ' + r.status);
   const rows = parseCSV(await r.text()).slice(1).filter(x => x[3] === 'C');
   const k = x => x[2] + '|' + normPart(x[4]) + '|' + (parseFloat(x[14]) || 0).toFixed(2);
@@ -1504,8 +1522,8 @@ async function mdcCandidateDonors(env, name, office) {
     return { name: v.name + (type === 'individual' && v.occ ? ' (' + v.occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
-  return { donors, monetary, inkind, count, to, ties, office: c.office,
-    url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=miamidade&ca=' + c.ca + '&rellevel=3&committee=N' };
+  return { donors, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label,
+    url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N' };
 }
 async function refreshMdcDonors(env, result, name, office, officeCode) {
   if (officeCode || flOfficeQuery(office)) return false;           // federal and state races have their own sources
@@ -1517,7 +1535,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
     result.mdcAt = Date.now();
     if (d && d.count) {
       result.donors = d.donors;
-      result.donorDataNote = 'Contributions reported to the Miami-Dade Elections Department for ' + d.office + ': $' +
+      result.donorDataNote = 'Contributions reported to the ' + d.filer + ' for ' + d.office + ': $' +
         Math.round(d.monetary).toLocaleString('en-US') + ' in money' + (d.inkind ? ' and $' + Math.round(d.inkind).toLocaleString('en-US') + ' in-kind' : '') +
         ' from ' + d.count + ' contributions, through ' + d.to + ', with amended reports applied. Top givers shown.' + (d.ties || '') + ' Money to allied political committees is listed separately.';
       result.donorListUrl = d.url;
