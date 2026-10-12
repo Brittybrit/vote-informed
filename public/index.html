@@ -2652,11 +2652,11 @@ document.addEventListener('toggle', function(e){
   if(el && el.matches && el.matches('details.og') && el.open) loadPanel(el);
 }, true);
 
-function srcLink(url){
+function srcLink(url, label){
   var u = safeUrl(url);
   if(!u) return '';
   var h = hostOf(u);
-  return ' <a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + (h ? esc(h) : t('src')) + ' ↗</a>';
+  return ' <a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + (label ? esc(label) : h ? esc(h) : t('src')) + ' ↗</a>';
 }
 
 function linkifySource(sname){
@@ -2822,7 +2822,7 @@ function renderDossier(cand, race, r, cached){
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.note ? '<div class="enote" style="font-size:12px">' + esc(d.note) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url, d.srcLabel) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
       (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
     }).join('');
