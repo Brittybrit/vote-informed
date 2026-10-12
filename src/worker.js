@@ -1778,6 +1778,7 @@ async function txCandidateDonors(env, name, office) {
   });
   if (hits.length !== 1) return null;
   const c = hits[0];
+  if (c.summary) return { summary: c.summary, label: city.label, version: data.updated || '' };
   const agg = {}; let total = 0, count = 0, to = '', last = null;
   for (const rep of c.reports || []) {
     if (!last || String(rep.period || '') > String(last.period || '')) last = rep;
@@ -1813,6 +1814,19 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
   try {
     const d = await txCandidateDonors(env, name, office);
     // re-apply if another source replaced these donors since
+    if (d && d.summary) {
+      // Only the total from the latest summary page (North Miami Beach): add it to the note and point
+      // to that report. Donors stay from web research.
+      const sm = d.summary;
+      const line = (sm.total != null ? 'The candidate\u2019s latest report to the ' + d.label + ' (' + sm.report + ', through ' + sm.through +
+        ') shows $' + Math.round(sm.total).toLocaleString('en-US') + ' raised to date, including loans.' : 'See the candidate\u2019s latest report to the ' + d.label +
+        ' (' + sm.report + ').') + (sm.note ? ' ' + sm.note : '') + ' The city posts scanned reports, so the donors listed come from web research.';
+      if (result.txV === d.version && String(result.donorDataNote || '').includes(line)) return false;
+      result.txV = d.version;
+      result.donorDataNote = (String(result.donorDataNote || '').replace(/ ?The candidate\u2019s latest report to the [^]*?come from web research\.|See the candidate\u2019s latest report to the [^]*?come from web research\./, '').trim() + ' ' + line).trim();
+      result.donorListUrl = sm.url;
+      return true;
+    }
     if (!d || (result.txV === d.version && (!d.count || result.donorSource === 'CITY'))) return false;
     result.txV = d.version;
     if (d.count) {

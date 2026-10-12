@@ -1,5 +1,5 @@
 {
- "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)].",
+ "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)]. A candidate with \"summary\" instead of \"reports\" has only the money-to-date total read from the summary page of their latest report.",
  "updated": "2026-10-12",
  "cities": [
   {
@@ -936,6 +936,106 @@
        ]
       }
      ]
+    }
+   ]
+  },
+  {
+   "city": "North Miami Beach",
+   "match": "^\\s*north miami beach\\b",
+   "label": "City of North Miami Beach",
+   "portal": "https://www.citynmb.com/DocumentCenter/",
+   "candidates": [
+    {
+     "name": "Jay R. Chernoff",
+     "office": "Group 2",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15032",
+      "through": "2026-10-02",
+      "total": 35361.22
+     }
+    },
+    {
+     "name": "Whitney Padote",
+     "office": "Group 2",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15033",
+      "through": "2026-10-02",
+      "total": 13553.0
+     }
+    },
+    {
+     "name": "Jasmine Rivera",
+     "office": "Group 2",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15031",
+      "through": "2026-10-02",
+      "total": 9241.35
+     }
+    },
+    {
+     "name": "Eunice Diona Flowers",
+     "office": "Group 4",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15035",
+      "through": "2026-10-02",
+      "total": 1764.39
+     }
+    },
+    {
+     "name": "Linda Joseph",
+     "office": "Group 4",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15036",
+      "through": "2026-10-02",
+      "total": 41700.0
+     }
+    },
+    {
+     "name": "Margaret Mary Love",
+     "office": "Group 4",
+     "summary": {
+      "report": "26G2",
+      "url": "https://www.citynmb.com/DocumentCenter/View/14962",
+      "through": "2026-09-04",
+      "total": 53150.0,
+      "note": "She filed waivers (no activity) for 26G3 and 26G4."
+     }
+    },
+    {
+     "name": "Dayanara Torres",
+     "office": "Group 4",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15034",
+      "through": "2026-10-02",
+      "total": 22040.0
+     }
+    },
+    {
+     "name": "Phyllis Smith",
+     "office": "Group 6",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15039",
+      "through": "2026-10-02",
+      "total": 54665.0
+     }
+    },
+    {
+     "name": "Ariel E. Vasquez",
+     "office": "Group 6",
+     "summary": {
+      "report": "26G4",
+      "url": "https://www.citynmb.com/DocumentCenter/View/15038",
+      "through": "2026-10-02",
+      "total": null,
+      "note": "His handwritten totals don't add up across reports (26G3 shows $5,000 to date, 26G4 about $3,822), so no total is shown."
+     }
     }
    ]
   }
