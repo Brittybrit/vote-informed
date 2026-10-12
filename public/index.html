@@ -301,6 +301,10 @@
   .mv-row{display:flex; gap:8px;}
   .mv-row button{flex:1;}
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
+  /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
+  .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
+  .fin-side.side-yes{color:var(--ok-fg); background:var(--ok-bg); border-left-color:var(--ok-fg);}
+  .fin-side.side-no{color:var(--paper); background:var(--ink); border-left-color:var(--ink);}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
 
   .dossier-body{padding:20px; overflow-wrap:break-word;}
@@ -636,8 +640,8 @@ en: {
   'donors.committeeOnly': 'No direct campaign donors found. Committee money is listed below.',
   'sec.outside': 'Outside Spending',
   'outside.sub': 'Groups spending their own money on ads, mail and texts about this candidate. This money does not go to the campaign, and the candidate does not control it.',
-  'outside.for': 'Spent to help this candidate',
-  'outside.against': 'Spent to defeat this candidate',
+  'outside.for': '✓ Spent to help this candidate',
+  'outside.against': '✕ Spent to defeat this candidate',
   'outside.none': 'No outside spending found for this candidate.',
   'outside.donors': 'Its donors',
   'outside.full': 'All outside spending on FEC.gov',
@@ -657,8 +661,8 @@ en: {
   'ratings.sub': 'Assessments by outside groups, not endorsements.',
   'sec.sources': 'Sources Consulted',
   'sec.financing': 'Who Is Financing It',
-  'fin.yes': 'BACKING YES',
-  'fin.no': 'BACKING NO',
+  'fin.yes': '✓ Paying to pass it (Yes side)',
+  'fin.no': '✕ Paying to defeat it (No side)',
   'fin.none': 'No organized funding found on this side.',
   'sec.supporters': 'Major Supporters',
   'sec.opponents': 'Major Opposition',
@@ -867,8 +871,8 @@ es: {
   'donors.committeeOnly': 'No se encontraron donantes directos de campaña. El dinero de comités aparece abajo.',
   'sec.outside': 'Gastos externos',
   'outside.sub': 'Grupos que gastan su propio dinero en anuncios, correo y mensajes sobre este candidato. Este dinero no va a la campaña y el candidato no lo controla.',
-  'outside.for': 'Gastado para ayudar a este candidato',
-  'outside.against': 'Gastado para derrotar a este candidato',
+  'outside.for': '✓ Gastado para ayudar a este candidato',
+  'outside.against': '✕ Gastado para derrotar a este candidato',
   'outside.none': 'No se encontraron gastos externos para este candidato.',
   'outside.donors': 'Sus donantes',
   'outside.full': 'Todos los gastos externos en FEC.gov',
@@ -888,8 +892,8 @@ es: {
   'ratings.sub': 'Evaluaciones de grupos externos, no respaldos.',
   'sec.sources': 'Fuentes consultadas',
   'sec.financing': 'Quién la financia',
-  'fin.yes': 'A FAVOR DEL SÍ',
-  'fin.no': 'A FAVOR DEL NO',
+  'fin.yes': '✓ Pagan para aprobarla (lado del Sí)',
+  'fin.no': '✕ Pagan para rechazarla (lado del No)',
   'fin.none': 'No se encontró financiamiento organizado en este lado.',
   'sec.supporters': 'Principales partidarios',
   'sec.opponents': 'Principal oposición',
@@ -1098,8 +1102,8 @@ ht: {
   'donors.committeeOnly': 'Nou pa jwenn donatè dirèk pou kanpay la. Lajan komite yo parèt anba a.',
   'sec.outside': 'Depans deyò',
   'outside.sub': 'Gwoup k ap depanse pwòp lajan yo sou piblisite, lèt ak mesaj sou kandida sa a. Lajan sa a pa ale nan kanpay la, epi kandida a pa kontwole l.',
-  'outside.for': 'Depanse pou ede kandida sa a',
-  'outside.against': 'Depanse pou fè kandida sa a pèdi',
+  'outside.for': '✓ Depanse pou ede kandida sa a',
+  'outside.against': '✕ Depanse pou fè kandida sa a pèdi',
   'outside.none': 'Nou pa jwenn depans deyò pou kandida sa a.',
   'outside.donors': 'Donatè li yo',
   'outside.full': 'Tout depans deyò sou FEC.gov',
@@ -1119,8 +1123,8 @@ ht: {
   'ratings.sub': 'Evalyasyon gwoup deyò fè, se pa sipò ofisyèl.',
   'sec.sources': 'Sous nou konsilte',
   'sec.financing': 'Kiyès k ap finanse l',
-  'fin.yes': 'POU WI',
-  'fin.no': 'POU NON',
+  'fin.yes': '✓ Peye pou l pase (bò Wi)',
+  'fin.no': '✕ Peye pou l pa pase (bò Non)',
   'fin.none': 'Nou pa jwenn okenn finansman òganize sou bò sa a.',
   'sec.supporters': 'Pi gwo moun ki pou li',
   'sec.opponents': 'Pi gwo opozisyon',
@@ -1899,8 +1903,8 @@ function renderMeasureDossier(ri, r, cached){
 
   var fin = r.financing || {};
   html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
-    '<div class="fin-side">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
-    '<div class="fin-side">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
+    '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
+    '<div class="fin-side side-no">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
   if(fin.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(fin.note) + '</p>';
   html += '</div>';
 
@@ -2233,8 +2237,8 @@ function renderDossier(cand, race, r, cached){
     var os = r.outsideSpending, osFor = os.support || [], osAg = os.oppose || [];
     html += '<div class="dsec"><h4>' + t('sec.outside') + '</h4>' +
       '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('outside.sub') + '</p>';
-    if(osFor.length) html += '<div class="outside-h">' + t('outside.for') + '</div>' + outsideRows(osFor);
-    if(osAg.length) html += '<div class="outside-h">' + t('outside.against') + '</div>' + outsideRows(osAg);
+    if(osFor.length) html += '<div class="fin-side side-yes">' + t('outside.for') + '</div>' + outsideRows(osFor);
+    if(osAg.length) html += '<div class="fin-side side-no">' + t('outside.against') + '</div>' + outsideRows(osAg);
     if(!osFor.length && !osAg.length) html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('outside.none') + '</p>';
     if(os.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(os.note) + '</p>';
     if(/^https:\/\//i.test(os.listUrl || ''))
