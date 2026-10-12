@@ -63,13 +63,13 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
-      if (request.method === 'GET' && url.pathname === '/api/civic-status') {
+      if (request.method === 'GET' && url.pathname === '/api/civic-status' && env.CIVIC_ENABLED === '1') {   // off until the address lookup ships (it sends addresses to Google)
         return await handleCivicStatus(env);
       }
-      if (request.method === 'GET' && url.pathname === '/api/elections') {
+      if (request.method === 'GET' && url.pathname === '/api/elections' && env.CIVIC_ENABLED === '1') {   // off until the address lookup ships (it sends addresses to Google)
         return await handleElections(env);
       }
-      if (request.method === 'POST' && url.pathname === '/api/voterinfo') {
+      if (request.method === 'POST' && url.pathname === '/api/voterinfo' && env.CIVIC_ENABLED === '1') {   // off until the address lookup ships (it sends addresses to Google)
         return await handleVoterInfo(request, env);
       }
       if (request.method === 'POST' && url.pathname === '/api/ballot-text') {
@@ -83,6 +83,9 @@ export default {
       }
       if (request.method === 'GET' && url.pathname === '/api/fec-group') {
         return await handleFecGroup(url, request, env);
+      }
+      if (request.method === 'GET' && url.pathname === '/api/master') {
+        return await handleMaster(env);
       }
       if (request.method === 'POST' && url.pathname === '/api/report') {
         return await handleReport(request, env);
@@ -718,12 +721,12 @@ async function refreshCached(env, key, result, name, officeCode, office) {
 // Women Voters are nonpartisan. Labor unions get no left/right label at all: see classifyUnion.
 // First match wins. Edit this list, not the prompt, to change a label.
 const KNOWN_LEANS = [
-  [/\b(miami herald|el nuevo herald|sun sentinel|palm beach post|tampa bay times|orlando sentinel|tallahassee democrat|florida times union|miami today|biscayne times|miami new times|miami times|wlrn|axios)\b/, 'nonpartisan'],
-  [/\beditorial board\b/, 'nonpartisan'],
+  [/\b(miami herald|el nuevo herald|sun sentinel|palm beach post|tampa bay times|orlando sentinel|tallahassee democrat|florida times union|miami today|biscayne times|miami new times|miami times|wlrn|axios)\b/, 'press'],
+  [/\beditorial board\b/, 'press'],
   [/\b(sheriffs association|police chiefs association|fire chiefs)\b/, 'nonpartisan'],
   [/\b(bar association|the florida bar|league of women voters)\b/, 'nonpartisan'],
-  [/\b(democratic (party|club|executive committee|caucus)|young democrats|democrats)\b/, 'left'],
-  [/\b(republican (party|club|executive committee)|young republicans|republicans|gop)\b/, 'right'],
+  [/\b(democratic (party|club|clubs|executive committee|caucus|women)|young democrats|college democrats|democrats)\b/, 'left'],
+  [/\b(republican (party|club|clubs|executive committee|caucus|women|liberty caucus)|young republicans|college republicans|republicans|gop)\b/, 'right'],
 ];
 function knownLean(name) {
   const n = normPart(name);
@@ -1246,7 +1249,7 @@ async function handleFecGroup(url, request, env) {
 //                   nonprofit match (501(c)(4)/(5)/(6)), else a business with links to search
 //                   public records. Exact matches only, so a group is never confused with another.
 // Cached a week, shared by everyone. Search links are always included.
-const ORG_VERSION = 5;
+const ORG_VERSION = 6;   // 6: keyed and matched on the full name, suffix included (Acme LLC is not Acme Inc)
 function orgSearchLinks(name) {
   const plain = String(name || '').replace(/\s*\(.*\)\s*$/, '').trim();
   const bare = plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|inc\.?|corp\.?|corporation|co\.?)\s*$/i, '').trim() || plain;
@@ -1271,7 +1274,7 @@ async function handleOrg(url, request, env) {
     return json({ org: { type: 'fec', group: g, links: orgSearchLinks(g && g.name) } });
   }
   if (!name) return json({ error: 'Missing name' }, 400);
-  const key = 'org' + ORG_VERSION + ':' + (await sha256(normOrg(name) || normPart(name)));
+  const key = 'org' + ORG_VERSION + ':' + (await sha256(normPart(name)));
   const hit = await env.CACHE.get(key, 'json');
   if (hit) return json({ org: hit, cached: true });
   if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
@@ -1283,7 +1286,7 @@ async function handleOrg(url, request, env) {
     const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
     const r = await fetch('https://api.open.fec.gov/v1/committees/?q=' + encodeURIComponent(name.replace(/\s*\(.*\)\s*$/, '')) + '&per_page=20&api_key=' + apiKey);
     if (r.ok) {
-      const c = ((await r.json()).results || []).find(x => normOrg(x.name) === want);
+      const c = ((await r.json()).results || []).find(x => sameOrg(x.name, name));
       if (c) {
         const gk = 'fecg' + GROUP_VERSION + ':' + c.committee_id;
         let g = await env.CACHE.get(gk, 'json');
@@ -1338,7 +1341,7 @@ async function flCommittee(env, name) {
   }
   const lh = await lr.text();
   const matches = [...lh.matchAll(/href="?ComDetail\.asp\?account=(\d+)"?[^>]*>([^<]+)</gi)]
-    .map(m => ({ account: m[1], name: decodeEntities(m[2]) })).filter(m => normOrg(m.name) === want);
+    .map(m => ({ account: m[1], name: decodeEntities(m[2]) })).filter(m => sameOrg(m.name, name));
   const details = [];
   for (const m of matches.slice(0, 4)) {
     const dr = await fetch(FL_BASE + '/committees/ComDetail.asp?account=' + m.account, { headers: { ...H, 'Referer': FL_BASE + '/committees/ComLkupByName.asp' } });
@@ -2280,10 +2283,16 @@ async function findNonprofit(name) {
   if (!want) return null;
   const r = await fetch('https://projects.propublica.org/nonprofits/api/v2/search.json?q=' + encodeURIComponent('"' + want + '"'));
   if (!r.ok) return null;
-  const o = ((await r.json()).organizations || []).find(x => normOrg(x.name) === want);
+  const o = ((await r.json()).organizations || []).find(x => sameOrg(x.name, name));
   return o && [4, 5, 6].includes(o.subseccd) ? o : null;
 }
 
+// Same organization only if the names match with suffixes kept ("Acme Holdings LLC" is not "Acme
+// Holdings Inc"); a leading "The" and punctuation don't count. Used wherever a match names officers.
+function sameOrg(a, b) {
+  const k = n => normPart(n).replace(/^the /, '').replace(/\b(incorporated)\b/g, 'inc').replace(/\b(corporation)\b/g, 'corp').trim();
+  return !!k(a) && k(a) === k(b);
+}
 function normOrg(n) {
   return normPart(n).replace(/\b(inc|incorporated|corp|corporation|co|llc|the)\b/g, ' ').replace(/\s+/g, ' ').trim();
 }
@@ -2598,6 +2607,19 @@ function moneyLinks(committeeId, cycle) {
   };
 }
 
+/* ---------------- the countywide ballot, as already parsed ---------------- */
+// The pinned parse of the bundled countywide ballot, so a phone can load it without downloading the
+// PDF and uploading it back (F41), and so an uploaded ballot can be checked against it (F14).
+async function handleMaster(env) {
+  let pk = await env.CACHE.get(FEATURED_KEY);
+  if (!pk) pk = await bundledParseKey(env);
+  const master = pk ? await env.CACHE.get(pk, 'json') : null;
+  if (!master || !Array.isArray(master.races)) return json({ error: 'Not ready' }, 404);
+  return new Response(JSON.stringify({ ballot: master, cached: true, master: true }), {
+    headers: { 'Content-Type': 'application/json', 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'public, max-age=300' }
+  });
+}
+
 /* ---------------- error reports and the owner's correction tools ---------------- */
 // A voter flags a problem on a dossier; it lands in KV for the owner (90 days). The owner works them
 // at /admin.html with the ADMIN_TOKEN secret (`npx wrangler secret put ADMIN_TOKEN`); without that
@@ -2870,7 +2892,7 @@ function isStr(v) { return typeof v === 'string' && v.trim().length > 0; }
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json', 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store' }
   });
 }
 
