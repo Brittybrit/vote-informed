@@ -2899,8 +2899,8 @@ function renderDossier(cand, race, r, cached){
   }
 
   var fedRace = ri >= 0 && isFederalRace(race);
-  html += '<div class="dsec" id="localSec"></div>';
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
+  html += '<div class="dsec" id="localSec"></div>';
 
   html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
@@ -2933,9 +2933,6 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
-
-  // Biggest backers sit right under the campaign's own donors
-  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
@@ -2997,6 +2994,9 @@ function renderDossier(cand, race, r, cached){
       html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
     html += '</div>';
   }
+
+  // Biggest backers: after the campaign's donors and outside spending
+  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
 
   html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
