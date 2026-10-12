@@ -389,6 +389,7 @@ async function runResearch(env, key, p) {
     '1. Top campaign donors/contributors (largest individual donors, PACs, organizations). ONLY money given directly to the campaign of this candidate for THIS race. Do NOT include outside spending, super PAC or independent expenditures, money given to a PAC that supports the candidate, or contributions to past campaigns of this candidate for other offices. For federal races prefer FEC data; for state/local use state disclosure portals and news coverage. If a source names a donor or PAC but not the amount, still list it with amount "unknown" rather than leaving it only in the note. If no donors are named anywhere, return an empty array — do not guess. Florida caps direct gifts to a campaign at $3,000 per election for statewide offices and Supreme Court justices and $1,000 for other offices, so a gift above that went to a committee, not the campaign.',
     '1b. Top donors to political committees (Florida political committees, super PACs) that the candidate controls or that exist to support them, e.g. "Friends of [candidate]". These are NOT campaign donors and go in committeeDonors with the committee name. Never put committee money in donors.',
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies, and only when you found the rating on that body\u2019s own website: its url must be a page on the rating organization\u2019s own site, not a blog, news story or aggregator repeating it. If you cannot find it on their own site, leave it out. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
+    '   THIS ELECTION ONLY: endorsements, opposition and ratings must be for this candidate in THIS election (the 2025-2026 cycle). Endorsements, ratings or opposition from the candidate\u2019s earlier campaigns, even for the same office (a 2022 or 2024 race, an earlier retention vote, a prior term), do not count: leave them out entirely. Give each item\u2019s "year": the year it was made.',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate. EXCEPTION: every labor union (including police, firefighter and teacher unions and labor federations like the AFL-CIO) gets "lean": "labor", never left or right, plus "laborType": the kind of workers it represents (e.g. "Teachers", "Firefighters", "Police", "Nurses", "Public employees", "Building trades", "Multiple trades (labor federation)"), and "type": "labor union".',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
     '   - "url": link the endorser own announcement (their site or publication) or reliable news coverage of it. Never cite a political party or campaign page that repeats another organization endorsement, unless the endorser is that party or campaign.',
@@ -403,9 +404,9 @@ async function runResearch(env, key, p) {
     '  "committeeDonors": [ {"name": "donor name", "amount": "dollar amount, or unknown", "committee": "the committee that received it, as named in the source", "type": "individual | PAC | corporation | party committee | other", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "donorDataNote": "one sentence on the quality/source of donor data found, or why none was found",',
     '  "donorListUrl": "link to the page listing this candidate\u2019s full campaign contributions on an official disclosure portal (Florida Division of Elections, Miami-Dade County or city clerk filings), taken directly from your search results, else empty string",',
-    '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
-    '  "opposition": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
-    '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "endorsements": [ {"org": "organization or person", "year": "year it was made, e.g. 2026, else empty string", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "opposition": [ {"org": "organization or person", "year": "year it was made, e.g. 2026, else empty string", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "ratings": [ {"org": "organization", "year": "year it was made, e.g. 2026, else empty string", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "outsideSpending": { "support": [ {"name": "spender as named in the source", "amount": "dollar amount, or unknown", "kind": "super PAC | political committee | party committee | nonprofit | electioneering communications organization | union | corporation | other", "disclosure": "disclosed or not_disclosed", "note": "one line, else empty string", "url": "direct link to the page documenting this, else empty string"} ], "oppose": [ same shape ], "note": "one sentence on what was found and its source, or why nothing was found" },',
     fedsocSchema,
     '  "sources": ["site names or URLs actually consulted"]',
@@ -443,6 +444,8 @@ async function runResearch(env, key, p) {
     catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
     try { await splitOpposition(env, result); result.oppV = OPPOSITION_VERSION; }
     catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
+    try { await dropPriorCycle(env, result, name); } catch (e) { console.log('prior-cycle check error for ' + name + ': ' + e.message); }
+    result.cycV = CYCLE_VERSION;
     ownSiteRatings(result);
     separateCommitteeMoney(result, office, officeCode);
     if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
@@ -649,6 +652,11 @@ async function refreshCached(env, key, result, name, officeCode, office) {
       changed = true;
     } catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
   }
+  if (result.cycV !== CYCLE_VERSION) {
+    try { await dropPriorCycle(env, result, name); } catch (e) { console.log('prior-cycle check error for ' + name + ': ' + e.message); }
+    result.cycV = CYCLE_VERSION;   // set even on failure: never retry on every read
+    changed = true;
+  }
   if (result.linkV !== LINK_VERSION) {
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
@@ -835,6 +843,58 @@ async function regradeFedsoc(env, result, name) {
     fs.status = status;
     fs.evidence = kept;
   }
+  return result;
+}
+
+// Candidates: endorsements, opposition and ratings from earlier campaigns (a 2022 race, an earlier
+// retention vote) don't count for this election. They move to priorCycle (not shown).
+// Anything dated before CYCLE_START by its own "year" or its link's date is dropped outright; the
+// rest goes to a model check that reads the org, note and link. Bump to re-check every cached result.
+const CYCLE_VERSION = 1;
+const CYCLE_START_YEAR = 2025;   // the 2025-2026 cycle; update each cycle
+function urlYear(u) {
+  const m = String(u || '').match(/[\/_-]((?:19|20)\d\d)[\/_-]/);
+  return m ? parseInt(m[1], 10) : null;
+}
+async function dropPriorCycle(env, result, name) {
+  const lists = ['endorsements', 'opposition', 'ratings'];
+  const prior = [];
+  const drop = new Set();
+  const items = [];
+  for (const label of lists) {
+    const list = result[label];
+    if (!Array.isArray(list)) continue;
+    list.forEach((it, i) => {
+      const id = label + ':' + i;
+      const y = parseInt(it && it.year, 10);
+      const uy = urlYear(it && it.url);
+      // its own year, or a dated link, before this cycle: an earlier campaign. (A 2024 link can be an
+      // early endorsement for 2026, so 2024 links go to the check instead.)
+      if ((y && y < CYCLE_START_YEAR) || (uy && uy < CYCLE_START_YEAR - 1)) drop.add(id);
+      else items.push({ id, it, uy });
+    });
+  }
+  if (items.length) {
+    const text = await callAnthropic(env, {
+      model: MODEL,
+      max_tokens: 600,
+      temperature: 0,
+      messages: [{ role: 'user', content: [
+        'Each item below is listed as an endorsement, opposition, or rating of ' + name + ' in the November 2026 election (the 2025-2026 cycle). Some are actually from an earlier campaign: an earlier race (for example 2018, 2020, 2022 or 2024), a previous term, or an earlier retention vote, even for the same office.',
+        'Return ONLY a JSON array of the ids of items that are from an earlier campaign and not this 2026 election. Include an item when its note, year or link points to a race before 2026 (for example "endorsed in 2022", a 2024 primary, a link dated 2022). Leave out items that are for 2026 or that give no sign of an earlier race. Example: ["endorsements:2"] or [].',
+        '',
+        items.map(x => x.id + ' | ' + String(x.it && x.it.org || '') + ' | ' + (x.it && x.it.rating ? 'rating: ' + x.it.rating + ' | ' : '') + 'year: ' + String(x.it && x.it.year || '') + ' | ' + String(x.it && x.it.note || '') + ' | ' + String(x.it && x.it.url || '')).join('\n')
+      ].join('\n') }]
+    });
+    const m = String(text || '').match(/\[[^\]]*\]/);
+    (m ? JSON.parse(m[0]) : []).filter(x => typeof x === 'string').forEach(x => drop.add(x));
+  }
+  if (!drop.size) return result;
+  for (const label of lists) {
+    if (!Array.isArray(result[label])) continue;
+    result[label] = result[label].filter((it, i) => drop.has(label + ':' + i) ? (prior.push({ ...it, list: label }), false) : true);
+  }
+  result.priorCycle = (Array.isArray(result.priorCycle) ? result.priorCycle : []).concat(prior);
   return result;
 }
 
