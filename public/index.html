@@ -300,6 +300,15 @@
   .votebar .swapnote{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin-top:8px; text-align:center;}
   .mv-row{display:flex; gap:8px;}
   .mv-row button{flex:1;}
+  .og-bought{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:4px;}
+  details.og{margin-top:6px;}
+  details.og summary{cursor:pointer; font-size:12.5px; font-weight:600; color:var(--left-fg);}
+  .og-body{margin-top:6px; padding:8px 10px; background:var(--panel); border:1px solid #DDDDD5; border-radius:4px; font-size:13px; line-height:1.5;}
+  .og-body p{margin:0 0 6px;}
+  .og-asof{color:var(--ink-soft); font-size:11.5px;}
+  .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
+  .og-body .og-f .dname{font-size:13px;}
+  .og-links{margin-top:6px !important;}
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
   /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
   .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
@@ -648,6 +657,26 @@ en: {
   'disc.no': 'Donors not disclosed',
   'disc.owners': 'Owners not listed',
   'disc.lookup': 'Public records',
+  'og.bought': 'Spent here on:',
+  'og.about': 'About this group',
+  'og.loading': 'Loading FEC records…',
+  'og.fail': 'Could not load FEC records right now.',
+  'og.leanR': 'By its own spending this cycle: {pct}% helped Republicans or opposed Democrats.',
+  'og.leanL': 'By its own spending this cycle: {pct}% helped Democrats or opposed Republicans.',
+  'og.mixed': 'Its spending this cycle is split: {r}% helped Republicans, {d}% helped Democrats.',
+  'og.formed': 'First filed with the FEC {date}',
+  'og.based': 'Based in {st}',
+  'og.spent': '{amt} on outside spending in all races this cycle',
+  'og.raised': '{amt} raised',
+  'og.asof': 'FEC reports through {date}',
+  'og.tied': 'Connected to: {org}',
+  'og.hidden': 'This group files with the FEC as an outside group, not a PAC, and does not have to report who funds it.',
+  'og.funders': 'Its top funders',
+  'og.nofunders': 'No itemized donors reported to the FEC yet this cycle.',
+  'og.alldonors': 'All its donors',
+  'og.fecpage': 'FEC record',
+  'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
+  'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
   'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
   'committee.to': 'to {name}',
@@ -879,6 +908,26 @@ es: {
   'disc.no': 'Donantes no divulgados',
   'disc.owners': 'Dueños no indicados',
   'disc.lookup': 'Registros públicos',
+  'og.bought': 'Gastado aquí en:',
+  'og.about': 'Sobre este grupo',
+  'og.loading': 'Cargando registros de la FEC…',
+  'og.fail': 'No se pudieron cargar los registros de la FEC en este momento.',
+  'og.leanR': 'Según sus propios gastos en este ciclo: el {pct}% ayudó a republicanos o se opuso a demócratas.',
+  'og.leanL': 'Según sus propios gastos en este ciclo: el {pct}% ayudó a demócratas o se opuso a republicanos.',
+  'og.mixed': 'Sus gastos en este ciclo están divididos: {r}% ayudó a republicanos, {d}% ayudó a demócratas.',
+  'og.formed': 'Se registró ante la FEC en {date}',
+  'og.based': 'Con sede en {st}',
+  'og.spent': '{amt} en gastos externos en todas las contiendas de este ciclo',
+  'og.raised': '{amt} recaudados',
+  'og.asof': 'informes de la FEC hasta el {date}',
+  'og.tied': 'Vinculado a: {org}',
+  'og.hidden': 'Este grupo se registra ante la FEC como grupo externo, no como PAC, y no tiene que informar quién lo financia.',
+  'og.funders': 'Sus principales donantes',
+  'og.nofunders': 'Todavía no hay donantes detallados reportados a la FEC en este ciclo.',
+  'og.alldonors': 'Todos sus donantes',
+  'og.fecpage': 'Registro en la FEC',
+  'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
+  'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
   'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
   'committee.to': 'a {name}',
@@ -1110,6 +1159,26 @@ ht: {
   'disc.no': 'Donatè yo pa divilge',
   'disc.owners': 'Mèt yo pa nonmen',
   'disc.lookup': 'Dosye piblik',
+  'og.bought': 'Depanse isit la sou:',
+  'og.about': 'Konsènan gwoup sa a',
+  'og.loading': 'N ap chaje dosye FEC yo…',
+  'og.fail': 'Nou pa ka chaje dosye FEC yo kounye a.',
+  'og.leanR': 'Dapre pwòp depans li nan sik sa a: {pct}% te ede Repibliken oswa te opoze Demokrat.',
+  'og.leanL': 'Dapre pwòp depans li nan sik sa a: {pct}% te ede Demokrat oswa te opoze Repibliken.',
+  'og.mixed': 'Depans li nan sik sa a divize: {r}% te ede Repibliken, {d}% te ede Demokrat.',
+  'og.formed': 'Premye anrejistre nan FEC {date}',
+  'og.based': 'Baze nan {st}',
+  'og.spent': '{amt} nan depans deyò nan tout kous sik sa a',
+  'og.raised': '{amt} ranmase',
+  'og.asof': 'rapò FEC jiska {date}',
+  'og.tied': 'Konekte ak: {org}',
+  'og.hidden': 'Gwoup sa a anrejistre nan FEC kòm yon gwoup deyò, pa kòm PAC, epi li pa oblije di ki moun ki finanse l.',
+  'og.funders': 'Pi gwo donatè li yo',
+  'og.nofunders': 'Poko gen donatè detaye ki rapòte bay FEC nan sik sa a.',
+  'og.alldonors': 'Tout donatè li yo',
+  'og.fecpage': 'Dosye FEC',
+  'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
+  'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
   'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
   'committee.to': 'bay {name}',
@@ -2023,13 +2092,84 @@ function byAmount(list){
 function outsideRows(list){
   return byAmount(list).map(function(d){
     var donors = safeUrl(d.donorsUrl);
-    return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+    var fec = /^C\d{8}$/.test(d.fecId || '') ? d.fecId : '';
+    var bought = (d.bought || []).map(function(b){ return t('cat.' + b.c) + ' ' + b.p + '%'; }).join(' · ');
+    return '<div class="donor-row og-row"><div style="flex:1;min-width:0"><span class="dname">' + esc(d.name) + '</span>' +
       (d.note ? '<div class="enote" style="font-size:12.5px">' + esc(d.note) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.kind, d.kind_tr) + disclosureTag(d) + srcLink(d.url) +
+      '<span class="dtype">' + (fec ? '<span class="og-lean" data-fec="' + fec + '"></span>' : '') +
+      kindTag(d.kind, d.kind_tr) + disclosureTag(d) + srcLink(d.url) +
       (donors ? ' <a class="srclink" href="' + esc(donors) + '" target="_blank" rel="noopener noreferrer">' + t('outside.donors') + ' ↗</a>' : '') +
-      '</span></div>' +
+      '</span>' +
+      (bought ? '<div class="og-bought">' + t('og.bought') + ' ' + esc(bought) + '</div>' : '') +
+      (fec ? '<details class="og" data-fec="' + fec + '"><summary>' + t('og.about') + '</summary><div class="og-body">' + t('og.loading') + '</div></details>' : '') +
+      '</div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
   }).join('');
+}
+
+// Facts about each outside group, loaded after the dossier renders. Shared and cached on the server.
+var groupCache = {};
+function fmtUSD(n){ return n == null ? '' : '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtShortUSD(n){
+  if(n == null) return '';
+  if(n >= 1e6) return '$' + (n/1e6).toFixed(n >= 1e7 ? 0 : 1) + 'M';
+  if(n >= 1e3) return '$' + Math.round(n/1e3) + 'K';
+  return '$' + Math.round(n);
+}
+function fmtMonth(d){
+  var m = String(d||'').match(/^(\d{4})-(\d{2})/);
+  if(!m) return '';
+  try { return new Date(+m[1], +m[2]-1, 1).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month:'short', year:'numeric'}); } catch(e){ return m[1]; }
+}
+function fmtDay(d){
+  var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if(!m) return '';
+  try { return new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month:'short', day:'numeric', year:'numeric'}); } catch(e){ return d; }
+}
+function groupBody(g){
+  var h = '';
+  if(g.lean){
+    var r = g.lean.pctR, d = 100 - r;
+    h += '<p>' + (g.lean.side === 'right' ? t('og.leanR', {pct: r}) : g.lean.side === 'left' ? t('og.leanL', {pct: d}) : t('og.mixed', {r: r, d: d})) + '</p>';
+  }
+  var facts = [];
+  if(g.formed) facts.push(t('og.formed', {date: fmtMonth(g.formed)}));
+  if(g.state) facts.push(t('og.based', {st: esc(g.state)}));
+  if(g.spentOutside) facts.push(t('og.spent', {amt: fmtShortUSD(g.spentOutside)}));
+  if(g.raised) facts.push(t('og.raised', {amt: fmtShortUSD(g.raised)}));
+  if(facts.length) h += '<p>' + facts.join(' · ') + (g.asOf ? ' <span class="og-asof">(' + t('og.asof', {date: fmtDay(g.asOf)}) + ')</span>' : '') + '</p>';
+  if(g.tiedTo) h += '<p>' + t('og.tied', {org: esc(g.tiedTo)}) + '</p>';
+  if(g.hidden){
+    h += '<p>' + t('og.hidden') + '</p>';
+  } else if(g.funders && g.funders.length){
+    h += '<div class="og-fh">' + t('og.funders') + '</div>' + g.funders.map(function(f){
+      return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span></div>' +
+        '<span class="damt">' + esc(f.amount) + '</span></div>';
+    }).join('');
+  } else {
+    h += '<p>' + t('og.nofunders') + '</p>';
+  }
+  var links = [];
+  if(safeUrl(g.fundersUrl)) links.push('<a class="srclink" href="' + esc(g.fundersUrl) + '" target="_blank" rel="noopener noreferrer">' + t('og.alldonors') + ' ↗</a>');
+  if(safeUrl(g.fecUrl)) links.push('<a class="srclink" href="' + esc(g.fecUrl) + '" target="_blank" rel="noopener noreferrer">' + t('og.fecpage') + ' ↗</a>');
+  if(links.length) h += '<p class="og-links">' + links.join(' ') + '</p>';
+  return h;
+}
+function fillGroup(id, g){
+  document.querySelectorAll('.og[data-fec="' + id + '"] .og-body').forEach(function(b){ b.innerHTML = g ? groupBody(g) : t('og.fail'); });
+  if(g && g.lean && g.lean.side !== 'mixed')
+    document.querySelectorAll('.og-lean[data-fec="' + id + '"]').forEach(function(sp){ sp.innerHTML = leanTag(g.lean.side); });
+}
+function loadGroups(){
+  var ids = {};
+  document.querySelectorAll('.og[data-fec]').forEach(function(el){ ids[el.getAttribute('data-fec')] = 1; });
+  Object.keys(ids).forEach(function(id){
+    if(groupCache[id]){ fillGroup(id, groupCache[id]); return; }
+    fetch('/api/fec-group?id=' + encodeURIComponent(id)).then(function(r){ return r.json(); }).then(function(j){
+      if(j && j.group){ groupCache[id] = j.group; fillGroup(id, j.group); } else fillGroup(id, null);
+    }).catch(function(){ fillGroup(id, null); });
+  });
 }
 
 function srcLink(url){
@@ -2301,6 +2441,7 @@ function renderDossier(cand, race, r, cached){
 
   html += '</div>';
   $('dossierContent').innerHTML = html;
+  if(r.outsideSpending) loadGroups();
   $('dossier').scrollTop = 0;
   if(fedRace) loadRaceMoney(ri, cand);
 }
