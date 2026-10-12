@@ -333,7 +333,7 @@ async function runResearch(env, key, p) {
   ].join('\n') : '';
 
   const fedsocTask = isJudicial
-    ? '3. Federalist Society ties: search this candidate across their internet presence — speeches, panels, event participation, membership mentions, chapter roles, FedSoc-affiliated endorsements, contributor listings, bios, news coverage. Apply this rubric strictly: "documented" = primary-source evidence of membership, leadership, or repeated participation (their own bio, FedSoc event listings, contributor pages). "possible" = ANY credible secondhand attribution (a named journalist, academic, or voter guide asserting ties) OR adjacent signals (spoke once at an event, endorsed by FedSoc-aligned groups) — always report these as evidence with the source own hedge preserved. "none_found" = ONLY when no credible source connects them to the Federalist Society at all. Never discard a credible secondhand claim; report it under "possible" with its caveat.'
+    ? '3. Federalist Society ties: search this candidate across their internet presence: speeches, panels, event participation, membership mentions, chapter roles, contributor listings, bios, news coverage. Apply this rubric strictly. "documented" = (a) the candidate states their own membership or a chapter role (their bio, campaign site, LinkedIn, questionnaire), or the Federalist Society lists them as a member or officer, or (b) the Federalist Society own site or reliable coverage shows them speaking, moderating or presenting at TWO OR MORE Federalist Society events on different dates. "possible" = a single Federalist Society event appearance (say so plainly, with the year, e.g. "spoke at one Federalist Society student chapter event in 2009"), OR a named journalist, academic, or voter guide that asserts ties to THIS candidate by name. Note that fedsoc.org contributor pages state that being listed does not imply membership; never describe a listing alone as membership. "none_found" = no credible source connects this candidate to the Federalist Society. EVERY evidence item must name this candidate: never include articles about a court, an appointment pipeline, an applicant pool, or other candidates that do not name this candidate, and never include endorsements by groups merely described as FedSoc-aligned. Preserve each source own hedges.'
     : '';
 
   const measurePrompt = [
@@ -349,6 +349,7 @@ async function runResearch(env, key, p) {
     '2. WHO IS FINANCING EACH SIDE. Look for registered committees/PACs supporting and opposing it, and their major contributors. Classify every funder by kind: "individual" | "corporation" | "lobbying or trade group" | "union" | "PAC/committee" | "nonprofit" | "political party" | "other". Report amounts only where actually reported; never guess. If one side has no organized funding, say so.',
     '3. Major supporters: organizations and notable public figures backing it.',
     '4. Major opponents: organizations and notable public figures against it.',
+    'THIS ELECTION ONLY: list a funder, supporter, or opponent only if they took a position on this measure for this election. Positions on an earlier version or an earlier election do not count, even as precedent; mention them in the relevant note instead.',
     'For every funder, supporter, and opponent, give "lean": "left", "right", or "nonpartisan" — the general political alignment of that person or organization, not the measure.',
     'CRITICAL identity rule: name each organization or person ONLY by a name you verified on their own site or in reliable coverage. If all you have is an acronym or handle, report it exactly as written and note the identity is unverified — NEVER invent an expansion. Preserve source hedges; never state a claim more strongly than the source does.',
     '',
@@ -383,6 +384,7 @@ async function runResearch(env, key, p) {
     '2. Endorsements and candidate ratings — these are DIFFERENT things and go in DIFFERENT arrays. "endorsements" = only explicit endorsements where an organization or person declares support for the candidate. "opposition" = organizations or people that explicitly oppose the candidate or urge a vote against them (including urging a NO vote on a judicial retention); these NEVER go in endorsements. "ratings" = evaluations that are not endorsements: bar association polls, "Highly Qualified"/"Qualified"/"Not Qualified" designations, judicial performance reviews, scorecards, grades. Only include ratings issued by established advocacy groups, professional or bar associations, or official review bodies, and only when you found the rating on that body\u2019s own website: its url must be a page on the rating organization\u2019s own site, not a blog, news story or aggregator repeating it. If you cannot find it on their own site, leave it out. EXCLUDE grades from voter-guide websites, election trackers, data aggregators, AI-generated report cards, and any site that grades candidates on its own "transparency", "accountability" or "integrity" rubric (for example Decode the Vote, Ballotpedia, Vote Smart summaries, iSideWith). If an organization states it does not endorse, its evaluation ALWAYS goes in ratings, never endorsements. CRITICAL identity rule for both arrays: name each organization ONLY by a full name you verified on the organization own website or in reliable coverage. If all you have is an acronym or a social-media handle, report the handle exactly as written and state in the note that the organization identity is unverified — NEVER guess or invent an expansion of an acronym. Classify each organization:',
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
+    '   - "url": link the endorser own announcement (their site or publication) or reliable news coverage of it. Never cite a political party or campaign page that repeats another organization endorsement, unless the endorser is that party or campaign.',
     fedsocTask,
     '',
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences. Write plain text inside all JSON string values — no XML, no cite tags, no citation markup of any kind. When summarizing evidence, preserve the source hedges and caveats: never state a claim more strongly than the source does.',
@@ -418,6 +420,15 @@ async function runResearch(env, key, p) {
   // made up is dropped, and so is anything that isn't plain https.
   result._links = verifyUrls(result, seen);
 
+  applyKnownLeans(result);
+  if (isMeasure) {
+    try { await dropPriorElection(env, result); result.measV = MEASURE_VERSION; }
+    catch (e) { console.log('prior-election check error for ' + name + ': ' + e.message); }
+  }
+  if (result.federalistSociety) {
+    try { await regradeFedsoc(env, result, name); result.fsV = FEDSOC_VERSION; }
+    catch (e) { console.log('fedsoc regrade error for ' + name + ': ' + e.message); }
+  }
   if (!isMeasure) {
     try { result.summary = await neutralSummary(env, result.summary); result.sumV = SUMMARY_VERSION; }
     catch (e) { console.log('summary rewrite error for ' + name + ': ' + e.message); }
@@ -578,10 +589,21 @@ function separateCommitteeMoney(result, office, officeCode) {
 // Saves back to the cache only when something changed.
 async function refreshCached(env, key, result, name, officeCode, office) {
   result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
-  if (result.financing) return result;                            // a ballot measure
+  applyKnownLeans(result);                                        // cheap, so this runs on every read
+  let changed = false;
+  if (result.financing) {                                         // a ballot measure
+    if (result.measV !== MEASURE_VERSION) {
+      try {
+        await dropPriorElection(env, result);
+        result.measV = MEASURE_VERSION;
+        changed = true;
+      } catch (e) { console.log('prior-election check error for ' + name + ': ' + e.message); }
+    }
+    if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    return result;
+  }
   ownSiteRatings(result);                                         // cheap, so these run on every read
   separateCommitteeMoney(result, office, officeCode);
-  let changed = false;
   if (result.sumV !== SUMMARY_VERSION) {
     try {
       result.summary = await neutralSummary(env, result.summary);
@@ -596,7 +618,127 @@ async function refreshCached(env, key, result, name, officeCode, office) {
       changed = true;
     } catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
   }
+  if (result.federalistSociety && result.fsV !== FEDSOC_VERSION) {
+    try {
+      await regradeFedsoc(env, result, name);
+      result.fsV = FEDSOC_VERSION;
+      changed = true;
+    } catch (e) { console.log('fedsoc regrade error for ' + name + ': ' + e.message); }
+  }
   if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+  return result;
+}
+
+// One label per organization, everywhere. Research labels each group's lean inside each dossier,
+// so the same group could come out "left" in one and "nonpartisan" in another. Groups that show up
+// across many races get a fixed label here. The rule: party organizations get their party's side;
+// news organizations, public-safety associations, bar associations and the League of Women Voters
+// are nonpartisan. First match wins. Edit this list, not the prompt, to change a label.
+const KNOWN_LEANS = [
+  [/\b(miami herald|el nuevo herald|sun sentinel|palm beach post|tampa bay times|orlando sentinel|tallahassee democrat|florida times union|miami today|biscayne times|miami new times|miami times|wlrn|axios)\b/, 'nonpartisan'],
+  [/\beditorial board\b/, 'nonpartisan'],
+  [/\b(fraternal order of police|police benevolent association|sheriffs association|police chiefs association|fire ?fighters|fire chiefs)\b/, 'nonpartisan'],
+  [/\b(bar association|the florida bar|league of women voters)\b/, 'nonpartisan'],
+  [/\b(democratic (party|club|executive committee|caucus)|young democrats|democrats)\b/, 'left'],
+  [/\b(republican (party|club|executive committee)|young republicans|republicans|gop)\b/, 'right'],
+];
+function knownLean(name) {
+  const n = normPart(name);
+  if (!n) return null;
+  for (const [re, lean] of KNOWN_LEANS) if (re.test(n)) return lean;
+  return null;
+}
+function applyKnownLeans(result) {
+  const fix = list => {
+    if (!Array.isArray(list)) return;
+    for (const it of list) {
+      if (!it || typeof it !== 'object') continue;
+      const lean = knownLean(it.org || it.name);
+      if (lean) it.lean = lean;
+    }
+  };
+  fix(result.endorsements); fix(result.opposition); fix(result.ratings);
+  fix(result.supporters); fix(result.opponents);
+  if (result.financing) { fix(result.financing.support); fix(result.financing.oppose); }
+  return result;
+}
+
+// Federalist Society screen, re-graded from the evidence already found (no web search).
+// Only ever lowers a status or drops evidence; it can't add anything. Catches a single old event
+// labeled "documented", and articles that never name the candidate. Bump to re-grade every cached judge.
+const FEDSOC_VERSION = 1;
+const FS_RANK = { none_found: 0, possible: 1, documented: 2 };
+async function regradeFedsoc(env, result, name) {
+  const fs = result.federalistSociety;
+  if (!fs || !Array.isArray(fs.evidence) || !fs.evidence.length) return result;
+  if (!(fs.status in FS_RANK) || fs.status === 'none_found') return result;
+  const text = await callAnthropic(env, {
+    model: MODEL_JUDICIAL,
+    max_tokens: 400,
+    temperature: 0,
+    messages: [{ role: 'user', content: [
+      'You check a Federalist Society screen for a nonpartisan voter guide. Candidate: ' + name + '. Use ONLY the evidence below. Do not use outside knowledge.',
+      '',
+      'Step 1. Drop any item that does not itself say this candidate, by name, is a member, held a role, or took part in a Federalist Society event, or that a named source asserts ties to this candidate. Drop items about a court, an appointment pipeline, an applicant pool, or other people, and items where the source does not attribute anything to this candidate.',
+      'Step 2. Grade what is left:',
+      '- "documented": the candidate states their own membership or a chapter role, or the Federalist Society lists them as a member or officer, or the kept items show TWO OR MORE Federalist Society event appearances on different dates.',
+      '- "possible": exactly one Federalist Society event appearance, or a named source asserting ties without primary evidence.',
+      '- "none_found": nothing kept.',
+      'A fedsoc.org speaker or contributor listing for one event is one appearance, not membership.',
+      '',
+      'Respond with ONLY JSON: {"keep": [indices of items to keep], "status": "documented|possible|none_found"}',
+      '',
+      fs.evidence.map((e, i) => i + '. [' + String(e && e.source || '') + '] ' + String(e && e.summary || '')).join('\n')
+    ].join('\n') }]
+  });
+  const out = extractJSON(text);
+  const keep = new Set((Array.isArray(out.keep) ? out.keep : []).filter(i => Number.isInteger(i) && i >= 0 && i < fs.evidence.length));
+  let status = out.status in FS_RANK ? out.status : fs.status;
+  if (FS_RANK[status] > FS_RANK[fs.status]) status = fs.status;   // never raise
+  const kept = fs.evidence.filter((e, i) => keep.has(i));
+  if (!kept.length || status === 'none_found') {
+    fs.status = 'none_found';
+    fs.evidence = [{ source: '', url: '', summary: 'No source that names this candidate connects them to the Federalist Society.' }];
+  } else {
+    fs.status = status;
+    fs.evidence = kept;
+  }
+  return result;
+}
+
+// Ballot measures: a group's position on an earlier version or earlier election is not support or
+// opposition this time. Those move out of the lists into priorPositions (not shown).
+// Bump to re-check every cached measure.
+const MEASURE_VERSION = 1;
+async function dropPriorElection(env, result) {
+  const lists = [['supporters', result.supporters], ['opponents', result.opponents]];
+  if (result.financing) lists.push(['financing.support', result.financing.support], ['financing.oppose', result.financing.oppose]);
+  const items = [];
+  for (const [label, list] of lists) if (Array.isArray(list)) list.forEach((it, i) => items.push({ id: label + ':' + i, it }));
+  if (!items.length) return result;
+  const text = await callAnthropic(env, {
+    model: MODEL,
+    max_tokens: 300,
+    temperature: 0,
+    messages: [{ role: 'user', content: [
+      'Each item below is listed as a supporter, opponent, or funder of a ballot measure in the CURRENT election. Some actually describe a position on an earlier version of the measure or an earlier election (for example "2022 precedent only", "opposed the 2022 version", "no position found for 2026").',
+      'Return ONLY a JSON array of the ids of items whose position is about an earlier election or version and not this one. If unclear, leave it out. Example: ["opponents:0"] or [].',
+      '',
+      items.map(x => x.id + ' | ' + String(x.it && (x.it.name || x.it.org) || '') + ' | ' + String(x.it && x.it.note || '')).join('\n')
+    ].join('\n') }]
+  });
+  const m = String(text || '').match(/\[[^\]]*\]/);
+  const ids = new Set(m ? JSON.parse(m[0]).filter(x => typeof x === 'string') : []);
+  if (!ids.size) return result;
+  const prior = [];
+  const prune = (label, list) => Array.isArray(list) ? list.filter((it, i) => ids.has(label + ':' + i) ? (prior.push(it), false) : true) : list;
+  result.supporters = prune('supporters', result.supporters);
+  result.opponents = prune('opponents', result.opponents);
+  if (result.financing) {
+    result.financing.support = prune('financing.support', result.financing.support);
+    result.financing.oppose = prune('financing.oppose', result.financing.oppose);
+  }
+  result.priorPositions = (Array.isArray(result.priorPositions) ? result.priorPositions : []).concat(prior);
   return result;
 }
 
