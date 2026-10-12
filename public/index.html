@@ -322,6 +322,14 @@
   .bk-paths li{margin:2px 0;}
   .bk-paths li.bk-for, .bk-paths li.bk-yes, .bk-paths li.bk-allied{list-style:'\2713  ';}
   .bk-paths li.bk-against, .bk-paths li.bk-no{list-style:'\2717  ';}
+  .al-com{margin:0 0 16px;}
+  .al-head{border-left:4px solid var(--ok-fg); background:var(--ok-bg); padding:8px 10px; margin:8px 0 4px;}
+  .al-head.al-unk{border-left-color:var(--flag-rule); background:var(--flag-bg);}
+  .al-head .dname{font-weight:800; font-size:15px;}
+  .al-label{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .al-facts, .al-spent{margin:4px 0 0; font-size:13px;}
+  .al-sub{font-size:11.5px; color:var(--ink-soft);}
+  .al-when{font-size:12px; color:var(--ink-soft);}
   .og-com{margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid #DDDDD5;}
   .og-warn{color:var(--flag-fg); background:var(--flag-bg); padding:4px 6px; font-size:12px;}
   .og-np{margin:6px 0 4px; padding:6px 8px; border-left:3px solid var(--flag-rule); background:var(--flag-bg); font-size:12.5px;}
@@ -742,6 +750,16 @@ en: {
   'sec.committee': 'Money to Allied Committees',
   'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
   'committee.to': 'to {name}',
+  'al.to': 'Given to this committee',
+  'al.raised': 'Raised {amt} in {n} reported gifts in 2025\u20132026 (Florida Division of Elections)',
+  'al.gave': 'Gave <strong>{amt}</strong> directly to this campaign.',
+  'al.gaveNone': 'No direct gift to this campaign in its filings.',
+  'al.spendNote': 'Florida committees report spending by who they paid (consultants, ad firms), not by candidate, so other money spent to help this candidate can\u2019t be added up from state records.',
+  'al.unnamed': 'Committee not named in the source',
+  'al.unnamedNote': 'Found in news or web sources that didn\u2019t say which committee got the money or when. Not checked against official filings.',
+  'al.date': 'Gave on {date}',
+  'al.dates': '{n} gifts, {first} to {last}',
+  'al.nodate': 'Date not given in the source',
   'donors.full': 'See full donor list',
   'sec.endorse': 'Endorsements',
   'endorse.none': 'No endorsements found in searched coverage.',
@@ -1027,6 +1045,16 @@ es: {
   'sec.committee': 'Dinero a comités aliados',
   'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
   'committee.to': 'a {name}',
+  'al.to': 'Donado a este comité',
+  'al.raised': 'Recaudó {amt} en {n} donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida)',
+  'al.gave': 'Dio <strong>{amt}</strong> directamente a esta campaña.',
+  'al.gaveNone': 'Sus registros no muestran una donación directa a esta campaña.',
+  'al.spendNote': 'Los comités de Florida reportan sus gastos por a quién pagaron (consultores, agencias de anuncios), no por candidato, así que el resto de lo gastado para ayudar a este candidato no se puede sumar con los registros estatales.',
+  'al.unnamed': 'Comité no nombrado en la fuente',
+  'al.unnamedNote': 'Encontrado en noticias o sitios web que no dicen qué comité recibió el dinero ni cuándo. No verificado con registros oficiales.',
+  'al.date': 'Donó el {date}',
+  'al.dates': '{n} donaciones, de {first} a {last}',
+  'al.nodate': 'La fuente no da la fecha',
   'donors.full': 'Ver lista completa de donantes',
   'sec.endorse': 'Respaldos',
   'endorse.none': 'No se encontraron respaldos en la cobertura revisada.',
@@ -1312,6 +1340,16 @@ ht: {
   'sec.committee': 'Lajan bay komite alye',
   'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
   'committee.to': 'bay {name}',
+  'al.to': 'Bay komite sa a',
+  'al.raised': 'Ranmase {amt} nan {n} don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid)',
+  'al.gave': 'Bay <strong>{amt}</strong> dirèkteman bay kanpay sa a.',
+  'al.gaveNone': 'Dosye li yo pa montre okenn don dirèk bay kanpay sa a.',
+  'al.spendNote': 'Komite Florid rapòte depans yo selon moun yo peye (konsiltan, ajans piblisite), pa selon kandida, kidonk lòt lajan yo depanse pou ede kandida sa a pa ka kalkile ak dosye leta.',
+  'al.unnamed': 'Sous la pa nonmen komite a',
+  'al.unnamedNote': 'Jwenn nan nouvèl oswa sit entènèt ki pa di ki komite ki resevwa lajan an ni kilè. Pa verifye ak dosye ofisyèl.',
+  'al.date': 'Bay li {date}',
+  'al.dates': '{n} don, soti {first} rive {last}',
+  'al.nodate': 'Sous la pa bay dat la',
   'donors.full': 'Gade tout lis donatè yo',
   'sec.endorse': 'Sipò ofisyèl',
   'endorse.none': 'Nou pa jwenn okenn sipò ofisyèl nan sous nou chèche yo.',
@@ -2470,7 +2508,7 @@ function traceBackers(groups){
       var top = byAmount(list.filter(function(f){ return backerKey(f.name) !== backerKey(g.name); })).slice(0, 6);
       var follow = top.filter(isPassThrough).slice(0, 3);
       top.forEach(function(f){
-        if(follow.indexOf(f) < 0) add(f, {amt: f.amount, to: g.name, g: g}, g.name);
+        if(follow.indexOf(f) < 0) add(f, {amt: f.amount, to: g.name, g: g, last: f.last}, g.name);
       });
       return Promise.all(follow.map(function(mid){
         return orgFetch(mid).then(function(o){
@@ -2497,6 +2535,7 @@ function backerPath(p){
   var s = p.mid
     ? t('bk.via', {amt: esc(fmtAmount(p.amt)), mid: '<strong>' + esc(p.mid) + '</strong>', amt2: esc(fmtAmount(p.midAmt)), org: '<strong>' + esc(p.to) + '</strong>'})
     : t('bk.gave', {amt: esc(fmtAmount(p.amt)), org: '<strong>' + esc(p.to) + '</strong>'});
+  if(p.last && !p.mid) s += ' <span class="al-when">(' + esc(fmtDay(p.last)) + ')</span>';
   return '<li class="bk-' + esc(g.end) + '">' + s + (end ? ', ' + end : '') + '</li>';
 }
 function backerRows(list){
@@ -2752,21 +2791,44 @@ function renderDossier(cand, race, r, cached){
   if(r.committeeDonors && r.committeeDonors.length){
     html += '<div class="dsec"><h4>' + t('sec.committee') + '</h4>' +
       '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('committee.sub') + '</p>';
-    // A panel for each committee receiving the money (often the candidate's own Florida committee)
-    var seenCom = {};
+    // Grouped by the committee that received the money: what it is, what it raised, what it gave this
+    // campaign, then its donors with dates. Rows with no committee named go last, flagged.
+    var comOrder = [], byCom = {};
     r.committeeDonors.forEach(function(d){
-      var c = String(d.committee || '').trim();
-      if(!c || seenCom[c.toLowerCase()]) return;
-      seenCom[c.toLowerCase()] = 1;
-      html += '<div class="og-com"><span class="dname">' + esc(c) + '</span>' + orgDetails({name: c}) + '</div>';
+      var c = String(d.committee || '').trim(), k = c.toLowerCase();
+      if(!byCom[k]){ byCom[k] = {name: c, rows: []}; comOrder.push(k); }
+      byCom[k].rows.push(d);
     });
-    html += r.committeeDonors.map(function(d){
-      return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-      (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
-      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
-      (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
-    }).join('');
+    comOrder.sort(function(a, b){ return (a === '') - (b === ''); });
+    comOrder.forEach(function(k){
+      var g = byCom[k];
+      var meta = (r.alliedCommittees || []).filter(function(m){ return String(m.name||'').toLowerCase() === k; })[0];
+      html += '<div class="al-com">';
+      if(g.name){
+        html += '<div class="al-head"><div class="al-label">' + t('al.to') + '</div><span class="dname">' + esc(g.name) + '</span>';
+        var facts = [];
+        if(meta && meta.type) facts.push(esc(meta.type) + (meta.status ? ' · ' + esc(meta.status) : ''));
+        if(meta && meta.raised) facts.push(t('al.raised', {amt: fmtShortUSD(meta.raised), n: meta.gifts || 0}));
+        if(facts.length) html += '<p class="al-facts">' + facts.join('<br>') + '</p>';
+        html += '<p class="al-spent">' + (meta && meta.gaveCampaign ? t('al.gave', {amt: esc(fmtAmount(meta.gaveCampaign))}) : meta ? t('al.gaveNone') : '') +
+          (meta ? ' <span class="al-sub">' + t('al.spendNote') + '</span>' : '') + '</p>';
+        html += orgDetails({name: g.name}) + '</div>';
+      } else {
+        html += '<div class="al-head al-unk"><div class="al-label">' + t('al.unnamed') + '</div><p class="al-sub">' + t('al.unnamedNote') + '</p></div>';
+      }
+      html += g.rows.map(function(d){
+        var when = d.last ? (d.gifts > 1 && d.first && d.first !== d.last
+          ? t('al.dates', {n: d.gifts, first: fmtDay(d.first), last: fmtDay(d.last)})
+          : t('al.date', {date: fmtDay(d.last)})) : (g.name ? '' : '');
+        return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+        (d.occupation ? '<div class="enote" style="font-size:12px">' + esc(d.occupation) + (d.place ? ' · ' + esc(d.place) : '') + '</div>' : '') +
+        (when ? '<div class="enote al-when">' + when + '</div>' : (!d.source ? '<div class="enote al-when">' + t('al.nodate') + '</div>' : '')) +
+        '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + (d.source ? '' : srcLink(d.url)) + '</span></div>' +
+        '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
+        (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
+      }).join('');
+      html += '</div>';
+    });
     html += '</div>';
   }
 
