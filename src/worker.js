@@ -446,6 +446,7 @@ async function runResearch(env, key, p) {
     ownSiteRatings(result);
     separateCommitteeMoney(result, office, officeCode);
     if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
+    await refreshMdcDonors(env, result, name, office, officeCode);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
     result.linkV = LINK_VERSION;
@@ -599,7 +600,7 @@ function separateCommitteeMoney(result, office, officeCode) {
     // PACs and party committees may give federal candidates more than individuals can; FEC rows are exact
     const fecRow = officeCode && /fec\.gov/.test(d.url || '');
     // official state records are exact too (parties and candidates' own loans aren't capped)
-    const official = fecRow || result.donorSource === 'FL';
+    const official = fecRow || result.donorSource === 'FL' || result.donorSource === 'MDC';
     if (n !== null && n > limit && !official) result.committeeDonors.push({ ...d, committee: d.committee || '' });
     else keep.push(d);
   }
@@ -633,6 +634,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   ownSiteRatings(result);                                         // cheap, so these run on every read
   separateCommitteeMoney(result, office, officeCode);
   if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
+  if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
       result.summary = await neutralSummary(env, result.summary);
@@ -1321,7 +1323,9 @@ async function flCandidateDonors(env, name, office) {
     agg[giver].kinds.add(c[3]);
   }
   if (!n) return { donors: [], count: 0 };
-  const donors = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([giver, v]) => {
+  const sorted = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount);
+  const ties = tieNote(sorted.map(e => e[1].amount), 8);
+  const donors = sorted.slice(0, 8).map(([giver, v]) => {
     const occ = v.occ;
     const self = /^candidate$/i.test(occ) || (normPart(giver).includes(np.last) && normPart(giver).includes(np.first));
     const party = /\b(party|executive committee)\b/i.test(giver + ' ' + occ);
@@ -1332,7 +1336,121 @@ async function flCandidateDonors(env, name, office) {
     return { name: giver + (type === 'individual' && occ ? ' (' + occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
-  return { donors, count: n, total, to };
+  return { donors, count: n, total, to, ties };
+}
+// Miami-Dade County and Community Council, School Board, county judge and other county-filed
+// candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
+// deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
+// county's own published totals to the cent. No AI, refreshed at most daily.
+const MDC_DONOR_VERSION = 1;
+const VF = 'https://www.voterfocus.com/CampaignFinance/';
+const VF_H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)', 'Accept': 'text/html,text/csv,*/*' };
+function parseCSV(s) {
+  const rows = []; let row = [], f = '', q = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (q) { if (c === '"') { if (s[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ',') { row.push(f); f = ''; }
+    else if (c === '\n') { row.push(f); rows.push(row); row = []; f = ''; }
+    else if (c !== '\r') f += c;
+  }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  return rows;
+}
+async function mdcCandidateList(env) {
+  const key = 'mdcl' + MDC_DONOR_VERSION;
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return hit;
+  const r = await fetch(VF + 'candidate_pr.php?c=miamidade', { headers: VF_H });
+  if (!r.ok) throw new Error('county list ' + r.status);
+  const html = await r.text();
+  const out = [];
+  // "Office: County Commission District 05" headers, each followed by that office's candidates
+  const parts = html.split(/Office:\s*/);
+  for (let i = 1; i < parts.length; i++) {
+    const office = decodeEntities(parts[i].split('<')[0]);
+    for (const m of parts[i].matchAll(/candidate_pr\.php\?op=cv&(?:amp;)?e=(\d+)&(?:amp;)?c=miamidade&(?:amp;)?ca=(\d+)[^"]*"[^>]*>([\s\S]*?)<\/a>/g)) {
+      // the link wraps the whole row ("Vicki L. Lopez (NOP) status (...) Contributions ..."): keep the name
+      const nm = decodeEntities(m[3]).split(/\s*\((?:NOP|NPA|REP|DEM|LPF|GRE|IND|[A-Z]{2,4})\)/)[0].trim();
+      if (nm) out.push({ office, e: m[1], ca: m[2], name: nm });
+    }
+  }
+  if (out.length) await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: 6 * 3600 });
+  return out;
+}
+async function mdcCandidateDonors(env, name, office) {
+  const np = flNameParts(name);
+  if (!np) return null;
+  const list = await mdcCandidateList(env);
+  let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && p.first === np.first; });
+  if (hits.length > 1) {   // same name in two races: use the district or group number
+    const num = (String(office).match(/(?:District|Group|Seat)\s+(\d+)/i) || [])[1];
+    if (num) hits = hits.filter(c => (String(c.office).match(/(\d+)\s*$/) || [])[1] && parseInt(c.office.match(/(\d+)\s*$/)[1], 10) === parseInt(num, 10));
+  }
+  if (hits.length !== 1) return null;
+  const c = hits[0];
+  const r = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&dhc=0&county=miamidade', { headers: VF_H });
+  if (!r.ok) throw new Error('county export ' + r.status);
+  const rows = parseCSV(await r.text()).slice(1).filter(x => x[3] === 'C');
+  const k = x => x[2] + '|' + normPart(x[4]) + '|' + (parseFloat(x[14]) || 0).toFixed(2);
+  const bag = new Map();
+  const put = (x, n) => { const key = k(x); const cur = bag.get(key) || { x, n: 0 }; cur.n += n; bag.set(key, cur); };
+  rows.filter(x => !x[15]).forEach(x => put(x, 1));
+  rows.filter(x => x[15] === 'D').forEach(x => put(x, -1));
+  rows.filter(x => x[15] === 'A').forEach(x => put(x, 1));
+  const agg = {}; let monetary = 0, inkind = 0, count = 0, to = '';
+  for (const { x, n } of bag.values()) {
+    if (n <= 0) continue;
+    const amt = (parseFloat(x[14]) || 0) * n;
+    const ik = /^(IK|INK)$/i.test(x[12]);
+    if (ik) inkind += amt; else monetary += amt;
+    count += n;
+    if (x[2] > to) to = x[2];
+    const who = String(x[4]).replace(/\s+/g, ' ').trim();
+    const id = normPart(who);
+    if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0 };
+    agg[id].amount += amt;
+    if (ik) agg[id].ik += amt;
+  }
+  const sorted = Object.values(agg).filter(v => v.amount > 0).sort((a, b) => b.amount - a.amount);
+  const ties = tieNote(sorted.map(v => v.amount), 8);
+  const donors = sorted.slice(0, 8).map(v => {
+    const looksCommittee = /committee|\bpac\b|\bpc\b|political|for better|floridians for|friends of|party/i.test(v.name + ' ' + v.occ);
+    const type = v.t === 'S' ? 'self-funded' : v.t === 'F' ? 'PAC' : v.t === 'B' ? (/union/i.test(v.occ) ? 'union' : 'corporation') : v.t === 'I' ? 'individual' : looksCommittee ? 'PAC' : 'other';
+    return { name: v.name + (type === 'individual' && v.occ ? ' (' + v.occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
+      ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}) };
+  });
+  return { donors, monetary, inkind, count, to, ties, office: c.office,
+    url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=miamidade&ca=' + c.ca + '&rellevel=3&committee=N' };
+}
+async function refreshMdcDonors(env, result, name, office, officeCode) {
+  if (officeCode || flOfficeQuery(office)) return false;           // federal and state races have their own sources
+  const fresh = result.mdcV === MDC_DONOR_VERSION && result.mdcAt && Date.now() - result.mdcAt < 24 * 3600 * 1000;
+  if (fresh) return false;
+  try {
+    const d = await mdcCandidateDonors(env, name, office);
+    result.mdcV = MDC_DONOR_VERSION;
+    result.mdcAt = Date.now();
+    if (d && d.count) {
+      result.donors = d.donors;
+      result.donorDataNote = 'Contributions reported to the Miami-Dade Elections Department for ' + d.office + ': $' +
+        Math.round(d.monetary).toLocaleString('en-US') + ' in money' + (d.inkind ? ' and $' + Math.round(d.inkind).toLocaleString('en-US') + ' in-kind' : '') +
+        ' from ' + d.count + ' contributions, through ' + d.to + ', with amended reports applied. Top givers shown.' + (d.ties || '') + ' Money to allied political committees is listed separately.';
+      result.donorListUrl = d.url;
+      result.donorSource = 'MDC';
+    }
+    return true;
+  } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
+}
+
+// When many givers tie at the cutoff (common at the legal limit), "top 8" is an arbitrary pick.
+// Say how many gave at least the smallest amount shown.
+function tieNote(sortedAmounts, shown) {
+  if (sortedAmounts.length <= shown) return '';
+  const floor = sortedAmounts[shown - 1];
+  const atLeast = sortedAmounts.filter(a => a >= floor).length;
+  return atLeast > shown ? ' ' + atLeast + ' givers gave $' + Math.round(floor).toLocaleString('en-US') + ' or more; ' + shown + ' are shown.' : '';
 }
 async function refreshFlDonors(env, key, result, name, office, save) {
   if (!flOfficeQuery(office)) return false;
@@ -1347,7 +1465,7 @@ async function refreshFlDonors(env, key, result, name, office, save) {
       result.donors = fl.donors;
       result.donorDataNote = 'Contributions reported to the Florida Division of Elections for the 2026 election: ' + fl.count +
         ' contributions totaling $' + Math.round(fl.total).toLocaleString('en-US') + (fl.to ? ', through ' + fl.to : '') +
-        '. Top givers shown; contributions to allied political committees are listed separately.';
+        '. Top givers shown.' + (fl.ties || '') + ' Contributions to allied political committees are listed separately.';
       result.donorSource = 'FL';
     }
     if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
