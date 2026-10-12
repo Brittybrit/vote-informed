@@ -1073,7 +1073,7 @@ function spendCategory(desc, cat) {
 //   formed   when it first filed with the FEC
 //   totals   money raised and spent on outside spending nationally, as of its latest report
 //   funders  its top donors, with "donors not disclosed" on nonprofit funders (IRS data via ProPublica)
-const GROUP_VERSION = 2;
+const GROUP_VERSION = 3;
 const LIMIT_GROUP_PER_DAY = 200;
 async function handleFecGroup(url, request, env) {
   const id = String(url.searchParams.get('id') || '');
@@ -1150,6 +1150,14 @@ async function fecGroupProfile(env, id) {
     g.lean = { side: share >= 0.8 ? (helpR > helpD ? 'right' : 'left') : 'mixed', pctR: Math.round(100 * helpR / (helpR + helpD)) };
   }
 
+  // Outside groups that aren't PACs are usually nonprofits: show who runs them from their 990.
+  if (hidden && g.name) {
+    try {
+      const o = await findNonprofit(g.name);
+      if (o) g.nonprofit = { ...(await nonprofitDetails(env, o.ein)), subsection: o.subseccd };
+    } catch (e) { console.log('nonprofit lookup ' + id + ': ' + e.message); }
+  }
+
   // Top funders. Groups that aren't PACs (hidden) don't report them, which is the point of the label.
   if (!hidden) {
     const aj = await get('/schedules/schedule_a/', { committee_id: id, two_year_transaction_period: String(cycle), sort: '-contribution_receipt_amount', per_page: '100' });
@@ -1172,21 +1180,84 @@ async function fecGroupProfile(env, id) {
     // Exact name match only, so a business is never mislabeled as a nonprofit.
     await Promise.all(g.funders.filter(f => f.type === 'organization').map(async f => {
       try {
-        const want = normOrg(f.name);
-        const r = await fetch('https://projects.propublica.org/nonprofits/api/v2/search.json?q=' + encodeURIComponent('"' + want + '"'));
-        if (!r.ok) return;
-        const hitOrg = ((await r.json()).organizations || []).find(o => normOrg(o.name) === want);
-        if (hitOrg && [4, 5, 6].includes(hitOrg.subseccd)) {
-          f.disclosure = 'not_disclosed';
-          f.type = 'nonprofit 501(c)(' + hitOrg.subseccd + ')';
-          f.lookupUrl = 'https://projects.propublica.org/nonprofits/organizations/' + hitOrg.ein;
-        }
+        const hitOrg = await findNonprofit(f.name);
+        if (!hitOrg) return;
+        f.disclosure = 'not_disclosed';
+        f.type = 'nonprofit 501(c)(' + hitOrg.subseccd + ')';
+        f.lookupUrl = 'https://projects.propublica.org/nonprofits/organizations/' + hitOrg.ein;
+        f.np = await nonprofitDetails(env, hitOrg.ein);
       } catch (e) { /* leave unlabeled */ }
     }));
     markDisclosure({ donors: g.funders });   // LLC funders get "owners not listed"
   }
   return g;
 }
+// Who runs a nonprofit: officers, directors and key employees from its latest IRS Form 990, plus
+// revenue and location. Revenue and location come from ProPublica's Nonprofit Explorer API; the
+// officer list comes from its organization page, which shows Part VII of the 990. Cached 30 days.
+// If ProPublica doesn't answer (or asks for a browser check), this returns what it has and the
+// page still links to the filing.
+const NONPROFIT_VERSION = 1;
+function decodeEntities(t) {
+  return String(t || '').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+async function nonprofitDetails(env, ein) {
+  if (!/^\d{6,9}$/.test(String(ein))) return null;
+  const key = 'np' + NONPROFIT_VERSION + ':' + ein;
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return hit;
+  const ua = { headers: { 'User-Agent': 'ballot305.org nonpartisan voter guide (github.com/Brittybrit/vote-informed)' } };
+  const np = { ein: String(ein), url: 'https://projects.propublica.org/nonprofits/organizations/' + ein, officers: [] };
+  try {
+    const r = await fetch('https://projects.propublica.org/nonprofits/api/v2/organizations/' + ein + '.json', ua);
+    if (r.ok) {
+      const j = await r.json();
+      const o = j.organization || {};
+      np.name = o.name || '';
+      np.city = o.city || '';
+      np.state = o.state || '';
+      np.subsection = o.subsection_code || null;
+      np.since = o.ruling_date ? String(o.ruling_date).slice(0, 4) : '';
+      const f = (j.filings_with_data || [])[0];
+      if (f) { np.revenue = f.totrevenue || null; np.revenueYear = f.tax_prd_yr || ''; }
+    }
+  } catch (e) { console.log('propublica api ' + ein + ': ' + e.message); }
+  try {
+    const r = await fetch(np.url, ua);
+    const html = r.ok ? await r.text() : '';
+    const ti = html.indexOf('<table class="employees');
+    if (ti >= 0) {
+      const table = html.slice(ti, html.indexOf('</table>', ti));
+      const before = html.slice(0, ti);
+      const years = [...before.matchAll(/id=['"]filing(\d{4})['"]|year-label">\s*(\d{4})/g)].map(m => m[1] || m[2]);
+      if (years.length) np.officersYear = years[years.length - 1];
+      for (const m of table.matchAll(/<tr class="employee-row[^"]*">([\s\S]*?)<\/tr>/g)) {
+        const cells = [...m[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map(c => c[1]);
+        if (!cells.length) continue;
+        const titleM = cells[0].match(/<span>([\s\S]*?)<\/span>/);
+        const name = decodeEntities(cells[0].replace(/<span>[\s\S]*?<\/span>/, ''));
+        const title = titleM ? decodeEntities(titleM[1]).replace(/^\(|\)$/g, '') : '';
+        const titleFixed = title.replace(/\b(ceo|coo|cfo|cto|evp|svp|vp|gc)\b/gi, w => w.toUpperCase());
+        const pay = cells[1] ? decodeEntities(cells[1]) : '';
+        if (name) np.officers.push({ name, title: titleFixed, pay: /^\$[\d,]+$/.test(pay) && pay !== '$0' ? pay : '' });
+        if (np.officers.length >= 15) break;
+      }
+    }
+  } catch (e) { console.log('propublica page ' + ein + ': ' + e.message); }
+  await env.CACHE.put(key, JSON.stringify(np), { expirationTtl: 60 * 60 * 24 * 30 });
+  return np;
+}
+// Exact-name match against the IRS list, for 501(c)(4), (c)(5) and (c)(6) groups. Null if no exact match.
+async function findNonprofit(name) {
+  const want = normOrg(name);
+  if (!want) return null;
+  const r = await fetch('https://projects.propublica.org/nonprofits/api/v2/search.json?q=' + encodeURIComponent('"' + want + '"'));
+  if (!r.ok) return null;
+  const o = ((await r.json()).organizations || []).find(x => normOrg(x.name) === want);
+  return o && [4, 5, 6].includes(o.subseccd) ? o : null;
+}
+
 function normOrg(n) {
   return normPart(n).replace(/\b(inc|incorporated|corp|corporation|co|llc|the)\b/g, ' ').replace(/\s+/g, ' ').trim();
 }

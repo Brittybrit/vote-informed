@@ -309,6 +309,13 @@
   .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
   .og-body .og-f .dname{font-size:13px;}
   .og-links{margin-top:6px !important;}
+  .og-np{margin:6px 0 4px; padding:6px 8px; border-left:3px solid var(--flag-rule); background:var(--flag-bg); font-size:12.5px;}
+  .og-np .og-fh{margin-top:0;}
+  .og-off{list-style:none; margin:2px 0 4px; padding:0;}
+  .og-off li{margin:1px 0;}
+  .og-pay{color:var(--ink-soft);}
+  .og-more{color:var(--ink-soft); font-style:italic;}
+  .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
   /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
   .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
@@ -675,6 +682,11 @@ en: {
   'og.nofunders': 'No itemized donors reported to the FEC yet this cycle.',
   'og.alldonors': 'All its donors',
   'og.fecpage': 'FEC record',
+  'og.runs': 'Who runs it (IRS Form 990, {year})',
+  'og.npmore': 'and {n} more in the filing',
+  'og.nprev': '{amt} revenue ({year})',
+  'og.npsince': 'tax-exempt since {year}',
+  'og.npsrc': 'Its IRS filings',
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
@@ -926,6 +938,11 @@ es: {
   'og.nofunders': 'Todavía no hay donantes detallados reportados a la FEC en este ciclo.',
   'og.alldonors': 'Todos sus donantes',
   'og.fecpage': 'Registro en la FEC',
+  'og.runs': 'Quién lo dirige (Formulario 990 del IRS, {year})',
+  'og.npmore': 'y {n} más en la declaración',
+  'og.nprev': '{amt} de ingresos ({year})',
+  'og.npsince': 'exento de impuestos desde {year}',
+  'og.npsrc': 'Sus declaraciones al IRS',
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
@@ -1177,6 +1194,11 @@ ht: {
   'og.nofunders': 'Poko gen donatè detaye ki rapòte bay FEC nan sik sa a.',
   'og.alldonors': 'Tout donatè li yo',
   'og.fecpage': 'Dosye FEC',
+  'og.runs': 'Kiyès ki dirije l (Fòm 990 IRS, {year})',
+  'og.npmore': 'ak {n} lòt nan deklarasyon an',
+  'og.nprev': '{amt} revni ({year})',
+  'og.npsince': 'egzante taks depi {year}',
+  'og.npsrc': 'Deklarasyon IRS li yo',
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
@@ -2126,6 +2148,25 @@ function fmtDay(d){
   if(!m) return '';
   try { return new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month:'short', day:'numeric', year:'numeric'}); } catch(e){ return d; }
 }
+// Who runs a nonprofit, from its latest IRS Form 990 (via ProPublica).
+function npBlock(np){
+  if(!np) return '';
+  var h = '<div class="og-np">';
+  var facts = [];
+  if(np.revenue) facts.push(t('og.nprev', {amt: fmtShortUSD(np.revenue), year: np.revenueYear || ''}));
+  if(np.city || np.state) facts.push(esc([np.city, np.state].filter(Boolean).join(', ')));
+  if(np.since) facts.push(t('og.npsince', {year: np.since}));
+  if(np.officers && np.officers.length){
+    var shown = np.officers.slice(0, 6).map(function(o){
+      return '<li><strong>' + esc(o.name) + '</strong>' + (o.title ? ', ' + esc(o.title) : '') + (o.pay ? ' <span class="og-pay">(' + esc(o.pay) + ')</span>' : '') + '</li>';
+    }).join('');
+    var more = np.officers.length > 6 ? '<li class="og-more">' + t('og.npmore', {n: np.officers.length - 6}) + '</li>' : '';
+    h += '<div class="og-fh">' + t('og.runs', {year: np.officersYear || ''}) + '</div><ul class="og-off">' + shown + more + '</ul>';
+  }
+  if(facts.length) h += '<p class="og-npfacts">' + facts.join(' · ') + '</p>';
+  if(safeUrl(np.url)) h += '<p class="og-links"><a class="srclink" href="' + esc(np.url) + '" target="_blank" rel="noopener noreferrer">' + t('og.npsrc') + ' ↗</a></p>';
+  return h + '</div>';
+}
 function groupBody(g){
   var h = '';
   if(g.lean){
@@ -2140,11 +2181,11 @@ function groupBody(g){
   if(facts.length) h += '<p>' + facts.join(' · ') + (g.asOf ? ' <span class="og-asof">(' + t('og.asof', {date: fmtDay(g.asOf)}) + ')</span>' : '') + '</p>';
   if(g.tiedTo) h += '<p>' + t('og.tied', {org: esc(g.tiedTo)}) + '</p>';
   if(g.hidden){
-    h += '<p>' + t('og.hidden') + '</p>';
+    h += '<p>' + t('og.hidden') + '</p>' + npBlock(g.nonprofit);
   } else if(g.funders && g.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + g.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
-        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span></div>' +
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span>' + npBlock(f.np) + '</div>' +
         '<span class="damt">' + esc(f.amount) + '</span></div>';
     }).join('');
   } else {
