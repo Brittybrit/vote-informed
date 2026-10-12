@@ -1101,7 +1101,7 @@ async function handleFecGroup(url, request, env) {
 //                   nonprofit match (501(c)(4)/(5)/(6)), else a business with links to search
 //                   public records. Exact matches only, so a group is never confused with another.
 // Cached a week, shared by everyone. Search links are always included.
-const ORG_VERSION = 2;
+const ORG_VERSION = 3;
 function orgSearchLinks(name) {
   const plain = String(name || '').replace(/\s*\(.*\)\s*$/, '').trim();
   const bare = plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|inc\.?|corp\.?|corporation|co\.?)\s*$/i, '').trim() || plain;
@@ -1150,8 +1150,9 @@ async function handleOrg(url, request, env) {
   if (out.type === 'none') {
     try {
       const fl = await flCommittee(env, name);
-      if (fl) { out.type = 'flc'; out.flc = fl; }
-    } catch (e) { console.log('org fl committee ' + name + ': ' + e.message); }
+      if (fl && fl.error) out.flErr = fl.error;
+      else if (fl) { out.type = 'flc'; out.flc = fl; }
+    } catch (e) { out.flErr = 'error'; console.log('org fl committee ' + name + ': ' + e.message); }
   }
   if (out.type === 'none') {
     try {
@@ -1160,7 +1161,7 @@ async function handleOrg(url, request, env) {
     } catch (e) { console.log('org nonprofit ' + name + ': ' + e.message); }
   }
   if (out.type === 'none' && /\b(l\.?\s?l\.?\s?c|inc|corp|corporation|company|co|lp|llp|holdings|group|partners|enterprises|ventures)\b\.?/i.test(name)) out.type = 'business';
-  await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: CACHE_TTL });
+  await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: out.flErr ? 3600 : CACHE_TTL });
   return json({ org: out, cached: false });
 }
 
@@ -1168,24 +1169,32 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 1;
+const FLC_VERSION = 2;
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
   const want = normOrg(name);
   if (!want) return null;
   const key = 'flc' + FLC_VERSION + ':' + (await sha256(want));
   const hit = await env.CACHE.get(key, 'json');
-  if (hit) return hit.none ? null : hit;
-  const form = (o) => ({ method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(o) });
+  if (hit) return hit.none ? (hit.err ? { error: hit.err } : null) : hit;
+  // The state's site is an older server that expects ordinary browser headers.
+  const H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)',
+    'Accept': 'text/html,application/xhtml+xml,text/plain,*/*', 'Accept-Language': 'en-US,en;q=0.9' };
+  const form = (o, ref) => ({ method: 'POST', headers: { ...H, 'Content-Type': 'application/x-www-form-urlencoded', 'Origin': FL_BASE, 'Referer': FL_BASE + ref }, body: new URLSearchParams(o) });
   const short = String(name).replace(/\s*\(.*\)\s*$/, '').trim().slice(0, 30);
   let out = null;
-  const lr = await fetch(FL_BASE + '/committees/ComLkupByName.asp', form({ searchtype: '1', comName: short, LkupTypeName: 'L', NameSearchBtn: 'Search by Name' }));
-  const lh = lr.ok ? await lr.text() : '';
+  const lr = await fetch(FL_BASE + '/committees/ComLkupByName.asp', form({ searchtype: '1', comName: short, LkupTypeName: 'L', NameSearchBtn: 'Search by Name' }, '/committees/'));
+  if (!lr.ok) {
+    // the lookup itself failed: say why, and don't remember "no match" for a week
+    await env.CACHE.put(key, JSON.stringify({ none: true, err: 'lookup ' + lr.status }), { expirationTtl: 3600 });
+    return { error: 'lookup ' + lr.status };
+  }
+  const lh = await lr.text();
   const matches = [...lh.matchAll(/href="?ComDetail\.asp\?account=(\d+)"?[^>]*>([^<]+)</gi)]
     .map(m => ({ account: m[1], name: decodeEntities(m[2]) })).filter(m => normOrg(m.name) === want);
   const details = [];
   for (const m of matches.slice(0, 4)) {
-    const dr = await fetch(FL_BASE + '/committees/ComDetail.asp?account=' + m.account);
+    const dr = await fetch(FL_BASE + '/committees/ComDetail.asp?account=' + m.account, { headers: { ...H, 'Referer': FL_BASE + '/committees/ComLkupByName.asp' } });
     if (!dr.ok) continue;
     const html = await dr.text();
     // Each field is a row: <b>Label:</b></td> <td>value<br>more lines</td>
@@ -1205,6 +1214,10 @@ async function flCommittee(env, name) {
       docsUrl: FL_BASE + '/campaign-docs/?account=' + m.account
     });
   }
+  if (matches.length && !details.length) {
+    await env.CACHE.put(key, JSON.stringify({ none: true, err: 'detail page' }), { expirationTtl: 3600 });
+    return { error: 'detail page' };
+  }
   let pick = details.length === 1 ? details[0] : null;
   if (!pick && details.length > 1) { const act = details.filter(d => /active/i.test(d.status)); if (act.length === 1) pick = act[0]; }
   if (pick) {
@@ -1212,7 +1225,7 @@ async function flCommittee(env, name) {
     try {
       const cr = await fetch(FL_BASE + '/cgi-bin/contrib.exe', form({ election: 'All', search_on: '4', CanFName: '', CanLName: '', CanNameSrch: '2', office: 'All', cdistrict: '', cgroup: '', party: 'All',
         ComName: short, ComNameSrch: '2', committee: 'All', cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '',
-        cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' }));
+        cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' }, '/campaign-finance/contributions/'));
       const tsv = cr.ok ? await cr.text() : '';
       const agg = {}; let total = 0, n = 0, from = '', to = '';
       for (const line of tsv.split(/\r?\n/).slice(1)) {
