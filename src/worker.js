@@ -1107,7 +1107,7 @@ async function handleFecGroup(url, request, env) {
 //                   nonprofit match (501(c)(4)/(5)/(6)), else a business with links to search
 //                   public records. Exact matches only, so a group is never confused with another.
 // Cached a week, shared by everyone. Search links are always included.
-const ORG_VERSION = 4;
+const ORG_VERSION = 5;
 function orgSearchLinks(name) {
   const plain = String(name || '').replace(/\s*\(.*\)\s*$/, '').trim();
   const bare = plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|inc\.?|corp\.?|corporation|co\.?)\s*$/i, '').trim() || plain;
@@ -1157,6 +1157,7 @@ async function handleOrg(url, request, env) {
     try {
       const fl = await flCommittee(env, name);
       if (fl && fl.error) out.flErr = fl.error;
+      else if (fl && /closed/i.test(fl.status || '') && !fl.gifts && /\b(inc|incorporated|corp|corporation|company|co|llc|l\.l\.c|lp|llp|ltd)\b\.?\s*$/i.test(name)) { /* old committee, not this company */ }
       else if (fl) { out.type = 'flc'; out.flc = fl; }
     } catch (e) { out.flErr = 'error'; console.log('org fl committee ' + name + ': ' + e.message); }
   }
@@ -1175,7 +1176,8 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 3;
+const FLC_VERSION = 4;
+const FL_SINCE = '2025-01-01';   // funders and totals cover the 2025-2026 cycle only
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
   const want = normOrg(name);
@@ -1231,7 +1233,7 @@ async function flCommittee(env, name) {
     try {
       const cr = await fetch(FL_BASE + '/cgi-bin/contrib.exe', form({ election: 'All', search_on: '4', CanFName: '', CanLName: '', CanNameSrch: '2', office: 'All', cdistrict: '', cgroup: '', party: 'All',
         ComName: short, ComNameSrch: '2', committee: 'All', cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '',
-        cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' }, '/campaign-finance/contributions/'));
+        cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '01/01/2025', cdateto: '', queryformat: '2', Submit: 'Submit' }, '/campaign-finance/contributions/'));
       const tsv = cr.ok ? await cr.text() : '';
       const agg = {}; let total = 0, n = 0, from = '', to = '';
       for (const line of tsv.split(/\r?\n/).slice(1)) {
@@ -1242,15 +1244,16 @@ async function flCommittee(env, name) {
         if (amt <= 0) continue;
         const [mm, dd, yy] = String(c[1]).split('/');
         const iso = yy && mm && dd ? yy + '-' + mm + '-' + dd : '';
+        if (!iso || iso < FL_SINCE) continue;   // 2025-2026 only, even if the date filter is ignored
         if (iso) { if (!from || iso < from) from = iso; if (!to || iso > to) to = iso; }
         total += amt; n++;
         const who = c[4].trim();
         if (!agg[who]) agg[who] = { amount: 0, occ: (c[7] || '').trim(), place: (c[6] || '').trim() };
         agg[who].amount += amt;
       }
-      out.raised = total || null; out.gifts = n; out.from = from; out.to = to;
+      out.raised = total || null; out.gifts = n; out.from = from; out.to = to; out.since = FL_SINCE;
       out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 6).map(([who, v]) => {
-        const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a)\b\.?/i.test(who);
+        const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|energy|utilities|airlines|communications|bancorp)\b\.?/i.test(who);
         const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
         const org = looksOrg || isCommittee || /corporation|association|union|trust/i.test(v.occ);
         return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: isCommittee ? 'political committee' : org ? 'organization' : 'individual', occupation: org ? '' : v.occ, place: v.place };
