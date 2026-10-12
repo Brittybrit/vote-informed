@@ -856,6 +856,7 @@ en: {
   'disc.cand': 'AI-assisted research compiled from live web search. Lean classifications and Federalist Society findings are best-effort judgments. Verify anything that would change your vote against the linked sources and official disclosure filings.',
   'disc.measure': 'AI-assisted research compiled from live web search. Lean classifications and funder identifications are best-effort judgments. Verify anything that would change your vote against the linked sources and official campaign finance filings.',
   'disc.translated': 'Translated automatically from English research. Names, amounts and sources are unchanged.',
+  'disc.partial': 'Some parts are shown in English because their translation changed a number.',
   'sum.sources': 'Sources:',
   'src': 'source',
   'amt.undisclosed': 'undisclosed',
@@ -1202,6 +1203,7 @@ es: {
   'disc.cand': 'Investigación asistida por IA a partir de búsquedas en vivo en la web. Las clasificaciones de tendencia y los hallazgos sobre la Federalist Society son juicios aproximados. Verifique todo lo que podría cambiar su voto con las fuentes enlazadas y los registros oficiales.',
   'disc.measure': 'Investigación asistida por IA a partir de búsquedas en vivo en la web. Las clasificaciones de tendencia y la identificación de financiadores son juicios aproximados. Verifique todo lo que podría cambiar su voto con las fuentes enlazadas y los registros oficiales de financiamiento de campañas.',
   'disc.translated': 'Traducido automáticamente de la investigación en inglés. Los nombres, montos y fuentes no cambian.',
+  'disc.partial': 'Algunas partes se muestran en inglés porque su traducción cambió un número.',
   'sum.sources': 'Fuentes:',
   'src': 'fuente',
   'amt.undisclosed': 'no divulgado',
@@ -1548,6 +1550,7 @@ ht: {
   'disc.cand': 'Rechèch ki fèt ak èd entèlijans atifisyèl nan rechèch an dirèk sou entènèt. Klasifikasyon tandans yo ak rezilta sou Federalist Society se pi bon jijman nou ka fè. Verifye nenpòt bagay ki ta ka chanje vòt ou nan sous ki gen lyen yo ak dosye ofisyèl yo.',
   'disc.measure': 'Rechèch ki fèt ak èd entèlijans atifisyèl nan rechèch an dirèk sou entènèt. Klasifikasyon tandans yo ak idantifikasyon moun k ap finanse yo se pi bon jijman nou ka fè. Verifye nenpòt bagay ki ta ka chanje vòt ou nan sous ki gen lyen yo ak dosye ofisyèl finansman kanpay yo.',
   'disc.translated': 'Tradiksyon otomatik soti nan rechèch an angle. Non, montan ak sous yo pa chanje.',
+  'disc.partial': 'Gen kèk pati ki rete an angle paske tradiksyon yo te chanje yon chif.',
   'sum.sources': 'Sous:',
   'src': 'sous',
   'amt.undisclosed': 'pa devwale',
@@ -2343,7 +2346,7 @@ function renderMeasureDossier(ri, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>' + reportBox();
+  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + '</p>' + reportBox();
   html += '</div>';
   $('dossierContent').innerHTML = html;
   loadBackers(r, true);
@@ -3146,7 +3149,7 @@ function renderDossier(cand, race, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>' + reportBox();
+  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + '</p>' + reportBox();
 
   html += '</div>';
   $('dossierContent').innerHTML = html;

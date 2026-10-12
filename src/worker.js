@@ -1036,6 +1036,7 @@ function committeeKind(n, reg, entity) {
 // surname has to end the ballot name and the first names have to start alike (the same rule as
 // matchFecCandidate). Two plausible matches is treated as no match: no FEC data beats the wrong person's.
 async function fecFindCandidate(env, name, officeCode, office) {
+  if (!env.FEC_API_KEY) console.log('WARNING: FEC_API_KEY is not set; using the shared DEMO_KEY, which runs out after a few requests');
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
   const y = new Date().getFullYear();
@@ -3002,13 +3003,8 @@ async function translateStrings(env, lang, items) {
 // Return the result translated into lang (cached). English or any failure returns the English result.
 async function localize(env, result, lang) {
   if (!result || !TR_LANGS[lang]) return result;
-  const ck = 'tr1:' + lang + ':' + await sha256(JSON.stringify(result));
-  const hit = await env.CACHE.get(ck, 'json');
-  if (hit) return hit;
-
   const copy = JSON.parse(JSON.stringify(result));
-  const items = [], setters = {};
-  let n = 0;
+  const items = [], setters = [];
   (function walk(o) {
     if (Array.isArray(o)) { o.forEach(walk); return; }
     if (!o || typeof o !== 'object') return;
@@ -3016,26 +3012,40 @@ async function localize(env, result, lang) {
       const v = o[k];
       if (typeof v === 'string' && v.trim() && v.length < 4000) {
         if (k === 'rating' && /^[\d\s%.\/A-F+\-()]+$/.test(v)) continue;   // grades and percentages stay as is
-        if (TR_KEYS.has(k) || /Note$/.test(k)) {
-          const id = 's' + (n++); items.push({ id, text: v }); setters[id] = t => { o[k] = t; };
-        } else if (TR_TAG_KEYS[k]) {
-          const id = 's' + (n++); items.push({ id, text: v }); setters[id] = t => { o[TR_TAG_KEYS[k]] = t; };
-        }
+        if (TR_KEYS.has(k) || /Note$/.test(k)) { items.push(v); setters.push(t => { o[k] = t; }); }
+        else if (TR_TAG_KEYS[k]) { items.push(v); setters.push(t => { o[TR_TAG_KEYS[k]] = t; }); }
       } else if (v && typeof v === 'object') walk(v);
     }
   })(copy);
   if (!items.length) return result;
-  try {
-    const tr = await translateStrings(env, lang, items);
-    for (const id of Object.keys(setters)) if (tr[id]) setters[id](tr[id]);
-    if (result.donorDataNote) copy.donorDataNote_en = result.donorDataNote;   // page checks the English wording
-    copy._translated = true;
-    await env.CACHE.put(ck, JSON.stringify(copy), { expirationTtl: CACHE_TTL });
-    return copy;
-  } catch (e) {
-    console.log('translate ' + lang + ' failed: ' + (e && e.message ? e.message : e));
-    return result;
+  if (result.donorDataNote) copy.donorDataNote_en = result.donorDataNote;   // page checks the English wording
+  // Keyed on the text being translated only, so daily refresh timestamps don't force a fresh translation
+  // of every dossier every day.
+  const ck = 'tr2:' + lang + ':' + await sha256(JSON.stringify(items));
+  let texts = await env.CACHE.get(ck, 'json');
+  if (!Array.isArray(texts) || texts.length !== items.length) {
+    try {
+      const tr = await translateStrings(env, lang, items.map((text, i) => ({ id: 's' + i, text })));
+      // A translation that drops or changes a number (an amount, a year, a percentage) is not used:
+      // that string stays in English. Names are kept by the prompt; numbers are checked here.
+      texts = items.map((src, i) => { const t = tr['s' + i]; return typeof t === 'string' && numbersKept(src, t) ? t : null; });
+      await env.CACHE.put(ck, JSON.stringify(texts), { expirationTtl: CACHE_TTL });
+    } catch (e) {
+      console.log('translate ' + lang + ' failed: ' + (e && e.message ? e.message : e));
+      return result;
+    }
   }
+  let kept = 0;
+  texts.forEach((t, i) => { if (t) { setters[i](t); kept++; } });
+  copy._translated = true;
+  if (kept < items.length) copy._partialTranslation = true;
+  return copy;
+}
+// Every number in the English (amounts, years, percentages, counts) must appear in the translation.
+function numbersKept(src, tr) {
+  const nums = s => (String(s).match(/\d[\d,.]*\d|\d/g) || []).map(n => n.replace(/[,.](?=\d{3}\b)/g, '').replace(/[.,]$/, ''));
+  const have = new Set(nums(tr));
+  return nums(src).every(n => have.has(n));
 }
 
 // Ballot titles: office names, measure YES/NO wording, election name. Candidate names are not sent.
@@ -3095,6 +3105,12 @@ async function handleBallotText(request, env) {
     if (hit) await env.CACHE.put(ck, JSON.stringify(hit), { expirationTtl: 60 * 60 * 24 * 60 });
   }
   if (hit) return json(hit);
+  // Only for a ballot this site already parsed (that step is rate-limited and cached), and only for that
+  // parse's own titles: otherwise this route is a free Sonnet translation service for any PDF and text.
+  const parsed = await env.CACHE.get('parse4:' + fp, 'json');
+  if (!parsed || !Array.isArray(parsed.races)) return json({ error: 'Load this ballot first' }, 400);
+  const known = new Set(parsed.races.map(r => normPart(r && r.office)));
+  if (offices.some(o => o && !known.has(normPart(o)))) return json({ error: 'Titles do not match this ballot' }, 400);
   const allowed = await rateLimit(env, 'btext', clientIP(request), 10);
   if (!allowed) return json({ error: 'Daily limit reached for your connection.' }, 429);
 
