@@ -30,6 +30,8 @@ npx wrangler deploy
 ```
 
 Set a monthly spend cap on your Anthropic key before sharing your deployment.
+
+Built-in spend controls (see `GLOBAL_LIMITS` in `src/worker.js`): fresh research, ballot parses and translations are capped per connection (per IPv6 /64) and site-wide per day. Cached results are always served. To stop all new AI work immediately without taking the site down, set a `FRESH_OFF` variable to `1` in the Cloudflare dashboard (Workers > your worker > Settings > Variables and Secrets); delete it to turn new work back on.
 Research costs scale with distinct candidates researched per week, not with
 traffic. A full county ballot runs a few dollars per week of active use.
 
