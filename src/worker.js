@@ -450,6 +450,7 @@ async function runResearch(env, key, p) {
     separateCommitteeMoney(result, office, officeCode);
     if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
     await refreshMdcDonors(env, result, name, office, officeCode);
+    await refreshAllied(env, result, name);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
     result.linkV = LINK_VERSION;
@@ -638,6 +639,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   separateCommitteeMoney(result, office, officeCode);
   if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
   if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
+  if (await refreshAllied(env, result, name)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
       result.summary = await neutralSummary(env, result.summary);
@@ -1236,7 +1238,7 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 4;
+const FLC_VERSION = 5;
 const FL_SINCE = '2025-01-01';   // funders and totals cover the 2025-2026 cycle only
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
@@ -1308,15 +1310,18 @@ async function flCommittee(env, name) {
         if (iso) { if (!from || iso < from) from = iso; if (!to || iso > to) to = iso; }
         total += amt; n++;
         const who = c[4].trim();
-        if (!agg[who]) agg[who] = { amount: 0, occ: (c[7] || '').trim(), place: (c[6] || '').trim() };
-        agg[who].amount += amt;
+        if (!agg[who]) agg[who] = { amount: 0, occ: (c[7] || '').trim(), place: (c[6] || '').trim(), n: 0, first: iso, last: iso };
+        agg[who].amount += amt; agg[who].n++;
+        if (iso < agg[who].first) agg[who].first = iso;
+        if (iso > agg[who].last) agg[who].last = iso;
       }
       out.raised = total || null; out.gifts = n; out.from = from; out.to = to; out.since = FL_SINCE;
-      out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 6).map(([who, v]) => {
+      out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([who, v]) => {
         const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|energy|utilities|airlines|communications|bancorp)\b\.?/i.test(who);
         const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
         const org = looksOrg || isCommittee || /corporation|association|union|trust/i.test(v.occ);
-        return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: isCommittee ? 'political committee' : org ? 'organization' : 'individual', occupation: org ? '' : v.occ, place: v.place };
+        return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: isCommittee ? 'political committee' : org ? 'organization' : 'individual', occupation: org ? '' : v.occ, place: v.place,
+          gifts: v.n, first: v.first, last: v.last };
       });
       markDisclosure({ donors: out.funders });
     } catch (e) { console.log('fl contributions ' + name + ': ' + e.message); }
@@ -1534,6 +1539,42 @@ async function refreshFlDonors(env, key, result, name, office, save) {
     if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
     return true;
   } catch (e) { console.log('FL donors ' + name + ': ' + e.message); return false; }
+}
+
+// Money to allied committees, from the state's own records. A state or county candidate's own political
+// committee ("Friends of Tom Leek") usually shows up as a donor to the campaign. For each one, list its
+// largest 2025-2026 donors with dates (Florida Division of Elections), and what it gave the campaign.
+// Replaces the web-research list, which has no committee names or dates. Refreshed daily.
+const ALLIED_VERSION = 1;
+async function refreshAllied(env, result, name) {
+  if (result.donorSource !== 'FL' && result.donorSource !== 'MDC') return false;
+  const fresh = result.alV === ALLIED_VERSION && result.alAt && Date.now() - result.alAt < 24 * 3600 * 1000;
+  if (fresh) return false;
+  const np = flNameParts(name);
+  if (!np) return false;
+  const ownName = n => { const w = ' ' + normPart(n) + ' '; return w.includes(' ' + np.last + ' ') && (w.includes(' ' + np.first + ' ') || /\bfriends of\b/.test(w)); };
+  const names = [];
+  const add = n => { const c = String(n || '').replace(/\s*\(.*\)\s*$/, '').trim(); if (c && ownName(c) && !names.some(x => normOrg(x) === normOrg(c))) names.push(c); };
+  (result.donors || []).filter(d => /pac|committee/i.test(d.type || '')).forEach(d => add(d.name));
+  (result.committeeDonors || []).forEach(d => add(d.committee));
+  const allied = [], rows = [];
+  for (const c of names.slice(0, 3)) {
+    let fl;
+    try { fl = await flCommittee(env, c); } catch (e) { continue; }
+    if (!fl || fl.error) continue;
+    const gave = (result.donors || []).find(d => normOrg(String(d.name || '').replace(/\s*\(.*\)\s*$/, '')) === normOrg(c));
+    allied.push({ name: fl.name, type: fl.type, status: fl.status, chair: fl.chair, url: fl.url, raised: fl.raised || 0, gifts: fl.gifts || 0,
+      gaveCampaign: gave ? gave.amount : '' });
+    for (const f of (fl.funders || [])) rows.push({ ...f, committee: fl.name, url: fl.url, source: 'FL' });
+  }
+  result.alV = ALLIED_VERSION;
+  result.alAt = Date.now();
+  if (allied.length) {
+    result.alliedCommittees = allied;
+    result.committeeDonors = rows;
+    result.committeeSource = 'FL';
+  }
+  return true;
 }
 
 async function fecGroupProfile(env, id) {
