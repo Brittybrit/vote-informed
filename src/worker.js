@@ -1547,27 +1547,29 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
 }
 
-// Cities whose clerks use EasyVote Campaign Finance. Its public API (the one the clerk's own portal
-// calls) lists each filer's reports and every itemized contribution, with the report it came from, so
-// every donor links to the report PDF that lists the gift. Only electronically filed reports are
+// Cities whose clerks use EasyVote Campaign Finance (Miami Gardens, Sunny Isles Beach, North Miami).
+// Its public API (the one the clerk's own portal calls) lists each filer's reports and every itemized
+// contribution, with the report it came from, so every donor links to the report PDF that lists the
+// gift. Only electronically filed reports are
 // itemized; a candidate who uploaded scans has no rows and keeps web research. The customer id is in
 // the portal's own requests (ecf-api.easyvoteapp.com/.../<id>). Refreshed at most daily, no AI.
-const EV_DONOR_VERSION = 1;
+const EV_DONOR_VERSION = 2;
 const EV_API = 'https://ecf-api.easyvoteapp.com';
 const EV_CITIES = [
   [/^\s*miami gardens\b/i, 'A7993568-4476-4576-83AC-1581F689A3A4', 'https://cityofmiamigardensfl.easyvotecampaignfinance.com', 'City of Miami Gardens'],
   [/^\s*sunny isles beach\b/i, 'C77027F3-DE8A-4968-BE87-BE0DAD8A8EE7', 'https://cityofsunnyislesbeachfl.easyvotecampaignfinance.com', 'City of Sunny Isles Beach'],
+  [/^\s*north miami\b(?!\s+beach)/i, '01C43AD2-766F-46FF-BA86-42000C4740FF', 'https://northmiamifl.easyvotecampaignfinance.com', 'City of North Miami'],
 ];
 function evJurisdiction(office) {
   for (const [re, id, portal, label] of EV_CITIES) if (re.test(String(office || ''))) return { id, portal, label };
   return null;
 }
 const evDocUrl = id => EV_API + '/documents/' + id + '/viewfinalredactedpdf';
-// "Seat 4", "Mayor": the part of the office both the ballot and the clerk agree on
+// "Seat 4", "District 2", "Mayor": the part of the office both the ballot and the clerk agree on
 function evSeat(office) {
   const o = String(office || '');
-  const n = (o.match(/Seat\s+(\d+)/i) || [])[1];
-  return n ? 'seat ' + parseInt(n, 10) : /\bmayor\b/i.test(o) ? 'mayor' : '';
+  const m = o.match(/\b(Seat|District)\s+(\d+)/i);
+  return m ? m[1].toLowerCase() + ' ' + parseInt(m[2], 10) : /\bmayor\b/i.test(o) ? 'mayor' : '';
 }
 async function evCandidateDonors(env, name, office) {
   const j = evJurisdiction(office);
@@ -1578,7 +1580,7 @@ async function evCandidateDonors(env, name, office) {
   if (!filers) {
     const r = await fetch(EV_API + '/filer/documentsearch/' + j.id, { headers: H });
     if (!r.ok) throw new Error('EasyVote filers ' + r.status);
-    filers = (await r.json()).filter(f => f.filertype === 'Candidate');
+    filers = (await r.json()).filter(f => /candidate/i.test(f.filertype || ''));   // "Candidate", "2026 Candidate"
     if (filers.length) await env.CACHE.put(lk, JSON.stringify(filers), { expirationTtl: 6 * 3600 });
   }
   // Ballot "Rod Mack" is the clerk's "Mack, Roderick": same seat, every word of the clerk's last
@@ -1620,7 +1622,9 @@ async function evCandidateDonors(env, name, office) {
     const base = normPart(String(d.documentname || '').replace(/amend(ed|ment)?/gi, ' ')).replace(/\s+/g, '');
     (groups[base] = groups[base] || []).push(d);
   }
-  const rows = [];
+  // Reports can cover overlapping periods (Palmetto Bay's 2026-Q3 and 2026-G1 list mostly the same
+  // gifts). One gift is one giver, day and amount, so one listed in two reports counts once.
+  const rows = [], seen = new Map();
   for (const g of Object.values(groups)) {
     g.sort((a, b) => evDate(b.datesubmitted).localeCompare(evDate(a.datesubmitted)));
     const use = g.find(d => (byDoc.get(d.documentid.toUpperCase()) || []).length);
@@ -1636,10 +1640,17 @@ async function evCandidateDonors(env, name, office) {
         (k.set.size <= set.size ? [...k.set].every(t => set.has(t)) : [...set].every(t => k.set.has(t))));
       if (dup) continue;
       kept.push({ v, date: x.ContributionDate, amt: x.ContributionAmount, set });
+      const key = [...set].sort().join(' ') + '|' + x.ContributionDate + '|' + x.ContributionAmount;
+      if (seen.has(key) && seen.get(key) !== use.documentid) continue;
+      seen.set(key, use.documentid);
       rows.push({ x, doc: use });
     }
   }
   const cand = normPart(f.firstname + ' ' + f.lastname).split(' ');
+  // the candidate, under any form of the name ("CAROLINA CRUZ" for Carolina Cruz Gonzalez,
+  // "George E. Duell Morgan" and "George Morgan"), counted as one giver
+  const isSelf = n => { const w = ' ' + normPart(n) + ' ';
+    return cand.length >= 2 && w.includes(' ' + cand[0] + ' ') && cand.slice(1).some(p => p.length > 1 && w.includes(' ' + p + ' ')); };
   const agg = {}; let total = 0, to = '';
   for (const { x, doc } of rows) {
     const date = String(x.ContributionDate || '').slice(0, 10);
@@ -1649,9 +1660,10 @@ async function evCandidateDonors(env, name, office) {
     const who = evWho(x);
     if (!who) continue;
     total += amt; out.count++;
-    if (date > to) to = date;
-    const id = normPart(who);
-    if (!agg[id]) agg[id] = { name: who, org: !!org, amount: 0, n: 0, doc, date };
+    if (date > to && date <= new Date().toISOString().slice(0, 10)) to = date;   // ignore mistyped future dates
+    const self = !org && isSelf(who);
+    const id = self ? '\u0000self' : normPart(who);
+    if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date };
     const a = agg[id];
     a.amount += amt; a.n++;
     if (date >= a.date) { a.date = date; a.doc = doc; }   // link the report with this giver's latest gift
@@ -1660,9 +1672,7 @@ async function evCandidateDonors(env, name, office) {
   out.ties = tieNote(sorted.map(v => v.amount), 8);
   out.total = total; out.to = to;
   out.donors = sorted.slice(0, 8).map(v => {
-    const w = ' ' + normPart(v.name) + ' ';
-    // the candidate, under any form of the name ("CAROLINA CRUZ" for Carolina Cruz Gonzalez)
-    const self = cand.length >= 2 && w.includes(' ' + cand[0] + ' ') && cand.slice(1).some(p => p.length > 1 && w.includes(' ' + p + ' '));
+    const self = v.self;
     const party = /\b(party|executive committee)\b/i.test(v.name);
     const committee = /political committee|\bpac\b|\bpc\b|committee|friends of|electioneering/i.test(v.name);
     // no contributor type in this system, so read it from the name
