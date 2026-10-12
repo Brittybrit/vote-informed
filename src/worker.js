@@ -143,7 +143,14 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
 
   const cached = await env.CACHE.get(cacheKey, 'json');
   if (cached) {
-    if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
+    // The countywide ballot is pinned: written once with no expiry, never re-parsed, so names,
+    // parties and race order (which saved plans and every cached dossier depend on) can't shift
+    // near Election Day. Its 186 names and parties were checked against the PDF text (Oct 12).
+    if (!cached.pinned && (isFeatured || await isBundledKey(env, cacheKey))) {
+      cached.pinned = true;
+      await env.CACHE.put(cacheKey, JSON.stringify(cached));
+      await env.CACHE.put(FEATURED_KEY, cacheKey);
+    } else if (isFeatured && !cached.pinned) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
     return json({ ballot: cached, cached: true });
   }
 
@@ -214,6 +221,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
   const text = await callAnthropic(env, {
     model: MODEL,
     max_tokens: 16000,
+    temperature: 0,   // the same PDF should always parse the same way
     messages: [{
       role: 'user',
       content: [
@@ -2742,6 +2750,20 @@ async function trustedMeasureSummary(env, ...titles) {
 // Cache key of the parse of the master ballot bundled with the site. The page parses that file
 // through /api/parse (the county site blocks Cloudflare), so fingerprint the deployed copy and
 // point at its parse. The file ships with the deploy, so nobody else can choose what it says.
+// Is this parse cache key the bundled countywide ballot's? (fingerprint computed once per isolate)
+let BUNDLED_KEY = null;
+async function isBundledKey(env, cacheKey) {
+  if (BUNDLED_KEY === null) {
+    BUNDLED_KEY = '';
+    try {
+      if (env.ASSETS) {
+        const res = await env.ASSETS.fetch(new Request('https://assets.local' + BUNDLED_BALLOT_PATH));
+        if (res.ok) BUNDLED_KEY = 'parse4:' + await pdfFingerprint(bufToBase64(await res.arrayBuffer()));
+      }
+    } catch (e) { console.log('bundled fingerprint failed: ' + (e && e.message ? e.message : e)); }
+  }
+  return !!BUNDLED_KEY && BUNDLED_KEY === cacheKey;
+}
 async function bundledParseKey(env) {
   if (!env.ASSETS) return null;
   try {
@@ -2749,7 +2771,7 @@ async function bundledParseKey(env) {
     if (!res.ok) return null;
     const pk = 'parse4:' + await pdfFingerprint(bufToBase64(await res.arrayBuffer()));
     if (!(await env.CACHE.get(pk))) return null;   // not parsed yet under the new key
-    await env.CACHE.put(FEATURED_KEY, pk, { expirationTtl: 60 * 60 * 6 });
+    await env.CACHE.put(FEATURED_KEY, pk);   // the bundled ballot is pinned; see parseBallot
     return pk;
   } catch (e) { console.log('bundled ballot lookup failed: ' + (e && e.message ? e.message : e)); return null; }
 }
