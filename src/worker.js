@@ -452,6 +452,7 @@ async function runResearch(env, key, p) {
     if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
     await refreshMdcDonors(env, result, name, office, officeCode);
     await refreshEvDonors(env, result, name, office, officeCode);
+    await refreshTxDonors(env, result, name, office, officeCode);
     await refreshAllied(env, result, name);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
@@ -642,6 +643,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
   if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshEvDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
+  if (await refreshTxDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshAllied(env, result, name)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
@@ -1747,6 +1749,83 @@ async function refreshEvDonors(env, result, name, office, officeCode) {
     }
     return true;
   } catch (e) { console.log('EasyVote donors ' + name + ': ' + e.message); return false; }
+}
+
+// Cities that post only scanned treasurer's reports (Pinecrest): /data/city-reports.json holds the
+// itemized rows typed in from each report, checked against the report's own totals. It ships with
+// the deploy, so a new report means editing that file and deploying. Each giver links to the report
+// PDF that lists the gift.
+let TX_DATA = null;
+async function txData(env) {
+  if (TX_DATA) return TX_DATA;
+  if (!env.ASSETS) return null;
+  const res = await env.ASSETS.fetch(new Request('https://assets.local/data/city-reports.json'));
+  if (!res.ok) return null;
+  TX_DATA = await res.json();
+  return TX_DATA;
+}
+async function txCandidateDonors(env, name, office) {
+  const data = await txData(env);
+  if (!data || !Array.isArray(data.cities)) return null;
+  const city = data.cities.find(c => new RegExp(c.match, 'i').test(String(office || '')));
+  if (!city) return null;
+  const seat = evSeat(office);
+  const words = ' ' + normPart(String(name).replace(/["“”][^"“”]*["“”]/g, ' ')) + ' ';
+  const hits = (city.candidates || []).filter(c => {
+    if (seat && c.office && evSeat(c.office) !== seat) return false;
+    const w = normPart(c.name).split(' ');
+    return words.includes(' ' + w[w.length - 1] + ' ') && words.trim().split(' ')[0].slice(0, 1) === w[0].slice(0, 1);
+  });
+  if (hits.length !== 1) return null;
+  const c = hits[0];
+  const agg = {}; let total = 0, count = 0, to = '', last = null;
+  for (const rep of c.reports || []) {
+    if (!last || String(rep.period || '') > String(last.period || '')) last = rep;
+    for (const [date, who, type, amount, kind] of rep.rows || []) {
+      const amt = Number(amount) || 0;
+      if (!amt || String(date) < CYCLE_START_YEAR + '-01-01') continue;
+      total += amt; if (amt > 0) count++;
+      if (date > to) to = date;
+      const id = type === 'S' ? '\u0000self' : normPart(who);
+      if (!agg[id]) agg[id] = { name: type === 'S' ? c.name : who, type, amount: 0, n: 0, rep, date, kinds: new Set() };
+      const a = agg[id];
+      a.amount += amt; if (amt > 0) a.n++;
+      if (kind) a.kinds.add(kind);
+      if (date >= a.date) { a.date = date; a.rep = rep; }
+    }
+  }
+  const sorted = Object.values(agg).sort((a, b) => b.amount - a.amount);
+  const donors = sorted.slice(0, 8).map(v => {
+    const type = v.type === 'S' ? 'self-funded' : v.type === 'F' ? 'PAC' :
+      v.type === 'B' ? (/\b(union|local \d+|afscme|seiu|iaff)\b/i.test(v.name) ? 'union' : 'corporation') : 'individual';
+    const kinds = [...v.kinds];
+    const note = v.type === 'S' ? 'may include loans to the campaign' :
+      kinds.length === 1 && kinds[0] === 'in-kind' ? 'in-kind (goods or services, not cash)' : '';
+    return { name: v.name, year: v.date.slice(0, 4), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
+      url: v.rep.url, srcLabel: v.rep.report + ' report' + (v.n > 1 ? ', ' + v.n + ' gifts' : ''), ...(note ? { note } : {}) };
+  });
+  return { donors, total, count, to, ties: tieNote(sorted.map(v => v.amount), 8), label: city.label, portal: city.portal,
+    pending: city.pending || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
+    version: data.updated || '' };
+}
+async function refreshTxDonors(env, result, name, office, officeCode) {
+  if (officeCode) return false;
+  try {
+    const d = await txCandidateDonors(env, name, office);
+    // re-apply if another source replaced these donors since
+    if (!d || (result.txV === d.version && (!d.count || result.donorSource === 'CITY'))) return false;
+    result.txV = d.version;
+    if (d.count) {
+      result.donors = d.donors;
+      result.donorDataNote = 'Contributions reported to the ' + d.label + ': $' + Math.round(d.total).toLocaleString('en-US') +
+        ' from ' + d.count + (d.count === 1 ? ' contribution' : ' contributions') + ', including loans and in-kind gifts, in reports through ' + d.through +
+        ' (' + d.lastReport + '). The village posts scanned reports, so these were typed in from each report and checked against its totals.' +
+        (d.pending ? ' ' + d.pending : '') + ' Top givers shown, each linked to the report that lists the gift.' + (d.ties || '');
+      result.donorListUrl = d.portal;
+      result.donorSource = 'CITY';
+    }
+    return true;
+  } catch (e) { console.log('city report donors ' + name + ': ' + e.message); return false; }
 }
 
 // When many givers tie at the cutoff (common at the legal limit), "top 8" is an arbitrary pick.
