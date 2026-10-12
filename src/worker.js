@@ -1548,7 +1548,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
 }
 
 // Cities whose clerks use EasyVote Campaign Finance (Miami Gardens, Sunny Isles Beach, North Miami,
-// Key Biscayne, Palmetto Bay).
+// Key Biscayne, Palmetto Bay, Opa-locka).
 // Its public API (the one the clerk's own portal calls) lists each filer's reports and every itemized
 // contribution, with the report it came from, so every donor links to the report PDF that lists the
 // gift. Only electronically filed reports are
@@ -1562,6 +1562,7 @@ const EV_CITIES = [
   [/^\s*north miami\b(?!\s+beach)/i, '01C43AD2-766F-46FF-BA86-42000C4740FF', 'https://northmiamifl.easyvotecampaignfinance.com', 'City of North Miami'],
   [/^\s*key biscayne\b/i, 'A25B1BF8-F262-47F8-920B-D0BB0628A195', 'https://villageofkeybiscaynefl.easyvotecampaignfinance.com', 'Village of Key Biscayne'],
   [/^\s*palmetto bay\b/i, '8E016AC8-E7ED-4667-A8D9-5A9374FAEEEE', 'https://villageofpalmettobayfl.easyvotecampaignfinance.com', 'Village of Palmetto Bay'],
+  [/^\s*opa-?\s*locka\b/i, '33D4780F-AF9C-4E37-927B-B24D7A9FDD03', 'https://cityofopalockafl.easyvotecampaignfinance.com', 'City of Opa-locka'],
 ];
 function evJurisdiction(office) {
   for (const [re, id, portal, label] of EV_CITIES) if (re.test(String(office || ''))) return { id, portal, label };
