@@ -451,6 +451,7 @@ async function runResearch(env, key, p) {
     separateCommitteeMoney(result, office, officeCode);
     if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
     await refreshMdcDonors(env, result, name, office, officeCode);
+    await refreshEvDonors(env, result, name, office, officeCode);
     await refreshAllied(env, result, name);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
@@ -605,7 +606,7 @@ function separateCommitteeMoney(result, office, officeCode) {
     // PACs and party committees may give federal candidates more than individuals can; FEC rows are exact
     const fecRow = officeCode && /fec\.gov/.test(d.url || '');
     // official state records are exact too (parties and candidates' own loans aren't capped)
-    const official = fecRow || result.donorSource === 'FL' || result.donorSource === 'MDC';
+    const official = fecRow || result.donorSource === 'FL' || result.donorSource === 'MDC' || result.donorSource === 'CITY';
     if (n !== null && n > limit && !official) result.committeeDonors.push({ ...d, committee: d.committee || '' });
     else keep.push(d);
   }
@@ -640,6 +641,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   separateCommitteeMoney(result, office, officeCode);
   if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
   if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
+  if (await refreshEvDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshAllied(env, result, name)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
@@ -862,7 +864,7 @@ function urlYear(u) {
 async function dropPriorCycle(env, result, name) {
   // [label, get, set]. Official records (FEC, state, county) are already limited to this cycle, so only
   // web-research rows are checked.
-  const official = result.donorSource === 'FL' || result.donorSource === 'MDC';
+  const official = result.donorSource === 'FL' || result.donorSource === 'MDC' || result.donorSource === 'CITY';
   const L = [
     ['endorsements', () => result.endorsements, v => { result.endorsements = v; }],
     ['opposition', () => result.opposition, v => { result.opposition = v; }],
@@ -1526,7 +1528,7 @@ async function mdcCandidateDonors(env, name, office) {
     url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N' };
 }
 async function refreshMdcDonors(env, result, name, office, officeCode) {
-  if (officeCode || flOfficeQuery(office)) return false;           // federal and state races have their own sources
+  if (officeCode || flOfficeQuery(office) || evJurisdiction(office)) return false;   // federal, state and EasyVote-city races have their own sources
   const fresh = result.mdcV === MDC_DONOR_VERSION && result.mdcAt && Date.now() - result.mdcAt < 24 * 3600 * 1000;
   if (fresh) return false;
   try {
@@ -1543,6 +1545,171 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
     }
     return true;
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
+}
+
+// Cities whose clerks use EasyVote Campaign Finance. Its public API (the one the clerk's own portal
+// calls) lists each filer's reports and every itemized contribution, with the report it came from, so
+// every donor links to the report PDF that lists the gift. Only electronically filed reports are
+// itemized; a candidate who uploaded scans has no rows and keeps web research. The customer id is in
+// the portal's own requests (ecf-api.easyvoteapp.com/.../<id>). Refreshed at most daily, no AI.
+const EV_DONOR_VERSION = 1;
+const EV_API = 'https://ecf-api.easyvoteapp.com';
+const EV_CITIES = [
+  [/^\s*miami gardens\b/i, 'A7993568-4476-4576-83AC-1581F689A3A4', 'https://cityofmiamigardensfl.easyvotecampaignfinance.com', 'City of Miami Gardens'],
+  [/^\s*sunny isles beach\b/i, 'C77027F3-DE8A-4968-BE87-BE0DAD8A8EE7', 'https://cityofsunnyislesbeachfl.easyvotecampaignfinance.com', 'City of Sunny Isles Beach'],
+];
+function evJurisdiction(office) {
+  for (const [re, id, portal, label] of EV_CITIES) if (re.test(String(office || ''))) return { id, portal, label };
+  return null;
+}
+const evDocUrl = id => EV_API + '/documents/' + id + '/viewfinalredactedpdf';
+// "Seat 4", "Mayor": the part of the office both the ballot and the clerk agree on
+function evSeat(office) {
+  const o = String(office || '');
+  const n = (o.match(/Seat\s+(\d+)/i) || [])[1];
+  return n ? 'seat ' + parseInt(n, 10) : /\bmayor\b/i.test(o) ? 'mayor' : '';
+}
+async function evCandidateDonors(env, name, office) {
+  const j = evJurisdiction(office);
+  if (!j) return null;
+  const H = { 'User-Agent': VF_H['User-Agent'], 'Accept': 'application/json', 'Origin': j.portal, 'Referer': j.portal + '/' };
+  const lk = 'evf' + EV_DONOR_VERSION + ':' + j.id;
+  let filers = await env.CACHE.get(lk, 'json');
+  if (!filers) {
+    const r = await fetch(EV_API + '/filer/documentsearch/' + j.id, { headers: H });
+    if (!r.ok) throw new Error('EasyVote filers ' + r.status);
+    filers = (await r.json()).filter(f => f.filertype === 'Candidate');
+    if (filers.length) await env.CACHE.put(lk, JSON.stringify(filers), { expirationTtl: 6 * 3600 });
+  }
+  // Ballot "Rod Mack" is the clerk's "Mack, Roderick": same seat, every word of the clerk's last
+  // name in the ballot name, and first names that start alike (Rod/Roderick, Steve/Steven).
+  const seat = evSeat(office);
+  const words = ' ' + normPart(String(name).replace(/["“”][^"“”]*["“”]/g, ' ')) + ' ';
+  const first = words.trim().split(' ')[0] || '';
+  const hits = filers.filter(f => {
+    if (seat && evSeat(f.officename) !== seat) return false;
+    const last = normPart(String(f.lastname || '').replace(/,?\s*\b(jr|sr|ii|iii|iv)\b\.?/gi, ''));
+    if (!last || !last.split(' ').every(w => words.includes(' ' + w + ' '))) return false;
+    const f1 = normPart(String(f.firstname || '').replace(/["“”].*$/, '')).split(' ')[0] || '';
+    const k = Math.min(3, f1.length, first.length);
+    return k > 0 && f1.slice(0, k) === first.slice(0, k);
+  });
+  if (hits.length !== 1) return null;
+  const f = hits[0];
+  const docs = (f.documents || []).filter(d => d && d.documentid);
+  const latest = docs.slice().sort((a, b) => evDate(b.datesubmitted).localeCompare(evDate(a.datesubmitted)))[0];
+  const out = { count: 0, filer: j.label, office: f.officename, portal: j.portal + '/home/publicfilings',
+    latestUrl: latest ? evDocUrl(latest.documentid) : '', latestName: latest ? String(latest.documentname || '').trim() : '' };
+  if (!docs.length) return out;
+  const r = await fetch(EV_API + '/advancedsearch/contributions/' + j.id + '?recipientLastName=' + encodeURIComponent(f.lastname), { headers: H });
+  if (!r.ok) throw new Error('EasyVote contributions ' + r.status);
+  // The search also matches contributors with this last name, so keep only rows from this filer's reports.
+  // It answers only for the clerk's own site (Origin), so an empty answer means unknown, not "none".
+  const all = await r.json();
+  out.searched = Array.isArray(all) && all.length > 0;
+  const byDoc = new Map();
+  for (const x of all) {
+    const id = String(x.DocumentFilingId || '').replace(/_Redacted$/i, '').toUpperCase();
+    if (!byDoc.has(id)) byDoc.set(id, []);
+    byDoc.get(id).push(x);
+  }
+  // An amended report ("2026G3 (amended)", "2026Q2-Amend") replaces the original: per report, use the
+  // newest filing that has itemized rows (an amendment uploaded as a scan has none).
+  const groups = {};
+  for (const d of docs) {
+    const base = normPart(String(d.documentname || '').replace(/amend(ed|ment)?/gi, ' ')).replace(/\s+/g, '');
+    (groups[base] = groups[base] || []).push(d);
+  }
+  const rows = [];
+  for (const g of Object.values(groups)) {
+    g.sort((a, b) => evDate(b.datesubmitted).localeCompare(evDate(a.datesubmitted)));
+    const use = g.find(d => (byDoc.get(d.documentid.toUpperCase()) || []).length);
+    if (!use) continue;
+    // A report comes back as two versions, "<id>_Redacted" and "<id>", and a row (often a loan) can be
+    // in both, sometimes under a shorter form of the name ("CAROLINA CRUZ GONZALEZ" / "CAROLINA CRUZ").
+    // Count a row from the second version once if the first already has it: same day, amount and name.
+    const kept = [];
+    const ver = x => /_Redacted$/i.test(String(x.DocumentFilingId || '')) ? 'r' : 'o';
+    for (const x of byDoc.get(use.documentid.toUpperCase()).slice().sort((a, b) => ver(b).localeCompare(ver(a)))) {
+      const v = ver(x), set = new Set(normPart(evWho(x)).split(' '));
+      const dup = kept.find(k => k.v !== v && k.date === x.ContributionDate && k.amt === x.ContributionAmount &&
+        (k.set.size <= set.size ? [...k.set].every(t => set.has(t)) : [...set].every(t => k.set.has(t))));
+      if (dup) continue;
+      kept.push({ v, date: x.ContributionDate, amt: x.ContributionAmount, set });
+      rows.push({ x, doc: use });
+    }
+  }
+  const cand = normPart(f.firstname + ' ' + f.lastname).split(' ');
+  const agg = {}; let total = 0, to = '';
+  for (const { x, doc } of rows) {
+    const date = String(x.ContributionDate || '').slice(0, 10);
+    const amt = Number(x.ContributionAmount) || 0;
+    if (amt <= 0 || date < CYCLE_START_YEAR + '-01-01') continue;
+    const org = String(x.ContributorOrganizationName || '').trim();
+    const who = evWho(x);
+    if (!who) continue;
+    total += amt; out.count++;
+    if (date > to) to = date;
+    const id = normPart(who);
+    if (!agg[id]) agg[id] = { name: who, org: !!org, amount: 0, n: 0, doc, date };
+    const a = agg[id];
+    a.amount += amt; a.n++;
+    if (date >= a.date) { a.date = date; a.doc = doc; }   // link the report with this giver's latest gift
+  }
+  const sorted = Object.values(agg).sort((a, b) => b.amount - a.amount);
+  out.ties = tieNote(sorted.map(v => v.amount), 8);
+  out.total = total; out.to = to;
+  out.donors = sorted.slice(0, 8).map(v => {
+    const w = ' ' + normPart(v.name) + ' ';
+    // the candidate, under any form of the name ("CAROLINA CRUZ" for Carolina Cruz Gonzalez)
+    const self = cand.length >= 2 && w.includes(' ' + cand[0] + ' ') && cand.slice(1).some(p => p.length > 1 && w.includes(' ' + p + ' '));
+    const party = /\b(party|executive committee)\b/i.test(v.name);
+    const committee = /political committee|\bpac\b|\bpc\b|committee|friends of|electioneering/i.test(v.name);
+    // no contributor type in this system, so read it from the name
+    const union = /\b(union|afscme|afl|cio|seiu|teamsters|iaff|united teachers|teachers union|education association|federation|brotherhood|fraternal order|firefighters|local \d+|cope)\b/i.test(v.name);
+    const corp = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|association|assn|trust|group|partners|holdings|ltd|lp|llp|pa|p\.a|bank|solutions|consulting|enterprises?|services|towing|transport|realty|properties|investments?|construction|development|management|medical|healthcare|center|foundation|church|ministries)\b\.?/i.test(v.name);
+    const type = self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : union ? 'union' : corp || v.org ? 'corporation' : 'individual';
+    const rep = String(v.doc.documentname || '').trim();
+    return { name: v.name, year: v.date.slice(0, 4), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
+      url: evDocUrl(v.doc.documentid), srcLabel: (rep ? rep + ' report' : 'report') + (v.n > 1 ? ', ' + v.n + ' gifts' : ''),
+      ...(self ? { note: 'may include loans to the campaign' } : {}) };
+  });
+  return out;
+}
+function evWho(x) {
+  const org = String(x.ContributorOrganizationName || '').trim();
+  return (org || [x.ContributorFirstName, x.ContributorMiddleName, x.ContributorLastName].filter(Boolean).join(' ') || x.ContributorFullName || '')
+    .replace(/\s+/g, ' ').trim();
+}
+function evDate(s) {   // "08/14/26" -> "2026-08-14"
+  const m = String(s || '').match(/^(\d\d)\/(\d\d)\/(\d\d)$/);
+  return m ? '20' + m[3] + '-' + m[1] + '-' + m[2] : '';
+}
+async function refreshEvDonors(env, result, name, office, officeCode) {
+  if (officeCode || !evJurisdiction(office)) return false;
+  const fresh = result.evV === EV_DONOR_VERSION && result.evAt && Date.now() - result.evAt < 24 * 3600 * 1000;
+  if (fresh) return false;
+  try {
+    const d = await evCandidateDonors(env, name, office);
+    result.evV = EV_DONOR_VERSION;
+    result.evAt = Date.now();
+    if (d && d.count) {
+      result.donors = d.donors;
+      result.donorDataNote = 'Contributions reported to the ' + d.filer + ' for ' + d.office + ': $' + Math.round(d.total).toLocaleString('en-US') +
+        ' from ' + d.count + ' contributions in ' + CYCLE_START_YEAR + '-' + (CYCLE_START_YEAR + 1) + ', through ' + d.to +
+        ', with amended reports applied. Top givers shown, each linked to the report that lists the gift.' + (d.ties || '') +
+        ' Only electronically filed reports are itemized; scanned reports are on the clerk’s portal.';
+      result.donorListUrl = d.portal;
+      result.donorSource = 'CITY';
+    } else if (d && d.latestUrl && result.donorSource !== 'CITY') {
+      // no itemized rows: point to the clerk's latest report instead of a web search result
+      result.donorListUrl = d.latestUrl;
+      // only say why when the search answered for other filers (an empty answer could be a blocked request)
+      if (d.searched && !/not itemized online/.test(result.donorDataNote || '')) result.donorDataNote = (result.donorDataNote ? result.donorDataNote + ' ' : '') + 'This candidate’s reports to the ' + d.filer +
+        ' are not itemized online; the linked ' + (d.latestName || 'latest') + ' report lists every contribution.';
+    }
+    return true;
+  } catch (e) { console.log('EasyVote donors ' + name + ': ' + e.message); return false; }
 }
 
 // When many givers tie at the cutoff (common at the legal limit), "top 8" is an arbitrary pick.
@@ -1580,7 +1747,7 @@ async function refreshFlDonors(env, key, result, name, office, save) {
 // Replaces the web-research list, which has no committee names or dates. Refreshed daily.
 const ALLIED_VERSION = 1;
 async function refreshAllied(env, result, name) {
-  if (result.donorSource !== 'FL' && result.donorSource !== 'MDC') return false;
+  if (result.donorSource !== 'FL' && result.donorSource !== 'MDC' && result.donorSource !== 'CITY') return false;
   const fresh = result.alV === ALLIED_VERSION && result.alAt && Date.now() - result.alAt < 24 * 3600 * 1000;
   if (fresh) return false;
   const np = flNameParts(name);
