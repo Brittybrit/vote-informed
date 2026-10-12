@@ -1,0 +1,29 @@
+{
+  "updated": "2026-10-12",
+  "note": "Edit this file to update request status. status: official | portal | pdf | requested | notfound. Dates are YYYY-MM-DD.",
+  "levels": [
+    { "level": "Federal (Congress)", "status": "official", "source": "Federal Election Commission", "url": "https://www.fec.gov/data/" },
+    { "level": "State (Governor, Cabinet, Legislature, State Attorney, judges)", "status": "official", "source": "Florida Division of Elections", "url": "https://dos.elections.myflorida.com/campaign-finance/contributions/" },
+    { "level": "County (Commission, School Board, county judges, Community Councils)", "status": "official", "source": "Miami-Dade Elections Department", "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?c=miamidade" }
+  ],
+  "cities": [
+    { "city": "Coral Gables", "status": "official", "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?el=8&c=muncoralgables" },
+    { "city": "Cutler Bay", "status": "official", "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?c=muncutlerbay" },
+    { "city": "Doral", "status": "official", "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?el=9&c=mundoral" },
+    { "city": "Hialeah", "status": "official", "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?c=munhialeah" },
+    { "city": "Miami Gardens", "status": "portal", "url": "https://cityofmiamigardensfl.easyvotecampaignfinance.com/home/publicfilings" },
+    { "city": "Sunny Isles Beach", "status": "portal", "url": "https://cityofsunnyislesbeachfl.easyvotecampaignfinance.com/home/publicfilings" },
+    { "city": "North Miami", "status": "portal", "url": "https://www.northmiamifl.gov/1426/Candidates-and-Campaign-Reports" },
+    { "city": "El Portal", "status": "pdf", "url": "https://elportalvillage.com/election-information/" },
+    { "city": "Pinecrest", "status": "pdf", "url": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election" },
+    { "city": "Virginia Gardens", "status": "pdf", "url": "https://virginiagardens-fl.gov/campaign-finance-report-documents/" },
+    { "city": "Medley", "status": "pdf", "url": "https://www.townofmedley.com/town-clerk" },
+    { "city": "Aventura", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://www.cityofaventura.com/162/Municipal-Election-Candidate-Information" },
+    { "city": "Biscayne Park", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://biscayneparkfl.gov/elections" },
+    { "city": "Key Biscayne", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://keybiscayne.fl.gov/government/village_clerk/index.php" },
+    { "city": "North Miami Beach", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://www.citynmb.com/" },
+    { "city": "Palmetto Bay", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://www.palmettobay-fl.gov/" },
+    { "city": "South Miami", "status": "requested", "requested": "2026-10-12", "due": "2026-10-15", "url": "https://southmiamifl.gov/544/Campaign-Treasurers-Reports" },
+    { "city": "Opa-locka", "status": "notfound", "url": "https://www.opalockafl.gov/339/Campaign-Finance-Reporting" }
+  ]
+}
