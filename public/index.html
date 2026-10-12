@@ -89,6 +89,8 @@
   .vb-btn{display:inline-block; background:var(--ink); color:var(--paper); border:none; font-weight:800; font-size:14px; letter-spacing:.04em; text-transform:uppercase; padding:12px 16px; cursor:pointer; text-decoration:none; font-family:inherit;}
   .vb-btn.ghost{background:transparent; color:var(--ink); border:2px solid var(--ink);}
   .vb-sites{margin-top:14px; border-top:1.5px solid var(--rule);}
+  .vb-pct{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 0 12px; margin-bottom:4px;}
+  .vb-pctnum{font-size:20px; font-weight:800; margin-top:2px;}
   .vb-site{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; border-bottom:1px dotted var(--rule);}
   .vb-site .nm{font-weight:800; font-size:15px;}
   .vb-site .ad{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:2px;}
@@ -887,6 +889,10 @@ en: {
   'vb.lookup': 'county voter lookup',
   'vb.noPrecinct': 'Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the',
   'vb.findMine': 'Find my polling place',
+  'vb.pctFrom': 'From the sample ballot you loaded',
+  'vb.pctNum': 'Precinct {p}',
+  'vb.pctCheck': 'Make sure this is your precinct before you go. The county lookup shows your precinct and polling place.',
+  'vb.pctBtn': 'Look up my precinct',
   'vb.noMatch': 'We could not match precinct {p} to a polling place. Check the',
   'vb.yourPlace': 'Your polling place &middot; Precinct {p}',
   'vb.hours': 'Tuesday, Nov 3 &middot; 7am to 7pm',
@@ -1215,6 +1221,10 @@ es: {
   'vb.lookup': 'búsqueda de votantes del condado',
   'vb.noPrecinct': 'Cargue su propia boleta de muestra (indica su precinto) para ver aquí su lugar de votación, o encuéntrelo con la',
   'vb.findMine': 'Encontrar mi lugar de votación',
+  'vb.pctFrom': 'De la boleta de muestra que cargó',
+  'vb.pctNum': 'Precinto {p}',
+  'vb.pctCheck': 'Antes de ir, confirme que este es su precinto. La búsqueda del condado muestra su precinto y su lugar de votación.',
+  'vb.pctBtn': 'Buscar mi precinto',
   'vb.noMatch': 'No pudimos encontrar el lugar de votación del precinto {p}. Consulte la',
   'vb.yourPlace': 'Su lugar de votación &middot; Precinto {p}',
   'vb.hours': 'Martes 3 de noviembre &middot; 7am a 7pm',
@@ -1543,6 +1553,10 @@ ht: {
   'vb.lookup': 'rechèch votè konte a',
   'vb.noPrecinct': 'Chaje pwòp echantiyon bilten vòt ou (li gen pwesen w sou li) pou w wè biwo vòt ou isit la, oswa jwenn li ak',
   'vb.findMine': 'Jwenn biwo vòt mwen',
+  'vb.pctFrom': 'Dapre egzanp bilten vòt ou chaje a',
+  'vb.pctNum': 'Pwesen {p}',
+  'vb.pctCheck': 'Asire w se pwesen ou anvan ou ale. Rechèch konte a montre pwesen ou ak biwo vòt ou.',
+  'vb.pctBtn': 'Chèche pwesen mwen',
   'vb.noMatch': 'Nou pa t ka jwenn biwo vòt pou pwesen {p}. Gade',
   'vb.yourPlace': 'Biwo vòt ou &middot; Pwesen {p}',
   'vb.hours': 'Madi 3 novanm &middot; 7am a 7pm',
@@ -3491,6 +3505,14 @@ async function showNearestSites(){
   navigator.geolocation.getCurrentPosition(finish, function(){ finish(null); }, {enableHighAccuracy:false, timeout:10000, maximumAge:600000});
 }
 
+// The precinct comes from reading the sample ballot, so a digit can be misread or the voter may have
+// loaded someone else's ballot. Show it first and put the county's own lookup right next to it.
+function precinctCheck(precinct){
+  return '<div class="vb-pct"><div><div class="vb-kicker">' + t('vb.pctFrom') + '</div>' +
+    '<div class="vb-pctnum">' + t('vb.pctNum', {p: esc(precinct)}) + '</div>' +
+    '<div class="vb-note" style="margin-top:2px">' + t('vb.pctCheck') + '</div></div>' +
+    '<a class="vb-btn" href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.pctBtn') + ' &#8599;</a></div>';
+}
 async function renderMyPlace(precinct){
   var box = $('vbPlace');
   var lookupLink = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.lookup') + ' &#8599;</a>';
@@ -3506,11 +3528,12 @@ async function renderMyPlace(precinct){
     }
   } catch(e){ myPlace = null; }
   if(!myPlace){
-    box.innerHTML = '<div class="vb-note">' + t('vb.noMatch', {p: esc(precinct)}) + ' ' + lookupLink + '</div>';
+    box.innerHTML = precinctCheck(precinct) + '<div class="vb-note">' + t('vb.noMatch', {p: esc(precinct)}) + ' ' + lookupLink + '</div>';
     return;
   }
   var full = myPlace.address + ', ' + myPlace.city + ', FL ' + myPlace.zip;
-  box.innerHTML = '<div class="vb-sites"><div class="vb-site"><div>' +
+  // Precinct first, read from the loaded ballot, with the county lookup to confirm it before the place.
+  box.innerHTML = precinctCheck(precinct) + '<div class="vb-sites"><div class="vb-site"><div>' +
     '<div class="vb-kicker">' + t('vb.yourPlace', {p: esc(myPlace.precinct)}) + '</div>' +
     '<div class="nm" style="margin-top:4px">' + esc(myPlace.name) + '</div>' +
     '<div class="ad">' + esc(full) + '</div><div class="dist">' + t('vb.hours') + '</div></div>' +
