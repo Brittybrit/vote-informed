@@ -61,6 +61,11 @@ research accelerant, not an authority. The source links are the product.
 Donor data is strongest for federal races (official FEC filings) and depends
 on disclosure portals and news coverage below that.
 
+The public methodology page (`public/methodology.html`, live at
+[ballot305.org/methodology](https://ballot305.org/methodology)) explains the
+sources, the left/right/nonpartisan labels, and the Federalist Society rubric.
+Fixed labels for recurring groups live in `KNOWN_LEANS` in `src/worker.js`.
+
 ## License
 
 MIT. See LICENSE.

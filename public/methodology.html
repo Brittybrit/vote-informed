@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How It Works · BALLOT305.ORG</title>
+<meta name="description" content="How Ballot305 researches candidates and ballot measures: sources, labels, the Federalist Society screen, and limits.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7; --ink:#131F3C; --ink-soft:#3D4763; --rule:#131F3C;
+    --left-bg:#E3ECFB; --left-fg:#1D4ED8;
+    --right-bg:#FBE5E5; --right-fg:#B91C1C;
+    --nonp-bg:#E8EAED; --nonp-fg:#374151;
+    --flag-bg:#FDF1D8; --flag-fg:#8A5A0B;
+    --ok-bg:#E6F0E8; --ok-fg:#2F6B3C;
+    --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55;}
+  header{border-bottom:4px solid var(--rule); padding:18px 16px;}
+  header a{color:var(--ink); text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.01em; font-size:20px;}
+  main{max-width:720px; margin:0 auto; padding:28px 16px 64px;}
+  h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
+  .lede{color:var(--ink-soft); margin-bottom:28px;}
+  h2{font-weight:800; font-size:19px; margin:32px 0 10px; padding-top:14px; border-top:2px solid var(--rule);}
+  p{margin-bottom:12px;}
+  ul{margin:0 0 14px 20px;}
+  li{margin-bottom:6px;}
+  a{color:var(--left-fg);}
+  .tag{display:inline-block; font-family:var(--mono); font-size:12px; font-weight:600; padding:1px 7px; border-radius:3px; white-space:nowrap;}
+  .l{background:var(--left-bg); color:var(--left-fg);}
+  .r{background:var(--right-bg); color:var(--right-fg);}
+  .n{background:var(--nonp-bg); color:var(--nonp-fg);}
+  .f{background:var(--flag-bg); color:var(--flag-fg);}
+  .o{background:var(--ok-bg); color:var(--ok-fg);}
+  dl{margin-bottom:14px;}
+  dt{margin-top:12px;}
+  dd{margin-left:0; color:var(--ink-soft);}
+  footer{border-top:2px solid var(--rule); padding:18px 16px; font-size:14px; color:var(--ink-soft); text-align:center;}
+</style>
+</head>
+<body>
+<header><a href="/">Ballot305.org</a></header>
+<main>
+  <h1>How it works</h1>
+  <p class="lede">Ballot305 is a free, independent research tool for Miami-Dade voters. It is built by one Miami Beach resident, not by a campaign, party, or government office. This page explains where the information comes from, how labels are assigned, and what the tool can get wrong.</p>
+
+  <h2>Where the research comes from</h2>
+  <p>When you tap a candidate or ballot measure, the site runs an AI research assistant (Anthropic's Claude) that searches the web and reads what it finds. It is told to report only what sources say, keep each source's hedges, and link every claim. Links it did not actually find in search are removed automatically.</p>
+  <ul>
+    <li><strong>Federal races</strong> (U.S. Senate, Congress): donor lists come from official Federal Election Commission filings.</li>
+    <li><strong>State and local races:</strong> donors come from state and county disclosure filings and news coverage of them. Coverage below the federal level is uneven, so some candidates show few or no donors.</li>
+    <li><strong>Endorsements</strong> are linked to the endorser's own announcement or to news coverage of it.</li>
+    <li><strong>Ratings</strong> such as bar association polls are shown only when found on the rating organization's own website.</li>
+  </ul>
+  <p>Each result is saved and shared for up to 7 days, so the next voter to look up the same candidate sees the same research. That keeps the site free to run and means everyone sees the same thing.</p>
+
+  <h2>Donors</h2>
+  <p>Money given directly to a candidate's campaign is listed separately from money given to political committees that support them. Florida limits direct gifts to a campaign ($3,000 per election for statewide offices, $1,000 for most others), so larger amounts went to a committee. For federal candidates, the list includes the candidate's own fundraising committees, since that money funds their campaign.</p>
+
+  <h2>Left, right, and nonpartisan labels</h2>
+  <p>Every endorser, opponent, and funder gets a label describing the group's general political alignment, not the candidate's:</p>
+  <p><span class="tag l">LEFT</span> <span class="tag r">RIGHT</span> <span class="tag n">NONPARTISAN</span></p>
+  <p>Party organizations and ideological advocacy groups get the side they are aligned with. News organizations and editorial boards, police, sheriff and firefighter associations, bar associations, and the League of Women Voters are always labeled nonpartisan. Groups that appear in many races use one fixed label everywhere, so the same group is never labeled differently in two places. Labels for other groups are assigned during research and are a judgment call. If you think one is wrong, tell us (see below).</p>
+
+  <h2>The Federalist Society screen (judges only)</h2>
+  <p>The Federalist Society is a national organization of conservative and libertarian lawyers. Membership is legal and common, and it is not a mark against anyone. Voters asked to know about these ties because the group has played a large role in judicial appointments. Every judicial candidate gets one of three results:</p>
+  <dl>
+    <dt><span class="tag f">DOCUMENTED TIES</span></dt>
+    <dd>The judge states their own membership or a chapter role, or the Federalist Society lists them as a member or officer, or records show them speaking at two or more of its events on different dates.</dd>
+    <dt><span class="tag f">POSSIBLE TIES</span></dt>
+    <dd>One appearance at a Federalist Society event, or a named journalist, academic, or voter guide that asserts ties to this judge by name. Speaking at one event does not mean membership. Judges of every outlook speak at its events.</dd>
+    <dt><span class="tag o">NO TIES FOUND</span></dt>
+    <dd>Nothing in searched coverage, bios, or event records connects the judge to the Federalist Society.</dd>
+  </dl>
+  <p>Evidence only counts if it names the judge. Articles about appointment trends, applicant pools, or a court in general are not used. Each result is checked a second time against these rules before it is shown, and that check can only lower a result, never raise it.</p>
+
+  <h2>Ballot measures</h2>
+  <p>For each referendum and amendment, the site looks for registered committees on each side, their major funders, and organizations publicly supporting or opposing it in this election. A group's position on an earlier version of a measure is not shown as support or opposition this time.</p>
+
+  <h2>What the tool can get wrong</h2>
+  <ul>
+    <li>It can only find what has been published online. A candidate with little press coverage will have a thin profile.</li>
+    <li>Donor data for state and local races depends on news coverage and filings, and can lag the latest reports.</li>
+    <li>AI research can misread a source. That is why every claim links to where it came from. Please click through before relying on anything important.</li>
+    <li>This is not an official ballot and does not record votes. It is not affiliated with the Miami-Dade Supervisor of Elections or any government agency.</li>
+  </ul>
+
+  <h2>Report an error</h2>
+  <p>If something is wrong, <a href="https://github.com/Brittybrit/vote-informed/issues" target="_blank" rel="noopener">open an issue on GitHub</a> or message <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> on Instagram with the candidate's name and what you found. Corrections are made as fast as possible.</p>
+
+  <h2>Open source</h2>
+  <p>All of the code, including the exact research instructions and the fixed label list, is public on <a href="https://github.com/Brittybrit/vote-informed" target="_blank" rel="noopener">GitHub</a> under the MIT license.</p>
+</main>
+<footer><a href="/">Back to Ballot305.org</a></footer>
+</body>
+</html>
