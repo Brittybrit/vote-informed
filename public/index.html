@@ -267,9 +267,10 @@
   .dossier{
     border:3px solid var(--rule); background:var(--panel);
     position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow-y:auto;
+    overflow-x:hidden; min-width:0;   /* nothing inside may push the panel sideways (the mobile "wiggle") */
   }
   @media (max-width:960px){
-    .dossier{position:fixed; inset:0; z-index:50; align-self:stretch; height:100vh; height:100dvh; max-height:none; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; border:none; border-top:6px solid var(--rule); display:none;}
+    .dossier{position:fixed; inset:0; z-index:50; align-self:stretch; height:100vh; height:100dvh; max-height:none; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; touch-action:pan-y; border:none; border-top:6px solid var(--rule); display:none;}
     .dossier.open{display:block;}
   }
   .dossier-empty{padding:48px 28px; text-align:center; color:var(--ink-soft);}
@@ -309,7 +310,8 @@
   .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
   .og-body .og-f .dname{font-size:13px;}
   .og-links{margin-top:6px !important;}
-  .og-body details.og{margin-left:4px; padding-left:8px; border-left:2px solid #DDDDD5;}
+  .og-body details.og{margin-left:0; padding-left:6px; border-left:2px solid #DDDDD5;}
+  .og-body .og-body{padding:6px 8px;}
   .og-search{font-size:12px;}
   .og-ok{color:var(--ok-fg); font-size:12px;}
   .og-com{margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid #DDDDD5;}
@@ -328,18 +330,24 @@
   .fin-side.side-no{color:var(--paper); background:var(--ink); border-left-color:var(--ink);}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
 
-  .dossier-body{padding:20px; overflow-wrap:break-word;}
+  .dossier-body{padding:20px; overflow-wrap:break-word; max-width:100%; min-width:0;}
+  .dossier-body *{max-width:100%;}
+  .og-body{overflow-wrap:anywhere; min-width:0;}
+  .fulllist{white-space:normal;}
+  @media (max-width:480px){ .dossier-body{padding:16px;} .donor-row .damt{max-width:45%;} }
   .dsec{margin-bottom:26px;}
   .dsec h4{
     font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.08em;
     border-bottom:2.5px solid var(--rule); padding-bottom:6px; margin-bottom:12px;
   }
-  .donor-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:8px 0; border-bottom:1px dotted #C9C9C1; font-size:14px;}
+  .donor-row{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:4px 12px; padding:8px 0; border-bottom:1px dotted #C9C9C1; font-size:14px;}
+  .donor-row > details.og, .donor-row > .og-np{flex:0 0 100%; min-width:0;}
   .donor-row:last-child{border-bottom:none;}
-  .donor-row > div{flex:1 1 auto; min-width:0;}
+  .donor-row > div{flex:1 1 0; min-width:0;}
   .donor-row .dname{font-weight:600; overflow-wrap:anywhere;}
   .donor-row .damt{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); flex:0 0 auto; max-width:38%; text-align:right; overflow-wrap:anywhere;}
-  .donor-row .dtype{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:flex; align-items:center; gap:8px; margin-top:4px;}
+  .donor-row .dtype{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin-top:4px;}
+  .tag{white-space:nowrap;}
 
   .endo{padding:10px 0; border-bottom:1px dotted #C9C9C1;}
   .endo:last-child{border-bottom:none;}
@@ -1747,6 +1755,13 @@ function renderJumpRow(){
     var sec = raceSection(race);
     if(sec && first[sec] === undefined) first[sec] = ri;
   });
+  // No city or town races on this ballot (common on a precinct ballot): point City at the
+  // city's own ballot questions instead, so voters can still jump straight to them.
+  if(first.city === undefined){
+    ballot.races.forEach(function(race, ri){
+      if(first.city === undefined && race.isMeasure && /^\s*(city|town|village)\s+of\b/i.test(String(race.office || ''))) first.city = ri;
+    });
+  }
   var present = JUMP_ORDER.filter(function(k){ return first[k] !== undefined; });
   // one section, or none recognized: chips would only add noise
   if(present.length < 2){ row.style.display = 'none'; row.innerHTML = ''; return; }
@@ -2162,9 +2177,9 @@ function outsideRows(list){
       (donors ? ' <a class="srclink" href="' + esc(donors) + '" target="_blank" rel="noopener noreferrer">' + t('outside.donors') + ' ↗</a>' : '') +
       '</span>' +
       (bought ? '<div class="og-bought">' + t('og.bought') + ' ' + esc(bought) + '</div>' : '') +
-      (isOrgEntry(d, d.kind) ? orgDetails(d) : '') +
       '</div>' +
-      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
+      (isOrgEntry(d, d.kind) ? orgDetails(d) : '') + '</div>';
   }).join('');
 }
 
@@ -2224,9 +2239,9 @@ function groupBody(g){
   } else if(g.funders && g.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + g.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
-        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span>' + npBlock(f.np) +
-        (!f.np && isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>' +
-        '<span class="damt">' + esc(f.amount) + '</span></div>';
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span></div>' +
+        '<span class="damt">' + esc(f.amount) + '</span>' +
+        npBlock(f.np) + (!f.np && isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>';
     }).join('');
   } else {
     h += '<p>' + t('og.nofunders') + '</p>';
@@ -2280,9 +2295,9 @@ function flcBlock(c, hint){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + c.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
         (f.occupation ? '<div class="enote" style="font-size:12px">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
-        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + '</span>' +
-        (isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>' +
-        '<span class="damt">' + esc(f.amount) + '</span></div>';
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + '</span></div>' +
+        '<span class="damt">' + esc(f.amount) + '</span>' +
+        (isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>';
     }).join('');
   }
   var L = [];
@@ -2332,7 +2347,7 @@ function loadPanel(el){
 }
 function loadGroups(){
   // top-level outside spenders: load now so the Left/Right tag appears without opening the panel
-  document.querySelectorAll('.og-row details.og[data-fec]').forEach(loadPanel);
+  document.querySelectorAll('.og-row > details.og[data-fec]').forEach(loadPanel);
 }
 document.addEventListener('toggle', function(e){
   var el = e.target;
@@ -2507,8 +2522,9 @@ function renderDossier(cand, race, r, cached){
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.note ? '<div class="enote" style="font-size:12px">' + esc(d.note) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span>' + (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>' +
-      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
+      (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
     }).join('');
   } else {
     var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote_en || r.donorDataNote || '');
@@ -2541,8 +2557,9 @@ function renderDossier(cand, race, r, cached){
     html += r.committeeDonors.map(function(d){
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span>' + (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>' +
-      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
+      (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
     }).join('');
     html += '</div>';
   }
