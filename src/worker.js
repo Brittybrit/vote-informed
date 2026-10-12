@@ -176,7 +176,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
   }
 
   const allowed = await rateLimit(env, 'parse', ip, LIMIT_PARSE_PER_DAY);
-  if (!allowed) return json({ error: 'Daily ballot-upload limit reached for your connection. Try again tomorrow.' }, 429);
+  if (!allowed) return json({ error: 'Ballot uploads are paused right now (daily limit). The countywide ballot still works. Try again tomorrow.' }, 429);
 
   const prompt = [
     'You are parsing a sample ballot PDF into structured data.',
@@ -236,7 +236,9 @@ async function handleResearch(request, env, ctx) {
   const office = body.office.slice(0, 200);
   const jurisdiction = isStr(body.jurisdiction) ? body.jurisdiction.slice(0, 200) : 'unknown';
   const election = isStr(body.election) ? body.election.slice(0, 120) : 'upcoming';
-  const isJudicial = !!body.isJudicial;
+  // Judicial runs use the costlier model and the Federalist Society screen. Decide from the office, not
+  // the browser: a caller can't force the expensive path on a non-judge or skip the screen for a judge.
+  const isJudicial = !body.isMeasure && /\b(judge|justice|court)\b/i.test(body.office);
   const isMeasure = !!body.isMeasure;
   let measureSummary = isStr(body.summary) ? body.summary.slice(0, 800) : '';
 
@@ -295,7 +297,7 @@ async function handleResearch(request, env, ctx) {
   if (!pending) {
     const ip = clientIP(request);
     const allowed = await rateLimit(env, 'research', ip, LIMIT_RESEARCH_PER_DAY);
-    if (!allowed) return json({ error: 'Daily research limit reached for your connection. Cached candidates still work — try again tomorrow for new ones.' }, 429);
+    if (!allowed) return json({ error: 'New research is paused right now (daily limit). Candidates already researched still work. Try again tomorrow for new ones.' }, 429);
     await env.CACHE.put('pend:' + key, '1', { expirationTtl: 300 }); // covers a long research run; ResearchRunner also dedupes
     if (body.poll) {
       if (env.RESEARCH) {
@@ -2684,16 +2686,38 @@ async function sha256(str) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// IPv6 phones get a whole /64 and can change address at will, so count per /64, not per address.
 function clientIP(request) {
-  return request.headers.get('CF-Connecting-IP') || 'unknown';
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (!ip.includes(':')) return ip;
+  const full = ip.split('::');
+  const head = full[0] ? full[0].split(':') : [];
+  const tail = full.length > 1 && full[1] ? full[1].split(':') : [];
+  const groups = full.length > 1 ? head.concat(Array(Math.max(0, 8 - head.length - tail.length)).fill('0'), tail) : head;
+  return groups.slice(0, 4).map(g => (g || '0').toLowerCase()).join(':') + '::/64';
 }
 
+// Spend controls, checked before any fresh (uncached) work. Cached results are always served.
+//  - Per connection (IPv4 address or IPv6 /64) per day: the limit each caller passes.
+//  - Site-wide per day: GLOBAL_LIMITS, a ceiling on the whole bill no matter how many addresses.
+//  - Kill switch: set the FRESH_OFF variable to 1 (Cloudflare dashboard > Workers > ballot-intel >
+//    Settings > Variables, or `npx wrangler secret put FRESH_OFF`) and nothing new reaches the
+//    Anthropic API; everything already researched keeps working. Delete it to turn fresh work back on.
+// KV counters are not atomic, so a burst can slip a few past a limit; the ceilings leave room for that.
+const GLOBAL_LIMITS = { research: 800, parse: 300, trballot: 400, btext: 150, money: 2000, group: 6000, voterinfo: 3000 };
+const AI_KINDS = new Set(['research', 'parse', 'trballot', 'btext']);
 async function rateLimit(env, kind, ip, limit) {
+  if (env.FRESH_OFF === '1' && AI_KINDS.has(kind)) return false;
   const day = new Date().toISOString().slice(0, 10);
   const key = 'rl:' + kind + ':' + ip + ':' + day;
-  const current = parseInt(await env.CACHE.get(key) || '0', 10);
+  const gkey = 'rl:' + kind + ':ALL:' + day;
+  const [current, total] = await Promise.all([env.CACHE.get(key), env.CACHE.get(gkey)]).then(v => v.map(x => parseInt(x || '0', 10)));
   if (current >= limit) return false;
-  await env.CACHE.put(key, String(current + 1), { expirationTtl: 86400 });
+  if (GLOBAL_LIMITS[kind] && total >= GLOBAL_LIMITS[kind]) { console.log('global daily limit reached: ' + kind); return false; }
+  await Promise.all([
+    env.CACHE.put(key, String(current + 1), { expirationTtl: 86400 }),
+    env.CACHE.put(gkey, String(total + 1), { expirationTtl: 2 * 86400 })
+  ]);
   return true;
 }
 
