@@ -329,6 +329,8 @@
   .tag.right{background:var(--right-bg); color:var(--right-fg);}
   .tag.nonpartisan{background:var(--nonp-bg); color:var(--nonp-fg);}
   .tag.group{background:var(--group-bg); color:var(--group-fg);}
+  .tag.nodisc{background:var(--flag-bg); color:var(--flag-fg); box-shadow:inset 0 0 0 1px var(--flag-rule);}
+  .outside-h{font-family:var(--mono); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin:12px 0 6px; color:var(--ink-soft);}
   .tag.kind{border:1.5px solid currentColor;}
   .tag.kind.kpac{background:#FDF3C8; color:#7A5D00;}
   .tag.kind.kcorp{background:#FBE9E7; color:#B3261E;}
@@ -632,6 +634,16 @@ en: {
   'donors.noFec': 'No donors on record with the FEC.',
   'donors.none': 'No donor data found.',
   'donors.committeeOnly': 'No direct campaign donors found. Committee money is listed below.',
+  'sec.outside': 'Outside Spending',
+  'outside.sub': 'Groups spending their own money on ads, mail and texts about this candidate. This money does not go to the campaign, and the candidate does not control it.',
+  'outside.for': 'Spent to help this candidate',
+  'outside.against': 'Spent to defeat this candidate',
+  'outside.none': 'No outside spending found for this candidate.',
+  'outside.donors': 'Its donors',
+  'outside.full': 'All outside spending on FEC.gov',
+  'disc.no': 'Donors not disclosed',
+  'disc.owners': 'Owners not listed',
+  'disc.lookup': 'Public records',
   'sec.committee': 'Money to Allied Committees',
   'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
   'committee.to': 'to {name}',
@@ -726,6 +738,9 @@ en: {
   'tag.corp.l': 'Corporation', 'tag.corp.d': 'A business giving money directly or through a company-linked committee. Corporate giving usually tracks the company&rsquo;s regulatory and business interests.',
   'tag.indiv.l': 'Individual', 'tag.indiv.d': 'A named person giving their own money. Their employer is shown when disclosed, which can hint at an industry interest behind the gift.',
   'tag.self.l': 'Self-Funded', 'tag.self.d': 'The candidate&rsquo;s own money.',
+  'tag.notdisclosed.l': 'Donors Not Disclosed', 'tag.notdisclosed.d': 'This group is not required to publicly name who gives it money, so the original source of these funds cannot be traced. This is legal. The Public records link opens what is on file, such as its tax filings or FEC registration.',
+  'tag.ownersnot.l': 'Owners Not Listed', 'tag.ownersnot.d': 'A limited liability company (LLC). A donation in a company name does not show who owns it. The Public records link opens its Florida business record, which lists its officers or managers.',
+  'tag.outsidegrp.l': 'Outside Group', 'tag.outsidegrp.d': 'A group that is not a registered PAC, often a nonprofit, that reported spending on this race. It does not have to list who funds it.',
   'tag.labortype.l': 'Kind of Workers', 'tag.labortype.d': 'The kind of workers this union represents. Ballot305 does not give labor unions a left or right label.',
   'tag.union.l': 'Labor Union', 'tag.union.d': 'A union giving through its political arm, funded by member dues. Generally supports worker-protection and collective-bargaining policies.',
   'tag.lobby.l': 'Lobbying / Trade Group', 'tag.lobby.d': 'An association that represents an industry&rsquo;s interests to government. Its money and endorsements usually track that industry&rsquo;s policy goals.',
@@ -850,6 +865,16 @@ es: {
   'donors.noFec': 'No hay donantes registrados ante la FEC.',
   'donors.none': 'No se encontraron datos de donantes.',
   'donors.committeeOnly': 'No se encontraron donantes directos de campaña. El dinero de comités aparece abajo.',
+  'sec.outside': 'Gastos externos',
+  'outside.sub': 'Grupos que gastan su propio dinero en anuncios, correo y mensajes sobre este candidato. Este dinero no va a la campaña y el candidato no lo controla.',
+  'outside.for': 'Gastado para ayudar a este candidato',
+  'outside.against': 'Gastado para derrotar a este candidato',
+  'outside.none': 'No se encontraron gastos externos para este candidato.',
+  'outside.donors': 'Sus donantes',
+  'outside.full': 'Todos los gastos externos en FEC.gov',
+  'disc.no': 'Donantes no divulgados',
+  'disc.owners': 'Dueños no indicados',
+  'disc.lookup': 'Registros públicos',
   'sec.committee': 'Dinero a comités aliados',
   'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
   'committee.to': 'a {name}',
@@ -944,6 +969,9 @@ es: {
   'tag.corp.l': 'Corporación', 'tag.corp.d': 'Una empresa que da dinero directamente o a través de un comité ligado a la empresa. Las donaciones corporativas suelen seguir los intereses regulatorios y comerciales de la empresa.',
   'tag.indiv.l': 'Individuo', 'tag.indiv.d': 'Una persona identificada que da su propio dinero. Se muestra su empleador cuando se divulga, lo que puede indicar un interés de alguna industria detrás de la donación.',
   'tag.self.l': 'Autofinanciado', 'tag.self.d': 'El propio dinero del candidato.',
+  'tag.notdisclosed.l': 'Donantes no divulgados', 'tag.notdisclosed.d': 'Este grupo no está obligado a nombrar públicamente a quienes le dan dinero, por lo que no se puede rastrear el origen de estos fondos. Esto es legal. El enlace Registros públicos abre lo que consta en archivo, como sus declaraciones de impuestos o su registro ante la FEC.',
+  'tag.ownersnot.l': 'Dueños no indicados', 'tag.ownersnot.d': 'Una compañía de responsabilidad limitada (LLC). Una donación a nombre de una compañía no muestra quién es su dueño. El enlace Registros públicos abre su registro comercial en Florida, que indica sus directivos o gerentes.',
+  'tag.outsidegrp.l': 'Grupo externo', 'tag.outsidegrp.d': 'Un grupo que no es un PAC registrado, a menudo una organización sin fines de lucro, que reportó gastos en esta contienda. No tiene que indicar quién lo financia.',
   'tag.labortype.l': 'Tipo de trabajadores', 'tag.labortype.d': 'El tipo de trabajadores que representa este sindicato. Ballot305 no les asigna a los sindicatos una etiqueta de izquierda o derecha.',
   'tag.union.l': 'Sindicato', 'tag.union.d': 'Un sindicato que da a través de su brazo político, financiado con las cuotas de sus miembros. Generalmente apoya políticas de protección de los trabajadores y de negociación colectiva.',
   'tag.lobby.l': 'Grupo de cabildeo / gremial', 'tag.lobby.d': 'Una asociación que representa los intereses de una industria ante el gobierno. Su dinero y sus respaldos suelen seguir los objetivos de política de esa industria.',
@@ -1068,6 +1096,16 @@ ht: {
   'donors.noFec': 'Pa gen okenn donatè anrejistre nan FEC.',
   'donors.none': 'Nou pa jwenn enfòmasyon sou donatè.',
   'donors.committeeOnly': 'Nou pa jwenn donatè dirèk pou kanpay la. Lajan komite yo parèt anba a.',
+  'sec.outside': 'Depans deyò',
+  'outside.sub': 'Gwoup k ap depanse pwòp lajan yo sou piblisite, lèt ak mesaj sou kandida sa a. Lajan sa a pa ale nan kanpay la, epi kandida a pa kontwole l.',
+  'outside.for': 'Depanse pou ede kandida sa a',
+  'outside.against': 'Depanse pou fè kandida sa a pèdi',
+  'outside.none': 'Nou pa jwenn depans deyò pou kandida sa a.',
+  'outside.donors': 'Donatè li yo',
+  'outside.full': 'Tout depans deyò sou FEC.gov',
+  'disc.no': 'Donatè yo pa divilge',
+  'disc.owners': 'Mèt yo pa nonmen',
+  'disc.lookup': 'Dosye piblik',
   'sec.committee': 'Lajan bay komite alye',
   'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
   'committee.to': 'bay {name}',
@@ -1162,6 +1200,9 @@ ht: {
   'tag.corp.l': 'Konpayi', 'tag.corp.d': 'Yon biznis k ap bay lajan dirèkteman oswa atravè yon komite ki mare ak konpayi an. Lajan konpayi bay anjeneral swiv enterè règleman ak biznis konpayi an.',
   'tag.indiv.l': 'Moun', 'tag.indiv.d': 'Yon moun nou konnen non l k ap bay pwòp lajan l. Nou montre ki kote li travay lè sa devwale, sa ka montre yon enterè endistri dèyè don an.',
   'tag.self.l': 'Pwòp lajan l', 'tag.self.d': 'Pwòp lajan kandida a.',
+  'tag.notdisclosed.l': 'Donatè yo pa divilge', 'tag.notdisclosed.d': 'Gwoup sa a pa oblije nonmen piblikman moun ki ba li lajan, kidonk nou pa ka swiv ki kote lajan sa a soti orijinalman. Sa a legal. Lyen Dosye piblik la louvri sa ki nan dosye, tankou deklarasyon taks li oswa enskripsyon li nan FEC.',
+  'tag.ownersnot.l': 'Mèt yo pa nonmen', 'tag.ownersnot.d': 'Yon konpayi responsabilite limite (LLC). Yon don nan non yon konpayi pa montre ki moun ki mèt li. Lyen Dosye piblik la louvri dosye biznis li nan Florid, ki bay non ofisye oswa manadjè li yo.',
+  'tag.outsidegrp.l': 'Gwoup deyò', 'tag.outsidegrp.d': 'Yon gwoup ki pa yon PAC ki anrejistre, souvan yon òganizasyon san bi likratif, ki rapòte depans nan kous sa a. Li pa oblije di ki moun ki finanse l.',
   'tag.labortype.l': 'Kalite travayè', 'tag.labortype.d': 'Kalite travayè sendika sa a reprezante. Ballot305 pa bay sendika yon etikèt gòch oswa dwat.',
   'tag.union.l': 'Sendika', 'tag.union.d': 'Yon sendika k ap bay atravè branch politik li, ak kotizasyon manm yo. Anjeneral li sipòte politik ki pwoteje travayè ak negosyasyon kolektif.',
   'tag.lobby.l': 'Gwoup lobi / komèsyal', 'tag.lobby.d': 'Yon asosyasyon ki reprezante enterè yon endistri devan gouvènman an. Lajan l ak sipò l anjeneral swiv objektif politik endistri sa a.',
@@ -1829,7 +1870,7 @@ function funderRows(list){
     return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
     (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
     '<div class="tagrow">' + leanTag(d.lean, d) +
-    kindTag(d.kind, d.kind_tr) +
+    kindTag(d.kind, d.kind_tr) + disclosureTag(d) +
     (d.amount ? '<span class="tag amtchip">' + esc(fmtAmount(d.amount)) + '</span>' : '') +
     srcLink(d.url) +
     '</div></div>';
@@ -1954,6 +1995,28 @@ function safeUrl(url){
 function hostOf(url){
   try { return new URL(url).hostname.replace(/^www\./, ''); } catch(e){ return ''; }
 }
+// Where a money trail goes dark: a plain label plus a link to the closest public record.
+function disclosureTag(d){
+  if(!d || !d.disclosure) return '';
+  var k = d.disclosure === 'not_disclosed' ? 'notdisclosed' : d.disclosure === 'owners_not_listed' ? 'ownersnot' : '';
+  if(!k) return '';
+  var html = '<span class="tag nodisc" data-k="' + k + '">' + t(k === 'notdisclosed' ? 'disc.no' : 'disc.owners') + '</span>';
+  var u = safeUrl(d.lookupUrl);
+  if(u) html += ' <a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + t('disc.lookup') + ' ↗</a>';
+  return html;
+}
+function outsideRows(list){
+  return list.map(function(d){
+    var donors = safeUrl(d.donorsUrl);
+    return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+      (d.note ? '<div class="enote" style="font-size:12.5px">' + esc(d.note) + '</div>' : '') +
+      '<span class="dtype">' + kindTag(d.kind, d.kind_tr) + disclosureTag(d) + srcLink(d.url) +
+      (donors ? ' <a class="srclink" href="' + esc(donors) + '" target="_blank" rel="noopener noreferrer">' + t('outside.donors') + ' ↗</a>' : '') +
+      '</span></div>' +
+      '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
+  }).join('');
+}
+
 function srcLink(url){
   var u = safeUrl(url);
   if(!u) return '';
@@ -1981,7 +2044,7 @@ function fmtAmount(a){
 }
 
 var TAG_DEFS = [
-  [/^labortype$/i, 'labortype'],
+  [/^labortype$/i, 'labortype'], [/^notdisclosed$/i, 'notdisclosed'], [/^ownersnot$/i, 'ownersnot'], [/outside group/i, 'outsidegrp'],
   [/^left$/i, 'left'], [/^right$/i, 'right'], [/^nonpartisan$/i, 'np'],
   [/donation platform|conduit/i, 'platform'], [/super\s*pac/i, 'super'],
   [/nonconnected\s*pac/i, 'noncon'], [/connected\s*pac/i, 'con'],
@@ -2121,7 +2184,7 @@ function renderDossier(cand, race, r, cached){
                : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
   } else {
@@ -2147,9 +2210,24 @@ function renderDossier(cand, race, r, cached){
     html += r.committeeDonors.map(function(d){
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
+    html += '</div>';
+  }
+
+  // Outside spending: groups spending on their own for or against the candidate. Shown only when
+  // the result has the section (results researched before it existed don't, until they refresh).
+  if(r.outsideSpending){
+    var os = r.outsideSpending, osFor = os.support || [], osAg = os.oppose || [];
+    html += '<div class="dsec"><h4>' + t('sec.outside') + '</h4>' +
+      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('outside.sub') + '</p>';
+    if(osFor.length) html += '<div class="outside-h">' + t('outside.for') + '</div>' + outsideRows(osFor);
+    if(osAg.length) html += '<div class="outside-h">' + t('outside.against') + '</div>' + outsideRows(osAg);
+    if(!osFor.length && !osAg.length) html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('outside.none') + '</p>';
+    if(os.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(os.note) + '</p>';
+    if(/^https:\/\//i.test(os.listUrl || ''))
+      html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
     html += '</div>';
   }
 

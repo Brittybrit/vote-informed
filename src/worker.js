@@ -347,6 +347,7 @@ async function runResearch(env, key, p) {
     'Find:',
     '1. What the measure does, in plain language a voter can use.',
     '2. WHO IS FINANCING EACH SIDE. Look for registered committees/PACs supporting and opposing it, and their major contributors. Classify every funder by kind: "individual" | "corporation" | "lobbying or trade group" | "union" | "PAC/committee" | "nonprofit" | "political party" | "other". Report amounts only where actually reported; never guess. If one side has no organized funding, say so.',
+    'If a funder is a 501(c)(4), 501(c)(6) or other group that does not publicly disclose its own donors, add "disclosure": "not_disclosed" to it.',
     '3. Major supporters: organizations and notable public figures backing it.',
     '4. Major opponents: organizations and notable public figures against it.',
     'THIS ELECTION ONLY: list a funder, supporter, or opponent only if they took a position on this measure for this election. Positions on an earlier version or an earlier election do not count, even as precedent; mention them in the relevant note instead.',
@@ -385,6 +386,7 @@ async function runResearch(env, key, p) {
     '   - "lean": "left", "right", or "nonpartisan" — based on the organization general political alignment, not the candidate. EXCEPTION: every labor union (including police, firefighter and teacher unions and labor federations like the AFL-CIO) gets "lean": "labor", never left or right, plus "laborType": the kind of workers it represents (e.g. "Teachers", "Firefighters", "Police", "Nurses", "Public employees", "Building trades", "Multiple trades (labor federation)"), and "type": "labor union".',
     '   - "type": the kind of group, e.g. "labor union", "law enforcement", "business association", "environmental group", "newspaper editorial board", "civil rights organization", "party organization", "elected official", "religious organization", "professional association"',
     '   - "url": link the endorser own announcement (their site or publication) or reliable news coverage of it. Never cite a political party or campaign page that repeats another organization endorsement, unless the endorser is that party or campaign.',
+    '4. OUTSIDE SPENDING: groups other than the campaign and the committees it controls that spent their own money on ads, mail, texts or canvassing FOR or AGAINST this candidate in THIS race (independent expenditures, electioneering communications, super PACs, party or nonprofit spending). Florida requires these to be reported to the Division of Elections or the county. List each spender with the amount where reported, its kind, and whether it supported or opposed the candidate. If a spender is a 501(c)(4), 501(c)(6) or other group that does not publicly disclose its donors, set "disclosure": "not_disclosed". Only list spending you found in filings or reliable coverage; never guess.',
     fedsocTask,
     '',
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences. Write plain text inside all JSON string values — no XML, no cite tags, no citation markup of any kind. When summarizing evidence, preserve the source hedges and caveats: never state a claim more strongly than the source does.',
@@ -398,6 +400,7 @@ async function runResearch(env, key, p) {
     '  "endorsements": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "opposition": [ {"org": "organization or person", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "optional one-line context, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
     '  "ratings": [ {"org": "organization", "rating": "the rating or evaluation given, exactly as stated", "lean": "left|right|nonpartisan|labor", "laborType": "only for unions, else omit", "type": "group type", "note": "what the rating means / methodology if stated, else empty string", "url": "direct link to the page documenting this, else empty string"} ],',
+    '  "outsideSpending": { "support": [ {"name": "spender as named in the source", "amount": "dollar amount, or unknown", "kind": "super PAC | political committee | party committee | nonprofit | electioneering communications organization | union | corporation | other", "disclosure": "disclosed or not_disclosed", "note": "one line, else empty string", "url": "direct link to the page documenting this, else empty string"} ], "oppose": [ same shape ], "note": "one sentence on what was found and its source, or why nothing was found" },',
     fedsocSchema,
     '  "sources": ["site names or URLs actually consulted"]',
     '}',
@@ -456,6 +459,13 @@ async function runResearch(env, key, p) {
     // federal race without FEC data: cache briefly so the next visitor retries FEC
     if (!fecOk) ttl = 60 * 60 * 6;
   }
+  if (officeCode) {
+    try {
+      const o = await fecOutsideSpending(env, name, officeCode);
+      if (o) { result.outsideSpending = o; result.outV = OUTSIDE_VERSION; }
+    } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
+  }
+  markDisclosure(result);
 
   await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: ttl });
   if (p.alias) await env.CACHE.put(p.alias, key, { expirationTtl: ttl });
@@ -589,7 +599,9 @@ function separateCommitteeMoney(result, office, officeCode) {
 // Saves back to the cache only when something changed.
 async function refreshCached(env, key, result, name, officeCode, office) {
   result = await refreshFec(env, key, result, name, officeCode);   // saves its own changes
-  applyKnownLeans(result);                                        // cheap, so this runs on every read
+  result = await refreshOutside(env, key, result, name, officeCode); // saves its own changes
+  applyKnownLeans(result);                                        // cheap, so these run on every read
+  markDisclosure(result);
   let changed = false;
   if (result.financing) {                                         // a ballot measure
     if (result.measV !== MEASURE_VERSION) {
@@ -830,12 +842,13 @@ function committeeKind(n, reg, entity) {
   return 'PAC';
 }
 
-async function fecTopDonors(env, name, officeCode) {
+// Find a candidate's FEC record. Returns { cand } or { cand: null, notRegistered: true } when both
+// the full-name and last-name searches came back empty, or null on an API error or ambiguity.
+async function fecFindCandidate(env, name, officeCode) {
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
   const base = 'https://api.open.fec.gov/v1';
   const y = new Date().getFullYear();
   const cycle = y + (y % 2 === 0 ? 0 : 1);
-
   const cRes = await fetch(base + '/candidates/search/?q=' + encodeURIComponent(name) +
     '&office=' + officeCode + '&cycle=' + cycle + '&per_page=5&api_key=' + apiKey);
   if (!cRes.ok) { console.log('FEC candidate search ' + cRes.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); return null; }
@@ -862,10 +875,158 @@ async function fecTopDonors(env, name, officeCode) {
   if (!cand) {
     console.log('FEC: no candidate match for ' + name);
     // both the full-name and last-name searches came back empty: not registered with the FEC
-    if (fallbackHits === 0) return { donors: [], definitive: true,
-      note: 'Not registered with the FEC for this race. Federal candidates only have to register after raising or spending $5,000, so this campaign has likely raised little or nothing.' };
+    if (fallbackHits === 0) return { cand: null, notRegistered: true };
     return null;
   }
+  return { cand };
+}
+
+// Outside spending: money groups spend on their own ads, mail and texts for or against a federal
+// candidate (independent expenditures). It never goes to the campaign. Regular FEC reports lag,
+// so spending reported in 24/48-hour notices after a group's latest regular report is added on;
+// notices dated on or before that report are skipped because the report already includes them.
+// Bump to rebuild every cached federal result's outside spending (free API, no AI cost).
+const OUTSIDE_VERSION = 1;
+const FEC_COMMITTEE_KIND = { O: 'super PAC', U: 'super PAC', V: 'hybrid PAC', W: 'hybrid PAC', I: 'outside group',
+  N: 'PAC', Q: 'PAC', X: 'party committee', Y: 'party committee', Z: 'party committee' };
+async function fecOutsideSpending(env, name, officeCode) {
+  const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
+  const base = 'https://api.open.fec.gov/v1';
+  const y = new Date().getFullYear();
+  const cycle = y + (y % 2 === 0 ? 0 : 1);
+  const found = await fecFindCandidate(env, name, officeCode);
+  if (!found) return null;
+  if (!found.cand) return { support: [], oppose: [], source: 'FEC',
+    note: 'Not registered with the FEC for this race, so no outside spending is reported for this candidate.' };
+  const cid = found.cand.candidate_id;
+
+  async function pages(notice) {
+    let rows = [], extra = {};
+    for (let i = 0; i < 5; i++) {
+      const q = new URLSearchParams({ candidate_id: cid, cycle: String(cycle), is_notice: String(notice), most_recent: 'true',
+        per_page: '100', sort: '-expenditure_date', api_key: apiKey, ...extra });
+      const r = await fetch(base + '/schedules/schedule_e/?' + q);
+      if (!r.ok) throw new Error('FEC schedule_e ' + r.status);
+      const j = await r.json();
+      const got = j.results || [];
+      rows = rows.concat(got);
+      const li = j.pagination && j.pagination.last_indexes;
+      if (!got.length || !li || rows.length >= ((j.pagination && j.pagination.count) || 0)) break;
+      extra = li;
+    }
+    return rows;
+  }
+  const regular = await pages(false);
+  const notices = await pages(true);
+
+  const agg = {}, cutoff = {};
+  const add = (r, amt) => {
+    const ind = r.support_oppose_indicator === 'O' ? 'O' : 'S';
+    const k = r.committee_id + '|' + ind;
+    if (!agg[k]) agg[k] = { id: r.committee_id, ind, name: (r.committee && r.committee.name) || r.committee_name || r.committee_id, amount: 0 };
+    agg[k].amount += amt;
+  };
+  for (const r of regular) {
+    if (r.memo_code === 'X' || !r.committee_id) continue;
+    add(r, r.expenditure_amount || 0);
+    const d = r.expenditure_date || r.dissemination_date || '';
+    if (!cutoff[r.committee_id] || d > cutoff[r.committee_id]) cutoff[r.committee_id] = d;
+  }
+  for (const r of notices) {
+    if (r.memo_code === 'X' || !r.committee_id) continue;
+    const d = r.expenditure_date || r.dissemination_date || '';
+    if (cutoff[r.committee_id] && d && d <= cutoff[r.committee_id]) continue;
+    add(r, r.expenditure_amount || 0);
+  }
+
+  const list = Object.values(agg).filter(a => a.amount > 0).sort((a, b) => b.amount - a.amount);
+  const ids = [...new Set(list.slice(0, 20).map(a => a.id))].filter(id => /^C\d{8}$/.test(id));
+  const reg = {};
+  if (ids.length) {
+    try {
+      const cr = await fetch(base + '/committees/?' + ids.map(id => 'committee_id=' + id).join('&') + '&per_page=20&api_key=' + apiKey);
+      if (cr.ok) for (const c of ((await cr.json()).results || [])) reg[c.committee_id] = c;
+    } catch (e) { console.log('FEC committee lookup error: ' + e.message); }
+  }
+  const toItem = a => {
+    const c = reg[a.id];
+    const t = c && c.committee_type;
+    // Form 5 filers (IDs starting C9, or committee type I) are outside groups, often nonprofits,
+    // that do not have to list who funds them. Registered PACs and super PACs do.
+    const hidden = /^C9/.test(a.id) || t === 'I';
+    const item = {
+      name: (c && c.name) || a.name,
+      amount: '$' + Math.round(a.amount).toLocaleString('en-US'),
+      kind: hidden ? 'outside group' : (FEC_COMMITTEE_KIND[t] || 'PAC'),
+      url: 'https://www.fec.gov/data/committee/' + a.id + '/',
+      fecId: a.id
+    };
+    if (hidden) item.disclosure = 'not_disclosed';
+    else item.donorsUrl = 'https://www.fec.gov/data/receipts/?committee_id=' + a.id;
+    return item;
+  };
+  return {
+    support: list.filter(a => a.ind === 'S').slice(0, 8).map(toItem),
+    oppose: list.filter(a => a.ind === 'O').slice(0, 8).map(toItem),
+    source: 'FEC',
+    listUrl: 'https://www.fec.gov/data/independent-expenditures/?candidate_id=' + cid + '&cycle=' + cycle,
+    note: list.length
+      ? 'Independent spending reported to the FEC this election cycle, including recent 24- and 48-hour notices. Totals can lag the newest filings.'
+      : 'No outside spending for or against this candidate has been reported to the FEC this election cycle.'
+  };
+}
+
+async function refreshOutside(env, key, result, name, officeCode) {
+  if (!officeCode || result.outV === OUTSIDE_VERSION) return result;
+  try {
+    const o = await fecOutsideSpending(env, name, officeCode);
+    if (o) {
+      result.outsideSpending = o;
+      result.outV = OUTSIDE_VERSION;
+      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    }
+  } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
+  return result;
+}
+
+// Where a money trail goes dark, say so plainly and link the public record that comes closest.
+// Nonprofits like 501(c)(4) and (c)(6) groups don't have to name donors: link their tax filings.
+// LLCs give under a company name that hides the owners: link the Florida business record.
+function markDisclosure(result) {
+  const mark = list => {
+    if (!Array.isArray(list)) return;
+    for (const it of list) {
+      if (!it || typeof it !== 'object') continue;
+      const name = String(it.name || it.org || '');
+      const tag = [it.kind, it.type].filter(Boolean).join(' ');
+      const plain = name.replace(/\s*\(.*\)\s*$/, '').trim();   // drop "(EMPLOYER)" suffixes
+      if (it.disclosure === 'not_disclosed' || /nonprofit|501\s*\(?\s*c\s*\)?|social welfare/i.test(tag)) {
+        it.disclosure = 'not_disclosed';
+        if (!it.lookupUrl) it.lookupUrl = it.fecId ? 'https://www.fec.gov/data/committee/' + it.fecId + '/'
+          : 'https://projects.propublica.org/nonprofits/search?q=' + encodeURIComponent(plain);
+      } else if (/\b(l\.?\s?l\.?\s?c\.?|limited liability company)\s*$/i.test(plain) || /\bl\.?l\.?c\b/i.test(plain)) {
+        it.disclosure = 'owners_not_listed';
+        if (!it.lookupUrl) it.lookupUrl = 'https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?inquiryType=EntityName&searchTerm=' + encodeURIComponent(plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|limited liability company)\s*$/i, '').trim() || plain);
+      }
+    }
+  };
+  mark(result.donors); mark(result.committeeDonors);
+  if (result.financing) { mark(result.financing.support); mark(result.financing.oppose); }
+  if (result.outsideSpending) { mark(result.outsideSpending.support); mark(result.outsideSpending.oppose); }
+  return result;
+}
+
+async function fecTopDonors(env, name, officeCode) {
+  const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
+  const base = 'https://api.open.fec.gov/v1';
+  const y = new Date().getFullYear();
+  const cycle = y + (y % 2 === 0 ? 0 : 1);
+
+  const found = await fecFindCandidate(env, name, officeCode);
+  if (!found) return null;
+  if (!found.cand) return { donors: [], definitive: true,
+    note: 'Not registered with the FEC for this race. Federal candidates only have to register after raising or spending $5,000, so this campaign has likely raised little or nothing.' };
+  const cand = found.cand;
   const committee = (cand.principal_committees || [])[0];
   if (!committee) { console.log('FEC: no principal committee for ' + name + ' (' + cand.candidate_id + ')'); return null; }
 
