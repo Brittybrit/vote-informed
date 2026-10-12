@@ -719,9 +719,10 @@ en: {
   'loc.forSub': 'Campaign donations plus outside groups spending to help.',
   'loc.againstSub': 'Outside groups spending to defeat this candidate.',
   'loc.people': 'Individual donors',
-  'loc.noAddr': 'Not counted above: {amt} with no address on file.',
+  'loc.noAddr': 'Percentages are of the money with an address on file. Not counted: {amt} with no address.',
   'loc.allUnk': 'No address on file for any of this money.',
   'loc.groups': 'Groups',
+  'loc.outside': 'Outside groups (spending on their own)',
   'loc.self': 'Own money',
   'loc.here': 'Located in the area that votes for this candidate',
   'loc.herePlace': 'Located in {place}',
@@ -730,7 +731,7 @@ en: {
   'loc.out': 'Outside Florida',
   'loc.unk': 'Location not reported',
   'loc.noAgainstFed': 'No outside spending against this candidate has been reported to the FEC.',
-  'loc.noAgainstLocal': 'Florida doesn&rsquo;t publish spending against state or local candidates in a form that can be totaled, so there&rsquo;s nothing to show here.',
+  'loc.noAgainstLocal': 'This guide doesn&rsquo;t total spending against state and local candidates yet. Groups that spend for or against them file reports with the Florida Division of Elections or the county or city clerk.',
   'loc.loading': 'Loading where the money comes from…',
   'loc.noData': 'No official filings with donor addresses are online for this candidate yet, so where the money comes from can&rsquo;t be counted. The donor list below may come from web research or scanned reports.',
   'loc.notePlace': 'This seat is elected by a district. Addresses are matched to {place}, not the district, so &ldquo;located in {place}&rdquo; is wider than the voters who elect it.',
@@ -1061,9 +1062,10 @@ es: {
   'loc.forSub': 'Donaciones a la campaña más gastos de grupos externos para ayudar.',
   'loc.againstSub': 'Gastos de grupos externos para derrotar a este candidato.',
   'loc.people': 'Donantes individuales',
-  'loc.noAddr': 'No se cuenta arriba: {amt} sin dirección en el informe.',
+  'loc.noAddr': 'Los porcentajes son del dinero con dirección en el informe. No se cuenta: {amt} sin dirección.',
   'loc.allUnk': 'Nada de este dinero tiene dirección en el informe.',
   'loc.groups': 'Grupos',
+  'loc.outside': 'Grupos externos (gastos propios)',
   'loc.self': 'Dinero propio',
   'loc.here': 'Ubicado en el área que vota por este candidato',
   'loc.herePlace': 'Ubicado en {place}',
@@ -1072,7 +1074,7 @@ es: {
   'loc.out': 'Fuera de Florida',
   'loc.unk': 'Ubicación no reportada',
   'loc.noAgainstFed': 'No se ha reportado a la FEC ningún gasto externo en contra de este candidato.',
-  'loc.noAgainstLocal': 'Florida no publica los gastos en contra de candidatos estatales o locales en una forma que se pueda sumar, así que no hay nada que mostrar aquí.',
+  'loc.noAgainstLocal': 'Esta guía todavía no suma los gastos en contra de candidatos estatales y locales. Los grupos que gastan a favor o en contra presentan informes ante la División de Elecciones de Florida o el secretario del condado o de la ciudad.',
   'loc.loading': 'Cargando de dónde viene el dinero…',
   'loc.noData': 'Todavía no hay informes oficiales con direcciones de donantes en línea para este candidato, así que no se puede calcular de dónde viene el dinero. La lista de donantes de abajo puede venir de búsquedas en la web o de informes escaneados.',
   'loc.notePlace': 'Este cargo se elige por distrito. Las direcciones se comparan con {place}, no con el distrito, así que &ldquo;ubicado en {place}&rdquo; abarca más que los votantes que lo eligen.',
@@ -1403,9 +1405,10 @@ ht: {
   'loc.forSub': 'Don bay kanpay la plis depans gwoup deyò pou ede.',
   'loc.againstSub': 'Depans gwoup deyò pou fè kandida sa a pèdi.',
   'loc.people': 'Donatè endividyèl',
-  'loc.noAddr': 'Pa konte anwo a: {amt} san adrès nan rapò a.',
+  'loc.noAddr': 'Pousantaj yo se sou lajan ki gen adrès nan rapò a. Pa konte: {amt} san adrès.',
   'loc.allUnk': 'Pa gen adrès nan rapò a pou okenn nan lajan sa a.',
   'loc.groups': 'Gwoup',
+  'loc.outside': 'Gwoup deyò (depans pa yo)',
   'loc.self': 'Pwòp lajan',
   'loc.here': 'Nan zòn ki vote pou kandida sa a',
   'loc.herePlace': 'Nan {place}',
@@ -1414,7 +1417,7 @@ ht: {
   'loc.out': 'Andeyò Florid',
   'loc.unk': 'Kote a pa rapòte',
   'loc.noAgainstFed': 'Pa gen depans deyò kont kandida sa a ki rapòte bay FEC.',
-  'loc.noAgainstLocal': 'Florid pa pibliye depans kont kandida eta oswa lokal nan yon fòm nou ka totalize, kidonk pa gen anyen pou montre isit la.',
+  'loc.noAgainstLocal': 'Gid sa a poko totalize depans kont kandida eta ak lokal yo. Gwoup ki depanse pou oswa kont yo depoze rapò bay Divizyon Eleksyon Florid oswa grefye konte a oswa vil la.',
   'loc.loading': 'N ap chaje kote lajan an soti…',
   'loc.noData': 'Pa gen rapò ofisyèl ak adrès donatè sou entènèt pou kandida sa a ankò, kidonk nou pa ka kalkile kote lajan an soti. Lis donatè ki anba a ka soti nan rechèch sou entènèt oswa nan rapò ki eskane.',
   'loc.notePlace': 'Se yon distri ki eli pòs sa a. Adrès yo konpare ak {place}, pa ak distri a, kidonk &ldquo;nan {place}&rdquo; pi laj pase votè ki eli l yo.',
@@ -3184,8 +3187,8 @@ function locPanel(L, side, emptyMsg){
   // One block per kind of giver. The bar is 100% of that money WITH an address on file, so the
   // percentages printed on it and under it are the same numbers; money with no address is stated
   // in words below the bar instead of drawn into it.
-  ['people','groups'].forEach(function(k){
-    var o = L[k], tot = locSum(o);
+  ['people','groups','outside'].forEach(function(k){
+    var o = L[k] || {}, tot = locSum(o);
     if(tot <= 0) return;
     var unk = o.unk || 0, known = tot - unk;
     h += '<div class="loc-row"><div class="loc-head"><span>' + t('loc.' + k) + '</span><span class="lv">' + fmtShortUSD(tot) + '</span></div>';
@@ -3226,8 +3229,16 @@ function renderLocal(fed){
   var isFed = fed !== null;
   if(isFed && fed === undefined){ sec.innerHTML = '<h4>' + t('sec.local') + '</h4><p class="mny-note">' + t('loc.loading') + '</p>'; return; }
   var campaign = isFed ? fed : (r.localMoney && r.localMoney.total ? r.localMoney : null);
-  var support = locMerge(campaign, os && os.localFor);
-  var against = os && os.localAgainst;
+  // Outside spending stays its own row ("Outside groups"): one super PAC buy shouldn't swamp the
+  // groups that gave to the campaign, and the two are placed by different kinds of address.
+  var withOutside = function(base, o){
+    if(!o || !o.total) return base;
+    var b = base ? JSON.parse(JSON.stringify(base)) : {kind: o.kind, place: o.place, exact: o.exact, people: {}, groups: {}, self: 0, total: 0};
+    b.outside = o.groups; b.total = (b.total || 0) + o.total;
+    return b;
+  };
+  var support = withOutside(campaign, os && os.localFor);
+  var against = withOutside(null, os && os.localAgainst);
   if(!support && !against && !isFed){
     sec.innerHTML = '<h4>' + t('sec.local') + '</h4><p style="font-size:13.5px;color:var(--ink-soft)">' + t('loc.noData') + '</p>';
     return;
