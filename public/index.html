@@ -2506,6 +2506,7 @@ function renderDossier(cand, race, r, cached){
                : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
+      (d.note ? '<div class="enote" style="font-size:12px">' + esc(d.note) + '</div>' : '') +
       '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span>' + (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');

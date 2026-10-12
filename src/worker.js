@@ -445,6 +445,7 @@ async function runResearch(env, key, p) {
     catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
     ownSiteRatings(result);
     separateCommitteeMoney(result, office, officeCode);
+    if (!officeCode) await refreshFlDonors(env, key, result, name, office, false);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
     result.linkV = LINK_VERSION;
@@ -597,7 +598,9 @@ function separateCommitteeMoney(result, office, officeCode) {
     const n = parseAmount(d.amount);
     // PACs and party committees may give federal candidates more than individuals can; FEC rows are exact
     const fecRow = officeCode && /fec\.gov/.test(d.url || '');
-    if (n !== null && n > limit && !fecRow) result.committeeDonors.push({ ...d, committee: d.committee || '' });
+    // official state records are exact too (parties and candidates' own loans aren't capped)
+    const official = fecRow || result.donorSource === 'FL';
+    if (n !== null && n > limit && !official) result.committeeDonors.push({ ...d, committee: d.committee || '' });
     else keep.push(d);
   }
   result.donors = keep;
@@ -629,6 +632,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   }
   ownSiteRatings(result);                                         // cheap, so these run on every read
   separateCommitteeMoney(result, office, officeCode);
+  if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
       result.summary = await neutralSummary(env, result.summary);
@@ -1254,6 +1258,101 @@ async function flCommittee(env, name) {
   }
   await env.CACHE.put(key, JSON.stringify(out || { none: true }), { expirationTtl: CACHE_TTL });
   return out;
+}
+
+// Florida state-filed candidates (Governor, Cabinet, Legislature, State Attorney, Public Defender,
+// judges): donors straight from the Florida Division of Elections, like FEC data for federal races.
+// Web search can find a candidate's state filing page but can't read the contributions inside it.
+// No AI, refreshed at most daily. County and city races file with the county, not the state.
+const FL_DONOR_VERSION = 1;
+function flOfficeQuery(office) {
+  const o = String(office || '');
+  const d = (o.match(/District\s+(\d+)/i) || [])[1] || '';
+  if (/^Governor/i.test(o)) return { office: 'GOV' };
+  if (/^Attorney General/i.test(o)) return { office: 'ATG' };
+  if (/^Chief Financial Officer/i.test(o)) return { office: 'CFO' };
+  if (/^Commissioner of Agriculture/i.test(o)) return { office: 'AGR' };
+  if (/^State Senator/i.test(o) && d) return { office: 'STS', cdistrict: d };
+  if (/^State Representative/i.test(o) && d) return { office: 'STR', cdistrict: d };
+  if (/^State Attorney/i.test(o)) return { office: 'STA', cdistrict: (o.match(/(\d+)(st|nd|rd|th)\s+Judicial Circuit/i) || [])[1] || '' };
+  if (/^Public Defender/i.test(o)) return { office: 'PUB', cdistrict: (o.match(/(\d+)(st|nd|rd|th)\s+Judicial Circuit/i) || [])[1] || '' };
+  if (/^Circuit Judge/i.test(o)) return { office: 'CTJ', cdistrict: (o.match(/(\d+)(st|nd|rd|th)\s+Judicial Circuit/i) || [])[1] || '', cgroup: (o.match(/Group\s+(\d+)/i) || [])[1] || '' };
+  if (/District Court of Appeal/i.test(o)) return { office: 'DCA' };
+  if (/Justice of the Supreme Court/i.test(o)) return { office: 'SCJ' };
+  return null;
+}
+function flNameParts(name) {
+  const first = String(name || '').split(/\s+and\s+/i)[0]                 // "Byron Donalds and Bryan Avila" -> Byron Donalds
+    .replace(/["“”][^"“”]*["“”]/g, ' ')                           // nicknames in quotes
+    .replace(/,?\s+\b(jr|sr|ii|iii|iv)\.?$/i, '').trim();
+  const parts = normPart(first).split(' ').filter(Boolean);
+  return parts.length >= 2 ? { first: parts[0], last: parts[parts.length - 1] } : null;
+}
+async function flCandidateDonors(env, name, office) {
+  const q = flOfficeQuery(office), np = flNameParts(name);
+  if (!q || !np) return null;
+  const H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)',
+    'Accept': 'text/html,text/plain,*/*', 'Content-Type': 'application/x-www-form-urlencoded',
+    'Origin': FL_BASE, 'Referer': FL_BASE + '/campaign-finance/contributions/' };
+  const y = new Date().getFullYear();
+  const body = new URLSearchParams({ election: '20261103-GEN', search_on: '2', CanFName: np.first, CanLName: np.last, CanNameSrch: '2',
+    office: q.office, cdistrict: q.cdistrict || '', cgroup: q.cgroup || '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All',
+    cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '', cdollar_minimum: '', cdollar_maximum: '',
+    rowlimit: '5000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' });
+  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body });
+  if (!r.ok) throw new Error('FL contributions ' + r.status);
+  const tsv = await r.text();
+  const agg = {}; let total = 0, n = 0, to = '';
+  for (const line of tsv.split(/\r?\n/).slice(1)) {
+    const c = line.split('\t');
+    if (c.length < 7) continue;
+    // "Lavin, George  (DEM)(STS)": same last name, first name starts the same
+    const who = c[0].replace(/\s*\([^)]*\)/g, '').split(',');
+    if (normPart(who[0]) !== np.last || !normPart(who[1] || '').startsWith(np.first)) continue;
+    const amt = parseFloat(c[2]) || 0;
+    if (amt <= 0) continue;
+    const [mm, dd, yy] = String(c[1]).split('/');
+    const iso = yy && mm && dd ? yy + '-' + mm + '-' + dd : '';
+    if (iso && iso > to) to = iso;
+    total += amt; n++;
+    const giver = c[4].trim();
+    if (!agg[giver]) agg[giver] = { amount: 0, occ: (c[7] || '').trim(), kinds: new Set() };
+    agg[giver].amount += amt;
+    agg[giver].kinds.add(c[3]);
+  }
+  if (!n) return { donors: [], count: 0 };
+  const donors = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([giver, v]) => {
+    const occ = v.occ;
+    const self = /^candidate$/i.test(occ) || (normPart(giver).includes(np.last) && normPart(giver).includes(np.first));
+    const party = /\b(party|executive committee)\b/i.test(giver + ' ' + occ);
+    const committee = /political committee|\bpac\b|committee|electioneering/i.test(giver + ' ' + occ);
+    const org = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|association|assn|union|trust|group|partners|holdings|ltd|lp|llp|pa|p\.a)\b\.?/i.test(giver);
+    const type = self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : org ? 'corporation' : 'individual';
+    const loan = v.kinds.has('LOA'), inkind = v.kinds.has('INK') && v.kinds.size === 1;
+    return { name: giver + (type === 'individual' && occ ? ' (' + occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
+      ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}) };
+  });
+  return { donors, count: n, total, to };
+}
+async function refreshFlDonors(env, key, result, name, office, save) {
+  if (!flOfficeQuery(office)) return false;
+  const fresh = result.flV === FL_DONOR_VERSION && result.flAt && Date.now() - result.flAt < 24 * 3600 * 1000;
+  if (fresh) return false;
+  try {
+    const fl = await flCandidateDonors(env, name, office);
+    if (!fl) return false;
+    result.flV = FL_DONOR_VERSION;
+    result.flAt = Date.now();
+    if (fl.count) {
+      result.donors = fl.donors;
+      result.donorDataNote = 'Contributions reported to the Florida Division of Elections for the 2026 election: ' + fl.count +
+        ' contributions totaling $' + Math.round(fl.total).toLocaleString('en-US') + (fl.to ? ', through ' + fl.to : '') +
+        '. Top givers shown; contributions to allied political committees are listed separately.';
+      result.donorSource = 'FL';
+    }
+    if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    return true;
+  } catch (e) { console.log('FL donors ' + name + ': ' + e.message); return false; }
 }
 
 async function fecGroupProfile(env, id) {
