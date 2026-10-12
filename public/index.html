@@ -873,6 +873,10 @@ en: {
   'resume.decided': '{d} of {t} races decided',
   'resume.btn': 'Resume',
   'resume.del': 'Delete this plan',
+  'disc.date': 'Researched {d}.',
+  'resume.shared': 'On a shared computer?',
+  'resume.forget': 'Forget everything on this device',
+  'resume.forgetConfirm': 'Delete every saved ballot plan and choice on this device?',
   'resume.confirm': 'Delete this saved ballot plan?',
   'resume.default': 'Saved ballot',
 
@@ -1225,6 +1229,10 @@ es: {
   'resume.decided': '{d} de {t} contiendas decididas',
   'resume.btn': 'Continuar',
   'resume.del': 'Eliminar este plan',
+  'disc.date': 'Investigado el {d}.',
+  'resume.shared': '¿Computadora compartida?',
+  'resume.forget': 'Borrar todo en este dispositivo',
+  'resume.forgetConfirm': '¿Borrar todos los planes de voto y selecciones guardados en este dispositivo?',
   'resume.confirm': '¿Eliminar este plan de voto guardado?',
   'resume.default': 'Boleta guardada',
 
@@ -1577,6 +1585,10 @@ ht: {
   'resume.decided': '{d} sou {t} eleksyon deside',
   'resume.btn': 'Kontinye',
   'resume.del': 'Efase plan sa a',
+  'disc.date': 'Rechèch fèt {d}.',
+  'resume.shared': 'Se yon òdinatè pataje?',
+  'resume.forget': 'Efase tout bagay sou aparèy sa a',
+  'resume.forgetConfirm': 'Efase tout plan vòt ak chwa ki sove sou aparèy sa a?',
   'resume.confirm': 'Efase plan vòt ou te sove a?',
   'resume.default': 'Bilten vòt ki sove',
 
@@ -2408,7 +2420,7 @@ function renderMeasureDossier(ri, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + '</p>' + reportBox();
+  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + (r.researchedAt ? ' ' + t('disc.date', {d: esc(fmtDay(r.researchedAt))}) : '') + '</p>' + reportBox();
   html += '</div>';
   $('dossierContent').innerHTML = html;
   loadBackers(r, true);
@@ -3212,7 +3224,7 @@ function renderDossier(cand, race, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + '</p>' + reportBox();
+  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + (r.researchedAt ? ' ' + t('disc.date', {d: esc(fmtDay(r.researchedAt))}) : '') + '</p>' + reportBox();
 
   html += '</div>';
   $('dossierContent').innerHTML = html;
@@ -3718,8 +3730,16 @@ function renderResumeList(){
       '<button class="rr-del" data-del="' + esc(id) + '" title="' + t('resume.del') + '">✕</button></span>' +
       '</div>';
   });
+  html += '<p class="rr-meta" style="margin-top:8px">' + t('resume.shared') + ' <button type="button" class="rr-del" id="forgetAll" style="width:auto;padding:2px 8px">' + t('resume.forget') + '</button></p>';
   box.innerHTML = html;
   box.style.display = 'block';
+  $('forgetAll').addEventListener('click', function(){
+    if(!confirm(T('resume.forgetConfirm'))) return;
+    try{ Object.keys(localStorage).forEach(function(k){ if(/^ballot305/.test(k)) localStorage.removeItem(k); }); }catch(e){}
+    ballot = null; votes = {}; currentId = null; cache = {};
+    renderResumeList();
+    location.reload();
+  });
   box.querySelectorAll('[data-resume]').forEach(function(b){
     b.addEventListener('click', function(){
       var e = loadStore().ballots[b.dataset.resume];

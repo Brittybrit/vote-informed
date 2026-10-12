@@ -31,6 +31,12 @@ const MODEL = 'claude-haiku-4-5';
 const MODEL_JUDICIAL = 'claude-sonnet-4-6'; // deeper judgment for judicial races (FedSoc screen)
 const API_URL = 'https://api.anthropic.com/v1/messages';
 const CACHE_TTL = 60 * 60 * 24 * 7;        // research: 7 days (endorsements and money move weekly)
+// Through Election Day, cached research never expires before Nov 6: otherwise entries made in early
+// voting run out on Nov 2-3 and the first voter per candidate waits 30-90s while the bill spikes.
+// Official donor data still refreshes daily on read (refreshCached), and the owner can force a fresh
+// look at any dossier from /admin.html.
+const HOLD_UNTIL = Date.parse('2026-11-06T12:00:00Z');
+function cacheTtl() { return Math.max(CACHE_TTL, Math.ceil((HOLD_UNTIL - Date.now()) / 1000)); }
 const PARSE_TTL = 60 * 60 * 24 * 30;       // parses: 30 days (a published ballot PDF doesn't change)
 const LIMIT_PARSE_PER_DAY = 10;
 const LIMIT_MONEY_PER_DAY = 40;    // fresh (uncached) race-money lookups per IP per day; FEC API only, no AI
@@ -292,11 +298,11 @@ async function handleResearch(request, env, ctx) {
     const old = await env.CACHE.get('resl4:' + key.slice(prefix.length), 'json');
     if (old && old.federalistSociety) {
       cached = old;
-      ctx.waitUntil(env.CACHE.put(key, JSON.stringify(old), { expirationTtl: CACHE_TTL }));
+      ctx.waitUntil(env.CACHE.put(key, JSON.stringify(old), { expirationTtl: cacheTtl() }));
     }
   }
   if (cached) {
-    if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: CACHE_TTL }));
+    if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: cacheTtl() }));
     return json({ result: await localize(env, await refreshCached(env, key, cached, name, officeCode, office), lang), cached: true, key });
   }
   const target = await env.CACHE.get(alias);
@@ -484,7 +490,7 @@ async function runResearch(env, key, p) {
   }
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
-  let ttl = CACHE_TTL;
+  let ttl = cacheTtl();
   if (officeCode) {
     let fecOk = false;
     try {
@@ -508,6 +514,7 @@ async function runResearch(env, key, p) {
     } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
   }
   markDisclosure(result);
+  result.researchedAt = new Date().toISOString().slice(0, 10);   // shown on the page so a reader can cite what they saw
 
   await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: ttl });
   if (p.alias) await env.CACHE.put(p.alias, key, { expirationTtl: ttl });
@@ -664,7 +671,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
         changed = true;
       }
     }
-    if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     return result;
   }
   ownSiteRatings(result);                                         // cheap, so these run on every read
@@ -710,7 +717,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
       changed = true;
     }
   }
-  if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+  if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
   return result;
 }
 
@@ -996,7 +1003,7 @@ async function refreshFec(env, key, result, name, officeCode, office) {
       result.donorDataNote = fec.note;
       result.donorListUrl = fec.listUrl || '';
       result.fecV = FEC_DATA_VERSION;
-      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     }
   } catch (e) { console.log('FEC refresh error for ' + name + ': ' + e.message); }
   return result;
@@ -1235,7 +1242,7 @@ async function handleFecGroup(url, request, env) {
   if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
   try {
     const g = await fecGroupProfile(env, id);
-    if (g) await env.CACHE.put(key, JSON.stringify(g), { expirationTtl: CACHE_TTL });
+    if (g) await env.CACHE.put(key, JSON.stringify(g), { expirationTtl: cacheTtl() });
     return json({ group: g, cached: false });
   } catch (e) {
     console.log('fec group ' + id + ' error: ' + e.message);
@@ -1269,7 +1276,7 @@ async function handleOrg(url, request, env) {
     if (!g) {
       if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
       try { g = await fecGroupProfile(env, fec); } catch (e) { console.log('org fec ' + fec + ': ' + e.message); return json({ error: 'FEC lookup failed' }, 502); }
-      if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: CACHE_TTL });
+      if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: cacheTtl() });
     }
     return json({ org: { type: 'fec', group: g, links: orgSearchLinks(g && g.name) } });
   }
@@ -1290,7 +1297,7 @@ async function handleOrg(url, request, env) {
       if (c) {
         const gk = 'fecg' + GROUP_VERSION + ':' + c.committee_id;
         let g = await env.CACHE.get(gk, 'json');
-        if (!g) { g = await fecGroupProfile(env, c.committee_id); if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: CACHE_TTL }); }
+        if (!g) { g = await fecGroupProfile(env, c.committee_id); if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: cacheTtl() }); }
         if (g) { out.type = 'fec'; out.group = g; }
       }
     }
@@ -1406,7 +1413,7 @@ async function flCommittee(env, name) {
       markDisclosure({ donors: out.funders });
     } catch (e) { console.log('fl contributions ' + name + ': ' + e.message); }
   }
-  await env.CACHE.put(key, JSON.stringify(out || { none: true }), { expirationTtl: CACHE_TTL });
+  await env.CACHE.put(key, JSON.stringify(out || { none: true }), { expirationTtl: cacheTtl() });
   return out;
 }
 
@@ -2077,7 +2084,7 @@ async function refreshFlDonors(env, key, result, name, office, save) {
       result.donorSource = 'FL';
       result.localMoney = fl.local || null;
     }
-    if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+    if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     return true;
   } catch (e) { console.log('FL donors ' + name + ': ' + e.message); return false; }
 }
@@ -2304,7 +2311,7 @@ async function refreshOutside(env, key, result, name, officeCode, office) {
     if (o) {
       result.outsideSpending = o;
       result.outV = OUTSIDE_VERSION;
-      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
+      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     }
   } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
   return result;
@@ -3051,7 +3058,7 @@ async function localize(env, result, lang) {
       // A translation that drops or changes a number (an amount, a year, a percentage) is not used:
       // that string stays in English. Names are kept by the prompt; numbers are checked here.
       texts = items.map((src, i) => { const t = tr['s' + i]; return typeof t === 'string' && numbersKept(src, t) ? t : null; });
-      await env.CACHE.put(ck, JSON.stringify(texts), { expirationTtl: CACHE_TTL });
+      await env.CACHE.put(ck, JSON.stringify(texts), { expirationTtl: cacheTtl() });
     } catch (e) {
       console.log('translate ' + lang + ' failed: ' + (e && e.message ? e.message : e));
       return result;
