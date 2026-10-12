@@ -2894,9 +2894,8 @@ function renderDossier(cand, race, r, cached){
   }
 
   var fedRace = ri >= 0 && isFederalRace(race);
-  if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
-
   html += '<div class="dsec" id="localSec"></div>';
+  if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
 
   html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
