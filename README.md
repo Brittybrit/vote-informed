@@ -55,6 +55,10 @@ If you deploy a fork, use your own name and domain. Do not present any
 deployment as official or affiliated with an elections authority, and keep
 the independence disclaimer visible.
 
+## Tests
+
+`npm test` runs the checks in `tests/` (no network, no Cloudflare account needed). GitHub runs them on every push. On the live site, /admin.html has a Check data sources button that tests each official source against a known 2026 candidate.
+
 ## Limitations
 
 Research is AI-assisted web search. It preserves source hedges, refuses to
