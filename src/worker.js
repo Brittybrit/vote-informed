@@ -78,6 +78,9 @@ export default {
       if (request.method === 'POST' && url.pathname === '/api/translate-ballot') {
         return await handleTranslateBallot(request, env);
       }
+      if (request.method === 'GET' && url.pathname === '/api/org') {
+        return await handleOrg(url, request, env);
+      }
       if (request.method === 'GET' && url.pathname === '/api/fec-group') {
         return await handleFecGroup(url, request, env);
       }
@@ -867,7 +870,7 @@ async function dropPriorElection(env, result) {
 
 // Bump when the FEC donor logic changes. Cached federal results from an older version get their
 // donor list rebuilt from FEC on next read: free API, no AI call, no rate-limit cost.
-const FEC_DATA_VERSION = 3;
+const FEC_DATA_VERSION = 4;
 async function refreshFec(env, key, result, name, officeCode) {
   if (!officeCode || result.fecV === FEC_DATA_VERSION) return result;
   try {
@@ -1090,6 +1093,69 @@ async function handleFecGroup(url, request, env) {
     console.log('fec group ' + id + ' error: ' + e.message);
     return json({ error: 'FEC lookup failed' }, 502);
   }
+}
+
+// "About this group" for any organization in a money list.
+//   ?fec=C12345678  a federal committee: its FEC profile (funders, lean, totals...)
+//   ?name=...       anything else: an exact-name FEC committee match, else an exact-name IRS
+//                   nonprofit match (501(c)(4)/(5)/(6)), else a business with links to search
+//                   public records. Exact matches only, so a group is never confused with another.
+// Cached a week, shared by everyone. Search links are always included.
+const ORG_VERSION = 1;
+function orgSearchLinks(name) {
+  const plain = String(name || '').replace(/\s*\(.*\)\s*$/, '').trim();
+  const bare = plain.replace(/[,\s]*\b(l\.?\s?l\.?\s?c\.?|inc\.?|corp\.?|corporation|co\.?)\s*$/i, '').trim() || plain;
+  return [
+    { k: 'sunbiz', url: 'https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?inquiryType=EntityName&searchTerm=' + encodeURIComponent(bare) },
+    { k: 'irs', url: 'https://projects.propublica.org/nonprofits/search?q=' + encodeURIComponent(bare) },
+    { k: 'fec', url: 'https://www.fec.gov/data/committees/?q=' + encodeURIComponent(bare) }
+  ];
+}
+async function handleOrg(url, request, env) {
+  const fec = String(url.searchParams.get('fec') || '');
+  const name = String(url.searchParams.get('name') || '').slice(0, 200).trim();
+  if (fec) {
+    if (!/^C\d{8}$/.test(fec)) return json({ error: 'Bad committee id' }, 400);
+    const gk = 'fecg' + GROUP_VERSION + ':' + fec;
+    let g = await env.CACHE.get(gk, 'json');
+    if (!g) {
+      if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
+      try { g = await fecGroupProfile(env, fec); } catch (e) { console.log('org fec ' + fec + ': ' + e.message); return json({ error: 'FEC lookup failed' }, 502); }
+      if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: CACHE_TTL });
+    }
+    return json({ org: { type: 'fec', group: g, links: orgSearchLinks(g && g.name) } });
+  }
+  if (!name) return json({ error: 'Missing name' }, 400);
+  const key = 'org' + ORG_VERSION + ':' + (await sha256(normOrg(name) || normPart(name)));
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return json({ org: hit, cached: true });
+  if (!(await rateLimit(env, 'group', clientIP(request), LIMIT_GROUP_PER_DAY))) return json({ error: 'Daily limit reached' }, 429);
+
+  const out = { type: 'none', name, links: orgSearchLinks(name) };
+  const want = normOrg(name);
+  try {
+    // A federal committee with exactly this name?
+    const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
+    const r = await fetch('https://api.open.fec.gov/v1/committees/?q=' + encodeURIComponent(name.replace(/\s*\(.*\)\s*$/, '')) + '&per_page=20&api_key=' + apiKey);
+    if (r.ok) {
+      const c = ((await r.json()).results || []).find(x => normOrg(x.name) === want);
+      if (c) {
+        const gk = 'fecg' + GROUP_VERSION + ':' + c.committee_id;
+        let g = await env.CACHE.get(gk, 'json');
+        if (!g) { g = await fecGroupProfile(env, c.committee_id); if (g) await env.CACHE.put(gk, JSON.stringify(g), { expirationTtl: CACHE_TTL }); }
+        if (g) { out.type = 'fec'; out.group = g; }
+      }
+    }
+  } catch (e) { console.log('org fec search ' + name + ': ' + e.message); }
+  if (out.type === 'none') {
+    try {
+      const o = await findNonprofit(name);
+      if (o) { out.type = 'nonprofit'; out.nonprofit = { ...(await nonprofitDetails(env, o.ein)), subsection: o.subseccd }; }
+    } catch (e) { console.log('org nonprofit ' + name + ': ' + e.message); }
+  }
+  if (out.type === 'none' && /\b(l\.?\s?l\.?\s?c|inc|corp|corporation|company|co|lp|llp|holdings|group|partners|enterprises|ventures)\b\.?/i.test(name)) out.type = 'business';
+  await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: CACHE_TTL });
+  return json({ org: out, cached: false });
 }
 
 async function fecGroupProfile(env, id) {
@@ -1357,6 +1423,7 @@ async function fecTopDonors(env, name, officeCode) {
       name: n + (v.employer && v.type === 'IND' ? ' (' + v.employer + ')' : ''),
       amount: '$' + Math.round(v.amount).toLocaleString('en-US'),
       type: COMMITTEE_ENTITIES[v.type] ? committeeKind(n, reg[v.cid], v.type) : (typeMap[v.type] || 'contributor'),
+      ...(COMMITTEE_ENTITIES[v.type] && /^C\d{8}$/.test(v.cid) ? { fecId: v.cid } : {}),
       // this donor's own contributions to this campaign, not the whole receipts list
       url: 'https://www.fec.gov/data/receipts/?committee_id=' + committee.committee_id +
            '&contributor_name=' + encodeURIComponent(n) + '&two_year_transaction_period=' + cycle

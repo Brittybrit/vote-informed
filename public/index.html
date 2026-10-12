@@ -309,6 +309,8 @@
   .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
   .og-body .og-f .dname{font-size:13px;}
   .og-links{margin-top:6px !important;}
+  .og-body details.og{margin-left:4px; padding-left:8px; border-left:2px solid #DDDDD5;}
+  .og-search{font-size:12px;}
   .og-np{margin:6px 0 4px; padding:6px 8px; border-left:3px solid var(--flag-rule); background:var(--flag-bg); font-size:12.5px;}
   .og-np .og-fh{margin-top:0;}
   .og-off{list-style:none; margin:2px 0 4px; padding:0;}
@@ -687,6 +689,11 @@ en: {
   'og.nprev': '{amt} revenue ({year})',
   'og.npsince': 'tax-exempt since {year}',
   'og.npsrc': 'Its IRS filings',
+  'og.npintro': 'A 501(c)({code}) nonprofit on the IRS list. It does not have to name its donors.',
+  'og.business': 'A business. Its Florida filings list its officers or managers.',
+  'og.nomatch': 'No federal PAC or IRS nonprofit matched this exact name. It may be a Florida political committee, a business, or a group known by another name.',
+  'og.searchlbl': 'Search public records:',
+  'og.search.sunbiz': 'Florida businesses', 'og.search.irs': 'IRS nonprofits', 'og.search.fec': 'FEC committees',
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
@@ -943,6 +950,11 @@ es: {
   'og.nprev': '{amt} de ingresos ({year})',
   'og.npsince': 'exento de impuestos desde {year}',
   'og.npsrc': 'Sus declaraciones al IRS',
+  'og.npintro': 'Una organización sin fines de lucro 501(c)({code}) en la lista del IRS. No tiene que nombrar a sus donantes.',
+  'og.business': 'Una empresa. Sus registros en Florida indican sus directivos o gerentes.',
+  'og.nomatch': 'Ningún PAC federal ni organización sin fines de lucro del IRS coincide exactamente con este nombre. Puede ser un comité político de Florida, una empresa o un grupo conocido por otro nombre.',
+  'og.searchlbl': 'Buscar registros públicos:',
+  'og.search.sunbiz': 'Empresas de Florida', 'og.search.irs': 'Organizaciones del IRS', 'og.search.fec': 'Comités de la FEC',
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
@@ -1199,6 +1211,11 @@ ht: {
   'og.nprev': '{amt} revni ({year})',
   'og.npsince': 'egzante taks depi {year}',
   'og.npsrc': 'Deklarasyon IRS li yo',
+  'og.npintro': 'Yon òganizasyon san bi likratif 501(c)({code}) ki sou lis IRS la. Li pa oblije nonmen donatè li yo.',
+  'og.business': 'Yon biznis. Dosye li nan Florid bay non ofisye oswa manadjè li yo.',
+  'og.nomatch': 'Pa gen okenn PAC federal ni òganizasyon IRS ki koresponn egzakteman ak non sa a. Li ka yon komite politik Florid, yon biznis, oswa yon gwoup ki gen yon lòt non.',
+  'og.searchlbl': 'Chèche dosye piblik:',
+  'og.search.sunbiz': 'Biznis Florid', 'og.search.irs': 'Òganizasyon IRS', 'og.search.fec': 'Komite FEC',
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
@@ -1961,14 +1978,15 @@ function measureVoteBar(ri, race){
 
 function funderRows(list){
   if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('fin.none') + '</p>';
-  return list.map(function(d){
+  return byAmount(list).map(function(d){
     return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
     (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
     '<div class="tagrow">' + leanTag(d.lean, d) +
     kindTag(d.kind, d.kind_tr) + disclosureTag(d) +
     (d.amount ? '<span class="tag amtchip">' + esc(fmtAmount(d.amount)) + '</span>' : '') +
-    srcLink(d.url) +
-    '</div></div>';
+    srcLink(d.url) + '</div>' +
+    (isOrgEntry(d, d.kind) ? orgDetails(d) : '') +
+    '</div>';
   }).join('');
 }
 
@@ -2123,14 +2141,14 @@ function outsideRows(list){
       (donors ? ' <a class="srclink" href="' + esc(donors) + '" target="_blank" rel="noopener noreferrer">' + t('outside.donors') + ' ↗</a>' : '') +
       '</span>' +
       (bought ? '<div class="og-bought">' + t('og.bought') + ' ' + esc(bought) + '</div>' : '') +
-      (fec ? '<details class="og" data-fec="' + fec + '"><summary>' + t('og.about') + '</summary><div class="og-body">' + t('og.loading') + '</div></details>' : '') +
+      (isOrgEntry(d, d.kind) ? orgDetails(d) : '') +
       '</div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
   }).join('');
 }
 
 // Facts about each outside group, loaded after the dossier renders. Shared and cached on the server.
-var groupCache = {};
+var orgCache = {};
 function fmtUSD(n){ return n == null ? '' : '$' + Math.round(n).toLocaleString('en-US'); }
 function fmtShortUSD(n){
   if(n == null) return '';
@@ -2185,7 +2203,8 @@ function groupBody(g){
   } else if(g.funders && g.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + g.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
-        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span>' + npBlock(f.np) + '</div>' +
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + srcLink(f.url) + '</span>' + npBlock(f.np) +
+        (!f.np && isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>' +
         '<span class="damt">' + esc(f.amount) + '</span></div>';
     }).join('');
   } else {
@@ -2197,21 +2216,74 @@ function groupBody(g){
   if(links.length) h += '<p class="og-links">' + links.join(' ') + '</p>';
   return h;
 }
-function fillGroup(id, g){
-  document.querySelectorAll('.og[data-fec="' + id + '"] .og-body').forEach(function(b){ b.innerHTML = g ? groupBody(g) : t('og.fail'); });
-  if(g && g.lean && g.lean.side !== 'mixed')
-    document.querySelectorAll('.og-lean[data-fec="' + id + '"]').forEach(function(sp){ sp.innerHTML = leanTag(g.lean.side); });
+// "About this group" panels. Any organization in a money list gets one. Loaded when opened (top-level
+// outside spenders load right away so their Left/Right tag shows), cached here and on the server.
+function isOrgEntry(d, typ){
+  var t = String(typ || '').toLowerCase();
+  if(!d || !d.name) return false;
+  if(/individual|self|candidate committee|^candidate$|platform|conduit/.test(t)) return false;
+  return true;
+}
+function orgDetails(d){
+  var fec = /^C\d{8}$/.test(d.fecId || '') ? d.fecId : '';
+  var name = String(d.name || '').replace(/\s*\(.*\)\s*$/, '').trim();
+  var attr = fec ? 'data-fec="' + fec + '"' : 'data-org="' + esc(name) + '"';
+  return '<details class="og" ' + attr + '><summary>' + t('og.about') + '</summary><div class="og-body">' + t('og.loading') + '</div></details>';
+}
+function panelKey(el){
+  var f = el.getAttribute('data-fec');
+  return f ? 'fec:' + f : 'org:' + (el.getAttribute('data-org') || '');
+}
+function linksBlock(links){
+  var L = (links || []).filter(function(l){ return safeUrl(l.url); }).map(function(l){
+    return '<a class="srclink" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">' + t('og.search.' + l.k) + ' ↗</a>';
+  });
+  return L.length ? '<p class="og-links og-search">' + t('og.searchlbl') + ' ' + L.join(' ') + '</p>' : '';
+}
+function orgBody(o){
+  if(!o) return t('og.fail');
+  if(o.type === 'fec' && o.group) return groupBody(o.group);
+  var h = '';
+  if(o.type === 'nonprofit' && o.nonprofit){
+    h += '<p>' + t('og.npintro', {code: o.nonprofit.subsection || ''}) + '</p>' + npBlock(o.nonprofit);
+  } else if(o.type === 'business'){
+    h += '<p>' + t('og.business') + '</p>';
+  } else {
+    h += '<p>' + t('og.nomatch') + '</p>';
+  }
+  return h + linksBlock(o.links);
+}
+function fillPanels(k, o){
+  document.querySelectorAll('details.og').forEach(function(el){
+    if(panelKey(el) !== k) return;
+    el.setAttribute('data-loaded', '1');
+    var b = el.querySelector(':scope > .og-body');
+    if(b) b.innerHTML = orgBody(o);
+  });
+  var g = o && o.type === 'fec' ? o.group : null;
+  if(g && g.lean && g.lean.side !== 'mixed' && k.indexOf('fec:') === 0)
+    document.querySelectorAll('.og-lean[data-fec="' + k.slice(4) + '"]').forEach(function(sp){ sp.innerHTML = leanTag(g.lean.side); });
+}
+function loadPanel(el){
+  if(el.getAttribute('data-loaded')) return;
+  var k = panelKey(el);
+  if(k === 'org:') return;
+  el.setAttribute('data-loaded', '1');
+  if(orgCache[k]){ fillPanels(k, orgCache[k]); return; }
+  var url = k.indexOf('fec:') === 0 ? '/api/org?fec=' + encodeURIComponent(k.slice(4)) : '/api/org?name=' + encodeURIComponent(k.slice(4));
+  fetch(url).then(function(r){ return r.json(); }).then(function(j){
+    if(j && j.org) orgCache[k] = j.org;
+    fillPanels(k, j && j.org);
+  }).catch(function(){ fillPanels(k, null); });
 }
 function loadGroups(){
-  var ids = {};
-  document.querySelectorAll('.og[data-fec]').forEach(function(el){ ids[el.getAttribute('data-fec')] = 1; });
-  Object.keys(ids).forEach(function(id){
-    if(groupCache[id]){ fillGroup(id, groupCache[id]); return; }
-    fetch('/api/fec-group?id=' + encodeURIComponent(id)).then(function(r){ return r.json(); }).then(function(j){
-      if(j && j.group){ groupCache[id] = j.group; fillGroup(id, j.group); } else fillGroup(id, null);
-    }).catch(function(){ fillGroup(id, null); });
-  });
+  // top-level outside spenders: load now so the Left/Right tag appears without opening the panel
+  document.querySelectorAll('.og-row details.og[data-fec]').forEach(loadPanel);
 }
+document.addEventListener('toggle', function(e){
+  var el = e.target;
+  if(el && el.matches && el.matches('details.og') && el.open) loadPanel(el);
+}, true);
 
 function srcLink(url){
   var u = safeUrl(url);
@@ -2380,7 +2452,7 @@ function renderDossier(cand, race, r, cached){
                : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span>' + (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
   } else {
@@ -2406,7 +2478,7 @@ function renderDossier(cand, race, r, cached){
     html += r.committeeDonors.map(function(d){
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url) + '</span>' + (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span></div>';
     }).join('');
     html += '</div>';
