@@ -37,6 +37,7 @@
     --group-bg:#F2EFE6; --group-fg:#6B5D3F;
     --flag-bg:#FDF1D8; --flag-fg:#8A5A0B; --flag-rule:#D9A93F;
     --ok-bg:#E6F0E8; --ok-fg:#2F6B3C;
+    --no-bg:#9B2C1F;   /* opposition headers: brick, darker than the party-red tags so it doesn't read as Republican */
     --vote-bg:#EEF5EF;
     --panel:#FFFFFF;
     --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
@@ -316,7 +317,7 @@
   .og-ok{color:var(--ok-fg); font-size:12px;}
   .bk-row{border-bottom:1px solid #DDDDD5; padding:2px 0 8px 10px; margin-bottom:6px; border-left:4px solid transparent;}
   .bk-side-yes .bk-row{border-left-color:var(--ok-fg);}
-  .bk-side-no .bk-row{border-left-color:var(--ink);}
+  .bk-side-no .bk-row{border-left-color:var(--no-bg);}
   .bk-row > .donor-row{border-bottom:0; padding-bottom:2px;}
   .bk-paths{margin:0 0 0 2px; padding-left:16px; font-size:12.5px; line-height:1.45; color:var(--ink-soft);}
   .bk-paths li{margin:2px 0;}
@@ -346,7 +347,7 @@
   /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
   .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
   .fin-side.side-yes{color:var(--ok-fg); background:var(--ok-bg); border-left-color:var(--ok-fg);}
-  .fin-side.side-no{color:var(--paper); background:var(--ink); border-left-color:var(--ink);}
+  .fin-side.side-no{color:#fff; background:var(--no-bg); border-left-color:#6E1D14;}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
 
   .dossier-body{padding:20px; overflow-wrap:break-word; max-width:100%; min-width:0;}
