@@ -73,3 +73,7 @@ MIT. See LICENSE.
 ## Updating records-request status
 
 City data coverage and public records requests live in `public/data/coverage.json`. Change a city's `status` (`official`, `portal`, `pdf`, `requested`, `notfound`), add `reply` (YYYY-MM-DD) and a short `replyNote` when a clerk answers, bump `updated`, and deploy. Candidate pages and the methodology page both read this file.
+
+## Cities with scanned reports
+
+`public/data/city-reports.json` holds donors typed in from cities that post only scanned treasurer's reports (Pinecrest). Each row is `[date, contributor, type, amount, kind]`: type `I` individual, `B` business, `F` political committee, `S` the candidate; kind `loan` or `in-kind` when it applies. When the clerk posts a new report, add it to the candidate's `reports` with its `period` and `url`, check the rows add up to the report's summary page, bump `updated` (cards refresh when it changes), and deploy.
