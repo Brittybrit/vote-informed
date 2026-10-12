@@ -439,6 +439,9 @@ async function runResearch(env, key, p) {
     catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
     ownSiteRatings(result);
     separateCommitteeMoney(result, office, officeCode);
+    try { await resourcePartyLinks(env, result, name, office); }
+    catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
+    result.linkV = LINK_VERSION;
   }
 
   // Federal races: replace search-derived donors with itemized FEC data (authoritative, free API)
@@ -634,6 +637,12 @@ async function refreshCached(env, key, result, name, officeCode, office) {
       changed = true;
     } catch (e) { console.log('opposition split error for ' + name + ': ' + e.message); }
   }
+  if (result.linkV !== LINK_VERSION) {
+    try { await resourcePartyLinks(env, result, name, office); }
+    catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
+    result.linkV = LINK_VERSION;   // set even on failure: never retry on every read
+    changed = true;
+  }
   if (result.federalistSociety && result.fsV !== FEDSOC_VERSION) {
     try {
       await regradeFedsoc(env, result, name);
@@ -726,6 +735,46 @@ function applyKnownLeans(result) {
   fix(result.endorsements); fix(result.opposition); fix(result.ratings);
   fix(result.supporters); fix(result.opponents);
   if (result.financing) { fix(result.financing.support); fix(result.financing.oppose); }
+  return result;
+}
+
+// An endorsement should link the endorser's own page (site or official social account) or news
+// coverage of it, never a party's website repeating someone else's endorsement (that made a
+// newspaper's pick look like a party product). Offending links get one small web search for the
+// primary source; if none is found the link is dropped and the endorsement stays.
+// Bump to re-check every cached result.
+const LINK_VERSION = 1;
+const PARTY_HOST = /(dems|democrat|gop|republican)/i;
+const PARTY_ORG = /\b(democrat\w*|dems|republican\w*|gop)\b/i;
+function partyCited(e) {
+  if (!e || !e.url) return false;
+  let host = '';
+  try { host = new URL(e.url).hostname; } catch (x) { return false; }
+  return PARTY_HOST.test(host) && !PARTY_ORG.test(String(e.org || e.name || ''));
+}
+async function resourcePartyLinks(env, result, name, office) {
+  const items = [...(result.endorsements || []), ...(result.opposition || []), ...(result.ratings || [])].filter(partyCited);
+  for (const e of items.slice(0, 4)) {
+    const seen = new Map();
+    let url = '';
+    try {
+      const text = await callAnthropic(env, {
+        model: MODEL,
+        max_tokens: 600,
+        temperature: 0,
+        messages: [{ role: 'user', content: [
+          'Find the page where ' + (e.org || e.name) + ' itself announced its endorsement or recommendation regarding ' + name + ' (' + office + '): its own website, or its own official social media account. If you cannot find that, a news outlet’s report of it is acceptable.',
+          'NOT acceptable: a political party, party club, or campaign website repeating it.',
+          'Respond with ONLY JSON: {"url": "the exact URL from your search results"} or {"url": ""} if none.'
+        ].join('\n') }],
+        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 2 }]
+      }, seen);
+      const cand = String((extractJSON(text) || {}).url || '');
+      const real = cand ? seen.get(normUrl(cand)) : '';
+      if (real && /^https:\/\//i.test(real) && !partyCited({ url: real, org: e.org || e.name })) url = real;
+    } catch (x) { console.log('link re-source error for ' + name + ': ' + x.message); }
+    e.url = url;   // primary source, or no link rather than a party page
+  }
   return result;
 }
 
