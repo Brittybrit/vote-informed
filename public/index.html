@@ -399,10 +399,10 @@
   #tagpop .tp-title{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; opacity:.8;}
   #tagpop .tp-body{font-size:13px; line-height:1.5; margin-top:5px;}
 
-  .fedsoc{border:2px solid var(--flag-rule); background:var(--flag-bg); padding:14px 16px;}
-  .fedsoc.none{border-color:#9DB8A4; background:var(--ok-bg);}
-  .fedsoc .fstatus{font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.06em; color:var(--flag-fg);}
-  .fedsoc.none .fstatus{color:var(--ok-fg);}
+  .fedsoc{border:2px solid var(--nonp-fg); background:var(--nonp-bg); padding:14px 16px;}
+  .fedsoc.none{border-color:#C9C9C1; background:var(--paper);}
+  .fedsoc .fstatus{font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.06em; color:var(--ink);}
+  .fedsoc.none .fstatus{color:var(--ink-soft);}
   .fedsoc ul{margin-top:10px; padding-left:18px;}
   .fedsoc li{font-size:13.5px; line-height:1.5; margin-bottom:8px;}
   .fedsoc li .src{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:block;}
@@ -645,6 +645,9 @@ en: {
   'status.translating': 'Translating the ballot',
   'err.slow': 'Research is taking longer than usual. Tap Retry in a moment. It may already be finished.',
   'juris.unknown': 'Jurisdiction unknown',
+  'upload.banner': 'This ballot was read from the PDF you uploaded, not the county&rsquo;s master ballot. Compare it with your official sample ballot from Miami-Dade Elections.',
+  'upload.missing': 'Not on the county&rsquo;s master ballot: {names}.',
+  'upload.party': 'Party differs from the county&rsquo;s master ballot: {names}.',
 
   'race.badge.measure': 'Ballot measure &middot; Finance check',
   'race.badge.judicial': 'Judicial',
@@ -692,9 +695,9 @@ en: {
   'mv.unmark': 'Tap your pick again to remove it from your plan',
 
   'sec.judicial': 'Judicial Screen',
-  'fs.documented': '⚑ Federalist Society: documented ties',
-  'fs.possible': '⚑ Federalist Society: possible ties',
-  'fs.none': '○ Federalist Society: no ties found',
+  'fs.documented': 'Federalist Society: documented ties',
+  'fs.possible': 'Federalist Society: possible ties',
+  'fs.none': 'Federalist Society: no ties found',
   'fs.noneText': 'Nothing in searched coverage, bios, or event records connected this candidate to the Federalist Society.',
   'sec.money': 'Money in This Race',
   'mny.loading': 'Loading FEC fundraising totals…',
@@ -864,6 +867,7 @@ en: {
   'lean.left': 'Left',
   'lean.right': 'Right',
   'lean.nonpartisan': 'Nonpartisan',
+  'lean.press': 'News outlet',
 
   'resume.title': 'Your saved ballot plans',
   'resume.decided': '{d} of {t} races decided',
@@ -922,6 +926,7 @@ en: {
   'tag.left.l': 'Lean: Left', 'tag.left.d': 'This organization or person generally aligns with liberal or progressive politics. The tag describes the endorser or funder, not the candidate or measure.',
   'tag.right.l': 'Lean: Right', 'tag.right.d': 'This organization or person generally aligns with conservative politics. The tag describes the endorser or funder, not the candidate or measure.',
   'tag.np.l': 'Lean: Nonpartisan', 'tag.np.d': 'No consistent alignment with either major party, or officially neutral.',
+  'tag.press.l': 'Lean: News outlet', 'tag.press.d': 'A newspaper or broadcaster. Its editorial board may endorse candidates of either party; it gets no left or right label here.',
   'tag.platform.l': 'Online Donation Platform', 'tag.platform.d': 'A service like WinRed (Republican) or ActBlue (Democratic) that processes online donations. This total is many individual donors giving through it, often in small amounts, not one group giving its own money.',
   'tag.super.l': 'Super PAC', 'tag.super.d': 'A committee that can raise unlimited money from people, companies and unions, but cannot give it directly to candidates. It spends on its own ads instead. One appearing here usually means a hybrid super PAC giving from a separate, limited account.',
   'tag.noncon.l': 'Nonconnected PAC', 'tag.noncon.d': 'A PAC not tied to any company, union or association. Usually an ideological, issue or leadership PAC that raises from individuals. Limited to $5,000 per election to a candidate.',
@@ -992,6 +997,9 @@ es: {
   'status.translating': 'Traduciendo la boleta',
   'err.slow': 'La investigación está tardando más de lo normal. Toque Reintentar en un momento. Puede que ya haya terminado.',
   'juris.unknown': 'Jurisdicción desconocida',
+  'upload.banner': 'Esta boleta se leyó del PDF que usted cargó, no de la boleta maestra del condado. Compárela con su boleta de muestra oficial de Elecciones de Miami-Dade.',
+  'upload.missing': 'No aparecen en la boleta maestra del condado: {names}.',
+  'upload.party': 'El partido es distinto al de la boleta maestra del condado: {names}.',
 
   'race.badge.measure': 'Medida electoral &middot; Revisión de financiamiento',
   'race.badge.judicial': 'Judicial',
@@ -1039,9 +1047,9 @@ es: {
   'mv.unmark': 'Toque su selección otra vez para quitarla de su plan',
 
   'sec.judicial': 'Revisión judicial',
-  'fs.documented': '⚑ Federalist Society: vínculos documentados',
-  'fs.possible': '⚑ Federalist Society: posibles vínculos',
-  'fs.none': '○ Federalist Society: no se encontraron vínculos',
+  'fs.documented': 'Federalist Society: vínculos documentados',
+  'fs.possible': 'Federalist Society: posibles vínculos',
+  'fs.none': 'Federalist Society: no se encontraron vínculos',
   'fs.noneText': 'Nada en la cobertura revisada, biografías o registros de eventos vinculó a este candidato con la Federalist Society.',
   'sec.money': 'Dinero en esta contienda',
   'mny.loading': 'Cargando los totales de recaudación de la FEC…',
@@ -1211,6 +1219,7 @@ es: {
   'lean.left': 'Izquierda',
   'lean.right': 'Derecha',
   'lean.nonpartisan': 'No partidista',
+  'lean.press': 'Medio de noticias',
 
   'resume.title': 'Sus planes de voto guardados',
   'resume.decided': '{d} de {t} contiendas decididas',
@@ -1269,6 +1278,7 @@ es: {
   'tag.left.l': 'Tendencia: Izquierda', 'tag.left.d': 'Esta organización o persona generalmente se alinea con la política liberal o progresista. La etiqueta describe a quien respalda o financia, no al candidato ni a la medida.',
   'tag.right.l': 'Tendencia: Derecha', 'tag.right.d': 'Esta organización o persona generalmente se alinea con la política conservadora. La etiqueta describe a quien respalda o financia, no al candidato ni a la medida.',
   'tag.np.l': 'Tendencia: No partidista', 'tag.np.d': 'Sin alineación constante con ninguno de los partidos principales, u oficialmente neutral.',
+  'tag.press.l': 'Tendencia: Medio de noticias', 'tag.press.d': 'Un periódico o emisora. Su consejo editorial puede respaldar a candidatos de cualquier partido; aquí no recibe etiqueta de izquierda ni derecha.',
   'tag.platform.l': 'Plataforma de donaciones en línea', 'tag.platform.d': 'Un servicio como WinRed (republicano) o ActBlue (demócrata) que procesa donaciones en línea. Este total es de muchos donantes individuales que dan a través de él, a menudo en montos pequeños, no un grupo que da su propio dinero.',
   'tag.super.l': 'Super PAC', 'tag.super.d': 'Un comité que puede recaudar dinero ilimitado de personas, empresas y sindicatos, pero no puede darlo directamente a los candidatos. En cambio, paga sus propios anuncios. Si aparece aquí, normalmente es un super PAC híbrido que da desde una cuenta separada y limitada.',
   'tag.noncon.l': 'PAC no vinculado', 'tag.noncon.d': 'Un PAC que no está ligado a ninguna empresa, sindicato o asociación. Suele ser un PAC ideológico, temático o de liderazgo que recauda de individuos. Limitado a $5,000 por elección para un candidato.',
@@ -1339,6 +1349,9 @@ ht: {
   'status.translating': 'N ap tradui bilten vòt la',
   'err.slow': 'Rechèch la ap pran plis tan pase nòmal. Peze Eseye ankò nan yon ti moman. Li ka gentan fini.',
   'juris.unknown': 'Nou pa konnen jiridiksyon an',
+  'upload.banner': 'Nou li bilten sa a nan PDF ou chaje a, pa nan bilten prensipal konte a. Konpare l ak egzanp bilten vòt ofisyèl ou nan Eleksyon Miami-Dade.',
+  'upload.missing': 'Pa nan bilten prensipal konte a: {names}.',
+  'upload.party': 'Pati a pa menm ak bilten prensipal konte a: {names}.',
 
   'race.badge.measure': 'Mezi sou bilten vòt &middot; Verifikasyon finansman',
   'race.badge.judicial': 'Jidisyè',
@@ -1386,9 +1399,9 @@ ht: {
   'mv.unmark': 'Peze chwa w la ankò pou retire l nan plan ou',
 
   'sec.judicial': 'Verifikasyon jidisyè',
-  'fs.documented': '⚑ Federalist Society: lyen ki dokimante',
-  'fs.possible': '⚑ Federalist Society: lyen ki posib',
-  'fs.none': '○ Federalist Society: nou pa jwenn okenn lyen',
+  'fs.documented': 'Federalist Society: lyen ki dokimante',
+  'fs.possible': 'Federalist Society: lyen ki posib',
+  'fs.none': 'Federalist Society: nou pa jwenn okenn lyen',
   'fs.noneText': 'Anyen nan sous nou chèche yo, nan biyografi oswa nan dosye evènman pa konekte kandida sa a ak Federalist Society.',
   'sec.money': 'Lajan nan eleksyon sa a',
   'mny.loading': 'N ap chaje total lajan FEC la…',
@@ -1558,6 +1571,7 @@ ht: {
   'lean.left': 'Gòch',
   'lean.right': 'Dwat',
   'lean.nonpartisan': 'San pati',
+  'lean.press': 'Medya nouvèl',
 
   'resume.title': 'Plan vòt ou sove yo',
   'resume.decided': '{d} sou {t} eleksyon deside',
@@ -1616,6 +1630,7 @@ ht: {
   'tag.left.l': 'Tandans: Gòch', 'tag.left.d': 'Òganizasyon oswa moun sa a jeneralman dakò ak politik liberal oswa pwogresis. Etikèt la dekri moun ki bay sipò a oswa lajan an, pa kandida a oswa mezi a.',
   'tag.right.l': 'Tandans: Dwat', 'tag.right.d': 'Òganizasyon oswa moun sa a jeneralman dakò ak politik konsèvatè. Etikèt la dekri moun ki bay sipò a oswa lajan an, pa kandida a oswa mezi a.',
   'tag.np.l': 'Tandans: San pati', 'tag.np.d': 'Li pa toujou dakò ak okenn nan de gwo pati yo, oswa li ofisyèlman net.',
+  'tag.press.l': 'Tandans: Medya nouvèl', 'tag.press.d': 'Yon jounal oswa yon estasyon. Komite editoryal li ka sipòte kandida nenpòt pati; isit la li pa gen etikèt gòch oswa dwat.',
   'tag.platform.l': 'Platfòm don sou entènèt', 'tag.platform.d': 'Yon sèvis tankou WinRed (Repibliken) oswa ActBlue (Demokrat) ki trete don sou entènèt. Total sa a se anpil moun ki bay atravè l, souvan ti kòb, se pa yon sèl gwoup k ap bay pwòp lajan l.',
   'tag.super.l': 'Super PAC', 'tag.super.d': 'Yon komite ki ka ranmase lajan san limit nan men moun, konpayi ak sendika, men ki pa ka bay lajan sa a dirèkteman bay kandida yo. Li peye pwòp piblisite pa l pito. Si li parèt isit la, anjeneral se yon super PAC ibrid k ap bay nan yon kont apa ki gen limit.',
   'tag.noncon.l': 'PAC ki pa konekte', 'tag.noncon.d': 'Yon PAC ki pa mare ak okenn konpayi, sendika oswa asosyasyon. Anjeneral se yon PAC ideyolojik, sou yon kesyon, oswa yon PAC lidèchip ki ranmase lajan nan men moun. Limit la se $5,000 pa eleksyon pou yon kandida.',
@@ -1767,6 +1782,9 @@ async function ensureBallotTranslation(quiet){
   if(LANG === 'en' || !ballot || (ballot.tr && ballot.tr[LANG])) return;
   if(!quiet) setStatus(t('status.translating'), false, true);
   // Best: the Spanish and Kreyol printed on the ballot itself (official county wording).
+  if(!lastPdf && ballot._master){
+    try{ var pr = await fetch(FEATURED_BALLOT_PATH); if(pr.ok) lastPdf = bufToB64(await pr.arrayBuffer()); }catch(e){}
+  }
   if(lastPdf){
     try{
       var both = await api('/api/ballot-text', {
@@ -1914,7 +1932,9 @@ async function handleFile(file){
   try{
     lastPdf = base64;
     var data = await api('/api/parse', { pdf: base64 });
+    if(data && data.ballot) data.ballot._upload = true;
     applyParsed(data);
+    checkUploadAgainstMaster();
   }catch(e){
     setStatus(t('status.cantparse', {msg: esc(e.message)}), true);
   }
@@ -1946,6 +1966,14 @@ function bufToB64(buf){
 
 async function loadFeaturedBallot(){
   setStatus(t('status.loadingMaster'), false, true);
+  // Fast path: the countywide ballot is already parsed on the server; no PDF download or upload.
+  try{
+    var mres = await fetch('/api/master');
+    if(mres.ok){
+      var md = await mres.json();
+      if(md && md.ballot && md.ballot.races){ md.ballot._master = true; lastPdf = null; applyParsed(md); return; }
+    }
+  }catch(e){ /* fall back to reading the bundled PDF */ }
   try{
     var res = await fetch(FEATURED_BALLOT_PATH);
     if(!res.ok) throw new Error('Bundled ballot missing (HTTP ' + res.status + ')');
@@ -1957,6 +1985,40 @@ async function loadFeaturedBallot(){
   }catch(e){
     setStatus(t('status.cantMaster', {msg: esc(e.message)}), true);
   }
+}
+
+// An uploaded PDF is read as-is, so a doctored "sample ballot" could add, drop or relabel candidates.
+// Compare it with the county's master ballot and say what differs, above the races.
+var uploadCheck = null;
+async function checkUploadAgainstMaster(){
+  var forBallot = ballot;
+  uploadCheck = null;
+  try{
+    var r = await fetch('/api/master'); if(!r.ok) return;
+    var m = (await r.json()).ballot;
+    var norm = function(x){ return String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim(); };
+    var known = {};
+    m.races.forEach(function(rc){ if(!rc.isMeasure) rc.candidates.forEach(function(c){ known[norm(c.name)] = c.party || ''; }); });
+    var missing = [], party = [];
+    forBallot.races.forEach(function(rc){
+      if(rc.isMeasure) return;
+      rc.candidates.forEach(function(c){
+        var k = norm(c.name);
+        if(!(k in known)) missing.push(c.name);
+        else if((c.party || '') && known[k] && (c.party || '').toUpperCase() !== known[k].toUpperCase()) party.push(c.name + ' (' + c.party + ' / ' + known[k] + ')');
+      });
+    });
+    if(ballot !== forBallot) return;
+    uploadCheck = { missing: missing, party: party };
+    renderBallot();
+  }catch(e){}
+}
+function uploadBanner(){
+  if(!ballot || !ballot._upload) return '';
+  var h = '<div class="cov-box" style="margin-top:8px">' + t('upload.banner');
+  if(uploadCheck && uploadCheck.missing.length) h += '<br>' + t('upload.missing', {names: esc(uploadCheck.missing.slice(0, 6).join(', ')) + (uploadCheck.missing.length > 6 ? ', …' : '')});
+  if(uploadCheck && uploadCheck.party.length) h += '<br>' + t('upload.party', {names: esc(uploadCheck.party.slice(0, 6).join(', '))});
+  return h + '</div>';
 }
 
 /* ---------------- render ballot ---------------- */
@@ -1971,7 +2033,7 @@ function renderBallot(){
   var j = $('jurisBox');
   j.style.display = 'block';
   j.innerHTML = '<strong>' + (ballot.jurisdiction ? esc(ballot.jurisdiction) : t('juris.unknown')) + '</strong>' +
-    esc([bt('electionName'), ballot.electionDate].filter(Boolean).join(' · '));
+    esc([bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + uploadBanner();
 
   var wrap = $('races');
   wrap.innerHTML = '';
@@ -2872,7 +2934,7 @@ function fmtAmount(a){
 
 var TAG_DEFS = [
   [/^labortype$/i, 'labortype'], [/^notdisclosed$/i, 'notdisclosed'], [/^ownersnot$/i, 'ownersnot'], [/outside group/i, 'outsidegrp'],
-  [/^left$/i, 'left'], [/^right$/i, 'right'], [/^nonpartisan$/i, 'np'],
+  [/^left$/i, 'left'], [/^right$/i, 'right'], [/^nonpartisan$/i, 'np'], [/^press$/i, 'press'],
   [/donation platform|conduit/i, 'platform'], [/super\s*pac/i, 'super'],
   [/nonconnected\s*pac/i, 'noncon'], [/connected\s*pac/i, 'con'],
   [/party/i, 'party'], [/candidate committee/i, 'candcom'], [/pac|committee/i, 'pac'],
@@ -2958,6 +3020,7 @@ function leanTag(lean, item){
   }
   if(l==='left') return '<span class="tag left" data-k="left">' + t('lean.left') + '</span>';
   if(l==='right') return '<span class="tag right" data-k="right">' + t('lean.right') + '</span>';
+  if(l==='press') return '<span class="tag nonpartisan" data-k="press">' + t('lean.press') + '</span>';   // newspapers: no lean label
   return '<span class="tag nonpartisan" data-k="nonpartisan">' + t('lean.nonpartisan') + '</span>';
 }
 
