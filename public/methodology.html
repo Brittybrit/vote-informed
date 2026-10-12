@@ -162,7 +162,7 @@
   function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function link(u, txt){ return /^https:\/\//.test(u || '') ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + txt + '</a>' : ''; }
   function detail(c){
-    if(c.status === 'official') return 'Every contribution, read from ' + esc(c.source || 'the clerk\u2019s online records') + '.';
+    if(c.status === 'official') return 'Every contribution, from the official records of ' + esc(c.source || 'the city clerk') + '.';
     if(c.status === 'portal') return 'Reports are in an online portal the app can\u2019t read yet. Donors come from news and web research.';
     if(c.status === 'pdf') return 'Reports are posted as PDF files. Donors come from news and web research.';
     if(c.status === 'requested') return 'Not found on the city website. Requested from the clerk ' + day(c.requested) + '; reply requested by ' + day(c.due) + '.' + (c.reply ? ' Clerk replied ' + day(c.reply) + (c.replyNote ? ': ' + esc(c.replyNote) : '.') : ' Awaiting reply.');
