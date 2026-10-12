@@ -1047,7 +1047,7 @@ async function fecFindCandidate(env, name, officeCode) {
 // so spending reported in 24/48-hour notices after a group's latest regular report is added on;
 // notices dated on or before that report are skipped because the report already includes them.
 // Bump to rebuild every cached federal result's outside spending (free API, no AI cost).
-const OUTSIDE_VERSION = 2;
+const OUTSIDE_VERSION = 3;
 const FEC_COMMITTEE_KIND = { O: 'super PAC', U: 'super PAC', V: 'hybrid PAC', W: 'hybrid PAC', I: 'outside group',
   N: 'PAC', Q: 'PAC', X: 'party committee', Y: 'party committee', Z: 'party committee' };
 async function fecOutsideSpending(env, name, officeCode) {
@@ -1132,7 +1132,31 @@ async function fecOutsideSpending(env, name, officeCode) {
       .map(([c, v]) => ({ c, p: Math.max(1, Math.round(100 * v / a.amount)) }));
     return item;
   };
+  // How local the outside money is, by the state each spender registered in. Only the 20 largest are
+  // looked up; the rest count as no address. A spender's home is not where its own donors live.
+  // House: matched to Miami-Dade by the spender's ZIP, the same as the campaign's own money.
+  const osScope = officeCode === 'S' ? { kind: 'state', place: 'Florida', exact: true } : { kind: 'county', place: 'Miami-Dade', exact: false };
+  if (osScope.kind === 'county') {
+    // the committee list may leave out the street address; fetch the full record for Florida spenders
+    await Promise.all(ids.filter(id => reg[id] && String(reg[id].state || '').toUpperCase() === 'FL' && !reg[id].zip).map(async id => {
+      try {
+        const r = await fetch(base + '/committee/' + id + '/?api_key=' + apiKey);
+        const c = r.ok && ((await r.json()).results || [])[0];
+        if (c && c.zip) reg[id].zip = c.zip;
+      } catch (e) { /* leaves the ZIP unknown */ }
+    }));
+  }
+  const sideLocal = ind => {
+    const L = newLocal(osScope);
+    for (const a of list.filter(a => a.ind === ind)) {
+      const c = reg[a.id] || {};
+      addLocal(L, 'PAC', { st: c.state || '', zip: String(c.zip || '').slice(0, 5), city: c.city || '' }, a.amount);
+    }
+    return roundLocal(L);
+  };
+  const localFor = sideLocal('S'), localAgainst = sideLocal('O');
   return {
+    localFor, localAgainst,
     support: list.filter(a => a.ind === 'S').slice(0, 8).map(toItem),
     oppose: list.filter(a => a.ind === 'O').slice(0, 8).map(toItem),
     source: 'FEC',
@@ -1353,7 +1377,7 @@ async function flCommittee(env, name) {
 // judges): donors straight from the Florida Division of Elections, like FEC data for federal races.
 // Web search can find a candidate's state filing page but can't read the contributions inside it.
 // No AI, refreshed at most daily. County and city races file with the county, not the state.
-const FL_DONOR_VERSION = 1;
+const FL_DONOR_VERSION = 2;
 function flOfficeQuery(office) {
   const o = String(office || '');
   const d = (o.match(/District\s+(\d+)/i) || [])[1] || '';
@@ -1405,31 +1429,37 @@ async function flCandidateDonors(env, name, office) {
     if (iso && iso > to) to = iso;
     total += amt; n++;
     const giver = c[4].trim();
-    if (!agg[giver]) agg[giver] = { amount: 0, occ: (c[7] || '').trim(), kinds: new Set() };
+    if (!agg[giver]) agg[giver] = { amount: 0, occ: (c[7] || '').trim(), kinds: new Set(), addr: splitCityLine(c[6]) };
     agg[giver].amount += amt;
     agg[giver].kinds.add(c[3]);
   }
   if (!n) return { donors: [], count: 0 };
-  const sorted = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount);
-  const ties = tieNote(sorted.map(e => e[1].amount), 8);
-  const donors = sorted.slice(0, 8).map(([giver, v]) => {
-    const occ = v.occ;
+  const typeOf = (giver, occ) => {
     const self = /^candidate$/i.test(occ) || (normPart(giver).includes(np.last) && normPart(giver).includes(np.first));
     const party = /\b(party|executive committee)\b/i.test(giver + ' ' + occ);
     const committee = /political committee|\bpac\b|committee|electioneering/i.test(giver + ' ' + occ);
     const org = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|association|assn|union|trust|group|partners|holdings|ltd|lp|llp|pa|p\.a)\b\.?/i.test(giver);
-    const type = self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : org ? 'corporation' : 'individual';
+    return self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : org ? 'corporation' : 'individual';
+  };
+  const scope = localScope(office, 'FL');
+  const local = newLocal(scope);
+  for (const [giver, v] of Object.entries(agg)) addLocal(local, typeOf(giver, v.occ), v.addr, v.amount);
+  const sorted = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount);
+  const ties = tieNote(sorted.map(e => e[1].amount), 8);
+  const donors = sorted.slice(0, 8).map(([giver, v]) => {
+    const occ = v.occ;
+    const type = typeOf(giver, occ);
     const loan = v.kinds.has('LOA'), inkind = v.kinds.has('INK') && v.kinds.size === 1;
     return { name: giver + (type === 'individual' && occ ? ' (' + occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
-  return { donors, count: n, total, to, ties };
+  return { donors, count: n, total, to, ties, local: roundLocal(local) };
 }
 // Miami-Dade County and Community Council, School Board, county judge and other county-filed
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 2;
+const MDC_DONOR_VERSION = 3;
 // Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
 // Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
 // Update the election ids each cycle.
@@ -1483,6 +1513,18 @@ async function mdcCandidateList(env, j) {
   if (out.length) await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: 6 * 3600 });
   return out;
 }
+// The county export has no documented column names. The address sits just before the contributor
+// type: find the ZIP among the columns after the name, with state and city before it.
+function vfAddr(x) {
+  for (let i = 5; i < 10 && i < x.length; i++) {
+    if (!/^\s*\d{5}(-?\d{4})?\s*$/.test(String(x[i] || ''))) continue;
+    const st = String(x[i - 1] || '').trim();
+    return { zip: String(x[i]).trim().slice(0, 5), st: /^[A-Za-z]{2}$/.test(st) ? st.toUpperCase() : '',
+      city: /^[A-Za-z]{2}$/.test(st) ? String(x[i - 2] || '').trim() : '' };
+  }
+  const line = x.slice(5, 10).map(v => String(v || '')).find(v => /\b[A-Z]{2}\s+\d{5}/.test(v));
+  return line ? splitCityLine(line) : {};
+}
 async function mdcCandidateDonors(env, name, office) {
   const np = flNameParts(name);
   if (!np) return null;
@@ -1514,19 +1556,24 @@ async function mdcCandidateDonors(env, name, office) {
     if (x[2] > to) to = x[2];
     const who = String(x[4]).replace(/\s+/g, ' ').trim();
     const id = normPart(who);
-    if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0 };
+    if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0, addr: vfAddr(x) };
     agg[id].amount += amt;
     if (ik) agg[id].ik += amt;
   }
   const sorted = Object.values(agg).filter(v => v.amount > 0).sort((a, b) => b.amount - a.amount);
   const ties = tieNote(sorted.map(v => v.amount), 8);
-  const donors = sorted.slice(0, 8).map(v => {
+  const typeOf = v => {
     const looksCommittee = /committee|\bpac\b|\bpc\b|political|for better|floridians for|friends of|party/i.test(v.name + ' ' + v.occ);
-    const type = v.t === 'S' ? 'self-funded' : v.t === 'F' ? 'PAC' : v.t === 'B' ? (/union/i.test(v.occ) ? 'union' : 'corporation') : v.t === 'I' ? 'individual' : looksCommittee ? 'PAC' : 'other';
+    return v.t === 'S' ? 'self-funded' : v.t === 'F' ? 'PAC' : v.t === 'B' ? (/union/i.test(v.occ) ? 'union' : 'corporation') : v.t === 'I' ? 'individual' : looksCommittee ? 'PAC' : 'other';
+  };
+  const local = newLocal(localScope(office, j.city ? 'CITY' : 'MDC') || localScope(office, 'MDC'));
+  for (const v of sorted) addLocal(local, typeOf(v), v.addr, v.amount);
+  const donors = sorted.slice(0, 8).map(v => {
+    const type = typeOf(v);
     return { name: v.name + (type === 'individual' && v.occ ? ' (' + v.occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
-  return { donors, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label,
+  return { donors, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label, local: roundLocal(local),
     url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N' };
 }
 async function refreshMdcDonors(env, result, name, office, officeCode) {
@@ -1544,6 +1591,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
         ' from ' + d.count + ' contributions, through ' + d.to + ', with amended reports applied. Top givers shown.' + (d.ties || '') + ' Money to allied political committees is listed separately.';
       result.donorListUrl = d.url;
       result.donorSource = 'MDC';
+      result.localMoney = d.local || null;
     }
     return true;
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
@@ -1556,7 +1604,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
 // gift. Only electronically filed reports are
 // itemized; a candidate who uploaded scans has no rows and keeps web research. The customer id is in
 // the portal's own requests (ecf-api.easyvoteapp.com/.../<id>). Refreshed at most daily, no AI.
-const EV_DONOR_VERSION = 3;
+const EV_DONOR_VERSION = 4;
 const EV_API = 'https://ecf-api.easyvoteapp.com';
 const EV_CITIES = [
   [/^\s*miami gardens\b/i, 'A7993568-4476-4576-83AC-1581F689A3A4', 'https://cityofmiamigardensfl.easyvotecampaignfinance.com', 'City of Miami Gardens'],
@@ -1690,7 +1738,7 @@ async function evCandidateDonors(env, name, office) {
     if (date > to && date <= new Date().toISOString().slice(0, 10)) to = date;   // ignore mistyped future dates
     const self = !org && isSelf(who);
     const id = self ? '\u0000self' : normPart(who);
-    if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date };
+    if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date, addr: evAddr(x) };
     const a = agg[id];
     a.amount += amt; if (amt > 0) a.n++;
     if (date >= a.date) { a.date = date; a.doc = doc; }   // link the report with this giver's latest gift
@@ -1698,20 +1746,33 @@ async function evCandidateDonors(env, name, office) {
   const sorted = Object.values(agg).sort((a, b) => b.amount - a.amount);
   out.ties = tieNote(sorted.map(v => v.amount), 8);
   out.total = total; out.to = to;
-  out.donors = sorted.slice(0, 8).map(v => {
-    const self = v.self;
+  const typeOf = v => {
     const party = /\b(party|executive committee)\b/i.test(v.name);
     const committee = /political committee|\bpac\b|\bpc\b|committee|friends of|electioneering/i.test(v.name);
     // no contributor type in this system, so read it from the name
     const union = /\b(union|afscme|afl|cio|seiu|teamsters|iaff|united teachers|teachers union|education association|federation|brotherhood|fraternal order|firefighters|local \d+|cope)\b/i.test(v.name);
     const corp = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|association|assn|trust|group|partners|holdings|ltd|lp|llp|pa|p\.a|bank|solutions|consulting|enterprises?|services|towing|transport|realty|properties|investments?|construction|development|management|medical|healthcare|center|foundation|church|ministries)\b\.?/i.test(v.name);
-    const type = self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : union ? 'union' : corp || v.org ? 'corporation' : 'individual';
+    return v.self ? 'self-funded' : party ? 'party committee' : committee ? 'PAC' : union ? 'union' : corp || v.org ? 'corporation' : 'individual';
+  };
+  const local = newLocal(localScope(office, 'CITY'));
+  for (const v of sorted) addLocal(local, typeOf(v), v.addr, v.amount);
+  out.local = roundLocal(local);
+  out.donors = sorted.slice(0, 8).map(v => {
+    const self = v.self;
+    const type = typeOf(v);
     const rep = String(v.doc.documentname || '').trim();
     return { name: v.name, year: v.date.slice(0, 4), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       url: evDocUrl(v.doc.documentid), srcLabel: (rep ? rep + ' report' : 'report') + (v.n > 1 ? ', ' + v.n + ' gifts' : ''),
       ...(self ? { note: 'may include loans to the campaign' } : {}) };
   });
   return out;
+}
+// Contributor address fields, by whatever names the clerk's export uses
+function evAddr(x) {
+  const keys = Object.keys(x || {});
+  const pick = re => { const k = keys.find(k => re.test(k)); return k ? String(x[k] || '').trim() : ''; };
+  const zip = pick(/^contributor.*(zip|postal)/i) || pick(/(zip|postal)/i);
+  return { city: pick(/^contributor.*city/i) || pick(/city/i), st: pick(/^contributor.*state/i) || pick(/^state$/i), zip: (zip.match(/\d{5}/) || [''])[0] };
 }
 function evWho(x) {
   const org = String(x.ContributorOrganizationName || '').trim();
@@ -1740,6 +1801,7 @@ async function refreshEvDonors(env, result, name, office, officeCode) {
         ' Only electronically filed reports are itemized; scanned reports are on the clerk’s portal.';
       result.donorListUrl = d.portal;
       result.donorSource = 'CITY';
+      result.localMoney = d.local || null;
     } else if (d && d.latestUrl && result.donorSource !== 'CITY') {
       // no itemized rows: point to the clerk's latest report instead of a web search result
       result.donorListUrl = d.latestUrl;
@@ -1842,6 +1904,88 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
   } catch (e) { console.log('city report donors ' + name + ': ' + e.message); return false; }
 }
 
+// How local is the money: every itemized gift, placed by the address on the filing.
+//   here  the place whose voters elect this office (Florida, Miami-Dade, or the city)
+//   mdc   elsewhere in Miami-Dade (city races only)
+//   fl    elsewhere in Florida
+//   out   outside Florida
+//   unk   no usable address
+// Givers split into people (individuals), groups (PACs, companies, unions, parties, committees)
+// and the candidate's own money. A group is placed by the address it filed under, often its
+// treasurer's or a Tallahassee office, not where its money comes from.
+// District races (legislature, commission, school board, city districts) are matched to the county
+// or city around the district, so "here" is wider than the voters who elect the seat: exact is false
+// and the page says "lives in <place>" instead of "can vote in this race".
+// Mailing city names don't follow city limits (many Doral and Cutler Bay homes have "Miami"
+// addresses), so a city's "here" undercounts. It undercounts every candidate in the race alike.
+const LOCAL_VERSION = 1;
+// Miami-Dade ZIP codes: Hialeah 33010-18 and 33002, Homestead and Florida City 33030-35, 33039,
+// 33090, 33092, Opa-locka and Miami Gardens 33054-56, and every 331xx and 332xx (Miami).
+// 33019-29 and 33060-77 are Broward; 33036-51 are Monroe.
+function mdcZip(z) { return /^33(00[2]|01[0-8]|03[0-5]|039|05[4-6]|09[02]|1\d\d|2\d\d)$/.test(String(z || '')); }
+// Statewide offices are "here" for all of Florida; Miami-Dade's own circuit (11th) covers only the county.
+function localScope(office, source) {
+  const o = String(office || '');
+  const district = /\bdistrict\s+\d+|community council|school board/i.test(o);
+  if (source === 'FL') {
+    const q = flOfficeQuery(o) || {};
+    if (['GOV', 'ATG', 'CFO', 'AGR', 'SCJ'].includes(q.office)) return { kind: 'state', place: 'Florida', exact: true };
+    if (['CTJ', 'STA', 'PUB'].includes(q.office) && q.cdistrict === '11') return { kind: 'county', place: 'Miami-Dade', exact: true };
+    return { kind: 'county', place: 'Miami-Dade', exact: false };   // legislature, 3rd District Court of Appeal
+  }
+  if (source === 'CITY') {
+    const ev = evJurisdiction(o), vf = vfJurisdiction(o);
+    const label = ev ? ev.label : vf.city ? vf.label : '';
+    if (!label) return null;
+    const place = label.replace(/^(City|Town|Village) of /, '');
+    return { kind: 'city', place, exact: !district };
+  }
+  return { kind: 'county', place: 'Miami-Dade', exact: !district };   // county-filed races
+}
+// "MIAMI BEACH, FL 33139-1234" -> { city, st, zip }
+function splitCityLine(s) {
+  const m = String(s || '').trim().match(/^(.*?)[,\s]+([A-Za-z]{2})\.?\s+(\d{5})(?:-?\d{4})?\s*$/);
+  if (m) return { city: m[1], st: m[2].toUpperCase(), zip: m[3] };
+  const z = String(s || '').match(/\b(\d{5})(?:-\d{4})?\s*$/);
+  return { city: '', st: '', zip: z ? z[1] : '' };
+}
+function ringOf(addr, scope) {
+  const st = String(addr.st || '').toUpperCase().trim();
+  const zip = String(addr.zip || '').slice(0, 5);
+  const inFl = st ? st === 'FL' : /^3[234]\d{3}$/.test(zip) ? true : null;
+  if (inFl === null) return 'unk';
+  if (!inFl) return 'out';
+  if (scope.kind === 'state') return 'here';
+  if (scope.kind === 'county') return zip ? (mdcZip(zip) ? 'here' : 'fl') : 'unk';
+  const city = normPart(addr.city);
+  const want = normPart(scope.place);
+  if (city && (city === want || (want === 'sunny isles beach' && city === 'sunny isles'))) return 'here';
+  return zip ? (mdcZip(zip) ? 'mdc' : 'fl') : city ? 'mdc' : 'unk';
+}
+function giverKind(type) {
+  const t = String(type || '').toLowerCase();
+  return t === 'individual' ? 'people' : t === 'self-funded' ? 'self' : 'groups';
+}
+function newLocal(scope) {
+  const rings = () => ({ here: 0, mdc: 0, fl: 0, out: 0, unk: 0 });
+  return { v: LOCAL_VERSION, kind: scope.kind, place: scope.place, exact: scope.exact, people: rings(), groups: rings(), self: 0 };
+}
+// One giver's net total (refunds already netted out); nothing for a giver who netted to zero or less.
+function addLocal(L, type, addr, amount) {
+  if (!L || !(amount > 0)) return;
+  const k = giverKind(type);
+  if (k === 'self') { L.self += amount; return; }
+  L[k][ringOf(addr || {}, L)] += amount;
+}
+function roundLocal(L) {
+  if (!L) return null;
+  for (const k of ['people', 'groups']) for (const r in L[k]) L[k][r] = Math.round(L[k][r]);
+  L.self = Math.round(L.self);
+  const sum = o => Object.values(o).reduce((a, b) => a + b, 0);
+  L.total = sum(L.people) + sum(L.groups) + L.self;
+  return L.total > 0 ? L : null;
+}
+
 // When many givers tie at the cutoff (common at the legal limit), "top 8" is an arbitrary pick.
 // Say how many gave at least the smallest amount shown.
 function tieNote(sortedAmounts, shown) {
@@ -1865,6 +2009,7 @@ async function refreshFlDonors(env, key, result, name, office, save) {
         ' contributions totaling $' + Math.round(fl.total).toLocaleString('en-US') + (fl.to ? ', through ' + fl.to : '') +
         '. Top givers shown.' + (fl.ties || '') + ' Contributions to allied political committees are listed separately.';
       result.donorSource = 'FL';
+      result.localMoney = fl.local || null;
     }
     if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
     return true;
@@ -2204,7 +2349,7 @@ async function fecTopDonors(env, name, officeCode) {
 // "Raised" is the sum of these buckets. Transfers between committees, outside loans, refunds and
 // interest are left out: they aren't support from anyone and voters can't read them.
 // Size bins are scaled to the individual-contribution total from the same summary data.
-const MONEY_VERSION = 2;
+const MONEY_VERSION = 3;
 async function handleRaceMoney(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
@@ -2259,6 +2404,7 @@ async function raceMoney(env, officeCode, district, cycle, names) {
 
   await Promise.all(candidates.map(async c => {
     try { c.breakdown = await moneyBreakdown(base, c, q); } catch (e) { console.log('FEC breakdown error for ' + c.name + ': ' + e.message); }
+    try { if (c.breakdown) c.local = await fecLocal(base, c, q, officeCode); } catch (e) { console.log('FEC local error for ' + c.name + ': ' + e.message); }
     c.links = moneyLinks(c.committeeId, cycle);
   }));
 
@@ -2322,6 +2468,54 @@ async function moneyBreakdown(base, c, q) {
   if (receipts > 0) c.receipts = out.small + out.mid + out.large + out.pac + out.party + out.self;
   if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
   return out;
+}
+
+// How local a federal campaign's money is. The FEC totals itemized gifts from people (over $200 a
+// year, plus most online gifts) by the giver's state and ZIP. Gifts it doesn't itemize, and PAC and
+// party money, have no address in these totals and count as unknown. Senate: Florida is the area that
+// votes. House: Florida redrew its districts in 2026, so gifts are matched to Miami-Dade by ZIP instead
+// of to the district (exact is false).
+async function fecLocal(base, c, q, officeCode) {
+  const bd = c.breakdown;
+  const scope = officeCode === 'S' ? { kind: 'state', place: 'Florida', exact: true } : { kind: 'county', place: 'Miami-Dade', exact: false };
+  const L = newLocal(scope);
+  const people = bd.small + bd.mid + bd.large;
+  const sRes = await fetch(base + '/schedules/schedule_a/by_state/by_candidate/?candidate_id=' + c.candidateId + '&per_page=100' + q);
+  if (!sRes.ok) throw new Error('by_state ' + sRes.status);
+  let fl = 0, out = 0;
+  for (const r of ((await sRes.json()).results || [])) {
+    const v = Math.max(0, Number(r.total) || 0);
+    if (String(r.state || '').toUpperCase() === 'FL') fl += v; else if (r.state) out += v;
+  }
+  // the state totals can run a little past the itemized total in the candidate summary; keep the bar honest
+  if (fl + out > people && fl + out > 0) { const k = people / (fl + out); fl *= k; out *= k; }
+  let here = scope.kind === 'state' ? fl : 0;
+  if (scope.kind === 'county') {
+    // by ZIP is kept per committee; Florida ZIPs only
+    if (!/^C\d{8}$/.test(c.committeeId)) return null;
+    let mdc = 0, seen = 0;
+    for (let page = 1; page <= 10; page++) {
+      const zRes = await fetch(base + '/schedules/schedule_a/by_zip/?committee_id=' + c.committeeId + '&state=FL&per_page=100&page=' + page + q.replace('&election_full=false', ''));
+      if (!zRes.ok) throw new Error('by_zip ' + zRes.status);
+      const j = await zRes.json();
+      for (const r of (j.results || [])) {
+        if (r.state && String(r.state).toUpperCase() !== 'FL') continue;
+        const v = Math.max(0, Number(r.total) || 0);
+        seen += v;
+        if (mdcZip(String(r.zip || '').slice(0, 5))) mdc += v;
+      }
+      if (!j.pagination || page >= (j.pagination.pages || 1)) break;
+    }
+    if (!seen) return null;
+    here = fl * (mdc / seen);   // by_zip covers this committee only; scale its Miami-Dade share to the candidate's Florida total
+  }
+  L.people.here = here;
+  L.people.fl = Math.max(0, fl - here);
+  L.people.out = out;
+  L.people.unk = Math.max(0, people - fl - out);
+  L.groups.unk = bd.pac + bd.party;
+  L.self = bd.self;
+  return roundLocal(L);
 }
 
 // fec.gov pages filtered to each bucket. Amount ranges follow the FEC's own size bins.
