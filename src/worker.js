@@ -2651,10 +2651,47 @@ function adminOk(request, env) {
   for (let i = 0; i < tok.length; i++) diff |= tok.charCodeAt(i) ^ got.charCodeAt(i);
   return diff === 0;
 }
+// Each official source, checked against a known 2026 candidate, so a silent format change or an outage
+// shows up here instead of as a voter noticing wrong numbers. No AI calls. Run it from /admin.html.
+async function sourceHealth(env) {
+  const out = { at: new Date().toISOString(), config: {
+    anthropicKey: !!env.ANTHROPIC_API_KEY, fecKey: !!env.FEC_API_KEY, adminToken: !!env.ADMIN_TOKEN, freshOff: env.FRESH_OFF === '1' }, checks: [] };
+  const probe = async (name, fn) => {
+    const t0 = Date.now();
+    try { const r = await fn(); out.checks.push({ name, ok: !!r.ok, detail: r.detail || '', ms: Date.now() - t0 }); }
+    catch (e) { out.checks.push({ name, ok: false, detail: String(e && e.message || e).slice(0, 200), ms: Date.now() - t0 }); }
+  };
+  await Promise.all([
+    probe('FEC (Maria Elvira Salazar, CD 27)', async () => {
+      const f = await fecFindCandidate(env, 'Maria Elvira Salazar', 'H', 'Representative in Congress, District 27');
+      return { ok: !!(f && f.cand), detail: f && f.cand ? f.cand.candidate_id : 'no match' };
+    }),
+    probe('Florida Division of Elections (Annette Taddeo, CFO)', async () => {
+      const d = await flCandidateDonors(env, 'Annette Taddeo', 'Chief Financial Officer');
+      return { ok: !!(d && d.count > 0 && d.total > 0), detail: d ? d.count + ' gifts, $' + Math.round(d.total || 0).toLocaleString('en-US') : 'no result' };
+    }),
+    probe('Miami-Dade County (Vicki L. Lopez, Commission 5)', async () => {
+      const d = await mdcCandidateDonors(env, 'Vicki L. Lopez', 'County Commissioner, District 5');
+      return { ok: !!(d && d.count > 0), detail: d ? d.count + ' gifts' : 'no match' };
+    }),
+    probe('EasyVote cities (North Miami filers)', async () => {
+      const d = await evCandidateDonors(env, 'Alix Desulme', 'North Miami - Mayor');
+      return { ok: !!d, detail: d ? (d.count + ' itemized gifts' + (d.searched === false ? ' (search returned nothing)' : '')) : 'no match' };
+    }),
+    probe('Countywide ballot parse pinned', async () => {
+      let pk = await env.CACHE.get(FEATURED_KEY); if (!pk) pk = await bundledParseKey(env);
+      const m = pk ? await env.CACHE.get(pk, 'json') : null;
+      return { ok: !!(m && m.races && m.races.length > 100), detail: m ? m.races.length + ' contests' + (m.pinned ? ', pinned' : ', NOT pinned yet (load the countywide ballot once)') : 'missing' };
+    })
+  ]);
+  out.ok = out.checks.every(c => c.ok) && out.config.anthropicKey && out.config.fecKey;
+  return out;
+}
 async function handleAdmin(request, env, url) {
   if (!env.ADMIN_TOKEN) return json({ error: 'Not found' }, 404);
   if (!adminOk(request, env)) return json({ error: 'Unauthorized' }, 401);
   const route = url.pathname.slice('/api/admin/'.length);
+  if (request.method === 'GET' && route === 'health') return json(await sourceHealth(env));
   if (request.method === 'GET' && route === 'reports') {
     const list = await env.CACHE.list({ prefix: 'report:', limit: 200 });
     const out = [];

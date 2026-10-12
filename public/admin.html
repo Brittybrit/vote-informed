@@ -34,6 +34,7 @@
     <button class="go" id="loginBtn" type="button">Open reports</button>
   </div>
   <div id="status" role="status"></div>
+  <div id="healthBox" style="display:none"><button id="healthBtn" type="button">Check data sources</button><div id="health"></div></div>
   <div id="list"></div>
   <details>
     <summary>What the buttons do</summary>
@@ -64,6 +65,7 @@ async function load(){
     var d = await call('reports');
     try { sessionStorage.setItem('b305admin', TOKEN); } catch(e) {}
     $('login').style.display = 'none';
+    $('healthBox').style.display = '';
     $('status').textContent = d.reports.length ? d.reports.length + ' open report(s), newest first.' : 'No open reports.';
     $('list').innerHTML = d.reports.map(function(r){
       return '<div class="rep' + (r.held ? ' held' : '') + '" data-id="' + esc(r.id) + '" data-key="' + esc(r.key) + '">' +
@@ -91,6 +93,19 @@ $('list').addEventListener('click', async function(e){
     await call(act, act === 'resolve' ? { id: box.getAttribute('data-id') } : { key: box.getAttribute('data-key') });
     load();
   } catch(err) { $('status').textContent = err.message; b.disabled = false; }
+});
+$('healthBtn').addEventListener('click', async function(){
+  var b = this; b.disabled = true; $('health').innerHTML = '<p class="meta">Checking each source (up to a minute)…</p>';
+  try {
+    var h = await call('health');
+    var c = h.config;
+    $('health').innerHTML = '<div class="rep' + (h.ok ? '' : ' held') + '">' +
+      '<div class="who">' + (h.ok ? 'All sources OK' : 'Something needs attention') + '</div>' +
+      '<div class="meta">Anthropic key ' + (c.anthropicKey ? 'set' : 'MISSING') + ' · FEC key ' + (c.fecKey ? 'set' : 'MISSING (using demo key)') +
+      ' · New AI research ' + (c.freshOff ? 'PAUSED (FRESH_OFF=1)' : 'on') + '</div>' +
+      h.checks.map(function(x){ return '<div class="txt">' + (x.ok ? '✓ ' : '✗ ') + esc(x.name) + ': ' + esc(x.detail) + ' <span class="meta">(' + x.ms + ' ms)</span></div>'; }).join('') + '</div>';
+  } catch(e) { $('health').textContent = e.message; }
+  b.disabled = false;
 });
 if(TOKEN) load();
 </script>
