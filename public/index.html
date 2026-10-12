@@ -311,6 +311,9 @@
   .og-links{margin-top:6px !important;}
   .og-body details.og{margin-left:4px; padding-left:8px; border-left:2px solid #DDDDD5;}
   .og-search{font-size:12px;}
+  .og-ok{color:var(--ok-fg); font-size:12px;}
+  .og-com{margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid #DDDDD5;}
+  .og-warn{color:var(--flag-fg); background:var(--flag-bg); padding:4px 6px; font-size:12px;}
   .og-np{margin:6px 0 4px; padding:6px 8px; border-left:3px solid var(--flag-rule); background:var(--flag-bg); font-size:12.5px;}
   .og-np .og-fh{margin-top:0;}
   .og-off{list-style:none; margin:2px 0 4px; padding:0;}
@@ -668,8 +671,8 @@ en: {
   'disc.lookup': 'Public records',
   'og.bought': 'Spent here on:',
   'og.about': 'About this group',
-  'og.loading': 'Loading FEC records…',
-  'og.fail': 'Could not load FEC records right now.',
+  'og.loading': 'Loading public records…',
+  'og.fail': 'Could not load public records right now.',
   'og.leanR': 'By its own spending this cycle: {pct}% helped Republicans or opposed Democrats.',
   'og.leanL': 'By its own spending this cycle: {pct}% helped Democrats or opposed Republicans.',
   'og.mixed': 'Its spending this cycle is split: {r}% helped Republicans, {d}% helped Democrats.',
@@ -693,6 +696,12 @@ en: {
   'og.business': 'A business. Its Florida filings list its officers or managers.',
   'og.nomatch': 'No federal PAC or IRS nonprofit matched this exact name. It may be a Florida political committee, a business, or a group known by another name.',
   'og.searchlbl': 'Search public records:',
+  'og.flc': 'Florida {type} · {status} · {city}',
+  'og.flcmatch': 'Its address matches the FEC record for this donor ({city}).',
+  'og.flcnomatch': 'A Florida committee has this exact name, but the FEC lists this donor in {city}. It may be a different group.',
+  'og.chair': 'Chair', 'og.treasurer': 'Treasurer', 'og.agent': 'Registered agent',
+  'og.flcraised': 'Raised {amt} in {n} reported gifts, {from} to {to} (Florida Division of Elections).',
+  'og.flcrec': 'State record', 'og.flcdocs': 'Campaign documents',
   'og.search.sunbiz': 'Florida businesses', 'og.search.irs': 'IRS nonprofits', 'og.search.fec': 'FEC committees',
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
@@ -929,8 +938,8 @@ es: {
   'disc.lookup': 'Registros públicos',
   'og.bought': 'Gastado aquí en:',
   'og.about': 'Sobre este grupo',
-  'og.loading': 'Cargando registros de la FEC…',
-  'og.fail': 'No se pudieron cargar los registros de la FEC en este momento.',
+  'og.loading': 'Cargando registros públicos…',
+  'og.fail': 'No se pudieron cargar los registros públicos en este momento.',
   'og.leanR': 'Según sus propios gastos en este ciclo: el {pct}% ayudó a republicanos o se opuso a demócratas.',
   'og.leanL': 'Según sus propios gastos en este ciclo: el {pct}% ayudó a demócratas o se opuso a republicanos.',
   'og.mixed': 'Sus gastos en este ciclo están divididos: {r}% ayudó a republicanos, {d}% ayudó a demócratas.',
@@ -954,6 +963,12 @@ es: {
   'og.business': 'Una empresa. Sus registros en Florida indican sus directivos o gerentes.',
   'og.nomatch': 'Ningún PAC federal ni organización sin fines de lucro del IRS coincide exactamente con este nombre. Puede ser un comité político de Florida, una empresa o un grupo conocido por otro nombre.',
   'og.searchlbl': 'Buscar registros públicos:',
+  'og.flc': '{type} de Florida · {status} · {city}',
+  'og.flcmatch': 'Su dirección coincide con el registro de la FEC para este donante ({city}).',
+  'og.flcnomatch': 'Un comité de Florida tiene exactamente este nombre, pero la FEC ubica a este donante en {city}. Puede ser otro grupo.',
+  'og.chair': 'Presidente', 'og.treasurer': 'Tesorero', 'og.agent': 'Agente registrado',
+  'og.flcraised': 'Recaudó {amt} en {n} donaciones reportadas, de {from} a {to} (División de Elecciones de Florida).',
+  'og.flcrec': 'Registro estatal', 'og.flcdocs': 'Documentos de campaña',
   'og.search.sunbiz': 'Empresas de Florida', 'og.search.irs': 'Organizaciones del IRS', 'og.search.fec': 'Comités de la FEC',
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
@@ -1190,8 +1205,8 @@ ht: {
   'disc.lookup': 'Dosye piblik',
   'og.bought': 'Depanse isit la sou:',
   'og.about': 'Konsènan gwoup sa a',
-  'og.loading': 'N ap chaje dosye FEC yo…',
-  'og.fail': 'Nou pa ka chaje dosye FEC yo kounye a.',
+  'og.loading': 'N ap chaje dosye piblik yo…',
+  'og.fail': 'Nou pa ka chaje dosye piblik yo kounye a.',
   'og.leanR': 'Dapre pwòp depans li nan sik sa a: {pct}% te ede Repibliken oswa te opoze Demokrat.',
   'og.leanL': 'Dapre pwòp depans li nan sik sa a: {pct}% te ede Demokrat oswa te opoze Repibliken.',
   'og.mixed': 'Depans li nan sik sa a divize: {r}% te ede Repibliken, {d}% te ede Demokrat.',
@@ -1215,6 +1230,12 @@ ht: {
   'og.business': 'Yon biznis. Dosye li nan Florid bay non ofisye oswa manadjè li yo.',
   'og.nomatch': 'Pa gen okenn PAC federal ni òganizasyon IRS ki koresponn egzakteman ak non sa a. Li ka yon komite politik Florid, yon biznis, oswa yon gwoup ki gen yon lòt non.',
   'og.searchlbl': 'Chèche dosye piblik:',
+  'og.flc': '{type} Florid · {status} · {city}',
+  'og.flcmatch': 'Adrès li koresponn ak dosye FEC pou donatè sa a ({city}).',
+  'og.flcnomatch': 'Yon komite Florid gen egzakteman non sa a, men FEC mete donatè sa a nan {city}. Li ka yon lòt gwoup.',
+  'og.chair': 'Prezidan', 'og.treasurer': 'Trezorye', 'og.agent': 'Ajan anrejistre',
+  'og.flcraised': 'Ranmase {amt} nan {n} don ki rapòte, soti {from} rive {to} (Divizyon Eleksyon Florid).',
+  'og.flcrec': 'Dosye eta a', 'og.flcdocs': 'Dokiman kanpay',
   'og.search.sunbiz': 'Biznis Florid', 'og.search.irs': 'Òganizasyon IRS', 'og.search.fec': 'Komite FEC',
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
@@ -2228,6 +2249,8 @@ function orgDetails(d){
   var fec = /^C\d{8}$/.test(d.fecId || '') ? d.fecId : '';
   var name = String(d.name || '').replace(/\s*\(.*\)\s*$/, '').trim();
   var attr = fec ? 'data-fec="' + fec + '"' : 'data-org="' + esc(name) + '"';
+  if(d.city) attr += ' data-city="' + esc(d.city) + '"';
+  if(d.st) attr += ' data-st="' + esc(d.st) + '"';
   return '<details class="og" ' + attr + '><summary>' + t('og.about') + '</summary><div class="og-body">' + t('og.loading') + '</div></details>';
 }
 function panelKey(el){
@@ -2240,11 +2263,41 @@ function linksBlock(links){
   });
   return L.length ? '<p class="og-links og-search">' + t('og.searchlbl') + ' ' + L.join(' ') + '</p>' : '';
 }
-function orgBody(o){
+// Florida political committee, from the Florida Division of Elections.
+function flcBlock(c, hint){
+  var h = '<p>' + t('og.flc', {type: esc(c.type || ''), status: esc(c.status || ''), city: esc(c.city || '')}) + '</p>';
+  if(hint && hint.city){
+    var same = String(hint.city).toLowerCase().replace(/[^a-z]/g,'') === String(c.city || '').toLowerCase().replace(/[^a-z]/g,'');
+    h += '<p class="' + (same ? 'og-ok' : 'og-warn') + '">' + t(same ? 'og.flcmatch' : 'og.flcnomatch', {city: esc(hint.city)}) + '</p>';
+  }
+  var people = [];
+  if(c.chair) people.push('<li>' + t('og.chair') + ': <strong>' + esc(c.chair) + '</strong></li>');
+  if(c.treasurer) people.push('<li>' + t('og.treasurer') + ': <strong>' + esc(c.treasurer) + '</strong></li>');
+  if(c.agent) people.push('<li>' + t('og.agent') + ': <strong>' + esc(c.agent) + '</strong></li>');
+  if(people.length) h += '<ul class="og-off">' + people.join('') + '</ul>';
+  if(c.raised) h += '<p>' + t('og.flcraised', {amt: fmtShortUSD(c.raised), n: c.gifts || 0, from: fmtMonth(c.from), to: fmtMonth(c.to)}) + '</p>';
+  if(c.funders && c.funders.length){
+    h += '<div class="og-fh">' + t('og.funders') + '</div>' + c.funders.map(function(f){
+      return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
+        (f.occupation ? '<div class="enote" style="font-size:12px">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
+        '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + '</span>' +
+        (isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>' +
+        '<span class="damt">' + esc(f.amount) + '</span></div>';
+    }).join('');
+  }
+  var L = [];
+  if(safeUrl(c.url)) L.push('<a class="srclink" href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' + t('og.flcrec') + ' ↗</a>');
+  if(safeUrl(c.docsUrl)) L.push('<a class="srclink" href="' + esc(c.docsUrl) + '" target="_blank" rel="noopener noreferrer">' + t('og.flcdocs') + ' ↗</a>');
+  if(L.length) h += '<p class="og-links">' + L.join(' ') + '</p>';
+  return h;
+}
+function orgBody(o, hint){
   if(!o) return t('og.fail');
   if(o.type === 'fec' && o.group) return groupBody(o.group);
   var h = '';
-  if(o.type === 'nonprofit' && o.nonprofit){
+  if(o.type === 'flc' && o.flc){
+    h += flcBlock(o.flc, hint);
+  } else if(o.type === 'nonprofit' && o.nonprofit){
     h += '<p>' + t('og.npintro', {code: o.nonprofit.subsection || ''}) + '</p>' + npBlock(o.nonprofit);
   } else if(o.type === 'business'){
     h += '<p>' + t('og.business') + '</p>';
@@ -2258,7 +2311,8 @@ function fillPanels(k, o){
     if(panelKey(el) !== k) return;
     el.setAttribute('data-loaded', '1');
     var b = el.querySelector(':scope > .og-body');
-    if(b) b.innerHTML = orgBody(o);
+    var hint = el.getAttribute('data-city') ? {city: el.getAttribute('data-city'), st: el.getAttribute('data-st')} : null;
+    if(b) b.innerHTML = orgBody(o, hint);
   });
   var g = o && o.type === 'fec' ? o.group : null;
   if(g && g.lean && g.lean.side !== 'mixed' && k.indexOf('fec:') === 0)
@@ -2475,6 +2529,14 @@ function renderDossier(cand, race, r, cached){
   if(r.committeeDonors && r.committeeDonors.length){
     html += '<div class="dsec"><h4>' + t('sec.committee') + '</h4>' +
       '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('committee.sub') + '</p>';
+    // A panel for each committee receiving the money (often the candidate's own Florida committee)
+    var seenCom = {};
+    r.committeeDonors.forEach(function(d){
+      var c = String(d.committee || '').trim();
+      if(!c || seenCom[c.toLowerCase()]) return;
+      seenCom[c.toLowerCase()] = 1;
+      html += '<div class="og-com"><span class="dname">' + esc(c) + '</span>' + orgDetails({name: c}) + '</div>';
+    });
     html += r.committeeDonors.map(function(d){
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.committee ? '<div class="enote" style="font-size:12.5px">' + t('committee.to', {name: esc(d.committee)}) + '</div>' : '') +
