@@ -694,8 +694,9 @@ en: {
   'loc.against': '✕ Opposition money',
   'loc.forSub': 'Campaign donations plus outside groups spending to help.',
   'loc.againstSub': 'Outside groups spending to defeat this candidate.',
-  'loc.leadExact': '<strong>{p}</strong> of {amt} is located in the area that votes for this candidate',
-  'loc.leadPlace': '<strong>{p}</strong> of {amt} is located in {place}',
+  'loc.leadPeople': '<strong>Individual donors:</strong> {p} of their money came from people located in {area}, {q} from outside Florida.',
+  'loc.leadGroups': '<strong>Groups:</strong> {p} of their money came from groups located in {area}, {q} from outside Florida.',
+  'loc.areaVotes': 'the area that votes for this candidate',
   'loc.people': 'People',
   'loc.groups': 'Groups',
   'loc.self': 'Own money',
@@ -1022,8 +1023,9 @@ es: {
   'loc.against': '✕ Dinero en contra',
   'loc.forSub': 'Donaciones a la campaña más gastos de grupos externos para ayudar.',
   'loc.againstSub': 'Gastos de grupos externos para derrotar a este candidato.',
-  'loc.leadExact': '<strong>{p}</strong> de {amt} está ubicado en el área que vota por este candidato',
-  'loc.leadPlace': '<strong>{p}</strong> de {amt} está ubicado en {place}',
+  'loc.leadPeople': '<strong>Donantes individuales:</strong> {p} de su dinero vino de personas ubicadas en {area}, {q} de fuera de Florida.',
+  'loc.leadGroups': '<strong>Grupos:</strong> {p} de su dinero vino de grupos ubicados en {area}, {q} de fuera de Florida.',
+  'loc.areaVotes': 'el área que vota por este candidato',
   'loc.people': 'Personas',
   'loc.groups': 'Grupos',
   'loc.self': 'Dinero propio',
@@ -1350,8 +1352,9 @@ ht: {
   'loc.against': '✕ Lajan kont',
   'loc.forSub': 'Don bay kanpay la plis depans gwoup deyò pou ede.',
   'loc.againstSub': 'Depans gwoup deyò pou fè kandida sa a pèdi.',
-  'loc.leadExact': '<strong>{p}</strong> nan {amt} soti nan zòn ki vote pou kandida sa a',
-  'loc.leadPlace': '<strong>{p}</strong> nan {amt} soti nan {place}',
+  'loc.leadPeople': '<strong>Donatè endividyèl:</strong> {p} nan lajan yo soti nan moun ki nan {area}, {q} soti andeyò Florid.',
+  'loc.leadGroups': '<strong>Gwoup:</strong> {p} nan lajan yo soti nan gwoup ki nan {area}, {q} soti andeyò Florid.',
+  'loc.areaVotes': 'zòn ki vote pou kandida sa a',
   'loc.people': 'Moun',
   'loc.groups': 'Gwoup',
   'loc.self': 'Pwòp lajan',
@@ -3084,8 +3087,14 @@ function locPanel(L, side, emptyMsg){
   var h = '<div class="loc-side"><div class="fin-side ' + (side === 'for' ? 'side-yes' : 'side-no') + '">' + t(side === 'for' ? 'loc.for' : 'loc.against') + '</div>' +
     '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t(side === 'for' ? 'loc.forSub' : 'loc.againstSub') + '</p>';
   if(!L || !L.total){ return h + '<p style="font-size:13.5px;color:var(--ink-soft)">' + emptyMsg + '</p></div>'; }
-  var here = (L.people.here || 0) + (L.groups.here || 0);
-  h += '<p class="mny-lead" style="margin-bottom:6px">' + t(L.exact ? 'loc.leadExact' : 'loc.leadPlace', {p: fmtPct(here, L.total), amt: fmtUsd(L.total), place: esc(L.place)}) + '</p>';
+  // Headline: people and groups separately, each out of the money that has an address on file
+  var area = L.kind === 'state' ? esc(L.place) : L.exact ? t('loc.areaVotes') : esc(L.place);   // statewide: just say Florida
+  ['people','groups'].forEach(function(k){
+    var known = locSum(L[k]) - (L[k].unk || 0);
+    if(known <= 0) return;
+    h += '<p class="mny-lead" style="margin-bottom:6px">' + t(k === 'people' ? 'loc.leadPeople' : 'loc.leadGroups',
+      {p: fmtPct(L[k].here || 0, known), q: fmtPct(L[k].out || 0, known), area: area}) + '</p>';
+  });
   var rows = [['people', L.people], ['groups', L.groups]];
   var max = Math.max(locSum(L.people), locSum(L.groups), L.self || 0) || 1;
   var used = {};
