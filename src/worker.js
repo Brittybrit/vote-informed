@@ -1832,8 +1832,8 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
     if (d.count) {
       result.donors = d.donors;
       result.donorDataNote = 'Contributions reported to the ' + d.label + ': $' + Math.round(d.total).toLocaleString('en-US') +
-        ' from ' + d.count + (d.count === 1 ? ' contribution' : ' contributions') + ', including loans and in-kind gifts, in reports through ' + d.through +
-        ' (' + d.lastReport + '). The village posts scanned reports, so these were typed in from each report and checked against its totals.' +
+        ' from ' + d.count + (d.count === 1 ? ' contribution' : ' contributions') + ' (loans and in-kind gifts count), in reports through ' + d.through +
+        ' (' + d.lastReport + '). The clerk posts scanned reports, so these were typed in from each report and checked against its totals.' +
         (d.pending ? ' ' + d.pending : '') + ' Top givers shown, each linked to the report that lists the gift.' + (d.ties || '');
       result.donorListUrl = d.portal;
       result.donorSource = 'CITY';
