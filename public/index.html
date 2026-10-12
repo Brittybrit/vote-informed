@@ -432,6 +432,14 @@
   .loc-bar{display:flex; height:22px; border:2px solid var(--ink); background:var(--paper); overflow:hidden; min-width:6px;}
   .loc-bar span{display:block; min-width:2px; border-right:1px solid var(--panel);}
   .loc-bar span:last-child{border-right:none;}
+  .loc-row{margin:12px 0 4px;}
+  .loc-head{display:flex; justify-content:space-between; align-items:baseline; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink); margin-bottom:4px;}
+  .loc-row .loc-bar{height:28px;}
+  .loc-bar em{font-style:normal; font-family:var(--mono); font-size:11.5px; font-weight:600; color:#fff; display:block; padding:6px 0 0 6px; white-space:nowrap; overflow:hidden;}
+  .loc-bar em.dk{color:var(--ink);}
+  .loc-cap{font-size:12.5px; line-height:1.5; color:var(--ink-soft); margin:5px 0 0;}
+  .loc-cap b{font-size:13px;}
+  .loc-cap-unk{font-family:var(--mono); font-size:11px; margin-top:2px;}
   .loc-key{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:10px; font-size:12px; color:var(--ink-soft);}
   .loc-key i{display:inline-block; width:11px; height:11px; border:1px solid rgba(19,31,60,.35); margin-right:5px; vertical-align:-1px;}
   .loc-unk{background:repeating-linear-gradient(45deg,#C9C9C1 0 3px,#F1F1EC 3px 6px);}
@@ -694,10 +702,9 @@ en: {
   'loc.against': '✕ Opposition money',
   'loc.forSub': 'Campaign donations plus outside groups spending to help.',
   'loc.againstSub': 'Outside groups spending to defeat this candidate.',
-  'loc.leadPeople': '<strong>Individual donors:</strong> {p} of their money came from people located in {area}, {q} from outside Florida.',
-  'loc.leadGroups': '<strong>Groups:</strong> {p} of their money came from groups located in {area}, {q} from outside Florida.',
-  'loc.areaVotes': 'the area that votes for this candidate',
-  'loc.people': 'People',
+  'loc.people': 'Individual donors',
+  'loc.noAddr': 'Not counted above: {amt} with no address on file.',
+  'loc.allUnk': 'No address on file for any of this money.',
   'loc.groups': 'Groups',
   'loc.self': 'Own money',
   'loc.here': 'Located in the area that votes for this candidate',
@@ -1023,10 +1030,9 @@ es: {
   'loc.against': '✕ Dinero en contra',
   'loc.forSub': 'Donaciones a la campaña más gastos de grupos externos para ayudar.',
   'loc.againstSub': 'Gastos de grupos externos para derrotar a este candidato.',
-  'loc.leadPeople': '<strong>Donantes individuales:</strong> {p} de su dinero vino de personas ubicadas en {area}, {q} de fuera de Florida.',
-  'loc.leadGroups': '<strong>Grupos:</strong> {p} de su dinero vino de grupos ubicados en {area}, {q} de fuera de Florida.',
-  'loc.areaVotes': 'el área que vota por este candidato',
-  'loc.people': 'Personas',
+  'loc.people': 'Donantes individuales',
+  'loc.noAddr': 'No se cuenta arriba: {amt} sin dirección en el informe.',
+  'loc.allUnk': 'Nada de este dinero tiene dirección en el informe.',
   'loc.groups': 'Grupos',
   'loc.self': 'Dinero propio',
   'loc.here': 'Ubicado en el área que vota por este candidato',
@@ -1352,10 +1358,9 @@ ht: {
   'loc.against': '✕ Lajan kont',
   'loc.forSub': 'Don bay kanpay la plis depans gwoup deyò pou ede.',
   'loc.againstSub': 'Depans gwoup deyò pou fè kandida sa a pèdi.',
-  'loc.leadPeople': '<strong>Donatè endividyèl:</strong> {p} nan lajan yo soti nan moun ki nan {area}, {q} soti andeyò Florid.',
-  'loc.leadGroups': '<strong>Gwoup:</strong> {p} nan lajan yo soti nan gwoup ki nan {area}, {q} soti andeyò Florid.',
-  'loc.areaVotes': 'zòn ki vote pou kandida sa a',
-  'loc.people': 'Moun',
+  'loc.people': 'Donatè endividyèl',
+  'loc.noAddr': 'Pa konte anwo a: {amt} san adrès nan rapò a.',
+  'loc.allUnk': 'Pa gen adrès nan rapò a pou okenn nan lajan sa a.',
   'loc.groups': 'Gwoup',
   'loc.self': 'Pwòp lajan',
   'loc.here': 'Nan zòn ki vote pou kandida sa a',
@@ -3079,49 +3084,47 @@ function locMerge(a, b){   // same scope only
   m.total = (m.total || 0) + (b.total || 0);
   return m;
 }
-function locHereLabel(L){
-  return L.exact ? t('loc.here') : t('loc.herePlace', {place: esc(L.place)});
-}
 function locPanel(L, side, emptyMsg){
   var h = '<div class="loc-side"><div class="fin-side ' + (side === 'for' ? 'side-yes' : 'side-no') + '">' + t(side === 'for' ? 'loc.for' : 'loc.against') + '</div>' +
     '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t(side === 'for' ? 'loc.forSub' : 'loc.againstSub') + '</p>';
   if(!L || !L.total){ return h + '<p style="font-size:13.5px;color:var(--ink-soft)">' + emptyMsg + '</p></div>'; }
-  // Headline: people and groups separately, each out of the money that has an address on file
-  var area = L.kind === 'state' ? esc(L.place) : L.exact ? t('loc.areaVotes') : esc(L.place);   // statewide: just say Florida
-  ['people','groups'].forEach(function(k){
-    var known = locSum(L[k]) - (L[k].unk || 0);
-    if(known <= 0) return;
-    h += '<p class="mny-lead" style="margin-bottom:6px">' + t(k === 'people' ? 'loc.leadPeople' : 'loc.leadGroups',
-      {p: fmtPct(L[k].here || 0, known), q: fmtPct(L[k].out || 0, known), area: area}) + '</p>';
-  });
-  var rows = [['people', L.people], ['groups', L.groups]];
-  var max = Math.max(locSum(L.people), locSum(L.groups), L.self || 0) || 1;
   var used = {};
-  h += '<div class="loc-grid">';
-  rows.forEach(function(row){
-    var tot = locSum(row[1]);
+  // One block per kind of giver. The bar is 100% of that money WITH an address on file, so the
+  // percentages printed on it and under it are the same numbers; money with no address is stated
+  // in words below the bar instead of drawn into it.
+  ['people','groups'].forEach(function(k){
+    var o = L[k], tot = locSum(o);
     if(tot <= 0) return;
-    h += '<span class="lr">' + t('loc.' + row[0]) + '</span><div><div class="loc-bar" style="width:' + Math.max(2, tot / max * 100) + '%">';
+    var unk = o.unk || 0, known = tot - unk;
+    h += '<div class="loc-row"><div class="loc-head"><span>' + t('loc.' + k) + '</span><span class="lv">' + fmtShortUSD(tot) + '</span></div>';
+    if(known <= 0){
+      h += '<div class="loc-bar"><span class="loc-unk" style="flex-grow:1"></span></div><p class="loc-cap">' + t('loc.allUnk') + '</p></div>';
+      used.unk = 1;
+      return;
+    }
+    var parts = [];
+    h += '<div class="loc-bar">';
     LOCAL_RINGS.forEach(function(g){
-      var v = row[1][g.k] || 0;
+      if(g.k === 'unk') return;
+      var v = o[g.k] || 0;
       if(v <= 0) return;
       used[g.k] = 1;
-      var name = (g.k === 'here' ? locHereLabel(L) : t('loc.' + g.k)).replace(/<[^>]+>/g, '');
-      var tip = t('loc.' + row[0]) + ' · ' + name + ': ' + fmtUsd(v) + ' (' + fmtPct(v, tot).replace('&lt;', '<') + ')';
-      h += '<span' + (g.cls ? ' class="' + g.cls + '"' : '') + ' style="flex-grow:' + v + (g.c ? ';background:' + g.c : '') + '" title="' + esc(tip) + '" aria-label="' + esc(tip) + '"></span>';
+      var pct = fmtPct(v, known), name = locRingLabel(L, g.k);
+      parts.push('<b style="color:' + g.c + '">&#9632;</b> ' + pct + ' ' + name.charAt(0).toLowerCase() + name.slice(1));
+      var big = v / known >= 0.12;
+      h += '<span style="flex-grow:' + v + ';background:' + g.c + '" title="' + esc(pct.replace('&lt;','<') + ' ' + name.replace(/<[^>]+>/g, '')) + '">' +
+        (big ? '<em class="' + (g.k === 'fl' ? 'dk' : '') + '">' + pct + '</em>' : '') + '</span>';
     });
-    h += '</div></div><span class="lv">' + fmtShortUSD(tot) + '</span>';
+    h += '</div><p class="loc-cap">' + parts.join(' &middot; ') + '</p>';
+    if(unk > 0) h += '<p class="loc-cap loc-cap-unk">' + t('loc.noAddr', {amt: fmtShortUSD(unk)}) + '</p>';
+    h += '</div>';
   });
-  if(L.self > 0){
-    h += '<span class="lr">' + t('loc.self') + '</span><div><div class="loc-bar" style="width:' + Math.max(2, L.self / max * 100) + '%"><span style="flex-grow:1;background:#C9C1AE"></span></div></div>' +
-      '<span class="lv">' + fmtShortUSD(L.self) + '</span>';
-  }
-  h += '</div><div class="loc-key">';
-  LOCAL_RINGS.forEach(function(g){
-    if(!used[g.k]) return;
-    h += '<span><i' + (g.cls ? ' class="' + g.cls + '"' : '') + (g.c ? ' style="background:' + g.c + '"' : '') + '></i>' + (g.k === 'here' ? locHereLabel(L) : t('loc.' + g.k)) + '</span>';
-  });
-  return h + '</div></div>';
+  if(L.self > 0) h += '<p class="loc-cap" style="margin-top:4px"><strong>' + t('loc.self') + ':</strong> ' + fmtShortUSD(L.self) + '</p>';
+  return h + '</div>';
+}
+function locRingLabel(L, k){
+  if(k !== 'here') return t('loc.' + k);
+  return L.kind === 'state' || !L.exact ? t('loc.herePlace', {place: esc(L.place)}) : t('loc.here');
 }
 // fed: undefined while the FEC totals load, null when the race isn't federal, else that candidate's local tally
 function renderLocal(fed){
