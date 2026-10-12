@@ -708,6 +708,7 @@ en: {
   'loc.noAgainstFed': 'No outside spending against this candidate has been reported to the FEC.',
   'loc.noAgainstLocal': 'Florida doesn&rsquo;t publish spending against state or local candidates in a form that can be totaled, so there&rsquo;s nothing to show here.',
   'loc.loading': 'Loading where the money comes from…',
+  'loc.noData': 'No official filings with donor addresses are online for this candidate yet, so where the money comes from can&rsquo;t be counted. The donor list below may come from web research or scanned reports.',
   'loc.notePlace': 'This seat is elected by a district. Addresses are matched to {place}, not the district, so &ldquo;located in {place}&rdquo; is wider than the voters who elect it.',
   'loc.noteCity': 'Matched by the city on the mailing address. Some homes inside the city have a &ldquo;Miami&rdquo; address, so this can undercount, the same way for every candidate.',
   'loc.noteGroups': 'Groups (PACs, companies, unions, parties) are placed by the address they filed under, often a treasurer&rsquo;s or a Tallahassee office, not by where their own donors live. Groups can&rsquo;t vote; this shows where the money sits, not who votes.',
@@ -1035,6 +1036,7 @@ es: {
   'loc.noAgainstFed': 'No se ha reportado a la FEC ningún gasto externo en contra de este candidato.',
   'loc.noAgainstLocal': 'Florida no publica los gastos en contra de candidatos estatales o locales en una forma que se pueda sumar, así que no hay nada que mostrar aquí.',
   'loc.loading': 'Cargando de dónde viene el dinero…',
+  'loc.noData': 'Todavía no hay informes oficiales con direcciones de donantes en línea para este candidato, así que no se puede calcular de dónde viene el dinero. La lista de donantes de abajo puede venir de búsquedas en la web o de informes escaneados.',
   'loc.notePlace': 'Este cargo se elige por distrito. Las direcciones se comparan con {place}, no con el distrito, así que &ldquo;ubicado en {place}&rdquo; abarca más que los votantes que lo eligen.',
   'loc.noteCity': 'Se compara por la ciudad en la dirección postal. Algunas casas dentro de la ciudad tienen dirección de &ldquo;Miami&rdquo;, así que puede quedarse corto, igual para todos los candidatos.',
   'loc.noteGroups': 'Los grupos (PAC, empresas, sindicatos, partidos) se ubican por la dirección con la que se registraron, a menudo la de un tesorero o una oficina en Tallahassee, no por dónde viven sus donantes. Los grupos no votan; esto muestra dónde está el dinero, no quién vota.',
@@ -1362,6 +1364,7 @@ ht: {
   'loc.noAgainstFed': 'Pa gen depans deyò kont kandida sa a ki rapòte bay FEC.',
   'loc.noAgainstLocal': 'Florid pa pibliye depans kont kandida eta oswa lokal nan yon fòm nou ka totalize, kidonk pa gen anyen pou montre isit la.',
   'loc.loading': 'N ap chaje kote lajan an soti…',
+  'loc.noData': 'Pa gen rapò ofisyèl ak adrès donatè sou entènèt pou kandida sa a ankò, kidonk nou pa ka kalkile kote lajan an soti. Lis donatè ki anba a ka soti nan rechèch sou entènèt oswa nan rapò ki eskane.',
   'loc.notePlace': 'Se yon distri ki eli pòs sa a. Adrès yo konpare ak {place}, pa ak distri a, kidonk &ldquo;nan {place}&rdquo; pi laj pase votè ki eli l yo.',
   'loc.noteCity': 'Nou konpare dapre vil ki sou adrès lapòs la. Gen kay andedan vil la ki gen adrès &ldquo;Miami&rdquo;, kidonk sa ka manke kèk, menm jan pou tout kandida.',
   'loc.noteGroups': 'Gwoup yo (PAC, konpayi, sendika, pati) plase dapre adrès yo anrejistre a, souvan adrès yon trezorye oswa yon biwo Tallahassee, pa kote pwòp donatè yo rete. Gwoup pa vote; sa a montre kote lajan an ye, pa kiyès ki vote.',
@@ -2887,8 +2890,6 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
-  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
-
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
 
@@ -2925,6 +2926,9 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
+
+  // Biggest backers sit right under the campaign's own donors
+  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
@@ -3121,7 +3125,10 @@ function renderLocal(fed){
   var campaign = isFed ? fed : (r.localMoney && r.localMoney.total ? r.localMoney : null);
   var support = locMerge(campaign, os && os.localFor);
   var against = os && os.localAgainst;
-  if(!support && !against && !isFed){ sec.remove(); return; }
+  if(!support && !against && !isFed){
+    sec.innerHTML = '<h4>' + t('sec.local') + '</h4><p style="font-size:13.5px;color:var(--ink-soft)">' + t('loc.noData') + '</p>';
+    return;
+  }
   var html = '<h4>' + t('sec.local') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('loc.sub') + '</p>';
   html += locPanel(support, 'for', t('donors.none'));
   html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : t('loc.noAgainstLocal'));
