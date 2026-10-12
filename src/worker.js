@@ -609,7 +609,11 @@ async function refreshCached(env, key, result, name, officeCode, office) {
         await dropPriorElection(env, result);
         result.measV = MEASURE_VERSION;
         changed = true;
-      } catch (e) { console.log('prior-election check error for ' + name + ': ' + e.message); }
+      } catch (e) {
+        console.log('prior-election check error for ' + name + ': ' + e.message);
+        result.measV = MEASURE_VERSION;   // keep as is; don't retry on every read
+        changed = true;
+      }
     }
     if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
     return result;
@@ -635,7 +639,11 @@ async function refreshCached(env, key, result, name, officeCode, office) {
       await regradeFedsoc(env, result, name);
       result.fsV = FEDSOC_VERSION;
       changed = true;
-    } catch (e) { console.log('fedsoc regrade error for ' + name + ': ' + e.message); }
+    } catch (e) {
+      console.log('fedsoc regrade error for ' + name + ': ' + e.message);
+      result.fsV = FEDSOC_VERSION;   // keep the original grade; don't retry (and pay) on every read
+      changed = true;
+    }
   }
   if (changed) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: CACHE_TTL });
   return result;
@@ -664,7 +672,7 @@ function knownLean(name) {
 // Labor unions are labeled by the kind of workers they represent, never left or right:
 // lean "labor", laborType "Teachers", type "labor union". First match wins.
 const NOT_UNION = /\b(civil liberties union|credit union|european union|union county|union station)\b/;
-const KNOWN_UNIONS = /\b(afl ?cio|afscme|seiu|teamsters|ibew|unite here|fraternal order of police|police benevolent association|pba|fop|fire ?fighters|iaff|united teachers|teachers union|federation of teachers|education association|nurses union|national nurses|communications workers|cwa|building (and construction )?trades|carpenters|laborers|plumbers|pipefitters|ironworkers|iron workers|electrical workers|labor council|transport workers|utu|smart union|ufcw|uaw)\b/;
+const KNOWN_UNIONS = /\b(seafarers|machinists|steelworkers|letter carriers|sag aftra|operating engineers|afscme|seiu|teamsters|ibew|unite here|fraternal order of police|police benevolent association|pba|fop|fire ?fighters|iaff|united teachers|teachers union|federation of teachers|education association|nurses union|national nurses|communications workers|cwa|building (and construction )?trades|carpenters|laborers|plumbers|pipefitters|ironworkers|iron workers|electrical workers|labor council|transport workers|utu|smart union|ufcw|uaw)\b/;
 const LABOR_TYPES = [
   [/\b(teacher|teachers|education association|educators|utd)\b/, 'Teachers'],
   [/\b(fire ?fighters?|iaff)\b/, 'Firefighters'],
@@ -679,6 +687,12 @@ const LABOR_TYPES = [
   [/\b(carpenters|laborers|plumbers|pipefitters|iron ?workers|building (and construction )?trades|construction)\b/, 'Building trades'],
   [/\b(cwa|communications workers)\b/, 'Communications workers'],
   [/\b(uaw|auto workers)\b/, 'Auto workers'],
+  [/\b(seafarers|maritime|longshore|ila|ilwu)\b/, 'Maritime workers'],
+  [/\b(machinists|iam|aerospace workers)\b/, 'Machinists'],
+  [/\b(steelworkers|usw)\b/, 'Steelworkers'],
+  [/\b(letter carriers|postal)\b/, 'Postal workers'],
+  [/\b(sag aftra|actors|musicians)\b/, 'Performers'],
+  [/\b(operating engineers|sheet metal|bricklayers|painters|roofers|elevator)\b/, 'Building trades'],
   [/\b(afl cio|labor council|labor federation|cope|central labor)\b/, 'Multiple trades (labor federation)'],
 ];
 function classifyUnion(it) {
@@ -726,7 +740,7 @@ async function regradeFedsoc(env, result, name) {
   if (!(fs.status in FS_RANK) || fs.status === 'none_found') return result;
   const text = await callAnthropic(env, {
     model: MODEL_JUDICIAL,
-    max_tokens: 400,
+    max_tokens: 1500,
     temperature: 0,
     messages: [{ role: 'user', content: [
       'You check a Federalist Society screen for a nonpartisan voter guide. Candidate: ' + name + '. Use ONLY the evidence below. Do not use outside knowledge.',
@@ -770,7 +784,7 @@ async function dropPriorElection(env, result) {
   if (!items.length) return result;
   const text = await callAnthropic(env, {
     model: MODEL,
-    max_tokens: 300,
+    max_tokens: 1000,
     temperature: 0,
     messages: [{ role: 'user', content: [
       'Each item below is listed as a supporter, opponent, or funder of a ballot measure in the CURRENT election. Some actually describe a position on an earlier version of the measure or an earlier election (for example "2022 precedent only", "opposed the 2022 version", "no position found for 2026").',
@@ -939,7 +953,8 @@ async function fecOutsideSpending(env, name, officeCode) {
     add(r, r.expenditure_amount || 0);
   }
 
-  const list = Object.values(agg).filter(a => a.amount > 0).sort((a, b) => b.amount - a.amount);
+  // Under $1,000 is usually a stray line item, not a campaign; leave it out to keep the list readable.
+  const list = Object.values(agg).filter(a => a.amount >= 1000).sort((a, b) => b.amount - a.amount);
   const ids = [...new Set(list.slice(0, 20).map(a => a.id))].filter(id => /^C\d{8}$/.test(id));
   const reg = {};
   if (ids.length) {
