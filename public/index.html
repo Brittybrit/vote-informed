@@ -2005,8 +2005,19 @@ function disclosureTag(d){
   if(u) html += ' <a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + t('disc.lookup') + ' ↗</a>';
   return html;
 }
+// Dollar value of an amount string ("$1,250,000", "$2.5 million"); unknown or undisclosed sorts last.
+function amountValue(a){
+  var m = String(a||'').replace(/,/g,'').match(/\$?\s*(\d+(?:\.\d+)?)\s*(million|m\b|thousand|k\b)?/i);
+  if(!m) return -1;
+  var n = parseFloat(m[1]), u = (m[2]||'').toLowerCase();
+  if(u === 'million' || u === 'm') n *= 1e6; else if(u === 'thousand' || u === 'k') n *= 1e3;
+  return n;
+}
+function byAmount(list){
+  return list.slice().sort(function(a, b){ return amountValue(b.amount) - amountValue(a.amount); });
+}
 function outsideRows(list){
-  return list.map(function(d){
+  return byAmount(list).map(function(d){
     var donors = safeUrl(d.donorsUrl);
     return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.note ? '<div class="enote" style="font-size:12.5px">' + esc(d.note) + '</div>' : '') +
