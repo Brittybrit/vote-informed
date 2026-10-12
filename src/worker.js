@@ -1547,18 +1547,21 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
 }
 
-// Cities whose clerks use EasyVote Campaign Finance (Miami Gardens, Sunny Isles Beach, North Miami).
+// Cities whose clerks use EasyVote Campaign Finance (Miami Gardens, Sunny Isles Beach, North Miami,
+// Key Biscayne, Palmetto Bay).
 // Its public API (the one the clerk's own portal calls) lists each filer's reports and every itemized
 // contribution, with the report it came from, so every donor links to the report PDF that lists the
 // gift. Only electronically filed reports are
 // itemized; a candidate who uploaded scans has no rows and keeps web research. The customer id is in
 // the portal's own requests (ecf-api.easyvoteapp.com/.../<id>). Refreshed at most daily, no AI.
-const EV_DONOR_VERSION = 2;
+const EV_DONOR_VERSION = 3;
 const EV_API = 'https://ecf-api.easyvoteapp.com';
 const EV_CITIES = [
   [/^\s*miami gardens\b/i, 'A7993568-4476-4576-83AC-1581F689A3A4', 'https://cityofmiamigardensfl.easyvotecampaignfinance.com', 'City of Miami Gardens'],
   [/^\s*sunny isles beach\b/i, 'C77027F3-DE8A-4968-BE87-BE0DAD8A8EE7', 'https://cityofsunnyislesbeachfl.easyvotecampaignfinance.com', 'City of Sunny Isles Beach'],
   [/^\s*north miami\b(?!\s+beach)/i, '01C43AD2-766F-46FF-BA86-42000C4740FF', 'https://northmiamifl.easyvotecampaignfinance.com', 'City of North Miami'],
+  [/^\s*key biscayne\b/i, 'A25B1BF8-F262-47F8-920B-D0BB0628A195', 'https://villageofkeybiscaynefl.easyvotecampaignfinance.com', 'Village of Key Biscayne'],
+  [/^\s*palmetto bay\b/i, '8E016AC8-E7ED-4667-A8D9-5A9374FAEEEE', 'https://villageofpalmettobayfl.easyvotecampaignfinance.com', 'Village of Palmetto Bay'],
 ];
 function evJurisdiction(office) {
   for (const [re, id, portal, label] of EV_CITIES) if (re.test(String(office || ''))) return { id, portal, label };
@@ -1580,7 +1583,7 @@ async function evCandidateDonors(env, name, office) {
   if (!filers) {
     const r = await fetch(EV_API + '/filer/documentsearch/' + j.id, { headers: H });
     if (!r.ok) throw new Error('EasyVote filers ' + r.status);
-    filers = (await r.json()).filter(f => /candidate/i.test(f.filertype || ''));   // "Candidate", "2026 Candidate"
+    filers = (await r.json()).filter(f => /candidate|incumbent/i.test(f.filertype || ''));   // "Candidate", "2026 Candidate", "Candidate-2026", "Incumbent"
     if (filers.length) await env.CACHE.put(lk, JSON.stringify(filers), { expirationTtl: 6 * 3600 });
   }
   // Ballot "Rod Mack" is the clerk's "Mack, Roderick": same seat, every word of the clerk's last
@@ -1598,7 +1601,8 @@ async function evCandidateDonors(env, name, office) {
   });
   if (hits.length !== 1) return null;
   const f = hits[0];
-  const docs = (f.documents || []).filter(d => d && d.documentid);
+  // qualifying paperwork is not a finance report
+  const docs = (f.documents || []).filter(d => d && d.documentid && !/qualif/i.test(d.documentname || ''));
   const latest = docs.slice().sort((a, b) => evDate(b.datesubmitted).localeCompare(evDate(a.datesubmitted)))[0];
   const out = { count: 0, filer: j.label, office: f.officename, portal: j.portal + '/home/publicfilings',
     latestUrl: latest ? evDocUrl(latest.documentid) : '', latestName: latest ? String(latest.documentname || '').trim() : '' };
@@ -1622,9 +1626,15 @@ async function evCandidateDonors(env, name, office) {
     const base = normPart(String(d.documentname || '').replace(/amend(ed|ment)?/gi, ' ')).replace(/\s+/g, '');
     (groups[base] = groups[base] || []).push(d);
   }
-  // Reports can cover overlapping periods (Palmetto Bay's 2026-Q3 and 2026-G1 list mostly the same
-  // gifts). One gift is one giver, day and amount, so one listed in two reports counts once.
-  const rows = [], seen = new Map();
+  const cand = normPart(f.firstname.replace(/["“”].*$/, '') + ' ' + f.lastname).split(' ').filter(Boolean);
+  // the candidate, under any form of the name ("CAROLINA CRUZ" for Carolina Cruz Gonzalez, "George E.
+  // Duell Morgan" and "George Morgan", "Pamela Schultz Gorman" for Pam Gorman), counted as one giver
+  const isSelf = n => { const w = normPart(n).split(' '), f0 = w[0] || '';
+    return cand.length >= 2 && f0.length >= 2 && (f0.startsWith(cand[0]) || cand[0].startsWith(f0)) &&
+      cand.slice(1).some(p => p.length > 1 && w.slice(1).includes(p)); };
+  const giver = x => !String(x.ContributorOrganizationName || '').trim() && isSelf(evWho(x)) ? '\u0000self' : null;
+  const dayNo = s => Math.round(Date.parse(String(s || '').slice(0, 10).replace(/^0\d(\d\d-)/, '20$1') + 'T00:00:00Z') / 864e5);
+  const reports = [];
   for (const g of Object.values(groups)) {
     g.sort((a, b) => evDate(b.datesubmitted).localeCompare(evDate(a.datesubmitted)));
     const use = g.find(d => (byDoc.get(d.documentid.toUpperCase()) || []).length);
@@ -1632,7 +1642,7 @@ async function evCandidateDonors(env, name, office) {
     // A report comes back as two versions, "<id>_Redacted" and "<id>", and a row (often a loan) can be
     // in both, sometimes under a shorter form of the name ("CAROLINA CRUZ GONZALEZ" / "CAROLINA CRUZ").
     // Count a row from the second version once if the first already has it: same day, amount and name.
-    const kept = [];
+    const kept = [], items = [];
     const ver = x => /_Redacted$/i.test(String(x.DocumentFilingId || '')) ? 'r' : 'o';
     for (const x of byDoc.get(use.documentid.toUpperCase()).slice().sort((a, b) => ver(b).localeCompare(ver(a)))) {
       const v = ver(x), set = new Set(normPart(evWho(x)).split(' '));
@@ -1640,32 +1650,46 @@ async function evCandidateDonors(env, name, office) {
         (k.set.size <= set.size ? [...k.set].every(t => set.has(t)) : [...set].every(t => k.set.has(t))));
       if (dup) continue;
       kept.push({ v, date: x.ContributionDate, amt: x.ContributionAmount, set });
-      const key = [...set].sort().join(' ') + '|' + x.ContributionDate + '|' + x.ContributionAmount;
-      if (seen.has(key) && seen.get(key) !== use.documentid) continue;
-      seen.set(key, use.documentid);
-      rows.push({ x, doc: use });
+      items.push({ x, key: (giver(x) || [...set].sort().join(' ')) + '|' + x.ContributionAmount, day: dayNo(x.ContributionDate) });
+    }
+    reports.push({ doc: use, items, exact: new Set(items.map(i => i.key + '|' + i.day)) });
+  }
+  // Reports can cover overlapping periods: Palmetto Bay's 2026-Q3 and 2026-G1 list mostly the same
+  // gifts, and some candidates' 2026-Q2 relists everything from Q1. A gift listed in two reports counts
+  // once. Same giver, amount and day is the same gift. In two reports that overlap (they share at least
+  // one such gift), the same giver and amount up to 3 days apart is too: one gift can be dated 09/28 in
+  // one report and 09/30 in the next. Each listing pairs with at most one from another report; repeat
+  // gifts within a report all count.
+  const overlap = (a, b) => { for (const k of a.exact) if (b.exact.has(k)) return true; return false; };
+  const rows = [], seen = new Map();
+  for (const rep of reports) {
+    const near = new Set(reports.filter(o => o !== rep && overlap(o, rep)).map(o => o.doc.documentid));
+    for (const { x, key, day } of rep.items) {
+      const list = seen.get(key) || [];
+      const twin = list.filter(e => !e.docs.has(rep.doc.documentid) &&
+          (e.day === day || (Math.abs(e.day - day) <= 3 && [...e.docs].some(d => near.has(d)))))
+        .sort((a, b) => Math.abs(a.day - day) - Math.abs(b.day - day))[0];
+      if (twin) { twin.docs.add(rep.doc.documentid); continue; }
+      list.push({ day, docs: new Set([rep.doc.documentid]) });
+      seen.set(key, list);
+      rows.push({ x, doc: rep.doc });
     }
   }
-  const cand = normPart(f.firstname + ' ' + f.lastname).split(' ');
-  // the candidate, under any form of the name ("CAROLINA CRUZ" for Carolina Cruz Gonzalez,
-  // "George E. Duell Morgan" and "George Morgan"), counted as one giver
-  const isSelf = n => { const w = ' ' + normPart(n) + ' ';
-    return cand.length >= 2 && w.includes(' ' + cand[0] + ' ') && cand.slice(1).some(p => p.length > 1 && w.includes(' ' + p + ' ')); };
   const agg = {}; let total = 0, to = '';
   for (const { x, doc } of rows) {
-    const date = String(x.ContributionDate || '').slice(0, 10);
+    const date = String(x.ContributionDate || '').slice(0, 10).replace(/^0\d(\d\d-)/, '20$1');   // mistyped years: Palmetto Bay's "0026-01-15", "0226-04-24"
     const amt = Number(x.ContributionAmount) || 0;
-    if (amt <= 0 || date < CYCLE_START_YEAR + '-01-01') continue;
+    if (!amt || date < CYCLE_START_YEAR + '-01-01') continue;   // a negative amount is a refund and nets out
     const org = String(x.ContributorOrganizationName || '').trim();
     const who = evWho(x);
     if (!who) continue;
-    total += amt; out.count++;
+    total += amt; if (amt > 0) out.count++;
     if (date > to && date <= new Date().toISOString().slice(0, 10)) to = date;   // ignore mistyped future dates
     const self = !org && isSelf(who);
     const id = self ? '\u0000self' : normPart(who);
     if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date };
     const a = agg[id];
-    a.amount += amt; a.n++;
+    a.amount += amt; if (amt > 0) a.n++;
     if (date >= a.date) { a.date = date; a.doc = doc; }   // link the report with this giver's latest gift
   }
   const sorted = Object.values(agg).sort((a, b) => b.amount - a.amount);
@@ -1688,8 +1712,10 @@ async function evCandidateDonors(env, name, office) {
 }
 function evWho(x) {
   const org = String(x.ContributorOrganizationName || '').trim();
-  return (org || [x.ContributorFirstName, x.ContributorMiddleName, x.ContributorLastName].filter(Boolean).join(' ') || x.ContributorFullName || '')
-    .replace(/\s+/g, ' ').trim();
+  if (org) return org.replace(/\s+/g, ' ');
+  return ([x.ContributorFirstName, x.ContributorMiddleName, x.ContributorLastName].filter(Boolean).join(' ') || x.ContributorFullName || '')
+    .replace(/\s+/g, ' ').trim().replace(/^(mr|mrs|ms|miss)\.?\s+(?=\S)/i, '')   // Key Biscayne's "Mr. Mario J. Garcia-Sierra"
+    .replace(/^([^,]+),\s*(?=\S)(?!(?:jr|sr|ii|iii|iv|llc|l\.l\.c|inc|corp|co|ltd|lp|llp|pllc|pa|p\.a)\.?$)([^,]+)$/i, '$2 $1').replace(/,$/, '').trim();   // Palmetto Bay's "Robinson, Karen"
 }
 function evDate(s) {   // "08/14/26" -> "2026-08-14"
   const m = String(s || '').match(/^(\d\d)\/(\d\d)\/(\d\d)$/);
