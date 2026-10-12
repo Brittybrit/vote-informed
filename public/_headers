@@ -3,3 +3,9 @@
 
 /
   Cache-Control: no-cache
+
+/data/*
+  Cache-Control: no-cache
+
+/methodology.html
+  Cache-Control: no-cache

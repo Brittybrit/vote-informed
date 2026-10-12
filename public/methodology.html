@@ -41,6 +41,12 @@
   dt{margin-top:12px;}
   dd{margin-left:0; color:var(--ink-soft);}
   footer{border-top:2px solid var(--rule); padding:18px 16px; font-size:14px; color:var(--ink-soft); text-align:center;}
+  .cov{width:100%; border-collapse:collapse; font-size:14px; margin:8px 0 6px;}
+  .cov th, .cov td{text-align:left; vertical-align:top; padding:7px 8px; border-bottom:1px solid #DDDDD5;}
+  .cov th{font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft);}
+  .cov .st{font-weight:700; white-space:nowrap;}
+  .cov-upd{font-size:12.5px; color:var(--ink-soft);}
+  @media (max-width:560px){ .cov thead{display:none;} .cov tr{display:block; border-bottom:1px solid #DDDDD5; padding:6px 0;} .cov td{display:block; border:0; padding:2px 0;} }
 </style>
 </head>
 <body>
@@ -65,6 +71,11 @@
   <h2>Donors</h2>
   <p>Money given directly to a candidate's campaign is listed separately from money given to political committees that support them. Florida limits direct gifts to a campaign ($3,000 per election for statewide offices, $1,000 for most others), so larger amounts went to a committee. For federal candidates, the list includes the candidate's own fundraising committees, since that money funds their campaign.</p>
 
+  <h2 id="coverage">Data coverage and open records requests</h2>
+  <p>Official donor records are not available the same way everywhere. Federal, state and county candidates file in public databases, and the app reads every contribution from them. City candidates file with each city clerk, and cities publish those reports in different ways, or not at all. Miami-Dade County Code &sect;12-7 (Ordinance 23-63, 2023) requires every city in the county to post its current candidates' campaign finance reports on its website within 7 days of receiving them. It doesn't require a searchable format, so a scanned PDF counts.</p>
+  <p>Where a city's official records aren't available to the app, a candidate's donors come from news and web research, and the candidate's page says so. Where we couldn't find a city's reports online, we asked the clerk for them in a public records request. This table shows where each request stands.</p>
+  <div id="covTable"><p>Loading&hellip;</p></div>
+  <p class="cov-upd" id="covUpd"></p>
   <h2>Outside spending</h2>
   <p>Since the Supreme Court's 2010 Citizens United decision, groups can spend unlimited money on their own ads, mail and texts for or against a candidate, as long as they don't coordinate with the campaign. This money never goes to the campaign, so it is not listed as a donation. It is shown in its own Outside Spending section, split into money spent to help the candidate and money spent to defeat them.</p>
   <ul>
@@ -144,5 +155,29 @@
   <p>All of the code, including the exact research instructions and the fixed label list, is public on <a href="https://github.com/Brittybrit/vote-informed" target="_blank" rel="noopener">GitHub</a> under the MIT license.</p>
 </main>
 <footer><a href="/">Back to Ballot305.org</a></footer>
+<script>
+(function(){
+  var LABEL = {official: 'Official data in the app', portal: 'Online portal, not read yet', pdf: 'PDF files only', requested: 'Records requested', notfound: 'No public link found'};
+  function day(d){ var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : ''; }
+  function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function link(u, txt){ return /^https:\/\//.test(u || '') ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + txt + '</a>' : ''; }
+  function detail(c){
+    if(c.status === 'official') return 'Every contribution, read from ' + esc(c.source || 'the clerk\u2019s online records') + '.';
+    if(c.status === 'portal') return 'Reports are in an online portal the app can\u2019t read yet. Donors come from news and web research.';
+    if(c.status === 'pdf') return 'Reports are posted as PDF files. Donors come from news and web research.';
+    if(c.status === 'requested') return 'Not found on the city website. Requested from the clerk ' + day(c.requested) + '; reply requested by ' + day(c.due) + '.' + (c.reply ? ' Clerk replied ' + day(c.reply) + (c.replyNote ? ': ' + esc(c.replyNote) : '.') : ' Awaiting reply.');
+    return 'No public link to reports found. Donors come from news and web research.';
+  }
+  fetch('/data/coverage.json').then(function(r){ return r.json(); }).then(function(j){
+    var order = {requested: 0, notfound: 1, portal: 2, pdf: 3, official: 4};
+    var rows = (j.levels || []).map(function(l){ return {name: l.level, status: l.status, source: l.source, url: l.url}; })
+      .concat((j.cities || []).slice().sort(function(a, b){ return (order[a.status] - order[b.status]) || a.city.localeCompare(b.city); })
+      .map(function(c){ return {name: c.city, status: c.status, url: c.url, requested: c.requested, due: c.due, reply: c.reply, replyNote: c.replyNote}; }));
+    document.getElementById('covTable').innerHTML = '<table class="cov"><thead><tr><th>Who</th><th>Status</th><th>Details</th></tr></thead><tbody>' +
+      rows.map(function(c){ return '<tr><td>' + esc(c.name) + '</td><td class="st">' + LABEL[c.status] + '</td><td>' + detail(c) + ' ' + link(c.url, 'Records') + '</td></tr>'; }).join('') + '</tbody></table>';
+    if(j.updated) document.getElementById('covUpd').textContent = 'Last updated ' + day(j.updated) + '.';
+  }).catch(function(){ document.getElementById('covTable').innerHTML = '<p>Couldn\u2019t load the coverage table.</p>'; });
+})();
+</script>
 </body>
 </html>

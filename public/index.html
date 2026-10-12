@@ -322,6 +322,9 @@
   .bk-paths li{margin:2px 0;}
   .bk-paths li.bk-for, .bk-paths li.bk-yes, .bk-paths li.bk-allied{list-style:'\2713  ';}
   .bk-paths li.bk-against, .bk-paths li.bk-no{list-style:'\2717  ';}
+  .cov-box{margin:12px 0 0; padding:8px 10px; border-left:4px solid var(--flag-rule); background:var(--flag-bg); font-size:13px;}
+  .cov-box p{margin:4px 0 0;}
+  .cov-h{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
   .al-com{margin:0 0 16px;}
   .al-head{border-left:4px solid var(--ok-fg); background:var(--ok-bg); padding:8px 10px; margin:8px 0 4px;}
   .al-head.al-unk{border-left-color:var(--flag-rule); background:var(--flag-bg);}
@@ -750,6 +753,14 @@ en: {
   'sec.committee': 'Money to Allied Committees',
   'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
   'committee.to': 'to {name}',
+  'cov.head': 'Official donor records: {city}',
+  'cov.portal': '{city} posts candidates\u2019 reports in an online portal this app can\u2019t read yet, so the donors above come from news and web research. Check the city\u2019s portal for the full list.',
+  'cov.pdf': '{city} posts candidates\u2019 reports only as PDF files, so the donors above come from news and web research. The PDFs have the full list.',
+  'cov.requested': 'We couldn\u2019t find {city}\u2019s 2026 candidate reports on its website, so the donors above come from news and web research. County law (Code \u00a712-7) requires cities to post them. We requested them from the clerk on {requested} and asked for a reply by {due}.',
+  'cov.notfound': 'We couldn\u2019t find a public link to {city}\u2019s candidate reports, so the donors above come from news and web research.',
+  'cov.replied': 'The clerk replied on {date}.',
+  'cov.cityrec': 'City records',
+  'cov.all': 'Data coverage for every city',
   'al.to': 'Given to this committee',
   'al.raised': 'Raised {amt} in {n} reported gifts in 2025\u20132026 (Florida Division of Elections)',
   'al.gave': 'Gave <strong>{amt}</strong> directly to this campaign.',
@@ -1045,6 +1056,14 @@ es: {
   'sec.committee': 'Dinero a comités aliados',
   'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
   'committee.to': 'a {name}',
+  'cov.head': 'Registros oficiales de donantes: {city}',
+  'cov.portal': '{city} publica los informes de los candidatos en un portal en línea que esta aplicación aún no puede leer, así que los donantes de arriba vienen de noticias e investigación en la web. Consulte el portal de la ciudad para la lista completa.',
+  'cov.pdf': '{city} publica los informes de los candidatos solo como archivos PDF, así que los donantes de arriba vienen de noticias e investigación en la web. Los PDF tienen la lista completa.',
+  'cov.requested': 'No encontramos los informes de 2026 de los candidatos de {city} en su sitio web, así que los donantes de arriba vienen de noticias e investigación en la web. La ley del condado (Código \u00a712-7) exige que las ciudades los publiquen. Los solicitamos a la secretaría municipal el {requested} y pedimos respuesta antes del {due}.',
+  'cov.notfound': 'No encontramos un enlace público a los informes de los candidatos de {city}, así que los donantes de arriba vienen de noticias e investigación en la web.',
+  'cov.replied': 'La secretaría respondió el {date}.',
+  'cov.cityrec': 'Registros de la ciudad',
+  'cov.all': 'Cobertura de datos de cada ciudad',
   'al.to': 'Donado a este comité',
   'al.raised': 'Recaudó {amt} en {n} donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida)',
   'al.gave': 'Dio <strong>{amt}</strong> directamente a esta campaña.',
@@ -1340,6 +1359,14 @@ ht: {
   'sec.committee': 'Lajan bay komite alye',
   'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
   'committee.to': 'bay {name}',
+  'cov.head': 'Dosye ofisyèl donatè: {city}',
+  'cov.portal': '{city} mete rapò kandida yo nan yon pòtay sou entènèt aplikasyon sa a poko ka li, kidonk donatè ki anwo yo soti nan nouvèl ak rechèch sou entènèt. Gade pòtay vil la pou lis konplè a.',
+  'cov.pdf': '{city} mete rapò kandida yo sèlman an PDF, kidonk donatè ki anwo yo soti nan nouvèl ak rechèch sou entènèt. PDF yo gen lis konplè a.',
+  'cov.requested': 'Nou pa jwenn rapò 2026 kandida {city} yo sou sit entènèt li, kidonk donatè ki anwo yo soti nan nouvèl ak rechèch sou entènèt. Lwa konte a (Kòd \u00a712-7) mande vil yo pibliye yo. Nou mande grefye a yo le {requested} epi nou mande yon repons anvan {due}.',
+  'cov.notfound': 'Nou pa jwenn yon lyen piblik pou rapò kandida {city} yo, kidonk donatè ki anwo yo soti nan nouvèl ak rechèch sou entènèt.',
+  'cov.replied': 'Grefye a reponn le {date}.',
+  'cov.cityrec': 'Dosye vil la',
+  'cov.all': 'Kouvèti done pou chak vil',
   'al.to': 'Bay komite sa a',
   'al.raised': 'Ranmase {amt} nan {n} don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid)',
   'al.gave': 'Bay <strong>{amt}</strong> dirèkteman bay kanpay sa a.',
@@ -2452,6 +2479,34 @@ function loadGroups(){
   // top-level outside spenders: load now so the Left/Right tag appears without opening the panel
   document.querySelectorAll('.og-row > details.og[data-fec]').forEach(loadPanel);
 }
+// Where official donor records exist for each city, and records requests in progress. Edited in
+// /data/coverage.json, shared with the methodology page.
+var COVERAGE = null;
+try { fetch('/data/coverage.json').then(function(r){ return r.json(); }).then(function(j){ COVERAGE = j; }).catch(function(){}); } catch(e){}
+function cityCoverage(office){
+  if(!COVERAGE || !COVERAGE.cities) return null;
+  var o = String(office || '').toLowerCase().trim();
+  var best = null;
+  COVERAGE.cities.forEach(function(c){
+    var n = c.city.toLowerCase();
+    if((o.indexOf(n + ' ') === 0 || o.indexOf(n + '-') === 0 || o === n) && (!best || n.length > best.city.length)) best = c;
+  });
+  return best;
+}
+function coverageText(c){
+  var k = 'cov.' + c.status;
+  var h = t(k, {city: esc(c.city), requested: fmtDay(c.requested), due: fmtDay(c.due)});
+  if(c.status === 'requested' && c.reply) h += ' ' + t('cov.replied', {date: fmtDay(c.reply)}) + (c.replyNote ? ' ' + esc(c.replyNote) : '');
+  return h;
+}
+function coverageBox(race){
+  if(!race || race.isMeasure) return '';
+  var c = cityCoverage(race.office);
+  if(!c || c.status === 'official') return '';
+  return '<div class="cov-box cov-' + esc(c.status) + '"><div class="cov-h">' + t('cov.head', {city: esc(c.city)}) + '</div><p>' + coverageText(c) + '</p>' +
+    '<p class="og-links">' + (safeUrl(c.url) ? '<a class="srclink" href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' + t('cov.cityrec') + ' ↗</a> ' : '') +
+    '<a class="srclink" href="/methodology.html#coverage" target="_blank" rel="noopener">' + t('cov.all') + ' ↗</a></p></div>';
+}
 // "Biggest backers": the people and companies whose money sits behind the groups in this race,
 // traced up to two steps back from the official filings, so they aren't buried in nested panels.
 function orgFetch(d){
@@ -2777,6 +2832,7 @@ function renderDossier(cand, race, r, cached){
     html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : hasCommittee ? t('donors.committeeOnly') : t('donors.none')) + '</p>';
   }
   if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
+  html += coverageBox(race);
   var listUrl = r.donorListUrl || '';
   if(!listUrl){   // federal results cached before this field existed: rebuild from the committee ID in the note
     var cm = String(r.donorDataNote||'').match(/committee (C\d{8})/);
