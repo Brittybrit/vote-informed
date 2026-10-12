@@ -595,9 +595,14 @@ function siteMatchesOrg(url, org) {
   if (hits.length >= 2) return true;
   return hits.some(w => w.length >= 5 && !GENERIC_WORDS.has(w));
 }
+const NEWS_HOSTS = /(^|\.)(miamiherald|elnuevoherald|sun-sentinel|sunsentinel|tampabay|orlandosentinel|palmbeachpost|tallahassee|wlrn|nbcmiami|local10|wsvn|cbsnews|cbs12|telemundo|univision|floridapolitics|floridaphoenix|politico|axios|miamitodaynews|biscaynetimes|miaminewtimes|themiamitimesonline|ballotpedia|votesmart|isidewith|wikipedia|facebook|instagram|twitter|x|youtube|medium|substack)\./i;
 function ownSiteRatings(result) {
   if (Array.isArray(result.ratings))
-    result.ratings = result.ratings.filter(r => r && /^https:\/\//i.test(r.url || '') && siteMatchesOrg(r.url, r.org));
+    result.ratings = result.ratings.filter(r => {
+      if (!r || !/^https:\/\//i.test(r.url || '')) return false;
+      let host = ''; try { host = new URL(r.url).hostname.toLowerCase().replace(/^www\./, '') + '.'; } catch (e) { return false; }
+      return !NEWS_HOSTS.test(host) && siteMatchesOrg(r.url, r.org);
+    });
   return result;
 }
 
@@ -1405,7 +1410,7 @@ async function flCommittee(env, name) {
 // judges): donors straight from the Florida Division of Elections, like FEC data for federal races.
 // Web search can find a candidate's state filing page but can't read the contributions inside it.
 // No AI, refreshed at most daily. County and city races file with the county, not the state.
-const FL_DONOR_VERSION = 2;
+const FL_DONOR_VERSION = 3;
 function flOfficeQuery(office) {
   const o = String(office || '');
   const d = (o.match(/District\s+(\d+)/i) || [])[1] || '';
@@ -1462,8 +1467,14 @@ async function flCandidateDonors(env, name, office) {
     agg[giver].kinds.add(c[3]);
   }
   if (!n) return { donors: [], count: 0 };
+  // The DOE export has no contributor type. The candidate's own money is the occupation "candidate", or a
+  // giver whose every name word is in the candidate's own name ("Rodriguez, Ana Maria" for Ana Maria
+  // Rodriguez), never just a donor who shares a first and last name ("Ana Rodriguez Lopez").
+  const candWords = new Set(normPart(String(name).split(/\s+and\s+/i)[0].replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ')).split(' ').filter(Boolean));
+  const isCand = giver => { const w = normPart(giver).split(' ').filter(x => x.length > 1 && !/^(jr|sr|ii|iii|iv|mr|mrs|ms|dr)$/.test(x));
+    return w.includes(np.first) && w.includes(np.last) && w.every(x => candWords.has(x)); };
   const typeOf = (giver, occ) => {
-    const self = /^candidate$/i.test(occ) || (normPart(giver).includes(np.last) && normPart(giver).includes(np.first));
+    const self = /^candidate$/i.test(occ) || isCand(giver);
     const party = /\b(party|executive committee)\b/i.test(giver + ' ' + occ);
     const committee = /political committee|\bpac\b|committee|electioneering/i.test(giver + ' ' + occ);
     const org = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|association|assn|union|trust|group|partners|holdings|ltd|lp|llp|pa|p\.a)\b\.?/i.test(giver);
@@ -1487,7 +1498,7 @@ async function flCandidateDonors(env, name, office) {
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 3;
+const MDC_DONOR_VERSION = 4;
 // Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
 // Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
 // Update the election ids each cycle.
@@ -1553,12 +1564,24 @@ function vfAddr(x) {
   const line = x.slice(5, 10).map(v => String(v || '')).find(v => /\b[A-Z]{2}\s+\d{5}/.test(v));
   return line ? splitCityLine(line) : {};
 }
+// Ballot and clerk first names: equal, one a short form of the other (Rod/Roderick), or a common nickname
+const NICKNAMES = [['steve', 'steven', 'stephen', 'esteban'], ['alex', 'alexander', 'alejandro'], ['bill', 'william', 'will', 'billy'],
+  ['bob', 'robert', 'rob', 'bobby'], ['mike', 'michael', 'miguel'], ['tony', 'antonio', 'anthony'], ['eddie', 'eduardo', 'edward', 'ed'],
+  ['jim', 'james', 'jimmy'], ['joe', 'joseph'], ['pepe', 'jose'], ['nick', 'nicholas', 'nicolas'], ['kathy', 'katherine', 'kathleen'],
+  ['pam', 'pamela'], ['liz', 'elizabeth', 'beth'], ['danny', 'daniel', 'dan'], ['rick', 'ricky', 'richard', 'ricardo'], ['chris', 'christopher', 'cristobal']];
+function sameFirst(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  const k = Math.min(a.length, b.length);
+  if (k >= 3 && a.slice(0, k) === b.slice(0, k)) return true;
+  return NICKNAMES.some(g => g.includes(a) && g.includes(b));
+}
 async function mdcCandidateDonors(env, name, office) {
   const np = flNameParts(name);
   if (!np) return null;
   const j = vfJurisdiction(office);
   const list = await mdcCandidateList(env, j);
-  let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && p.first === np.first; });
+  let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && sameFirst(p.first, np.first); });
   if (hits.length > 1) {   // same name in two races: use the district or group number
     const num = (String(office).match(/(?:District|Group|Seat)\s+(\d+)/i) || [])[1];
     if (num) hits = hits.filter(c => (String(c.office).match(/(\d+)\s*$/) || [])[1] && parseInt(c.office.match(/(\d+)\s*$/)[1], 10) === parseInt(num, 10));
@@ -1567,7 +1590,14 @@ async function mdcCandidateDonors(env, name, office) {
   const c = hits[0];
   const r = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&dhc=0&county=' + j.c, { headers: VF_H });
   if (!r.ok) throw new Error('county export ' + r.status);
-  const rows = parseCSV(await r.text()).slice(1).filter(x => x[3] === 'C');
+  const all = parseCSV(await r.text()).slice(1).filter(x => x.length > 4);
+  const rows = all.filter(x => x[3] === 'C');
+  // The export has no documented column names, so check the columns we read still hold what we expect:
+  // a date in column 2 and an amount in column 14 on nearly every contribution row. If not, throw: the
+  // caller keeps the last good result instead of publishing shifted numbers.
+  const shaped = rows.filter(x => /\d/.test(x[2] || '') && /[-\/]/.test(x[2] || '') && isFinite(parseFloat(x[14])));
+  if (all.length && (!rows.length || shaped.length < rows.length * 0.9))
+    throw new Error('county export layout changed (' + shaped.length + ' of ' + rows.length + ' contribution rows look right, ' + all.length + ' rows)');
   const k = x => x[2] + '|' + normPart(x[4]) + '|' + (parseFloat(x[14]) || 0).toFixed(2);
   const bag = new Map();
   const put = (x, n) => { const key = k(x); const cur = bag.get(key) || { x, n: 0 }; cur.n += n; bag.set(key, cur); };
@@ -1612,6 +1642,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
     const d = await mdcCandidateDonors(env, name, office);
     result.mdcV = MDC_DONOR_VERSION;
     result.mdcAt = Date.now();
+    if (d) delete result.officialMiss; else if (result.donorSource !== 'MDC') result.officialMiss = vfJurisdiction(office).label;
     if (d && d.count) {
       result.donors = d.donors;
       result.donorDataNote = 'Contributions reported to the ' + d.filer + ' for ' + d.office + ': $' +
@@ -1632,7 +1663,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
 // gift. Only electronically filed reports are
 // itemized; a candidate who uploaded scans has no rows and keeps web research. The customer id is in
 // the portal's own requests (ecf-api.easyvoteapp.com/.../<id>). Refreshed at most daily, no AI.
-const EV_DONOR_VERSION = 4;
+const EV_DONOR_VERSION = 5;
 const EV_API = 'https://ecf-api.easyvoteapp.com';
 const EV_CITIES = [
   [/^\s*miami gardens\b/i, 'A7993568-4476-4576-83AC-1581F689A3A4', 'https://cityofmiamigardensfl.easyvotecampaignfinance.com', 'City of Miami Gardens'],
@@ -1799,8 +1830,10 @@ async function evCandidateDonors(env, name, office) {
 function evAddr(x) {
   const keys = Object.keys(x || {});
   const pick = re => { const k = keys.find(k => re.test(k)); return k ? String(x[k] || '').trim() : ''; };
-  const zip = pick(/^contributor.*(zip|postal)/i) || pick(/(zip|postal)/i);
-  return { city: pick(/^contributor.*city/i) || pick(/city/i), st: pick(/^contributor.*state/i) || pick(/^state$/i), zip: (zip.match(/\d{5}/) || [''])[0] };
+  // contributor fields only: a fallback to any "city" field could pick the filer's own address and
+  // make every gift look local. No contributor address means "not reported".
+  const zip = pick(/^contributor.*(zip|postal)/i);
+  return { city: pick(/^contributor.*city/i), st: pick(/^contributor.*state/i), zip: (zip.match(/\d{5}/) || [''])[0] };
 }
 function evWho(x) {
   const org = String(x.ContributorOrganizationName || '').trim();
@@ -1821,6 +1854,7 @@ async function refreshEvDonors(env, result, name, office, officeCode) {
     const d = await evCandidateDonors(env, name, office);
     result.evV = EV_DONOR_VERSION;
     result.evAt = Date.now();
+    if (d) delete result.officialMiss; else if (result.donorSource !== 'CITY') result.officialMiss = evJurisdiction(office).label;
     if (d && d.count) {
       result.donors = d.donors;
       result.donorDataNote = 'Contributions reported to the ' + d.filer + ' for ' + d.office + ': $' + Math.round(d.total).toLocaleString('en-US') +
@@ -1988,7 +2022,7 @@ function ringOf(addr, scope) {
   const city = normPart(addr.city);
   const want = normPart(scope.place);
   if (city && (city === want || (want === 'sunny isles beach' && city === 'sunny isles'))) return 'here';
-  return zip ? (mdcZip(zip) ? 'mdc' : 'fl') : city ? 'mdc' : 'unk';
+  return zip ? (mdcZip(zip) ? 'mdc' : 'fl') : 'unk';
 }
 function giverKind(type) {
   const t = String(type || '').toLowerCase();
@@ -2457,7 +2491,7 @@ function matchFecCandidate(name, field) {
   if (!hits.length) return null;
   const byFirst = hits.filter(c => normPart(String(c.candidate_name).split(',')[1] || '').startsWith(first.slice(0, 3)));
   if (byFirst.length === 1) return byFirst[0];
-  if (byFirst.length > 1) return byFirst.sort((a, b) => (b.total_receipts || 0) - (a.total_receipts || 0))[0];
+  if (byFirst.length > 1) return null;   // two plausible filers: show nothing rather than guess
   return hits.length === 1 ? hits[0] : null;
 }
 
