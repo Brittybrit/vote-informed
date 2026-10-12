@@ -446,6 +446,11 @@
   .loc-key{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:10px; font-size:12px; color:var(--ink-soft);}
   .loc-key i{display:inline-block; width:11px; height:11px; border:1px solid rgba(19,31,60,.35); margin-right:5px; vertical-align:-1px;}
   .loc-unk{background:repeating-linear-gradient(45deg,#C9C9C1 0 3px,#F1F1EC 3px 6px);}
+  .rep{margin-top:14px; font-size:13px;}
+  .rep summary{cursor:pointer; font-family:var(--mono); font-size:11.5px; text-decoration:underline; text-underline-offset:2px; color:var(--ink-soft);}
+  .rep-hint{font-size:12.5px; color:var(--ink-soft); margin:8px 0 6px;}
+  .rep textarea, .rep input{width:100%; box-sizing:border-box; font:inherit; font-size:14px; padding:8px; border:2px solid var(--ink); background:var(--panel); margin-bottom:8px;}
+  .rep-msg{font-size:12.5px; margin-top:8px;}
   .mny-note{font-family:var(--mono); font-size:11px; line-height:1.5; color:var(--ink-soft); margin-top:10px;}
   .fulllist{display:inline-block; margin-top:12px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); border:2px solid var(--ink); padding:8px 12px; text-decoration:none;}
   .fulllist:hover{background:var(--ink); color:var(--paper);}
@@ -665,6 +670,14 @@ en: {
   'btn.close': 'CLOSE',
   'btn.retry': 'Retry',
   'err.failed': 'Research failed: {msg}',
+  'err.held': 'This profile is being corrected and will be back soon. Meanwhile, check the candidate&rsquo;s official filings.',
+  'rep.open': 'Report a problem with this page',
+  'rep.hint': 'Something wrong or about the wrong person? Tell us what and where. The site owner reviews every report.',
+  'rep.contact': 'Email or phone (optional, only if you want a reply)',
+  'rep.send': 'Send report',
+  'rep.empty': 'Write what is wrong first.',
+  'rep.thanks': 'Thank you. Your report was sent.',
+  'rep.fail': 'Could not send right now. Try again in a minute.',
   'load.cand': 'SEARCHING: DONORS &middot; ENDORSEMENTS',
   'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
   'load.cand2': 'Live web research, usually 15 to 45 seconds. Instant if someone beat you to it.',
@@ -999,6 +1012,14 @@ es: {
   'btn.close': 'CERRAR',
   'btn.retry': 'Reintentar',
   'err.failed': 'La investigación falló: {msg}',
+  'err.held': 'Este perfil se está corrigiendo y volverá pronto. Mientras tanto, consulte los informes oficiales del candidato.',
+  'rep.open': 'Reportar un problema con esta página',
+  'rep.hint': '¿Algo está mal o es sobre otra persona? Díganos qué y dónde. La responsable del sitio revisa cada reporte.',
+  'rep.contact': 'Correo o teléfono (opcional, solo si quiere respuesta)',
+  'rep.send': 'Enviar reporte',
+  'rep.empty': 'Primero escriba qué está mal.',
+  'rep.thanks': 'Gracias. Su reporte fue enviado.',
+  'rep.fail': 'No se pudo enviar ahora. Intente de nuevo en un minuto.',
   'load.cand': 'BUSCANDO: DONANTES &middot; RESPALDOS',
   'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
   'load.cand2': 'Investigación en vivo en la web, normalmente de 15 a 45 segundos. Instantánea si alguien ya la hizo.',
@@ -1333,6 +1354,14 @@ ht: {
   'btn.close': 'FÈMEN',
   'btn.retry': 'Eseye ankò',
   'err.failed': 'Rechèch la pa mache: {msg}',
+  'err.held': 'Y ap korije pwofil sa a, l ap tounen byento. Pandan tan sa a, gade rapò ofisyèl kandida a.',
+  'rep.open': 'Siyale yon pwoblèm sou paj sa a',
+  'rep.hint': 'Gen yon bagay ki pa bon oswa ki pale de yon lòt moun? Di nou kisa ak kote. Responsab sit la li chak rapò.',
+  'rep.contact': 'Imèl oswa telefòn (si ou vle yon repons sèlman)',
+  'rep.send': 'Voye rapò a',
+  'rep.empty': 'Ekri sa ki pa bon an anvan.',
+  'rep.thanks': 'Mèsi. Rapò ou a ale.',
+  'rep.fail': 'Nou pa ka voye l kounye a. Eseye ankò nan yon minit.',
   'load.cand': 'N AP CHÈCHE: DONATÈ &middot; SIPÒ',
   'load.fedsoc': ' &middot; FEDERALIST SOCIETY',
   'load.cand2': 'Rechèch an dirèk sou entènèt, anjeneral 15 a 45 segonn. Touswit si yon lòt moun deja fè l.',
@@ -2302,7 +2331,7 @@ function renderMeasureDossier(ri, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>';
+  html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>' + reportBox();
   html += '</div>';
   $('dossierContent').innerHTML = html;
   loadBackers(r, true);
@@ -2363,9 +2392,36 @@ function renderDossierLoading(cand, race){
 }
 
 function renderDossierError(cand, race, ri, ci, msg){
+  if(msg === 'HELD'){   // the owner took this profile down for correction
+    $('dossierContent').innerHTML = dossierHead(cand, race, null) + '<div class="d-error">' + t('err.held') + '</div>';
+    return;
+  }
   $('dossierContent').innerHTML = dossierHead(cand, race, null) +
     '<div class="d-error">' + t('err.failed', {msg: esc(msg)}) +
     '<br><button onclick="selectCandidate(' + ri + ',' + ci + ')">' + t('btn.retry') + '</button></div>';
+}
+
+// "Report a problem" on every dossier: goes to the owner's review list (see /admin.html).
+function reportBox(){
+  return '<details class="rep"><summary>' + t('rep.open') + '</summary>' +
+    '<p class="rep-hint">' + t('rep.hint') + '</p>' +
+    '<textarea id="repText" rows="4" maxlength="1500"></textarea>' +
+    '<input id="repContact" type="text" maxlength="200" placeholder="' + esc(T('rep.contact')) + '">' +
+    '<button type="button" class="fulllist" id="repSend" onclick="sendReport()">' + t('rep.send') + '</button>' +
+    '<p class="rep-msg" id="repMsg" role="status"></p></details>';
+}
+async function sendReport(){
+  var txt = ($('repText').value || '').trim(), msg = $('repMsg');
+  if(!txt){ msg.textContent = T('rep.empty'); return; }
+  var parts = String(activeKey || '').split(':'), race = ballot && ballot.races[parseInt(parts[0], 10)];
+  var cand = race && race.candidates[parseInt(parts[1], 10)];
+  $('repSend').disabled = true;
+  try{
+    await api('/api/report', { key: (cache[activeKey] && cache[activeKey].key) || '', name: cand ? cand.name : (race ? race.office : ''),
+      office: race ? race.office : '', lang: LANG, text: txt, contact: ($('repContact').value || '').trim() });
+    msg.textContent = T('rep.thanks');
+    $('repText').value = '';
+  }catch(e){ msg.textContent = T('rep.fail'); $('repSend').disabled = false; }
 }
 
 // Sources behind the AI-written description. Only real https links are shown.
@@ -3077,7 +3133,7 @@ function renderDossier(cand, race, r, cached){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
   }
-  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>';
+  html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') : '') + '</p>' + reportBox();
 
   html += '</div>';
   $('dossierContent').innerHTML = html;
