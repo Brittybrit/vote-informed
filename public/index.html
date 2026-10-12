@@ -314,11 +314,13 @@
   .og-body .og-body{padding:6px 8px;}
   .og-search{font-size:12px;}
   .og-ok{color:var(--ok-fg); font-size:12px;}
-  .bk-row{border-bottom:1px solid #DDDDD5; padding:2px 0 8px; margin-bottom:6px;}
+  .bk-row{border-bottom:1px solid #DDDDD5; padding:2px 0 8px 10px; margin-bottom:6px; border-left:4px solid transparent;}
+  .bk-side-yes .bk-row{border-left-color:var(--ok-fg);}
+  .bk-side-no .bk-row{border-left-color:var(--ink);}
   .bk-row > .donor-row{border-bottom:0; padding-bottom:2px;}
   .bk-paths{margin:0 0 0 2px; padding-left:16px; font-size:12.5px; line-height:1.45; color:var(--ink-soft);}
   .bk-paths li{margin:2px 0;}
-  .bk-paths li.bk-for, .bk-paths li.bk-yes{list-style:'\2713  ';}
+  .bk-paths li.bk-for, .bk-paths li.bk-yes, .bk-paths li.bk-allied{list-style:'\2713  ';}
   .bk-paths li.bk-against, .bk-paths li.bk-no{list-style:'\2717  ';}
   .og-com{margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid #DDDDD5;}
   .og-warn{color:var(--flag-fg); background:var(--flag-bg); padding:4px 6px; font-size:12px;}
@@ -686,6 +688,10 @@ en: {
   'bk.yes': 'which is paying to pass it',
   'bk.no': 'which is paying to defeat it',
   'bk.note': 'Big number = what each backer gave to the groups listed in 2025\u20132026 (gifts of $1,000 or more). Each group\u2019s largest donors only, traced up to two steps back. Nonprofits marked \u201cdonors not disclosed\u201d are where the public trail ends.',
+  'bk.help': '✓ Money behind groups trying to HELP this candidate',
+  'bk.stop': '✗ Money behind groups trying to STOP this candidate',
+  'bk.yesSide': '✓ Money behind the YES side',
+  'bk.noSide': '✗ Money behind the NO side',
   'sec.outside': 'Outside Spending',
   'outside.sub': 'Groups spending their own money on ads, mail and texts about this candidate. This money does not go to the campaign, and the candidate does not control it.',
   'outside.for': '✓ Spent to help this candidate',
@@ -967,6 +973,10 @@ es: {
   'bk.yes': 'que paga para aprobarla',
   'bk.no': 'que paga para rechazarla',
   'bk.note': 'Cifra grande = lo que cada financiador dio a los grupos mostrados en 2025\u20132026 (aportes de $1,000 o más). Solo los mayores donantes de cada grupo, rastreados hasta dos pasos atrás. Las organizaciones sin fines de lucro marcadas \u201cdonantes no divulgados\u201d son donde termina el rastro público.',
+  'bk.help': '✓ Dinero detrás de grupos que intentan AYUDAR a este candidato',
+  'bk.stop': '✗ Dinero detrás de grupos que intentan FRENAR a este candidato',
+  'bk.yesSide': '✓ Dinero detrás del lado del SÍ',
+  'bk.noSide': '✗ Dinero detrás del lado del NO',
   'sec.outside': 'Gastos externos',
   'outside.sub': 'Grupos que gastan su propio dinero en anuncios, correo y mensajes sobre este candidato. Este dinero no va a la campaña y el candidato no lo controla.',
   'outside.for': '✓ Gastado para ayudar a este candidato',
@@ -1248,6 +1258,10 @@ ht: {
   'bk.yes': 'ki peye pou l pase',
   'bk.no': 'ki peye pou l echwe',
   'bk.note': 'Gwo chif = sa chak moun bay gwoup ki parèt yo an 2025\u20132026 (don $1,000 oswa plis). Sèlman pi gwo donatè chak gwoup, swiv jiska de etap dèyè. Òganizasyon san bi likratif ki make \u201cdonatè pa divilge\u201d se kote tras piblik la fini.',
+  'bk.help': '✓ Lajan dèyè gwoup k ap eseye EDE kandida sa a',
+  'bk.stop': '✗ Lajan dèyè gwoup k ap eseye BLOKE kandida sa a',
+  'bk.yesSide': '✓ Lajan dèyè bò WI a',
+  'bk.noSide': '✗ Lajan dèyè bò NON an',
   'sec.outside': 'Depans deyò',
   'outside.sub': 'Gwoup k ap depanse pwòp lajan yo sou piblisite, lèt ak mesaj sou kandida sa a. Lajan sa a pa ale nan kanpay la, epi kandida a pa kontwole l.',
   'outside.for': '✓ Depanse pou ede kandida sa a',
@@ -2470,7 +2484,7 @@ function traceBackers(groups){
     }).catch(function(){});
   })).then(function(){
     return Object.keys(bag).map(function(k){ return bag[k]; })
-      .sort(function(a, b){ return b.total - a.total; }).slice(0, 10);
+      .sort(function(a, b){ return b.total - a.total; }).slice(0, 8);
   });
 }
 function backerPath(p){
@@ -2527,10 +2541,16 @@ function loadBackers(r, isMeasure){
   if(!groups.length){ sec.remove(); return; }
   var head = '<h4>' + t('sec.backers') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t(isMeasure ? 'bk.subm' : 'bk.sub') + '</p>';
   sec.innerHTML = head + '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.loading') + '</p>';
-  traceBackers(groups).then(function(list){
+  // Two sides, traced separately, each under the same green / black headings as the rest of the page
+  var help = groups.filter(function(g){ return g.end === 'for' || g.end === 'allied' || g.end === 'yes'; });
+  var stop = groups.filter(function(g){ return g.end === 'against' || g.end === 'no'; });
+  var none = '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.none') + '</p>';
+  Promise.all([help.length ? traceBackers(help) : null, stop.length ? traceBackers(stop) : null]).then(function(res){
     if(!document.body.contains(sec)) return;
-    sec.innerHTML = head + (list.length ? backerRows(list) : '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.none') + '</p>') +
-      '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + t('bk.note') + '</p>';
+    var h = head;
+    if(res[0]) h += '<div class="fin-side side-yes">' + t(isMeasure ? 'bk.yesSide' : 'bk.help') + '</div><div class="bk-side bk-side-yes">' + (res[0].length ? backerRows(res[0]) : none) + '</div>';
+    if(res[1]) h += '<div class="fin-side side-no">' + t(isMeasure ? 'bk.noSide' : 'bk.stop') + '</div><div class="bk-side bk-side-no">' + (res[1].length ? backerRows(res[1]) : none) + '</div>';
+    sec.innerHTML = h + '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + t('bk.note') + '</p>';
   });
 }
 document.addEventListener('toggle', function(e){
