@@ -746,9 +746,13 @@ function applyKnownLeans(result) {
 // newspaper's pick look like a party product). Offending links get one small web search for the
 // primary source; if none is found the link is dropped and the endorsement stays.
 // Bump to re-check every cached result.
-const LINK_VERSION = 1;
+const LINK_VERSION = 2;
 const PARTY_HOST = /(dems|democrat|gop|republican)/i;
 const PARTY_ORG = /\b(democrat\w*|dems|republican\w*|gop)\b/i;
+function needsPrimaryLink(e) {
+  // a party page standing in for someone else's endorsement, or a newspaper pick with no link at all
+  return partyCited(e) || (!!e && !e.url && /\b(herald|times|sun sentinel|post|news|editorial board)\b/i.test(String(e.org || e.name || '')));
+}
 function partyCited(e) {
   if (!e || !e.url) return false;
   let host = '';
@@ -756,7 +760,7 @@ function partyCited(e) {
   return PARTY_HOST.test(host) && !PARTY_ORG.test(String(e.org || e.name || ''));
 }
 async function resourcePartyLinks(env, result, name, office) {
-  const items = [...(result.endorsements || []), ...(result.opposition || []), ...(result.ratings || [])].filter(partyCited);
+  const items = [...(result.endorsements || []), ...(result.opposition || []), ...(result.ratings || [])].filter(needsPrimaryLink);
   for (const e of items.slice(0, 4)) {
     const seen = new Map();
     let url = '';
@@ -767,10 +771,11 @@ async function resourcePartyLinks(env, result, name, office) {
         temperature: 0,
         messages: [{ role: 'user', content: [
           'Find the page where ' + (e.org || e.name) + ' itself announced its endorsement or recommendation regarding ' + name + ' (' + office + '): its own website, or its own official social media account. If you cannot find that, a news outlet’s report of it is acceptable.',
+          'Newspapers often title these "[Paper] endorsement: [office]" or "[Paper] recommends" and post them on their official X or Facebook accounts; that post counts if it is the paper\'s own account and names this race.',
           'NOT acceptable: a political party, party club, or campaign website repeating it.',
           'Respond with ONLY JSON: {"url": "the exact URL from your search results"} or {"url": ""} if none.'
         ].join('\n') }],
-        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 2 }]
+        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 3 }]
       }, seen);
       const cand = String((extractJSON(text) || {}).url || '');
       const real = cand ? seen.get(normUrl(cand)) : '';
@@ -1068,7 +1073,7 @@ function spendCategory(desc, cat) {
 //   formed   when it first filed with the FEC
 //   totals   money raised and spent on outside spending nationally, as of its latest report
 //   funders  its top donors, with "donors not disclosed" on nonprofit funders (IRS data via ProPublica)
-const GROUP_VERSION = 1;
+const GROUP_VERSION = 2;
 const LIMIT_GROUP_PER_DAY = 200;
 async function handleFecGroup(url, request, env) {
   const id = String(url.searchParams.get('id') || '');
@@ -1111,7 +1116,7 @@ async function fecGroupProfile(env, id) {
     name: c.name || '',
     formed: c.first_file_date || '',
     state: c.state || '',
-    tiedTo: c.affiliated_committee_name || '',
+    tiedTo: /^(none|n\/?a|null|unknown)?$/i.test(String(c.affiliated_committee_name || '').trim()) ? '' : c.affiliated_committee_name,
     hidden,
     raised: t.receipts || null,
     spentOutside: t.independent_expenditures || null,
@@ -1153,7 +1158,8 @@ async function fecGroupProfile(env, id) {
       if (r.memo_code === 'X') continue;
       const n = String(r.contributor_name || '').trim();
       if (!n) continue;
-      if (!agg[n]) agg[n] = { amount: 0, et: r.entity_type, emp: r.contributor_employer || '', cid: r.contributor_id || '' };
+      const emp = String(r.contributor_employer || '').trim();
+      if (!agg[n]) agg[n] = { amount: 0, et: r.entity_type, emp: /^(information requested|info requested|requested|n\/?a|none|null|unknown|best efforts?)$/i.test(emp) ? '' : emp, cid: r.contributor_id || '' };
       agg[n].amount += r.contribution_receipt_amount || 0;
     }
     const kindOf = { IND: 'individual', ORG: 'organization', COM: 'PAC', PAC: 'PAC', PTY: 'party committee', CCM: 'candidate committee', CAN: 'candidate' };
