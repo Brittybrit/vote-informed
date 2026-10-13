@@ -5,7 +5,7 @@ import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
   'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'clientIP', 'rateLimit',
-  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey']);
+  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
 
@@ -199,4 +199,42 @@ test('shared donors endpoint: city races from the county system, cached, federal
   assert.deepEqual(again, r); assert.equal(calls, n, 'second request served from cache');
   const one = await (await w.__default.fetch(req({ races: [{ office: 'Doral - Councilmember - Seat 2', names: ['Maureen Porras'] }] }), env)).json();
   assert.equal(one.available, false);
+});
+
+test('city candidate lists without a party tag, and nicknames in parentheses', async () => {
+  const row = (ca, name) => '<div class="col-xs-12 detailrow candidate clickme" role="row">\r\n    <a class="rowlink" href="/CampaignFinance/candidate_pr.php?op=cv&e=6&c=muncutlerbay&ca=' + ca +
+    '&rellevel=4&committee=N">\r\n <div class="col-xs-7 no-gutter bold cf_indent" role="gridcell">\r\n' + name + ' \r\n </div>\r\n' +
+    '<div role="gridcell"><span class="for-screen-reader">status</span>\r\n(Active-<span class=\'statustext\'>Qualified</span>)\r\n</div>' +
+    '<span class="for-screen-reader">monetary</span>\r\n$5,840.00\r\n</a></div>';
+  const list = '<div>Office: Mayor</div>' + row(33, 'Ricardo Jorge Viriato De Melo Gomes') + row(28, 'Robert (BJ) Duncan') + row(30, 'Suzette (Suzy) Lord') +
+    '<div>Office: Council Member Seat 3</div>' + row(29, 'Richard Ramirez');
+  const head = 'rpt,line,date,ce,name,a1,a2,city,st,zip,type,occ,item,desc,amount,amend,last\n';
+  globalThis.fetch = async u => String(u).includes('candidate_pr.php') ? new Response(list)
+    : new Response(head + '1,1,2026-05-01,C,"JANE ROE","1 MAIN ST",,CUTLER BAY,FL,33189,I,RETIRED,CH,,250.00,,ROE\n');
+  const env = { CACHE: fakeKV() };
+  for (const [name, office] of [['Ricardo De Melo Gomes', 'Cutler Bay - Mayor'], ['Robert "B.J." Duncan', 'Cutler Bay - Mayor'],
+    ['Suzy Lord', 'Cutler Bay - Mayor'], ['Richard Ramirez', 'Cutler Bay - Residential Area Council Member - Seat 3']]) {
+    const d = await w.mdcCandidateDonors(env, name, office);
+    assert.ok(d && d.count === 1, name);
+    assert.match(d.url, /c=muncutlerbay/);
+  }
+  assert.deepEqual(w.vfRowName('Vicki L. Lopez (NOP) status (Active- Qualified ) Contributions'), { name: 'Vicki L. Lopez', nick: '' });
+});
+
+test('city seats and clerk first names', async () => {
+  assert.equal(w.vfSeat('GROUP (IV) - COMMISSIONER'), w.vfSeat('Coral Gables - for Commissioner - Group IV'));
+  assert.equal(w.vfSeat('GROUP (I ) - MAYOR'), 'mayor');
+  assert.equal(w.vfSeat('Council Seat 4'), w.vfSeat('Doral - Councilmember - Seat 4'));
+  assert.notEqual(w.vfSeat('Council Seat 2'), w.vfSeat('Doral - Councilmember - Seat 4'));
+  const row = (ca, name) => '<a href="/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=' + ca + '&rellevel=4">' + name + ' status (Active- Qualified )</a>';
+  const list = '<div>Office: Council Seat 2</div>' + row(74, 'Fernanda Gomes') + row(75, 'Maureen Porras') +
+    '<div>Office: Council Seat 4</div>' + row(70, 'Pedro Espinosa') + row(73, 'Gustavo Garagorry');
+  const head = 'rpt,line,date,ce,name,a1,a2,city,st,zip,type,occ,item,desc,amount,amend,last\n';
+  let asked = '';
+  globalThis.fetch = async u => { u = String(u); if (u.includes('candidate_pr.php')) return new Response(list);
+    asked = (u.match(/cand_id=(\d+)/) || [])[1]; return new Response(head + '1,1,2026-05-01,C,"JANE ROE","1 MAIN ST",,DORAL,FL,33166,I,RETIRED,CH,,250.00,,ROE\n'); };
+  const env = { CACHE: fakeKV() };
+  assert.ok(await w.mdcCandidateDonors(env, 'Peter Espinosa', 'Doral - Councilmember - Seat 4')); assert.equal(asked, '70');
+  assert.ok(await w.mdcCandidateDonors(env, 'Maureen Porras', 'Doral - Councilmember - Seat 2')); assert.equal(asked, '75');
+  assert.equal(await w.mdcCandidateDonors(env, 'Peter Gomes', 'Doral - Councilmember - Seat 4'), null, 'last name must match in that seat');
 });
