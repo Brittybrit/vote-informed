@@ -1,0 +1,390 @@
+{
+  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda.",
+  "updated": "2026-10-13",
+  "actions": [
+    {
+      "candidate": "Vicki L. Lopez",
+      "match": "county commissioner",
+      "date": "2026-04-23",
+      "body": "Miami-Dade County Commission",
+      "title": {
+        "en": "Approved 524 homes on the former Calusa golf course in West Kendall (developer: GL Homes)",
+        "es": "Aprobó 524 viviendas en el antiguo campo de golf Calusa en West Kendall (desarrollador: GL Homes)",
+        "ht": "Apwouve 524 kay sou ansyen teren gòlf Calusa nan West Kendall (devlopè: GL Homes)"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Regalado",
+          "Gilbert",
+          "Bastien",
+          "Hardemon",
+          "Lopez",
+          "Milian Orbis",
+          "McGhee",
+          "Bermudez"
+        ],
+        "no": [
+          "Cohen Higgins",
+          "Gonzalez",
+          "Steinberg",
+          "Rodriguez",
+          "Garcia"
+        ]
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": {
+            "en": "5 companies at GL Homes' office (Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810; Immokalee Road Associates; 15500 Pines Boulevard)",
+            "es": "5 empresas en la oficina de GL Homes (Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810; Immokalee Road Associates; 15500 Pines Boulevard)",
+            "ht": "5 konpayi nan biwo GL Homes (Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810; Immokalee Road Associates; 15500 Pines Boulevard)"
+          },
+          "key": "kendall associates i",
+          "amount": 5000,
+          "date": "2026-02-20"
+        },
+        {
+          "name": {
+            "en": "5 companies at GL Homes' office (G.L. Homes of Florida; Calusa Roads; Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810)",
+            "es": "5 empresas en la oficina de GL Homes (G.L. Homes of Florida; Calusa Roads; Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810)",
+            "ht": "5 konpayi nan biwo GL Homes (G.L. Homes of Florida; Calusa Roads; Kendall Associates I; 9800 Calusa Club Dr.; Home at 9810)"
+          },
+          "key": "kendall associates i",
+          "amount": 5000,
+          "date": "2026-09-16"
+        }
+      ],
+      "context": {
+        "en": "The commission postponed this vote in February 2026. The first $5,000 is dated Feb. 20, 2026.",
+        "es": "La comisión aplazó esta votación en febrero de 2026. Los primeros $5,000 tienen fecha del 20 de febrero de 2026.",
+        "ht": "Komisyon an te ranvwaye vòt sa a an fevriye 2026. Premye $5,000 la gen dat 20 fevriye 2026."
+      },
+      "url": "https://www.nbcmiami.com/news/local/developer-wins-approval-to-build-hundreds-of-homes-on-former-calusa-golf-course-after-yearslong-fight/3800192/",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=30&c=miamidade&ca=2949&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2025-09-10",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Ordinance to cut the warning before a car parked illegally on private property can be booted, from 30 to 20 minutes",
+        "es": "Ordenanza para reducir de 30 a 20 minutos el aviso antes de inmovilizar un auto mal estacionado en propiedad privada",
+        "ht": "Òdonans pou redui avètisman an anvan yo ka bloke yon machin ki pake ilegalman sou pwopriyete prive, de 30 a 20 minit"
+      },
+      "passed": false,
+      "votes": {
+        "yes": [
+          "Porras",
+          "Cabral"
+        ],
+        "no": [
+          "Fraga",
+          "Pineyro",
+          "Reinoso"
+        ]
+      },
+      "role": [
+        "presented",
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Alpine Towing",
+          "key": "alpine towing",
+          "amount": 1000,
+          "date": "2026-06-30"
+        }
+      ],
+      "context": {
+        "en": "The ordinance covered booting on private lots, not towing itself.",
+        "es": "La ordenanza trataba de inmovilizar autos en lotes privados, no de remolcarlos.",
+        "ht": "Òdonans lan te sou bloke machin nan pakin prive, pa sou remòke yo."
+      },
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=783&doc_id=92499e4c-930a-11f0-8df7-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2025-12-10",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Hired Continental Strategy as the city's federal lobbyist",
+        "es": "Contrató a Continental Strategy como cabildero federal de la ciudad",
+        "ht": "Anboche Continental Strategy kòm lobiyis federal vil la"
+      },
+      "passed": true,
+      "votes": {
+        "consent": true,
+        "yes": [
+          "Fraga",
+          "Cabral",
+          "Pineyro",
+          "Reinoso"
+        ],
+        "absent": [
+          "Porras"
+        ]
+      },
+      "role": [
+        "absent"
+      ],
+      "donors": [
+        {
+          "name": "Continental PLLC / Continental Strategies LLC",
+          "key": "continental strategies",
+          "amount": 2000,
+          "date": "2026-05-14"
+        }
+      ],
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=801&doc_id=3ae2bafd-da99-11f0-bb28-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2025-03-12",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Extended the Corradino Group's city planning contract by one year",
+        "es": "Extendió por un año el contrato de planificación de Corradino Group con la ciudad",
+        "ht": "Pwolonje kontra planifikasyon Corradino Group ak vil la pou yon ane"
+      },
+      "passed": true,
+      "votes": {
+        "consent": true,
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "The Corradino Group",
+          "key": "corradino group",
+          "amount": 1000,
+          "date": "2026-06-02"
+        }
+      ],
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=765&doc_id=c75c0a1e-ff9b-11ef-ab6a-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2026-04-08",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Picked the Corradino Group and four other firms for city planning and zoning work",
+        "es": "Eligió a Corradino Group y otras cuatro firmas para trabajos de planificación y zonificación de la ciudad",
+        "ht": "Chwazi Corradino Group ak kat lòt konpayi pou travay planifikasyon ak zonaj vil la"
+      },
+      "passed": true,
+      "votes": {
+        "consent": true,
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "The Corradino Group",
+          "key": "corradino group",
+          "amount": 1000,
+          "date": "2026-06-02"
+        }
+      ],
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=813&doc_id=b2121744-339b-11f1-bb28-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2025-05-14",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Approved the public art at Bridge Point Doral, 10855 NW 34 St.",
+        "es": "Aprobó el arte público en Bridge Point Doral, 10855 NW 34 St.",
+        "ht": "Apwouve atizay piblik nan Bridge Point Doral, 10855 NW 34 St."
+      },
+      "passed": true,
+      "votes": {
+        "consent": true,
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "BP Doral 826 FL / Bridge Point Doral 2700",
+          "key": "bridge point doral",
+          "amount": 1000,
+          "date": "2026-06-29"
+        }
+      ],
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=767&doc_id=de407e07-311b-11f0-856f-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "date": "2026-06-10",
+      "body": "Doral City Council",
+      "title": {
+        "en": "Approved Shelton Academy's site plan change for a two-phase school expansion",
+        "es": "Aprobó el cambio de plano de Shelton Academy para ampliar la escuela en dos fases",
+        "ht": "Apwouve chanjman plan Shelton Academy pou agrandi lekòl la an de etap"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Shelton Academy",
+          "key": "shelton academy",
+          "amount": 1000,
+          "date": "2026-09-02"
+        }
+      ],
+      "url": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=825&doc_id=0d111c2f-6598-11f1-9494-005056a89546",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Vince Lago",
+      "match": "^\\s*coral gables\\b",
+      "date": "2026-02-24",
+      "body": "Coral Gables City Commission",
+      "title": {
+        "en": "Hired Kaufman Lynn Construction to manage building the Mobility Hub. Kaufman Lynn's registered lobbyist: Les Pantin",
+        "es": "Contrató a Kaufman Lynn Construction para administrar la construcción del Mobility Hub. Cabildero registrado de Kaufman Lynn: Les Pantin",
+        "ht": "Anboche Kaufman Lynn Construction pou jere konstriksyon Mobility Hub la. Lobiyis ofisyèl Kaufman Lynn: Les Pantin"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Lago",
+          "Anderson",
+          "Fernandez",
+          "Lara"
+        ],
+        "no": [
+          "Castro"
+        ]
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Les Pantin / Pantin Gov LLC",
+          "key": "pantin",
+          "amount": 2000,
+          "date": "2026-09-24"
+        }
+      ],
+      "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29058",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=39&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Vince Lago",
+      "match": "^\\s*coral gables\\b",
+      "date": "2026-05-05",
+      "body": "Coral Gables City Commission",
+      "title": {
+        "en": "Hired US Champions Soccer Academy to run the city soccer program. Registered lobbyist: Les Pantin",
+        "es": "Contrató a US Champions Soccer Academy para el programa de fútbol de la ciudad. Cabildero registrado: Les Pantin",
+        "ht": "Anboche US Champions Soccer Academy pou jere pwogram foutbòl vil la. Lobiyis ofisyèl: Les Pantin"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Les Pantin / Pantin Gov LLC",
+          "key": "pantin",
+          "amount": 2000,
+          "date": "2026-09-24"
+        }
+      ],
+      "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29236",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=39&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Vince Lago",
+      "match": "^\\s*coral gables\\b",
+      "date": "2026-07-07",
+      "body": "Coral Gables City Commission",
+      "title": {
+        "en": "Skipped competitive bidding to hire John Bell Construction for Country Club pool repairs (about $1.59 million). Registered lobbyist: Les Pantin",
+        "es": "Omitió la licitación para contratar a John Bell Construction en las reparaciones de la piscina del Country Club (unos $1.59 millones). Cabildero registrado: Les Pantin",
+        "ht": "Sote òf konpetitif pou anboche John Bell Construction pou repare pisin Country Club la (anviwon $1.59 milyon). Lobiyis ofisyèl: Les Pantin"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Les Pantin / Pantin Gov LLC",
+          "key": "pantin",
+          "amount": 2000,
+          "date": "2026-09-24"
+        }
+      ],
+      "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29602",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=39&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Melissa Castro",
+      "match": "^\\s*coral gables\\b",
+      "date": "2025-03-11",
+      "body": "Coral Gables City Commission",
+      "title": {
+        "en": "Approved an agreement with the firefighters' union (IAFF Local 1210) creating a Technical Response Team and its job terms",
+        "es": "Aprobó un acuerdo con el sindicato de bomberos (IAFF Local 1210) que crea un Equipo de Respuesta Técnica y sus condiciones de empleo",
+        "ht": "Apwouve yon akò ak sendika ponpye yo (IAFF Local 1210) ki kreye yon Ekip Repons Teknik ak kondisyon travay li"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Coral Gables Pro Firefighters",
+          "key": "coral gables pro firefighters",
+          "amount": 1000,
+          "date": "2026-10-02"
+        }
+      ],
+      "context": {
+        "en": "The donor is listed as a firefighters' group. Whether it is Local 1210 itself is not stated in the filing.",
+        "es": "El donante figura como un grupo de bomberos. El reporte no dice si es el propio Local 1210.",
+        "ht": "Donatè a parèt kòm yon gwoup ponpye. Rapò a pa di si se Local 1210 menm."
+      },
+      "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27340",
+      "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=41&rellevel=3&committee=N"
+    }
+  ]
+}

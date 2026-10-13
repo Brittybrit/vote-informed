@@ -5,7 +5,7 @@ import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
   'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'clientIP', 'rateLimit',
-  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean']);
+  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
 
@@ -149,4 +149,54 @@ test('source health check reports each source', async () => {
   const h = await w2.sourceHealth({ CACHE: fakeKV(), ANTHROPIC_API_KEY: 'x', FEC_API_KEY: 'y' });
   assert.equal(h.checks.length, 5);
   assert.equal(h.ok, false, 'sources down means not ok');
+});
+
+test('shared donors: names, d/b/a and suffixes, street addresses', () => {
+  assert.equal(w.donorKey('Alpine Towing d/b/a Galactic'), w.donorKey('ALPINE TOWING'));
+  assert.equal(w.donorKey('The Corradino Group, Inc.'), 'corradino group');
+  assert.equal(w.streetKey('7735 NW 146 STREET, STE 306', '33016'), w.streetKey('7735 NW 146th St Suite 306', '33016-1234'));
+  assert.notEqual(w.streetKey('1450 Brickell Ave Ste 2300', '33131'), w.streetKey('1450 Brickell Ave Ste 1800', '33131'), 'different suites stay apart');
+  assert.equal(w.streetKey('PROTECTED', '33016'), '');
+  const g = w.sharedDonors([
+    { name: 'A', office: 'Doral - Councilmember - Seat 2', donors: [
+      { name: 'Alpine Towing', type: 'corporation', amount: 1000, first: '2026-06-30', last: '2026-06-30', street: '3500 NW 67 St', zip: '33147' },
+      { name: 'Bridge Point Doral 2700', type: 'corporation', amount: 500, first: '2026-06-29', last: '2026-06-29', street: '9525 W Bryn Mawr Ave', zip: '60018' },
+      { name: 'Jane Roe', type: 'individual', amount: 500, first: '2026-05-01', last: '2026-05-01', street: '1 Main St', zip: '33166' },
+      { name: 'A', type: 'self-funded', amount: 900, street: '', zip: '' }] },
+    { name: 'B', office: 'Doral - Councilmember - Seat 2', donors: [
+      { name: 'Alpine Towing d/b/a Galactic', type: 'corporation', amount: 500, first: '2026-08-20', last: '2026-08-20', street: '3500 NW 67th Street', zip: '33147' },
+      { name: 'BP Doral 826 FL', type: 'corporation', amount: 500, first: '2026-08-20', last: '2026-08-20', street: '9525 West Bryn Mawr Avenue', zip: '60018' },
+      { name: 'John Roe', type: 'individual', amount: 300, street: '1 Main St', zip: '33166' }] },
+    { name: 'C', office: 'Doral - Councilmember - Seat 4', donors: [
+      { name: 'ALPINE TOWING', type: 'corporation', amount: 500, first: '2026-09-02', last: '2026-09-02', street: '', zip: '' }] }
+  ]);
+  assert.equal(g.length, 2, 'people at one address are not joined; self-funding never counts');
+  assert.equal(g[0].label, 'Alpine Towing'); assert.equal(g[0].reach, 3); assert.equal(g[0].total, 2000);
+  assert.deepEqual(g[1].by.map(b => b.name), ['A', 'B']); assert.equal(g[1].sameAddress, true);
+});
+
+test('shared donors endpoint: city races from the county system, cached, federal skipped', async () => {
+  const list = '<div>Office: Councilmember Seat 02</div><a href="candidate_pr.php?op=cv&e=9&c=mundoral&ca=75&rellevel=3">Maureen Porras (NOP)</a>' +
+    '<a href="candidate_pr.php?op=cv&e=9&c=mundoral&ca=74&rellevel=3">Fernanda Gomes (NOP)</a>';
+  const head = 'rpt,line,date,ce,name,a1,a2,city,st,zip,type,occ,item,desc,amount,amend,last\n';
+  const csv = { 75: head + '1,1,2026-06-30,C,"ALPINE TOWING","3500 NW 67 ST",,MIAMI,FL,33147,B,TOWING,CH,,1000.00,,X\n1,2,2026-05-01,C,"JANE ROE","1 MAIN ST",,DORAL,FL,33166,I,RETIRED,CH,,100.00,,ROE\n',
+    74: head + '1,1,2026-08-20,C,"Alpine Towing d/b/a Galactic","3500 NW 67th St",,MIAMI,FL,33147,B,TOWING,CH,,500.00,,X\n' };
+  let calls = 0;
+  globalThis.fetch = async u => { calls++; u = String(u);
+    if (u.includes('candidate_pr.php')) return new Response(list);
+    const id = (u.match(/cand_id=(\d+)/) || [])[1];
+    return new Response(csv[id] || head); };
+  const env = { CACHE: fakeKV() };
+  const req = body => new Request('https://x/api/shared-donors', { method: 'POST', headers: { 'CF-Connecting-IP': '1.2.3.4' }, body: JSON.stringify(body) });
+  const body = { races: [{ office: 'Doral - Councilmember - Seat 2', names: ['Fernanda Gomes', 'Maureen Porras', 'Write-in'] },
+    { office: 'Representative in Congress, District 28', names: ['X Y', 'Z W'] }] };
+  const r = await (await w.__default.fetch(req(body), env)).json();
+  assert.equal(r.available, true);
+  assert.equal(r.candidates.length, 2, 'write-ins and federal races left out');
+  assert.equal(r.groups.length, 1); assert.equal(r.groups[0].reach, 2); assert.equal(r.groups[0].total, 1500);
+  const n = calls;
+  const again = await (await w.__default.fetch(req(body), env)).json();
+  assert.deepEqual(again, r); assert.equal(calls, n, 'second request served from cache');
+  const one = await (await w.__default.fetch(req({ races: [{ office: 'Doral - Councilmember - Seat 2', names: ['Maureen Porras'] }] }), env)).json();
+  assert.equal(one.available, false);
 });

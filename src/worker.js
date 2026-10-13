@@ -66,6 +66,9 @@ export default {
       if (request.method === 'POST' && url.pathname === '/api/race-money') {
         return await handleRaceMoney(request, env);
       }
+      if (request.method === 'POST' && url.pathname === '/api/shared-donors') {
+        return await handleSharedDonors(request, env);
+      }
       if (request.method === 'GET' && url.pathname === '/api/evsites') {
         return handleEarlyVotingSites();
       }
@@ -1636,9 +1639,12 @@ async function mdcCandidateDonors(env, name, office) {
     if (x[2] > to) to = x[2];
     const who = String(x[4]).replace(/\s+/g, ' ').trim();
     const id = normPart(who);
-    if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0, addr: vfAddr(x) };
+    if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0, addr: vfAddr(x),
+      street: vfStreet(x), first: x[2], last: x[2] };
     agg[id].amount += amt;
     if (ik) agg[id].ik += amt;
+    if (x[2] < agg[id].first) agg[id].first = x[2];
+    if (x[2] > agg[id].last) agg[id].last = x[2];
   }
   const sorted = Object.values(agg).filter(v => v.amount > 0).sort((a, b) => b.amount - a.amount);
   const ties = tieNote(sorted.map(v => v.amount), 8);
@@ -1653,8 +1659,15 @@ async function mdcCandidateDonors(env, name, office) {
     return { name: v.name + (type === 'individual' && v.occ ? ' (' + v.occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
-  return { donors, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label, local: roundLocal(local),
+  const givers = sorted.map(v => ({ name: v.name, type: typeOf(v), amount: Math.round(v.amount), first: v.first, last: v.last,
+    street: v.street, zip: (v.addr && v.addr.zip) || '' }));
+  return { donors, all: givers, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label, local: roundLocal(local),
     url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N' };
+}
+// Street line of a county or city export row ("7735 NW 146 STREET, STE 306"); empty when withheld
+function vfStreet(x) {
+  const s = String(x[5] || '').trim();
+  return /protected|^\W*$/i.test(s) ? '' : s;
 }
 async function refreshMdcDonors(env, result, name, office, officeCode) {
   if (officeCode || flOfficeQuery(office) || evJurisdiction(office)) return false;   // federal, state and EasyVote-city races have their own sources
@@ -1819,9 +1832,10 @@ async function evCandidateDonors(env, name, office) {
     if (date > to && date <= new Date().toISOString().slice(0, 10)) to = date;   // ignore mistyped future dates
     const self = !org && isSelf(who);
     const id = self ? '\u0000self' : normPart(who);
-    if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date, addr: evAddr(x) };
+    if (!agg[id]) agg[id] = { name: who, org: !!org, self, amount: 0, n: 0, doc, date, first: date, addr: evAddr(x), street: evStreet(x) };
     const a = agg[id];
     a.amount += amt; if (amt > 0) a.n++;
+    if (date < a.first) a.first = date;
     if (date >= a.date) { a.date = date; a.doc = doc; }   // link the report with this giver's latest gift
   }
   const sorted = Object.values(agg).sort((a, b) => b.amount - a.amount);
@@ -1846,7 +1860,16 @@ async function evCandidateDonors(env, name, office) {
       url: evDocUrl(v.doc.documentid), srcLabel: (rep ? rep + ' report' : 'report') + (v.n > 1 ? ', ' + v.n + ' gifts' : ''),
       ...(self ? { note: 'may include loans to the campaign' } : {}) };
   });
+  out.all = sorted.filter(v => v.amount > 0).map(v => ({ name: v.name, type: typeOf(v), amount: Math.round(v.amount), first: v.first, last: v.date,
+    street: v.street, zip: (v.addr && v.addr.zip) || '' }));
   return out;
+}
+// Contributor street line, by whatever name the clerk's export uses
+function evStreet(x) {
+  const keys = Object.keys(x || {});
+  const k = keys.find(k => /^contributor.*(address|street)(1|line1)?$/i.test(k)) || keys.find(k => /^contributor.*address/i.test(k));
+  const s = k ? String(x[k] || '').trim() : '';
+  return /protected|^\W*$/i.test(s) ? '' : s;
 }
 // Contributor address fields, by whatever names the clerk's export uses
 function evAddr(x) {
@@ -1934,9 +1957,10 @@ async function txCandidateDonors(env, name, office) {
       total += amt; if (amt > 0) count++;
       if (date > to) to = date;
       const id = type === 'S' ? '\u0000self' : normPart(who);
-      if (!agg[id]) agg[id] = { name: type === 'S' ? c.name : who, type, amount: 0, n: 0, rep, date, kinds: new Set() };
+      if (!agg[id]) agg[id] = { name: type === 'S' ? c.name : who, type, amount: 0, n: 0, rep, date, first: date, kinds: new Set() };
       const a = agg[id];
       a.amount += amt; if (amt > 0) a.n++;
+      if (date < a.first) a.first = date;
       if (kind) a.kinds.add(kind);
       if (date >= a.date) { a.date = date; a.rep = rep; }
     }
@@ -1951,7 +1975,10 @@ async function txCandidateDonors(env, name, office) {
     return { name: v.name, year: v.date.slice(0, 4), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
       url: v.rep.url, srcLabel: v.rep.report + ' report' + (v.n > 1 ? ', ' + v.n + ' gifts' : ''), ...(note ? { note } : {}) };
   });
-  return { donors, total, count, to, ties: tieNote(sorted.map(v => v.amount), 8), label: city.label, portal: city.portal,
+  const kindOf = v => v.type === 'S' ? 'self-funded' : v.type === 'F' ? 'PAC' :
+    v.type === 'B' ? (/\b(union|local \d+|afscme|seiu|iaff)\b/i.test(v.name) ? 'union' : 'corporation') : 'individual';
+  const all = sorted.filter(v => v.amount > 0).map(v => ({ name: v.name, type: kindOf(v), amount: Math.round(v.amount), first: v.first, last: v.date, street: '', zip: '' }));
+  return { donors, all, total, count, to, ties: tieNote(sorted.map(v => v.amount), 8), label: city.label, portal: city.portal,
     pending: city.pending || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
     version: data.updated || '' };
 }
@@ -2476,6 +2503,124 @@ async function handleRaceMoney(request, env) {
   // A failed lookup is cached for 10 minutes so a broken FEC response isn't retried on every tap.
   await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: out.available ? 60 * 60 * 12 : 600 });
   return json(out);
+}
+
+// Donors who gave to more than one candidate. For a city race the comparison covers every race in that
+// city on the ballot (the client sends them); otherwise just this race. Official county and city
+// reports only (VoterFocus, EasyVote, the hand-typed city reports). No AI, cached half a day.
+const SHARED_VERSION = 1;
+async function handleSharedDonors(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body || !Array.isArray(body.races)) return json({ error: 'Missing races' }, 400);
+  const pairs = [], seen = new Set();
+  for (const r of body.races.slice(0, 8)) {
+    if (!r || !isStr(r.office) || !Array.isArray(r.names)) continue;
+    const office = r.office.slice(0, 200);
+    if (federalOfficeCode(office) || flOfficeQuery(office)) continue;   // federal and state money has its own sources
+    for (const n of r.names.filter(isStr).map(n => n.slice(0, 120).trim()).filter(n => !/^write[\s-]*in/i.test(n))) {
+      const k = normPart(n) + '|' + normPart(office);
+      if (!seen.has(k)) { seen.add(k); pairs.push({ name: n, office }); }
+    }
+  }
+  if (pairs.length < 2) return json({ available: false, reason: 'too-few' });
+  if (pairs.length > 16) pairs.length = 16;
+  const key = 'shared' + SHARED_VERSION + ':' + await sha256(pairs.map(p => normPart(p.name) + '|' + normPart(p.office)).sort().join('#'));
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return json(hit);
+  if (!(await rateLimit(env, 'money', clientIP(request), LIMIT_MONEY_PER_DAY)))
+    return json({ error: 'Daily limit reached for fundraising lookups from your connection.' }, 429);
+  const lists = [];
+  for (const p of pairs) {
+    let all = null;
+    try { all = await fullDonors(env, p.name, p.office); } catch (e) { console.log('shared donors ' + p.name + ': ' + e.message); }
+    lists.push({ name: p.name, office: p.office, donors: all });
+  }
+  const found = lists.filter(l => Array.isArray(l.donors));
+  const out = found.length < 2 ? { available: false, reason: 'no-data', candidates: lists.map(l => ({ name: l.name, office: l.office, found: !!l.donors })) }
+    : { available: true, asOf: new Date().toISOString().slice(0, 10),
+        candidates: lists.map(l => ({ name: l.name, office: l.office, found: Array.isArray(l.donors), count: l.donors ? l.donors.length : 0 })),
+        groups: sharedDonors(found) };
+  await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: out.available ? 60 * 60 * 12 : 60 * 60 });
+  return json(out);
+}
+// Every itemized giver to one candidate, from whichever official source covers the office. null = none.
+async function fullDonors(env, name, office) {
+  const key = 'sdl' + SHARED_VERSION + ':' + await sha256(normPart(name) + '|' + normPart(office));
+  const hit = await env.CACHE.get(key, 'json');
+  if (hit) return hit.all;
+  let d = null;
+  if (evJurisdiction(office)) d = await evCandidateDonors(env, name, office);
+  else {
+    d = await txCandidateDonors(env, name, office);
+    if (!d || !d.all) d = await mdcCandidateDonors(env, name, office);
+  }
+  const all = d && Array.isArray(d.all) && d.all.length ? d.all.filter(v => v.type !== 'self-funded') : null;
+  await env.CACHE.put(key, JSON.stringify({ all }), { expirationTtl: all ? 60 * 60 * 12 : 60 * 60 });
+  return all;
+}
+// Name as a match key: "Alpine Towing d/b/a Galactic" and "ALPINE TOWING" are one giver; "Foo, Inc." is "foo"
+function donorKey(name) {
+  let s = normPart(String(name || '').replace(/\b(d\s*\/\s*b\s*\/\s*a|dba)\b.*$/i, ''));
+  const SUF = /\s(inc|incorporated|llc|l l c|corp|corporation|co|company|pa|p a|pllc|pl|ltd|lp|llp|lllp)$/;
+  for (let i = 0; i < 3 && SUF.test(s); i++) s = s.replace(SUF, '');
+  return s.replace(/^the\s/, '').trim();
+}
+// Street line as a match key: suite words dropped (numbers kept), "146th" = "146", common abbreviations.
+function streetKey(street, zip) {
+  const z = String(zip || '').slice(0, 5);
+  if (!/^\d{5}$/.test(z)) return '';
+  const ABBR = { street: 'st', avenue: 'ave', av: 'ave', road: 'rd', drive: 'dr', boulevard: 'blvd', terrace: 'ter', terr: 'ter',
+    court: 'ct', lane: 'ln', place: 'pl', parkway: 'pkwy', pky: 'pkwy', highway: 'hwy', circle: 'cir', north: 'n', south: 's',
+    east: 'e', west: 'w', northwest: 'nw', northeast: 'ne', southwest: 'sw', southeast: 'se' };
+  const w = normPart(street).split(' ').filter(Boolean)
+    .map(t => t.replace(/^(\d+)(st|nd|rd|th)$/, '$1'))
+    .map(t => ABBR[t] || t)
+    .filter(t => !/^(ste|suite|unit|apt|floor|fl|bldg|building|rm|room)$/.test(t));
+  if (!w.length || !/^\d/.test(w[0]) || w.join(' ').length < 6) return '';
+  return w.join(' ') + '|' + z;
+}
+// lists: [{name, office, donors: [{name, type, amount, first, last, street, zip}]}]
+// Givers are joined when the name matches, and businesses, PACs and unions also when they list the same
+// street address (people are not: family members share homes). A group that reached two or more
+// candidates is returned, largest reach first.
+function sharedDonors(lists) {
+  const nodes = [];
+  lists.forEach((l, ci) => (l.donors || []).forEach(d => { if (d && d.amount > 0 && d.type !== 'self-funded') nodes.push({ ci, d }); }));
+  const parent = nodes.map((_, i) => i);
+  const find = i => { while (parent[i] !== i) { parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
+  const join = (a, b) => { a = find(a); b = find(b); if (a !== b) parent[b] = a; };
+  const byName = new Map(), byStreet = new Map();
+  nodes.forEach((n, i) => {
+    const k = donorKey(n.d.name);
+    if (k.length >= 3) { if (byName.has(k)) join(byName.get(k), i); else byName.set(k, i); }
+    if (n.d.type !== 'individual') {
+      const sk = streetKey(n.d.street, n.d.zip);
+      if (sk) { if (byStreet.has(sk)) join(byStreet.get(sk), i); else byStreet.set(sk, i); }
+    }
+  });
+  const comps = new Map();
+  nodes.forEach((n, i) => { const r = find(i); if (!comps.has(r)) comps.set(r, []); comps.get(r).push(n); });
+  const groups = [];
+  for (const members of comps.values()) {
+    const cands = new Set(members.map(m => m.ci));
+    if (cands.size < 2) continue;
+    const by = [...cands].sort((a, b) => a - b).map(ci => {
+      const mine = members.filter(m => m.ci === ci);
+      return { name: lists[ci].name, office: lists[ci].office, amount: mine.reduce((s, m) => s + m.d.amount, 0),
+        first: mine.map(m => m.d.first || '').filter(Boolean).sort()[0] || '', last: mine.map(m => m.d.last || '').filter(Boolean).sort().pop() || '' };
+    });
+    const names = [];
+    for (const m of members.slice().sort((a, b) => b.d.amount - a.d.amount)) {
+      const k = donorKey(m.d.name);
+      if (!names.some(n => donorKey(n) === k)) names.push(m.d.name);
+    }
+    const people = members.every(m => m.d.type === 'individual');
+    const sameAddress = new Set(members.map(m => donorKey(m.d.name))).size > 1;
+    groups.push({ label: names[0], others: names.slice(1, 12), more: Math.max(0, names.length - 12), kind: people ? 'person' : 'group',
+      sameAddress, reach: cands.size, total: by.reduce((s, b) => s + b.amount, 0), by });
+  }
+  groups.sort((a, b) => b.reach - a.reach || b.total - a.total);
+  return groups.slice(0, 40);
 }
 
 async function raceMoney(env, officeCode, district, cycle, names) {
