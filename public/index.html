@@ -843,6 +843,7 @@ en: {
   'ties.current': '{name} serves on the {body} now. Their official actions have not been reviewed for this section yet.',
   'ties.currentNone': '{name} serves on the {body} now. No official actions on items naming one of their donors were found in the meetings reviewed.',
   'ties.noData': '{name} serves on the {body} now. Itemized campaign reports for them are not available, so their donors cannot be checked against their official actions yet.',
+  'ties.noMinutes': '{name} serves on the {body} now. The town posts meeting agendas but not minutes, so how they voted on items naming their donors cannot be checked yet.',
   'ties.noGivers': '{name} serves on the {body} now. Their campaign reports list no outside donors, so no official action can be tied to one.',
   'ties.former': '{name} is a former member of the {body}. Their past official actions have not been reviewed for this section yet.',
   'ties.sub': 'Official actions on items that name this candidate’s donors, and donors who gave to more than one candidate. Dates are shown as recorded. Giving before or after an action is listed, not judged.',
@@ -1237,6 +1238,7 @@ es: {
   'ties.current': '{name} forma parte de {body} ahora. Sus acciones oficiales aún no se han revisado para esta sección.',
   'ties.currentNone': '{name} forma parte de {body} ahora. No se encontraron acciones oficiales sobre asuntos que nombren a uno de sus donantes en las reuniones revisadas.',
   'ties.noData': '{name} forma parte de {body} ahora. No hay reportes de campaña detallados de esta persona, así que aún no se pueden comparar sus donantes con sus acciones oficiales.',
+  'ties.noMinutes': '{name} forma parte de {body} ahora. El municipio publica las agendas de sus reuniones pero no las actas, así que todavía no se puede verificar cómo votó en asuntos que nombran a sus donantes.',
   'ties.noGivers': '{name} forma parte de {body} ahora. Sus reportes de campaña no muestran donantes externos, así que ninguna acción oficial puede vincularse a uno.',
   'ties.former': '{name} es exmiembro de {body}. Sus acciones oficiales pasadas aún no se han revisado para esta sección.',
   'ties.sub': 'Acciones oficiales en asuntos que nombran a donantes de este candidato, y donantes que dieron a más de un candidato. Las fechas se muestran tal como constan. Donar antes o después de una acción se informa, no se juzga.',
@@ -1631,6 +1633,7 @@ ht: {
   'ties.current': '{name} sèvi nan {body} kounye a. Nou poko revize aksyon ofisyèl li yo pou seksyon sa a.',
   'ties.currentNone': '{name} sèvi nan {body} kounye a. Nou pa jwenn okenn aksyon ofisyèl sou dosye ki nonmen youn nan donatè li yo nan reyinyon nou revize yo.',
   'ties.noData': '{name} sèvi nan {body} kounye a. Poko gen rapò kanpay detaye pou li, kidonk nou poko ka konpare donatè li yo ak aksyon ofisyèl li yo.',
+  'ties.noMinutes': '{name} sèvi nan {body} kounye a. Vil la pibliye ajanda reyinyon yo men li pa pibliye pwosèvèbal yo, kidonk nou poko ka verifye kijan li te vote sou dosye ki nonmen donatè li yo.',
   'ties.noGivers': '{name} sèvi nan {body} kounye a. Rapò kanpay li yo pa gen okenn donatè deyò, kidonk pa gen okenn aksyon ofisyèl ki ka mare ak youn.',
   'ties.former': '{name} se yon ansyen manm {body}. Nou poko revize ansyen aksyon ofisyèl li yo pou seksyon sa a.',
   'ties.sub': 'Aksyon ofisyèl sou dosye ki nonmen donatè kandida sa a, ak donatè ki bay plis pase yon kandida. Dat yo parèt jan yo anrejistre. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije.',
@@ -3568,6 +3571,7 @@ function renderTies(ri, cand, acts, shared, loading, city){
       : st.status === 'former' ? t('ties.former', {name: nm, body: body})
       : st.reason === 'nodata' ? t('ties.noData', {name: nm, body: body})
       : st.reason === 'nogivers' ? t('ties.noGivers', {name: nm, body: body})
+      : st.reason === 'nominutes' ? t('ties.noMinutes', {name: nm, body: body})
       : st.reviewed ? t('ties.currentNone', {name: nm, body: body}) : t('ties.current', {name: nm, body: body})) + '</p>';
   }
   if(acts.length){

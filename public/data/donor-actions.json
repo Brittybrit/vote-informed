@@ -1,5 +1,5 @@
 {
-  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda. officeholders: who holds (or held) a seat on the body the race is for, checked Oct 13, 2026 against city and county sites and news; reviewed = their official actions were checked for this list. checked: races where every candidate's status was checked; a candidate there who is not listed holds no seat on that body now. reason: nodata = no itemized campaign reports posted, so donors cannot be checked; nogivers = reports list no outside donors.",
+  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda. officeholders: who holds (or held) a seat on the body the race is for, checked Oct 13, 2026 against city and county sites and news; reviewed = their official actions were checked for this list. checked: races where every candidate's status was checked; a candidate there who is not listed holds no seat on that body now. reason: nodata = no itemized campaign reports posted, so donors cannot be checked; nogivers = reports list no outside donors; nominutes = the body posts agendas but not minutes, so votes cannot be verified.",
   "updated": "2026-10-13",
   "checked": [
     "^\\s*(aventura|biscayne park|coral gables|cutler bay|doral|el portal|hialeah|key biscayne|medley|miami gardens|north miami|north miami beach|opa-?\\s*locka|palmetto bay|pinecrest|south miami|sunny isles beach|virginia gardens)\\b",
@@ -127,13 +127,15 @@
       "candidate": "Edgar Ayala",
       "match": "^\\s*medley\\b",
       "body": "Medley Town Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nominutes"
     },
     {
       "candidate": "Lizelh Rodriguez",
       "match": "^\\s*medley\\b",
       "body": "Medley Town Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nominutes"
     },
     {
       "candidate": "Alix Desulme",
@@ -160,13 +162,15 @@
       "candidate": "Jay R. Chernoff",
       "match": "^\\s*north miami beach\\b",
       "body": "North Miami Beach City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Phyllis Smith",
       "match": "^\\s*north miami beach\\b",
       "body": "North Miami Beach City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Natasha L. Ervin",
@@ -233,7 +237,8 @@
       "candidate": "Fred Spencer Deno IV",
       "match": "^\\s*virginia gardens\\b",
       "body": "Virginia Gardens Village Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Jorge Arce",
@@ -1542,6 +1547,415 @@
       },
       "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_07072026-509",
       "donorUrl": "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=405146&dbid=0&repo=CityHall"
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2025-09-08",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Approved how the city spends the $110,000 a year that its garbage hauler, Coastal Waste & Recycling, must give under its contract: rent and utility help, scholarships and community events",
+        "es": "Aprobó cómo la ciudad gasta los $110,000 al año que su recolector de basura, Coastal Waste & Recycling, debe aportar según su contrato: ayuda con renta y servicios, becas y eventos comunitarios",
+        "ht": "Apwouve kijan vil la depanse $110,000 pa ane ke konpayi fatra li, Coastal Waste & Recycling, dwe bay dapre kontra li: èd pou lwaye ak sèvis piblik, bous etid ak evènman kominotè"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Joseph",
+          "Chernoff",
+          "Fleurimond",
+          "Smith",
+          "Smukler"
+        ],
+        "no": [
+          "Jean"
+        ],
+        "absent": [
+          "Su"
+        ],
+        "consent": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Coastal Waste",
+          "key": "coastal waste",
+          "amount": 1000,
+          "date": "2026-09-03"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=432",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14957",
+      "context": {
+        "en": "The money comes from Coastal Waste under its existing contract; this vote set how the city uses it. It passed as part of the consent agenda, which Chernoff moved; Jean voted against the whole consent agenda.",
+        "es": "El dinero viene de Coastal Waste según su contrato vigente; esta votación definió cómo lo usa la ciudad. Se aprobó como parte de la agenda de consentimiento, que Chernoff propuso; Jean votó en contra de toda esa agenda.",
+        "ht": "Lajan an soti nan Coastal Waste dapre kontra li genyen deja; vòt sa a te deside kijan vil la sèvi avè l. Li pase nan ajanda konsantman an, ke Chernoff te pwopoze; Jean te vote kont tout ajanda sa a."
+      }
+    },
+    {
+      "candidate": "Phyllis Smith",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2025-09-08",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Reappointed Fabio Nick and Eric Isicoff to the Eastern Shores Security Guard Special Taxing District board and David Templer to the Eastern Shores First Addition district, in a slate of 12 board appointments",
+        "es": "Renombró a Fabio Nick y Eric Isicoff en la junta del Distrito Especial de Impuestos para Guardias de Seguridad de Eastern Shores y a David Templer en el distrito de Eastern Shores First Addition, en una lista de 12 nombramientos",
+        "ht": "Renonmen Fabio Nick ak Eric Isicoff nan konsèy Distri Taks Espesyal pou Gad Sekirite Eastern Shores, ak David Templer nan distri Eastern Shores First Addition, nan yon lis 12 nominasyon"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true,
+        "absent": [
+          "Su"
+        ]
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Fabio Nick",
+          "key": "fabio nick",
+          "amount": 1000,
+          "date": "2026-07-23"
+        },
+        {
+          "name": "Eric Isicoff",
+          "key": "eric isicoff",
+          "amount": 1000,
+          "date": "2026-08-13"
+        },
+        {
+          "name": "Templer and Hirsch",
+          "key": "templer",
+          "amount": 1000,
+          "date": "2026-07-24"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=432",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14850",
+      "context": {
+        "en": "Chernoff moved the slate and Smith seconded it. Templer & Hirsch is a law firm that carries David Templer's name. The donors gave in 2026, after the vote.",
+        "es": "Chernoff propuso la lista y Smith la secundó. Templer & Hirsch es un bufete que lleva el nombre de David Templer. Los donantes aportaron en 2026, después de la votación.",
+        "ht": "Chernoff te pwopoze lis la epi Smith te apiye l. Templer & Hirsch se yon biwo avoka ki pote non David Templer. Donatè yo te bay an 2026, apre vòt la."
+      }
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2025-09-08",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Reappointed Fabio Nick and Eric Isicoff to the Eastern Shores Security Guard Special Taxing District board and David Templer to the Eastern Shores First Addition district, in a slate of 12 board appointments",
+        "es": "Renombró a Fabio Nick y Eric Isicoff en la junta del Distrito Especial de Impuestos para Guardias de Seguridad de Eastern Shores y a David Templer en el distrito de Eastern Shores First Addition, en una lista de 12 nombramientos",
+        "ht": "Renonmen Fabio Nick ak Eric Isicoff nan konsèy Distri Taks Espesyal pou Gad Sekirite Eastern Shores, ak David Templer nan distri Eastern Shores First Addition, nan yon lis 12 nominasyon"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true,
+        "absent": [
+          "Su"
+        ]
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Templer & Hirsch",
+          "key": "templer",
+          "amount": 500,
+          "date": "2026-08-17"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=432",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14916",
+      "context": {
+        "en": "Chernoff moved the slate and Smith seconded it. Templer & Hirsch is a law firm that carries David Templer's name. The gift came in 2026, after the vote.",
+        "es": "Chernoff propuso la lista y Smith la secundó. Templer & Hirsch es un bufete que lleva el nombre de David Templer. El aporte llegó en 2026, después de la votación.",
+        "ht": "Chernoff te pwopoze lis la epi Smith te apiye l. Templer & Hirsch se yon biwo avoka ki pote non David Templer. Don an te rive an 2026, apre vòt la."
+      }
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2025-10-21",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Renewed G5ive's permit to serve alcohol from 4 to 6 a.m. at 337 NW 170 St",
+        "es": "Renovó el permiso de G5ive para servir alcohol de 4 a 6 a.m. en 337 NW 170 St",
+        "ht": "Renouvle pèmi G5ive pou sèvi alkòl de 4 a 6 è dimaten nan 337 NW 170 St"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Joseph",
+          "Chernoff",
+          "Fleurimond",
+          "Smith",
+          "Smukler",
+          "Su"
+        ],
+        "no": [
+          "Jean"
+        ]
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "G5ive",
+          "key": "g5ive",
+          "amount": 1000,
+          "date": "2026-07-15"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=441",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14783",
+      "context": {
+        "en": "The police said they had no objection and described incidents at the business over the past year. Smukler moved it and Chernoff seconded; Jean voted no.",
+        "es": "La policía dijo que no tenía objeción y describió incidentes en el negocio durante el último año. Smukler lo propuso y Chernoff lo secundó; Jean votó en contra.",
+        "ht": "Lapolis te di li pa gen okenn objeksyon epi li te dekri ensidan nan biznis la pandan dènye ane a. Smukler te pwopoze l epi Chernoff te apiye l; Jean te vote non."
+      }
+    },
+    {
+      "candidate": "Phyllis Smith",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-02-17",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Appointed the Charter Review Committee, including Bruce Kusens (nominated by Smith) and David Templer (nominated by Smukler)",
+        "es": "Nombró el Comité de Revisión de la Carta Municipal, incluidos Bruce Kusens (nominado por Smith) y David Templer (nominado por Smukler)",
+        "ht": "Nonmen Komite Revizyon Konstitisyon Vil la, ladan l Bruce Kusens (Smith te pwopoze l) ak David Templer (Smukler te pwopoze l)"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "presented",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Bruce Kusens",
+          "key": "bruce kusens",
+          "amount": 5,
+          "date": "2026-08-28"
+        },
+        {
+          "name": "Bruce Kusens",
+          "key": "bruce kusens",
+          "amount": 500,
+          "date": "2026-09-04"
+        },
+        {
+          "name": "Bruce Kusens",
+          "key": "bruce kusens",
+          "amount": 15,
+          "date": "2026-09-11"
+        },
+        {
+          "name": "Templer and Hirsch",
+          "key": "templer",
+          "amount": 1000,
+          "date": "2026-07-24"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=456",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14964",
+      "context": {
+        "en": "Each commissioner nominated one member; Smith nominated Kusens. Chernoff moved the appointments. Templer & Hirsch is a law firm that carries David Templer's name.",
+        "es": "Cada comisionado nominó a un miembro; Smith nominó a Kusens. Chernoff propuso los nombramientos. Templer & Hirsch es un bufete que lleva el nombre de David Templer.",
+        "ht": "Chak komisyonè te pwopoze yon manm; Smith te pwopoze Kusens. Chernoff te pwopoze nominasyon yo. Templer & Hirsch se yon biwo avoka ki pote non David Templer."
+      }
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-02-17",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Appointed the Charter Review Committee, including Bruce Kusens (nominated by Smith) and David Templer (nominated by Smukler)",
+        "es": "Nombró el Comité de Revisión de la Carta Municipal, incluidos Bruce Kusens (nominado por Smith) y David Templer (nominado por Smukler)",
+        "ht": "Nonmen Komite Revizyon Konstitisyon Vil la, ladan l Bruce Kusens (Smith te pwopoze l) ak David Templer (Smukler te pwopoze l)"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Bruce Kusens",
+          "key": "bruce kusens",
+          "amount": 250,
+          "date": "2026-09-04"
+        },
+        {
+          "name": "Templer & Hirsch",
+          "key": "templer",
+          "amount": 500,
+          "date": "2026-08-17"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=456",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14957",
+      "context": {
+        "en": "Each commissioner nominated one member; Chernoff nominated Barbara Kramer and moved the appointments. Templer & Hirsch is a law firm that carries David Templer's name.",
+        "es": "Cada comisionado nominó a un miembro; Chernoff nominó a Barbara Kramer y propuso los nombramientos. Templer & Hirsch es un bufete que lleva el nombre de David Templer.",
+        "ht": "Chak komisyonè te pwopoze yon manm; Chernoff te pwopoze Barbara Kramer epi li te pwopoze nominasyon yo. Templer & Hirsch se yon biwo avoka ki pote non David Templer."
+      }
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-04-21",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Appointed Wrendly Mesidor to the Beautification Committee",
+        "es": "Nombró a Wrendly Mesidor en el Comité de Embellecimiento",
+        "ht": "Nonmen Wrendly Mesidor nan Komite Anbelisman"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Wrenly Mesidor",
+          "key": "mesidor",
+          "amount": 150,
+          "date": "2025-03-20"
+        },
+        {
+          "name": "Wrenly Mesidor",
+          "key": "mesidor",
+          "amount": 300,
+          "date": "2026-03-28"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=459",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14503",
+      "context": {
+        "en": "Part of a slate of five appointments, moved by Chernoff. Chernoff's reports spell the name \"Wrenly\". In July 2026 the commission also gave Mesidor a proclamation listed under Chernoff's name; proclamations are not voted on.",
+        "es": "Parte de una lista de cinco nombramientos, propuesta por Chernoff. Los reportes de Chernoff escriben el nombre \"Wrenly\". En julio de 2026 la comisión también entregó a Mesidor una proclama a nombre de Chernoff; las proclamas no se votan.",
+        "ht": "Se te fè pati yon lis senk nominasyon, Chernoff te pwopoze l. Rapò Chernoff yo ekri non an \"Wrenly\". An jiyè 2026 komisyon an te bay Mesidor yon pwoklamasyon sou non Chernoff tou; yo pa vote sou pwoklamasyon."
+      }
+    },
+    {
+      "candidate": "Phyllis Smith",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-04-21",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Appointed Wrendly Mesidor to the Beautification Committee",
+        "es": "Nombró a Wrendly Mesidor en el Comité de Embellecimiento",
+        "ht": "Nonmen Wrendly Mesidor nan Komite Anbelisman"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Wrendly Mesidor",
+          "key": "mesidor",
+          "amount": 100,
+          "date": "2026-09-08"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=459",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14995",
+      "context": {
+        "en": "Part of a slate of five appointments, moved by Chernoff.",
+        "es": "Parte de una lista de cinco nombramientos, propuesta por Chernoff.",
+        "ht": "Se te fè pati yon lis senk nominasyon, Chernoff te pwopoze l."
+      }
+    },
+    {
+      "candidate": "Phyllis Smith",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-05-19",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Appointed Fabio Nick as an alternate on the Eastern Shores Security Guard Special Taxing District board",
+        "es": "Nombró a Fabio Nick como suplente en la junta del Distrito Especial de Impuestos para Guardias de Seguridad de Eastern Shores",
+        "ht": "Nonmen Fabio Nick kòm ranplasan nan konsèy Distri Taks Espesyal pou Gad Sekirite Eastern Shores"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Fabio Nick",
+          "key": "fabio nick",
+          "amount": 1000,
+          "date": "2026-07-23"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=463",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14850",
+      "context": {
+        "en": "Part of a slate of three appointments, moved by Chernoff. The gift came two months after the vote.",
+        "es": "Parte de una lista de tres nombramientos, propuesta por Chernoff. El aporte llegó dos meses después de la votación.",
+        "ht": "Se te fè pati yon lis twa nominasyon, Chernoff te pwopoze l. Don an te rive de mwa apre vòt la."
+      }
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "date": "2026-06-16",
+      "body": "North Miami Beach City Commission",
+      "title": {
+        "en": "Hired Becker & Poliakoff for annexation lobbying and consulting, $85,992 raised by 10% with a wider scope set by the city manager",
+        "es": "Contrató a Becker & Poliakoff para cabildeo y asesoría sobre anexión, $85,992 aumentados en un 10% con un alcance más amplio definido por el administrador municipal",
+        "ht": "Anboche Becker & Poliakoff pou lobi ak konsèy sou aneksyon, $85,992 ogmante 10% ak yon pi gwo travay ke administratè vil la ap fikse"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Becker & Poliakoff P.A.",
+          "key": "becker poliakoff",
+          "amount": 1000,
+          "date": "2026-08-07"
+        }
+      ],
+      "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=468",
+      "donorUrl": "https://www.citynmb.com/DocumentCenter/View/14868",
+      "context": {
+        "en": "The mayor pulled it from the consent agenda and moved to raise the amount by 10% and widen the scope (7-0). Chernoff then moved final approval. The firm was hired from the city's pool of pre-qualified lobbying firms. Chernoff's report also counts a $1,000 in-kind gift that it does not name.",
+        "es": "El alcalde lo sacó de la agenda de consentimiento y propuso aumentar el monto en un 10% y ampliar el alcance (7-0). Luego Chernoff propuso la aprobación final. La firma fue contratada de la lista de cabilderos precalificados de la ciudad. El reporte de Chernoff también cuenta un aporte en especie de $1,000 sin nombre.",
+        "ht": "Majistra a te retire l nan ajanda konsantman an epi li te pwopoze ogmante kantite lajan an 10% ak elaji travay la (7-0). Apre sa Chernoff te pwopoze apwobasyon final la. Yo te chwazi biwo a nan lis lobiyis vil la te deja kalifye. Rapò Chernoff la konte tou yon don $1,000 an nati li pa nonmen."
+      }
     }
   ]
 }
