@@ -510,7 +510,7 @@ async function runResearch(env, key, p) {
   if (officeCode) {
     try {
       const o = await fecOutsideSpending(env, name, officeCode, office);
-      if (o) { result.outsideSpending = o; result.outV = OUTSIDE_VERSION; }
+      if (o) { result.outsideSpending = o; result.outV = OUTSIDE_VERSION; result.outAt = Date.now(); }
     } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
   }
   markDisclosure(result);
@@ -1090,8 +1090,15 @@ function fecNameMatches(clean, fecName) {
 // candidate (independent expenditures). It never goes to the campaign. Regular FEC reports lag,
 // so spending reported in 24/48-hour notices after a group's latest regular report is added on;
 // notices dated on or before that report are skipped because the report already includes them.
+// Only general-election spending (election type G + cycle) counts, so money spent in the primary isn't
+// shown as spending in the race on the ballot. Lines with no support/oppose flag are left out: every
+// independent expenditure must name a side, so a blank is a data error, not a neutral ad.
 // Bump to rebuild every cached federal result's outside spending (free API, no AI cost).
-const OUTSIDE_VERSION = 4;
+const OUTSIDE_VERSION = 5;
+// Outside spending peaks right before an election, so re-pull it daily even while the rest of a
+// result stays cached. After a failed pull, try again in an hour.
+const OUTSIDE_TTL_MS = 24 * 60 * 60 * 1000;
+const OUTSIDE_RETRY_MS = 60 * 60 * 1000;
 const FEC_COMMITTEE_KIND = { O: 'super PAC', U: 'super PAC', V: 'hybrid PAC', W: 'hybrid PAC', I: 'outside group',
   N: 'PAC', Q: 'PAC', X: 'party committee', Y: 'party committee', Z: 'party committee' };
 async function fecOutsideSpending(env, name, officeCode, office) {
@@ -1125,8 +1132,11 @@ async function fecOutsideSpending(env, name, officeCode, office) {
   const notices = await pages(true);
 
   const agg = {}, cutoff = {};
+  const general = 'G' + cycle;
   const add = (r, amt) => {
-    const ind = r.support_oppose_indicator === 'O' ? 'O' : 'S';
+    if (r.election_type !== general) return;
+    const ind = r.support_oppose_indicator;
+    if (ind !== 'S' && ind !== 'O') return;
     const k = r.committee_id + '|' + ind;
     if (!agg[k]) agg[k] = { id: r.committee_id, ind, name: (r.committee && r.committee.name) || r.committee_name || r.committee_id, amount: 0, cats: {} };
     agg[k].amount += amt;
@@ -1136,6 +1146,7 @@ async function fecOutsideSpending(env, name, officeCode, office) {
   for (const r of regular) {
     if (r.memo_code === 'X' || !r.committee_id) continue;
     add(r, r.expenditure_amount || 0);
+    // every regular line moves the cutoff, primary ones too: the report covers all of them
     const d = r.expenditure_date || r.dissemination_date || '';
     if (!cutoff[r.committee_id] || d > cutoff[r.committee_id]) cutoff[r.committee_id] = d;
   }
@@ -1206,8 +1217,8 @@ async function fecOutsideSpending(env, name, officeCode, office) {
     source: 'FEC',
     listUrl: 'https://www.fec.gov/data/independent-expenditures/?candidate_id=' + cid + '&cycle=' + cycle,
     note: list.length
-      ? 'Independent spending reported to the FEC this election cycle, including recent 24- and 48-hour notices. Totals can lag the newest filings.'
-      : 'No outside spending for or against this candidate has been reported to the FEC this election cycle.'
+      ? 'Independent spending for the ' + cycle + ' general election reported to the FEC, including recent 24- and 48-hour notices. Primary spending is not included. Totals can lag the newest filings.'
+      : 'No outside spending for or against this candidate in the ' + cycle + ' general election has been reported to the FEC.'
   };
 }
 
@@ -2304,16 +2315,22 @@ function normOrg(n) {
   return normPart(n).replace(/\b(inc|incorporated|corp|corporation|co|llc|the)\b/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-async function refreshOutside(env, key, result, name, officeCode, office) {
-  if (!officeCode || result.outV === OUTSIDE_VERSION) return result;
-  try {
-    const o = await fecOutsideSpending(env, name, officeCode, office);
-    if (o) {
-      result.outsideSpending = o;
-      result.outV = OUTSIDE_VERSION;
-      await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
-    }
-  } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
+async function refreshOutside(env, key, result, name, officeCode, office, now = Date.now()) {
+  if (!officeCode) return result;
+  if (result.outV === OUTSIDE_VERSION && result.outAt && now - result.outAt < OUTSIDE_TTL_MS) return result;
+  let o = null;
+  try { o = await fecOutsideSpending(env, name, officeCode, office); }
+  catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
+  if (o) {
+    result.outsideSpending = o;
+    result.outV = OUTSIDE_VERSION;
+    result.outAt = now;
+  } else if (result.outV === OUTSIDE_VERSION) {
+    // keep what we have and retry in an hour rather than on every read
+    result.outAt = now - OUTSIDE_TTL_MS + OUTSIDE_RETRY_MS;
+  } else return result;   // nothing current to keep; try again on the next read
+  try { await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() }); }
+  catch (e) { console.log('cache write error for ' + name + ': ' + e.message); }
   return result;
 }
 
