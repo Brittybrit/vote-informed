@@ -1712,6 +1712,16 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
       result.donorListUrl = d.url;
       result.donorSource = 'MDC';
       result.localMoney = d.local || null;
+    } else if (d) {
+      // Matched in the official system but nothing itemized yet (a first report not yet due or posted,
+      // as with Hialeah's Nov 3 special election). Say so instead of leaving web-research donors,
+      // which can come from an older campaign.
+      result.donors = [];
+      result.donorDataNote = 'No contributions reported to the ' + d.filer + ' for ' + d.office + ' as of ' +
+        new Date().toISOString().slice(0, 10) + '. Reports posted later will show here.';
+      result.donorListUrl = d.url;
+      result.donorSource = 'MDC';
+      result.localMoney = null;
     }
     return true;
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
