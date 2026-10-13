@@ -1523,7 +1523,7 @@ async function flCandidateDonors(env, name, office) {
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 4;
+const MDC_DONOR_VERSION = 5;
 // Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
 // Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
 // Update the election ids each cycle.
@@ -1569,13 +1569,31 @@ async function mdcCandidateList(env, j) {
     const office = decodeEntities(parts[i].split('<')[0]);
     for (const m of parts[i].matchAll(linkRe)) {
       if (j.el && m[1] !== String(j.el)) continue;   // another election listed on the same page
-      // the link wraps the whole row ("Vicki L. Lopez (NOP) status (...) Contributions ..."): keep the name
-      const nm = decodeEntities(m[3]).split(/\s*\((?:NOP|NPA|REP|DEM|LPF|GRE|IND|[A-Z]{2,4})\)/)[0].trim();
-      if (nm) out.push({ office, e: m[1], ca: m[2], name: nm });
+      // the link wraps the whole row: "Vicki L. Lopez (NOP) status (...) Contributions ..." for the county,
+      // "Maureen Porras status (...)" for cities (no party). Keep the name; a nickname in parentheses
+      // ("Suzette (Suzy) Lord", "Robert (BJ) Duncan") is kept apart for matching the ballot name.
+      const row = vfRowName(decodeEntities(m[3]));
+      if (row.name) out.push({ office, e: m[1], ca: m[2], name: row.name, ...(row.nick ? { nick: row.nick } : {}) });
     }
   }
   if (out.length) await env.CACHE.put(key, JSON.stringify(out), { expirationTtl: 6 * 3600 });
   return out;
+}
+// The seat an office names: "mayor", or its number ("Seat 2", "Group IV", "GROUP (IV) - COMMISSIONER", "District 05")
+function vfSeat(office) {
+  const o = String(office || '');
+  if (/\bmayor\b/i.test(o)) return 'mayor';
+  const m = o.match(/\b(?:seat|group|district)\s*\(?\s*([ivx]+|\d+)\s*\)?/i);
+  if (!m) return '';
+  const R = { i: 1, ii: 2, iii: 3, iv: 4, v: 5, vi: 6, vii: 7, viii: 8 };
+  const n = /^\d+$/.test(m[1]) ? parseInt(m[1], 10) : R[m[1].toLowerCase()];
+  return n ? 'n' + n : '';
+}
+function vfRowName(text) {
+  let t = String(text || '').split(/\s+status\b|\s*\((?:active|inactive)\b/i)[0].trim();
+  t = t.replace(/\s*\((?:NOP|NPA|REP|DEM|LPF|GRE|IND|[A-Z]{2,4})\)\s*$/, '').trim();   // party, only at the end
+  const nick = (t.match(/\(([^)]+)\)/) || [])[1] || '';
+  return { name: t.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim(), nick: nick.trim() };
 }
 // The county export has no documented column names. The address sits just before the contributor
 // type: find the ZIP among the columns after the name, with state and city before it.
@@ -1606,10 +1624,18 @@ async function mdcCandidateDonors(env, name, office) {
   if (!np) return null;
   const j = vfJurisdiction(office);
   const list = await mdcCandidateList(env, j);
-  let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && sameFirst(p.first, np.first); });
+  let hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last &&
+    (sameFirst(p.first, np.first) || (c.nick && sameFirst(normPart(c.nick).split(' ')[0], np.first))); });
   if (hits.length > 1) {   // same name in two races: use the district or group number
     const num = (String(office).match(/(?:District|Group|Seat)\s+(\d+)/i) || [])[1];
     if (num) hits = hits.filter(c => (String(c.office).match(/(\d+)\s*$/) || [])[1] && parseInt(c.office.match(/(\d+)\s*$/)[1], 10) === parseInt(num, 10));
+    else if (j.city && vfSeat(office)) hits = hits.filter(c => vfSeat(c.office) === vfSeat(office));
+  }
+  // A city clerk may list a legal first name the ballot doesn't use (ballot "Peter Espinosa", clerk "Pedro
+  // Espinosa"; "Nikki" / "Dominique Whiting"). Within one city, the same last name in the same seat is the
+  // same candidate. Not for the county list, which mixes many offices with the same district numbers.
+  if (!hits.length && j.city && vfSeat(office)) {
+    hits = list.filter(c => { const p = flNameParts(c.name); return p && p.last === np.last && vfSeat(c.office) === vfSeat(office); });
   }
   if (hits.length !== 1) return null;
   const c = hits[0];
@@ -2508,7 +2534,7 @@ async function handleRaceMoney(request, env) {
 // Donors who gave to more than one candidate. For a city race the comparison covers every race in that
 // city on the ballot (the client sends them); otherwise just this race. Official county and city
 // reports only (VoterFocus, EasyVote, the hand-typed city reports). No AI, cached half a day.
-const SHARED_VERSION = 1;
+const SHARED_VERSION = 2;
 async function handleSharedDonors(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !Array.isArray(body.races)) return json({ error: 'Missing races' }, 400);
