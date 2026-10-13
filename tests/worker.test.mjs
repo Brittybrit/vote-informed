@@ -5,7 +5,7 @@ import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
   'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'clientIP', 'rateLimit',
-  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat']);
+  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat', 'refreshMdcDonors']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
 
@@ -237,4 +237,13 @@ test('city seats and clerk first names', async () => {
   assert.ok(await w.mdcCandidateDonors(env, 'Peter Espinosa', 'Doral - Councilmember - Seat 4')); assert.equal(asked, '70');
   assert.ok(await w.mdcCandidateDonors(env, 'Maureen Porras', 'Doral - Councilmember - Seat 2')); assert.equal(asked, '75');
   assert.equal(await w.mdcCandidateDonors(env, 'Peter Gomes', 'Doral - Councilmember - Seat 4'), null, 'last name must match in that seat');
+});
+
+test('official system with no reports yet says so', async () => {
+  const list = '<div>Office: City Council Group II</div><a href="/CampaignFinance/candidate_pr.php?op=cv&e=4&c=munhialeah&ca=26&rellevel=3">Luis Gonzalez status (Active-Qualified)</a>';
+  globalThis.fetch = async u => String(u).includes('candidate_pr.php') ? new Response(list) : new Response('rpt,line,date,ce,name\n');
+  const result = { donors: [{ name: 'Old Campaign Donor', amount: '$500' }] };
+  assert.equal(await w.refreshMdcDonors({ CACHE: fakeKV() }, result, 'Luis Gonzalez', 'Hialeah - Councilmember - Group II', ''), true);
+  assert.deepEqual(result.donors, []);
+  assert.match(result.donorDataNote, /^No contributions reported to the City of Hialeah/);
 });
