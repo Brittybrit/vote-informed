@@ -1,5 +1,5 @@
 {
-  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda. officeholders: who holds (or held) a seat on the body the race is for, checked Oct 13, 2026 against city and county sites and news; reviewed = their official actions were checked for this list. checked: races where every candidate's status was checked; a candidate there who is not listed holds no seat on that body now.",
+  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda. officeholders: who holds (or held) a seat on the body the race is for, checked Oct 13, 2026 against city and county sites and news; reviewed = their official actions were checked for this list. checked: races where every candidate's status was checked; a candidate there who is not listed holds no seat on that body now. reason: nodata = no itemized campaign reports posted, so donors cannot be checked; nogivers = reports list no outside donors.",
   "updated": "2026-10-13",
   "checked": [
     "^\\s*(aventura|biscayne park|coral gables|cutler bay|doral|el portal|hialeah|key biscayne|medley|miami gardens|north miami|north miami beach|opa-?\\s*locka|palmetto bay|pinecrest|south miami|sunny isles beach|virginia gardens)\\b",
@@ -17,13 +17,15 @@
       "candidate": "Howard S. Weinberg",
       "match": "^\\s*aventura\\b",
       "body": "Aventura City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Daniel Samaria",
       "match": "^\\s*biscayne park\\b",
       "body": "Biscayne Park Village Commission",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Judi Hamelburg",
@@ -55,19 +57,22 @@
       "candidate": "Robert \"B.J.\" Duncan",
       "match": "^\\s*cutler bay\\b",
       "body": "Cutler Bay Town Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Suzy Lord",
       "match": "^\\s*cutler bay\\b",
       "body": "Cutler Bay Town Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Richard Ramirez",
       "match": "^\\s*cutler bay\\b",
       "body": "Cutler Bay Town Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Maureen Porras",
@@ -80,91 +85,106 @@
       "candidate": "Omarr C. Nickerson",
       "match": "^\\s*el portal\\b",
       "body": "El Portal Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nogivers"
     },
     {
       "candidate": "Anders Urbom",
       "match": "^\\s*el portal\\b",
       "body": "El Portal Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nogivers"
     },
     {
       "candidate": "Charles Winters",
       "match": "^\\s*el portal\\b",
       "body": "El Portal Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nogivers"
     },
     {
       "candidate": "Luis Gonzalez",
       "match": "^\\s*hialeah\\b",
       "body": "Hialeah City Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Oscar Sardiñas",
       "match": "^\\s*key biscayne\\b",
       "body": "Key Biscayne Village Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Fernando Vazquez",
       "match": "^\\s*key biscayne\\b",
       "body": "Key Biscayne Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nogivers"
     },
     {
       "candidate": "Edgar Ayala",
       "match": "^\\s*medley\\b",
       "body": "Medley Town Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Lizelh Rodriguez",
       "match": "^\\s*medley\\b",
       "body": "Medley Town Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Alix Desulme",
       "match": "^\\s*north miami\\b(?!\\s+beach)",
       "body": "North Miami City Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Kassandra Timothe",
       "match": "^\\s*north miami\\b(?!\\s+beach)",
       "body": "North Miami City Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Mary Estimé-Irvin",
       "match": "^\\s*north miami\\b(?!\\s+beach)",
       "body": "North Miami City Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Jay R. Chernoff",
       "match": "^\\s*north miami beach\\b",
       "body": "North Miami Beach City Commission",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Phyllis Smith",
       "match": "^\\s*north miami beach\\b",
       "body": "North Miami Beach City Commission",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Natasha L. Ervin",
       "match": "^\\s*opa-?\\s*locka\\b",
       "body": "Opa-locka City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Sherelean Bass",
       "match": "^\\s*opa-?\\s*locka\\b",
       "body": "Opa-locka City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Rose Tydus",
@@ -176,31 +196,36 @@
       "candidate": "Ken Fairman",
       "match": "^\\s*pinecrest\\b",
       "body": "Pinecrest Village Council",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Javier E. Fernández",
       "match": "^\\s*south miami\\b",
       "body": "South Miami City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Steve Calle",
       "match": "^\\s*south miami\\b",
       "body": "South Miami City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Lisa Bonich",
       "match": "^\\s*south miami\\b",
       "body": "South Miami City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Larisa Svechin",
       "match": "^\\s*sunny isles beach\\b",
       "body": "Sunny Isles Beach City Commission",
-      "status": "current"
+      "status": "current",
+      "reviewed": true
     },
     {
       "candidate": "Dana Goldman",
@@ -212,25 +237,29 @@
       "candidate": "Fred Spencer Deno IV",
       "match": "^\\s*virginia gardens\\b",
       "body": "Virginia Gardens Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Jorge Arce",
       "match": "^\\s*virginia gardens\\b",
       "body": "Virginia Gardens Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Elizabeth K. Taylor-Martinez",
       "match": "^\\s*virginia gardens\\b",
       "body": "Virginia Gardens Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     },
     {
       "candidate": "Michael Tur",
       "match": "^\\s*virginia gardens\\b",
       "body": "Virginia Gardens Village Council",
-      "status": "current"
+      "status": "current",
+      "reason": "nodata"
     }
   ],
   "actions": [
@@ -617,6 +646,907 @@
       },
       "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27340",
       "donorUrl": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=41&rellevel=3&committee=N"
+    },
+    {
+      "candidate": "Alix Desulme",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-01-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired Ronald L. Book, P.A. as the city's state lobbyist, up to $6,670 a month",
+        "es": "Contrató a Ronald L. Book, P.A. como cabildero estatal de la ciudad, hasta $6,670 al mes",
+        "ht": "Anboche Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2024-09-29"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2024-04-19"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/20070",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-01-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired Ronald L. Book, P.A. as the city's state lobbyist, up to $6,670 a month",
+        "es": "Contrató a Ronald L. Book, P.A. como cabildero estatal de la ciudad, hasta $6,670 al mes",
+        "ht": "Anboche Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2026-06-30"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 500,
+          "date": "2026-06-30"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/20070",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings",
+      "context": {
+        "en": "The same two gifts are listed again, dated July 6, 2026, in her next report. It is not clear whether that is a second set of gifts or the same ones listed twice; only the first is counted here.",
+        "es": "Los mismos dos aportes aparecen otra vez, con fecha 6 de julio de 2026, en su siguiente reporte. No está claro si son otros aportes o los mismos listados dos veces; aquí solo se cuenta el primero.",
+        "ht": "Menm de don yo parèt ankò, ak dat 6 jiyè 2026, nan pwochen rapò li. Li pa klè si se lòt don oswa menm don yo ki ekri de fwa; se premye a sèlman ki konte isit la."
+      }
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-01-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired Ronald L. Book, P.A. as the city's state lobbyist, up to $6,670 a month",
+        "es": "Contrató a Ronald L. Book, P.A. como cabildero estatal de la ciudad, hasta $6,670 al mes",
+        "ht": "Anboche Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2026-06-30"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 500,
+          "date": "2026-06-30"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/20070",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Alix Desulme",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-01-27",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Renewed Ronald L. Book, P.A. as the city's state lobbyist without competitive bidding, up to $6,670 a month",
+        "es": "Renovó a Ronald L. Book, P.A. como cabildero estatal de la ciudad sin licitación, hasta $6,670 al mes",
+        "ht": "Renouvle Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2024-09-29"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2024-04-19"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22601",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-01-27",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Renewed Ronald L. Book, P.A. as the city's state lobbyist without competitive bidding, up to $6,670 a month",
+        "es": "Renovó a Ronald L. Book, P.A. como cabildero estatal de la ciudad sin licitación, hasta $6,670 al mes",
+        "ht": "Renouvle Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2026-06-30"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 500,
+          "date": "2026-06-30"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22601",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings",
+      "context": {
+        "en": "The same two gifts are listed again, dated July 6, 2026, in her next report. It is not clear whether that is a second set of gifts or the same ones listed twice; only the first is counted here.",
+        "es": "Los mismos dos aportes aparecen otra vez, con fecha 6 de julio de 2026, en su siguiente reporte. No está claro si son otros aportes o los mismos listados dos veces; aquí solo se cuenta el primero.",
+        "ht": "Menm de don yo parèt ankò, ak dat 6 jiyè 2026, nan pwochen rapò li. Li pa klè si se lòt don oswa menm don yo ki ekri de fwa; se premye a sèlman ki konte isit la."
+      }
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-01-27",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Renewed Ronald L. Book, P.A. as the city's state lobbyist without competitive bidding, up to $6,670 a month",
+        "es": "Renovó a Ronald L. Book, P.A. como cabildero estatal de la ciudad sin licitación, hasta $6,670 al mes",
+        "ht": "Renouvle Ronald L. Book, P.A. kòm lobiyis vil la nan Leta a san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Ronald L. Book, P.A.",
+          "key": "ronald l book",
+          "amount": 1000,
+          "date": "2026-06-30"
+        },
+        {
+          "name": "Ronald L. Book",
+          "key": "ronald l book",
+          "amount": 500,
+          "date": "2026-06-30"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22601",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-01-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired Becker & Poliakoff, P.A. as the city's federal lobbyist without competitive bidding, up to $6,670 a month",
+        "es": "Contrató a Becker & Poliakoff, P.A. como cabildero federal de la ciudad sin licitación, hasta $6,670 al mes",
+        "ht": "Anboche Becker & Poliakoff, P.A. kòm lobiyis federal vil la san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Becker & Poliakoff, P.A.",
+          "key": "becker poliakoff",
+          "amount": 500,
+          "date": "2026-09-03"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/20069",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-01-27",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Renewed Becker & Poliakoff, P.A. as the city's federal lobbyist for one year without competitive bidding, up to $6,670 a month",
+        "es": "Renovó por un año a Becker & Poliakoff, P.A. como cabildero federal de la ciudad sin licitación, hasta $6,670 al mes",
+        "ht": "Renouvle Becker & Poliakoff, P.A. pou yon ane kòm lobiyis federal vil la san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Becker & Poliakoff, P.A.",
+          "key": "becker poliakoff",
+          "amount": 500,
+          "date": "2026-09-03"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22600",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Alix Desulme",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-10-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired We Strategize, LLC for government affairs and lobbying for one year without competitive bidding, up to $6,670 a month",
+        "es": "Contrató a We Strategize, LLC para asuntos gubernamentales y cabildeo por un año sin licitación, hasta $6,670 al mes",
+        "ht": "Anboche We Strategize, LLC pou zafè gouvènman ak lobi pou yon ane san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "We Strategize, LLC",
+          "key": "we strategize",
+          "amount": 1000,
+          "date": "2024-11-25"
+        },
+        {
+          "name": "We Strategize, LLC",
+          "key": "we strategize",
+          "amount": 1000,
+          "date": "2026-09-08"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/21908",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-10-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired We Strategize, LLC for government affairs and lobbying for one year without competitive bidding, up to $6,670 a month",
+        "es": "Contrató a We Strategize, LLC para asuntos gubernamentales y cabildeo por un año sin licitación, hasta $6,670 al mes",
+        "ht": "Anboche We Strategize, LLC pou zafè gouvènman ak lobi pou yon ane san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "We Strategize",
+          "key": "we strategize",
+          "amount": 1000,
+          "date": "2026-09-14"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/21908",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-10-14",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Hired We Strategize, LLC for government affairs and lobbying for one year without competitive bidding, up to $6,670 a month",
+        "es": "Contrató a We Strategize, LLC para asuntos gubernamentales y cabildeo por un año sin licitación, hasta $6,670 al mes",
+        "ht": "Anboche We Strategize, LLC pou zafè gouvènman ak lobi pou yon ane san apèl dòf, jiska $6,670 pa mwa"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "We Strategize, LLC",
+          "key": "we strategize",
+          "amount": 1000,
+          "date": "2026-08-24"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/21908",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2025-03-11",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Approved the first amendment to the 99-year city land lease with Redwood CP Dev, LLC for the site next to the Joe Celestin Center (1525 NW 135 St)",
+        "es": "Aprobó la primera enmienda al arrendamiento de terreno de la ciudad por 99 años con Redwood CP Dev, LLC para el lote junto al Joe Celestin Center (1525 NW 135 St)",
+        "ht": "Apwouve premye amannman nan kontra lokasyon tè vil la pou 99 an ak Redwood CP Dev, LLC pou teren bò Joe Celestin Center (1525 NW 135 St)"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Desulme",
+          "Burns",
+          "Estimé-Irvin",
+          "Charles"
+        ],
+        "absent": [
+          "Timothe"
+        ],
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Redwood Dev Co, LLC",
+          "key": "redwood dev co",
+          "amount": 1000,
+          "date": "2026-08-31"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/20451",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings",
+      "context": {
+        "en": "The donor is Redwood Dev Co, LLC; the city's tenant is Redwood CP Dev, LLC. State records list the same office address and registered agent for both. Common ownership is not confirmed.",
+        "es": "El donante es Redwood Dev Co, LLC; el inquilino de la ciudad es Redwood CP Dev, LLC. Los registros estatales indican la misma dirección de oficina y el mismo agente registrado para ambas. No está confirmado que tengan los mismos dueños.",
+        "ht": "Donatè a se Redwood Dev Co, LLC; lokatè vil la se Redwood CP Dev, LLC. Dosye Leta yo bay menm adrès biwo ak menm ajan anrejistre pou de yo. Pa gen konfimasyon se menm pwopriyetè yo."
+      }
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-03-24",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Started talks with Redwood CP Dev, LLC to drop the developer's duty to build a pool in Claude Pepper Park in exchange for money for city projects elsewhere",
+        "es": "Inició negociaciones con Redwood CP Dev, LLC para eliminar la obligación del desarrollador de construir una piscina en Claude Pepper Park a cambio de dinero para proyectos de la ciudad en otros lugares",
+        "ht": "Louvri negosyasyon ak Redwood CP Dev, LLC pou retire obligasyon pwomotè a pou bati yon pisin nan Claude Pepper Park, an echanj pou lajan pou lòt pwojè vil la"
+      },
+      "passed": true,
+      "votes": {
+        "yes": [
+          "Timothe",
+          "Estimé-Irvin",
+          "Charles"
+        ],
+        "no": [
+          "Desulme",
+          "Burns"
+        ]
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Redwood Dev Co, LLC",
+          "key": "redwood dev co",
+          "amount": 1000,
+          "date": "2026-08-31"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22863",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings",
+      "context": {
+        "en": "The donor is Redwood Dev Co, LLC; the city's tenant is Redwood CP Dev, LLC. State records list the same office address and registered agent for both. Common ownership is not confirmed.",
+        "es": "El donante es Redwood Dev Co, LLC; el inquilino de la ciudad es Redwood CP Dev, LLC. Los registros estatales indican la misma dirección de oficina y el mismo agente registrado para ambas. No está confirmado que tengan los mismos dueños.",
+        "ht": "Donatè a se Redwood Dev Co, LLC; lokatè vil la se Redwood CP Dev, LLC. Dosye Leta yo bay menm adrès biwo ak menm ajan anrejistre pou de yo. Pa gen konfimasyon se menm pwopriyetè yo."
+      }
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "date": "2026-08-25",
+      "body": "North Miami City Council",
+      "title": {
+        "en": "Approved the second amendment with Redwood CP Dev, LLC: no pool, park work in three phases, and $3 million more in park fees in 2027-2028",
+        "es": "Aprobó la segunda enmienda con Redwood CP Dev, LLC: sin piscina, obras del parque en tres fases y $3 millones más en cargos para parques en 2027-2028",
+        "ht": "Apwouve dezyèm amannman ak Redwood CP Dev, LLC: pa gen pisin, travay pak la an twa faz, ak $3 milyon anplis nan frè pak an 2027-2028"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Redwood Dev Co, LLC",
+          "key": "redwood dev co",
+          "amount": 1000,
+          "date": "2026-08-31"
+        }
+      ],
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/23898",
+      "donorUrl": "https://northmiamifl.easyvotecampaignfinance.com/home/publicfilings",
+      "context": {
+        "en": "The donor is Redwood Dev Co, LLC; the city's tenant is Redwood CP Dev, LLC. State records list the same office address and registered agent for both. Common ownership is not confirmed.",
+        "es": "El donante es Redwood Dev Co, LLC; el inquilino de la ciudad es Redwood CP Dev, LLC. Los registros estatales indican la misma dirección de oficina y el mismo agente registrado para ambas. No está confirmado que tengan los mismos dueños.",
+        "ht": "Donatè a se Redwood Dev Co, LLC; lokatè vil la se Redwood CP Dev, LLC. Dosye Leta yo bay menm adrès biwo ak menm ajan anrejistre pou de yo. Pa gen konfimasyon se menm pwopriyetè yo."
+      }
+    },
+    {
+      "candidate": "Steve Calle",
+      "match": "^\\s*south miami\\b",
+      "date": "2026-03-30",
+      "body": "South Miami City Commission",
+      "title": {
+        "en": "Approved a term sheet with 13th Floor Link at SoMi, LLC to redevelop the City Hall site",
+        "es": "Aprobó una hoja de términos con 13th Floor Link at SoMi, LLC para reurbanizar el terreno del Ayuntamiento",
+        "ht": "Apwouve yon dokiman kondisyon ak 13th Floor Link at SoMi, LLC pou rebati teren Meri a"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "13th Floor Fund V, LP",
+          "key": "13th floor fund v",
+          "amount": 1000,
+          "date": "2026-04-06"
+        },
+        {
+          "name": "Arnaud Karsenti",
+          "key": "arnaud karsenti",
+          "amount": 1000,
+          "date": "2026-04-06"
+        }
+      ],
+      "context": {
+        "en": "The donor 13th Floor Fund V, LP shares the 13th Floor name with the developer; Arnaud Karsenti is a 13th Floor founder. The gifts came about a week after the term sheet vote.",
+        "es": "El donante 13th Floor Fund V, LP comparte el nombre 13th Floor con el desarrollador; Arnaud Karsenti es fundador de 13th Floor. Los aportes llegaron una semana después del voto sobre la hoja de términos.",
+        "ht": "Donatè 13th Floor Fund V, LP pote menm non 13th Floor ak pwomotè a; Arnaud Karsenti se youn nan fondatè 13th Floor. Don yo rive anviwon yon semèn apre vòt sou dokiman kondisyon an."
+      },
+      "url": "https://southmiami.granicus.com/MinutesViewer.php?view_id=2&clip_id=1887&doc_id=4cc34acd-4366-11f1-bb28-005056a89546",
+      "donorUrl": "https://www.somifl.gov/DocumentCenter/View/8961"
+    },
+    {
+      "candidate": "Lisa Bonich",
+      "match": "^\\s*south miami\\b",
+      "date": "2026-03-30",
+      "body": "South Miami City Commission",
+      "title": {
+        "en": "Approved a term sheet with 13th Floor Link at SoMi, LLC to redevelop the City Hall site",
+        "es": "Aprobó una hoja de términos con 13th Floor Link at SoMi, LLC para reurbanizar el terreno del Ayuntamiento",
+        "ht": "Apwouve yon dokiman kondisyon ak 13th Floor Link at SoMi, LLC pou rebati teren Meri a"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "13th Floor Fund V, LP",
+          "key": "13th floor fund v",
+          "amount": 1000,
+          "date": "2026-04-08"
+        },
+        {
+          "name": "Arnaud Karsenti",
+          "key": "arnaud karsenti",
+          "amount": 1000,
+          "date": "2026-04-08"
+        }
+      ],
+      "context": {
+        "en": "The donor 13th Floor Fund V, LP shares the 13th Floor name with the developer; Arnaud Karsenti is a 13th Floor founder. The gifts came about a week after the term sheet vote.",
+        "es": "El donante 13th Floor Fund V, LP comparte el nombre 13th Floor con el desarrollador; Arnaud Karsenti es fundador de 13th Floor. Los aportes llegaron una semana después del voto sobre la hoja de términos.",
+        "ht": "Donatè 13th Floor Fund V, LP pote menm non 13th Floor ak pwomotè a; Arnaud Karsenti se youn nan fondatè 13th Floor. Don yo rive anviwon yon semèn apre vòt sou dokiman kondisyon an."
+      },
+      "url": "https://southmiami.granicus.com/MinutesViewer.php?view_id=2&clip_id=1887&doc_id=4cc34acd-4366-11f1-bb28-005056a89546",
+      "donorUrl": "https://www.somifl.gov/DocumentCenter/View/8960"
+    },
+    {
+      "candidate": "Steve Calle",
+      "match": "^\\s*south miami\\b",
+      "date": "2026-09-22",
+      "body": "South Miami City Commission",
+      "title": {
+        "en": "Approved on first reading a franchise and two ground leases with 13th Floor Link at SoMi, LLC for the City Hall redevelopment",
+        "es": "Aprobó en primera lectura una franquicia y dos arrendamientos de terreno con 13th Floor Link at SoMi, LLC para la reurbanización del Ayuntamiento",
+        "ht": "Apwouve nan premye lekti yon franchiz ak de kontra lokasyon tè ak 13th Floor Link at SoMi, LLC pou rebati Meri a"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "13th Floor Fund V, LP",
+          "key": "13th floor fund v",
+          "amount": 1000,
+          "date": "2026-04-06"
+        },
+        {
+          "name": "Arnaud Karsenti",
+          "key": "arnaud karsenti",
+          "amount": 1000,
+          "date": "2026-04-06"
+        }
+      ],
+      "context": {
+        "en": "The donor 13th Floor Fund V, LP shares the 13th Floor name with the developer; Arnaud Karsenti is a 13th Floor founder. The gifts came about a week after the term sheet vote.",
+        "es": "El donante 13th Floor Fund V, LP comparte el nombre 13th Floor con el desarrollador; Arnaud Karsenti es fundador de 13th Floor. Los aportes llegaron una semana después del voto sobre la hoja de términos.",
+        "ht": "Donatè 13th Floor Fund V, LP pote menm non 13th Floor ak pwomotè a; Arnaud Karsenti se youn nan fondatè 13th Floor. Don yo rive anviwon yon semèn apre vòt sou dokiman kondisyon an."
+      },
+      "url": "https://southmiami.granicus.com/MinutesViewer.php?view_id=2&clip_id=1964&doc_id=d9043255-c295-11f1-89ef-005056a84798",
+      "donorUrl": "https://www.somifl.gov/DocumentCenter/View/8961"
+    },
+    {
+      "candidate": "Lisa Bonich",
+      "match": "^\\s*south miami\\b",
+      "date": "2026-09-22",
+      "body": "South Miami City Commission",
+      "title": {
+        "en": "Approved on first reading a franchise and two ground leases with 13th Floor Link at SoMi, LLC for the City Hall redevelopment",
+        "es": "Aprobó en primera lectura una franquicia y dos arrendamientos de terreno con 13th Floor Link at SoMi, LLC para la reurbanización del Ayuntamiento",
+        "ht": "Apwouve nan premye lekti yon franchiz ak de kontra lokasyon tè ak 13th Floor Link at SoMi, LLC pou rebati Meri a"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "13th Floor Fund V, LP",
+          "key": "13th floor fund v",
+          "amount": 1000,
+          "date": "2026-04-08"
+        },
+        {
+          "name": "Arnaud Karsenti",
+          "key": "arnaud karsenti",
+          "amount": 1000,
+          "date": "2026-04-08"
+        }
+      ],
+      "context": {
+        "en": "The donor 13th Floor Fund V, LP shares the 13th Floor name with the developer; Arnaud Karsenti is a 13th Floor founder. The gifts came about a week after the term sheet vote.",
+        "es": "El donante 13th Floor Fund V, LP comparte el nombre 13th Floor con el desarrollador; Arnaud Karsenti es fundador de 13th Floor. Los aportes llegaron una semana después del voto sobre la hoja de términos.",
+        "ht": "Donatè 13th Floor Fund V, LP pote menm non 13th Floor ak pwomotè a; Arnaud Karsenti se youn nan fondatè 13th Floor. Don yo rive anviwon yon semèn apre vòt sou dokiman kondisyon an."
+      },
+      "url": "https://southmiami.granicus.com/MinutesViewer.php?view_id=2&clip_id=1964&doc_id=d9043255-c295-11f1-89ef-005056a84798",
+      "donorUrl": "https://www.somifl.gov/DocumentCenter/View/8960"
+    },
+    {
+      "candidate": "Ken Fairman",
+      "match": "^\\s*pinecrest\\b",
+      "date": "2025-11-18",
+      "body": "Pinecrest Village Council",
+      "title": {
+        "en": "Approved a permit for full liquor sales at Platea Prime, 12175 Pinecrest Parkway, on property owned by SU Dixie Belle, LLC",
+        "es": "Aprobó un permiso de venta de licor para Platea Prime, 12175 Pinecrest Parkway, en una propiedad de SU Dixie Belle, LLC",
+        "ht": "Apwouve yon pèmi pou vann tout kalite alkòl nan Platea Prime, 12175 Pinecrest Parkway, sou yon pwopriyete SU Dixie Belle, LLC"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "So Dixie Belle, LLC",
+          "key": "so dixie belle",
+          "amount": 1000,
+          "date": "2026-06-10"
+        }
+      ],
+      "context": {
+        "en": "The campaign report spells the donor \"So Dixie Belle, LLC\"; the property owner in the hearing record is \"SU Dixie Belle, LLC\".",
+        "es": "El reporte de campaña escribe al donante como \"So Dixie Belle, LLC\"; el dueño de la propiedad en la audiencia es \"SU Dixie Belle, LLC\".",
+        "ht": "Rapò kanpay la ekri donatè a \"So Dixie Belle, LLC\"; pwopriyetè a nan dosye odyans lan se \"SU Dixie Belle, LLC\"."
+      },
+      "url": "https://legistar1.granicus.com/Pinecrest/attachments/d608610c-16db-478f-973d-87437c06248e.pdf",
+      "donorUrl": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/fairman-ken-2026q2.pdf"
+    },
+    {
+      "candidate": "Natasha L. Ervin",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "date": "2025-12-10",
+      "body": "Opa-locka City Commission",
+      "title": {
+        "en": "Accepted Florida Industrial Properties Eight, LLC's $280,000 offer for city land (the Water Tank Property)",
+        "es": "Aceptó la oferta de $280,000 de Florida Industrial Properties Eight, LLC por un terreno de la ciudad (la propiedad del tanque de agua)",
+        "ht": "Aksepte òf $280,000 Florida Industrial Properties Eight, LLC pou yon tè vil la (pwopriyete rezèvwa dlo a)"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true,
+        "consent": true,
+        "absent": [
+          "Kelley"
+        ]
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Florida Industrial Properties Six, LLC",
+          "key": "florida industrial properties",
+          "amount": 1000,
+          "date": "2022-08-17"
+        }
+      ],
+      "context": {
+        "en": "The buyer is Florida Industrial Properties Eight, LLC; the donor is its sister company Florida Industrial Properties Six, LLC. State records list the same address and the same managers (Jose F. Vega, Kevin A. Goch, Jodi Goch) for both. The gift went to her 2022 campaign.",
+        "es": "El comprador es Florida Industrial Properties Eight, LLC; el donante es su empresa hermana Florida Industrial Properties Six, LLC. Los registros estatales indican la misma dirección y los mismos gerentes (Jose F. Vega, Kevin A. Goch, Jodi Goch) para ambas. El aporte fue a su campaña de 2022.",
+        "ht": "Achtè a se Florida Industrial Properties Eight, LLC; donatè a se konpayi sè li Florida Industrial Properties Six, LLC. Dosye Leta yo bay menm adrès ak menm manadjè (Jose F. Vega, Kevin A. Goch, Jodi Goch) pou de yo. Don an te ale nan kanpay 2022 li."
+      },
+      "url": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7853,plainText=false)",
+      "donorUrl": "https://cityofopalockafl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Natasha L. Ervin",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "date": "2025-12-10",
+      "body": "Opa-locka City Commission",
+      "title": {
+        "en": "Approved on first reading the sale of the Water Tank Property to Florida Industrial Properties Eight, LLC, with the buyer moving the water main",
+        "es": "Aprobó en primera lectura la venta de la propiedad del tanque de agua a Florida Industrial Properties Eight, LLC, con el comprador reubicando la tubería principal",
+        "ht": "Apwouve nan premye lekti vant pwopriyete rezèvwa dlo a bay Florida Industrial Properties Eight, LLC, kote achtè a ap deplase tiyo dlo prensipal la"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true,
+        "absent": [
+          "Kelley"
+        ]
+      },
+      "role": [
+        "moved",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Florida Industrial Properties Six, LLC",
+          "key": "florida industrial properties",
+          "amount": 1000,
+          "date": "2022-08-17"
+        }
+      ],
+      "context": {
+        "en": "The buyer is Florida Industrial Properties Eight, LLC; the donor is its sister company Florida Industrial Properties Six, LLC. State records list the same address and the same managers (Jose F. Vega, Kevin A. Goch, Jodi Goch) for both. The gift went to her 2022 campaign.",
+        "es": "El comprador es Florida Industrial Properties Eight, LLC; el donante es su empresa hermana Florida Industrial Properties Six, LLC. Los registros estatales indican la misma dirección y los mismos gerentes (Jose F. Vega, Kevin A. Goch, Jodi Goch) para ambas. El aporte fue a su campaña de 2022.",
+        "ht": "Achtè a se Florida Industrial Properties Eight, LLC; donatè a se konpayi sè li Florida Industrial Properties Six, LLC. Dosye Leta yo bay menm adrès ak menm manadjè (Jose F. Vega, Kevin A. Goch, Jodi Goch) pou de yo. Don an te ale nan kanpay 2022 li."
+      },
+      "url": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7853,plainText=false)",
+      "donorUrl": "https://cityofopalockafl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Natasha L. Ervin",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "date": "2026-01-14",
+      "body": "Opa-locka City Commission",
+      "title": {
+        "en": "Gave final approval to the sale of the Water Tank Property to Florida Industrial Properties Eight, LLC",
+        "es": "Dio la aprobación final a la venta de la propiedad del tanque de agua a Florida Industrial Properties Eight, LLC",
+        "ht": "Bay apwobasyon final pou vant pwopriyete rezèvwa dlo a bay Florida Industrial Properties Eight, LLC"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "seconded",
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Florida Industrial Properties Six, LLC",
+          "key": "florida industrial properties",
+          "amount": 1000,
+          "date": "2022-08-17"
+        }
+      ],
+      "context": {
+        "en": "The buyer is Florida Industrial Properties Eight, LLC; the donor is its sister company Florida Industrial Properties Six, LLC. State records list the same address and the same managers (Jose F. Vega, Kevin A. Goch, Jodi Goch) for both. The gift went to her 2022 campaign.",
+        "es": "El comprador es Florida Industrial Properties Eight, LLC; el donante es su empresa hermana Florida Industrial Properties Six, LLC. Los registros estatales indican la misma dirección y los mismos gerentes (Jose F. Vega, Kevin A. Goch, Jodi Goch) para ambas. El aporte fue a su campaña de 2022.",
+        "ht": "Achtè a se Florida Industrial Properties Eight, LLC; donatè a se konpayi sè li Florida Industrial Properties Six, LLC. Dosye Leta yo bay menm adrès ak menm manadjè (Jose F. Vega, Kevin A. Goch, Jodi Goch) pou de yo. Don an te ale nan kanpay 2022 li."
+      },
+      "url": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7870,plainText=false)",
+      "donorUrl": "https://cityofopalockafl.easyvotecampaignfinance.com/home/publicfilings"
+    },
+    {
+      "candidate": "Howard S. Weinberg",
+      "match": "^\\s*aventura\\b",
+      "date": "2026-05-05",
+      "body": "Aventura City Commission",
+      "title": {
+        "en": "Approved Aventura City Center at 2999 NE 191 St (Aventura 2999, LLC): a hotel, 58 homes per acre where 25 are allowed, and towers up to 23 stories where 4 are allowed",
+        "es": "Aprobó Aventura City Center en 2999 NE 191 St (Aventura 2999, LLC): un hotel, 58 viviendas por acre donde se permiten 25 y torres de hasta 23 pisos donde se permiten 4",
+        "ht": "Apwouve Aventura City Center nan 2999 NE 191 St (Aventura 2999, LLC): yon otèl, 58 kay pa ak kote yo pèmèt 25, ak gwo bilding jiska 23 etaj kote yo pèmèt 4"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Bilzin Sumberg",
+          "key": "bilzin sumberg",
+          "amount": 1000,
+          "date": "2026-03-20"
+        },
+        {
+          "name": "Brian Adler",
+          "key": "brian adler",
+          "amount": 500,
+          "date": "2026-03-20"
+        }
+      ],
+      "context": {
+        "en": "The donors are the applicant's law firm and its attorney, Brian Adler, who spoke for Aventura 2999, LLC at the hearings. Adler's letter of intent for the project is dated March 16, 2026.",
+        "es": "Los donantes son el bufete del solicitante y su abogado, Brian Adler, quien habló por Aventura 2999, LLC en las audiencias. La carta de intención de Adler para el proyecto tiene fecha del 16 de marzo de 2026.",
+        "ht": "Donatè yo se biwo avoka aplikan an ak avoka li, Brian Adler, ki te pale pou Aventura 2999, LLC nan odyans yo. Lèt entansyon Adler pou pwojè a gen dat 16 mas 2026."
+      },
+      "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_06022026-505",
+      "donorUrl": "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=398138&dbid=0&repo=CityHall"
+    },
+    {
+      "candidate": "Howard S. Weinberg",
+      "match": "^\\s*aventura\\b",
+      "date": "2026-07-07",
+      "body": "Aventura City Commission",
+      "title": {
+        "en": "Approved a sign variance for the Aventura City Center development (Aventura 2999, LLC)",
+        "es": "Aprobó una variación de letreros para el desarrollo Aventura City Center (Aventura 2999, LLC)",
+        "ht": "Apwouve yon eksepsyon pou ansèy devlopman Aventura City Center (Aventura 2999, LLC)"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true,
+        "absent": [
+          "Kruss"
+        ]
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Bilzin Sumberg",
+          "key": "bilzin sumberg",
+          "amount": 1000,
+          "date": "2026-03-20"
+        },
+        {
+          "name": "Brian Adler",
+          "key": "brian adler",
+          "amount": 500,
+          "date": "2026-03-20"
+        }
+      ],
+      "context": {
+        "en": "The donors are the applicant's law firm and its attorney, Brian Adler, who spoke for Aventura 2999, LLC at the hearings. Adler's letter of intent for the project is dated March 16, 2026.",
+        "es": "Los donantes son el bufete del solicitante y su abogado, Brian Adler, quien habló por Aventura 2999, LLC en las audiencias. La carta de intención de Adler para el proyecto tiene fecha del 16 de marzo de 2026.",
+        "ht": "Donatè yo se biwo avoka aplikan an ak avoka li, Brian Adler, ki te pale pou Aventura 2999, LLC nan odyans yo. Lèt entansyon Adler pou pwojè a gen dat 16 mas 2026."
+      },
+      "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09082026-516",
+      "donorUrl": "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=398138&dbid=0&repo=CityHall"
+    },
+    {
+      "candidate": "Howard S. Weinberg",
+      "match": "^\\s*aventura\\b",
+      "date": "2026-06-02",
+      "body": "Aventura City Commission",
+      "title": {
+        "en": "Approved on first reading a zoning change letting hospitals locate in the Community Business (B2) district, requested for Mount Sinai Medical Center",
+        "es": "Aprobó en primera lectura un cambio de zonificación que permite hospitales en el distrito Comercial Comunitario (B2), solicitado para Mount Sinai Medical Center",
+        "ht": "Apwouve nan premye lekti yon chanjman zonaj ki pèmèt lopital nan distri Biznis Kominotè (B2), mande pou Mount Sinai Medical Center"
+      },
+      "passed": true,
+      "votes": {
+        "unanimous": true
+      },
+      "role": [
+        "yes"
+      ],
+      "donors": [
+        {
+          "name": "Bercow Radell",
+          "key": "bercow radell",
+          "amount": 1000,
+          "date": "2026-05-21"
+        },
+        {
+          "name": "Jeff Bercow",
+          "key": "jeff bercow",
+          "amount": 1000,
+          "date": "2026-05-21"
+        }
+      ],
+      "context": {
+        "en": "Mount Sinai was represented by Michael Marrero of Bercow Radell Fernandez Larkin & Tapanes. The donors are that firm and its founding partner, Jeff Bercow.",
+        "es": "Mount Sinai fue representado por Michael Marrero, de Bercow Radell Fernandez Larkin & Tapanes. Los donantes son ese bufete y su socio fundador, Jeff Bercow.",
+        "ht": "Se Michael Marrero, nan Bercow Radell Fernandez Larkin & Tapanes, ki te reprezante Mount Sinai. Donatè yo se biwo sa a ak patnè fondatè li, Jeff Bercow."
+      },
+      "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_07072026-509",
+      "donorUrl": "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=405146&dbid=0&repo=CityHall"
     }
   ]
 }
