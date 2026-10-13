@@ -180,19 +180,20 @@
 <footer><a href="/">Back to Ballot305.org</a> &middot; <a href="/about">About</a></footer>
 <script>
 (function(){
-  var LABEL = {official: 'Official data in the app', portal: 'Online portal, not read yet', pdf: 'PDF files only', requested: 'Records requested', notfound: 'No public link found'};
+  var LABEL = {official: 'Official data in the app', typed: 'Typed in from the city\u2019s scanned reports', portal: 'Online portal, not read yet', pdf: 'PDF files only', requested: 'Records requested', notfound: 'No public link found'};
   function day(d){ var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : ''; }
   function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function link(u, txt){ return /^https:\/\//.test(u || '') ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + txt + '</a>' : ''; }
   function detail(c){
     if(c.status === 'official') return 'Every contribution, from the official records of ' + esc(c.source || 'the city clerk') + '.';
+    if(c.status === 'typed') return 'The city posts scanned reports. Every contribution was typed in from them and checked against each report\u2019s totals.';
     if(c.status === 'portal') return 'Reports are in an online portal the app can\u2019t read yet. Donors come from news and web research.';
     if(c.status === 'pdf') return 'Reports are posted as PDF files. Donors come from news and web research.';
     if(c.status === 'requested') return 'Not found on the city website. Requested from the clerk ' + day(c.requested) + '; reply requested by ' + day(c.due) + '.' + (c.reply ? ' Clerk replied ' + day(c.reply) + (c.replyNote ? ': ' + esc(c.replyNote) : '.') : ' Awaiting reply.');
     return 'No public link to reports found. Donors come from news and web research.';
   }
   fetch('/data/coverage.json').then(function(r){ return r.json(); }).then(function(j){
-    var order = {requested: 0, notfound: 1, portal: 2, pdf: 3, official: 4};
+    var order = {requested: 0, notfound: 1, portal: 2, pdf: 3, typed: 4, official: 5};
     var rows = (j.levels || []).map(function(l){ return {name: l.level, status: l.status, source: l.source, url: l.url}; })
       .concat((j.cities || []).slice().sort(function(a, b){ return (order[a.status] - order[b.status]) || a.city.localeCompare(b.city); })
       .map(function(c){ return {name: c.city, status: c.status, url: c.url, requested: c.requested, due: c.due, reply: c.reply, replyNote: c.replyNote}; }));

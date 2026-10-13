@@ -2897,7 +2897,7 @@ function coverageText(c){
 function coverageBox(race){
   if(!race || race.isMeasure) return '';
   var c = cityCoverage(race.office);
-  if(!c || c.status === 'official') return '';
+  if(!c || c.status === 'official' || c.status === 'typed') return '';
   return '<div class="cov-box cov-' + esc(c.status) + '"><div class="cov-h">' + t('cov.head', {city: esc(c.city)}) + '</div><p>' + coverageText(c) + '</p>' +
     '<p class="og-links">' + (safeUrl(c.url) ? '<a class="srclink" href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' + t('cov.cityrec') + ' ↗</a> ' : '') +
     '<a class="srclink" href="/methodology.html#coverage" target="_blank" rel="noopener">' + t('cov.all') + ' ↗</a></p></div>';
