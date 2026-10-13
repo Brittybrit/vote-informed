@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City Transparency Check · BALLOT305.ORG</title>
+<meta name="description" content="How open is your city? The 18 Miami-Dade cities with races on the Nov. 3, 2026 ballot, checked against eight basics: who funds the candidates, and what the council did and how each member voted.">
+<meta property="og:title" content="City Transparency Check · Ballot305">
+<meta property="og:description" content="18 Miami-Dade cities checked against eight basics of open government, with a link to every record.">
+<meta property="og:image" content="https://ballot305.org/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7; --ink:#131F3C; --ink-soft:#3D4763; --rule:#131F3C; --hair:#C9C9C1;
+    --link:#1D4ED8; --yes:#2F6B3C; --yes-bg:#E6F0E8; --part:#8A5A0B; --part-bg:#FDF1D8; --no:#9B2C1F; --no-bg:#F8E3DF;
+    --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55;}
+  header{border-bottom:4px solid var(--rule); padding:18px 16px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;}
+  header a{color:var(--ink); text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.01em; font-size:20px;}
+  .langs{display:flex; gap:6px;}
+  .langs button{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; background:transparent; border:1.5px solid var(--rule); color:var(--ink); padding:5px 10px; cursor:pointer;}
+  .langs button.on{background:var(--ink); color:var(--paper);}
+  main{max-width:860px; margin:0 auto; padding:28px 16px 64px;}
+  h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
+  .lede{color:var(--ink-soft); margin-bottom:12px;}
+  .law{font-size:14px; border-left:4px solid var(--rule); padding:8px 12px; margin:14px 0; background:#fff;}
+  .stats{display:flex; flex-wrap:wrap; gap:10px 24px; font-family:var(--mono); font-size:12.5px; margin:16px 0; padding:10px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);}
+  .stats div{max-width:15em;}
+  .stats b{font-family:var(--sans); font-size:20px; font-weight:900; display:block; line-height:1.1;}
+  .legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:13px; margin:10px 0 6px; align-items:center;}
+  .mk{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; font-size:13px; font-weight:800; border:1.5px solid; flex:none; font-family:var(--mono);}
+  .mk.yes{color:var(--yes); background:var(--yes-bg); border-color:var(--yes);}
+  .mk.partial{color:var(--part); background:var(--part-bg); border-color:var(--part);}
+  .mk.no{color:var(--no); background:var(--no-bg); border-color:var(--no);}
+  .sortbar{display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-family:var(--mono); font-size:11.5px; margin:14px 0 8px;}
+  .sortbar button{font:inherit; background:transparent; border:1.5px solid var(--rule); color:var(--ink); padding:3px 9px; cursor:pointer;}
+  .sortbar button.on{background:var(--ink); color:var(--paper);}
+  .gridwrap{overflow-x:auto; border-top:2px solid var(--rule); border-bottom:2px solid var(--rule);}
+  table{border-collapse:collapse; width:100%; min-width:560px;}
+  th,td{padding:6px 4px; text-align:center; border-bottom:1px solid var(--hair);}
+  thead th{font-family:var(--mono); font-size:10.5px; font-weight:600; vertical-align:bottom; line-height:1.25; color:var(--ink-soft);}
+  thead tr.grp th{font-size:11px; color:var(--ink); text-transform:uppercase; letter-spacing:.06em; border-bottom:1px solid var(--rule);}
+  th.city, td.city{text-align:left; position:sticky; left:0; background:var(--paper); min-width:9.5em;}
+  td.city a{color:var(--ink); font-weight:700; text-decoration:none; font-size:14px;}
+  td.city a:hover{text-decoration:underline;}
+  td.cnt{font-family:var(--mono); font-size:12px; white-space:nowrap;}
+  td .mk{width:20px; height:20px; font-size:12px;}
+  .cards{margin-top:10px;}
+  .card{margin-top:30px; scroll-margin-top:12px;}
+  .card h2{font-weight:900; text-transform:uppercase; font-size:21px; line-height:1.15; padding-top:12px; border-top:4px solid var(--rule);}
+  .card .sum{font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); margin:2px 0 4px;}
+  .card .src{font-family:var(--mono); font-size:11.5px; display:flex; flex-wrap:wrap; gap:4px 14px; margin-bottom:6px;}
+  .card h3{font-family:var(--mono); font-size:11.5px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin:12px 0 2px; color:var(--ink-soft);}
+  .row{display:flex; gap:10px; padding:8px 0; border-bottom:1px dotted var(--hair);}
+  .row:last-child{border-bottom:none;}
+  .row .lab{font-weight:700; font-size:14.5px; line-height:1.35;}
+  .row .lab .rt{font-family:var(--mono); font-size:11px; font-weight:600; margin-left:6px;}
+  .rt.yes{color:var(--yes);} .rt.partial{color:var(--part);} .rt.no{color:var(--no);}
+  .row .note{font-size:14px; color:var(--ink-soft); margin-top:2px; line-height:1.45;}
+  .row .note a{font-family:var(--mono); font-size:11.5px; white-space:nowrap;}
+  a{color:var(--link);}
+  .how{margin-top:40px; padding-top:14px; border-top:2px solid var(--rule); font-size:14px; color:var(--ink-soft);}
+  .how h2{font-size:16px; font-weight:800; color:var(--ink); margin:14px 0 6px;}
+  .how p, .how li{margin-bottom:8px;}
+  .how ol{padding-left:20px;}
+  .empty{color:var(--ink-soft); font-size:14px; margin-top:6px;}
+  footer{border-top:2px solid var(--rule); padding:18px 16px; font-size:14px; color:var(--ink-soft); text-align:center;}
+  .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<header><a href="/">Ballot305.org</a><div class="langs" role="group" aria-label="Language / Idioma / Lang"><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="ht">KREYÒL</button></div></header>
+<main>
+  <h1 data-t="title"></h1>
+  <p class="lede" data-t="lede"></p>
+  <p class="law" id="law"></p>
+  <div class="stats" id="stats"></div>
+  <div class="legend" id="legend"></div>
+  <div class="sortbar" id="sortbar"></div>
+  <div class="gridwrap"><table id="grid"><tbody><tr><td class="empty" data-t="loading"></td></tr></tbody></table></div>
+  <div class="cards" id="cards"></div>
+  <div class="how" id="how"></div>
+</main>
+<footer id="foot"></footer>
+<script>
+(function(){
+  var KEYS = ['M1','M2','M3','V1','V2','V3','V4','V5'];
+  var S = {
+    en: {
+      title: 'How open is your city?',
+      lede: 'The 18 Miami-Dade cities with races on the November 3, 2026 ballot, checked against eight basics: can you see who funds the candidates, and can you see what the council did and how each member voted. Each rating links the page it rests on. This is a checklist, not a grade: it shows what a voter can find online today.',
+      law: 'Since 2023, Miami-Dade County Code section 12-7 requires every city to post, on its own website, a list of its current candidates and their campaign finance reports within 7 days of receiving them, plus the candidates and reports from its previous two elections. The first two checks below measure that rule.',
+      loading: 'Loading…', loadErr: 'Couldn’t load the checklist. Try again in a minute.',
+      yes: 'Yes', partial: 'Partly', no: 'No',
+      gMoney: 'Campaign money', gVotes: 'Meetings and votes',
+      'k.M1': 'Current reports posted', 'k.M2': 'Past reports posted', 'k.M3': 'Donors searchable',
+      'k.V1': 'Agendas with backup', 'k.V2': 'Minutes posted', 'k.V3': 'Votes by name', 'k.V4': 'Searchable text', 'k.V5': 'Video',
+      'd.M1': 'Every current candidate’s campaign reports are on the city’s website or an official system it links to.',
+      'd.M2': 'Reports from the city’s previous two elections are still posted.',
+      'd.M3': 'Gifts can be searched as data (VoterFocus or EasyVote), not only read from scanned PDFs.',
+      'd.V1': 'Council agendas are posted with the documents behind each item (staff memos, contracts, bids).',
+      'd.V2': 'Approved minutes are posted where people can find them, and kept current.',
+      'd.V3': 'The record shows how each member voted, by name, not only a tally like “passed 5-0.”',
+      'd.V4': 'Agendas and minutes are searchable text, not scanned images.',
+      'd.V5': 'Video or audio of council meetings is archived online.',
+      sM: '{n} of 18 post every current candidate’s reports', sM2: '{n} of 18 keep past elections’ reports up',
+      sV3: '{n} of 18 record each member’s vote by name', sVid: '{n} of 18 archive meeting video', sUpdated: 'last checked',
+      sortOpen: 'Most open first', sortAZ: 'A to Z', sort: 'Sort:',
+      cnt: '{y} yes · {p} partly · {n} no', cntShort: '{y}/8',
+      meetings: 'Meetings page', elections: 'Elections page', source: 'Source',
+      thCity: 'City', thMet: 'Fully met',
+      howT: 'How we checked',
+      how: '<p>Each city was checked by hand on October 13, 2026, using only the city’s own websites and the official systems they link to (VoterFocus, EasyVote, Granicus, Legistar, eScribe, CivicClerk, CivicWeb, NovusAgenda, CHAMP, Laserfiche records portals, and the city’s video channel). News coverage and outside sites don’t count.</p><ol><li><b>Yes</b> means a voter can find it online today. <b>Partly</b> means some of it is missing, out of date, or so hard to find that most people won’t. <b>No</b> means we couldn’t find it.</li><li>For minutes, being posted only inside a later meeting’s agenda packet counts as partly.</li><li>For votes, a tally that names absences but not each member’s vote counts as partly.</li><li>“Searchable” means a computer can read the text. A scan of a signed page is an image unless the city adds a text layer.</li></ol><p>A “no” is what we could find, not proof that a record doesn’t exist. If your city posts something we missed, or a rating is out of date, email <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a> with the link and we’ll re-check within 24 hours. See also <a href="/methodology">how Ballot305 works</a> and <a href="/actions">donors and official actions</a>.</p>',
+      foot: '<a href="/">Back to Ballot305.org</a> · <a href="/actions">Donors and official actions</a> · <a href="/methodology">How it works</a> · <a href="/about">About</a>'
+    },
+    es: {
+      title: '¿Qué tan transparente es su ciudad?',
+      lede: 'Las 18 ciudades de Miami-Dade con contiendas en la boleta del 3 de noviembre de 2026, revisadas con ocho puntos básicos: ¿puede ver quién financia a los candidatos y qué hizo el concejo y cómo votó cada miembro? Cada calificación enlaza la página en la que se basa. Es una lista de verificación, no una nota: muestra lo que un votante puede encontrar en línea hoy.',
+      law: 'Desde 2023, la sección 12-7 del Código del Condado Miami-Dade exige que cada ciudad publique en su propio sitio web la lista de sus candidatos actuales y sus reportes de finanzas de campaña dentro de los 7 días de recibirlos, además de los candidatos y reportes de sus dos elecciones anteriores. Los dos primeros puntos miden esa regla.',
+      loading: 'Cargando…', loadErr: 'No se pudo cargar la lista. Intente de nuevo en un minuto.',
+      yes: 'Sí', partial: 'En parte', no: 'No',
+      gMoney: 'Dinero de campaña', gVotes: 'Reuniones y votos',
+      'k.M1': 'Reportes actuales publicados', 'k.M2': 'Reportes anteriores publicados', 'k.M3': 'Donantes que se pueden buscar',
+      'k.V1': 'Agendas con respaldo', 'k.V2': 'Actas publicadas', 'k.V3': 'Votos por nombre', 'k.V4': 'Texto que se puede buscar', 'k.V5': 'Video',
+      'd.M1': 'Los reportes de campaña de cada candidato actual están en el sitio web de la ciudad o en un sistema oficial que este enlaza.',
+      'd.M2': 'Los reportes de las dos elecciones anteriores de la ciudad siguen publicados.',
+      'd.M3': 'Los aportes se pueden buscar como datos (VoterFocus o EasyVote), no solo leer en PDF escaneados.',
+      'd.V1': 'Las agendas del concejo se publican con los documentos de cada asunto (memorandos, contratos, ofertas).',
+      'd.V2': 'Las actas aprobadas se publican donde la gente las puede encontrar, y al día.',
+      'd.V3': 'El registro muestra cómo votó cada miembro, por nombre, no solo un conteo como “aprobado 5-0”.',
+      'd.V4': 'Las agendas y actas son texto que se puede buscar, no imágenes escaneadas.',
+      'd.V5': 'El video o audio de las reuniones del concejo está archivado en línea.',
+      sM: '{n} de 18 publican los reportes de todos los candidatos actuales', sM2: '{n} de 18 mantienen los reportes de elecciones anteriores',
+      sV3: '{n} de 18 registran el voto de cada miembro por nombre', sVid: '{n} de 18 archivan video de las reuniones', sUpdated: 'última revisión',
+      sortOpen: 'Más transparentes primero', sortAZ: 'A a Z', sort: 'Ordenar:',
+      cnt: '{y} sí · {p} en parte · {n} no', cntShort: '{y}/8',
+      meetings: 'Página de reuniones', elections: 'Página de elecciones', source: 'Fuente',
+      thCity: 'Ciudad', thMet: 'Cumplidos',
+      howT: 'Cómo revisamos',
+      how: '<p>Cada ciudad se revisó a mano el 13 de octubre de 2026, usando solo los sitios web de la ciudad y los sistemas oficiales que enlazan (VoterFocus, EasyVote, Granicus, Legistar, eScribe, CivicClerk, CivicWeb, NovusAgenda, CHAMP, portales de registros Laserfiche y el canal de video de la ciudad). Las noticias y otros sitios no cuentan.</p><ol><li><b>Sí</b> significa que un votante lo puede encontrar en línea hoy. <b>En parte</b> significa que falta algo, está desactualizado o es tan difícil de encontrar que la mayoría no lo encontrará. <b>No</b> significa que no lo encontramos.</li><li>Si las actas solo aparecen dentro del paquete de agenda de una reunión posterior, cuenta como en parte.</li><li>Si el registro de votos da el conteo y las ausencias pero no el voto de cada miembro, cuenta como en parte.</li><li>“Que se puede buscar” significa que una computadora puede leer el texto. Un escaneo de una página firmada es una imagen, salvo que la ciudad le agregue una capa de texto.</li></ol><p>Un “no” es lo que pudimos encontrar, no prueba de que el documento no exista. Si su ciudad publica algo que no vimos, o una calificación está desactualizada, escriba a <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a> con el enlace y lo revisaremos en 24 horas. Vea también <a href="/methodology">cómo funciona Ballot305</a> y <a href="/actions">donantes y acciones oficiales</a>.</p>',
+      foot: '<a href="/">Volver a Ballot305.org</a> · <a href="/actions">Donantes y acciones oficiales</a> · <a href="/methodology">Cómo funciona</a> · <a href="/about">Acerca de</a>'
+    },
+    ht: {
+      title: 'Ki jan vil ou a transparan?',
+      lede: '18 vil Miami-Dade ki gen eleksyon sou bilten vòt 3 novanm 2026 la, nou verifye yo ak uit bagay debaz: èske ou ka wè kiyès ki finanse kandida yo, epi èske ou ka wè sa konsèy la fè ak kijan chak manm vote? Chak nòt gen lyen paj li baze sou li a. Se yon lis verifikasyon, se pa yon nòt lekòl: li montre sa yon votè ka jwenn sou entènèt jodi a.',
+      law: 'Depi 2023, seksyon 12-7 Kòd Konte Miami-Dade mande chak vil pibliye sou pwòp sit entènèt li lis kandida aktyèl li yo ak rapò finans kanpay yo nan 7 jou apre li resevwa yo, ansanm ak kandida ak rapò de dènye eleksyon li yo. De premye pwen yo mezire règ sa a.',
+      loading: 'N ap chaje…', loadErr: 'Nou pa t ka chaje lis la. Eseye ankò nan yon minit.',
+      yes: 'Wi', partial: 'Yon pati', no: 'Non',
+      gMoney: 'Lajan kanpay', gVotes: 'Reyinyon ak vòt',
+      'k.M1': 'Rapò aktyèl pibliye', 'k.M2': 'Ansyen rapò pibliye', 'k.M3': 'Ka chèche donatè',
+      'k.V1': 'Ajanda ak dokiman', 'k.V2': 'Pwosèvèbal pibliye', 'k.V3': 'Vòt pa non', 'k.V4': 'Tèks ou ka chèche', 'k.V5': 'Videyo',
+      'd.M1': 'Rapò kanpay chak kandida aktyèl sou sit entènèt vil la oswa sou yon sistèm ofisyèl li bay lyen.',
+      'd.M2': 'Rapò de dènye eleksyon vil la toujou pibliye.',
+      'd.M3': 'Ou ka chèche don yo kòm done (VoterFocus oswa EasyVote), pa sèlman li yo nan PDF eskane.',
+      'd.V1': 'Ajanda konsèy la pibliye ak dokiman chak dosye (memo, kontra, òf).',
+      'd.V2': 'Pwosèvèbal apwouve yo pibliye kote moun ka jwenn yo, epi yo ajou.',
+      'd.V3': 'Dosye a montre kijan chak manm vote, pa non, pa sèlman yon kantite tankou “pase 5-0.”',
+      'd.V4': 'Ajanda ak pwosèvèbal yo se tèks ou ka chèche, pa imaj eskane.',
+      'd.V5': 'Videyo oswa odyo reyinyon konsèy yo achive sou entènèt.',
+      sM: '{n} sou 18 pibliye rapò tout kandida aktyèl yo', sM2: '{n} sou 18 kenbe rapò ansyen eleksyon yo',
+      sV3: '{n} sou 18 anrejistre vòt chak manm pa non', sVid: '{n} sou 18 achive videyo reyinyon yo', sUpdated: 'dènye verifikasyon',
+      sortOpen: 'Pi transparan an premye', sortAZ: 'A rive Z', sort: 'Lòd:',
+      cnt: '{y} wi · {p} yon pati · {n} non', cntShort: '{y}/8',
+      meetings: 'Paj reyinyon', elections: 'Paj eleksyon', source: 'Sous',
+      thCity: 'Vil', thMet: 'Konplè',
+      howT: 'Kijan nou verifye',
+      how: '<p>Nou verifye chak vil ak men 13 oktòb 2026, sèlman sou sit entènèt vil la ak sistèm ofisyèl li bay lyen (VoterFocus, EasyVote, Granicus, Legistar, eScribe, CivicClerk, CivicWeb, NovusAgenda, CHAMP, pòtal dosye Laserfiche, ak chèn videyo vil la). Nouvèl ak lòt sit pa konte.</p><ol><li><b>Wi</b> vle di yon votè ka jwenn li sou entènèt jodi a. <b>Yon pati</b> vle di gen bagay ki manke, ki pa ajou, oswa ki tèlman difisil pou jwenn pifò moun p ap jwenn li. <b>Non</b> vle di nou pa jwenn li.</li><li>Si pwosèvèbal yo parèt sèlman nan pake ajanda yon lòt reyinyon apre, sa konte kòm yon pati.</li><li>Si dosye vòt la bay kantite vòt ak absans men pa vòt chak manm, sa konte kòm yon pati.</li><li>“Ou ka chèche” vle di yon òdinatè ka li tèks la. Yon eskan paj siyen se yon imaj, sòf si vil la ajoute yon kouch tèks.</li></ol><p>Yon “non” se sa nou te ka jwenn, se pa prèv dokiman an pa egziste. Si vil ou a pibliye yon bagay nou rate, oswa yon nòt pa ajou, ekri <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a> ak lyen an, n ap verifye l nan 24 èdtan. Gade tou <a href="/methodology">kijan Ballot305 mache</a> ak <a href="/actions">donatè ak aksyon ofisyèl</a>.</p>',
+      foot: '<a href="/">Retounen sou Ballot305.org</a> · <a href="/actions">Donatè ak aksyon ofisyèl</a> · <a href="/methodology">Kijan li mache</a> · <a href="/about">Konsènan</a>'
+    }
+  };
+  var MK = {yes: '✓', partial: '½', no: '✕'};
+  var LANG = 'en', DATA = null, SORT = 'open';
+  try { var s0 = localStorage.getItem('ballot305.lang'); if (S[s0]) LANG = s0; } catch(e){}
+  try { var s1 = localStorage.getItem('ballot305.tsort'); if (s1 === 'az') SORT = 'az'; } catch(e){}
+
+  function t(k, v){ var s = (S[LANG][k] != null ? S[LANG][k] : S.en[k]) || ''; return v ? s.replace(/\{(\w+)\}/g, function(_, n){ return v[n] != null ? v[n] : ''; }) : s; }
+  function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function L(x){ return x && typeof x === 'object' ? (x[LANG] || x.en || '') : (x || ''); }
+  function slug(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function day(d){ var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})/); if(!m) return ''; try { return new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month:'short', day:'numeric', year:'numeric'}); } catch(e){ return d; } }
+  function link(u, txt){ return /^https?:\/\//.test(u || '') ? '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(txt) + ' ↗</a>' : ''; }
+  function mark(r){ return '<span class="mk ' + r + '" role="img" aria-label="' + esc(t(r)) + '" title="' + esc(t(r)) + '">' + MK[r] + '</span>'; }
+  function counts(c){ var o = {yes:0, partial:0, no:0}; KEYS.forEach(function(k){ var r = c.items[k] && c.items[k].r; if(o[r] != null) o[r]++; }); return o; }
+  function score(c){ var o = counts(c); return o.yes * 10 + o.partial; }
+
+  function render(){
+    document.documentElement.lang = LANG;
+    document.querySelectorAll('[data-t]').forEach(function(el){ el.textContent = t(el.getAttribute('data-t')); });
+    document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === LANG); });
+    document.getElementById('law').textContent = t('law');
+    document.getElementById('legend').innerHTML = ['yes','partial','no'].map(function(r){ return '<span>' + mark(r) + ' ' + esc(t(r)) + '</span>'; }).join('');
+    document.getElementById('sortbar').innerHTML = '<span>' + esc(t('sort')) + '</span>' +
+      '<button data-sort="open" class="' + (SORT === 'open' ? 'on' : '') + '">' + esc(t('sortOpen')) + '</button>' +
+      '<button data-sort="az" class="' + (SORT === 'az' ? 'on' : '') + '">' + esc(t('sortAZ')) + '</button>';
+    document.querySelectorAll('#sortbar button').forEach(function(b){ b.addEventListener('click', function(){ SORT = b.getAttribute('data-sort'); try { localStorage.setItem('ballot305.tsort', SORT); } catch(e){} render(); }); });
+    document.getElementById('how').innerHTML = '<h2>' + esc(t('howT')) + '</h2>' + t('how');
+    document.getElementById('foot').innerHTML = t('foot');
+    if(!DATA) return;
+    var C = DATA.cities.slice().sort(function(a, b){ return SORT === 'az' ? a.city.localeCompare(b.city) : (score(b) - score(a)) || a.city.localeCompare(b.city); });
+    var n = C.length;
+    function cnt(k){ return C.filter(function(c){ return c.items[k] && c.items[k].r === 'yes'; }).length; }
+    document.getElementById('stats').innerHTML =
+      '<div><b>' + cnt('M1') + '</b>' + esc(t('sM', {n: cnt('M1')}).replace(/^\d+ /, '')) + '</div>' +
+      '<div><b>' + cnt('M2') + '</b>' + esc(t('sM2', {n: cnt('M2')}).replace(/^\d+ /, '')) + '</div>' +
+      '<div><b>' + cnt('V3') + '</b>' + esc(t('sV3', {n: cnt('V3')}).replace(/^\d+ /, '')) + '</div>' +
+      (DATA.updated ? '<div><b>' + esc(day(DATA.updated)) + '</b>' + esc(t('sUpdated')) + '</div>' : '');
+    var head = '<thead><tr class="grp"><th class="city" rowspan="2">' + esc(t('thCity')) + '</th><th colspan="3">' + esc(t('gMoney')) + '</th><th colspan="5">' + esc(t('gVotes')) + '</th><th rowspan="2">' + esc(t('thMet')) + '</th></tr><tr>' +
+      KEYS.map(function(k){ return '<th scope="col" title="' + esc(t('d.' + k)) + '">' + esc(t('k.' + k)) + '</th>'; }).join('') + '</tr></thead>';
+    var body = '<tbody>' + C.map(function(c){
+      var o = counts(c);
+      return '<tr><td class="city"><a href="#' + slug(c.city) + '">' + esc(c.city) + '</a></td>' +
+        KEYS.map(function(k){ var it = c.items[k] || {}; return '<td>' + (it.r ? mark(it.r) : '') + '</td>'; }).join('') +
+        '<td class="cnt">' + esc(t('cntShort', {y: o.yes})) + '</td></tr>';
+    }).join('') + '</tbody>';
+    document.getElementById('grid').innerHTML = '<caption class="vh">' + esc(t('title')) + '</caption>' + head + body;
+    document.getElementById('cards').innerHTML = C.map(function(c){
+      var o = counts(c);
+      function rows(keys){ return keys.map(function(k){
+        var it = c.items[k] || {};
+        return '<div class="row">' + mark(it.r) + '<div><div class="lab">' + esc(t('k.' + k)) + '<span class="rt ' + it.r + '">' + esc(t(it.r)) + '</span></div>' +
+          '<div class="note">' + esc(L(it.note)) + ' ' + link(it.url, t('source')) + '</div></div></div>';
+      }).join(''); }
+      return '<section class="card" id="' + slug(c.city) + '"><h2>' + esc(c.city) + '</h2>' +
+        '<div class="sum">' + esc(t('cnt', {y: o.yes, p: o.partial, n: o.no})) + '</div>' +
+        '<div class="src">' + link(c.electionsUrl, t('elections')) + link(c.meetingsUrl, t('meetings')) + '</div>' +
+        '<h3>' + esc(t('gMoney')) + '</h3>' + rows(['M1','M2','M3']) +
+        '<h3>' + esc(t('gVotes')) + '</h3>' + rows(['V1','V2','V3','V4','V5']) + '</section>';
+    }).join('');
+    if(location.hash && !render.jumped){ render.jumped = true; var el = document.getElementById(location.hash.slice(1)); if(el) el.scrollIntoView(); }
+  }
+
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.addEventListener('click', function(){ LANG = b.getAttribute('data-lang'); try { localStorage.setItem('ballot305.lang', LANG); } catch(e){} render(); });
+  });
+  render();
+  fetch('/data/transparency.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
+    .catch(function(){ document.getElementById('grid').innerHTML = '<tbody><tr><td class="empty">' + esc(t('loadErr')) + '</td></tr></tbody>'; });
+})();
+</script>
+</body>
+</html>
