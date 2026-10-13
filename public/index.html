@@ -345,6 +345,24 @@
   .og-pay{color:var(--ink-soft);}
   .og-more{color:var(--ink-soft); font-style:italic;}
   .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
+  .ties-sub{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:-4px 0 10px; line-height:1.5;}
+  .ties-note{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
+  .tie-act{padding:10px 0 12px; border-bottom:1px dotted #C9C9C1;}
+  .tie-act:last-of-type{border-bottom:none;}
+  .tie-when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
+  .tie-title{font-weight:700; font-size:14.5px; line-height:1.4; margin-top:3px;}
+  .tie-vote{font-size:13px; margin-top:5px; line-height:1.5;}
+  .tie-roles{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;}
+  .tie-role{font-family:var(--mono); font-size:11px; border:1.5px solid var(--ink); padding:1px 6px; border-radius:2px;}
+  .tie-donor{font-size:13.5px; margin-top:8px; padding-left:10px; border-left:3px solid var(--rule);}
+  .tie-donor .enote{font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .tie-act > .enote{font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.45;}
+  .tie-gifts{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:4px; font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);}
+  .tie-gift.me{color:var(--ink); font-weight:700;}
+  .tie-seat{opacity:.75;}
+  .tie-addr, .tie-more{font-size:12px; color:var(--ink-soft); margin-top:3px;}
+  .tie-addr summary, .tie-more summary{cursor:pointer;}
+  .tie-more{margin-top:8px;}
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
   /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
   .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
@@ -819,6 +837,37 @@ en: {
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
+  'sec.ties': 'Donors and Official Actions',
+  'ties.sub': 'Official actions on items that name this candidate’s donors, and donors who gave to more than one candidate. Dates are shown as recorded. Giving before or after an action is listed, not judged.',
+  'ties.actions': 'What {name} did on items naming a donor',
+  'ties.passed': 'Passed',
+  'ties.failed': 'Failed',
+  'ties.unan': 'unanimous',
+  'ties.consent': 'approved with the consent agenda',
+  'ties.yes': 'Yes',
+  'ties.no': 'No',
+  'ties.absent': 'Absent',
+  'role.yes': 'Voted yes',
+  'role.no': 'Voted no',
+  'role.absent': 'Absent for the vote',
+  'role.moved': 'Made the motion',
+  'role.seconded': 'Seconded',
+  'role.presented': 'Presented the item',
+  'ties.gave': 'gave {amt} on {date}',
+  'ties.also': 'Also gave to: {names}',
+  'ties.alsoNone': 'Not found in other candidates’ reports compared here.',
+  'ties.record': 'Meeting record',
+  'ties.report': 'Campaign report',
+  'ties.shared': 'Gave to more than one candidate',
+  'ties.scopeCity': 'Compared across every {city} race on this ballot.',
+  'ties.scopeRace': 'Compared across the candidates in this race.',
+  'ties.sameAddr': 'Includes {n} more listed at the same address:',
+  'ties.more': 'Show all {n}',
+  'ties.noneShared': 'No donor in the official reports gave to more than one of these candidates.',
+  'ties.loading': 'Comparing official donor reports…',
+  'ties.err': 'Could not compare donor reports right now.',
+  'ties.missing': 'No itemized official reports found for: {names}.',
+  'ties.method': 'From official campaign reports as of {date}. Givers are matched by name; companies, PACs and unions also by shared street address (people are not, since family members share homes). Same address does not prove common ownership.',
   'committee.sub': 'Donors to political committees backing this candidate. Committees can take unlimited amounts; direct campaign gifts are capped by law.',
   'committee.to': 'to {name}',
   'cov.head': 'Official donor records: {city}',
@@ -1175,6 +1224,37 @@ es: {
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
+  'sec.ties': 'Donantes y acciones oficiales',
+  'ties.sub': 'Acciones oficiales en asuntos que nombran a donantes de este candidato, y donantes que dieron a más de un candidato. Las fechas se muestran tal como constan. Donar antes o después de una acción se informa, no se juzga.',
+  'ties.actions': 'Lo que hizo {name} en asuntos que nombran a un donante',
+  'ties.passed': 'Aprobado',
+  'ties.failed': 'Rechazado',
+  'ties.unan': 'por unanimidad',
+  'ties.consent': 'aprobado en la agenda de consentimiento',
+  'ties.yes': 'Sí',
+  'ties.no': 'No',
+  'ties.absent': 'Ausente',
+  'role.yes': 'Votó sí',
+  'role.no': 'Votó no',
+  'role.absent': 'Ausente en la votación',
+  'role.moved': 'Presentó la moción',
+  'role.seconded': 'Secundó la moción',
+  'role.presented': 'Presentó el asunto',
+  'ties.gave': 'donó {amt} el {date}',
+  'ties.also': 'También donó a: {names}',
+  'ties.alsoNone': 'No aparece en los reportes de los otros candidatos comparados aquí.',
+  'ties.record': 'Acta de la reunión',
+  'ties.report': 'Reporte de campaña',
+  'ties.shared': 'Donaron a más de un candidato',
+  'ties.scopeCity': 'Comparado entre todas las contiendas de {city} en esta boleta.',
+  'ties.scopeRace': 'Comparado entre los candidatos de esta contienda.',
+  'ties.sameAddr': 'Incluye {n} más registrados en la misma dirección:',
+  'ties.more': 'Ver los {n}',
+  'ties.noneShared': 'Ningún donante en los reportes oficiales dio a más de uno de estos candidatos.',
+  'ties.loading': 'Comparando reportes oficiales de donantes…',
+  'ties.err': 'No se pudieron comparar los reportes de donantes en este momento.',
+  'ties.missing': 'No se encontraron reportes oficiales detallados de: {names}.',
+  'ties.method': 'De reportes oficiales de campaña al {date}. Los donantes se comparan por nombre; empresas, PAC y sindicatos también por la misma dirección (las personas no, porque los familiares comparten casa). La misma dirección no prueba que tengan el mismo dueño.',
   'committee.sub': 'Donantes a comités políticos que apoyan a este candidato. Los comités pueden recibir montos ilimitados; las donaciones directas a la campaña tienen un límite legal.',
   'committee.to': 'a {name}',
   'cov.head': 'Registros oficiales de donantes: {city}',
@@ -1531,6 +1611,37 @@ ht: {
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
+  'sec.ties': 'Donatè ak aksyon ofisyèl',
+  'ties.sub': 'Aksyon ofisyèl sou dosye ki nonmen donatè kandida sa a, ak donatè ki bay plis pase yon kandida. Dat yo parèt jan yo anrejistre. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije.',
+  'ties.actions': 'Sa {name} te fè sou dosye ki nonmen yon donatè',
+  'ties.passed': 'Pase',
+  'ties.failed': 'Pa pase',
+  'ties.unan': 'alinanimite',
+  'ties.consent': 'apwouve nan ajanda konsantman an',
+  'ties.yes': 'Wi',
+  'ties.no': 'Non',
+  'ties.absent': 'Absan',
+  'role.yes': 'Vote wi',
+  'role.no': 'Vote non',
+  'role.absent': 'Te absan pou vòt la',
+  'role.moved': 'Te pwopoze mosyon an',
+  'role.seconded': 'Te apiye mosyon an',
+  'role.presented': 'Te prezante dosye a',
+  'ties.gave': 'bay {amt} {date}',
+  'ties.also': 'Te bay tou: {names}',
+  'ties.alsoNone': 'Nou pa jwenn li nan rapò lòt kandida nou konpare isit la.',
+  'ties.record': 'Dosye reyinyon an',
+  'ties.report': 'Rapò kanpay',
+  'ties.shared': 'Bay plis pase yon kandida',
+  'ties.scopeCity': 'Konpare nan tout eleksyon {city} ki sou bilten sa a.',
+  'ties.scopeRace': 'Konpare ant kandida yo nan eleksyon sa a.',
+  'ties.sameAddr': 'Gen {n} lòt ki anrejistre nan menm adrès la:',
+  'ties.more': 'Wè tout {n}',
+  'ties.noneShared': 'Pa gen okenn donatè nan rapò ofisyèl yo ki bay plis pase youn nan kandida sa yo.',
+  'ties.loading': 'N ap konpare rapò ofisyèl donatè yo…',
+  'ties.err': 'Nou pa ka konpare rapò donatè yo kounye a.',
+  'ties.missing': 'Nou pa jwenn rapò ofisyèl detaye pou: {names}.',
+  'ties.method': 'Soti nan rapò kanpay ofisyèl yo jiska {date}. Nou konpare donatè yo pa non; konpayi, PAC ak sendika tou pa menm adrès (moun pa, paske fanmi rete nan menm kay). Menm adrès pa pwouve se menm pwopriyetè.',
   'committee.sub': 'Donatè ki bay komite politik k ap sipòte kandida sa a. Komite yo ka resevwa lajan san limit; don dirèk bay kanpay la gen yon limit nan lalwa.',
   'committee.to': 'bay {name}',
   'cov.head': 'Dosye ofisyèl donatè: {city}',
@@ -3108,6 +3219,7 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
+  if(ri >= 0 && !fedRace && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
@@ -3234,6 +3346,7 @@ function renderDossier(cand, race, r, cached){
   renderLocal(fedRace ? undefined : null);
   $('dossier').scrollTop = 0;
   if(fedRace) loadRaceMoney(ri, cand);
+  if(ri >= 0 && !fedRace && !race.isMeasure) loadTies(ri, cand);
 }
 
 // Newspaper editorial boards lead the endorsement list; everything else keeps its order.
@@ -3346,6 +3459,130 @@ function renderLocal(fed){
 /* ---------------- money in this race (FEC) ---------------- */
 
 // U.S. Senate and House only: the FEC covers them; state and local races file elsewhere.
+// "Donors and official actions": hand-checked actions on items naming a candidate's donors
+// (/data/donor-actions.json) and, from official reports, donors who gave to more than one candidate.
+var ACTIONS = null, actionsWait = [];
+try { fetch('/data/donor-actions.json').then(function(r){ return r.json(); }).then(function(j){
+  ACTIONS = j; var w = actionsWait; actionsWait = []; w.forEach(function(f){ f(); });
+}).catch(function(){ ACTIONS = {actions: []}; var w = actionsWait; actionsWait = []; w.forEach(function(f){ f(); }); }); } catch(e){ ACTIONS = {actions: []}; }
+var sharedCache = {};   // request key -> response (or a pending promise)
+function normName(s){
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+}
+// same rule as the server's donorKey: "Alpine Towing d/b/a Galactic" = "ALPINE TOWING", "Foo, Inc." = "foo"
+function giverKey(n){
+  var s = normName(String(n || '').replace(/\b(d\s*\/\s*b\s*\/\s*a|dba)\b.*$/i, ''));
+  for(var i = 0; i < 3; i++) s = s.replace(/\s(inc|incorporated|llc|l l c|corp|corporation|co|company|pa|p a|pllc|pl|ltd|lp|llp|lllp)$/, '');
+  return s.replace(/^the\s/, '').trim();
+}
+// ballot name vs. the name in the file: same last word, same first initial
+function sameCand(a, b){
+  var x = normName(String(a).replace(/["“”][^"“”]*["“”]/g, ' ')).split(' '), y = normName(b).split(' ');
+  return x.length && y.length && x[x.length-1] === y[y.length-1] && x[0].charAt(0) === y[0].charAt(0);
+}
+function actionsFor(cand, race){
+  if(!ACTIONS || !ACTIONS.actions) return [];
+  return ACTIONS.actions.filter(function(a){
+    try { if(!new RegExp(a.match, 'i').test(race.office || '')) return false; } catch(e){ return false; }
+    return sameCand(cand.name, a.candidate);
+  }).sort(function(a, b){ return String(b.date).localeCompare(String(a.date)); });
+}
+// The city for a city race ("Doral - Councilmember - Seat 2" -> "Doral"); '' for county and state races
+function raceCity(race){
+  var m = String(race && race.office || '').match(/^\s*([^-–]+?)\s*[-–]\s+\S/);
+  return m && !/^(county|state|school|united|representative|justice|judge|circuit)/i.test(m[1]) ? m[1].trim() : '';
+}
+function tiesPeers(ri){
+  var race = ballot.races[ri], city = raceCity(race);
+  var list = city ? ballot.races.filter(function(r){ return !r.isMeasure && !r.isRetention && raceCity(r).toLowerCase() === city.toLowerCase(); }) : [race];
+  return { city: city, races: list.map(function(r){ return { office: r.office, names: r.candidates.map(function(c){ return c.name; }) }; }) };
+}
+function tiesActive(ri, cand){
+  return $('tiesSec') && activeKey && parseInt(activeKey.split(':')[0],10) === ri && ballot.races[ri].candidates.some(function(c){ return c.name === cand.name; });
+}
+function loadTies(ri, cand){
+  if(!ACTIONS){ actionsWait.push(function(){ loadTies(ri, cand); }); return; }
+  var race = ballot.races[ri], acts = actionsFor(cand, race), peers = tiesPeers(ri);
+  var nNames = peers.races.reduce(function(n, r){ return n + r.names.length; }, 0);
+  if(nNames < 2){ renderTies(ri, cand, acts, null, false); return; }
+  var key = JSON.stringify(peers.races);
+  var hit = sharedCache[key];
+  if(hit && !hit.then){ renderTies(ri, cand, acts, hit, false, peers.city); return; }
+  renderTies(ri, cand, acts, null, true, peers.city);
+  if(!hit) hit = sharedCache[key] = api('/api/shared-donors', { races: peers.races });
+  hit.then(function(d){ sharedCache[key] = d; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, d, false, peers.city); })
+     .catch(function(){ delete sharedCache[key]; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, {error: true}, false, peers.city); });
+}
+function usd(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('en-US'); }
+function seatLabel(office, city){
+  var parts = String(office || '').split(/\s+[-–]\s+/);
+  return city && parts.length > 1 ? parts[parts.length - 1] : String(office || '');
+}
+function renderTies(ri, cand, acts, shared, loading, city){
+  var box = $('tiesSec');
+  if(!box) return;
+  var ok = shared && shared.available && !shared.error;
+  var groups = ok ? (shared.groups || []) : [];
+  var me = function(b){ return sameCand(cand.name, b.name) && (!b.office || b.office === ballot.races[ri].office); };
+  var mine = groups.filter(function(g){ return g.by.some(me); });
+  var others = groups.filter(function(g){ return !g.by.some(me); });
+  var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
+  if(!acts.length && !loading && !(ok && meFound)){ box.hidden = true; box.innerHTML = ''; return; }
+  box.hidden = false;
+  var h = '<h4>' + t('sec.ties') + '</h4><p class="ties-sub">' + t('ties.sub') + '</p>';
+  if(acts.length){
+    h += '<div class="fin-side">' + t('ties.actions', {name: esc(cand.name)}) + '</div>';
+    h += acts.map(function(a){
+      var v = a.votes || {}, out = [];
+      out.push('<strong>' + t(a.passed ? 'ties.passed' : 'ties.failed') + '</strong>' +
+        (v.yes && v.no ? ' ' + v.yes.length + '-' + v.no.length : '') +
+        (v.unanimous ? ', ' + t('ties.unan') : '') + (v.consent ? ', ' + t('ties.consent') : ''));
+      if(v.no && v.no.length) out.push(t('ties.yes') + ': ' + esc(v.yes.join(', ')) + ' &middot; ' + t('ties.no') + ': ' + esc(v.no.join(', ')));
+      if(v.absent && v.absent.length) out.push(t('ties.absent') + ': ' + esc(v.absent.join(', ')));
+      var title = (a.title && (a.title[LANG] || a.title.en)) || '';
+      var ctx = a.context ? (a.context[LANG] || a.context.en) : '';
+      var donors = (a.donors || []).map(function(d){
+        var dn = d.name && typeof d.name === 'object' ? (d.name[LANG] || d.name.en) : d.name;
+        var line = '<div class="tie-donor"><span class="dname">' + esc(dn) + '</span> ' + t('ties.gave', {amt: usd(d.amount), date: fmtDay(d.date)});
+        if(ok && meFound){
+          var k = giverKey(d.key || dn);
+          var g = mine.filter(function(g){ return [g.label].concat(g.others || []).some(function(n){ var gk = giverKey(n); return gk === k || (k.length > 4 && gk.indexOf(k) >= 0); }); })[0];
+          var also = g ? g.by.filter(function(b){ return !me(b); }).map(function(b){ return esc(b.name); }) : [];
+          line += '<div class="enote">' + (also.length ? t('ties.also', {names: also.join(', ')}) : t('ties.alsoNone')) + '</div>';
+        }
+        return line + '</div>';
+      }).join('');
+      return '<div class="tie-act"><div class="tie-when">' + esc(fmtDay(a.date)) + ' &middot; ' + esc(a.body || '') + '</div>' +
+        '<div class="tie-title">' + esc(title) + '</div>' +
+        '<div class="tie-vote">' + out.join('<br>') + '</div>' +
+        '<div class="tie-roles">' + (a.role || []).map(function(r){ return '<span class="tie-role">' + t('role.' + r) + '</span>'; }).join('') + '</div>' +
+        donors + (ctx ? '<p class="enote">' + esc(ctx) + '</p>' : '') +
+        '<div class="dtype">' + srcLink(a.url, T('ties.record')) + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
+    }).join('');
+  }
+  if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
+  else if(shared && shared.error) h += '<p class="mny-note">' + t('ties.err') + '</p>';
+  else if(ok && meFound){
+    h += '<div class="fin-side">' + t('ties.shared') + '</div><p class="ties-sub">' + (city ? t('ties.scopeCity', {city: esc(city)}) : t('ties.scopeRace')) + '</p>';
+    var row = function(g){
+      var by = g.by.slice().sort(function(a, b){ return me(b) - me(a) || b.amount - a.amount; }).map(function(b){
+        var seat = seatLabel(b.office, city), mark = me(b);
+        return '<span class="tie-gift' + (mark ? ' me' : '') + '">' + esc(b.name) + (shared.candidates.length > 2 && seat && seat !== b.office ? ' <span class="tie-seat">' + esc(seat) + '</span>' : '') + ' ' + usd(b.amount) + '</span>';
+      }).join('');
+      var extra = (g.others || []).length ? '<details class="tie-addr"><summary>' + t('ties.sameAddr', {n: g.others.length + (g.more || 0)}) + '</summary>' + esc(g.others.join('; ')) + (g.more ? '…' : '') + '</details>' : '';
+      return '<div class="donor-row"><div><span class="dname">' + esc(g.label) + '</span>' + extra + '<div class="tie-gifts">' + by + '</div></div><span class="damt">' + usd(g.total) + '</span></div>';
+    };
+    if(!mine.length && !others.length) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('ties.noneShared') + '</p>';
+    var first = mine.concat(others), show = first.slice(0, 10), rest = first.slice(10);
+    h += show.map(row).join('');
+    if(rest.length) h += '<details class="tie-more"><summary>' + t('ties.more', {n: first.length}) + '</summary>' + rest.map(row).join('') + '</details>';
+    var miss = (shared.candidates || []).filter(function(c){ return !c.found; }).map(function(c){ return esc(c.name); });
+    if(miss.length) h += '<p class="ties-note">' + t('ties.missing', {names: miss.join(', ')}) + '</p>';
+    h += '<p class="ties-note">' + t('ties.method', {date: esc(fmtDay(shared.asOf))}) + '</p>';
+  }
+  box.innerHTML = h;
+}
+
 function isFederalRace(race){
   var o = String(race && race.office || '').toLowerCase();
   return /\b(united states|u\.?s\.?)\s+senat/.test(o) ||
