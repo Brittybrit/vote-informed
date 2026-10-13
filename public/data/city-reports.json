@@ -1,5 +1,5 @@
 {
- "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)]. A candidate with \"summary\" instead of \"reports\" has only the money-to-date total read from the summary page of their latest report.",
+ "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)]. A candidate with \"summary\" instead of \"reports\" has only the money-to-date total read from the summary page of their latest report. A candidate with \"none\" has no report posted; the text says so.",
  "updated": "2026-10-13",
  "cities": [
   {
@@ -6283,7 +6283,6 @@
    "match": "^\\s*virginia gardens\\b",
    "label": "Village of Virginia Gardens",
    "portal": "https://virginiagardens-fl.gov/campaign-finance-report-documents/",
-   "pending": "Council member Michael Tur had no report posted on the village page as of 2026-10-13.",
    "candidates": [
     {
      "name": "Tim Boylan",
@@ -6370,6 +6369,11 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Michael Tur",
+     "office": "Council",
+     "none": "The Village of Virginia Gardens had not posted a campaign report for him on its website as of 2026-10-13."
     }
    ]
   }
