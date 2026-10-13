@@ -346,6 +346,7 @@
   .og-more{color:var(--ink-soft); font-style:italic;}
   .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
   .ties-sub{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:-4px 0 10px; line-height:1.5;}
+  .tie-status{font-size:13.5px; line-height:1.5; margin:0 0 12px; padding:8px 10px; border-left:4px solid var(--rule);}
   .ties-note{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
   .tie-act{padding:10px 0 12px; border-bottom:1px dotted #C9C9C1;}
   .tie-act:last-of-type{border-bottom:none;}
@@ -838,6 +839,10 @@ en: {
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
   'sec.ties': 'Donors and Official Actions',
+  'ties.notIn': '{name} does not hold a seat here now, so there are no official actions to show.',
+  'ties.current': '{name} serves on the {body} now. Their official actions have not been reviewed for this section yet.',
+  'ties.currentNone': '{name} serves on the {body} now. No official actions on items naming one of their donors were found in the meetings reviewed.',
+  'ties.former': '{name} is a former member of the {body}. Their past official actions have not been reviewed for this section yet.',
   'ties.sub': 'Official actions on items that name this candidate’s donors, and donors who gave to more than one candidate. Dates are shown as recorded. Giving before or after an action is listed, not judged.',
   'ties.actions': 'What {name} did on items naming a donor',
   'ties.passed': 'Passed',
@@ -1225,6 +1230,10 @@ es: {
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
   'sec.ties': 'Donantes y acciones oficiales',
+  'ties.notIn': '{name} no ocupa un cargo aquí ahora, así que no hay acciones oficiales que mostrar.',
+  'ties.current': '{name} forma parte de {body} ahora. Sus acciones oficiales aún no se han revisado para esta sección.',
+  'ties.currentNone': '{name} forma parte de {body} ahora. No se encontraron acciones oficiales sobre asuntos que nombren a uno de sus donantes en las reuniones revisadas.',
+  'ties.former': '{name} es exmiembro de {body}. Sus acciones oficiales pasadas aún no se han revisado para esta sección.',
   'ties.sub': 'Acciones oficiales en asuntos que nombran a donantes de este candidato, y donantes que dieron a más de un candidato. Las fechas se muestran tal como constan. Donar antes o después de una acción se informa, no se juzga.',
   'ties.actions': 'Lo que hizo {name} en asuntos que nombran a un donante',
   'ties.passed': 'Aprobado',
@@ -1612,6 +1621,10 @@ ht: {
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
   'sec.ties': 'Donatè ak aksyon ofisyèl',
+  'ties.notIn': '{name} pa gen okenn pòs isit la kounye a, kidonk pa gen aksyon ofisyèl pou montre.',
+  'ties.current': '{name} sèvi nan {body} kounye a. Nou poko revize aksyon ofisyèl li yo pou seksyon sa a.',
+  'ties.currentNone': '{name} sèvi nan {body} kounye a. Nou pa jwenn okenn aksyon ofisyèl sou dosye ki nonmen youn nan donatè li yo nan reyinyon nou revize yo.',
+  'ties.former': '{name} se yon ansyen manm {body}. Nou poko revize ansyen aksyon ofisyèl li yo pou seksyon sa a.',
   'ties.sub': 'Aksyon ofisyèl sou dosye ki nonmen donatè kandida sa a, ak donatè ki bay plis pase yon kandida. Dat yo parèt jan yo anrejistre. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije.',
   'ties.actions': 'Sa {name} te fè sou dosye ki nonmen yon donatè',
   'ties.passed': 'Pase',
@@ -3480,6 +3493,15 @@ function sameCand(a, b){
   var x = normName(String(a).replace(/["“”][^"“”]*["“”]/g, ' ')).split(' '), y = normName(b).split(' ');
   return x.length && y.length && x[x.length-1] === y[y.length-1] && x[0].charAt(0) === y[0].charAt(0);
 }
+// Whether the candidate holds a seat on the body this race is for. null = not checked for this race.
+function officeStatus(cand, race){
+  if(!ACTIONS || !ACTIONS.checked) return null;
+  var o = String(race.office || '');
+  var re = function(p){ try { return new RegExp(p, 'i').test(o); } catch(e){ return false; } };
+  if(!ACTIONS.checked.some(re)) return null;
+  var h = (ACTIONS.officeholders || []).filter(function(x){ return re(x.match) && sameCand(cand.name, x.candidate); })[0];
+  return h ? h : {status: 'none'};
+}
 function actionsFor(cand, race){
   if(!ACTIONS || !ACTIONS.actions) return [];
   return ACTIONS.actions.filter(function(a){
@@ -3527,9 +3549,16 @@ function renderTies(ri, cand, acts, shared, loading, city){
   var mine = groups.filter(function(g){ return g.by.some(me); });
   var others = groups.filter(function(g){ return !g.by.some(me); });
   var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
-  if(!acts.length && !loading && !(ok && meFound)){ box.hidden = true; box.innerHTML = ''; return; }
+  var st = officeStatus(cand, ballot.races[ri]);
+  if(!acts.length && !loading && !(ok && meFound) && !st){ box.hidden = true; box.innerHTML = ''; return; }
   box.hidden = false;
   var h = '<h4>' + t('sec.ties') + '</h4><p class="ties-sub">' + t('ties.sub') + '</p>';
+  if(st && !acts.length){
+    var nm = esc(cand.name), body = esc(st.body || '');
+    h += '<p class="tie-status">' + (st.status === 'none' ? t('ties.notIn', {name: nm})
+      : st.status === 'former' ? t('ties.former', {name: nm, body: body})
+      : st.reviewed ? t('ties.currentNone', {name: nm, body: body}) : t('ties.current', {name: nm, body: body})) + '</p>';
+  }
   if(acts.length){
     h += '<div class="fin-side">' + t('ties.actions', {name: esc(cand.name)}) + '</div>';
     h += acts.map(function(a){

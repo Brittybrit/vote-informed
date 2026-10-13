@@ -1,6 +1,238 @@
 {
-  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda.",
+  "note": "Official actions by incumbents on items that name one of their campaign donors, checked by hand against meeting minutes or roll calls. Each action lists the candidate's own role and every vote. Donations are from the candidate's official campaign reports. Dates are shown as recorded: giving before or after an action is listed, not judged. Edit by hand; keep only verified items. role: yes | no | absent | moved | seconded | presented. votes.consent = approved as part of the consent agenda. officeholders: who holds (or held) a seat on the body the race is for, checked Oct 13, 2026 against city and county sites and news; reviewed = their official actions were checked for this list. checked: races where every candidate's status was checked; a candidate there who is not listed holds no seat on that body now.",
   "updated": "2026-10-13",
+  "checked": [
+    "^\\s*(aventura|biscayne park|coral gables|cutler bay|doral|el portal|hialeah|key biscayne|medley|miami gardens|north miami|north miami beach|opa-?\\s*locka|palmetto bay|pinecrest|south miami|sunny isles beach|virginia gardens)\\b",
+    "^county commissioner, district 5$"
+  ],
+  "officeholders": [
+    {
+      "candidate": "Vicki L. Lopez",
+      "match": "^county commissioner, district 5$",
+      "body": "Miami-Dade County Commission",
+      "status": "current",
+      "reviewed": true
+    },
+    {
+      "candidate": "Howard S. Weinberg",
+      "match": "^\\s*aventura\\b",
+      "body": "Aventura City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Daniel Samaria",
+      "match": "^\\s*biscayne park\\b",
+      "body": "Biscayne Park Village Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Judi Hamelburg",
+      "match": "^\\s*biscayne park\\b",
+      "body": "Biscayne Park Village Commission",
+      "status": "former"
+    },
+    {
+      "candidate": "Vince Lago",
+      "match": "^\\s*coral gables\\b",
+      "body": "Coral Gables City Commission",
+      "status": "current",
+      "reviewed": true
+    },
+    {
+      "candidate": "Melissa Castro",
+      "match": "^\\s*coral gables\\b",
+      "body": "Coral Gables City Commission",
+      "status": "current",
+      "reviewed": true
+    },
+    {
+      "candidate": "Nestor Menendez",
+      "match": "^\\s*coral gables\\b",
+      "body": "Coral Gables City Commission",
+      "status": "former"
+    },
+    {
+      "candidate": "Robert \"B.J.\" Duncan",
+      "match": "^\\s*cutler bay\\b",
+      "body": "Cutler Bay Town Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Suzy Lord",
+      "match": "^\\s*cutler bay\\b",
+      "body": "Cutler Bay Town Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Richard Ramirez",
+      "match": "^\\s*cutler bay\\b",
+      "body": "Cutler Bay Town Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Maureen Porras",
+      "match": "^\\s*doral\\b",
+      "body": "Doral City Council",
+      "status": "current",
+      "reviewed": true
+    },
+    {
+      "candidate": "Omarr C. Nickerson",
+      "match": "^\\s*el portal\\b",
+      "body": "El Portal Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Anders Urbom",
+      "match": "^\\s*el portal\\b",
+      "body": "El Portal Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Charles Winters",
+      "match": "^\\s*el portal\\b",
+      "body": "El Portal Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Luis Gonzalez",
+      "match": "^\\s*hialeah\\b",
+      "body": "Hialeah City Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Oscar Sardiñas",
+      "match": "^\\s*key biscayne\\b",
+      "body": "Key Biscayne Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Fernando Vazquez",
+      "match": "^\\s*key biscayne\\b",
+      "body": "Key Biscayne Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Edgar Ayala",
+      "match": "^\\s*medley\\b",
+      "body": "Medley Town Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Lizelh Rodriguez",
+      "match": "^\\s*medley\\b",
+      "body": "Medley Town Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Alix Desulme",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "body": "North Miami City Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Kassandra Timothe",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "body": "North Miami City Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Mary Estimé-Irvin",
+      "match": "^\\s*north miami\\b(?!\\s+beach)",
+      "body": "North Miami City Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Jay R. Chernoff",
+      "match": "^\\s*north miami beach\\b",
+      "body": "North Miami Beach City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Phyllis Smith",
+      "match": "^\\s*north miami beach\\b",
+      "body": "North Miami Beach City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Natasha L. Ervin",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "body": "Opa-locka City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Sherelean Bass",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "body": "Opa-locka City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Rose Tydus",
+      "match": "^\\s*opa-?\\s*locka\\b",
+      "body": "Opa-locka City Commission",
+      "status": "former"
+    },
+    {
+      "candidate": "Ken Fairman",
+      "match": "^\\s*pinecrest\\b",
+      "body": "Pinecrest Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Javier E. Fernández",
+      "match": "^\\s*south miami\\b",
+      "body": "South Miami City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Steve Calle",
+      "match": "^\\s*south miami\\b",
+      "body": "South Miami City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Lisa Bonich",
+      "match": "^\\s*south miami\\b",
+      "body": "South Miami City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Larisa Svechin",
+      "match": "^\\s*sunny isles beach\\b",
+      "body": "Sunny Isles Beach City Commission",
+      "status": "current"
+    },
+    {
+      "candidate": "Dana Goldman",
+      "match": "^\\s*sunny isles beach\\b",
+      "body": "Sunny Isles Beach City Commission",
+      "status": "former"
+    },
+    {
+      "candidate": "Fred Spencer Deno IV",
+      "match": "^\\s*virginia gardens\\b",
+      "body": "Virginia Gardens Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Jorge Arce",
+      "match": "^\\s*virginia gardens\\b",
+      "body": "Virginia Gardens Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Elizabeth K. Taylor-Martinez",
+      "match": "^\\s*virginia gardens\\b",
+      "body": "Virginia Gardens Village Council",
+      "status": "current"
+    },
+    {
+      "candidate": "Michael Tur",
+      "match": "^\\s*virginia gardens\\b",
+      "body": "Virginia Gardens Village Council",
+      "status": "current"
+    }
+  ],
   "actions": [
     {
       "candidate": "Vicki L. Lopez",
