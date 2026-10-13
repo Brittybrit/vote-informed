@@ -2005,7 +2005,7 @@ async function txCandidateDonors(env, name, office) {
     v.type === 'B' ? (/\b(union|local \d+|afscme|seiu|iaff)\b/i.test(v.name) ? 'union' : 'corporation') : 'individual';
   const all = sorted.filter(v => v.amount > 0).map(v => ({ name: v.name, type: kindOf(v), amount: Math.round(v.amount), first: v.first, last: v.date, street: '', zip: '' }));
   return { donors, all, total, count, to, ties: tieNote(sorted.map(v => v.amount), 8), label: city.label, portal: city.portal,
-    pending: city.pending || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
+    pending: city.pending || '', cnote: c.note || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
     version: data.updated || '' };
 }
 async function refreshTxDonors(env, result, name, office, officeCode) {
@@ -2033,7 +2033,7 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
       result.donorDataNote = 'Contributions reported to the ' + d.label + ': $' + Math.round(d.total).toLocaleString('en-US') +
         ' from ' + d.count + (d.count === 1 ? ' contribution' : ' contributions') + ' (loans and in-kind gifts count), in reports through ' + d.through +
         ' (' + d.lastReport + '). The clerk posts scanned reports, so these were typed in from each report and checked against its totals.' +
-        (d.pending ? ' ' + d.pending : '') + ' Top givers shown, each linked to the report that lists the gift.' + (d.ties || '');
+        (d.pending ? ' ' + d.pending : '') + (d.cnote ? ' ' + d.cnote : '') + ' Top givers shown, each linked to the report that lists the gift.' + (d.ties || '');
       result.donorListUrl = d.portal;
       result.donorSource = 'CITY';
     }
