@@ -1984,6 +1984,7 @@ async function txCandidateDonors(env, name, office) {
   if (hits.length !== 1) return null;
   const c = hits[0];
   if (c.summary) return { summary: c.summary, label: city.label, version: data.updated || '' };
+  if (c.none) return { none: c.none, label: city.label, version: data.updated || '' };
   const agg = {}; let total = 0, count = 0, to = '', last = null;
   for (const rep of c.reports || []) {
     if (!last || String(rep.period || '') > String(last.period || '')) last = rep;
@@ -2023,6 +2024,16 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
   try {
     const d = await txCandidateDonors(env, name, office);
     // re-apply if another source replaced these donors since
+    if (d && d.none) {
+      // The clerk posted no report for this candidate: say so instead of the research note's guess.
+      const line = d.none;
+      const hasDonors = Array.isArray(result.donors) && result.donors.length > 0;
+      const note = hasDonors ? (String(result.donorDataNote || '').replace(line, '').trim() + ' ' + line).trim() : line;
+      if (result.txV === d.version && result.donorDataNote === note) return false;
+      result.txV = d.version;
+      result.donorDataNote = note;
+      return true;
+    }
     if (d && d.summary) {
       // Only the total from the latest summary page (North Miami Beach): add it to the note and point
       // to that report. Donors stay from web research.
@@ -2030,9 +2041,13 @@ async function refreshTxDonors(env, result, name, office, officeCode) {
       const line = (sm.total != null ? 'The candidate\u2019s latest report to the ' + d.label + ' (' + sm.report + ', through ' + sm.through +
         ') shows $' + Math.round(sm.total).toLocaleString('en-US') + ' raised to date, including loans.' : 'See the candidate\u2019s latest report to the ' + d.label +
         ' (' + sm.report + ').') + (sm.note ? ' ' + sm.note : '') + ' The city posts scanned reports, so the donors listed come from web research.';
-      if (result.txV === d.version && String(result.donorDataNote || '').includes(line)) return false;
+      // No donors from web research either: the summary line is the whole note, so a research note
+      // that says no records were found doesn't sit next to the report that shows the total.
+      const hasDonors = Array.isArray(result.donors) && result.donors.length > 0;
+      const solo = line.replace(' The city posts scanned reports, so the donors listed come from web research.', ' The city posts scanned reports.');
+      if (result.txV === d.version && (hasDonors ? String(result.donorDataNote || '').includes(line) : result.donorDataNote === solo)) return false;
       result.txV = d.version;
-      result.donorDataNote = (String(result.donorDataNote || '').replace(/ ?The candidate\u2019s latest report to the [^]*?come from web research\.|See the candidate\u2019s latest report to the [^]*?come from web research\./, '').trim() + ' ' + line).trim();
+      result.donorDataNote = hasDonors ? (String(result.donorDataNote || '').replace(/ ?The candidate\u2019s latest report to the [^]*?come from web research\.|See the candidate\u2019s latest report to the [^]*?come from web research\./, '').trim() + ' ' + line).trim() : solo;
       result.donorListUrl = sm.url;
       return true;
     }
