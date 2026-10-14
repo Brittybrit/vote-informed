@@ -873,6 +873,7 @@ en: {
   'ties.sameAddr': 'Includes {n} more listed at the same address:',
   'ties.more': 'Show all {n}',
   'ties.noneShared': 'No donor in the official reports gave to more than one of these candidates.',
+  'ties.noneMine': 'None of {name}’s donors in the official reports gave to another of these candidates.',
   'ties.loading': 'Comparing official donor reports…',
   'ties.err': 'Could not compare donor reports right now.',
   'ties.missing': 'No itemized official reports found for: {names}.',
@@ -1268,6 +1269,7 @@ es: {
   'ties.sameAddr': 'Incluye {n} más registrados en la misma dirección:',
   'ties.more': 'Ver los {n}',
   'ties.noneShared': 'Ningún donante en los reportes oficiales dio a más de uno de estos candidatos.',
+  'ties.noneMine': 'Ningún donante de {name} en los reportes oficiales dio a otro de estos candidatos.',
   'ties.loading': 'Comparando reportes oficiales de donantes…',
   'ties.err': 'No se pudieron comparar los reportes de donantes en este momento.',
   'ties.missing': 'No se encontraron reportes oficiales detallados de: {names}.',
@@ -1663,6 +1665,7 @@ ht: {
   'ties.sameAddr': 'Gen {n} lòt ki anrejistre nan menm adrès la:',
   'ties.more': 'Wè tout {n}',
   'ties.noneShared': 'Pa gen okenn donatè nan rapò ofisyèl yo ki bay plis pase youn nan kandida sa yo.',
+  'ties.noneMine': 'Pa gen okenn donatè {name} nan rapò ofisyèl yo ki bay yon lòt nan kandida sa yo.',
   'ties.loading': 'N ap konpare rapò ofisyèl donatè yo…',
   'ties.err': 'Nou pa ka konpare rapò donatè yo kounye a.',
   'ties.missing': 'Nou pa jwenn rapò ofisyèl detaye pou: {names}.',
@@ -3559,7 +3562,6 @@ function renderTies(ri, cand, acts, shared, loading, city){
   var groups = ok ? (shared.groups || []) : [];
   var me = function(b){ return sameCand(cand.name, b.name) && (!b.office || b.office === ballot.races[ri].office); };
   var mine = groups.filter(function(g){ return g.by.some(me); });
-  var others = groups.filter(function(g){ return !g.by.some(me); });
   var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
   var st = officeStatus(cand, ballot.races[ri]);
   if(!acts.length && !loading && !(ok && meFound) && !st){ box.hidden = true; box.innerHTML = ''; return; }
@@ -3616,8 +3618,9 @@ function renderTies(ri, cand, acts, shared, loading, city){
       var extra = (g.others || []).length ? '<details class="tie-addr"><summary>' + t('ties.sameAddr', {n: g.others.length + (g.more || 0)}) + '</summary>' + esc(g.others.join('; ')) + (g.more ? '…' : '') + '</details>' : '';
       return '<div class="donor-row"><div><span class="dname">' + esc(g.label) + '</span>' + extra + '<div class="tie-gifts">' + by + '</div></div><span class="damt">' + usd(g.total) + '</span></div>';
     };
-    if(!mine.length && !others.length) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('ties.noneShared') + '</p>';
-    var first = mine.concat(others), show = first.slice(0, 10), rest = first.slice(10);
+    // only givers to this candidate: a donor who gave to two other candidates doesn't belong on this page
+    if(!mine.length) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t(groups.length ? 'ties.noneMine' : 'ties.noneShared', {name: esc(cand.name)}) + '</p>';
+    var first = mine, show = first.slice(0, 10), rest = first.slice(10);
     h += show.map(row).join('');
     if(rest.length) h += '<details class="tie-more"><summary>' + t('ties.more', {n: first.length}) + '</summary>' + rest.map(row).join('') + '</details>';
     var miss = (shared.candidates || []).filter(function(c){ return !c.found; }).map(function(c){ return esc(c.name); });
