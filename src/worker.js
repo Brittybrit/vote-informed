@@ -2631,7 +2631,7 @@ async function fecTopDonors(env, name, officeCode, office) {
 // "Raised" is the sum of these buckets. Transfers between committees, outside loans, refunds and
 // interest are left out: they aren't support from anyone and voters can't read them.
 // Size bins are scaled to the individual-contribution total from the same summary data.
-const MONEY_VERSION = 3;
+const MONEY_VERSION = 4;
 async function handleRaceMoney(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
@@ -2931,7 +2931,8 @@ function moneyLinks(committeeId, cycle) {
     large: ind + '&min_amount=1000',
     pac: base + p + '&line_number=F3-11C',
     party: base + p + '&line_number=F3-11B',
-    self: base + p + '&line_number=F3-11D'
+    // the candidate's own money: contributions (line 11d) and loans (line 13a), as in the totals
+    self: base + p + '&line_number=F3-11D&line_number=F3-13A'
   };
 }
 
