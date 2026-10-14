@@ -312,7 +312,8 @@
   .og-asof{color:var(--ink-soft); font-size:11.5px;}
   .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
   .og-body .og-f .dname{font-size:13px;}
-  .og-links{margin-top:6px !important;}
+  .og-links{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); line-height:1.8; margin-top:6px !important;}
+  .og-links .srclink, .og-links .how-btn{margin-right:10px;}
   .og-body details.og{margin-left:0; padding-left:6px; border-left:2px solid #DDDDD5;}
   .og-body .og-body{padding:6px 8px;}
   .og-search{font-size:12px;}
@@ -347,7 +348,7 @@
   .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
   .ties-sub{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:-4px 0 10px; line-height:1.5;}
   .tie-status{font-size:13.5px; line-height:1.5; margin:0 0 12px; padding:8px 10px; border-left:4px solid var(--rule);}
-  .ties-note{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
+  .ties-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
   .tie-act{padding:10px 0 12px; border-bottom:1px dotted #C9C9C1;}
   .tie-act:last-of-type{border-bottom:none;}
   .tie-when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
@@ -357,6 +358,7 @@
   .tie-role{font-family:var(--mono); font-size:11px; border:1.5px solid var(--ink); padding:1px 6px; border-radius:2px;}
   .tie-donor{font-size:13.5px; margin-top:8px; padding-left:10px; border-left:3px solid var(--rule);}
   .tie-donor .enote{font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .donor-row .enote{font-size:12px; color:var(--ink-soft); margin-top:2px; line-height:1.45;}
   .tie-act > .enote{font-size:12.5px; color:var(--ink-soft); margin-top:6px; line-height:1.45;}
   .tie-gifts{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:4px; font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);}
   .tie-gift.me{color:var(--ink); font-weight:700;}
@@ -470,7 +472,23 @@
   .rep-hint{font-size:12.5px; color:var(--ink-soft); margin:8px 0 6px;}
   .rep textarea, .rep input{width:100%; box-sizing:border-box; font:inherit; font-size:14px; padding:8px; border:2px solid var(--ink); background:var(--panel); margin-bottom:8px;}
   .rep-msg{font-size:12.5px; margin-top:8px;}
-  .mny-note{font-family:var(--mono); font-size:11px; line-height:1.5; color:var(--ink-soft); margin-top:10px;}
+  .mny-note, .fine{font-family:var(--mono); font-size:11px; line-height:1.5; color:var(--ink-soft); margin-top:10px;}
+  .sec-sub{font-family:var(--mono); font-size:10.5px; line-height:1.5; color:var(--ink-soft); margin:-4px 0 10px;}
+  .side-sub{font-family:var(--mono); font-size:10.5px; line-height:1.5; color:var(--ink-soft); margin:0 0 8px;}
+  .empty{font-size:13.5px; color:var(--ink-soft);}
+  /* Methodology: long explainers open in a dialog instead of sitting in the page */
+  .how-btn{background:none; border:none; padding:0; font-family:var(--mono); font-size:10.5px; color:var(--left-fg);
+    text-decoration:underline; text-underline-offset:2px; cursor:pointer; white-space:nowrap;}
+  .how-btn::before{content:"\24D8"; text-decoration:none; display:inline-block; margin-right:4px;}
+  dialog.how-dlg{margin:auto; max-width:560px; width:calc(100% - 32px); border:2.5px solid var(--ink); background:var(--paper); color:var(--ink);
+    padding:18px 20px 16px; box-shadow:6px 6px 0 rgba(0,0,0,.12);}
+  dialog.how-dlg::backdrop{background:rgba(10,19,48,.45);}
+  .how-dlg h4{font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.08em; border-bottom:2.5px solid var(--rule);
+    padding-bottom:6px; margin:0 0 12px;}
+  .how-dlg .how-body{font-size:14px; line-height:1.6;}
+  .how-dlg .how-body p{margin:0 0 10px;}
+  .how-dlg .how-close{margin-top:6px; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase;
+    background:var(--ink); color:var(--paper); border:none; padding:8px 14px; cursor:pointer;}
   .fulllist{display:inline-block; margin-top:12px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); border:2px solid var(--ink); padding:8px 12px; text-decoration:none;}
   .fulllist:hover{background:var(--ink); color:var(--paper);}
   .srcs{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); overflow-wrap:anywhere; word-break:break-all;}
@@ -730,6 +748,12 @@ en: {
   'mny.donors': 'Donors',
   'mny.sum': '<strong>Grassroots</strong> {g} &middot; <strong>Big money</strong> ($1,000+ gifts and PACs) {b}',
   'mny.note': 'FEC filings for {period}, through {date}. Raised means money from donors, PACs, parties and the candidate; transfers between committees, refunds and outside loans are left out. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
+  'how.btn': 'Methodology',
+  'how.title': 'How this is counted',
+  'how.close': 'Close',
+  'mny.asof': 'FEC filings for {period}, through {date}.',
+  'flout.subShort': 'Committee and party spending that names this candidate in Florida filings. A floor, not a total.',
+  'loc.noAgainstShort': 'Not added up for state and local races. Full filings: {src}.',
   'mny.none': 'No FEC filings found for {name} this period.',
   'mny.zero': '{name} has reported raising no money this period.',
   'mny.err': 'Couldn&rsquo;t load FEC totals right now.',
@@ -1142,6 +1166,12 @@ es: {
   'mny.donors': 'Donantes',
   'mny.sum': '<strong>Base popular</strong> {g} &middot; <strong>Dinero grande</strong> (donaciones de $1,000+ y PAC) {b}',
   'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Lo recaudado incluye dinero de donantes, PAC, partidos y del propio candidato; no incluye transferencias entre comités, reembolsos ni préstamos de terceros. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
+  'how.btn': 'Metodología',
+  'how.title': 'Cómo se cuenta',
+  'how.close': 'Cerrar',
+  'mny.asof': 'Informes de la FEC de {period}, hasta el {date}.',
+  'flout.subShort': 'Gastos de comités y partidos que nombran a este candidato en informes de Florida. Un mínimo, no un total.',
+  'loc.noAgainstShort': 'No se suma en las contiendas estatales y locales. Informes completos: {src}.',
   'mny.none': 'No se encontraron informes ante la FEC de {name} en este período.',
   'mny.zero': '{name} no ha reportado recaudación en este período.',
   'mny.err': 'No se pudieron cargar los totales de la FEC en este momento.',
@@ -1554,6 +1584,12 @@ ht: {
   'mny.donors': 'Donatè',
   'mny.sum': '<strong>Baz popilè</strong> {g} &middot; <strong>Gwo lajan</strong> (don $1,000+ ak PAC) {b}',
   'mny.note': 'Rapò FEC pou {period}, jiska {date}. Lajan ranmase a se lajan ki soti nan donatè, PAC, pati ak kandida a menm; transfè ant komite, ranbousman ak prè lòt moun pa ladan l. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
+  'how.btn': 'Metodoloji',
+  'how.title': 'Kijan nou konte',
+  'how.close': 'Fèmen',
+  'mny.asof': 'Rapò FEC pou {period}, jiska {date}.',
+  'flout.subShort': 'Depans komite ak pati ki nonmen kandida sa a nan rapò Florid. Yon minimòm, pa yon total.',
+  'loc.noAgainstShort': 'Nou pa totalize sa pou eleksyon eta ak lokal yo. Tout rapò yo: {src}.',
   'mny.none': 'Nou pa jwenn rapò FEC pou {name} nan peryòd sa a.',
   'mny.zero': '{name} pa deklare li ranmase lajan nan peryòd sa a.',
   'mny.err': 'Nou pa ka chaje total FEC yo kounye a.',
@@ -2559,7 +2595,7 @@ function measureVoteBar(ri, race){
 }
 
 function funderRows(list){
-  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('fin.none') + '</p>';
+  if(!list || !list.length) return '<p class="empty">' + t('fin.none') + '</p>';
   return byAmount(list).map(function(d){
     return '<div class="endo"><div class="eorg">' + esc(d.name) + '</div>' +
     (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
@@ -2573,7 +2609,7 @@ function funderRows(list){
 }
 
 function sideList(list, emptyMsg){
-  if(!list || !list.length) return '<p style="font-size:13.5px;color:var(--ink-soft)">' + emptyMsg + '</p>';
+  if(!list || !list.length) return '<p class="empty">' + emptyMsg + '</p>';
   return list.map(function(e){
     return '<div class="endo"><div class="eorg">' + esc(e.name) + '</div>' +
     (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
@@ -2597,7 +2633,7 @@ function renderMeasureDossier(ri, r, cached){
   html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
     '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
     '<div class="fin-side side-no">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
-  if(fin.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(fin.note) + '</p>';
+  if(fin.note) html += '<p class="fine">' + esc(fin.note) + '</p>';
   html += '</div>';
 
   html += '<div class="dsec"><h4>' + t('sec.supporters') + '</h4>' + sideList(r.supporters, t('none.support')) + '</div>';
@@ -2749,22 +2785,43 @@ function flOutsideHtml(f){
     }));
   };
   var h = '<div class="fin-side" style="margin-top:14px">' + t('flout.head') + '</div>' +
-    '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t('flout.sub', {since: esc(fmtDay(f.since))}) + '</p>';
+    '<p class="side-sub">' + t('flout.subShort') + ' ' + howBtn(t('flout.sub', {since: esc(fmtDay(f.since))})) + '</p>';
   var any = (f.oppose || []).length + (f.support || []).length + (f.unstated || []).length;
-  if(!any) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('flout.none') + '</p>';
+  if(!any) h += '<p class="empty">' + t('flout.none') + '</p>';
   if((f.oppose || []).length) h += '<div class="fin-side side-no">' + t('flout.against') + '</div>' + rows(f.oppose);
   if((f.support || []).length) h += '<div class="fin-side side-yes">' + t('flout.for') + '</div>' + rows(f.support);
   if((f.unstated || []).length) h += '<div class="fin-side">' + t('flout.unstated') + '</div>' + rows(f.unstated);
   if(safeUrl(f.listUrl)) h += '<a class="fulllist" href="' + esc(f.listUrl) + '" target="_blank" rel="noopener">' + t('flout.full') + ' &#8599;</a>';
   return h;
 }
+// Long explainers live behind a "Methodology" button and open in one shared dialog.
+var HOW = [];
+function howBtn(html){
+  HOW.push(html);
+  return '<button type="button" class="how-btn" data-how="' + (HOW.length - 1) + '">' + t('how.btn') + '</button>';
+}
+document.addEventListener('click', function(e){
+  var b = e.target && e.target.closest && e.target.closest('.how-btn');
+  if(!b) return;
+  e.preventDefault();
+  var d = document.getElementById('howDlg');
+  if(!d){
+    d = document.createElement('dialog'); d.id = 'howDlg'; d.className = 'how-dlg';
+    d.addEventListener('click', function(ev){ if(ev.target === d) d.close(); });   // click outside the box closes it
+    document.body.appendChild(d);
+  }
+  d.innerHTML = '<h4>' + t('how.title') + '</h4><div class="how-body"><p>' + (HOW[+b.getAttribute('data-how')] || '') + '</p></div>' +
+    '<button type="button" class="how-close" autofocus>' + t('how.close') + '</button>';
+  d.querySelector('.how-close').onclick = function(){ d.close(); };
+  if(d.showModal) d.showModal(); else d.setAttribute('open', '');
+});
 function outsideRows(list){
   return byAmount(list).map(function(d){
     var donors = safeUrl(d.donorsUrl);
     var fec = /^C\d{8}$/.test(d.fecId || '') ? d.fecId : '';
     var bought = (d.bought || []).map(function(b){ return t('cat.' + b.c) + ' ' + b.p + '%'; }).join(' · ');
     return '<div class="donor-row og-row"><div style="flex:1;min-width:0"><span class="dname">' + esc(d.name) + '</span>' +
-      (d.note ? '<div class="enote" style="font-size:12.5px">' + esc(d.note) + '</div>' : '') +
+      (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
       '<span class="dtype">' + (fec ? '<span class="og-lean" data-fec="' + fec + '"></span>' : '') +
       kindTag(d.kind, d.kind_tr) + disclosureTag(d) + srcLink(d.url) +
       (donors ? ' <a class="srclink" href="' + esc(donors) + '" target="_blank" rel="noopener noreferrer">' + t('outside.donors') + ' ↗</a>' : '') +
@@ -2888,7 +2945,7 @@ function flcBlock(c, hint){
   if(c.funders && c.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + c.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
-        (f.occupation ? '<div class="enote" style="font-size:12px">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
+        (f.occupation ? '<div class="enote">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
         '<span class="dtype">' + kindTag(f.type) + disclosureTag(f) + '</span></div>' +
         '<span class="damt">' + esc(f.amount) + '</span>' +
         (isOrgEntry(f, f.type) ? orgDetails(f) : '') + '</div>';
@@ -3068,7 +3125,7 @@ function backerRows(list){
   return list.map(function(b){
     var f = b.f;
     return '<div class="bk-row"><div class="donor-row"><div><span class="dname">' + esc(f.name) + '</span>' +
-      (f.occupation ? '<div class="enote" style="font-size:12px">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
+      (f.occupation ? '<div class="enote">' + esc(f.occupation) + (f.place ? ' · ' + esc(f.place) : '') + '</div>' : '') +
       '<span class="dtype">' + kindTag(f.type || f.kind) + disclosureTag(f) + srcLink(f.url) + '</span></div>' +
       '<span class="damt">' + esc(fmtShortUSD(b.total)) + '</span></div>' +
       '<ul class="bk-paths">' + b.paths.slice(0, 4).map(backerPath).join('') + '</ul></div>';
@@ -3104,18 +3161,18 @@ function loadBackers(r, isMeasure){
   if(!sec) return;
   var groups = backerGroups(r, isMeasure);
   if(!groups.length){ sec.remove(); return; }
-  var head = '<h4>' + t('sec.backers') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t(isMeasure ? 'bk.subm' : 'bk.sub') + '</p>';
-  sec.innerHTML = head + '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.loading') + '</p>';
+  var head = '<h4>' + t('sec.backers') + '</h4><p class="sec-sub">' + t(isMeasure ? 'bk.subm' : 'bk.sub') + '</p>';
+  sec.innerHTML = head + '<p class="empty">' + t('bk.loading') + '</p>';
   // Two sides, traced separately, each under the same green / black headings as the rest of the page
   var help = groups.filter(function(g){ return g.end === 'for' || g.end === 'allied' || g.end === 'yes'; });
   var stop = groups.filter(function(g){ return g.end === 'against' || g.end === 'no'; });
-  var none = '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('bk.none') + '</p>';
+  var none = '<p class="empty">' + t('bk.none') + '</p>';
   Promise.all([help.length ? traceBackers(help) : null, stop.length ? traceBackers(stop) : null]).then(function(res){
     if(!document.body.contains(sec)) return;
     var h = head;
     if(res[0]) h += '<div class="fin-side side-yes">' + t(isMeasure ? 'bk.yesSide' : 'bk.help') + '</div><div class="bk-side bk-side-yes">' + (res[0].length ? backerRows(res[0]) : none) + '</div>';
     if(res[1]) h += '<div class="fin-side side-no">' + t(isMeasure ? 'bk.noSide' : 'bk.stop') + '</div><div class="bk-side bk-side-no">' + (res[1].length ? backerRows(res[1]) : none) + '</div>';
-    sec.innerHTML = h + '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + t('bk.note') + '</p>';
+    sec.innerHTML = h + '<p class="og-links">' + howBtn(t('bk.note')) + '</p>';
   });
 }
 document.addEventListener('toggle', function(e){
@@ -3292,7 +3349,7 @@ function renderDossier(cand, race, r, cached){
                : /\bFOR (SENATE|CONGRESS|PRESIDENT|AMERICA|FLORIDA)\b|\bFRIENDS OF\b|\bVICTORY FUND\b/.test(s) ? 'candidate committee' : 'PAC';
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-      (d.note ? '<div class="enote" style="font-size:12px">' + esc(d.note) + '</div>' : '') +
+      (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
       '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url, d.srcLabel) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
       (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
@@ -3300,10 +3357,10 @@ function renderDossier(cand, race, r, cached){
   } else {
     var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote_en || r.donorDataNote || '');
     var hasCommittee = committeeRows(r).length;
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : hasCommittee ? t('donors.committeeOnly') : t('donors.none')) + '</p>';
+    html += '<p class="empty">' + (official ? t('donors.noFec') : hasCommittee ? t('donors.committeeOnly') : t('donors.none')) + '</p>';
   }
   if(r.officialMiss && !r.donorSource) html += '<div class="cov-box">' + t('donors.noMatch', {src: esc(r.officialMiss)}) + '</div>';
-  if(r.donorDataNote) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(r.donorDataNote) + '</p>';
+  if(r.donorDataNote) html += '<p class="fine">' + esc(r.donorDataNote) + '</p>';
   html += coverageBox(race);
   var listUrl = r.donorListUrl || '';
   if(!listUrl){   // federal results cached before this field existed: rebuild from the committee ID in the note
@@ -3319,7 +3376,7 @@ function renderDossier(cand, race, r, cached){
   // committees take unlimited amounts, campaigns are capped.
   if(committeeRows(r).length){
     html += '<div class="dsec"><h4>' + t('sec.committee') + '</h4>' +
-      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('committee.sub') + '</p>';
+      '<p class="sec-sub">' + t('committee.sub') + '</p>';
     // Grouped by the committee that received the money: what it is, what it raised, what it gave this
     // campaign, then its donors with dates. Rows with no committee named go last, flagged.
     var comOrder = [], byCom = {};
@@ -3350,7 +3407,7 @@ function renderDossier(cand, race, r, cached){
           ? t('al.dates', {n: d.gifts, first: fmtDay(d.first), last: fmtDay(d.last)})
           : t('al.date', {date: fmtDay(d.last)})) : (g.name ? '' : '');
         return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
-        (d.occupation ? '<div class="enote" style="font-size:12px">' + esc(d.occupation) + (d.place ? ' · ' + esc(d.place) : '') + '</div>' : '') +
+        (d.occupation ? '<div class="enote">' + esc(d.occupation) + (d.place ? ' · ' + esc(d.place) : '') + '</div>' : '') +
         (when ? '<div class="enote al-when">' + when + '</div>' : (!d.source ? '<div class="enote al-when">' + t('al.nodate') + '</div>' : '')) +
         '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + (d.source ? '' : srcLink(d.url)) + '</span></div>' +
         '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
@@ -3366,11 +3423,11 @@ function renderDossier(cand, race, r, cached){
   if(r.outsideSpending || r.flOutside){
     var os = r.outsideSpending || {}, osFor = os.support || [], osAg = os.oppose || [];
     html += '<div class="dsec"><h4>' + t('sec.outside') + '</h4>' +
-      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('outside.sub') + '</p>';
+      '<p class="sec-sub">' + t('outside.sub') + '</p>';
     if(osFor.length) html += '<div class="fin-side side-yes">' + t('outside.for') + '</div>' + outsideRows(osFor);
     if(osAg.length) html += '<div class="fin-side side-no">' + t('outside.against') + '</div>' + outsideRows(osAg);
-    if(r.outsideSpending && !osFor.length && !osAg.length) html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('outside.none') + '</p>';
-    if(os.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(os.note) + '</p>';
+    if(r.outsideSpending && !osFor.length && !osAg.length) html += '<p class="empty">' + t('outside.none') + '</p>';
+    if(os.note) html += '<p class="fine">' + esc(os.note) + '</p>';
     if(/^https:\/\//i.test(os.listUrl || ''))
       html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
     if(r.flOutside) html += flOutsideHtml(r.flOutside);
@@ -3391,13 +3448,13 @@ function renderDossier(cand, race, r, cached){
       '</div></div>';
     }).join('');
   } else {
-    html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('endorse.none') + '</p>';
+    html += '<p class="empty">' + t('endorse.none') + '</p>';
   }
   html += '</div>';
 
   if(r.opposition && r.opposition.length){
     html += '<div class="dsec"><h4>' + t('sec.oppose') + '</h4>' +
-      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
+      '<p class="sec-sub">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
     html += r.opposition.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
       (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
@@ -3414,7 +3471,7 @@ function renderDossier(cand, race, r, cached){
   if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'') + ' ' + (e.type_en||'')); });
   if(r.ratings && r.ratings.length){
     html += '<div class="dsec"><h4>' + t('sec.ratings') + '</h4>' +
-      '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('ratings.sub') + '</p>';
+      '<p class="sec-sub">' + t('ratings.sub') + '</p>';
     html += r.ratings.map(function(e){
       return '<div class="endo"><div class="eorg">' + esc(e.org) +
       (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
@@ -3490,8 +3547,8 @@ function outsideFilingsLink(race){
 }
 function locPanel(L, side, emptyMsg){
   var h = '<div class="loc-side"><div class="fin-side ' + (side === 'for' ? 'side-yes' : 'side-no') + '">' + t(side === 'for' ? 'loc.for' : 'loc.against') + '</div>' +
-    '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t(side === 'for' ? 'loc.forSub' : 'loc.againstSub') + '</p>';
-  if(!L || !L.total){ return h + '<p style="font-size:13.5px;color:var(--ink-soft)">' + emptyMsg + '</p></div>'; }
+    '<p class="side-sub">' + t(side === 'for' ? 'loc.forSub' : 'loc.againstSub') + '</p>';
+  if(!L || !L.total){ return h + '<p class="empty">' + emptyMsg + '</p></div>'; }
   var used = {};
   // One block per kind of giver. The bar is 100% of that money WITH an address on file, so the
   // percentages printed on it and under it are the same numbers; money with no address is stated
@@ -3549,13 +3606,13 @@ function renderLocal(fed, fedLinks){
   var support = withOutside(campaign, os && os.localFor);
   var against = withOutside(null, os && os.localAgainst);
   if(!support && !against && !isFed){
-    sec.innerHTML = '<h4>' + t('sec.local') + '</h4><p style="font-size:13.5px;color:var(--ink-soft)">' + t('loc.noData') + '</p>';
+    sec.innerHTML = '<h4>' + t('sec.local') + '</h4><p class="empty">' + t('loc.noData') + '</p>';
     return;
   }
-  var html = '<h4>' + t('sec.local') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('loc.sub') + '</p>';
+  var html = '<h4>' + t('sec.local') + '</h4><p class="sec-sub">' + t('loc.sub') + '</p>';
   html += locPanel(support, 'for', t('donors.none'));
   var flOpp = r.flOutside && r.flOutside.totals && r.flOutside.totals.oppose, src = outsideFilingsLink(ballot.races[parseInt(activeKey, 10)]);
-  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : flOpp ? t('loc.againstFl', {amt: usd(flOpp), src: src}) : t('loc.noAgainstLocal', {src: src}));
+  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : flOpp ? t('loc.againstFl', {amt: usd(flOpp), src: src}) : t('loc.noAgainstShort', {src: src}) + ' ' + howBtn(t('loc.noAgainstLocal', {src: src})));
   var L = support || against, notes = [];
   if(L && !L.exact) notes.push(L.kind === 'city' ? t('loc.notePlaceCity', {place: esc(L.place)}) : t('loc.notePlace', {place: esc(L.place)}));
   if(L && L.kind === 'city') notes.push(t('loc.noteCity'));
@@ -3563,12 +3620,11 @@ function renderLocal(fed, fedLinks){
   // groups are placed by their registered address. Elsewhere every group is placed by its filing address.
   if(isFed) notes.push(t('loc.noteFed'), t('loc.noteVote'));
   else notes.push(t('loc.noteGroups'));
-  html += '<p class="mny-note">' + notes.join(' ') + '</p>';
-  // where these numbers come from
+  // where these numbers come from; the caveats open from "Methodology"
   var link = function(u, label){ return safeUrl(u) ? '<a class="srclink" href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>' : ''; };
   var srcs = [link(isFed ? (fedLinks && fedLinks.all) : r.donorListUrl, t('loc.srcCampaign')),
     link((os && os.listUrl) || (r.flOutside && r.flOutside.listUrl), t('loc.srcOutside'))].filter(Boolean);
-  if(srcs.length) html += '<p class="og-links">' + t('loc.sources') + ' ' + srcs.join(' ') + '</p>';
+  html += '<p class="og-links">' + (srcs.length ? t('loc.sources') + ' ' + srcs.join(' ') : '') + howBtn(notes.join('</p><p>')) + '</p>';
   sec.innerHTML = html;
 }
 
@@ -3707,13 +3763,13 @@ function renderTies(ri, cand, acts, shared, loading, city){
       return '<div class="donor-row"><div><span class="dname">' + esc(g.label) + '</span>' + extra + '<div class="tie-gifts">' + by + '</div></div><span class="damt">' + usd(g.total) + '</span></div>';
     };
     // only givers to this candidate: a donor who gave to two other candidates doesn't belong on this page
-    if(!mine.length) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t(groups.length ? 'ties.noneMine' : 'ties.noneShared', {name: esc(cand.name)}) + '</p>';
+    if(!mine.length) h += '<p class="empty">' + t(groups.length ? 'ties.noneMine' : 'ties.noneShared', {name: esc(cand.name)}) + '</p>';
     var first = mine, show = first.slice(0, 10), rest = first.slice(10);
     h += show.map(row).join('');
     if(rest.length) h += '<details class="tie-more"><summary>' + t('ties.more', {n: first.length}) + '</summary>' + rest.map(row).join('') + '</details>';
     var miss = (shared.candidates || []).filter(function(c){ return !c.found; }).map(function(c){ return esc(c.name); });
     if(miss.length) h += '<p class="ties-note">' + t('ties.missing', {names: miss.join(', ')}) + '</p>';
-    h += '<p class="ties-note">' + t('ties.method', {date: esc(fmtDay(shared.asOf))}) + '</p>';
+    h += '<p class="og-links">' + howBtn(t('ties.method', {date: esc(fmtDay(shared.asOf))})) + '</p>';
   }
   if(st || acts.length){
     // same anchor rule as /actions: the city name, or the county district
@@ -3832,7 +3888,8 @@ function renderRaceMoney(ri, cand, d){
 
   if(d.unmatched && d.unmatched.length)
     html += '<p class="mny-note">' + t('mny.unmatched', {names: d.unmatched.map(esc).join(', ')}) + '</p>';
-  html += '<p class="mny-note">' + t('mny.note', {period: esc(d.period || ''), date: esc(d.coverageEnd || '')}) + ' ' + t('mny.approx') + '</p>';
+  html += '<p class="og-links">' + t('mny.asof', {period: esc(d.period || ''), date: esc(d.coverageEnd || '')}) + ' ' +
+    howBtn(t('mny.note', {period: esc(d.period || ''), date: esc(d.coverageEnd || '')}) + '</p><p>' + t('mny.approx')) + '</p>';
   box.innerHTML = html;
 }
 
