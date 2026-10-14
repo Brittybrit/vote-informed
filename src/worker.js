@@ -486,6 +486,7 @@ async function runResearch(env, key, p) {
     await refreshMdcDonors(env, result, name, office, officeCode);
     await refreshEvDonors(env, result, name, office, officeCode);
     await refreshTxDonors(env, result, name, office, officeCode);
+    if (!officeCode) await refreshFlOutside(env, result, name, office);
     await refreshAllied(env, result, name);
     try { await resourcePartyLinks(env, result, name, office); }
     catch (e) { console.log('link re-source error for ' + name + ': ' + e.message); }
@@ -683,6 +684,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshEvDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshTxDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
+  if (!officeCode && await refreshFlOutside(env, result, name, office)) changed = true;
   if (await refreshAllied(env, result, name)) { markDisclosure(result); changed = true; }
   if (result.sumV !== SUMMARY_VERSION) {
     try {
@@ -1518,6 +1520,100 @@ async function flCandidateDonors(env, name, office) {
       ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}) };
   });
   return { donors, count: n, total, to, ties, local: roundLocal(local) };
+}
+
+// State races: spending by committees and parties whose filed purpose names this candidate, from the
+// Division of Elections expenditure search. Florida filings have no support/oppose field, so a side is
+// shown only when the purpose says it ("opposing", "in support of"); the rest is "side not stated".
+// Left out: the candidates' own campaigns, contributions and transfers (already on the receiving
+// committee's report), refunds. This is a floor: plenty of outside spending never names the candidate.
+// Re-pulled daily. No AI.
+const FL_OUT_VERSION = 1;
+const FL_OUT_TTL_MS = 24 * 60 * 60 * 1000;
+function flOutsideRows(rows, name, office) {
+  const np = flNameParts(name), q = flOfficeQuery(office);
+  if (!np || !q) return null;
+  const word = w => new RegExp('(^|[^a-z])' + w.replace(/[^a-z0-9 ]/g, '') + '([^a-z]|$)');
+  const lastRe = word(np.last), firstRe = word(np.first);
+  const d = parseInt(q.cdistrict || '', 10);
+  const distRe = !d ? null : q.office === 'STR' ? new RegExp('\\b(hd|house district|house dist|house d|district)\\s*-?\\s*0*' + d + '\\b')
+    : q.office === 'STS' ? new RegExp('\\b(sd|senate district|senate dist|senate d|district)\\s*-?\\s*0*' + d + '\\b') : null;
+  const agg = {};
+  for (const r of rows) {
+    const [filer, date, amtS, payee, , , purpose, type] = r;
+    const amt = parseFloat(amtS) || 0;
+    if (amt <= 0 || !filer) continue;
+    if (/\([A-Z]{3}\)\s*\([A-Z]{3}\)\s*$/.test(filer)) continue;                 // a candidate's own campaign
+    const p = normPart(String(purpose || '').replace(/[-\/]/g, ' '));
+    if (!lastRe.test(p) || !(firstRe.test(p) || (distRe && distRe.test(p)))) continue;
+    if (/\b(contrib\w*|donation|political committee|political commitee|transfer|refund|reimburs\w*|fundrais\w*|event|tickets?|dues|membership|sponsorship)\b/.test(p)) continue;
+    if (/^(CAN|REF|TRF|DIS)$/i.test(String(type || '').trim())) continue;
+    const side = /\b(oppos\w*|against|defeat)\b/.test(p) ? 'O' : /\b(support\w*|in favor|re ?elect|elect)\b/.test(p) ? 'S' : 'U';
+    const clean = String(filer).replace(/\s*\((PAC|PAP|ECO|CCE|PTY)\)\s*$/, '').trim();
+    const party = /\(PAP\)|\(PTY\)\s*$/.test(filer) || /\b(party|campaign committee|campaign c)\b/i.test(clean);
+    const k = clean + '|' + side;
+    const iso = String(date || '').replace(/^(\d\d)\/(\d\d)\/(\d{4})$/, '$3-$1-$2');
+    if (!agg[k]) agg[k] = { name: clean, side, party, amount: 0, n: 0, first: iso, last: iso, purposes: [], cats: {} };
+    const a = agg[k];
+    a.amount += amt; a.n++;
+    if (iso < a.first) a.first = iso;
+    if (iso > a.last) a.last = iso;
+    const pu = String(purpose || '').trim();
+    if (pu && a.purposes.length < 3 && !a.purposes.includes(pu)) a.purposes.push(pu);
+    const c = spendCategory(pu);
+    a.cats[c] = (a.cats[c] || 0) + amt;
+  }
+  const item = a => ({
+    name: a.name, amount: '$' + Math.round(a.amount).toLocaleString('en-US'), amt: Math.round(a.amount),
+    kind: a.party ? 'party committee' : 'political committee', lines: a.n, from: a.first, to: a.last,
+    note: a.purposes.join('; '),
+    bought: Object.entries(a.cats).filter(([, v]) => v > 0).sort((x, y) => y[1] - x[1]).slice(0, 3)
+      .map(([c, v]) => ({ c, p: Math.max(1, Math.round(100 * v / a.amount)) }))
+  });
+  const list = Object.values(agg).sort((a, b) => b.amount - a.amount);
+  const sum = side => Math.round(list.filter(a => a.side === side).reduce((t, a) => t + a.amount, 0));
+  return {
+    support: list.filter(a => a.side === 'S').slice(0, 8).map(item),
+    oppose: list.filter(a => a.side === 'O').slice(0, 8).map(item),
+    unstated: list.filter(a => a.side === 'U').slice(0, 8).map(item),
+    totals: { support: sum('S'), oppose: sum('O'), unstated: sum('U') },
+    since: FL_SINCE, asOf: new Date().toISOString().slice(0, 10),
+    listUrl: FL_BASE + '/campaign-finance/expenditures/'
+  };
+}
+async function flOutside(env, name, office) {
+  const np = flNameParts(name);
+  if (!np || !flOfficeQuery(office)) return null;
+  const H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)',
+    'Accept': 'text/html,text/plain,*/*', 'Content-Type': 'application/x-www-form-urlencoded',
+    'Origin': FL_BASE, 'Referer': FL_BASE + '/campaign-finance/expenditures/' };
+  const since = FL_SINCE.replace(/^(\d{4})-(\d\d)-(\d\d)$/, '$2/$3/$1');
+  // search_on 1 covers committees and parties; "%" makes the purpose search "contains"
+  const body = new URLSearchParams({ election: 'All', search_on: '1', CanFName: '', CanLName: '', CanNameSrch: '2', office: 'All',
+    cdistrict: '', cgroup: '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All', cfname: '', clname: '', namesearch: '2',
+    ccity: '', cstate: '', czipcode: '', cpurpose: '%' + np.last.toUpperCase(), cdollar_minimum: '', cdollar_maximum: '',
+    rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: since, cdateto: '', queryformat: '2', Submit: 'Submit' });
+  const r = await fetch(FL_BASE + '/cgi-bin/expend.exe', { method: 'POST', headers: H, body });
+  if (!r.ok) throw new Error('FL expenditures ' + r.status);
+  const text = await r.text();
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+  if (!lines.length || !/^Candidate\/Committee\t/i.test(lines[0])) throw new Error('FL expenditures: unexpected response');
+  return flOutsideRows(lines.slice(1).map(l => l.split('\t')), name, office);
+}
+async function refreshFlOutside(env, result, name, office, now = Date.now()) {
+  if (!flOfficeQuery(office)) return false;
+  if (result.flOutV === FL_OUT_VERSION && result.flOutAt && now - result.flOutAt < FL_OUT_TTL_MS) return false;
+  try {
+    const o = await flOutside(env, name, office);
+    if (!o) return false;
+    result.flOutside = o; result.flOutV = FL_OUT_VERSION; result.flOutAt = now;
+    return true;
+  } catch (e) {
+    console.log('FL outside spending ' + name + ': ' + e.message);
+    if (result.flOutV !== FL_OUT_VERSION) return false;
+    result.flOutAt = now - FL_OUT_TTL_MS + 60 * 60 * 1000;   // keep the last pull; retry in an hour
+    return true;
+  }
 }
 // Miami-Dade County and Community Council, School Board, county judge and other county-filed
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report

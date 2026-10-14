@@ -800,6 +800,15 @@ en: {
   'outside.none': 'No outside spending found for this candidate.',
   'outside.donors': 'Its donors',
   'outside.full': 'All outside spending on FEC.gov',
+  'flout.head': 'In Florida filings that name this candidate',
+  'flout.sub': 'Spending by committees and parties since {since} whose filed purpose names this candidate. Florida filings have no field for supporting or opposing, so a side is shown only when the filing says it. Spending that doesn&rsquo;t name the candidate isn&rsquo;t here, so this is a floor, not a total.',
+  'flout.against': '✕ Filings that say they oppose this candidate',
+  'flout.for': '✓ Filings that say they support this candidate',
+  'flout.unstated': 'Side not stated in the filing',
+  'flout.none': 'No committee or party filing names this candidate yet.',
+  'flout.lines': '{n} filed lines, {from} to {to}',
+  'flout.full': 'Search all Florida expenditure filings',
+  'loc.againstFl': 'At least {amt} in Florida filings that say they oppose this candidate. Most Florida filings don&rsquo;t state a side, so the real figure may be higher. Full filings: {src}.',
   'disc.no': 'Donors not disclosed',
   'disc.owners': 'Owners not listed',
   'disc.lookup': 'Public records',
@@ -1199,6 +1208,15 @@ es: {
   'outside.none': 'No se encontraron gastos externos para este candidato.',
   'outside.donors': 'Sus donantes',
   'outside.full': 'Todos los gastos externos en FEC.gov',
+  'flout.head': 'En informes de Florida que nombran a este candidato',
+  'flout.sub': 'Gastos de comités y partidos desde {since} cuyo propósito declarado nombra a este candidato. Los informes de Florida no tienen un campo para apoyar u oponerse, así que solo se indica el lado cuando el informe lo dice. Los gastos que no nombran al candidato no aparecen, así que esto es un mínimo, no un total.',
+  'flout.against': '✕ Informes que dicen oponerse a este candidato',
+  'flout.for': '✓ Informes que dicen apoyar a este candidato',
+  'flout.unstated': 'El informe no indica el lado',
+  'flout.none': 'Ningún informe de comité o partido nombra todavía a este candidato.',
+  'flout.lines': '{n} líneas declaradas, del {from} al {to}',
+  'flout.full': 'Buscar todos los informes de gastos de Florida',
+  'loc.againstFl': 'Al menos {amt} en informes de Florida que dicen oponerse a este candidato. La mayoría de los informes de Florida no indican un lado, así que la cifra real puede ser mayor. Informes completos: {src}.',
   'disc.no': 'Donantes no divulgados',
   'disc.owners': 'Dueños no indicados',
   'disc.lookup': 'Registros públicos',
@@ -1598,6 +1616,15 @@ ht: {
   'outside.none': 'Nou pa jwenn depans deyò pou kandida sa a.',
   'outside.donors': 'Donatè li yo',
   'outside.full': 'Tout depans deyò sou FEC.gov',
+  'flout.head': 'Nan rapò Florid ki nonmen kandida sa a',
+  'flout.sub': 'Depans komite ak pati depi {since} kote rezon yo deklare a nonmen kandida sa a. Rapò Florid yo pa gen yon kaz pou sipòte oswa opoze, kidonk nou montre yon bò sèlman lè rapò a di l. Depans ki pa nonmen kandida a pa la, kidonk sa a se yon minimòm, pa yon total.',
+  'flout.against': '✕ Rapò ki di yo opoze kandida sa a',
+  'flout.for': '✓ Rapò ki di yo sipòte kandida sa a',
+  'flout.unstated': 'Rapò a pa di ki bò',
+  'flout.none': 'Poko gen rapò komite oswa pati ki nonmen kandida sa a.',
+  'flout.lines': '{n} liy deklare, {from} rive {to}',
+  'flout.full': 'Chèche tout rapò depans Florid yo',
+  'loc.againstFl': 'Omwen {amt} nan rapò Florid ki di yo opoze kandida sa a. Pifò rapò Florid pa di ki bò, kidonk vrè chif la ka pi wo. Tout rapò yo: {src}.',
   'disc.no': 'Donatè yo pa divilge',
   'disc.owners': 'Mèt yo pa nonmen',
   'disc.lookup': 'Dosye piblik',
@@ -2701,6 +2728,24 @@ function amountValue(a){
 function byAmount(list){
   return list.slice().sort(function(a, b){ return amountValue(b.amount) - amountValue(a.amount); });
 }
+// State races: committee and party spending whose filed purpose names the candidate (Florida DOE)
+function flOutsideHtml(f){
+  var rows = function(list){
+    return outsideRows((list || []).map(function(d){
+      return { name: d.name, amount: d.amount, kind: d.kind, bought: d.bought,
+        note: t('flout.lines', {n: d.lines, from: fmtDay(d.from), to: fmtDay(d.to)}) + (d.note ? ' · ' + d.note : '') };
+    }));
+  };
+  var h = '<div class="fin-side" style="margin-top:14px">' + t('flout.head') + '</div>' +
+    '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t('flout.sub', {since: esc(fmtDay(f.since))}) + '</p>';
+  var any = (f.oppose || []).length + (f.support || []).length + (f.unstated || []).length;
+  if(!any) h += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('flout.none') + '</p>';
+  if((f.oppose || []).length) h += '<div class="fin-side side-no">' + t('flout.against') + '</div>' + rows(f.oppose);
+  if((f.support || []).length) h += '<div class="fin-side side-yes">' + t('flout.for') + '</div>' + rows(f.support);
+  if((f.unstated || []).length) h += '<div class="fin-side">' + t('flout.unstated') + '</div>' + rows(f.unstated);
+  if(safeUrl(f.listUrl)) h += '<a class="fulllist" href="' + esc(f.listUrl) + '" target="_blank" rel="noopener">' + t('flout.full') + ' &#8599;</a>';
+  return h;
+}
 function outsideRows(list){
   return byAmount(list).map(function(d){
     var donors = safeUrl(d.donorsUrl);
@@ -3306,16 +3351,17 @@ function renderDossier(cand, race, r, cached){
 
   // Outside spending: groups spending on their own for or against the candidate. Shown only when
   // the result has the section (results researched before it existed don't, until they refresh).
-  if(r.outsideSpending){
-    var os = r.outsideSpending, osFor = os.support || [], osAg = os.oppose || [];
+  if(r.outsideSpending || r.flOutside){
+    var os = r.outsideSpending || {}, osFor = os.support || [], osAg = os.oppose || [];
     html += '<div class="dsec"><h4>' + t('sec.outside') + '</h4>' +
       '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('outside.sub') + '</p>';
     if(osFor.length) html += '<div class="fin-side side-yes">' + t('outside.for') + '</div>' + outsideRows(osFor);
     if(osAg.length) html += '<div class="fin-side side-no">' + t('outside.against') + '</div>' + outsideRows(osAg);
-    if(!osFor.length && !osAg.length) html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('outside.none') + '</p>';
+    if(r.outsideSpending && !osFor.length && !osAg.length) html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + t('outside.none') + '</p>';
     if(os.note) html += '<p style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:10px">' + esc(os.note) + '</p>';
     if(/^https:\/\//i.test(os.listUrl || ''))
       html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
+    if(r.flOutside) html += flOutsideHtml(r.flOutside);
     html += '</div>';
   }
 
@@ -3491,7 +3537,8 @@ function renderLocal(fed){
   }
   var html = '<h4>' + t('sec.local') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('loc.sub') + '</p>';
   html += locPanel(support, 'for', t('donors.none'));
-  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : t('loc.noAgainstLocal', {src: outsideFilingsLink(ballot.races[parseInt(activeKey, 10)])}));
+  var flOpp = r.flOutside && r.flOutside.totals && r.flOutside.totals.oppose, src = outsideFilingsLink(ballot.races[parseInt(activeKey, 10)]);
+  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : flOpp ? t('loc.againstFl', {amt: usd(flOpp), src: src}) : t('loc.noAgainstLocal', {src: src}));
   var L = support || against, notes = [];
   if(L && !L.exact) notes.push(L.kind === 'city' ? t('loc.notePlaceCity', {place: esc(L.place)}) : t('loc.notePlace', {place: esc(L.place)}));
   if(L && L.kind === 'city') notes.push(t('loc.noteCity'));
