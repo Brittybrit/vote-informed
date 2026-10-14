@@ -105,6 +105,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/pollingplace') {
         return handlePollingPlace(url.searchParams.get('p'));
       }
+      if (request.method === 'GET' && url.pathname === '/data/donor-actions.csv') {
+        return handleActionsCsv(env);
+      }
       return json({ error: 'Not found' }, 404);
     } catch (e) {
       return json({ error: 'Server error: ' + (e && e.message ? e.message : String(e)) }, 500);
@@ -3254,6 +3257,55 @@ function normElection(e) {
 }
 
 function isStr(v) { return typeof v === 'string' && v.trim().length > 0; }
+
+// /data/donor-actions.csv: the /actions table as a flat CSV, one row per action and donor,
+// built from public/data/donor-actions.json so the two can't drift. English text only.
+async function handleActionsCsv(env) {
+  if (!env.ASSETS) return json({ error: 'Not available' }, 404);
+  const res = await env.ASSETS.fetch(new Request('https://assets.local/data/donor-actions.json'));
+  if (!res.ok) return json({ error: 'Not available' }, 404);
+  const data = await res.json();
+  const csv = actionsToCsv(data);
+  return new Response(csv, {
+    headers: {
+      'Content-Type': 'text/csv; charset=utf-8',
+      'Content-Disposition': 'inline; filename="ballot305-donor-actions.csv"',
+      'X-Content-Type-Options': 'nosniff',
+      'Cache-Control': 'public, max-age=3600'
+    }
+  });
+}
+
+function actionsToCsv(data) {
+  const en = v => (v && typeof v === 'object') ? (v.en || '') : (v == null ? '' : String(v));
+  const cell = v => {
+    const s = v == null ? '' : String(v);
+    return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  const head = ['candidate', 'body', 'action_date', 'item', 'result', 'vote_detail', 'candidate_role',
+    'donor', 'donation_amount', 'donation_date', 'days_from_action', 'context', 'record_url', 'donor_report_url'];
+  const rows = [head.join(',')];
+  const dayDiff = (a, b) => {
+    const da = Date.parse(a), db = Date.parse(b);
+    return isNaN(da) || isNaN(db) ? '' : Math.round((db - da) / 86400000);
+  };
+  for (const a of (data && Array.isArray(data.actions) ? data.actions : [])) {
+    const v = a.votes || {};
+    const parts = [];
+    if (v.yes && v.no && v.no.length) parts.push(v.yes.length + '-' + v.no.length + ' (yes: ' + v.yes.join(', ') + '; no: ' + v.no.join(', ') + ')');
+    if (v.unanimous) parts.push('unanimous');
+    if (v.consent) parts.push('consent agenda');
+    if (v.absent && v.absent.length) parts.push('absent: ' + v.absent.join(', '));
+    const base = [a.candidate, a.body, a.date, en(a.title), a.passed === false ? 'failed' : 'passed', parts.join('; '),
+      (a.role || []).join('; ')];
+    const donors = Array.isArray(a.donors) && a.donors.length ? a.donors : [{}];
+    for (const g of donors) {
+      rows.push(base.concat([en(g.name), g.amount == null ? '' : g.amount, g.date || '', dayDiff(a.date, g.date),
+        en(a.context), a.url || '', a.donorUrl || '']).map(cell).join(','));
+    }
+  }
+  return '﻿' + rows.join('\n') + '\n';
+}
 
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
