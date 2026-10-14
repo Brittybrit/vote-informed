@@ -368,9 +368,12 @@
   .tie-more{margin-top:8px;}
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
   /* Yes/help vs No/defeat: distinct mark, wording, and a colored bar (green vs ink; not party colors) */
-  .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:13.5px; font-weight:800; letter-spacing:0; border:0; border-left:5px solid; padding:7px 10px; margin:14px 0 6px; border-radius:2px;}
-  .fin-side.side-yes{color:var(--ok-fg); background:var(--ok-bg); border-left-color:var(--ok-fg);}
-  .fin-side.side-no{color:#fff; background:var(--no-bg); border-left-color:#6E1D14;}
+  /* "For" and "against" are subsection headings, not filled blocks: filled blocks read as more bars */
+  .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:14px; font-weight:800; letter-spacing:0; text-transform:none;
+    background:none; border:0; border-bottom:2px solid currentColor; padding:0 0 5px; margin:22px 0 8px;}
+  .fin-side.side-yes{color:var(--ok-fg);}
+  .fin-side.side-no{color:var(--no-bg);}
+  .loc-side + .loc-side{margin-top:6px;}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
 
   .dossier-body{padding:20px; overflow-wrap:break-word; max-width:100%; min-width:0;}
