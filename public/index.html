@@ -753,7 +753,10 @@ en: {
   'loc.out': 'Outside Florida',
   'loc.unk': 'Location not reported',
   'loc.noAgainstFed': 'No outside spending against this candidate has been reported to the FEC.',
-  'loc.noAgainstLocal': 'This guide doesn&rsquo;t total spending against state and local candidates yet. Groups that spend for or against them file reports with the Florida Division of Elections or the county or city clerk.',
+  'loc.noAgainstLocal': 'Florida filings don&rsquo;t say whether outside spending supports or opposes a candidate, so this guide doesn&rsquo;t add it up for state and local races. Any groups found in news coverage are listed under Outside Spending below. Full filings: {src}.',
+  'loc.srcState': 'Florida Division of Elections',
+  'loc.srcCounty': 'Miami-Dade Elections Department',
+  'loc.srcCity': '{city} campaign records',
   'loc.loading': 'Loading where the money comes from…',
   'loc.noData': 'No official filings with donor addresses are online for this candidate yet, so where the money comes from can&rsquo;t be counted. The donor list below may come from web research or scanned reports.',
   'loc.notePlace': 'This seat is elected by a district, and addresses are matched to {place} as a whole, not the district. That counts some people who can&rsquo;t vote in this race, and where a district reaches into another county, voters there show as elsewhere in Florida.',
@@ -1149,7 +1152,10 @@ es: {
   'loc.out': 'Fuera de Florida',
   'loc.unk': 'Ubicación no reportada',
   'loc.noAgainstFed': 'No se ha reportado a la FEC ningún gasto externo en contra de este candidato.',
-  'loc.noAgainstLocal': 'Esta guía todavía no suma los gastos en contra de candidatos estatales y locales. Los grupos que gastan a favor o en contra presentan informes ante la División de Elecciones de Florida o el secretario del condado o de la ciudad.',
+  'loc.noAgainstLocal': 'Los informes de Florida no indican si un gasto externo apoya o se opone a un candidato, así que esta guía no lo suma en las contiendas estatales y locales. Los grupos hallados en la prensa aparecen abajo en Gastos externos. Informes completos: {src}.',
+  'loc.srcState': 'División de Elecciones de Florida',
+  'loc.srcCounty': 'Departamento de Elecciones de Miami-Dade',
+  'loc.srcCity': 'registros de campaña de {city}',
   'loc.loading': 'Cargando de dónde viene el dinero…',
   'loc.noData': 'Todavía no hay informes oficiales con direcciones de donantes en línea para este candidato, así que no se puede calcular de dónde viene el dinero. La lista de donantes de abajo puede venir de búsquedas en la web o de informes escaneados.',
   'loc.notePlace': 'Este cargo se elige por distrito y las direcciones se comparan con todo {place}, no con el distrito. Eso cuenta a algunas personas que no pueden votar en esta contienda, y cuando un distrito llega a otro condado, sus votantes aparecen como en otra parte de Florida.',
@@ -1545,7 +1551,10 @@ ht: {
   'loc.out': 'Andeyò Florid',
   'loc.unk': 'Kote a pa rapòte',
   'loc.noAgainstFed': 'Pa gen depans deyò kont kandida sa a ki rapòte bay FEC.',
-  'loc.noAgainstLocal': 'Gid sa a poko totalize depans kont kandida eta ak lokal yo. Gwoup ki depanse pou oswa kont yo depoze rapò bay Divizyon Eleksyon Florid oswa grefye konte a oswa vil la.',
+  'loc.noAgainstLocal': 'Rapò Florid yo pa di si yon depans deyò sipòte oswa opoze yon kandida, kidonk gid sa a pa totalize li pou eleksyon eta ak lokal yo. Gwoup nou jwenn nan laprès parèt anba a nan Depans deyò. Tout rapò yo: {src}.',
+  'loc.srcState': 'Divizyon Eleksyon Florid',
+  'loc.srcCounty': 'Depatman Eleksyon Miami-Dade',
+  'loc.srcCity': 'dosye kanpay {city}',
   'loc.loading': 'N ap chaje kote lajan an soti…',
   'loc.noData': 'Pa gen rapò ofisyèl ak adrès donatè sou entènèt pou kandida sa a ankò, kidonk nou pa ka kalkile kote lajan an soti. Lis donatè ki anba a ka soti nan rechèch sou entènèt oswa nan rapò ki eskane.',
   'loc.notePlace': 'Se yon distri ki eli pòs sa a, epi adrès yo konpare ak tout {place}, pa ak distri a. Sa konte kèk moun ki pa ka vote nan kous sa a, epi kote yon distri rive nan yon lòt konte, votè la yo parèt kòm lòt kote nan Florid.',
@@ -3408,6 +3417,14 @@ function locMerge(a, b){   // same scope only
   m.total = (m.total || 0) + (b.total || 0);
   return m;
 }
+// Where outside spending in a state or local race is filed: the state, the county or the city clerk
+function outsideFilingsLink(race){
+  var o = String(race && race.office || ''), c = cityCoverage(o), lv = (COVERAGE && COVERAGE.levels) || [];
+  var state = /^(Governor|Attorney General|Chief Financial Officer|Commissioner of Agriculture|State Senator|State Representative|State Attorney|Public Defender|Circuit Judge)|District Court of Appeal|Justice of the Supreme Court/i.test(o);
+  var label = c ? t('loc.srcCity', {city: esc(c.city)}) : state ? t('loc.srcState') : t('loc.srcCounty');
+  var url = c ? c.url : ((lv[state ? 1 : 2] || {}).url || '');
+  return safeUrl(url) ? '<a class="srclink" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>' : label;
+}
 function locPanel(L, side, emptyMsg){
   var h = '<div class="loc-side"><div class="fin-side ' + (side === 'for' ? 'side-yes' : 'side-no') + '">' + t(side === 'for' ? 'loc.for' : 'loc.against') + '</div>' +
     '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:0 0 8px">' + t(side === 'for' ? 'loc.forSub' : 'loc.againstSub') + '</p>';
@@ -3474,7 +3491,7 @@ function renderLocal(fed){
   }
   var html = '<h4>' + t('sec.local') + '</h4><p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('loc.sub') + '</p>';
   html += locPanel(support, 'for', t('donors.none'));
-  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : t('loc.noAgainstLocal'));
+  html += locPanel(against, 'against', isFed ? t('loc.noAgainstFed') : t('loc.noAgainstLocal', {src: outsideFilingsLink(ballot.races[parseInt(activeKey, 10)])}));
   var L = support || against, notes = [];
   if(L && !L.exact) notes.push(L.kind === 'city' ? t('loc.notePlaceCity', {place: esc(L.place)}) : t('loc.notePlace', {place: esc(L.place)}));
   if(L && L.kind === 'city') notes.push(t('loc.noteCity'));
