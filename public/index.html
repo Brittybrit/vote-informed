@@ -3078,7 +3078,7 @@ function backerGroups(r, isMeasure){
     take(os.support, 'for', 5); take(os.oppose, 'against', 5);
     // committees backing the candidate: their donors are already in the record, so no lookup needed
     var byCom = {};
-    (r.committeeDonors || []).forEach(function(d){
+    committeeRows(r).forEach(function(d){
       var c = String(d.committee || '').trim();
       if(!c) return;
       (byCom[c] = byCom[c] || []).push(d);
@@ -3287,7 +3287,7 @@ function renderDossier(cand, race, r, cached){
     }).join('');
   } else {
     var official = /^(Not registered with the FEC|No itemized contributions reported)/.test(r.donorDataNote_en || r.donorDataNote || '');
-    var hasCommittee = r.committeeDonors && r.committeeDonors.length;
+    var hasCommittee = committeeRows(r).length;
     html += '<p style="font-size:13.5px;color:var(--ink-soft)">' + (official ? t('donors.noFec') : hasCommittee ? t('donors.committeeOnly') : t('donors.none')) + '</p>';
   }
   if(r.officialMiss && !r.donorSource) html += '<div class="cov-box">' + t('donors.noMatch', {src: esc(r.officialMiss)}) + '</div>';
@@ -3305,13 +3305,13 @@ function renderDossier(cand, race, r, cached){
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
-  if(r.committeeDonors && r.committeeDonors.length){
+  if(committeeRows(r).length){
     html += '<div class="dsec"><h4>' + t('sec.committee') + '</h4>' +
       '<p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin:-4px 0 10px">' + t('committee.sub') + '</p>';
     // Grouped by the committee that received the money: what it is, what it raised, what it gave this
     // campaign, then its donors with dates. Rows with no committee named go last, flagged.
     var comOrder = [], byCom = {};
-    r.committeeDonors.forEach(function(d){
+    committeeRows(r).forEach(function(d){
       var c = String(d.committee || '').trim(), k = c.toLowerCase();
       if(!byCom[k]){ byCom[k] = {name: c, rows: []}; comOrder.push(k); }
       byCom[k].rows.push(d);
@@ -3366,7 +3366,7 @@ function renderDossier(cand, race, r, cached){
   }
 
   // Biggest backers: after the campaign's donors and outside spending
-  if(r.outsideSpending || (r.committeeDonors && r.committeeDonors.length)) html += '<div class="dsec" id="backersSec"></div>';
+  if(r.outsideSpending || committeeRows(r).length) html += '<div class="dsec" id="backersSec"></div>';
 
   html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
@@ -3464,6 +3464,11 @@ function locMerge(a, b){   // same scope only
   return m;
 }
 // Where outside spending in a state or local race is filed: the state, the county or the city clerk
+// Money to allied committees: only rows read from a committee's own state filings. Web-research rows
+// (often no committee, no date, maybe another cycle) are left out: they can't be checked.
+function committeeRows(r){
+  return (r && r.committeeDonors || []).filter(function(d){ return d && d.source && String(d.committee || '').trim(); });
+}
 function outsideFilingsLink(race){
   var o = String(race && race.office || ''), c = cityCoverage(o), lv = (COVERAGE && COVERAGE.levels) || [];
   var state = /^(Governor|Attorney General|Chief Financial Officer|Commissioner of Agriculture|State Senator|State Representative|State Attorney|Public Defender|Circuit Judge)|District Court of Appeal|Justice of the Supreme Court/i.test(o);
