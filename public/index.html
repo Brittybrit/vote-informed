@@ -3426,8 +3426,10 @@ function renderDossier(cand, race, r, cached){
       '<p class="sec-sub">' + t('outside.sub') + '</p>';
     if(osFor.length) html += '<div class="fin-side side-yes">' + t('outside.for') + '</div>' + outsideRows(osFor);
     if(osAg.length) html += '<div class="fin-side side-no">' + t('outside.against') + '</div>' + outsideRows(osAg);
-    if(r.outsideSpending && !osFor.length && !osAg.length) html += '<p class="empty">' + t('outside.none') + '</p>';
-    if(os.note) html += '<p class="fine">' + esc(os.note) + '</p>';
+    // nothing found: say it once, using the source's own note when there is one (it names the source)
+    var osEmpty = r.outsideSpending && !osFor.length && !osAg.length;
+    if(osEmpty) html += '<p class="empty">' + (os.note ? esc(os.note) : t('outside.none')) + '</p>';
+    else if(os.note) html += '<p class="fine">' + esc(os.note) + '</p>';
     if(/^https:\/\//i.test(os.listUrl || ''))
       html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
     if(r.flOutside) html += flOutsideHtml(r.flOutside);
