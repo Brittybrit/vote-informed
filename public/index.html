@@ -396,6 +396,8 @@
   .tag{white-space:nowrap;}
 
   .endo{padding:10px 0; border-bottom:1px dotted #C9C9C1;}
+  .endo-grp{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:14px 0 4px;}
+  .endo-grp:first-of-type{padding-top:2px;}
   .endo:last-child{border-bottom:none;}
   .endo .eorg{font-weight:600; font-size:14px;}
   .endo .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
@@ -944,6 +946,12 @@ en: {
   'donors.full': 'See full donor list',
   'sec.endorse': 'Endorsements',
   'endorse.none': 'No endorsements found in searched coverage.',
+  'endo.g.press': 'Newspapers',
+  'endo.g.labor': 'Unions',
+  'endo.g.party': 'Party and political groups',
+  'endo.g.official': 'Elected officials and individuals',
+  'endo.g.business': 'Business and trade groups',
+  'endo.g.advocacy': 'Advocacy and community groups',
   'sec.oppose': 'Opposed By',
   'oppose.sub': 'Groups that urged a vote against this candidate.',
   'oppose.subRet': 'Groups that urged a NO vote on keeping this judge.',
@@ -1362,6 +1370,12 @@ es: {
   'donors.full': 'Ver lista completa de donantes',
   'sec.endorse': 'Respaldos',
   'endorse.none': 'No se encontraron respaldos en la cobertura revisada.',
+  'endo.g.press': 'Periódicos',
+  'endo.g.labor': 'Sindicatos',
+  'endo.g.party': 'Partidos y grupos políticos',
+  'endo.g.official': 'Funcionarios electos y personas',
+  'endo.g.business': 'Grupos empresariales y gremiales',
+  'endo.g.advocacy': 'Grupos de defensa y comunitarios',
   'sec.oppose': 'En contra',
   'oppose.sub': 'Grupos que pidieron votar en contra de este candidato.',
   'oppose.subRet': 'Grupos que pidieron votar NO a mantener a este juez.',
@@ -1780,6 +1794,12 @@ ht: {
   'donors.full': 'Gade tout lis donatè yo',
   'sec.endorse': 'Sipò ofisyèl',
   'endorse.none': 'Nou pa jwenn okenn sipò ofisyèl nan sous nou chèche yo.',
+  'endo.g.press': 'Jounal',
+  'endo.g.labor': 'Sendika',
+  'endo.g.party': 'Pati ak gwoup politik',
+  'endo.g.official': 'Ofisyèl eli ak moun',
+  'endo.g.business': 'Gwoup biznis ak komès',
+  'endo.g.advocacy': 'Gwoup defans ak kominotè',
   'sec.oppose': 'Kont li',
   'oppose.sub': 'Gwoup ki mande moun vote kont kandida sa a.',
   'oppose.subRet': 'Gwoup ki mande moun vote NON pou kenbe jij sa a.',
@@ -3444,14 +3464,7 @@ function renderDossier(cand, race, r, cached){
 
   html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
-    html += editorialFirst(r.endorsements).map(function(e){
-      return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
-      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean, e) +
-      groupTag(e) +
-      srcLink(e.url) +
-      '</div></div>';
-    }).join('');
+    html += groupedEndorsements(r.endorsements);
   } else {
     html += '<p class="empty">' + t('endorse.none') + '</p>';
   }
@@ -3460,14 +3473,7 @@ function renderDossier(cand, race, r, cached){
   if(r.opposition && r.opposition.length){
     html += '<div class="dsec"><h4>' + t('sec.oppose') + '</h4>' +
       '<p class="sec-sub">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
-    html += r.opposition.map(function(e){
-      return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
-      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean, e) +
-      groupTag(e) +
-      srcLink(e.url) +
-      '</div></div>';
-    }).join('');
+    html += groupedEndorsements(r.opposition);
     html += '</div>';
   }
 
@@ -3508,10 +3514,31 @@ function renderDossier(cand, race, r, cached){
 
 // Newspaper editorial boards lead the endorsement list; everything else keeps its order.
 var EDITORIAL_RE = /\beditorial board\b|\b(miami herald|el nuevo herald|sun sentinel|palm beach post|tampa bay times|orlando sentinel|tallahassee democrat|florida times[- ]union|miami today|biscayne times|miami new times|miami times)\b/i;
-function editorialFirst(list){
-  var ed = [], rest = [];
-  list.forEach(function(e){ (e && EDITORIAL_RE.test((e.org || '') + ' ' + (e.note || '')) ? ed : rest).push(e); });
-  return ed.concat(rest);
+// Endorsements and opposition, grouped by kind of endorser in a fixed order, alphabetical inside
+// each group, so the order means something. The kind comes from the research's type, lean and name.
+var ENDO_GROUPS = ['press', 'labor', 'party', 'official', 'business', 'advocacy'];
+function endoGroup(e){
+  var ty = String(e.type || '').toLowerCase(), all = ty + ' ' + String(e.org || '') + ' ' + String(e.note || '');
+  if(EDITORIAL_RE.test(all) || e.lean === 'press' || /newspaper|editorial|\bmedia\b|publication/.test(ty)) return 'press';
+  if(e.lean === 'labor' || e.laborType || /\bunion\b|\blabor\b|federation|afl-cio|\bseiu\b|afscme|\biaff\b|teamsters|fraternal order of police|benevolent association|firefighters/i.test(all)) return 'labor';
+  if(/party|executive committee|caucus|\bclub\b|\bpac\b|political committee|political action/.test(ty)) return 'party';
+  if(/elected|official|office ?holder|mayor|senator|representative|commissioner|council|governor|legislator|judge|sheriff|individual|person|candidate|former|leader|activist/.test(ty)) return 'official';
+  if(/chamber|business|trade|industry|realtor|builder|corporat|compan|employer/.test(ty)) return 'business';
+  return 'advocacy';
+}
+function sortName(n){ return String(n || '').replace(/^the\s+/i, '').toLowerCase(); }
+function groupedEndorsements(list){
+  var by = {};
+  (list || []).forEach(function(e){ if(e) (by[endoGroup(e)] = by[endoGroup(e)] || []).push(e); });
+  var used = ENDO_GROUPS.filter(function(g){ return by[g]; });
+  return used.map(function(g){
+    var rows = by[g].slice().sort(function(a, b){ return sortName(a.org).localeCompare(sortName(b.org)); });
+    return (used.length > 1 ? '<div class="endo-grp">' + t('endo.g.' + g) + '</div>' : '') + rows.map(function(e){
+      return '<div class="endo"><div class="eorg">' + esc(e.org) + '</div>' +
+      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+      '<div class="tagrow">' + leanTag(e.lean, e) + groupTag(e) + srcLink(e.url) + '</div></div>';
+    }).join('');
+  }).join('');
 }
 
 /* ---------------- how local is the money ---------------- */
