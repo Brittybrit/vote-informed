@@ -60,3 +60,18 @@ test('outside spending: refreshed daily, retried hourly after a failure', async 
   assert.ok(stale - r.outAt < w.OUTSIDE_TTL_MS);
   assert.ok(JSON.parse(kv.store.get('k1')).outAt === r.outAt);
 });
+
+test('Biscayne Park: no county lookup, and the dossier says no reports are posted', async () => {
+  const x = await loadWorker(['isCityRace', 'refreshMdcDonors', 'refreshTxDonors']);
+  assert.ok(x.isCityRace('Biscayne Park - Commissioner'));
+  assert.ok(!x.isCityRace('County Commissioner, District 5'));
+  globalThis.fetch = async u => { throw new Error('no network expected: ' + u); };
+  const r = { officialMiss: 'Miami-Dade Elections Department', donors: [], donorDataNote: 'No campaign finance disclosures found.' };
+  assert.equal(await x.refreshMdcDonors({}, r, 'Daniel Samaria', 'Biscayne Park - Commissioner', null), true);
+  assert.equal(r.officialMiss, undefined);
+  const fs = await import('node:fs');
+  const json = fs.readFileSync(new URL('../public/data/city-reports.json', import.meta.url), 'utf8');
+  const env = { ASSETS: { fetch: async () => new Response(json) } };
+  assert.equal(await x.refreshTxDonors(env, r, 'Daniel Samaria', 'Biscayne Park - Commissioner', null), true);
+  assert.match(r.donorDataNote, /Biscayne Park has not posted campaign reports online/);
+});

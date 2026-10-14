@@ -1695,8 +1695,20 @@ function vfStreet(x) {
   const s = String(x[5] || '').trim();
   return /protected|^\W*$/i.test(s) ? '' : s;
 }
+// A city race on the ballot ("Biscayne Park - Commissioner"), same rule as the page's raceCity
+function isCityRace(office) {
+  const m = String(office || '').match(/^\s*([^-–]+?)\s*[-–]\s+\S/);
+  return !!m && !/^(county|state|school|united|representative|justice|judge|circuit)/i.test(m[1]);
+}
 async function refreshMdcDonors(env, result, name, office, officeCode) {
   if (officeCode || flOfficeQuery(office) || evJurisdiction(office)) return false;   // federal, state and EasyVote-city races have their own sources
+  // City candidates file with their city clerk, not the county, unless the city uses the county's
+  // VoterFocus system. Don't look them up in the county list or say the county has their reports.
+  if (isCityRace(office) && !vfJurisdiction(office).city) {
+    if (!result.officialMiss) return false;
+    delete result.officialMiss;
+    return true;
+  }
   const fresh = result.mdcV === MDC_DONOR_VERSION && result.mdcAt && Date.now() - result.mdcAt < 24 * 3600 * 1000;
   if (fresh) return false;
   try {
