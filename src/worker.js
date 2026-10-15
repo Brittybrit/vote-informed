@@ -3296,7 +3296,7 @@ function actionsToCsv(data) {
     if (v.unanimous) parts.push('unanimous');
     if (v.consent) parts.push('consent agenda');
     if (v.absent && v.absent.length) parts.push('absent: ' + v.absent.join(', '));
-    const base = [a.candidate, a.body, a.date, en(a.title), a.passed === false ? 'failed' : 'passed', parts.join('; '),
+    const base = [a.candidate, a.body, a.date, en(a.title), a.result ? en(a.result) : a.passed === false ? 'failed' : 'passed', parts.join('; '),
       (a.role || []).join('; ')];
     const donors = Array.isArray(a.donors) && a.donors.length ? a.donors : [{}];
     for (const g of donors) {
