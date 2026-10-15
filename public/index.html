@@ -906,10 +906,14 @@ en: {
   'role.moved': 'Made the motion',
   'role.seconded': 'Seconded',
   'role.presented': 'Presented the item',
+  'role.requested': 'Filed the budget request',
+  'role.sponsor': 'Sponsored the bill',
   'ties.gave': 'gave {amt} on {date}',
   'ties.also': 'Also gave to: {names}',
   'ties.alsoNone': 'Not found in other candidates’ reports compared here.',
   'ties.record': 'Meeting record',
+  'ties.recordReq': 'Request form',
+  'ties.recordBill': 'Bill page',
   'ties.all': 'Every city, side by side',
   'ties.report': 'Campaign report',
   'ties.shared': 'Gave to more than one candidate',
@@ -1330,10 +1334,14 @@ es: {
   'role.moved': 'Presentó la moción',
   'role.seconded': 'Secundó la moción',
   'role.presented': 'Presentó el asunto',
+  'role.requested': 'Presentó la solicitud de fondos',
+  'role.sponsor': 'Patrocinó el proyecto de ley',
   'ties.gave': 'donó {amt} el {date}',
   'ties.also': 'También donó a: {names}',
   'ties.alsoNone': 'No aparece en los reportes de los otros candidatos comparados aquí.',
   'ties.record': 'Acta de la reunión',
+  'ties.recordReq': 'Formulario de solicitud',
+  'ties.recordBill': 'Página del proyecto',
   'ties.all': 'Todas las ciudades, lado a lado',
   'ties.report': 'Reporte de campaña',
   'ties.shared': 'Donaron a más de un candidato',
@@ -1754,10 +1762,14 @@ ht: {
   'role.moved': 'Te pwopoze mosyon an',
   'role.seconded': 'Te apiye mosyon an',
   'role.presented': 'Te prezante dosye a',
+  'role.requested': 'Te depoze demann lajan an',
+  'role.sponsor': 'Te parennen pwojè lwa a',
   'ties.gave': 'bay {amt} {date}',
   'ties.also': 'Te bay tou: {names}',
   'ties.alsoNone': 'Nou pa jwenn li nan rapò lòt kandida nou konpare isit la.',
   'ties.record': 'Dosye reyinyon an',
+  'ties.recordReq': 'Fòm demann lan',
+  'ties.recordBill': 'Paj pwojè lwa a',
   'ties.all': 'Tout vil yo, youn bò lòt',
   'ties.report': 'Rapò kanpay',
   'ties.shared': 'Bay plis pase yon kandida',
@@ -3756,7 +3768,8 @@ function renderTies(ri, cand, acts, shared, loading, city){
     h += '<div class="fin-side">' + t('ties.actions', {name: esc(cand.name)}) + '</div>';
     h += acts.map(function(a){
       var v = a.votes || {}, out = [];
-      out.push('<strong>' + t(a.passed ? 'ties.passed' : 'ties.failed') + '</strong>' +
+      var res = a.result ? (a.result[LANG] || a.result.en) : '';
+      out.push('<strong>' + (res ? esc(res) : t(a.passed ? 'ties.passed' : 'ties.failed')) + '</strong>' +
         (v.yes && v.no ? ' ' + v.yes.length + '-' + v.no.length : '') +
         (v.unanimous ? ', ' + t('ties.unan') : '') + (v.consent ? ', ' + t('ties.consent') : ''));
       if(v.no && v.no.length) out.push(t('ties.yes') + ': ' + esc(v.yes.join(', ')) + ' &middot; ' + t('ties.no') + ': ' + esc(v.no.join(', ')));
@@ -3779,7 +3792,7 @@ function renderTies(ri, cand, acts, shared, loading, city){
         '<div class="tie-vote">' + out.join('<br>') + '</div>' +
         '<div class="tie-roles">' + (a.role || []).map(function(r){ return '<span class="tie-role">' + t('role.' + r) + '</span>'; }).join('') + '</div>' +
         donors + (ctx ? '<p class="enote">' + esc(ctx) + '</p>' : '') +
-        '<div class="dtype">' + srcLink(a.url, T('ties.record')) + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
+        '<div class="dtype">' + srcLink(a.url, T(a.kind === 'request' ? 'ties.recordReq' : a.kind === 'bill' ? 'ties.recordBill' : 'ties.record')) + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
     }).join('');
   }
   if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
