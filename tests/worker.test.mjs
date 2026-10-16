@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
-  'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'clientIP', 'rateLimit',
+  'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'flCommittee', 'realValue', 'clientIP', 'rateLimit',
   'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat', 'refreshMdcDonors']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
@@ -90,6 +90,39 @@ test('Florida DOE: own money only for the candidate\'s own name', async () => {
   const d = await w.flCandidateDonors({}, 'Ana Maria Rodriguez', 'State Representative, District 113');
   assert.deepEqual(d.donors.map(x => x.type), ['self-funded', 'individual']);
   assert.equal(d.local.self, 500); assert.equal(d.local.people.here, 300);
+});
+
+test('Florida DOE: what a party committee gave, cash vs in-kind, each gift', async () => {
+  const H = 'Basabe, Fabian (REP)(STR)';
+  const tsv = ['h',
+    H + '\t03/01/2026\t2500\tCHE\tFLORIDA HOUSE REPUBLICAN CAMPAIGN COMMITTEE\t1 Main\tTALLAHASSEE, FL 32301\tPOLITICAL PARTY',
+    H + '\t09/10/2026\t140000\tINK\tFLORIDA HOUSE REPUBLICAN CAMPAIGN COMMITTEE\t1 Main\tTALLAHASSEE, FL 32301\tPOLITICAL PARTY\tPOLLING AND MAIL',
+    H + '\t10/01/2026\t5616\tINK\tFLORIDA HOUSE REPUBLICAN CAMPAIGN COMMITTEE\t1 Main\tTALLAHASSEE, FL 32301\tPOLITICAL PARTY\tSTAFF',
+    H + '\t02/01/2026\t17522\tLOA\tBasabe, Fabian\t2 Main\tMIAMI BEACH, FL 33139\tCANDIDATE'].join('\n');
+  globalThis.fetch = async () => ({ ok: true, text: async () => tsv });
+  const d = await w.flCandidateDonors({}, 'Fabian Basabe', 'State Representative, District 106');
+  const p = d.donors[0];
+  assert.equal(p.type, 'party committee'); assert.equal(p.amount, '$148,116');
+  assert.deepEqual({ n: p.gave.n, cash: p.gave.cash, inkind: p.gave.inkind, from: p.gave.from, to: p.gave.to },
+    { n: 3, cash: 2500, inkind: 145616, from: '2026-03-01', to: '2026-10-01' });
+  assert.equal(p.gave.gifts[0].a, 140000); assert.equal(p.gave.gifts[0].desc, 'POLLING AND MAIL');
+  const self = d.donors[1];
+  assert.equal(self.type, 'self-funded'); assert.equal(self.name, 'Fabian Basabe'); assert.equal(self.gave, undefined);
+});
+
+test('Florida committee panel: no "none reported" for a party committee, no "None" officers', async () => {
+  const pages = {
+    'ComLkupByName.asp': '<a href="ComDetail.asp?account=123">FLORIDA HOUSE REPUBLICAN CAMPAIGN COMMITTEE</a>',
+    'ComDetail.asp': '<b>Type:</b></td><td>Florida Affiliated Party Committee</td><b>Status:</b></td><td>Active</td>' +
+      '<b>Address:</b></td><td>PO Box 1<br>Tallahassee, FL 32302</td><b>Chairperson:</b></td><td>Sam Garrison</td>' +
+      '<b>Registered Agent:</b></td><td>None</td>',
+    'contrib.exe': 'Candidate/Committee\tDate\tAmount\tTyp\tContributor Name\tAddress\tCity State Zip\tOccupation\n'
+  };
+  globalThis.fetch = async u => { const k = Object.keys(pages).find(x => String(u).includes(x)); return { ok: true, status: 200, text: async () => pages[k] }; };
+  const fl = await w.flCommittee({ CACHE: fakeKV() }, 'Florida House Republican Campaign Committee');
+  assert.equal(fl.chair, 'Sam Garrison'); assert.equal(fl.agent, '');
+  assert.equal(fl.since, undefined);   // the page must not say "none reported"
+  assert.equal(w.realValue('N/A'), ''); assert.equal(w.realValue('Jane Doe'), 'Jane Doe');
 });
 
 test('rate limits: per /64, site-wide ceiling, kill switch', async () => {

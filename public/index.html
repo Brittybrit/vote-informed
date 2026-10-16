@@ -309,6 +309,13 @@
   details.og summary{cursor:pointer; font-size:12.5px; font-weight:600; color:var(--left-fg);}
   .og-body{margin-top:6px; padding:8px 10px; background:var(--panel); border:1px solid #DDDDD5; border-radius:4px; font-size:13px; line-height:1.5;}
   .og-body p{margin:0 0 6px;}
+  .og-gave{margin-top:6px; padding:8px 10px; background:var(--panel); border:1px solid #DDDDD5; border-radius:4px; font-size:13px; line-height:1.5;}
+  .og-gave .og-fh{margin-top:0;}
+  .og-gave p{margin:0 0 6px;}
+  .og-gifts summary{cursor:pointer; font-size:12.5px;}
+  .og-gt{border-collapse:collapse; width:100%; margin-top:4px; font-size:12.5px;}
+  .og-gt td{padding:3px 6px 3px 0; border-top:1px solid #E6E6DF; vertical-align:top;}
+  .og-gt td.num{text-align:right; font-family:var(--mono); white-space:nowrap; padding-right:10px;}
   .og-asof{color:var(--ink-soft); font-size:11.5px;}
   .og-fh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin:8px 0 2px;}
   .og-body .og-f .dname{font-size:13px;}
@@ -879,6 +886,14 @@ en: {
   'og.flcraised': 'Raised {amt} in {n} reported gifts in 2025\u20132026 (Florida Division of Elections).',
   'og.flcnone': 'Money given to this committee: none reported in 2025\u20132026 (Florida Division of Elections).',
   'og.flcrec': 'State record', 'og.flcdocs': 'Campaign documents',
+  'og.flcraisedmin': 'Raised at least {amt} in {n} reported gifts in 2025\u20132026 (Florida Division of Elections). The state search stops at 3,000 gifts.',
+  'og.flcparty': 'Money given to this committee: not shown. Our search of state records doesn\u2019t cover party committees yet. Its campaign documents list every donor.',
+  'og.gaveh': 'Given to this campaign',
+  'og.gave1': '{amt} on {date}.',
+  'og.gaven': '{amt} in {n} gifts, {from} to {to}.',
+  'og.k.cash': '{amt} cash', 'og.k.inkind': '{amt} in-kind (goods or services, not cash)', 'og.k.loan': '{amt} in loans',
+  'og.kt.cash': 'Cash', 'og.kt.inkind': 'In-kind', 'og.kt.loan': 'Loan',
+  'og.gavelist': 'See each gift', 'og.gavetop': 'Largest {n} of {total} gifts',
   'og.search.sunbiz': 'Florida businesses', 'og.search.irs': 'IRS nonprofits', 'og.search.fec': 'FEC committees',
   'cat.tv': 'TV and video ads', 'cat.digital': 'Digital ads', 'cat.mail': 'Mail', 'cat.text': 'Text messages', 'cat.phone': 'Phone calls',
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
@@ -1307,6 +1322,14 @@ es: {
   'og.flcraised': 'Recaudó {amt} en {n} donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida).',
   'og.flcnone': 'Dinero donado a este comité: ninguno reportado en 2025\u20132026 (División de Elecciones de Florida).',
   'og.flcrec': 'Registro estatal', 'og.flcdocs': 'Documentos de campaña',
+  'og.flcraisedmin': 'Recaudó al menos {amt} en {n} donaciones reportadas en 2025\u20132026 (División de Elecciones de Florida). La búsqueda estatal se detiene en 3,000 donaciones.',
+  'og.flcparty': 'Dinero donado a este comité: no se muestra. Nuestra búsqueda en los registros estatales aún no cubre los comités de partido. Sus documentos de campaña listan a cada donante.',
+  'og.gaveh': 'Lo que dio a esta campaña',
+  'og.gave1': '{amt} el {date}.',
+  'og.gaven': '{amt} en {n} donaciones, del {from} al {to}.',
+  'og.k.cash': '{amt} en efectivo', 'og.k.inkind': '{amt} en especie (bienes o servicios, no efectivo)', 'og.k.loan': '{amt} en préstamos',
+  'og.kt.cash': 'Efectivo', 'og.kt.inkind': 'En especie', 'og.kt.loan': 'Préstamo',
+  'og.gavelist': 'Ver cada donación', 'og.gavetop': 'Las {n} mayores de {total} donaciones',
   'og.search.sunbiz': 'Empresas de Florida', 'og.search.irs': 'Organizaciones del IRS', 'og.search.fec': 'Comités de la FEC',
   'cat.tv': 'Anuncios de TV y video', 'cat.digital': 'Anuncios digitales', 'cat.mail': 'Correo', 'cat.text': 'Mensajes de texto', 'cat.phone': 'Llamadas',
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
@@ -1735,6 +1758,14 @@ ht: {
   'og.flcraised': 'Ranmase {amt} nan {n} don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid).',
   'og.flcnone': 'Lajan yo bay komite sa a: pa gen okenn ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid).',
   'og.flcrec': 'Dosye eta a', 'og.flcdocs': 'Dokiman kanpay',
+  'og.flcraisedmin': 'Ranmase omwen {amt} nan {n} don ki rapòte an 2025\u20132026 (Divizyon Eleksyon Florid). Rechèch eta a sispann nan 3,000 don.',
+  'og.flcparty': 'Lajan yo bay komite sa a: nou pa montre l. Rechèch nou nan dosye eta a pa kouvri komite pati yo ankò. Dokiman kanpay li yo bay lis chak donatè.',
+  'og.gaveh': 'Sa li bay kanpay sa a',
+  'og.gave1': '{amt} nan dat {date}.',
+  'og.gaven': '{amt} nan {n} don, soti {from} rive {to}.',
+  'og.k.cash': '{amt} an lajan', 'og.k.inkind': '{amt} an nati (byen oswa sèvis, pa lajan)', 'og.k.loan': '{amt} an prè',
+  'og.kt.cash': 'Lajan', 'og.kt.inkind': 'An nati', 'og.kt.loan': 'Prè',
+  'og.gavelist': 'Wè chak don', 'og.gavetop': '{n} pi gwo nan {total} don',
   'og.search.sunbiz': 'Biznis Florid', 'og.search.irs': 'Òganizasyon IRS', 'og.search.fec': 'Komite FEC',
   'cat.tv': 'Piblisite televizyon ak videyo', 'cat.digital': 'Piblisite dijital', 'cat.mail': 'Lèt', 'cat.text': 'Mesaj tèks', 'cat.phone': 'Apèl telefòn',
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
@@ -2951,7 +2982,32 @@ function orgDetails(d){
   var attr = fec ? 'data-fec="' + fec + '"' : 'data-org="' + esc(name) + '"';
   if(d.city) attr += ' data-city="' + esc(d.city) + '"';
   if(d.st) attr += ' data-st="' + esc(d.st) + '"';
-  return '<details class="og" ' + attr + '><summary>' + t('og.about') + '</summary><div class="og-body">' + t('og.loading') + '</div></details>';
+  return '<details class="og" ' + attr + '><summary>' + t('og.about') + '</summary>' + gaveBlock(d.gave) +
+    '<div class="og-body">' + t('og.loading') + '</div></details>';
+}
+// What this group gave the candidate on this page: cash vs in-kind vs loans, dates, and each gift.
+function gaveBlock(g){
+  if(!g || !g.n) return '';
+  var usd = function(x){ return '$' + Math.round(x).toLocaleString('en-US'); };
+  var day = function(d){ return fmtDay(d) || esc(d || ''); };
+  var sum = (g.cash || 0) + (g.inkind || 0) + (g.loan || 0);
+  var h = '<div class="og-gave"><div class="og-fh">' + t('og.gaveh') + '</div><p>' +
+    (g.n === 1 ? t('og.gave1', {amt: usd(sum), date: day(g.from)}) : t('og.gaven', {amt: usd(sum), n: g.n, from: day(g.from), to: day(g.to)}));
+  var parts = [];
+  if(g.cash) parts.push(t('og.k.cash', {amt: usd(g.cash)}));
+  if(g.inkind) parts.push(t('og.k.inkind', {amt: usd(g.inkind)}));
+  if(g.loan) parts.push(t('og.k.loan', {amt: usd(g.loan)}));
+  if(parts.length > 1 || g.inkind || g.loan) h += ' ' + parts.join(' · ');
+  h += '</p>';
+  if(g.gifts && g.gifts.length > 1){
+    h += '<details class="og-gifts"><summary>' + t('og.gavelist') + '</summary>' +
+      (g.gifts.length < g.n ? '<p class="fine">' + t('og.gavetop', {n: g.gifts.length, total: g.n}) + '</p>' : '') +
+      '<table class="og-gt">' + g.gifts.map(function(x){
+        return '<tr><td>' + day(x.d) + '</td><td class="num">' + usd(x.a) + '</td><td>' + t('og.kt.' + x.k) +
+          (x.desc ? '<div class="enote">' + esc(x.desc) + '</div>' : '') + '</td></tr>';
+      }).join('') + '</table></details>';
+  }
+  return h + '</div>';
 }
 function panelKey(el){
   var f = el.getAttribute('data-fec');
@@ -2973,10 +3029,11 @@ function flcBlock(c, hint){
   var people = [];
   if(c.chair) people.push('<li>' + t('og.chair') + ': <strong>' + esc(c.chair) + '</strong></li>');
   if(c.treasurer) people.push('<li>' + t('og.treasurer') + ': <strong>' + esc(c.treasurer) + '</strong></li>');
-  if(c.agent) people.push('<li>' + t('og.agent') + ': <strong>' + esc(c.agent) + '</strong></li>');
+  if(c.agent && !/^(none|n\/?a)$/i.test(c.agent)) people.push('<li>' + t('og.agent') + ': <strong>' + esc(c.agent) + '</strong></li>');
   if(people.length) h += '<ul class="og-off">' + people.join('') + '</ul>';
-  if(c.raised) h += '<p>' + t('og.flcraised', {amt: fmtShortUSD(c.raised), n: c.gifts || 0}) + '</p>';
+  if(c.raised) h += '<p>' + t(c.capped ? 'og.flcraisedmin' : 'og.flcraised', {amt: fmtShortUSD(c.raised), n: c.gifts || 0}) + '</p>';
   else if(c.since) h += '<p>' + t('og.flcnone') + '</p>';
+  else if(/party/i.test(c.type || '')) h += '<p>' + t('og.flcparty') + '</p>';
   if(c.funders && c.funders.length){
     h += '<div class="og-fh">' + t('og.funders') + '</div>' + c.funders.map(function(f){
       return '<div class="donor-row og-f"><div><span class="dname">' + esc(f.name) + '</span>' +
