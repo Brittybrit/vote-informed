@@ -1344,7 +1344,7 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 5;
+const FLC_VERSION = 6;
 const FL_SINCE = '2025-01-01';   // funders and totals cover the 2025-2026 cycle only
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
@@ -1421,7 +1421,8 @@ async function flCommittee(env, name) {
         if (iso < agg[who].first) agg[who].first = iso;
         if (iso > agg[who].last) agg[who].last = iso;
       }
-      out.raised = total || null; out.gifts = n; out.from = from; out.to = to; out.since = FL_SINCE;
+      out.raised = total || null; out.gifts = n; out.from = from; out.to = to;
+      if (cr.ok && /\t/.test(tsv)) out.since = FL_SINCE;   // only claim "none reported" when the state actually answered with a report table
       out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([who, v]) => {
         const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|energy|utilities|airlines|communications|bancorp)\b\.?/i.test(who);
         const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
