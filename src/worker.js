@@ -1344,7 +1344,7 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 6;
+const FLC_VERSION = 7;
 const FL_SINCE = '2025-01-01';   // funders and totals cover the 2025-2026 cycle only
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
@@ -1383,9 +1383,9 @@ async function flCommittee(env, name) {
       account: m.account, name: m.name,
       type: lines('Type')[0] || '', status: lines('Status')[0] || '',
       city: cityM ? cityM[1].trim() : '', state: cityM ? cityM[2] : '',
-      chair: lines('Chairperson')[0] || '',
-      treasurer: lines('Treasurer')[0] || '',
-      agent: lines('Registered Agent')[0] || '',
+      chair: realValue(lines('Chairperson')[0]),
+      treasurer: realValue(lines('Treasurer')[0]),
+      agent: realValue(lines('Registered Agent')[0]),
       url: FL_BASE + '/committees/ComDetail.asp?account=' + m.account,
       docsUrl: FL_BASE + '/campaign-docs/?account=' + m.account
     });
@@ -1404,10 +1404,10 @@ async function flCommittee(env, name) {
         cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '01/01/2025', cdateto: '', queryformat: '2', Submit: 'Submit' }, '/campaign-finance/contributions/'));
       const tsv = cr.ok ? await cr.text() : '';
       const agg = {}; let total = 0, n = 0, from = '', to = '';
-      for (const line of tsv.split(/\r?\n/).slice(1)) {
+      const allRows = tsv.split(/\r?\n/).slice(1).filter(l => l.split('\t').length >= 7);
+      for (const line of allRows) {
         const c = line.split('\t');
-        if (c.length < 7) continue;
-        if (normOrg(c[0].replace(/\s*\([^)]*\)\s*$/, '')) !== normOrg(pick.name)) continue;   // this committee only
+        if (normOrg(c[0].replace(/(\s*\([^)]*\))+\s*$/, '')) !== normOrg(pick.name)) continue;   // this committee only
         const amt = parseFloat(c[2]) || 0;
         if (amt <= 0) continue;
         const [mm, dd, yy] = String(c[1]).split('/');
@@ -1422,7 +1422,14 @@ async function flCommittee(env, name) {
         if (iso > agg[who].last) agg[who].last = iso;
       }
       out.raised = total || null; out.gifts = n; out.from = from; out.to = to;
-      if (cr.ok && /\t/.test(tsv)) out.since = FL_SINCE;   // only claim "none reported" when the state actually answered with a report table
+      if (allRows.length >= 3000) out.capped = true;   // the state stops at 3,000 rows: the total is a floor
+      // Only claim "none reported" when the state answered with a report table AND the committee is the kind
+      // whose receipts that search covers. Party and affiliated party committees (the caucus campaign arms)
+      // always raise money; an empty answer for one means our search missed it, not that nobody gave.
+      const party = /party/i.test(pick.type || '');
+      if (cr.ok && /\t/.test(tsv) && !party) out.since = FL_SINCE;
+      if (!n) console.log('fl contributions ' + pick.name + ' (' + pick.type + '): 0 matched of ' + allRows.length + ' rows; filers seen: ' +
+        [...new Set(allRows.slice(0, 50).map(l => l.split('\t')[0]))].slice(0, 5).join(' | '));
       out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([who, v]) => {
         const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|energy|utilities|airlines|communications|bancorp)\b\.?/i.test(who);
         const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
@@ -1437,11 +1444,17 @@ async function flCommittee(env, name) {
   return out;
 }
 
+// The state prints "None" or "N/A" in empty officer fields; don't show those as names
+function realValue(v) {
+  const x = String(v || '').trim();
+  return /^(none|n\/?a|not applicable|-+)$/i.test(x) ? '' : x;
+}
+
 // Florida state-filed candidates (Governor, Cabinet, Legislature, State Attorney, Public Defender,
 // judges): donors straight from the Florida Division of Elections, like FEC data for federal races.
 // Web search can find a candidate's state filing page but can't read the contributions inside it.
 // No AI, refreshed at most daily. County and city races file with the county, not the state.
-const FL_DONOR_VERSION = 3;
+const FL_DONOR_VERSION = 4;
 function flOfficeQuery(office) {
   const o = String(office || '');
   const d = (o.match(/District\s+(\d+)/i) || [])[1] || '';
@@ -1464,6 +1477,27 @@ function flNameParts(name) {
     .replace(/,?\s+\b(jr|sr|ii|iii|iv)\.?$/i, '').trim();
   const parts = normPart(first).split(' ').filter(Boolean);
   return parts.length >= 2 ? { first: parts[0], last: parts[parts.length - 1] } : null;
+}
+// What one giver handed this campaign: cash, in-kind (goods or services) and loans, the date range,
+// and the gifts themselves (largest first, at most 12). Shown under group donors so a voter sees
+// what the group gave this candidate, not what the group raised.
+function newGave() { return { n: 0, cash: 0, inkind: 0, loan: 0, from: '', to: '', gifts: [] }; }
+function addGave(g, iso, amt, kind, desc) {
+  g.n++; g[kind] += amt;
+  if (iso && (!g.from || iso < g.from)) g.from = iso;
+  if (iso && (!g.to || iso > g.to)) g.to = iso;
+  const d = String(desc || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+  g.gifts.push({ d: iso, a: Math.round(amt * 100) / 100, k: kind, ...(kind === 'inkind' && d ? { desc: d } : {}) });
+}
+function doneGave(g) {
+  const r = x => Math.round(x);
+  return { n: g.n, cash: r(g.cash), inkind: r(g.inkind), loan: r(g.loan), from: g.from, to: g.to,
+    gifts: g.gifts.sort((a, b) => b.a - a.a || (a.d < b.d ? -1 : 1)).slice(0, 12) };
+}
+// "Basabe, Fabian" -> "Fabian Basabe" (for a candidate's own money); anything else unchanged
+function lastFirst(n) {
+  const m = String(n || '').match(/^\s*([^,]+),\s*([^,]+?)\s*$/);
+  return m ? m[2] + ' ' + m[1] : String(n || '');
 }
 async function flCandidateDonors(env, name, office) {
   const q = flOfficeQuery(office), np = flNameParts(name);
@@ -1493,9 +1527,10 @@ async function flCandidateDonors(env, name, office) {
     if (iso && iso > to) to = iso;
     total += amt; n++;
     const giver = c[4].trim();
-    if (!agg[giver]) agg[giver] = { amount: 0, occ: (c[7] || '').trim(), kinds: new Set(), addr: splitCityLine(c[6]) };
+    if (!agg[giver]) agg[giver] = { amount: 0, occ: (c[7] || '').trim(), kinds: new Set(), addr: splitCityLine(c[6]), gave: newGave() };
     agg[giver].amount += amt;
     agg[giver].kinds.add(c[3]);
+    addGave(agg[giver].gave, iso, amt, /^INK$/i.test(c[3]) ? 'inkind' : /^LOA$/i.test(c[3]) ? 'loan' : 'cash', c[8]);
   }
   if (!n) return { donors: [], count: 0 };
   // The DOE export has no contributor type. The candidate's own money is the occupation "candidate", or a
@@ -1520,8 +1555,10 @@ async function flCandidateDonors(env, name, office) {
     const occ = v.occ;
     const type = typeOf(giver, occ);
     const loan = v.kinds.has('LOA'), inkind = v.kinds.has('INK') && v.kinds.size === 1;
-    return { name: giver + (type === 'individual' && occ ? ' (' + occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
-      ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}) };
+    const shown = type === 'self-funded' ? lastFirst(giver) : giver;
+    return { name: shown + (type === 'individual' && occ ? ' (' + occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
+      ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}),
+      ...(type !== 'individual' && type !== 'self-funded' ? { gave: doneGave(v.gave) } : {}) };
   });
   return { donors, count: n, total, to, ties, local: roundLocal(local) };
 }
@@ -1623,7 +1660,7 @@ async function refreshFlOutside(env, result, name, office, now = Date.now()) {
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 5;
+const MDC_DONOR_VERSION = 6;
 // Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
 // Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
 // Update the election ids each cycle.
@@ -1766,9 +1803,10 @@ async function mdcCandidateDonors(env, name, office) {
     const who = String(x[4]).replace(/\s+/g, ' ').trim();
     const id = normPart(who);
     if (!agg[id]) agg[id] = { name: who, amount: 0, t: x[10], occ: decodeEntities(String(x[11]).replace(/<br>/gi, ' ')), ik: 0, addr: vfAddr(x),
-      street: vfStreet(x), first: x[2], last: x[2] };
+      street: vfStreet(x), first: x[2], last: x[2], gave: newGave() };
     agg[id].amount += amt;
     if (ik) agg[id].ik += amt;
+    for (let i = 0; i < n; i++) addGave(agg[id].gave, x[2], amt / n, ik ? 'inkind' : 'cash', '');
     if (x[2] < agg[id].first) agg[id].first = x[2];
     if (x[2] > agg[id].last) agg[id].last = x[2];
   }
@@ -1783,7 +1821,8 @@ async function mdcCandidateDonors(env, name, office) {
   const donors = sorted.slice(0, 8).map(v => {
     const type = typeOf(v);
     return { name: v.name + (type === 'individual' && v.occ ? ' (' + v.occ + ')' : ''), amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type,
-      ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}) };
+      ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}),
+      ...(type !== 'individual' && type !== 'self-funded' ? { gave: doneGave(v.gave) } : {}) };
   });
   const givers = sorted.map(v => ({ name: v.name, type: typeOf(v), amount: Math.round(v.amount), first: v.first, last: v.last,
     street: v.street, zip: (v.addr && v.addr.zip) || '' }));
