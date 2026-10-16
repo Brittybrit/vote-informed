@@ -27,3 +27,31 @@ class_name = "ResearchRunner"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["ResearchRunner"]
+
+# ---------------------------------------------------------------------------
+# Ballot317: Marion County, Indiana. A separate Worker from the same code.
+#   npx wrangler deploy --env indy
+# Plain `npx wrangler deploy` is Ballot305 and ignores everything below.
+# Nothing here is shared with Ballot305: own Worker name, own pages folder,
+# own cache, own background runner, no custom domain (workers.dev only).
+[env.indy]
+name = "ballot317"
+workers_dev = true
+routes = []   # never inherit ballot305.org
+
+[env.indy.vars]
+COUNTY = "marion"
+
+[env.indy.assets]
+directory = "./public-317"
+binding = "ASSETS"
+
+# Create once: npx wrangler kv namespace create CACHE --env indy
+# then paste the printed id here.
+[[env.indy.kv_namespaces]]
+binding = "CACHE"
+id = "REPLACE_WITH_BALLOT317_KV_ID"
+
+[[env.indy.durable_objects.bindings]]
+name = "RESEARCH"
+class_name = "ResearchRunner"

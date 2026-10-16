@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ballot305 Reports</title>
+<style>
+  :root{ --paper:#FAFAF7; --ink:#131F3C; --soft:#3D4763; --no:#9B2C1F; --ok:#2F6B3C; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 'Libre Franklin', Arial, sans-serif; }
+  main{ max-width:760px; margin:0 auto; padding:20px 16px 60px; }
+  h1{ font-size:20px; margin:0 0 4px; }
+  .sub{ font-family:ui-monospace, Menlo, monospace; font-size:12px; color:var(--soft); margin:0 0 16px; }
+  input{ font:inherit; padding:8px; border:2px solid var(--ink); width:100%; box-sizing:border-box; }
+  button{ font:inherit; font-size:13px; font-weight:700; padding:7px 10px; border:2px solid var(--ink); background:#fff; color:var(--ink); cursor:pointer; margin:6px 6px 0 0; }
+  button.danger{ background:var(--no); border-color:var(--no); color:#fff; }
+  button.go{ background:var(--ink); color:#fff; }
+  .rep{ background:#fff; border:2px solid var(--ink); padding:12px; margin:12px 0; }
+  .rep.held{ border-color:var(--no); }
+  .meta{ font-family:ui-monospace, Menlo, monospace; font-size:11.5px; color:var(--soft); overflow-wrap:anywhere; }
+  .who{ font-weight:800; }
+  .txt{ white-space:pre-wrap; margin:8px 0; }
+  .tag{ display:inline-block; font-size:11px; font-weight:800; color:#fff; background:var(--no); padding:1px 6px; margin-left:6px; }
+  #status{ font-size:13px; margin-top:10px; }
+  details{ margin-top:18px; font-size:13.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Error reports</h1>
+  <p class="sub">Private page for the site owner. Needs the ADMIN_TOKEN secret.</p>
+  <div id="login">
+    <input id="tok" type="password" placeholder="Admin token" autocomplete="off">
+    <button class="go" id="loginBtn" type="button">Open reports</button>
+  </div>
+  <div id="status" role="status"></div>
+  <div id="healthBox" style="display:none"><button id="healthBtn" type="button">Check data sources</button><div id="health"></div></div>
+  <div id="list"></div>
+  <details>
+    <summary>What the buttons do</summary>
+    <p><strong>Re-research</strong> drops the cached profile so the next visitor gets fresh research. Use it when the profile is stale or the fix is likely to come out right on a second pass.</p>
+    <p><strong>Take down</strong> removes the profile and shows visitors "being corrected" until you put it back. Use it for anything false about a real person.</p>
+    <p><strong>Put back</strong> lifts a take-down; the next visitor gets fresh research.</p>
+    <p><strong>Done</strong> removes the report from this list. Reports also expire after 90 days.</p>
+  </details>
+</main>
+<script>
+var TOKEN = '';
+try { TOKEN = sessionStorage.getItem('b305admin') || ''; } catch(e) {}
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+async function call(path, body){
+  var r = await fetch('/api/admin/' + path, {
+    method: body ? 'POST' : 'GET',
+    headers: Object.assign({ 'Authorization': 'Bearer ' + TOKEN }, body ? { 'Content-Type': 'application/json' } : {}),
+    body: body ? JSON.stringify(body) : undefined
+  });
+  var d = await r.json().catch(function(){ return {}; });
+  if(!r.ok) throw new Error(r.status === 401 ? 'Wrong token' : r.status === 404 ? 'Admin is off (set the ADMIN_TOKEN secret)' : (d.error || ('Error ' + r.status)));
+  return d;
+}
+async function load(){
+  $('status').textContent = 'Loading…';
+  try {
+    var d = await call('reports');
+    try { sessionStorage.setItem('b305admin', TOKEN); } catch(e) {}
+    $('login').style.display = 'none';
+    $('healthBox').style.display = '';
+    $('status').textContent = d.reports.length ? d.reports.length + ' open report(s), newest first.' : 'No open reports.';
+    $('list').innerHTML = d.reports.map(function(r){
+      return '<div class="rep' + (r.held ? ' held' : '') + '" data-id="' + esc(r.id) + '" data-key="' + esc(r.key) + '">' +
+        '<div class="who">' + esc(r.name || '(no name)') + (r.held ? '<span class="tag">TAKEN DOWN</span>' : '') + '</div>' +
+        '<div class="meta">' + esc(r.office) + ' · ' + esc(r.at) + (r.lang ? ' · ' + esc(r.lang) : '') + '</div>' +
+        '<div class="txt">' + esc(r.text) + '</div>' +
+        (r.contact ? '<div class="meta">Contact: ' + esc(r.contact) + '</div>' : '') +
+        (r.key ? '<button data-act="refresh">Re-research</button>' +
+          (r.held ? '<button data-act="release">Put back</button>' : '<button class="danger" data-act="hold">Take down</button>') : '<div class="meta">No profile key (sent before the page finished loading).</div>') +
+        '<button data-act="resolve">Done</button></div>';
+    }).join('');
+  } catch(e) {
+    $('status').textContent = e.message;
+    if(/token/i.test(e.message)){ try { sessionStorage.removeItem('b305admin'); } catch(x) {} $('login').style.display = ''; }
+  }
+}
+$('loginBtn').addEventListener('click', function(){ TOKEN = $('tok').value.trim(); if(TOKEN) load(); });
+$('tok').addEventListener('keydown', function(e){ if(e.key === 'Enter') $('loginBtn').click(); });
+$('list').addEventListener('click', async function(e){
+  var b = e.target.closest('button[data-act]'); if(!b) return;
+  var box = b.closest('.rep'), act = b.getAttribute('data-act');
+  if(act === 'hold' && !confirm('Take this profile down until you put it back?')) return;
+  b.disabled = true;
+  try {
+    await call(act, act === 'resolve' ? { id: box.getAttribute('data-id') } : { key: box.getAttribute('data-key') });
+    load();
+  } catch(err) { $('status').textContent = err.message; b.disabled = false; }
+});
+$('healthBtn').addEventListener('click', async function(){
+  var b = this; b.disabled = true; $('health').innerHTML = '<p class="meta">Checking each source (up to a minute)…</p>';
+  try {
+    var h = await call('health');
+    var c = h.config;
+    $('health').innerHTML = '<div class="rep' + (h.ok ? '' : ' held') + '">' +
+      '<div class="who">' + (h.ok ? 'All sources OK' : 'Something needs attention') + '</div>' +
+      '<div class="meta">Anthropic key ' + (c.anthropicKey ? 'set' : 'MISSING') + ' · FEC key ' + (c.fecKey ? 'set' : 'MISSING (using demo key)') +
+      ' · New AI research ' + (c.freshOff ? 'PAUSED (FRESH_OFF=1)' : 'on') + '</div>' +
+      h.checks.map(function(x){ return '<div class="txt">' + (x.ok ? '✓ ' : '✗ ') + esc(x.name) + ': ' + esc(x.detail) + ' <span class="meta">(' + x.ms + ' ms)</span></div>'; }).join('') + '</div>';
+  } catch(e) { $('health').textContent = e.message; }
+  b.disabled = false;
+});
+if(TOKEN) load();
+</script>
+</body>
+</html>
