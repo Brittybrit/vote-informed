@@ -1002,7 +1002,7 @@ en: {
   'fil.to': 'Where it went',
   'fil.rest': 'Everyone else ({n})',
   'fil.read': 'Read the filings',
-  'fil.stake': 'What is at stake for the main funder',
+  'fil.stake': 'Background',
   'sec.supporters': 'Major Supporters',
   'sec.opponents': 'Major Opposition',
   'none.support': 'No organized support found in searched coverage.',
@@ -1446,7 +1446,7 @@ es: {
   'fil.to': 'En qué se gastó',
   'fil.rest': 'Todos los demás ({n})',
   'fil.read': 'Ver los informes',
-  'fil.stake': 'Qué se juega el principal financiador',
+  'fil.stake': 'Contexto',
   'sec.supporters': 'Principales partidarios',
   'sec.opponents': 'Principal oposición',
   'none.support': 'No se encontró apoyo organizado en la cobertura revisada.',
@@ -1890,7 +1890,7 @@ ht: {
   'fil.to': 'Ki kote l ale',
   'fil.rest': 'Tout lòt yo ({n})',
   'fil.read': 'Li rapò yo',
-  'fil.stake': 'Sa pi gwo finansè a gen an jwèt',
+  'fil.stake': 'Kontèks',
   'sec.supporters': 'Pi gwo moun ki pou li',
   'sec.opponents': 'Pi gwo opozisyon',
   'none.support': 'Nou pa jwenn okenn sipò òganize nan sous nou chèche yo.',
@@ -2728,7 +2728,8 @@ function filedRows(list){
         return '<div class="fil-row"><div>' + esc(d.name) + (d.place ? ' <span class="what">· ' + esc(d.place) + '</span>' : '') + '</div>' +
           '<div class="amt">' + usd(d.amount) + ' · ' + (d.share || d.amount <= 0 ? d.share : '&lt;0.1') + '%</div>' +
           '<div class="fil-bar"><span style="width:' + Math.max(1, Math.min(100, d.share)) + '%"></span></div>' +
-          (d.disclosure ? '<div class="what">' + disclosureTag(d) + '</div>' : '') + '</div>';
+          (d.disclosure ? '<div class="what">' + disclosureTag(d) + '</div>' : '') +
+          (d.type && d.type !== 'individual' ? '<div class="what">' + orgDetails({name: d.name}) + '</div>' : '') + '</div>';
       }).join('');
       if(donors.length > 6){
         var rest = donors.slice(6).reduce(function(a, d){ return a + d.amount; }, 0);

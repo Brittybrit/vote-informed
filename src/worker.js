@@ -1764,29 +1764,67 @@ function sameFirst(a, b) {
 // main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
 // shows for that report; if they don't (a layout change, an amendment we can't read), the last good
 // result stays up. No AI. Refreshed at most every 6 hours.
-const MEASURE_FILINGS_VERSION = 1;
+const MEASURE_FILINGS_VERSION = 2;
 const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
+// One entry per ballot measure, matched on the title the ballot prints ("City of Miami 3: ..."). Each
+// committee names the system it files in: 'vf' = a VoterFocus clerk (c = the clerk's code, ca = the
+// committee id), 'fl' = the Florida Division of Elections (account = the state's id, name = its exact
+// filed name). A measure with committees: [] was checked and nobody has registered for or against it;
+// checked says where, checkedOn when. Notes are written by hand from the linked coverage.
 const MEASURE_FILINGS = [
   {
-    match: /virginia key/i,
-    c: 'muncitymiami',
-    filer: 'City of Miami Clerk',
-    headlineNote: 'Both sides are paid for by marina companies competing for the same city lease. Each committee\'s money comes almost entirely from one company.',
+    match: /^City of Miami 3\b|virginia key/i,
+    headlineNote: 'The two big committees are paid for by marina companies competing for the same city lease. Each gets almost all of its money from one company.',
     committees: [
-      { side: 'support', ca: 155, name: 'Help Save Virginia Key PC',
+      { side: 'support', src: 'vf', c: 'muncitymiami', ca: 155, name: 'Help Save Virginia Key PC',
         stakeNote: 'Suntex co-owns Virginia Key LLC, the company that gets the lease if Yes wins: 45 years plus two 15-year renewals on 27 acres of city waterfront, with the right to combine the marinas into one private marina and build restaurants, bars and shops. The city gets at least $2.2 million a year in rent plus 6% of gross revenue.' },
-      { side: 'oppose', ca: 156, name: 'Preserve and Protect Miami',
-        stakeNote: 'Rickenbacker Marina is the current operator on the site. The new lease would let Virginia Key LLC remove current tenants. Rickenbacker Marina\'s president, Aabad Melwani, is one of the leaders of the No campaign.' }
+      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 156, name: 'Preserve and Protect Miami',
+        stakeNote: 'Rickenbacker Marina is the current operator on the site. The new lease would let Virginia Key LLC remove current tenants. Rickenbacker Marina\'s president, Aabad Melwani, is one of the leaders of the No campaign.' },
+      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 158, name: 'Miami Residents for Public Waterfront Access',
+        stakeNote: 'Its money comes from David Ralph, lead organizer of Save Our Marinas, a group of boaters and residents opposing the lease.' }
     ],
     stakeSources: [
       { name: 'WLRN, Oct 8, 2026', url: 'https://www.wlrn.org/government-politics/2026-10-08/miami-virginia-key-marina-referendum-ballot' },
+      { name: 'WLRN, Jul 21, 2026', url: 'https://www.wlrn.org/government-politics/2026-07-21/miami-marina-ballot-referendum-virginia-key-marine-stadium' },
       { name: 'Axios Miami, Aug 20, 2026', url: 'https://www.axios.com/local/miami/2026/08/20/virginia-key-marina-redevelopment-miami-referendum' }
     ]
-  }
+  },
+  {
+    match: /^City of Miami 1\b|safe and ready miami/i,
+    committees: [
+      { side: 'support', src: 'vf', c: 'muncitymiami', ca: 159, name: 'Safe and Ready Miami PC',
+        stakeNote: 'Run by Christian Ulvert, political strategist for Mayor Eileen Higgins. Its money comes from his other committee, Ethical Leadership for Florida.' }
+    ],
+    stakeSources: [{ name: 'Political Cortadito, Oct 14, 2026', url: 'https://politicalcortadito.com/2026/10/14/miami-virginia-key-referendum-waterfront-money-war/' }],
+    checked: ['City of Miami Clerk'], checkedOn: '2026-10-17'
+  },
+  { match: /^City of Miami 2\b/i, committees: [], checked: ['City of Miami Clerk'], checkedOn: '2026-10-17' },
+  {
+    match: /^No\. 3 Constitutional Amendment/i,
+    committees: [
+      { side: 'support', src: 'fl', account: 93318, name: 'Vote Yes on 3' },
+      { side: 'oppose', src: 'fl', account: 92021, name: 'Vote No on 3 Florida, Inc.' },
+      { side: 'oppose', src: 'fl', account: 93209, name: 'Floridians for Shared Prosperity, Inc.' },
+      { side: 'oppose', src: 'fl', account: 93273, name: 'No On 3. Protect Our Homes',
+        stakeNote: 'Chaired by Miami-Dade Mayor Daniella Levine Cava, according to the state\'s committee record.' },
+      { side: 'oppose', src: 'fl', account: 93307, name: 'Florida Public Servants No on 3' }
+    ],
+    checked: ['Florida Division of Elections'], checkedOn: '2026-10-17'
+  },
+  {
+    match: /^No\. 2 Constitutional Amendment/i,
+    committees: [
+      { side: 'support', src: 'fl', account: 93364, name: 'Save Florida Farmers',
+        stakeNote: 'Pays for farm2savings.com, which urges a Yes vote on Amendment 2.' }
+    ],
+    stakeSources: [{ name: 'farm2savings.com', url: 'https://farm2savings.com/' }],
+    checked: ['Florida Division of Elections'], checkedOn: '2026-10-17'
+  },
+  { match: /^No\. 1 Constitutional Amendment/i, committees: [], checked: ['Florida Division of Elections'], checkedOn: '2026-10-17' }
 ];
 function measureFilingsFor(name, summary) {
-  const s = String(name || '') + ' ' + String(summary || '');
-  return MEASURE_FILINGS.find(m => m.match.test(s)) || null;
+  const n = String(name || '');
+  return MEASURE_FILINGS.find(m => m.match.test(n)) || null;
 }
 const vfMoney = s => parseFloat(String(s || '').replace(/[$,\s]/g, '')) || 0;
 function vfIso(mdy) {
@@ -1862,18 +1900,87 @@ function tallyCommittee(reports, csvs) {
   return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100,
     through, reports: reports.map(r => r.code), donors, payees };
 }
-async function committeeFilings(c, ca) {
+async function vfCommitteeFilings(c, ca) {
   const page = VF + 'candidate_pr.php?op=cv&e=1&c=' + c + '&ca=' + ca + '&rellevel=3&committee=Y';
   const r = await fetch(page, { headers: VF_H });
   if (!r.ok) throw new Error('committee page ' + ca + ' ' + r.status);
-  const reports = vfReportList(await r.text());
-  if (!reports.length) throw new Error('committee ' + ca + ': no reports listed');
+  const html = await r.text();
+  const reports = vfReportList(html);   // a new committee may have no reports yet
+  if (!reports.length && !/financial reports are available/i.test(html)) throw new Error('committee ' + ca + ': page layout changed');
   const csvs = await Promise.all(reports.map(async rep => {
     const x = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + ca + '&county=' + c + '&dhc=' + rep.dhc, { headers: VF_H });
     if (!x.ok) throw new Error('report ' + rep.dhc + ' export ' + x.status);
     return x.text();
   }));
   return { ...tallyCommittee(reports, csvs), url: page };
+}
+// A state committee's own itemized records at the Division of Elections, 2025-2026. The state has no
+// per-report totals to check against, so the checks are: the search answered with its table, every row
+// kept is this committee's own (exact filed name), and a search that hits the state's 3,000-row cap is
+// marked as a floor.
+async function flTsv(exe, ref, name) {
+  const body = new URLSearchParams({ election: 'All', search_on: '4', CanFName: '', CanLName: '', CanNameSrch: '2', office: 'All', cdistrict: '',
+    cgroup: '', party: 'All', ComName: name.slice(0, 40), ComNameSrch: '2', committee: 'All', cfname: '', clname: '', namesearch: '2', ccity: '',
+    cstate: '', czipcode: '', coccupation: '', cpurpose: '', cdollar_minimum: '', cdollar_maximum: '', rowlimit: '3000', csort1: 'AMT', csort2: 'DAT',
+    cdatefrom: FL_SINCE.replace(/^(\d{4})-(\d\d)-(\d\d)$/, '$2/$3/$1'), cdateto: '', queryformat: '2', Submit: 'Submit' });
+  const r = await fetch(FL_BASE + '/cgi-bin/' + exe, { method: 'POST', body, headers: { 'User-Agent': VF_H['User-Agent'],
+    'Accept': 'text/html,text/plain,*/*', 'Content-Type': 'application/x-www-form-urlencoded', 'Origin': FL_BASE, 'Referer': FL_BASE + ref } });
+  if (!r.ok) throw new Error('state ' + exe + ' ' + r.status);
+  const lines = (await r.text()).split(/\r?\n/).filter(l => l.trim());
+  if (!lines.length || !/^Candidate\/Committee\t/i.test(lines[0])) throw new Error('state ' + exe + ': unexpected response');
+  const rows = lines.slice(1).map(l => l.split('\t')).filter(c => c.length >= 7);
+  return { rows: rows.filter(c => normOrg(c[0].replace(/(\s*\([^)]*\))+\s*$/, '')) === normOrg(name)), capped: rows.length >= 3000 };
+}
+const flIso = d => { const m = String(d || '').match(/(\d{2})\/(\d{2})\/(\d{4})/); return m ? m[3] + '-' + m[1] + '-' + m[2] : ''; };
+function tallyFl(contribs, expends) {
+  const gave = new Map(), paid = new Map();
+  let raised = 0, inkind = 0, spent = 0, through = '';
+  for (const c of contribs) {
+    const amt = parseFloat(c[2]) || 0, iso = flIso(c[1]);
+    if (!amt || !iso || iso < FL_SINCE) continue;
+    if (iso > through) through = iso;
+    if (/^INK/i.test(c[3])) inkind += amt; else raised += amt;
+    const who = vfClean(c[4]), k = vfOrgKey(who);
+    const cur = gave.get(k) || { name: who, amount: 0, occ: vfClean(c[7]), place: vfClean(c[6]).replace(/\s+\d{5}(-\d{4})?$/, ''), first: iso, last: iso };
+    cur.amount += amt;
+    if (iso < cur.first) cur.first = iso;
+    if (iso > cur.last) cur.last = iso;
+    gave.set(k, cur);
+  }
+  for (const e of expends) {
+    const amt = parseFloat(e[2]) || 0, iso = flIso(e[1]);
+    if (!amt || !iso || iso < FL_SINCE) continue;
+    if (iso > through) through = iso;
+    spent += amt;
+    const who = vfClean(e[3]), k = vfOrgKey(who);
+    const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|INC)\b/i, ' $1'), amount: 0, what: new Map() };
+    cur.amount += amt;
+    const d = vfClean(e[6]);
+    if (d) cur.what.set(d.toLowerCase(), { d, n: ((cur.what.get(d.toLowerCase()) || {}).n || 0) + amt });
+    paid.set(k, cur);
+  }
+  const total = raised + inkind;
+  const typeOf = v => /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ + ' ' + v.name) ? 'PAC/committee'
+    : /\b(inc|llc|corp|co|company|association|federation|fund|trust|group|realtors|union|pa|lp|llp|foundation|institute)\b/i.test(v.name) || /association|corporation|union|business/i.test(v.occ) ? 'corporation' : 'individual';
+  const donors = [...gave.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
+    name: v.name, amount: Math.round(v.amount * 100) / 100,
+    share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),
+    type: typeOf(v), place: v.place, first: v.first, last: v.last }));
+  const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
+    name: v.name, amount: Math.round(v.amount * 100) / 100,
+    what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
+  return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100, through, donors, payees };
+}
+async function flCommitteeFilings(account, name) {
+  const c = await flTsv('contrib.exe', '/campaign-finance/contributions/', name);
+  const e = await flTsv('expend.exe', '/campaign-finance/expenditures/', name);
+  return { ...tallyFl(c.rows, e.rows), ...(c.capped || e.capped ? { capped: true } : {}),
+    url: FL_BASE + '/committees/ComDetail.asp?account=' + account };
+}
+const FILERS = { vf: c => c === 'muncitymiami' ? 'City of Miami Clerk' : c === 'miamidade' ? 'Miami-Dade Elections Department' : 'city clerk', fl: () => 'Florida Division of Elections' };
+async function committeeFilings(com) {
+  if (com.src === 'fl') return flCommitteeFilings(com.account, com.name);
+  return vfCommitteeFilings(com.c, com.ca);
 }
 function fmtUsd(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
 function fmtLongDay(iso) {
@@ -1887,14 +1994,16 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   const fin = result.financing;
   if (fin.filed && fin.filV === MEASURE_FILINGS_VERSION && now - (fin.filAt || 0) < MEASURE_FILINGS_TTL) return false;
   const sides = { support: [], oppose: [] };
+  const filers = new Set(cfg.checked || []);
   try {
     for (const com of cfg.committees) {
-      const f = await committeeFilings(cfg.c, com.ca);
-      const top = f.donors[0];
-      sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(f.raised + f.inkind), url: f.url,
-        stakeNote: com.stakeNote,
-        note: top ? (top.share === 100 ? 'All' : top.share >= 99 ? 'All but ' + fmtUsd(f.raised + f.inkind - top.amount) : top.share + '%') +
-          ' of its money came from ' + top.name + '.' : 'No contributions reported.',
+      const f = await committeeFilings(com);
+      filers.add(com.src === 'fl' ? FILERS.fl() : com.filer || FILERS.vf(com.c));
+      const top = f.donors[0], all = f.raised + f.inkind;
+      sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(all), url: f.url,
+        ...(com.stakeNote ? { stakeNote: com.stakeNote } : {}),
+        note: top ? (top.share === 100 ? 'All' : top.share >= 99 ? 'All but ' + fmtUsd(all - top.amount) : top.share + '%') +
+          ' of its money came from ' + top.name + '.' : 'No contributions reported yet.',
         filings: f });
     }
   } catch (e) {
@@ -1902,12 +2011,15 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
     if (fin.filed) { fin.filAt = now - MEASURE_FILINGS_TTL + 3600 * 1000; return true; }   // keep the last good one, retry in an hour
     return false;                                                                             // never filed: keep web research
   }
-  const through = [...sides.support, ...sides.oppose].map(x => x.filings.through).sort().pop();
+  const where = [...filers].join(' and ');
+  const through = [...sides.support, ...sides.oppose].map(x => x.filings.through).filter(Boolean).sort().pop();
+  const note = cfg.committees.length
+    ? 'From the committees\' own reports to the ' + where + (through ? ', through ' + fmtLongDay(through) : '') + '. Newer reports show up here within a few hours of filing.'
+    : 'No committee has registered with the ' + where + ' to support or oppose this question, as of ' + fmtLongDay(cfg.checkedOn) + '.';
   result.financing = {
     support: sides.support, oppose: sides.oppose, filed: true, filV: MEASURE_FILINGS_VERSION, filAt: now,
-    headlineNote: cfg.headlineNote, stakeSources: cfg.stakeSources, filer: cfg.filer,
-    note: 'From the committees\' own reports to the ' + cfg.filer + ', through ' + fmtLongDay(through) + '. Newer reports show up here within a few hours of filing.',
-    research: fin.research || { support: fin.support, oppose: fin.oppose, note: fin.note }
+    ...(cfg.headlineNote ? { headlineNote: cfg.headlineNote } : {}), ...(cfg.stakeSources ? { stakeSources: cfg.stakeSources } : {}),
+    note, research: fin.research || { support: fin.support, oppose: fin.oppose, note: fin.note }
   };
   return true;
 }

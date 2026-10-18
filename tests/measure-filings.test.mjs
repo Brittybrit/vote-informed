@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadWorker } from './load-worker.mjs';
 
-const w = await loadWorker(['vfReportList', 'tallyCommittee', 'refreshMeasureFilings', 'measureFilingsFor', 'markDisclosure', 'MEASURE_FILINGS_TTL']);
+const w = await loadWorker(['vfReportList', 'tallyCommittee', 'refreshMeasureFilings', 'measureFilingsFor', 'markDisclosure', 'MEASURE_FILINGS_TTL', 'flCommitteeFilings']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
 
@@ -70,11 +70,14 @@ test('measure filings: a mismatch with the posted totals or a new export layout 
 });
 
 test('measure filings: replace web research, keep the last good on failure, leave other measures alone', async () => {
-  assert.equal(w.measureFilingsFor('Referendum 3', 'Lease of Virginia Key marina property'), w.measureFilingsFor('Virginia Key marinas'));
-  assert.equal(w.measureFilingsFor('Charter amendment on term limits', ''), null);
+  assert.equal(w.measureFilingsFor('City of Miami 3: Proposed Lease and Redevelopment of existing Rickenbacker and Marine Stadium Marinas on Virginia Key'), w.measureFilingsFor('Virginia Key marinas'));
+  assert.equal(w.measureFilingsFor('City of Miami 3'), w.measureFilingsFor('City of Miami 3: anything'));
+  assert.notEqual(w.measureFilingsFor('City of Miami 1: Safe and Ready Miami'), w.measureFilingsFor('City of Miami 3'));
+  assert.equal(w.measureFilingsFor('City of Doral 7: term limits', ''), null);
   const pages = {
     155: '<tbody>' + row(2163, 'S01', '10/1/2026 - 10/9/2026', '$1,000.00', '$0.00', '$0.00').replace(/ca=156/, 'ca=155') + '</tbody>',
-    156: PAGE
+    156: PAGE,
+    158: '<p>The following financial reports are available:</p><table><tbody></tbody></table>'
   };
   const csv = { 2163: HEAD + '1,2026-10-01,C,"Suntex Marina Investors LLC","17330 Preston Rd - Ste 100C",,Dallas,TX,75252,B,"Marina Owner/Operator",CH,,1000.00,,"Suntex"\n', 2160: S01 };
   let down = false;
@@ -87,7 +90,7 @@ test('measure filings: replace web research, keep the last good on failure, leav
     throw new Error('unexpected ' + u);
   };
   const result = { summary: 'Lease of Virginia Key marina property', financing: { support: [{ name: 'Suntex Marinas', amount: '$1,500,000' }], oppose: [], note: 'press' } };
-  assert.equal(await w.refreshMeasureFilings(null, result, 'Referendum 3', 1000), true);
+  assert.equal(await w.refreshMeasureFilings(null, result, 'City of Miami 3', 1000), true);
   const fin = result.financing;
   assert.equal(fin.filed, true);
   assert.equal(fin.support.length, 1);
@@ -95,15 +98,44 @@ test('measure filings: replace web research, keep the last good on failure, leav
   assert.equal(fin.support[0].note, 'All of its money came from Suntex Marina Investors LLC.');
   assert.equal(fin.oppose[0].amount, '$250,000');
   assert.equal(fin.oppose[0].note, 'All of its money came from Rickenbacker Marina Corp.');
+  assert.equal(fin.oppose[1].note, 'No contributions reported yet.');   // a new committee with no reports yet
   assert.match(fin.note, /through Oct 9, 2026/);
   assert.equal(fin.research.support[0].name, 'Suntex Marinas');   // research kept aside, not shown
   // fresh: no refetch
-  assert.equal(await w.refreshMeasureFilings(null, result, 'Referendum 3', 2000), false);
+  assert.equal(await w.refreshMeasureFilings(null, result, 'City of Miami 3', 2000), false);
   // stale and the site is down: the filed numbers stay
   down = true;
-  assert.equal(await w.refreshMeasureFilings(null, result, 'Referendum 3', 1000 + w.MEASURE_FILINGS_TTL + 1), true);
+  assert.equal(await w.refreshMeasureFilings(null, result, 'City of Miami 3', 1000 + w.MEASURE_FILINGS_TTL + 1), true);
   assert.equal(result.financing.oppose[0].amount, '$250,000');
   // an LLC funder gets the "owners not listed" lookup
   w.markDisclosure(result);
   assert.equal(result.financing.support[0].filings.donors[0].disclosure, 'owners_not_listed');
+});
+
+test('measure filings: state committees from the Division of Elections; questions nobody registered for', async () => {
+  const C = 'Candidate/Committee\tDate\tAmount\tTyp\tContributor Name\tAddress\tCity State Zip\tOccupation\tInkind Desc\r\n' + [
+    'Vote Yes on 3 (PAC)\t09/11/2026\t4000000.00\tCHE\tFLORIDA REALTORS\t7025 AUGUSTA NATIONAL DRIVE\tORLANDO, FL 32822\tTRADE ASSOCIATION\t',
+    'Vote Yes on 3 (PAC)\t10/09/2026\t2016500.00\tCHE\tNATIONAL ASSOCIATION OF REALTORS\t430 N MICHIGAN AVENUE\tCHICAGO, IL 60611\tTRADE ASSOCIATION\t',
+    'Vote Yes on 3 (PAC)\t09/30/2026\t10.33\tINT\tTD BANK NA\t1560 N ORANGE\tORLANDO, FL 32804\t\t',
+    'Vote Yes on 3 Too (PAC)\t09/30/2026\t999.00\tCHE\tSOMEONE ELSE\tX\tMIAMI, FL 33101\t\t'   // a different committee: left out
+  ].join('\r\n');
+  const E = 'Candidate/Committee\tDate\tAmount\tPayee Name\tAddress\tCity State Zip\tPurpose\tType\r\n' + [
+    'Vote Yes on 3 (PAC)\t09/16/2026\t2877750.00\tSGS INC\t6211 NW 132ND STREET\tGAINESVILLE, FL 32653\tAMENDMENT 3\tIEI',
+    'Vote Yes on 3 (PAC)\t10/06/2026\t1881200.00\tSGS, INC\t6211 NW 132ND STREET\tGAINESVILLE, FL 32653\tAMENDMENT 3\tIEI'
+  ].join('\r\n');
+  globalThis.fetch = async u => new Response(/contrib/.test(String(u)) ? C : E);
+  const f = await w.flCommitteeFilings(93318, 'Vote Yes on 3');
+  assert.equal(f.raised, 6016510.33);
+  assert.equal(f.spent, 4758950);
+  assert.equal(f.through, '2026-10-09');
+  assert.deepEqual(f.donors.slice(0, 2).map(d => [d.name, d.share, d.type]), [['FLORIDA REALTORS', 66.5, 'corporation'], ['NATIONAL ASSOCIATION OF REALTORS', 33.5, 'corporation']]);
+  assert.deepEqual(f.payees.map(p => [p.name, p.amount]), [['SGS INC', 4758950]]);   // "SGS, INC" is the same payee
+  // the state answering with an error page is an error, not "no money"
+  globalThis.fetch = async () => new Response('<html>Bad gateway</html>');
+  await assert.rejects(w.flCommitteeFilings(93318, 'Vote Yes on 3'), /unexpected response/);
+  // a question checked with no committee says so, and drops the web-research funders
+  const r = { financing: { support: [{ name: 'Some group', amount: '$5' }], oppose: [] } };
+  assert.equal(await w.refreshMeasureFilings(null, r, 'No. 1 Constitutional Amendment: Budget Stabilization Fund', 5), true);
+  assert.deepEqual([r.financing.support, r.financing.oppose], [[], []]);
+  assert.match(r.financing.note, /^No committee has registered with the Florida Division of Elections to support or oppose this question, as of Oct 17, 2026\.$/);
 });
