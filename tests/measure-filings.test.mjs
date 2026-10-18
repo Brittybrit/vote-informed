@@ -63,6 +63,10 @@ test('measure filings: a mismatch with the posted totals or a new export layout 
   const amended = S01 + '24,2026-10-09,E,"EDGE Communications, LLC","1742 W Flagler Street",,Miami,FL,33135,,,MO,Polling,7750.00,D,"EDGE"\n';
   const f = w.tallyCommittee(w.vfReportList(PAGE.replace('$247,174.98', '$239,424.98')), [amended]);
   assert.equal(f.spent, 239424.98);
+  // a report with nothing in it exports as an alert, and only passes if its posted totals are zero
+  const none = "<script> alert('No records found to export!');</script>";
+  assert.equal(w.tallyCommittee(w.vfReportList(PAGE.replace('$250,000.00', '$0.00').replace('$247,174.98', '$0.00')), [none]).raised, 0);
+  assert.throws(() => w.tallyCommittee(w.vfReportList(PAGE), [none]), /do not match/);
   // $1,100,000 of $1,100,100 is 99.9%, never rounded up to all of it
   const two = S01.replace('Corp\t"\n', 'Corp\t"\n9,2026-10-06,C,"EDGE Communications LLC","1742 W Flagler Street",,MIAMI,FL,33135,B,Consulting,CH,,100.00,,"EDGE"\n');
   const g = w.tallyCommittee(w.vfReportList(PAGE.replace('$250,000.00', '$250,100.00')), [two]);

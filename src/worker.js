@@ -1793,12 +1793,22 @@ const MEASURE_FILINGS = [
     match: /^City of Miami 1\b|safe and ready miami/i,
     committees: [
       { side: 'support', src: 'vf', c: 'muncitymiami', ca: 159, name: 'Safe and Ready Miami PC',
-        stakeNote: 'Run by Christian Ulvert, political strategist for Mayor Eileen Higgins. Its money comes from his other committee, Ethical Leadership for Florida.' }
+        stakeNote: 'Political Cortadito reports the committee is run by Christian Ulvert, political strategist for Mayor Eileen Higgins. Its reports list the money as coming from Ethical Leadership for Florida; the matching transfers appear in the county reports of Ethical Leadership for Miami, a committee registered with Miami-Dade County.' }
     ],
     stakeSources: [{ name: 'Political Cortadito, Oct 14, 2026', url: 'https://politicalcortadito.com/2026/10/14/miami-virginia-key-referendum-waterfront-money-war/' }],
     checked: ['City of Miami Clerk'], checkedOn: '2026-10-17'
   },
   { match: /^City of Miami 2\b/i, committees: [], checked: ['City of Miami Clerk'], checkedOn: '2026-10-17' },
+  {
+    match: /^School Board Referendum/i,
+    committees: [
+      { side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future',
+        stakeNote: 'WLRN describes Secure Our Future as Miami-Dade County Public Schools\' political committee for the referendum. The district also uses the name for its campaign.' }
+    ],
+    stakeSources: [{ name: 'WLRN, Oct 15, 2026', url: 'https://www.wlrn.org/education/2026-10-15/south-florida-schools-fear-voter-confusion-between-amendment-3-and-popular-school-funding-referendum' }],
+    checked: ['Miami-Dade Elections Department'], checkedOn: '2026-10-17'
+  },
+  { match: /^County Referendum [1-6]\b/i, committees: [], checked: ['Miami-Dade Elections Department'], checkedOn: '2026-10-17' },
   {
     match: /^No\. 3 Constitutional Amendment/i,
     committees: [
@@ -1854,7 +1864,9 @@ function tallyCommittee(reports, csvs) {
   const gave = new Map(), paid = new Map();
   let raised = 0, inkind = 0, spent = 0;
   reports.forEach((rep, i) => {
-    const rows = parseCSV(String(csvs[i] || ''));
+    // a report with no line items exports as a script alert instead of a CSV; its posted totals must then be zero
+    const empty = /no records found to export/i.test(String(csvs[i] || ''));
+    const rows = empty ? [[...HEAD, '', '', '', '', '', '', '', '', '', 'amount', 'amend. code']] : parseCSV(String(csvs[i] || ''));
     const head = (rows[0] || []).map(h => String(h).trim().toLowerCase());
     if (HEAD.some((h, k) => head[k] !== h) || head[13] !== 'amount' || head[14] !== 'amend. code')
       throw new Error('report ' + rep.dhc + ' export layout changed');
