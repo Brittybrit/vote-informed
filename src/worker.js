@@ -686,6 +686,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   separateCommitteeMoney(result, office, officeCode);
   if (!officeCode && await refreshFlDonors(env, key, result, name, office, false)) { markDisclosure(result); changed = true; }
   if (await refreshMdcDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
+  if (await refreshCountyLobby(env, result, name, office)) changed = true;
   if (await refreshEvDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (await refreshTxDonors(env, result, name, office, officeCode)) { markDisclosure(result); changed = true; }
   if (!officeCode && await refreshFlOutside(env, result, name, office)) changed = true;
@@ -2164,7 +2165,7 @@ async function mdcCandidateDonors(env, name, office) {
       ...(v.ik && v.ik === v.amount ? { note: 'in-kind (goods or services, not cash)' } : {}),
       ...(type !== 'individual' && type !== 'self-funded' ? { gave: doneGave(v.gave) } : {}) };
   });
-  const givers = sorted.map(v => ({ name: v.name, type: typeOf(v), amount: Math.round(v.amount), first: v.first, last: v.last,
+  const givers = sorted.map(v => ({ name: v.name, type: typeOf(v), amount: Math.round(v.amount), first: v.first, last: v.last, occ: v.occ || '',
     street: v.street, zip: (v.addr && v.addr.zip) || '' }));
   return { donors, all: givers, monetary, inkind, count, to, ties, office: c.office || office, filer: j.label, local: roundLocal(local),
     url: VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N' };
@@ -2216,6 +2217,93 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
     }
     return true;
   } catch (e) { console.log('county donors ' + name + ': ' + e.message); return false; }
+}
+
+// County races: which of a candidate's givers are registered to lobby Miami-Dade County, or are clients of a
+// registered lobbyist, from the Clerk of the Board's 2026 registrations (public/data/county-lobbyists.json,
+// exported from the Clerk's lobbyist search). Only for county offices: those are the officials county
+// lobbyists lobby. Matching rules, stated on the methodology page:
+//  - a company or group: its name equals a registered client's name, ignoring Inc, LLC, punctuation and case
+//  - a person: first and last name equal a registered lobbyist's AND the ZIP code matches the lobbyist's
+//    registered address or the occupation filed with the gift is lobbying, government affairs or consulting
+const LOBBY_VERSION = 1;
+function isCountyRace(office) {
+  return /^\s*(county commissioner|county mayor|mayor,?\s+miami-dade|miami-dade county mayor)\b/i.test(String(office || ''));
+}
+let LOBBY_INDEX = null;
+async function countyLobbyIndex(env) {
+  if (LOBBY_INDEX) return LOBBY_INDEX;
+  if (!env || !env.ASSETS) return null;
+  const res = await env.ASSETS.fetch(new Request('https://assets.local/data/county-lobbyists.json'));
+  if (!res.ok) return null;
+  return LOBBY_INDEX = buildLobbyIndex(await res.json());
+}
+function buildLobbyIndex(j) {
+  const clients = new Map(), people = new Map();
+  for (const l of j.lobbyists || []) {
+    const [last, ...rest] = String(l.name || '').split(',');
+    const firstPart = rest.join(' ').replace(/\b(esq|jr|sr|ii|iii|iv)\b\.?/gi, ' ');
+    const np = flNameParts(firstPart + ' ' + last);
+    const zip = (String(l.addr || '').match(/\b(\d{5})(?:-\d{4})?\s*$/) || String(l.addr || '').match(/\b(\d{5})\b/) || [])[1] || '';
+    const display = (firstPart.trim() + ' ' + last.trim()).replace(/\s+/g, ' ').toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
+    if (np) {
+      const k = np.first + ' ' + np.last;
+      if (!people.has(k)) people.set(k, []);
+      people.get(k).push({ name: display, zip, clients: (l.clients || []).length });
+    }
+    for (const [c] of l.clients || []) {
+      const k = donorKey(c);
+      if (!k) continue;
+      if (!clients.has(k)) clients.set(k, { name: c, lobbyists: [] });
+      if (!clients.get(k).lobbyists.includes(display)) clients.get(k).lobbyists.push(display);
+    }
+  }
+  return { clients, people, asOf: j.asOf, year: j.year, source: j.source };
+}
+const LOBBY_OCC = /lobby|government(al)?\s*(affairs|relations|consult)|public\s*affairs|political\s*consult|consultant|consulting/i;
+function lobbyMatch(idx, giver) {
+  const name = String(giver.name || '').replace(/\s*\(.*\)\s*$/, '').trim();
+  if (giver.type === 'individual') {
+    const np = flNameParts(name);
+    if (!np) return null;
+    const hits = idx.people.get(np.first + ' ' + np.last) || [];
+    const zip = String(giver.zip || '').slice(0, 5);
+    const hit = hits.find(h => (zip && h.zip === zip)) || (LOBBY_OCC.test(giver.occ || '') ? hits[0] : null);
+    return hit ? { as: 'lobbyist', lobbyist: hit.name, clients: hit.clients } : null;
+  }
+  const c = idx.clients.get(donorKey(name));
+  return c ? { as: 'client', lobbyists: c.lobbyists.slice(0, 6), more: Math.max(0, c.lobbyists.length - 6) } : null;
+}
+function countyLobbyTies(idx, all) {
+  const givers = [];
+  let total = 0;
+  for (const g of all || []) {
+    const m = lobbyMatch(idx, g);
+    if (!m) continue;
+    givers.push({ name: String(g.name).replace(/\s*\(.*\)\s*$/, '').trim(), amount: g.amount, ...m });
+    total += g.amount || 0;
+  }
+  givers.sort((a, b) => b.amount - a.amount);
+  return { year: idx.year, asOf: idx.asOf, source: idx.source, count: givers.length, total, givers: givers.slice(0, 25), of: (all || []).length };
+}
+async function refreshCountyLobby(env, result, name, office) {
+  if (!isCountyRace(office) || result.donorSource !== 'MDC') return false;
+  if (result.lobbyV === LOBBY_VERSION && result.lobbyAt === result.mdcAt) return false;
+  try {
+    const idx = await countyLobbyIndex(env);
+    if (!idx) return false;
+    const all = await fullDonors(env, name, office);
+    if (!all) return false;
+    result.countyLobby = countyLobbyTies(idx, all);
+    for (const d of result.donors || []) {
+      const g = all.find(x => donorKey(x.name) === donorKey(String(d.name).replace(/\s*\(.*\)\s*$/, '')));
+      const m = g ? lobbyMatch(idx, g) : null;
+      if (m) d.lobby = m.as; else delete d.lobby;
+    }
+    result.lobbyV = LOBBY_VERSION;
+    result.lobbyAt = result.mdcAt;
+    return true;
+  } catch (e) { console.log('county lobby ' + name + ': ' + e.message); return false; }
 }
 
 // Cities whose clerks use EasyVote Campaign Finance (Miami Gardens, Sunny Isles Beach, North Miami,
@@ -3053,7 +3141,7 @@ async function handleRaceMoney(request, env) {
 // Donors who gave to more than one candidate. For a city race the comparison covers every race in that
 // city on the ballot (the client sends them); otherwise just this race. Official county and city
 // reports only (VoterFocus, EasyVote, the hand-typed city reports). No AI, cached half a day.
-const SHARED_VERSION = 2;
+const SHARED_VERSION = 3;   // 3: county givers carry their filed occupation
 async function handleSharedDonors(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !Array.isArray(body.races)) return json({ error: 'Missing races' }, 400);

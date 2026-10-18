@@ -413,6 +413,7 @@
   .fil-card .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
   .fil-facts{list-style:none; padding:0; margin:4px 0 12px; font-size:13.5px; line-height:1.5;}
   .fil-facts li{padding:3px 0;}
+  .lob-box{margin-top:14px; padding-top:4px; border-top:1px solid #C9C9C1;}
   .tag.conn{background:var(--flag-bg); color:var(--flag-fg); box-shadow:inset 0 0 0 1px var(--flag-rule);}
   .fil-stats{font-family:var(--mono); font-size:12.5px; color:var(--ink); margin-top:6px;}
   .fil-sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:12px 0 4px;}
@@ -998,6 +999,17 @@ en: {
   'fin.no': '✕ Paying to defeat it (No side)',
   'fin.none': 'No organized funding found on this side.',
   'fil.raised': 'Raised',
+  'lob.head': 'Registered to lobby Miami-Dade County ({y})',
+  'lob.sum': '{c} of this campaign\'s {n} givers are registered county lobbyists or their clients. Together they gave {amt}.',
+  'lob.none': 'None of this campaign\'s {n} givers matches a registered county lobbyist or client.',
+  'lob.lobbyist': 'County lobbyist',
+  'lob.client': 'Lobbyist client',
+  'lob.def.lobbyist': 'This giver is registered with the Miami-Dade Clerk of the Board as a lobbyist this year.',
+  'lob.def.client': 'This giver is a registered client of at least one Miami-Dade County lobbyist this year.',
+  'lob.isLob': 'Registered lobbyist with {n} clients.',
+  'lob.isClient': 'Client of {l}.',
+  'lob.more': 'and {n} more',
+  'lob.rule': 'Clerk of the Board registrations, exported {d}. Companies match on the registered client name. People match on first and last name plus the ZIP code on the registration or an occupation of lobbying, government affairs or consulting.',
   'fil.giver1': '1 giver',
   'fil.givers': '{n} givers',
   'mix.businesses': 'Businesses',
@@ -1465,6 +1477,17 @@ es: {
   'fin.no': '✕ Pagan para rechazarla (lado del No)',
   'fin.none': 'No se encontró financiamiento organizado en este lado.',
   'fil.raised': 'Recaudó',
+  'lob.head': 'Inscritos para cabildear ante el Condado Miami-Dade ({y})',
+  'lob.sum': '{c} de los {n} donantes de esta campaña son cabilderos del condado inscritos o sus clientes. Juntos dieron {amt}.',
+  'lob.none': 'Ninguno de los {n} donantes de esta campaña coincide con un cabildero o cliente inscrito ante el condado.',
+  'lob.lobbyist': 'Cabildero del condado',
+  'lob.client': 'Cliente de cabildero',
+  'lob.def.lobbyist': 'Este donante está inscrito como cabildero ante el Secretario de la Comisión de Miami-Dade este año.',
+  'lob.def.client': 'Este donante es cliente inscrito de al menos un cabildero del Condado Miami-Dade este año.',
+  'lob.isLob': 'Cabildero inscrito con {n} clientes.',
+  'lob.isClient': 'Cliente de {l}.',
+  'lob.more': 'y {n} más',
+  'lob.rule': 'Inscripciones del Secretario de la Comisión, exportadas el {d}. Las empresas coinciden por el nombre del cliente inscrito. Las personas coinciden por nombre y apellido más el código postal de la inscripción o una ocupación de cabildeo, asuntos gubernamentales o consultoría.',
   'fil.giver1': '1 donante',
   'fil.givers': '{n} donantes',
   'mix.businesses': 'Empresas',
@@ -1932,6 +1955,17 @@ ht: {
   'fin.no': '✕ Peye pou l pa pase (bò Non)',
   'fin.none': 'Nou pa jwenn okenn finansman òganize sou bò sa a.',
   'fil.raised': 'Ranmase',
+  'lob.head': 'Enskri pou fè lobi nan Konte Miami-Dade ({y})',
+  'lob.sum': '{c} nan {n} donatè kanpay sa a se lobiyis konte ki enskri oswa kliyan yo. Ansanm yo bay {amt}.',
+  'lob.none': 'Okenn nan {n} donatè kanpay sa a pa koresponn ak yon lobiyis oswa kliyan ki enskri nan konte a.',
+  'lob.lobbyist': 'Lobiyis konte',
+  'lob.client': 'Kliyan lobiyis',
+  'lob.def.lobbyist': 'Donatè sa a enskri kòm lobiyis nan Grefye Komisyon Miami-Dade ane sa a.',
+  'lob.def.client': 'Donatè sa a se kliyan enskri omwen yon lobiyis Konte Miami-Dade ane sa a.',
+  'lob.isLob': 'Lobiyis enskri ak {n} kliyan.',
+  'lob.isClient': 'Kliyan {l}.',
+  'lob.more': 'ak {n} lòt',
+  'lob.rule': 'Enskripsyon Grefye Komisyon an, ekspòte {d}. Konpayi yo koresponn sou non kliyan ki enskri a. Moun yo koresponn sou non ak siyati plis kòd postal enskripsyon an oswa yon okipasyon lobi, zafè gouvènman oswa konsiltasyon.',
   'fil.giver1': '1 donatè',
   'fil.givers': '{n} donatè',
   'mix.businesses': 'Biznis',
@@ -2783,6 +2817,22 @@ function funderRows(list){
   }).join('');
 }
 
+// County races: givers registered to lobby Miami-Dade County, or clients of a registered lobbyist
+function lobbyTag(as){
+  if(as !== 'lobbyist' && as !== 'client') return '';
+  return '<span class="tag conn" title="' + esc(t('lob.def.' + as)) + '">' + t('lob.' + as) + '</span>';
+}
+function countyLobbyBlock(cl){
+  if(!cl) return '';
+  var h = '<div class="lob-box"><div class="fil-sub">' + t('lob.head', {y: cl.year}) + '</div>';
+  if(!cl.count) return h + '<p class="fine">' + t('lob.none', {n: cl.of}) + srcLink(cl.source && cl.source.url, cl.source && cl.source.name) + '</p></div>';
+  h += '<p style="font-size:13.5px;line-height:1.5;margin:4px 0 8px">' + t('lob.sum', {c: cl.count, n: cl.of, amt: usd(cl.total)}) + '</p>';
+  h += cl.givers.map(function(g){
+    var who = g.as === 'lobbyist' ? t('lob.isLob', {n: g.clients || 0}) : t('lob.isClient', {l: esc((g.lobbyists || []).join(', ')) + (g.more ? ' ' + t('lob.more', {n: g.more}) : '')});
+    return '<div class="fil-row"><div>' + esc(g.name) + '</div><div class="amt">' + usd(g.amount) + '</div><div class="what">' + lobbyTag(g.as) + ' ' + who + '</div></div>';
+  }).join('');
+  return h + '<p class="fine">' + t('lob.rule', {d: esc(fmtDay(cl.asOf))}) + srcLink(cl.source && cl.source.url, cl.source && cl.source.name) + '</p></div>';
+}
 // Both sides at a glance, all arithmetic on the filings: money, number of givers, largest giver's share,
 // and both sides' money per registered voter where the question is decided (formula on hover).
 function factsBlock(fx){
@@ -3621,7 +3671,7 @@ function renderDossier(cand, race, r, cached){
       }
       return '<div class="donor-row"><div><span class="dname">' + esc(d.name) + '</span>' +
       (d.note ? '<div class="enote">' + esc(d.note) + '</div>' : '') +
-      '<span class="dtype">' + kindTag(d.type, d.type_tr) + disclosureTag(d) + srcLink(d.url, d.srcLabel) + '</span></div>' +
+      '<span class="dtype">' + kindTag(d.type, d.type_tr) + lobbyTag(d.lobby) + disclosureTag(d) + srcLink(d.url, d.srcLabel) + '</span></div>' +
       '<span class="damt">' + esc(fmtAmount(d.amount)) + '</span>' +
       (isOrgEntry(d, d.type) ? orgDetails(d) : '') + '</div>';
     }).join('');
@@ -3632,6 +3682,7 @@ function renderDossier(cand, race, r, cached){
   }
   if(r.officialMiss && !r.donorSource) html += '<div class="cov-box">' + t('donors.noMatch', {src: esc(r.officialMiss)}) + '</div>';
   if(r.donorDataNote) html += '<p class="fine">' + esc(r.donorDataNote) + '</p>';
+  html += countyLobbyBlock(r.countyLobby);
   html += coverageBox(race);
   var listUrl = r.donorListUrl || '';
   if(!listUrl){   // federal results cached before this field existed: rebuild from the committee ID in the note
