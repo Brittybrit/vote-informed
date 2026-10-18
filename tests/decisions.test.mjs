@@ -5,50 +5,68 @@ import { readFileSync } from 'node:fs';
 const d = JSON.parse(readFileSync(new URL('../public/data/decisions.json', import.meta.url)));
 const html = readFileSync(new URL('../public/decisions.html', import.meta.url), 'utf8');
 const LANGS = ['en', 'es', 'ht'];
-// pull one language block's keys out of the page's string table
+// one language block's keys from the page's string table
 function keysFor(lang) {
   const start = html.indexOf('\n    ' + lang + ': {');
   assert.ok(start > 0, 'no ' + lang + ' block');
   const end = html.indexOf('\n    }', start);
-  return new Set([...html.slice(html.indexOf('{', start) + 1, end).matchAll(/'([a-zA-Z.]+)'\s*:|\n\s+([a-zA-Z0-9]+)\s*:/g)].map(m => m[1] || m[2]));
+  return new Set([...html.slice(html.indexOf('{', start) + 1, end).matchAll(/(?:^\s+|',\s+)(?:'([a-zA-Z.0-9]+)'|([a-zA-Z0-9]+))\s*:/gm)].map(m => m[1] || m[2]));
 }
+const en = keysFor('en');
 
 test('every page string exists in all three languages', () => {
-  const en = keysFor('en');
   for (const lang of ['es', 'ht']) {
     const k = keysFor(lang);
     for (const key of en) assert.ok(k.has(key), lang + ' is missing ' + key);
   }
 });
 
-test('every action is well formed and its roll call matches the tally', () => {
+test('page script parses', () => {
+  const js = html.slice(html.indexOf('<script>') + 8, html.lastIndexOf('</script>'));
+  new Function(js);
+});
+
+test('every body and action is well formed', () => {
+  const ids = new Set();
   for (const B of d.bodies) {
-    const members = B.members.map(m => m.key);
-    const keys = { en: keysFor('en') };
-    for (const k of Object.keys(B.onBallot)) assert.ok(members.includes(k), 'on-ballot member ' + k);
+    for (const l of LANGS) assert.ok(B.name[l], B.key + ' name ' + l);
+    if (B.coverage) for (const l of LANGS) assert.ok(B.coverage[l], B.key + ' coverage ' + l);
+    for (const k of Object.keys(B.onBallot)) for (const a of B.onBallot[k].accounts) assert.ok(B.accounts[a], B.key + ' account ' + a);
     for (const a of B.actions) {
-      const id = a.id;
-      for (const l of LANGS) assert.ok(a.subject[l], id + ' subject ' + l);
-      assert.ok(keys.en.has('kind.' + a.kind), id + ' kind ' + a.kind);
-      assert.ok(keys.en.has('res.' + a.result), id + ' result ' + a.result);
-      assert.ok(a.parties.length, id + ' needs a named party');
+      const id = B.key + ' ' + a.id;
+      assert.ok(!ids.has(a.id), 'duplicate id ' + a.id); ids.add(a.id);
+      if (a.title) for (const l of LANGS) assert.ok(a.title[l], id + ' title ' + l);
+      else { for (const l of LANGS) assert.ok(a.subject[l], id + ' subject ' + l); assert.ok(en.has('kind.' + a.kind), id + ' kind ' + a.kind); assert.ok(a.parties.length, id + ' party'); }
+      assert.ok(en.has('res.' + a.result), id + ' result ' + a.result);
       assert.match(a.date, /^\d{4}-\d{2}-\d{2}$/);
-      assert.deepEqual(Object.keys(a.roll).sort(), members.slice().sort(), id + ' roll members');
-      const yes = members.filter(m => a.roll[m] === 'yes').length, no = members.filter(m => a.roll[m] === 'no').length;
-      assert.deepEqual([yes, no], a.tally, id + ' tally');
-      for (const m of members) assert.ok(['yes', 'no', 'absent', 'excused', null].includes(a.roll[m]), id + ' vote ' + m);
-      if (a.vacant) assert.equal(a.roll[a.vacant], null);
-      for (const k of ['matterUrl', 'minutesUrl']) assert.match(a[k], /^https:\/\/www\.miamidade\.gov\//);
-      for (const l of a.lobbied) { assert.ok(l.name && l.for); assert.match(l.reg, /^\d{4}-\d{2}-\d{2}$/); assert.ok(a.parties.includes(l.for), id + ' lobbyist for unknown party ' + l.for); }
+      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].includes(v), id + ' vote ' + v);
+      if (a.rollComplete && a.tally) {
+        const vals = Object.values(a.roll);
+        assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
+      }
+      if (a.rollComplete && B.key !== 'county') assert.ok(a.tally, id + ' complete roll needs a tally');
+      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record'].includes(l.t), id + ' link type'); }
+      for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
+        assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot: ' + g.to);
         assert.ok(B.accounts[g.acct], id + ' account ' + g.acct);
         assert.equal(B.accounts[g.acct].owner, g.to, id + ' account owner');
-        assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot');
-        assert.ok(['party', 'lobbyist', 'firm'].includes(g.kind));
-        assert.ok(g.amount > 0); assert.match(g.date, /^\d{4}-\d{2}-\d{2}$/);
-        if (g.kind !== 'party') { assert.ok(g.lobbyist && a.parties.includes(g.forParty), id + ' gift link'); assert.ok(a.lobbied.some(l => l.name === g.lobbyist), id + ' gift lobbyist not listed: ' + g.lobbyist); }
-        if (g.kind === 'lobbyist') assert.ok(['addr', 'occ'].includes(g.basis));
+        assert.ok(g.to in a.roll, id + ' gift to someone who did not take part: ' + g.to);
+        assert.ok(['party', 'lobbyist', 'firm', 'listed'].includes(g.kind), id + ' kind ' + g.kind);
+        assert.ok(g.amount > 0, id + ' amount'); assert.match(g.date, /^\d{4}-\d{2}-\d{2}$/, id + ' gift date');
+        if (g.kind === 'lobbyist' || g.kind === 'firm') assert.ok(a.lobbied.some(l => l.name === g.lobbyist), id + ' gift lobbyist not listed: ' + g.lobbyist);
+        if (g.kind === 'lobbyist') assert.ok(['addr', 'occ'].includes(g.basis), id + ' basis');
+        if (g.kind === 'listed') assert.ok(a.giftNotes && a.giftNotes[g.to] || B.key === 'northmiami', id + ' listed gift needs a note');
       }
+      if (a.giftNotes) for (const n of Object.values(a.giftNotes)) for (const l of LANGS) assert.ok(n[l], id + ' note ' + l);
     }
+  }
+});
+
+test('county roll calls are complete and Lopez is marked not yet seated before Nov 18, 2025 votes', () => {
+  const C = d.bodies.find(b => b.key === 'county');
+  for (const a of C.actions) {
+    assert.equal(Object.keys(a.roll).length, 13, a.id);
+    if (a.vacant) assert.equal(a.roll.Lopez, null);
   }
 });

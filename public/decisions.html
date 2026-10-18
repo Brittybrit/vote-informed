@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Official Actions: Votes, Lobbyists and Gifts · BALLOT305.ORG</title>
-<meta name="description" content="Miami-Dade County Commission actions that benefit a named company or group: how each commissioner voted, who was registered to lobby for the company, and gifts from them to commissioners on the Nov. 3, 2026 ballot.">
+<meta name="description" content="Miami-Dade County Commission and city council actions that benefit a named company or group: how each member voted, who was registered to lobby for the company, and gifts from them to officials on the Nov. 3, 2026 ballot.">
 <meta property="og:title" content="Official Actions: Votes, Lobbyists and Gifts · Ballot305">
 <meta property="og:description" content="Start from the vote: who voted, who lobbied, and whether those lobbyists or companies gave to the officials on the ballot.">
 <meta property="og:image" content="https://ballot305.org/og-image.png">
@@ -29,13 +29,15 @@
   h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
   .lede{color:var(--ink-soft); margin-bottom:10px;}
   .bodies{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 4px;}
-  .bodies span{font-family:var(--mono); font-size:11.5px; border:1.5px solid var(--ink); padding:3px 9px;}
+  .bodies a{text-decoration:none; color:inherit;}
+  .bodies span{font-family:var(--mono); font-size:11.5px; border:1.5px solid var(--ink); padding:3px 9px; display:inline-block;}
+  .bodies small{opacity:.7;}
   .bodies span.on{background:var(--ink); color:var(--paper);}
   .bodies span.soon{border-color:var(--hair); color:var(--ink-soft);}
   .stats{display:flex; flex-wrap:wrap; gap:8px 22px; font-family:var(--mono); font-size:12.5px; margin:14px 0 14px; padding:10px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);}
   .stats b{font-family:var(--sans); font-size:20px; font-weight:900; display:block; line-height:1.1;}
   .ballot{font-size:14px; margin-bottom:14px;}
-  .ballot div{margin-top:4px; padding-left:10px; border-left:4px solid var(--rule);}
+  .ballot div{margin-top:6px; padding-left:10px; border-left:4px solid var(--rule);}
   .ballot .muted{border-left-color:var(--hair); color:var(--ink-soft);}
   .tools{position:sticky; top:0; background:var(--paper); z-index:2; padding:10px 0 8px; border-bottom:2px solid var(--rule);}
   .tools input[type=search]{width:100%; font:inherit; font-size:15px; padding:9px 11px; border:1.5px solid var(--rule); background:#fff; color:var(--ink); border-radius:0;}
@@ -121,8 +123,19 @@
       noGift: 'No gift from the company, its registered lobbyists or their firms was found in {accts}.',
       matter: 'County file {id}', clerk: 'Signed resolution with roll call', minutes: 'Meeting minutes', draft: 'draft', registry: 'Lobbyist registry',
       how1: 'How this is made: every item the County Commission acted on from November 18, 2025 (when Commissioner Lopez was seated) through October 6, 2026 was searched for a named private company, developer or group that receives a contract, lease, land, zoning approval, money or a change to an existing deal. Routine items with no named beneficiary are not listed. Each vote comes from the Clerk of the Board’s minutes, which list the motion, the tally, each “no” vote and each absence, and was checked against the roll call in the signed resolution where the clerk posts one. Many minutes are still marked draft by the clerk.',
-      how2: 'Lobbyists are everyone the county’s lobbyist registry lists for the company in 2025 or 2026, with the registration date it records. Gifts are matched three ways, and each gift says which: the giver is the company itself; the giver has the same name as a registered lobbyist and the report shows the same address or a lobbying-type job; or the giver is one of four lobbying firms (Bercow Radell Fernandez Larkin & Tapanes, Capital City Consulting, LSN Partners, Pantin Gov) at the same office address as a registered lobbyist on the item. Names are shown as each record spells them. Only commissioners on the November 3 ballot were checked: Vicki L. Lopez (her county campaign and the political committee she chairs) and Oliver G. Gilbert III (his federal campaign for Congress). Read the <a href="/methodology#ties">full method</a>. Found an error? Email <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
-      foot: '<a href="/">Back to Ballot305.org</a> · <a href="/actions">Donors, lobbyists and official actions by candidate</a> · <a href="/methodology">How it works</a> · <a href="/about">About</a>'
+      how2: 'Gifts are matched three ways, and each gift says which: the giver is the company itself; the giver has the same name as a registered lobbyist on the item and the report shows the same address or a lawyer, lobbyist or consultant job; or the giver is a lobbying firm at the same office address as a registered lobbyist on the item. In cities without a registry, the note under a gift says how it connects. Names are shown as each record spells them. Only officials on the November 3 ballot were checked. Read the <a href="/methodology#decisions">full method</a>. Found an error? Email <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
+      foot: '<a href="/">Back to Ballot305.org</a> · <a href="/actions">Donors, lobbyists and official actions by candidate</a> · <a href="/methodology">How it works</a> · <a href="/about">About</a>',
+      lede2: 'This page starts from the vote. For each action by the Miami-Dade County Commission and the city councils that benefits a named company or group, it shows how each member voted, who was registered to lobby for that company, and whether the company, those lobbyists or their lobbying firms gave to an official who is on the November 3, 2026 ballot. Gifts are listed with the dates the reports show, before or after the vote. Nothing here claims a vote was bought.',
+      'body.state2': 'Florida Legislature (next)', sActs2: 'actions listed', sGift2: 'with a gift to someone on the ballot',
+      offBallot2: 'The other members are not on the November 3 ballot. Their votes are shown, but their donors were not checked.',
+      allVotes2: 'How each member voted', gifts2: 'Gifts to members on the ballot', lobbied2: 'Registered lobbyists for the company',
+      'res.passed': 'Passed', 'res.failed': 'Failed', 'res.withdrawn': 'Withdrawn before a vote', 'kind.permit': 'Permit',
+      rollPartial: 'The record says the vote was unanimous but does not name every member; names shown are the ones it lists.', consentNote: 'Passed on the consent agenda.',
+      'role.moved': 'made the motion', 'role.seconded': 'seconded', 'role.presented': 'presented the item', 'role.sponsoredItem': 'sponsored the item',
+      firstReading: 'First reading: {date}.', namedLobbyist: 'Lobbyist named on the agenda: {n}', coverageH: 'What was checked',
+      record: 'Meeting record', legistar: 'City file', othersH: 'Other cities with officials on the ballot',
+      'st.none': 'reviewed; no official actions found that name one of their donors', 'st.nodata': 'no itemized campaign reports posted, so this can’t be checked', 'st.nogivers': 'reports list no outside donors',
+      howCity: 'For each city, the box under its name says what was checked. Where a city posts a lobbyist registry, the list starts from what registered lobbyists’ clients asked for; where it doesn’t, the list starts from items that name a donor of someone on the ballot, and those gifts are shown with a note on how they connect.'
     },
     es: {
       title: 'Acciones oficiales: votos, cabilderos y donaciones',
@@ -151,8 +164,19 @@
       noGift: 'No se encontró ninguna donación de la empresa, sus cabilderos registrados o sus firmas en {accts}.',
       matter: 'Expediente del condado {id}', clerk: 'Resolución firmada con la votación', minutes: 'Acta de la reunión', draft: 'borrador', registry: 'Registro de cabilderos',
       how1: 'Cómo se hace: se revisó cada asunto que la Comisión del Condado aprobó o rechazó desde el 18 de noviembre de 2025 (cuando la comisionada Lopez tomó posesión) hasta el 6 de octubre de 2026, buscando una empresa privada, desarrollador o grupo con nombre que recibe un contrato, arrendamiento, terreno, aprobación de zonificación, dinero o un cambio a un acuerdo existente. No se incluyen asuntos de rutina sin un beneficiario con nombre. Cada voto viene de las actas de la Secretaría de la Junta, que muestran la moción, el conteo, cada voto en contra y cada ausencia, y se comparó con la votación de la resolución firmada cuando la secretaría la publica. Muchas actas todavía están marcadas como borrador.',
-      how2: 'Los cabilderos son todas las personas que el registro de cabilderos del condado muestra para la empresa en 2025 o 2026, con la fecha de registro que consta. Las donaciones se vinculan de tres formas, y cada una dice cuál: el donante es la propia empresa; el donante tiene el mismo nombre que un cabildero registrado y el reporte muestra la misma dirección o un empleo de cabildeo; o el donante es una de cuatro firmas de cabildeo (Bercow Radell Fernandez Larkin & Tapanes, Capital City Consulting, LSN Partners, Pantin Gov) en la misma dirección de oficina que un cabildero registrado en el asunto. Los nombres aparecen como los escribe cada registro. Solo se revisaron los comisionados que están en la boleta del 3 de noviembre: Vicki L. Lopez (su campaña al condado y el comité político que preside) y Oliver G. Gilbert III (su campaña federal al Congreso). Lea el <a href="/methodology#ties">método completo</a>. ¿Encontró un error? Escriba a <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
-      foot: '<a href="/">Volver a Ballot305.org</a> · <a href="/actions">Donantes, cabilderos y acciones oficiales por candidato</a> · <a href="/methodology">Cómo funciona</a> · <a href="/about">Acerca de</a>'
+      how2: 'Las donaciones se vinculan de tres formas, y cada una dice cuál: el donante es la propia empresa; el donante tiene el mismo nombre que un cabildero registrado en el asunto y el reporte muestra la misma dirección o un empleo de abogado, cabildero o consultor; o el donante es una firma de cabildeo en la misma dirección de oficina que un cabildero registrado en el asunto. En ciudades sin registro, la nota bajo cada donación explica la relación. Los nombres aparecen como los escribe cada registro. Solo se revisaron los funcionarios que están en la boleta del 3 de noviembre. Lea el <a href="/methodology#decisions">método completo</a>. ¿Encontró un error? Escriba a <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
+      foot: '<a href="/">Volver a Ballot305.org</a> · <a href="/actions">Donantes, cabilderos y acciones oficiales por candidato</a> · <a href="/methodology">Cómo funciona</a> · <a href="/about">Acerca de</a>',
+      lede2: 'Esta página empieza por el voto. Para cada acción de la Comisión del Condado Miami-Dade y de los concejos municipales que beneficia a una empresa o grupo con nombre, muestra cómo votó cada miembro, quién estaba registrado como cabildero de esa empresa y si la empresa, esos cabilderos o sus firmas de cabildeo donaron a un funcionario que está en la boleta del 3 de noviembre de 2026. Las donaciones aparecen con las fechas que muestran los reportes, antes o después del voto. Nada aquí afirma que un voto fue comprado.',
+      'body.state2': 'Legislatura de Florida (siguiente)', sActs2: 'acciones en la lista', sGift2: 'con una donación a alguien en la boleta',
+      offBallot2: 'Los demás miembros no están en la boleta del 3 de noviembre. Se muestran sus votos, pero no se revisaron sus donantes.',
+      allVotes2: 'Cómo votó cada miembro', gifts2: 'Donaciones a miembros en la boleta', lobbied2: 'Cabilderos registrados de la empresa',
+      'res.passed': 'Aprobado', 'res.failed': 'Rechazado', 'res.withdrawn': 'Retirado antes de votar', 'kind.permit': 'Permiso',
+      rollPartial: 'El acta dice que la votación fue unánime pero no nombra a cada miembro; se muestran los nombres que aparecen.', consentNote: 'Aprobado en la agenda de consentimiento.',
+      'role.moved': 'presentó la moción', 'role.seconded': 'secundó', 'role.presented': 'presentó el asunto', 'role.sponsoredItem': 'patrocinó el asunto',
+      firstReading: 'Primera lectura: {date}.', namedLobbyist: 'Cabildero nombrado en la agenda: {n}', coverageH: 'Qué se revisó',
+      record: 'Acta de la reunión', legistar: 'Expediente de la ciudad', othersH: 'Otras ciudades con funcionarios en la boleta',
+      'st.none': 'revisado; no se encontraron acciones oficiales que nombren a uno de sus donantes', 'st.nodata': 'no hay reportes de campaña detallados, así que no se puede revisar', 'st.nogivers': 'sus reportes no muestran donantes externos',
+      howCity: 'Para cada ciudad, el recuadro bajo su nombre explica qué se revisó. Donde la ciudad publica un registro de cabilderos, la lista parte de lo que pidieron los clientes de cabilderos registrados; donde no, parte de los asuntos que nombran a un donante de alguien en la boleta, y esas donaciones se muestran con una nota sobre la relación.'
     },
     ht: {
       title: 'Aksyon ofisyèl: vòt, lobiyis ak kado',
@@ -181,11 +205,22 @@
       noGift: 'Nou pa jwenn okenn kado konpayi a, lobiyis anrejistre li yo oswa konpayi yo nan {accts}.',
       matter: 'Dosye konte {id}', clerk: 'Rezolisyon siyen ak vòt la', minutes: 'Pwosè-vèbal reyinyon an', draft: 'bouyon', registry: 'Rejis lobiyis',
       how1: 'Kijan nou fè l: nou chèche chak dosye Komisyon Konte a te deside depi 18 novanm 2025 (lè komisè Lopez te chita) rive 6 oktòb 2026, pou jwenn yon konpayi prive, yon devlopè oswa yon gwoup ki gen non ki resevwa yon kontra, yon lokasyon, tè, yon apwobasyon zonaj, lajan oswa yon chanjman nan yon akò ki la deja. Nou pa mete dosye woutin ki pa gen yon benefisyè ki gen non. Chak vòt soti nan pwosè-vèbal Grefye Konsèy la, ki montre mosyon an, total la, chak vòt non ak chak absans, epi nou konpare l ak vòt ki nan rezolisyon siyen an lè grefye a pibliye l. Anpil pwosè-vèbal toujou make bouyon.',
-      how2: 'Lobiyis yo se tout moun rejis lobiyis konte a montre pou konpayi a an 2025 oswa 2026, ak dat anrejistreman li ekri. Nou mare kado yo twa fason, epi chak kado di kilès: moun ki bay la se konpayi a menm; moun ki bay la gen menm non ak yon lobiyis anrejistre epi rapò a montre menm adrès la oswa yon travay lobi; oswa moun ki bay la se youn nan kat konpayi lobi (Bercow Radell Fernandez Larkin & Tapanes, Capital City Consulting, LSN Partners, Pantin Gov) nan menm adrès biwo ak yon lobiyis anrejistre sou dosye a. Nou ekri non yo jan chak dosye ekri yo. Nou verifye sèlman komisè ki sou bilten vòt 3 novanm lan: Vicki L. Lopez (kanpay konte li ak komite politik li prezide a) ak Oliver G. Gilbert III (kanpay federal li pou Kongrè). Li <a href="/methodology#ties">tout metòd la</a>. Ou jwenn yon erè? Ekri <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
-      foot: '<a href="/">Retounen sou Ballot305.org</a> · <a href="/actions">Donatè, lobiyis ak aksyon ofisyèl pa kandida</a> · <a href="/methodology">Kijan li mache</a> · <a href="/about">Konsènan</a>'
+      how2: 'Nou mare kado yo twa fason, epi chak kado di kilès: moun ki bay la se konpayi a menm; moun ki bay la gen menm non ak yon lobiyis anrejistre sou dosye a epi rapò a montre menm adrès la oswa yon travay avoka, lobiyis oswa konsiltan; oswa moun ki bay la se yon konpayi lobi nan menm adrès biwo ak yon lobiyis anrejistre sou dosye a. Nan vil ki pa gen rejis, nòt anba kado a di kijan li konekte. Nou ekri non yo jan chak dosye ekri yo. Nou verifye sèlman ofisyèl ki sou bilten vòt 3 novanm lan. Li <a href="/methodology#decisions">tout metòd la</a>. Ou jwenn yon erè? Ekri <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
+      foot: '<a href="/">Retounen sou Ballot305.org</a> · <a href="/actions">Donatè, lobiyis ak aksyon ofisyèl pa kandida</a> · <a href="/methodology">Kijan li mache</a> · <a href="/about">Konsènan</a>',
+      lede2: 'Paj sa a kòmanse ak vòt la. Pou chak aksyon Komisyon Konte Miami-Dade ak konsèy vil yo ki benefisye yon konpayi oswa yon gwoup ki gen non, li montre kijan chak manm te vote, ki moun ki te anrejistre kòm lobiyis pou konpayi sa a, epi si konpayi a, lobiyis sa yo oswa konpayi lobi yo te bay yon ofisyèl ki sou bilten vòt 3 novanm 2026 la. Nou mete kado yo ak dat rapò yo montre, anvan oswa apre vòt la. Anyen isit la pa di yo te achte yon vòt.',
+      'body.state2': 'Lejislati Florid (apre)', sActs2: 'aksyon nan lis la', sGift2: 'ak yon kado bay yon moun ki sou bilten an',
+      offBallot2: 'Lòt manm yo pa sou bilten vòt 3 novanm lan. Nou montre vòt yo, men nou pa verifye donatè yo.',
+      allVotes2: 'Kijan chak manm te vote', gifts2: 'Kado bay manm ki sou bilten an', lobbied2: 'Lobiyis anrejistre pou konpayi a',
+      'res.passed': 'Pase', 'res.failed': 'Pa pase', 'res.withdrawn': 'Retire anvan vòt', 'kind.permit': 'Pèmi',
+      rollPartial: 'Dosye a di vòt la te alinanimite men li pa nonmen chak manm; non nou montre yo se sa li bay.', consentNote: 'Pase nan ajanda konsantman an.',
+      'role.moved': 'te pwopoze mosyon an', 'role.seconded': 'te apiye', 'role.presented': 'te prezante dosye a', 'role.sponsoredItem': 'te parennen dosye a',
+      firstReading: 'Premye lekti: {date}.', namedLobbyist: 'Lobiyis ajanda a nonmen: {n}', coverageH: 'Sa nou verifye',
+      record: 'Dosye reyinyon an', legistar: 'Dosye vil la', othersH: 'Lòt vil ki gen ofisyèl sou bilten an',
+      'st.none': 'revize; nou pa jwenn aksyon ofisyèl ki nonmen youn nan donatè li yo', 'st.nodata': 'pa gen rapò kanpay detaye, kidonk nou pa ka verifye', 'st.nogivers': 'rapò li yo pa gen donatè deyò',
+      howCity: 'Pou chak vil, bwat ki anba non li a di sa nou verifye. Kote vil la pibliye yon rejis lobiyis, lis la kòmanse ak sa kliyan lobiyis anrejistre yo te mande; kote li pa pibliye l, lis la kòmanse ak dosye ki nonmen yon donatè yon moun ki sou bilten an, epi nou montre kado sa yo ak yon nòt sou kijan yo konekte.'
     }
   };
-  var LANG = 'en', DATA = null, F = 'all';
+  var LANG = 'en', DATA = null, F = 'all', BK = null;
   try { var s0 = localStorage.getItem('ballot305.lang'); if (S[s0]) LANG = s0; } catch(e){}
   function t(k, v){ var s = (S[LANG][k] != null ? S[LANG][k] : S.en[k]) || ''; return v ? s.replace(/\{(\w+)\}/g, function(_, n){ return v[n] != null ? v[n] : ''; }) : s; }
   function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -196,98 +231,133 @@
   function norm(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   function list(a){ return a.length < 2 ? (a[0] || '') : a.slice(0, -1).join(', ') + (LANG === 'es' ? ' y ' : LANG === 'ht' ? ' ak ' : ' and ') + a[a.length - 1]; }
 
-  function body(){ return DATA && DATA.bodies && DATA.bodies[0]; }
-  function mem(B, k){ for(var i = 0; i < B.members.length; i++) if(B.members[i].key === k) return B.members[i]; return {name: k}; }
-  function acctNames(B, keys){ return list(keys.map(function(k){ return L(B.accounts[k].name); })); }
+  function bodies(){ return (DATA && DATA.bodies) || []; }
+  function cur(){ var bs = bodies(); for (var i = 0; i < bs.length; i++) if (bs[i].key === BK) return bs[i]; return bs[0]; }
+  function mem(B, k){ for(var i = 0; i < B.members.length; i++) if(B.members[i].key === k) return B.members[i].name; return k; }
+  function acctNames(B, keys){ return list(keys.map(function(k){ return B.accounts[k] ? L(B.accounts[k].name) : k; })); }
   function vword(v){ return t('v.' + (v || 'vacant')); }
   function hasGift(a){ return (a.gifts || []).length > 0; }
-  function isSplit(a){ return a.tally && a.tally[1] > 0; }
+  function isSplit(a){ return !!(a.tally && a.tally[1] > 0); }
+  function regDates(l){ var r = (l.regs || (l.reg ? [l.reg] : [])).slice().sort(); if(!r.length) return ''; var a0 = /^\d{4}-\d{2}$/.test(r[0]) ? r[0] : day(r[0]), a1 = /^\d{4}-\d{2}$/.test(r[r.length-1]) ? r[r.length-1] : day(r[r.length-1]); return a0 === a1 ? a0 : a0 + ' – ' + a1; }
 
   function lobHtml(a){
-    var ls = a.lobbied || [];
-    if(!ls.length) return '';
+    var ls = a.lobbied || [], out = '';
+    if(a.namedLobbyist) out += '<div class="lob">' + t('namedLobbyist', {n: esc(a.namedLobbyist)}) + '</div>';
+    if(!ls.length) return out ? '<div class="lobs"><div class="h">' + t('lobbied2') + '</div>' + out + '</div>' : '';
     var by = {}, order = [];
-    ls.forEach(function(l){ if(!by[l.for]){ by[l.for] = []; order.push(l.for); } by[l.for].push(l); });
+    ls.forEach(function(l){ var k = l.for || ''; if(!by[k]){ by[k] = []; order.push(k); } by[k].push(l); });
     var rows = order.map(function(p){
-      return by[p].map(function(l){ return '<div class="lob"><b>' + esc(l.name) + '</b>' + (order.length > 1 ? ' ' + t('lobFor', {p: esc(p)}) : '') + ' · ' + t('lobReg', {date: esc(day(l.reg))}) + '</div>'; }).join('');
+      return by[p].map(function(l){ var d = regDates(l); return '<div class="lob"><b>' + esc(l.name) + '</b>' + (l.firm ? ' (' + esc(l.firm) + ')' : '') + (p && (order.length > 1 || !a.parties || a.parties.indexOf(p) < 0) ? ' ' + t('lobFor', {p: esc(p)}) : '') + (d ? ' · ' + t('lobReg', {date: esc(d)}) : '') + '</div>'; }).join('');
     }).join('');
-    var head = '<div class="h">' + t('lobbied') + (order.length === 1 ? ' (' + esc(order[0]) + ')' : '') + '</div>';
+    var head = '<div class="h">' + t('lobbied2') + '</div>' + out;
     if(ls.length > 6) return '<div class="lobs">' + head + '<details><summary>' + t('lobMore', {n: ls.length}) + '</summary>' + rows + '</details></div>';
     return '<div class="lobs">' + head + rows + '</div>';
   }
   function giftHtml(B, a){
-    var on = Object.keys(B.onBallot), out = '';
-    var gs = a.gifts || [];
+    var on = Object.keys(B.onBallot), out = '', gs = a.gifts || [];
     if(gs.length){
-      out += '<div class="gifts"><div class="h">' + t('gifts') + '</div>' + gs.map(function(g){
-        var basis = '';
-        if(g.kind === 'lobbyist') basis = g.basis === 'addr' ? t('basisAddr') : t('basisOcc', {occ: esc(g.occ)});
-        var how = g.kind === 'party' ? t('how.party') : t('how.' + g.kind, {lob: esc(g.lobbyist), p: esc(g.forParty), basis: basis});
-        return '<div class="gift">' + t('gave', {donor: esc(g.donor), amt: usd(g.amount), date: esc(day(g.date)), acct: esc(L(B.accounts[g.acct].name))}) + '<div class="how2">' + how + '</div></div>';
+      var by = {}, order = [];
+      gs.forEach(function(g){ if(!by[g.to]){ by[g.to] = []; order.push(g.to); } by[g.to].push(g); });
+      out += '<div class="gifts"><div class="h">' + t('gifts2') + '</div>' + order.map(function(k){
+        var note = a.giftNotes && a.giftNotes[k] ? '<div class="how2">' + esc(L(a.giftNotes[k])) + '</div>' : '';
+        return by[k].map(function(g){
+          var acc = B.accounts[g.acct] ? L(B.accounts[g.acct].name) : mem(B, g.to);
+          var how = '';
+          if(g.kind === 'party') how = t('how.party');
+          else if(g.kind === 'lobbyist') how = t('how.lobbyist', {lob: esc(g.lobbyist), p: esc(g.forParty), basis: g.basis === 'addr' ? t('basisAddr') : g.occ ? t('basisOcc', {occ: esc(g.occ)}) : ''});
+          else if(g.kind === 'firm') how = t('how.firm', {lob: esc(g.lobbyist), p: esc(g.forParty)});
+          return '<div class="gift">' + t('gave', {donor: esc(g.donor), amt: usd(g.amount), date: esc(day(g.date)), acct: esc(acc)}) + (how ? '<div class="how2">' + how + '</div>' : '') + '</div>';
+        }).join('') + note;
       }).join('') + '</div>';
     }
     on.forEach(function(k){
-      if(a.vacant === k) return;
-      if(!gs.some(function(g){ return g.to === k; })) out += '<p class="nogift">' + t('noGift', {accts: esc(acctNames(B, B.onBallot[k].accounts))}) + '</p>';
+      if(a.vacant === k || !(k in a.roll) || a.roll[k] == null) return;
+      if(!gs.some(function(g){ return g.to === k; }) && B.onBallot[k].accounts) out += '<p class="nogift">' + t('noGift', {accts: esc(acctNames(B, B.onBallot[k].accounts))}) + '</p>';
     });
     return out;
   }
+  function linkHtml(B, a){
+    return (a.links || []).map(function(l){
+      var lab = l.t === 'matter' ? (B.key === 'county' ? t('matter', {id: a.id}) : t('legistar') + (a.ref ? ' ' + a.ref : '')) : l.t === 'clerk' ? t('clerk') : l.t === 'minutes' ? t('minutes') + (l.draft ? ' (' + t('draft') + ')' : '') : t('record');
+      return link(l.url, lab);
+    }).join('') + ((a.lobbied || []).length && B.registries ? B.registries.map(function(r){ return link(r.url, t('registry')); }).slice(0, 1).join('') : '');
+  }
   function actHtml(B, a){
     var on = Object.keys(B.onBallot);
-    var res = '<strong>' + t('res.' + a.result) + '</strong> ' + (a.tally[1] ? '<span class="split">' + t('tally', {y: a.tally[0], n: a.tally[1]}) + '</span>' : t('tally', {y: a.tally[0], n: 0}) + ', ' + t('unan'));
-    var onb = on.map(function(k){ var v = a.roll[k]; return '<span class="' + (v === 'no' ? 'no' : v === 'yes' ? '' : 'away') + '">' + esc(t('votedBy', {name: mem(B, k).name, v: vword(v)})) + '</span>'; }).join('');
-    var roll = B.members.map(function(m){
-      var v = a.roll[m.key], ob = on.indexOf(m.key) >= 0;
-      return '<span' + (ob ? '' : ' class="nb"') + '>' + (ob ? '<b>' + esc(m.name) + '</b>' : esc(m.name)) + '</span><span class="' + (v === 'no' ? 'v-no' : '') + '">' + vword(v) + '</span>';
+    var res = '<strong>' + t('res.' + a.result) + '</strong>';
+    if(a.tally) res += ' ' + (a.tally[1] ? '<span class="split">' + t('tally', {y: a.tally[0], n: a.tally[1]}) + '</span>' : t('tally', {y: a.tally[0], n: 0}) + ', ' + t('unan'));
+    else if(a.unanimous) res += ', ' + t('unan');
+    var onb = on.filter(function(k){ return k in a.roll; }).map(function(k){
+      var v = a.roll[k], r = (a.roles && a.roles[k]) || [];
+      var extra = r.length ? ' · ' + r.map(function(x){ return t('role.' + x); }).join(', ') : (a.mover === k ? ' · ' + t('role.moved') : a.second === k ? ' · ' + t('role.seconded') : '');
+      return '<span class="' + (v === 'no' ? 'no' : v === 'yes' ? '' : 'away') + '">' + esc(t('votedBy', {name: mem(B, k), v: v == null ? '—' : vword(v)})) + esc(extra) + '</span>';
     }).join('');
-    var mv = a.mover && a.second ? '<div class="note">' + t('moved', {m: esc(mem(B, a.mover).name), s: esc(mem(B, a.second).name)}) + '</div>' : '';
-    var party = (a.parties.length > 1 ? t('parties', {p: esc(a.parties.join('; '))}) : t('party', {p: esc(a.parties[0])}));
-    var links = link(a.matterUrl, t('matter', {id: a.id})) + link(a.clerkUrl, t('clerk')) + link(a.minutesUrl, t('minutes') + (a.minutesStatus === 'draft' ? ' (' + t('draft') + ')' : '')) + ((a.lobbied || []).length ? link(B.registry.url, t('registry')) : '');
-    var search = norm([a.id, a.ref, L(a.subject), a.parties.join(' ')].concat((a.lobbied || []).map(function(l){ return l.name; })).concat((a.gifts || []).map(function(g){ return g.donor; })).join(' '));
-    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length ? 1 : 0) + '">' +
-      '<div class="when">' + esc(day(a.date)) + ' · ' + t('meeting.' + a.meeting) + (a.ref ? ' · ' + esc(a.ref) : '') + '</div>' +
-      '<div class="ttl">' + t('kind.' + a.kind) + ': ' + esc(L(a.subject)) + '</div>' +
-      '<div class="party">' + party + '</div>' +
-      '<div class="res">' + res + '</div>' +
-      '<div class="onb">' + onb + '</div>' +
-      '<details><summary>' + t('allVotes') + '</summary><div class="roll">' + roll + '</div><div class="note">' + t('grayNote') + '</div>' + mv + '</details>' +
+    var keys = Object.keys(a.roll);
+    var roll = keys.length ? B.members.map(function(m){ return m.key; }).filter(function(k){ return keys.indexOf(k) >= 0; }).concat(keys.filter(function(k){ return !B.members.some(function(m){ return m.key === k; }); })).map(function(k){
+      var v = a.roll[k], ob = on.indexOf(k) >= 0;
+      return '<span' + (ob ? '' : ' class="nb"') + '>' + (ob ? '<b>' + esc(mem(B, k)) + '</b>' : esc(mem(B, k))) + '</span><span class="' + (v === 'no' ? 'v-no' : '') + '">' + (v == null ? '—' : vword(v)) + '</span>';
+    }).join('') : '';
+    var mv = a.mover && a.second ? '<div class="note">' + t('moved', {m: esc(mem(B, a.mover)), s: esc(mem(B, a.second))}) + '</div>' : '';
+    var partial = !a.rollComplete && keys.length ? '<div class="note">' + t('rollPartial') + '</div>' : '';
+    var party = a.parties && a.parties.length ? '<div class="party">' + (a.parties.length > 1 ? t('parties', {p: esc(a.parties.join('; '))}) : t('party', {p: esc(a.parties[0])})) + '</div>' : '';
+    var ttl = a.title ? esc(L(a.title)) : t('kind.' + a.kind) + ': ' + esc(L(a.subject));
+    var meta = [esc(day(a.date))]; if(a.meeting) meta.push(t('meeting.' + a.meeting)); if(a.ref) meta.push(esc(a.ref));
+    var search = norm([a.id, a.ref, L(a.subject), L(a.title), (a.parties || []).join(' ')].concat((a.lobbied || []).map(function(l){ return l.name + ' ' + (l.for || ''); })).concat((a.gifts || []).map(function(g){ return g.donor; })).join(' '));
+    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length || a.namedLobbyist ? 1 : 0) + '">' +
+      '<div class="when">' + meta.join(' · ') + '</div><div class="ttl">' + ttl + '</div>' + party +
+      '<div class="res">' + res + (a.consent ? ' · ' + t('consentNote') : '') + '</div>' +
+      (onb ? '<div class="onb">' + onb + '</div>' : '') +
+      (roll ? '<details><summary>' + t('allVotes2') + '</summary><div class="roll">' + roll + '</div>' + partial + '<div class="note">' + t('grayNote') + '</div>' + mv + '</details>' : '') +
+      (a.firstReading ? '<p class="note">' + t('firstReading', {date: esc(day(a.firstReading))}) + '</p>' : '') +
       (a.note ? '<p class="note">' + esc(L(a.note)) + '</p>' : '') +
-      lobHtml(a) + giftHtml(B, a) +
-      '<div class="links">' + links + '</div></div>';
+      lobHtml(a) + giftHtml(B, a) + '<div class="links">' + linkHtml(B, a) + '</div></div>';
+  }
+  function othersHtml(){
+    var o = (DATA && DATA.others) || []; if(!o.length || BK !== '_others') return '';
+    return o.map(function(x){ return '<div class="act"><div class="ttl">' + esc(L(x.body)) + '</div><div class="note">' + x.people.map(function(p){ return '<b>' + esc(p.name) + '</b>: ' + t('st.' + p.status); }).join('<br>') + '</div></div>'; }).join('');
   }
 
   function render(){
     document.documentElement.lang = LANG;
     document.querySelectorAll('[data-t]').forEach(function(el){ el.textContent = t(el.getAttribute('data-t')); });
+    document.querySelector('[data-t="lede"]').textContent = t('lede2');
     document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === LANG); });
     var q = document.getElementById('q'); q.placeholder = t('search'); q.setAttribute('aria-label', t('search'));
-    document.getElementById('how').innerHTML = '<p>' + esc(t('how1')) + '</p><p>' + t('how2') + '</p>';
+    document.getElementById('how').innerHTML = '<p>' + t('howCity') + '</p><p>' + t('how2') + '</p>';
     document.getElementById('foot').innerHTML = t('foot');
-    document.getElementById('bodies').innerHTML = '<span class="on">' + t('body.county') + '</span><span class="soon">' + t('body.cities') + '</span><span class="soon">' + t('body.state') + '</span>';
+    var bs = bodies();
+    if(!BK && bs.length){ var h = location.hash.slice(1); BK = bs.some(function(b){ return b.key === h; }) || h === '_others' ? h : bs[0].key; }
+    document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
+      (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '') + '<span class="soon">' + t('body.state2') + '</span>';
+    document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
     document.getElementById('filters').innerHTML = ['all', 'gift', 'split', 'lob'].map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });
-    var B = body();
-    if(!B) return;
-    var A = B.actions;
+    if(!bs.length) return;
+    if(BK === '_others'){
+      document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
+      document.getElementById('list').innerHTML = othersHtml(); filter(); return;
+    }
+    var B = cur(), A = B.actions;
     document.getElementById('stats').innerHTML =
-      '<div><b>' + A.length + '</b>' + t('sActs', {date: esc(day(B.since))}) + '</div>' +
-      '<div><b>' + A.filter(function(a){ return (a.lobbied || []).length; }).length + '</b>' + t('sLob') + '</div>' +
-      '<div><b>' + A.filter(hasGift).length + '</b>' + t('sGift') + '</div>' +
+      '<div><b>' + A.length + '</b>' + t('sActs2') + '</div>' +
+      '<div><b>' + A.filter(function(a){ return (a.lobbied || []).length || a.namedLobbyist; }).length + '</b>' + t('sLob') + '</div>' +
+      '<div><b>' + A.filter(hasGift).length + '</b>' + t('sGift2') + '</div>' +
       (DATA.updated ? '<div><b>' + esc(day(DATA.updated)) + '</b>' + t('sUpdated') + '</div>' : '');
     var on = Object.keys(B.onBallot);
-    document.getElementById('ballot').innerHTML = on.map(function(k){
-      return '<div>' + esc(t('onBallot', {name: mem(B, k).name, race: L(B.onBallot[k].race), accts: acctNames(B, B.onBallot[k].accounts)})) + ' ' +
-        B.onBallot[k].accounts.map(function(x){ return link(B.accounts[x].url, L(B.accounts[x].name)); }).join(' · ') + '</div>';
-    }).join('') + '<div class="muted">' + esc(t('offBallot', {n: B.members.length - on.length})) + '</div>';
+    document.getElementById('ballot').innerHTML = (B.coverage ? '<div class="muted"><b>' + t('coverageH') + ':</b> ' + esc(L(B.coverage)) + '</div>' : '') + on.map(function(k){
+      var ob = B.onBallot[k];
+      return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)})) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
+        (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') + '</div>';
+    }).join('') + '<div class="muted">' + esc(t('offBallot2')) + '</div>';
     document.getElementById('list').innerHTML = A.map(function(a){ return actHtml(B, a); }).join('');
     filter();
   }
   function filter(){
     var q = norm(document.getElementById('q').value).trim(), any = false;
-    document.querySelectorAll('.act').forEach(function(el){
-      var ok = (!q || el.getAttribute('data-search').indexOf(q) >= 0) && (F === 'all' || el.getAttribute('data-' + F) === '1');
+    document.querySelectorAll('#list .act').forEach(function(el){
+      var ok = BK === '_others' || ((!q || (el.getAttribute('data-search') || '').indexOf(q) >= 0) && (F === 'all' || el.getAttribute('data-' + F) === '1'));
       el.hidden = !ok; if(ok) any = true;
     });
     document.getElementById('noresult').hidden = any || !DATA;
@@ -296,6 +366,7 @@
     b.addEventListener('click', function(){ LANG = b.getAttribute('data-lang'); try { localStorage.setItem('ballot305.lang', LANG); } catch(e){} render(); });
   });
   document.getElementById('q').addEventListener('input', filter);
+  window.addEventListener('hashchange', function(){ var h = location.hash.slice(1); if(h && h !== BK){ BK = h; render(); } });
   render();
   fetch('/data/decisions.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
     .catch(function(){ document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('loadErr')) + '</p>'; });
