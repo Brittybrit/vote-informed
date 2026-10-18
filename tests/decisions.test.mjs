@@ -39,7 +39,7 @@ test('every body and action is well formed', () => {
       else { for (const l of LANGS) assert.ok(a.subject[l], id + ' subject ' + l); assert.ok(en.has('kind.' + a.kind), id + ' kind ' + a.kind); assert.ok(a.parties.length, id + ' party'); }
       assert.ok(en.has('res.' + a.result), id + ' result ' + a.result);
       assert.match(a.date, /^\d{4}-\d{2}-\d{2}$/);
-      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].includes(v), id + ' vote ' + v);
+      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].concat(B.type === 'requests' ? ['requested'] : []).includes(v), id + ' vote ' + v);
       if (a.rollComplete && a.tally) {
         const vals = Object.values(a.roll);
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
@@ -68,5 +68,26 @@ test('county roll calls are complete and Lopez is marked not yet seated before N
   for (const a of C.actions) {
     assert.equal(Object.keys(a.roll).length, 13, a.id);
     if (a.vacant) assert.equal(a.roll.Lopez, null);
+  }
+});
+
+test('state budget requests: one filer on the ballot, an amount, and every gift says how it ties to the form', () => {
+  const R = d.bodies.filter(b => b.type === 'requests');
+  assert.ok(R.length >= 1, 'state bodies');
+  for (const B of R) {
+    assert.ok(B.actions.length > 0, B.key);
+    for (const a of B.actions) {
+      const ks = Object.keys(a.roll);
+      assert.equal(ks.length, 1, a.id); assert.equal(a.roll[ks[0]], 'requested', a.id);
+      assert.ok(B.onBallot[ks[0]], a.id + ' filer on ballot');
+      assert.ok(a.ask > 0, a.id + ' amount'); assert.equal(a.kind, 'request');
+      assert.ok(en.has('res.' + a.result));
+      if (a.result === 'requestedW') assert.ok(a.note, a.id + ' withdrawn note');
+      for (const g of a.gifts) {
+        assert.ok(['named', 'firm', 'firmpac', 'firmlob', 'party'].includes(g.rel), a.id + ' rel ' + g.rel);
+        assert.ok(en.has('how.s.' + g.rel));
+        if (g.rel !== 'party') { assert.ok(a.lobbied.length, a.id + ' firm gift but no lobbyist on the form'); assert.ok(g.firmName, a.id + ' firm name'); }
+      }
+    }
   }
 });
