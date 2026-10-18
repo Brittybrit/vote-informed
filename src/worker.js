@@ -1765,7 +1765,7 @@ function sameFirst(a, b) {
 // main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
 // shows for that report; if they don't (a layout change, an amendment we can't read), the last good
 // result stays up. No AI. Refreshed at most every 6 hours.
-const MEASURE_FILINGS_VERSION = 4;
+const MEASURE_FILINGS_VERSION = 5;
 const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
 // Registered voters, for the "per registered voter" figure: the state's book-closing count for the Nov 3,
 // 2026 election; for the City of Miami, the county's district totals (Miami Dist 1-5) of Oct 1, 2026.
@@ -1911,7 +1911,7 @@ function tallyCommittee(reports, csvs) {
         const inK = /^(IK|INK)$/i.test(x[11]);
         if (inK) ik += amt; else c += amt;
         const k = vfOrgKey(who);
-        const cur = gave.get(k) || { name: who, amount: 0, type: x[9], place: [vfClean(x[6]), x[7]].filter(Boolean).join(', '), first: x[1], last: x[1] };
+        const cur = gave.get(k) || { name: who, amount: 0, type: x[9], place: [vfClean(x[6]), x[7]].filter(Boolean).join(', '), street: [vfClean(x[4]), vfClean(x[5])].filter(Boolean).join(' '), zip: String(x[8] || '').slice(0, 5), first: x[1], last: x[1] };
         cur.amount += amt;
         if (x[1] < cur.first) cur.first = x[1];
         if (x[1] > cur.last) cur.last = x[1];
@@ -1936,7 +1936,7 @@ function tallyCommittee(reports, csvs) {
   const typeOf = t => t === 'B' ? 'corporation' : t === 'I' ? 'individual' : t === 'F' || t === 'P' ? 'PAC/committee' : 'other';
   const donors = [...gave.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
     name: v.name, amount: Math.round(v.amount * 100) / 100, share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),   // never round a partial share up to 100
-    type: typeOf(v.type), place: v.place, first: v.first, last: v.last }));
+    type: typeOf(v.type), place: v.place, street: v.street, zip: v.zip, first: v.first, last: v.last }));
   const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
     name: v.name, amount: Math.round(v.amount * 100) / 100,
     what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
@@ -1985,7 +1985,7 @@ function tallyFl(contribs, expends) {
     if (iso > through) through = iso;
     if (/^INK/i.test(c[3])) inkind += amt; else raised += amt;
     const who = vfClean(c[4]), k = vfOrgKey(who);
-    const cur = gave.get(k) || { name: who, amount: 0, occ: vfClean(c[7]), place: vfClean(c[6]).replace(/\s+\d{5}(-\d{4})?$/, ''), first: iso, last: iso };
+    const cur = gave.get(k) || { name: who, amount: 0, occ: vfClean(c[7]), place: vfClean(c[6]).replace(/\s+\d{5}(-\d{4})?$/, ''), street: vfClean(c[5]), zip: (vfClean(c[6]).match(/(\d{5})(-\d{4})?$/) || [])[1] || '', first: iso, last: iso };
     cur.amount += amt;
     if (iso < cur.first) cur.first = iso;
     if (iso > cur.last) cur.last = iso;
@@ -2009,7 +2009,7 @@ function tallyFl(contribs, expends) {
   const donors = [...gave.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
     name: v.name, amount: Math.round(v.amount * 100) / 100,
     share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),
-    type: typeOf(v), place: v.place, first: v.first, last: v.last }));
+    type: typeOf(v), place: v.place, street: v.street, zip: v.zip, first: v.first, last: v.last }));
   const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
     name: v.name, amount: Math.round(v.amount * 100) / 100,
     what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
@@ -2231,7 +2231,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
 //  - a company or group: its name equals a registered client's name, ignoring Inc, LLC, punctuation and case
 //  - a person: first and last name equal a registered lobbyist's AND the ZIP code matches the lobbyist's
 //    registered address or the occupation filed with the gift is lobbying, government affairs or consulting
-const LOBBY_VERSION = 2;   // 2: School Board races too
+const LOBBY_VERSION = 3;   // 3: givers at a registered lobbyist's office address
 function isCountyRace(office) {
   return /^\s*(county commissioner|county mayor|mayor,?\s+miami-dade|miami-dade county mayor)\b/i.test(String(office || ''));
 }
@@ -2257,14 +2257,32 @@ async function countyLobbyIndex(env, set = 'county') {
   idx.body = LOBBY_SETS[set].body;
   return LOBBY_INDEX[set] = idx;
 }
+// A registration's address as a match key: street line (suite kept) plus ZIP, or a PO box plus ZIP
+function lobbyAddrKey(street, zip) {
+  const z = String(zip || '').slice(0, 5), st = String(street || '');
+  const box = st.match(/\bp\.?\s*o\.?\s*box\s*(\d+)/i);
+  if (box && /^\d{5}$/.test(z)) return 'pobox ' + box[1] + '|' + z;
+  return streetKey(st, z);
+}
+function splitAddr(addr) {   // "3800 NE 1st Ave, Suite 200, Miami, FL 33137" -> street "3800 NE 1st Ave, Suite 200", zip "33137"
+  const parts = String(addr || '').split(',').map(x => x.trim()).filter(Boolean);
+  const zip = (String(addr || '').match(/\b(\d{5})(?:-\d{4})?\s*$/) || [])[1] || '';
+  return { street: parts.slice(0, Math.max(1, parts.length - 2)).join(' '), zip };
+}
 function buildLobbyIndex(j) {
-  const clients = new Map(), people = new Map();
+  const clients = new Map(), people = new Map(), offices = new Map();
   for (const l of j.lobbyists || []) {
     const [last, ...rest] = String(l.name || '').split(',');
     const firstPart = rest.join(' ').replace(/\b(esq|jr|sr|ii|iii|iv)\b\.?/gi, ' ');
     const np = flNameParts(firstPart + ' ' + last);
     const zip = (String(l.addr || '').match(/\b(\d{5})(?:-\d{4})?\s*$/) || String(l.addr || '').match(/\b(\d{5})\b/) || [])[1] || '';
     const display = (firstPart.trim() + ' ' + last.trim()).replace(/\s+/g, ' ').toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
+    const { street, zip: z5 } = splitAddr(l.addr);
+    const ak = lobbyAddrKey(street, z5);
+    if (ak) {
+      if (!offices.has(ak)) offices.set(ak, []);
+      if (!offices.get(ak).includes(display)) offices.get(ak).push(display);
+    }
     if (np) {
       const k = np.first + ' ' + np.last;
       if (!people.has(k)) people.set(k, []);
@@ -2278,7 +2296,7 @@ function buildLobbyIndex(j) {
       if (!cl.seen.has(who)) { cl.seen.add(who); cl.lobbyists.push(display); }
     }
   }
-  return { clients, people, asOf: j.asOf, year: j.year, source: j.source };
+  return { clients, people, offices, asOf: j.asOf, year: j.year, source: j.source };
 }
 const LOBBY_OCC = /lobby|government(al)?\s*(affairs|relations|consult)|public\s*affairs|political\s*consult|consultant|consulting/i;
 function lobbyMatch(idx, giver) {
@@ -2292,7 +2310,11 @@ function lobbyMatch(idx, giver) {
     return hit ? { as: 'lobbyist', lobbyist: hit.name, clients: hit.clients } : null;
   }
   const c = idx.clients.get(donorKey(name));
-  return c ? { as: 'client', lobbyists: c.lobbyists.slice(0, 6), more: Math.max(0, c.lobbyists.length - 6) } : null;
+  if (c) return { as: 'client', lobbyists: c.lobbyists.slice(0, 6), more: Math.max(0, c.lobbyists.length - 6) };
+  // a firm whose address (street and suite, or PO box) is the registered office of lobbyists
+  const ak = lobbyAddrKey(giver.street, giver.zip);
+  const at = ak && idx.offices.get(ak);
+  return at ? { as: 'firm', lobbyists: at.slice(0, 6), more: Math.max(0, at.length - 6) } : null;
 }
 function countyLobbyTies(idx, all) {
   const givers = [];

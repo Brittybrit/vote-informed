@@ -1004,6 +1004,9 @@ en: {
   'lob.none': 'None of this campaign\'s {n} givers matches a lobbyist or client registered with {body}.',
   'lob.lobbyist': 'Registered lobbyist',
   'lob.client': 'Lobbyist client',
+  'lob.firm': 'Lobbyist\'s office',
+  'lob.def.firm': 'This giver\'s filed address, including suite or PO box, is the registered office of lobbyists registered with the government this office belongs to.',
+  'lob.isFirm': 'Filed address is the registered office of {l}.',
   'lob.def.lobbyist': 'This giver is registered as a lobbyist with the government this office belongs to.',
   'lob.def.client': 'This giver is a registered client of at least one lobbyist registered with the government this office belongs to.',
   'lob.isLob': 'Registered lobbyist with {n} clients.',
@@ -1482,6 +1485,9 @@ es: {
   'lob.none': 'Ninguno de los {n} donantes de esta campaña coincide con un cabildero o cliente inscrito ante {body}.',
   'lob.lobbyist': 'Cabildero inscrito',
   'lob.client': 'Cliente de cabildero',
+  'lob.firm': 'Oficina de cabildero',
+  'lob.def.firm': 'La dirección registrada de este donante, con suite o apartado postal, es la oficina inscrita de cabilderos inscritos ante el gobierno al que pertenece este cargo.',
+  'lob.isFirm': 'Su dirección registrada es la oficina inscrita de {l}.',
   'lob.def.lobbyist': 'Este donante está inscrito como cabildero ante el gobierno al que pertenece este cargo.',
   'lob.def.client': 'Este donante es cliente inscrito de al menos un cabildero inscrito ante el gobierno al que pertenece este cargo.',
   'lob.isLob': 'Cabildero inscrito con {n} clientes.',
@@ -1960,6 +1966,9 @@ ht: {
   'lob.none': 'Okenn nan {n} donatè kanpay sa a pa koresponn ak yon lobiyis oswa kliyan ki enskri nan {body}.',
   'lob.lobbyist': 'Lobiyis enskri',
   'lob.client': 'Kliyan lobiyis',
+  'lob.firm': 'Biwo lobiyis',
+  'lob.def.firm': 'Adrès donatè sa a anrejistre, ak swit oswa bwat postal, se biwo enskri lobiyis ki enskri nan gouvènman pòs sa a fè pati.',
+  'lob.isFirm': 'Adrès li anrejistre se biwo enskri {l}.',
   'lob.def.lobbyist': 'Donatè sa a enskri kòm lobiyis nan gouvènman pòs sa a fè pati.',
   'lob.def.client': 'Donatè sa a se kliyan enskri omwen yon lobiyis ki enskri nan gouvènman pòs sa a fè pati.',
   'lob.isLob': 'Lobiyis enskri ak {n} kliyan.',
@@ -2819,7 +2828,7 @@ function funderRows(list){
 
 // County races: givers registered to lobby Miami-Dade County, or clients of a registered lobbyist
 function lobbyTag(as){
-  if(as !== 'lobbyist' && as !== 'client') return '';
+  if(as !== 'lobbyist' && as !== 'client' && as !== 'firm') return '';
   return '<span class="tag conn" title="' + esc(t('lob.def.' + as)) + '">' + t('lob.' + as) + '</span>';
 }
 function countyLobbyBlock(cl){
@@ -2828,7 +2837,8 @@ function countyLobbyBlock(cl){
   if(!cl.count) return h + '<p class="fine">' + t('lob.none', {n: cl.of, body: esc(cl.body || 'Miami-Dade County')}) + srcLink(cl.source && cl.source.url, cl.source && cl.source.name) + '</p></div>';
   h += '<p style="font-size:13.5px;line-height:1.5;margin:4px 0 8px">' + t('lob.sum', {c: cl.count, n: cl.of, amt: usd(cl.total), body: esc(cl.body || 'Miami-Dade County')}) + '</p>';
   h += cl.givers.map(function(g){
-    var who = g.as === 'lobbyist' ? t('lob.isLob', {n: g.clients || 0}) : t('lob.isClient', {l: esc((g.lobbyists || []).join(', ')) + (g.more ? ' ' + t('lob.more', {n: g.more}) : '')});
+    var names = esc((g.lobbyists || []).join(', ')) + (g.more ? ' ' + t('lob.more', {n: g.more}) : '');
+    var who = g.as === 'lobbyist' ? t('lob.isLob', {n: g.clients || 0}) : g.as === 'firm' ? t('lob.isFirm', {l: names}) : t('lob.isClient', {l: names});
     return '<div class="fil-row"><div>' + esc(g.name) + '</div><div class="amt">' + usd(g.amount) + '</div><div class="what">' + lobbyTag(g.as) + ' ' + who + '</div></div>';
   }).join('');
   return h + '<p class="fine">' + t('lob.rule', {d: esc(fmtDay(cl.asOf))}) + srcLink(cl.source && cl.source.url, cl.source && cl.source.name) + '</p></div>';

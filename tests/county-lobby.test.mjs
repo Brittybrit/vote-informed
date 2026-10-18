@@ -31,3 +31,16 @@ test('county lobbyists: county offices only', () => {
   assert.ok(!w.isCountyRace('School Board Member, District 1'));
   assert.ok(!w.isCountyRace('Coral Gables - for Mayor - Group I'));
 });
+
+test('lobbying firms: filed address with suite or PO box equals a lobbyist office', async () => {
+  const { loadWorker } = await import('./load-worker.mjs');
+  const v = await loadWorker(['buildLobbyIndex', 'lobbyMatch']);
+  const ix = v.buildLobbyIndex({ lobbyists: [
+    { id: '1', name: 'MEJIA, DANIELLE', addr: '3800 NE 1st Ave, Suite 200, Miami, FL 33137', clients: [['AVMED, INC.', '']] },
+    { id: '2', name: 'MANZANO, JESSE', addr: 'PO BOX 348068, CORAL GABLES, FL 33234', clients: [['NWN Corporation', '']] }
+  ] });
+  assert.deepEqual(v.lobbyMatch(ix, { name: 'LSN PARTNERS', type: 'corporation', street: '3800 NE 1 AVE STE 200', zip: '33137' }), { as: 'firm', lobbyists: ['Danielle Mejia'], more: 0 });
+  assert.equal(v.lobbyMatch(ix, { name: 'TRIDENTE STRATEGIES, INC.', type: 'corporation', street: 'PO BOX 348068', zip: '33234' }).as, 'firm');
+  assert.equal(v.lobbyMatch(ix, { name: 'OTHER CO', type: 'corporation', street: '3800 NE 1 AVE STE 300', zip: '33137' }), null);   // other suite
+  assert.equal(v.lobbyMatch(ix, { name: 'NO SUITE CO', type: 'corporation', street: '3800 NE 1 AVE', zip: '33137' }), null);           // no suite, no match
+});
