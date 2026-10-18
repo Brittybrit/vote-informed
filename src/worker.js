@@ -1765,7 +1765,7 @@ function sameFirst(a, b) {
 // main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
 // shows for that report; if they don't (a layout change, an amendment we can't read), the last good
 // result stays up. No AI. Refreshed at most every 6 hours.
-const MEASURE_FILINGS_VERSION = 3;
+const MEASURE_FILINGS_VERSION = 4;
 const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
 // Registered voters, for the "per registered voter" figure: the state's book-closing count for the Nov 3,
 // 2026 election; for the City of Miami, the county's district totals (Miami Dist 1-5) of Oct 1, 2026.
@@ -1815,6 +1815,7 @@ const MEASURE_FILINGS = [
   {
     match: /^School Board Referendum/i,
     voters: VOTERS.MDC,
+    lobbySet: 'school',
     committees: [{ side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future' }],
     connections: [
       { match: /^buspatrol/i, tag: 'vendor', detailNote: 'The School Board authorized a contract with BusPatrol America for school bus stop-arm cameras on Apr 22, 2026 (item D-71)',
@@ -2049,6 +2050,7 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   if (fin.filed && fin.filV === MEASURE_FILINGS_VERSION && now - (fin.filAt || 0) < MEASURE_FILINGS_TTL) return false;
   const sides = { support: [], oppose: [] };
   const filers = new Set();
+  const lobbyIdx = cfg.lobbySet ? await countyLobbyIndex(env, cfg.lobbySet).catch(() => null) : null;
   try {
     for (const com of cfg.committees) {
       const f = await committeeFilings(com);
@@ -2056,6 +2058,9 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
       for (const d of f.donors) {
         const c = (cfg.connections || []).find(x => x.match.test(d.name));
         if (c) d.connection = { tag: c.tag, detailNote: c.detailNote || c.detail, source: c.source };
+        // registered to lobby the government that put the question on the ballot
+        const m = lobbyIdx ? lobbyMatch(lobbyIdx, d) : null;
+        if (m) d.lobby = m.as;
       }
       const top = f.donors[0], all = f.raised + f.inkind;
       sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(all), url: f.url,
@@ -2226,17 +2231,31 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
 //  - a company or group: its name equals a registered client's name, ignoring Inc, LLC, punctuation and case
 //  - a person: first and last name equal a registered lobbyist's AND the ZIP code matches the lobbyist's
 //    registered address or the occupation filed with the gift is lobbying, government affairs or consulting
-const LOBBY_VERSION = 1;
+const LOBBY_VERSION = 2;   // 2: School Board races too
 function isCountyRace(office) {
   return /^\s*(county commissioner|county mayor|mayor,?\s+miami-dade|miami-dade county mayor)\b/i.test(String(office || ''));
 }
-let LOBBY_INDEX = null;
-async function countyLobbyIndex(env) {
-  if (LOBBY_INDEX) return LOBBY_INDEX;
-  if (!env || !env.ASSETS) return null;
-  const res = await env.ASSETS.fetch(new Request('https://assets.local/data/county-lobbyists.json'));
+// Same check for School Board races against the School Board's own list (both fiscal years covering
+// 2025-2026). That list has no addresses, so a person there matches only on name plus a lobbying,
+// government affairs or consulting occupation.
+const LOBBY_SETS = {
+  county: { file: '/data/county-lobbyists.json', body: 'Miami-Dade County' },
+  school: { file: '/data/school-board-lobbyists.json', body: 'the Miami-Dade School Board' }
+};
+function lobbySetFor(office) {
+  if (isCountyRace(office)) return 'county';
+  if (/^\s*school board member\b/i.test(String(office || ''))) return 'school';
+  return null;
+}
+const LOBBY_INDEX = {};
+async function countyLobbyIndex(env, set = 'county') {
+  if (LOBBY_INDEX[set]) return LOBBY_INDEX[set];
+  if (!env || !env.ASSETS || !LOBBY_SETS[set]) return null;
+  const res = await env.ASSETS.fetch(new Request('https://assets.local' + LOBBY_SETS[set].file));
   if (!res.ok) return null;
-  return LOBBY_INDEX = buildLobbyIndex(await res.json());
+  const idx = buildLobbyIndex(await res.json());
+  idx.body = LOBBY_SETS[set].body;
+  return LOBBY_INDEX[set] = idx;
 }
 function buildLobbyIndex(j) {
   const clients = new Map(), people = new Map();
@@ -2254,8 +2273,9 @@ function buildLobbyIndex(j) {
     for (const [c] of l.clients || []) {
       const k = donorKey(c);
       if (!k) continue;
-      if (!clients.has(k)) clients.set(k, { name: c, lobbyists: [] });
-      if (!clients.get(k).lobbyists.includes(display)) clients.get(k).lobbyists.push(display);
+      if (!clients.has(k)) clients.set(k, { name: c, lobbyists: [], seen: new Set() });
+      const who = np ? np.first + ' ' + np.last : display, cl = clients.get(k);   // "David Custin" = "David R. Custin"
+      if (!cl.seen.has(who)) { cl.seen.add(who); cl.lobbyists.push(display); }
     }
   }
   return { clients, people, asOf: j.asOf, year: j.year, source: j.source };
@@ -2284,13 +2304,14 @@ function countyLobbyTies(idx, all) {
     total += g.amount || 0;
   }
   givers.sort((a, b) => b.amount - a.amount);
-  return { year: idx.year, asOf: idx.asOf, source: idx.source, count: givers.length, total, givers: givers.slice(0, 25), of: (all || []).length };
+  return { body: idx.body || 'Miami-Dade County', year: idx.year, asOf: idx.asOf, source: idx.source, count: givers.length, total, givers: givers.slice(0, 25), of: (all || []).length };
 }
 async function refreshCountyLobby(env, result, name, office) {
-  if (!isCountyRace(office) || result.donorSource !== 'MDC') return false;
+  const set = lobbySetFor(office);
+  if (!set || result.donorSource !== 'MDC') return false;
   if (result.lobbyV === LOBBY_VERSION && result.lobbyAt === result.mdcAt) return false;
   try {
-    const idx = await countyLobbyIndex(env);
+    const idx = await countyLobbyIndex(env, set);
     if (!idx) return false;
     const all = await fullDonors(env, name, office);
     if (!all) return false;
