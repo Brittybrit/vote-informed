@@ -944,6 +944,11 @@ en: {
   'role.yes': 'Voted yes',
   'role.no': 'Voted no',
   'role.absent': 'Absent for the vote',
+  'role.excused': 'Excused from the vote',
+  'role.nv': 'Did not vote',
+  'role.abstain': 'Abstained',
+  'ties.rollCall': 'Roll call',
+  'ties.analysis': 'Staff analysis',
   'role.moved': 'Made the motion',
   'role.seconded': 'Seconded',
   'role.presented': 'Presented the item',
@@ -1433,6 +1438,11 @@ es: {
   'role.yes': 'Votó sí',
   'role.no': 'Votó no',
   'role.absent': 'Ausente en la votación',
+  'role.excused': 'Excusado de la votación',
+  'role.nv': 'No votó',
+  'role.abstain': 'Se abstuvo',
+  'ties.rollCall': 'Lista de votación',
+  'ties.analysis': 'Análisis legislativo',
   'role.moved': 'Presentó la moción',
   'role.seconded': 'Secundó la moción',
   'role.presented': 'Presentó el asunto',
@@ -1922,6 +1932,11 @@ ht: {
   'role.yes': 'Vote wi',
   'role.no': 'Vote non',
   'role.absent': 'Te absan pou vòt la',
+  'role.excused': 'Te eskize pou vòt la',
+  'role.nv': 'Pa t vote',
+  'role.abstain': 'Te abstni',
+  'ties.rollCall': 'Lis vòt la',
+  'ties.analysis': 'Analiz Lejislati a',
   'role.moved': 'Te pwopoze mosyon an',
   'role.seconded': 'Te apiye mosyon an',
   'role.presented': 'Te prezante dosye a',
@@ -4179,7 +4194,7 @@ function renderTies(ri, cand, acts, shared, loading, city){
         '<div class="tie-roles">' + (a.role || []).map(function(r){ return '<span class="tie-role">' + t('role.' + r) + '</span>'; }).join('') + '</div>' +
         lobbyHtml(a) + donors + (a.lobbied && a.lobbied.length && !(a.donors || []).length ? '<p class="enote">' + t('ties.noGift', {name: esc(cand.name)}) + '</p>' : '') +
         (ctx ? '<p class="enote">' + esc(ctx) + '</p>' : '') +
-        '<div class="dtype">' + srcLink(a.url, T(a.kind === 'request' ? 'ties.recordReq' : a.kind === 'bill' ? 'ties.recordBill' : 'ties.record')) + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
+        '<div class="dtype">' + srcLink(a.url, T(a.kind === 'request' ? 'ties.recordReq' : a.kind === 'bill' ? 'ties.recordBill' : 'ties.record')) + (a.voteUrls || []).map(function(u){ return srcLink(u, T('ties.rollCall')); }).join('') + (a.analysisUrl ? srcLink(a.analysisUrl, T('ties.analysis')) : '') + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
     }).join('');
   }
   if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';

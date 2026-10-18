@@ -18,7 +18,7 @@ test('CSV lists registered lobbyists, and keeps an action with no donors as one 
 
 test('every action in the data file is well formed', () => {
   const d = JSON.parse(readFileSync(new URL('../public/data/donor-actions.json', import.meta.url)));
-  const roles = new Set(['yes', 'no', 'absent', 'moved', 'seconded', 'presented', 'requested', 'sponsor', 'sponsoredItem']);
+  const roles = new Set(['yes', 'no', 'absent', 'moved', 'seconded', 'presented', 'requested', 'sponsor', 'sponsoredItem', 'excused', 'nv', 'abstain']);
   for (const a of d.actions) {
     for (const k of ['en', 'es', 'ht']) assert.ok(a.title[k], a.title.en + ' ' + k);
     if (a.context) for (const k of ['en', 'es', 'ht']) assert.ok(a.context[k], a.title.en + ' context ' + k);
