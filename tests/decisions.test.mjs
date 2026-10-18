@@ -80,7 +80,7 @@ test('state budget requests: one filer on the ballot, an amount, and every gift 
       const ks = Object.keys(a.roll);
       assert.equal(ks.length, 1, a.id); assert.equal(a.roll[ks[0]], 'requested', a.id);
       assert.ok(B.onBallot[ks[0]], a.id + ' filer on ballot');
-      assert.ok(a.ask > 0, a.id + ' amount'); assert.equal(a.kind, 'request');
+      assert.ok(a.ask > 0 && a.ask < 1e9, a.id + ' amount ' + a.ask); assert.equal(a.kind, 'request');
       assert.ok(en.has('res.' + a.result));
       if (a.result === 'requestedW') assert.ok(a.note, a.id + ' withdrawn note');
       for (const g of a.gifts) {
