@@ -77,7 +77,9 @@ test('measure filings: replace web research, keep the last good on failure, leav
   assert.equal(w.measureFilingsFor('City of Miami 3: Proposed Lease and Redevelopment of existing Rickenbacker and Marine Stadium Marinas on Virginia Key'), w.measureFilingsFor('Virginia Key marinas'));
   assert.equal(w.measureFilingsFor('City of Miami 3'), w.measureFilingsFor('City of Miami 3: anything'));
   assert.notEqual(w.measureFilingsFor('City of Miami 1: Safe and Ready Miami'), w.measureFilingsFor('City of Miami 3'));
-  assert.equal(w.measureFilingsFor('City of Doral 7: term limits', ''), null);
+  assert.equal(w.measureFilingsFor('City of Miami Springs: Revitalizing the Northwest 36 Street District', ''), null);   // not checked: keeps web research
+  assert.ok(w.measureFilingsFor('Town of Miami Lakes 15: Interference With Administration'));
+  assert.notEqual(w.measureFilingsFor('City of Miami Beach: Two 20-year Lease Extension Options'), w.measureFilingsFor('City of Miami 1'));
   const pages = {
     155: '<tbody>' + row(2163, 'S01', '10/1/2026 - 10/9/2026', '$1,000.00', '$0.00', '$0.00').replace(/ca=156/, 'ca=155') + '</tbody>',
     156: PAGE,
@@ -141,5 +143,5 @@ test('measure filings: state committees from the Division of Elections; question
   const r = { financing: { support: [{ name: 'Some group', amount: '$5' }], oppose: [] } };
   assert.equal(await w.refreshMeasureFilings(null, r, 'No. 1 Constitutional Amendment: Budget Stabilization Fund', 5), true);
   assert.deepEqual([r.financing.support, r.financing.oppose], [[], []]);
-  assert.match(r.financing.note, /^No committee has registered with the Florida Division of Elections to support or oppose this question, as of Oct 17, 2026\.$/);
+  assert.equal(r.financing.note, "No committee for or against this question shows up in the Florida Division of Elections' committee records, as of Oct 17, 2026.");
 });

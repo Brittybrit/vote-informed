@@ -1796,9 +1796,9 @@ const MEASURE_FILINGS = [
         stakeNote: 'Political Cortadito reports the committee is run by Christian Ulvert, political strategist for Mayor Eileen Higgins. Its reports list the money as coming from Ethical Leadership for Florida; the matching transfers appear in the county reports of Ethical Leadership for Miami, a committee registered with Miami-Dade County.' }
     ],
     stakeSources: [{ name: 'Political Cortadito, Oct 14, 2026', url: 'https://politicalcortadito.com/2026/10/14/miami-virginia-key-referendum-waterfront-money-war/' }],
-    checked: ['City of Miami Clerk'], checkedOn: '2026-10-17'
+    checked: 'the City of Miami Clerk\'s committee filings', checkedOn: '2026-10-17'
   },
-  { match: /^City of Miami 2\b/i, committees: [], checked: ['City of Miami Clerk'], checkedOn: '2026-10-17' },
+  { match: /^City of Miami 2\b/i, committees: [], checked: 'the City of Miami Clerk\'s committee filings', checkedOn: '2026-10-17' },
   {
     match: /^School Board Referendum/i,
     committees: [
@@ -1806,9 +1806,26 @@ const MEASURE_FILINGS = [
         stakeNote: 'WLRN describes Secure Our Future as Miami-Dade County Public Schools\' political committee for the referendum. The district also uses the name for its campaign.' }
     ],
     stakeSources: [{ name: 'WLRN, Oct 15, 2026', url: 'https://www.wlrn.org/education/2026-10-15/south-florida-schools-fear-voter-confusion-between-amendment-3-and-popular-school-funding-referendum' }],
-    checked: ['Miami-Dade Elections Department'], checkedOn: '2026-10-17'
+    checked: 'the Miami-Dade Elections Department\'s committee filings', checkedOn: '2026-10-17'
   },
-  { match: /^County Referendum [1-6]\b/i, committees: [], checked: ['Miami-Dade Elections Department'], checkedOn: '2026-10-17' },
+  { match: /^County Referendum [1-6]\b/i, committees: [], checked: 'the Miami-Dade Elections Department\'s committee filings', checkedOn: '2026-10-17' },
+  {
+    match: /^City of Miami Beach\b|1691 Michigan/i,
+    committees: [
+      { side: 'support', src: 'vf', c: 'munmiamibeach', filer: 'City of Miami Beach Clerk', ca: 136, name: 'Lincoln Road Strong',
+        stakeNote: 'Its filed purpose is to support this question. Its main donor, RJR Vacaville LLC, lists the same address as the city property the question is about, 1691 Michigan Avenue.' }
+    ]
+  },
+  { match: /^City of Coral Gables [1-4]\b/i, committees: [], checked: 'the City of Coral Gables Clerk\'s committee filings', checkedOn: '2026-10-17' },
+  { match: /^City of Doral\b/i, committees: [], checked: 'the City of Doral Clerk\'s committee filings', checkedOn: '2026-10-17' },
+  { match: /^Town of Miami Lakes \d+\b/i, committees: [], checked: 'the Town of Miami Lakes Clerk\'s committee filings', checkedOn: '2026-10-17' },
+  { match: /^City of Opa-locka [12]\b/i, committees: [], checked: 'the City of Opa-locka\'s campaign finance filings', checkedOn: '2026-10-17' },
+  { match: /^Village of Palmetto Bay [1-6]\b/i, committees: [], checked: 'the Village of Palmetto Bay\'s campaign finance filings', checkedOn: '2026-10-17' },
+  { match: /^City of Aventura [12]\b/i, committees: [], checked: 'the City of Aventura Clerk\'s election pages', checkedOn: '2026-10-17' },
+  { match: /^City of North Miami Beach [1-8]\b/i, committees: [], checked: 'the City of North Miami Beach Clerk\'s election pages', checkedOn: '2026-10-17' },
+  { match: /^City of South Miami [1-4]\b/i, committees: [], checked: 'the City of South Miami Clerk\'s campaign reports page', checkedOn: '2026-10-17' },
+  { match: /^Village of Key Biscayne\b/i, committees: [],
+    noneNote: 'No committee is reporting money for or against this question. One committee, Key Biscayne United, is registered with the Village, but every 2026 report it filed says it had no activity, and its filings online don\'t say which side it is on. Checked Oct 17, 2026.' },
   {
     match: /^No\. 3 Constitutional Amendment/i,
     committees: [
@@ -1819,7 +1836,7 @@ const MEASURE_FILINGS = [
         stakeNote: 'Chaired by Miami-Dade Mayor Daniella Levine Cava, according to the state\'s committee record.' },
       { side: 'oppose', src: 'fl', account: 93307, name: 'Florida Public Servants No on 3' }
     ],
-    checked: ['Florida Division of Elections'], checkedOn: '2026-10-17'
+    checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17'
   },
   {
     match: /^No\. 2 Constitutional Amendment/i,
@@ -1828,9 +1845,9 @@ const MEASURE_FILINGS = [
         stakeNote: 'Pays for farm2savings.com, which urges a Yes vote on Amendment 2.' }
     ],
     stakeSources: [{ name: 'farm2savings.com', url: 'https://farm2savings.com/' }],
-    checked: ['Florida Division of Elections'], checkedOn: '2026-10-17'
+    checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17'
   },
-  { match: /^No\. 1 Constitutional Amendment/i, committees: [], checked: ['Florida Division of Elections'], checkedOn: '2026-10-17' }
+  { match: /^No\. 1 Constitutional Amendment/i, committees: [], checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17' }
 ];
 function measureFilingsFor(name, summary) {
   const n = String(name || '');
@@ -2006,7 +2023,7 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   const fin = result.financing;
   if (fin.filed && fin.filV === MEASURE_FILINGS_VERSION && now - (fin.filAt || 0) < MEASURE_FILINGS_TTL) return false;
   const sides = { support: [], oppose: [] };
-  const filers = new Set(cfg.checked || []);
+  const filers = new Set();
   try {
     for (const com of cfg.committees) {
       const f = await committeeFilings(com);
@@ -2027,7 +2044,7 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   const through = [...sides.support, ...sides.oppose].map(x => x.filings.through).filter(Boolean).sort().pop();
   const note = cfg.committees.length
     ? 'From the committees\' own reports to the ' + where + (through ? ', through ' + fmtLongDay(through) : '') + '. Newer reports show up here within a few hours of filing.'
-    : 'No committee has registered with the ' + where + ' to support or oppose this question, as of ' + fmtLongDay(cfg.checkedOn) + '.';
+    : cfg.noneNote || 'No committee for or against this question shows up in ' + cfg.checked + ', as of ' + fmtLongDay(cfg.checkedOn) + '.';
   result.financing = {
     support: sides.support, oppose: sides.oppose, filed: true, filV: MEASURE_FILINGS_VERSION, filAt: now,
     ...(cfg.headlineNote ? { headlineNote: cfg.headlineNote } : {}), ...(cfg.stakeSources ? { stakeSources: cfg.stakeSources } : {}),
