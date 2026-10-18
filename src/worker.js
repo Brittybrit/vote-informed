@@ -1347,7 +1347,15 @@ async function handleOrg(url, request, env) {
 // Division of Elections committee database has their officers and every contribution they report.
 // Exact-name match only; if two committees share the exact name and neither is uniquely active,
 // nothing is shown. Cached a week. If the state site doesn't answer, the panel keeps its search links.
-const FLC_VERSION = 7;
+const FLC_VERSION = 8;
+// Florida reports have no contributor-type field, so read it from the name and the occupation line.
+// Groups like "Seminole Tribe of Florida" or "Centennial Bank" carry none of the usual Inc/LLC words.
+const FL_ORG_WORDS = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|pl|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|health|medical|clinic|energy|utilities|airlines|communications|bank|bancorp|bancshares|financial|credit union|tribe|tribal|nation|university|college|school|academy|church|society|institute|alliance|coalition|network|club|chamber|federation|authority|district|gaming|casino|resorts?|hotels?|motors|automotive|pharmacy|labs?|laboratories|technologies|partnership|of florida|of america)\b\.?/i;
+function flFunderType(who, occ) {
+  if (/political committee|\bpac\b|committee|electioneering|party/i.test(occ || '')) return 'political committee';
+  if (FL_ORG_WORDS.test(who || '') || /corporation|association|union|trust|\btribe\b|tribal government/i.test(occ || '')) return 'organization';
+  return 'individual';
+}
 const FL_SINCE = '2025-01-01';   // funders and totals cover the 2025-2026 cycle only
 const FL_BASE = 'https://dos.elections.myflorida.com';
 async function flCommittee(env, name) {
@@ -1434,10 +1442,8 @@ async function flCommittee(env, name) {
       if (!n) console.log('fl contributions ' + pick.name + ' (' + pick.type + '): 0 matched of ' + allRows.length + ' rows; filers seen: ' +
         [...new Set(allRows.slice(0, 50).map(l => l.split('\t')[0]))].slice(0, 5).join(' | '));
       out.funders = Object.entries(agg).sort((a, b) => b[1].amount - a[1].amount).slice(0, 8).map(([who, v]) => {
-        const looksOrg = /\b(inc|incorporated|llc|l\.l\.c|corp|corporation|co|company|pac|committee|fund|association|assn|group|partners|holdings|enterprises|union|party|trust|foundation|council|realtors|development|properties|management|ltd|lp|llp|pa|p\.a|markets?|supermarkets?|stores|insurance|construction|builders|realty|capital|ventures|services|solutions|systems|industries|international|associates|hospital|healthcare|energy|utilities|airlines|communications|bancorp)\b\.?/i.test(who);
-        const isCommittee = /political committee|\bpac\b|committee|electioneering|party/i.test(v.occ);
-        const org = looksOrg || isCommittee || /corporation|association|union|trust/i.test(v.occ);
-        return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type: isCommittee ? 'political committee' : org ? 'organization' : 'individual', occupation: org ? '' : v.occ, place: v.place,
+        const type = flFunderType(who, v.occ), org = type !== 'individual';
+        return { name: who, amount: '$' + Math.round(v.amount).toLocaleString('en-US'), type, occupation: org ? '' : v.occ, place: v.place,
           gifts: v.n, first: v.first, last: v.last };
       });
       markDisclosure({ donors: out.funders });
@@ -2804,7 +2810,7 @@ async function refreshFlDonors(env, key, result, name, office, save) {
 // committee ("Friends of Tom Leek") usually shows up as a donor to the campaign. For each one, list its
 // largest 2025-2026 donors with dates (Florida Division of Elections), and what it gave the campaign.
 // Replaces the web-research list, which has no committee names or dates. Refreshed daily.
-const ALLIED_VERSION = 1;
+const ALLIED_VERSION = 2;
 async function refreshAllied(env, result, name) {
   if (result.donorSource !== 'FL' && result.donorSource !== 'MDC' && result.donorSource !== 'CITY') return false;
   const fresh = result.alV === ALLIED_VERSION && result.alAt && Date.now() - result.alAt < 24 * 3600 * 1000;

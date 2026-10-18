@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
-  'fecLocal', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'flCommittee', 'realValue', 'clientIP', 'rateLimit',
+  'fecLocal', 'flFunderType', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'flCommittee', 'realValue', 'clientIP', 'rateLimit',
   'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat', 'refreshMdcDonors']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
@@ -279,4 +279,13 @@ test('official system with no reports yet says so', async () => {
   assert.equal(await w.refreshMdcDonors({ CACHE: fakeKV() }, result, 'Luis Gonzalez', 'Hialeah - Councilmember - Group II', ''), true);
   assert.deepEqual(result.donors, []);
   assert.match(result.donorDataNote, /^No contributions reported to the City of Hialeah/);
+});
+
+test('Florida committee funders: groups without Inc/LLC in the name are not labeled individuals', () => {
+  assert.equal(w.flFunderType('SEMINOLE TRIBE OF FLORIDA', 'TRIBE'), 'organization');
+  assert.equal(w.flFunderType('CENTENNIAL BANK', 'FINANCIAL SERVICES'), 'organization');
+  assert.equal(w.flFunderType('NEXTERA ENERGY CAPITAL HOLDINGS INC', ''), 'organization');
+  assert.equal(w.flFunderType('CONSERVATIVE FLORIDA', 'POLITICAL COMMITTEE'), 'political committee');
+  assert.equal(w.flFunderType('BOOK RONALD L.', 'ATTORNEY'), 'individual');
+  assert.equal(w.flFunderType('GARCIA MARIA', 'RETIRED'), 'individual');
 });
