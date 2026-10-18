@@ -408,6 +408,20 @@
   .endo:last-child{border-bottom:none;}
   .endo .eorg{font-weight:600; font-size:14px;}
   .endo .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .fil-head{font-size:15px; font-weight:700; line-height:1.45; margin:4px 0 10px;}
+  .fil-card{padding:10px 0 14px;}
+  .fil-stats{font-family:var(--mono); font-size:12.5px; color:var(--ink); margin-top:6px;}
+  .fil-stake{font-size:13px; line-height:1.5; margin-top:8px; padding:8px 10px; border-left:3px solid var(--rule); background:rgba(127,127,127,.06);}
+  .fil-stake b{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); font-weight:400; margin-bottom:2px;}
+  .fil-sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:12px 0 4px;}
+  .fil-row{display:grid; grid-template-columns:1fr auto; gap:2px 10px; padding:5px 0; font-size:13px; border-bottom:1px dotted #C9C9C1;}
+  .fil-row:last-child{border-bottom:none;}
+  .fil-row .amt{font-family:var(--mono); font-size:12.5px; text-align:right; white-space:nowrap;}
+  .fil-row .what{grid-column:1 / -1; font-size:12px; color:var(--ink-soft);}
+  .fil-bar{grid-column:1 / -1; height:6px; background:rgba(127,127,127,.15);}
+  .fil-bar span{display:block; height:100%; background:var(--ink);}
+  .side-yes + .fil-card .fil-bar span{background:var(--ok-fg);}
+  .side-no + .fil-card .fil-bar span{background:var(--no-bg);}
   .tagrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;}
   .tag{
     font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.07em;
@@ -981,6 +995,14 @@ en: {
   'fin.yes': '✓ Paying to pass it (Yes side)',
   'fin.no': '✕ Paying to defeat it (No side)',
   'fin.none': 'No organized funding found on this side.',
+  'fil.raised': 'Raised',
+  'fil.spent': 'Spent',
+  'fil.through': 'through {d}',
+  'fil.from': 'Where the money came from',
+  'fil.to': 'Where it went',
+  'fil.rest': 'Everyone else ({n})',
+  'fil.read': 'Read the filings',
+  'fil.stake': 'What is at stake for the main funder',
   'sec.supporters': 'Major Supporters',
   'sec.opponents': 'Major Opposition',
   'none.support': 'No organized support found in searched coverage.',
@@ -1417,6 +1439,14 @@ es: {
   'fin.yes': '✓ Pagan para aprobarla (lado del Sí)',
   'fin.no': '✕ Pagan para rechazarla (lado del No)',
   'fin.none': 'No se encontró financiamiento organizado en este lado.',
+  'fil.raised': 'Recaudó',
+  'fil.spent': 'Gastó',
+  'fil.through': 'hasta el {d}',
+  'fil.from': 'De dónde vino el dinero',
+  'fil.to': 'En qué se gastó',
+  'fil.rest': 'Todos los demás ({n})',
+  'fil.read': 'Ver los informes',
+  'fil.stake': 'Qué se juega el principal financiador',
   'sec.supporters': 'Principales partidarios',
   'sec.opponents': 'Principal oposición',
   'none.support': 'No se encontró apoyo organizado en la cobertura revisada.',
@@ -1853,6 +1883,14 @@ ht: {
   'fin.yes': '✓ Peye pou l pase (bò Wi)',
   'fin.no': '✕ Peye pou l pa pase (bò Non)',
   'fin.none': 'Nou pa jwenn okenn finansman òganize sou bò sa a.',
+  'fil.raised': 'Ranmase',
+  'fil.spent': 'Depanse',
+  'fil.through': 'jiska {d}',
+  'fil.from': 'Ki kote lajan an soti',
+  'fil.to': 'Ki kote l ale',
+  'fil.rest': 'Tout lòt yo ({n})',
+  'fil.read': 'Li rapò yo',
+  'fil.stake': 'Sa pi gwo finansè a gen an jwèt',
   'sec.supporters': 'Pi gwo moun ki pou li',
   'sec.opponents': 'Pi gwo opozisyon',
   'none.support': 'Nou pa jwenn okenn sipò òganize nan sous nou chèche yo.',
@@ -2674,6 +2712,44 @@ function funderRows(list){
   }).join('');
 }
 
+// A committee as its reports show it: totals, every funder with its share, the biggest places the money went.
+function filedRows(list){
+  if(!list || !list.length) return '<p class="empty">' + t('fin.none') + '</p>';
+  return list.map(function(c){
+    var f = c.filings || {};
+    var h = '<div class="fil-card"><div class="eorg">' + esc(c.name) + '</div>' +
+      (c.note ? '<div class="enote">' + esc(c.note) + '</div>' : '') +
+      '<div class="fil-stats">' + t('fil.raised') + ' ' + usd((f.raised || 0) + (f.inkind || 0)) + ' · ' + t('fil.spent') + ' ' + usd(f.spent) +
+      (f.through ? ' · ' + t('fil.through', {d: esc(fmtDay(f.through))}) : '') + '</div>';
+    if(c.stakeNote) h += '<div class="fil-stake"><b>' + t('fil.stake') + '</b>' + esc(c.stakeNote) + '</div>';
+    var donors = f.donors || [];
+    if(donors.length){
+      h += '<div class="fil-sub">' + t('fil.from') + '</div>' + donors.slice(0, 6).map(function(d){
+        return '<div class="fil-row"><div>' + esc(d.name) + (d.place ? ' <span class="what">· ' + esc(d.place) + '</span>' : '') + '</div>' +
+          '<div class="amt">' + usd(d.amount) + ' · ' + (d.share || d.amount <= 0 ? d.share : '&lt;0.1') + '%</div>' +
+          '<div class="fil-bar"><span style="width:' + Math.max(1, Math.min(100, d.share)) + '%"></span></div>' +
+          (d.disclosure ? '<div class="what">' + disclosureTag(d) + '</div>' : '') + '</div>';
+      }).join('');
+      if(donors.length > 6){
+        var rest = donors.slice(6).reduce(function(a, d){ return a + d.amount; }, 0);
+        h += '<div class="fil-row"><div>' + t('fil.rest', {n: donors.length - 6}) + '</div><div class="amt">' + usd(rest) + '</div></div>';
+      }
+    }
+    var pay = f.payees || [];
+    if(pay.length){
+      h += '<div class="fil-sub">' + t('fil.to') + '</div>' + pay.slice(0, 5).map(function(p){
+        return '<div class="fil-row"><div>' + esc(p.name) + '</div><div class="amt">' + usd(p.amount) + '</div>' +
+          (p.what ? '<div class="what">' + esc(p.what) + '</div>' : '') + '</div>';
+      }).join('');
+      if(pay.length > 5){
+        var other = pay.slice(5).reduce(function(a, p){ return a + p.amount; }, 0);
+        h += '<div class="fil-row"><div>' + t('fil.rest', {n: pay.length - 5}) + '</div><div class="amt">' + usd(other) + '</div></div>';
+      }
+    }
+    return h + '<p class="og-links">' + srcLink(c.url, t('fil.read')) + '</p></div>';
+  }).join('');
+}
+
 function sideList(list, emptyMsg){
   if(!list || !list.length) return '<p class="empty">' + emptyMsg + '</p>';
   return list.map(function(e){
@@ -2695,12 +2771,23 @@ function renderMeasureDossier(ri, r, cached){
   }
 
   var fin = r.financing || {};
-  if((fin.support && fin.support.length) || (fin.oppose && fin.oppose.length)) html += '<div class="dsec" id="backersSec"></div>';
-  html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
-    '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
-    '<div class="fin-side side-no">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
-  if(fin.note) html += '<p class="fine">' + esc(fin.note) + '</p>';
-  html += '</div>';
+  if(fin.filed){
+    // straight from the committees' own reports: one card per committee, who funds it, where it went
+    html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
+      (fin.headlineNote ? '<p class="fil-head">' + esc(fin.headlineNote) + '</p>' : '') +
+      '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + filedRows(fin.support) +
+      '<div class="fin-side side-no">' + t('fin.no') + '</div>' + filedRows(fin.oppose);
+    if(fin.note) html += '<p class="fine">' + esc(fin.note) +
+      (fin.stakeSources || []).map(function(s){ return srcLink(s.url, s.name); }).join('') + '</p>';
+    html += '</div>';
+  } else {
+    if((fin.support && fin.support.length) || (fin.oppose && fin.oppose.length)) html += '<div class="dsec" id="backersSec"></div>';
+    html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
+      '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + funderRows(fin.support) +
+      '<div class="fin-side side-no">' + t('fin.no') + '</div>' + funderRows(fin.oppose);
+    if(fin.note) html += '<p class="fine">' + esc(fin.note) + '</p>';
+    html += '</div>';
+  }
 
   html += '<div class="dsec"><h4>' + t('sec.supporters') + '</h4>' + sideList(r.supporters, t('none.support')) + '</div>';
   html += '<div class="dsec"><h4>' + t('sec.opponents') + '</h4>' + sideList(r.opponents, t('none.oppose')) + '</div>';

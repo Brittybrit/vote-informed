@@ -667,6 +667,7 @@ async function refreshCached(env, key, result, name, officeCode, office) {
   markDisclosure(result);
   let changed = false;
   if (result.financing) {                                         // a ballot measure
+    if (await refreshMeasureFilings(env, result, name)) changed = true;
     if (result.measV !== MEASURE_VERSION) {
       try {
         await dropPriorElection(env, result);
@@ -969,7 +970,8 @@ async function dropPriorCycle(env, result, name) {
 const MEASURE_VERSION = 1;
 async function dropPriorElection(env, result) {
   const lists = [['supporters', result.supporters], ['opponents', result.opponents]];
-  if (result.financing) lists.push(['financing.support', result.financing.support], ['financing.oppose', result.financing.oppose]);
+  // a filed measure's funders come from the committees' own reports, not from research to second-guess
+  if (result.financing && !result.financing.filed) lists.push(['financing.support', result.financing.support], ['financing.oppose', result.financing.oppose]);
   const items = [];
   for (const [label, list] of lists) if (Array.isArray(list)) list.forEach((it, i) => items.push({ id: label + ':' + i, it }));
   if (!items.length) return result;
@@ -991,7 +993,7 @@ async function dropPriorElection(env, result) {
   const prune = (label, list) => Array.isArray(list) ? list.filter((it, i) => ids.has(label + ':' + i) ? (prior.push(it), false) : true) : list;
   result.supporters = prune('supporters', result.supporters);
   result.opponents = prune('opponents', result.opponents);
-  if (result.financing) {
+  if (result.financing && !result.financing.filed) {
     result.financing.support = prune('financing.support', result.financing.support);
     result.financing.oppose = prune('financing.oppose', result.financing.oppose);
   }
@@ -1755,6 +1757,159 @@ function sameFirst(a, b) {
   const k = Math.min(a.length, b.length);
   if (k >= 3 && a.slice(0, k) === b.slice(0, k)) return true;
   return NICKNAMES.some(g => g.includes(a) && g.includes(b));
+}
+// Ballot measures: money from the committees' own reports, not web research.
+// A measure listed here gets its "who is financing it" section rebuilt from the official filings of the
+// committees registered for and against it: who gave, what share, where the money went, and what the
+// main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
+// shows for that report; if they don't (a layout change, an amendment we can't read), the last good
+// result stays up. No AI. Refreshed at most every 6 hours.
+const MEASURE_FILINGS_VERSION = 1;
+const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
+const MEASURE_FILINGS = [
+  {
+    match: /virginia key/i,
+    c: 'muncitymiami',
+    filer: 'City of Miami Clerk',
+    headlineNote: 'Both sides are paid for by marina companies competing for the same city lease. Each committee\'s money comes almost entirely from one company.',
+    committees: [
+      { side: 'support', ca: 155, name: 'Help Save Virginia Key PC',
+        stakeNote: 'Suntex co-owns Virginia Key LLC, the company that gets the lease if Yes wins: 45 years plus two 15-year renewals on 27 acres of city waterfront, with the right to combine the marinas into one private marina and build restaurants, bars and shops. The city gets at least $2.2 million a year in rent plus 6% of gross revenue.' },
+      { side: 'oppose', ca: 156, name: 'Preserve and Protect Miami',
+        stakeNote: 'Rickenbacker Marina is the current operator on the site. The new lease would let Virginia Key LLC remove current tenants. Rickenbacker Marina\'s president, Aabad Melwani, is one of the leaders of the No campaign.' }
+    ],
+    stakeSources: [
+      { name: 'WLRN, Oct 8, 2026', url: 'https://www.wlrn.org/government-politics/2026-10-08/miami-virginia-key-marina-referendum-ballot' },
+      { name: 'Axios Miami, Aug 20, 2026', url: 'https://www.axios.com/local/miami/2026/08/20/virginia-key-marina-redevelopment-miami-referendum' }
+    ]
+  }
+];
+function measureFilingsFor(name, summary) {
+  const s = String(name || '') + ' ' + String(summary || '');
+  return MEASURE_FILINGS.find(m => m.match.test(s)) || null;
+}
+const vfMoney = s => parseFloat(String(s || '').replace(/[$,\s]/g, '')) || 0;
+function vfIso(mdy) {
+  const m = String(mdy || '').match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  return m ? m[3] + '-' + m[1].padStart(2, '0') + '-' + m[2].padStart(2, '0') : '';
+}
+// The reports a committee has filed, from its page on the clerk's VoterFocus site
+function vfReportList(html) {
+  const out = [];
+  for (const m of String(html || '').matchAll(/<tr role="row">([\s\S]*?)<\/tr>/g)) {
+    const row = m[1];
+    const dhc = (row.match(/[?&;]dhc=(\d+)/) || [])[1];
+    if (!dhc) continue;
+    const label = (row.match(/dhc=\d+[^>]*>\s*([^<]+?)\s*<br>\s*\(([^)]*)\)/) || []);
+    const val = cls => vfMoney((row.match(new RegExp('class="' + cls + '"[\\s\\S]*?class="Value">([^<]*)<')) || [])[1]);
+    const period = String(label[2] || '').split('-');
+    out.push({ dhc, code: (label[1] || '').trim(), from: vfIso(period[0]), to: vfIso(period[1]),
+      monetary: val('Monetary'), inkind: val('InKind'), spent: val('Expenditures') });
+  }
+  return out;
+}
+const vfClean = s => decodeEntities(String(s || '').replace(/<br>/gi, ' ')).replace(/[\t\s]+/g, ' ').replace(/[\s-]+$/, '').trim();
+const vfOrgKey = s => normPart(s).replace(/\b(llc|inc|corp|corporation|co|pa|llp|lp)\b/g, '').replace(/\s+/g, ' ').trim();
+// Add up one committee's reports. csvs[i] is the per-report export for reports[i] (no report-code column).
+function tallyCommittee(reports, csvs) {
+  const HEAD = ['line number', 'item date', 'cont/exp', 'name'];
+  const gave = new Map(), paid = new Map();
+  let raised = 0, inkind = 0, spent = 0;
+  reports.forEach((rep, i) => {
+    const rows = parseCSV(String(csvs[i] || ''));
+    const head = (rows[0] || []).map(h => String(h).trim().toLowerCase());
+    if (HEAD.some((h, k) => head[k] !== h) || head[13] !== 'amount' || head[14] !== 'amend. code')
+      throw new Error('report ' + rep.dhc + ' export layout changed');
+    let c = 0, ik = 0, e = 0;
+    for (const x of rows.slice(1)) {
+      if (x.length < 15) continue;
+      const amt = (parseFloat(x[13]) || 0) * (x[14] === 'D' ? -1 : 1);
+      const who = vfClean(x[3]);
+      if (x[2] === 'C') {
+        const inK = /^(IK|INK)$/i.test(x[11]);
+        if (inK) ik += amt; else c += amt;
+        const k = vfOrgKey(who);
+        const cur = gave.get(k) || { name: who, amount: 0, type: x[9], place: [vfClean(x[6]), x[7]].filter(Boolean).join(', '), first: x[1], last: x[1] };
+        cur.amount += amt;
+        if (x[1] < cur.first) cur.first = x[1];
+        if (x[1] > cur.last) cur.last = x[1];
+        gave.set(k, cur);
+      } else if (x[2] === 'E') {
+        e += amt;
+        const k = vfOrgKey(who);
+        const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|Inc)\b/i, ' $1'), amount: 0, what: new Map() };
+        cur.amount += amt;
+        const d = vfClean(x[12]);
+        if (d) cur.what.set(d.toLowerCase(), { d, n: ((cur.what.get(d.toLowerCase()) || {}).n || 0) + amt });
+        paid.set(k, cur);
+      }
+    }
+    // the itemized rows must match the clerk's own totals for this report, to the dollar
+    const off = (a, b) => Math.abs(a - b) > 1;
+    if (off(c, rep.monetary) || off(ik, rep.inkind) || off(e, rep.spent))
+      throw new Error('report ' + rep.dhc + ' rows (' + c.toFixed(2) + ' / ' + e.toFixed(2) + ') do not match the posted totals (' + rep.monetary + ' / ' + rep.spent + ')');
+    raised += c; inkind += ik; spent += e;
+  });
+  const total = raised + inkind;
+  const typeOf = t => t === 'B' ? 'corporation' : t === 'I' ? 'individual' : t === 'F' || t === 'P' ? 'PAC/committee' : 'other';
+  const donors = [...gave.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
+    name: v.name, amount: Math.round(v.amount * 100) / 100, share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),   // never round a partial share up to 100
+    type: typeOf(v.type), place: v.place, first: v.first, last: v.last }));
+  const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
+    name: v.name, amount: Math.round(v.amount * 100) / 100,
+    what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
+  const through = reports.map(r => r.to).filter(Boolean).sort().pop() || '';
+  return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100,
+    through, reports: reports.map(r => r.code), donors, payees };
+}
+async function committeeFilings(c, ca) {
+  const page = VF + 'candidate_pr.php?op=cv&e=1&c=' + c + '&ca=' + ca + '&rellevel=3&committee=Y';
+  const r = await fetch(page, { headers: VF_H });
+  if (!r.ok) throw new Error('committee page ' + ca + ' ' + r.status);
+  const reports = vfReportList(await r.text());
+  if (!reports.length) throw new Error('committee ' + ca + ': no reports listed');
+  const csvs = await Promise.all(reports.map(async rep => {
+    const x = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + ca + '&county=' + c + '&dhc=' + rep.dhc, { headers: VF_H });
+    if (!x.ok) throw new Error('report ' + rep.dhc + ' export ' + x.status);
+    return x.text();
+  }));
+  return { ...tallyCommittee(reports, csvs), url: page };
+}
+function fmtUsd(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtLongDay(iso) {
+  const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][+m[2] - 1] + ' ' + (+m[3]) + ', ' + m[1] : '';
+}
+// Replace a measure's financing with the committees' filings. Returns true when the result changed.
+async function refreshMeasureFilings(env, result, name, now = Date.now()) {
+  const cfg = measureFilingsFor(name, result && result.summary);
+  if (!cfg || !result || !result.financing) return false;
+  const fin = result.financing;
+  if (fin.filed && fin.filV === MEASURE_FILINGS_VERSION && now - (fin.filAt || 0) < MEASURE_FILINGS_TTL) return false;
+  const sides = { support: [], oppose: [] };
+  try {
+    for (const com of cfg.committees) {
+      const f = await committeeFilings(cfg.c, com.ca);
+      const top = f.donors[0];
+      sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(f.raised + f.inkind), url: f.url,
+        stakeNote: com.stakeNote,
+        note: top ? (top.share === 100 ? 'All' : top.share >= 99 ? 'All but ' + fmtUsd(f.raised + f.inkind - top.amount) : top.share + '%') +
+          ' of its money came from ' + top.name + '.' : 'No contributions reported.',
+        filings: f });
+    }
+  } catch (e) {
+    console.log('measure filings error for ' + name + ': ' + e.message);
+    if (fin.filed) { fin.filAt = now - MEASURE_FILINGS_TTL + 3600 * 1000; return true; }   // keep the last good one, retry in an hour
+    return false;                                                                             // never filed: keep web research
+  }
+  const through = [...sides.support, ...sides.oppose].map(x => x.filings.through).sort().pop();
+  result.financing = {
+    support: sides.support, oppose: sides.oppose, filed: true, filV: MEASURE_FILINGS_VERSION, filAt: now,
+    headlineNote: cfg.headlineNote, stakeSources: cfg.stakeSources, filer: cfg.filer,
+    note: 'From the committees\' own reports to the ' + cfg.filer + ', through ' + fmtLongDay(through) + '. Newer reports show up here within a few hours of filing.',
+    research: fin.research || { support: fin.support, oppose: fin.oppose, note: fin.note }
+  };
+  return true;
 }
 async function mdcCandidateDonors(env, name, office) {
   const np = flNameParts(name);
@@ -2585,7 +2740,10 @@ function markDisclosure(result) {
     }
   };
   mark(result.donors); mark(result.committeeDonors);
-  if (result.financing) { mark(result.financing.support); mark(result.financing.oppose); }
+  if (result.financing) {
+    mark(result.financing.support); mark(result.financing.oppose);
+    for (const it of [...(result.financing.support || []), ...(result.financing.oppose || [])]) if (it && it.filings) mark(it.filings.donors);
+  }
   if (result.outsideSpending) { mark(result.outsideSpending.support); mark(result.outsideSpending.oppose); }
   return result;
 }
