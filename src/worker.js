@@ -3796,8 +3796,11 @@ function actionsToCsv(data) {
     const s = v == null ? '' : String(v);
     return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
   };
-  const head = ['candidate', 'body', 'action_date', 'item', 'result', 'vote_detail', 'candidate_role',
+  const head = ['candidate', 'body', 'action_date', 'item', 'result', 'vote_detail', 'candidate_role', 'registered_lobbyists',
     'donor', 'donation_amount', 'donation_date', 'days_from_action', 'context', 'record_url', 'donor_report_url'];
+  // "Brian Adler (Bilzin Sumberg) for Public Storage, registered 2023-09; ..."
+  const lobbyists = a => (Array.isArray(a.lobbied) ? a.lobbied : []).map(l =>
+    l.name + (l.firm ? ' (' + l.firm + ')' : '') + (l.for ? ' for ' + l.for : '') + (l.reg ? ', registered ' + l.reg : '')).join('; ');
   const rows = [head.join(',')];
   const dayDiff = (a, b) => {
     const da = Date.parse(a), db = Date.parse(b);
@@ -3811,7 +3814,7 @@ function actionsToCsv(data) {
     if (v.consent) parts.push('consent agenda');
     if (v.absent && v.absent.length) parts.push('absent: ' + v.absent.join(', '));
     const base = [a.candidate, a.body, a.date, en(a.title), a.result ? en(a.result) : a.passed === false ? 'failed' : 'passed', parts.join('; '),
-      (a.role || []).join('; ')];
+      (a.role || []).join('; '), lobbyists(a)];
     const donors = Array.isArray(a.donors) && a.donors.length ? a.donors : [{}];
     for (const g of donors) {
       rows.push(base.concat([en(g.name), g.amount == null ? '' : g.amount, g.date || '', dayDiff(a.date, g.date),

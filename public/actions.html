@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Donors and Official Actions · BALLOT305.ORG</title>
-<meta name="description" content="Every Miami-Dade city incumbent on the Nov. 3, 2026 ballot: official actions on items that name one of their campaign donors, checked against meeting records.">
-<meta property="og:title" content="Donors and Official Actions · Ballot305">
-<meta property="og:description" content="What Miami-Dade city incumbents did on items that name their own campaign donors, city by city.">
+<title>Donors, Lobbyists and Official Actions · BALLOT305.ORG</title>
+<meta name="description" content="Every Miami-Dade city incumbent on the Nov. 3, 2026 ballot: official actions on items that name one of their campaign donors or that a registered lobbyist worked on, checked against meeting records.">
+<meta property="og:title" content="Donors, Lobbyists and Official Actions · Ballot305">
+<meta property="og:description" content="What Miami-Dade city incumbents did on items that name their own campaign donors or that registered lobbyists worked on, city by city.">
 <meta property="og:image" content="https://ballot305.org/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,9 @@
   .role.no{border-color:var(--no-fg); color:var(--no-fg);}
   .donor{font-size:14px; margin-top:8px; padding-left:10px; border-left:3px solid var(--rule);}
   .donor b{font-weight:600;}
+  .lobs{font-size:13.5px; margin-top:8px; padding-left:10px; border-left:3px dotted var(--rule);}
+  .lobh{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .lob{margin-top:3px;} .lob b{font-weight:600;}
   .ctx{font-size:13px; color:var(--ink-soft); margin-top:6px; line-height:1.45;}
   .links{font-family:var(--mono); font-size:11.5px; margin-top:6px; display:flex; flex-wrap:wrap; gap:4px 14px;}
   a{color:var(--left-fg);}
@@ -85,14 +88,14 @@
 (function(){
   var S = {
     en: {
-      title: 'Donors and official actions',
-      lede: 'What Miami-Dade city incumbents on the November 3, 2026 ballot did on items that name one of their own campaign donors: votes, motions, items they brought forward, and votes they missed. Every item is checked by hand against the meeting minutes or signed resolution. Gifts before or after an action are listed, not judged. Nothing here claims a vote was bought. For state legislators, it lists state budget requests they filed where the money would go to a donor or the request’s registered lobbyist gave to their campaign or committee, and bills they sponsored that benefit a donor.',
+      title: 'Donors, lobbyists and official actions',
+      lede: 'What Miami-Dade city incumbents on the November 3, 2026 ballot did on items that name one of their own campaign donors or that a registered lobbyist worked on: votes, motions, items they brought forward, and votes they missed. Every item is checked by hand against the meeting minutes or signed resolution. Gifts before or after an action are listed, not judged. Nothing here claims a vote was bought. For state legislators, it lists state budget requests they filed where the money would go to a donor or the request’s registered lobbyist gave to their campaign or committee, and bills they sponsored that benefit a donor.',
       loading: 'Loading…', loadErr: 'Couldn’t load the list. Try again in a minute.',
       search: 'Search a name, donor or company', noresult: 'Nothing matches that search.',
-      sActions: 'actions tied to donors', sMembers: 'incumbents with at least one', sCities: 'cities and districts covered', sUpdated: 'last checked',
+      sActions: 'actions tied to donors or lobbyists', sMembers: 'incumbents with at least one', sCities: 'cities and districts covered', sUpdated: 'last checked',
       body: '{body}', allMembers: 'Incumbents on the ballot',
       noIncumbent: 'No current member of this body is on the ballot, so there are no official actions to compare.',
-      nActions: '{n} actions naming a donor', nActions1: '1 action naming a donor', fromThese: 'gifts from these donors: {amt}',
+      nActions: '{n} actions with a donor or lobbyist', nActions1: '1 action with a donor or lobbyist', fromThese: 'gifts from these donors: {amt}',
       current: 'Not reviewed yet.', none: 'Reviewed. No official actions on items naming one of their donors were found in the records searched.',
       nodata: 'Itemized campaign reports for them are not available, so their donors can’t be checked against their actions yet.',
       nogivers: 'Their campaign reports list no outside donors, so no action can be tied to one.',
@@ -100,20 +103,21 @@
       former: 'Former member. Past official actions not reviewed yet.',
       passed: 'Passed', failed: 'Failed', unan: 'unanimous', consent: 'approved with the consent agenda', yes: 'Yes', no: 'No', absent: 'Absent',
       gave: 'gave {amt} on {date}', record: 'Meeting record', recordReq: 'Request form', recordBill: 'Bill page', report: 'Campaign report',
-      'role.yes': 'Voted yes', 'role.no': 'Voted no', 'role.absent': 'Absent for the vote', 'role.moved': 'Made the motion', 'role.seconded': 'Seconded', 'role.presented': 'Presented the item', 'role.requested': 'Filed the budget request', 'role.sponsor': 'Sponsored the bill',
-      how1: 'How this list is made: for each incumbent, the business, PAC and larger individual donors in their official campaign reports are searched for in the posted agendas, minutes and resolutions from January 2025 on. When a donor is a sister company of the party in the item, it is included only if state corporate records show a shared address and shared managers or registered agent, and the item says what was confirmed. Records posted online differ by city, so “none found” means none in the records searched. For state legislators, every House and Senate budget request form they filed for the 2025 and 2026 sessions was read. Gifts to a political committee the legislator chairs are counted and labeled. Whether a request was funded was not checked.',
+      'role.yes': 'Voted yes', 'role.no': 'Voted no', 'role.absent': 'Absent for the vote', 'role.moved': 'Made the motion', 'role.seconded': 'Seconded', 'role.presented': 'Presented the item', 'role.requested': 'Filed the budget request', 'role.sponsor': 'Sponsored the bill', 'role.sponsoredItem': 'Sponsored the item',
+      lobbied: 'Registered lobbyists on this item', lobFor: 'for {client}', lobReg: 'registered {date}', lobForm: 'named on the request forms', noGift: 'No gift from the client, its lobbyists or their firms appears in {name}’s campaign reports.',
+      how1: 'How this list is made: for each incumbent, the business, PAC and larger individual donors in their official campaign reports are searched for in the posted agendas, minutes and resolutions from January 2025 on. When a donor is a sister company of the party in the item, it is included only if state corporate records show a shared address and shared managers or registered agent, and the item says what was confirmed. Records posted online differ by city, so “none found” means none in the records searched. For state legislators, every House and Senate budget request form they filed for the 2025 and 2026 sessions was read. Gifts to a political committee the legislator chairs are counted and labeled. Whether a request was funded was not checked. Where a city posts its lobbyist registry (so far Aventura, North Miami Beach, Coral Gables, Doral and the county), items its registered lobbyists worked on are listed with each lobbyist, firm, client and registration date as the registry records them, whether or not anyone involved gave to the candidate. In Aventura and North Miami Beach every land-use and contract item a registered client asked for since 2022 was checked against the signed resolutions or minutes.',
       how2: 'Each candidate’s page also lists donors who gave to more than one candidate in the same city. Read the <a href="/methodology#ties">full method</a>. Download the whole table as a <a href="/data/donor-actions.csv">CSV file</a> (English). Found an error or a missing item? Email <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
       foot: '<a href="/">Back to Ballot305.org</a> · <a href="/transparency">City transparency check</a> · <a href="/methodology">How it works</a> · <a href="/about">About</a>'
     },
     es: {
-      title: 'Donantes y acciones oficiales',
-      lede: 'Lo que hicieron los titulares de cargos municipales de Miami-Dade que están en la boleta del 3 de noviembre de 2026 en asuntos que nombran a uno de sus propios donantes de campaña: votos, mociones, asuntos que presentaron y votaciones a las que faltaron. Cada asunto se verificó a mano con el acta de la reunión o la resolución firmada. Los aportes antes o después de una acción se informan, no se juzgan. Nada aquí afirma que un voto fue comprado. Para los legisladores estatales, muestra las solicitudes de fondos del presupuesto estatal que presentaron cuando el dinero iría a un donante o el cabildero registrado en la solicitud dio a su campaña o comité, y los proyectos de ley que patrocinaron que benefician a un donante.',
+      title: 'Donantes, cabilderos y acciones oficiales',
+      lede: 'Lo que hicieron los titulares de cargos municipales de Miami-Dade que están en la boleta del 3 de noviembre de 2026 en asuntos que nombran a uno de sus propios donantes de campaña o en los que trabajó un cabildero registrado: votos, mociones, asuntos que presentaron y votaciones a las que faltaron. Cada asunto se verificó a mano con el acta de la reunión o la resolución firmada. Los aportes antes o después de una acción se informan, no se juzgan. Nada aquí afirma que un voto fue comprado. Para los legisladores estatales, muestra las solicitudes de fondos del presupuesto estatal que presentaron cuando el dinero iría a un donante o el cabildero registrado en la solicitud dio a su campaña o comité, y los proyectos de ley que patrocinaron que benefician a un donante.',
       loading: 'Cargando…', loadErr: 'No se pudo cargar la lista. Intente de nuevo en un minuto.',
       search: 'Busque un nombre, donante o empresa', noresult: 'Nada coincide con esa búsqueda.',
-      sActions: 'acciones vinculadas a donantes', sMembers: 'titulares con al menos una', sCities: 'ciudades y distritos incluidos', sUpdated: 'última revisión',
+      sActions: 'acciones vinculadas a donantes o cabilderos', sMembers: 'titulares con al menos una', sCities: 'ciudades y distritos incluidos', sUpdated: 'última revisión',
       body: '{body}', allMembers: 'Titulares en la boleta',
       noIncumbent: 'Ningún miembro actual de este organismo está en la boleta, así que no hay acciones oficiales que comparar.',
-      nActions: '{n} acciones que nombran a un donante', nActions1: '1 acción que nombra a un donante', fromThese: 'aportes de estos donantes: {amt}',
+      nActions: '{n} acciones con un donante o cabildero', nActions1: '1 acción con un donante o cabildero', fromThese: 'aportes de estos donantes: {amt}',
       current: 'Aún no revisado.', none: 'Revisado. No se encontraron acciones oficiales sobre asuntos que nombren a uno de sus donantes en los registros consultados.',
       nodata: 'No hay reportes de campaña detallados de esta persona, así que aún no se pueden comparar sus donantes con sus acciones.',
       nogivers: 'Sus reportes de campaña no muestran donantes externos, así que ninguna acción puede vincularse a uno.',
@@ -121,20 +125,21 @@
       former: 'Exmiembro. Sus acciones oficiales pasadas aún no se han revisado.',
       passed: 'Aprobado', failed: 'Rechazado', unan: 'por unanimidad', consent: 'aprobado en la agenda de consentimiento', yes: 'Sí', no: 'No', absent: 'Ausente',
       gave: 'donó {amt} el {date}', record: 'Acta de la reunión', recordReq: 'Formulario de solicitud', recordBill: 'Página del proyecto', report: 'Reporte de campaña',
-      'role.yes': 'Votó sí', 'role.no': 'Votó no', 'role.absent': 'Ausente en la votación', 'role.moved': 'Presentó la moción', 'role.seconded': 'Secundó la moción', 'role.presented': 'Presentó el asunto', 'role.requested': 'Presentó la solicitud de fondos', 'role.sponsor': 'Patrocinó el proyecto de ley',
-      how1: 'Cómo se hace esta lista: para cada titular, se buscan los donantes empresariales, los PAC y los donantes individuales más grandes de sus reportes oficiales de campaña en las agendas, actas y resoluciones publicadas desde enero de 2025. Cuando el donante es una empresa hermana de la parte del asunto, se incluye solo si los registros corporativos del estado muestran la misma dirección y los mismos gerentes o agente registrado, y el asunto dice qué se confirmó. Los registros publicados en línea varían según la ciudad, así que “no se encontró” significa que no se encontró en los registros consultados. Para los legisladores estatales, se leyeron todos los formularios de solicitud de fondos de la Cámara y el Senado que presentaron para las sesiones de 2025 y 2026. Se cuentan y se identifican los aportes a un comité político que preside el legislador. No se verificó si cada solicitud recibió fondos.',
+      'role.yes': 'Votó sí', 'role.no': 'Votó no', 'role.absent': 'Ausente en la votación', 'role.moved': 'Presentó la moción', 'role.seconded': 'Secundó la moción', 'role.presented': 'Presentó el asunto', 'role.requested': 'Presentó la solicitud de fondos', 'role.sponsor': 'Patrocinó el proyecto de ley', 'role.sponsoredItem': 'Patrocinó el asunto',
+      lobbied: 'Cabilderos registrados en este asunto', lobFor: 'por {client}', lobReg: 'registrado {date}', lobForm: 'nombrados en los formularios de solicitud', noGift: 'No aparece ninguna donación del cliente, sus cabilderos o sus firmas en los reportes de campaña de {name}.',
+      how1: 'Cómo se hace esta lista: para cada titular, se buscan los donantes empresariales, los PAC y los donantes individuales más grandes de sus reportes oficiales de campaña en las agendas, actas y resoluciones publicadas desde enero de 2025. Cuando el donante es una empresa hermana de la parte del asunto, se incluye solo si los registros corporativos del estado muestran la misma dirección y los mismos gerentes o agente registrado, y el asunto dice qué se confirmó. Los registros publicados en línea varían según la ciudad, así que “no se encontró” significa que no se encontró en los registros consultados. Para los legisladores estatales, se leyeron todos los formularios de solicitud de fondos de la Cámara y el Senado que presentaron para las sesiones de 2025 y 2026. Se cuentan y se identifican los aportes a un comité político que preside el legislador. No se verificó si cada solicitud recibió fondos. Donde una ciudad publica su registro de cabilderos (por ahora Aventura, North Miami Beach, Coral Gables, Doral y el condado), los asuntos en que trabajaron sus cabilderos registrados se muestran con cada cabildero, firma, cliente y fecha de registro tal como constan, haya o no donaciones al candidato. En Aventura y North Miami Beach se revisó contra las resoluciones firmadas o las actas cada asunto de uso de suelo y contratos que pidió un cliente registrado desde 2022.',
       how2: 'La página de cada candidato también muestra los donantes que dieron a más de un candidato en la misma ciudad. Lea el <a href="/methodology#ties">método completo</a>. Descargue la tabla completa en un <a href="/data/donor-actions.csv">archivo CSV</a> (en inglés). ¿Encontró un error o falta algo? Escriba a <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
       foot: '<a href="/">Volver a Ballot305.org</a> · <a href="/transparency">Transparencia de las ciudades</a> · <a href="/methodology">Cómo funciona</a> · <a href="/about">Acerca de</a>'
     },
     ht: {
-      title: 'Donatè ak aksyon ofisyèl',
-      lede: 'Sa ofisyèl vil Miami-Dade ki sou bilten vòt 3 novanm 2026 la te fè sou dosye ki nonmen youn nan pwòp donatè kanpay yo: vòt, mosyon, dosye yo te pote, ak vòt yo te rate. Nou verifye chak dosye ak men nan pwosè-vèbal reyinyon an oswa rezolisyon ki siyen an. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije. Anyen isit la pa di yo te achte yon vòt. Pou lejislatè Leta yo, li montre demann lajan nan bidjè Leta yo te depoze lè lajan an ta ale bay yon donatè oswa lobiyis anrejistre sou demann lan te bay kanpay oswa komite yo, ak pwojè lwa yo te parennen ki benefisye yon donatè.',
+      title: 'Donatè, lobiyis ak aksyon ofisyèl',
+      lede: 'Sa ofisyèl vil Miami-Dade ki sou bilten vòt 3 novanm 2026 la te fè sou dosye ki nonmen youn nan pwòp donatè kanpay yo oswa kote yon lobiyis anrejistre te travay: vòt, mosyon, dosye yo te pote, ak vòt yo te rate. Nou verifye chak dosye ak men nan pwosè-vèbal reyinyon an oswa rezolisyon ki siyen an. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije. Anyen isit la pa di yo te achte yon vòt. Pou lejislatè Leta yo, li montre demann lajan nan bidjè Leta yo te depoze lè lajan an ta ale bay yon donatè oswa lobiyis anrejistre sou demann lan te bay kanpay oswa komite yo, ak pwojè lwa yo te parennen ki benefisye yon donatè.',
       loading: 'N ap chaje…', loadErr: 'Nou pa t ka chaje lis la. Eseye ankò nan yon minit.',
       search: 'Chèche yon non, yon donatè oswa yon konpayi', noresult: 'Anyen pa koresponn ak rechèch sa a.',
-      sActions: 'aksyon ki mare ak donatè', sMembers: 'ofisyèl ki gen omwen youn', sCities: 'vil ak distri ki enkli', sUpdated: 'dènye verifikasyon',
+      sActions: 'aksyon ki mare ak donatè oswa lobiyis', sMembers: 'ofisyèl ki gen omwen youn', sCities: 'vil ak distri ki enkli', sUpdated: 'dènye verifikasyon',
       body: '{body}', allMembers: 'Ofisyèl ki sou bilten vòt la',
       noIncumbent: 'Pa gen okenn manm aktyèl òganis sa a ki sou bilten vòt la, kidonk pa gen aksyon ofisyèl pou konpare.',
-      nActions: '{n} aksyon ki nonmen yon donatè', nActions1: '1 aksyon ki nonmen yon donatè', fromThese: 'don donatè sa yo: {amt}',
+      nActions: '{n} aksyon ak yon donatè oswa lobiyis', nActions1: '1 aksyon ak yon donatè oswa lobiyis', fromThese: 'don donatè sa yo: {amt}',
       current: 'Poko revize.', none: 'Revize. Nou pa jwenn okenn aksyon ofisyèl sou dosye ki nonmen youn nan donatè li yo nan dosye nou chèche yo.',
       nodata: 'Poko gen rapò kanpay detaye pou li, kidonk nou poko ka konpare donatè li yo ak aksyon li yo.',
       nogivers: 'Rapò kanpay li yo pa gen okenn donatè deyò, kidonk pa gen okenn aksyon ki ka mare ak youn.',
@@ -142,8 +147,9 @@
       former: 'Ansyen manm. Nou poko revize ansyen aksyon ofisyèl li yo.',
       passed: 'Pase', failed: 'Pa pase', unan: 'alinanimite', consent: 'apwouve nan ajanda konsantman an', yes: 'Wi', no: 'Non', absent: 'Absan',
       gave: 'bay {amt} {date}', record: 'Dosye reyinyon an', recordReq: 'Fòm demann lan', recordBill: 'Paj pwojè lwa a', report: 'Rapò kanpay',
-      'role.yes': 'Vote wi', 'role.no': 'Vote non', 'role.absent': 'Te absan pou vòt la', 'role.moved': 'Te pwopoze mosyon an', 'role.seconded': 'Te apiye mosyon an', 'role.presented': 'Te prezante dosye a', 'role.requested': 'Te depoze demann lajan an', 'role.sponsor': 'Te parennen pwojè lwa a',
-      how1: 'Kijan nou fè lis sa a: pou chak ofisyèl, nou chèche non donatè biznis, PAC ak pi gwo donatè endividyèl ki nan rapò kanpay ofisyèl yo nan ajanda, pwosè-vèbal ak rezolisyon vil la pibliye depi janvye 2025. Lè donatè a se yon konpayi sè pati ki nan dosye a, nou mete l sèlman si dosye konpayi Leta a montre menm adrès ak menm manadjè oswa ajan anrejistre, epi dosye a di sa ki konfime. Dosye ki sou entènèt yo pa menm nan chak vil, kidonk “nou pa jwenn” vle di nou pa jwenn anyen nan dosye nou chèche yo. Pou lejislatè Leta yo, nou li tout fòm demann lajan Lachanm ak Sena yo te depoze pou sesyon 2025 ak 2026 yo. Nou konte epi nou make don ki bay yon komite politik lejislatè a prezide. Nou pa verifye si chak demann te jwenn lajan.',
+      'role.yes': 'Vote wi', 'role.no': 'Vote non', 'role.absent': 'Te absan pou vòt la', 'role.moved': 'Te pwopoze mosyon an', 'role.seconded': 'Te apiye mosyon an', 'role.presented': 'Te prezante dosye a', 'role.requested': 'Te depoze demann lajan an', 'role.sponsor': 'Te parennen pwojè lwa a', 'role.sponsoredItem': 'Te parennen dosye a',
+      lobbied: 'Lobiyis anrejistre sou dosye sa a', lobFor: 'pou {client}', lobReg: 'anrejistre {date}', lobForm: 'nonmen sou fòm demann yo', noGift: 'Pa gen okenn kado kliyan an, lobiyis li yo oswa konpayi yo nan rapò kanpay {name}.',
+      how1: 'Kijan nou fè lis sa a: pou chak ofisyèl, nou chèche non donatè biznis, PAC ak pi gwo donatè endividyèl ki nan rapò kanpay ofisyèl yo nan ajanda, pwosè-vèbal ak rezolisyon vil la pibliye depi janvye 2025. Lè donatè a se yon konpayi sè pati ki nan dosye a, nou mete l sèlman si dosye konpayi Leta a montre menm adrès ak menm manadjè oswa ajan anrejistre, epi dosye a di sa ki konfime. Dosye ki sou entènèt yo pa menm nan chak vil, kidonk “nou pa jwenn” vle di nou pa jwenn anyen nan dosye nou chèche yo. Pou lejislatè Leta yo, nou li tout fòm demann lajan Lachanm ak Sena yo te depoze pou sesyon 2025 ak 2026 yo. Nou konte epi nou make don ki bay yon komite politik lejislatè a prezide. Nou pa verifye si chak demann te jwenn lajan. Kote yon vil pibliye rejis lobiyis li (pou kounye a Aventura, North Miami Beach, Coral Gables, Doral ak konte a), nou mete dosye lobiyis anrejistre li yo te travay sou yo, ak chak lobiyis, konpayi, kliyan ak dat anrejistreman jan rejis la ekri yo, kit gen kado bay kandida a kit pa genyen. Nan Aventura ak North Miami Beach nou verifye chak dosye itilizasyon tè ak kontra yon kliyan anrejistre te mande depi 2022 ak rezolisyon siyen yo oswa pwosè-vèbal yo.',
       how2: 'Paj chak kandida montre tou donatè ki bay plis pase yon kandida nan menm vil la. Li <a href="/methodology#ties">tout metòd la</a>. Telechaje tout tablo a kòm yon <a href="/data/donor-actions.csv">fichye CSV</a> (an angle). Ou jwenn yon erè oswa yon bagay ki manke? Ekri <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>.',
       foot: '<a href="/">Retounen sou Ballot305.org</a> · <a href="/transparency">Transparans vil yo</a> · <a href="/methodology">Kijan li mache</a> · <a href="/about">Konsènan</a>'
     }
@@ -199,6 +205,33 @@
     });
   }
 
+  function reg(d){
+    var m = String(d || '').match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
+    if(!m) return '';
+    if(m[3]) return day(d);
+    try { return new Date(+m[1], +m[2]-1, 1).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month:'short', year:'numeric'}); } catch(e){ return d; }
+  }
+  // registered lobbyists, grouped by firm and client, with the registry they come from
+  function lobHtml(a){
+    var list = a.lobbied || [];
+    if(!list.length) return '';
+    var groups = [], by = {}, used = [];
+    list.forEach(function(l){
+      var k = (l.firm || '') + '|' + (l.for || '') + '|' + (l.src || '');
+      if(!by[k]){ by[k] = {firm: l.firm, client: l.for, src: l.src, names: [], regs: []}; groups.push(by[k]); }
+      by[k].names.push(l.name); if(l.reg) by[k].regs.push(l.reg);
+    });
+    var rows = groups.map(function(g){
+      var r = g.regs.slice().sort(), when = '';
+      if(r.length){ var a0 = reg(r[0]), a1 = reg(r[r.length - 1]); when = t('lobReg', {date: esc(a0 === a1 ? a0 : a0 + ' – ' + a1)}); }
+      if(g.src && g.src !== 'form' && used.indexOf(g.src) < 0) used.push(g.src);
+      return '<div class="lob"><b>' + esc(g.names.join(', ')) + '</b>' + (g.firm ? ' (' + esc(g.firm) + ')' : '') + (g.client ? ' ' + t('lobFor', {client: esc(g.client)}) : '') +
+        (g.src === 'form' ? ', ' + t('lobForm') : '') + (when ? ' · ' + when : '') + '</div>';
+    }).join('');
+    var R = (DATA && DATA.registries) || {};
+    var links = used.map(function(k){ return R[k] ? link(R[k].url, L(R[k].name)) : ''; }).join('');
+    return '<div class="lobs"><div class="lobh">' + t('lobbied') + '</div>' + rows + (links ? '<div class="links">' + links + '</div>' : '') + '</div>';
+  }
   function actHtml(a){
     var v = a.votes || {}, out = [];
     var split = v.yes && v.no && v.no.length;
@@ -208,15 +241,16 @@
     if(v.absent && v.absent.length) out.push(t('absent') + ': ' + esc(v.absent.join(', ')));
     var donors = (a.donors || []).map(function(g){ return '<div class="donor"><b>' + esc(L(g.name)) + '</b> ' + t('gave', {amt: usd(g.amount), date: day(g.date)}) + '</div>'; }).join('');
     var ctx = L(a.context);
+    var lob = lobHtml(a), noGift = (a.lobbied || []).length && !(a.donors || []).length ? '<p class="ctx">' + t('noGift', {name: esc(a.candidate)}) + '</p>' : '';
     return '<div class="act"><div class="when">' + esc(day(a.date)) + '</div><div class="ttl">' + esc(L(a.title)) + '</div>' +
       '<div class="vote">' + out.join('<br>') + '</div>' +
       '<div class="roles">' + (a.role || []).map(function(r){ return '<span class="role' + (r === 'no' ? ' no' : '') + '">' + t('role.' + r) + '</span>'; }).join('') + '</div>' +
-      donors + (ctx ? '<p class="ctx">' + esc(ctx) + '</p>' : '') +
+      lob + donors + noGift + (ctx ? '<p class="ctx">' + esc(ctx) + '</p>' : '') +
       '<div class="links">' + link(a.url, t(a.kind === 'request' ? 'recordReq' : a.kind === 'bill' ? 'recordBill' : 'record')) + link(a.donorUrl, t('report')) + '</div></div>';
   }
   function memberHtml(m){
     var o = m.o, h = '<div class="member" data-search="' + esc(norm([o.candidate].concat(m.acts.map(function(a){
-      return [L(a.title)].concat((a.donors || []).map(function(g){ return L(g.name); })).join(' ');
+      return [L(a.title)].concat((a.donors || []).map(function(g){ return L(g.name); })).concat((a.lobbied || []).map(function(l){ return [l.name, l.firm, l.for].join(' '); })).join(' ');
     })).join(' '))) + '"><h3>' + esc(o.candidate) + '</h3>';
     if(m.acts.length){
       var seen = {}, sum = 0;
