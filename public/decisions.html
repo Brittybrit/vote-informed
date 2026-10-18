@@ -138,7 +138,7 @@
       howCity: 'For each city, the box under its name says what was checked. Where a city posts a lobbyist registry, the list starts from what registered lobbyists’ clients asked for; where it doesn’t, the list starts from items that name a donor of someone on the ballot, and those gifts are shown with a note on how they connect.',
       lede3: 'This page starts from the official action. For each action by the Miami-Dade County Commission and the city councils that benefits a named company or group, it shows how each member voted, who was registered to lobby for that company, and whether the company, those lobbyists or their lobbying firms gave to an official who is on the November 3, 2026 ballot. For state legislators, the actions are the budget requests they filed. Gifts are listed with the dates the reports show, before or after the action. Nothing here claims a vote or request was bought.',
       'v.requested': 'filed this request', 'kind.request': 'Budget request', 'res.requested': 'Asked for {amt} in the state budget', 'res.requestedW': 'Asked for {amt} in the state budget; later marked withdrawn',
-      partyS: 'Would receive the money: {p}', lobbiedS: 'Registered lobbyist named on the request form', formLink: 'Request form',
+      partyS: 'Would receive the money: {p}', lobbiedS: 'Lobbyist named on the request form', formLink: 'Request form',
       noGiftS: 'No gift from the group receiving the money, the lobbying firm on the form, its PAC or its lobbyists was found in {accts}.',
       'how.s.named': 'Same name as {lob}, the lobbyist named on the form. The report lists the occupation as “{occ}”.',
       'how.s.firm': 'The lobbying firm named on the form ({firm}).',
@@ -146,7 +146,8 @@
       'how.s.firmlob': 'A lobbyist at the firm named on the form ({firm}).',
       'how.s.party': 'The giver is the group named on the form to receive the money.',
       offBallotS: 'Only members from Miami-Dade who are on the November 3 ballot are listed.',
-      howState: 'Each state legislator files budget request forms asking for money for a project. The form names the member, the group that would get the money, and the registered lobbyist working on it. A gift from one of a firm’s lobbyists or from the firm’s political committee is counted as a gift from the firm, at any amount. Whether a request was funded was not checked.'
+      howState: 'Each state legislator files budget request forms asking for money for a project. The form names the member, the group that would get the money, and the registered lobbyist working on it. A gift from one of a firm’s lobbyists or from the firm’s political committee is counted as a gift from the firm, at any amount. Whether a request was funded was not checked.',
+      'reg.confirmed': 'Registered with the Legislature to lobby for {p} ({y}).', 'reg.otherClients': 'Registered with the Legislature, but not found registered for a client named “{rec}” in the 2025 or 2026 lists.', 'reg.notFound': 'Not found in the Legislature’s 2025 or 2026 lobbyist lists.', fUnreg: 'Lobbyist not found registered for the client'
     },
     es: {
       title: 'Acciones oficiales: votos, cabilderos y donaciones',
@@ -190,7 +191,7 @@
       howCity: 'Para cada ciudad, el recuadro bajo su nombre explica qué se revisó. Donde la ciudad publica un registro de cabilderos, la lista parte de lo que pidieron los clientes de cabilderos registrados; donde no, parte de los asuntos que nombran a un donante de alguien en la boleta, y esas donaciones se muestran con una nota sobre la relación.',
       lede3: 'Esta página parte de la acción oficial. Para cada acción de la Comisión del Condado de Miami-Dade y de los concejos municipales que beneficia a una empresa o grupo con nombre, muestra cómo votó cada miembro, quién estaba registrado para cabildear por esa empresa y si la empresa, esos cabilderos o sus firmas donaron a un funcionario que está en la boleta del 3 de noviembre de 2026. Para los legisladores estatales, las acciones son las solicitudes de fondos que presentaron. Las donaciones aparecen con las fechas de los reportes, antes o después de la acción. Nada aquí afirma que se compró un voto o una solicitud.',
       'v.requested': 'presentó esta solicitud', 'kind.request': 'Solicitud de fondos', 'res.requested': 'Pidió {amt} en el presupuesto estatal', 'res.requestedW': 'Pidió {amt} en el presupuesto estatal; luego marcada como retirada',
-      partyS: 'Recibiría el dinero: {p}', lobbiedS: 'Cabildero registrado nombrado en el formulario', formLink: 'Formulario de solicitud',
+      partyS: 'Recibiría el dinero: {p}', lobbiedS: 'Cabildero nombrado en el formulario', formLink: 'Formulario de solicitud',
       noGiftS: 'No se encontró ninguna donación del grupo que recibiría el dinero, de la firma de cabildeo del formulario, de su PAC ni de sus cabilderos en {accts}.',
       'how.s.named': 'Mismo nombre que {lob}, el cabildero nombrado en el formulario. El reporte indica la ocupación como “{occ}”.',
       'how.s.firm': 'La firma de cabildeo nombrada en el formulario ({firm}).',
@@ -198,7 +199,8 @@
       'how.s.firmlob': 'Un cabildero de la firma nombrada en el formulario ({firm}).',
       'how.s.party': 'El donante es el grupo que el formulario nombra para recibir el dinero.',
       offBallotS: 'Solo aparecen los miembros de Miami-Dade que están en la boleta del 3 de noviembre.',
-      howState: 'Cada legislador estatal presenta formularios para pedir dinero del presupuesto para un proyecto. El formulario nombra al miembro, al grupo que recibiría el dinero y al cabildero registrado que trabaja en él. Una donación de uno de los cabilderos de una firma o del comité político de la firma cuenta como donación de la firma, sin importar el monto. No se revisó si la solicitud recibió fondos.'
+      howState: 'Cada legislador estatal presenta formularios para pedir dinero del presupuesto para un proyecto. El formulario nombra al miembro, al grupo que recibiría el dinero y al cabildero registrado que trabaja en él. Una donación de uno de los cabilderos de una firma o del comité político de la firma cuenta como donación de la firma, sin importar el monto. No se revisó si la solicitud recibió fondos.',
+      'reg.confirmed': 'Registrado ante la Legislatura como cabildero de {p} ({y}).', 'reg.otherClients': 'Registrado ante la Legislatura, pero no aparece registrado para un cliente llamado “{rec}” en las listas de 2025 o 2026.', 'reg.notFound': 'No aparece en las listas de cabilderos de la Legislatura de 2025 o 2026.', fUnreg: 'Cabildero sin registro para el cliente'
     },
     ht: {
       title: 'Aksyon ofisyèl: vòt, lobiyis ak kado',
@@ -242,7 +244,7 @@
       howCity: 'Pou chak vil, bwat ki anba non li a di sa nou verifye. Kote vil la pibliye yon rejis lobiyis, lis la kòmanse ak sa kliyan lobiyis anrejistre yo te mande; kote li pa pibliye l, lis la kòmanse ak dosye ki nonmen yon donatè yon moun ki sou bilten an, epi nou montre kado sa yo ak yon nòt sou kijan yo konekte.',
       lede3: 'Paj sa a kòmanse ak aksyon ofisyèl la. Pou chak aksyon Komisyon Konte Miami-Dade ak konsèy vil yo ki benefisye yon konpayi oswa yon gwoup ki gen non, li montre kijan chak manm te vote, ki moun ki te anrejistre pou fè lobi pou konpayi sa a, epi si konpayi a, lobiyis sa yo oswa fèm yo te bay yon ofisyèl ki sou bilten 3 novanm 2026 la. Pou lejislatè Leta yo, aksyon yo se demann bidjè yo te depoze. Kado yo parèt ak dat rapò yo bay, anvan oswa apre aksyon an. Anyen isit la pa di yo te achte yon vòt oswa yon demann.',
       'v.requested': 'te depoze demann sa a', 'kind.request': 'Demann bidjè', 'res.requested': 'Te mande {amt} nan bidjè Leta a', 'res.requestedW': 'Te mande {amt} nan bidjè Leta a; pita yo make l retire',
-      partyS: 'Ta resevwa lajan an: {p}', lobbiedS: 'Lobiyis anrejistre ki nonmen sou fòm nan', formLink: 'Fòm demann nan',
+      partyS: 'Ta resevwa lajan an: {p}', lobbiedS: 'Lobiyis ki nonmen sou fòm nan', formLink: 'Fòm demann nan',
       noGiftS: 'Nou pa jwenn okenn kado nan gwoup ki ta resevwa lajan an, fèm lobi ki sou fòm nan, PAC li oswa lobiyis li yo nan {accts}.',
       'how.s.named': 'Menm non ak {lob}, lobiyis ki nonmen sou fòm nan. Rapò a bay okipasyon an kòm “{occ}”.',
       'how.s.firm': 'Fèm lobi ki nonmen sou fòm nan ({firm}).',
@@ -250,7 +252,8 @@
       'how.s.firmlob': 'Yon lobiyis nan fèm ki nonmen sou fòm nan ({firm}).',
       'how.s.party': 'Moun ki bay la se gwoup fòm nan nonmen pou resevwa lajan an.',
       offBallotS: 'Se sèlman manm Miami-Dade ki sou bilten 3 novanm nan ki parèt.',
-      howState: 'Chak lejislatè Leta depoze fòm pou mande lajan nan bidjè a pou yon pwojè. Fòm nan nonmen manm nan, gwoup ki ta resevwa lajan an, ak lobiyis anrejistre k ap travay sou li. Yon kado nan men youn nan lobiyis yon fèm oswa nan komite politik fèm nan konte kòm yon kado fèm nan, kèlkeswa kantite a. Nou pa tcheke si demann nan te jwenn lajan.'
+      howState: 'Chak lejislatè Leta depoze fòm pou mande lajan nan bidjè a pou yon pwojè. Fòm nan nonmen manm nan, gwoup ki ta resevwa lajan an, ak lobiyis anrejistre k ap travay sou li. Yon kado nan men youn nan lobiyis yon fèm oswa nan komite politik fèm nan konte kòm yon kado fèm nan, kèlkeswa kantite a. Nou pa tcheke si demann nan te jwenn lajan.',
+      'reg.confirmed': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}).', 'reg.otherClients': 'Anrejistre nan Lejislati a, men nou pa jwenn li anrejistre pou yon kliyan ki rele “{rec}” nan lis 2025 oswa 2026 yo.', 'reg.notFound': 'Nou pa jwenn li nan lis lobiyis Lejislati a pou 2025 oswa 2026.', fUnreg: 'Lobiyis pa anrejistre pou kliyan an'
     }
   };
   var LANG = 'en', DATA = null, F = 'all', BK = null;
@@ -280,7 +283,7 @@
     var by = {}, order = [];
     ls.forEach(function(l){ var k = l.for || ''; if(!by[k]){ by[k] = []; order.push(k); } by[k].push(l); });
     var rows = order.map(function(p){
-      return by[p].map(function(l){ var d = regDates(l); return '<div class="lob"><b>' + esc(l.name) + '</b>' + (l.firm ? ' (' + esc(l.firm) + ')' : '') + (p && (order.length > 1 || !a.parties || a.parties.indexOf(p) < 0) ? ' ' + t('lobFor', {p: esc(p)}) : '') + (d ? ' · ' + t('lobReg', {date: esc(d)}) : '') + '</div>'; }).join('');
+      return by[p].map(function(l){ var d = regDates(l); return '<div class="lob"><b>' + esc(l.name) + '</b>' + (l.firm ? ' (' + esc(l.firm) + ')' : '') + (p && (order.length > 1 || !a.parties || a.parties.indexOf(p) < 0) ? ' ' + t('lobFor', {p: esc(p)}) : '') + (d ? ' · ' + t('lobReg', {date: esc(d)}) : '') + (l.legReg ? '<div class="how2">' + t('reg.' + l.legReg.status, {p: esc(l.legReg.principal), y: esc(list(l.legReg.years || [])), rec: esc(l.for)}) + '</div>' : '') + '</div>'; }).join('');
     }).join('');
     var head = '<div class="h">' + LH + '</div>' + out;
     if(ls.length > 6) return '<div class="lobs">' + head + '<details><summary>' + t('lobMore', {n: ls.length}) + '</summary>' + rows + '</details></div>';
@@ -338,7 +341,7 @@
     var ttl = a.title ? esc(L(a.title)) : t('kind.' + a.kind) + ': ' + esc(L(a.subject));
     var meta = [esc(day(a.date))]; if(a.meeting) meta.push(t('meeting.' + a.meeting)); if(a.ref) meta.push(esc(a.ref));
     var search = norm([a.id, a.ref, L(a.subject), L(a.title), (a.parties || []).join(' ')].concat((a.lobbied || []).map(function(l){ return l.name + ' ' + (l.for || ''); })).concat((a.gifts || []).map(function(g){ return g.donor; })).join(' '));
-    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length || a.namedLobbyist ? 1 : 0) + '">' +
+    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length || a.namedLobbyist ? 1 : 0) + '" data-unreg="' + ((a.lobbied || []).some(function(l){ return l.legReg && l.legReg.status !== 'confirmed'; }) ? 1 : 0) + '">' +
       '<div class="when">' + meta.join(' · ') + '</div><div class="ttl">' + ttl + '</div>' + party +
       '<div class="res">' + res + (a.consent ? ' · ' + t('consentNote') : '') + '</div>' +
       (onb ? '<div class="onb">' + onb + '</div>' : '') +
@@ -367,7 +370,7 @@
     document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
     document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
-    document.getElementById('filters').innerHTML = (RQB ? ['all', 'gift', 'lob'] : ['all', 'gift', 'split', 'lob']).map(function(k){
+    document.getElementById('filters').innerHTML = (RQB ? ['all', 'gift', 'lob', 'unreg'] : ['all', 'gift', 'split', 'lob']).map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });
