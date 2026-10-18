@@ -1764,56 +1764,63 @@ function sameFirst(a, b) {
 // main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
 // shows for that report; if they don't (a layout change, an amendment we can't read), the last good
 // result stays up. No AI. Refreshed at most every 6 hours.
-const MEASURE_FILINGS_VERSION = 2;
+const MEASURE_FILINGS_VERSION = 3;
 const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
+// Registered voters, for the "per registered voter" figure: the state's book-closing count for the Nov 3,
+// 2026 election; for the City of Miami, the county's district totals (Miami Dist 1-5) of Oct 1, 2026.
+const VOTERS = {
+  FL: { n: 13704495, where: 'Florida', asOf: '2026-10-05', source: { name: 'Florida Division of Elections, book closing', url: 'https://dos.fl.gov/elections/data-statistics/voter-registration-statistics/bookclosing/' } },
+  MDC: { n: 1313264, where: 'Miami-Dade County', asOf: '2026-10-05', source: { name: 'Florida Division of Elections, book closing', url: 'https://dos.fl.gov/elections/data-statistics/voter-registration-statistics/bookclosing/' } },
+  MIAMI: { n: 182212, where: 'the City of Miami', asOf: '2026-10-01',
+    source: { name: 'Miami-Dade Elections, registration by district', url: 'https://www.miamidade.gov/elections/library/reports/voter-registration-statistics-districts.pdf' } }
+};
 // One entry per ballot measure, matched on the title the ballot prints ("City of Miami 3: ..."). Each
 // committee names the system it files in: 'vf' = a VoterFocus clerk (c = the clerk's code, ca = the
 // committee id), 'fl' = the Florida Division of Elections (account = the state's id, name = its exact
 // filed name). A measure with committees: [] was checked and nobody has registered for or against it;
-// checked says where, checkedOn when. Notes are written by hand from the linked coverage.
+// checked says where, checkedOn when.
+// No free-text context. A funder's tie to what the measure decides is shown only with one of these tags,
+// each with a source that says it outright (defined on the methodology page):
+//   party       the funder, or a company it co-owns, gets the contract, lease or sale the measure decides
+//   operator    the funder runs a business today on the property the measure decides
+//   atProperty  the funder's filed address is the property the measure decides
+//   committee   the funder is itself a political committee (and where it files, if under another name)
 const MEASURE_FILINGS = [
   {
     match: /^City of Miami 3\b|virginia key/i,
-    headlineNote: 'The two big committees are paid for by marina companies competing for the same city lease. Each gets almost all of its money from one company.',
+    voters: VOTERS.MIAMI,
     committees: [
-      { side: 'support', src: 'vf', c: 'muncitymiami', ca: 155, name: 'Help Save Virginia Key PC',
-        stakeNote: 'Suntex co-owns Virginia Key LLC, the company that gets the lease if Yes wins: 45 years plus two 15-year renewals on 27 acres of city waterfront, with the right to combine the marinas into one private marina and build restaurants, bars and shops. The city gets at least $2.2 million a year in rent plus 6% of gross revenue.' },
-      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 156, name: 'Preserve and Protect Miami',
-        stakeNote: 'Rickenbacker Marina is the current operator on the site. The new lease would let Virginia Key LLC remove current tenants. Rickenbacker Marina\'s president, Aabad Melwani, is one of the leaders of the No campaign.' },
-      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 158, name: 'Miami Residents for Public Waterfront Access',
-        stakeNote: 'Its money comes from David Ralph, lead organizer of Save Our Marinas, a group of boaters and residents opposing the lease.' }
+      { side: 'support', src: 'vf', c: 'muncitymiami', ca: 155, name: 'Help Save Virginia Key PC' },
+      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 156, name: 'Preserve and Protect Miami' },
+      { side: 'oppose', src: 'vf', c: 'muncitymiami', ca: 158, name: 'Miami Residents for Public Waterfront Access' }
     ],
-    stakeSources: [
-      { name: 'WLRN, Oct 8, 2026', url: 'https://www.wlrn.org/government-politics/2026-10-08/miami-virginia-key-marina-referendum-ballot' },
-      { name: 'WLRN, Jul 21, 2026', url: 'https://www.wlrn.org/government-politics/2026-07-21/miami-marina-ballot-referendum-virginia-key-marine-stadium' },
-      { name: 'Axios Miami, Aug 20, 2026', url: 'https://www.axios.com/local/miami/2026/08/20/virginia-key-marina-redevelopment-miami-referendum' }
+    connections: [
+      { match: /^suntex/i, tag: 'party', detail: 'Co-owns Virginia Key LLC, which would get the lease if Yes wins', source: { name: 'WLRN, Oct 8, 2026', url: 'https://www.wlrn.org/government-politics/2026-10-08/miami-virginia-key-marina-referendum-ballot' } },
+      { match: /^rickenbacker marina/i, tag: 'operator', detail: 'Runs Rickenbacker Marina, one of the two marinas the lease covers', source: { name: 'Axios Miami, Aug 20, 2026', url: 'https://www.axios.com/local/miami/2026/08/20/virginia-key-marina-redevelopment-miami-referendum' } }
     ]
   },
   {
     match: /^City of Miami 1\b|safe and ready miami/i,
-    committees: [
-      { side: 'support', src: 'vf', c: 'muncitymiami', ca: 159, name: 'Safe and Ready Miami PC',
-        stakeNote: 'Political Cortadito reports the committee is run by Christian Ulvert, political strategist for Mayor Eileen Higgins. Its reports list the money as coming from Ethical Leadership for Florida; the matching transfers appear in the county reports of Ethical Leadership for Miami, a committee registered with Miami-Dade County.' }
-    ],
-    stakeSources: [{ name: 'Political Cortadito, Oct 14, 2026', url: 'https://politicalcortadito.com/2026/10/14/miami-virginia-key-referendum-waterfront-money-war/' }],
-    checked: 'the City of Miami Clerk\'s committee filings', checkedOn: '2026-10-17'
+    voters: VOTERS.MIAMI,
+    committees: [{ side: 'support', src: 'vf', c: 'muncitymiami', ca: 159, name: 'Safe and Ready Miami PC' }],
+    connections: [
+      { match: /^ethical leadership for/i, tag: 'committee', detail: 'Files with Miami-Dade County as Ethical Leadership for Miami',
+        source: { name: 'Miami-Dade Elections filings', url: 'https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=1&c=miamidade&ca=2917&rellevel=3&committee=Y' } }
+    ]
   },
   { match: /^City of Miami 2\b/i, committees: [], checked: 'the City of Miami Clerk\'s committee filings', checkedOn: '2026-10-17' },
   {
     match: /^School Board Referendum/i,
-    committees: [
-      { side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future',
-        stakeNote: 'WLRN describes Secure Our Future as Miami-Dade County Public Schools\' political committee for the referendum. The district also uses the name for its campaign.' }
-    ],
-    stakeSources: [{ name: 'WLRN, Oct 15, 2026', url: 'https://www.wlrn.org/education/2026-10-15/south-florida-schools-fear-voter-confusion-between-amendment-3-and-popular-school-funding-referendum' }],
-    checked: 'the Miami-Dade Elections Department\'s committee filings', checkedOn: '2026-10-17'
+    voters: VOTERS.MDC,
+    committees: [{ side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future' }]
   },
   { match: /^County Referendum [1-6]\b/i, committees: [], checked: 'the Miami-Dade Elections Department\'s committee filings', checkedOn: '2026-10-17' },
   {
     match: /^City of Miami Beach\b|1691 Michigan/i,
-    committees: [
-      { side: 'support', src: 'vf', c: 'munmiamibeach', filer: 'City of Miami Beach Clerk', ca: 136, name: 'Lincoln Road Strong',
-        stakeNote: 'Its filed purpose is to support this question. Its main donor, RJR Vacaville LLC, lists the same address as the city property the question is about, 1691 Michigan Avenue.' }
+    committees: [{ side: 'support', src: 'vf', c: 'munmiamibeach', filer: 'City of Miami Beach Clerk', ca: 136, name: 'Lincoln Road Strong' }],
+    connections: [
+      { match: /^rjr vacaville/i, tag: 'atProperty', detail: 'Filed address is 1691 Michigan Ave, the property in the question',
+        source: { name: 'Lincoln Road Strong report', url: 'https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=rp&e=6&c=munmiamibeach&ca=136&rellevel=3&committee=Y&dhc=1569' } }
     ]
   },
   { match: /^City of Coral Gables [1-4]\b/i, committees: [], checked: 'the City of Coral Gables Clerk\'s committee filings', checkedOn: '2026-10-17' },
@@ -1828,23 +1835,19 @@ const MEASURE_FILINGS = [
     noneNote: 'No committee is reporting money for or against this question. One committee, Key Biscayne United, is registered with the Village, but every 2026 report it filed says it had no activity, and its filings online don\'t say which side it is on. Checked Oct 17, 2026.' },
   {
     match: /^No\. 3 Constitutional Amendment/i,
+    voters: VOTERS.FL,
     committees: [
       { side: 'support', src: 'fl', account: 93318, name: 'Vote Yes on 3' },
       { side: 'oppose', src: 'fl', account: 92021, name: 'Vote No on 3 Florida, Inc.' },
       { side: 'oppose', src: 'fl', account: 93209, name: 'Floridians for Shared Prosperity, Inc.' },
-      { side: 'oppose', src: 'fl', account: 93273, name: 'No On 3. Protect Our Homes',
-        stakeNote: 'Chaired by Miami-Dade Mayor Daniella Levine Cava, according to the state\'s committee record.' },
+      { side: 'oppose', src: 'fl', account: 93273, name: 'No On 3. Protect Our Homes' },
       { side: 'oppose', src: 'fl', account: 93307, name: 'Florida Public Servants No on 3' }
-    ],
-    checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17'
+    ]
   },
   {
     match: /^No\. 2 Constitutional Amendment/i,
-    committees: [
-      { side: 'support', src: 'fl', account: 93364, name: 'Save Florida Farmers',
-        stakeNote: 'Pays for farm2savings.com, which urges a Yes vote on Amendment 2.' }
-    ],
-    stakeSources: [{ name: 'farm2savings.com', url: 'https://farm2savings.com/' }],
+    voters: VOTERS.FL,
+    committees: [{ side: 'support', src: 'fl', account: 93364, name: 'Save Florida Farmers' }],
     checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17'
   },
   { match: /^No\. 1 Constitutional Amendment/i, committees: [], checked: 'the Florida Division of Elections\' committee records', checkedOn: '2026-10-17' }
@@ -2017,6 +2020,17 @@ function fmtLongDay(iso) {
   return m ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][+m[2] - 1] + ' ' + (+m[3]) + ', ' + m[1] : '';
 }
 // Replace a measure's financing with the committees' filings. Returns true when the result changed.
+const MIX = { corporation: 'businesses', individual: 'people', 'PAC/committee': 'committees' };
+// Share of a committee's money by kind of giver, in percent (whole numbers; a nonzero sliver shows as 0.1)
+function moneyMix(donors) {
+  const tot = donors.reduce((a, d) => a + d.amount, 0), by = {};
+  for (const d of donors) { const k = MIX[d.type] || 'other'; by[k] = (by[k] || 0) + d.amount; }
+  if (!tot) return {};
+  const out = {};
+  for (const [k, v] of Object.entries(by)) out[k] = v >= tot - 0.005 ? 100 : Math.max(0.1, Math.min(99.9, Math.round(v / tot * 1000) / 10));
+  return out;
+}
+// Replace a measure's financing with the committees' filings. Returns true when the result changed.
 async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   const cfg = measureFilingsFor(name, result && result.summary);
   if (!cfg || !result || !result.financing) return false;
@@ -2028,17 +2042,37 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
     for (const com of cfg.committees) {
       const f = await committeeFilings(com);
       filers.add(com.src === 'fl' ? FILERS.fl() : com.filer || FILERS.vf(com.c));
+      for (const d of f.donors) {
+        const c = (cfg.connections || []).find(x => x.match.test(d.name));
+        if (c) d.connection = { tag: c.tag, detailNote: c.detail, source: c.source };
+      }
       const top = f.donors[0], all = f.raised + f.inkind;
       sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(all), url: f.url,
-        ...(com.stakeNote ? { stakeNote: com.stakeNote } : {}),
         note: top ? (top.share === 100 ? 'All' : top.share >= 99 ? 'All but ' + fmtUsd(all - top.amount) : top.share + '%') +
           ' of its money came from ' + top.name + '.' : 'No contributions reported yet.',
-        filings: f });
+        filings: { ...f, givers: f.donors.length, mix: moneyMix(f.donors) } });
     }
   } catch (e) {
     console.log('measure filings error for ' + name + ': ' + e.message);
     if (fin.filed) { fin.filAt = now - MEASURE_FILINGS_TTL + 3600 * 1000; return true; }   // keep the last good one, retry in an hour
     return false;                                                                             // never filed: keep web research
+  }
+  // Each side as a whole: money raised, how many different givers, and the largest giver's share
+  const sideFacts = list => {
+    const by = new Map(); let raised = 0;
+    for (const c of list) for (const d of c.filings.donors) {
+      const k = vfOrgKey(d.name), cur = by.get(k) || { name: d.name, amount: 0 };
+      cur.amount += d.amount; by.set(k, cur); raised += d.amount;
+    }
+    const top = [...by.values()].sort((a, b) => b.amount - a.amount)[0];
+    return { committees: list.length, raised: Math.round(raised * 100) / 100, givers: by.size,
+      ...(top ? { topName: top.name, topShare: top.amount >= raised - 0.005 ? 100 : Math.min(99.9, Math.round(top.amount / raised * 1000) / 10) } : {}) };
+  };
+  const facts = { support: sideFacts(sides.support), oppose: sideFacts(sides.oppose) };
+  if (cfg.voters && cfg.committees.length) {
+    const both = facts.support.raised + facts.oppose.raised;
+    facts.perVoter = { amount: Math.round(both / cfg.voters.n * 100) / 100, total: Math.round(both), voters: cfg.voters.n,
+      where: cfg.voters.where, asOf: cfg.voters.asOf, source: cfg.voters.source };
   }
   const where = [...filers].join(' and ');
   const through = [...sides.support, ...sides.oppose].map(x => x.filings.through).filter(Boolean).sort().pop();
@@ -2047,7 +2081,7 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
     : cfg.noneNote || 'No committee for or against this question shows up in ' + cfg.checked + ', as of ' + fmtLongDay(cfg.checkedOn) + '.';
   result.financing = {
     support: sides.support, oppose: sides.oppose, filed: true, filV: MEASURE_FILINGS_VERSION, filAt: now,
-    ...(cfg.headlineNote ? { headlineNote: cfg.headlineNote } : {}), ...(cfg.stakeSources ? { stakeSources: cfg.stakeSources } : {}),
+    ...(cfg.committees.length ? { facts } : {}),
     note, research: fin.research || { support: fin.support, oppose: fin.oppose, note: fin.note }
   };
   return true;

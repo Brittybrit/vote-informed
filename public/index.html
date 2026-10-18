@@ -408,11 +408,13 @@
   .endo:last-child{border-bottom:none;}
   .endo .eorg{font-weight:600; font-size:14px;}
   .endo .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
-  .fil-head{font-size:15px; font-weight:700; line-height:1.45; margin:4px 0 10px;}
   .fil-card{padding:10px 0 14px;}
+  .fil-card .eorg{font-weight:600; font-size:14px;}
+  .fil-card .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .fil-facts{list-style:none; padding:0; margin:4px 0 12px; font-size:13.5px; line-height:1.5;}
+  .fil-facts li{padding:3px 0;}
+  .tag.conn{background:var(--flag-bg); color:var(--flag-fg); box-shadow:inset 0 0 0 1px var(--flag-rule);}
   .fil-stats{font-family:var(--mono); font-size:12.5px; color:var(--ink); margin-top:6px;}
-  .fil-stake{font-size:13px; line-height:1.5; margin-top:8px; padding:8px 10px; border-left:3px solid var(--rule); background:rgba(127,127,127,.06);}
-  .fil-stake b{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); font-weight:400; margin-bottom:2px;}
   .fil-sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:12px 0 4px;}
   .fil-row{display:grid; grid-template-columns:1fr auto; gap:2px 10px; padding:5px 0; font-size:13px; border-bottom:1px dotted #C9C9C1;}
   .fil-row:last-child{border-bottom:none;}
@@ -996,13 +998,34 @@ en: {
   'fin.no': '✕ Paying to defeat it (No side)',
   'fin.none': 'No organized funding found on this side.',
   'fil.raised': 'Raised',
+  'fil.giver1': '1 giver',
+  'fil.givers': '{n} givers',
+  'mix.businesses': 'Businesses',
+  'mix.people': 'People',
+  'mix.committees': 'Political committees',
+  'mix.other': 'Other',
+  'fx.yes': 'Yes side:',
+  'fx.no': 'No side:',
+  'fx.nocom': 'no committee.',
+  'fx.side': '{amt} raised from {g} through {c}.',
+  'fx.com1': '1 committee',
+  'fx.coms': '{n} committees',
+  'fx.top': 'Largest giver: {name}, {pct}%.',
+  'fx.perVoter': 'Both sides together: {total}, or {amt} per registered voter in {where} ({n} voters as of {d}).',
+  'conn.party': 'Party to the deal',
+  'conn.operator': 'Current operator',
+  'conn.atProperty': 'At the property',
+  'conn.committee': 'Political committee',
+  'conn.def.party': 'The giver, or a company it co-owns, gets the contract, lease or sale this question decides.',
+  'conn.def.operator': 'The giver runs a business today on the property this question decides.',
+  'conn.def.atProperty': 'The giver\'s filed address is the property this question decides.',
+  'conn.def.committee': 'The giver is itself a political committee.',
   'fil.spent': 'Spent',
   'fil.through': 'through {d}',
   'fil.from': 'Where the money came from',
   'fil.to': 'Where it went',
   'fil.rest': 'Everyone else ({n})',
   'fil.read': 'Read the filings',
-  'fil.stake': 'Background',
   'sec.supporters': 'Major Supporters',
   'sec.opponents': 'Major Opposition',
   'none.support': 'No organized support found in searched coverage.',
@@ -1440,13 +1463,34 @@ es: {
   'fin.no': '✕ Pagan para rechazarla (lado del No)',
   'fin.none': 'No se encontró financiamiento organizado en este lado.',
   'fil.raised': 'Recaudó',
+  'fil.giver1': '1 donante',
+  'fil.givers': '{n} donantes',
+  'mix.businesses': 'Empresas',
+  'mix.people': 'Personas',
+  'mix.committees': 'Comités políticos',
+  'mix.other': 'Otros',
+  'fx.yes': 'Lado del Sí:',
+  'fx.no': 'Lado del No:',
+  'fx.nocom': 'ningún comité.',
+  'fx.side': '{amt} recaudados de {g} a través de {c}.',
+  'fx.com1': '1 comité',
+  'fx.coms': '{n} comités',
+  'fx.top': 'Mayor donante: {name}, {pct}%.',
+  'fx.perVoter': 'Ambos lados juntos: {total}, o {amt} por votante inscrito en {where} ({n} votantes al {d}).',
+  'conn.party': 'Parte del acuerdo',
+  'conn.operator': 'Operador actual',
+  'conn.atProperty': 'En la propiedad',
+  'conn.committee': 'Comité político',
+  'conn.def.party': 'El donante, o una empresa de la que es copropietario, obtiene el contrato, arrendamiento o venta que decide esta pregunta.',
+  'conn.def.operator': 'El donante opera hoy un negocio en la propiedad que decide esta pregunta.',
+  'conn.def.atProperty': 'La dirección registrada del donante es la propiedad que decide esta pregunta.',
+  'conn.def.committee': 'El donante es a su vez un comité político.',
   'fil.spent': 'Gastó',
   'fil.through': 'hasta el {d}',
   'fil.from': 'De dónde vino el dinero',
   'fil.to': 'En qué se gastó',
   'fil.rest': 'Todos los demás ({n})',
   'fil.read': 'Ver los informes',
-  'fil.stake': 'Contexto',
   'sec.supporters': 'Principales partidarios',
   'sec.opponents': 'Principal oposición',
   'none.support': 'No se encontró apoyo organizado en la cobertura revisada.',
@@ -1884,13 +1928,34 @@ ht: {
   'fin.no': '✕ Peye pou l pa pase (bò Non)',
   'fin.none': 'Nou pa jwenn okenn finansman òganize sou bò sa a.',
   'fil.raised': 'Ranmase',
+  'fil.giver1': '1 donatè',
+  'fil.givers': '{n} donatè',
+  'mix.businesses': 'Biznis',
+  'mix.people': 'Moun',
+  'mix.committees': 'Komite politik',
+  'mix.other': 'Lòt',
+  'fx.yes': 'Bò Wi a:',
+  'fx.no': 'Bò Non an:',
+  'fx.nocom': 'okenn komite.',
+  'fx.side': '{amt} ranmase nan men {g} atravè {c}.',
+  'fx.com1': '1 komite',
+  'fx.coms': '{n} komite',
+  'fx.top': 'Pi gwo donatè: {name}, {pct}%.',
+  'fx.perVoter': 'De bò yo ansanm: {total}, oswa {amt} pou chak votè enskri nan {where} ({n} votè nan dat {d}).',
+  'conn.party': 'Patisipan nan kontra a',
+  'conn.operator': 'Operatè aktyèl',
+  'conn.atProperty': 'Nan pwopriyete a',
+  'conn.committee': 'Komite politik',
+  'conn.def.party': 'Donatè a, oswa yon konpayi li se ko-pwopriyetè, jwenn kontra, lwaye oswa vant kesyon sa a deside.',
+  'conn.def.operator': 'Donatè a gen yon biznis jodi a sou pwopriyete kesyon sa a deside.',
+  'conn.def.atProperty': 'Adrès donatè a anrejistre se pwopriyete kesyon sa a deside.',
+  'conn.def.committee': 'Donatè a li menm se yon komite politik.',
   'fil.spent': 'Depanse',
   'fil.through': 'jiska {d}',
   'fil.from': 'Ki kote lajan an soti',
   'fil.to': 'Ki kote l ale',
   'fil.rest': 'Tout lòt yo ({n})',
   'fil.read': 'Li rapò yo',
-  'fil.stake': 'Kontèks',
   'sec.supporters': 'Pi gwo moun ki pou li',
   'sec.opponents': 'Pi gwo opozisyon',
   'none.support': 'Nou pa jwenn okenn sipò òganize nan sous nou chèche yo.',
@@ -2712,6 +2777,22 @@ function funderRows(list){
   }).join('');
 }
 
+// Both sides at a glance, all arithmetic on the filings: money, number of givers, largest giver's share,
+// and both sides' money per registered voter where the question is decided (formula on hover).
+function factsBlock(fx){
+  if(!fx) return '';
+  function side(f, label){
+    if(!f || !f.committees) return '<li><b>' + label + '</b> ' + t('fx.nocom') + '</li>';
+    return '<li><b>' + label + '</b> ' + t('fx.side', {amt: usd(f.raised), c: t(f.committees === 1 ? 'fx.com1' : 'fx.coms', {n: f.committees}), g: t(f.givers === 1 ? 'fil.giver1' : 'fil.givers', {n: f.givers})}) +
+      (f.topName ? ' ' + t('fx.top', {name: esc(f.topName), pct: f.topShare}) : '') + '</li>';
+  }
+  var h = '<ul class="fil-facts">' + side(fx.support, t('fx.yes')) + side(fx.oppose, t('fx.no'));
+  var pv = fx.perVoter;
+  if(pv) h += '<li title="' + esc(usd(pv.total) + ' ÷ ' + Number(pv.voters).toLocaleString('en-US')) + '">' +
+    t('fx.perVoter', {total: usd(pv.total), amt: '$' + Number(pv.amount).toFixed(2), where: esc(pv.where), n: Number(pv.voters).toLocaleString('en-US'), d: esc(fmtDay(pv.asOf))}) +
+    (pv.source ? srcLink(pv.source.url, pv.source.name) : '') + '</li>';
+  return h + '</ul>';
+}
 // A committee as its reports show it: totals, every funder with its share, the biggest places the money went.
 function filedRows(list){
   if(!list || !list.length) return '<p class="empty">' + t('fin.none') + '</p>';
@@ -2721,13 +2802,17 @@ function filedRows(list){
       (c.note ? '<div class="enote">' + esc(c.note) + '</div>' : '') +
       '<div class="fil-stats">' + t('fil.raised') + ' ' + usd((f.raised || 0) + (f.inkind || 0)) + ' · ' + t('fil.spent') + ' ' + usd(f.spent) +
       (f.through ? ' · ' + t('fil.through', {d: esc(fmtDay(f.through))}) : '') + '</div>';
-    if(c.stakeNote) h += '<div class="fil-stake"><b>' + t('fil.stake') + '</b>' + esc(c.stakeNote) + '</div>';
+    var mix = f.mix || {}, mk = Object.keys(mix).sort(function(a, b){ return mix[b] - mix[a]; });
+    if(f.givers || mk.length) h += '<div class="fil-stats">' + t(f.givers === 1 ? 'fil.giver1' : 'fil.givers', {n: f.givers || 0}) +
+      (mk.length ? ' · ' + mk.map(function(k){ return t('mix.' + k) + ' ' + mix[k] + '%'; }).join(' · ') : '') + '</div>';
     var donors = f.donors || [];
     if(donors.length){
       h += '<div class="fil-sub">' + t('fil.from') + '</div>' + donors.slice(0, 6).map(function(d){
         return '<div class="fil-row"><div>' + esc(d.name) + (d.place ? ' <span class="what">· ' + esc(d.place) + '</span>' : '') + '</div>' +
           '<div class="amt">' + usd(d.amount) + ' · ' + (d.share || d.amount <= 0 ? d.share : '&lt;0.1') + '%</div>' +
           '<div class="fil-bar"><span style="width:' + Math.max(1, Math.min(100, d.share)) + '%"></span></div>' +
+          (d.connection ? '<div class="what"><span class="tag conn" title="' + esc(t('conn.def.' + d.connection.tag)) + '">' + t('conn.' + d.connection.tag) + '</span> ' +
+            esc(d.connection.detailNote || '') + (d.connection.source ? srcLink(d.connection.source.url, d.connection.source.name) : '') + '</div>' : '') +
           (d.disclosure ? '<div class="what">' + disclosureTag(d) + '</div>' : '') +
           (d.type && d.type !== 'individual' ? '<div class="what">' + orgDetails({name: d.name}) + '</div>' : '') + '</div>';
       }).join('');
@@ -2775,11 +2860,11 @@ function renderMeasureDossier(ri, r, cached){
   if(fin.filed){
     // straight from the committees' own reports: one card per committee, who funds it, where it went
     html += '<div class="dsec"><h4>' + t('sec.financing') + '</h4>' +
-      (fin.headlineNote ? '<p class="fil-head">' + esc(fin.headlineNote) + '</p>' : '') +
+      factsBlock(fin.facts) +
       '<div class="fin-side side-yes">' + t('fin.yes') + '</div>' + filedRows(fin.support) +
       '<div class="fin-side side-no">' + t('fin.no') + '</div>' + filedRows(fin.oppose);
     if(fin.note) html += '<p class="fine">' + esc(fin.note) +
-      (fin.stakeSources || []).map(function(s){ return srcLink(s.url, s.name); }).join('') + '</p>';
+'</p>';
     html += '</div>';
   } else {
     if((fin.support && fin.support.length) || (fin.oppose && fin.oppose.length)) html += '<div class="dsec" id="backersSec"></div>';

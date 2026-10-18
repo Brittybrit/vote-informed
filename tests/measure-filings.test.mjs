@@ -106,7 +106,15 @@ test('measure filings: replace web research, keep the last good on failure, leav
   assert.equal(fin.oppose[0].note, 'All of its money came from Rickenbacker Marina Corp.');
   assert.equal(fin.oppose[1].note, 'No contributions reported yet.');   // a new committee with no reports yet
   assert.match(fin.note, /through Oct 9, 2026/);
-  assert.equal(fin.research.support[0].name, 'Suntex Marinas');   // research kept aside, not shown
+  assert.equal(fin.research.support[0].name, 'Suntex Marinas');
+  // concentration, mix, per voter, and the tag on a funder tied to the lease
+  assert.deepEqual(fin.facts.support, { committees: 1, raised: 1000, givers: 1, topName: 'Suntex Marina Investors LLC', topShare: 100 });
+  assert.deepEqual(fin.facts.oppose, { committees: 2, raised: 250000, givers: 1, topName: 'Rickenbacker Marina Corp', topShare: 100 });
+  assert.deepEqual(fin.facts.perVoter && [fin.facts.perVoter.amount, fin.facts.perVoter.total, fin.facts.perVoter.voters], [1.38, 251000, 182212]);
+  assert.deepEqual(fin.support[0].filings.mix, { businesses: 100 });
+  assert.equal(fin.support[0].filings.donors[0].connection.tag, 'party');
+  assert.equal(fin.oppose[0].filings.donors[0].connection.tag, 'operator');
+  assert.ok(!('headlineNote' in fin) && !fin.support.some(c => 'stakeNote' in c));   // research kept aside, not shown
   // fresh: no refetch
   assert.equal(await w.refreshMeasureFilings(null, result, 'City of Miami 3', 2000), false);
   // stale and the site is down: the filed numbers stay
