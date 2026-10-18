@@ -91,3 +91,22 @@ test('state budget requests: one filer on the ballot, an amount, and every gift 
     }
   }
 });
+
+test('state budget requests: each one says where it stands in that year’s final budget', () => {
+  const LAW = { '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
+  for (const B of d.bodies.filter(b => b.type === 'requests')) {
+    for (const a of B.actions) {
+      const b = a.budget; assert.ok(b, a.id + ' has no budget status');
+      const [fy, law] = LAW[a.id.slice(1, 3)];
+      assert.equal(b.fy, fy, a.id); assert.equal(b.law, law, a.id);
+      assert.ok(/^https:\/\/www\.flsenate\.gov\//.test(b.url), a.id + ' act link');
+      assert.equal(b.ref, (B.key === 'flhouse' ? 'HF ' : 'SF ') + a.id.split('-')[1], a.id + ' form number');
+      assert.ok(['in', 'notIn'].includes(b.status), a.id + ' status');
+      if (b.status === 'notIn') assert.ok(!b.amount && !b.vetoed, a.id + ' amount or veto on a request not in the budget');
+      if (b.amount != null) assert.ok(b.amount > 0 && b.amount < 1e9, a.id + ' budget amount ' + b.amount);
+      if (b.vetoed) { assert.ok(b.vetoed > 0 && b.vetoed < 1e9, a.id); assert.ok(/^https:\/\/www\.flgov\.com\//.test(b.vetoUrl), a.id + ' veto link'); }
+      if (b.vetoed && b.amount) assert.ok(b.vetoed <= b.amount, a.id + ' vetoed more than appropriated');
+    }
+  }
+  for (const k of ['bud.in', 'bud.inNoAmt', 'bud.more', 'bud.veto', 'bud.vetoAll', 'bud.notIn', 'bud.law', 'bud.vetoL', 'fFund']) assert.ok(en.has(k), k);
+});

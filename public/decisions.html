@@ -49,6 +49,7 @@
   .ttl{font-weight:800; font-size:16px; line-height:1.35; margin-top:3px;}
   .party{font-size:14px; margin-top:3px;}
   .res{font-size:14px; margin-top:6px;}
+  .bud{font-size:14px; margin-top:3px;}
   .res .split{color:var(--no-fg); font-weight:700;}
   .onb{display:flex; flex-wrap:wrap; gap:6px; margin-top:7px;}
   .onb span{font-family:var(--mono); font-size:11.5px; border:1.5px solid var(--ink); padding:1px 7px;}
@@ -146,8 +147,8 @@
       'how.s.firmlob': 'A lobbyist at the firm named on the form ({firm}).',
       'how.s.party': 'The giver is the group named on the form to receive the money.',
       offBallotS: 'Only members from Miami-Dade who are on the November 3 ballot are listed.',
-      howState: 'Each state legislator files budget request forms asking for money for a project. The form names the member, the group that would get the money, and the registered lobbyist working on it. A gift from one of a firm’s lobbyists or from the firm’s political committee is counted as a gift from the firm, at any amount. Whether a request was funded was not checked.',
-      'reg.confirmed': 'Registered with the Legislature to lobby for {p} ({y}).', 'reg.confirmedAs': 'Registered with the Legislature to lobby for {p} ({y}). The form names the group as “{rec}”.', 'reg.confirmedRequester': 'Registered with the Legislature to lobby for {p} ({y}), which the form lists as the group making the request.', 'reg.otherClients': 'Registered with the Legislature, but not found registered for a client named “{rec}” in the 2024, 2025 or 2026 lists.', 'reg.notFound': 'Not found in the Legislature’s 2024, 2025 or 2026 lobbyist lists.', fUnreg: 'Lobbyist not found registered for the client'
+      howState: 'Each state legislator files budget request forms asking for money for a project. The form names the member, the group that would get the money, and the registered lobbyist working on it. A gift from one of a firm’s lobbyists or from the firm’s political committee is counted as a gift from the firm, at any amount. Each request also says whether its form number is in the final budget and whether the governor vetoed it.',
+      'reg.confirmed': 'Registered with the Legislature to lobby for {p} ({y}).', 'reg.confirmedAs': 'Registered with the Legislature to lobby for {p} ({y}). The form names the group as “{rec}”.', 'reg.confirmedRequester': 'Registered with the Legislature to lobby for {p} ({y}), which the form lists as the group making the request.', 'reg.otherClients': 'Registered with the Legislature, but not found registered for a client named “{rec}” in the 2024, 2025 or 2026 lists.', 'reg.notFound': 'Not found in the Legislature’s 2024, 2025 or 2026 lobbyist lists.', fUnreg: 'Lobbyist not found registered for the client', 'bud.in': 'In the final {fy} budget ({law}, {ch}) at {amt}.', 'bud.inNoAmt': 'Named in the final {fy} budget ({law}, {ch}); the text does not give a separate amount for it.', 'bud.more': 'It is also named in a part of the budget that gives no separate amount.', 'bud.veto': 'The governor vetoed {amt} of it.', 'bud.vetoAll': 'The governor vetoed it ({amt}).', 'bud.notIn': 'Form number {ref} does not appear in the final {fy} budget ({law}, {ch}).', 'bud.law': 'Final budget', 'bud.vetoL': 'Governor’s veto list', fFund: 'In the final budget'
     },
     es: {
       title: 'Acciones oficiales: votos, cabilderos y donaciones',
@@ -199,8 +200,8 @@
       'how.s.firmlob': 'Un cabildero de la firma nombrada en el formulario ({firm}).',
       'how.s.party': 'El donante es el grupo que el formulario nombra para recibir el dinero.',
       offBallotS: 'Solo aparecen los miembros de Miami-Dade que están en la boleta del 3 de noviembre.',
-      howState: 'Cada legislador estatal presenta formularios para pedir dinero del presupuesto para un proyecto. El formulario nombra al miembro, al grupo que recibiría el dinero y al cabildero registrado que trabaja en él. Una donación de uno de los cabilderos de una firma o del comité político de la firma cuenta como donación de la firma, sin importar el monto. No se revisó si la solicitud recibió fondos.',
-      'reg.confirmed': 'Registrado ante la Legislatura como cabildero de {p} ({y}).', 'reg.confirmedAs': 'Registrado ante la Legislatura como cabildero de {p} ({y}). El formulario nombra al grupo como “{rec}”.', 'reg.confirmedRequester': 'Registrado ante la Legislatura como cabildero de {p} ({y}), que el formulario indica como el grupo que hace la solicitud.', 'reg.otherClients': 'Registrado ante la Legislatura, pero no aparece registrado para un cliente llamado “{rec}” en las listas de 2024, 2025 o 2026.', 'reg.notFound': 'No aparece en las listas de cabilderos de la Legislatura de 2024, 2025 o 2026.', fUnreg: 'Cabildero sin registro para el cliente'
+      howState: 'Cada legislador estatal presenta formularios para pedir dinero del presupuesto para un proyecto. El formulario nombra al miembro, al grupo que recibiría el dinero y al cabildero registrado que trabaja en él. Una donación de uno de los cabilderos de una firma o del comité político de la firma cuenta como donación de la firma, sin importar el monto. Cada solicitud también indica si su número de formulario está en el presupuesto final y si el gobernador la vetó.',
+      'reg.confirmed': 'Registrado ante la Legislatura como cabildero de {p} ({y}).', 'reg.confirmedAs': 'Registrado ante la Legislatura como cabildero de {p} ({y}). El formulario nombra al grupo como “{rec}”.', 'reg.confirmedRequester': 'Registrado ante la Legislatura como cabildero de {p} ({y}), que el formulario indica como el grupo que hace la solicitud.', 'reg.otherClients': 'Registrado ante la Legislatura, pero no aparece registrado para un cliente llamado “{rec}” en las listas de 2024, 2025 o 2026.', 'reg.notFound': 'No aparece en las listas de cabilderos de la Legislatura de 2024, 2025 o 2026.', fUnreg: 'Cabildero sin registro para el cliente', 'bud.in': 'En el presupuesto final {fy} ({law}, {ch}) por {amt}.', 'bud.inNoAmt': 'Nombrada en el presupuesto final {fy} ({law}, {ch}); el texto no indica una cantidad aparte para ella.', 'bud.more': 'También aparece en una parte del presupuesto que no indica una cantidad aparte.', 'bud.veto': 'El gobernador vetó {amt}.', 'bud.vetoAll': 'El gobernador la vetó ({amt}).', 'bud.notIn': 'El número de formulario {ref} no aparece en el presupuesto final {fy} ({law}, {ch}).', 'bud.law': 'Presupuesto final', 'bud.vetoL': 'Lista de vetos del gobernador', fFund: 'En el presupuesto final'
     },
     ht: {
       title: 'Aksyon ofisyèl: vòt, lobiyis ak kado',
@@ -252,8 +253,8 @@
       'how.s.firmlob': 'Yon lobiyis nan fèm ki nonmen sou fòm nan ({firm}).',
       'how.s.party': 'Moun ki bay la se gwoup fòm nan nonmen pou resevwa lajan an.',
       offBallotS: 'Se sèlman manm Miami-Dade ki sou bilten 3 novanm nan ki parèt.',
-      howState: 'Chak lejislatè Leta depoze fòm pou mande lajan nan bidjè a pou yon pwojè. Fòm nan nonmen manm nan, gwoup ki ta resevwa lajan an, ak lobiyis anrejistre k ap travay sou li. Yon kado nan men youn nan lobiyis yon fèm oswa nan komite politik fèm nan konte kòm yon kado fèm nan, kèlkeswa kantite a. Nou pa tcheke si demann nan te jwenn lajan.',
-      'reg.confirmed': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}).', 'reg.confirmedAs': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}). Fòm nan rele gwoup la “{rec}”.', 'reg.confirmedRequester': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}), ke fòm nan bay kòm gwoup k ap fè demann nan.', 'reg.otherClients': 'Anrejistre nan Lejislati a, men nou pa jwenn li anrejistre pou yon kliyan ki rele “{rec}” nan lis 2024, 2025 oswa 2026 yo.', 'reg.notFound': 'Nou pa jwenn li nan lis lobiyis Lejislati a pou 2024, 2025 oswa 2026.', fUnreg: 'Lobiyis pa anrejistre pou kliyan an'
+      howState: 'Chak lejislatè Leta depoze fòm pou mande lajan nan bidjè a pou yon pwojè. Fòm nan nonmen manm nan, gwoup ki ta resevwa lajan an, ak lobiyis anrejistre k ap travay sou li. Yon kado nan men youn nan lobiyis yon fèm oswa nan komite politik fèm nan konte kòm yon kado fèm nan, kèlkeswa kantite a. Chak demann di tou si nimewo fòm li nan bidjè final la epi si gouvènè a te mete veto sou li.',
+      'reg.confirmed': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}).', 'reg.confirmedAs': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}). Fòm nan rele gwoup la “{rec}”.', 'reg.confirmedRequester': 'Anrejistre nan Lejislati a kòm lobiyis pou {p} ({y}), ke fòm nan bay kòm gwoup k ap fè demann nan.', 'reg.otherClients': 'Anrejistre nan Lejislati a, men nou pa jwenn li anrejistre pou yon kliyan ki rele “{rec}” nan lis 2024, 2025 oswa 2026 yo.', 'reg.notFound': 'Nou pa jwenn li nan lis lobiyis Lejislati a pou 2024, 2025 oswa 2026.', fUnreg: 'Lobiyis pa anrejistre pou kliyan an', 'bud.in': 'Nan bidjè final {fy} la ({law}, {ch}) pou {amt}.', 'bud.inNoAmt': 'Yo nonmen l nan bidjè final {fy} la ({law}, {ch}); tèks la pa bay yon kantite apa pou li.', 'bud.more': 'Yo nonmen l tou nan yon pati bidjè a ki pa bay yon kantite apa.', 'bud.veto': 'Gouvènè a te mete veto sou {amt} ladan l.', 'bud.vetoAll': 'Gouvènè a te mete veto sou li ({amt}).', 'bud.notIn': 'Nimewo fòm {ref} la pa parèt nan bidjè final {fy} la ({law}, {ch}).', 'bud.law': 'Bidjè final', 'bud.vetoL': 'Lis veto gouvènè a', fFund: 'Nan bidjè final la'
     }
   };
   var LANG = 'en', DATA = null, F = 'all', BK = null;
@@ -319,6 +320,19 @@
       return link(l.url, lab);
     }).join('') + ((a.lobbied || []).length && B.registries ? B.registries.map(function(r){ return link(r.url, t('registry')); }).slice(0, 1).join('') : '');
   }
+  function inBudget(a){ var b = a.budget; return !!(b && b.status === 'in' && !(b.vetoed && b.amount && b.vetoed >= b.amount)); }
+  function budHtml(a){
+    var b = a.budget; if(!b) return '';
+    var p = {fy: esc(b.fy), law: esc(b.law), ch: esc(b.ch), ref: esc(b.ref)}, txt;
+    if(b.status === 'notIn') txt = t('bud.notIn', p);
+    else {
+      txt = b.amount ? t('bud.in', Object.assign({amt: usd(b.amount)}, p)) : t('bud.inNoAmt', p);
+      if(b.amount && b.someUnstated) txt += ' ' + t('bud.more');
+      if(b.vetoed) txt += ' ' + t(b.amount && b.vetoed >= b.amount ? 'bud.vetoAll' : 'bud.veto', {amt: usd(b.vetoed)});
+    }
+    return '<div class="bud">' + txt + '</div>';
+  }
+  function budLinks(a){ var b = a.budget; if(!b) return ''; return link(b.url, t('bud.law') + ' ' + b.law) + (b.vetoed ? link(b.vetoUrl, t('bud.vetoL')) : ''); }
   function actHtml(B, a){
     var on = Object.keys(B.onBallot);
     var RQ = B.type === 'requests';
@@ -341,14 +355,14 @@
     var ttl = a.title ? esc(L(a.title)) : t('kind.' + a.kind) + ': ' + esc(L(a.subject));
     var meta = [esc(day(a.date))]; if(a.meeting) meta.push(t('meeting.' + a.meeting)); if(a.ref) meta.push(esc(a.ref));
     var search = norm([a.id, a.ref, L(a.subject), L(a.title), (a.parties || []).join(' ')].concat((a.lobbied || []).map(function(l){ return l.name + ' ' + (l.for || ''); })).concat((a.gifts || []).map(function(g){ return g.donor; })).join(' '));
-    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length || a.namedLobbyist ? 1 : 0) + '" data-unreg="' + ((a.lobbied || []).some(function(l){ return l.legReg && /^(otherClients|notFound)$/.test(l.legReg.status); }) ? 1 : 0) + '">' +
+    return '<div class="act" data-search="' + esc(search) + '" data-gift="' + (hasGift(a) ? 1 : 0) + '" data-split="' + (isSplit(a) ? 1 : 0) + '" data-lob="' + ((a.lobbied || []).length || a.namedLobbyist ? 1 : 0) + '" data-unreg="' + ((a.lobbied || []).some(function(l){ return l.legReg && /^(otherClients|notFound)$/.test(l.legReg.status); }) ? 1 : 0) + '" data-fund="' + (inBudget(a) ? 1 : 0) + '">' +
       '<div class="when">' + meta.join(' · ') + '</div><div class="ttl">' + ttl + '</div>' + party +
-      '<div class="res">' + res + (a.consent ? ' · ' + t('consentNote') : '') + '</div>' +
+      '<div class="res">' + res + (a.consent ? ' · ' + t('consentNote') : '') + '</div>' + (RQ ? budHtml(a) : '') +
       (onb ? '<div class="onb">' + onb + '</div>' : '') +
       (roll ? '<details><summary>' + t('allVotes2') + '</summary><div class="roll">' + roll + '</div>' + partial + '<div class="note">' + t('grayNote') + '</div>' + mv + '</details>' : '') +
       (a.firstReading ? '<p class="note">' + t('firstReading', {date: esc(day(a.firstReading))}) + '</p>' : '') +
       (a.note ? '<p class="note">' + esc(L(a.note)) + '</p>' : '') +
-      lobHtml(B, a) + giftHtml(B, a) + '<div class="links">' + linkHtml(B, a) + '</div></div>';
+      lobHtml(B, a) + giftHtml(B, a) + '<div class="links">' + linkHtml(B, a) + (RQ ? budLinks(a) : '') + '</div></div>';
   }
   function othersHtml(){
     var o = (DATA && DATA.others) || []; if(!o.length || BK !== '_others') return '';
@@ -370,7 +384,7 @@
     document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
     document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
-    document.getElementById('filters').innerHTML = (RQB ? ['all', 'gift', 'lob', 'unreg'] : ['all', 'gift', 'split', 'lob']).map(function(k){
+    document.getElementById('filters').innerHTML = (RQB ? ['all', 'gift', 'lob', 'unreg', 'fund'] : ['all', 'gift', 'split', 'lob']).map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });
