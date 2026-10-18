@@ -73,7 +73,7 @@ test('county roll calls are complete and Lopez is marked not yet seated before N
 
 test('state budget requests: one filer on the ballot, an amount, and every gift says how it ties to the form', () => {
   const R = d.bodies.filter(b => b.type === 'requests');
-  assert.ok(R.length >= 1, 'state bodies');
+  assert.equal(R.length, 2, 'house and senate bodies');
   for (const B of R) {
     assert.ok(B.actions.length > 0, B.key);
     for (const a of B.actions) {
