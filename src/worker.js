@@ -1785,8 +1785,8 @@ const VOTERS = {
 //   operator    the funder runs a business today on the property the measure decides
 //   atProperty  the funder's filed address is the property the measure decides
 //   committee   the funder is itself a political committee (and where it files, if under another name)
-//   vendor      the funder, or the company the filing names it as leading, has a contract with the government
-//               that put the question on the ballot, shown in that government's own records (2024 or later)
+//   vendor      the funder, or the company the filing names it as leading, has had a contract with the government
+//               that put the question on the ballot, in effect in 2024 or later, shown in that government's own records
 const MEASURE_FILINGS = [
   {
     match: /^City of Miami 3\b|virginia key/i,
@@ -1814,7 +1814,15 @@ const MEASURE_FILINGS = [
   {
     match: /^School Board Referendum/i,
     voters: VOTERS.MDC,
-    committees: [{ side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future' }]
+    committees: [{ side: 'support', src: 'vf', c: 'miamidade', ca: 3082, name: 'Secure Our Future' }],
+    connections: [
+      { match: /^buspatrol/i, tag: 'vendor', detailNote: 'The School Board authorized a contract with BusPatrol America for school bus stop-arm cameras on Apr 22, 2026 (item D-71)',
+        source: { name: 'School Board minutes, Apr 22, 2026', url: 'https://pdfs.dadeschools.net/Bdarch/2026/Bd042226/lastbda.pdf' } },
+      { match: /^united data technologies/i, tag: 'vendor', detailNote: 'One of the vendors awarded district network contracts (ITB-22-010-CM) for July 2023 to June 2025',
+        source: { name: 'School Board item E-143, Dec 14, 2022', url: 'https://pdfs.dadeschools.net/Bdarch/2022/Bd121422/agenda/e143.pdf' } },
+      { match: /^kelli campbell/i, tag: 'vendor', detailNote: 'CEO of Acceleration Academies, which runs a dropout-recovery school for M-DCPS (2024-25 school improvement plan)',
+        source: { name: 'M-DCPS school improvement plan 7871, 2024-25', url: 'https://api.dadeschools.net/WMSFiles/92/24_25SIPs/7871.pdf' } }
+    ]
   },
   { match: /^County Referendum [1-6]\b/i, committees: [], checked: 'the Miami-Dade Elections Department\'s committee filings', checkedOn: '2026-10-17' },
   {
@@ -2046,7 +2054,7 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
       filers.add(com.src === 'fl' ? FILERS.fl() : com.filer || FILERS.vf(com.c));
       for (const d of f.donors) {
         const c = (cfg.connections || []).find(x => x.match.test(d.name));
-        if (c) d.connection = { tag: c.tag, detailNote: c.detail, source: c.source };
+        if (c) d.connection = { tag: c.tag, detailNote: c.detailNote || c.detail, source: c.source };
       }
       const top = f.donors[0], all = f.raised + f.inkind;
       sides[com.side].push({ name: com.name, kind: 'PAC/committee', amount: fmtUsd(all), url: f.url,
