@@ -917,6 +917,7 @@ en: {
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
   'sec.ties': 'Donors, Lobbyists and Official Actions',
+  'sec.offices': 'Offices Held', 'off.sub': 'Public offices in this site\u2019s records (federal, state, Miami-Dade County, School Board, cities, special districts and courts), with the dates each source gives. Most records start in 2023.', 'off.none': 'No public office found in this site\u2019s records.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Since {a}', 'off.until': 'Start date not stated \u2013 left {b}', 'off.now': 'Serving now; start date not stated in the source', 'off.seen': 'Seated in official meeting records from {a} to {b}', 'off.seenFrom': 'Seated in official meeting records since at least {a}', 'off.endBy': '(left by {b})', 'off.elected': 'elected', 'off.appointed': 'appointed',
   'ties.notIn': '{name} does not hold a seat here now, so there are no official actions to show.',
   'ties.current': '{name} serves on the {body} now. Their official actions have not been reviewed for this section yet.',
   'ties.currentNone': '{name} serves on the {body} now. No official actions on items naming one of their donors were found in the meetings reviewed.',
@@ -1405,6 +1406,7 @@ es: {
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
   'sec.ties': 'Donantes, cabilderos y acciones oficiales',
+  'sec.offices': 'Cargos ocupados', 'off.sub': 'Cargos p\u00fablicos en los registros de este sitio (federales, estatales, del Condado Miami-Dade, la Junta Escolar, las ciudades, los distritos especiales y los tribunales), con las fechas que da cada fuente. La mayor\u00eda de los registros empieza en 2023.', 'off.none': 'No se encontr\u00f3 ning\u00fan cargo p\u00fablico en los registros de este sitio.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Desde {a}', 'off.until': 'Fecha de inicio no indicada \u2013 dej\u00f3 el cargo el {b}', 'off.now': 'En el cargo; la fuente no indica la fecha de inicio', 'off.seen': 'Aparece en las actas oficiales de {a} a {b}', 'off.seenFrom': 'Aparece en las actas oficiales desde al menos {a}', 'off.endBy': '(dej\u00f3 el cargo antes del {b})', 'off.elected': 'elegido', 'off.appointed': 'nombrado',
   'ties.notIn': '{name} no ocupa un cargo aquí ahora, así que no hay acciones oficiales que mostrar.',
   'ties.current': '{name} forma parte de {body} ahora. Sus acciones oficiales aún no se han revisado para esta sección.',
   'ties.currentNone': '{name} forma parte de {body} ahora. No se encontraron acciones oficiales sobre asuntos que nombren a uno de sus donantes en las reuniones revisadas.',
@@ -1893,6 +1895,7 @@ ht: {
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
   'sec.ties': 'Donatè, lobiyis ak aksyon ofisyèl',
+  'sec.offices': 'P\u00f2s li te okipe', 'off.sub': 'P\u00f2s piblik ki nan dosye sit sa a (federal, Leta, Konte Miami-Dade, Konsey Lek\u00f2l, vil yo, distri espesyal ak tribinal), ak dat chak sous bay. Pif\u00f2 dosye k\u00f2manse an 2023.', 'off.none': 'Nou pa jwenn okenn p\u00f2s piblik nan dosye sit sa a.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Depi {a}', 'off.until': 'Dat k\u00f2mansman pa bay \u2013 li kite {b}', 'off.now': 'Nan p\u00f2s la kounye a; sous la pa bay dat k\u00f2mansman', 'off.seen': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo soti {a} rive {b}', 'off.seenFrom': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo depi omwen {a}', 'off.endBy': '(li te kite anvan {b})', 'off.elected': 'eli', 'off.appointed': 'nonmen',
   'ties.notIn': '{name} pa gen okenn pòs isit la kounye a, kidonk pa gen aksyon ofisyèl pou montre.',
   'ties.current': '{name} sèvi nan {body} kounye a. Nou poko revize aksyon ofisyèl li yo pou seksyon sa a.',
   'ties.currentNone': '{name} sèvi nan {body} kounye a. Nou pa jwenn okenn aksyon ofisyèl sou dosye ki nonmen youn nan donatè li yo nan reyinyon nou revize yo.',
@@ -3688,6 +3691,7 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="officesSec" hidden></div>';
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
   html += '<div class="dsec" id="localSec"></div>';
@@ -3841,6 +3845,7 @@ function renderDossier(cand, race, r, cached){
   renderLocal(fedRace ? undefined : null);
   $('dossier').scrollTop = 0;
   if(fedRace) loadRaceMoney(ri, cand);
+  if(ri >= 0 && !race.isMeasure) loadOffices(ri, cand);
   if(ri >= 0 && !fedRace && !race.isMeasure) loadTies(ri, cand);
 }
 
@@ -4044,6 +4049,37 @@ function tiesPeers(ri){
 }
 function tiesActive(ri, cand){
   return $('tiesSec') && activeKey && parseInt(activeKey.split(':')[0],10) === ri && ballot.races[ri].candidates.some(function(c){ return c.name === cand.name; });
+}
+// Offices held: every public office this site's roster has for the candidate, with dates as the sources give them
+var HELD = null, heldWait = [];
+function loadOffices(ri, cand){
+  if(HELD === null){
+    heldWait.push(function(){ loadOffices(ri, cand); });
+    if(heldWait.length === 1) fetch('/data/offices-held.json').then(function(r){ return r.json(); })
+      .then(function(j){ HELD = j; }).catch(function(){ HELD = {byBallot: {}, people: {}}; })
+      .then(function(){ var w = heldWait; heldWait = []; w.forEach(function(f){ f(); }); });
+    return;
+  }
+  var box = $('officesSec'), race = ballot.races[ri];
+  if(!box || !activeKey || parseInt(activeKey.split(':')[0], 10) !== ri || !race.candidates.some(function(c){ return c.name === cand.name; })) return;
+  var pid = HELD.byBallot[race.office + '|' + cand.name];
+  if(!pid){ for(var k in HELD.byBallot){ var p = k.split('|'); if(p[0] === race.office && sameCand(cand.name, p[1])){ pid = HELD.byBallot[k]; break; } } }
+  var P = pid && HELD.people[pid];
+  if(!P || !P.terms.length){ box.hidden = true; return; }   // no record isn't proof of no office (records mostly start in 2023), so say nothing
+  var rows = P.terms.map(function(x){
+    var when;
+    if(x.start) when = x.end ? t('off.range', {a: fmtDay(x.start), b: fmtDay(x.end)}) : t('off.since', {a: fmtDay(x.start)});
+    else if(x.servingFrom) when = x.lastSeen && x.end == null && x.endKnown === false ? t('off.seen', {a: fmtDay(x.servingFrom), b: fmtDay(x.lastSeen)}) : t('off.seenFrom', {a: fmtDay(x.servingFrom)});
+    else when = x.end ? t('off.until', {b: fmtDay(x.end)}) : t('off.now');
+    if(!x.end && x.endKnown === false && x.endBy && !x.lastSeen) when += ' ' + t('off.endBy', {b: fmtDay(x.endBy)});
+    var via = /appoint/i.test(x.via || '') ? t('off.appointed') : /elect|runoff/i.test(x.via || '') ? t('off.elected') : '';
+    return '<div class="donor-row"><div><span class="dname">' + esc(x.office) + '</span>' + (x.role ? ' <span class="fine">(' + esc(x.role) + ')</span>' : '') +
+      '<div class="enote">' + when + (via ? ' &middot; ' + via : '') + '</div>' +
+      '<span class="dtype">' + srcLink(x.source) + '</span></div></div>';
+  }).join('');
+  box.hidden = false;
+  box.innerHTML = '<h4>' + t('sec.offices') + '</h4><p class="sec-sub">' + t('off.sub') + '</p>' +
+    (rows || '<p class="empty">' + t('off.none') + '</p>');
 }
 function loadTies(ri, cand){
   if(!ACTIONS){ actionsWait.push(function(){ loadTies(ri, cand); }); return; }
