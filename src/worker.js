@@ -1785,6 +1785,8 @@ const VOTERS = {
 //   operator    the funder runs a business today on the property the measure decides
 //   atProperty  the funder's filed address is the property the measure decides
 //   committee   the funder is itself a political committee (and where it files, if under another name)
+//   vendor      the funder, or the company the filing names it as leading, has a contract with the government
+//               that put the question on the ballot, shown in that government's own records (2024 or later)
 const MEASURE_FILINGS = [
   {
     match: /^City of Miami 3\b|virginia key/i,
