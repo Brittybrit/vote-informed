@@ -129,7 +129,7 @@
     document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
     document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
-    document.getElementById('filters').innerHTML = (RQB ? ['all', 'gift', 'lob', 'unreg', 'fund', 'bill'] : ['all', 'gift', 'split', 'lob']).map(function(k){
+    document.getElementById('filters').innerHTML = (RQB ? (cur().level === 'federal' ? ['all', 'gift', 'lob'] : ['all', 'gift', 'lob', 'unreg', 'fund', 'bill']) : ['all', 'gift', 'split', 'lob']).map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });

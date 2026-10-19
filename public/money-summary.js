@@ -6,7 +6,7 @@
   function usd(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('en-US'); }
   function big(n, lang){
     if(n < 1e6) return usd(n);
-    var x = (Math.round(n / 1e5) / 10).toFixed(1);
+    var x = (Math.round(n / 1e5) / 10).toFixed(1).replace(/\.0$/, '');
     return '$' + x + (lang === 'es' ? ' millones' : lang === 'ht' ? ' milyon' : ' million');
   }
   function L(o, lang){ return o && typeof o === 'object' ? (o[lang] || o.en) : o; }
@@ -35,6 +35,9 @@
       nogivers: function(p){ return esc(p.name) + '’s reports show no outside donors.'; },
       nodata: function(p){ return 'No itemized donor reports are posted for ' + esc(p.name) + ', so this could not be checked.'; },
       noneCity: 'No donors found with business before the city in 2025 or 2026.',
+      reqF: function(p, R){ return esc(p.name) + ' filed ' + R.n + ' earmark request' + (R.n === 1 ? '' : 's') + ' worth ' + big(R.ask, 'en') + ' for groups whose federal lobbying firms, their PACs or their lobbyists gave ' + usd(R.money) + ' from ' + this.donors(R.donors) + '.'; },
+      noneF: function(p){ return 'None of ' + esc(p.name) + '’s earmark requests in 2025 or 2026 were for a group whose federal lobbying firm, its PAC or its lobbyists gave to the campaign.'; },
+      norequests: function(p){ return esc(p.name) + ' made no earmark requests in 2025 or 2026.'; },
       how: 'How this is counted'
     },
     es: {
@@ -62,6 +65,9 @@
       nogivers: function(p){ return 'Los informes de ' + esc(p.name) + ' no muestran donantes externos.'; },
       nodata: function(p){ return 'No hay informes detallados de donantes publicados para ' + esc(p.name) + ', así que no se pudo verificar.'; },
       noneCity: 'No se encontraron donantes con asuntos ante la ciudad en 2025 o 2026.',
+      reqF: function(p, R){ return esc(p.name) + ' presentó ' + R.n + ' solicitud' + (R.n === 1 ? '' : 'es') + ' de fondos federales para proyectos por ' + big(R.ask, 'es') + ' para grupos cuyas firmas de cabildeo federal, sus comités políticos o sus cabilderos donaron ' + usd(R.money) + ' de ' + this.donors(R.donors) + '.'; },
+      noneF: function(p){ return 'Ninguna de las solicitudes de fondos federales de ' + esc(p.name) + ' en 2025 o 2026 fue para un grupo cuya firma de cabildeo federal, su comité político o sus cabilderos donaran a la campaña.'; },
+      norequests: function(p){ return esc(p.name) + ' no hizo solicitudes de fondos federales para proyectos en 2025 ni 2026.'; },
       how: 'C\u00f3mo se cuenta'
     },
     ht: {
@@ -89,12 +95,16 @@
       nogivers: function(p){ return 'Rapò ' + esc(p.name) + ' yo pa montre okenn donatè deyò.'; },
       nodata: function(p){ return 'Pa gen rapò donatè detaye ki afiche pou ' + esc(p.name) + ', kidonk nou pa t ka verifye.'; },
       noneCity: 'Nou pa jwenn okenn donat\u00e8 ki te gen dosye devan vil la an 2025 oswa 2026.',
+      reqF: function(p, R){ return esc(p.name) + ' depoze ' + R.n + ' demann lajan federal pou pwojè pou ' + big(R.ask, 'ht') + ' pou gwoup kote fèm lobi federal yo, komite politik yo oswa lobiyis yo te bay ' + usd(R.money) + ' nan men ' + this.donors(R.donors) + '.'; },
+      noneF: function(p){ return 'Okenn nan demann lajan federal ' + esc(p.name) + ' an 2025 oswa 2026 pa t pou yon gwoup kote fèm lobi federal li, komite politik li oswa lobiyis li te bay kanpay la.'; },
+      norequests: function(p){ return esc(p.name) + ' pa t fè okenn demann lajan federal pou pwojè an 2025 oswa 2026.'; },
       how: 'Kijan nou konte'
     }
   };
   function moneySummary(p, lang){
     var w = W[lang] || W.en, b = esc(L(p.bodyName, lang)), out = [];
-    if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : w.noneCity;
+    if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
+    if(p.kind === 'federal') return p.total ? w.reqF(p, p.requests) : w.noneF(p);
     if(!p.total) return w.none(p, b);
     var timing = !p.before ? w.after : p.before === p.gifts ? w.allBefore : w.someBefore(p.beforeAmt);
     if(p.kind === 'state'){

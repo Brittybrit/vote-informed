@@ -4365,7 +4365,7 @@ function renderTies(ri, cand, acts, shared, loading, city, dec){
   var mine = groups.filter(function(g){ return g.by.some(me); });
   var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
   var st = officeStatus(cand, ballot.races[ri]), sp = summaryFor(cand, ballot.races[ri]);
-  if(sp && !sp.total) sp = null;   // "nothing found" is already said by the status line below
+  if(sp && !sp.total && sp.kind !== 'federal' && sp.status !== 'norequests') sp = null;   // "nothing found" is already said by the status line below
   var decActs = dec && DC ? dec.actions : [];
   if(!acts.length && !decActs.length && !loading && !(ok && meFound) && !st && !sp){ box.hidden = true; box.innerHTML = ''; return; }
   box.hidden = false;

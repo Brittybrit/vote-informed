@@ -51,7 +51,7 @@ export function build(decisions, officesHeld) {
       const byAcct = {};
       for (const g of all) byAcct[g.acct] = (byAcct[g.acct] || 0) + g.amount;
       const e = {
-        pid: m.person, body: B.key, bodyName: B.name, name: m.name, last: key, kind: state ? 'state' : 'votes',
+        pid: m.person, body: B.key, bodyName: B.name, name: m.name, last: key, kind: state ? (B.level === 'federal' ? 'federal' : 'state') : 'votes',
         total: sum(all), donors: new Set(all.map(g => g.donor)).size, gifts: all.length,
         before: before.length, beforeAmt: sum(before),
         accounts: Object.keys(byAcct).filter(a => byAcct[a] > 0).length,
@@ -121,7 +121,7 @@ export function buildTies(decisions) {
     for (const k of ob.accounts) if (B.accounts[k]) accounts[k] = B.accounts[k];
     files[m.person] = {
       updated: decisions.updated, cycleStart: CYCLE_START,
-      body: { key: B.key, name: B.name, type: B.type || null, members: B.members.map(x => ({ key: x.key, name: x.name })),
+      body: { key: B.key, name: B.name, type: B.type || null, level: B.level || null, members: B.members.map(x => ({ key: x.key, name: x.name })),
         onBallot: { [key]: ob }, accounts, registries: B.registries || null },
       actions: tiedActions(B, key),
     };

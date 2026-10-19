@@ -49,7 +49,7 @@ test('every body and action is well formed', () => {
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
       }
       if (a.rollComplete && B.key !== 'county') assert.ok(a.tally, id + ' complete roll needs a tally');
-      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill'].includes(l.t), id + ' link type'); }
+      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte'].includes(l.t), id + ' link type'); }
       for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
         assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot: ' + g.to);
@@ -58,7 +58,7 @@ test('every body and action is well formed', () => {
         assert.ok(g.to in a.roll, id + ' gift to someone who did not take part: ' + g.to);
         assert.ok(['party', 'lobbyist', 'firm', 'listed', 'class'].includes(g.kind), id + ' kind ' + g.kind);
         assert.ok(g.amount > 0, id + ' amount'); assert.match(g.date, /^\d{4}-\d{2}-\d{2}$/, id + ' gift date');
-        if (g.kind === 'lobbyist' || g.kind === 'firm') assert.ok(a.lobbied.some(l => l.name === g.lobbyist), id + ' gift lobbyist not listed: ' + g.lobbyist);
+        if ((g.kind === 'lobbyist' || g.kind === 'firm') && B.level !== 'federal') assert.ok(a.lobbied.some(l => l.name === g.lobbyist), id + ' gift lobbyist not listed: ' + g.lobbyist);
         if (g.kind === 'lobbyist') assert.ok(['addr', 'occ'].includes(g.basis), id + ' basis');
         if (g.kind === 'listed') assert.ok(a.giftNotes && a.giftNotes[g.to] || B.key === 'northmiami', id + ' listed gift needs a note');
       }
@@ -76,7 +76,7 @@ test('county roll calls are complete and Lopez is marked not yet seated before N
 });
 
 test('state budget requests: one filer on the ballot, an amount, and every gift says how it ties to the form', () => {
-  const R = d.bodies.filter(b => b.type === 'requests');
+  const R = d.bodies.filter(b => b.type === 'requests' && b.level !== 'federal');
   assert.equal(R.length, 2, 'house and senate bodies');
   for (const B of R) {
     assert.ok(B.actions.length > 0, B.key);
@@ -98,7 +98,7 @@ test('state budget requests: one filer on the ballot, an amount, and every gift 
 
 test('state budget requests: each one says where it stands in that year’s final budget', () => {
   const LAW = { '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
-  for (const B of d.bodies.filter(b => b.type === 'requests')) {
+  for (const B of d.bodies.filter(b => b.type === 'requests' && b.level !== 'federal')) {
     for (const a of B.actions.filter(a => a.kind === 'request')) {
       const b = a.budget; assert.ok(b, a.id + ' has no budget status');
       const [fy, law] = LAW[a.id.slice(1, 3)];
@@ -117,7 +117,7 @@ test('state budget requests: each one says where it stands in that year’s fina
 
 test('state floor votes: official roll call, the staff analysis, every member of the chamber, and donors in the group the analysis names', () => {
   let n = 0;
-  for (const B of d.bodies.filter(b => b.type === 'requests')) {
+  for (const B of d.bodies.filter(b => b.type === 'requests' && b.level !== 'federal')) {
     for (const a of B.actions.filter(a => a.kind === 'bill')) {
       n++;
       assert.deepEqual(Object.keys(a.roll).sort(), B.members.map(m => m.key).sort(), a.id + ' every member of the chamber');
@@ -130,4 +130,29 @@ test('state floor votes: official roll call, the staff analysis, every member of
   }
   assert.ok(n > 0, 'floor votes present');
   for (const k of ['kind.bill', 'v.nv', 'v.abstain', 'how.s.cls', 'noGiftB', 'fBill', 'rollCall', 'analysisL', 'billL']) assert.ok(en.has(k), k);
+});
+
+test('U.S. House earmark requests: one requester, an amount, a source, and gifts tied through a registered firm', () => {
+  const B = d.bodies.find(b => b.key === 'ushouse');
+  assert.ok(B && B.level === 'federal' && B.type === 'requests');
+  assert.equal(B.actions.length, 156);
+  for (const a of B.actions) {
+    const ks = Object.keys(a.roll);
+    assert.equal(ks.length, 1, a.id); assert.equal(a.roll[ks[0]], 'requested', a.id);
+    assert.equal(a.result, 'requestedF'); assert.ok(en.has('res.requestedF'));
+    assert.ok(a.ask > 0 && a.ask < 2e8, a.id + ' amount ' + a.ask);
+    for (const l of LANGS) assert.ok(a.dateLabel[l] && a.title[l], a.id + ' label ' + l);
+    assert.ok(a.links.some(l => l.t === 'record' && /\.house\.gov\//.test(l.url)), a.id + ' member page');
+    for (const g of a.gifts) {
+      assert.ok(['ldaFirm', 'ldaPac', 'ldaLob', 'ldaOwn'].includes(g.rel), a.id + ' rel ' + g.rel);
+      assert.ok(en.has('how.s.' + g.rel));
+      assert.ok(a.lobbied.length, a.id + ' gift but no registered lobbyist');
+      assert.ok(a.lobbied.some(l => l.firm === g.firmName || l.name === g.firmName || (g.rel === 'ldaOwn' && l.for === g.forParty)), a.id + ' gift firm not among registrants: ' + g.firmName);
+      assert.match(g.src, /^https:\/\/lda\.gov\/filings\/public\/contribution\//, a.id + ' LD-203 link');
+      assert.ok(g.date >= '2025-01-01', a.id + ' cycle');
+    }
+    for (const l of a.lobbied) assert.match(l.url, /^https:\/\/lda\.gov\/filings\/public\/filing\//, a.id + ' LDA link');
+  }
+  for (const k of ['lobbiedF', 'noGiftF', 'howFed', 'offBallotF', 'srcL', 'cmteL', 'reqPage', 'how.s.noFec', 'st.norequests']) assert.ok(en.has(k), k);
+  assert.ok(d.others.some(o => o.body.en === 'U.S. Senate' && o.people.some(p => p.name === 'Ashley Moody' && p.status === 'norequests')));
 });
