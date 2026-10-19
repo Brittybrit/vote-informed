@@ -61,7 +61,15 @@ test('warm-up skips cached, running and failed contests, and retries failed on r
   assert.equal((await w.warmRun(e, { indices: [0] })).states[0].state, 'failed');
   assert.equal((await w.warmRun(e, { indices: [0], retry: true })).states[0].state, 'pending');
   assert.equal(e.jobs.length, 2);
-  e.CACHE.store.set(key, '{}'); e.CACHE.store.set('warmcost:' + key, JSON.stringify({ 'claude-haiku-4-5': { in: 50000, out: 4000, cacheWrite: 0, cacheRead: 0, searches: 3, calls: 2 } }));
+  e.CACHE.store.set(key, '{}');
+  assert.equal((await w.warmCheck(e, { start: 0, count: 1 })).states[0].state, 'translate');
+  const tr = await w.warmRun(e, { indices: [0] });
+  assert.equal(tr.states[0].state, 'pending');
+  assert.equal(e.jobs[2].translateOnly, true);
+  assert.equal(e.jobs[2].at, key);
+  e.CACHE.store.delete('pend:tr:' + key);
+  e.CACHE.store.set('warmtr:es:' + key, '1'); e.CACHE.store.set('warmtr:ht:' + key, '1');
+  e.CACHE.store.set('warmcost:' + key, JSON.stringify({ 'claude-haiku-4-5': { in: 50000, out: 4000, cacheWrite: 0, cacheRead: 0, searches: 3, calls: 2 } }));
   const s = (await w.warmCheck(e, { start: 0, count: 1 })).states[0];
   assert.equal(s.state, 'cached');
   assert.equal(s.cost, 0.1);   // $0.05 in + $0.02 out + $0.03 searches
@@ -109,4 +117,24 @@ test('an uploaded ballot does not borrow across elections, counties, districts o
   assert.notEqual(await slot(e, { name: 'Maria Elvira Salazar', office: 'U.S. Representative, District 26', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION }), cong);
   // a looser name only counts inside the same office
   assert.notEqual(await slot(e, { name: 'Vicki Lopez', office: 'Mayor', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION }), master);
+});
+
+test('a changed line re-translates only that line', async () => {
+  const v = await loadWorker(['localize']);
+  const sent = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (u, o) => {
+    const items = JSON.parse(JSON.parse(o.body).messages[0].content.split('\n').pop()).items;
+    sent.push(items.map(x => x.text));
+    const text = JSON.stringify({ items: items.map(x => ({ id: x.id, text: 'ES ' + x.text })) });
+    return new Response(JSON.stringify({ content: [{ type: 'text', text }], stop_reason: 'end_turn', usage: {} }));
+  };
+  try {
+    const e = { CACHE: fakeKV(), ANTHROPIC_API_KEY: 'k' };
+    const a = await v.localize(e, { summary: 'Runs for mayor.', donorDataNote: '12 gifts on file.' }, 'es');
+    assert.equal(a.summary, 'ES Runs for mayor.');
+    const b = await v.localize(e, { summary: 'Runs for mayor.', donorDataNote: '13 gifts on file.' }, 'es');
+    assert.equal(b.donorDataNote, 'ES 13 gifts on file.');
+    assert.deepEqual(sent, [['Runs for mayor.', '12 gifts on file.'], ['13 gifts on file.']]);
+  } finally { globalThis.fetch = realFetch; }
 });

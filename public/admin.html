@@ -37,7 +37,7 @@
   <div id="healthBox" style="display:none"><button id="healthBtn" type="button">Check data sources</button><div id="health"></div></div>
   <div id="warmBox" style="display:none">
     <h1 style="margin-top:22px">Warm up research</h1>
-    <p class="sub">Researches every candidate and question on the countywide ballot so voters never wait. Skips anything already researched. Safe to stop and start again.</p>
+    <p class="sub">Researches every candidate and question on the countywide ballot, and translates each into Spanish and Haitian Creole, so voters never wait. Skips anything already done. Safe to stop and start again.</p>
     <button id="warmCheck" type="button">Check what's left</button>
     <button class="go" id="warmGo" type="button" disabled>Start</button>
     <label class="meta" style="margin-left:6px"><input type="checkbox" id="warmRetry" style="width:auto"> Retry failed ones</label>
@@ -119,16 +119,16 @@ $('healthBtn').addEventListener('click', async function(){
   b.disabled = false;
 });
 // ---- warm-up ----
-var W = { items: [], st: {}, cost: {}, running: false };
+var W = { items: [], st: {}, cost: {}, tries: {}, running: false };
 var IN_FLIGHT = 4;
 function warmCount(){
-  var c = { cached: 0, pending: 0, failed: 0, held: 0, todo: 0 }, spent = 0;
+  var c = { cached: 0, pending: 0, failed: 0, held: 0, todo: 0, translate: 0 }, spent = 0;
   W.items.forEach(function(x){ var s = W.st[x.i] || 'todo'; c[s] = (c[s] || 0) + 1; spent += W.cost[x.i] || 0; });
   return { c: c, spent: spent };
 }
 function warmShow(note){
   var r = warmCount(), c = r.c, n = W.items.length;
-  $('warmStat').innerHTML = esc(n + ' contests · ' + c.cached + ' researched · ' + c.pending + ' running · ' + c.todo + ' to go · ' + c.failed + ' failed' + (c.held ? ' · ' + c.held + ' taken down' : '')) +
+  $('warmStat').innerHTML = esc(n + ' contests · ' + c.cached + ' ready in all 3 languages · ' + c.pending + ' running · ' + c.todo + ' to research · ' + c.translate + ' to translate · ' + c.failed + ' failed' + (c.held ? ' · ' + c.held + ' taken down' : '')) +
     '<br>' + esc('Spent by this warm-up so far: $' + r.spent.toFixed(2)) + (note ? '<br>' + esc(note) : '');
   var f = W.items.filter(function(x){ return W.st[x.i] === 'failed'; });
   $('warmFail').innerHTML = f.length ? 'Failed: ' + f.map(function(x){ return esc(x.label); }).join(' · ') : '';
@@ -167,7 +167,9 @@ async function warmLoop(){
       }
       var running = W.items.filter(function(x){ return W.st[x.i] === 'pending'; }).length;
       var retry = $('warmRetry').checked;
-      var next = W.items.filter(function(x){ var s = W.st[x.i] || 'todo'; return s === 'todo' || (retry && s === 'failed'); }).slice(0, Math.max(0, IN_FLIGHT - running)).map(function(x){ return x.i; });
+      // translations that keep failing are left for visitors (they still work, just slower the first time)
+      var next = W.items.filter(function(x){ var s = W.st[x.i] || 'todo'; return s === 'todo' || (retry && s === 'failed') || (s === 'translate' && (W.tries[x.i] || 0) < 2); }).slice(0, Math.max(0, IN_FLIGHT - running)).map(function(x){ return x.i; });
+      next.forEach(function(i){ if(W.st[i] === 'translate') W.tries[i] = (W.tries[i] || 0) + 1; });
       if(!next.length && !running){ W.running = false; warmShow('Done.'); return; }
       if(next.length){
         var r = await call('warm-run', { indices: next, retry: retry });

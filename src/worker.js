@@ -3698,16 +3698,40 @@ async function warmList(env) {
   if (!items) return { error: 'The countywide ballot is not loaded yet. Open the home page once so it loads, then try again.' };
   return { total: items.length, items: items.map((x, i) => ({ i, label: x.label, kind: x.kind })) };
 }
+const WARM_LANGS = ['es', 'ht'];
 async function warmState(env, item) {
   const { key, alias, prefix } = await researchSlot(env, item.body);
   if (await env.CACHE.get('hold:' + key)) return { key, state: 'held' };
-  let done = !!(await env.CACHE.get(key));
-  if (!done) { const t = await env.CACHE.get(alias); done = !!(t && t !== key && await env.CACHE.get(t)); }
-  if (!done && prefix === 'resj1:') { const old = await env.CACHE.get('resl4:' + key.slice(prefix.length), 'json'); done = !!(old && old.federalistSociety); }
+  let at = (await env.CACHE.get(key)) ? key : null;
+  if (!at) { const t = await env.CACHE.get(alias); if (t && t !== key && await env.CACHE.get(t)) at = t; }
+  if (!at && prefix === 'resj1:') { const old = await env.CACHE.get('resl4:' + key.slice(prefix.length), 'json'); if (old && old.federalistSociety) at = 'resl4:' + key.slice(prefix.length); }
   const cost = await env.CACHE.get('warmcost:' + key, 'json');
-  const out = { key, state: done ? 'cached' : (await env.CACHE.get('fail:' + key)) ? 'failed' : (await env.CACHE.get('pend:' + key)) ? 'pending' : 'todo' };
+  let state;
+  if (at) {
+    const tr = await Promise.all(WARM_LANGS.map(l => env.CACHE.get('warmtr:' + l + ':' + at)));
+    state = tr.every(Boolean) ? 'cached' : (await env.CACHE.get('pend:tr:' + at)) ? 'pending' : 'translate';
+  } else state = (await env.CACHE.get('fail:' + key)) ? 'failed' : (await env.CACHE.get('pend:' + key)) ? 'pending' : 'todo';
+  const out = { key, at, state };
   if (cost) out.cost = usageCost(cost);
   return out;
+}
+// Translate a researched dossier into Spanish and Haitian Creole the way a visitor would see it
+// (after the read-time refresh), so the first visitor in each language doesn't wait on translation.
+async function warmTranslate(env, at, p) {
+  const cached = await env.CACHE.get(at, 'json');
+  if (!cached) return;
+  const fresh = await refreshCached(env, at, cached, p.name, p.officeCode, p.office);
+  for (const lang of WARM_LANGS) {
+    const r = await localize(env, fresh, lang);
+    if (r && r._translated) await env.CACHE.put('warmtr:' + lang + ':' + at, '1', { expirationTtl: cacheTtl() });
+  }
+}
+function mergeUsage(a, b) {
+  for (const [m, u] of Object.entries(b || {})) {
+    const t = a[m] || (a[m] = { in: 0, out: 0, cacheWrite: 0, cacheRead: 0, searches: 0, calls: 0 });
+    for (const k of Object.keys(t)) t[k] += u[k] || 0;
+  }
+  return a;
 }
 async function warmCheck(env, b) {
   const items = await warmItems(env);
@@ -3727,6 +3751,15 @@ async function warmRun(env, b) {
   for (const i of idx) {
     const s = await warmState(env, items[i]);
     if (s.state === 'failed' && b.retry) await env.CACHE.delete('fail:' + s.key);
+    else if (s.state === 'translate') {
+      if (!(await rateLimit(env, 'warm', 'owner', GLOBAL_LIMITS.warm))) { out.push({ i, state: 'stopped', error: env.FRESH_OFF === '1' ? 'New research is switched off (FRESH_OFF=1).' : 'Daily warm-up limit reached.' }); break; }
+      const { params } = await researchSlot(env, items[i].body);
+      await env.CACHE.put('pend:tr:' + s.at, '1', { expirationTtl: 900 });
+      const stub = env.RESEARCH.get(env.RESEARCH.idFromName('tr:' + s.at));
+      await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ key: s.key, at: s.at, params, warm: true, translateOnly: true }) });
+      out.push({ i, state: 'pending' });
+      continue;
+    }
     else if (s.state !== 'todo') { out.push({ i, state: s.state }); continue; }
     if (!(await rateLimit(env, 'warm', 'owner', GLOBAL_LIMITS.warm))) { out.push({ i, state: 'stopped', error: env.FRESH_OFF === '1' ? 'New research is switched off (FRESH_OFF=1).' : 'Daily warm-up limit reached.' }); break; }
     const { key, params } = await researchSlot(env, items[i].body);
@@ -4030,8 +4063,14 @@ export class ResearchRunner {
         // The owner's warm-up: same research, plus a record of what it cost.
         const env = Object.create(this.env);
         env.__usage = {};
-        try { await runResearch(env, job.key, job.params); }
-        finally { await this.env.CACHE.put('warmcost:' + job.key, JSON.stringify(env.__usage), { expirationTtl: cacheTtl() }); }
+        try {
+          if (!job.translateOnly) await runResearch(env, job.key, job.params);
+          await warmTranslate(env, job.at || job.key, job.params);
+        } finally {
+          const prev = await this.env.CACHE.get('warmcost:' + job.key, 'json');
+          await this.env.CACHE.put('warmcost:' + job.key, JSON.stringify(mergeUsage(prev || {}, env.__usage)), { expirationTtl: cacheTtl() });
+          if (job.at) await this.env.CACHE.delete('pend:tr:' + job.at);
+        }
       } else {
         await runResearch(this.env, job.key, job.params);   // writes result or fail: key to KV itself
       }
@@ -4164,10 +4203,19 @@ async function localize(env, result, lang) {
   let texts = await env.CACHE.get(ck, 'json');
   if (!Array.isArray(texts) || texts.length !== items.length) {
     try {
-      const tr = await translateStrings(env, lang, items.map((text, i) => ({ id: 's' + i, text })));
+      // Strings translated before (in this or another dossier) are reused one by one, so a daily data
+      // refresh that changes one note re-translates that note, not the whole dossier.
+      const sk = await Promise.all(items.map(x => sha256(x).then(h => 'trs:' + lang + ':' + h)));
+      const prior = await Promise.all(sk.map(k => env.CACHE.get(k)));
+      const need = items.map((text, i) => ({ id: 's' + i, text })).filter((x, i) => prior[i] === null);
+      const tr = need.length ? await translateStrings(env, lang, need) : {};
       // A translation that drops or changes a number (an amount, a year, a percentage) is not used:
       // that string stays in English. Names are kept by the prompt; numbers are checked here.
-      texts = items.map((src, i) => { const t = tr['s' + i]; return typeof t === 'string' && numbersKept(src, t) ? t : null; });
+      texts = items.map((src, i) => {
+        if (prior[i] !== null) return prior[i] || null;
+        const t = tr['s' + i]; return typeof t === 'string' && numbersKept(src, t) ? t : null;
+      });
+      await Promise.all(need.map(x => { const i = +x.id.slice(1); return texts[i] ? env.CACHE.put(sk[i], texts[i], { expirationTtl: cacheTtl() }) : null; }));
       await env.CACHE.put(ck, JSON.stringify(texts), { expirationTtl: cacheTtl() });
     } catch (e) {
       console.log('translate ' + lang + ' failed: ' + (e && e.message ? e.message : e));
