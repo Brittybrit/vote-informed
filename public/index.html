@@ -98,6 +98,14 @@
   .vb-site .vb-btn{padding:9px 12px; font-size:12px; white-space:nowrap;}
   .vb-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:10px; line-height:1.6;}
   .vb-note a{color:inherit;}
+  .vb-map{height:300px; margin-top:14px; border:1.5px solid var(--rule); z-index:0;}
+  .vb-pin{width:26px; height:26px; background:var(--ink); color:var(--paper); border:2px solid #FFFFFF; font-weight:900; font-size:13px; line-height:22px; text-align:center; box-sizing:border-box; font-family:var(--mono);}
+  .vb-num{display:inline-block; min-width:20px; height:20px; line-height:20px; text-align:center; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:11px; font-weight:800; margin-bottom:4px;}
+  .vb-zip{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:10px;}
+  .vb-zip label{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft);}
+  .vb-zip input{font:inherit; font-size:16px; width:7em; padding:9px 10px; border:2px solid var(--ink); background:var(--panel); color:var(--ink);}
+  .vb-zip .vb-btn{padding:10px 14px; font-size:12px;}
+  .vb-row .vb-btn.ghost{padding:9px 12px; font-size:12px;}
   main{max-width:1180px; margin:0 auto; padding:0 24px 80px;}
 
   .upload-stage{padding:44px 0 40px; max-width:640px; margin:0 auto;}
@@ -1114,13 +1122,24 @@ en: {
   'vb.finding': 'Finding sites near you&hellip;',
   'vb.loadFail': 'Could not load sites.',
   'vb.countyList': 'See the county list',
-  'vb.locOff': 'Location is off, so here are all 28 sites A to Z. Turn on location for this site to sort by distance.',
+  'vb.locOff': 'Location is off. Enter your ZIP code to see the closest sites, or browse all 28 below, A to Z.',
   'vb.allBtn': 'All 28 sites by distance',
   'vb.sameHours': 'All early voting sites have the same hours.',
   'vb.source': 'Source:',
   'vb.sourceName': 'Miami-Dade Elections early voting schedule',
   'vb.miAway': '{n} mi away',
   'vb.directions': 'Directions',
+  'vb.zipLabel': 'ZIP code',
+  'vb.zipBtn': 'Sort by distance',
+  'vb.useZip': 'Use a ZIP code instead',
+  'vb.zipBad': 'Enter a 5-digit ZIP code.',
+  'vb.zipUnknown': 'ZIP {z} is not a Miami-Dade ZIP code in our list. Check the number, or browse all 28 sites below.',
+  'vb.miZip': '{n} mi from the middle of ZIP {z}',
+  'vb.zipNote': 'Distances from a ZIP code are measured from its center, so they are approximate.',
+  'vb.mapYou': 'You are here',
+  'vb.mapZip': 'Middle of ZIP {z}',
+  'vb.mapLabel': 'Map of early voting sites',
+  'vb.mapPrivacy': 'Your location and ZIP stay on your device. Map images come from CARTO, which sees only the area shown.',
   'vb.lookup': 'county voter lookup',
   'vb.noPrecinct': 'Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the',
   'vb.findMine': 'Find my polling place',
@@ -1608,13 +1627,24 @@ es: {
   'vb.finding': 'Buscando centros cerca de usted&hellip;',
   'vb.loadFail': 'No se pudieron cargar los centros.',
   'vb.countyList': 'Ver la lista del condado',
-  'vb.locOff': 'La ubicación está desactivada, así que aquí están los 28 centros en orden alfabético. Active la ubicación para este sitio web para ordenarlos por distancia.',
+  'vb.locOff': 'La ubicación está desactivada. Escriba su código postal para ver los centros más cercanos, o vea los 28 abajo en orden alfabético.',
   'vb.allBtn': 'Los 28 centros por distancia',
   'vb.sameHours': 'Todos los centros de votación anticipada tienen el mismo horario.',
   'vb.source': 'Fuente:',
   'vb.sourceName': 'Calendario de votación anticipada de Elecciones de Miami-Dade',
   'vb.miAway': 'a {n} millas',
   'vb.directions': 'Cómo llegar',
+  'vb.zipLabel': 'Código postal',
+  'vb.zipBtn': 'Ordenar por distancia',
+  'vb.useZip': 'Usar un código postal',
+  'vb.zipBad': 'Escriba un código postal de 5 dígitos.',
+  'vb.zipUnknown': 'El código postal {z} no está en nuestra lista de Miami-Dade. Revise el número, o vea los 28 centros abajo.',
+  'vb.miZip': 'a {n} millas del centro del código postal {z}',
+  'vb.zipNote': 'Las distancias desde un código postal se miden desde su centro, así que son aproximadas.',
+  'vb.mapYou': 'Usted está aquí',
+  'vb.mapZip': 'Centro del código postal {z}',
+  'vb.mapLabel': 'Mapa de los centros de votación anticipada',
+  'vb.mapPrivacy': 'Su ubicación y código postal se quedan en su dispositivo. Las imágenes del mapa vienen de CARTO, que solo ve el área que se muestra.',
   'vb.lookup': 'búsqueda de votantes del condado',
   'vb.noPrecinct': 'Cargue su propia boleta de muestra (indica su precinto) para ver aquí su lugar de votación, o encuéntrelo con la',
   'vb.findMine': 'Encontrar mi lugar de votación',
@@ -2102,13 +2132,24 @@ ht: {
   'vb.finding': 'N ap chèche lokal ki pre w&hellip;',
   'vb.loadFail': 'Nou pa t ka chaje lokal yo.',
   'vb.countyList': 'Gade lis konte a',
-  'vb.locOff': 'Lokalizasyon an fèmen, kidonk men tout 28 lokal yo nan lòd alfabetik. Ouvè lokalizasyon pou sit entènèt sa a pou ranje yo selon distans.',
+  'vb.locOff': 'Lokalizasyon an fèmen. Antre kòd postal ou pou wè lokal ki pi pre yo, oswa gade tout 28 lokal yo anba a, nan lòd alfabetik.',
   'vb.allBtn': 'Tout 28 lokal yo selon distans',
   'vb.sameHours': 'Tout lokal Vote pi Bonè yo gen menm lè.',
   'vb.source': 'Sous:',
   'vb.sourceName': 'Orè Vote pi Bonè Eleksyon Miami-Dade',
   'vb.miAway': '{n} mil lwen',
   'vb.directions': 'Direksyon',
+  'vb.zipLabel': 'Kòd postal',
+  'vb.zipBtn': 'Ranje selon distans',
+  'vb.useZip': 'Sèvi ak yon kòd postal',
+  'vb.zipBad': 'Antre yon kòd postal 5 chif.',
+  'vb.zipUnknown': 'Kòd postal {z} pa nan lis Miami-Dade nou an. Verifye nimewo a, oswa gade tout 28 lokal yo anba a.',
+  'vb.miZip': '{n} mil soti nan mitan kòd postal {z}',
+  'vb.zipNote': 'Distans ki soti nan yon kòd postal mezire apati mitan l, kidonk yo pa egzak.',
+  'vb.mapYou': 'Ou la a',
+  'vb.mapZip': 'Mitan kòd postal {z}',
+  'vb.mapLabel': 'Kat lokal vote pi bonè yo',
+  'vb.mapPrivacy': 'Lokalizasyon ak kòd postal ou rete sou aparèy ou. Imaj kat la soti nan CARTO, ki wè sèlman zòn ki parèt la.',
   'vb.lookup': 'rechèch votè konte a',
   'vb.noPrecinct': 'Chaje pwòp echantiyon bilten vòt ou (li gen pwesen w sou li) pou w wè biwo vòt ou isit la, oswa jwenn li ak',
   'vb.findMine': 'Jwenn biwo vòt mwen',
@@ -4537,42 +4578,142 @@ function milesBetween(a, b, c, d){
   var x = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a*toR)*Math.cos(c*toR)*Math.sin(dLon/2)*Math.sin(dLon/2);
   return 2 * R * Math.asin(Math.sqrt(x));
 }
-function siteRow(s, dist){
+function siteRow(s, dist, n, zip){
   var full = s.address + ', ' + s.city + ', FL ' + s.zip;
-  return '<div class="vb-site"><div><div class="nm">' + esc(s.name) + '</div>' +
+  var d = dist == null ? '' : (zip ? t('vb.miZip', {n: dist.toFixed(1), z: esc(zip)}) : t('vb.miAway', {n: dist.toFixed(1)}));
+  return '<div class="vb-site"><div>' + (n ? '<span class="vb-num">' + n + '</span>' : '') + '<div class="nm">' + esc(s.name) + '</div>' +
     '<div class="ad">' + esc(full) + '</div>' +
-    (dist != null ? '<div class="dist">' + t('vb.miAway', {n: dist.toFixed(1)}) + '</div>' : '') + '</div>' +
+    (d ? '<div class="dist">' + d + '</div>' : '') + '</div>' +
     '<a class="vb-btn" href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">' + t('vb.directions') + ' &#8599;</a></div>';
 }
+
+// Leaflet is vendored under /vendor and loaded only when someone opens the site finder.
+var leafletP = null, evMap = null, zipTable = null;
+function loadLeaflet(){
+  if(window.L) return Promise.resolve(window.L);
+  if(leafletP) return leafletP;
+  leafletP = new Promise(function(res, rej){
+    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/vendor/leaflet-1.9.4/leaflet.css';
+    document.head.appendChild(css);
+    var s = document.createElement('script'); s.src = '/vendor/leaflet-1.9.4/leaflet.js';
+    s.onload = function(){ res(window.L); };
+    s.onerror = function(){ leafletP = null; rej(new Error('leaflet')); };
+    document.head.appendChild(s);
+  });
+  return leafletP;
+}
+async function getZipTable(){
+  if(zipTable) return zipTable;
+  var r = await fetch('/data/mdzip.json'); zipTable = (await r.json()).zips; return zipTable;
+}
+
+// Map of all 28 sites. The closest ones (when we have a starting point) are numbered to match the list.
+// Tiles come from CARTO; the voter's position or ZIP is only used here in the browser.
+async function drawEvMap(sites, origin, top){
+  var el = $('vbMap');
+  if(!el) return;
+  var L;
+  try { L = await loadLeaflet(); } catch(e){ el.remove(); var p = $('vbMapNote'); if(p) p.remove(); return; }
+  if(!document.body.contains(el)) return;
+  if(evMap){ evMap.remove(); evMap = null; }
+  evMap = L.map(el, {scrollWheelZoom:false, zoomControl:true});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+  }).addTo(evMap);
+  var popup = function(s){
+    var full = s.address + ', ' + s.city + ', FL ' + s.zip;
+    return '<strong>' + esc(s.name) + '</strong><br>' + esc(full) + '<br><a href="' + esc(mapsDir(full)) + '" target="_blank" rel="noopener">' + t('vb.directions') + ' &#8599;</a>';
+  };
+  var topIdx = {}; (top || []).forEach(function(s, i){ topIdx[s.name] = i + 1; });
+  var pts = [];
+  sites.forEach(function(s){
+    if(s.lat == null) return;
+    var n = topIdx[s.name];
+    var m = n
+      ? L.marker([s.lat, s.lon], {icon: L.divIcon({className:'', html:'<div class="vb-pin">' + n + '</div>', iconSize:[26,26], iconAnchor:[13,13]}), zIndexOffset:1000, title:s.name})
+      : L.circleMarker([s.lat, s.lon], {radius:6, color:'#131F3C', weight:2, fillColor:'#FFFFFF', fillOpacity:1});
+    m.bindPopup(popup(s)).addTo(evMap);
+    if(n || !origin) pts.push([s.lat, s.lon]);
+  });
+  if(origin){
+    L.circleMarker([origin.lat, origin.lon], {radius:7, color:'#FFFFFF', weight:3, fillColor:'#1F7A3A', fillOpacity:1})
+      .bindTooltip(origin.zip ? t('vb.mapZip', {z: esc(origin.zip)}) : t('vb.mapYou')).addTo(evMap);
+    pts.push([origin.lat, origin.lon]);
+  }
+  evMap.fitBounds(pts, {padding:[28, 28], maxZoom:14});
+}
+
+function zipForm(){
+  return '<form class="vb-zip" id="vbZipForm" novalidate>' +
+    '<label for="vbZip">' + t('vb.zipLabel') + '</label>' +
+    '<input id="vbZip" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" placeholder="33130">' +
+    '<button class="vb-btn" type="submit">' + t('vb.zipBtn') + '</button></form><div class="vb-note" id="vbZipMsg" style="margin-top:6px"></div>';
+}
+
 async function showNearestSites(){
   var box = $('vbSites');
   box.innerHTML = '<div class="vb-note">' + t('vb.finding') + '</div>';
   var data;
   try { data = await getEvSites(); } catch(e){ box.innerHTML = '<div class="vb-note">' + t('vb.loadFail') + ' <a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.countyList') + ' &#8599;</a></div>'; return; }
-  var sites = data.sites.slice();
-  var finish = function(pos){
-    var note = '';
-    if(pos){
-      var la = pos.coords.latitude, lo = pos.coords.longitude;
-      sites.forEach(function(s){ s._d = (s.lat != null) ? milesBetween(la, lo, s.lat, s.lon) : null; });
+
+  // origin: {lat, lon} from the browser, {lat, lon, zip} from a ZIP code, or null (A to Z list).
+  var render = function(origin, msg){
+    var sites = data.sites.slice();
+    if(origin){
+      sites.forEach(function(s){ s._d = (s.lat != null) ? milesBetween(origin.lat, origin.lon, s.lat, s.lon) : null; });
       sites.sort(function(a, b){ return (a._d == null) - (b._d == null) || (a._d || 0) - (b._d || 0); });
     } else {
+      sites.forEach(function(s){ s._d = null; });
       sites.sort(function(a, b){ return a.name.localeCompare(b.name); });
-      note = t('vb.locOff');
     }
-    var top = pos ? sites.slice(0, 3) : sites;
-    var html = '<div class="vb-sites">' + top.map(function(s){ return siteRow(s, pos ? s._d : null); }).join('') + '</div>';
-    if(pos) html += '<button class="vb-btn ghost" id="vbAll" type="button" style="margin-top:12px">' + t('vb.allBtn') + '</button>';
-    html += '<div class="vb-note">' + (note ? note + '<br>' : '') + t('vb.sameHours') + ' ' + t('vb.source') + ' <a href="' + esc(data.source) + '" target="_blank" rel="noopener">' + t('vb.sourceName') + ' &#8599;</a></div>';
+    var zip = origin && origin.zip;
+    var top = origin ? sites.slice(0, 3) : [];
+    var list = origin ? top : sites;
+    var html = '';
+    if(!origin) html += '<div class="vb-note">' + t('vb.locOff') + '</div>' + zipForm();
+    html += '<div class="vb-map" id="vbMap" role="region" aria-label="' + t('vb.mapLabel') + '"></div>' +
+      '<div class="vb-note" id="vbMapNote" style="margin-top:6px">' + t('vb.mapPrivacy') + '</div>';
+    html += '<div class="vb-sites">' + list.map(function(s, i){ return siteRow(s, s._d, origin ? i + 1 : 0, zip); }).join('') + '</div>';
+    if(origin) html += '<div class="vb-row" style="margin-top:12px; justify-content:flex-start">' +
+      '<button class="vb-btn ghost" id="vbAll" type="button">' + t('vb.allBtn') + '</button>' +
+      (zip ? '' : '<button class="vb-btn ghost" id="vbUseZip" type="button">' + t('vb.useZip') + '</button>') + '</div>' +
+      '<div id="vbZipBox"></div>';
+    html += '<div class="vb-note">' + (zip ? t('vb.zipNote') + '<br>' : '') + t('vb.sameHours') + ' ' + t('vb.source') + ' <a href="' + esc(data.source) + '" target="_blank" rel="noopener">' + t('vb.sourceName') + ' &#8599;</a></div>';
     box.innerHTML = html;
+    if(msg && $('vbZipMsg')) $('vbZipMsg').innerHTML = msg;
+
     var all = $('vbAll');
     if(all) all.addEventListener('click', function(){
-      box.querySelector('.vb-sites').innerHTML = sites.map(function(s){ return siteRow(s, s._d); }).join('');
+      box.querySelector('.vb-sites').innerHTML = sites.map(function(s, i){ return siteRow(s, s._d, i < 3 ? i + 1 : 0, zip); }).join('');
       all.remove();
     });
+    var uz = $('vbUseZip');
+    if(uz) uz.addEventListener('click', function(){ $('vbZipBox').innerHTML = zipForm(); wireZip(); uz.remove(); $('vbZip').focus(); });
+    wireZip();
+    drawEvMap(sites, origin, top);
   };
-  if(!navigator.geolocation) return finish(null);
-  navigator.geolocation.getCurrentPosition(finish, function(){ finish(null); }, {enableHighAccuracy:false, timeout:10000, maximumAge:600000});
+
+  var wireZip = function(){
+    var f = $('vbZipForm');
+    if(!f) return;
+    f.addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      var z = ($('vbZip').value || '').trim(), out = $('vbZipMsg');
+      if(!/^\d{5}$/.test(z)){ out.innerHTML = t('vb.zipBad'); return; }
+      var tbl;
+      try { tbl = await getZipTable(); } catch(e){ out.innerHTML = t('vb.loadFail'); return; }
+      var c = tbl[z];
+      if(!c){ out.innerHTML = t('vb.zipUnknown', {z: esc(z)}); return; }
+      render({lat:c[0], lon:c[1], zip:z});
+    });
+  };
+
+  if(!navigator.geolocation) return render(null);
+  navigator.geolocation.getCurrentPosition(
+    function(pos){ render({lat:pos.coords.latitude, lon:pos.coords.longitude}); },
+    function(){ render(null); },
+    {enableHighAccuracy:false, timeout:10000, maximumAge:600000});
 }
 
 // The precinct comes from reading the sample ballot, so a digit can be misread or the voter may have
