@@ -4751,7 +4751,7 @@ function siteRow(s, dist, n, zip){
 }
 
 // Leaflet is vendored under /vendor and loaded only when someone opens the site finder.
-var leafletP = null, evMap = null, zipTable = null;
+var leafletP = null, evMap = null, zipTable = null, NEAR = 5;   // closest sites listed and numbered
 function loadLeaflet(){
   if(window.L) return Promise.resolve(window.L);
   if(leafletP) return leafletP;
@@ -4832,7 +4832,7 @@ async function showNearestSites(){
       sites.sort(function(a, b){ return a.name.localeCompare(b.name); });
     }
     var zip = origin && origin.zip;
-    var top = origin ? sites.slice(0, 3) : [];
+    var top = origin ? sites.slice(0, NEAR) : [];
     var list = origin ? top : sites;
     var html = '';
     if(!origin) html += '<div class="vb-note">' + t('vb.locOff') + '</div>' + zipForm();
@@ -4849,7 +4849,7 @@ async function showNearestSites(){
 
     var all = $('vbAll');
     if(all) all.addEventListener('click', function(){
-      box.querySelector('.vb-sites').innerHTML = sites.map(function(s, i){ return siteRow(s, s._d, i < 3 ? i + 1 : 0, zip); }).join('');
+      box.querySelector('.vb-sites').innerHTML = sites.map(function(s, i){ return siteRow(s, s._d, i < NEAR ? i + 1 : 0, zip); }).join('');
       all.remove();
     });
     var uz = $('vbUseZip');
