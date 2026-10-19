@@ -1162,7 +1162,7 @@ en: {
   'vb.mapYou': 'You are here',
   'vb.mapZip': 'Middle of ZIP {z}',
   'vb.mapLabel': 'Map of early voting sites',
-  'vb.mapPrivacy': 'Your location and ZIP stay on your device. Map images come from CARTO, which sees only the area shown.',
+  'vb.mapPrivacy': 'Your location and ZIP stay on your device. Map images come from OpenStreetMap, which sees only the area shown.',
   'vb.lookup': 'county voter lookup',
   'vb.noPrecinct': 'Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the',
   'vb.findMine': 'Find my polling place',
@@ -1668,7 +1668,7 @@ es: {
   'vb.mapYou': 'Usted está aquí',
   'vb.mapZip': 'Centro del código postal {z}',
   'vb.mapLabel': 'Mapa de los centros de votación anticipada',
-  'vb.mapPrivacy': 'Su ubicación y código postal se quedan en su dispositivo. Las imágenes del mapa vienen de CARTO, que solo ve el área que se muestra.',
+  'vb.mapPrivacy': 'Su ubicación y código postal se quedan en su dispositivo. Las imágenes del mapa vienen de OpenStreetMap, que solo ve el área que se muestra.',
   'vb.lookup': 'búsqueda de votantes del condado',
   'vb.noPrecinct': 'Cargue su propia boleta de muestra (indica su precinto) para ver aquí su lugar de votación, o encuéntrelo con la',
   'vb.findMine': 'Encontrar mi lugar de votación',
@@ -2174,7 +2174,7 @@ ht: {
   'vb.mapYou': 'Ou la a',
   'vb.mapZip': 'Mitan kòd postal {z}',
   'vb.mapLabel': 'Kat lokal vote pi bonè yo',
-  'vb.mapPrivacy': 'Lokalizasyon ak kòd postal ou rete sou aparèy ou. Imaj kat la soti nan CARTO, ki wè sèlman zòn ki parèt la.',
+  'vb.mapPrivacy': 'Lokalizasyon ak kòd postal ou rete sou aparèy ou. Imaj kat la soti nan OpenStreetMap, ki wè sèlman zòn ki parèt la.',
   'vb.lookup': 'rechèch votè konte a',
   'vb.noPrecinct': 'Chaje pwòp echantiyon bilten vòt ou (li gen pwesen w sou li) pou w wè biwo vòt ou isit la, oswa jwenn li ak',
   'vb.findMine': 'Jwenn biwo vòt mwen',
@@ -4666,7 +4666,7 @@ async function getZipTable(){
 }
 
 // Map of all 28 sites. The closest ones (when we have a starting point) are numbered to match the list.
-// Tiles come from CARTO; the voter's position or ZIP is only used here in the browser.
+// Tiles come from OpenStreetMap; the voter's position or ZIP is only used here in the browser.
 async function drawEvMap(sites, origin, top){
   var el = $('vbMap');
   if(!el) return;
@@ -4675,9 +4675,9 @@ async function drawEvMap(sites, origin, top){
   if(!document.body.contains(el)) return;
   if(evMap){ evMap.remove(); evMap = null; }
   evMap = L.map(el, {scrollWheelZoom:false, zoomControl:true});
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    subdomains:'abcd', maxZoom:19,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
   }).addTo(evMap);
   var popup = function(s){
     var full = s.address + ', ' + s.city + ', FL ' + s.zip;
