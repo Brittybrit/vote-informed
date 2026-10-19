@@ -2,13 +2,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { loadWorker, fakeKV } from './load-worker.mjs';
 
-const w = await loadWorker(['warmItems', 'warmRun', 'warmCheck', 'usageCost', 'addUsage', 'FEATURED_KEY']);
+const w = await loadWorker(['warmItems', 'warmRun', 'warmCheck', 'usageCost', 'addUsage', 'researchSlot', 'FEATURED_KEY']);
 
 const MASTER = {
   jurisdiction: 'Miami-Dade County', electionName: 'General Election', electionDate: 'November 3, 2026',
   races: [
     { office: 'County Commissioner, District 5', candidates: [{ name: 'Vicki L. Lopez' }, { name: 'Write-in' }] },
     { office: 'Shall Judge Jane Roe of the Third District Court of Appeal be retained in office?', isJudicial: true, candidates: [{ name: 'YES' }, { name: 'NO' }] },
+    { office: 'Representative in Congress, District 27', candidates: [{ name: 'Maria Elvira Salazar' }, { name: 'Other Person' }] },
     { office: 'Circuit Judge, Group 5', isJudicial: true, candidates: [{ name: 'A. Judge' }, { name: 'B. Judge' }] },
     { office: 'City of Miami Question 3', isMeasure: true, summary: 'Virginia Key marina lease', candidates: [{ name: 'YES' }, { name: 'NO' }] }
   ]
@@ -27,6 +28,7 @@ test('warm list reads the ballot the way the page does', async () => {
   assert.deepEqual(items.map(x => [x.kind, x.body.name]), [
     ['candidate', 'Vicki L. Lopez'],
     ['judge', 'Jane Roe'],
+    ['candidate', 'Maria Elvira Salazar'], ['candidate', 'Other Person'],
     ['judge', 'A. Judge'], ['judge', 'B. Judge'],
     ['measure', 'City of Miami Question 3']
   ]);
@@ -41,7 +43,7 @@ test('warm-up schedules the same cache slot a visitor would', async () => {
   assert.equal((await res.json()).pending, true);
   const visitorKey = e.jobs[0].key;
   const e2 = env();
-  const r = await w.warmRun(e2, { indices: [0, 4] });
+  const r = await w.warmRun(e2, { indices: [0, 6] });
   assert.deepEqual(r.states.map(x => x.state), ['pending', 'pending']);
   assert.equal(e2.jobs[0].key, visitorKey);
   assert.equal(e2.jobs[0].warm, true);
@@ -81,4 +83,30 @@ test('cost math', () => {
 test('warm-up routes need the admin token', async () => {
   const res = await w.__default.fetch(new Request('https://x/api/admin/warm-list', { method: 'POST', body: '{}' }), env(), {});
   assert.equal(res.status, 401);
+});
+
+const MASTER_ELECTION = 'General Election November 3, 2026';
+const slot = async (e, body) => (await w.researchSlot(e, body)).key;
+test('an uploaded ballot reuses the countywide entry when it is the same contest', async () => {
+  const e = env();
+  const master = await slot(e, { name: 'Vicki L. Lopez', office: 'County Commissioner, District 5', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION });
+  // parse wrote the county, the date and the name a little differently
+  assert.equal(await slot(e, { name: 'VICKI LOPEZ', office: 'County Commissioner, District 5', jurisdiction: 'Miami-Dade County, FL', election: 'Tuesday, November 3, 2026' }), master);
+  // office worded differently, same exact name, same district number
+  const cong = await slot(e, { name: 'Maria Elvira Salazar', office: 'Representative in Congress, District 27', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION });
+  assert.equal(await slot(e, { name: 'Maria Elvira Salazar', office: 'U.S. Representative, District 27', jurisdiction: 'Miami-Dade', election: MASTER_ELECTION }), cong);
+  // ballot question title with different punctuation
+  const q = await slot(e, { name: 'City of Miami Question 3', office: 'Ballot measure', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION, isMeasure: true });
+  assert.equal(await slot(e, { name: 'CITY OF MIAMI - QUESTION 3', office: 'Ballot measure', jurisdiction: 'x Miami-Dade', election: MASTER_ELECTION, isMeasure: true, summary: 'slanted' }), q);
+});
+
+test('an uploaded ballot does not borrow across elections, counties, districts or people', async () => {
+  const e = env();
+  const master = await slot(e, { name: 'Vicki L. Lopez', office: 'County Commissioner, District 5', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION });
+  assert.notEqual(await slot(e, { name: 'Vicki L. Lopez', office: 'County Commissioner, District 5', jurisdiction: 'Miami-Dade County', election: 'Primary Election August 18, 2026' }), master);
+  assert.notEqual(await slot(e, { name: 'Vicki L. Lopez', office: 'County Commissioner, District 5', jurisdiction: 'Broward County', election: MASTER_ELECTION }), master);
+  const cong = await slot(e, { name: 'Maria Elvira Salazar', office: 'Representative in Congress, District 27', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION });
+  assert.notEqual(await slot(e, { name: 'Maria Elvira Salazar', office: 'U.S. Representative, District 26', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION }), cong);
+  // a looser name only counts inside the same office
+  assert.notEqual(await slot(e, { name: 'Vicki Lopez', office: 'Mayor', jurisdiction: 'Miami-Dade County', election: MASTER_ELECTION }), master);
 });

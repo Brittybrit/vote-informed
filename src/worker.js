@@ -260,6 +260,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
 // of the key, or one visitor could seed everyone's result with a prompt of their choosing. Used by
 // /api/research and by the owner's warm-up, so both land on the same cache entries.
 async function researchSlot(env, body) {
+  body = await onMaster(env, body);
   const name = body.name.slice(0, 120);
   const office = body.office.slice(0, 200);
   const jurisdiction = isStr(body.jurisdiction) ? body.jurisdiction.slice(0, 200) : 'unknown';
@@ -3607,6 +3608,65 @@ function usageCost(acc) {
 // a retention question researches its judge; YES/NO rows and write-in lines are not people.
 const WARM_YESNO = /^(yes|no|s[ií]|non?|wi|for|against)\b/i;
 const WARM_RETAIN = /retain|retention|retenerse|rete an fonksyon/i;
+// A contest from an uploaded sample ballot that is also on the countywide ballot is researched under
+// the countywide ballot's exact wording, so it shares the warmed cache entry instead of paying for a
+// second lookup when the AI parse writes the jurisdiction, office or name a little differently.
+// Matches only when it is clearly the same contest:
+//  - same office (ignoring case, punctuation, accents) and the same candidate (same last name and first
+//    initial, the rule the page uses), or
+//  - the exact same candidate name, found once on the countywide ballot, with the same district or
+//    group numbers in the office.
+// Ballot questions match on their title. Only for the same election date and county as the countywide
+// ballot. Anything else is researched as sent.
+let MASTER_INDEX = null;   // { pk, byOffice, byName } for the parse currently pinned
+async function masterIndex(env) {
+  let pk = await env.CACHE.get(FEATURED_KEY);
+  if (!pk) pk = await bundledParseKey(env);
+  if (!pk) return null;
+  if (MASTER_INDEX && MASTER_INDEX.pk === pk) return MASTER_INDEX;
+  const items = await warmItems(env);
+  if (!items) return null;
+  const byOffice = new Map(), byName = new Map();
+  for (const x of items) {
+    const ko = (x.kind === 'measure' ? 'm|' : 'c|') + normPart(x.kind === 'measure' ? x.body.name : x.body.office);
+    if (!byOffice.has(ko)) byOffice.set(ko, []);
+    byOffice.get(ko).push(x.body);
+    if (x.kind !== 'measure') { const kn = normPart(x.body.name); byName.set(kn, byName.has(kn) ? null : x.body); }
+  }
+  const first = items[0] ? items[0].body : {};
+  const county = normPart(first.jurisdiction || '').split(' county')[0].trim() || 'miami dade';
+  MASTER_INDEX = { pk, byOffice, byName, election: normElection(first.election || ''), county };
+  return MASTER_INDEX;
+}
+function sameLastFirst(a, b) {
+  const x = normPart(String(a).replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ')).split(' ').filter(Boolean);
+  const y = normPart(String(b).replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ')).split(' ').filter(Boolean);
+  return x.length > 0 && y.length > 0 && x[x.length - 1] === y[y.length - 1] && x[0].charAt(0) === y[0].charAt(0);
+}
+const officeNums = o => (normPart(o).match(/\b\d+\b/g) || []).join(',');
+async function onMaster(env, body) {
+  let idx = null;
+  try { idx = await masterIndex(env); } catch (e) { return body; }
+  if (!idx) return body;
+  // Only the same election in the same county: a primary ballot or another county's ballot never borrows.
+  if (isStr(body.election) && normElection(body.election) !== idx.election) return body;
+  if (isStr(body.jurisdiction) && !normPart(body.jurisdiction).includes(idx.county)) return body;
+  let hit = null;
+  if (body.isMeasure) {
+    const list = idx.byOffice.get('m|' + normPart(body.name)) || idx.byOffice.get('m|' + normPart(body.office)) || [];
+    if (list.length === 1) hit = list[0];
+  } else {
+    const list = (idx.byOffice.get('c|' + normPart(body.office)) || []).filter(m => sameLastFirst(m.name, body.name));
+    if (list.length === 1) hit = list[0];
+    else if (!list.length) {
+      const m = idx.byName.get(normPart(body.name));
+      if (m && officeNums(m.office) === officeNums(body.office)) hit = m;
+    }
+  }
+  if (!hit) return body;
+  return Object.assign({}, body, { name: hit.name, office: hit.office, jurisdiction: hit.jurisdiction, election: hit.election, summary: hit.summary });
+}
+
 async function warmItems(env) {
   let pk = await env.CACHE.get(FEATURED_KEY);
   if (!pk) pk = await bundledParseKey(env);
