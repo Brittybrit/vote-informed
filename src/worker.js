@@ -256,11 +256,10 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
   return json({ ballot, cached: false });
 }
 
-async function handleResearch(request, env, ctx) {
-  const body = await request.json().catch(() => null);
-  if (!body || !isStr(body.name) || !isStr(body.office)) {
-    return json({ error: 'Missing candidate name or office' }, 400);
-  }
+// The shared cache slot for one research request. Everything that shapes the research prompt is part
+// of the key, or one visitor could seed everyone's result with a prompt of their choosing. Used by
+// /api/research and by the owner's warm-up, so both land on the same cache entries.
+async function researchSlot(env, body) {
   const name = body.name.slice(0, 120);
   const office = body.office.slice(0, 200);
   const jurisdiction = isStr(body.jurisdiction) ? body.jurisdiction.slice(0, 200) : 'unknown';
@@ -270,12 +269,7 @@ async function handleResearch(request, env, ctx) {
   const isJudicial = !body.isMeasure && /\b(judge|justice|court)\b/i.test(body.office);
   const isMeasure = !!body.isMeasure;
   let measureSummary = isStr(body.summary) ? body.summary.slice(0, 800) : '';
-
   const officeCode = isMeasure ? null : federalOfficeCode(office);
-  const lang = TR_LANGS[body.lang] ? body.lang : 'en';
-
-  // Everything that shapes the research prompt has to be part of the shared cache key, or one
-  // visitor can seed everyone's result with a prompt of their choosing.
   //  - isJudicial picks its own prefix, so sending false for a judge can't strip the FedSoc screen.
   //  - A measure found on the county master ballot uses the county's printed summary and the
   //    browser's is ignored. Any other measure keys on a hash of the summary it was researched
@@ -287,7 +281,6 @@ async function handleResearch(request, env, ctx) {
     if (trusted !== null) measureSummary = trusted.slice(0, 800);
     else if (measureSummary) summaryTag = '|s:' + (await sha256(normPart(measureSummary))).slice(0, 16);
   }
-
   // Shared cache: the whole point. 500 users, one bill.
   const prefix = isMeasure ? 'resm2:' : officeCode ? 'res7:' : isJudicial ? 'resj1:' : 'resl4:';
   const key = prefix + await sha256((name + '|' + office + '|' + jurisdiction + '|' + election).toLowerCase().replace(/\s+/g, ' ') + summaryTag);
@@ -295,6 +288,18 @@ async function handleResearch(request, env, ctx) {
   // ("Tuesday, November 3, 2026" vs "November 3, 2026", "Moe" with or without quotes, accents)
   // share one cached result.
   const alias = 'alias:' + prefix + await sha256([normPart(name), normPart(office), normPart(jurisdiction), normElection(election)].join('|') + summaryTag);
+  const params = { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode, alias };
+  return { key, alias, prefix, params };
+}
+
+async function handleResearch(request, env, ctx) {
+  const body = await request.json().catch(() => null);
+  if (!body || !isStr(body.name) || !isStr(body.office)) {
+    return json({ error: 'Missing candidate name or office' }, 400);
+  }
+  const lang = TR_LANGS[body.lang] ? body.lang : 'en';
+  const { key, alias, prefix, params } = await researchSlot(env, body);
+  const { name, office, officeCode } = params;
   // A dossier the owner pulled for correction stays down until she releases it.
   if (await env.CACHE.get('hold:' + key)) return json({ error: 'HELD', key }, 503);
   let cached = await env.CACHE.get(key, 'json');
@@ -323,7 +328,6 @@ async function handleResearch(request, env, ctx) {
   const failed = await env.CACHE.get('fail:' + key);
   if (failed) return json({ error: failed }, 502);
   const pending = await env.CACHE.get('pend:' + key);
-  const params = { name, office, jurisdiction, election, isJudicial, isMeasure, measureSummary, officeCode, alias };
 
   if (!pending) {
     const ip = clientIP(request);
@@ -3549,6 +3553,9 @@ async function handleAdmin(request, env, url) {
   if (request.method !== 'POST') return json({ error: 'Not found' }, 404);
   const b = await request.json().catch(() => ({}));
   const key = isStr(b.key) && /^(res[a-z0-9]*|resm2|resj1|resl4|res7):[0-9a-f]{64}$/.test(b.key) ? b.key : '';
+  if (route === 'warm-list') return json(await warmList(env));
+  if (route === 'warm-check') return json(await warmCheck(env, b));
+  if (route === 'warm-run') return json(await warmRun(env, b));
   if (route === 'resolve') {
     if (!isStr(b.id) || !b.id.startsWith('report:')) return json({ error: 'Bad id' }, 400);
     await env.CACHE.delete(b.id);
@@ -3569,6 +3576,106 @@ async function handleAdmin(request, env, url) {
     return json({ ok: true });
   }
   return json({ error: 'Not found' }, 404);
+}
+
+/* ---------------- warm-up: research every contest on the countywide ballot ahead of voters ---------------- */
+// Run from /admin.html. The page walks the list a few at a time; each contest already cached is skipped,
+// so a stopped run picks up where it left off. Every warm-up run records what it spent (warmcost:<key>).
+// Honors the FRESH_OFF kill switch and its own daily ceiling (GLOBAL_LIMITS.warm).
+const PRICES = {   // dollars per million tokens; web search $10 per 1,000. https://platform.claude.com/docs/en/about-claude/pricing
+  'claude-haiku-4-5': { in: 1, out: 5 },
+  'claude-sonnet-4-6': { in: 3, out: 15 }
+};
+const SEARCH_PRICE = 0.01;
+function addUsage(acc, model, u) {
+  if (!u) return;
+  const m = acc[model] || (acc[model] = { in: 0, out: 0, cacheWrite: 0, cacheRead: 0, searches: 0, calls: 0 });
+  m.in += u.input_tokens || 0; m.out += u.output_tokens || 0;
+  m.cacheWrite += u.cache_creation_input_tokens || 0; m.cacheRead += u.cache_read_input_tokens || 0;
+  m.searches += (u.server_tool_use && u.server_tool_use.web_search_requests) || 0;
+  m.calls++;
+}
+function usageCost(acc) {
+  let usd = 0;
+  for (const [model, m] of Object.entries(acc || {})) {
+    const p = PRICES[model] || PRICES['claude-sonnet-4-6'];   // unknown model: price it high, not low
+    usd += (m.in * p.in + m.out * p.out + m.cacheWrite * p.in * 1.25 + m.cacheRead * p.in * 0.1) / 1e6 + m.searches * SEARCH_PRICE;
+  }
+  return Math.round(usd * 10000) / 10000;
+}
+// Same ballot the site shows by default, read the way the page reads it (normalizeBallot in index.html):
+// a retention question researches its judge; YES/NO rows and write-in lines are not people.
+const WARM_YESNO = /^(yes|no|s[ií]|non?|wi|for|against)\b/i;
+const WARM_RETAIN = /retain|retention|retenerse|rete an fonksyon/i;
+async function warmItems(env) {
+  let pk = await env.CACHE.get(FEATURED_KEY);
+  if (!pk) pk = await bundledParseKey(env);
+  const master = pk ? await env.CACHE.get(pk, 'json') : null;
+  if (!master || !Array.isArray(master.races)) return null;
+  const jurisdiction = master.jurisdiction || '';
+  const election = [master.electionName, master.electionDate].filter(Boolean).join(' ');
+  const items = [];
+  for (const race of master.races) {
+    if (!race || !isStr(race.office)) continue;
+    if (race.isMeasure) {
+      items.push({ label: race.office, kind: 'measure', body: { name: race.office, office: 'Ballot measure', jurisdiction, election, isJudicial: false, isMeasure: true, summary: race.summary || '' } });
+      continue;
+    }
+    let people = (race.candidates || []).filter(c => c && isStr(c.name) && c.name.trim() && !WARM_YESNO.test(c.name.trim()) && !/write[\s-]*in/i.test(c.name));
+    if (race.isJudicial && people.length === 0 && WARM_RETAIN.test(race.office)) {
+      const m = race.office.match(/shall\s+(?:justice|judge)\s+(.+?)\s+of\s+the/i);
+      if (m) people = [{ name: m[1] }];
+    }
+    for (const c of people) {
+      const judge = /\b(judge|justice|court)\b/i.test(race.office);
+      items.push({ label: c.name + ' (' + race.office + ')', kind: judge ? 'judge' : 'candidate', body: { name: c.name, office: race.office, jurisdiction, election, isJudicial: !!race.isJudicial } });
+    }
+  }
+  return items;
+}
+async function warmList(env) {
+  const items = await warmItems(env);
+  if (!items) return { error: 'The countywide ballot is not loaded yet. Open the home page once so it loads, then try again.' };
+  return { total: items.length, items: items.map((x, i) => ({ i, label: x.label, kind: x.kind })) };
+}
+async function warmState(env, item) {
+  const { key, alias, prefix } = await researchSlot(env, item.body);
+  if (await env.CACHE.get('hold:' + key)) return { key, state: 'held' };
+  let done = !!(await env.CACHE.get(key));
+  if (!done) { const t = await env.CACHE.get(alias); done = !!(t && t !== key && await env.CACHE.get(t)); }
+  if (!done && prefix === 'resj1:') { const old = await env.CACHE.get('resl4:' + key.slice(prefix.length), 'json'); done = !!(old && old.federalistSociety); }
+  const cost = await env.CACHE.get('warmcost:' + key, 'json');
+  const out = { key, state: done ? 'cached' : (await env.CACHE.get('fail:' + key)) ? 'failed' : (await env.CACHE.get('pend:' + key)) ? 'pending' : 'todo' };
+  if (cost) out.cost = usageCost(cost);
+  return out;
+}
+async function warmCheck(env, b) {
+  const items = await warmItems(env);
+  if (!items) return { error: 'Ballot not loaded' };
+  let idx;
+  if (Array.isArray(b.indices)) idx = b.indices.map(n => parseInt(n, 10)).filter(n => n >= 0 && n < items.length).slice(0, 40);
+  else { const start = Math.max(0, parseInt(b.start, 10) || 0), count = Math.min(40, Math.max(1, parseInt(b.count, 10) || 40)); idx = []; for (let i = start; i < Math.min(items.length, start + count); i++) idx.push(i); }
+  const states = await Promise.all(idx.map(i => warmState(env, items[i])));
+  return { states: states.map((s, j) => ({ i: idx[j], state: s.state, cost: s.cost })) };
+}
+async function warmRun(env, b) {
+  const items = await warmItems(env);
+  if (!items) return { error: 'Ballot not loaded' };
+  if (!env.RESEARCH) return { error: 'The research runner (Durable Object) is not bound.' };
+  const idx = (Array.isArray(b.indices) ? b.indices : []).map(n => parseInt(n, 10)).filter(n => n >= 0 && n < items.length).slice(0, 5);
+  const out = [];
+  for (const i of idx) {
+    const s = await warmState(env, items[i]);
+    if (s.state === 'failed' && b.retry) await env.CACHE.delete('fail:' + s.key);
+    else if (s.state !== 'todo') { out.push({ i, state: s.state }); continue; }
+    if (!(await rateLimit(env, 'warm', 'owner', GLOBAL_LIMITS.warm))) { out.push({ i, state: 'stopped', error: env.FRESH_OFF === '1' ? 'New research is switched off (FRESH_OFF=1).' : 'Daily warm-up limit reached.' }); break; }
+    const { key, params } = await researchSlot(env, items[i].body);
+    await env.CACHE.put('pend:' + key, '1', { expirationTtl: 900 });
+    const stub = env.RESEARCH.get(env.RESEARCH.idFromName(key));
+    await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ key, params, warm: true }) });
+    out.push({ i, state: 'pending' });
+  }
+  return { states: out };
 }
 
 /* ---------------- utilities ---------------- */
@@ -3603,6 +3710,7 @@ async function callAnthropicOnce(env, payload) {
     throw new Error('Anthropic API ' + res.status + ': ' + t.slice(0, 300));
   }
   const data = await res.json();
+  if (env.__usage) addUsage(env.__usage, payload.model, data.usage);
   if (data.stop_reason === 'max_tokens') {
     throw new Error('The AI response was cut off before finishing. Try again; if it persists, the document is too large.');
   }
@@ -3745,8 +3853,8 @@ function clientIP(request) {
 //    Settings > Variables, or `npx wrangler secret put FRESH_OFF`) and nothing new reaches the
 //    Anthropic API; everything already researched keeps working. Delete it to turn fresh work back on.
 // KV counters are not atomic, so a burst can slip a few past a limit; the ceilings leave room for that.
-const GLOBAL_LIMITS = { report: 500, research: 800, parse: 300, trballot: 400, btext: 150, money: 2000, group: 6000, voterinfo: 3000 };
-const AI_KINDS = new Set(['research', 'parse', 'trballot', 'btext']);
+const GLOBAL_LIMITS = { report: 500, research: 800, warm: 400, parse: 300, trballot: 400, btext: 150, money: 2000, group: 6000, voterinfo: 3000 };
+const AI_KINDS = new Set(['research', 'warm', 'parse', 'trballot', 'btext']);
 async function rateLimit(env, kind, ip, limit) {
   if (env.FRESH_OFF === '1' && AI_KINDS.has(kind)) return false;
   const day = new Date().toISOString().slice(0, 10);
@@ -3858,7 +3966,15 @@ export class ResearchRunner {
     if (!job) return;
     await this.state.storage.put('running', Date.now());
     try {
-      await runResearch(this.env, job.key, job.params);   // writes result or fail: key to KV itself
+      if (job.warm) {
+        // The owner's warm-up: same research, plus a record of what it cost.
+        const env = Object.create(this.env);
+        env.__usage = {};
+        try { await runResearch(env, job.key, job.params); }
+        finally { await this.env.CACHE.put('warmcost:' + job.key, JSON.stringify(env.__usage), { expirationTtl: cacheTtl() }); }
+      } else {
+        await runResearch(this.env, job.key, job.params);   // writes result or fail: key to KV itself
+      }
     } finally {
       await this.state.storage.deleteAll();
     }

@@ -35,12 +35,22 @@
   </div>
   <div id="status" role="status"></div>
   <div id="healthBox" style="display:none"><button id="healthBtn" type="button">Check data sources</button><div id="health"></div></div>
+  <div id="warmBox" style="display:none">
+    <h1 style="margin-top:22px">Warm up research</h1>
+    <p class="sub">Researches every candidate and question on the countywide ballot so voters never wait. Skips anything already researched. Safe to stop and start again.</p>
+    <button id="warmCheck" type="button">Check what's left</button>
+    <button class="go" id="warmGo" type="button" disabled>Start</button>
+    <label class="meta" style="margin-left:6px"><input type="checkbox" id="warmRetry" style="width:auto"> Retry failed ones</label>
+    <div id="warmStat" class="txt"></div>
+    <div id="warmFail" class="meta"></div>
+  </div>
   <div id="list"></div>
   <details>
     <summary>What the buttons do</summary>
     <p><strong>Re-research</strong> drops the cached profile so the next visitor gets fresh research. Use it when the profile is stale or the fix is likely to come out right on a second pass.</p>
     <p><strong>Take down</strong> removes the profile and shows visitors "being corrected" until you put it back. Use it for anything false about a real person.</p>
     <p><strong>Put back</strong> lifts a take-down; the next visitor gets fresh research.</p>
+    <p><strong>Warm up research</strong> researches every contest on the countywide ballot that isn't cached yet, four at a time, and shows what it has spent. Keep the page open while it runs; pausing stops new ones from starting. Each one costs roughly $0.10 (candidates) to $0.45 (judges and ballot questions). It stops on its own if new research is switched off (FRESH_OFF) or after 400 in a day.</p>
     <p><strong>Done</strong> removes the report from this list. Reports also expire after 90 days.</p>
   </details>
 </main>
@@ -66,6 +76,7 @@ async function load(){
     try { sessionStorage.setItem('b305admin', TOKEN); } catch(e) {}
     $('login').style.display = 'none';
     $('healthBox').style.display = '';
+    $('warmBox').style.display = '';
     $('status').textContent = d.reports.length ? d.reports.length + ' open report(s), newest first.' : 'No open reports.';
     $('list').innerHTML = d.reports.map(function(r){
       return '<div class="rep' + (r.held ? ' held' : '') + '" data-id="' + esc(r.id) + '" data-key="' + esc(r.key) + '">' +
@@ -107,6 +118,69 @@ $('healthBtn').addEventListener('click', async function(){
   } catch(e) { $('health').textContent = e.message; }
   b.disabled = false;
 });
+// ---- warm-up ----
+var W = { items: [], st: {}, cost: {}, running: false };
+var IN_FLIGHT = 4;
+function warmCount(){
+  var c = { cached: 0, pending: 0, failed: 0, held: 0, todo: 0 }, spent = 0;
+  W.items.forEach(function(x){ var s = W.st[x.i] || 'todo'; c[s] = (c[s] || 0) + 1; spent += W.cost[x.i] || 0; });
+  return { c: c, spent: spent };
+}
+function warmShow(note){
+  var r = warmCount(), c = r.c, n = W.items.length;
+  $('warmStat').innerHTML = esc(n + ' contests · ' + c.cached + ' researched · ' + c.pending + ' running · ' + c.todo + ' to go · ' + c.failed + ' failed' + (c.held ? ' · ' + c.held + ' taken down' : '')) +
+    '<br>' + esc('Spent by this warm-up so far: $' + r.spent.toFixed(2)) + (note ? '<br>' + esc(note) : '');
+  var f = W.items.filter(function(x){ return W.st[x.i] === 'failed'; });
+  $('warmFail').innerHTML = f.length ? 'Failed: ' + f.map(function(x){ return esc(x.label); }).join(' · ') : '';
+  $('warmGo').textContent = W.running ? 'Pause' : (c.todo || (c.failed && $('warmRetry').checked) ? 'Start' : 'Start');
+  $('warmGo').disabled = !W.items.length;
+}
+async function warmCheckAll(){
+  for(var s = 0; s < W.items.length; s += 40){
+    var d = await call('warm-check', { start: s, count: 40 });
+    (d.states || []).forEach(function(x){ W.st[x.i] = x.state; if(x.cost) W.cost[x.i] = x.cost; });
+    warmShow('Checking… ' + Math.min(W.items.length, s + 40) + ' of ' + W.items.length);
+  }
+}
+$('warmCheck').addEventListener('click', async function(){
+  var b = this; b.disabled = true;
+  try {
+    var d = await call('warm-list', {});
+    if(d.error) throw new Error(d.error);
+    W.items = d.items; W.st = {}; W.cost = {};
+    await warmCheckAll();
+    warmShow();
+  } catch(e) { $('warmStat').textContent = e.message; }
+  b.disabled = false;
+});
+$('warmGo').addEventListener('click', function(){
+  W.running = !W.running; warmShow(W.running ? 'Starting…' : 'Paused. Research already started will finish on its own.');
+  if(W.running) warmLoop();
+});
+async function warmLoop(){
+  while(W.running){
+    try {
+      var pend = W.items.filter(function(x){ return W.st[x.i] === 'pending'; }).map(function(x){ return x.i; });
+      for(var k = 0; k < pend.length; k += 40){
+        var d = await call('warm-check', { indices: pend.slice(k, k + 40) });
+        (d.states || []).forEach(function(x){ W.st[x.i] = x.state; if(x.cost) W.cost[x.i] = x.cost; });
+      }
+      var running = W.items.filter(function(x){ return W.st[x.i] === 'pending'; }).length;
+      var retry = $('warmRetry').checked;
+      var next = W.items.filter(function(x){ var s = W.st[x.i] || 'todo'; return s === 'todo' || (retry && s === 'failed'); }).slice(0, Math.max(0, IN_FLIGHT - running)).map(function(x){ return x.i; });
+      if(!next.length && !running){ W.running = false; warmShow('Done.'); return; }
+      if(next.length){
+        var r = await call('warm-run', { indices: next, retry: retry });
+        var stop = (r.states || []).filter(function(x){ return x.state === 'stopped'; })[0];
+        (r.states || []).forEach(function(x){ if(x.state !== 'stopped') W.st[x.i] = x.state; });
+        if(stop){ W.running = false; warmShow(stop.error); return; }
+        next.forEach(function(i){ if(retry && W.st[i] === 'failed') W.st[i] = 'pending'; });
+      }
+      warmShow('Running. Keep this page open; it checks every 15 seconds.');
+    } catch(e) { warmShow('Error: ' + e.message + ' (will try again)'); }
+    await new Promise(function(r){ setTimeout(r, 15000); });
+  }
+}
 if(TOKEN) load();
 </script>
 </body>
