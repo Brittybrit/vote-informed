@@ -7,7 +7,7 @@
 // - A gift is counted once, however many actions it ties to.
 // - "Before": a gift dated before at least one action it ties to.
 // - State legislators: money tied to budget requests and money tied only to bill votes are kept apart.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 export const CYCLE_START = '2025-01-01';
@@ -51,7 +51,7 @@ export function build(decisions, officesHeld) {
       const byAcct = {};
       for (const g of all) byAcct[g.acct] = (byAcct[g.acct] || 0) + g.amount;
       const e = {
-        body: B.key, bodyName: B.name, name: m.name, last: key, kind: state ? 'state' : 'votes',
+        pid: m.person, body: B.key, bodyName: B.name, name: m.name, last: key, kind: state ? 'state' : 'votes',
         total: sum(all), donors: new Set(all.map(g => g.donor)).size, gifts: all.length,
         before: before.length, beforeAmt: sum(before),
         accounts: Object.keys(byAcct).filter(a => byAcct[a] > 0).length,
@@ -95,11 +95,49 @@ export function build(decisions, officesHeld) {
   return { updated: decisions.updated, cycleStart: CYCLE_START, people, byBallot };
 }
 
+// One file per incumbent (public/data/ties/<person>.json) with exactly the actions and gifts their
+// summary counts, so the dossier can show the cards behind the one-line summary without loading
+// all of decisions.json. Gifts to other members are left out; the full roll call stays.
+export function tiedActions(B, key) {
+  const accts = new Set(B.onBallot[key].accounts);
+  const out = [];
+  for (const a of B.actions) {
+    const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
+    if (!gifts.length) continue;
+    const x = { ...a, gifts };
+    if (a.giftNotes) { if (a.giftNotes[key]) x.giftNotes = { [key]: a.giftNotes[key] }; else delete x.giftNotes; }
+    out.push(x);
+  }
+  return out.sort((p, q) => String(q.date).localeCompare(String(p.date)) || String(p.id).localeCompare(String(q.id)));
+}
+
+export function buildTies(decisions) {
+  const files = {};
+  for (const B of decisions.bodies) for (const key of Object.keys(B.onBallot)) {
+    const m = B.members.find(x => x.key === key) || {};
+    if (!m.person) continue;
+    const ob = B.onBallot[key];
+    const accounts = {};
+    for (const k of ob.accounts) if (B.accounts[k]) accounts[k] = B.accounts[k];
+    files[m.person] = {
+      updated: decisions.updated, cycleStart: CYCLE_START,
+      body: { key: B.key, name: B.name, type: B.type || null, members: B.members.map(x => ({ key: x.key, name: x.name })),
+        onBallot: { [key]: ob }, accounts, registries: B.registries || null },
+      actions: tiedActions(B, key),
+    };
+  }
+  return files;
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = new URL('../public/data/', import.meta.url);
   const d = JSON.parse(readFileSync(new URL('decisions.json', root)));
   const h = JSON.parse(readFileSync(new URL('offices-held.json', root)));
   const out = build(d, h);
   writeFileSync(new URL('money-summary.json', root), JSON.stringify(out, null, 1) + '\n');
-  console.log(Object.keys(out.people).length + ' people');
+  const dir = new URL('ties/', root), ties = buildTies(d);
+  mkdirSync(dir, { recursive: true });
+  for (const f of readdirSync(dir)) if (f.endsWith('.json') && !ties[f.slice(0, -5)]) unlinkSync(new URL(f, dir));
+  for (const [pid, t] of Object.entries(ties)) writeFileSync(new URL(pid + '.json', dir), JSON.stringify(t) + '\n');
+  console.log(Object.keys(out.people).length + ' people, ' + Object.keys(ties).length + ' tie files');
 }

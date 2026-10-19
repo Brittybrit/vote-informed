@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import vm from 'node:vm';
-import { build, CYCLE_START } from '../scripts/money-summary.mjs';
+import { build, buildTies, CYCLE_START } from '../scripts/money-summary.mjs';
 
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 const decisions = JSON.parse(read('../public/data/decisions.json'));
@@ -58,4 +58,26 @@ test('renders in all three languages with no leftovers', () => {
 test('pages load the shared script', () => {
   for (const f of ['../public/index.html', '../public/decisions.html']) assert.match(read(f), /<script src="\/money-summary\.js"><\/script>/, f);
   assert.match(read('../public/methodology.html'), /id="summary"/);
+});
+
+test('per-person tie files match the builder and add up to the summary', () => {
+  const ties = JSON.parse(JSON.stringify(buildTies(decisions)));
+  const dir = new URL('../public/data/ties/', import.meta.url);
+  const files = readdirSync(dir).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5)).sort();
+  assert.deepEqual(files, Object.keys(ties).sort(), 'tie files on disk (run node scripts/money-summary.mjs)');
+  for (const pid of files) {
+    assert.deepEqual(JSON.parse(read('../public/data/ties/' + pid + '.json')), ties[pid], pid);
+    const p = saved.people[pid];
+    assert.ok(p, pid);
+    assert.equal(p.pid, pid);
+    const seen = new Map();
+    for (const a of ties[pid].actions) for (const g of a.gifts) {
+      assert.equal(g.to, p.last, pid + ' gift to someone else');
+      seen.set([g.acct, g.donor, Number(g.amount), g.date].join('|'), Number(g.amount));
+    }
+    const sum = [...seen.values()].reduce((n, x) => n + x, 0);
+    // the summary merges donor-name spellings, so its total can only be <= the raw unique sum
+    assert.ok(Math.abs(sum - p.total) < 0.01 || sum > p.total, pid + ' ' + sum + ' vs ' + p.total);
+    if (p.kind === 'votes') assert.equal(ties[pid].actions.length, p.items, pid);
+  }
 });

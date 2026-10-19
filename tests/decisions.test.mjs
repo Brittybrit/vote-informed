@@ -4,13 +4,15 @@ import { readFileSync } from 'node:fs';
 
 const d = JSON.parse(readFileSync(new URL('../public/data/decisions.json', import.meta.url)));
 const html = readFileSync(new URL('../public/decisions.html', import.meta.url), 'utf8');
+// the card renderer and its strings are shared with the dossier on the home page
+const card = readFileSync(new URL('../public/decision-card.js', import.meta.url), 'utf8');
 const LANGS = ['en', 'es', 'ht'];
 // one language block's keys from the page's string table
 function keysFor(lang) {
-  const start = html.indexOf('\n    ' + lang + ': {');
+  const start = card.indexOf('\n    ' + lang + ': {');
   assert.ok(start > 0, 'no ' + lang + ' block');
-  const end = html.indexOf('\n    }', start);
-  return new Set([...html.slice(html.indexOf('{', start) + 1, end).matchAll(/(?:^\s+|',\s+)(?:'([a-zA-Z.0-9]+)'|([a-zA-Z0-9]+))\s*:/gm)].map(m => m[1] || m[2]));
+  const end = card.indexOf('\n    }', start);
+  return new Set([...card.slice(card.indexOf('{', start) + 1, end).matchAll(/(?:^\s+|',\s+)(?:'([a-zA-Z.0-9]+)'|([a-zA-Z0-9]+))\s*:/gm)].map(m => m[1] || m[2]));
 }
 const en = keysFor('en');
 
@@ -24,6 +26,8 @@ test('every page string exists in all three languages', () => {
 test('page script parses', () => {
   const js = html.slice(html.indexOf('<script>') + 8, html.lastIndexOf('</script>'));
   new Function(js);
+  new Function(card);
+  assert.match(html, /<script src="\/decision-card\.js"><\/script>/);
 });
 
 test('every body and action is well formed', () => {

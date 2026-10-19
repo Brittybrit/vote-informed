@@ -35,3 +35,9 @@
 
 /money-summary.js
   Cache-Control: no-cache
+
+/decision-card.js
+  Cache-Control: no-cache
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable

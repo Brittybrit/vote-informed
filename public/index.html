@@ -98,6 +98,28 @@
   .vb-site .vb-btn{padding:9px 12px; font-size:12px; white-space:nowrap;}
   .vb-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:10px; line-height:1.6;}
   .vb-note a{color:inherit;}
+  .dc .act{padding:12px 0 14px; border-bottom:1px dotted #C9C9C1;}
+  .dc .when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
+  .dc .ttl{font-weight:800; font-size:15px; line-height:1.35; margin-top:3px;}
+  .dc .party, .dc .res, .dc .bud{font-size:13.5px; margin-top:4px;}
+  .dc .res .split{color:#9B2C1F; font-weight:700;}
+  .dc .onb{display:flex; flex-wrap:wrap; gap:6px; margin-top:7px;}
+  .dc .onb span{font-family:var(--mono); font-size:11.5px; border:1.5px solid var(--ink); padding:1px 7px;}
+  .dc .onb span.no{border-color:#9B2C1F; color:#9B2C1F;}
+  .dc .onb span.away{border-style:dashed;}
+  .dc details{margin-top:7px; font-size:13px;}
+  .dc summary{cursor:pointer; font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);}
+  .dc .roll{display:grid; grid-template-columns:1fr auto; gap:1px 12px; margin-top:5px; max-width:420px;}
+  .dc .roll .nb{color:var(--ink-soft);}
+  .dc .roll .v-no{color:#9B2C1F; font-weight:700;}
+  .dc .lobs, .dc .gifts{font-size:13px; margin-top:9px; padding-left:10px;}
+  .dc .lobs{border-left:1px dotted #C9C9C1;}
+  .dc .gifts{border-left:1px solid #C9C9C1;}
+  .dc .h{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .dc .lob, .dc .gift{margin-top:3px;} .dc .lob b, .dc .gift b{font-weight:600;}
+  .dc .how2, .dc .nogift, .dc .note{font-size:12.5px; color:var(--ink-soft); margin-top:3px;}
+  .dc .links{font-family:var(--mono); font-size:11.5px; margin-top:8px; display:flex; flex-wrap:wrap; gap:4px 14px;}
+  .dc .links a{color:var(--left-fg);}
   .vb-map{height:300px; margin-top:14px; border:1.5px solid var(--rule); z-index:0;}
   .vb-pin{width:26px; height:26px; background:var(--ink); color:var(--paper); border:2px solid #FFFFFF; font-weight:900; font-size:13px; line-height:22px; text-align:center; box-sizing:border-box; font-family:var(--mono);}
   .vb-num{display:inline-block; min-width:20px; height:20px; line-height:20px; text-align:center; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:11px; font-weight:800; margin-bottom:4px;}
@@ -971,6 +993,7 @@ en: {
   'ties.recordReq': 'Request form',
   'ties.recordBill': 'Bill page',
   'ties.all': 'Every city, side by side',
+  'ties.allBody': 'Every action of the {body}, with how each member voted',
   'ties.report': 'Campaign report',
   'ties.shared': 'Gave to more than one candidate',
   'ties.scopeCity': 'Compared across every {city} race on this ballot.',
@@ -1476,6 +1499,7 @@ es: {
   'ties.recordReq': 'Formulario de solicitud',
   'ties.recordBill': 'Página del proyecto',
   'ties.all': 'Todas las ciudades, lado a lado',
+  'ties.allBody': 'Todas las acciones de {body}, con el voto de cada miembro',
   'ties.report': 'Reporte de campaña',
   'ties.shared': 'Donaron a más de un candidato',
   'ties.scopeCity': 'Comparado entre todas las contiendas de {city} en esta boleta.',
@@ -1981,6 +2005,7 @@ ht: {
   'ties.recordReq': 'Fòm demann lan',
   'ties.recordBill': 'Paj pwojè lwa a',
   'ties.all': 'Tout vil yo, youn bò lòt',
+  'ties.allBody': 'Tout aksyon {body}, ak fason chak manm te vote',
   'ties.report': 'Rapò kanpay',
   'ties.shared': 'Bay plis pase yon kandida',
   'ties.scopeCity': 'Konpare nan tout eleksyon {city} ki sou bilten sa a.',
@@ -2214,6 +2239,7 @@ function t(key, vars){
 }
 </script>
 <script src="/money-summary.js"></script>
+<script src="/decision-card.js"></script>
 <script>
 // Next election — update these three lines each cycle.
 var ELECTION = {
@@ -4158,15 +4184,37 @@ function loadTies(ri, cand){
   }
   if(!ACTIONS){ actionsWait.push(function(){ loadTies(ri, cand); }); return; }
   var race = ballot.races[ri], acts = actionsFor(cand, race), peers = tiesPeers(ri);
+  // The actions behind the one-line summary (/data/ties/<person>.json, built from decisions.json)
+  var sp = summaryFor(cand, race), dec = null;
+  if(sp && sp.pid && sp.total){
+    var tf = TIESF[sp.pid];
+    if(tf === undefined){
+      TIESF[sp.pid] = fetch('/data/ties/' + encodeURIComponent(sp.pid) + '.json').then(function(r){ if(!r.ok) throw 0; return r.json(); })
+        .then(function(j){ TIESF[sp.pid] = j; }).catch(function(){ TIESF[sp.pid] = false; })
+        .then(function(){ if(tiesActive(ri, cand)) loadTies(ri, cand); });
+      tf = TIESF[sp.pid];
+    }
+    if(tf && !tf.then) dec = tf;
+  }
+  if(dec) acts = acts.filter(function(a){ return keepOldCard(a, dec); });
   var nNames = peers.races.reduce(function(n, r){ return n + r.names.length; }, 0);
-  if(nNames < 2){ renderTies(ri, cand, acts, null, false); return; }
+  if(nNames < 2){ renderTies(ri, cand, acts, null, false, '', dec); return; }
   var key = JSON.stringify(peers.races);
   var hit = sharedCache[key];
-  if(hit && !hit.then){ renderTies(ri, cand, acts, hit, false, peers.city); return; }
-  renderTies(ri, cand, acts, null, true, peers.city);
+  if(hit && !hit.then){ renderTies(ri, cand, acts, hit, false, peers.city, dec); return; }
+  renderTies(ri, cand, acts, null, true, peers.city, dec);
   if(!hit) hit = sharedCache[key] = api('/api/shared-donors', { races: peers.races });
-  hit.then(function(d){ sharedCache[key] = d; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, d, false, peers.city); })
-     .catch(function(){ delete sharedCache[key]; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, {error: true}, false, peers.city); });
+  hit.then(function(d){ sharedCache[key] = d; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, d, false, peers.city, dec); })
+     .catch(function(){ delete sharedCache[key]; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, {error: true}, false, peers.city, dec); });
+}
+var TIESF = {};   // person id -> tie file, a pending promise, or false
+var DC = window.DecisionCard ? window.DecisionCard(function(){ return LANG; }) : null;
+// The older hand-checked cards (/data/donor-actions.json) stay only where the tie file doesn't cover them:
+// state budget requests and floor votes are in the tie file form by form, so only bill sponsorships stay;
+// for councils and commissions, a card stays unless the tie file has an action on the same date.
+function keepOldCard(a, dec){
+  if(dec.body.type === 'requests') return a.kind === 'bill' && !a.floor;
+  return !dec.actions.some(function(x){ return x.date === a.date; });
 }
 function usd(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('en-US'); }
 function seatLabel(office, city){
@@ -4203,7 +4251,7 @@ function lobbyHtml(a){
   var links = used.map(function(k){ var r = regs[k]; return r ? srcLink(r.url, (r.name && (r.name[LANG] || r.name.en)) || T('ties.registry')) : ''; }).join('');
   return '<div class="tie-lobs"><div class="tie-lobh">' + t('ties.lobbied') + '</div>' + rows + (links ? '<div class="dtype">' + links + '</div>' : '') + '</div>';
 }
-function renderTies(ri, cand, acts, shared, loading, city){
+function renderTies(ri, cand, acts, shared, loading, city, dec){
   var box = $('tiesSec');
   if(!box) return;
   var ok = shared && shared.available && !shared.error;
@@ -4213,11 +4261,12 @@ function renderTies(ri, cand, acts, shared, loading, city){
   var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
   var st = officeStatus(cand, ballot.races[ri]), sp = summaryFor(cand, ballot.races[ri]);
   if(sp && !sp.total) sp = null;   // "nothing found" is already said by the status line below
-  if(!acts.length && !loading && !(ok && meFound) && !st && !sp){ box.hidden = true; box.innerHTML = ''; return; }
+  var decActs = dec && DC ? dec.actions : [];
+  if(!acts.length && !decActs.length && !loading && !(ok && meFound) && !st && !sp){ box.hidden = true; box.innerHTML = ''; return; }
   box.hidden = false;
   var h = '<h4>' + t('sec.ties') + '</h4><p class="ties-sub">' + t('ties.sub') + '</p>';
   if(sp && window.moneySummary) h += '<p class="tie-sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary" target="_blank" rel="noopener">' + esc(window.moneySummary.howLabel(LANG)) + '</a></p>';
-  if(st && !acts.length){
+  if(st && !acts.length && !decActs.length){
     var nm = esc(cand.name), body = esc(st.body || '');
     h += '<p class="tie-status">' + (st.status === 'none' ? t('ties.notIn', {name: nm})
       : st.status === 'former' ? t('ties.former', {name: nm, body: body})
@@ -4226,9 +4275,18 @@ function renderTies(ri, cand, acts, shared, loading, city){
       : st.reason === 'nominutes' ? t('ties.noMinutes', {name: nm, body: body})
       : st.reviewed ? t('ties.currentNone', {name: nm, body: body}) : t('ties.current', {name: nm, body: body})) + '</p>';
   }
-  if(acts.length){
+  if(acts.length || decActs.length){
     h += '<div class="fin-side">' + t('ties.actions', {name: esc(cand.name)}) + '</div>';
-    h += acts.map(function(a){
+    var cards = decActs.map(function(a){ return {date: a.date, html: '<div class="dc">' + DC.actHtml(dec.body, a) + '</div>'}; });
+    cards = cards.concat(acts.map(function(a){ return {date: a.date, html: oldCard(a)}; }));
+    cards.sort(function(x, y){ return String(y.date).localeCompare(String(x.date)); });
+    var CUT = 12;
+    h += cards.slice(0, CUT).map(function(c){ return c.html; }).join('');
+    if(cards.length > CUT) h += '<details class="tie-more"><summary>' + t('ties.more', {n: cards.length}) + '</summary>' + cards.slice(CUT).map(function(c){ return c.html; }).join('') + '</details>';
+    if(decActs.length) h += '<p class="ties-note"><a class="srclink" href="/decisions#' + esc(dec.body.key) + '" target="_blank" rel="noopener">' + t('ties.allBody', {body: esc((dec.body.name && (dec.body.name[LANG] || dec.body.name.en)) || '')}) + ' ↗</a></p>';
+  }
+  function oldCard(a){
+    {
       var v = a.votes || {}, out = [];
       var res = a.result ? (a.result[LANG] || a.result.en) : '';
       out.push('<strong>' + (res ? esc(res) : t(a.passed ? 'ties.passed' : 'ties.failed')) + '</strong>' +
@@ -4256,7 +4314,7 @@ function renderTies(ri, cand, acts, shared, loading, city){
         lobbyHtml(a) + donors + (a.lobbied && a.lobbied.length && !(a.donors || []).length ? '<p class="enote">' + t('ties.noGift', {name: esc(cand.name)}) + '</p>' : '') +
         (ctx ? '<p class="enote">' + esc(ctx) + '</p>' : '') +
         '<div class="dtype">' + srcLink(a.url, T(a.kind === 'request' ? 'ties.recordReq' : a.kind === 'bill' ? 'ties.recordBill' : 'ties.record')) + (a.voteUrls || []).map(function(u){ return srcLink(u, T('ties.rollCall')); }).join('') + (a.analysisUrl ? srcLink(a.analysisUrl, T('ties.analysis')) : '') + srcLink(a.donorUrl, T('ties.report')) + '</div></div>';
-    }).join('');
+    }
   }
   if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
   else if(shared && shared.error) h += '<p class="mny-note">' + t('ties.err') + '</p>';
@@ -4279,7 +4337,7 @@ function renderTies(ri, cand, acts, shared, loading, city){
     if(miss.length) h += '<p class="ties-note">' + t('ties.missing', {names: miss.join(', ')}) + '</p>';
     h += '<p class="og-links">' + howBtn(t('ties.method', {date: esc(fmtDay(shared.asOf))})) + '</p>';
   }
-  if(st || acts.length){
+  if(st || acts.length || decActs.length){
     // same anchor rule as /actions: the city name, or the county district
     var rc = raceCity(ballot.races[ri]), anchor = rc ? normName(rc).replace(/ /g, '-')
       : /^county commissioner, district 5$/i.test(ballot.races[ri].office || '') ? 'miami-dade-county-district-5' : '';
