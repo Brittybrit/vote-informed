@@ -3814,7 +3814,7 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
-  if(ri >= 0 && !fedRace && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
@@ -3931,7 +3931,7 @@ function renderDossier(cand, race, r, cached){
   $('dossier').scrollTop = 0;
   if(fedRace) loadRaceMoney(ri, cand);
   if(ri >= 0 && !race.isMeasure) loadOffices(ri, cand);
-  if(ri >= 0 && !fedRace && !race.isMeasure) loadTies(ri, cand);
+  if(ri >= 0 && !race.isMeasure) loadTies(ri, cand);
 }
 
 // Newspaper editorial boards lead the endorsement list; everything else keeps its order.
@@ -4198,7 +4198,7 @@ function loadTies(ri, cand){
   }
   if(dec) acts = acts.filter(function(a){ return keepOldCard(a, dec); });
   var nNames = peers.races.reduce(function(n, r){ return n + r.names.length; }, 0);
-  if(nNames < 2){ renderTies(ri, cand, acts, null, false, '', dec); return; }
+  if(nNames < 2 || isFederalRace(race)){ renderTies(ri, cand, acts, null, false, '', dec); return; }
   var key = JSON.stringify(peers.races);
   var hit = sharedCache[key];
   if(hit && !hit.then){ renderTies(ri, cand, acts, hit, false, peers.city, dec); return; }
