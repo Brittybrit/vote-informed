@@ -124,7 +124,7 @@
     var bs = bodies();
     if(!BK && bs.length){ var h = location.hash.slice(1); BK = bs.some(function(b){ return b.key === h; }) || h === '_others' ? h : bs[0].key; }
     var RQB = BK !== '_others' && bs.length && cur().type === 'requests', h2 = t('how2');
-    document.getElementById('how').innerHTML = RQB ? '<p>' + t('howState') + '</p><p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : '<p>' + t('howCity') + '</p><p>' + h2 + '</p>';
+    document.getElementById('how').innerHTML = RQB ? '<p>' + t(cur().level === 'federal' ? 'howFed' : 'howState') + '</p><p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : '<p>' + t('howCity') + '</p><p>' + h2 + '</p>';
     if(RQB && F === 'split') F = 'all';
     document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
@@ -151,7 +151,7 @@
       return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)})) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
         (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
         (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
-    }).join('') + '<div class="muted">' + esc(t(B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
+    }).join('') + '<div class="muted">' + esc(t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
     document.getElementById('list').innerHTML = A.map(function(a){ return actHtml(B, a); }).join('');
     filter();
   }
