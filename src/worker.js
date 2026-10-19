@@ -3554,6 +3554,7 @@ async function handleAdmin(request, env, url) {
   if (request.method !== 'POST') return json({ error: 'Not found' }, 404);
   const b = await request.json().catch(() => ({}));
   const key = isStr(b.key) && /^(res[a-z0-9]*|resm2|resj1|resl4|res7):[0-9a-f]{64}$/.test(b.key) ? b.key : '';
+  if (route === 'fec-get') return json(await adminFecGet(env, b));
   if (route === 'warm-list') return json(await warmList(env));
   if (route === 'warm-check') return json(await warmCheck(env, b));
   if (route === 'warm-run') return json(await warmRun(env, b));
@@ -3577,6 +3578,23 @@ async function handleAdmin(request, env, url) {
     return json({ ok: true });
   }
   return json({ error: 'Not found' }, 404);
+}
+
+// Read-only FEC API proxy for research runs from /admin (uses the site's FEC key, never returns it).
+// Only candidate, committee and itemized-receipt lookups; one page per call.
+async function adminFecGet(env, b) {
+  if (!env.FEC_API_KEY) return { error: 'No FEC key' };
+  const path = isStr(b.path) ? b.path : '';
+  if (!/^\/(candidates?|committees?|schedules\/schedule_a|schedules\/schedule_b)\/[A-Za-z0-9_\/-]*$/.test(path)) return { error: 'Path not allowed' };
+  const qs = new URLSearchParams();
+  for (const [k, v] of Object.entries(b.params || {})) {
+    if (!/^[a-z_]{1,40}$/.test(k)) continue;
+    for (const x of [].concat(v)) if (['string', 'number', 'boolean'].includes(typeof x)) qs.append(k, String(x).slice(0, 200));
+  }
+  qs.set('api_key', env.FEC_API_KEY);
+  const r = await fetch('https://api.open.fec.gov/v1' + path + '?' + qs.toString());
+  const body = await r.json().catch(() => ({}));
+  return { status: r.status, body };
 }
 
 /* ---------------- warm-up: research every contest on the countywide ballot ahead of voters ---------------- */
