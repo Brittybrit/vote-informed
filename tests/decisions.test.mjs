@@ -49,7 +49,7 @@ test('every body and action is well formed', () => {
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
       }
       if (a.rollComplete && B.key !== 'county') assert.ok(a.tally, id + ' complete roll needs a tally');
-      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte'].includes(l.t), id + ' link type'); }
+      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr'].includes(l.t), id + ' link type'); }
       for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
         assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot: ' + g.to);
@@ -135,8 +135,9 @@ test('state floor votes: official roll call, the staff analysis, every member of
 test('U.S. House earmark requests: one requester, an amount, a source, and gifts tied through a registered firm', () => {
   const B = d.bodies.find(b => b.key === 'ushouse');
   assert.ok(B && B.level === 'federal' && B.type === 'requests');
-  assert.equal(B.actions.length, 156);
-  for (const a of B.actions) {
+  const R = B.actions.filter(a => a.kind !== 'bill');
+  assert.equal(R.length, 156);
+  for (const a of R) {
     const ks = Object.keys(a.roll);
     assert.equal(ks.length, 1, a.id); assert.equal(a.roll[ks[0]], 'requested', a.id);
     assert.equal(a.result, 'requestedF'); assert.ok(en.has('res.requestedF'));
@@ -154,5 +155,32 @@ test('U.S. House earmark requests: one requester, an amount, a source, and gifts
     for (const l of a.lobbied) assert.match(l.url, /^https:\/\/lda\.gov\/filings\/public\/filing\//, a.id + ' LDA link');
   }
   for (const k of ['lobbiedF', 'noGiftF', 'howFed', 'offBallotF', 'srcL', 'cmteL', 'reqPage', 'how.s.noFec', 'st.norequests']) assert.ok(en.has(k), k);
-  assert.ok(d.others.some(o => o.body.en === 'U.S. Senate' && o.people.some(p => p.name === 'Ashley Moody' && p.status === 'norequests')));
+  assert.ok(!d.others.some(o => o.body.en === 'U.S. Senate'), 'Moody has her own body now');
+  assert.ok(/no Congressionally Directed Spending requests/.test(d.bodies.find(b => b.key === 'ussenate').coverage.en));
+});
+
+test('Congress floor votes: enacted laws, official roll calls, a quoted source, and PAC gifts from the named kind of business', () => {
+  const fv = JSON.parse(readFileSync(new URL('../scripts/data/federal/floor-votes.json', import.meta.url)));
+  const H = d.bodies.find(b => b.key === 'ushouse'), S = d.bodies.find(b => b.key === 'ussenate');
+  assert.ok(S && S.level === 'federal' && S.onBallot.Moody, 'senate body for Moody');
+  const votes = [...H.actions, ...S.actions].filter(a => a.kind === 'bill');
+  assert.equal(votes.length, fv.bills.reduce((n, b) => n + b.votes.length, 0));
+  for (const a of votes) {
+    assert.equal(a.result, 'passed', a.id);
+    assert.ok(a.links.some(l => l.t === 'vote' && /^https:\/\/(clerk\.house\.gov\/Votes\/|www\.senate\.gov\/legislative\/LIS\/roll_call_votes\/)/.test(l.url)), a.id + ' roll call link');
+    assert.ok(a.links.some(l => ['cbo', 'crs', 'fr'].includes(l.t)), a.id + ' source link');
+    for (const l of LANGS) assert.match(a.note[l], /\u201c.+\u201d/, a.id + ' quote ' + l);
+    assert.match(a.note.en, /P\.L\. 119-\d+/, a.id + ' public law');
+    const B = a.id.includes('-S') ? S : H;
+    for (const k of Object.keys(a.roll)) assert.ok(B.onBallot[k], a.id + ' roll member ' + k);
+    for (const g of a.gifts) {
+      assert.equal(g.kind, 'class'); assert.equal(g.rel, 'clsF');
+      assert.ok(g.donor.endsWith(' PAC'), a.id + ' donor ' + g.donor);
+      for (const l of LANGS) assert.ok(g.occ[l], a.id + ' occ ' + l);
+      assert.ok(g.date >= '2025-01-01', a.id + ' cycle');
+      if (g.n) assert.ok(g.n > 1 && g.last >= g.date, a.id + ' range');
+      assert.match(g.src, /^https:\/\/www\.fec\.gov\/data\/receipts\//);
+    }
+  }
+  for (const k of ['gaveN', 'how.s.clsF', 'cboL', 'crsL', 'frL', 'howFedV']) assert.ok(en.has(k), k);
 });

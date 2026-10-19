@@ -15,12 +15,18 @@
 // - fec-check.json: each LD-203 gift looked up in the campaign's FEC itemized receipts.
 //
 // Gift rule (same as the state cards): a gift counts if from the firm, its PAC, or any of its lobbyists.
+//
+// Floor votes (floor-votes.json): enacted 2025 laws where a Congressional Budget Office estimate, a
+// Congressional Research Service report or the rule being overturned names the kind of business it
+// affects. Donors are that kind of business giving through its PAC (pac-agg.json, from the campaign's
+// FEC receipts); employees' own gifts are not counted. Moody gets a U.S. Senate body with her votes.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const DIR = new URL('./data/federal/', import.meta.url);
 const read = f => JSON.parse(readFileSync(new URL(f, DIR)));
 
+const SENATOR = { key: 'Moody', name: 'Ashley Moody', person: 'ashley-moody', cmte: 'C00895763', cname: 'Moody for Florida', race: ['U.S. Senate', 'Senado de EE. UU.', 'Sena Etazini'] };
 const MEMBERS = [
   { key: 'Diaz-Balart', name: 'Mario Diaz-Balart', person: 'mario-diaz-balart', cmte: 'C00376087', cname: 'Mario Diaz-Balart for Congress', race: ['U.S. House, District 26', 'Cámara de EE. UU., Distrito 26', 'Chanm Etazini, Distri 26'] },
   { key: 'Salazar', name: 'Maria Elvira Salazar', person: 'maria-elvira-salazar', cmte: 'C00714261', cname: 'Salazar for Congress', race: ['U.S. House, District 27', 'Cámara de EE. UU., Distrito 27', 'Chanm Etazini, Distri 27'] },
@@ -47,6 +53,96 @@ const FY = {
   FY2026: { date: '2025-04-01', label: { en: 'FY2026 request (spring 2025)', es: 'Solicitud para el año fiscal 2026 (primavera de 2025)', ht: 'Demann pou ane fiskal 2026 (prentan 2025)' } },
   FY2027: { date: '2026-04-01', label: { en: 'FY2027 request (spring 2026)', es: 'Solicitud para el año fiscal 2027 (primavera de 2026)', ht: 'Demann pou ane fiskal 2027 (prentan 2026)' } },
 };
+
+const MOTION = {
+  passage: { house: { en: 'final passage in the House', es: 'aprobación final en la Cámara', ht: 'adopsyon final nan Chanm nan' },
+    senate: { en: 'final passage in the Senate', es: 'aprobación final en el Senado', ht: 'adopsyon final nan Sena a' } },
+  passageHouseAmdt: { house: { en: 'House passage of the final version worked out with the Senate', es: 'aprobación en la Cámara de la versión final acordada con el Senado', ht: 'Chanm nan adopte vèsyon final yo te negosye ak Sena a' } },
+  concur: { senate: { en: 'Senate vote to accept the House version, sending it to the President', es: 'voto del Senado para aceptar la versión de la Cámara y enviarla al Presidente', ht: 'Sena a vote pou aksepte vèsyon Chanm nan epi voye l bay Prezidan an' } },
+};
+const voteUrl = v => v.chamber === 'house'
+  ? 'https://clerk.house.gov/Votes/' + v.date.slice(0, 4) + String(v.roll).padStart(3, '0')
+  : 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_' + String(v.roll).padStart(5, '0') + '.htm';
+const receiptsUrl = (cmte, name) => 'https://www.fec.gov/data/receipts/?committee_id=' + cmte + '&contributor_name=' + encodeURIComponent(name) + '&two_year_transaction_period=2026';
+
+// One gift row per company per member: the PAC's total, number of receipts and date range.
+export function classGifts(cls, member, cmte, agg) {
+  const by = new Map();
+  for (const [m, name, , total, n, first, last] of agg) {
+    if (m !== member.key || last < '2025-01-01') continue;
+    const d = cls.donors.find(([re]) => new RegExp(re).test(name));
+    if (!d) continue;
+    const [, company, occ] = d;
+    const g = by.get(company) || { to: member.key, acct: member.key.toLowerCase(), kind: 'class', rel: 'clsF', donor: company + ' PAC', amount: 0, n: 0, date: first, last, occ, src: receiptsUrl(cmte, company) };
+    g.amount += total; g.n += n;
+    if (first < g.date) g.date = first;
+    if (last > g.last) g.last = last;
+    by.set(company, g);
+  }
+  return [...by.values()].map(g => {
+    const out = { ...g };
+    if (out.n === 1) { delete out.n; delete out.last; }
+    return out;
+  }).sort((a, b) => b.amount - a.amount || a.donor.localeCompare(b.donor));
+}
+
+function voteNote(bill, v, cls) {
+  const q = bill.quote, m = (MOTION[v.motion] || {})[v.chamber];
+  const say = { en: ' says: ', es: ' dice (en inglés; traducción): ', ht: ' di (an angle; tradiksyon): ' };
+  const tail = {
+    en: 'Donors listed are ' + cls.label.en + ', giving through their PACs, as named in the campaign’s FEC reports; this does not claim they asked for the bill or for this vote. Gifts from their employees are not counted. Gifts are shown with the dates recorded, including any after the vote. It became law (' + bill.law + ').',
+    es: 'Los donantes que aparecen son ' + cls.label.es + ', que donaron a través de sus comités de acción política (PAC), según los reportes de la campaña ante la FEC; esto no afirma que pidieran el proyecto ni este voto. No se cuentan las donaciones de sus empleados. Las donaciones se muestran con las fechas registradas, incluso las posteriores al voto. Se convirtió en ley (' + bill.law + ').',
+    ht: 'Donatè ki parèt yo se ' + cls.label.ht + ', ki te bay atravè PAC yo (komite aksyon politik), jan rapò FEC kanpay la nonmen yo; sa pa di yo te mande pwojè lwa a ni vòt sa a. Nou pa konte kado anplwaye yo. Kado yo parèt ak dat yo anrejistre, menm sa ki vini apre vòt la. Li te tounen lwa (' + bill.law + ').',
+  };
+  const out = {};
+  for (const l of ['en', 'es', 'ht']) {
+    const intro = { en: 'Floor vote: ', es: 'Votación en el pleno: ', ht: 'Vòt nan sesyon plenyè: ' }[l] + m[l] + '. ';
+    const quote = l === 'en' ? '“' + q.en + '”' : '“' + q[l] + '”';
+    let body;
+    if (q.pre && q.inline) body = q.pre[l] + ' ' + quote + ' (' + q.src[l] + (l === 'en' ? '' : l === 'es' ? '; en inglés, traducción' : '; an angle, tradiksyon') + ').';
+    else body = (q.pre ? q.pre[l] + ' ' : '') + q.src[l] + (l === 'en' ? say.en : say[l]) + quote;
+    if (q.post) body += ' ' + q.post[l];
+    out[l] = intro + body + ' ' + tail[l];
+  }
+  return out;
+}
+
+export function floorVotes(chamber, members) {
+  const fv = read('floor-votes.json'), agg = read('pac-agg.json').rows;
+  const actions = [];
+  for (const bill of fv.bills) for (const v of bill.votes) {
+    if (v.chamber !== chamber) continue;
+    const cls = fv.classes[bill.class];
+    const gifts = members.flatMap(m => classGifts(cls, m, m.cmte, agg));
+    const links = [{ t: 'vote', url: voteUrl(v) }, { t: bill.quote.t, url: bill.quote.url }];
+    if (bill.quote.url2) links.push({ t: 'crs', url: bill.quote.url2 });
+    links.push({ t: 'bill', url: bill.bill });
+    actions.push({
+      id: 'USV-' + bill.key + '-' + (chamber === 'house' ? 'H' : 'S') + v.roll, date: v.date, ref: bill.ref, kind: 'bill',
+      subject: bill.subject, parties: [], result: 'passed', tally: v.tally, notVoting: v.notVoting,
+      roll: { ...v.members }, rollComplete: false, lobbied: [], gifts, note: voteNote(bill, v, cls), motion: v.motion, links,
+    });
+  }
+  return actions;
+}
+
+export function buildSenate() {
+  const m = SENATOR, acct = m.key.toLowerCase();
+  return {
+    key: 'ussenate', level: 'federal', type: 'requests', since: '2025-01-01', rosterBody: 'us-senate', noRequests: true,
+    name: { en: 'U.S. Senate', es: 'Senado de EE. UU.', ht: 'Sena Etazini' },
+    members: [{ key: m.key, name: m.name, person: m.person }],
+    onBallot: { [m.key]: { race: { en: m.race[0], es: m.race[1], ht: m.race[2] }, accounts: [acct] } },
+    accounts: { [acct]: { owner: m.key, name: { en: m.cname, es: m.cname, ht: m.cname }, url: 'https://www.fec.gov/data/committee/' + m.cmte + '/' } },
+    registries: null,
+    coverage: {
+      en: 'Senator Moody made no Congressionally Directed Spending requests for FY2026 or FY2027 (Senate Appropriations Committee charts). Floor votes are on 2025 laws where a Congressional Budget Office estimate, a Congressional Research Service report or the rule being overturned names the kind of business affected; donors are those businesses’ PACs giving to Moody for Florida in 2025 or 2026.',
+      es: 'La senadora Moody no hizo solicitudes de Congressionally Directed Spending para los años fiscales 2026 ni 2027 (tablas del Comité de Asignaciones del Senado). Los votos en el pleno son sobre leyes de 2025 en las que una estimación de la Oficina de Presupuesto del Congreso, un informe del Servicio de Investigación del Congreso o la regla que se anula nombra el tipo de negocio afectado; los donantes son los PAC de esos negocios que donaron a Moody for Florida en 2025 o 2026.',
+      ht: 'Senatè Moody pa t fè okenn demann Congressionally Directed Spending pou ane fiskal 2026 oswa 2027 (tablo Komite Afektasyon Sena a). Vòt nan sesyon plenyè yo se sou lwa 2025 kote yon estimasyon Biwo Bidjè Kongrè a, yon rapò Sèvis Rechèch Kongrè a oswa règ y ap anile a nonmen kalite biznis ki konsène; donatè yo se PAC biznis sa yo ki te bay Moody for Florida an 2025 oswa 2026.',
+    },
+    actions: floorVotes('senate', [m]).sort((p, q) => q.date.localeCompare(p.date) || p.id.localeCompare(q.id)),
+  };
+}
 
 export function buildFederal() {
   const reqs = read('requests.json'), lda = read('lda-clients.json').clients, gm = read('gm.json'), fec = read('fec-check.json').rows;
@@ -113,6 +209,7 @@ export function buildFederal() {
     if (!c) a.noLda = true;
     actions.push(a);
   }
+  actions.push(...floorVotes('house', MEMBERS));
   actions.sort((p, q) => q.date.localeCompare(p.date) || p.id.localeCompare(q.id));
   return {
     key: 'ushouse', level: 'federal', type: 'requests', since: '2025-01-01', rosterBody: 'us-house',
@@ -120,27 +217,31 @@ export function buildFederal() {
     members, onBallot, accounts,
     registries: [{ name: { en: 'Lobbying Disclosure Act reports (lda.gov)', es: 'Reportes de la Ley de Divulgación de Cabildeo (lda.gov)', ht: 'Rapò Lwa sou Divilgasyon Lobi (lda.gov)' }, url: 'https://lda.gov/' }],
     coverage: {
-      en: 'Every Community Project Funding request for FY2026 and FY2027 by the five U.S. House members on Miami-Dade’s November 3 ballot (156 requests). FY2026 from the House Appropriations Committee’s consolidated table; FY2027 from each member’s own request page. Whether a request was funded in the final bill was not checked. Gifts come from lobbyists’ and firms’ own contribution reports to Congress (LD-203), each looked up in the campaign’s FEC reports.',
-      es: 'Todas las solicitudes de Community Project Funding para los años fiscales 2026 y 2027 de los cinco miembros de la Cámara de EE. UU. en la boleta del 3 de noviembre en Miami-Dade (156 solicitudes). El año fiscal 2026 viene de la tabla consolidada del Comité de Asignaciones de la Cámara; el 2027, de la página de solicitudes de cada miembro. No se revisó si cada solicitud quedó financiada en la ley final. Las donaciones vienen de los reportes de contribuciones que los propios cabilderos y firmas presentan al Congreso (LD-203), cotejados con los reportes de la campaña ante la FEC.',
-      ht: 'Tout demann Community Project Funding pou ane fiskal 2026 ak 2027 senk manm Chanm Etazini ki sou bilten 3 novanm Miami-Dade la (156 demann). Ane fiskal 2026 soti nan tablo konsolide Komite Afektasyon Chanm nan; 2027 soti nan paj demann chak manm. Nou pa verifye si chak demann te finanse nan lwa final la. Kado yo soti nan rapò kontribisyon lobiyis ak fèm yo menm bay Kongrè a (LD-203), epi nou chèche chak nan rapò FEC kanpay la.',
+      en: 'Every Community Project Funding request for FY2026 and FY2027 by the five U.S. House members on Miami-Dade’s November 3 ballot (156 requests). FY2026 from the House Appropriations Committee’s consolidated table; FY2027 from each member’s own request page. Whether a request was funded in the final bill was not checked. Gifts come from lobbyists’ and firms’ own contribution reports to Congress (LD-203), each looked up in the campaign’s FEC reports. Floor votes are on 2025 laws where a Congressional Budget Office estimate, a Congressional Research Service report or the rule being overturned names the kind of business affected; donors are those businesses’ PACs, from the campaign’s FEC reports.',
+      es: 'Todas las solicitudes de Community Project Funding para los años fiscales 2026 y 2027 de los cinco miembros de la Cámara de EE. UU. en la boleta del 3 de noviembre en Miami-Dade (156 solicitudes). El año fiscal 2026 viene de la tabla consolidada del Comité de Asignaciones de la Cámara; el 2027, de la página de solicitudes de cada miembro. No se revisó si cada solicitud quedó financiada en la ley final. Las donaciones vienen de los reportes de contribuciones que los propios cabilderos y firmas presentan al Congreso (LD-203), cotejados con los reportes de la campaña ante la FEC. Los votos en el pleno son sobre leyes de 2025 en las que una estimación de la Oficina de Presupuesto del Congreso, un informe del Servicio de Investigación del Congreso o la regla que se anula nombra el tipo de negocio afectado; los donantes son los PAC de esos negocios, según los reportes de la campaña ante la FEC.',
+      ht: 'Tout demann Community Project Funding pou ane fiskal 2026 ak 2027 senk manm Chanm Etazini ki sou bilten 3 novanm Miami-Dade la (156 demann). Ane fiskal 2026 soti nan tablo konsolide Komite Afektasyon Chanm nan; 2027 soti nan paj demann chak manm. Nou pa verifye si chak demann te finanse nan lwa final la. Kado yo soti nan rapò kontribisyon lobiyis ak fèm yo menm bay Kongrè a (LD-203), epi nou chèche chak nan rapò FEC kanpay la. Vòt nan sesyon plenyè yo se sou lwa 2025 kote yon estimasyon Biwo Bidjè Kongrè a, yon rapò Sèvis Rechèch Kongrè a oswa règ y ap anile a nonmen kalite biznis ki konsène; donatè yo se PAC biznis sa yo, selon rapò FEC kanpay la.',
     },
     actions,
   };
 }
 
-export function apply(decisions, body) {
-  const i = decisions.bodies.findIndex(b => b.key === 'ushouse');
-  if (i >= 0) decisions.bodies[i] = body; else decisions.bodies.push(body);
+export function apply(decisions, body, senate) {
+  for (const b of [body, senate]) {
+    if (!b) continue;
+    const i = decisions.bodies.findIndex(x => x.key === b.key);
+    if (i >= 0) decisions.bodies[i] = b; else decisions.bodies.push(b);
+  }
   decisions.others = (decisions.others || []).filter(o => !(o.body && o.body.en === 'U.S. Senate'));
-  decisions.others.push({ body: { en: 'U.S. Senate', es: 'Senado de EE. UU.', ht: 'Sena Etazini' }, people: [{ name: 'Ashley Moody', status: 'norequests' }] });
+  if (!senate) decisions.others.push({ body: { en: 'U.S. Senate', es: 'Senado de EE. UU.', ht: 'Sena Etazini' }, people: [{ name: 'Ashley Moody', status: 'norequests' }] });
+  if (!decisions.others.length) delete decisions.others;
   return decisions;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const p = new URL('../public/data/decisions.json', import.meta.url);
   const d = JSON.parse(readFileSync(p));
-  const body = buildFederal();
-  writeFileSync(p, JSON.stringify(apply(d, body), null, 1) + '\n');
-  const tied = body.actions.filter(a => a.gifts.length);
-  console.log(body.actions.length + ' requests, ' + tied.length + ' with a gift');
+  const body = buildFederal(), senate = buildSenate();
+  writeFileSync(p, JSON.stringify(apply(d, body, senate), null, 1) + '\n');
+  const req = body.actions.filter(a => a.kind === 'request'), votes = body.actions.filter(a => a.kind === 'bill');
+  console.log(req.length + ' requests, ' + req.filter(a => a.gifts.length).length + ' with a gift; ' + votes.length + ' House floor votes; ' + senate.actions.length + ' Senate floor votes');
 }

@@ -60,7 +60,10 @@ export function build(decisions, officesHeld) {
         const req = tied.filter(([a]) => a.kind === 'request');
         const bills = tied.filter(([a]) => a.kind === 'bill');
         const reqKeys = new Set(req.flatMap(([, gs]) => gs.map(giftKey)));
-        const billOnly = all.filter(g => !reqKeys.has(g.key));
+        // Bill money counts only donors tied to bills the member voted yes on, since the summary line
+        // says "voted yes on ... bills that help kinds of business that gave".
+        const yesKeys = new Set(bills.filter(([a]) => a.roll[key] === 'yes').flatMap(([, gs]) => gs.map(giftKey)));
+        const billOnly = all.filter(g => !reqKeys.has(g.key) && yesKeys.has(g.key));
         const funded = a => {
           const b = a.budget || {};
           return b.status === 'in' && b.amount ? Math.max(0, b.amount - (b.vetoed || 0)) : 0;

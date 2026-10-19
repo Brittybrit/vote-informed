@@ -692,11 +692,11 @@
    "name": "Mario Diaz-Balart",
    "last": "Diaz-Balart",
    "kind": "federal",
-   "total": 27500,
-   "donors": 23,
-   "gifts": 26,
-   "before": 11,
-   "beforeAmt": 14750,
+   "total": 248250,
+   "donors": 48,
+   "gifts": 51,
+   "before": 30,
+   "beforeAmt": 211000,
    "accounts": 1,
    "requests": {
     "n": 13,
@@ -706,11 +706,11 @@
     "donors": 23
    },
    "bills": {
-    "bills": 0,
-    "votes": 0,
-    "yes": 0,
-    "money": 0,
-    "donors": 0
+    "bills": 4,
+    "votes": 4,
+    "yes": 4,
+    "money": 220750,
+    "donors": 25
    }
   },
   "maria-elvira-salazar": {
@@ -724,11 +724,11 @@
    "name": "Maria Elvira Salazar",
    "last": "Salazar",
    "kind": "federal",
-   "total": 500,
-   "donors": 1,
-   "gifts": 1,
-   "before": 1,
-   "beforeAmt": 500,
+   "total": 44500,
+   "donors": 14,
+   "gifts": 14,
+   "before": 6,
+   "beforeAmt": 15500,
    "accounts": 1,
    "requests": {
     "n": 2,
@@ -738,11 +738,11 @@
     "donors": 1
    },
    "bills": {
-    "bills": 0,
-    "votes": 0,
-    "yes": 0,
-    "money": 0,
-    "donors": 0
+    "bills": 3,
+    "votes": 3,
+    "yes": 1,
+    "money": 38000,
+    "donors": 10
    }
   },
   "carlos-a-gimenez": {
@@ -756,11 +756,11 @@
    "name": "Carlos A. Gimenez",
    "last": "Gimenez",
    "kind": "federal",
-   "total": 7750,
-   "donors": 4,
-   "gifts": 5,
-   "before": 3,
-   "beforeAmt": 4250,
+   "total": 43750,
+   "donors": 18,
+   "gifts": 19,
+   "before": 13,
+   "beforeAmt": 30750,
    "accounts": 1,
    "requests": {
     "n": 18,
@@ -770,11 +770,11 @@
     "donors": 4
    },
    "bills": {
-    "bills": 0,
-    "votes": 0,
-    "yes": 0,
-    "money": 0,
-    "donors": 0
+    "bills": 3,
+    "votes": 3,
+    "yes": 2,
+    "money": 8500,
+    "donors": 3
    }
   },
   "jared-moskowitz": {
@@ -788,11 +788,11 @@
    "name": "Jared Moskowitz",
    "last": "Moskowitz",
    "kind": "federal",
-   "total": 8600,
-   "donors": 10,
-   "gifts": 10,
-   "before": 8,
-   "beforeAmt": 4600,
+   "total": 36100,
+   "donors": 18,
+   "gifts": 18,
+   "before": 9,
+   "beforeAmt": 7600,
    "accounts": 1,
    "requests": {
     "n": 13,
@@ -802,11 +802,11 @@
     "donors": 10
    },
    "bills": {
-    "bills": 0,
-    "votes": 0,
-    "yes": 0,
-    "money": 0,
-    "donors": 0
+    "bills": 3,
+    "votes": 3,
+    "yes": 2,
+    "money": 17500,
+    "donors": 5
    }
   },
   "byron-donalds": {
@@ -820,12 +820,12 @@
    "name": "Byron Donalds",
    "last": "Donalds",
    "kind": "federal",
-   "total": 0,
-   "donors": 0,
-   "gifts": 0,
-   "before": 0,
-   "beforeAmt": 0,
-   "accounts": 0,
+   "total": 2000,
+   "donors": 1,
+   "gifts": 1,
+   "before": 1,
+   "beforeAmt": 2000,
+   "accounts": 1,
    "requests": {
     "n": 0,
     "ask": 0,
@@ -834,11 +834,43 @@
     "donors": 0
    },
    "bills": {
-    "bills": 0,
-    "votes": 0,
-    "yes": 0,
+    "bills": 1,
+    "votes": 1,
+    "yes": 1,
+    "money": 2000,
+    "donors": 1
+   }
+  },
+  "ashley-moody": {
+   "pid": "ashley-moody",
+   "body": "ussenate",
+   "bodyName": {
+    "en": "U.S. Senate",
+    "es": "Senado de EE. UU.",
+    "ht": "Sena Etazini"
+   },
+   "name": "Ashley Moody",
+   "last": "Moody",
+   "kind": "federal",
+   "total": 235500,
+   "donors": 39,
+   "gifts": 39,
+   "before": 13,
+   "beforeAmt": 95000,
+   "accounts": 1,
+   "requests": {
+    "n": 0,
+    "ask": 0,
+    "funded": 0,
     "money": 0,
     "donors": 0
+   },
+   "bills": {
+    "bills": 5,
+    "votes": 5,
+    "yes": 5,
+    "money": 235500,
+    "donors": 39
    }
   },
   "daniel-samaria": {
@@ -1038,17 +1070,6 @@
    "name": "Michael Tur",
    "kind": "none",
    "status": "nodata"
-  },
-  "ashley-moody": {
-   "body": null,
-   "bodyName": {
-    "en": "U.S. Senate",
-    "es": "Senado de EE. UU.",
-    "ht": "Sena Etazini"
-   },
-   "name": "Ashley Moody",
-   "kind": "none",
-   "status": "norequests"
   }
  },
  "byBallot": {
@@ -1083,6 +1104,7 @@
   "Representative in Congress, District 28|Carlos A. Gimenez": "carlos-a-gimenez",
   "Representative in Congress, District 25|Jared Moskowitz": "jared-moskowitz",
   "Governor and Lieutenant Governor|Byron Donalds": "byron-donalds",
+  "United States Senator|Ashley Moody": "ashley-moody",
   "Biscayne Park - Commissioner|Daniel Samaria": "daniel-samaria",
   "Cutler Bay - Mayor|Robert \"B.J.\" Duncan": "robert-duncan",
   "Cutler Bay - Mayor|Suzy Lord": "suzy-lord",
@@ -1100,7 +1122,6 @@
   "Virginia Gardens - Mayor|Fred Spencer Deno IV": "fred-spencer-deno-iv",
   "Virginia Gardens - Council|Jorge Arce": "jorge-arce",
   "Virginia Gardens - Council|Elizabeth K. Taylor-Martinez": "elizabeth-taylor-martinez",
-  "Virginia Gardens - Council|Michael Tur": "michael-tur",
-  "United States Senator|Ashley Moody": "ashley-moody"
+  "Virginia Gardens - Council|Michael Tur": "michael-tur"
  }
 }

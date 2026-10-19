@@ -104,7 +104,12 @@
   function moneySummary(p, lang){
     var w = W[lang] || W.en, b = esc(L(p.bodyName, lang)), out = [];
     if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
-    if(p.kind === 'federal') return p.total ? w.reqF(p, p.requests) : w.noneF(p);
+    if(p.kind === 'federal'){
+      var RF = p.requests || {n: 0}, BF = p.bills || {votes: 0};
+      out.push(RF.n ? w.reqF(p, RF) : p.body === 'ussenate' ? w.norequests(p) : w.noneF(p));
+      if(BF.votes && BF.yes) out.push(w.bills(RF.n ? p : {name: p.last, last: p.last}, BF, !RF.n));
+      return out.join(' ');
+    }
     if(!p.total) return w.none(p, b);
     var timing = !p.before ? w.after : p.before === p.gifts ? w.allBefore : w.someBefore(p.beforeAmt);
     if(p.kind === 'state'){
