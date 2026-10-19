@@ -38,6 +38,8 @@
   .stats b{font-family:var(--sans); font-size:20px; font-weight:900; display:block; line-height:1.1;}
   .ballot{font-size:14px; margin-bottom:14px;}
   .ballot div{margin-top:6px; padding-left:10px; border-left:1px solid var(--hair);}
+  .ballot .sum{margin-top:3px; font-size:14px; color:var(--ink);}
+  .ballot .sum a{font-family:var(--mono); font-size:11.5px; margin-left:4px;}
   .ballot .muted{border-left-color:var(--hair); color:var(--ink-soft);}
   .tools{position:sticky; top:0; background:var(--paper); z-index:2; padding:10px 0 8px; border-bottom:2px solid var(--rule);}
   .tools input[type=search]{width:100%; font:inherit; font-size:15px; padding:9px 11px; border:1.5px solid var(--rule); background:#fff; color:var(--ink); border-radius:0;}
@@ -94,6 +96,7 @@
   <div class="how" id="how"></div>
 </main>
 <footer id="foot"></footer>
+<script src="/money-summary.js"></script>
 <script>
 (function(){
   var S = {
@@ -402,8 +405,10 @@
     var on = Object.keys(B.onBallot);
     document.getElementById('ballot').innerHTML = (B.coverage ? '<div class="muted"><b>' + t('coverageH') + ':</b> ' + esc(L(B.coverage)) + '</div>' : '') + on.map(function(k){
       var ob = B.onBallot[k];
+      var m = B.members.filter(function(x){ return x.key === k; })[0], sp = SUM && m && SUM.people[m.person];
       return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)})) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
-        (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') + '</div>';
+        (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
+        (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
     }).join('') + '<div class="muted">' + esc(t(B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
     document.getElementById('list').innerHTML = A.map(function(a){ return actHtml(B, a); }).join('');
     filter();
@@ -422,6 +427,8 @@
   document.getElementById('q').addEventListener('input', filter);
   window.addEventListener('hashchange', function(){ var h = location.hash.slice(1); if(h && h !== BK){ BK = h; render(); } });
   render();
+  var SUM = null;
+  fetch('/data/money-summary.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ SUM = j; if(DATA) render(); }).catch(function(){});
   fetch('/data/decisions.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
     .catch(function(){ document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('loadErr')) + '</p>'; });
 })();

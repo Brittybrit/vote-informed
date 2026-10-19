@@ -352,6 +352,8 @@
   .og-more{color:var(--ink-soft); font-style:italic;}
   .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
   .ties-sub{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:-4px 0 10px; line-height:1.5;}
+  .tie-sum{font-size:14.5px; line-height:1.5; margin:0 0 12px;}
+  .tie-sum a{font-family:var(--mono); font-size:11px; margin-left:4px;}
   .tie-status{font-size:13.5px; line-height:1.5; margin:0 0 12px; padding:8px 10px; border:1px solid #C9C9C1;}
   .ties-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
   .tie-act{padding:10px 0 12px; border-bottom:1px dotted #C9C9C1;}
@@ -2170,6 +2172,7 @@ function t(key, vars){
   return s;
 }
 </script>
+<script src="/money-summary.js"></script>
 <script>
 // Next election — update these three lines each cycle.
 var ELECTION = {
@@ -4096,7 +4099,22 @@ function loadOffices(ri, cand){
   box.innerHTML = '<h4>' + t('sec.offices') + '</h4><p class="sec-sub">' + t('off.sub') + '</p>' +
     (rows || '<p class="empty">' + t('off.none') + '</p>');
 }
+// One-line money summary per incumbent (/data/money-summary.json, built from /data/decisions.json)
+var SUMMARY = null, summaryWait = [];
+function summaryFor(cand, race){
+  if(!SUMMARY || !SUMMARY.byBallot) return null;
+  var pid = SUMMARY.byBallot[race.office + '|' + cand.name];
+  if(!pid){ for(var k in SUMMARY.byBallot){ var p = k.split('|'); if(p[0] === race.office && sameCand(cand.name, p[1])){ pid = SUMMARY.byBallot[k]; break; } } }
+  return pid ? SUMMARY.people[pid] || null : null;
+}
 function loadTies(ri, cand){
+  if(SUMMARY === null){
+    summaryWait.push(function(){ loadTies(ri, cand); });
+    if(summaryWait.length === 1) fetch('/data/money-summary.json').then(function(r){ return r.json(); })
+      .then(function(j){ SUMMARY = j; }).catch(function(){ SUMMARY = {people: {}, byBallot: {}}; })
+      .then(function(){ var w = summaryWait; summaryWait = []; w.forEach(function(f){ f(); }); });
+    return;
+  }
   if(!ACTIONS){ actionsWait.push(function(){ loadTies(ri, cand); }); return; }
   var race = ballot.races[ri], acts = actionsFor(cand, race), peers = tiesPeers(ri);
   var nNames = peers.races.reduce(function(n, r){ return n + r.names.length; }, 0);
@@ -4152,10 +4170,12 @@ function renderTies(ri, cand, acts, shared, loading, city){
   var me = function(b){ return sameCand(cand.name, b.name) && (!b.office || b.office === ballot.races[ri].office); };
   var mine = groups.filter(function(g){ return g.by.some(me); });
   var meFound = ok && (shared.candidates || []).some(function(c){ return c.found && me(c); });
-  var st = officeStatus(cand, ballot.races[ri]);
-  if(!acts.length && !loading && !(ok && meFound) && !st){ box.hidden = true; box.innerHTML = ''; return; }
+  var st = officeStatus(cand, ballot.races[ri]), sp = summaryFor(cand, ballot.races[ri]);
+  if(sp && !sp.total) sp = null;   // "nothing found" is already said by the status line below
+  if(!acts.length && !loading && !(ok && meFound) && !st && !sp){ box.hidden = true; box.innerHTML = ''; return; }
   box.hidden = false;
   var h = '<h4>' + t('sec.ties') + '</h4><p class="ties-sub">' + t('ties.sub') + '</p>';
+  if(sp && window.moneySummary) h += '<p class="tie-sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary" target="_blank" rel="noopener">' + esc(window.moneySummary.howLabel(LANG)) + '</a></p>';
   if(st && !acts.length){
     var nm = esc(cand.name), body = esc(st.body || '');
     h += '<p class="tie-status">' + (st.status === 'none' ? t('ties.notIn', {name: nm})
