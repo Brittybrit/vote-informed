@@ -31,9 +31,10 @@ test('every summary links back to a ballot entry', () => {
 });
 
 test('gifts before the cycle are not counted', () => {
-  const ervin = saved.people['natasha-l-ervin'];
-  assert.equal(ervin.total, 0);
   assert.equal(CYCLE_START, '2025-01-01');
+  for (const B of decisions.bodies) for (const a of B.actions) for (const g of a.gifts)
+    assert.ok(g.date >= CYCLE_START, B.key + ' ' + a.id + ' gift dated ' + g.date);
+  assert.ok(!saved.people['natasha-l-ervin'].total);
 });
 
 test('totals add up', () => {
