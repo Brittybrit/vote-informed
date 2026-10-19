@@ -98,6 +98,16 @@
   .vb-site .vb-btn{padding:9px 12px; font-size:12px; white-space:nowrap;}
   .vb-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:10px; line-height:1.6;}
   .vb-note a{color:inherit;}
+  .pf-bar{margin-top:10px; padding:10px 0 2px; border-top:1px dotted var(--rule); font-size:13px;}
+  .pf-bar label{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px;}
+  .pf-row{display:flex; gap:6px; flex-wrap:wrap;}
+  .pf-bar input{font:inherit; font-size:16px; width:8em; padding:7px 9px; border:2px solid var(--ink); background:var(--panel); color:var(--ink);}
+  .pf-bar button{font-family:inherit; font-weight:800; font-size:12px; letter-spacing:.04em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; padding:9px 12px; cursor:pointer;}
+  .pf-bar .pf-clear{background:transparent; color:var(--ink); border:2px solid var(--ink); padding:4px 9px; margin-left:6px;}
+  .pf-bar.on{font-weight:700; color:var(--ink);}
+  .pf-note{font-family:var(--mono); font-size:11px; font-weight:400; color:var(--ink-soft); margin-top:6px; line-height:1.6;}
+  .pf-note a{color:inherit;}
+  .race-instr.pf-maybe{color:var(--flag-fg); font-weight:700;}
   .dc .act{padding:12px 0 14px; border-bottom:1px dotted #C9C9C1;}
   .dc .when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
   .dc .ttl{font-weight:800; font-size:15px; line-height:1.35; margin-top:3px;}
@@ -857,6 +867,18 @@ en: {
   'loc.srcCampaign': 'Campaign donor filings',
   'loc.srcOutside': 'Outside spending filings',
   'jump.label': 'Jump to',
+  'pf.label': 'Show only one precinct’s races',
+  'pf.ph': 'e.g. 503',
+  'pf.btn': 'Filter',
+  'pf.find': 'Find my precinct',
+  'pf.bad': 'Enter a precinct number, like 503 or 116.1.',
+  'pf.unknown': 'Precinct {p} is not in the county’s list. Check the number on your voter information card or sample ballot.',
+  'pf.fail': 'Could not load the precinct list. Try again in a minute.',
+  'pf.on': 'Showing {n} of {t} races and questions for precinct {p}.',
+  'pf.clear': 'Show all',
+  'pf.pctShort': 'Precinct {p}',
+  'pf.note': 'From the county’s precinct / district list (Oct 1, 2026). Your own sample ballot is the final word.',
+  'pf.maybe': 'Only part of your precinct may vote on this. Check your sample ballot.',
   'jump.federal': 'Federal', 'jump.state': 'State', 'jump.county': 'County', 'jump.city': 'City',
   'jump.judicial': 'Judicial', 'jump.amend': 'Amendments', 'jump.ref': 'Referendums', 'jump.measure': 'Measures',
   'jump.top': '&uarr; Top',
@@ -1363,6 +1385,18 @@ es: {
   'loc.srcCampaign': 'Informes de donantes de la campaña',
   'loc.srcOutside': 'Informes de gastos externos',
   'jump.label': 'Ir a',
+  'pf.label': 'Mostrar solo las contiendas de un precinto',
+  'pf.ph': 'ej. 503',
+  'pf.btn': 'Filtrar',
+  'pf.find': 'Buscar mi precinto',
+  'pf.bad': 'Escriba un número de precinto, como 503 o 116.1.',
+  'pf.unknown': 'El precinto {p} no está en la lista del condado. Revise el número en su tarjeta de información del votante o su boleta de muestra.',
+  'pf.fail': 'No se pudo cargar la lista de precintos. Intente de nuevo en un minuto.',
+  'pf.on': 'Mostrando {n} de {t} contiendas y preguntas del precinto {p}.',
+  'pf.clear': 'Mostrar todo',
+  'pf.pctShort': 'Precinto {p}',
+  'pf.note': 'Según la lista de precintos y distritos del condado (1 de octubre de 2026). Su propia boleta de muestra es la palabra final.',
+  'pf.maybe': 'Puede que solo parte de su precinto vote en esto. Revise su boleta de muestra.',
   'jump.federal': 'Federal', 'jump.state': 'Estatal', 'jump.county': 'Condado', 'jump.city': 'Ciudad',
   'jump.judicial': 'Judicial', 'jump.amend': 'Enmiendas', 'jump.ref': 'Referendos', 'jump.measure': 'Medidas',
   'jump.top': '&uarr; Arriba',
@@ -1869,6 +1903,18 @@ ht: {
   'loc.srcCampaign': 'Rapò donatè kanpay la',
   'loc.srcOutside': 'Rapò depans deyò',
   'jump.label': 'Ale nan',
+  'pf.label': 'Montre sèlman eleksyon yon biwo vòt',
+  'pf.ph': 'egz. 503',
+  'pf.btn': 'Filtre',
+  'pf.find': 'Jwenn biwo vòt mwen',
+  'pf.bad': 'Antre yon nimewo biwo vòt, tankou 503 oswa 116.1.',
+  'pf.unknown': 'Biwo vòt {p} pa nan lis konte a. Verifye nimewo a sou kat enfòmasyon votè ou oswa sou bilten egzanp ou.',
+  'pf.fail': 'Nou pa t ka chaje lis biwo vòt yo. Eseye ankò nan yon minit.',
+  'pf.on': 'N ap montre {n} sou {t} eleksyon ak kesyon pou biwo vòt {p}.',
+  'pf.clear': 'Montre tout',
+  'pf.pctShort': 'Biwo vòt {p}',
+  'pf.note': 'Selon lis biwo vòt ak distri konte a (1ye oktòb 2026). Pwòp bilten egzanp ou se dènye mo a.',
+  'pf.maybe': 'Petèt se sèlman yon pati nan biwo vòt ou ki vote sou sa a. Verifye bilten egzanp ou.',
   'jump.federal': 'Federal', 'jump.state': 'Eta', 'jump.county': 'Konte', 'jump.city': 'Vil',
   'jump.judicial': 'Jidisyè', 'jump.amend': 'Amannman', 'jump.ref': 'Referandòm', 'jump.measure': 'Mezi',
   'jump.top': '&uarr; Anwo',
@@ -2240,6 +2286,7 @@ function t(key, vars){
 </script>
 <script src="/money-summary.js"></script>
 <script src="/decision-card.js"></script>
+<script src="/precinct-filter.js"></script>
 <script>
 // Next election — update these three lines each cycle.
 var ELECTION = {
@@ -2588,6 +2635,7 @@ function uploadBanner(){
 
 function renderBallot(){
   try { renderVoteBar(); } catch(e){}
+  ensurePrecinctsForBallot();
   $('uploadStage').style.display = 'none';
   $('workspace').style.display = 'grid';
 
@@ -2596,19 +2644,23 @@ function renderBallot(){
   var j = $('jurisBox');
   j.style.display = 'block';
   j.innerHTML = '<strong>' + (ballot.jurisdiction ? esc(ballot.jurisdiction) : t('juris.unknown')) + '</strong>' +
-    esc([bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + uploadBanner();
+    esc([bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + uploadBanner() + precinctBar();
+  wirePrecinctBar();
 
   var wrap = $('races');
   wrap.innerHTML = '';
   ballot.races.forEach(function(race, ri){
     var div = document.createElement('div');
     div.className = 'race';
+    var inP = raceOnPrecinct(ri);
+    if(inP === false) div.hidden = true;
     if(race.isRetention){ renderRetentionRace(div, race, ri); wrap.appendChild(div); return; }
     div.innerHTML =
       '<div class="race-head"><h3>' + esc(officeOf(ri)) + '</h3>' +
       (race.isMeasure ? '<span class="jbadge">' + t('race.badge.measure') + '</span>' :
        race.isJudicial ? '<span class="jbadge">' + t('race.badge.judicial') + '</span>' : '') +
       '</div>' +
+      (inP === null && ballot.filterPct ? '<div class="race-instr pf-maybe">' + t('pf.maybe') + '</div>' : '') +
       (race.isMeasure
         ? '<div class="race-instr">' + t('race.instr.measure') + '</div>'
         : '<div class="race-instr">' + t('race.instr.cand') + '</div>');
@@ -2637,6 +2689,55 @@ function renderBallot(){
   refreshVoteUI();
 }
 
+/* ---------------- master ballot: filter to one precinct ---------------- */
+// Uses the county's precinct / district cross reference (/data/precincts.json) and /precinct-filter.js.
+// Races are hidden, not dropped: votes stay saved and come back with "Show all".
+var PRECINCTS = null, precinctsP = null;
+function loadPrecincts(){
+  if(PRECINCTS) return Promise.resolve(PRECINCTS);
+  if(!precinctsP) precinctsP = fetch('/data/precincts.json').then(function(r){ if(!r.ok) throw 0; return r.json(); })
+    .then(function(j){ PRECINCTS = j; return j; }).catch(function(e){ precinctsP = null; throw e; });
+  return precinctsP;
+}
+// true / false / null (can't tell from the precinct); always true with no filter
+function raceOnPrecinct(ri){
+  if(!ballot || !ballot.filterPct || !PRECINCTS || !window.precinctFilter) return true;
+  return window.precinctFilter.raceInPrecinct(ballot.races[ri], ballot.filterPct, PRECINCTS);
+}
+function precinctBar(){
+  if(!ballot || ballot.precinct || ballot.races.length < 20) return '';   // a precinct ballot is already filtered
+  var find = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('pf.find') + ' &#8599;</a>';
+  if(ballot.filterPct && PRECINCTS){
+    var shown = ballot.races.filter(function(r, ri){ return raceOnPrecinct(ri) !== false; }).length;
+    return '<div class="pf-bar on"><div>' + t('pf.on', {n: shown, t: ballot.races.length, p: esc(ballot.filterPct)}) +
+      ' <button type="button" class="pf-clear" id="pfClear">' + t('pf.clear') + '</button></div>' +
+      '<div class="pf-note">' + t('pf.note') + ' ' + find + '</div></div>';
+  }
+  return '<form class="pf-bar" id="pfForm" novalidate><label for="pfIn">' + t('pf.label') + '</label>' +
+    '<span class="pf-row"><input id="pfIn" inputmode="decimal" autocomplete="off" maxlength="8" placeholder="' + t('pf.ph') + '">' +
+    '<button type="submit">' + t('pf.btn') + '</button></span>' +
+    '<div class="pf-note" id="pfMsg">' + find + '</div></form>';
+}
+function wirePrecinctBar(){
+  var f = $('pfForm'), c = $('pfClear');
+  if(c) c.addEventListener('click', function(){ delete ballot.filterPct; saveState(); renderBallot(); });
+  if(!f) return;
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var raw = $('pfIn').value, msg = $('pfMsg'), p = window.precinctFilter ? window.precinctFilter.normPrecinct(raw) : '';
+    if(!p){ msg.innerHTML = t('pf.bad'); return; }
+    loadPrecincts().then(function(d){
+      if(!d.precincts[p]){ msg.innerHTML = t('pf.unknown', {p: esc(p)}); return; }
+      ballot.filterPct = p; saveState(); renderBallot();
+      var w = $('races'); if(w) w.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }).catch(function(){ msg.innerHTML = t('pf.fail'); });
+  });
+}
+// A saved plan that was filtered: load the data, then draw again
+function ensurePrecinctsForBallot(){
+  if(ballot && ballot.filterPct && !PRECINCTS) loadPrecincts().then(function(){ if(ballot && ballot.filterPct) renderBallot(); }).catch(function(){});
+}
+
 /* ---------------- jump-to sections ---------------- */
 
 // Sort each race into a ballot section from its English office title. Order matches the chips.
@@ -2662,6 +2763,7 @@ function renderJumpRow(){
   var first = {};
   var els = $('races').children;
   ballot.races.forEach(function(race, ri){
+    if(raceOnPrecinct(ri) === false) return;
     var sec = raceSection(race);
     if(sec && first[sec] === undefined) first[sec] = ri;
   });
@@ -2669,7 +2771,7 @@ function renderJumpRow(){
   // city's own ballot questions instead, so voters can still jump straight to them.
   if(first.city === undefined){
     ballot.races.forEach(function(race, ri){
-      if(first.city === undefined && race.isMeasure && /^\s*(city|town|village)\s+of\b/i.test(String(race.office || ''))) first.city = ri;
+      if(first.city === undefined && race.isMeasure && raceOnPrecinct(ri) !== false && /^\s*(city|town|village)\s+of\b/i.test(String(race.office || ''))) first.city = ri;
     });
   }
   var present = JUMP_ORDER.filter(function(k){ return first[k] !== undefined; });
@@ -2769,8 +2871,8 @@ function refreshVoteUI(){
     var oval = el.querySelector('.oval-btn');
     if(oval) oval.setAttribute('aria-checked', voted ? 'true' : 'false');
   });
-  var total = ballot ? ballot.races.length : 0;
-  var decided = Object.keys(votes).length;
+  var total = ballot ? ballot.races.filter(function(r, ri){ return raceOnPrecinct(ri) !== false; }).length : 0;
+  var decided = Object.keys(votes).filter(function(ri){ return raceOnPrecinct(+ri) !== false; }).length;
   $('planCount').innerHTML = t('plan.count', {d: decided, t: total});
   $('planMeter').style.width = (total ? Math.round(decided/total*100) : 0) + '%';
   renderPlanView();
@@ -2781,6 +2883,7 @@ function renderPlanView(){
   if(!ballot){ rows.innerHTML=''; return; }
   var html = '';
   ballot.races.forEach(function(race, ri){
+    if(raceOnPrecinct(ri) === false) return;
     var ci = votes[ri];
     var ret = race.isRetention && (ci === 'yes' || ci === 'no');
     var picked = ret ? {} : (ci !== undefined && typeof ci === 'number') ? race.candidates[ci] : null;
@@ -2807,9 +2910,10 @@ function renderPlanView(){
 function buildPrintPlan(){
   var el = $('printPlan');
   var html = '<h1>' + t('print.title') + '</h1>' +
-    '<div class="pj">' + esc([ballot.jurisdiction, bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + '</div>' +
+    '<div class="pj">' + esc([ballot.jurisdiction, bt('electionName'), ballot.electionDate].filter(Boolean).join(' · ')) + (ballot.filterPct ? ' · ' + t('pf.pctShort', {p: esc(ballot.filterPct)}) : '') + '</div>' +
     '<table>';
   ballot.races.forEach(function(race, ri){
+    if(raceOnPrecinct(ri) === false) return;
     var ci = votes[ri];
     var ret = race.isRetention && (ci === 'yes' || ci === 'no');
     var picked = (ci !== undefined && typeof ci === 'number') ? race.candidates[ci] : null;
