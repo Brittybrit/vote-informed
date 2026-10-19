@@ -131,6 +131,7 @@
   .dc .links{font-family:var(--mono); font-size:11.5px; margin-top:8px; display:flex; flex-wrap:wrap; gap:4px 14px;}
   .dc .links a{color:var(--left-fg);}
   .vb-map{height:300px; margin-top:14px; border:1.5px solid var(--rule); z-index:0;}
+  .vb-you{width:18px; height:18px; border-radius:50%; background:#1F7A3A; border:3px solid #FFFFFF; box-shadow:0 0 0 2px #1F7A3A; box-sizing:border-box;}
   .vb-pin{width:26px; height:26px; background:var(--ink); color:var(--paper); border:2px solid #FFFFFF; font-weight:900; font-size:13px; line-height:22px; text-align:center; box-sizing:border-box; font-family:var(--mono);}
   .vb-num{display:inline-block; min-width:20px; height:20px; line-height:20px; text-align:center; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:11px; font-weight:800; margin-bottom:4px;}
   .vb-zip{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:10px;}
@@ -4799,7 +4800,8 @@ async function drawEvMap(sites, origin, top){
     if(n || !origin) pts.push([s.lat, s.lon]);
   });
   if(origin){
-    L.circleMarker([origin.lat, origin.lon], {radius:7, color:'#FFFFFF', weight:3, fillColor:'#1F7A3A', fillOpacity:1})
+    // drawn above the numbered pins so a site right next to you doesn't cover your dot
+    L.marker([origin.lat, origin.lon], {icon: L.divIcon({className:'', html:'<div class="vb-you"></div>', iconSize:[18,18], iconAnchor:[9,9]}), zIndexOffset:2000, keyboard:false})
       .bindTooltip(origin.zip ? t('vb.mapZip', {z: esc(origin.zip)}) : t('vb.mapYou')).addTo(evMap);
     pts.push([origin.lat, origin.lon]);
   }
