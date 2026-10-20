@@ -524,6 +524,7 @@ async function runResearch(env, key, p) {
       const o = await fecOutsideSpending(env, name, officeCode, office);
       if (o) { result.outsideSpending = o; result.outV = OUTSIDE_VERSION; result.outAt = Date.now(); }
     } catch (e) { console.log('FEC outside spending error for ' + name + ': ' + e.message); }
+    fecOnly(result);
   }
   markDisclosure(result);
   result.researchedAt = new Date().toISOString().slice(0, 10);   // shown on the page so a reader can cite what they saw
@@ -668,6 +669,7 @@ function separateCommitteeMoney(result, office, officeCode) {
 async function refreshCached(env, key, result, name, officeCode, office) {
   result = await refreshFec(env, key, result, name, officeCode, office);   // saves its own changes
   result = await refreshOutside(env, key, result, name, officeCode, office); // saves its own changes
+  if (officeCode) fecOnly(result);                                // federal money shown only from the FEC
   applyKnownLeans(result);                                        // cheap, so these run on every read
   markDisclosure(result);
   let changed = false;
@@ -1022,6 +1024,27 @@ async function refreshFec(env, key, result, name, officeCode, office) {
       await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     }
   } catch (e) { console.log('FEC refresh error for ' + name + ': ' + e.message); }
+  return result;
+}
+
+// Federal dossiers show money only from the FEC, the same fields for every candidate. Anything the web
+// search turned up (donors, committee donors, outside spending) is dropped; if the FEC call failed, the
+// section says so and stays empty until the next read retries, rather than showing search results.
+function fecOnly(result) {
+  if (!result || result.financing) return result;
+  const fromFec = d => d && /^https:\/\/(www\.)?fec\.gov\//.test(String(d.url || ''));
+  if (result.fecV !== FEC_DATA_VERSION) {
+    result.donors = (result.donors || []).filter(fromFec);
+    result.donorDataNote = 'Official FEC donor data couldn\u2019t be loaded just now. This section fills in from the FEC on the next visit; nothing from other sources is shown in its place.';
+    result.donorListUrl = /fec\.gov/.test(String(result.donorListUrl || '')) ? result.donorListUrl : '';
+  }
+  // committees that support a federal candidate file with the FEC on their own; web-sourced lists aren't shown
+  result.committeeDonors = [];
+  delete result.alliedCommittees;
+  delete result.committeeSource;
+  const o = result.outsideSpending;
+  if (!o || o.source !== 'FEC') result.outsideSpending = { support: [], oppose: [], source: 'FEC',
+    note: 'FEC outside spending data couldn\u2019t be loaded just now. This section fills in from the FEC on the next visit.' };
   return result;
 }
 
@@ -3159,7 +3182,7 @@ async function fecTopDonors(env, name, officeCode, office) {
 // "Raised" is the sum of these buckets. Transfers between committees, outside loans, refunds and
 // interest are left out: they aren't support from anyone and voters can't read them.
 // Size bins are scaled to the individual-contribution total from the same summary data.
-const MONEY_VERSION = 4;
+const MONEY_VERSION = 5;   // 5: spent, cash on hand and debts from the same FEC totals
 async function handleRaceMoney(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
@@ -3392,6 +3415,11 @@ async function moneyBreakdown(base, c, q) {
   const self = n(t.candidate_contribution) + n(t.loans_made_by_candidate);
   const r = v => Math.round(v);
   const out = { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), sized: binSum > 0 };
+  // the same four headline fields for every candidate, all from this one FEC totals record; null = not reported
+  const opt = v => (v === null || v === undefined || v === '' || !isFinite(Number(v))) ? null : Math.round(Math.max(0, Number(v)));
+  c.spent = opt(t.disbursements);
+  c.cash = opt(t.last_cash_on_hand_end_period);
+  c.debts = opt(t.last_debts_owed_by_committee);
   // candidate totals cover every authorized committee; "raised" leaves out transfers, refunds and outside loans
   if (receipts > 0) c.receipts = out.small + out.mid + out.large + out.pac + out.party + out.self;
   if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
