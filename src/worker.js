@@ -204,7 +204,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
   }
 
   const allowed = await rateLimit(env, 'parse', ip, LIMIT_PARSE_PER_DAY);
-  if (!allowed) return json({ error: 'Ballot uploads are paused right now (daily limit). The countywide ballot still works. Try again tomorrow.' }, 429);
+  if (!allowed) return json({ error: 'Ballot uploads are paused right now (daily limit). Load the countywide ballot instead and filter it to your precinct: it shows the same races. Uploads open again tomorrow.' }, 429);
 
   const prompt = [
     'You are parsing a sample ballot PDF into structured data.',
@@ -315,12 +315,12 @@ async function handleResearch(request, env, ctx) {
   }
   if (cached) {
     if (!(await env.CACHE.get(alias))) ctx.waitUntil(env.CACHE.put(alias, key, { expirationTtl: cacheTtl() }));
-    return json({ result: await localize(env, await refreshCached(env, key, cached, name, officeCode, office), lang), cached: true, key });
+    return json({ result: await localize(env, await serveCached(env, ctx, request.url, key, cached, name, officeCode, office), lang), cached: true, key });
   }
   const target = await env.CACHE.get(alias);
   if (target && target !== key) {
     const hit = await env.CACHE.get(target, 'json');
-    if (hit) return json({ result: await localize(env, await refreshCached(env, target, hit, name, officeCode, office), lang), cached: true, key: target });
+    if (hit) return json({ result: await localize(env, await serveCached(env, ctx, request.url, target, hit, name, officeCode, office), lang), cached: true, key: target });
   }
 
   // Fire-and-poll: mobile browsers kill requests after ~60s, and fresh research
@@ -661,6 +661,37 @@ function separateCommitteeMoney(result, office, officeCode) {
     else keep.push(d);
   }
   result.donors = keep;
+  return result;
+}
+
+// A cached dossier goes back fast. The daily refresh from official sources (FEC, state, county, cities)
+// can take 15-30 seconds; if it isn't done within QUICK_MS, the visitor gets the stored dossier (with
+// the cheap per-read fixes applied) and the refresh finishes after the response, saving itself to KV.
+// A short lock in the edge cache keeps a burst of visitors to one dossier from each starting a refresh.
+const QUICK_MS = 2500;
+const LOCK_SECONDS = 120;
+async function serveCached(env, ctx, reqUrl, key, cached, name, officeCode, office) {
+  const lock = typeof caches !== 'undefined' && reqUrl ? new Request(new URL('/__refresh-lock/' + encodeURIComponent(key), reqUrl).toString()) : null;
+  try {
+    if (lock && await caches.default.match(lock)) return quickApply(structuredClone(cached), officeCode, office);
+    if (lock) await caches.default.put(lock, new Response('1', { headers: { 'Cache-Control': 'max-age=' + LOCK_SECONDS } }));
+  } catch (e) { console.log('refresh lock error: ' + e.message); }
+  const work = refreshCached(env, key, structuredClone(cached), name, officeCode, office)
+    .catch(e => { console.log('refresh error for ' + name + ': ' + (e && e.message ? e.message : e)); return null; });
+  let timer;
+  const late = new Promise(r => { timer = setTimeout(() => r(null), QUICK_MS); });
+  const done = await Promise.race([work, late]);
+  clearTimeout(timer);
+  if (done) return done;
+  if (ctx && ctx.waitUntil) ctx.waitUntil(work);
+  return quickApply(structuredClone(cached), officeCode, office);
+}
+// The cheap fixes refreshCached applies on every read, without any network call.
+function quickApply(result, officeCode, office) {
+  if (officeCode) fecOnly(result);
+  applyKnownLeans(result);
+  markDisclosure(result);
+  if (!result.financing) { ownSiteRatings(result); separateCommitteeMoney(result, office, officeCode); }
   return result;
 }
 
@@ -1084,6 +1115,13 @@ function committeeKind(n, reg, entity) {
 // so a same-name candidate elsewhere can never supply the donors or outside spending. The FEC's
 // surname has to end the ballot name and the first names have to start alike (the same rule as
 // matchFecCandidate). Two plausible matches is treated as no match: no FEC data beats the wrong person's.
+// Ballot names the FEC spells differently, checked by hand against the FEC's own record. Without these the
+// dossier would wrongly say the candidate isn't registered. Key: the ballot name as normPart prints it.
+const FEC_ID_OVERRIDES = {
+  'neil j gillespie': 'S6FL00863'   // FEC: "GILESPIE, NEIL JOSEPH" (NPA, U.S. Senate 2026)
+};
+function fecOverride(name) { return FEC_ID_OVERRIDES[normPart(String(name || '').split(/\s+and\s+/i)[0])] || ''; }
+
 async function fecFindCandidate(env, name, officeCode, office) {
   if (!env.FEC_API_KEY) console.log('WARNING: FEC_API_KEY is not set; using the shared DEMO_KEY, which runs out after a few requests');
   const apiKey = env.FEC_API_KEY || 'DEMO_KEY';
@@ -1105,6 +1143,12 @@ async function fecFindCandidate(env, name, officeCode, office) {
     if (!r.ok) { console.log('FEC candidate search ' + r.status + ' for ' + name + (apiKey === 'DEMO_KEY' ? ' (using DEMO_KEY; set FEC_API_KEY)' : '')); continue; }
     answered = true;
     for (const c of ((await r.json()).results || [])) if (c && c.candidate_id && String(c.state || 'FL') === 'FL') seen.set(c.candidate_id, c);
+  }
+  const forced = fecOverride(name);
+  if (forced) {
+    const r = await fetch(base + '/candidates/search/?candidate_id=' + forced + '&per_page=1&api_key=' + apiKey);
+    const c = r.ok ? ((await r.json()).results || [])[0] : null;
+    if (c) return { cand: c };
   }
   if (!answered) return null;
   const hits = [...seen.values()].filter(c => fecNameMatches(clean, c.name || c.candidate_name || ''));
@@ -3371,6 +3415,8 @@ async function raceMoney(env, officeCode, district, cycle, names) {
 // ("WASSERMAN SCHULTZ, DEBBIE"). The FEC surname has to end the ballot name; the first name has
 // to share its first three letters, unless only one candidate in the race has that surname.
 function matchFecCandidate(name, field) {
+  const forced = fecOverride(name);
+  if (forced) return field.find(c => c.candidate_id === forced) || null;
   const clean = normPart(name.replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' '))
     .replace(/\b(jr|sr|ii|iii|iv)$/, '').trim();
   const first = clean.split(' ')[0] || '';
@@ -4069,10 +4115,17 @@ async function rateLimit(env, kind, ip, limit) {
   const [current, total] = await Promise.all([env.CACHE.get(key), env.CACHE.get(gkey)]).then(v => v.map(x => parseInt(x || '0', 10)));
   if (current >= limit) return false;
   if (GLOBAL_LIMITS[kind] && total >= GLOBAL_LIMITS[kind]) { console.log('global daily limit reached: ' + kind); return false; }
-  await Promise.all([
-    env.CACHE.put(key, String(current + 1), { expirationTtl: 86400 }),
-    env.CACHE.put(gkey, String(total + 1), { expirationTtl: 2 * 86400 })
-  ]);
+  try {
+    await Promise.all([
+      env.CACHE.put(key, String(current + 1), { expirationTtl: 86400 }),
+      env.CACHE.put(gkey, String(total + 1), { expirationTtl: 2 * 86400 })
+    ]);
+  } catch (e) {
+    // KV write refused (daily write limit or an outage). Paid AI lookups stop rather than run uncounted;
+    // free official-data lookups carry on.
+    console.log('rate-limit counter write failed (' + kind + '): ' + e.message);
+    return !AI_KINDS.has(kind);
+  }
   return true;
 }
 
