@@ -109,6 +109,17 @@
 
   function bodies(){ return (DATA && DATA.bodies) || []; }
   function cur(){ var bs = bodies(); for (var i = 0; i < bs.length; i++) if (bs[i].key === BK) return bs[i]; return bs[0]; }
+  // The race someone is on the ballot for can belong to a different body than the one they serve on now
+  // (a state representative running for U.S. Senate). List them on the race's tab too, linked to their own.
+  var RACE_BODY = [[/^U\.S\. Senate/, 'ussenate'], [/^U\.S\. House/, 'ushouse'], [/^State Senate/, 'flsenate'], [/^State House/, 'flhouse'], [/^County Commission/, 'county']];
+  function raceBody(r){ var en = r && r.en || ''; for(var i = 0; i < RACE_BODY.length; i++) if(RACE_BODY[i][0].test(en)) return RACE_BODY[i][1]; return null; }
+  function crossListed(B){
+    var out = [];
+    bodies().forEach(function(O){ if(O.key === B.key) return; Object.keys(O.onBallot).forEach(function(k){
+      var ob = O.onBallot[k]; if(raceBody(ob.race) === B.key) out.push({name: mem(O, k), race: ob.race, body: O});
+    }); });
+    return out;
+  }
   function othersHtml(){
     var o = (DATA && DATA.others) || []; if(!o.length || BK !== '_others') return '';
     return o.map(function(x){ return '<div class="act"><div class="ttl">' + esc(L(x.body)) + '</div><div class="note">' + x.people.map(function(p){ return '<b>' + esc(p.name) + '</b>: ' + t('st.' + p.status); }).join('<br>') + '</div></div>'; }).join('');
@@ -158,6 +169,8 @@
       return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)}).replace(/\.\.$/, '.')) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
         (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
         (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
+    }).join('') + crossListed(B).map(function(c){
+      return '<div>' + esc(t('alsoOn', {name: c.name, race: L(c.race)})) + ' <a href="#' + esc(c.body.key) + '">' + esc(t('actsOn', {body: L(c.body.name)})) + '</a></div>';
     }).join('') + (B.alsoOnBallot || []).map(function(o){
       return '<div>' + esc(t('alsoOn', {name: o.name, race: L(B.name)})) + ' ' + (o.body ? '<a href="#' + esc(o.body) + '">' + esc(L(o.note)) + '</a>' : esc(L(o.note))) + '</div>';
     }).join('') + '<div class="muted">' + esc(t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
