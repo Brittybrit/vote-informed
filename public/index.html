@@ -756,6 +756,8 @@ en: {
   'status.reading': 'Reading {name}',
   'status.cantread': 'Could not read the file: {msg}',
   'status.parsing': 'Parsing ballot structure',
+  'status.oldBallot': 'This sample ballot is from an earlier election. Ballot305 covers the November 3, 2026 General Election. Get your current sample ballot from the county, or load the countywide ballot and filter it to your precinct.',
+  'status.fromPct': 'Read precinct {p} from your sample ballot. Showing your races from the countywide ballot.',
   'status.cantparse': 'Could not parse this ballot: {msg}',
   'status.loadingMaster': 'Loading the countywide master ballot',
   'status.cantMaster': 'Could not load the master ballot: {msg}',
@@ -1277,6 +1279,8 @@ es: {
   'status.reading': 'Leyendo {name}',
   'status.cantread': 'No se pudo leer el archivo: {msg}',
   'status.parsing': 'Analizando la estructura de la boleta',
+  'status.oldBallot': 'Esta boleta de muestra es de una elección anterior. Ballot305 cubre las Elecciones Generales del 3 de noviembre de 2026. Obtenga su boleta de muestra actual del condado, o cargue la boleta de todo el condado y fíltrela por su precinto.',
+  'status.fromPct': 'Leímos el precinto {p} en su boleta de muestra. Le mostramos sus contiendas de la boleta de todo el condado.',
   'status.cantparse': 'No se pudo analizar esta boleta: {msg}',
   'status.loadingMaster': 'Cargando la boleta maestra del condado',
   'status.cantMaster': 'No se pudo cargar la boleta maestra: {msg}',
@@ -1798,6 +1802,8 @@ ht: {
   'status.reading': 'N ap li {name}',
   'status.cantread': 'Nou pa t ka li fichye a: {msg}',
   'status.parsing': 'N ap analize estrikti bilten vòt la',
+  'status.oldBallot': 'Echantiyon bilten vòt sa a se pou yon eleksyon anvan. Ballot305 kouvri Eleksyon Jeneral 3 novanm 2026 la. Jwenn echantiyon bilten vòt ou a kounye a nan konte a, oswa chaje bilten vòt tout konte a epi filtre l pou pwesen w lan.',
+  'status.fromPct': 'Nou li pwesen {p} sou echantiyon bilten vòt ou a. N ap montre w eleksyon ou yo nan bilten vòt tout konte a.',
   'status.cantparse': 'Nou pa t ka analize bilten vòt sa a: {msg}',
   'status.loadingMaster': 'N ap chaje bilten vòt prensipal konte a',
   'status.cantMaster': 'Nou pa t ka chaje bilten vòt prensipal la: {msg}',
@@ -2304,6 +2310,7 @@ function t(key, vars){
 <script src="/money-summary.js"></script>
 <script src="/decision-card.js"></script>
 <script src="/precinct-filter.js"></script>
+<script src="/quick-ballot.js"></script>
 <script>
 // Next election — update these three lines each cycle.
 var ELECTION = {
@@ -2542,6 +2549,14 @@ async function handleFile(file){
   }
   setStatus(t('status.reading', {name: esc(file.name)}), false, true);
 
+  // Free path: read the date and precinct off the PDF here and show the countywide ballot for that
+  // precinct. Anything this can't read goes to the server parse below.
+  try{
+    var quick = await quickPrecinctBallot(file);
+    if(quick === 'other'){ setStatus(t('status.oldBallot'), true); return; }
+    if(quick) return;
+  }catch(e){ /* fall through to the server parse */ }
+
   var base64;
   try{
     base64 = await new Promise(function(resolve, reject){
@@ -2565,6 +2580,33 @@ async function handleFile(file){
   }catch(e){
     setStatus(t('status.cantparse', {msg: esc(e.message)}), true);
   }
+}
+
+async function quickPrecinctBallot(file){
+  if(!window.quickBallot || !window.precinctFilter) return null;
+  var text = await window.quickBallot.readPdfText(file, 12);
+  if(!text || text.replace(/\s+/g, '').length < 200) return null;          // a scan: no text to read
+  var when = window.quickBallot.electionCheck(text);
+  if(when === 'other') return 'other';
+  if(when !== 'this') return null;
+  var pct = window.quickBallot.precinctFromText(text, window.precinctFilter.normPrecinct);
+  if(!pct) return null;
+  var data = await loadPrecincts();
+  if(!data.precincts[pct]) return null;
+  var mres = await fetch('/api/master');
+  if(!mres.ok) return null;
+  var md = await mres.json();
+  if(!md || !md.ballot || !md.ballot.races) return null;
+  var b = md.ballot;
+  b._master = true;
+  b.filterPct = pct;
+  b.pfSeen = window.quickBallot.seenOnBallot(b.races, text, function(r){
+    return window.precinctFilter.raceInPrecinct(r, pct, data) === null;
+  });
+  lastPdf = null;
+  await applyParsed(md);
+  setStatus(t('status.fromPct', {p: esc(pct)}), false);
+  return 'loaded';
 }
 
 async function applyParsed(data){
@@ -2719,7 +2761,10 @@ function loadPrecincts(){
 // true / false / null (can't tell from the precinct); always true with no filter
 function raceOnPrecinct(ri){
   if(!ballot || !ballot.filterPct || !PRECINCTS || !window.precinctFilter) return true;
-  return window.precinctFilter.raceInPrecinct(ballot.races[ri], ballot.filterPct, PRECINCTS);
+  var v = window.precinctFilter.raceInPrecinct(ballot.races[ri], ballot.filterPct, PRECINCTS);
+  // read from the voter's own sample ballot: races the precinct can't place are settled by its text
+  if(v === null && Array.isArray(ballot.pfSeen)) return ballot.pfSeen.indexOf(ri) >= 0;
+  return v;
 }
 function precinctBar(){
   if(!ballot || ballot.precinct || ballot.races.length < 20) return '';   // a precinct ballot is already filtered
@@ -2737,7 +2782,7 @@ function precinctBar(){
 }
 function wirePrecinctBar(){
   var f = $('pfForm'), c = $('pfClear');
-  if(c) c.addEventListener('click', function(){ delete ballot.filterPct; saveState(); renderBallot(); });
+  if(c) c.addEventListener('click', function(){ delete ballot.filterPct; delete ballot.pfSeen; saveState(); renderBallot(); });
   if(!f) return;
   f.addEventListener('submit', function(ev){
     ev.preventDefault();
@@ -2745,7 +2790,7 @@ function wirePrecinctBar(){
     if(!p){ msg.innerHTML = t('pf.bad'); return; }
     loadPrecincts().then(function(d){
       if(!d.precincts[p]){ msg.innerHTML = t('pf.unknown', {p: esc(p)}); return; }
-      ballot.filterPct = p; saveState(); renderBallot();
+      ballot.filterPct = p; delete ballot.pfSeen; saveState(); renderBallot();
       var w = $('races'); if(w) w.scrollIntoView({behavior: 'smooth', block: 'start'});
     }).catch(function(){ msg.innerHTML = t('pf.fail'); });
   });
