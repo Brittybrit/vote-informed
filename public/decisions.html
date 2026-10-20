@@ -122,9 +122,11 @@
     var q = document.getElementById('q'); q.placeholder = t('search'); q.setAttribute('aria-label', t('search'));
     document.getElementById('foot').innerHTML = t('foot');
     var bs = bodies();
-    if(!BK && bs.length){ var h = location.hash.slice(1); BK = bs.some(function(b){ return b.key === h; }) || h === '_others' ? h : bs[0].key; }
-    var RQB = BK !== '_others' && bs.length && cur().type === 'requests', h2 = t('how2');
-    document.getElementById('how').innerHTML = RQB ? '<p>' + (cur().level === 'federal' ? [cur().actions.some(function(x){ return x.kind === 'request'; }) ? t('howFed') : '', cur().actions.some(function(x){ return x.kind === 'bill'; }) ? t('howFedV') : ''].filter(Boolean).join(' ') : t('howState')) + '</p><p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : '<p>' + t('howCity') + '</p><p>' + h2 + '</p>';
+    if(!BK && bs.length){ var h = location.hash.slice(1); BK = bs.some(function(b){ return b.key === h; }) || h === '_others' ? h : null; }
+    var PICK = !BK;   // no group chosen yet: show the list of groups and nothing about any one of them
+    document.querySelector('.tools').hidden = PICK || !bs.length;
+    var RQB = !PICK && BK !== '_others' && bs.length && cur().type === 'requests', h2 = t('how2');
+    document.getElementById('how').innerHTML = PICK ? '<p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : RQB ? '<p>' + (cur().level === 'federal' ? [cur().actions.some(function(x){ return x.kind === 'request'; }) ? t('howFed') : '', cur().actions.some(function(x){ return x.kind === 'bill'; }) ? t('howFedV') : ''].filter(Boolean).join(' ') : t('howState')) + '</p><p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : '<p>' + t('howCity') + '</p><p>' + h2 + '</p>';
     if(RQB && F === 'split') F = 'all';
     document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
@@ -134,6 +136,11 @@
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });
     if(!bs.length) return;
+    if(PICK){
+      document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
+      document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('pickBody')) + '</p>';
+      document.getElementById('noresult').hidden = true; return;
+    }
     if(BK === '_others'){
       document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
       document.getElementById('list').innerHTML = othersHtml(); filter(); return;
@@ -167,7 +174,7 @@
     b.addEventListener('click', function(){ LANG = b.getAttribute('data-lang'); try { localStorage.setItem('ballot305.lang', LANG); } catch(e){} render(); });
   });
   document.getElementById('q').addEventListener('input', filter);
-  window.addEventListener('hashchange', function(){ var h = location.hash.slice(1); if(h && h !== BK){ BK = h; render(); } });
+  window.addEventListener('hashchange', function(){ var h = location.hash.slice(1) || null; if(h !== BK){ BK = h; render(); } });
   render();
   var SUM = null;
   fetch('/data/money-summary.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ SUM = j; if(DATA) render(); }).catch(function(){});
