@@ -3179,10 +3179,11 @@ async function fecTopDonors(env, name, officeCode, office) {
 //   pac    PACs and other non-party committees (corporate, union, trade and issue PACs alike)
 //   party  party committees
 //   self   the candidate's own money and loans
-// "Raised" is the sum of these buckets. Transfers between committees, outside loans, refunds and
-// interest are left out: they aren't support from anyone and voters can't read them.
+//   jfc    donor money passed on by joint fundraising committees (and the candidate's other authorized committees)
+// "Raised" is the sum of these buckets. Outside loans, refunds and interest are left out: they aren't
+// support from anyone and voters can't read them.
 // Size bins are scaled to the individual-contribution total from the same summary data.
-const MONEY_VERSION = 5;   // 5: spent, cash on hand and debts from the same FEC totals
+const MONEY_VERSION = 6;   // 6: joint fundraising money and the candidate's other committees
 async function handleRaceMoney(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !isStr(body.office) || !Array.isArray(body.names)) return json({ error: 'Missing office or names' }, 400);
@@ -3356,6 +3357,7 @@ async function raceMoney(env, officeCode, district, cycle, names) {
   await Promise.all(candidates.map(async c => {
     try { c.breakdown = await moneyBreakdown(base, c, q); } catch (e) { console.log('FEC breakdown error for ' + c.name + ': ' + e.message); }
     try { if (c.breakdown) c.local = await fecLocal(base, c, q, officeCode); } catch (e) { console.log('FEC local error for ' + c.name + ': ' + e.message); }
+    try { if (c.breakdown) await otherCommittees(base, c, cycle, apiKey); } catch (e) { console.log('FEC committees error for ' + c.name + ': ' + e.message); }
     c.links = moneyLinks(c.committeeId, cycle);
   }));
 
@@ -3413,15 +3415,18 @@ async function moneyBreakdown(base, c, q) {
   const pac = n(t.other_political_committee_contributions);
   const party = n(t.political_party_committee_contributions);
   const self = n(t.candidate_contribution) + n(t.loans_made_by_candidate);
+  // donor money that reached the campaign through joint fundraising committees (and any other committee
+  // authorized by the candidate), reported on line 12. Without it a campaign funded through a JFC looks small.
+  const jfc = n(t.transfers_from_other_authorized_committee);
   const r = v => Math.round(v);
-  const out = { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), sized: binSum > 0 };
+  const out = { small: r(small), mid: r(mid), large: r(large), pac: r(pac), party: r(party), self: r(self), jfc: r(jfc), sized: binSum > 0 };
   // the same four headline fields for every candidate, all from this one FEC totals record; null = not reported
   const opt = v => (v === null || v === undefined || v === '' || !isFinite(Number(v))) ? null : Math.round(Math.max(0, Number(v)));
   c.spent = opt(t.disbursements);
   c.cash = opt(t.last_cash_on_hand_end_period);
   c.debts = opt(t.last_debts_owed_by_committee);
   // candidate totals cover every authorized committee; "raised" leaves out transfers, refunds and outside loans
-  if (receipts > 0) c.receipts = out.small + out.mid + out.large + out.pac + out.party + out.self;
+  if (receipts > 0) c.receipts = out.small + out.mid + out.large + out.pac + out.party + out.self + out.jfc;
   if (t.coverage_end_date) c.coverageEnd = t.coverage_end_date;
   return out;
 }
@@ -3488,8 +3493,70 @@ function moneyLinks(committeeId, cycle) {
     pac: base + p + '&line_number=F3-11C',
     party: base + p + '&line_number=F3-11B',
     // the candidate's own money: contributions (line 11d) and loans (line 13a), as in the totals
-    self: base + p + '&line_number=F3-11D&line_number=F3-13A'
+    self: base + p + '&line_number=F3-11D&line_number=F3-13A',
+    jfc: base + p + '&line_number=F3-12'
   };
+}
+
+// The candidate's committees besides the campaign, each tied to them by the FEC's own records:
+//   jfc         a joint fundraising committee (FEC designation J) registered under the candidate's name,
+//               or one whose own filings show money sent to the candidate's campaign
+//   leadership  a leadership PAC whose FEC registration names the candidate as its sponsor
+// Super PACs are not here: they can't give to a candidate and are shown as outside spending.
+// For each: raised, spent, cash on hand, and how much it sent to the campaign (already inside the
+// campaign's own total, so subtracted before adding committees together).
+async function otherCommittees(base, c, cycle, apiKey) {
+  const key = '&api_key=' + apiKey;
+  const getJ = async u => { const r = await fetch(base + u + key); if (!r.ok) throw new Error(u.split('?')[0] + ' ' + r.status); return r.json(); };
+  const [last, given] = String(c.fecName || '').split(',').map(x => normPart(x || ''));
+  if (!last) return;
+  const firsts = new Set([given && given.split(' ')[0], normPart(c.name).split(' ')[0]].filter(x => x && x.length >= 2));
+  const nameHas = n => { const w = ' ' + normPart(n) + ' '; return w.includes(' ' + last + ' ') && [...firsts].some(f => w.includes(' ' + f + ' ')); };
+
+  const found = new Map();
+  const jq = await getJ('/committees/?q=' + encodeURIComponent(last) + '&designation=J&cycle=' + cycle + '&per_page=50');
+  for (const m of (jq.results || [])) if (m && m.committee_id && nameHas(m.name)) found.set(m.committee_id, { id: m.committee_id, name: m.name, kind: 'jfc', basis: 'name' });
+  const lq = await getJ('/committees/?sponsor_candidate_id=' + c.candidateId + '&per_page=20');
+  for (const m of (lq.results || [])) if (m && m.committee_id && m.committee_id !== c.committeeId)
+    found.set(m.committee_id, { id: m.committee_id, name: m.name, kind: m.designation === 'J' ? 'jfc' : 'leadership', basis: 'sponsor' });
+
+  const list = [];
+  for (const m of [...found.values()].slice(0, 6)) {
+    const t = ((await getJ('/committee/' + m.id + '/totals/?cycle=' + cycle + '&per_page=1')).results || [])[0];
+    if (!t) continue;
+    const n = v => Math.round(Math.max(0, Number(v) || 0));
+    m.raised = n(t.receipts);
+    m.spent = n(t.disbursements);
+    m.cash = (t.last_cash_on_hand_end_period === null || t.last_cash_on_hand_end_period === undefined) ? null : n(t.last_cash_on_hand_end_period);
+    m.toCampaign = c.committeeId ? await sentTo(getJ, m.id, c.committeeId, cycle) : 0;
+    m.coverageEnd = String(t.coverage_end_date || '').slice(0, 10);
+    m.url = 'https://www.fec.gov/data/committee/' + m.id + '/?cycle=' + cycle;
+    m.donorsUrl = 'https://www.fec.gov/data/receipts/?committee_id=' + m.id + '&two_year_transaction_period=' + cycle;
+    if (m.raised > 0 || m.toCampaign > 0) list.push(m);
+  }
+  list.sort((a, b) => b.raised - a.raised);
+  c.committees = list;
+  // Every dollar raised in the candidate's name once: the campaign, plus what the other committees raised
+  // minus what they already passed to the campaign.
+  const extra = list.reduce((sum, m) => sum + Math.max(0, m.raised - m.toCampaign), 0);
+  c.allRaised = Math.round((c.receipts || 0) + extra);
+  // what reached the campaign from joint fundraisers not listed above (shared with other candidates)
+  const listedJfc = list.filter(m => m.kind === 'jfc').reduce((sum, m) => sum + m.toCampaign, 0);
+  c.sharedJfc = Math.max(0, ((c.breakdown && c.breakdown.jfc) || 0) - listedJfc);
+}
+// Money one committee reported sending to another this cycle, from the sender's own Schedule B.
+async function sentTo(getJ, from, to, cycle) {
+  let total = 0, after = '';
+  for (let page = 0; page < 5; page++) {
+    const j = await getJ('/schedules/schedule_b/?committee_id=' + from + '&recipient_committee_id=' + to +
+      '&two_year_transaction_period=' + cycle + '&per_page=100&sort=-disbursement_date' + after);
+    const rows = j.results || [];
+    for (const r of rows) if (r.memo_code !== 'X') total += Math.max(0, Number(r.disbursement_amount) || 0);
+    const li = (j.pagination || {}).last_indexes;
+    if (rows.length < 100 || !li || !li.last_index) break;
+    after = '&last_index=' + encodeURIComponent(li.last_index) + '&last_disbursement_date=' + encodeURIComponent(li.last_disbursement_date || '');
+  }
+  return Math.round(total);
 }
 
 /* ---------------- the countywide ballot, as already parsed ---------------- */

@@ -51,3 +51,32 @@ test('race money: raised, spent, cash on hand and debts come from the same FEC t
     assert.equal(c.receipts, 1000);
   } finally { globalThis.fetch = realFetch; }
 });
+
+test('other committees: JFC and leadership PAC from FEC records, money passed to the campaign counted once', async () => {
+  const x = await loadWorker(['otherCommittees']);
+  const realFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async url => {
+    calls.push(url);
+    const ok = body => ({ ok: true, json: async () => body });
+    if (/\/committees\/\?q=moody&designation=J/.test(url)) return ok({ results: [
+      { committee_id: 'C00000001', name: 'ASHLEY MOODY VICTORY FUND' },
+      { committee_id: 'C00000009', name: 'MOODY BLUES VICTORY FUND' } ] });   // different first name: not hers
+    if (/sponsor_candidate_id=S6FL00640/.test(url)) return ok({ results: [{ committee_id: 'C00000002', name: 'FLORIDA LEADS', designation: 'D' }] });
+    if (/\/committee\/C00000001\/totals/.test(url)) return ok({ results: [{ receipts: 7000, disbursements: 5800, last_cash_on_hand_end_period: 1200 }] });
+    if (/\/committee\/C00000002\/totals/.test(url)) return ok({ results: [{ receipts: 500, disbursements: 100, last_cash_on_hand_end_period: 400 }] });
+    if (/schedule_b\/\?committee_id=C00000001&recipient_committee_id=C00895763/.test(url)) return ok({ results: [
+      { disbursement_amount: 3000 }, { disbursement_amount: 400 }, { disbursement_amount: 50, memo_code: 'X' } ], pagination: {} });
+    if (/schedule_b/.test(url)) return ok({ results: [], pagination: {} });
+    return { ok: false, json: async () => ({}) };
+  };
+  try {
+    const c = { name: 'Ashley Moody', fecName: 'MOODY, ASHLEY', candidateId: 'S6FL00640', committeeId: 'C00895763',
+      receipts: 13000, breakdown: { jfc: 4400 } };
+    await x.otherCommittees('https://api.example', c, 2026, 'K');
+    assert.deepEqual(c.committees.map(m => [m.name, m.kind, m.basis, m.toCampaign]),
+      [['ASHLEY MOODY VICTORY FUND', 'jfc', 'name', 3400], ['FLORIDA LEADS', 'leadership', 'sponsor', 0]]);
+    assert.equal(c.allRaised, 13000 + (7000 - 3400) + 500);
+    assert.equal(c.sharedJfc, 4400 - 3400);
+  } finally { globalThis.fetch = realFetch; }
+});

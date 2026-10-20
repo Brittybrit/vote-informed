@@ -525,6 +525,9 @@
   .mny-facts dt{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
   .mny-facts dd{margin:2px 0 0; font-size:16px; font-weight:700;}
   @media (max-width:520px){ .mny-facts{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  .mny-cm{margin:10px 0; padding-top:8px; border-top:1px solid #C9C9C1;}
+  .mny-cm-name{font-weight:700; font-size:14px;}
+  .mny-cm-kind{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-left:6px;}
   .mny-sum{font-size:13.5px; margin-top:12px; padding:9px 12px; background:var(--paper); border:1px solid #C9C9C1;}
   .loc-side{margin-bottom:14px;}
   .loc-grid{display:grid; grid-template-columns:76px minmax(0,1fr) 62px; gap:8px 10px; align-items:center; font-size:13px; margin-top:8px;}
@@ -824,7 +827,7 @@ en: {
   'mny.self': 'Candidate&rsquo;s own money and loans',
   'mny.donors': 'Donors',
   'mny.sum': '<strong>Grassroots</strong> {g} &middot; <strong>Big money</strong> ($1,000+ gifts and PACs) {b}',
-  'mny.note': 'FEC filings for {period}, through {date}. Raised means money from donors, PACs, parties and the candidate; transfers between committees, refunds and outside loans are left out. Spent, cash on hand and debts are the totals the campaign reported to the FEC for the same period. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
+  'mny.note': 'FEC filings for {period}, through {date}. Raised means money from donors, PACs, parties, joint fundraising committees and the candidate; refunds and outside loans are left out. Spent, cash on hand and debts are the totals the campaign reported to the FEC for the same period. Money from joint fundraising committees counts when it reaches the campaign; each committee tied to the candidate is listed with what it raised and what it passed on. Tap a bar or row to open that FEC donor list. Most gifts of $200 and under are not listed by name, so that list is partial. Corporations can&rsquo;t give to federal candidates directly; their money arrives through PACs, which also include union and issue groups.',
   'how.btn': 'Methodology',
   'how.title': 'How this is counted',
   'how.close': 'Close',
@@ -833,6 +836,7 @@ en: {
   'loc.noAgainstShort': 'Not added up for state and local races. Full filings: {src}.',
   'mny.none': 'No FEC filings found for {name} this period.',
   'mny.zero': '{name} has reported raising no money this period.',
+  'mny.jfc': 'Through joint fundraising committees', 'mny.cm.h': 'All of {name}&rsquo;s committees', 'mny.cm.all': 'Raised across all of {name}&rsquo;s committees: <strong>{amt}</strong>. Money a committee passed to the campaign is counted once.', 'mny.cm.jfc': 'Joint fundraising committee', 'mny.cm.lead': 'Leadership PAC', 'mny.cm.to': 'Sent to campaign', 'mny.cm.basis.name': 'Registered with the FEC as a joint fundraising committee in the candidate&rsquo;s name. Part of what it raises can go to party committees.', 'mny.cm.basis.sponsor': 'The FEC lists the candidate as this committee&rsquo;s sponsor.', 'mny.cm.none': 'No joint fundraising committee or leadership PAC in {name}&rsquo;s name is registered with the FEC.', 'mny.cm.shared': 'The campaign also received {amt} from joint fundraisers shared with other candidates. That money is already in the campaign total.',
   'mny.f.raised': 'Raised', 'mny.f.spent': 'Spent', 'mny.f.cash': 'Cash on hand', 'mny.f.debts': 'Debts', 'mny.nr': 'Not reported',
   'mny.err': 'Couldn&rsquo;t load FEC totals right now.',
   'mny.unmatched': 'Not found in FEC data: {names}.',
@@ -1344,7 +1348,7 @@ es: {
   'mny.self': 'Dinero y préstamos del propio candidato',
   'mny.donors': 'Donantes',
   'mny.sum': '<strong>Base popular</strong> {g} &middot; <strong>Dinero grande</strong> (donaciones de $1,000+ y PAC) {b}',
-  'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Lo recaudado incluye dinero de donantes, PAC, partidos y del propio candidato; no incluye transferencias entre comités, reembolsos ni préstamos de terceros. Lo gastado, el efectivo disponible y las deudas son los totales que la campaña reportó a la FEC para el mismo período. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
+  'mny.note': 'Informes ante la FEC de {period}, hasta el {date}. Lo recaudado incluye dinero de donantes, PAC, partidos y del propio candidato; no incluye reembolsos ni préstamos de terceros. Lo gastado, el efectivo disponible y las deudas son los totales que la campaña reportó a la FEC para el mismo período. El dinero de los comités de recaudación conjunta cuenta cuando llega a la campaña; cada comité vinculado al candidato aparece con lo que recaudó y lo que pasó a la campaña. Toque una barra o fila para abrir esa lista de donantes en la FEC. La mayoría de las donaciones de $200 o menos no se listan por nombre, así que esa lista es parcial. Las corporaciones no pueden donar directamente a candidatos federales; su dinero llega a través de PAC, que también incluyen sindicatos y grupos de causas.',
   'how.btn': 'Metodología',
   'how.title': 'Cómo se cuenta',
   'how.close': 'Cerrar',
@@ -1353,6 +1357,7 @@ es: {
   'loc.noAgainstShort': 'No se suma en las contiendas estatales y locales. Informes completos: {src}.',
   'mny.none': 'No se encontraron informes ante la FEC de {name} en este período.',
   'mny.zero': '{name} no ha reportado recaudación en este período.',
+  'mny.jfc': 'A través de comités de recaudación conjunta', 'mny.cm.h': 'Todos los comités de {name}', 'mny.cm.all': 'Recaudado entre todos los comités de {name}: <strong>{amt}</strong>. El dinero que un comité pasó a la campaña se cuenta una sola vez.', 'mny.cm.jfc': 'Comité de recaudación conjunta', 'mny.cm.lead': 'PAC de liderazgo', 'mny.cm.to': 'Enviado a la campaña', 'mny.cm.basis.name': 'Registrado ante la FEC como comité de recaudación conjunta a nombre del candidato. Parte de lo que recauda puede ir a comités del partido.', 'mny.cm.basis.sponsor': 'La FEC indica que el candidato patrocina este comité.', 'mny.cm.none': 'No hay ningún comité de recaudación conjunta ni PAC de liderazgo a nombre de {name} registrado ante la FEC.', 'mny.cm.shared': 'La campaña también recibió {amt} de recaudaciones conjuntas compartidas con otros candidatos. Ese dinero ya está en el total de la campaña.',
   'mny.f.raised': 'Recaudado', 'mny.f.spent': 'Gastado', 'mny.f.cash': 'Efectivo disponible', 'mny.f.debts': 'Deudas', 'mny.nr': 'No reportado',
   'mny.err': 'No se pudieron cargar los totales de la FEC en este momento.',
   'mny.unmatched': 'No aparece en los datos de la FEC: {names}.',
@@ -1864,7 +1869,7 @@ ht: {
   'mny.self': 'Pwòp lajan ak prè kandida a',
   'mny.donors': 'Donatè',
   'mny.sum': '<strong>Baz popilè</strong> {g} &middot; <strong>Gwo lajan</strong> (don $1,000+ ak PAC) {b}',
-  'mny.note': 'Rapò FEC pou {period}, jiska {date}. Lajan ranmase a se lajan ki soti nan donatè, PAC, pati ak kandida a menm; transfè ant komite, ranbousman ak prè lòt moun pa ladan l. Lajan depanse, lajan ki rete ak dèt yo se total kanpay la rapòte bay FEC pou menm peryòd la. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
+  'mny.note': 'Rapò FEC pou {period}, jiska {date}. Lajan ranmase a se lajan ki soti nan donatè, PAC, pati ak kandida a menm; ranbousman ak prè lòt moun pa ladan l. Lajan depanse, lajan ki rete ak dèt yo se total kanpay la rapòte bay FEC pou menm peryòd la. Lajan komite ranmasaj lajan ansanm yo konte lè li rive nan kanpay la; chak komite ki lye ak kandida a parèt ak sa li ranmase ak sa li pase bay kanpay la. Peze yon ba oswa yon liy pou louvri lis donatè sa a sou FEC. Pifò don $200 oswa mwens pa parèt ak non, kidonk lis sa a pa konplè. Konpayi pa ka bay kandida federal lajan dirèkteman; lajan yo pase nan PAC, epi PAC gen ladan sendika ak gwoup ki defann kòz tou.',
   'how.btn': 'Metodoloji',
   'how.title': 'Kijan nou konte',
   'how.close': 'Fèmen',
@@ -1873,6 +1878,7 @@ ht: {
   'loc.noAgainstShort': 'Nou pa totalize sa pou eleksyon eta ak lokal yo. Tout rapò yo: {src}.',
   'mny.none': 'Nou pa jwenn rapò FEC pou {name} nan peryòd sa a.',
   'mny.zero': '{name} pa deklare li ranmase lajan nan peryòd sa a.',
+  'mny.jfc': 'Atravè komite ranmasaj lajan ansanm', 'mny.cm.h': 'Tout komite {name} yo', 'mny.cm.all': 'Lajan ranmase nan tout komite {name} yo: <strong>{amt}</strong>. Lajan yon komite pase bay kanpay la konte yon sèl fwa.', 'mny.cm.jfc': 'Komite ranmasaj lajan ansanm', 'mny.cm.lead': 'PAC lidèchip', 'mny.cm.to': 'Voye bay kanpay la', 'mny.cm.basis.name': 'Anrejistre nan FEC kòm komite ranmasaj lajan ansanm sou non kandida a. Yon pati nan sa li ranmase ka ale bay komite pati a.', 'mny.cm.basis.sponsor': 'FEC di kandida a se patwon komite sa a.', 'mny.cm.none': 'Pa gen okenn komite ranmasaj lajan ansanm ni PAC lidèchip sou non {name} ki anrejistre nan FEC.', 'mny.cm.shared': 'Kanpay la te resevwa {amt} tou nan men ranmasaj lajan ansanm ak lòt kandida. Lajan sa a deja nan total kanpay la.',
   'mny.f.raised': 'Lajan ranmase', 'mny.f.spent': 'Lajan depanse', 'mny.f.cash': 'Lajan ki rete', 'mny.f.debts': 'Dèt', 'mny.nr': 'Pa rapòte',
   'mny.err': 'Nou pa ka chaje total FEC yo kounye a.',
   'mny.unmatched': 'Pa nan done FEC yo: {names}.',
@@ -4479,7 +4485,8 @@ var MONEY_BUCKETS = [
   { k:'large', c:'#D08A2B', group:'big' },
   { k:'pac',   c:'#8A3F12', group:'big' },
   { k:'party', c:'#7C8597' },
-  { k:'self',  c:'#C9C1AE' }
+  { k:'self',  c:'#C9C1AE' },
+  { k:'jfc',   c:'#4F6497' }
 ];
 
 function fmtUsd(n){
@@ -4581,6 +4588,30 @@ function renderRaceMoney(ri, cand, d){
     html += '</div>';
     var grass = bd.small || 0, big = (bd.large || 0) + (bd.pac || 0);
     html += '<p class="mny-sum">' + t('mny.sum', {g: fmtPct(grass, total), b: fmtPct(big, total)}) + '</p>';
+  }
+
+  // Every committee tied to this candidate in FEC records, each counted once
+  if(me && Array.isArray(me.committees)){
+    var who = esc(cand.name);
+    html += '<div class="mny-label">' + t('mny.cm.h', {name: who}) + '</div>';
+    if(me.committees.length){
+      html += '<p class="mny-lead">' + t('mny.cm.all', {name: who, amt: fmtUsd(me.allRaised)}) + '</p>';
+      me.committees.forEach(function(m){
+        var u = link(m.url), du = link(m.donorsUrl);
+        html += '<div class="mny-cm"><div class="mny-cm-name">' + (u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(m.name) + ' &#8599;</a>' : esc(m.name)) +
+          ' <span class="mny-cm-kind">' + t('mny.cm.' + (m.kind === 'jfc' ? 'jfc' : 'lead')) + '</span></div>' +
+          '<dl class="mny-facts">' +
+          '<div><dt>' + t('mny.f.raised') + '</dt><dd>' + fmtUsd(m.raised) + '</dd></div>' +
+          '<div><dt>' + t('mny.cm.to') + '</dt><dd>' + fmtUsd(m.toCampaign) + '</dd></div>' +
+          '<div><dt>' + t('mny.f.spent') + '</dt><dd>' + fmtUsd(m.spent) + '</dd></div>' +
+          '<div><dt>' + t('mny.f.cash') + '</dt><dd>' + (m.cash === null || m.cash === undefined ? t('mny.nr') : fmtUsd(m.cash)) + '</dd></div>' +
+          '</dl><p class="mny-note">' + t('mny.cm.basis.' + (m.basis === 'sponsor' ? 'sponsor' : 'name')) +
+          (du ? ' <a href="' + esc(du) + '" target="_blank" rel="noopener">' + t('mny.donors') + ' &#8599;</a>' : '') + '</p></div>';
+      });
+    } else {
+      html += '<p class="mny-note">' + t('mny.cm.none', {name: who}) + '</p>';
+    }
+    if(me.sharedJfc > 0) html += '<p class="mny-note">' + t('mny.cm.shared', {amt: fmtUsd(me.sharedJfc)}) + '</p>';
   }
 
   if(d.unmatched && d.unmatched.length)
