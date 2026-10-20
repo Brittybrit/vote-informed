@@ -155,9 +155,11 @@
     document.getElementById('ballot').innerHTML = (B.coverage ? '<div class="muted"><b>' + t('coverageH') + ':</b> ' + esc(L(B.coverage)) + '</div>' : '') + on.map(function(k){
       var ob = B.onBallot[k];
       var m = B.members.filter(function(x){ return x.key === k; })[0], sp = SUM && m && SUM.people[m.person];
-      return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)})) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
+      return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)}).replace(/\.\.$/, '.')) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
         (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
         (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
+    }).join('') + (B.alsoOnBallot || []).map(function(o){
+      return '<div>' + esc(t('alsoOn', {name: o.name, race: L(B.name)})) + ' ' + (o.body ? '<a href="#' + esc(o.body) + '">' + esc(L(o.note)) + '</a>' : esc(L(o.note))) + '</div>';
     }).join('') + '<div class="muted">' + esc(t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
     document.getElementById('list').innerHTML = A.map(function(a){ return actHtml(B, a); }).join('');
     filter();

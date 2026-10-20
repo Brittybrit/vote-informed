@@ -135,6 +135,17 @@ export function buildSenate() {
     onBallot: { [m.key]: { race: { en: m.race[0], es: m.race[1], ht: m.race[2] }, accounts: [acct] } },
     accounts: { [acct]: { owner: m.key, name: { en: m.cname, es: m.cname, ht: m.cname }, url: 'https://www.fec.gov/data/committee/' + m.cmte + '/' } },
     registries: null,
+    // The other U.S. Senate candidates on the ballot, so the tab doesn't read as if Moody were running alone.
+    alsoOnBallot: [
+      { name: 'Angie Nixon', body: 'flhouse', note: {
+        en: 'state representative (District 13, Jacksonville); her budget requests and floor votes are on the Florida House tab',
+        es: 'representante estatal (Distrito 13, Jacksonville); sus solicitudes de presupuesto y sus votos están en la pestaña de la Cámara de Florida',
+        ht: 'reprezantan Leta (Distri 13, Jacksonville); demann bidjè li ak vòt li yo nan onglè Chanm Florid la' } },
+      { name: 'Neil J. Gillespie', note: {
+        en: 'holds no elected office, so there are no official actions to show',
+        es: 'no ocupa ningún cargo electo, así que no hay acciones oficiales que mostrar',
+        ht: 'li pa gen okenn pòs eli, kidonk pa gen aksyon ofisyèl pou montre' } },
+    ],
     coverage: {
       en: 'Senator Moody made no Congressionally Directed Spending requests for FY2026 or FY2027 (Senate Appropriations Committee charts). Floor votes are on 2025 laws where a Congressional Budget Office estimate, a Congressional Research Service report or the rule being overturned names the kind of business affected; donors are those businesses’ PACs giving to Moody for Florida in 2025 or 2026.',
       es: 'La senadora Moody no hizo solicitudes de Congressionally Directed Spending para los años fiscales 2026 ni 2027 (tablas del Comité de Asignaciones del Senado). Los votos en el pleno son sobre leyes de 2025 en las que una estimación de la Oficina de Presupuesto del Congreso, un informe del Servicio de Investigación del Congreso o la regla que se anula nombra el tipo de negocio afectado; los donantes son los PAC de esos negocios que donaron a Moody for Florida en 2025 o 2026.',
