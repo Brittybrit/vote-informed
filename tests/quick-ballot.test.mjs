@@ -15,6 +15,9 @@ test('election date: this election, an old one, or no date', () => {
   assert.equal(q.electionCheck('Official General Election Ballot November 3, 2026 Miami-Dade'), 'this');
   assert.equal(q.electionCheck('Official General Election Ballot November 5, 2024 Miami-Dade'), 'other');
   assert.equal(q.electionCheck('Primary Election August 18, 2026'), 'other');
+  assert.equal(q.electionCheck('Official General Election BallotNovember 5, 2024Miami-Dade'), 'other');
+  assert.equal(q.electionCheck('Official General Election Ballot November 3, 2026. Amendment takes effect January 1, 2027.'), 'this');
+  assert.equal(q.electionCheck('Amendment 3 ... effective January 1, 2027 and applies to the 2028 tax roll'), '');
   assert.equal(q.electionCheck('Sample ballot, no date'), '');
 });
 

@@ -21,17 +21,19 @@
     return out.join('\n');
   }
 
-  // 'this' when the text names Nov 3, 2026; 'other' when it names a different election date;
-  // '' when it names no full date (can't tell here, so the server decides).
+  // 'this' when the ballot names Nov 3, 2026 anywhere; 'other' only when its election header names a
+  // different date ("General Election ... November 5, 2024"). Other dates in the text, like an
+  // amendment's "January 1, 2027" effective date, don't count. '' = can't tell; the server decides.
   function electionCheck(text, want){
     want = want || { year: 2026, month: 11, day: 3 };
-    var re = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2}),?\s+(20\d{2})\b/gi;
-    var m, found = false;
-    while((m = re.exec(String(text || '')))){
-      found = true;
+    var t = String(text || '').replace(/\s+/g, ' ');
+    var date = /(january|february|march|april|may|june|july|august|september|october|november|december)\s*(\d{1,2}),?\s*(20\d{2})(?!\d)/gi;
+    var m;
+    while((m = date.exec(t))){
       if(MONTHS[m[1].toLowerCase()] === want.month && +m[2] === want.day && +m[3] === want.year) return 'this';
     }
-    return found ? 'other' : '';
+    var head = /\b(general|primary|special|municipal|preference)\s+election\b[^.]{0,60}?(january|february|march|april|may|june|july|august|september|october|november|december)\s*(\d{1,2}),?\s*(20\d{2})(?!\d)/gi;
+    return head.test(t) ? 'other' : '';
   }
 
   // "PRECINCT 033.0" -> "033.0"; '' when no single precinct is printed
