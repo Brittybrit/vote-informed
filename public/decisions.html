@@ -48,6 +48,9 @@
   .filters button.on{background:var(--ink); color:var(--paper);}
   .act{padding:16px 0 18px; border-bottom:1px dotted var(--hair);}
   .when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
+  .src{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:2px;}
+  .serves{font-weight:600;}
+  .cov summary{margin-top:6px;}
   .ttl{font-weight:800; font-size:16px; line-height:1.35; margin-top:3px;}
   .party{font-size:14px; margin-top:3px;}
   .res{font-size:14px; margin-top:6px;}
@@ -107,22 +110,37 @@
   var lobHtml = DC.lobHtml, giftHtml = DC.giftHtml, linkHtml = DC.linkHtml, inBudget = DC.inBudget, budHtml = DC.budHtml, budLinks = DC.budLinks, actHtml = DC.actHtml;
   try { var s0 = localStorage.getItem('ballot305.lang'); if (S[s0]) LANG = s0; } catch(e){}
 
-  function bodies(){ return (DATA && DATA.bodies) || []; }
-  function cur(){ var bs = bodies(); for (var i = 0; i < bs.length; i++) if (bs[i].key === BK) return bs[i]; return bs[0]; }
-  // The race someone is on the ballot for can belong to a different body than the one they serve on now
-  // (a state representative running for U.S. Senate). List them on the race's tab too, linked to their own.
-  var RACE_BODY = [[/^U\.S\. Senate/, 'ussenate'], [/^U\.S\. House/, 'ushouse'], [/^State Senate/, 'flsenate'], [/^State House/, 'flhouse'], [/^County Commission/, 'county']];
-  function raceBody(r){ var en = r && r.en || ''; for(var i = 0; i < RACE_BODY.length; i++) if(RACE_BODY[i][0].test(en)) return RACE_BODY[i][1]; return null; }
-  function crossListed(B){
-    var out = [];
-    bodies().forEach(function(O){ if(O.key === B.key) return; Object.keys(O.onBallot).forEach(function(k){
-      var ob = O.onBallot[k]; if(raceBody(ob.race) === B.key) out.push({name: mem(O, k), race: ob.race, body: O});
-    }); });
-    return out;
+  var GS = [];   // race groups, built once the data loads (DC.groupsOf)
+  var LEGACY = {ushouse: 'us-house', ussenate: 'us-senate', flhouse: 'fl-house', flsenate: 'fl-senate'};
+  function cur(){ for (var i = 0; i < GS.length; i++) if (GS[i].key === BK) return GS[i]; return null; }
+  function fromHash(){
+    var h = location.hash.slice(1); if(!h) return null;
+    if(h === '_others') return h;
+    h = LEGACY[h] || h;
+    return GS.some(function(g){ return g.key === h; }) ? h : null;
+  }
+  function tabName(G){
+    return L(G.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '');
   }
   function othersHtml(){
     var o = (DATA && DATA.others) || []; if(!o.length || BK !== '_others') return '';
     return o.map(function(x){ return '<div class="act"><div class="ttl">' + esc(L(x.body)) + '</div><div class="note">' + x.people.map(function(p){ return '<b>' + esc(p.name) + '</b>: ' + t('st.' + p.status); }).join('<br>') + '</div></div>'; }).join('');
+  }
+  var FLAGS = {gift: function(c){ return hasGift(c.a); }, split: function(c){ return c.B.type !== 'requests' && isSplit(c.a); },
+    lob: function(c){ return (c.a.lobbied || []).length || c.a.namedLobbyist; },
+    unreg: function(c){ return (c.a.lobbied || []).some(function(l){ return l.legReg && /^(otherClients|notFound)$/.test(l.legReg.status); }); },
+    fund: function(c){ return c.B.type === 'requests' && inBudget(c.a); }, bill: function(c){ return c.a.kind === 'bill'; }};
+
+  function howFor(G){
+    var h2 = t('how2'), ps = [], city = false;
+    G.parts.forEach(function(p){
+      var B = p.B, x;
+      if(B.type !== 'requests'){ x = t('howCity'); city = true; }
+      else if(B.level === 'federal') x = [B.actions.some(function(a){ return a.kind === 'request'; }) ? t('howFed') : '', B.actions.some(function(a){ return a.kind === 'bill'; }) ? t('howFedV') : ''].filter(Boolean).join(' ');
+      else x = t('howState');
+      if(x && ps.indexOf(x) < 0) ps.push(x);
+    });
+    return ps.map(function(x){ return '<p>' + x + '</p>'; }).join('') + '<p>' + (city ? h2 : h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/)))) + '</p>';
   }
 
   function render(){
@@ -132,21 +150,22 @@
     document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === LANG); });
     var q = document.getElementById('q'); q.placeholder = t('search'); q.setAttribute('aria-label', t('search'));
     document.getElementById('foot').innerHTML = t('foot');
-    var bs = bodies();
-    if(!BK && bs.length){ var h = location.hash.slice(1); BK = bs.some(function(b){ return b.key === h; }) || h === '_others' ? h : null; }
-    var PICK = !BK;   // no group chosen yet: show the list of groups and nothing about any one of them
-    document.querySelector('.tools').hidden = PICK || !bs.length;
-    var RQB = !PICK && BK !== '_others' && bs.length && cur().type === 'requests', h2 = t('how2');
-    document.getElementById('how').innerHTML = PICK ? '<p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : RQB ? '<p>' + (cur().level === 'federal' ? [cur().actions.some(function(x){ return x.kind === 'request'; }) ? t('howFed') : '', cur().actions.some(function(x){ return x.kind === 'bill'; }) ? t('howFedV') : ''].filter(Boolean).join(' ') : t('howState')) + '</p><p>' + h2.slice(Math.max(0, h2.search(/[^.>]*<a href="\/methodology/))) + '</p>' : '<p>' + t('howCity') + '</p><p>' + h2 + '</p>';
-    if(RQB && F === 'split') F = 'all';
-    document.getElementById('bodies').innerHTML = bs.map(function(b){ return '<a href="#' + b.key + '" data-b="' + b.key + '"><span class="' + (b.key === BK ? 'on' : '') + '">' + esc(L(b.name).replace(/^Miami-Dade /, '').replace(/ (City|Village|Town) (Commission|Council)$/, '').replace(/^(Comisión|Concejo) de(l| la)? (Ciudad|Villa|Pueblo) de /, '').replace(/^(Komisyon|Konsèy) (Vil|Vilaj) /, '')) + ' <small>' + b.actions.length + '</small></span></a>'; }).join('') +
+    if(DATA && !GS.length) GS = DC.groupsOf(DATA);
+    if(!BK && GS.length) BK = fromHash();
+    var PICK = !BK, G = cur();
+    if(!PICK && BK !== '_others' && !G){ BK = null; PICK = true; }
+    document.querySelector('.tools').hidden = PICK || !GS.length;
+    document.getElementById('how').innerHTML = PICK || BK === '_others' ? '<p>' + t('how2').slice(Math.max(0, t('how2').search(/[^.>]*<a href="\/methodology/))) + '</p>' : howFor(G);
+    document.getElementById('bodies').innerHTML = GS.map(function(g){ return '<a href="#' + g.key + '" data-b="' + g.key + '"><span class="' + (g.key === BK ? 'on' : '') + '">' + esc(tabName(g)) + ' <small>' + g.cards.length + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
     document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
-    document.getElementById('filters').innerHTML = (RQB ? (cur().level === 'federal' ? ['all', 'gift'].concat(cur().actions.some(function(x){ return (x.lobbied || []).length; }) ? ['lob'] : [], cur().actions.some(function(x){ return x.kind === 'bill'; }) ? ['bill'] : []) : ['all', 'gift', 'lob', 'unreg', 'fund', 'bill']) : ['all', 'gift', 'split', 'lob']).map(function(k){
+    var fk = G ? ['all'].concat(['gift', 'split', 'lob', 'unreg', 'fund', 'bill'].filter(function(k){ return G.cards.some(FLAGS[k]); })) : [];
+    if(fk.indexOf(F) < 0) F = 'all';
+    document.getElementById('filters').innerHTML = fk.map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
     }).join('');
     document.querySelectorAll('#filters button').forEach(function(b){ b.addEventListener('click', function(){ F = b.getAttribute('data-f'); render(); }); });
-    if(!bs.length) return;
+    if(!GS.length) return;
     if(PICK){
       document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
       document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('pickBody')) + '</p>';
@@ -156,25 +175,34 @@
       document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
       document.getElementById('list').innerHTML = othersHtml(); filter(); return;
     }
-    var B = cur(), A = B.actions;
+    var C = G.cards;
     document.getElementById('stats').innerHTML =
-      '<div><b>' + A.length + '</b>' + t('sActs2') + '</div>' +
-      '<div><b>' + A.filter(function(a){ return (a.lobbied || []).length || a.namedLobbyist; }).length + '</b>' + t('sLob') + '</div>' +
-      '<div><b>' + A.filter(hasGift).length + '</b>' + t('sGift2') + '</div>' +
+      '<div><b>' + C.length + '</b>' + t('sActs2') + '</div>' +
+      '<div><b>' + C.filter(FLAGS.lob).length + '</b>' + t('sLob') + '</div>' +
+      '<div><b>' + C.filter(FLAGS.gift).length + '</b>' + t('sGift2') + '</div>' +
       (DATA.updated ? '<div><b>' + esc(day(DATA.updated)) + '</b>' + t('sUpdated') + '</div>' : '');
-    var on = Object.keys(B.onBallot);
-    document.getElementById('ballot').innerHTML = (B.coverage ? '<div class="muted"><b>' + t('coverageH') + ':</b> ' + esc(L(B.coverage)) + '</div>' : '') + on.map(function(k){
-      var ob = B.onBallot[k];
-      var m = B.members.filter(function(x){ return x.key === k; })[0], sp = SUM && m && SUM.people[m.person];
-      return '<div>' + (ob.race ? esc(t('onBallot', {name: mem(B, k), race: L(ob.race)}).replace(/\.\.$/, '.')) + ' ' : '<b>' + esc(mem(B, k)) + '</b> · ') +
-        (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
-        (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
-    }).join('') + crossListed(B).map(function(c){
-      return '<div>' + esc(t('alsoOn', {name: c.name, race: L(c.race)})) + ' <a href="#' + esc(c.body.key) + '">' + esc(t('actsOn', {body: L(c.body.name)})) + '</a></div>';
-    }).join('') + (B.alsoOnBallot || []).map(function(o){
-      return '<div>' + esc(t('alsoOn', {name: o.name, race: L(B.name)})) + ' ' + (o.body ? '<a href="#' + esc(o.body) + '">' + esc(L(o.note)) + '</a>' : esc(L(o.note))) + '</div>';
-    }).join('') + '<div class="muted">' + esc(t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2')) + '</div>';
-    document.getElementById('list').innerHTML = A.map(function(a){ return actHtml(B, a); }).join('');
+    var people = '', cov = '', notes = [], also = '';
+    G.parts.forEach(function(p){
+      var B = p.B;
+      p.keys.forEach(function(k){
+        var ob = B.onBallot[k], m = B.members.filter(function(x){ return x.key === k; })[0], sp = SUM && m && SUM.people[m.person];
+        var dot = function(x){ return x.replace(/\.?$/, '.').replace(/\.\.$/, '.'); };
+        people += '<div>' + (ob.race ? '<b>' + esc(dot(t('onBallotR', {name: mem(B, k), race: L(ob.race)}))) + '</b> ' : '<b>' + esc(mem(B, k)) + '.</b> ') +
+          '<span class="serves">' + esc(dot(t(ob.former ? 'servedOn' : 'servesOn', {body: L(B.name)}))) + '</span> ' + esc(t('giftsIn')) + ' ' +
+          (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
+          (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
+      });
+      if(B.coverage) cov += '<p><b>' + esc(L(B.name)) + ':</b> ' + esc(L(B.coverage)) + '</p>';
+      var n = t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2');
+      if(notes.indexOf(n) < 0) notes.push(n);
+      also += (B.alsoOnBallot || []).map(function(o){ return '<div>' + esc(t('alsoOn', {name: o.name, race: L(G.name)})) + ' ' + esc(L(o.note)) + '</div>'; }).join('');
+    });
+    document.getElementById('ballot').innerHTML = people + also +
+      '<div class="muted">' + esc(t('byRace')) + ' ' + notes.map(esc).join(' ') + '</div>' +
+      (cov ? '<details class="muted cov"><summary>' + t('coverageH') + '</summary>' + cov + '</details>' : '');
+    document.getElementById('list').innerHTML = C.map(function(c){
+      return actHtml(c.B, c.a).replace('<div class="when">', '<div class="src">' + esc(t('fromBody', {body: L(c.B.name)})) + '</div><div class="when">');
+    }).join('');
     filter();
   }
   function filter(){
@@ -189,7 +217,7 @@
     b.addEventListener('click', function(){ LANG = b.getAttribute('data-lang'); try { localStorage.setItem('ballot305.lang', LANG); } catch(e){} render(); });
   });
   document.getElementById('q').addEventListener('input', filter);
-  window.addEventListener('hashchange', function(){ var h = location.hash.slice(1) || null; if(h !== BK){ BK = h; render(); } });
+  window.addEventListener('hashchange', function(){ var h = fromHash(); if(h !== BK){ BK = h; render(); } });
   render();
   var SUM = null;
   fetch('/data/money-summary.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ SUM = j; if(DATA) render(); }).catch(function(){});

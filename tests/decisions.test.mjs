@@ -194,3 +194,20 @@ test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab wi
   assert.equal(B.actions.filter(a => a.kind === 'bill' && a.roll.Nixon).length, B.actions.filter(a => a.kind === 'bill').length);
   for (let i = 1; i < B.actions.length; i++) assert.ok(B.actions[i - 1].date >= B.actions[i].date, 'newest first at ' + B.actions[i].id);
 });
+
+test('the decisions page groups candidates by the race on the ballot, not the body they serve on', async () => {
+  const vm = await import('node:vm');
+  const ctx = { window: {} }; vm.createContext(ctx); vm.runInContext(card, ctx);
+  const DC = ctx.window.DecisionCard(() => 'en');
+  const G = DC.groupsOf(d), by = Object.fromEntries(G.map(g => [g.key, g]));
+  const who = k => JSON.parse(JSON.stringify(by[k].parts.flatMap(p => p.keys.map(x => p.B.key + ':' + x)).sort()));
+  assert.deepEqual(who('us-senate'), ['flhouse:Nixon', 'ussenate:Moody']);
+  assert.deepEqual(who('governor'), ['ushouse:Donalds']);
+  assert.ok(who('us-house').includes('county:Gilbert') && !who('us-house').includes('ushouse:Donalds'));
+  assert.ok(who('fl-senate').includes('flhouse:Gantt'));
+  assert.deepEqual(who('county'), ['county:Lopez']);
+  assert.deepEqual(JSON.parse(JSON.stringify(G.slice(0, 6).map(g => g.key))), ['us-senate', 'us-house', 'governor', 'fl-senate', 'fl-house', 'county']);
+  for (const g of G) for (const c of g.cards) for (const x of c.a.gifts) assert.ok(c.B.onBallot[x.to], g.key + ' gift to someone not in this race');
+  // Nixon's requests show only in her race, not under the State House candidates
+  assert.ok(!by['fl-house'].cards.some(c => c.a.roll.Nixon === 'requested'));
+});

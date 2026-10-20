@@ -1017,6 +1017,7 @@ en: {
   'ties.recordBill': 'Bill page',
   'ties.all': 'Every city, side by side',
   'ties.allBody': 'Every action of the {body}, with how each member voted',
+  'ties.allRace': 'Official actions of every candidate in this race ({race})',
   'ties.report': 'Campaign report',
   'ties.shared': 'Gave to more than one candidate',
   'ties.scopeCity': 'Compared across every {city} race on this ballot.',
@@ -1535,6 +1536,7 @@ es: {
   'ties.recordBill': 'Página del proyecto',
   'ties.all': 'Todas las ciudades, lado a lado',
   'ties.allBody': 'Todas las acciones de {body}, con el voto de cada miembro',
+  'ties.allRace': 'Acciones oficiales de todos los candidatos de esta contienda ({race})',
   'ties.report': 'Reporte de campaña',
   'ties.shared': 'Donaron a más de un candidato',
   'ties.scopeCity': 'Comparado entre todas las contiendas de {city} en esta boleta.',
@@ -2053,6 +2055,7 @@ ht: {
   'ties.recordBill': 'Paj pwojè lwa a',
   'ties.all': 'Tout vil yo, youn bò lòt',
   'ties.allBody': 'Tout aksyon {body}, ak fason chak manm te vote',
+  'ties.allRace': 'Aksyon ofisyèl tout kandida nan kous sa a ({race})',
   'ties.report': 'Rapò kanpay',
   'ties.shared': 'Bay plis pase yon kandida',
   'ties.scopeCity': 'Konpare nan tout eleksyon {city} ki sou bilten sa a.',
@@ -4388,7 +4391,12 @@ function renderTies(ri, cand, acts, shared, loading, city, dec){
     var CUT = 12;
     h += cards.slice(0, CUT).map(function(c){ return c.html; }).join('');
     if(cards.length > CUT) h += '<details class="tie-more"><summary>' + t('ties.more', {n: cards.length}) + '</summary>' + cards.slice(CUT).map(function(c){ return c.html; }).join('') + '</details>';
-    if(decActs.length) h += '<p class="ties-note"><a class="srclink" href="/decisions#' + esc(dec.body.key) + '" target="_blank" rel="noopener">' + t('ties.allBody', {body: esc((dec.body.name && (dec.body.name[LANG] || dec.body.name.en)) || '')}) + ' ↗</a></p>';
+    if(decActs.length){
+      // The decisions page is grouped by the race on the ballot, so link to this candidate's race.
+      var obk = Object.keys(dec.body.onBallot || {})[0], gk = DC.raceGroup ? DC.raceGroup(dec.body.key, obk && dec.body.onBallot[obk].race) : dec.body.key;
+      var gn = DC.GROUP && DC.GROUP[gk] ? DC.GROUP[gk].name : dec.body.name;
+      h += '<p class="ties-note"><a class="srclink" href="/decisions#' + esc(gk) + '" target="_blank" rel="noopener">' + t('ties.allRace', {race: esc((gn && (gn[LANG] || gn.en)) || '')}) + ' ↗</a></p>';
+    }
   }
   function oldCard(a){
     {
