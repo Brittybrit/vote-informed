@@ -1863,7 +1863,7 @@ function sameFirst(a, b) {
 // main funder stands to gain. Each report's itemized rows must add up to the totals the clerk's site
 // shows for that report; if they don't (a layout change, an amendment we can't read), the last good
 // result stays up. No AI. Refreshed at most every 6 hours.
-const MEASURE_FILINGS_VERSION = 5;
+const MEASURE_FILINGS_VERSION = 6;   // 6: every payment line, and digital/social spending by the filer's own words
 const MEASURE_FILINGS_TTL = 6 * 3600 * 1000;
 // Registered voters, for the "per registered voter" figure: the state's book-closing count for the Nov 3,
 // 2026 election; for the City of Miami, the county's district totals (Miami Dist 1-5) of Oct 1, 2026.
@@ -1986,6 +1986,25 @@ function vfReportList(html) {
   }
   return out;
 }
+// Everyone a committee paid, largest first, with every payment line as filed (date, purpose, amount).
+function paidList(paid) {
+  return [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
+    name: v.name, amount: Math.round(v.amount * 100) / 100,
+    what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', '),
+    items: (v.items || []).filter(i => Math.abs(i.amount) > 0.005).sort((a, b) => String(a.date).localeCompare(String(b.date))).slice(0, 200) }));
+}
+// Payment lines whose filed purpose is online or social media work, in the committee's own words.
+// A payment to an agency stops there: the filings don't show who the agency paid (creators, ad platforms).
+const DIGITAL_PURPOSE = /\b(digital|social\s*media|social|influencer|creator|online|internet|web(site)?|streaming|facebook|instagram|tiktok|youtube|meta|google|content)\b/i;
+function digitalSpend(payees) {
+  let amount = 0;
+  const by = [];
+  for (const p of payees) {
+    const n = (p.items || []).filter(i => DIGITAL_PURPOSE.test(i.what || '')).reduce((a, i) => a + i.amount, 0);
+    if (n > 0.005) { amount += n; by.push({ name: p.name, amount: Math.round(n * 100) / 100 }); }
+  }
+  return { amount: Math.round(amount * 100) / 100, payees: by.sort((a, b) => b.amount - a.amount) };
+}
 const vfClean = s => decodeEntities(String(s || '').replace(/<br>/gi, ' ')).replace(/[\t\s]+/g, ' ').replace(/[\s-]+$/, '').trim();
 const vfOrgKey = s => normPart(s).replace(/\b(llc|inc|corp|corporation|co|pa|llp|lp)\b/g, '').replace(/\s+/g, ' ').trim();
 // Add up one committee's reports. csvs[i] is the per-report export for reports[i] (no report-code column).
@@ -2017,10 +2036,11 @@ function tallyCommittee(reports, csvs) {
       } else if (x[2] === 'E') {
         e += amt;
         const k = vfOrgKey(who);
-        const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|Inc)\b/i, ' $1'), amount: 0, what: new Map() };
+        const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|Inc)\b/i, ' $1'), amount: 0, what: new Map(), items: [] };
         cur.amount += amt;
         const d = vfClean(x[12]);
         if (d) cur.what.set(d.toLowerCase(), { d, n: ((cur.what.get(d.toLowerCase()) || {}).n || 0) + amt });
+        cur.items.push({ date: x[1], what: d, amount: Math.round(amt * 100) / 100 });
         paid.set(k, cur);
       }
     }
@@ -2035,12 +2055,10 @@ function tallyCommittee(reports, csvs) {
   const donors = [...gave.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
     name: v.name, amount: Math.round(v.amount * 100) / 100, share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),   // never round a partial share up to 100
     type: typeOf(v.type), place: v.place, street: v.street, zip: v.zip, first: v.first, last: v.last }));
-  const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
-    name: v.name, amount: Math.round(v.amount * 100) / 100,
-    what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
+  const payees = paidList(paid);
   const through = reports.map(r => r.to).filter(Boolean).sort().pop() || '';
   return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100,
-    through, reports: reports.map(r => r.code), donors, payees };
+    through, reports: reports.map(r => r.code), donors, payees, digital: digitalSpend(payees) };
 }
 async function vfCommitteeFilings(c, ca) {
   const page = VF + 'candidate_pr.php?op=cv&e=1&c=' + c + '&ca=' + ca + '&rellevel=3&committee=Y';
@@ -2095,10 +2113,11 @@ function tallyFl(contribs, expends) {
     if (iso > through) through = iso;
     spent += amt;
     const who = vfClean(e[3]), k = vfOrgKey(who);
-    const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|INC)\b/i, ' $1'), amount: 0, what: new Map() };
+    const cur = paid.get(k) || { name: who.replace(/,\s*(LLC|INC)\b/i, ' $1'), amount: 0, what: new Map(), items: [] };
     cur.amount += amt;
     const d = vfClean(e[6]);
     if (d) cur.what.set(d.toLowerCase(), { d, n: ((cur.what.get(d.toLowerCase()) || {}).n || 0) + amt });
+    cur.items.push({ date: iso, what: d, amount: Math.round(amt * 100) / 100 });
     paid.set(k, cur);
   }
   const total = raised + inkind;
@@ -2108,10 +2127,8 @@ function tallyFl(contribs, expends) {
     name: v.name, amount: Math.round(v.amount * 100) / 100,
     share: !total ? 0 : v.amount >= total - 0.005 ? 100 : Math.min(99.9, Math.round(v.amount / total * 1000) / 10),
     type: typeOf(v), place: v.place, street: v.street, zip: v.zip, first: v.first, last: v.last }));
-  const payees = [...paid.values()].filter(v => v.amount > 0.005).sort((a, b) => b.amount - a.amount).map(v => ({
-    name: v.name, amount: Math.round(v.amount * 100) / 100,
-    what: [...v.what.values()].sort((a, b) => b.n - a.n).slice(0, 3).map(w => w.d).join(', ') }));
-  return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100, through, donors, payees };
+  const payees = paidList(paid);
+  return { raised: Math.round(raised * 100) / 100, inkind: Math.round(inkind * 100) / 100, spent: Math.round(spent * 100) / 100, through, donors, payees, digital: digitalSpend(payees) };
 }
 async function flCommitteeFilings(account, name) {
   const c = await flTsv('contrib.exe', '/campaign-finance/contributions/', name);

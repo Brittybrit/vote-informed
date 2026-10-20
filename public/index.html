@@ -525,6 +525,7 @@
   .mny-facts dt{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
   .mny-facts dd{margin:2px 0 0; font-size:16px; font-weight:700;}
   @media (max-width:520px){ .mny-facts{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  .fil-all{margin-top:8px;font-size:13px}.fil-all summary{cursor:pointer;color:var(--ink-soft);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 0}.fil-pay{padding:6px 0;border-top:1px dotted #C9C9C1}.fil-line{display:grid;grid-template-columns:7.5em 1fr auto;gap:8px;padding:2px 0;color:var(--ink-soft)}.fil-line .amt{color:var(--ink)}
   .mny-cm{margin:10px 0; padding-top:8px; border-top:1px solid #C9C9C1;}
   .mny-cm-name{font-weight:700; font-size:14px;}
   .mny-cm-kind{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-left:6px;}
@@ -917,6 +918,7 @@ en: {
   'bk.stop': '✗ Who funds the groups spending to defeat this candidate',
   'bk.yesSide': '✓ Money behind the YES side',
   'bk.noSide': '✗ Money behind the NO side',
+  'ads.cand': 'Paid ads on Facebook and Instagram that mention {name}, from Meta’s public ad library (includes ads for and against)',
   'sec.outside': 'Outside Spending',
   'outside.sub': 'Groups spending their own money on ads, mail and texts about this candidate. This money does not go to the campaign, and the candidate does not control it.',
   'outside.for': '✓ Spent to help this candidate',
@@ -1124,6 +1126,7 @@ en: {
   'fil.from': 'Where the money came from',
   'fil.to': 'Where it went',
   'fil.rest': 'Everyone else ({n})',
+  'fil.digital': 'Online and social media work', 'fil.digitalNote': 'Payment lines whose filed purpose mentions digital, social media, online or similar work (a line that also covers other work counts in full). The filings show the firm that was paid, not anyone it paid in turn, such as social media creators or ad platforms.', 'fil.all': 'See all {n} payments as filed', 'fil.ads': 'Its paid ads on Facebook and Instagram',
   'fil.read': 'Read the filings',
   'sec.supporters': 'Major Supporters',
   'sec.opponents': 'Major Opposition',
@@ -1440,6 +1443,7 @@ es: {
   'bk.stop': '✗ Quién financia a los grupos que gastan para derrotar a este candidato',
   'bk.yesSide': '✓ Dinero detrás del lado del SÍ',
   'bk.noSide': '✗ Dinero detrás del lado del NO',
+  'ads.cand': 'Anuncios pagados en Facebook e Instagram que mencionan a {name}, de la biblioteca pública de anuncios de Meta (incluye anuncios a favor y en contra)',
   'sec.outside': 'Gastos externos',
   'outside.sub': 'Grupos que gastan su propio dinero en anuncios, correo y mensajes sobre este candidato. Este dinero no va a la campaña y el candidato no lo controla.',
   'outside.for': '✓ Gastado para ayudar a este candidato',
@@ -1647,6 +1651,7 @@ es: {
   'fil.from': 'De dónde vino el dinero',
   'fil.to': 'En qué se gastó',
   'fil.rest': 'Todos los demás ({n})',
+  'fil.digital': 'Trabajo en línea y en redes sociales', 'fil.digitalNote': 'Pagos cuyo propósito declarado menciona trabajo digital, en redes sociales, en línea o similar (un pago que también cubre otro trabajo cuenta completo). Los informes muestran la empresa que recibió el pago, no a quién pagó esa empresa, como creadores de contenido o plataformas de anuncios.', 'fil.all': 'Ver los {n} pagos tal como se declararon', 'fil.ads': 'Sus anuncios pagados en Facebook e Instagram',
   'fil.read': 'Ver los informes',
   'sec.supporters': 'Principales partidarios',
   'sec.opponents': 'Principal oposición',
@@ -1963,6 +1968,7 @@ ht: {
   'bk.stop': '✗ Kiyès ki finanse gwoup k ap depanse pou fè kandida sa a pèdi',
   'bk.yesSide': '✓ Lajan dèyè bò WI a',
   'bk.noSide': '✗ Lajan dèyè bò NON an',
+  'ads.cand': 'Piblisite peye sou Facebook ak Instagram ki mansyone {name}, nan bibliyotèk piblisite piblik Meta a (gen piblisite pou ak kont)',
   'sec.outside': 'Depans deyò',
   'outside.sub': 'Gwoup k ap depanse pwòp lajan yo sou piblisite, lèt ak mesaj sou kandida sa a. Lajan sa a pa ale nan kanpay la, epi kandida a pa kontwole l.',
   'outside.for': '✓ Depanse pou ede kandida sa a',
@@ -2170,6 +2176,7 @@ ht: {
   'fil.from': 'Ki kote lajan an soti',
   'fil.to': 'Ki kote l ale',
   'fil.rest': 'Tout lòt yo ({n})',
+  'fil.digital': 'Travay sou entènèt ak rezo sosyal', 'fil.digitalNote': 'Peman kote rezon ki deklare a pale de travay dijital, rezo sosyal, sou entènèt oswa menm jan (yon peman ki kouvri lòt travay tou konte nèt). Rapò yo montre konpayi ki te resevwa lajan an, pa moun konpayi sa a te peye apre, tankou kreyatè sou rezo sosyal oswa platfòm piblisite.', 'fil.all': 'Gade tout {n} peman yo jan yo deklare yo', 'fil.ads': 'Piblisite li peye sou Facebook ak Instagram',
   'fil.read': 'Li rapò yo',
   'sec.supporters': 'Pi gwo moun ki pou li',
   'sec.opponents': 'Pi gwo opozisyon',
@@ -3135,6 +3142,11 @@ function factsBlock(fx){
     (pv.source ? srcLink(pv.source.url, pv.source.name) : '') + '</li>';
   return h + '</ul>';
 }
+// Meta's public library of political and issue ads (Facebook, Instagram), searched by name
+function adLibraryUrl(name){
+  return 'https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US&media_type=all&search_type=keyword_unordered&q=' +
+    encodeURIComponent(String(name || '').replace(/,?\s*(Inc|LLC|PC)\.?$/i, '').trim());
+}
 // A committee as its reports show it: totals, every funder with its share, the biggest places the money went.
 function filedRows(list){
   if(!list || !list.length) return '<p class="empty">' + t('fin.none') + '</p>';
@@ -3174,8 +3186,25 @@ function filedRows(list){
         var other = pay.slice(5).reduce(function(a, p){ return a + p.amount; }, 0);
         h += '<div class="fil-row"><div>' + t('fil.rest', {n: pay.length - 5}) + '</div><div class="amt">' + usd(other) + '</div></div>';
       }
+      // online and social media work, in the filer's own words
+      var dg = f.digital;
+      if(dg && dg.amount > 0){
+        h += '<div class="fil-sub">' + t('fil.digital') + '</div><div class="fil-row"><div>' +
+          esc(dg.payees.slice(0, 4).map(function(p){ return p.name + ' ' + usd(p.amount); }).join(' · ')) + (dg.payees.length > 4 ? ' …' : '') +
+          '</div><div class="amt">' + usd(dg.amount) + '</div><div class="what">' + t('fil.digitalNote') + '</div></div>';
+      }
+      // every payment as filed
+      var lines = pay.reduce(function(a, p){ return a + ((p.items && p.items.length) || 0); }, 0);
+      if(lines){
+        h += '<details class="fil-all"><summary>' + t('fil.all', {n: lines}) + '</summary>' + pay.map(function(p){
+          return '<div class="fil-pay"><div class="eorg">' + esc(p.name) + ' <span class="amt">' + usd(p.amount) + '</span></div>' +
+            (p.items || []).map(function(i){
+              return '<div class="fil-line"><span>' + esc(fmtDay(i.date)) + '</span><span>' + esc(i.what || '') + '</span><span class="amt">' + usd(i.amount) + '</span></div>';
+            }).join('') + '</div>';
+        }).join('') + '</details>';
+      }
     }
-    return h + '<p class="og-links">' + srcLink(c.url, t('fil.read')) + '</p></div>';
+    return h + '<p class="og-links">' + srcLink(c.url, t('fil.read')) + ' ' + srcLink(adLibraryUrl(c.name), t('fil.ads')) + '</p></div>';
   }).join('');
 }
 
@@ -4043,6 +4072,7 @@ function renderDossier(cand, race, r, cached){
     if(/^https:\/\//i.test(os.listUrl || ''))
       html += '<a class="fulllist" href="' + esc(os.listUrl) + '" target="_blank" rel="noopener">' + t('outside.full') + ' &#8599;</a>';
     if(r.flOutside) html += flOutsideHtml(r.flOutside);
+    html += '<p class="og-links">' + srcLink(adLibraryUrl(cand.name.split(/\s+and\s+/i)[0]), t('ads.cand', {name: cand.name.split(/\s+and\s+/i)[0]})) + '</p>';
     html += '</div>';
   }
 
