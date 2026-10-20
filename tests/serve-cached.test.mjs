@@ -26,3 +26,11 @@ test('FEC spelling override for a ballot name the FEC misspells', () => {
   assert.equal(w.fecOverride('Neil J. Gillespie'), 'S6FL00863');
   assert.equal(w.fecOverride('Ashley Moody'), '');
 });
+
+test('old sample ballots are turned away; this election and undated ballots load', async () => {
+  const x = await loadWorker(['otherElection']);
+  assert.ok(x.otherElection({ electionName: 'General Election', electionDate: 'November 5, 2024' }));
+  assert.ok(x.otherElection({ electionName: 'Primary Election', electionDate: 'August 18, 2026' }));
+  assert.equal(x.otherElection({ electionName: 'General Election', electionDate: 'Tuesday, November 3, 2026' }), '');
+  assert.equal(x.otherElection({ electionName: 'General Election', electionDate: '' }), '');
+});

@@ -117,6 +117,26 @@ export default {
 
 /* ---------------- handlers ---------------- */
 
+// This site covers the November 3, 2026 General Election. An old sample ballot (people keep the 2024 one
+// saved on their phone) would otherwise load last election's races and send each one to fresh research.
+const THIS_ELECTION = { year: 2026, month: 11, day: 3, label: 'November 3, 2026 General Election' };
+const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+function otherElection(ballot) {
+  const text = [ballot && ballot.electionName, ballot && ballot.electionDate].filter(Boolean).join(' ');
+  const year = (text.match(/\b(19|20)\d{2}\b/) || [])[0];
+  if (year && Number(year) !== THIS_ELECTION.year) return text.trim();
+  const md = text.match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})\b/i);
+  if (md && (MONTHS[md[1].toLowerCase()] !== THIS_ELECTION.month || Number(md[2]) !== THIS_ELECTION.day)) return text.trim();
+  return '';
+}
+function ballotReply(ballot, cached) {
+  const other = otherElection(ballot);
+  if (other) return json({ error: 'This sample ballot is for a different election (' + other + '). Ballot305 covers the ' +
+    THIS_ELECTION.label + '. Get your current sample ballot from the county, or load the countywide ballot and filter it to your precinct.',
+    otherElection: other }, 422);
+  return json({ ballot, cached });
+}
+
 async function handleParse(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || typeof body.pdf !== 'string' || body.pdf.length < 100) {
@@ -166,7 +186,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
       await env.CACHE.put(cacheKey, JSON.stringify(cached));
       await env.CACHE.put(FEATURED_KEY, cacheKey);
     } else if (isFeatured && !cached.pinned) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
-    return json({ ballot: cached, cached: true });
+    return ballotReply(cached, true);
   }
 
   // One-time migration: entries written under the old fingerprint. Nothing writes those keys
@@ -176,7 +196,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
   if (v3) {
     await env.CACHE.put(cacheKey, JSON.stringify(v3), { expirationTtl: PARSE_TTL });
     if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
-    return json({ ballot: v3, cached: true });
+    return ballotReply(v3, true);
   }
 
   // Ballots parsed before precinct extraction existed: reuse that parse instead of re-reading
@@ -200,7 +220,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
     }
     await env.CACHE.put(cacheKey, JSON.stringify(older), { expirationTtl: PARSE_TTL });
     if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
-    return json({ ballot: older, cached: true });
+    return ballotReply(older, true);
   }
 
   const allowed = await rateLimit(env, 'parse', ip, LIMIT_PARSE_PER_DAY);
@@ -253,7 +273,7 @@ async function parseBallot(env, pdfB64, ip, isFeatured) {
 
   await env.CACHE.put(cacheKey, JSON.stringify(ballot), { expirationTtl: PARSE_TTL });
   if (isFeatured) await env.CACHE.put(FEATURED_KEY, cacheKey, { expirationTtl: PARSE_TTL });
-  return json({ ballot, cached: false });
+  return ballotReply(ballot, false);
 }
 
 // The shared cache slot for one research request. Everything that shapes the research prompt is part
