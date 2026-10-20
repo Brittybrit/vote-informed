@@ -184,3 +184,13 @@ test('Congress floor votes: enacted laws, official roll calls, a quoted source, 
   }
   for (const k of ['gaveN', 'how.s.clsF', 'cboL', 'crsL', 'frL', 'howFedV']) assert.ok(en.has(k), k);
 });
+
+test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab with her six requests and her floor votes', () => {
+  const B = d.bodies.find(b => b.key === 'flhouse');
+  assert.equal(B.onBallot.Nixon.race.en, 'U.S. Senate');
+  const req = B.actions.filter(a => a.kind === 'request' && a.roll.Nixon);
+  assert.equal(req.length, 6);
+  for (const a of req) assert.ok(a.budget && a.budget.ref === 'HF ' + a.ref.match(/APR (\d+)/)[1], a.id);
+  assert.equal(B.actions.filter(a => a.kind === 'bill' && a.roll.Nixon).length, B.actions.filter(a => a.kind === 'bill').length);
+  for (let i = 1; i < B.actions.length; i++) assert.ok(B.actions[i - 1].date >= B.actions[i].date, 'newest first at ' + B.actions[i].id);
+});

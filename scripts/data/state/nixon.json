@@ -1,0 +1,21 @@
+{
+ "source": "Florida House Appropriations Project Requests for 2025 and 2026 (flhouse.gov/AppropriationProjectRequests), each form read Oct 19, 2026. Budget status from SB 2500 (Ch. 2025-198) and HB 5001E (Ch. 2026-232) and the governor's 2025 and 2026 veto lists. Floor votes from the House vote records linked on each bill card. Donors checked: her state campaign accounts (Florida Division of Elections, no contributions dated 2025 or later as of Oct 19, 2026) and her U.S. Senate campaign (FEC committee C00915041, 846 itemized receipts through the latest report).",
+ "member": { "key": "Nixon", "name": "Angie Nixon", "person": "angela-nixon" },
+ "race": { "en": "U.S. Senate", "es": "Senado de EE. UU.", "ht": "Sena Etazini" },
+ "accounts": {
+  "nixon": { "name": { "en": "Angie Nixon state campaign (2026)", "es": "Campaña estatal de Angie Nixon (2026)", "ht": "Kanpay Leta Angie Nixon (2026)" }, "url": "https://dos.elections.myflorida.com/candidates/CanDetail.asp?account=90009" },
+  "nixonfec": { "name": { "en": "Angie Nixon for U.S. Senate (FEC)", "es": "Angie Nixon para el Senado de EE. UU. (FEC)", "ht": "Angie Nixon pou Sena Etazini (FEC)" }, "url": "https://www.fec.gov/data/committee/C00915041/" }
+ },
+ "requests": [
+  { "fy": 2025, "form": 1666, "docId": 667, "date": "2025-02-11", "title": "Sowing SEEDS (A Workforce Development and Mentoring Program)", "recipient": "AnnieRuth Foundation", "ask": 201320, "cmte": "PreK-12 Budget Subcommittee", "budget": { "status": "in", "amount": 80000, "lines": 1, "vetoed": 80000 } },
+  { "fy": 2025, "form": 1745, "docId": 746, "date": "2025-02-11", "title": "Enhancing Literacy and STEM for Home Schooling Families", "recipient": "Our Homeroom Jax, Inc.", "ask": 50000, "cmte": "PreK-12 Budget Subcommittee", "budget": { "status": "in", "amount": 50000, "lines": 1, "vetoed": 50000 } },
+  { "fy": 2025, "form": 1830, "docId": 830, "date": "2025-02-13", "title": "Youth Diversion Agency (YDA) Intensive Diversion and Workforce Certification Initiative", "recipient": "Youth Diversion Agency of Northeast Florida, Inc.", "ask": 500000, "cmte": "Justice Budget Subcommittee", "budget": { "status": "notIn" } },
+  { "fy": 2025, "form": 2202, "docId": 1200, "date": "2025-02-13", "title": "Legacy College & Postsecondary Prep", "recipient": "The Center One Foundation, Inc", "ask": 300000, "cmte": "PreK-12 Budget Subcommittee", "budget": { "status": "notIn" } },
+  { "fy": 2026, "form": 3803, "docId": 2804, "date": "2025-11-21", "title": "The Center One Foundation - Life After High School Preparation", "recipient": "The Center One Foundation", "ask": 345000, "cmte": "Higher Education Budget Subcommittee", "budget": { "status": "notIn" } },
+  { "fy": 2026, "form": 3804, "docId": 2805, "date": "2025-11-20", "title": "Historic Oneida Bungalow Court", "recipient": "Preservation SOS", "ask": 650000, "cmte": "Transportation & Economic Development Budget Subcommittee", "budget": { "status": "notIn" } }
+ ],
+ "votes": {
+  "HV26-1389-2846": "no", "HV26-1389-2662": "no", "HV26-1175-1568": "yes", "HV26-1137-1586": "yes",
+  "HV25-1730-1392": "yes", "HV25-1730-1285": "nv", "HV25-429-2170": "yes", "HV25-1525-2118": "yes"
+ }
+}
