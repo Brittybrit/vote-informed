@@ -102,8 +102,27 @@ console.log('Cabinet: ' + actions.length + ' actions, ' + actions.reduce((n, a) 
   const S2 = d.bodies.find(b => b.key === 'flsenate');
   S2.actions = S2.actions.filter(a => !(a.kind === 'request' && a.roll.Ingoglia));
   const BUD = { law: 'SB 2500', ch: 'Ch. 2025-198', fy: '2025-26', url: 'https://www.flsenate.gov/Session/Bill/2025/2500/BillText/er/PDF', vetoUrl: 'https://www.flgov.com/eog/sites/default/files/shared/2025/06/2025%20Final%20Veto%20List.pdf' };
+  // Firm rosters from the Legislature's lobbying-firm directories (2025 and 2026): a gift from any lobbyist
+  // at the firm counts as the firm giving (Brit's Oct 15 rule), when the report shows a lobbying, government
+  // relations, consulting or law occupation.
+  const ROSTER = JSON.parse(readFileSync(new URL('lfir/firm-lobbyists.json', DIR)));
+  const LOBOCC = /LOBBY|GOVERNMENT|GOVT|GOV\b|CONSULT|ATTORNEY|LAWYER|LAW FIRM|PUBLIC AFFAIRS|ADVOCA/i;
+  const personKey = n => { const [last, first] = n.split(',').map(x => x.trim()); return [norm(last.replace(/\s+(Jr|Sr|III|II)\.?$/, '')), norm(first.replace(/\(.*?\)/g, '')).split(' ')[0]]; };
+  const rosterGifts = (firmName, forParty, namedLobbyist) => {
+    const people = ROSTER[firmName] || []; const out = [];
+    for (const p of people) {
+      const [last, first] = personKey(p);
+      for (const r of rows) {
+        if (r.to !== 'Ingoglia' || r.amount <= 0 || r.date < '2025-01-01') continue;
+        const w = r.n.split(' ');
+        if (!(w.includes(last) && w.includes(first)) || /\b(INC|LLC|PAC|COMMITTEE|CORP|GROUP)\b/.test(r.n) || !LOBOCC.test(r.occ)) continue;
+        out.push({ to: 'Ingoglia', acct: r.acct, kind: 'firm', rel: 'firmlob', donor: r.donor, amount: Math.round(r.amount * 100) / 100, date: r.date, occ: r.occ, firmName, lobbyist: namedLobbyist, forParty });
+      }
+    }
+    return out;
+  };
   const firmGifts = (firmName, lobbyist, forParty) => {
-    const F = META.firms[firmName]; if (!F) return [];
+    const F = META.firms[firmName] || { match: [], rel: 'firm' };
     const specs = [{ match: F.match, rel: F.rel }, ...(F.also || [])];
     const out = [];
     for (const sp of specs) for (const r of rows) {
@@ -111,7 +130,9 @@ console.log('Cabinet: ' + actions.length + ' actions, ' + actions.reduce((n, a) 
       if (!sp.match.map(norm).some(t => r.n.includes(t))) continue;
       out.push({ to: 'Ingoglia', acct: r.acct, kind: sp.rel === 'named' ? 'lobbyist' : 'firm', rel: sp.rel, ...(sp.rel === 'named' ? { basis: 'occ' } : {}), donor: r.donor, amount: Math.round(r.amount * 100) / 100, date: r.date, occ: r.occ, firmName, lobbyist: sp.lobbyist || lobbyist, forParty });
     }
-    return out;
+    const seen = new Set(out.map(g => g.acct + '|' + g.donor + '|' + g.amount + '|' + g.date));
+    for (const g of rosterGifts(firmName, forParty, lobbyist)) { const k = g.acct + '|' + g.donor + '|' + g.amount + '|' + g.date; if (!seen.has(k)) { seen.add(k); out.push(g); } }
+    return out.sort((a, b) => a.date.localeCompare(b.date));
   };
   for (const f of LF) {
     const [mm, dd, yy] = f.date.split('/');
@@ -123,7 +144,7 @@ console.log('Cabinet: ' + actions.length + ' actions, ' + actions.reduce((n, a) 
       subject: { en: f.title, es: f.title, ht: f.title }, parties: [rec], result: withdrawn ? 'requestedW' : 'requested', ask: f.ask,
       roll: { Ingoglia: 'requested' }, rollComplete: false,
       lobbied: f.lobbyist ? [{ name: f.lobbyist, firm: f.firm || undefined, for: rec, src: 'form' }] : [],
-      gifts: f.firm ? firmGifts(f.firm, f.lobbyist, rec) : [],
+      gifts: f.firm ? firmGifts(f.firm, f.lobbyist, rec).filter(g => g.rel !== 'firmlob' || f.lobbyist) : [],
       links: [{ t: 'record', url: 'https://www.flsenate.gov/PublishedContent/Session/FiscalYear/FY2025-26/LocalFundingInitiativeRequests/FY2025-26_S' + f.form + '.pdf' }],
       cmte: META.cmte[f.form],
       ...(withdrawn ? { note: { en: 'The Senate list marks this request withdrawn (duplicates).', es: 'La lista del Senado marca esta solicitud como retirada (duplicates).', ht: 'Lis Sena a la make demann sa a kòm retire (duplicates).' } } : {}),
