@@ -24,6 +24,9 @@ export function build(decisions, officesHeld) {
   for (const [k, pid] of Object.entries(officesHeld.byBallot)) (byPerson[pid] = byPerson[pid] || []).push(k);
   const people = {}, byBallot = {};
   const add = (pid, entry) => {
+    // A person with actions in two bodies (Ingoglia: Senate requests, then Cabinet votes) keeps the line
+    // with more money behind it; the dossier still shows both bodies' cards.
+    if (people[pid] && (people[pid].total || 0) > (entry.total || 0)) return;
     people[pid] = entry;
     for (const k of byPerson[pid] || []) byBallot[k] = pid;
   };
@@ -123,11 +126,14 @@ export function buildTies(decisions) {
     const ob = B.onBallot[key];
     const accounts = {};
     for (const k of ob.accounts) if (B.accounts[k]) accounts[k] = B.accounts[k];
+    const acts = tiedActions(B, key);
+    const money = f => (f ? f.actions : []).reduce((n, a) => n + a.gifts.reduce((x, g) => x + Number(g.amount), 0), 0);
+    if (files[m.person] && money(files[m.person]) > money({ actions: acts })) continue;   // same choice as build()
     files[m.person] = {
       updated: decisions.updated, cycleStart: CYCLE_START,
       body: { key: B.key, name: B.name, type: B.type || null, level: B.level || null, members: B.members.map(x => ({ key: x.key, name: x.name })),
         onBallot: { [key]: ob }, accounts, registries: B.registries || null },
-      actions: tiedActions(B, key),
+      actions: acts,
     };
   }
   return files;

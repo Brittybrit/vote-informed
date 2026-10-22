@@ -738,28 +738,35 @@
   },
   "blaise-ingoglia": {
    "pid": "blaise-ingoglia",
-   "body": "cabinet",
+   "body": "flsenate",
    "bodyName": {
-    "en": "Cabinet or their own office",
-    "es": "el Gabinete o su propio despacho",
-    "ht": "Kabinè a oswa pwòp biwo yo"
+    "en": "Florida Senate",
+    "es": "Senado de Florida",
+    "ht": "Sena Florid"
    },
    "name": "Blaise Ingoglia",
    "last": "Ingoglia",
-   "kind": "cabinet",
-   "total": 6487.27,
-   "donors": 3,
-   "gifts": 3,
-   "before": 0,
-   "beforeAmt": 0,
-   "accounts": 1,
-   "items": 1,
-   "yes": 1,
-   "no": 0,
-   "away": 0,
-   "acted": 0,
-   "votes": 1,
-   "split": 0
+   "kind": "state",
+   "total": 126483.5,
+   "donors": 14,
+   "gifts": 24,
+   "before": 3,
+   "beforeAmt": 13500,
+   "accounts": 2,
+   "requests": {
+    "n": 16,
+    "ask": 34781200,
+    "funded": 7112252,
+    "money": 96483.5,
+    "donors": 12
+   },
+   "bills": {
+    "bills": 1,
+    "votes": 1,
+    "yes": 1,
+    "money": 30000,
+    "donors": 2
+   }
   },
   "mario-diaz-balart": {
    "pid": "mario-diaz-balart",

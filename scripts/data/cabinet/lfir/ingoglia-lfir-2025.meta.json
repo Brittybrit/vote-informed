@@ -1,0 +1,41 @@
+{
+  "fixRecipient": {
+    "2718": "City of Wildwood", "2724": "Citrus County Board of County Commissioners", "2725": "Hernando County Sheriff's Office Animal Shelter", "2731": "City of Coleman",
+    "2732": "Citrus County Schools", "2864": "LifeStream Behavioral Center, Inc.", "2866": "Pasco-Hernando State College", "2972": "Hernando County Sheriff's Office",
+    "3037": "University of Florida Department of Neurology (requester: Field of Dreams)"
+  },
+  "cmte": {
+    "2318": "Appropriations Subcommittee on Criminal and Civil Justice", "2320": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2321": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2714": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2715": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development", "2716": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2717": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2718": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2719": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2720": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2721": "Appropriations Subcommittee on Health and Human Services", "2722": "Appropriations Subcommittee on Health and Human Services",
+    "2723": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2724": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development", "2725": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2726": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2727": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2728": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2729": "Appropriations Subcommittee on Education", "2730": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development", "2731": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "2732": "Appropriations Subcommittee on Education", "2733": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2734": "Appropriations Subcommittee on Education",
+    "2735": "Appropriations Subcommittee on Agriculture, Environment and General Government", "2864": "Appropriations Subcommittee on Health and Human Services", "2865": "Appropriations Subcommittee on Health and Human Services",
+    "2866": "Appropriations Subcommittee on Education", "2971": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development", "2972": "Appropriations Subcommittee on Criminal and Civil Justice",
+    "2973": "Appropriations Subcommittee on Criminal and Civil Justice", "2974": "Appropriations Subcommittee on Education", "2975": "Appropriations", "2976": "Appropriations Subcommittee on Education", "2977": "Appropriations",
+    "2978": "Appropriations Subcommittee on Health and Human Services", "3037": "Appropriations Subcommittee on Education", "3332": "Appropriations Subcommittee on Agriculture, Environment and General Government",
+    "3333": "Appropriations Subcommittee on Agriculture, Environment and General Government", "3334": "Appropriations Subcommittee on Agriculture, Environment and General Government", "3335": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development",
+    "3336": "Appropriations Subcommittee on Agriculture, Environment and General Government", "3408": "Appropriations Subcommittee on Agriculture, Environment and General Government", "3503": "Appropriations Subcommittee on Health and Human Services",
+    "3504": "Appropriations Subcommittee on Health and Human Services", "3505": "Appropriations Subcommittee on Transportation, Tourism, and Economic Development", "3506": "Appropriations Subcommittee on Agriculture, Environment and General Government"
+  },
+  "withdrawn": ["3336"],
+  "budget": {
+    "2318": 200000, "2320": 66500, "2321": 3500000, "2717": 562252, "2722": 296120, "2723": 5000000, "2724": 2894141, "2725": 1000000, "2728": 2000000, "2730": 81000,
+    "2731": 350000, "2732": 1046090, "2734": 120000, "2864": 1000000, "2971": 500000, "2973": 350000, "2974": 250000, "2975": 641841, "2976": 850000, "2977": 967168,
+    "3037": 5000000, "3332": 350000, "3335": 1500000, "3503": 250000, "3504": 150000
+  },
+  "lines": { "3504": 2 },
+  "vetoed": { "2973": 350000, "3503": 250000, "3504": 50000 },
+  "firms": {
+    "The Southern Group": { "match": ["SOUTHERN GROUP OF FLORIDA POLITICAL COMMITTEE"], "rel": "firmpac", "also": [{ "match": ["THE SOUTHERN GROUP OF FLORIDA"], "rel": "firm" }] },
+    "Capitol Solutions LLC": { "match": ["CAPITOL SOLUTIONS"], "rel": "firm" },
+    "Shumaker Advisors Florida, LLC": { "match": ["SHUMAKER FLORIDA POLITICAL COMMITTEE"], "rel": "firmpac", "also": [{ "match": ["SHUMAKER ADVISORS"], "rel": "firm" }] },
+    "Rubin, Turnbull & Associates": { "match": ["RUBIN TURNBULL"], "rel": "firm", "also": [{ "match": ["TURNBULL HEATHER"], "rel": "named", "lobbyist": "Heather L. Turnbull" }] },
+    "GrayRobinson PA": { "match": ["GRAYROBINSON PA FLORIDA POLITICAL ACTION COMMITTEE", "GRAYROBINSON EMPLOYEES FOR A BETTER FLORIDA"], "rel": "firmpac", "also": [{ "match": ["GRAYROBINSON P A"], "rel": "firm" }] },
+    "RSA Consulting Group LLC": { "match": ["RSA CONSULTING GROUP"], "rel": "firm" },
+    "Capital City Consulting LLC": { "match": ["CAPITAL CITY CONSULTING MIAMI"], "rel": "firm" }
+  }
+}

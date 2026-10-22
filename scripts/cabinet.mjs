@@ -94,3 +94,44 @@ for (const a of S.actions) {
 
 writeFileSync(FILE, JSON.stringify(d, null, 1) + '\n');
 console.log('Cabinet: ' + actions.length + ' actions, ' + actions.reduce((n, a) => n + a.gifts.length, 0) + ' gift rows; Ingoglia Senate votes added');
+
+// --- Ingoglia's FY2025-26 Local Funding Initiative Requests (47 forms, flsenate.gov) ------------
+{
+  const LF = JSON.parse(readFileSync(new URL('lfir/ingoglia-lfir-2025.json', DIR)));
+  const META = JSON.parse(readFileSync(new URL('lfir/ingoglia-lfir-2025.meta.json', DIR)));
+  const S2 = d.bodies.find(b => b.key === 'flsenate');
+  S2.actions = S2.actions.filter(a => !(a.kind === 'request' && a.roll.Ingoglia));
+  const BUD = { law: 'SB 2500', ch: 'Ch. 2025-198', fy: '2025-26', url: 'https://www.flsenate.gov/Session/Bill/2025/2500/BillText/er/PDF', vetoUrl: 'https://www.flgov.com/eog/sites/default/files/shared/2025/06/2025%20Final%20Veto%20List.pdf' };
+  const firmGifts = (firmName, lobbyist, forParty) => {
+    const F = META.firms[firmName]; if (!F) return [];
+    const specs = [{ match: F.match, rel: F.rel }, ...(F.also || [])];
+    const out = [];
+    for (const sp of specs) for (const r of rows) {
+      if (r.to !== 'Ingoglia' || r.amount <= 0 || r.date < '2025-01-01') continue;
+      if (!sp.match.map(norm).some(t => r.n.includes(t))) continue;
+      out.push({ to: 'Ingoglia', acct: r.acct, kind: sp.rel === 'named' ? 'lobbyist' : 'firm', rel: sp.rel, ...(sp.rel === 'named' ? { basis: 'occ' } : {}), donor: r.donor, amount: Math.round(r.amount * 100) / 100, date: r.date, occ: r.occ, firmName, lobbyist: sp.lobbyist || lobbyist, forParty });
+    }
+    return out;
+  };
+  for (const f of LF) {
+    const [mm, dd, yy] = f.date.split('/');
+    const rec = META.fixRecipient[f.form] || f.recipient;
+    const withdrawn = META.withdrawn.includes(f.form);
+    const inB = META.budget[f.form];
+    const card = {
+      id: 'S25-' + f.form, date: `${yy}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`, ref: 'LFIR ' + f.form + ' · FY 2025-26', kind: 'request',
+      subject: { en: f.title, es: f.title, ht: f.title }, parties: [rec], result: withdrawn ? 'requestedW' : 'requested', ask: f.ask,
+      roll: { Ingoglia: 'requested' }, rollComplete: false,
+      lobbied: f.lobbyist ? [{ name: f.lobbyist, firm: f.firm || undefined, for: rec, src: 'form' }] : [],
+      gifts: f.firm ? firmGifts(f.firm, f.lobbyist, rec) : [],
+      links: [{ t: 'record', url: 'https://www.flsenate.gov/PublishedContent/Session/FiscalYear/FY2025-26/LocalFundingInitiativeRequests/FY2025-26_S' + f.form + '.pdf' }],
+      cmte: META.cmte[f.form],
+      ...(withdrawn ? { note: { en: 'The Senate list marks this request withdrawn (duplicates).', es: 'La lista del Senado marca esta solicitud como retirada (duplicates).', ht: 'Lis Sena a la make demann sa a kòm retire (duplicates).' } } : {}),
+      budget: { ...BUD, ref: 'SF ' + f.form, status: inB ? 'in' : 'notIn', ...(inB ? { amount: inB, lines: META.lines[f.form] || 1 } : {}), ...(META.vetoed[f.form] ? { vetoed: META.vetoed[f.form] } : {}) },
+    };
+    const at = S2.actions.findIndex(x => x.date < card.date);
+    S2.actions.splice(at < 0 ? S2.actions.length : at, 0, card);
+  }
+  writeFileSync(FILE, JSON.stringify(d, null, 1) + '\n');
+  console.log('Ingoglia LFIRs: ' + LF.length + ' requests, ' + LF.filter(f => META.budget[f.form]).length + ' in budget');
+}
