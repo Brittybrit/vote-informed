@@ -51,7 +51,7 @@ export function build(decisions, officesHeld) {
       const byAcct = {};
       for (const g of all) byAcct[g.acct] = (byAcct[g.acct] || 0) + g.amount;
       const e = {
-        pid: m.person, body: B.key, bodyName: B.name, name: m.name, last: key, kind: state ? (B.level === 'federal' ? 'federal' : 'state') : 'votes',
+        pid: m.person, body: B.key, bodyName: B.cabinet ? { en: 'Cabinet or their own office', es: 'el Gabinete o su propio despacho', ht: 'Kabinè a oswa pwòp biwo yo' } : B.name, name: m.name, last: key, kind: state ? (B.level === 'federal' ? 'federal' : 'state') : B.cabinet ? 'cabinet' : 'votes',
         total: sum(all), donors: new Set(all.map(g => g.donor)).size, gifts: all.length,
         before: before.length, beforeAmt: sum(before),
         accounts: Object.keys(byAcct).filter(a => byAcct[a] > 0).length,
@@ -80,9 +80,10 @@ export function build(decisions, officesHeld) {
           money: sum(billOnly), donors: new Set(billOnly.map(g => g.donor)).size,
         };
       } else {
-        const v = { yes: 0, no: 0, away: 0 };
-        for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else v.away++; }
+        const v = { yes: 0, no: 0, away: 0, acted: 0 };
+        for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else if (x === 'acted') v.acted++; else v.away++; }
         e.items = tied.length; e.yes = v.yes; e.no = v.no; e.away = v.away;
+        if (B.cabinet) { e.acted = v.acted; e.votes = tied.length - v.acted; }
         e.split = tied.filter(([a]) => a.tally && a.tally[1] > 0).length;
       }
       add(m.person, e);

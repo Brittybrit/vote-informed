@@ -21,6 +21,12 @@
         else { if(p.no) s += ', no on ' + p.no; if(p.away) s += ', and was absent for ' + p.away; }
         return s + '.';
       },
+      cabinet: function(p){
+        var parts = [];
+        if(p.votes) parts.push((p.yes === p.votes ? (p.votes === 1 ? 'the one Cabinet vote' : 'all ' + p.votes + ' Cabinet votes') : p.yes + ' of ' + p.votes + ' Cabinet votes') + ' where a donor was the party');
+        if(p.acted) parts.push(p.acted + ' action' + (p.acted === 1 ? '' : 's') + ' of the office that named a donor or a kind of business that gave');
+        return esc(p.last) + ' voted yes on ' + parts.join(', and took ') + '.';
+      },
       split: function(p){ return p.items === 1 ? 'It was a split vote.' : p.split === 1 ? 'One was a split vote.' : p.split + ' were split votes.'; },
       req: function(p, R){ return esc(p.name) + ' filed ' + R.n + ' budget request' + (R.n === 1 ? '' : 's') + ' worth ' + big(R.ask, 'en') + ' where the lobbying firm or the group getting the money gave ' + usd(R.money) + '. ' + (R.funded ? big(R.funded, 'en') + ' of that made the final budget after vetoes.' : 'None of it made the final budget.'); },
       bills: function(p, Bl, first){
@@ -49,6 +55,12 @@
         if(p.items === 1 && !p.yes) s = esc(p.last) + (p.no ? ' votó en contra del único asunto' : ' estuvo ausente en el único asunto');
         else { if(p.no) s += ', en contra de ' + p.no; if(p.away) s += ' y estuvo ausente en ' + p.away; }
         return s + '.';
+      },
+      cabinet: function(p){
+        var parts = [];
+        if(p.votes) parts.push((p.yes === p.votes ? (p.votes === 1 ? 'el único voto del Gabinete' : 'los ' + p.votes + ' votos del Gabinete') : p.yes + ' de los ' + p.votes + ' votos del Gabinete') + ' en que un donante era la parte');
+        if(p.acted) parts.push(p.acted + ' acci' + (p.acted === 1 ? 'ón' : 'ones') + ' del cargo que nombra a un donante o a un tipo de negocio que donó');
+        return esc(p.last) + ' votó a favor de ' + parts.join(', y tomó ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'Fue una votación dividida.' : p.split === 1 ? 'Una fue una votación dividida.' : p.split + ' fueron votaciones divididas.'; },
       req: function(p, R){ return esc(p.name) + ' presentó ' + R.n + ' solicitud' + (R.n === 1 ? '' : 'es') + ' de presupuesto por ' + big(R.ask, 'es') + ' en las que la firma de cabildeo o el grupo que recibiría el dinero donó ' + usd(R.money) + '. ' + (R.funded ? big(R.funded, 'es') + ' de eso quedó en el presupuesto final después de los vetos.' : 'Nada de eso quedó en el presupuesto final.'); },
@@ -79,6 +91,12 @@
         if(p.items === 1 && !p.yes) s = esc(p.last) + (p.no ? ' vote non sou sèl dosye a' : ' te absan pou sèl dosye a');
         else { if(p.no) s += ', non sou ' + p.no; if(p.away) s += ' epi li te absan pou ' + p.away; }
         return s + '.';
+      },
+      cabinet: function(p){
+        var parts = [];
+        if(p.votes) parts.push((p.yes === p.votes ? (p.votes === 1 ? 'sèl vòt Kabinè a' : 'tout ' + p.votes + ' vòt Kabinè yo') : p.yes + ' sou ' + p.votes + ' vòt Kabinè') + ' kote yon donatè te pati a');
+        if(p.acted) parts.push(p.acted + ' aksyon pòs la ki nonmen yon donatè oswa yon kalite biznis ki te bay');
+        return esc(p.last) + ' te vote wi sou ' + parts.join(', epi li te pran ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'Se te yon vòt divize.' : p.split === 1 ? 'Youn se te yon vòt divize.' : p.split + ' ladan yo se te vòt divize.'; },
       req: function(p, R){ return esc(p.name) + ' depoze ' + R.n + ' demann bidjè pou ' + big(R.ask, 'ht') + ' kote fèm lobiyis la oswa gwoup ki t ap resevwa lajan an te bay ' + usd(R.money) + '. ' + (R.funded ? big(R.funded, 'ht') + ' ladan l te rive nan bidjè final la apre veto yo.' : 'Anyen ladan l pa t rive nan bidjè final la.'); },
@@ -119,7 +137,7 @@
       out.push(w.total(p), timing);
       return out.join(' ');
     }
-    out.push(w.took(p, b), w.voted(p));
+    out.push(w.took(p, b), p.kind === 'cabinet' ? w.cabinet(p) : w.voted(p));
     if(p.split) out.push(w.split(p));
     out.push(timing);
     return out.join(' ');

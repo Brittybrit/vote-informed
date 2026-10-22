@@ -17,7 +17,7 @@
       'res.adopted': 'Adopted', 'res.approved': 'Approved', 'res.approvedCond': 'Approved with conditions', 'res.denied': 'Denied', 'res.firstReading': 'Passed on first reading',
       party: 'Company or group named in the item: {p}', parties: 'Companies or groups named in the item: {p}',
       unan: 'unanimous', tally: '{y}-{n}',
-      'v.yes': 'Yes', 'v.no': 'No', 'v.absent': 'Absent', 'v.excused': 'Excused', 'v.vacant': 'Not yet seated',
+      'v.acted': 'took this action', 'kind.settlement': 'Settlement', 'kind.lawsuit': 'Lawsuit filed', 'kind.subpoena': 'Subpoena', 'kind.enforcement': 'Enforcement action', 'meeting.cabinet': 'Governor and Cabinet meeting', 'res.settled': 'Settled', 'res.filed': 'Filed', 'res.issued': 'Issued', 'noGiftC': 'No gift from the party or the donors described in the note was found in {accts}.', 'v.yes': 'Yes', 'v.no': 'No', 'v.absent': 'Absent', 'v.excused': 'Excused', 'v.vacant': 'Not yet seated',
       votedBy: '{name}: {v}', allVotes: 'How all 13 members voted', grayNote: 'Gray: not on the November 3 ballot, donors not checked.',
       moved: 'Motion by {m}, seconded by {s}.',
       lobbied: 'Registered with the county to lobby for the company', lobFor: 'for {p}', lobReg: 'registered {date}', lobMore: 'Show all {n} lobbyists',
@@ -71,7 +71,7 @@
       'res.adopted': 'Adoptada', 'res.approved': 'Aprobada', 'res.approvedCond': 'Aprobada con condiciones', 'res.denied': 'Negada', 'res.firstReading': 'Aprobada en primera lectura',
       party: 'Empresa o grupo nombrado en el asunto: {p}', parties: 'Empresas o grupos nombrados en el asunto: {p}',
       unan: 'por unanimidad', tally: '{y}-{n}',
-      'v.yes': 'Sí', 'v.no': 'No', 'v.absent': 'Ausente', 'v.excused': 'Excusado', 'v.vacant': 'Aún no tomaba posesión',
+      'v.acted': 'tomó esta acción', 'kind.settlement': 'Acuerdo', 'kind.lawsuit': 'Demanda presentada', 'kind.subpoena': 'Citación', 'kind.enforcement': 'Acción de cumplimiento', 'meeting.cabinet': 'Reunión del Gobernador y el Gabinete', 'res.settled': 'Resuelto', 'res.filed': 'Presentada', 'res.issued': 'Emitida', 'noGiftC': 'No se encontró ninguna donación de la parte ni de los donantes descritos en la nota en {accts}.', 'v.yes': 'Sí', 'v.no': 'No', 'v.absent': 'Ausente', 'v.excused': 'Excusado', 'v.vacant': 'Aún no tomaba posesión',
       votedBy: '{name}: {v}', allVotes: 'Cómo votaron los 13 miembros', grayNote: 'En gris: no están en la boleta del 3 de noviembre, donantes no revisados.',
       moved: 'Moción de {m}, secundada por {s}.',
       lobbied: 'Registrados ante el condado como cabilderos de la empresa', lobFor: 'por {p}', lobReg: 'registrado {date}', lobMore: 'Ver los {n} cabilderos',
@@ -125,7 +125,7 @@
       'res.adopted': 'Adopte', 'res.approved': 'Apwouve', 'res.approvedCond': 'Apwouve ak kondisyon', 'res.denied': 'Refize', 'res.firstReading': 'Pase nan premye lekti',
       party: 'Konpayi oswa gwoup ki nonmen nan dosye a: {p}', parties: 'Konpayi oswa gwoup ki nonmen nan dosye a: {p}',
       unan: 'alinanimite', tally: '{y}-{n}',
-      'v.yes': 'Wi', 'v.no': 'Non', 'v.absent': 'Absan', 'v.excused': 'Eskize', 'v.vacant': 'Poko te chita',
+      'v.acted': 'te pran aksyon sa a', 'kind.settlement': 'Akò', 'kind.lawsuit': 'Pwosè depoze', 'kind.subpoena': 'Sitasyon', 'kind.enforcement': 'Aksyon aplikasyon', 'meeting.cabinet': 'Reyinyon Gouvènè ak Kabinè', 'res.settled': 'Regle', 'res.filed': 'Depoze', 'res.issued': 'Emèt', 'noGiftC': 'Nou pa jwenn okenn kado nan men pati a oswa donatè nòt la dekri yo nan {accts}.', 'v.yes': 'Wi', 'v.no': 'Non', 'v.absent': 'Absan', 'v.excused': 'Eskize', 'v.vacant': 'Poko te chita',
       votedBy: '{name}: {v}', allVotes: 'Kijan 13 manm yo te vote', grayNote: 'An gri: pa sou bilten vòt 3 novanm lan, nou pa verifye donatè yo.',
       moved: 'Mosyon {m}, apiye pa {s}.',
       lobbied: 'Anrejistre nan konte a kòm lobiyis pou konpayi a', lobFor: 'pou {p}', lobReg: 'anrejistre {date}', lobMore: 'Montre tout {n} lobiyis yo',
@@ -276,12 +276,13 @@
     // Voters read a ballot, so the decisions page groups people by the race they are on the ballot for,
     // not by the body they serve on now. raceGroup maps a body + race to the election it belongs to;
     // a body's own election (a city's council race, say) is its home group.
-    var HOME = {ushouse: 'us-house', ussenate: 'us-senate', flhouse: 'fl-house', flsenate: 'fl-senate', county: 'county'};
-    var RACES = [[/^U\.S\. Senate/, 'us-senate'], [/^U\.S\. House/, 'us-house'], [/^Governor/, 'governor'], [/^State Senate/, 'fl-senate'], [/^State House/, 'fl-house'], [/^County Commission/, 'county']];
+    var HOME = {ushouse: 'us-house', ussenate: 'us-senate', flhouse: 'fl-house', flsenate: 'fl-senate', county: 'county', cabinet: 'cabinet'};
+    var RACES = [[/^U\.S\. Senate/, 'us-senate'], [/^U\.S\. House/, 'us-house'], [/^Governor/, 'governor'], [/^(Attorney General|Chief Financial Officer|Commissioner of Agriculture)/, 'cabinet'], [/^State Senate/, 'fl-senate'], [/^State House/, 'fl-house'], [/^County Commission/, 'county']];
     var GROUP = {
       'us-senate': {order: 1, name: {en: 'U.S. Senate', es: 'Senado de EE. UU.', ht: 'Sena Etazini'}},
       'us-house': {order: 2, name: {en: 'U.S. House', es: 'Cámara de EE. UU.', ht: 'Chanm Etazini'}},
       'governor': {order: 3, name: {en: 'Governor', es: 'Gobernador', ht: 'Gouvènè'}},
+      'cabinet': {order: 3.5, name: {en: 'Florida Cabinet', es: 'Gabinete de Florida', ht: 'Kabinè Florid'}},
       'fl-senate': {order: 4, name: {en: 'State Senate', es: 'Senado estatal', ht: 'Sena Leta'}},
       'fl-house': {order: 5, name: {en: 'State House', es: 'Cámara estatal', ht: 'Chanm Leta'}},
       'county': {order: 6, name: {en: 'County Commission', es: 'Comisión del Condado', ht: 'Komisyon Konte'}}

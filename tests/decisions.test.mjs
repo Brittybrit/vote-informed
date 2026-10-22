@@ -43,12 +43,12 @@ test('every body and action is well formed', () => {
       else { for (const l of LANGS) assert.ok(a.subject[l], id + ' subject ' + l); assert.ok(en.has('kind.' + a.kind), id + ' kind ' + a.kind); if (a.kind !== 'bill') assert.ok(a.parties.length, id + ' party'); }
       assert.ok(en.has('res.' + a.result), id + ' result ' + a.result);
       assert.match(a.date, /^\d{4}-\d{2}-\d{2}$/);
-      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].concat(B.type === 'requests' ? ['requested', 'nv', 'abstain'] : []).includes(v), id + ' vote ' + v);
+      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].concat(B.type === 'requests' ? ['requested', 'nv', 'abstain'] : []).concat(B.cabinet ? ['acted'] : []).includes(v), id + ' vote ' + v);
       if (a.rollComplete && a.tally) {
         const vals = Object.values(a.roll);
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
       }
-      if (a.rollComplete && B.key !== 'county') assert.ok(a.tally, id + ' complete roll needs a tally');
+      if (a.rollComplete && B.key !== 'county' && !a.agency) assert.ok(a.tally, id + ' complete roll needs a tally');
       for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr'].includes(l.t), id + ' link type'); }
       for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
@@ -206,7 +206,8 @@ test('the decisions page groups candidates by the race on the ballot, not the bo
   assert.ok(who('us-house').includes('county:Gilbert') && !who('us-house').includes('ushouse:Donalds'));
   assert.ok(who('fl-senate').includes('flhouse:Gantt'));
   assert.deepEqual(who('county'), ['county:Lopez']);
-  assert.deepEqual(JSON.parse(JSON.stringify(G.slice(0, 6).map(g => g.key))), ['us-senate', 'us-house', 'governor', 'fl-senate', 'fl-house', 'county']);
+  assert.deepEqual(JSON.parse(JSON.stringify(G.slice(0, 7).map(g => g.key))), ['us-senate', 'us-house', 'governor', 'cabinet', 'fl-senate', 'fl-house', 'county']);
+  assert.deepEqual(who('cabinet'), ['cabinet:Ingoglia', 'cabinet:Simpson', 'cabinet:Uthmeier', 'flsenate:Ingoglia']);
   for (const g of G) for (const c of g.cards) for (const x of c.a.gifts) assert.ok(c.B.onBallot[x.to], g.key + ' gift to someone not in this race');
   // Nixon's requests show only in her race, not under the State House candidates
   assert.ok(!by['fl-house'].cards.some(c => c.a.roll.Nixon === 'requested'));
