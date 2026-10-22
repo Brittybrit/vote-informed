@@ -23113,29 +23113,6 @@
      "namedLobbyist": "",
      "gifts": [
       {
-       "to": "Lago",
-       "acct": "lago",
-       "kind": "lobbyist",
-       "donor": "LES PANTIN",
-       "amount": 1000,
-       "date": "2026-09-24",
-       "occ": "LOBBYIST",
-       "lobbyist": "Leslie E Pantin",
-       "forParty": "John Bell Construction, Inc.",
-       "basis": "occ"
-      },
-      {
-       "to": "Lago",
-       "acct": "lago",
-       "kind": "firm",
-       "donor": "PANTIN GOV LLC",
-       "amount": 1000,
-       "date": "2026-09-24",
-       "occ": "GOVT RELATIONS CNSLTG",
-       "lobbyist": "Leslie E Pantin",
-       "forParty": "John Bell Construction, Inc."
-      },
-      {
        "to": "Menendez",
        "acct": "menendez",
        "kind": "firm",
@@ -23157,6 +23134,29 @@
        "lobbyist": "Leslie E Pantin",
        "forParty": "John Bell Construction, Inc.",
        "basis": "occ"
+      },
+      {
+       "to": "Lago",
+       "acct": "lago",
+       "kind": "lobbyist",
+       "donor": "LES PANTIN",
+       "amount": 1000,
+       "date": "2026-09-24",
+       "occ": "LOBBYIST",
+       "lobbyist": "Leslie E Pantin",
+       "forParty": "John Bell Construction, Inc.",
+       "basis": "occ"
+      },
+      {
+       "to": "Lago",
+       "acct": "lago",
+       "kind": "firm",
+       "donor": "PANTIN GOV LLC",
+       "amount": 1000,
+       "date": "2026-09-24",
+       "occ": "GOVT RELATIONS CNSLTG",
+       "lobbyist": "Leslie E Pantin",
+       "forParty": "John Bell Construction, Inc."
       }
      ],
      "giftNotes": {},
@@ -23540,6 +23540,114 @@
       {
        "to": "Porras",
        "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Joseph Goldstein",
+       "amount": 1000,
+       "date": "2026-05-20",
+       "occ": "Attorney",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Joseph G. Goldstein, listed at Holland & Knight in the Coral Gables lobbyist registry; the report lists the occupation as “Attorney”",
+        "es": "Joseph G. Goldstein, listado en Holland & Knight en el registro de cabilderos de Coral Gables; el reporte indica la ocupación “Attorney”",
+        "ht": "Joseph G. Goldstein, nan lis Holland & Knight nan rejis lobiyis Coral Gables; rapò a di okipasyon an se “Attorney”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Miriam Soler Ramos",
+       "amount": 250,
+       "date": "2026-05-27",
+       "occ": "Lawyer",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Miriam Soler Ramos, listed at Holland & Knight in the Coral Gables lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Miriam Soler Ramos, listado en Holland & Knight en el registro de cabilderos de Coral Gables; el reporte indica la ocupación “Lawyer”",
+        "ht": "Miriam Soler Ramos, nan lis Holland & Knight nan rejis lobiyis Coral Gables; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Alan Krischer",
+       "amount": 100,
+       "date": "2026-05-28",
+       "occ": "Attorney",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Alan S. Krischer, listed at Holland & Knight in the Doral lobbyist registry; the report lists the occupation as “Attorney”",
+        "es": "Alan S. Krischer, listado en Holland & Knight en el registro de cabilderos de Doral; el reporte indica la ocupación “Attorney”",
+        "ht": "Alan S. Krischer, nan lis Holland & Knight nan rejis lobiyis Doral; rapò a di okipasyon an se “Attorney”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight in the county lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight en el registro de cabilderos de el condado; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight nan rejis lobiyis konte a; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Alejandro Arias",
+       "amount": 500,
+       "date": "2026-05-29",
+       "occ": "Lawyer",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Alejandro Arias, listed at Holland & Knight in the county lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Alejandro Arias, listado en Holland & Knight en el registro de cabilderos de el condado; el reporte indica la ocupación “Lawyer”",
+        "ht": "Alejandro Arias, nan lis Holland & Knight nan rejis lobiyis konte a; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Hugo Arza",
+       "amount": 1000,
+       "date": "2026-05-29",
+       "occ": "Lawyer",
+       "lobbyist": "Juan J. Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Hugo P. Arza, listed at Holland & Knight in the Doral lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Hugo P. Arza, listado en Holland & Knight en el registro de cabilderos de Doral; el reporte indica la ocupación “Lawyer”",
+        "ht": "Hugo P. Arza, nan lis Holland & Knight nan rejis lobiyis Doral; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
        "kind": "lobbyist",
        "donor": "James Williams",
        "amount": 1000,
@@ -23892,7 +24000,26 @@
       }
      ],
      "namedLobbyist": "",
-     "gifts": [],
+     "gifts": [
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "James Williams",
+       "amount": 1000,
+       "date": "2026-09-02",
+       "occ": "Lawyer",
+       "lobbyist": "Mario Garcia-Serra",
+       "forParty": "Publix Super Markets, Inc.",
+       "firmName": "Gunster, Yoakley & Stewart, P.A.",
+       "why": {
+        "en": "James Williams, listed at Gunster in the county lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "James Williams, listado en Gunster en el registro de cabilderos de el condado; el reporte indica la ocupación “Lawyer”",
+        "ht": "James Williams, nan lis Gunster nan rejis lobiyis konte a; rapò a di okipasyon an se “Lawyer”"
+       }
+      }
+     ],
      "giftNotes": {},
      "firstReading": null,
      "links": [
@@ -23950,7 +24077,26 @@
       }
      ],
      "namedLobbyist": "",
-     "gifts": [],
+     "gifts": [
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "James Williams",
+       "amount": 1000,
+       "date": "2026-09-02",
+       "occ": "Lawyer",
+       "lobbyist": "Mario Garcia-Serra",
+       "forParty": "Publix Super Markets, Inc.",
+       "firmName": "Gunster, Yoakley & Stewart, P.A.",
+       "why": {
+        "en": "James Williams, listed at Gunster in the county lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "James Williams, listado en Gunster en el registro de cabilderos de el condado; el reporte indica la ocupación “Lawyer”",
+        "ht": "James Williams, nan lis Gunster nan rejis lobiyis konte a; rapò a di okipasyon an se “Lawyer”"
+       }
+      }
+     ],
      "giftNotes": {},
      "firstReading": null,
      "links": [
@@ -24208,6 +24354,24 @@
       {
        "to": "Porras",
        "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Joseph Goldstein",
+       "amount": 1000,
+       "date": "2026-05-20",
+       "occ": "Attorney",
+       "lobbyist": "Alejandro J. Arias",
+       "forParty": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Joseph G. Goldstein, listed at Holland & Knight in the Coral Gables lobbyist registry; the report lists the occupation as “Attorney”",
+        "es": "Joseph G. Goldstein, listado en Holland & Knight en el registro de cabilderos de Coral Gables; el reporte indica la ocupación “Attorney”",
+        "ht": "Joseph G. Goldstein, nan lis Holland & Knight nan rejis lobiyis Coral Gables; rapò a di okipasyon an se “Attorney”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
        "kind": "lobbyist",
        "donor": "Miriam Soler Ramos",
        "amount": 250,
@@ -24220,6 +24384,42 @@
       {
        "to": "Porras",
        "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Alan Krischer",
+       "amount": 100,
+       "date": "2026-05-28",
+       "occ": "Attorney",
+       "lobbyist": "Alejandro J. Arias",
+       "forParty": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Alan S. Krischer, listed at Holland & Knight in the Doral lobbyist registry; the report lists the occupation as “Attorney”",
+        "es": "Alan S. Krischer, listado en Holland & Knight en el registro de cabilderos de Doral; el reporte indica la ocupación “Attorney”",
+        "ht": "Alan S. Krischer, nan lis Holland & Knight nan rejis lobiyis Doral; rapò a di okipasyon an se “Attorney”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Alejandro J. Arias",
+       "forParty": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight in the county lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight en el registro de cabilderos de el condado; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight nan rejis lobiyis konte a; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
        "kind": "lobbyist",
        "donor": "Alejandro Arias",
        "amount": 500,
@@ -24228,6 +24428,24 @@
        "lobbyist": "Alejandro J. Arias",
        "forParty": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
        "basis": "occ"
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Hugo Arza",
+       "amount": 1000,
+       "date": "2026-05-29",
+       "occ": "Lawyer",
+       "lobbyist": "Alejandro J. Arias",
+       "forParty": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+       "firmName": "Holland & Knight",
+       "why": {
+        "en": "Hugo P. Arza, listed at Holland & Knight in the Doral lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Hugo P. Arza, listado en Holland & Knight en el registro de cabilderos de Doral; el reporte indica la ocupación “Lawyer”",
+        "ht": "Hugo P. Arza, nan lis Holland & Knight nan rejis lobiyis Doral; rapò a di okipasyon an se “Lawyer”"
+       }
       }
      ],
      "giftNotes": {},
@@ -24715,6 +24933,18 @@
        "donor": "Brian Adler",
        "amount": 500,
        "date": "2026-03-20"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "firm",
+       "rel": "firm",
+       "donor": "Bercow Radell",
+       "amount": 1000,
+       "date": "2026-05-21",
+       "lobbyist": "Jeffrey Bercow",
+       "forParty": "Aventura 2999, LLC",
+       "firmName": "Bercow Radell Fernandez Larkin & Tapanes"
       }
      ],
      "giftNotes": {
@@ -24977,6 +25207,18 @@
        "donor": "Brian Adler",
        "amount": 500,
        "date": "2026-03-20"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "firm",
+       "rel": "firm",
+       "donor": "Bercow Radell",
+       "amount": 1000,
+       "date": "2026-05-21",
+       "lobbyist": "Jeffrey Bercow",
+       "forParty": "Aventura 2999, LLC",
+       "firmName": "Bercow Radell Fernandez Larkin & Tapanes"
       }
      ],
      "giftNotes": {
@@ -25044,14 +25286,6 @@
        "to": "Weinberg",
        "acct": "weinberg",
        "kind": "listed",
-       "donor": "Medical Offices at Uptown Aventura",
-       "amount": 1000,
-       "date": "2026-08-25"
-      },
-      {
-       "to": "Weinberg",
-       "acct": "weinberg",
-       "kind": "listed",
        "donor": "Bilzin Sumberg",
        "amount": 1000,
        "date": "2026-03-20"
@@ -25063,6 +25297,14 @@
        "donor": "Brian Adler",
        "amount": 500,
        "date": "2026-03-20"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "listed",
+       "donor": "Medical Offices at Uptown Aventura",
+       "amount": 1000,
+       "date": "2026-08-25"
       }
      ],
      "giftNotes": {
@@ -25383,14 +25625,6 @@
        "to": "Weinberg",
        "acct": "weinberg",
        "kind": "listed",
-       "donor": "Gulfstream Park",
-       "amount": 1000,
-       "date": "2026-10-02"
-      },
-      {
-       "to": "Weinberg",
-       "acct": "weinberg",
-       "kind": "listed",
        "donor": "Bercow Radell",
        "amount": 1000,
        "date": "2026-05-21"
@@ -25402,6 +25636,14 @@
        "donor": "Jeff Bercow",
        "amount": 1000,
        "date": "2026-05-21"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "listed",
+       "donor": "Gulfstream Park",
+       "amount": 1000,
+       "date": "2026-10-02"
       }
      ],
      "giftNotes": {
@@ -25482,14 +25724,6 @@
        "to": "Weinberg",
        "acct": "weinberg",
        "kind": "listed",
-       "donor": "Gulfstream Park",
-       "amount": 1000,
-       "date": "2026-10-02"
-      },
-      {
-       "to": "Weinberg",
-       "acct": "weinberg",
-       "kind": "listed",
        "donor": "Bercow Radell",
        "amount": 1000,
        "date": "2026-05-21"
@@ -25501,6 +25735,14 @@
        "donor": "Jeff Bercow",
        "amount": 1000,
        "date": "2026-05-21"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "listed",
+       "donor": "Gulfstream Park",
+       "amount": 1000,
+       "date": "2026-10-02"
       }
      ],
      "giftNotes": {
@@ -25667,14 +25909,6 @@
        "to": "Weinberg",
        "acct": "weinberg",
        "kind": "listed",
-       "donor": "Gulfstream Park",
-       "amount": 1000,
-       "date": "2026-10-02"
-      },
-      {
-       "to": "Weinberg",
-       "acct": "weinberg",
-       "kind": "listed",
        "donor": "Bercow Radell",
        "amount": 1000,
        "date": "2026-05-21"
@@ -25686,6 +25920,14 @@
        "donor": "Jeff Bercow",
        "amount": 1000,
        "date": "2026-05-21"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "listed",
+       "donor": "Gulfstream Park",
+       "amount": 1000,
+       "date": "2026-10-02"
       }
      ],
      "giftNotes": {
@@ -26265,6 +26507,23 @@
        "donor": "Bilzin Sumberg",
        "amount": 1000,
        "date": "2026-03-20"
+      },
+      {
+       "to": "Weinberg",
+       "acct": "weinberg",
+       "kind": "firm",
+       "rel": "firmlob",
+       "donor": "Brian Adler",
+       "amount": 500,
+       "date": "2026-03-20",
+       "lobbyist": "Lauren Kahn",
+       "forParty": "Aventura Corporate Center, LLLP",
+       "firmName": "Bilzin Sumberg",
+       "why": {
+        "en": "Brian Adler, listed at Bilzin Sumberg in the county lobbyist registry; name match only, the report gives no occupation or address",
+        "es": "Brian Adler, listado en Bilzin Sumberg en el registro de cabilderos de el condado; coincidencia solo por nombre, el reporte no indica ocupación ni dirección",
+        "ht": "Brian Adler, nan lis Bilzin Sumberg nan rejis lobiyis konte a; koresponn sou non sèlman, rapò a pa bay okipasyon ni adrès"
+       }
       }
      ],
      "giftNotes": {
@@ -26700,6 +26959,22 @@
        "to": "Smith",
        "acct": "smith",
        "kind": "listed",
+       "donor": "Templer and Hirsch",
+       "amount": 1000,
+       "date": "2026-07-24"
+      },
+      {
+       "to": "Chernoff",
+       "acct": "chernoff",
+       "kind": "listed",
+       "donor": "Templer & Hirsch",
+       "amount": 500,
+       "date": "2026-08-17"
+      },
+      {
+       "to": "Smith",
+       "acct": "smith",
+       "kind": "listed",
        "donor": "Bruce Kusens",
        "amount": 5,
        "date": "2026-08-28"
@@ -26713,22 +26988,6 @@
        "date": "2026-09-04"
       },
       {
-       "to": "Smith",
-       "acct": "smith",
-       "kind": "listed",
-       "donor": "Bruce Kusens",
-       "amount": 15,
-       "date": "2026-09-11"
-      },
-      {
-       "to": "Smith",
-       "acct": "smith",
-       "kind": "listed",
-       "donor": "Templer and Hirsch",
-       "amount": 1000,
-       "date": "2026-07-24"
-      },
-      {
        "to": "Chernoff",
        "acct": "chernoff",
        "kind": "listed",
@@ -26737,12 +26996,12 @@
        "date": "2026-09-04"
       },
       {
-       "to": "Chernoff",
-       "acct": "chernoff",
+       "to": "Smith",
+       "acct": "smith",
        "kind": "listed",
-       "donor": "Templer & Hirsch",
-       "amount": 500,
-       "date": "2026-08-17"
+       "donor": "Bruce Kusens",
+       "amount": 15,
+       "date": "2026-09-11"
       }
      ],
      "giftNotes": {
@@ -27067,17 +27326,17 @@
        "to": "Smith",
        "acct": "smith",
        "kind": "listed",
-       "donor": "Eric Isicoff",
+       "donor": "Templer and Hirsch",
        "amount": 1000,
-       "date": "2026-08-13"
+       "date": "2026-07-24"
       },
       {
        "to": "Smith",
        "acct": "smith",
        "kind": "listed",
-       "donor": "Templer and Hirsch",
+       "donor": "Eric Isicoff",
        "amount": 1000,
-       "date": "2026-07-24"
+       "date": "2026-08-13"
       },
       {
        "to": "Chernoff",
