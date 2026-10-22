@@ -39,9 +39,15 @@ for (const f of readdirSync(P('scripts/data/state/donors/'))) {
     const [mm, dd, yy] = c[1].split('/');
     const r = { acct, date: `${yy}-${mm}-${dd}`, amount: Math.round(parseFloat(c[2]) * 100) / 100, typ: c[3].trim(), donor: c[4].trim(), addr: c[5].trim(), occ: c[7].trim() };
     r.n = norm(r.donor); r.w = new Set(r.n.split(' '));
-    if (r.date >= '2025-01-01' && r.amount > 0) rows.push(r);
+    if (r.date >= '2025-01-01') rows.push(r);
   }
 }
+// A refund (REF, negative) cancels the latest earlier gift of the same amount from the same donor to the same account.
+for (const ref of rows.filter(r => r.amount < 0)) {
+  const g = rows.filter(r => r.acct === ref.acct && r.n === ref.n && r.amount === -ref.amount && r.date <= ref.date && !r.refunded).sort((p, q) => q.date.localeCompare(p.date))[0];
+  if (g) g.refunded = true;
+}
+for (let i = rows.length - 1; i >= 0; i--) if (rows[i].amount <= 0 || rows[i].refunded) rows.splice(i, 1);
 const firmKey = {}; for (const k of Object.keys(FIRMS)) firmKey[norm(k).replace(SUFFIX, '').replace(/\s+/g, ' ').trim()] = k;
 const findFirm = name => { const n = norm(name).replace(SUFFIX, '').replace(/\s+/g, ' ').trim(); if (firmKey[n]) return firmKey[n]; for (const k in firmKey) if (n.length > 8 && (k.includes(n) || n.includes(k))) return firmKey[k]; return null; };
 const personKey = p => { const [last, first] = p.split(',').map(s => s.trim()); return [norm(last.replace(/\s+(Jr|Sr|III|II)\.?$/, '')), norm(first.replace(/\(.*?\)/g, '')).split(' ')[0]]; };
