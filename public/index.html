@@ -50,6 +50,21 @@
   :focus-visible{outline:3px solid var(--left-fg); outline-offset:2px;}
   @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important;} }
 
+  .menu-btn{position:absolute; top:14px; right:14px; z-index:30; width:42px; height:42px; border:1.5px solid var(--rule); background:var(--paper); color:var(--ink); cursor:pointer; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; padding:0;}
+  .menu-btn span{display:block; width:20px; height:2.5px; background:var(--ink);}
+  .menu-btn[aria-expanded=true] span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+  .menu-btn[aria-expanded=true] span:nth-child(2){opacity:0;}
+  .menu-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+  .menu{position:absolute; top:62px; right:14px; z-index:29; background:var(--paper); border:1.5px solid var(--rule); min-width:260px; max-width:calc(100vw - 28px); box-shadow:4px 4px 0 var(--ink); display:none;}
+  .menu[data-open=true]{display:block;}
+  .menu a{display:block; padding:11px 14px; color:var(--ink); text-decoration:none; font-weight:700; font-size:14px; border-bottom:1px solid var(--hair);}
+  .menu a:last-child{border-bottom:0;}
+  .menu a small{display:block; font-weight:400; font-size:12px; color:var(--ink-soft); margin-top:1px;}
+  .menu a.cur{background:var(--ink); color:var(--paper);}
+  .menu a.cur small{color:var(--paper); opacity:.8;}
+  .menu .mh{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); padding:8px 14px 4px; border-bottom:1px solid var(--hair);}
+  body{position:relative;}
+  @media (max-width:560px){ .menu-btn{top:10px; right:10px;} .menu{top:58px; right:10px;} }
   header{
     border-bottom:4px solid var(--rule);
     padding:28px 24px 18px;
@@ -618,6 +633,18 @@
 </head>
 <body>
 
+<button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Menu"><span></span><span></span><span></span></button>
+<nav class="menu" id="siteMenu" data-open="false" aria-label="Site">
+  <div class="mh" data-i18n="nav.h"></div>
+  <a href="/" class="cur"><span data-i18n="nav.ballot"></span><small data-i18n="nav.ballotS"></small></a>
+  <a href="/actions"><span data-i18n="nav.actions"></span><small data-i18n="nav.actionsS"></small></a>
+  <a href="/decisions"><span data-i18n="nav.decisions"></span><small data-i18n="nav.decisionsS"></small></a>
+  <a href="/lobby"><span data-i18n="nav.lobby"></span><small data-i18n="nav.lobbyS"></small></a>
+  <a href="/transparency"><span data-i18n="nav.transparency"></span><small data-i18n="nav.transparencyS"></small></a>
+  <a href="/methodology"><span data-i18n="nav.method"></span></a>
+  <a href="/press"><span data-i18n="nav.press"></span></a>
+  <a href="/about"><span data-i18n="nav.about"></span></a>
+</nav>
 <header>
   <div class="masthead">
     <h1 class="wordmark" aria-label="Ballot305.org">BALL<span class="o" aria-hidden="true"></span>T305<span class="dotorg">.ORG</span></h1>
@@ -751,7 +778,8 @@ en: {
   'print.title': 'My Ballot Plan',
   'print.note': 'Personal research notes prepared with Ballot305.org. This is not an official ballot. Verify races and names against your official ballot when voting.',
   'dossier.empty': 'No candidate selected.<br>Click a name to research. Fill an oval to add them to your ballot plan.',
-  'foot': 'Independent voter research tool. Not affiliated with the Miami-Dade Supervisor of Elections or any government agency. This is not an official ballot and does not record votes.<br>Made with love by <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donors, lobbyists and official actions</a> &middot; <a href="/decisions">Votes, lobbyists and gifts</a> &middot; <a href="/transparency">City transparency check</a> &middot; <a href="/methodology">How it works</a> &middot; <a href="/about">About</a> &middot; Corrections: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
+  'nav.h': 'Ballot305', 'nav.ballot': 'Your ballot', 'nav.ballotS': 'Every race and question, with the money behind each candidate', 'nav.actions': 'By candidate', 'nav.actionsS': 'Donors, lobbyists and official actions for each incumbent', 'nav.decisions': 'Official actions', 'nav.decisionsS': 'Votes, lobbyists and gifts, by body', 'nav.lobby': 'Budget dollars and lobbying money', 'nav.lobbyS': 'State budget requests rolled up by lobbying firm', 'nav.transparency': 'City transparency check', 'nav.transparencyS': 'Which cities post donor data, agendas and votes', 'nav.method': 'How it works', 'nav.press': 'Press', 'nav.about': 'About',
+  'foot': 'Independent voter research tool. Not affiliated with the Miami-Dade Supervisor of Elections or any government agency. This is not an official ballot and does not record votes.<br>Made with love by <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donors, lobbyists and official actions</a> &middot; <a href="/decisions">Votes, lobbyists and gifts</a> &middot; <a href="/lobby">Budget dollars and lobbying money</a> &middot; <a href="/transparency">City transparency check</a> &middot; <a href="/methodology">How it works</a> &middot; <a href="/about">About</a> &middot; Corrections: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
 
   'status.notpdf': 'That is not a PDF. Upload a sample ballot in PDF format.',
   'status.reading': 'Reading {name}',
@@ -1276,7 +1304,8 @@ es: {
   'print.title': 'Mi plan de voto',
   'print.note': 'Notas personales de investigación preparadas con Ballot305.org. Esta no es una boleta oficial. Verifique las contiendas y los nombres con su boleta oficial al votar.',
   'dossier.empty': 'Ningún candidato seleccionado.<br>Haga clic en un nombre para investigar. Rellene un óvalo para agregarlo a su plan de voto.',
-  'foot': 'Herramienta independiente de investigación para votantes. No está afiliada a la Supervisora de Elecciones de Miami-Dade ni a ninguna agencia gubernamental. Esta no es una boleta oficial y no registra votos.<br>Hecho con amor por <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donantes, cabilderos y acciones oficiales</a> &middot; <a href="/decisions">Votos, cabilderos y donaciones</a> &middot; <a href="/transparency">Transparencia de las ciudades</a> &middot; <a href="/methodology">Cómo funciona</a> &middot; <a href="/about">Acerca de</a> &middot; Correcciones: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
+  'nav.h': 'Ballot305', 'nav.ballot': 'Su boleta', 'nav.ballotS': 'Cada contienda y pregunta, con el dinero detrás de cada candidato', 'nav.actions': 'Por candidato', 'nav.actionsS': 'Donantes, cabilderos y acciones oficiales de cada titular', 'nav.decisions': 'Acciones oficiales', 'nav.decisionsS': 'Votos, cabilderos y donaciones, por organismo', 'nav.lobby': 'Dólares del presupuesto y dinero del cabildeo', 'nav.lobbyS': 'Solicitudes de presupuesto estatal agrupadas por firma de cabildeo', 'nav.transparency': 'Transparencia de las ciudades', 'nav.transparencyS': 'Qué ciudades publican donantes, agendas y votos', 'nav.method': 'Cómo funciona', 'nav.press': 'Prensa', 'nav.about': 'Acerca de',
+  'foot': 'Herramienta independiente de investigación para votantes. No está afiliada a la Supervisora de Elecciones de Miami-Dade ni a ninguna agencia gubernamental. Esta no es una boleta oficial y no registra votos.<br>Hecho con amor por <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donantes, cabilderos y acciones oficiales</a> &middot; <a href="/decisions">Votos, cabilderos y donaciones</a> &middot; <a href="/lobby">Dólares del presupuesto y dinero del cabildeo</a> &middot; <a href="/transparency">Transparencia de las ciudades</a> &middot; <a href="/methodology">Cómo funciona</a> &middot; <a href="/about">Acerca de</a> &middot; Correcciones: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
 
   'status.notpdf': 'Eso no es un PDF. Suba una boleta de muestra en formato PDF.',
   'status.reading': 'Leyendo {name}',
@@ -1801,7 +1830,8 @@ ht: {
   'print.title': 'Plan vòt mwen',
   'print.note': 'Nòt rechèch pèsonèl ki prepare ak Ballot305.org. Sa a se pa yon bilten vòt ofisyèl. Verifye eleksyon yo ak non yo sou bilten vòt ofisyèl ou lè w ap vote.',
   'dossier.empty': 'Ou poko chwazi okenn kandida.<br>Klike sou yon non pou fè rechèch. Ranpli yon oval pou ajoute l nan plan vòt ou.',
-  'foot': 'Zouti rechèch endepandan pou votè. Li pa gen okenn rapò ak Sipèvizè Eleksyon Miami-Dade oswa okenn ajans gouvènman. Sa a se pa yon bilten vòt ofisyèl epi li pa anrejistre vòt.<br>Fèt ak lanmou pa <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donatè, lobiyis ak aksyon ofisyèl</a> &middot; <a href="/decisions">Vòt, lobiyis ak kado</a> &middot; <a href="/transparency">Transparans vil yo</a> &middot; <a href="/methodology">Kijan li mache</a> &middot; <a href="/about">Konsènan</a> &middot; Koreksyon: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
+  'nav.h': 'Ballot305', 'nav.ballot': 'Bilten ou', 'nav.ballotS': 'Chak kous ak kesyon, ak lajan ki dèyè chak kandida', 'nav.actions': 'Pa kandida', 'nav.actionsS': 'Donatè, lobiyis ak aksyon ofisyèl pou chak ofisyèl an plas', 'nav.decisions': 'Aksyon ofisyèl', 'nav.decisionsS': 'Vòt, lobiyis ak kado, pa kò', 'nav.lobby': 'Dola bidjè ak lajan lobi', 'nav.lobbyS': 'Demann bidjè Leta gwoupe pa fèm lobi', 'nav.transparency': 'Transparans vil yo', 'nav.transparencyS': 'Ki vil ki pibliye donatè, ajennda ak vòt', 'nav.method': 'Kijan li mache', 'nav.press': 'Laprès', 'nav.about': 'Konsènan',
+  'foot': 'Zouti rechèch endepandan pou votè. Li pa gen okenn rapò ak Sipèvizè Eleksyon Miami-Dade oswa okenn ajans gouvènman. Sa a se pa yon bilten vòt ofisyèl epi li pa anrejistre vòt.<br>Fèt ak lanmou pa <a href="https://www.instagram.com/realbritty" target="_blank" rel="noopener">@realbritty</a> &middot; <a href="/actions">Donatè, lobiyis ak aksyon ofisyèl</a> &middot; <a href="/decisions">Vòt, lobiyis ak kado</a> &middot; <a href="/lobby">Dola bidjè ak lajan lobi</a> &middot; <a href="/transparency">Transparans vil yo</a> &middot; <a href="/methodology">Kijan li mache</a> &middot; <a href="/about">Konsènan</a> &middot; Koreksyon: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>',
 
   'status.notpdf': 'Sa a se pa yon PDF. Voye yon echantiyon bilten vòt an fòma PDF.',
   'status.reading': 'N ap li {name}',
@@ -5101,6 +5131,16 @@ function renderResumeList(){
   });
 }
 renderResumeList();
+
+// Site menu (hamburger)
+(function(){
+  var b = document.getElementById('menuBtn'), m = document.getElementById('siteMenu');
+  if(!b || !m) return;
+  function set(open){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); m.setAttribute('data-open', open ? 'true' : 'false'); }
+  b.addEventListener('click', function(e){ e.stopPropagation(); set(b.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('click', function(e){ if(!m.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') set(false); });
+})();
 </script>
 </body>
 </html>

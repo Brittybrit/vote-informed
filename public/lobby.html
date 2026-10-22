@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budget Dollars and Lobbying Money · BALLOT305.ORG</title>
+<meta name="description" content="For each lobbying firm named on a state budget request filed by a legislator on Miami-Dade’s November 3, 2026 ballot: how much its clients asked for, how much made the final budget, and what the firm gave the legislators who filed.">
+<meta property="og:title" content="Budget Dollars and Lobbying Money · Ballot305">
+<meta property="og:description" content="State budget requests rolled up by the lobbying firm on the form: dollars funded, dollars given, and who filed.">
+<meta property="og:image" content="https://ballot305.org/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7; --ink:#131F3C; --ink-soft:#3D4763; --rule:#131F3C; --hair:#C9C9C1;
+    --ok-fg:#2F6B3C; --no-fg:#9B2C1F; --bar:#131F3C; --bar2:#9B2C1F;
+    --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55;}
+  header{border-bottom:4px solid var(--rule); padding:18px 16px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;}
+  header a{color:var(--ink); text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.01em; font-size:20px;}
+  .langs{display:flex; gap:6px;}
+  .langs button{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; background:transparent; border:1.5px solid var(--rule); color:var(--ink); padding:5px 10px; cursor:pointer;}
+  .langs button.on{background:var(--ink); color:var(--paper);}
+  main{max-width:860px; margin:0 auto; padding:28px 16px 64px;}
+  h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
+  .lede{color:var(--ink-soft); margin-bottom:10px;}
+  .stats{display:flex; flex-wrap:wrap; gap:8px 22px; font-family:var(--mono); font-size:12.5px; margin:14px 0; padding:10px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);}
+  .stats b{font-family:var(--sans); font-size:20px; font-weight:900; display:block; line-height:1.1;}
+  .scale{margin:6px 0 14px; padding:12px 14px; border:1.5px solid var(--rule); font-size:14px;}
+  .scale h2{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px;}
+  .scale p{margin-bottom:6px;}
+  .scale .src{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft);}
+  .scale .src a{color:inherit;}
+  .tools{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:10px 0 14px;}
+  .tools span{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-right:4px;}
+  .tools button{font-family:var(--mono); font-size:11.5px; border:1.5px solid var(--ink); background:transparent; color:var(--ink); padding:3px 9px; cursor:pointer;}
+  .tools button.on{background:var(--ink); color:var(--paper);}
+  .firm{padding:14px 0 16px; border-bottom:1px dotted var(--hair);}
+  .firm .name{font-weight:800; font-size:17px; line-height:1.3;}
+  .firm .name small{font-family:var(--mono); font-size:11px; font-weight:400; color:var(--ink-soft); margin-left:6px;}
+  .nums{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:6px 14px; margin-top:6px; font-size:14px;}
+  .nums b{display:block; font-size:18px; font-weight:900; line-height:1.15;}
+  .nums .gave b{color:var(--no-fg);}
+  .nums .funded b{color:var(--ok-fg);}
+  .nums i{font-style:normal; font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .bars{margin-top:8px; display:grid; gap:3px;}
+  .bar{height:7px; background:#EAEAE3; position:relative;}
+  .bar span{position:absolute; left:0; top:0; bottom:0; background:var(--bar);}
+  .bar.g span{background:var(--bar2);}
+  .barl{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); display:flex; justify-content:space-between;}
+  details{margin-top:8px; font-size:13.5px;}
+  summary{cursor:pointer; font-family:var(--mono); font-size:11.5px; color:var(--ink);}
+  .mem{margin:8px 0 0 10px; padding-left:10px; border-left:1px solid var(--hair);}
+  .mem .who{font-weight:700;}
+  .mem .who small{font-family:var(--mono); font-size:11px; font-weight:400; color:var(--ink-soft); margin-left:6px;}
+  .mem .line{font-size:13px; color:var(--ink-soft);}
+  .mem .gift{font-size:12.5px; margin-top:2px;}
+  .mem .form{font-size:12.5px; margin-top:2px;}
+  .mem .form .ok{color:var(--ok-fg); font-weight:700;}
+  .mem .form .no{color:var(--ink-soft);}
+  .mem .form .veto{color:var(--no-fg); font-weight:700;}
+  .mem .form a{color:inherit;}
+  .how{margin-top:40px; padding-top:14px; border-top:2px solid var(--rule); font-size:14px; color:var(--ink-soft);}
+  .how p{margin-bottom:10px;}
+  footer{border-top:2px solid var(--rule); padding:18px 16px; font-size:14px; color:var(--ink-soft); text-align:center;}
+  footer a{color:var(--ink);}
+  @media (max-width:560px){ .nums{grid-template-columns:repeat(2, minmax(0,1fr));} h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<header><a href="/">Ballot305.org</a><div class="langs" role="group" aria-label="Language / Idioma / Lang"><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="ht">KREYÒL</button></div></header>
+<main>
+  <h1 id="h1"></h1>
+  <p class="lede" id="lede"></p>
+  <div class="stats" id="stats"></div>
+  <div class="scale" id="scale"></div>
+  <div class="tools" id="tools"></div>
+  <div id="list"></div>
+  <div class="how" id="how"></div>
+</main>
+<footer id="foot"></footer>
+<script>
+(function(){
+  var S = {
+    en: {
+      title: 'Budget dollars and lobbying money',
+      lede: 'Every state budget request filed for the 2025 and 2026 sessions by a legislator on Miami-Dade’s November 3, 2026 ballot (and by Blaise Ingoglia, on the ballot for CFO), rolled up by the lobbying firm named on the request form. For each firm: what its clients asked for, what made the final budget after the governor’s vetoes, what the firm, its political committee or its lobbyists gave the legislators who filed those requests, and who filed. The money moves in two separate transactions: the client pays the firm a fee; the firm gives to legislators out of its own money. Nothing here claims a request was bought.',
+      scaleH: 'For scale',
+      scale1: function(v, w){ return 'The ' + w.money(v.funded) + ' these requests put in the budget is ' + v.pctBudget + ' of the two state budgets together (' + w.big(v.budgets) + ' for 2025-26 and 2026-27), ' + w.money(v.perFl) + ' per Florida resident, and about ' + v.incomes.toLocaleString('en-US') + ' times the state’s median household income (' + w.money(v.income) + '). The governor vetoed ' + w.big(v.vetoes) + ' from the same two budgets.'; },
+      scale2: function(v, w){ return 'The ' + w.money(v.gave) + ' the firms gave the filers is ' + w.cents(v.gavePerFl) + ' per Florida resident, about ' + v.gaveIncomes + ' median household incomes, and ' + w.money(v.perM) + ' for every $1 million their clients got funded. Miami-Dade, where these legislators’ voters live, has ' + v.mdcPop.toLocaleString('en-US') + ' people and a median household income of ' + w.money(v.mdcIncome) + '.'; },
+      scaleSrc: 'Population (July 1, 2025) and median household income (2020-2024, 2024 dollars): U.S. Census QuickFacts. Budgets as signed: $117.4 billion (June 30, 2025), $117.6 billion (June 29, 2026).',
+      share: function(p){ return p + ' of all funded dollars'; }, dupNote: 'same project as another chamber’s form, counted once:',
+      big: function(n){ return '$' + (Math.round(n / 1e8) / 10).toFixed(1) + ' billion'; }, cents: function(n){ return n < 1 ? (Math.round(n * 100) / 100).toFixed(2).replace(/^0/, '') + ' cents' : '$' + n.toFixed(2); },
+      sFirms: 'lobbying firms', sReq: 'budget requests', sFunded: 'in the final budget', sVia: 'of that came through a firm', sGave: 'given by firms to the filers',
+      sort: 'Sort by', byFunded: 'Dollars funded', byGave: 'Dollars given', byRatio: 'Given per $1M funded', byReq: 'Requests',
+      requests: function(n){ return n + ' request' + (n === 1 ? '' : 's'); }, fundedN: function(n, t){ return n + ' of ' + t + ' funded'; },
+      asked: 'Asked', funded: 'In final budget', gave: 'Gave to filers', giftN: function(n, d){ return n + ' gift' + (n === 1 ? '' : 's') + ' from ' + d + ' name' + (d === 1 ? '' : 's'); }, noGift: 'no gift found',
+      none: 'No lobbyist named on the form', noneNote: 'Requests whose form names no registered lobbyist. Shown for scale; no firm, so no gifts to match.',
+      who: 'Who filed, what got funded, what the firm gave', member: function(m){ return m.name + ' (' + m.race + ')'; },
+      memLine: function(m, w){ return w.requests(m.requests) + ' · ' + w.money(m.asked) + ' asked · ' + w.money(m.funded) + ' funded' + (m.gave ? ' · firm gave ' + w.money(m.gave) : ' · no gift from the firm found'); },
+      gift: function(g, w){ return g.donor + ' gave ' + w.money(g.amount) + ' on ' + w.day(g.date) + (g.rel === 'firmpac' ? ' (the firm’s political committee)' : g.rel === 'firmlob' ? ' (a lobbyist at the firm)' : g.rel === 'named' ? ' (the lobbyist named on the form)' : ' (the firm)'); },
+      fIn: function(f, w){ return 'in the budget at ' + w.money(f.funded + f.vetoed) + (f.vetoed ? ', ' + w.money(f.vetoed) + ' vetoed' : ''); }, fOut: 'not in the final budget',
+      ratio: function(x, w){ return w.money(x) + ' given per $1M funded'; },
+      howH: 'How this is counted',
+      how1: 'Requests are every House Appropriations Project Request and Senate Local Funding Initiative Request on the official actions page, with the firm as the form spells it (spelling variants are not merged). A request is “funded” when its form number appears in the final budget (SB 2500 for 2025-26, HB 5001E for 2026-27), at the printed amount minus any veto. The same project filed in both chambers is one budget line and is counted once (matched by year, recipient and amount). Gifts are from the firm itself, its political committee, a lobbyist at the firm, or the lobbyist named on the form, to the filing legislator’s campaign account or a political committee they chair, January 2025 to October 2026, counted once however many forms they tie to. A gift is only counted toward a firm when it is tied to a request that firm lobbied.',
+      how2: 'Gifts to a legislator are not payments from the client. Cities, school boards and nonprofits pay a lobbying firm a fee; the firm’s political giving is its own, and it gives to many legislators for all its clients. A public body cannot legally make a political contribution, directly or through a vendor. What the page shows is which firms sit between the most budget money and the most campaign money for the same legislators.',
+      money: function(n){ return '$' + Math.round(n).toLocaleString('en-US'); },
+      day: function(s){ var p = s.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1] + ' ' + (+p[2]) + ', ' + p[0]; },
+      foot: '<a href="/">Back to Ballot305.org</a> · <a href="/decisions">Official actions</a> · <a href="/actions">By candidate</a> · <a href="/methodology">How it works</a>',
+      updated: 'last checked'
+    },
+    es: {
+      title: 'Dólares del presupuesto y dinero del cabildeo',
+      lede: 'Todas las solicitudes de presupuesto estatal presentadas para las sesiones de 2025 y 2026 por un legislador que está en la boleta del 3 de noviembre de 2026 en Miami-Dade (y por Blaise Ingoglia, en la boleta para CFO), agrupadas por la firma de cabildeo nombrada en el formulario. Para cada firma: lo que pidieron sus clientes, lo que quedó en el presupuesto final tras los vetos del gobernador, lo que la firma, su comité político o sus cabilderos donaron a los legisladores que presentaron esas solicitudes, y quién las presentó. El dinero se mueve en dos transacciones separadas: el cliente paga una tarifa a la firma; la firma dona a legisladores con su propio dinero. Nada aquí afirma que una solicitud fue comprada.',
+      scaleH: 'Para dimensionar',
+      scale1: function(v, w){ return 'Los ' + w.money(v.funded) + ' que estas solicitudes pusieron en el presupuesto son el ' + v.pctBudget + ' de los dos presupuestos estatales juntos (' + w.big(v.budgets) + ' para 2025-26 y 2026-27), ' + w.money(v.perFl) + ' por residente de Florida, y unas ' + v.incomes.toLocaleString('en-US') + ' veces el ingreso medio por hogar del estado (' + w.money(v.income) + '). El gobernador vetó ' + w.big(v.vetoes) + ' de esos mismos dos presupuestos.'; },
+      scale2: function(v, w){ return 'Los ' + w.money(v.gave) + ' que las firmas donaron a quienes presentaron son ' + w.cents(v.gavePerFl) + ' por residente de Florida, unos ' + v.gaveIncomes + ' ingresos medios por hogar, y ' + w.money(v.perM) + ' por cada $1 millón que sus clientes obtuvieron. Miami-Dade, donde viven los votantes de estos legisladores, tiene ' + v.mdcPop.toLocaleString('en-US') + ' habitantes y un ingreso medio por hogar de ' + w.money(v.mdcIncome) + '.'; },
+      scaleSrc: 'Población (1 de julio de 2025) e ingreso medio por hogar (2020-2024, dólares de 2024): U.S. Census QuickFacts. Presupuestos firmados: $117.4 mil millones (30 de junio de 2025), $117.6 mil millones (29 de junio de 2026).',
+      share: function(p){ return p + ' de todos los dólares financiados'; }, dupNote: 'mismo proyecto que el formulario de la otra cámara, contado una vez:',
+      big: function(n){ return '$' + (Math.round(n / 1e8) / 10).toFixed(1) + ' mil millones'; }, cents: function(n){ return n < 1 ? (Math.round(n * 100) / 100).toFixed(2).replace(/^0/, '') + ' centavos' : '$' + n.toFixed(2); },
+      sFirms: 'firmas de cabildeo', sReq: 'solicitudes de presupuesto', sFunded: 'en el presupuesto final', sVia: 'de eso pasó por una firma', sGave: 'donado por firmas a quienes las presentaron',
+      sort: 'Ordenar por', byFunded: 'Dólares financiados', byGave: 'Dólares donados', byRatio: 'Donado por cada $1M financiado', byReq: 'Solicitudes',
+      requests: function(n){ return n + ' solicitud' + (n === 1 ? '' : 'es'); }, fundedN: function(n, t){ return n + ' de ' + t + ' financiadas'; },
+      asked: 'Pedido', funded: 'En el presupuesto final', gave: 'Donó a quienes presentaron', giftN: function(n, d){ return n + ' donaci' + (n === 1 ? 'ón' : 'ones') + ' de ' + d + ' nombre' + (d === 1 ? '' : 's'); }, noGift: 'sin donación encontrada',
+      none: 'Sin cabildero en el formulario', noneNote: 'Solicitudes cuyo formulario no nombra a ningún cabildero registrado. Se muestran como referencia; sin firma, no hay donaciones que cotejar.',
+      who: 'Quién presentó, qué se financió, qué donó la firma', member: function(m){ return m.name + ' (' + m.race + ')'; },
+      memLine: function(m, w){ return w.requests(m.requests) + ' · ' + w.money(m.asked) + ' pedido · ' + w.money(m.funded) + ' financiado' + (m.gave ? ' · la firma donó ' + w.money(m.gave) : ' · sin donación de la firma'); },
+      gift: function(g, w){ return g.donor + ' donó ' + w.money(g.amount) + ' el ' + w.day(g.date) + (g.rel === 'firmpac' ? ' (el comité político de la firma)' : g.rel === 'firmlob' ? ' (un cabildero de la firma)' : g.rel === 'named' ? ' (el cabildero nombrado en el formulario)' : ' (la firma)'); },
+      fIn: function(f, w){ return 'en el presupuesto por ' + w.money(f.funded + f.vetoed) + (f.vetoed ? ', ' + w.money(f.vetoed) + ' vetado' : ''); }, fOut: 'no quedó en el presupuesto final',
+      ratio: function(x, w){ return w.money(x) + ' donado por cada $1M financiado'; },
+      howH: 'Cómo se cuenta',
+      how1: 'Las solicitudes son todas las Appropriations Project Requests de la Cámara y las Local Funding Initiative Requests del Senado de la página de acciones oficiales, con la firma tal como la escribe el formulario (no se unifican variantes de escritura). Una solicitud está “financiada” cuando su número de formulario aparece en el presupuesto final (SB 2500 para 2025-26, HB 5001E para 2026-27), por el monto impreso menos cualquier veto. El mismo proyecto presentado en ambas cámaras es una sola línea del presupuesto y se cuenta una vez (por año, beneficiario y monto). Las donaciones son de la propia firma, su comité político, un cabildero de la firma o el cabildero nombrado en el formulario, a la cuenta de campaña del legislador o a un comité político que preside, de enero de 2025 a octubre de 2026, contadas una sola vez aunque se vinculen a varios formularios. Una donación solo se cuenta para una firma cuando está vinculada a una solicitud que esa firma cabildeó.',
+      how2: 'Las donaciones a un legislador no son pagos del cliente. Las ciudades, juntas escolares y organizaciones sin fines de lucro pagan una tarifa a la firma de cabildeo; las donaciones políticas de la firma son suyas, y dona a muchos legisladores por todos sus clientes. Un ente público no puede hacer contribuciones políticas, ni directamente ni a través de un proveedor. Lo que muestra la página es qué firmas están entre la mayor cantidad de dinero del presupuesto y la mayor cantidad de dinero de campaña para los mismos legisladores.',
+      money: function(n){ return '$' + Math.round(n).toLocaleString('en-US'); },
+      day: function(s){ var p = s.split('-'); return (+p[2]) + ' ' + ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][+p[1]-1] + ' ' + p[0]; },
+      foot: '<a href="/">Volver a Ballot305.org</a> · <a href="/decisions">Acciones oficiales</a> · <a href="/actions">Por candidato</a> · <a href="/methodology">Cómo funciona</a>',
+      updated: 'última revisión'
+    },
+    ht: {
+      title: 'Dola bidjè ak lajan lobi',
+      lede: 'Tout demann bidjè Leta yon lejislatè ki sou bilten 3 novanm 2026 Miami-Dade la te depoze pou sesyon 2025 ak 2026 (ak Blaise Ingoglia, ki sou bilten an pou CFO), gwoupe dapre fèm lobi yo nonmen sou fòm demann lan. Pou chak fèm: sa kliyan li yo te mande, sa ki te rive nan bidjè final la apre veto gouvènè a, sa fèm nan, komite politik li oswa lobiyis li yo te bay lejislatè ki te depoze demann sa yo, ak kiyès ki te depoze. Lajan an deplase nan de tranzaksyon separe: kliyan an peye fèm nan yon frè; fèm nan bay lejislatè ak pwòp lajan li. Anyen isit la pa di yo te achte yon demann.',
+      scaleH: 'Pou konpare',
+      scale1: function(v, w){ return w.money(v.funded) + ' demann sa yo mete nan bidjè a se ' + v.pctBudget + ' nan de bidjè Leta yo ansanm (' + w.big(v.budgets) + ' pou 2025-26 ak 2026-27), ' + w.money(v.perFl) + ' pou chak rezidan Florid, epi apeprè ' + v.incomes.toLocaleString('en-US') + ' fwa revni medyàn kay nan Eta a (' + w.money(v.income) + '). Gouvènè a te mete veto sou ' + w.big(v.vetoes) + ' nan menm de bidjè sa yo.'; },
+      scale2: function(v, w){ return w.money(v.gave) + ' fèm yo te bay moun ki depoze yo se ' + w.cents(v.gavePerFl) + ' pou chak rezidan Florid, apeprè ' + v.gaveIncomes + ' revni medyàn kay, ak ' + w.money(v.perM) + ' pou chak $1 milyon kliyan yo te jwenn. Miami-Dade, kote votè lejislatè sa yo rete, gen ' + v.mdcPop.toLocaleString('en-US') + ' moun ak yon revni medyàn kay ' + w.money(v.mdcIncome) + '.'; },
+      scaleSrc: 'Popilasyon (1ye jiyè 2025) ak revni medyàn kay (2020-2024, dola 2024): U.S. Census QuickFacts. Bidjè yo jan yo siyen: $117.4 milya (30 jen 2025), $117.6 milya (29 jen 2026).',
+      share: function(p){ return p + ' nan tout dola finanse yo'; }, dupNote: 'menm pwojè ak fòm lòt chanm nan, konte yon fwa:',
+      big: function(n){ return '$' + (Math.round(n / 1e8) / 10).toFixed(1) + ' milya'; }, cents: function(n){ return n < 1 ? (Math.round(n * 100) / 100).toFixed(2).replace(/^0/, '') + ' santim' : '$' + n.toFixed(2); },
+      sFirms: 'fèm lobi', sReq: 'demann bidjè', sFunded: 'nan bidjè final la', sVia: 'nan sa te pase pa yon fèm', sGave: 'fèm yo bay moun ki te depoze yo',
+      sort: 'Klase pa', byFunded: 'Dola finanse', byGave: 'Dola bay', byRatio: 'Bay pou chak $1M finanse', byReq: 'Demann',
+      requests: function(n){ return n + ' demann'; }, fundedN: function(n, t){ return n + ' sou ' + t + ' finanse'; },
+      asked: 'Mande', funded: 'Nan bidjè final la', gave: 'Bay moun ki depoze yo', giftN: function(n, d){ return n + ' kado nan men ' + d + ' non'; }, noGift: 'pa jwenn kado',
+      none: 'Pa gen lobiyis sou fòm nan', noneNote: 'Demann ki pa nonmen okenn lobiyis anrejistre sou fòm nan. Yo parèt pou konparezon; pa gen fèm, kidonk pa gen kado pou konpare.',
+      who: 'Kiyès ki depoze, sa ki finanse, sa fèm nan bay', member: function(m){ return m.name + ' (' + m.race + ')'; },
+      memLine: function(m, w){ return w.requests(m.requests) + ' · ' + w.money(m.asked) + ' mande · ' + w.money(m.funded) + ' finanse' + (m.gave ? ' · fèm nan te bay ' + w.money(m.gave) : ' · pa jwenn kado nan men fèm nan'); },
+      gift: function(g, w){ return g.donor + ' te bay ' + w.money(g.amount) + ' nan ' + w.day(g.date) + (g.rel === 'firmpac' ? ' (komite politik fèm nan)' : g.rel === 'firmlob' ? ' (yon lobiyis nan fèm nan)' : g.rel === 'named' ? ' (lobiyis yo nonmen sou fòm nan)' : ' (fèm nan)'); },
+      fIn: function(f, w){ return 'nan bidjè a pou ' + w.money(f.funded + f.vetoed) + (f.vetoed ? ', ' + w.money(f.vetoed) + ' veto' : ''); }, fOut: 'pa nan bidjè final la',
+      ratio: function(x, w){ return w.money(x) + ' bay pou chak $1M finanse'; },
+      howH: 'Kijan nou konte',
+      how1: 'Demann yo se tout Appropriations Project Request Chanm nan ak Local Funding Initiative Request Sena a ki sou paj aksyon ofisyèl yo, ak fèm nan jan fòm nan ekri l (nou pa fizyone varyant òtograf). Yon demann “finanse” lè nimewo fòm li parèt nan bidjè final la (SB 2500 pou 2025-26, HB 5001E pou 2026-27), pou montan enprime a mwens nenpòt veto. Menm pwojè yo depoze nan tou de chanm yo se yon sèl liy bidjè epi nou konte l yon fwa (dapre ane, benefisyè ak montan). Kado yo soti nan fèm nan menm, komite politik li, yon lobiyis nan fèm nan, oswa lobiyis yo nonmen sou fòm nan, bay kont kanpay lejislatè a oswa yon komite politik li prezide, janvye 2025 rive oktòb 2026, konte yon sèl fwa kèlkeswa kantite fòm yo konekte ak yo. Yon kado konte pou yon fèm sèlman lè li konekte ak yon demann fèm sa a te fè lobi pou li.',
+      how2: 'Kado bay yon lejislatè se pa peman kliyan an. Vil, konsèy lekòl ak òganizasyon san bi likratif peye fèm lobi a yon frè; don politik fèm nan se pa l, epi li bay anpil lejislatè pou tout kliyan li yo. Yon kò piblik pa ka fè kontribisyon politik legalman, ni dirèkteman ni atravè yon founisè. Sa paj la montre se ki fèm ki chita ant plis lajan bidjè ak plis lajan kanpay pou menm lejislatè yo.',
+      money: function(n){ return '$' + Math.round(n).toLocaleString('en-US'); },
+      day: function(s){ var p = s.split('-'); return (+p[2]) + ' ' + ['jan','fev','mas','avr','me','jen','jiy','out','sep','okt','nov','des'][+p[1]-1] + ' ' + p[0]; },
+      foot: '<a href="/">Retounen sou Ballot305.org</a> · <a href="/decisions">Aksyon ofisyèl</a> · <a href="/actions">Pa kandida</a> · <a href="/methodology">Kijan li mache</a>',
+      updated: 'dènye verifikasyon'
+    }
+  };
+  var LANG = 'en', DATA = null, SORT = 'funded';
+  try { var s0 = localStorage.getItem('ballot305.lang'); if (S[s0]) LANG = s0; } catch(e){}
+  function esc(x){ return String(x == null ? '' : x).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function L(o){ return o && typeof o === 'object' ? (o[LANG] || o.en) : o; }
+  function $(id){ return document.getElementById(id); }
+  function w(){ return S[LANG] || S.en; }
+  function ratio(r){ return r.funded ? r.gave / (r.funded / 1e6) : 0; }
+  function render(){
+    var t = w();
+    document.documentElement.lang = LANG; document.title = t.title + ' · BALLOT305.ORG';
+    document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === LANG); });
+    $('h1').textContent = t.title; $('lede').textContent = t.lede; $('foot').innerHTML = t.foot;
+    $('how').innerHTML = '<p><b>' + esc(t.howH) + '</b></p><p>' + esc(t.how1) + '</p><p>' + esc(t.how2) + '</p>';
+    if(!DATA) return;
+    var T = DATA.totals;
+    $('stats').innerHTML = [[T.firms, t.sFirms], [T.requests, t.sReq], [t.money(T.funded), t.sFunded], [t.money(T.fundedViaFirm), t.sVia], [t.money(T.gave), t.sGave], [t.day(DATA.updated), t.updated]]
+      .map(function(x){ return '<div><b>' + esc(x[0]) + '</b>' + esc(x[1]) + '</div>'; }).join('');
+    var sc = DATA.scale, budgets = sc.budget['2025-26'] + sc.budget['2026-27'], vetoes = sc.vetoes['2025-26'] + sc.vetoes['2026-27'];
+    var v = { funded: T.funded, budgets: budgets, vetoes: vetoes, pctBudget: (Math.round(10000 * T.funded / budgets) / 100).toFixed(2) + '%', perFl: Math.round(T.funded / sc.flPop), incomes: Math.round(T.funded / sc.flIncome), income: sc.flIncome,
+      gave: T.gave, gavePerFl: T.gave / sc.flPop, gaveIncomes: Math.round(10 * T.gave / sc.flIncome) / 10, perM: Math.round(T.gave / (T.fundedViaFirm / 1e6)), mdcPop: sc.mdcPop, mdcIncome: sc.mdcIncome };
+    $('scale').innerHTML = '<h2>' + esc(t.scaleH) + '</h2><p>' + esc(t.scale1(v, t)) + '</p><p>' + esc(t.scale2(v, t)) + '</p><div class="src">' + esc(t.scaleSrc) + ' <a href="' + sc.src.census + '" target="_blank" rel="noopener">Census</a> · <a href="' + sc.src.b2025 + '" target="_blank" rel="noopener">2025-26</a> · <a href="' + sc.src.b2026 + '" target="_blank" rel="noopener">2026-27</a></div>';
+    $('tools').innerHTML = '<span>' + esc(t.sort) + '</span>' + [['funded', t.byFunded], ['gave', t.byGave], ['ratio', t.byRatio], ['requests', t.byReq]].map(function(x){ return '<button type="button" data-s="' + x[0] + '" class="' + (SORT === x[0] ? 'on' : '') + '">' + esc(x[1]) + '</button>'; }).join('');
+    $('tools').querySelectorAll('button').forEach(function(b){ b.addEventListener('click', function(){ SORT = b.getAttribute('data-s'); render(); }); });
+    var rows = DATA.rows.filter(function(r){ return r.firm; }).slice();
+    rows.sort(function(a, b){ return SORT === 'gave' ? b.gave - a.gave || b.funded - a.funded : SORT === 'ratio' ? ratio(b) - ratio(a) || b.gave - a.gave : SORT === 'requests' ? b.requests - a.requests || b.funded - a.funded : b.funded - a.funded || b.gave - a.gave; });
+    var maxF = Math.max.apply(null, rows.map(function(r){ return r.funded; })), maxG = Math.max.apply(null, rows.map(function(r){ return r.gave; }));
+    var none = DATA.rows.filter(function(r){ return !r.firm; })[0];
+    $('list').innerHTML = rows.map(function(r){ return firmHtml(r, t, maxF, maxG, T.funded); }).join('') + (none ? '<div class="firm"><div class="name">' + esc(t.none) + '<small>' + esc(t.requests(none.requests)) + '</small></div><div class="nums"><div><b>' + esc(t.money(none.asked)) + '</b><i>' + esc(t.asked) + '</i></div><div class="funded"><b>' + esc(t.money(none.funded)) + '</b><i>' + esc(t.funded) + '</i></div></div><p class="lede" style="font-size:13px;margin-top:6px">' + esc(t.noneNote) + '</p></div>' : '');
+  }
+  function firmHtml(r, t, maxF, maxG, allFunded){
+    var share = allFunded ? (Math.round(1000 * r.funded / allFunded) / 10).toFixed(1) + '%' : '';
+    var pf = maxF ? Math.round(100 * r.funded / maxF) : 0, pg = maxG ? Math.round(100 * r.gave / maxG) : 0;
+    return '<div class="firm"><div class="name">' + esc(r.firm) + '<small>' + esc(t.requests(r.requests)) + ' · ' + esc(t.fundedN(r.fundedN, r.requests)) + '</small></div>' +
+      '<div class="nums"><div><b>' + esc(t.money(r.asked)) + '</b><i>' + esc(t.asked) + '</i></div><div class="funded"><b>' + esc(t.money(r.funded)) + '</b><i>' + esc(t.funded) + '</i></div><div class="gave"><b>' + esc(t.money(r.gave)) + '</b><i>' + esc(t.gave) + '</i> <span style="font-size:12px;color:var(--ink-soft)">' + esc(r.giftN ? t.giftN(r.giftN, r.giftDonors) : t.noGift) + '</span></div></div>' +
+      '<div class="bars"><div class="bar"><span style="width:' + pf + '%"></span></div><div class="bar g"><span style="width:' + pg + '%"></span></div><div class="barl"><span>' + esc(t.funded) + (r.funded ? ' · ' + esc(t.share(share)) : '') + '</span><span>' + (r.funded ? esc(t.ratio(ratio(r), t)) : '') + '</span></div></div>' +
+      '<details><summary>' + esc(t.who) + '</summary>' + r.members.map(function(m){
+        return '<div class="mem"><div class="who">' + esc(t.member({name: m.name, race: L(m.race)})) + '</div><div class="line">' + esc(t.memLine(m, t)) + '</div>' +
+          m.gifts.map(function(g){ return '<div class="gift">' + esc(t.gift(g, t)) + '</div>'; }).join('') +
+          m.forms.map(function(f){ return '<div class="form"><a href="/decisions#' + esc(m.body) + '">' + esc(f.ref) + '</a> · ' + esc(f.title) + (f.party ? ' (' + esc(f.party) + ')' : '') + ' · ' + esc(t.money(f.ask)) + ' · ' + (f.dup ? '<span class="no">' + esc(t.dupNote) + '</span> ' : '') + (f.status === 'in' ? '<span class="' + (f.vetoed ? 'veto' : 'ok') + '">' + esc(t.fIn(f, t)) + '</span>' : '<span class="no">' + esc(t.fOut) + '</span>') + '</div>'; }).join('') + '</div>';
+      }).join('') + '</details></div>';
+  }
+  document.querySelectorAll('.langs button').forEach(function(b){ b.addEventListener('click', function(){ LANG = b.getAttribute('data-lang'); try { localStorage.setItem('ballot305.lang', LANG); } catch(e){} render(); }); });
+  render();
+  fetch('/data/lobby-ledger.json').then(function(r){ return r.json(); }).then(function(j){ DATA = j; render(); });
+})();
+</script>
+</body>
+</html>
