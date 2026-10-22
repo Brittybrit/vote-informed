@@ -892,7 +892,7 @@ en: {
   'pf.pctShort': 'Precinct {p}',
   'pf.note': 'From the county’s precinct / district list (Oct 1, 2026). Your own sample ballot is the final word.',
   'pf.maybe': 'Only part of your precinct may vote on this. Check your sample ballot.',
-  'jump.federal': 'Federal', 'jump.state': 'State', 'jump.county': 'County', 'jump.city': 'City',
+  'jump.federal': 'Federal', 'jump.cabinet': 'Governor & Cabinet', 'jump.state': 'State', 'jump.county': 'County', 'jump.city': 'City',
   'jump.judicial': 'Judicial', 'jump.amend': 'Amendments', 'jump.ref': 'Referendums', 'jump.measure': 'Measures',
   'jump.top': '&uarr; Top',
   'sec.donors': 'Top Campaign Donors',
@@ -1417,7 +1417,7 @@ es: {
   'pf.pctShort': 'Precinto {p}',
   'pf.note': 'Según la lista de precintos y distritos del condado (1 de octubre de 2026). Su propia boleta de muestra es la palabra final.',
   'pf.maybe': 'Puede que solo parte de su precinto vote en esto. Revise su boleta de muestra.',
-  'jump.federal': 'Federal', 'jump.state': 'Estatal', 'jump.county': 'Condado', 'jump.city': 'Ciudad',
+  'jump.federal': 'Federal', 'jump.cabinet': 'Gobernador y Gabinete', 'jump.state': 'Estatal', 'jump.county': 'Condado', 'jump.city': 'Ciudad',
   'jump.judicial': 'Judicial', 'jump.amend': 'Enmiendas', 'jump.ref': 'Referendos', 'jump.measure': 'Medidas',
   'jump.top': '&uarr; Arriba',
   'sec.donors': 'Principales donantes de campaña',
@@ -1942,7 +1942,7 @@ ht: {
   'pf.pctShort': 'Biwo vòt {p}',
   'pf.note': 'Selon lis biwo vòt ak distri konte a (1ye oktòb 2026). Pwòp bilten egzanp ou se dènye mo a.',
   'pf.maybe': 'Petèt se sèlman yon pati nan biwo vòt ou ki vote sou sa a. Verifye bilten egzanp ou.',
-  'jump.federal': 'Federal', 'jump.state': 'Eta', 'jump.county': 'Konte', 'jump.city': 'Vil',
+  'jump.federal': 'Federal', 'jump.cabinet': 'Gouvènè ak Kabinè', 'jump.state': 'Eta', 'jump.county': 'Konte', 'jump.city': 'Vil',
   'jump.judicial': 'Jidisyè', 'jump.amend': 'Amannman', 'jump.ref': 'Referandòm', 'jump.measure': 'Mezi',
   'jump.top': '&uarr; Anwo',
   'sec.donors': 'Pi gwo donatè kanpay la',
@@ -2810,7 +2810,7 @@ function ensurePrecinctsForBallot(){
 /* ---------------- jump-to sections ---------------- */
 
 // Sort each race into a ballot section from its English office title. Order matches the chips.
-var JUMP_ORDER = ['federal', 'state', 'county', 'city', 'judicial', 'amend', 'ref', 'measure'];
+var JUMP_ORDER = ['federal', 'cabinet', 'state', 'county', 'city', 'judicial', 'amend', 'ref', 'measure'];
 function raceSection(race){
   var o = String(race.office || '').toLowerCase();
   if(race.isMeasure){
@@ -2820,7 +2820,8 @@ function raceSection(race){
   }
   if(race.isJudicial || /\b(judge|justice)\b/.test(o)) return 'judicial';
   if(/\b(united states|u\.?s\.?)\s+senat|representative in congress|congressional|president of the united states/.test(o)) return 'federal';
-  if(/governor|attorney general|chief financial officer|commissioner of agriculture|state senat|state representative|state attorney|public defender/.test(o)) return 'state';
+  if(/governor|attorney general|chief financial officer|commissioner of agriculture/.test(o)) return 'cabinet';
+  if(/state senat|state representative|state attorney|public defender/.test(o)) return 'state';
   if(/county|school board|sheriff|property appraiser|tax collector|supervisor of elections|clerk of|soil and water|community council/.test(o)) return 'county';
   if(/ - |\bcity\b|\btown\b|\bvillage\b|council|commission|mayor/.test(o)) return 'city';
   return '';
