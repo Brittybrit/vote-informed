@@ -32,12 +32,12 @@ async function handleAdmin(request, env, url) {
   if (!env.ADMIN_TOKEN) return json({ error: 'Not found' }, 404);
   if (!adminOk(request, env)) return json({ error: 'Unauthorized' }, 401);
   const route = url.pathname.slice('/api/admin/'.length);
-  if (request.method === 'GET' && route === 'board') return json((await env.CACHE.get(BOARD_KEY, 'json')) || { status: {}, notes: {}, extra: [], overrides: {}, hidden: [], updated: null });
-  if (request.method === 'GET' && route === 'board-context') return json({ text: (await env.CACHE.get(BOARD_CONTEXT_KEY)) || '' });
+  if (request.method === 'GET' && route === 'board') return json((await env.BOARD.get(BOARD_KEY, 'json')) || { status: {}, notes: {}, extra: [], overrides: {}, hidden: [], updated: null });
+  if (request.method === 'GET' && route === 'board-context') return json({ text: (await env.BOARD.get(BOARD_CONTEXT_KEY)) || '' });
   if (request.method !== 'POST') return json({ error: 'Not found' }, 404);
   const b = await request.json().catch(() => ({}));
-  if (route === 'board') { const st = boardState(b.state); st.updated = new Date().toISOString(); await env.CACHE.put(BOARD_KEY, JSON.stringify(st)); return json({ ok: true, state: st }); }
-  if (route === 'board-context') { const t = isStr(b.text) ? b.text.slice(0, 200000) : ''; if (t) await env.CACHE.put(BOARD_CONTEXT_KEY, t); else await env.CACHE.delete(BOARD_CONTEXT_KEY); return json({ ok: true, chars: t.length }); }
+  if (route === 'board') { const st = boardState(b.state); st.updated = new Date().toISOString(); await env.BOARD.put(BOARD_KEY, JSON.stringify(st)); return json({ ok: true, state: st }); }
+  if (route === 'board-context') { const t = isStr(b.text) ? b.text.slice(0, 200000) : ''; if (t) await env.BOARD.put(BOARD_CONTEXT_KEY, t); else await env.BOARD.delete(BOARD_CONTEXT_KEY); return json({ ok: true, chars: t.length }); }
   if (route === 'board-chat') return json(await boardChat(env, b, url));
   return json({ error: 'Not found' }, 404);
 }
@@ -91,11 +91,11 @@ async function boardChat(env, b, url) {
   if (!env.ANTHROPIC_API_KEY) return { error: 'No API key configured' };
   const q = isStr(b.question) ? b.question.slice(0, 2000) : '';
   if (!q) return { error: 'Empty question' };
-  const st = boardState(await env.CACHE.get(BOARD_KEY, 'json'));
+  const st = boardState(await env.BOARD.get(BOARD_KEY, 'json'));
   const board = isStr(b.board) ? b.board.slice(0, 40000) : '';
   const ids = Array.isArray(b.ids) ? b.ids.map(String).slice(0, 500) : [];
   const focus = isStr(b.stepId) && b.stepId ? '\n\nThe owner opened the edit box on step id "' + b.stepId.slice(0, 80) + '" and typed the instruction below. Apply it to that step with edit_step (and set_status or add_note if that is what they mean), then confirm in one short sentence.' : '';
-  const context = (await env.CACHE.get(BOARD_CONTEXT_KEY)) || '';
+  const context = (await env.BOARD.get(BOARD_CONTEXT_KEY)) || '';
   const system = 'You are helping the owner of the founder board for We the People 305, a Miami-Dade civic data nonprofit. The board is a kanban with columns todo, doing, waiting, done. Answer from the board, the project notes and, when the question is about officials, agendas, money or the platform\'s data, the live API through read_platform. If asked to change the board, use the tools, then confirm in one short sentence. You cannot change the website or the repo from here; say so plainly if asked. Plain language, no em dashes, no markdown headers.' + (context ? '\n\nPROJECT NOTES (the owner\'s own planning documents):\n' + context.slice(0, 120000) : '');
   const payload = { model: env.MODEL || MODEL, max_tokens: 800, system, tools: BOARD_TOOLS, messages: [{ role: 'user', content: 'BOARD (one JSON line per step):\n' + board + focus + '\n\nINSTRUCTION: ' + q }] };
   let text = '', changed = false;
@@ -117,7 +117,7 @@ async function boardChat(env, b, url) {
     }
     payload.messages.push({ role: 'user', content: results });
   }
-  if (changed) { st.updated = new Date().toISOString(); await env.CACHE.put(BOARD_KEY, JSON.stringify(st)); }
+  if (changed) { st.updated = new Date().toISOString(); await env.BOARD.put(BOARD_KEY, JSON.stringify(st)); }
   return { text: text.trim(), state: st, changed };
 }
 

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const served = [];
-const env = () => ({ CACHE: fakeKV(), ADMIN_TOKEN: 'secret-token', ASSETS: { fetch: async req => { const p = new URL(req.url).pathname; served.push(p); return new Response('asset:' + p, { status: 200 }); } } });
+const env = () => ({ BOARD: fakeKV(), ADMIN_TOKEN: 'secret-token', ASSETS: { fetch: async req => { const p = new URL(req.url).pathname; served.push(p); return new Response('asset:' + p, { status: 200 }); } } });
 const hit = (w, e, host, path, init) => { served.length = 0; return w.__default.fetch(new Request('https://' + host + path, init), e); };
 
 test('board state is sanitized and tools change it', async () => {
@@ -44,7 +44,7 @@ test('hosts: admin host serves the board behind the token; public hosts never ex
   assert.deepEqual(body.status, {});
   r = await hit(w, e, 'admin.wethepeople305.org', '/api/admin/board', { method: 'POST', headers: { Authorization: 'Bearer secret-token', 'Content-Type': 'application/json' }, body: JSON.stringify({ state: { status: { a: 'done' }, hidden: ['b'] } }) });
   assert.equal((await r.json()).state.status.a, 'done');
-  assert.ok(e.CACHE.store.has('board:founder'));
+  assert.ok(e.BOARD.store.has('board:founder'));
   // Without a token configured the admin API does not exist.
   r = await hit(w, { ...env(), ADMIN_TOKEN: '' }, 'admin.wethepeople305.org', '/api/admin/board');
   assert.equal(r.status, 404);

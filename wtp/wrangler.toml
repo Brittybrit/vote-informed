@@ -15,10 +15,10 @@ binding = "ASSETS"
 # The root must reach the Worker so the admin host can serve the board instead of the holding page.
 run_worker_first = ["/", "/index.html", "/admin/*", "/api/*"]
 
-# Its own storage, separate from ballot305. Create it once:  npx wrangler kv namespace create CACHE
+# Its own storage, separate from ballot305. Create it once:  npx wrangler kv namespace create BOARD
 # then paste the id it prints below.
 [[kv_namespaces]]
-binding = "CACHE"
+binding = "BOARD"
 id = "REPLACE_WITH_KV_ID"
 
 [vars]
