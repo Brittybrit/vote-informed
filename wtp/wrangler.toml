@@ -5,23 +5,11 @@ workers_dev = false
 
 routes = [
   { pattern = "wethepeople305.org", custom_domain = true },
-  { pattern = "www.wethepeople305.org", custom_domain = true },
-  { pattern = "admin.wethepeople305.org", custom_domain = true }
+  { pattern = "www.wethepeople305.org", custom_domain = true }
 ]
+# admin.wethepeople305.org is a separate private Worker (the founder board), not in this repo.
 
 [assets]
 directory = "./public"
 binding = "ASSETS"
-# The root must reach the Worker so the admin host can serve the board instead of the holding page.
-run_worker_first = ["/", "/index.html", "/admin/*", "/api/*"]
-
-# Its own storage, separate from ballot305. Create it once:  npx wrangler kv namespace create BOARD
-# then paste the id it prints below.
-[[kv_namespaces]]
-binding = "BOARD"
-id = "48c4fb79803444d2ac48d6ddd08be6ae"
-
-[vars]
-PLATFORM_ORIGIN = "https://ballot305.org"
-
-# Secrets (set once with `npx wrangler secret put NAME`): ADMIN_TOKEN, ANTHROPIC_API_KEY
+run_worker_first = ["/admin/*", "/api/*"]
