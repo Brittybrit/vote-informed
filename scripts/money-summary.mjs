@@ -56,9 +56,13 @@ export function build(decisions, officesHeld) {
       const e = {
         pid: m.person, body: B.key, bodyName: B.cabinet ? { en: 'Cabinet or their own office', es: 'el Gabinete o su propio despacho', ht: 'Kabinè a oswa pwòp biwo yo' } : B.name, name: m.name, last: key, kind: state ? (B.level === 'federal' ? 'federal' : 'state') : B.cabinet ? 'cabinet' : 'votes',
         total: sum(all), donors: new Set(all.map(g => g.donor)).size, gifts: all.length,
-        before: before.length, beforeAmt: sum(before),
+        before: before.length, beforeAmt: sum(before), afterAmt: Math.round((sum(all) - sum(before)) * 100) / 100,
         accounts: Object.keys(byAcct).filter(a => byAcct[a] > 0).length,
       };
+      // Campaign money and political committee money, kept apart so the line can say which got what
+      const isCmte = a => /^(pc|pac)/i.test(a) || /political committee|\bPAC\b/i.test(String(((B.accounts || {})[a] || {}).en || (B.accounts || {})[a] || ''));
+      e.campaignAmt = Math.round(Object.entries(byAcct).filter(([a]) => !isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
+      e.committeeAmt = Math.round(Object.entries(byAcct).filter(([a]) => isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
       if (state) {
         const req = tied.filter(([a]) => a.kind === 'request');
         const bills = tied.filter(([a]) => a.kind === 'bill');
@@ -67,6 +71,8 @@ export function build(decisions, officesHeld) {
         // says "voted yes on ... bills that help kinds of business that gave".
         const yesKeys = new Set(bills.filter(([a]) => a.roll[key] === 'yes').flatMap(([, gs]) => gs.map(giftKey)));
         const billOnly = all.filter(g => !reqKeys.has(g.key) && yesKeys.has(g.key));
+        // Donors tied only to bills the member did not vote yes on (voted no or did not vote)
+        const billOther = all.filter(g => !reqKeys.has(g.key) && !yesKeys.has(g.key));
         const funded = a => {
           const b = a.budget || {};
           return b.status === 'in' && b.amount ? Math.max(0, b.amount - (b.vetoed || 0)) : 0;
@@ -76,11 +82,16 @@ export function build(decisions, officesHeld) {
           n: req.length, ask: sum(req.map(([a]) => ({ amount: a.ask || 0 }))),
           funded: sum(req.map(([a]) => ({ amount: funded(a) }))),
           money: sum(reqGifts), donors: new Set(reqGifts.map(g => g.donor)).size,
+          inBudget: sum(req.map(([a]) => ({ amount: (a.budget || {}).status === 'in' ? (a.budget.amount || 0) : 0 }))),
+          vetoed: sum(req.map(([a]) => ({ amount: (a.budget || {}).status === 'in' ? Math.min(a.budget.amount || 0, a.budget.vetoed || 0) : 0 }))),
+          inN: req.filter(([a]) => (a.budget || {}).status === 'in').length,
         };
         e.bills = {
           bills: new Set(bills.map(([a]) => a.ref)).size, votes: bills.length,
           yes: bills.filter(([a]) => a.roll[key] === 'yes').length,
           money: sum(billOnly), donors: new Set(billOnly.map(g => g.donor)).size,
+          no: bills.filter(([a]) => a.roll[key] === 'no').length,
+          otherMoney: sum(billOther), otherDonors: new Set(billOther.map(g => g.donor)).size,
         };
       } else {
         const v = { yes: 0, no: 0, away: 0, acted: 0 };

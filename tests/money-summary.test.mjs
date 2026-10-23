@@ -52,7 +52,21 @@ test('renders in all three languages with no leftovers', () => {
     assert.ok(s.length > 20, pid + ' ' + lang);
     assert.doesNotMatch(s, /undefined|NaN|null|\{\w+\}/, pid + ' ' + lang + ': ' + s);
   }
-  assert.match(render(saved.people['mike-redondo'], 'en'), /^Mike Redondo filed 41 budget requests worth \$110\.5 million/);
+  // money first, then the actions
+  const r = render(saved.people['mike-redondo'], 'en');
+  assert.match(r, /^Mike Redondo took \$193,555 from 31 donors/);
+  assert.ok(r.indexOf('took') < r.indexOf('asked for $110.5 million'));
+  // the parts add up to the total when both are shown
+  for (const p of Object.values(saved.people)) {
+    if ((p.kind === 'state' || p.kind === 'federal') && p.total)
+      assert.equal(Math.round(p.requests.money + p.bills.money + p.bills.otherMoney), Math.round(p.total), p.pid + ' parts');
+    if (p.total) {
+      assert.equal(Math.round(p.beforeAmt + p.afterAmt), Math.round(p.total), p.pid + ' before + after');
+      assert.equal(Math.round(p.campaignAmt + p.committeeAmt), Math.round(p.total), p.pid + ' accounts');
+    }
+  }
+  // no "the rest" or other words that make the reader work out a number
+  for (const p of Object.values(saved.people)) assert.doesNotMatch(render(p, 'en'), /the rest|of that|\bmore\b/i, p.pid);
 });
 
 test('pages load the shared script', () => {
