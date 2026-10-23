@@ -4,3 +4,6 @@ node_modules/
 .dev.vars
 .env
 *.log
+
+# Machine-found conflict-of-interest leads are hypotheses, never published; keep them out of the public repo.
+scripts/data/leads/auto.json

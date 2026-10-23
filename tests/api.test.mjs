@@ -150,3 +150,15 @@ test('cycleNow: yearly phases wrap the year and next meetings are in the future'
   assert.equal(oct.phases.upcoming[0].key, 'election');
   assert.equal(oct.levers[0].nextMeeting, '2026-11-05');
 });
+
+test('connections: only confirmed rows are public and every one cites a record', async () => {
+  const { res, body } = await get('/api/v1/connections');
+  assert.equal(res.status, 200);
+  for (const c of body.confirmed) {
+    assert.ok(c.record && (c.record.url || c.record.note), 'confirmed connection has a record');
+    assert.ok(c.relationship);
+  }
+  assert.ok(typeof body.underReview === 'object');
+  const { body: one } = await get('/api/v1/people/vicki-l-lopez');
+  assert.ok(one.connections && typeof one.connections.underReview === 'number');
+});

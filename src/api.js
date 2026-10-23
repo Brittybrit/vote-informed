@@ -46,7 +46,8 @@ const FILES = {
   cycles: '/data/cycles.json',
   precincts: '/data/precincts.json',
   contacts: '/data/contacts.json',
-  upcoming: '/data/upcoming.json'
+  upcoming: '/data/upcoming.json',
+  connections: '/data/connections.json'
 };
 const MAX_LIMIT = 500, DEFAULT_LIMIT = 100;
 
@@ -65,7 +66,7 @@ export async function loadApiData(env) {
     const res = await env.ASSETS.fetch(new Request('https://assets.local' + path));
     raw[k] = res.ok ? await res.json() : null;
   }
-  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf, raw.contacts && raw.contacts.updated, raw.upcoming && raw.upcoming.updated].join('|');
+  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf, raw.contacts && raw.contacts.updated, raw.upcoming && raw.upcoming.updated, raw.connections && raw.connections.updated].join('|');
   if (cache && cache.key === key) return cache.data;
   cache = { key, data: buildIndex(raw) };
   return cache.data;
@@ -212,6 +213,7 @@ export function buildIndex(raw) {
     precincts: raw.precincts || null,
     contacts: raw.contacts || { updated: null, offices: {}, bodies: {} },
     upcoming: raw.upcoming || { updated: null, meetings: [] },
+    connections: raw.connections || { updated: null, confirmed: [], underReview: {} },
     officesByBody: groupBy(roster.offices || [], o => o.body),
     termsByOffice: groupBy(roster.terms || [], t => t.office),
     ballotByOffice: groupBy(roster.ballot || [], r => r.officeId)
@@ -289,6 +291,10 @@ function route(parts, q, data, url) {
     if (b) return notFound('upcoming');
     return page(filterUpcoming(data, q), q, data);
   }
+  if (a === 'connections') {
+    if (b) { const rows = data.connections.confirmed.filter(c => c.person === b); return { body: { person: b, updated: data.connections.updated, confirmed: rows, underReview: data.connections.underReview[b] || 0, note: data.connections.note } }; }
+    return { body: data.connections };
+  }
   if (a === 'payments') {
     const rows = data.upcoming.payments || [];
     if (!b) return { body: { updated: data.upcoming.updated, bodies: rows.map(p => ({ body: p.body, rosterBody: p.rosterBody, checked: p.checked, datasets: p.datasets.length, topVendors: p.vendors.top.length, departments: p.staffing ? p.staffing.byDepartment.length : 0 })) } };
@@ -332,6 +338,7 @@ function index(data, url) {
       contacts: base + '/contacts/{office}',
       procurement: base + '/procurement/county',
       payments: base + '/payments/county',
+      connections: base + '/connections/{person}',
       bulk: base + '/bulk',
       openapi: base + '/openapi.json'
     },
@@ -365,6 +372,7 @@ function bulk(data, url) {
       { path: o + FILES.precincts, what: 'precinct to district cross reference (county elections office)' },
       { path: o + FILES.contacts, what: 'official contacts per office' },
       { path: o + FILES.upcoming, what: 'items on posted agendas with ledger matches and tags' },
+      { path: o + FILES.connections, what: 'confirmed connections between officials and the parties before them' },
       { path: o + '/data/lobby-ledger.json', what: 'state budget requests by lobbying firm' },
       { path: o + '/data/county-lobbyists.json', what: 'Miami-Dade County lobbyist registrations used for matching' },
       { path: o + '/data/school-board-lobbyists.json', what: 'M-DCPS lobbyist registrations' },
@@ -439,7 +447,9 @@ function personDetail(p, data) {
     terms,
     races,
     actions: (data.actionsByPerson.get(p.id) || []).map(a => ({ id: a.id, body: a.body, date: a.date, ref: a.ref, kind: a.kind, subject: a.subject, result: a.result, split: a.split, vote: a.roll[p.id] || (a.role || null), ties: a.ties.filter(t => t.person === p.id).length })),
-    ties: data.ties.filter(t => t.person === p.id)
+    ties: data.ties.filter(t => t.person === p.id),
+    connections: { confirmed: data.connections.confirmed.filter(c => c.person === p.id), underReview: data.connections.underReview[p.id] || 0 },
+    contact: data.contacts.offices[(terms.find(t => (t.end == null)) || {}).office] || null
   };
 }
 
@@ -677,6 +687,8 @@ function openapi(url) {
       '/cycles': list('Governance calendar and citizen levers per body', []),
       '/cycles/{key}': { get: { summary: 'One body: meetings, phases, levers, elections, contacts', parameters: [{ name: 'key', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Unknown body' } } } },
       '/upcoming': list('Items on posted agendas, with ledger matches, tags and, given a precinct, relevance', [['body', 'cycle body key or roster body id'], ['precinct', 'county precinct; limits to the bodies it votes for and adds a relevance block'], ['since', 'YYYY-MM-DD'], ['until', 'YYYY-MM-DD'], ['tagged', 'comma list of money, lobbied, wallet, place, hearing, history, near'], ...paging]),
+      '/connections': list('Confirmed connections between officials and parties, donors, lobbyists and vendors, each with the official record that states it; counts of leads under review per official', []),
+      '/connections/{person}': { get: { summary: 'One official\'s confirmed connections and the count under review', parameters: [{ name: 'person', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' } } } },
       '/payments': list('Who each body pays: staffing by department, top vendors with ledger matches, union contracts, levers', []),
       '/payments/{body}': { get: { summary: 'One body\'s staffing and vendor payments', parameters: [{ name: 'body', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Not researched' } } } },
       '/procurement': list('Spending under consideration per body: open solicitations, expiring contracts, capital plan, levers', []),
