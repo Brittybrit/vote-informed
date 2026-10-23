@@ -1,0 +1,184 @@
+{
+  "key": "city-aventura",
+  "rosterBody": "city-aventura",
+  "name": "Aventura City Commission",
+  "jurisdiction": "City of Aventura",
+  "level": "municipal",
+  "checked": "2026-10-23",
+  "links": {
+    "home": "https://www.cityofaventura.com/200/City-Commission",
+    "calendar": "https://www.cityofaventura.com/327/Meetings-Schedule",
+    "agendas": "https://www.cityofaventura.com/AgendaCenter",
+    "minutes": "https://www.cityofaventura.com/159/Agendas-Minutes-Recaps",
+    "video": "https://www.cityofaventura.com/AgendaCenter",
+    "clerk": "https://www.cityofaventura.com/158/City-Clerk"
+  },
+  "meetings": {
+    "pattern": "Regular meeting the first Tuesday of each month at 6:00 p.m., except August and December (no meetings), at the Aventura Government Center Commission Chambers, 19200 West Country Club Drive, or virtually when the agenda says so. A workshop follows about two weeks later, usually a Thursday at 9:00 a.m. in the 5th floor Executive Conference Room. The Local Planning Agency meets at 6:00 p.m. before regular meetings when there are zoning items.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-11-10", "time": "19:00", "kind": "special", "note": "Commission Inauguration Ceremony, Commission Chamber (swearing in of November 3 winners)", "source": "https://www.cityofaventura.com/calendar.aspx?view=list&year=2026&month=11&day=10&CID=14" },
+      { "date": "2026-11-17", "time": "18:00", "kind": "regular", "note": "November regular meeting, moved from the first Tuesday because of the election; Commission Chamber", "source": "https://www.cityofaventura.com/calendar.aspx?view=list&year=2026&month=11&day=17&CID=14" },
+      { "date": "2026-11-19", "time": "09:00", "kind": "workshop", "note": "November Commission Workshop", "source": "https://www.cityofaventura.com/DocumentCenter/View/181/Annual-Meeting-Notice-PDF" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-proposal",
+      "name": "Budget review meeting",
+      "start": "2026-07-23",
+      "end": "2026-07-23",
+      "repeats": "yearly",
+      "decides": "The Commission reviews the City Manager's proposed FY 2026/27 operating and capital budget at a 9:00 a.m. meeting and sets the tentative millage.",
+      "source": "https://www.cityofaventura.com/DocumentCenter/View/181/Annual-Meeting-Notice-PDF"
+    },
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-08",
+      "end": "2026-09-15",
+      "repeats": "yearly",
+      "decides": "First Budget Public Hearing September 8 at 6:00 p.m. and Second Budget Public Hearing September 15 at 5:01 p.m. adopt the millage and the FY 2026/27 budget.",
+      "source": "https://www.cityofaventura.com/DocumentCenter/View/181/Annual-Meeting-Notice-PDF"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "The 2026/2027 fiscal year budget takes effect; prior-year operating encumbrances lapse September 30.",
+      "source": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09152026-519"
+    },
+    {
+      "key": "recess",
+      "name": "August recess",
+      "start": "2026-08-01",
+      "end": "2026-08-31",
+      "repeats": "yearly",
+      "decides": "No Commission meetings in August (or December).",
+      "source": "https://www.cityofaventura.com/DocumentCenter/View/181/Annual-Meeting-Notice-PDF"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the November 2026 election",
+      "start": "2026-08-10",
+      "end": "2026-08-14",
+      "repeats": "once",
+      "decides": "Who runs for Mayor and Commission Seats 2, 4 and 6; 8:30 a.m. to 4:30 p.m. with the City Clerk.",
+      "source": "https://www.cityofaventura.com/162/Municipal-Election-Candidate-Information"
+    },
+    {
+      "key": "election",
+      "name": "General and special election",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Mayor (Howard S. Weinberg v. Alberto Zaltzberg); Seats 2, 4 and 6 unopposed (Orlinsky, Kruss, Bloom); two charter questions on elected officials' salaries and auditor rotation.",
+      "source": "https://www.cityofaventura.com/428/2026-Municipal-Election-Candidate-Inform"
+    },
+    {
+      "key": "swearing-in",
+      "name": "Commission inauguration",
+      "start": "2026-11-10",
+      "end": "2026-11-10",
+      "repeats": "once",
+      "decides": "Winners of the November 3 election are sworn in at 7:00 p.m. in the Commission Chamber.",
+      "source": "https://www.cityofaventura.com/calendar.aspx?view=list&year=2026&month=11&day=10&CID=14"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Speak at the Public Comments item near the end of each regular meeting (after Staff Reports) or at a public hearing item. To speak on a consent agenda item, tell the City Clerk before the meeting starts; you are recognized before the consent agenda is approved.",
+      "rules": "No time limit, sign-up form or speaker rule is printed on the agenda or the meetings page. The Commission Chambers are open to the public; meetings may be virtual when the agenda says so.",
+      "deadline": "Consent agenda items: notify the Clerk before the meeting begins",
+      "url": "https://www.cityofaventura.com/AgendaCenter",
+      "source": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09082026-516"
+    },
+    {
+      "key": "written-comment",
+      "how": "No written comment procedure is posted. Email the City Clerk's office.",
+      "rules": null,
+      "deadline": null,
+      "url": "mailto:cityclerk@cityofaventura.com",
+      "source": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09082026-516"
+    },
+    {
+      "key": "contact",
+      "how": "Call or visit the Government Center, weekdays 8:30 a.m. to 5:00 p.m., or use the staff directory for individual commissioners.",
+      "rules": "Government Center 305-466-8900.",
+      "deadline": null,
+      "url": "https://www.cityofaventura.com/200/City-Commission",
+      "source": "https://www.cityofaventura.com/200/City-Commission"
+    },
+    {
+      "key": "records-request",
+      "how": "Submit a public records request through the city's JustFOIA portal.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://aventurafl.justfoia.com",
+      "source": "https://www.cityofaventura.com/312/City-Code-Charter"
+    },
+    {
+      "key": "petition",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/aventura/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "referendum",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/aventura/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "recall",
+      "how": "Florida's uniform municipal recall statute, F.S. 100.361, applies to the Mayor and Commissioners; the city charter text could not be checked for a city-specific provision.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+      "key": "qualify",
+      "how": "Qualify with the City Clerk during the August qualifying week: $100 charter qualifying fee, 1 percent state assessment, and a $500 refundable sign deposit. Candidates must have lived in the city continuously for one year before qualifying; Seat 2 candidates must live north of the Lehman Causeway and Seat 4 south of it.",
+      "rules": "2026 window: August 10 to 14, 8:30 a.m. to 4:30 p.m. Seats 2, 4, 6 and Mayor were up in 2026; Seats 1, 3 and 5 are next in 2028. Resign-to-run notice is due at least 10 days before qualifying opens.",
+      "deadline": "4:30 p.m. on the last day of the August qualifying week",
+      "url": "https://www.cityofaventura.com/162/Municipal-Election-Candidate-Information",
+      "source": "https://www.cityofaventura.com/162/Municipal-Election-Candidate-Information"
+    },
+    {
+      "key": "vote",
+      "how": "City elections are held with the November general election in even years; vote through Miami-Dade Elections by mail, early voting or at your precinct.",
+      "rules": "Registered Aventura voters; all seats are voted citywide (residential-area seats restrict only who may run).",
+      "deadline": "Election Day November 3, 2026",
+      "url": "https://www.cityofaventura.com/173/Voting",
+      "source": "https://www.cityofaventura.com/161/Elections"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Apply for an advisory board through the Advisory Boards page or the Form Center.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.cityofaventura.com/212/Advisory-Boards",
+      "source": "https://www.cityofaventura.com/27/Our-City"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-08-10", "end": "2026-08-14", "source": "https://www.cityofaventura.com/162/Municipal-Election-Candidate-Information" },
+    "terms": "Mayor and six commissioners (Seats 1 to 6) serve four-year terms, staggered: Mayor and Seats 2, 4, 6 in 2026; Seats 1, 3, 5 in 2028. The charter requires two commissioners to live north of the Lehman Causeway, two south, and two plus the Mayor anywhere in the city. Term limits and run-off rules were not found on the city pages.",
+    "source": "https://www.cityofaventura.com/200/City-Commission"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Ellisa L. Horvath, MMC, City Clerk", "email": "cityclerk@cityofaventura.com", "phone": "305-466-8901", "url": "https://www.cityofaventura.com/158/City-Clerk", "source": "https://www.cityofaventura.com/158/City-Clerk" },
+    { "role": "commission office", "name": "City Commission (Government Center)", "email": null, "phone": "305-466-8900", "url": "https://www.cityofaventura.com/200/City-Commission", "source": "https://www.cityofaventura.com/200/City-Commission" },
+    { "role": "mayor", "name": "Howard S. Weinberg, Esq.", "email": null, "phone": "305-466-8900", "url": "https://www.cityofaventura.com/200/City-Commission", "source": "https://www.cityofaventura.com/200/City-Commission" }
+  ],
+  "notes": "Schedule comes from the 2026 Meeting Schedule PDF (DocumentCenter/View/181) confirmed against the Meetings calendar for Nov 10 and Nov 17; the PDF's November block runs the dates and times together, so the pairing (Inauguration Nov 10 at 7:00 p.m., meeting Nov 17 at 6:00 p.m.) is taken from the calendar entries. No December meetings and no 2027 schedule posted (the January 2027 calendar shows only a charter school board date). Agenda lead time is not stated anywhere found; the meetings page says agendas are posted on the Government Center bulletin board and website. Public comment rules come from the September 8, 2026 agenda, which gives the consent-agenda sign-in rule but no time limit; a search for a rules-of-procedure document was not possible because the web search budget was exhausted. The charter could not be read (Municode returned errors on every attempt and the city posts no charter PDF), so petition and referendum are null and recall cites only the state statute; the charter's election section and any run-off or term-limit rules are also unverified. The clerk's personal email is ehorvath@cityofaventura.com; the office address cityclerk@cityofaventura.com is from the agenda ADA notice. Budget: July 23 budget review and September hearings from the schedule PDF; the proposed budget release date is not posted. The records-request URL is the JustFOIA domain named on the City Code and Charter page, not opened."
+}
