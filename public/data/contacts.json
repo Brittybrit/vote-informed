@@ -1,6 +1,311 @@
 {
  "updated": "2026-10-23",
  "note": "Official contacts per office, from each body's own pages. Source files: scripts/data/contacts/. Rebuild: node scripts/contacts.mjs.",
- "offices": {},
- "bodies": {}
+ "offices": {
+  "mdc-commission-1": {
+   "office": "mdc-commission-1",
+   "holder": "Oliver G. Gilbert III",
+   "email": "District1@miamidade.gov",
+   "phone": "305-375-5694",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "17988 NW 27th Ave, Miami Gardens, FL 33056",
+    "phone": "305-474-3011",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district01/contact-us.page",
+   "staff": [
+    {
+     "role": "chief of staff",
+     "name": "Akeem Brutus",
+     "email": "Akeem.Brutus@miamidade.gov"
+    },
+    {
+     "role": "deputy chief of staff",
+     "name": "Sandra Pierre-Paul",
+     "email": "Sandra.PierrePaul@miamidade.gov"
+    }
+   ],
+   "source": "https://www.miamidade.gov/global/government/commission/district01/home.page; https://www.miamidade.gov/global/government/commission/district01/contact-us.page",
+   "notes": "Fax 305-372-6028 (Clark Center), 305-474-3066 (district office).",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-2": {
+   "office": "mdc-commission-2",
+   "holder": "Marleine Bastien",
+   "email": "district2@miamidade.gov",
+   "phone": "305-375-4833",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "915 NE 125th St, Suite 2A, Miami, FL 33161",
+    "phone": "305-694-2779",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district02/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district02/home.page; https://www.miamidade.gov/global/government/commission/district02/contact-us.page",
+   "notes": "Fax 305-375-4843 (Clark Center), 305-694-2781 (district office). No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-3": {
+   "office": "mdc-commission-3",
+   "holder": "Keon Hardemon",
+   "email": "district3@miamidade.gov",
+   "phone": "305-375-5393",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "Joseph Caleb Center, 5400 NW 22nd Ave, Suite 701, Miami, FL 33142",
+    "phone": "305-636-2331",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district03/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district03/home.page; https://www.miamidade.gov/global/government/commission/district03/contact-us.page",
+   "notes": "Fax 305-372-6104. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-4": {
+   "office": "mdc-commission-4",
+   "holder": "Micky Steinberg",
+   "email": "district4@miamidade.gov",
+   "phone": "305-375-5128",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "2124 NE 123rd St, Suite 201, North Miami, FL 33181",
+    "phone": "305-787-5999",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district04/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district04/home.page; https://www.miamidade.gov/global/government/commission/district04/contact-us.page",
+   "notes": "Satellite office at Aventura City Hall, 19200 W Country Club Dr, #417, Aventura, FL 33180, 305-787-5999. No staff or fax listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-5": {
+   "office": "mdc-commission-5",
+   "holder": "Vicki L. Lopez",
+   "email": "district5@miamidade.gov",
+   "phone": "305-375-5924",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "2100 Coral Way, Suite 400, Miami, FL 33145",
+    "phone": "305-375-5924",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district05/contact-us.page",
+   "staff": [
+    {
+     "role": "chief of staff",
+     "name": "Arleen Gomez",
+     "email": "Arleen.Gomez@miamidade.gov"
+    }
+   ],
+   "source": "https://www.miamidade.gov/global/government/commission/district05/home.page; https://www.miamidade.gov/global/government/commission/district05/contact-us.page",
+   "notes": "Fax 305-375-5904. Second district office at Miami Beach City Hall, 1700 Convention Center Dr, 1st Floor, Miami Beach, FL 33139. Clark Center suite from the contact-us page; the home page lists only the two district offices.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-6": {
+   "office": "mdc-commission-6",
+   "holder": "Natalie Milian Orbis",
+   "email": "district6@miamidade.gov",
+   "phone": "305-375-5696",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "1000 SW 57th Ave, Suite 201, Miami, FL 33144",
+    "phone": "305-267-6377",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district06/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district06/home.page; https://www.miamidade.gov/global/government/commission/district06/contact-us.page",
+   "notes": "Fax 305-372-6090 (Clark Center), 305-267-6366 (main office). Hialeah satellite at 501 President Donald J. Trump Ave, 4th Floor, Hialeah, FL 33010, Wednesdays 9 a.m. to 4 p.m.; mobile office hours Mondays 9 a.m. to 4 p.m. rotating among Miami Springs, City of Miami (two sites) and Coral Gables. Clark Center suite and phone from the contact-us page. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-7": {
+   "office": "mdc-commission-7",
+   "holder": "Raquel A. Regalado",
+   "email": "District7@miamidade.gov",
+   "phone": "305-375-5680",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "3750 S Dixie Hwy, Suite 201, Miami, FL 33133",
+    "phone": "305-375-5680",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district07/contact-us.page",
+   "staff": [
+    {
+     "role": "chief of staff",
+     "name": "Anthony Escarra",
+     "email": "Anthony.Escarra@miamidade.gov"
+    },
+    {
+     "role": "deputy chief of staff",
+     "name": "Laura Verdaguer",
+     "email": "Laura.Verdaguer@miamidade.gov"
+    }
+   ],
+   "source": "https://www.miamidade.gov/global/government/commission/district07/home.page; https://www.miamidade.gov/global/government/commission/district07/contact-us.page",
+   "notes": "Accessibility line 305-669-4003. No fax listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-8": {
+   "office": "mdc-commission-8",
+   "holder": "Danielle Cohen Higgins",
+   "email": "District8@miamidade.gov",
+   "phone": "305-375-5218",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 220, Miami, FL 33128",
+   "districtOffice": {
+    "address": "South Dade Government Center, 10710 SW 211 St, Suite 103, Cutler Bay, FL 33189",
+    "phone": "305-378-6677",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district08/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district08/home.page; https://www.miamidade.gov/global/government/commission/district08/contact-us.page",
+   "notes": "Fax 305-372-6073. Press inquiries press.district8@miamidade.gov. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-9": {
+   "office": "mdc-commission-9",
+   "holder": "Kionne L. McGhee",
+   "email": "District9@miamidade.gov",
+   "phone": "305-234-4938",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 320, Miami, FL 33128",
+   "districtOffice": {
+    "address": "South Dade Government Center, 10710 SW 211 St, Suite 204, Cutler Bay, FL 33189",
+    "phone": "305-234-4938",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district09/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district09/home.page; https://www.miamidade.gov/global/government/commission/district09/contact-us.page",
+   "notes": "Fax 305-372-6011. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-10": {
+   "office": "mdc-commission-10",
+   "holder": "Anthony Rodriguez",
+   "email": "district10@miamidade.gov",
+   "phone": "305-375-4835",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 320, Miami, FL 33128",
+   "districtOffice": {
+    "address": "7146 SW 117th Ave, Miami, FL 33183",
+    "phone": "305-222-2116",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district10/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district10/home.page; https://www.miamidade.gov/global/government/commission/district10/contact-us.page",
+   "notes": "Fax 305-375-3456. Chairman. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-11": {
+   "office": "mdc-commission-11",
+   "holder": "Roberto J. Gonzalez",
+   "email": "District11@miamidade.gov",
+   "phone": "305-375-5511",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 320, Miami, FL 33128",
+   "districtOffice": {
+    "address": "12781 SW 42nd St, Unit E-F, Miami, FL 33175",
+    "phone": "305-375-5511",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district11/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district11/home.page; https://www.miamidade.gov/global/government/commission/district11/contact-us.page",
+   "notes": "Fax 305-375-5883. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-12": {
+   "office": "mdc-commission-12",
+   "holder": "Juan Carlos \"JC\" Bermudez",
+   "email": "district12@miamidade.gov",
+   "phone": "305-375-4343",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 320, Miami, FL 33128",
+   "districtOffice": {
+    "address": "8333 NW 53 St, Suite 102, Doral, FL 33166",
+    "phone": "305-599-1200",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district12/contact-us.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/commission/district12/home.page; https://www.miamidade.gov/global/government/commission/district12/contact-us.page",
+   "notes": "Fax 305-470-1791 (district office). No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-commission-13": {
+   "office": "mdc-commission-13",
+   "holder": "René Garcia",
+   "email": "district13@miamidade.gov",
+   "phone": "305-375-4831",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, Suite 320, Miami, FL 33128",
+   "districtOffice": {
+    "address": "1490 W 68th St, Suite 101, Hialeah, FL 33014",
+    "phone": "305-820-8424",
+    "hours": null
+   },
+   "contactUrl": "https://www.miamidade.gov/global/government/commission/district13/contact-us.page",
+   "staff": [
+    {
+     "role": "chief of staff",
+     "name": "Iraida Mendez-Cartaya",
+     "email": "Iraida.Mendez-Cartaya@miamidade.gov"
+    },
+    {
+     "role": "deputy chief of staff",
+     "name": "Ismare Monreal",
+     "email": "ismare.monreal@miamidade.gov"
+    },
+    {
+     "role": "deputy chief of staff",
+     "name": "Lauren Pardo",
+     "email": "lauren.pardo@miamidade.gov"
+    }
+   ],
+   "source": "https://www.miamidade.gov/global/government/commission/district13/home.page; https://www.miamidade.gov/global/government/commission/district13/contact-us.page",
+   "notes": "No fax listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  },
+  "mdc-mayor": {
+   "office": "mdc-mayor",
+   "holder": "Daniella Levine Cava",
+   "email": "mayor@miamidade.gov",
+   "phone": "305-375-5071",
+   "officeAddress": "Stephen P. Clark Center, 111 NW 1st St, 29th Floor, Miami, FL 33128",
+   "districtOffice": null,
+   "contactUrl": "https://www.miamidade.gov/global/government/mayor/contact.page",
+   "staff": [],
+   "source": "https://www.miamidade.gov/global/government/mayor/home.page; https://www.miamidade.gov/global/government/mayor/contact.page",
+   "notes": "Switchboard 305-375-1880, media 305-375-1545, fax 305-375-2099. Public records custodian: Office of the Mayor, 305-375-1880. No staff listed.",
+   "body": "mdc-commission",
+   "checked": "2026-10-23"
+  }
+ },
+ "bodies": {
+  "mdc-commission": {
+   "clerkEmail": "cocpubreq@miamidadeclerk.gov",
+   "clerkPhone": "305-275-1155",
+   "clerkUrl": "https://www.miamidadeclerk.gov/clerk/cob-home.page",
+   "clerkAddress": "Clerk of the Board, Stephen P. Clark Center, 111 NW 1st St, Suite 17-202, Miami, FL 33128",
+   "commentEmail": null,
+   "recordsRequestUrl": "https://miamidadecounty.govqa.us/WEBAPP/_rs/RequestSelect.aspx",
+   "source": "https://www.miamidadeclerk.gov/clerk/cob-contact.page; https://www.miamidadeclerk.gov/clerk/public-records-requests.page",
+   "checked": "2026-10-23",
+   "notes": "All emails on miamidade.gov are Cloudflare-protected; each was decoded from the page's email-protection link and the decode was verified locally (XOR with first byte). Case of district emails is as the page encodes it. No district page lists office hours except District 6's Hialeah satellite and mobile hours. Chief of staff appears only on the contact-us pages of Districts 1, 5, 7 and 13; the other contact-us pages list only the commissioner. Clerk of the Board pages list no email (\"contact this office by phone or in writing\"); cocpubreq@miamidadeclerk.gov is the Clerk's public records email from the public-records-requests page, which also directs BCC records requests to the county GovQA portal (select Board of County Commission) and gives (305) 593-1352 for questions. No written-comment email found on the commission pages; written comment route not confirmed. Mayor row is included here because mdc-mayor is a one-office body."
+  }
+ }
 }
