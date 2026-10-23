@@ -64,6 +64,8 @@ export default {
       if (ADMIN_HOSTS.has(url.hostname) && (url.pathname === '/' || url.pathname === '/index.html')) {
         return env.ASSETS.fetch(new Request('https://assets.local/admin/board.html', request));
       }
+      // run_worker_first sends the root here on every host; everywhere else it is the normal home page.
+      if (url.pathname === '/' || url.pathname === '/index.html') return env.ASSETS.fetch(request);
       if (url.pathname === '/api/v1' || url.pathname.startsWith('/api/v1/')) {
         return handleApi(request, env, url);
       }
