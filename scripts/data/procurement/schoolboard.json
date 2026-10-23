@@ -1,0 +1,1772 @@
+{
+  "body": "schoolboard",
+  "rosterBody": "mdcps-board",
+  "checked": "2026-10-23",
+  "links": {
+    "solicitations": "http://procurement.dadeschools.net",
+    "vendorRegistration": "https://forms.dadeschools.net/webpdf/3921.pdf",
+    "sbe": "https://oeo.dadeschools.net/",
+    "capitalPlan": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf",
+    "contracts": "https://pdfs.dadeschools.net/Bdarch/2026/",
+    "protests": "http://procurement.dadeschools.net",
+    "inspectorGeneral": "https://www.miamidadeig.org/"
+  },
+  "solicitations": [
+    {
+      "id": "ITB-25-069-JS",
+      "title": "Pest Control Items",
+      "department": null,
+      "type": "ITB",
+      "posted": "2026-10-08",
+      "questionsDue": null,
+      "preBid": null,
+      "due": "2026-11-05",
+      "estimatedValue": null,
+      "term": null,
+      "setAside": null,
+      "buyer": {
+        "name": "Procurement Management Services",
+        "email": "vendors@dadeschools.net",
+        "phone": "(305) 995-4288"
+      },
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator; number from URL slug)"
+    },
+    {
+      "id": null,
+      "title": "Miami Lakes K-8 Center GOB Renovations",
+      "department": "Facilities Design and Construction",
+      "type": "other",
+      "posted": "2026-09-29",
+      "questionsDue": null,
+      "preBid": null,
+      "due": "2026-11-10",
+      "estimatedValue": null,
+      "term": null,
+      "setAside": null,
+      "buyer": {
+        "name": "Procurement Management Services",
+        "email": "vendors@dadeschools.net",
+        "phone": "(305) 995-4288"
+      },
+      "location": {
+        "address": "Miami Lakes K-8 Center",
+        "district": null
+      },
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    },
+    {
+      "id": null,
+      "title": "Inspection and Administrative Services for Elevators and Wheelchair Lifts",
+      "department": "Facilities Operations Maintenance",
+      "type": "RFP",
+      "posted": "2026-09-11",
+      "questionsDue": null,
+      "preBid": null,
+      "due": "2026-11-03",
+      "estimatedValue": null,
+      "term": null,
+      "setAside": null,
+      "buyer": {
+        "name": "Procurement Management Services",
+        "email": "vendors@dadeschools.net",
+        "phone": "(305) 995-4288"
+      },
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    },
+    {
+      "id": "ITB-25-038-VF",
+      "title": "Security Systems Services (non-mandatory pre-bid July 27, 2026, 10:00 a.m. ET via Google Meet; bid opening August 18, 2026, 1:00 p.m.)",
+      "department": null,
+      "type": "ITB",
+      "posted": "2026-07-20",
+      "questionsDue": null,
+      "preBid": "2026-07-27",
+      "due": "2026-08-18",
+      "estimatedValue": null,
+      "term": null,
+      "setAside": null,
+      "buyer": {
+        "name": "Procurement Management Services",
+        "email": "vendors@dadeschools.net",
+        "phone": "(305) 995-4288"
+      },
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://samsearch.co/gov-explore/sled/security-systems-services/543243 (third-party aggregator; closed, awaiting Board action)"
+    }
+  ],
+  "capitalPlan": [
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Capital Projects",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 275922407,
+        "FY2027-28": 251538754,
+        "FY2028-29": 283456020,
+        "FY2029-30": 308161746,
+        "FY2030-31": 361248408
+      },
+      "total": 1480327335,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Impact Fee projects",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 21901000,
+        "FY2027-28": 21901000,
+        "FY2028-29": 21901000,
+        "FY2029-30": 21901000,
+        "FY2030-31": 21901000
+      },
+      "total": 109505000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Critical Systems Lifecycle Needs",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 11590170,
+        "FY2027-28": 11590170,
+        "FY2028-29": 11590170,
+        "FY2029-30": 21590170,
+        "FY2030-31": 21590170
+      },
+      "total": 77950850,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Comprehensive Needs",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 12000000,
+        "FY2027-28": 12000000,
+        "FY2028-29": 12000000,
+        "FY2029-30": 12000000,
+        "FY2030-31": 12000000
+      },
+      "total": 60000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: ADA (Lawsuit Projects)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 8000000,
+        "FY2027-28": 8000000,
+        "FY2028-29": 8000000,
+        "FY2029-30": 8000000,
+        "FY2030-31": 8000000
+      },
+      "total": 40000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Maintenance Service Contracts",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 22000000,
+        "FY2027-28": 22000000,
+        "FY2028-29": 22000000,
+        "FY2029-30": 22000000,
+        "FY2030-31": 22000000
+      },
+      "total": 110000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Safety to Life",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 6937243,
+        "FY2027-28": 6937243,
+        "FY2028-29": 6937243,
+        "FY2029-30": 6937243,
+        "FY2030-31": 6937243
+      },
+      "total": 34686215,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Roofing",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 18000000,
+        "FY2027-28": 22000000,
+        "FY2028-29": 22000000,
+        "FY2029-30": 22000000,
+        "FY2030-31": 22000000
+      },
+      "total": 106000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Locker Rm & Athletic Field Renov",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 0,
+        "FY2027-28": 5000000,
+        "FY2028-29": 5000000,
+        "FY2029-30": 5000000,
+        "FY2030-31": 0
+      },
+      "total": 15000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Energy Management Projects loc 9241",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 1600000,
+        "FY2027-28": 3600000,
+        "FY2028-29": 3600000,
+        "FY2029-30": 3600000,
+        "FY2030-31": 3600000
+      },
+      "total": 16000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Structural Projects",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 5000000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 4000000,
+        "FY2029-30": 3000000,
+        "FY2030-31": 0
+      },
+      "total": 17000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: HVAC Projects",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 15000000,
+        "FY2027-28": 15000000,
+        "FY2028-29": 15000000,
+        "FY2029-30": 15000000,
+        "FY2030-31": 15000000
+      },
+      "total": 75000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Painting and Beautification",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 1000000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 5000000,
+        "FY2029-30": 5000000,
+        "FY2030-31": 4000000
+      },
+      "total": 20000000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Five-Year Facilities Work Program FY 2026-27 to 2030-31 category: Offsite Road Improvements",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 220000,
+        "FY2027-28": 220000,
+        "FY2028-29": 220000,
+        "FY2029-30": 220000,
+        "FY2030-31": 220000
+      },
+      "total": 1100000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Subtotal Facilities Projects, Five-Year Facilities Work Program FY 2026-27 to 2030-31",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 1776139281,
+        "FY2027-28": 390637167,
+        "FY2028-29": 420704433,
+        "FY2029-30": 454410159,
+        "FY2030-31": 498496821
+      },
+      "total": 3540387861,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "SpaceHub for Booker T Washington SHS (carryforward line in E-15)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Booker T. Washington Senior High, 1200 NW 6 Ave, Miami",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2026-27": 150000
+      },
+      "total": 150000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "PECO - Visual & Performing Arts (line in E-15)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Districtwide",
+        "district": null
+      },
+      "fundingSource": "PECO",
+      "amounts": {
+        "FY2026-27": 450000
+      },
+      "total": 450000,
+      "status": "funded",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e15.pdf"
+    },
+    {
+      "project": "Palm Springs Middle School GOB renovation, Project 01619500 (H A Contracting Corp; Change Order 1 approved 2026-09-09, adjusted contract price 8,196,434.00)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Palm Springs Middle School, Hialeah",
+        "district": null
+      },
+      "fundingSource": "General Obligation Bond",
+      "amounts": {
+        "FY2026-27": null
+      },
+      "total": 8196434.0,
+      "status": "under construction",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/f40.pdf"
+    },
+    {
+      "project": "West Lakes Preparatory Academy: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "West Lakes Preparatory Academy",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 10000000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 10000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "New K-12 @ SW 149 Ave and 160 St (Phase I): New school (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "New K-12 @ SW 149 Ave and 160 St (Phase I)",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 3000000,
+        "FY2025-26": 23171178,
+        "FY2026-27": 37000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 63171178,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "J C Bermudez Doral Senior High: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "J C Bermudez Doral Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 10000000,
+        "FY2025-26": 0,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 10000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Coral Gables Senior High: Partial Replacement (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Coral Gables Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 10000000,
+        "FY2025-26": 3200000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 13200000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Coral Gables Preparatory Academy: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Coral Gables Preparatory Academy",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 9000000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 9000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "New School - South Region: New school (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "New School - South Region",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 3862484,
+        "FY2025-26": 1682060,
+        "FY2026-27": 19182060,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 24726604,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "English Center: Replacement (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "English Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 8000000,
+        "FY2025-26": 0,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 8000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "New School @ NE 215 Street and 6 Avenue: New school (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "New School @ NE 215 Street and 6 Avenue",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 9563790,
+        "FY2025-26": 7000000,
+        "FY2026-27": 8563790,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 25127580,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Broadmoor Elementary: Replacement (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Broadmoor Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 6000000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 6000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Coral Reef Senior High: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Coral Reef Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 1000000,
+        "FY2026-27": 7000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 8000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Frances S Tucker Elementary: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Frances S Tucker Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 7781000,
+        "FY2025-26": 0,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 7781000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Miami Lakes Middle: Addition to Replace Portables (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Miami Lakes Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 2955150,
+        "FY2026-27": 2955150,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 5910300,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Highland Oaks Elementary: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Highland Oaks Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 5300000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 5300000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Dr. Henry E. Perrine Academy of the Arts: Art & Music Suite (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Dr. Henry E. Perrine Academy of the Arts",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 4363790,
+        "FY2025-26": 0,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 4363790,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Lenora Braynon Smith Elementary: Replacement (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Lenora Braynon Smith Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 12750000,
+        "FY2025-26": 4000000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 16750000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Andrea Castillo Preparatory Academy: Addition (K-8 Conversion) (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Andrea Castillo Preparatory Academy",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 3500000,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 3500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Homestead Senior High: Addition (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Homestead Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 1000675,
+        "FY2025-26": 0,
+        "FY2026-27": 0,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 1000675,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Lamar Louis Curry Middle: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Lamar Louis Curry Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 3000000,
+        "FY2027-28": 1500000,
+        "FY2028-29": 0
+      },
+      "total": 4500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Sweetwater Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Sweetwater Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 3000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 3000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Barbara Hawkins Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Barbara Hawkins Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 400000,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 3000000,
+        "FY2028-29": 0
+      },
+      "total": 3900000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Booker T Washington Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Booker T Washington Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 5000000,
+        "FY2026-27": 5000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 10000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Miami Central Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Miami Central Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 1000000,
+        "FY2025-26": 0,
+        "FY2026-27": 4500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 5500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Van E Blanton Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Van E Blanton Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 289761,
+        "FY2027-28": 2510239,
+        "FY2028-29": 0
+      },
+      "total": 2800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "William H Turner Technical Arts Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "William H Turner Technical Arts Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 4500000,
+        "FY2028-29": 0
+      },
+      "total": 5000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Henry H Filer Middle: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Henry H Filer Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 2800000,
+        "FY2026-27": 5000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 7800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "South Hialeah Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "South Hialeah Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 1500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 1800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "G Holmes Braddock Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "G Holmes Braddock Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 1000000,
+        "FY2025-26": 4000000,
+        "FY2026-27": 3000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 8000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Howard D McMillan Middle: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Howard D McMillan Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 3200000,
+        "FY2025-26": 500000,
+        "FY2026-27": 4000000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 0
+      },
+      "total": 12700000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Miami Sunset Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Miami Sunset Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 500000,
+        "FY2026-27": 5000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 5500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Arthur and Polly Mays Conservatory of the Arts: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Arthur and Polly Mays Conservatory of the Arts",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 15000000,
+        "FY2026-27": 15000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 30000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Coral Reef Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Coral Reef Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 900000,
+        "FY2025-26": 1500000,
+        "FY2026-27": 7000000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 0
+      },
+      "total": 14400000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Homestead Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Homestead Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 1000000,
+        "FY2025-26": 5000000,
+        "FY2026-27": 6000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 12000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Hialeah Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Hialeah Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 2500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 2500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Christina M Eve Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Christina M Eve Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 2800000,
+        "FY2026-27": 2000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 4800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Greenglade Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Greenglade Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 500000,
+        "FY2026-27": 4300000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 4800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Jane S Roberts K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Jane S Roberts K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 869670,
+        "FY2025-26": 300000,
+        "FY2026-27": 2000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 3169670,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Florida City Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Florida City Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 3500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 3500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Aventura Waterways K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Aventura Waterways K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 9313790,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 9613790,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Auburndale Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Auburndale Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 500000,
+        "FY2026-27": 3000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 3500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Agenoria S Paschal/Olinda Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Agenoria S Paschal/Olinda Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 4200000,
+        "FY2028-29": 0
+      },
+      "total": 4700000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Campbell Drive K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Campbell Drive K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 4500000,
+        "FY2028-29": 0
+      },
+      "total": 5000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Eugenia B Thomas K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Eugenia B Thomas K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 3500000,
+        "FY2028-29": 0
+      },
+      "total": 4000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "George Washington Carver Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "George Washington Carver Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 2000000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 2300000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Hammocks Middle: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Hammocks Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 1000000,
+        "FY2027-28": 500000,
+        "FY2028-29": 3500000
+      },
+      "total": 5000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "John A Ferguson Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "John A Ferguson Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 0
+      },
+      "total": 5500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Laura C Saunders Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Laura C Saunders Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 1700000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 2000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Miami Gardens Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Miami Gardens Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 1500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 1800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Miami Heights Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Miami Heights Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 3500000,
+        "FY2028-29": 0
+      },
+      "total": 4000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Palmetto Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Palmetto Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 1500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 1800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Riverside Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Riverside Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 12000000,
+        "FY2026-27": 300000,
+        "FY2027-28": 2500000,
+        "FY2028-29": 0
+      },
+      "total": 14800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "South Miami K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "South Miami K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 500000,
+        "FY2026-27": 1500000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 2000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Sunset Park Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Sunset Park Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 4300000,
+        "FY2028-29": 0
+      },
+      "total": 4800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "West Miami Middle: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "West Miami Middle",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 500000,
+        "FY2028-29": 3000000
+      },
+      "total": 4000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Zora Neale Hurston Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Zora Neale Hurston Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 500000,
+        "FY2027-28": 500000,
+        "FY2028-29": 4000000
+      },
+      "total": 5000000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "North Miami Beach Senior High: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "North Miami Beach Senior High",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 1500000,
+        "FY2026-27": 1000000,
+        "FY2027-28": 5000000,
+        "FY2028-29": 5000000
+      },
+      "total": 12500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Irving & Beatrice Peskoe K-8 Center: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Irving & Beatrice Peskoe K-8 Center",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 300000,
+        "FY2026-27": 1200000,
+        "FY2027-28": 0,
+        "FY2028-29": 0
+      },
+      "total": 1500000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Kelsey L Pharr Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Kelsey L Pharr Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 300000,
+        "FY2027-28": 2500000,
+        "FY2028-29": 0
+      },
+      "total": 2800000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    },
+    {
+      "project": "Whispering Pines Elementary: Improvements/Renovations (FLDOE-filed FY 2024-25 to 2028-29 work plan, funded)",
+      "department": "Facilities Design and Construction",
+      "location": {
+        "address": "Whispering Pines Elementary",
+        "district": null
+      },
+      "fundingSource": "Local Optional Millage (1.5 mill capital outlay)",
+      "amounts": {
+        "FY2024-25": 0,
+        "FY2025-26": 0,
+        "FY2026-27": 300000,
+        "FY2027-28": 3000000,
+        "FY2028-29": 0
+      },
+      "total": 3300000,
+      "status": "funded",
+      "source": "https://www.fldoe.org/core/fileparse.php/9948/urlt/DADE2025.pdf"
+    }
+  ],
+  "expiring": [
+    {
+      "contract": "ITB-22-041-PM Intercom, Master Clock, and PA Sound Systems (initial term Feb 13, 2024 to Feb 12, 2027; supplemental award 2026-07-22 raised total to 3,500,000 per year)",
+      "vendor": "Audio Enhancement, Inc.; AudioVideo Technical Services, Inc.; Briggs Management & Associate LLC; GlobalXnet Technologies, LLC; Integrated Fire & Security Solutions Inc.; Music Arts Enterprises, Inc.; NDR Corporation; Rauland-Borg Corporation of Florida; Solotech Sales & Integration USA Inc.",
+      "department": "Facilities Operations Maintenance",
+      "value": 3500000,
+      "expires": "2027-02-12",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "ITB-24-048-MF Audiovisual Equipment, Supplies and Installation Services (initial term July 22, 2026 to July 21, 2027; up to 8,000,000 initial and per extension)",
+      "vendor": "awardees listed in agenda item",
+      "department": "Information Technology Services",
+      "value": 8000000,
+      "expires": "2027-07-21",
+      "renewalsLeft": 4,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "ITB-22-051-TA Air Conditioning, Window and Wall (initial term Dec 11, 2024 to Dec 10, 2027; supplemental award 2026-07-22, total 466,666 per year)",
+      "vendor": "The Ware Group, LLC dba Johnstone Supply",
+      "department": "Facilities Operations Maintenance",
+      "value": 466666,
+      "expires": "2027-12-10",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "ITB-23-037-PM Maintenance Inspections Deficiencies Repair and Renovations (initial term Jan 13, 2025 to Jan 12, 2028; supplemental award 2026-07-22, total 5,000,000 per year)",
+      "vendor": "Caliste Construction, LLC; FSN Contracting Services, LLC; Gamax Consulting, Inc.; Kasas Construction, Inc.; Leadex Corporation; Metro Contractor Incorporated; Supreme Roofing & Construction, Inc.",
+      "department": "Facilities Operations Maintenance",
+      "value": 5000000,
+      "expires": "2028-01-12",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "Roofing term bid 03072700-I, J, K, L Open Market (one year, awarded 2026-07-22, maximum initial value 4,000,000)",
+      "vendor": "A-1 Duran Roofing, Inc.; Atlas Apex Roofing, LLC; Salomon Construction & Roofing Corp. dba Salomon Roofing & Waterproofing; T&G Corporation dba T&G Constructors",
+      "department": "Facilities Design and Construction",
+      "value": 4000000,
+      "expires": "2027-07-22",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "Roofing term bid 03072700-E, F Small Business Enterprise set-aside (one year, awarded 2026-07-22, maximum 500,000)",
+      "vendor": "Avante Quality Corp.; Sunshine Roofing & Sheet Metal Corporation",
+      "department": "Facilities Design and Construction",
+      "value": 500000,
+      "expires": "2027-07-22",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "Roofing term bid 03072700-A Micro Business Enterprise set-aside (one year, awarded 2026-07-22, maximum 200,000)",
+      "vendor": "Cocho, Inc.",
+      "department": "Facilities Design and Construction",
+      "value": 200000,
+      "expires": "2027-07-22",
+      "renewalsLeft": 2,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd072226/lastbda.pdf"
+    },
+    {
+      "contract": "Construction Manager at-Risk Miscellaneous Agreement for projects up to $4 million each (one-year extension approved 2026-06-17)",
+      "vendor": "Mexal Corporation; Unitech Builders Corp.",
+      "department": "Facilities Design and Construction",
+      "value": null,
+      "expires": "2027-06-17",
+      "renewalsLeft": null,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd061726/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd061726/lastbda.pdf"
+    },
+    {
+      "contract": "Job Order Contracting (JOC) System Consultant Services Agreement (second one-year extension approved 2026-10-14)",
+      "vendor": "The Gordian Group, Inc.",
+      "department": "Facilities Design and Construction",
+      "value": null,
+      "expires": "2027-10-14",
+      "renewalsLeft": 0,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd101426/lastbda.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd101426/lastbda.pdf"
+    },
+    {
+      "contract": "ITB-25-047-MJ Transportation for Special Needs Students (initial term Sep 9, 2026 to Sep 8, 2028; FY 2025-26 spend 2,769,757)",
+      "vendor": "HopSkipDrive, Inc.; Rids Brother Company Inc",
+      "department": "Transportation",
+      "value": null,
+      "expires": "2028-09-08",
+      "renewalsLeft": 3,
+      "url": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e142.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e142.pdf"
+    },
+    {
+      "contract": "ITB-20-042-MV Elevator Retrofit and Modernization (effective Sep 9, 2021; aggregator lists expiration Sep 30, 2026)",
+      "vendor": "Delaware Elevator of Florida, Inc.; Oracle Elevator Holdco, Inc.; Thyssen Elevator Company; Xpert Elevator Services, Inc.",
+      "department": "Facilities Operations Maintenance",
+      "value": null,
+      "expires": "2026-09-30",
+      "renewalsLeft": null,
+      "url": "https://starbridge.ai/buyer/miami-dade-county-public-schools",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    },
+    {
+      "contract": "ITB-22-001-PM Elevator Services (effective Apr 19, 2023; aggregator lists expiration Sep 30, 2026; successor RFP for elevator inspection services due 2026-11-03)",
+      "vendor": "American International Elevator Associates, Inc.; Evolution Elevator & Escalator Corp.; Oracle Elevator Holdco, Inc.; TG Oil Services, Inc.",
+      "department": "Facilities Operations Maintenance",
+      "value": null,
+      "expires": "2026-09-30",
+      "renewalsLeft": null,
+      "url": "https://starbridge.ai/buyer/miami-dade-county-public-schools",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    },
+    {
+      "contract": "RFP-23-001-VF professional development services",
+      "vendor": "FACTS Education Solutions LLC",
+      "department": null,
+      "value": null,
+      "expires": "2026-09-30",
+      "renewalsLeft": null,
+      "url": "https://starbridge.ai/buyer/miami-dade-county-public-schools",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    },
+    {
+      "contract": "Software Services Agreement, Vizzle licenses",
+      "vendor": "Rethink Autism, Inc.",
+      "department": null,
+      "value": null,
+      "expires": "2026-09-30",
+      "renewalsLeft": null,
+      "url": "https://starbridge.ai/buyer/miami-dade-county-public-schools",
+      "source": "https://starbridge.ai/buyer/miami-dade-county-public-schools (third-party aggregator)"
+    }
+  ],
+  "levers": [
+    {
+      "key": "vendor-register",
+      "who": "vendors",
+      "how": "Submit Vendor Application FM-3921 (Rev. 09-26) with Certification of Compliance 6465, IRS W-9, SUNBIZ printout, latest County Business Tax Receipt, Foreign Country of Concern Attestation and the labor coercion affidavit to vendors@dadeschools.net or Procurement Management Services, 1450 N.E. 2nd Avenue, Suite 650, Miami, FL 33132. Solicitations are advertised on the Procurement Management Services website and Euna OpenBids (formerly DemandStar).",
+      "rules": "No application fee is stated on the form.",
+      "deadline": "",
+      "url": "https://forms.dadeschools.net/webpdf/3921.pdf",
+      "source": "https://forms.dadeschools.net/webpdf/3921.pdf"
+    },
+    {
+      "key": "certify-sbe",
+      "who": "certified small businesses",
+      "how": "Certify through the district's Office of Economic Opportunity (oeo.dadeschools.net) under Board Policy 6320.02, Small/Micro, Minority/Women, and Veteran Business Enterprise Programs. A Goal Setting Committee reviews each solicitation for SBE, MBE, M/WBE or VBE participation; some construction term bids are set aside for SBE and MBE firms (for example roofing term bids 03072700-E, F and A awarded 2026-07-22).",
+      "rules": "Policy 6320.02 revised Nov 2012, Nov 2014, Sept 2015, Mar 2019, Oct 2021. Policy 6320 sets a goal that service-disabled veteran business enterprises receive 3% of total prime and subcontract award value each fiscal year. Eligibility thresholds and application steps not readable (OEO site blocked).",
+      "deadline": "",
+      "url": "https://oeo.dadeschools.net/",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2020/Bd061720/agenda/e142.pdf"
+    },
+    {
+      "key": "solicitation-questions",
+      "who": "vendors",
+      "how": "Submit written questions to the buyer named in the solicitation by the deadline printed in it; answers are issued by addendum on the procurement site and Euna OpenBids.",
+      "rules": "Cone of silence applies from advertisement until Board action; the district posts a Bids and Board Action cone of silence status page (procurement.dadeschools.net/bidsol/asp/actions2026.asp).",
+      "deadline": "Per solicitation",
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd090926/agenda/e142.pdf"
+    },
+    {
+      "key": "pre-bid",
+      "who": "anyone",
+      "how": "Join the non-mandatory pre-bid conference listed in each solicitation (recent ones held by Google Meet with a dial-in).",
+      "rules": "Non-mandatory unless the solicitation says otherwise.",
+      "deadline": "Per solicitation",
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://samsearch.co/gov-explore/sled/security-systems-services/543243"
+    },
+    {
+      "key": "comment-at-award",
+      "who": "anyone",
+      "how": "Register to speak on the agenda item (procurement awards are E-141 and up; facilities awards are F-items) by filing form FM-6314 with the Citizen Information Center, 1450 N.E. Second Avenue, Room 102, Miami, FL 33132, 305-995-1128, Request4Appearance@Dadeschools.net.",
+      "rules": "Register by 4:30 p.m. on the Monday before the Wednesday meeting (Tuesday if Monday is a holiday). Two minutes per agenda item; three minutes at scheduled Public Hearings; ten minutes total per meeting; comments must stay on the item (Board Policy 0169.1).",
+      "deadline": "4:30 p.m. the Monday before the meeting",
+      "url": "https://pdfs.dadeschools.net/Bdarch/pdfs/FM-6314.pdf",
+      "source": "https://pdfs.dadeschools.net/Bdarch/pdfs/FM-6314.pdf"
+    },
+    {
+      "key": "records-request",
+      "who": "anyone",
+      "how": "Email prr@dadeschools.net or contact the Citizen Information Center, Office of Communications, 1450 N.E. 2nd Avenue, Suite 102, Miami, FL 33132, 305-995-1128.",
+      "rules": "School Board Policy 8310. Copies $0.15 per page, $0.20 double-sided, $1.00 per CD; a cost estimate and prepayment are required when gathering, copying and redacting will take more than 15 minutes.",
+      "deadline": "",
+      "url": "https://cic.dadeschools.net/",
+      "source": "https://ehandbooks.dadeschools.net/user_guides/147.pdf"
+    },
+    {
+      "key": "protest",
+      "who": "vendors",
+      "how": "File a Notice of Protest with Procurement Management Services, then a Formal Written Protest with a protest bond; Procurement must offer a meeting within 7 days; unresolved protests go to a hearing under F.S. 120.569 and 120.57 and Board Bylaw 0133.",
+      "rules": "Board Policy 6320: Notice of Protest within 72 hours after posting of the bid tabulation (or of the solicitation, for specification protests), excluding Saturdays, Sundays and legal holidays; Formal Written Protest within ten calendar days after the notice. Bond is 1% of the District's estimate of the contract value (leases: 1% of basic-period rent or $5,000, whichever is greater; construction: per F.S. 255.0516).",
+      "deadline": "72 hours after posting of the bid tabulation",
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2020/Bd061720/agenda/e142.pdf"
+    },
+    {
+      "key": "inspector-general",
+      "who": "anyone",
+      "how": "Report fraud, waste or contracting concerns to the Miami-Dade County Office of the Inspector General, which serves as the School Board's Inspector General under an Inter-Local Agreement: (305) 523-0623, 1501 NE 2nd Avenue, Suite 343, Miami, FL 33132, www.MiamiDadeIG.org (report fraud page at miamidadeig.org/inspectorgeneral/fraud.page).",
+      "rules": "The OIG Contract Oversight Unit monitors and randomly inspects contracting and construction activities. The 2025 annual report says the Inter-Local Agreement was first executed in 2007 and the then-current agreement expired December 18, 2025; renewal status not confirmed.",
+      "deadline": "",
+      "url": "https://www.miamidadeig.org/",
+      "source": "https://www.miamidade.gov/resources-oig/pdf/2025-MDCPS/2025-annual-report-mdcps-oig.pdf"
+    },
+    {
+      "key": "other",
+      "who": "vendors",
+      "how": "Construction firms apply for prequalification to bid on educational facilities projects; the Board approves applications monthly as item F-80 (Attachment A).",
+      "rules": "Prequalification is required for facilities construction bids.",
+      "deadline": "",
+      "url": "http://procurement.dadeschools.net",
+      "source": "https://pdfs.dadeschools.net/Bdarch/2026/Bd101426/lastbda.pdf"
+    }
+  ],
+  "notes": "Checked 2026-10-23. procurement.dadeschools.net (bid listing, cone of silence status page, bid PDFs), oeo.dadeschools.net and the demandstar/openbids portals all blocked fetches (robots_disallowed, JavaScript-only or client errors), so open solicitations are limited to four items seen on third-party aggregators (starbridge.ai, samsearch.co); their numbers, values, terms, set-asides and question deadlines are mostly not printed there and are null. Search results show ITB-25-049-PM and ITB-25-039-VF bid PDFs exist on the procurement site but they could not be read. Capital plan: the adopted Five-Year Facilities Work Program FY 2026-27 to 2030-31 (Board item E-15, 2026-09-09) is a category-level table with no school-by-school appendix in the agenda PDF; five-year total revenues and appropriations 6,760,610,923; FY 2026-27 total 2,358,402,193 including beginning fund balance 1,363,696,980; Capital Projects 1,480,327,335 over five years. The school-level work plan the district files with FLDOE (DADE2026.pdf) returned a client error on fldoe.org, cdn.fldoe.org and origin.fldoe.org, so school rows come from the prior cycle filing DADE2025.pdf (FY 2024-25 to 2028-29, funded rows only, amounts by that plan's years) and are marked as such in the project name; the same filing lists many unfunded Improvements/Renovations rows (for example Coral Gables Senior High 31,293,566 and Miami Beach Fienberg/Fisher K-8 5,736,065) that are not recorded. Expiring contracts come from Board after-action agendas (lastbda.pdf) for June 17, July 22, September 9 and October 14, 2026; the October 21, 2026 and May 20, 2026 agendas were not retrievable. renewalsLeft is the number of optional one-year extensions stated at award. The four rows sourced to starbridge.ai are the aggregator's listed expiration dates, not Board text. The district uses Euna OpenBids (formerly DemandStar) alongside its own procurement site. Protest and SBE rules are quoted from Policy 6320 as reproduced in a 2020 Board item, not from the current policy manual."
+}
