@@ -111,3 +111,42 @@ test('people search, transparency, bulk, openapi, etag', async () => {
   const opt = await handleApi(new Request('https://ballot305.org/api/v1', { method: 'OPTIONS' }), env, new URL('https://ballot305.org/api/v1'));
   assert.equal(opt.status, 204);
 });
+
+test('now: one precinct gives my offices, holders, candidates and a cycle block where researched', async () => {
+  const { res, body } = await get('/api/v1/now?precinct=33&date=2026-10-23');
+  assert.equal(res.status, 200);
+  assert.equal(body.precinct, '033.0');
+  assert.equal(body.districts.countyCommission, 5);
+  const county = body.bodies.find(b => b.body === 'mdc-commission');
+  assert.equal(county.seats.length, 1);
+  assert.equal(county.seats[0].holders[0].person, 'vicki-l-lopez');
+  assert.ok(county.seats[0].onBallot[0].candidates.some(c => c.incumbent));
+  const city = body.bodies.find(b => b.level === 'municipal');
+  assert.equal(city.body, 'city-miami-beach');
+  assert.ok(city.seats.length >= 5);
+  for (const b of body.bodies) if (b.cycle) {
+    assert.ok(Array.isArray(b.cycle.levers));
+    for (const m of b.cycle.meetings.next) assert.ok(m.date >= '2026-10-23');
+  }
+  const bad = await get('/api/v1/now');
+  assert.equal(bad.res.status, 400);
+  const miss = await get('/api/v1/now?precinct=999.9');
+  assert.equal(miss.res.status, 404);
+});
+
+test('cycleNow: yearly phases wrap the year and next meetings are in the future', async () => {
+  const { cycleNow } = await import('../src/api.js');
+  const c = { key: 't', phases: [
+    { key: 'budget-hearings', start: '2026-09-01', end: '2026-09-30', repeats: 'yearly', source: 'x' },
+    { key: 'recess', start: '2026-12-15', end: '2027-01-10', repeats: 'yearly', source: 'x' },
+    { key: 'election', start: '2026-11-03', end: '2026-11-03', repeats: 'once', source: 'x' }
+  ], meetings: { schedule: [{ date: '2026-10-01', source: 'x' }, { date: '2026-11-05', source: 'x' }] }, levers: [{ key: 'public-comment', source: 'x' }] };
+  const sept = cycleNow(c, '2027-09-15');
+  assert.deepEqual(sept.phases.current.map(p => p.key), ['budget-hearings']);
+  const jan = cycleNow(c, '2027-01-05');
+  assert.deepEqual(jan.phases.current.map(p => p.key), ['recess']);
+  const oct = cycleNow(c, '2026-10-23');
+  assert.deepEqual(oct.meetings.next.map(m => m.date), ['2026-11-05']);
+  assert.equal(oct.phases.upcoming[0].key, 'election');
+  assert.equal(oct.levers[0].nextMeeting, '2026-11-05');
+});

@@ -11,6 +11,9 @@
  *   GET /api/v1/people               roster people (q= name search)
  *   GET /api/v1/people/{id}          one person: terms, offices, actions summary, ties
  *   GET /api/v1/transparency         city records scorecard
+ *   GET /api/v1/cycles               governance calendar and citizen levers per body
+ *   GET /api/v1/cycles/{key}         one body's cycle
+ *   GET /api/v1/now?precinct=033.0   my offices, who holds them, who is running, each body's phase, next meetings, levers
  *   GET /api/v1/bulk                 the raw files behind everything
  *   GET /api/v1/openapi.json         OpenAPI 3 description
  *
@@ -37,7 +40,9 @@ const FILES = {
   decisions: '/data/decisions.json',
   roster: '/data/roster.json',
   transparency: '/data/transparency.json',
-  moneySummary: '/data/money-summary.json'
+  moneySummary: '/data/money-summary.json',
+  cycles: '/data/cycles.json',
+  precincts: '/data/precincts.json'
 };
 const MAX_LIMIT = 500, DEFAULT_LIMIT = 100;
 
@@ -56,7 +61,7 @@ export async function loadApiData(env) {
     const res = await env.ASSETS.fetch(new Request('https://assets.local' + path));
     raw[k] = res.ok ? await res.json() : null;
   }
-  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated].join('|');
+  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf].join('|');
   if (cache && cache.key === key) return cache.data;
   cache = { key, data: buildIndex(raw) };
   return cache.data;
@@ -197,9 +202,17 @@ export function buildIndex(raw) {
     rosterUpdated: roster.updated || null,
     bodies, actions, ties, people, termsByPerson, offices, actionsByPerson, summaries, onBallot,
     ballot: roster.ballot || [],
-    transparency: raw.transparency || null
+    transparency: raw.transparency || null,
+    cycles: raw.cycles || { updated: null, bodies: [] },
+    cyclesByBody: new Map(((raw.cycles && raw.cycles.bodies) || []).map(c => [c.rosterBody, c])),
+    precincts: raw.precincts || null,
+    officesByBody: groupBy(roster.offices || [], o => o.body),
+    termsByOffice: groupBy(roster.terms || [], t => t.office),
+    ballotByOffice: groupBy(roster.ballot || [], r => r.officeId)
   };
 }
+
+function groupBy(rows, fn) { const m = new Map(); for (const r of rows) { const k = fn(r); if (!m.has(k)) m.set(k, []); m.get(k).push(r); } return m; }
 
 /* ---------------- request handling ---------------- */
 
@@ -260,6 +273,12 @@ function route(parts, q, data, url) {
     return p ? { body: personDetail(p, data) } : notFound('person');
   }
   if (a === 'transparency') return { body: data.transparency || { cities: [] } };
+  if (a === 'cycles') {
+    if (!b) return { body: data.cycles };
+    const c = data.cycles.bodies.find(x => x.key === b || x.rosterBody === b);
+    return c ? { body: c } : notFound('cycle');
+  }
+  if (a === 'now') return now(data, q);
   return notFound('endpoint');
 }
 
@@ -280,6 +299,8 @@ function index(data, url) {
       people: base + '/people?q=lopez&onBallot=1',
       person: base + '/people/{id}',
       transparency: base + '/transparency',
+      cycles: base + '/cycles',
+      now: base + '/now?precinct=033.0',
       bulk: base + '/bulk',
       openapi: base + '/openapi.json'
     },
@@ -309,6 +330,8 @@ function bulk(data, url) {
       { path: o + FILES.roster, what: 'officeholder roster: people, offices, terms, ballot' },
       { path: o + FILES.moneySummary, what: 'one-line money summary per incumbent' },
       { path: o + FILES.transparency, what: 'city records scorecard' },
+      { path: o + FILES.cycles, what: 'governance calendar and citizen levers per body' },
+      { path: o + FILES.precincts, what: 'precinct to district cross reference (county elections office)' },
       { path: o + '/data/lobby-ledger.json', what: 'state budget requests by lobbying firm' },
       { path: o + '/data/county-lobbyists.json', what: 'Miami-Dade County lobbyist registrations used for matching' },
       { path: o + '/data/school-board-lobbyists.json', what: 'M-DCPS lobbyist registrations' },
@@ -387,6 +410,118 @@ function personDetail(p, data) {
   };
 }
 
+/* ---------------- now: the citizen's view for one precinct ---------------- */
+
+// Precinct municipality names (county cross reference) to roster body ids.
+const MUNI_ALIAS = { 'N MIAMI BEACH': 'north-miami-beach', 'N BAY VILLAGE': 'north-bay-village', 'INDIAN CREEK VILLAGE': 'indian-creek', 'OPA LOCKA': 'opa-locka', 'UNINCORPORATED M-D': null };
+function muniBody(name) {
+  if (name == null) return null;
+  const n = String(name).toUpperCase().trim();
+  if (n in MUNI_ALIAS) return MUNI_ALIAS[n] ? 'city-' + MUNI_ALIAS[n] : null;
+  return 'city-' + n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+export function normPrecinct(p) {
+  const m = String(p || '').match(/(\d{1,4})(?:\.(\d))?/);
+  if (!m) return '';
+  return String(parseInt(m[1], 10)).padStart(3, '0') + '.' + (m[2] || '0');
+}
+
+function now(data, q) {
+  const pct = normPrecinct(q.get('precinct'));
+  const today = DATE_RE.test(q.get('date') || '') ? q.get('date') : new Date().toISOString().slice(0, 10);
+  if (!pct) return { body: { error: 'precinct is required, e.g. ?precinct=033.0. Find yours on your voter card or at the county elections office.' }, status: 400 };
+  const row = data.precincts && data.precincts.precincts && data.precincts.precincts[pct];
+  if (!row) return notFound('precinct ' + pct);
+  const [congress, stateSenate, stateHouse, muni, schoolBoard, countyCommission] = row;
+  const cityBody = muniBody(muni);
+  const cityDistrict = cityBody === 'city-north-miami' ? (data.precincts.northMiamiDistrict || {})[pct] : cityBody === 'city-miami-gardens' ? (data.precincts.miamiGardensDistrict || {})[pct] : null;
+
+  // Which offices are mine: every office on a body I'm in, narrowed to my district where the office has one.
+  const wanted = [
+    { body: 'mdc-commission', district: String(countyCommission) }, { body: 'mdc-mayor' }, { body: 'mdc-sheriff' }, { body: 'mdc-clerk' },
+    { body: 'mdc-property-appraiser' }, { body: 'mdc-tax-collector' }, { body: 'mdc-supervisor-of-elections' },
+    { body: 'mdcps-board', district: String(schoolBoard) },
+    cityBody ? { body: cityBody, district: cityDistrict == null ? null : String(cityDistrict) } : null,
+    { body: 'fl-state-attorney-11' }, { body: 'fl-public-defender-11' },
+    { body: 'fl-house', district: String(stateHouse) }, { body: 'fl-senate', district: String(stateSenate) },
+    { body: 'us-house', district: String(congress) }, { body: 'us-senate' }, { body: 'fl-executive' }
+  ].filter(Boolean);
+
+  const bodiesOut = [];
+  for (const w of wanted) {
+    const offices = (data.officesByBody.get(w.body) || []).filter(o => w.district == null || o.district == null || String(o.district) === w.district);
+    if (!offices.length) continue;
+    const cycle = data.cyclesByBody.get(w.body) || null;
+    const seats = offices.map(o => {
+      const terms = (data.termsByOffice.get(o.id) || []).filter(t => (t.start == null || t.start <= today) && (t.end == null || t.end >= today));
+      const holders = terms.map(t => holder(t, data));
+      const races = (data.ballotByOffice.get(o.id) || []).map(r => ({ office: r.office, judicial: !!r.judicial, candidates: (r.candidates || []).map(c => ({ person: c.person, name: c.asPrinted || (c.person && data.people.get(c.person) || {}).name || null, party: c.party || null, incumbent: holders.some(h => h.person === c.person) })) }));
+      return { office: o.id, name: o.name, district: o.district == null ? null : o.district, kind: o.kind || null, actionScope: o.actionScope || 'all', holders, onBallot: races };
+    });
+    bodiesOut.push({
+      body: w.body,
+      name: cycle ? cycle.name : (data.bodies.find(b => b.rosterBody === w.body) || {}).name || offices[0].jurisdiction || w.body,
+      level: offices[0].level,
+      jurisdiction: offices[0].jurisdiction,
+      decisionsBody: (data.bodies.find(b => b.rosterBody === w.body) || {}).key || null,
+      seats,
+      cycle: cycle ? cycleNow(cycle, today) : null
+    });
+  }
+  return { body: {
+    precinct: pct, date: today, updated: data.cycles.updated || null, rosterUpdated: data.rosterUpdated,
+    districts: { congress, stateSenate, stateHouse, municipality: muni, municipalityBody: cityBody, cityDistrict: cityDistrict == null ? null : cityDistrict, schoolBoard, countyCommission },
+    note: 'Offices are every seat on the bodies this precinct falls in, narrowed to its district. Holders are the people the roster shows seated today; candidates are from the Nov 3, 2026 ballot. The cycle block says what phase each body is in, its next posted meetings, and what a resident can do; bodies without a cycle block have not been researched yet.',
+    bodies: bodiesOut
+  } };
+}
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+function holder(t, data) {
+  const p = data.people.get(t.person) || {};
+  const s = data.summaries.get(t.person) || null;
+  return { person: t.person, name: p.name || t.person, since: t.start || null, sinceKnown: t.startKnown !== false, via: t.via || null, termExpires: t.termExpires || null, actionCount: (data.actionsByPerson.get(t.person) || []).length, moneySummary: s ? { total: s.total, donors: s.donors, gifts: s.gifts, before: s.before, items: s.items, split: s.split } : null };
+}
+
+// What phase a body is in today, its next meetings, and the levers, from its cycle file.
+export function cycleNow(c, today) {
+  const md = today.slice(5);
+  const inPhase = p => {
+    if (!p.start && !p.end) return false;
+    if (p.repeats === 'yearly') {
+      const s = (p.start || p.end).slice(5), e = (p.end || p.start).slice(5);
+      return s <= e ? (md >= s && md <= e) : (md >= s || md <= e);
+    }
+    return (p.start || '0000') <= today && today <= (p.end || '9999');
+  };
+  const current = c.phases.filter(inPhase);
+  const upcoming = c.phases
+    .map(p => ({ p, start: nextStart(p, today) }))
+    .filter(x => x.start && x.start > today)
+    .sort((x, y) => x.start.localeCompare(y.start))
+    .slice(0, 4)
+    .map(x => ({ ...x.p, start: x.start }));
+  const meetings = c.meetings.schedule.filter(m => m.date >= today).slice(0, 5);
+  const next = meetings[0] || null;
+  const levers = c.levers.map(l => ({ ...l, nextMeeting: /comment/.test(l.key) && next ? next.date : null }));
+  return {
+    key: c.key, checked: c.checked || null, links: c.links || {},
+    meetings: { pattern: c.meetings.pattern || null, agendaLeadDays: c.meetings.agendaLeadDays == null ? null : c.meetings.agendaLeadDays, next: meetings, scheduleEnds: c.meetings.schedule.length ? c.meetings.schedule[c.meetings.schedule.length - 1].date : null },
+    phases: { current, upcoming },
+    levers,
+    elections: c.elections || null,
+    contacts: c.contacts || [],
+    notes: c.notes || null
+  };
+}
+function nextStart(p, today) {
+  if (!p.start) return null;
+  if (p.repeats !== 'yearly') return p.start;
+  const y = Number(today.slice(0, 4));
+  const thisYear = y + '-' + p.start.slice(5);
+  return thisYear > today ? thisYear : (y + 1) + '-' + p.start.slice(5);
+}
+
 /* ---------------- helpers ---------------- */
 
 function text(v) { return v == null ? null : (typeof v === 'string' ? v : (v.en || Object.values(v)[0] || null)); }
@@ -432,6 +567,9 @@ function openapi(url) {
       '/people': list('Roster people', [['q', 'name substring'], ['onBallot', '1 = on the Nov 3, 2026 ballot'], ...paging]),
       '/people/{id}': { get: { summary: 'One person with terms, races, actions and ties', parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Unknown person' } } } },
       '/transparency': list('City records scorecard', []),
+      '/cycles': list('Governance calendar and citizen levers per body', []),
+      '/cycles/{key}': { get: { summary: 'One body: meetings, phases, levers, elections, contacts', parameters: [{ name: 'key', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Unknown body' } } } },
+      '/now': list('For one precinct today: my offices, who holds them, who is running, each body\'s phase, next meetings and what a resident can do', [['precinct', 'county precinct, e.g. 033.0 (required)'], ['date', 'YYYY-MM-DD, defaults to today']]),
       '/bulk': list('Raw data files', [])
     }
   };
