@@ -1,0 +1,57 @@
+{
+  "key": "city-key-biscayne",
+  "rosterBody": "city-key-biscayne",
+  "name": "Key Biscayne Village Council",
+  "jurisdiction": "Village of Key Biscayne",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.keybiscayne.fl.gov/",
+    "calendar": "https://www.keybiscayne.fl.gov/calendar.php",
+    "agendas": "https://www.keybiscayne.fl.gov/government/agendas_minutes.php",
+    "minutes": "https://www.keybiscayne.fl.gov/government/agendas_minutes.php",
+    "video": "https://keybiscayne.granicus.com/ViewPublisher.php?view_id=1",
+    "clerk": "https://www.keybiscayne.fl.gov/government/village_clerk/index.php"
+  },
+  "meetings": {
+    "pattern": "Roughly monthly on a Tuesday at 6:30 p.m., Council Chamber, 560 Crandon Boulevard (rear of the fire station). The village does not publish a fixed day-of-month rule online; 2026 posted meeting dates were Jan 13, Mar 10, May 14, Jun 9, Aug 25, Sep 22 and Oct 13, taken from second-reading notices.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-08-25", "time": "18:30", "kind": "regular", "note": "Council meeting with second-reading ordinances", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/public_notices.php" },
+      { "date": "2026-09-22", "time": "18:30", "kind": "regular", "note": "Council meeting with second-reading ordinance; FY2027 budget was adopted by Sept 30 per village news", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/public_notices.php" },
+      { "date": "2026-10-13", "time": "18:30", "kind": "regular", "note": "Council meeting, second reading of three ordinances", "source": "https://files.keybiscayne.fl.gov/Documents/Government/Village%20Clerk/Public%20Notices%20&%20Legal%20ads/Second%20reading%20notice%20for%20October%2013,%202026%20Council%20Meeting.pdf" }
+    ]
+  },
+  "phases": [
+    { "key": "budget-proposal", "name": "Budget community meeting", "start": "2026-08-19", "end": "2026-08-19", "repeats": "yearly", "decides": "Manager presents the FY2027 budget to residents before the September hearings (date from the presentation file name on the budgets page).", "source": "https://www.keybiscayne.fl.gov/services/finance/budgets.php" },
+    { "key": "budget-hearings", "name": "September budget hearings", "start": null, "end": null, "repeats": "yearly", "decides": "Two September hearings set the tentative then final millage and budget. 2026 dates were not readable (the Notice of Proposed Tax Increase PDF is an image). The FY2027 budget, millage 2.8708, was adopted by Sept 30, 2026.", "source": "https://www.keybiscayne.fl.gov/news_detail_T21_R375.php" },
+    { "key": "fiscal-year-start", "name": "Fiscal year begins", "start": "2026-10-01", "end": "2026-10-01", "repeats": "yearly", "decides": "FY2027 runs from October 1, 2026; budgets are adopted in late September each year per the budgets page history.", "source": "https://www.keybiscayne.fl.gov/services/finance/budgets.php" },
+    { "key": "qualifying", "name": "Mayor qualifying (2026)", "start": "2026-06-02", "end": "2026-06-12", "repeats": "once", "decides": "Who runs for Mayor; a primary on Aug 18 if more than two qualify. No mayor race appears on the Nov 3, 2026 sample ballot.", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php" },
+    { "key": "qualifying", "name": "Councilmember qualifying (2026)", "start": "2026-08-10", "end": "2026-08-20", "repeats": "once", "decides": "Who runs for the three council seats on the Nov 3, 2026 ballot. Noon to noon at the Village Clerk, 88 W. McIntyre St., Suite 220.", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php" },
+    { "key": "election", "name": "Municipal and special election", "start": "2026-11-03", "end": "2026-11-03", "repeats": "once", "decides": "Three council seats (four-year terms) and a charter referendum requiring voter approval for stormwater or flood projects over $50 million.", "source": "https://files.keybiscayne.fl.gov/Documents/Government/Village%20Clerk/Public%20Notices%20&%20Legal%20ads/Sample%20Ballot%20-%20Key%20Biscayne%20Municipal%20and%20Special%2011.03.26%20FINAL.pdf" },
+    { "key": "swearing-in", "name": "Vice Mayor selection", "start": null, "end": null, "repeats": "yearly", "decides": "At its first meeting after a regular election (or in November in non-election years) the council elects a Vice Mayor from its members.", "source": "https://www.keybiscayne.fl.gov/government/council/index.php" }
+  ],
+  "levers": [
+    { "key": "public-comment", "how": "Fill out a Public Comment Form and hand it to the Village Clerk before the item is heard, then speak when called during the public comment portion.", "rules": "Register with the Clerk before the item is heard. No time limit is stated on the agendas page or in the meeting notice; the Public Comment Card PDF is an image and could not be read.", "deadline": "Before the item is heard at the meeting", "url": "https://www.keybiscayne.fl.gov/government/agendas_minutes.php", "source": "https://files.keybiscayne.fl.gov/Documents/Government/Village%20Clerk/Public%20Notices%20&%20Legal%20ads/Second%20reading%20notice%20for%20October%2013,%202026%20Council%20Meeting.pdf" },
+    { "key": "written-comment", "how": "Email publiccomments@keybiscayne.fl.gov.", "rules": "No word limit or cutoff stated in the notice.", "deadline": null, "url": "mailto:publiccomments@keybiscayne.fl.gov", "source": "https://files.keybiscayne.fl.gov/Documents/Government/Village%20Clerk/Public%20Notices%20&%20Legal%20ads/Second%20reading%20notice%20for%20October%2013,%202026%20Council%20Meeting.pdf" },
+    { "key": "contact", "how": "Each council member has a posted email (first initial plus last name at keybiscayne.fl.gov) and phone on the council page; the council office line is (305) 365-5506.", "rules": null, "deadline": null, "url": "https://www.keybiscayne.fl.gov/government/council/index.php", "source": "https://www.keybiscayne.fl.gov/government/council/index.php" },
+    { "key": "records-request", "how": "File through the village's public records portal.", "rules": null, "deadline": null, "url": "https://keybiscayne.justfoia.com/publicportal/home/newrequest", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/public_records.php" },
+    { "key": "petition", "how": "The charter and code are hosted on Municode, which could not be fetched; initiative section numbers and thresholds are not recorded here. A resident charter-amendment petition did reach the Nov 3, 2026 ballot (stormwater referendum).", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/key_biscayne/codes/code_of_ordinances", "source": "https://www.keybiscayne.fl.gov/government/council/index.php" },
+    { "key": "referendum", "how": "See petition; charter text not reachable. Charter amendments go to the voters, as with the Nov 3, 2026 stormwater question.", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/key_biscayne/codes/code_of_ordinances", "source": "https://files.keybiscayne.fl.gov/Documents/Government/Village%20Clerk/Public%20Notices%20&%20Legal%20ads/Sample%20Ballot%20-%20Key%20Biscayne%20Municipal%20and%20Special%2011.03.26%20FINAL.pdf" },
+    { "key": "recall", "how": "Charter text on Municode not reachable; section and threshold not recorded.", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/key_biscayne/codes/code_of_ordinances", "source": null },
+    { "key": "qualify", "how": "File DS-DE 9, DS-DE 84, candidate oath, Form 1, loyalty and residency oath, $100 fee (charter Sec. 2.04) and voter registration proof with the Village Clerk during the posted window. Must have lived and been registered in the village for at least one year.", "rules": "Noon-to-noon windows; mayor qualifies in June, council in August of even years", "deadline": "Noon on the last day of the qualifying period", "url": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php" },
+    { "key": "vote", "how": "Vote at the Key Biscayne Community Center, 10 Village Green Way, 7 a.m. to 7 p.m. on election day, or by mail or early voting through Miami-Dade Elections.", "rules": "Registration closed Oct 5, 2026; vote-by-mail requests by Oct 22, 2026", "deadline": "2026-11-03", "url": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/municipal_election.php", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/municipal_election.php" }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-08-10", "end": "2026-08-20", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php" },
+    "terms": "Seven members elected at large, nonpartisan. Mayor serves two years (elected every even year); six council members serve four-year staggered terms, three elected each even year. The council picks a Vice Mayor each November.",
+    "source": "https://www.keybiscayne.fl.gov/government/village_clerk/elections/candidate_qualifying.php"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Jocelyn B. Koch, MMC, Village Clerk", "email": "jkoch@keybiscayne.fl.gov", "phone": "(305) 365-5506", "url": "https://www.keybiscayne.fl.gov/government/village_clerk/index.php", "source": "https://www.keybiscayne.fl.gov/government/village_clerk/index.php" },
+    { "role": "commission office", "name": "Village Council", "email": null, "phone": "(305) 365-5506", "url": "https://www.keybiscayne.fl.gov/government/council/index.php", "source": "https://www.keybiscayne.fl.gov/government/council/index.php" },
+    { "role": "mayor", "name": "Joe I. Rasco", "email": "jrasco@keybiscayne.fl.gov", "phone": "(305) 365-5506", "url": "https://www.keybiscayne.fl.gov/government/council/index.php", "source": "https://www.keybiscayne.fl.gov/government/council/index.php" }
+  ],
+  "notes": "The village calendar loads events by JavaScript and the Granicus archive blocks automated fetching, so no forward schedule past Oct 13, 2026 was readable; 2026 dates come from the clerk's second-reading notices and stop at Oct 13. No 2027 dates posted. Agenda lead time is not stated. The two September 2026 TRIM hearing dates were not readable (the budget notice PDF is a scanned image); only the Sept 30 adoption announcement and the Aug 19 community meeting were found. The charter is on Municode, which refused fetches, so initiative, referendum and recall sections and thresholds are missing. The council page lists Mayor Rasco's term as 2022-2026 and the clerk page says the mayor qualified in June 2026, but the Nov 3, 2026 sample ballot shows only council seats and a referendum; the mayor's status was not confirmed. Public comment time limit not found in any reachable document."
+}

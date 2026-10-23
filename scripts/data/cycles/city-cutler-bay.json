@@ -1,0 +1,58 @@
+{
+  "key": "city-cutler-bay",
+  "rosterBody": "city-cutler-bay",
+  "name": "Cutler Bay Town Council",
+  "jurisdiction": "Town of Cutler Bay",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.cutlerbay-fl.gov/",
+    "calendar": "https://www.cutlerbay-fl.gov/meetings/recent",
+    "agendas": "https://pub-cutlerbay-fl.escribemeetings.com/",
+    "minutes": "https://pub-cutlerbay-fl.escribemeetings.com/",
+    "video": "https://pub-cutlerbay-fl.escribemeetings.com/",
+    "clerk": "https://www.cutlerbay-fl.gov/node/2271"
+  },
+  "meetings": {
+    "pattern": "Third Wednesday of each month, 6:00 p.m., Town Hall Council Chambers, 10720 Caribbean Boulevard, Suite 115, Cutler Bay. Also streamed on Zoom (login on the town calendar). The agendas page says 7:00 p.m. but the council page and every 2026 posted meeting say 6:00 p.m.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-07-15", "time": "18:00", "kind": "regular", "note": "Regular Town Council Meeting", "source": "https://www.cutlerbay-fl.gov/meetings/recent" },
+      { "date": "2026-07-30", "time": "18:00", "kind": "workshop", "note": "2nd Budget Workshop (General Fund)", "source": "https://www.cutlerbay-fl.gov/node/11690" },
+      { "date": "2026-08-25", "time": "18:00", "kind": "workshop", "note": "3rd Budget Workshop (All Funds)", "source": "https://www.cutlerbay-fl.gov/node/11691" },
+      { "date": "2026-09-08", "time": "18:00", "kind": "budget-hearing", "note": "First Budget Hearing (tentative millage and budget)", "source": "https://www.cutlerbay-fl.gov/node/11692" },
+      { "date": "2026-10-21", "time": "18:00", "kind": "regular", "note": "Derived from the third-Wednesday pattern on the council page; no individual notice was reachable", "source": "https://www.cutlerbay-fl.gov/node/98" },
+      { "date": "2026-11-18", "time": "18:00", "kind": "regular", "note": "Derived from the third-Wednesday pattern on the council page; no individual notice was reachable", "source": "https://www.cutlerbay-fl.gov/node/98" },
+      { "date": "2026-12-16", "time": "18:00", "kind": "regular", "note": "Derived from the third-Wednesday pattern on the council page; no individual notice was reachable", "source": "https://www.cutlerbay-fl.gov/node/98" }
+    ]
+  },
+  "phases": [
+    { "key": "budget-proposal", "name": "Budget workshops (visioning, general fund, all funds)", "start": "2026-06-17", "end": "2026-08-25", "repeats": "yearly", "decides": "Council reviews the manager's proposed budget by fund before the September hearings.", "source": "https://www.cutlerbay-fl.gov/node/11691" },
+    { "key": "budget-hearings", "name": "September budget hearings", "start": "2026-09-08", "end": null, "repeats": "yearly", "decides": "First hearing sets the tentative millage and budget; second hearing (date not found for 2026, held Sept 25 in 2025) adopts the final millage and budget.", "source": "https://www.cutlerbay-fl.gov/node/11692" },
+    { "key": "fiscal-year-start", "name": "Fiscal year begins", "start": "2026-10-01", "end": "2026-10-01", "repeats": "yearly", "decides": "Charter Sec. 4.6: fiscal year runs October 1 through September 30.", "source": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf" },
+    { "key": "qualifying", "name": "Candidate qualifying for the 2026 general election", "start": "2026-07-23", "end": "2026-08-06", "repeats": "once", "decides": "Who appears on the November 3, 2026 ballot for Mayor, Seat 1 and Seat 3. Noon to noon at the Town Clerk's office, Suite 105.", "source": "https://www.cutlerbay-fl.gov/node/11493" },
+    { "key": "election", "name": "Municipal general election", "start": "2026-11-03", "end": "2026-11-03", "repeats": "once", "decides": "Mayor, Council Seat 1 and Council Seat 3, four-year terms. Next regular town election is November 2028 (charter Sec. 5.1(C), even years).", "source": "https://www.cutlerbay-fl.gov/node/11493" }
+  ],
+  "levers": [
+    { "key": "public-comment", "how": "Speak in person at the meeting or by phone on Zoom (press *9 to raise your hand and wait to be called). State your name, address and the agenda item, and whether you are a paid consultant, town employee, lobbyist or representing an organization.", "rules": "A three-minute limit per speaker may be imposed. No advance sign-up is described for in-person speakers. Anyone may speak.", "deadline": "During the meeting", "url": "https://pub-cutlerbay-fl.escribemeetings.com/", "source": "https://www.cutlerbay-fl.gov/node/11692" },
+    { "key": "written-comment", "how": "Email TownClerk@cutlerbay-fl.gov (400 words max) or leave a voicemail of up to 3 minutes at (786) 573-5529. Include name, address and agenda item number.", "rules": "400-word limit for email; 3-minute limit for voicemail.", "deadline": "5 p.m. the day before the meeting", "url": "mailto:TownClerk@cutlerbay-fl.gov", "source": "https://www.cutlerbay-fl.gov/node/11692" },
+    { "key": "contact", "how": "Council members are reached through Town Hall at (305) 234-4262; the Town Clerk's office handles meeting procedure questions at mmelinu@cutlerbay-fl.gov.", "rules": null, "deadline": null, "url": "https://www.cutlerbay-fl.gov/node/98", "source": "https://www.cutlerbay-fl.gov/node/98" },
+    { "key": "petition", "how": "Charter Sec. 5.2(A)(1): electors may propose an ordinance to the council by petition. Sec. 5.2(C)(1): signatures of at least 10 percent of electors registered at the last regular town election. Sec. 5.2(C)(4): petitions must be filed within 60 days of filing the affidavit.", "rules": "10 percent of registered electors; 60-day filing window", "deadline": "60 days from the affidavit", "url": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf", "source": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf" },
+    { "key": "referendum", "how": "Charter Sec. 5.2(A)(2): electors may require the council to reconsider an adopted ordinance, using the same petition process and 10 percent threshold in Sec. 5.2(C). Charter amendments by petition need 10 percent of qualified electors (Sec. 6.1(A)).", "rules": "10 percent of registered electors; 60-day filing window", "deadline": "60 days from the affidavit", "url": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf", "source": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf" },
+    { "key": "recall", "how": "Charter Sec. 2.7: a recall petition needs 10 percent of registered electors as certified by the county Supervisor of Elections and is handled like other petitions under Sec. 5.2.", "rules": "10 percent of registered electors", "deadline": null, "url": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf", "source": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf" },
+    { "key": "qualify", "how": "File qualifying papers with the Town Clerk during the posted qualifying window (2026: noon July 23 to noon August 6). Mayor and Vice Mayor run town-wide; Seat 1, 2 and 3 candidates must have lived in that seat's area for one year before qualifying.", "rules": "Four-year terms; eight consecutive years max per office, twelve combined (Sec. 2.3(E))", "deadline": "Noon on the last day of qualifying", "url": "https://www.cutlerbay-fl.gov/node/11493", "source": "https://www.cutlerbay-fl.gov/node/11493" },
+    { "key": "vote", "how": "Town elections are held with the county general election in even years, first Tuesday after the first Monday in November (Sec. 5.1(C)).", "rules": null, "deadline": "2026-11-03", "url": "https://www.cutlerbay-fl.gov/node/11493", "source": "https://www.cutlerbay-fl.gov/node/11493" }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-07-23", "end": "2026-08-06", "source": "https://www.cutlerbay-fl.gov/node/11493" },
+    "terms": "Four years, at-large, staggered: Mayor, Seat 1 and Seat 3 in 2026; Vice Mayor and Seat 2 in 2028. Term limits: eight consecutive years in one office, twelve combined.",
+    "source": "https://www.cutlerbay-fl.gov/sites/default/files/fileattachments/town_clerk/page/2281/from_legal_-_town_charter_-_as_adopted_november_2018_-_final_no_maps.pdf"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Office of the Town Clerk", "email": "townclerk@cutlerbay-fl.gov", "phone": "(305) 234-4262", "url": "https://www.cutlerbay-fl.gov/node/2271", "source": "https://www.cutlerbay-fl.gov/node/2271" },
+    { "role": "clerk", "name": "Town Clerk (meeting procedure and elections)", "email": "mmelinu@cutlerbay-fl.gov", "phone": "(305) 234-4262", "url": "https://www.cutlerbay-fl.gov/node/11493", "source": "https://www.cutlerbay-fl.gov/node/11493" },
+    { "role": "commission office", "name": "Town Council", "email": null, "phone": "(305) 234-4262", "url": "https://www.cutlerbay-fl.gov/node/98", "source": "https://www.cutlerbay-fl.gov/node/98" }
+  ],
+  "notes": "The eScribe portal (pub-cutlerbay-fl.escribemeetings.com) and the town calendar and most pretty-URL pages block automated fetching; only /node/ pages were readable. The posted meeting list stops at the Sept 8, 2026 first budget hearing. The 2026 second budget hearing date was not found (2025's was Sept 25). Oct, Nov and Dec 2026 regular meetings are derived from the third-Wednesday rule, not individually confirmed. No 2027 dates posted. Agenda lead time is not stated anywhere reachable. Public comment rules come from the town's own meeting notices, not a rules-of-procedure document; the three-minute limit is described as one that 'may be imposed'. Individual council member emails are not posted on the council page; Town Hall phone is the only contact given."
+}

@@ -1,0 +1,164 @@
+{
+  "key": "city-coral-gables",
+  "rosterBody": "city-coral-gables",
+  "name": "Coral Gables City Commission",
+  "jurisdiction": "City of Coral Gables",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.coralgables.com/department/city-commission",
+    "calendar": "https://coralgables.legistar.com/Calendar.aspx",
+    "agendas": "https://coralgables.legistar.com/",
+    "minutes": "https://coralgables.legistar.com/Calendar.aspx",
+    "video": "https://www.youtube.com/coralgablestv",
+    "clerk": "https://www.coralgables.com/department/office-city-clerk"
+  },
+  "meetings": {
+    "pattern": "Regular meetings about twice a month on Tuesdays at 9:00 a.m. (one meeting in March, April and August 2026). Since March 2026 held at the Police and Fire Headquarters Community Meeting Room, 2151 Salzedo Street, while City Hall is renovated. Streamed on Zoom and Coral Gables TV.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-10-27", "time": "09:00", "kind": "regular", "note": "Police and Fire Headquarters, Community Meeting Room, 2151 Salzedo Street", "source": "https://webapi.legistar.com/v1/coralgables/events?$filter=EventDate+ge+datetime%272026-01-01%27+and+EventBodyName+eq+%27City+Commission%27&$orderby=EventDate" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-proposal",
+      "name": "Budget estimate goes to the Commission",
+      "start": "2026-07-01",
+      "end": "2026-07-08",
+      "repeats": "yearly",
+      "decides": "The City Manager submits the budget estimate July 1 and presents it to the Commission July 8; the Commission certifies the proposed tax rate to the Property Appraiser by August 4.",
+      "source": "https://www.coralgables.com/sites/default/files/2026-07/FY%2026-27%20Budget%20Meeting%20Estimate%20Presentation%20July%208%2C%202026.pdf"
+    },
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-15",
+      "end": "2026-09-29",
+      "repeats": "yearly",
+      "decides": "Two evening hearings (5:01 p.m.) set the millage rate and adopt the budget for the fiscal year starting October 1.",
+      "source": "https://www.coralgables.com/sites/default/files/2026-07/FY%2026-27%20Budget%20Meeting%20Estimate%20Presentation%20July%208%2C%202026.pdf"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "The adopted budget takes effect; the city fiscal year runs October 1 to September 30.",
+      "source": "https://www.coralgables.com/sites/default/files/2025-10/Ordinance%20-%202025-28%20Adopted%20FY%202026%20Annual%20Budget.pdf"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the November 2026 election",
+      "start": "2026-06-08",
+      "end": "2026-06-12",
+      "repeats": "once",
+      "decides": "Who appears on the ballot for Mayor (Group I) and Commission Groups IV and V; noon Monday June 8 to noon Friday June 12, 2026.",
+      "source": "https://www.coralgables.com/media/5301"
+    },
+    {
+      "key": "election",
+      "name": "General biennial municipal election",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Mayor and two commission seats (Groups IV and V); run-off December 1, 2026 if no candidate wins a majority.",
+      "source": "https://www.coralgables.com/media/5301"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Fill out a speaker card from the City Clerk at the meeting and speak when your name is called. Anyone may speak on a public hearing item; comment on other items is allowed where law requires it or the Chair permits.",
+      "rules": "Three minutes per speaker; the Chair may shorten to two minutes when many people sign up. State your name and residential or business address, and whether you represent a group and are paid to. One turn per subject unless the Chair allows more. Lobbyists must be registered.",
+      "deadline": "Sign up at the meeting before the item is called",
+      "url": "https://coralgables.legistar.com/Calendar.aspx",
+      "source": "https://www.coralgables.com/sites/default/files/2022-10/CAO%202015-104%20Rules%20of%20Public%20Participation%20and%20Decorum.pdf"
+    },
+    {
+      "key": "written-comment",
+      "how": "No written comment procedure or eComment is posted; Legistar shows eComment as not available. Email the City Clerk or the commissioners directly.",
+      "rules": null,
+      "deadline": null,
+      "url": "mailto:cityclerk@coralgables.com",
+      "source": "https://coralgables.legistar.com/Calendar.aspx"
+    },
+    {
+      "key": "contact",
+      "how": "Email or call the Mayor and commissioners or the Commission office aides.",
+      "rules": "Commission office general email CommissionAides@coralgables.com; City Hall 305-446-6800.",
+      "deadline": null,
+      "url": "https://www.coralgables.com/department/city-commission/contacts",
+      "source": "https://www.coralgables.com/department/city-commission"
+    },
+    {
+      "key": "records-request",
+      "how": "Submit a public records request through the city's JustFOIA portal; all requests go through the City Clerk's Office.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://coralgablesfl.justfoia.com/publicportal/home/newrequest",
+      "source": "https://www.coralgables.com/department/office-city-clerk"
+    },
+    {
+      "key": "petition",
+      "how": "Charter Sec. 10(C): voters may propose an ordinance by petition. If the Commission does not pass it unchanged, it goes to the voters at the next regular election (Sec. 10(C)(iv)).",
+      "rules": "Signatures of at least twenty percent of the city's registered voters (Sec. 10(C)(ii)); petition papers are filed with the City Clerk.",
+      "deadline": null,
+      "url": "https://library.municode.com/fl/coral_gables/codes/code_of_ordinances",
+      "source": "https://www.coralgables.com/sites/default/files/2024-01/CAO-2016-091-Charter-Revisions-Consistent-with-City-Referendum-Results-CH.pdf"
+    },
+    {
+      "key": "referendum",
+      "how": "Charter Sec. 10: voters may approve or reject at the polls any ordinance the Commission passes, except appropriation and annual tax levy ordinances. If a majority votes no, the ordinance is repealed (Sec. 10(B)(i)).",
+      "rules": "Petition signed by at least ten percent of the total number of registered voters in the city (Sec. 10(B)); petition papers assembled and filed with the City Clerk (Sec. 10(B)(viii)).",
+      "deadline": null,
+      "url": "https://library.municode.com/fl/coral_gables/codes/code_of_ordinances",
+      "source": "https://www.coralgables.com/sites/default/files/2024-01/CAO-2016-091-Charter-Revisions-Consistent-with-City-Referendum-Results-CH.pdf"
+    },
+    {
+      "key": "recall",
+      "how": "Charter Sec. 1 says the Mayor and all commissioners are subject to recall; recall petitions are filed with the City Clerk (Sec. 10(B)(viii)). Florida's uniform municipal recall statute, F.S. 100.361, sets the procedure.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk no later than 30 days after the first signature. The charter excerpt available online does not reproduce a city-specific threshold.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://www.coralgables.com/sites/default/files/2024-01/CAO-2016-091-Charter-Revisions-Consistent-with-City-Referendum-Results-CH.pdf"
+    },
+    {
+      "key": "qualify",
+      "how": "File qualifying papers with the City Clerk, who is the municipal Supervisor of Elections. Candidates must be U.S. citizens and city residents for at least one year before the election (Charter Sec. 3(a)).",
+      "rules": "Qualifying runs from noon of the 50th day to noon of the 46th day before the election (Charter Sec. 3(e)). For 2026: noon June 8 to noon June 12.",
+      "deadline": "Noon on the 46th day before the election",
+      "url": "https://www.coralgables.com/department/office-city-clerk/city-coral-gables-elections",
+      "source": "https://www.coralgables.com/media/5301"
+    },
+    {
+      "key": "vote",
+      "how": "City elections now coincide with the November general election in even years (charter amendment approved April 21, 2026). Vote at your county precinct, by mail or early voting through Miami-Dade Elections.",
+      "rules": "Registered Coral Gables voters.",
+      "deadline": "Election Day November 3, 2026; run-off December 1, 2026 if needed",
+      "url": "https://www.coralgables.com/department/office-city-clerk/city-coral-gables-elections",
+      "source": "https://www.coralgables.com/media/5301"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Apply for city boards and committees through the City Clerk's boards page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.coralgables.com/departments/CityClerk/boards-committees",
+      "source": "https://www.coralgables.com/department/office-city-clerk"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-06-08", "end": "2026-06-12", "source": "https://www.coralgables.com/media/5301" },
+    "terms": "Mayor two years; four commissioners four-year staggered terms (Groups II and III next up in 2028). Term limits: eight consecutive years as Mayor, twelve as Commissioner (Charter Sec. 2). Elections every two years in November since the April 21, 2026 charter amendment; the commission page still says second Tuesday in April of odd years.",
+    "source": "https://www.coralgables.com/department/office-city-clerk/city-coral-gables-elections"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Billy Y. Urquia, City Clerk", "email": "cityclerk@coralgables.com", "phone": "305-460-5210", "url": "https://www.coralgables.com/department/office-city-clerk", "source": "https://www.coralgables.com/department/office-city-clerk" },
+    { "role": "commission office", "name": "City Commission office (aides)", "email": "CommissionAides@coralgables.com", "phone": "305-446-6800", "url": "https://www.coralgables.com/department/city-commission/contacts", "source": "https://www.coralgables.com/department/city-commission" },
+    { "role": "mayor", "name": "Vince Lago", "email": "vlago@coralgables.com", "phone": "305-460-5304", "url": "https://www.coralgables.com/department/city-commission/contacts", "source": "https://www.coralgables.com/department/city-commission/contacts" }
+  ],
+  "notes": "Schedule comes from the Legistar API for body City Commission; as of 2026-10-22 it lists nothing after October 27, 2026 and no 2027 dates, so November and December 2026 meetings are not yet posted. 2026 meetings held so far: Jan 13, Jan 27, Feb 10, Feb 24, Mar 10, Apr 14, May 5, May 19, Jun 2, Jun 3 (capital workshop), Jul 7, Jul 8 (budget presentation), Aug 25, Sep 14 (special assessment hearing), Sep 15 (regular and 5:01 p.m. first budget hearing), Sep 29 (regular and 5:01 p.m. second budget hearing), Oct 13, Oct 27. Agenda lead time is not stated on the clerk page or Legistar; the Municode code pages (Secs. 2-68, 2-70, 2-73 govern meetings and are cited by the public participation rules) could not be fetched. Public comment rules come from City Attorney Opinion 2015-104; no written comment or eComment channel is posted. Charter text comes from excerpts in City Attorney Opinion 2016-091 because Municode would not load; the recall threshold in the full charter was not reachable, so the statewide statute is cited. The commission department page still shows the pre-2026 April election schedule; the Candidate Handbook and clerk elections page confirm November 3, 2026. No 2027 budget calendar is posted; the budget-proposal and hearing phases are the 2026 dates marked yearly."
+}
