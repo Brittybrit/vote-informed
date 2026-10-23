@@ -831,6 +831,213 @@
     }
    ],
    "notes": "Checked 2026-10-22. Schedule: the city calendar (CivicPlus) showed only the October 28, 2026 regular meeting; the November and December list views returned no council meetings, so the posted schedule stops there. The meeting pattern (second and fourth Wednesday, 5:30 p.m.) is from the City Council page; apply it for later dates but confirm on the CivicWeb portal, which blocks automated fetching (robots) and could not be read for agenda lead time, posted schedule or public comment rules. Agenda lead days unknown. Budget: only the second hearing (Sept 23, 2026, 5:01 p.m.) was found as a legal ad on the county site; the first hearing notice and the proposed budget release date for FY 2026-27 were not found (a 2026-09-09 notice URL guess failed). Charter: the city's charter PDF (DocumentCenter/View/396) has no machine-readable text and municode.com returned errors, so initiative, referendum and recall charter sections are missing; the recall lever uses Fla. Stat. 100.361, which the statute says applies to all cities, and the petition lever uses Fla. Stat. 166.031 as the state floor. Only Charter Sec. 6.2 (charter revision commission) and Sec. 2.1 (vice mayor) were confirmed, from a 2014 ballot. Public comment time limit not found. Legal notices moved to legalads.miamidade.gov effective Sept 1, 2025 (city Public Notices page)."
+  },
+  {
+   "key": "city-sunny-isles-beach",
+   "rosterBody": "city-sunny-isles-beach",
+   "name": "Sunny Isles Beach City Commission",
+   "jurisdiction": "City of Sunny Isles Beach",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.sibfl.gov/",
+    "calendar": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas/Commission-Meeting-Schedule",
+    "agendas": "https://sibfl.granicus.com/ViewPublisher.php?view_id=2",
+    "minutes": "https://sibfl.granicus.com/ViewPublisher.php?view_id=2",
+    "video": "https://www.youtube.com/cityofsib/live",
+    "clerk": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk"
+   },
+   "meetings": {
+    "pattern": "Third Thursday of the month (second Thursday in May), Commission Workshop at 1:30 p.m. and Regular Commission Meeting at 6:30 p.m., David P. Samson Commission Chambers, Government Center, 18070 Collins Avenue. No December meeting. Special, workshop and emergency meetings are posted to the city event calendar.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-08-20",
+      "time": "18:30",
+      "kind": "regular",
+      "note": "Workshop 1:30 p.m., regular meeting 6:30 p.m.",
+      "source": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas/Commission-Meeting-Schedule"
+     },
+     {
+      "date": "2026-09-08",
+      "time": "17:30",
+      "kind": "budget-hearing",
+      "note": "Special Commission Meeting, First Budget Hearing (legal ad dated Sept 2)",
+      "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/sunny-isles-beach/2026/2026-09-02-special-budget-hearing.pdf"
+     },
+     {
+      "date": "2026-09-17",
+      "time": "18:30",
+      "kind": "regular",
+      "note": "Workshop 1:30 p.m., regular meeting 6:30 p.m.",
+      "source": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas/Commission-Meeting-Schedule"
+     },
+     {
+      "date": "2026-10-15",
+      "time": "18:30",
+      "kind": "regular",
+      "note": "Workshop 1:30 p.m., regular meeting 6:30 p.m.",
+      "source": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas/Commission-Meeting-Schedule"
+     },
+     {
+      "date": "2026-11-19",
+      "time": "18:30",
+      "kind": "regular",
+      "note": "Workshop 1:30 p.m., regular meeting 6:30 p.m. Last posted 2026 meeting; none in December.",
+      "source": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas/Commission-Meeting-Schedule"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Proposed budget to Commission and tentative millage",
+     "start": "2026-06-23",
+     "end": "2026-07-16",
+     "repeats": "yearly",
+     "decides": "Manager submits the proposed budget (June 23), Commission workshop on the tentative budget (July 2), Commission adopts the tentative millage (July 16) per the FY2026-27 budget calendar.",
+     "source": "https://www.sibfl.gov/files/assets/city/v/1/city-hall/documents/financial-documents/fy-26-27-budget-book-tentative-digital-copy-revision-compressed.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-08",
+     "end": null,
+     "repeats": "yearly",
+     "decides": "First hearing (Sept 8, 2026, 5:30 p.m.) on tentative millage and budget; the second hearing, which adopts the final budget and millage, must fall within 15 days of the first. The budget book planned Sept 10 but the actual second-hearing notice was not found. Adopted FY2027 millage: 1.6514.",
+     "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/sunny-isles-beach/2026/2026-09-02-special-budget-hearing.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "The city's fiscal year runs October 1 through September 30.",
+     "source": "https://www.sibfl.gov/files/assets/city/v/1/city-hall/documents/financial-documents/fy-26-27-budget-book-tentative-digital-copy-revision-compressed.pdf"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the 2026 general election",
+     "start": "2026-08-03",
+     "end": "2026-08-07",
+     "repeats": "once",
+     "decides": "Who appears on the Nov 3, 2026 ballot for Mayor, Seat 2 and Seat 4. 9 a.m. Monday Aug 3 to 4 p.m. Friday Aug 7 at the City Clerk's office.",
+     "source": "https://www.sibfl.gov/Resident-Services/Elections"
+    },
+    {
+     "key": "election",
+     "name": "Municipal general election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor, Commission Seat 2 and Commission Seat 4, four-year terms. Terms begin on the 14th day after certification (charter Sec. C-5.1(i), 2023 amendment).",
+     "source": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Attend the regular meeting in person at the Samson Commission Chambers; meetings are also streamed on YouTube and SIBTV. Documents and procedure questions go to the City Clerk at 305.792.1703 or cityclerk@sibfl.net.",
+     "rules": "No time limit, sign-up procedure or speaker eligibility rule is posted on the meetings page, schedule page or event notices.",
+     "deadline": "During the meeting",
+     "url": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas",
+     "source": "https://www.sibfl.gov/City-Hall/Commission-Meetings-and-Agendas"
+    },
+    {
+     "key": "written-comment",
+     "how": "No dedicated public comment email is posted. The city's general contact portal and the clerk's email (cityclerk@sibfl.net) are the posted channels.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.sibfl.gov/City-Hall/Contact-Us/Email-Us",
+     "source": "https://www.sibfl.gov/City-Hall/Contact-Us"
+    },
+    {
+     "key": "contact",
+     "how": "Each elected official has a seat email (mayor@sibfl.net, seat1@ through seat4@sibfl.net) and a direct line listed on the Commission page; the shared office line is 305.792.1700.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission",
+     "source": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission"
+    },
+    {
+     "key": "records-request",
+     "how": "File through the city's NextRequest portal or search the Laserfiche document center.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://sibfl.nextrequest.com/",
+     "source": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "The charter is published only through Municode, which refused automated fetches; initiative section numbers and signature thresholds are not recorded.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/sunny_isles_beach/codes/code_of_ordinances?nodeId=THCH_CH",
+     "source": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk/Municipal-Charter"
+    },
+    {
+     "key": "referendum",
+     "how": "Charter amendments go to the voters (14 amendments passed at a May 23, 2023 special election). Charter Sec. C-7.4 seats a Charter Revision Commission in January 2033 and every ten years after. Citizen referendum thresholds not readable (Municode).",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/sunny_isles_beach/codes/code_of_ordinances?nodeId=THCH_CH",
+     "source": "https://sibfl.net/proposed-charter-amendments"
+    },
+    {
+     "key": "qualify",
+     "how": "File DS-DE 9 and DS-DE 84 before any campaign activity, then qualify with the City Clerk during the posted window. Qualifying fee is $200 (charter Sec. C-2.4, raised from $100 in 2023).",
+     "rules": "Four-year terms; elections in even years",
+     "deadline": "4 p.m. on the last day of qualifying",
+     "url": "https://www.sibfl.gov/Resident-Services/Elections",
+     "source": "https://www.sibfl.gov/Resident-Services/Elections"
+    },
+    {
+     "key": "vote",
+     "how": "City elections are held with the county general election in even years, the Tuesday after the first Monday in November; vote at your assigned precinct 7 a.m. to 7 p.m.",
+     "rules": null,
+     "deadline": "2026-11-03",
+     "url": "https://www.sibfl.gov/Resident-Services/Elections/Voter-Information",
+     "source": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-08-03",
+     "end": "2026-08-07",
+     "source": "https://www.sibfl.gov/Resident-Services/Elections"
+    },
+    "terms": "Mayor and four commissioners (Seats 1 to 4), four-year staggered terms; Mayor, Seat 2 and Seat 4 in 2026, Seats 1 and 3 in 2028. Mayor nominates the Vice Mayor subject to Commission approval (Sec. C-2.2(b)).",
+    "source": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Mauricio Betancur, CMC, City Clerk",
+     "email": "cityclerk@sibfl.net",
+     "phone": "305.792.1703",
+     "url": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk",
+     "source": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "Mayor and Commission office",
+     "email": null,
+     "phone": "305.792.1700",
+     "url": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission",
+     "source": "https://www.sibfl.gov/City-Hall/Contact-Us"
+    },
+    {
+     "role": "mayor",
+     "name": "Larisa Svechin",
+     "email": "mayor@sibfl.net",
+     "phone": "305.792.1753",
+     "url": "https://www.sibfl.gov/City-Hall/Elected-Officials/Mayor",
+     "source": "https://www.sibfl.gov/City-Hall/Elected-Officials/Commission"
+    }
+   ],
+   "notes": "The 2026 schedule page lists all eleven regular meeting dates and stops at Nov 19, 2026; no 2027 schedule posted. The Granicus agenda archive blocks automated fetching, so agenda lead time was not confirmed. The first 2026 budget hearing (Sept 8) comes from the county-hosted legal ad; the second hearing's notice was not found (budget calendar planned Sept 10, and the regular Sept 17 meeting is within the 15-day window). No public comment rules (time limit, sign-up, written comment email) are posted on any reachable city page; the city has no published rules-of-procedure document online. The charter is only on Municode, which refused fetches, so initiative, referendum and recall provisions are missing; the 2023 charter amendment page supplied the qualifying fee, term-start and charter-review sections."
   }
  ]
 }
