@@ -223,6 +223,16 @@
   .gb-opt:hover{background:#EFF3FA;}
   .gb-title{display:block; font-weight:800; font-size:14px;}
   .gb-desc{display:block; font-size:12.5px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .gb-find{cursor:default; border-color:var(--ink);}
+  .gb-find:hover{background:var(--paper);}
+  .fp-row{display:flex; gap:6px; margin-top:9px;}
+  .gb-find input{flex:1; min-width:0; font:inherit; font-size:16px; padding:9px 10px; border:2px solid var(--ink); background:var(--panel); color:var(--ink);}
+  .gb-find button{font-family:inherit; font-weight:800; font-size:12px; letter-spacing:.04em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; padding:9px 14px; cursor:pointer; white-space:nowrap;}
+  .gb-find .fp-loc{background:transparent; color:var(--ink); border:2px solid var(--ink); padding:7px 12px; width:100%;}
+  .gb-find button[disabled]{opacity:.55; cursor:wait;}
+  .fp-msg{display:block; font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:7px; line-height:1.6;}
+  .fp-msg:empty{display:none;}
+  .fp-msg .fp-pick{font-family:inherit; font-weight:800; font-size:12px; background:var(--ink); color:var(--paper); border:none; padding:6px 10px; margin:4px 6px 0 0; cursor:pointer;}
   .finehint{font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); margin-top:16px; text-align:center; line-height:1.6;}
 
   .statusline{
@@ -683,6 +693,16 @@
       <input type="file" id="fileInput" accept="application/pdf" hidden>
       <div class="getballot">
         <p class="gb-head" data-i18n="gb.head"></p>
+        <form class="gb-opt gb-find" id="findForm" novalidate>
+          <span class="gb-title" data-i18n="fp.t"></span>
+          <span class="gb-desc" data-i18n="fp.d"></span>
+          <span class="fp-row">
+            <input id="fpIn" type="text" autocomplete="street-address" enterkeyhint="search" maxlength="120">
+            <button type="submit" id="fpGo" data-i18n="fp.go"></button>
+          </span>
+          <span class="fp-row"><button type="button" class="fp-loc" id="fpLoc" data-i18n="fp.loc"></button></span>
+          <span class="fp-msg" id="fpMsg"></span>
+        </form>
         <a class="gb-opt" href="https://www.voterfocus.com/VoterInformationLookup/voterSearch?county=FL-DAD" target="_blank" rel="noopener">
           <span class="gb-title" data-i18n="gb.exact.t"></span>
           <span class="gb-desc" data-i18n="gb.exact.d"></span>
@@ -772,6 +792,19 @@ en: {
   'gb.exact.d': 'Look yourself up on the county&rsquo;s voter portal for your precinct-specific sample ballot, with only the races you&rsquo;ll actually vote on. Save it as a PDF and upload it here.',
   'gb.master.t': 'Load the countywide master ballot &rarr;',
   'gb.master.d': 'Every race in Miami-Dade for the November 3 General Election. Loads right here, no download needed.',
+  'fp.t': 'Find my ballot by address &rarr;',
+  'fp.d': 'Type your home address, or use your location. We find your precinct and show only your races. The address goes to the U.S. Census geocoder and the county&rsquo;s precinct map, not to this site, and is not saved.',
+  'fp.ph': 'Street address, city',
+  'fp.go': 'Find',
+  'fp.loc': 'Use my location',
+  'fp.working': 'Finding your precinct',
+  'fp.empty': 'Type a street address with a city or ZIP.',
+  'fp.nomatch': 'That address could not be found. Try adding the city or ZIP, or check the spelling.',
+  'fp.outside': 'That spot is not inside any Miami-Dade precinct.',
+  'fp.denied': 'Location was not shared. Type your address instead.',
+  'fp.fail': 'The lookup did not answer. Try again in a minute, or type your precinct number below the ballot.',
+  'fp.split': 'The county splits precinct {w} in two, and only your sample ballot says which half is yours. Pick one for now and confirm it on the county lookup:',
+  'fp.found': 'Precinct {p}. The county map gives this answer for your address; your own sample ballot is the final word.',
   'finehint': 'Research runs once per candidate and is shared: if someone already looked a candidate up this week, your result is instant. Your ballot plan is saved only on this device.',
   'rc.check.big': 'Check your registration &amp; precinct',
   'rc.check.sub': 'County voter lookup, also where you get your precinct-specific sample ballot &rarr;',
@@ -1298,6 +1331,19 @@ es: {
   'gb.exact.d': 'Búsquese en el portal de votantes del condado para obtener la boleta de muestra de su precinto, solo con las contiendas en las que realmente votará. Guárdela como PDF y súbala aquí.',
   'gb.master.t': 'Cargar la boleta maestra de todo el condado &rarr;',
   'gb.master.d': 'Todas las contiendas de Miami-Dade para las Elecciones Generales del 3 de noviembre. Se carga aquí mismo, sin descargar nada.',
+  'fp.t': 'Buscar mi boleta por dirección &rarr;',
+  'fp.d': 'Escriba la dirección de su casa o use su ubicación. Encontramos su precinto y mostramos solo sus contiendas. La dirección va al geocodificador del Censo de EE. UU. y al mapa de precintos del condado, no a este sitio, y no se guarda.',
+  'fp.ph': 'Dirección, ciudad',
+  'fp.go': 'Buscar',
+  'fp.loc': 'Usar mi ubicación',
+  'fp.working': 'Buscando su precinto',
+  'fp.empty': 'Escriba una dirección con ciudad o código postal.',
+  'fp.nomatch': 'No se encontró esa dirección. Agregue la ciudad o el código postal, o revise la ortografía.',
+  'fp.outside': 'Ese lugar no está dentro de ningún precinto de Miami-Dade.',
+  'fp.denied': 'No se compartió la ubicación. Escriba su dirección.',
+  'fp.fail': 'La búsqueda no respondió. Intente de nuevo en un minuto o escriba su número de precinto debajo de la boleta.',
+  'fp.split': 'El condado divide el precinto {w} en dos, y solo su boleta de muestra dice cuál mitad es la suya. Elija una por ahora y confírmela en la búsqueda del condado:',
+  'fp.found': 'Precinto {p}. Esta es la respuesta del mapa del condado para su dirección; su propia boleta de muestra es la palabra final.',
   'finehint': 'La investigación se hace una vez por candidato y se comparte: si alguien ya buscó a un candidato esta semana, su resultado es instantáneo. Su plan de voto se guarda solo en este dispositivo.',
   'rc.check.big': 'Verifique su inscripción y su precinto',
   'rc.check.sub': 'Búsqueda de votantes del condado, también donde obtiene la boleta de muestra de su precinto &rarr;',
@@ -1824,6 +1870,19 @@ ht: {
   'gb.exact.d': 'Chèche non w sou pòtay votè konte a pou jwenn echantiyon bilten vòt pou pwesen w lan, ak sèlman eleksyon ou pral vote yo. Sove l kòm PDF epi voye l isit la.',
   'gb.master.t': 'Chaje bilten vòt prensipal tout konte a &rarr;',
   'gb.master.d': 'Tout eleksyon nan Miami-Dade pou Eleksyon Jeneral 3 novanm nan. Li chaje isit la, ou pa bezwen telechaje anyen.',
+  'fp.t': 'Jwenn bilten vòt mwen ak adrès mwen &rarr;',
+  'fp.d': 'Tape adrès kay ou, oswa itilize kote w ye a. Nou jwenn pwesen w epi nou montre sèlman eleksyon pa w yo. Adrès la ale nan jeokodè Resansman Etazini an ak kat pwesen konte a, pa nan sit sa a, epi li pa sove.',
+  'fp.ph': 'Adrès, vil',
+  'fp.go': 'Chèche',
+  'fp.loc': 'Itilize kote m ye a',
+  'fp.working': 'N ap chèche pwesen w',
+  'fp.empty': 'Tape yon adrès ak vil la oswa kòd postal la.',
+  'fp.nomatch': 'Nou pa t ka jwenn adrès sa a. Ajoute vil la oswa kòd postal la, oswa verifye òtograf la.',
+  'fp.outside': 'Kote sa a pa nan okenn pwesen Miami-Dade.',
+  'fp.denied': 'Ou pa t pataje kote w ye a. Tape adrès ou pito.',
+  'fp.fail': 'Rechèch la pa t reponn. Eseye ankò nan yon minit, oswa tape nimewo pwesen w anba bilten an.',
+  'fp.split': 'Konte a divize pwesen {w} an de, e se sèlman echantiyon bilten vòt ou ki di ki mwatye ki pou ou. Chwazi youn pou kounye a epi konfime l nan rechèch konte a:',
+  'fp.found': 'Pwesen {p}. Se repons kat konte a bay pou adrès ou; echantiyon bilten vòt ou se dènye mo a.',
   'finehint': 'Rechèch la fèt yon sèl fwa pou chak kandida epi tout moun pataje l: si yon moun deja chèche yon kandida semèn sa a, rezilta w ap parèt touswit. Plan vòt ou sove sèlman sou aparèy sa a.',
   'rc.check.big': 'Verifye enskripsyon w ak pwesen w',
   'rc.check.sub': 'Rechèch votè konte a, se la tou ou jwenn echantiyon bilten vòt pou pwesen w &rarr;',
@@ -2360,6 +2419,7 @@ function t(key, vars){
 <script src="/money-summary.js"></script>
 <script src="/decision-card.js"></script>
 <script src="/precinct-filter.js"></script>
+<script src="/find-precinct.js"></script>
 <script src="/quick-ballot.js"></script>
 <script>
 // Next election — update these three lines each cycle.
@@ -2848,6 +2908,58 @@ function wirePrecinctBar(){
 // A saved plan that was filtered: load the data, then draw again
 function ensurePrecinctsForBallot(){
   if(ballot && ballot.filterPct && !PRECINCTS) loadPrecincts().then(function(){ if(ballot && ballot.filterPct) renderBallot(); }).catch(function(){});
+}
+
+/* ---------------- find my ballot by address or location ---------------- */
+// Address -> precinct (/find-precinct.js), then the countywide ballot filtered to that precinct,
+// the same path a typed precinct number takes. Split precincts (116.0 / 116.1) ask the voter.
+function wireFindPrecinct(){
+  var f = $('findForm'), loc = $('fpLoc');
+  if(!f || !window.findPrecinct) return;
+  var fp = window.findPrecinct;
+  function busy(on){ $('fpGo').disabled = on; loc.disabled = on; }
+  function say(html){ $('fpMsg').innerHTML = html; }
+  function fail(key, extra){ busy(false); say(t(key, extra || {})); }
+  function finish(p){
+    busy(false);
+    say(t('fp.found', {p: esc(p)}));
+    return loadFeaturedBallot().then(function(){
+      if(!ballot || ballot.precinct) return;
+      ballot.filterPct = p; delete ballot.pfSeen; saveState();
+      loadPrecincts().then(function(){ renderBallot(); setStatus(t('status.fromPct', {p: esc(p)}), false); }).catch(function(){ renderBallot(); });
+    });
+  }
+  function resolve(point){
+    return fp.precinctAt(point.lat, point.lng).then(function(whole){
+      if(!whole) return fail('fp.outside');
+      return loadPrecincts().then(function(d){
+        var c = fp.candidates(whole, d);
+        if(!c.length) return fail('fp.outside');
+        if(c.length === 1) return finish(c[0]);
+        busy(false);
+        var find = '<a href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('pf.find') + ' &#8599;</a>';
+        say(t('fp.split', {w: esc(whole)}) + ' ' + find + '<br>' + c.map(function(k){
+          return '<button type="button" class="fp-pick" data-p="' + esc(k) + '">' + t('pf.pctShort', {p: esc(k)}) + '</button>';
+        }).join(''));
+        $('fpMsg').querySelectorAll('.fp-pick').forEach(function(b){ b.addEventListener('click', function(){ finish(b.dataset.p); }); });
+      });
+    });
+  }
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var a = fp.cleanAddress($('fpIn').value);
+    if(!a || !/\d/.test(a)) return fail('fp.empty');
+    busy(true); say(t('fp.working') + '<span class="dots"></span>');
+    fp.geocode(a).then(resolve).catch(function(e){
+      fail(e && e.message === 'nomatch' ? 'fp.nomatch' : 'fp.fail');
+    });
+  });
+  loc.addEventListener('click', function(){
+    busy(true); say(t('fp.working') + '<span class="dots"></span>');
+    fp.locate().then(resolve).catch(function(e){
+      fail(e && (e.code === 1 || e.message === 'unsupported') ? 'fp.denied' : 'fp.fail');
+    });
+  });
 }
 
 /* ---------------- jump-to sections ---------------- */
@@ -4744,6 +4856,7 @@ function renderRaceMoney(ri, cand, d){
 
 $('pickBtn').addEventListener('click', function(){ $('fileInput').click(); });
 $('loadMaster').addEventListener('click', loadFeaturedBallot);
+wireFindPrecinct();
 $('fileInput').addEventListener('change', function(e){ handleFile(e.target.files[0]); });
 
 var dz = $('dropzone');
@@ -4810,6 +4923,7 @@ function renderCountdown(){
 function applyStatic(){
   document.documentElement.lang = LANG;
   document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
+  if($('fpIn')) $('fpIn').placeholder = t('fp.ph');
   document.querySelectorAll('.langs button').forEach(function(b){
     b.classList.toggle('on', b.dataset.lang === LANG);
     b.setAttribute('aria-pressed', b.dataset.lang === LANG ? 'true' : 'false');

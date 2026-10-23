@@ -110,6 +110,12 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/pollingplace') {
         return handlePollingPlace(url.searchParams.get('p'));
       }
+      if (request.method === 'GET' && url.pathname === '/api/geocode') {
+        return await handleGeocode(url.searchParams.get('q'));
+      }
+      if (request.method === 'GET' && url.pathname === '/api/precinct') {
+        return await handlePrecinctAt(url.searchParams.get('lat'), url.searchParams.get('lng'));
+      }
       if (request.method === 'GET' && url.pathname === '/data/donor-actions.csv') {
         return handleActionsCsv(env);
       }
@@ -4351,6 +4357,31 @@ function handlePollingPlace(p) {
   if (!row) return json({ error: 'Precinct not found', precinct: key }, 404);
   const [name, address, city, zip] = row;
   return json({ precinct: key, name, address, city, zip, openHour: 7, closeHour: 19, date: '2026-11-03', source: PP_SOURCE });
+}
+
+/* ---------------- find my precinct: fallbacks for /find-precinct.js ---------------- */
+// The browser calls the Census geocoder and the county's precinct layer itself. These two routes
+// exist only for browsers where that direct call fails. They pass the request along and return the
+// answer; nothing is logged or stored, and the response is not cached.
+const GEOCODER = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress';
+const PRECINCT_LAYER = 'https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Precinct_gdb/FeatureServer/0/query';
+async function passThrough(url) {
+  const r = await fetch(url, { signal: AbortSignal.timeout(12000), headers: { 'Accept': 'application/json' } });
+  if (!r.ok) return json({ error: 'Upstream HTTP ' + r.status }, 502);
+  return new Response(await r.text(), {
+    headers: { 'Content-Type': 'application/json', 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store' }
+  });
+}
+async function handleGeocode(q) {
+  const a = String(q || '').replace(/\s+/g, ' ').trim().slice(0, 200);
+  if (!a) return json({ error: 'Missing q' }, 400);
+  return passThrough(GEOCODER + '?benchmark=Public_AR_Current&format=json&address=' + encodeURIComponent(a));
+}
+async function handlePrecinctAt(lat, lng) {
+  const la = Number(lat), lo = Number(lng);
+  if (!isFinite(la) || !isFinite(lo) || la < 24 || la > 27 || lo < -82 || lo > -79) return json({ error: 'Not in Miami-Dade' }, 400);
+  return passThrough(PRECINCT_LAYER + '?f=json&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects' +
+    '&outFields=ID&returnGeometry=false&geometry=' + encodeURIComponent(lo + ',' + la));
 }
 
 
