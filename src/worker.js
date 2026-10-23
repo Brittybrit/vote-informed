@@ -52,7 +52,7 @@ const FEATURED_BALLOT_URL = 'https://www.miamidade.gov/elections/library/2026-11
 const FEATURED_KEY = 'featured:parse';
 const BUNDLED_BALLOT_PATH = '/ballots/2026-11-03-general.pdf';   // keep in sync with index.html
 // Hosts that open on the founder board (public/admin/board.html). The board's state and chat sit behind ADMIN_TOKEN.
-const ADMIN_HOSTS = new Set(['admin.wethepeople.org']);
+const ADMIN_HOSTS = new Set(['admin.wethepeople305.org']);
 const BOARD_KEY = 'board:founder';
 const BOARD_CONTEXT_KEY = 'board:context';   // project notes the board's chat reads (claude.ai Projects are not reachable by API)
 
@@ -60,7 +60,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     try {
-      // admin.wethepeople.org serves the founder board at its root; everything else on that host is the same app.
+      // admin.wethepeople305.org serves the founder board at its root; everything else on that host is the same app.
       if (ADMIN_HOSTS.has(url.hostname) && (url.pathname === '/' || url.pathname === '/index.html')) {
         return env.ASSETS.fetch(new Request('https://assets.local/admin/board.html', request));
       }
