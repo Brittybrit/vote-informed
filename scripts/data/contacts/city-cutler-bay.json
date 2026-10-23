@@ -1,0 +1,76 @@
+{
+  "rosterBody": "city-cutler-bay",
+  "checked": "2026-10-23",
+  "offices": [
+    {
+      "office": "city-cutler-bay-mayor",
+      "holder": "Tim Meerbott",
+      "email": null,
+      "phone": "(305) 234-4262",
+      "officeAddress": "Cutler Bay Town Hall, 10720 Caribbean Blvd, Suite 105, Cutler Bay, FL 33189",
+      "districtOffice": null,
+      "contactUrl": "https://www.cutlerbay-fl.gov/node/98",
+      "staff": [],
+      "source": "https://www.cutlerbay-fl.gov/node/98",
+      "notes": "BLOCKED: Mayor and council member pages on cutlerbay-fl.gov refuse automated fetch (robots); the council list page prints no emails."
+    },
+    {
+      "office": "city-cutler-bay-member",
+      "holder": "Michael P. Callahan",
+      "email": null,
+      "phone": "(305) 234-4262",
+      "officeAddress": "Cutler Bay Town Hall, 10720 Caribbean Blvd, Suite 105, Cutler Bay, FL 33189",
+      "districtOffice": null,
+      "contactUrl": "https://www.cutlerbay-fl.gov/node/98",
+      "staff": [],
+      "source": "https://www.cutlerbay-fl.gov/node/98",
+      "notes": "BLOCKED: Mayor and council member pages on cutlerbay-fl.gov refuse automated fetch (robots); the council list page prints no emails. Vice Mayor seat; not on the council list page fetched."
+    },
+    {
+      "office": "city-cutler-bay-seat-1",
+      "holder": "Robert \"BJ\" Duncan",
+      "email": null,
+      "phone": "(305) 234-4262",
+      "officeAddress": "Cutler Bay Town Hall, 10720 Caribbean Blvd, Suite 105, Cutler Bay, FL 33189",
+      "districtOffice": null,
+      "contactUrl": "https://www.cutlerbay-fl.gov/node/98",
+      "staff": [],
+      "source": "https://www.cutlerbay-fl.gov/node/98",
+      "notes": "Email not printed on the council page."
+    },
+    {
+      "office": "city-cutler-bay-seat-2",
+      "holder": "Suzy Lord",
+      "email": null,
+      "phone": "(305) 234-4262",
+      "officeAddress": "Cutler Bay Town Hall, 10720 Caribbean Blvd, Suite 105, Cutler Bay, FL 33189",
+      "districtOffice": null,
+      "contactUrl": "https://www.cutlerbay-fl.gov/node/98",
+      "staff": [],
+      "source": "https://www.cutlerbay-fl.gov/node/98",
+      "notes": "Email not printed on the council page."
+    },
+    {
+      "office": "city-cutler-bay-seat-3",
+      "holder": "Richard Ramirez",
+      "email": null,
+      "phone": "(305) 234-4262",
+      "officeAddress": "Cutler Bay Town Hall, 10720 Caribbean Blvd, Suite 105, Cutler Bay, FL 33189",
+      "districtOffice": null,
+      "contactUrl": "https://www.cutlerbay-fl.gov/node/98",
+      "staff": [],
+      "source": "https://www.cutlerbay-fl.gov/node/98",
+      "notes": "Email not printed on the council page."
+    }
+  ],
+  "body": {
+    "clerkName": null,
+    "clerkEmail": "townclerk@cutlerbay-fl.gov",
+    "clerkPhone": "(305) 234-4262",
+    "clerkUrl": "https://www.cutlerbay-fl.gov/node/2271",
+    "commentEmail": null,
+    "recordsRequestUrl": null,
+    "source": "https://www.cutlerbay-fl.gov/node/2271"
+  },
+  "notes": "Only the council list page (node/98) and clerk page (node/2271) were fetchable; they print a single shared phone and no emails. Mayor, vice mayor and member pages are robots-blocked. Clerk page names no clerk and gives no records portal. No written-comment email found. To fill: open https://www.cutlerbay-fl.gov/ Town Council pages in a browser."
+}

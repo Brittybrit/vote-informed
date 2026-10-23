@@ -1,0 +1,42 @@
+{
+  "rosterBody": "city-biscayne-park",
+  "checked": "2026-10-23",
+  "offices": [
+    {
+      "office": "city-biscayne-park-mayor",
+      "holder": "Jonathan Groth",
+      "email": null,
+      "phone": "305-899-8000",
+      "officeAddress": "Village Hall, 600 NE 114th St, Biscayne Park, FL 33161",
+      "districtOffice": null,
+      "contactUrl": "https://biscayneparkfl.gov/contact",
+      "staff": [],
+      "source": "https://biscayneparkfl.gov/contact",
+      "notes": "BLOCKED: the Mayor & Commissioners page (biscayneparkfl.gov/commission, /mayor-commissioners) refuses automated fetches (robots). Phone is Village Hall; general email villagehall@biscayneparkfl.gov."
+    },
+    {
+      "office": "city-biscayne-park-member",
+      "holder": "Four commissioners (see notes)",
+      "email": null,
+      "phone": "305-899-8000",
+      "officeAddress": "Village Hall, 600 NE 114th St, Biscayne Park, FL 33161",
+      "districtOffice": null,
+      "contactUrl": "https://biscayneparkfl.gov/contact",
+      "staff": [],
+      "source": "https://biscayneparkfl.gov/contact",
+      "notes": "BLOCKED: commissioner page not fetchable; no individual emails or phones captured. Village Hall general email villagehall@biscayneparkfl.gov."
+    }
+  ],
+  "body": {
+    "clerkName": "Pamela Latimore",
+    "clerkEmail": "villageclerk@biscayneparkfl.gov",
+    "clerkPhone": "305-899-8000",
+    "clerkUrl": "https://biscayneparkfl.gov/contact",
+    "commentEmail": null,
+    "recordsRequestUrl": null,
+    "villageHallEmail": "villagehall@biscayneparkfl.gov",
+    "hours": "Monday to Thursday 9:00am-5:00pm (closed 1:00pm-2:00pm); Friday 9:00am-5:00pm (closed to the public at 12:00pm)",
+    "source": "https://biscayneparkfl.gov/contact"
+  },
+  "notes": "Commission pages blocked to automated fetch on 2026-10-23 (robots_disallowed); only the contact page was readable. Clerk and Village Hall contacts captured. The only records email on the contact page is the Police department's (publicrecords@biscayneparkpolice.org), not the Village's; no Village records portal found. To fill: open https://biscayneparkfl.gov/ > Government > Mayor & Commissioners in a browser."
+}
