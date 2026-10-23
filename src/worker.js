@@ -1566,7 +1566,7 @@ function realValue(v) {
 // judges): donors straight from the Florida Division of Elections, like FEC data for federal races.
 // Web search can find a candidate's state filing page but can't read the contributions inside it.
 // No AI, refreshed at most daily. County and city races file with the county, not the state.
-const FL_DONOR_VERSION = 4;
+const FL_DONOR_VERSION = 5;
 function flOfficeQuery(office) {
   const o = String(office || '');
   const d = (o.match(/District\s+(\d+)/i) || [])[1] || '';
@@ -1611,27 +1611,63 @@ function lastFirst(n) {
   const m = String(n || '').match(/^\s*([^,]+),\s*([^,]+?)\s*$/);
   return m ? m[2] + ' ' + m[1] : String(n || '');
 }
+// One candidate search at the Division of Elections (2026 general), tab-separated.
+async function flContribTsv(H, first, last, q) {
+  const body = new URLSearchParams({ election: '20261103-GEN', search_on: '2', CanFName: first, CanLName: last, CanNameSrch: '2',
+    office: q.office, cdistrict: q.cdistrict || '', cgroup: q.cgroup || '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All',
+    cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '', cdollar_minimum: '', cdollar_maximum: '',
+    rowlimit: '5000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' });
+  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body });
+  if (!r.ok) throw new Error('FL contributions ' + r.status);
+  const t = await r.text();
+  // The state's database times out under load and answers 200 with an error page inside the TSV.
+  // That is not "no contributions": throw so the caller keeps what it has and tries again later.
+  if (/Error in \/cgi-bin|ODBC|Query timeout/i.test(t)) throw new Error('FL contributions: state search errored');
+  return t;
+}
+// Rows of a state search that belong to this candidate. The filer is "Lavin, George  (DEM)(STS)" or, with a
+// two-word surname, "Baez-Geller, Lucia (DEM)(STR)": the filed surname must contain the ballot's last name
+// and every surname word must be in the ballot name; the first name must start the same.
+function flRowsFor(tsv, name, np) {
+  const nameWords = new Set(normPart(String(name || '').split(/\s+and\s+/i)[0]).split(' ').filter(Boolean));
+  // A hyphenated ballot surname ("Baez-Geller") must be filed whole, so a "Geller, Lucia" isn't merged in.
+  const ballotLast = String(name || '').split(/\s+and\s+/i)[0].replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ')
+    .replace(/,?\s+\b(jr|sr|ii|iii|iv)\.?$/i, '').trim().split(/\s+/).pop() || '';
+  const needAll = /-/.test(ballotLast) ? normPart(ballotLast).split(' ').filter(Boolean) : [];
+  const out = [];
+  for (const line of String(tsv || '').split(/\r?\n/).slice(1)) {
+    const c = line.split('\t');
+    if (c.length < 7) continue;
+    const who = c[0].replace(/\s*\([^)]*\)/g, '').split(',');
+    const sur = normPart(who[0]).split(' ').filter(Boolean);
+    if (!sur.includes(np.last) || !sur.every(x => nameWords.has(x)) || !needAll.every(x => sur.includes(x)) || !normPart(who[1] || '').startsWith(np.first)) continue;
+    out.push(c);
+  }
+  return out;
+}
 async function flCandidateDonors(env, name, office) {
   const q = flOfficeQuery(office), np = flNameParts(name);
   if (!q || !np) return null;
   const H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)',
     'Accept': 'text/html,text/plain,*/*', 'Content-Type': 'application/x-www-form-urlencoded',
     'Origin': FL_BASE, 'Referer': FL_BASE + '/campaign-finance/contributions/' };
-  const y = new Date().getFullYear();
-  const body = new URLSearchParams({ election: '20261103-GEN', search_on: '2', CanFName: np.first, CanLName: np.last, CanNameSrch: '2',
-    office: q.office, cdistrict: q.cdistrict || '', cgroup: q.cgroup || '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All',
-    cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '', cdollar_minimum: '', cdollar_maximum: '',
-    rowlimit: '5000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' });
-  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body });
-  if (!r.ok) throw new Error('FL contributions ' + r.status);
-  const tsv = await r.text();
+  // Two-word surnames ("Baez-Geller", "Romero Roses") are filed whole; try the hyphenated surname as
+  // written first, then the last word, then the last two words, until the state answers with rows.
+  const tried = new Set(), lasts = [];
+  const addLast = v => { v = String(v || '').trim(); if (v && !tried.has(v.toLowerCase())) { tried.add(v.toLowerCase()); lasts.push(v); } };
+  const words = String(name || '').split(/\s+and\s+/i)[0].replace(/["\u201c\u201d][^"\u201c\u201d]*["\u201c\u201d]/g, ' ')
+    .replace(/,?\s+\b(jr|sr|ii|iii|iv)\.?$/i, '').trim().split(/\s+/);
+  const lastWord = words[words.length - 1] || '';
+  if (/-/.test(lastWord)) addLast(lastWord);
+  addLast(np.last);
+  if (words.length >= 3 && !/-/.test(lastWord)) addLast(words.slice(-2).join(' '));
+  let tsv = '';
+  for (const ln of lasts) {
+    tsv = await flContribTsv(H, np.first, ln, q);
+    if (flRowsFor(tsv, name, np).length) break;
+  }
   const agg = {}; let total = 0, n = 0, to = '';
-  for (const line of tsv.split(/\r?\n/).slice(1)) {
-    const c = line.split('\t');
-    if (c.length < 7) continue;
-    // "Lavin, George  (DEM)(STS)": same last name, first name starts the same
-    const who = c[0].replace(/\s*\([^)]*\)/g, '').split(',');
-    if (normPart(who[0]) !== np.last || !normPart(who[1] || '').startsWith(np.first)) continue;
+  for (const c of flRowsFor(tsv, name, np)) {
     const amt = parseFloat(c[2]) || 0;
     if (amt <= 0) continue;
     const [mm, dd, yy] = String(c[1]).split('/');
@@ -1772,7 +1808,7 @@ async function refreshFlOutside(env, result, name, office, now = Date.now()) {
 // candidates: donors from the county's campaign finance system (VoterFocus). Each amended report
 // deletes ("D") lines and adds ("A") corrected ones; applying those to the original lines matches the
 // county's own published totals to the cent. No AI, refreshed at most daily.
-const MDC_DONOR_VERSION = 6;
+const MDC_DONOR_VERSION = 7;
 // Cities whose clerks use the same VoterFocus system, under their own code, with the id of the
 // Nov 3, 2026 election in it. Other cities publish PDFs or nothing, so their races keep web research.
 // Update the election ids each cycle.
@@ -2228,6 +2264,31 @@ async function refreshMeasureFilings(env, result, name, now = Date.now()) {
   };
   return true;
 }
+// Rows from a candidate's reports that the all-reports export left out, aligned to its columns.
+async function vfMissingReports(c, j, all) {
+  if (!c.e) return [];
+  const page = VF + 'candidate_pr.php?op=cv&e=' + c.e + '&c=' + j.c + '&ca=' + c.ca + '&rellevel=3&committee=N';
+  const r = await fetch(page, { headers: VF_H });
+  if (!r.ok) throw new Error('candidate page ' + r.status);
+  const reports = vfReportList(await r.text()).filter(rep => rep.monetary > 0 || rep.inkind > 0);
+  const key = x => [x[2], normPart(x[4]), (parseFloat(x[14]) || 0).toFixed(2)].join('|');
+  const have = new Set(all.filter(x => x[3] === 'C').map(key));
+  const out = [];
+  for (const rep of reports) {
+    const x = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&county=' + j.c + '&dhc=' + rep.dhc, { headers: VF_H });
+    if (!x.ok) throw new Error('report ' + rep.dhc + ' export ' + x.status);
+    const text = await x.text();
+    if (/no records found to export/i.test(text)) continue;
+    const rows = parseCSV(text);
+    const head = (rows[0] || []).map(h => String(h).trim().toLowerCase());
+    if (head[1] !== 'item date' || head[2] !== 'cont/exp' || head[3] !== 'name' || head[13] !== 'amount') throw new Error('report ' + rep.dhc + ' export layout changed');
+    const lined = rows.slice(1).filter(y => y.length >= 15).map(y => [rep.code, ...y]);
+    const cont = lined.filter(y => y[3] === 'C');
+    if (!cont.length || cont.some(y => have.has(key(y)))) continue;   // already in the all-reports export
+    out.push(...lined);
+  }
+  return out;
+}
 async function mdcCandidateDonors(env, name, office) {
   const np = flNameParts(name);
   if (!np) return null;
@@ -2251,6 +2312,12 @@ async function mdcCandidateDonors(env, name, office) {
   const r = await fetch(VF + 'export.php?op=CFINANCE&cand_id=' + c.ca + '&dhc=0&county=' + j.c, { headers: VF_H });
   if (!r.ok) throw new Error('county export ' + r.status);
   const all = parseCSV(await r.text()).slice(1).filter(x => x.length > 4);
+  // The all-reports export (dhc=0) can leave out a report (a Hialeah candidate's only report was missing
+  // from it). Read the candidate's report list and add any report whose rows aren't in it, from that
+  // report's own export. Per-report exports have no report-code column, so their columns sit one to the
+  // left; prepend the report code to line them up.
+  try { for (const x of await vfMissingReports(c, j, all)) all.push(x); }
+  catch (e) { console.log('VoterFocus reports ' + name + ': ' + e.message); }
   const rows = all.filter(x => x[3] === 'C');
   // The export has no documented column names, so check the columns we read still hold what we expect:
   // a date in column 2 and an amount in column 14 on nearly every contribution row. If not, throw: the
@@ -2923,10 +2990,28 @@ async function refreshFlDonors(env, key, result, name, office, save) {
         '. Top givers shown.' + (fl.ties || '') + ' Contributions to allied political committees are listed separately.';
       result.donorSource = 'FL';
       result.localMoney = fl.local || null;
+    } else {
+      // The state answered and has no contributions for this candidate. Show that instead of web-research
+      // donors, which may come from an aggregator or an older campaign (official sources only).
+      result.donors = [];
+      result.donorDataNote = 'No contributions reported to the Florida Division of Elections for this 2026 race as of ' +
+        new Date().toISOString().slice(0, 10) + '. Reports filed later will show here.';
+      result.donorSource = 'FL';
+      result.localMoney = null;
     }
     if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     return true;
-  } catch (e) { console.log('FL donors ' + name + ': ' + e.message); return false; }
+  } catch (e) {
+    console.log('FL donors ' + name + ': ' + e.message);
+    // State unreachable today. Donors already from the state stay. Web-research donors don't: official
+    // sources only, so say the state couldn't be read and retry on a later visit (flV not set).
+    if (result.donorSource === 'FL' || !(result.donors || []).length) return false;
+    result.donors = [];
+    result.donorDataNote = 'The Florida Division of Elections search did not answer today. Donors will show here once it does.';
+    delete result.localMoney;
+    if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
+    return true;
+  }
 }
 
 // Money to allied committees, from the state's own records. A state or county candidate's own political

@@ -5,7 +5,7 @@ import { loadWorker, fakeKV } from './load-worker.mjs';
 
 const w = await loadWorker(['mdcZip', 'localScope', 'splitCityLine', 'ringOf', 'newLocal', 'addLocal', 'roundLocal', 'vfAddr', 'evAddr',
   'fecLocal', 'flFunderType', 'fecFindCandidate', 'matchFecCandidate', 'sameFirst', 'ownSiteRatings', 'flCandidateDonors', 'flCommittee', 'realValue', 'clientIP', 'rateLimit',
-  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat', 'refreshMdcDonors']);
+  'numbersKept', 'parseBallot', 'pdfFingerprint', 'knownLean', 'sharedDonors', 'donorKey', 'streetKey', 'mdcCandidateDonors', 'vfRowName', 'vfSeat', 'refreshMdcDonors', 'flRowsFor', 'refreshFlDonors']);
 const realFetch = globalThis.fetch;
 test.afterEach(() => { globalThis.fetch = realFetch; });
 
@@ -288,4 +288,59 @@ test('Florida committee funders: groups without Inc/LLC in the name are not labe
   assert.equal(w.flFunderType('CONSERVATIVE FLORIDA', 'POLITICAL COMMITTEE'), 'political committee');
   assert.equal(w.flFunderType('BOOK RONALD L.', 'ATTORNEY'), 'individual');
   assert.equal(w.flFunderType('GARCIA MARIA', 'RETIRED'), 'individual');
+});
+
+test('Florida DOE: two-word surnames match; others with the same last word do not', () => {
+  const tsv = ['h',
+    'Baez-Geller, Lucia (DEM)(STR)\t03/01/2026\t1000\tCHE\tTEAMSTERS LOCAL 769\t1 Main\tMIAMI, FL 33101\tUNION',
+    'Geller, Lucia (REP)(STR)\t03/01/2026\t500\tCHE\tSOMEONE\t1 Main\tMIAMI, FL 33101\tX'].join('\n');
+  const np = { first: 'lucia', last: 'geller' };
+  const rows = w.flRowsFor(tsv, 'Lucia Baez-Geller', np);
+  assert.equal(rows.length, 1); assert.equal(rows[0][4], 'TEAMSTERS LOCAL 769');
+  const rr = w.flRowsFor('h\nRomero Roses, Gloria (DEM)(STR)\t03/01/2026\t250\tCHE\tA DONOR\t1 Main\tMIAMI, FL 33101\tX', 'Gloria Romero Roses', { first: 'gloria', last: 'roses' });
+  assert.equal(rr.length, 1);
+});
+
+test('Florida DOE: hyphenated surname is searched as written', async () => {
+  const asked = [];
+  globalThis.fetch = async (u, o) => { asked.push(new URLSearchParams(String(o.body)).get('CanLName'));
+    return { ok: true, text: async () => 'h\nBaez-Geller, Lucia (DEM)(STR)\t03/01/2026\t1000\tCHE\tTEAMSTERS LOCAL 769\t1 Main\tMIAMI, FL 33101\tUNION' }; };
+  const d = await w.flCandidateDonors({}, 'Lucia Baez-Geller', 'State Representative, District 106');
+  assert.equal(asked[0], 'Baez-Geller'); assert.equal(d.count, 1); assert.match(d.donors[0].name, /^TEAMSTERS LOCAL 769/);
+});
+
+test('Florida DOE: no filed contributions replaces web-research donors', async () => {
+  globalThis.fetch = async () => ({ ok: true, text: async () => 'Candidate/Committee\tDate\tAmount\n' });
+  const result = { donors: [{ name: 'From an aggregator', amount: '$1,000', url: 'https://www.transparencyusa.org/x' }] };
+  assert.equal(await w.refreshFlDonors({ CACHE: fakeKV() }, 'k', result, 'Bonita Jones-Peabody', 'Circuit Judge, 11th Judicial Circuit, Group 69', false), true);
+  assert.deepEqual(result.donors, []); assert.equal(result.donorSource, 'FL'); assert.match(result.donorDataNote, /No contributions reported/);
+});
+
+test('VoterFocus: a report missing from the all-reports export is added from its own export', async () => {
+  const list = '<div>Office: Councilmember Group 02</div><a href="candidate_pr.php?op=cv&e=4&c=munhialeah&ca=26&rellevel=3">Luis Gonzalez (NOP)</a>';
+  const page = '<tr role="row"><td><a href="candidate_pr.php?op=rp&dhc=206">G2<br>(10/03/2026-10/16/2026)</a></td>' +
+    '<td class="Monetary"><span class="Value">$1,500.00</span></td><td class="InKind"><span class="Value">$0.00</span></td>' +
+    '<td class="Expenditures"><span class="Value">$0.00</span></td></tr>';
+  const allCsv = 'h\n';   // the all-reports export: header only, the G2 left out
+  const repCsv = 'Line Number,Item Date,Cont/Exp,Name,Address1,Address2,City,State,Zip,Type,Occupation,InKind,Description,Amount,Amend. Code\n' +
+    '1,2026-10-13,C,THE CORRADINO GROUP,4055 NW 97 AVE,,DORAL,FL,33178,B,ENGINEERING,,,1000,\n' +
+    '2,2026-10-13,C,SFM JANITORIAL SERVICES LLC,7500 NW 74 AVE,,MEDLEY,FL,33166,B,JANITORIAL,,,500,\n';
+  globalThis.fetch = async u => { u = String(u);
+    if (u.includes('op=cv&e=4')) return new Response(page);
+    if (u.includes('candidate_pr.php')) return new Response(list);
+    if (u.includes('dhc=206')) return new Response(repCsv);
+    return new Response(allCsv); };
+  const d = await w.mdcCandidateDonors({ CACHE: fakeKV() }, 'Luis Gonzalez', 'Hialeah - Councilmember - Group II');
+  assert.equal(d.count, 2); assert.equal(Math.round(d.monetary), 1500);
+  assert.equal(d.donors[0].name, 'THE CORRADINO GROUP');
+});
+
+test('Florida DOE: a state error page is not read as no contributions', async () => {
+  globalThis.fetch = async () => ({ ok: true, text: async () => 'Candidate/Committee\tDate\n<H1>Error in /cgi-bin/contrib.exe</H1>\n[Microsoft][ODBC SQL Server Driver]Query timeout expired' });
+  const kept = { donorSource: 'FL', donors: [{ name: 'FROM THE STATE', amount: '$500' }] };
+  assert.equal(await w.refreshFlDonors({ CACHE: fakeKV() }, 'k', kept, 'Lucia Baez-Geller', 'State Representative, District 106', false), false);
+  assert.equal(kept.donors.length, 1);
+  const web = { donors: [{ name: 'From a news story', amount: '$1,000' }] };
+  assert.equal(await w.refreshFlDonors({ CACHE: fakeKV() }, 'k', web, 'Lucia Baez-Geller', 'State Representative, District 106', false), true);
+  assert.deepEqual(web.donors, []); assert.equal(web.flV, undefined); assert.match(web.donorDataNote, /did not answer/);
 });
