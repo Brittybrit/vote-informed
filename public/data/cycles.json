@@ -419,6 +419,208 @@
    "notes": "The eScribe portal (pub-cutlerbay-fl.escribemeetings.com) and the town calendar and most pretty-URL pages block automated fetching; only /node/ pages were readable. The posted meeting list stops at the Sept 8, 2026 first budget hearing. The 2026 second budget hearing date was not found (2025's was Sept 25). Oct, Nov and Dec 2026 regular meetings are derived from the third-Wednesday rule, not individually confirmed. No 2027 dates posted. Agenda lead time is not stated anywhere reachable. Public comment rules come from the town's own meeting notices, not a rules-of-procedure document; the three-minute limit is described as one that 'may be imposed'. Individual council member emails are not posted on the council page; Town Hall phone is the only contact given."
   },
   {
+   "key": "city-doral",
+   "rosterBody": "city-doral",
+   "name": "Doral City Council",
+   "jurisdiction": "City of Doral",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Council-Meetings",
+    "calendar": "https://www.cityofdoral.com/Events-directory?dlv_OC%20CL%20City%20Events%20Listing=(dd_OC%20Event%20Categories=Council%20Meetings)(dd_OC%20Composite%20Date=0d)",
+    "agendas": "https://doral.legistar.com/Calendar.aspx",
+    "minutes": "https://doral.legistar.com/Calendar.aspx",
+    "video": "https://cityofdoral.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+   },
+   "meetings": {
+    "pattern": "One regular Council Meeting a month, usually the second Wednesday, split into a 10:00 a.m. morning session and a 6:00 p.m. evening session (public hearings and second readings are in the evening). Doral Government Center Council Chambers, 8401 NW 53 Terrace. The charter requires at least 11 regular monthly meetings a year (Sec. 4.01(a)); no meeting was held in July 2026. Local Planning Agency meets at 5:30 p.m. the same day when there are zoning items.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-11-18",
+      "time": "10:00",
+      "kind": "regular",
+      "note": "Morning session 10:00 a.m.; evening session 6:00 p.m. Council Chambers, 8401 NW 53 Terrace",
+      "source": "https://www.cityofdoral.com/Events-directory/2026-11-18-Notice-Council-Meeting-PUBLISHED"
+     },
+     {
+      "date": "2026-12-09",
+      "time": "10:00",
+      "kind": "regular",
+      "note": "Morning session 10:00 a.m.; evening session 6:00 p.m. Council Chambers, 8401 NW 53 Terrace",
+      "source": "https://www.cityofdoral.com/Events-directory/2026-12-09-Notice-Council-Meeting-PUBLISHED"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Proposed millage and budget workshop",
+     "start": "2026-07-29",
+     "end": "2026-08-21",
+     "repeats": "yearly",
+     "decides": "Special meeting July 29 sets the proposed millage rate for FY 2026-27; Council budget workshop August 21 reviews the City Manager's proposed budget.",
+     "source": "https://webapi.legistar.com/v1/doral/events?$filter=EventDate+ge+datetime%272026-01-01%27&$orderby=EventDate&$select=EventDate,EventTime,EventLocation,EventComment,EventBodyName"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-08",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "Two 6:00 p.m. special meetings adopt the millage rate and the FY 2026-27 budget (first hearing September 8, second hearing September 22).",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/departments/finance/budget-brief/adopted-budget-in-brief-fy-2027.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "The adopted budget takes effect; the charter sets the fiscal year to end September 30 (Sec. 8.07).",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the November 2026 election",
+     "start": "2026-07-13",
+     "end": "2026-07-17",
+     "repeats": "once",
+     "decides": "Who appears on the ballot for Council Seats 2 and 4; noon Monday July 13 to noon Friday July 17, 2026, with the City Clerk.",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/election-docs/notice-of-qualifying-period-november-3-2026-general-election.pdf"
+    },
+    {
+     "key": "election",
+     "name": "General municipal election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Council Seat 2 (Fernanda Gomes v. Maureen Porras), Seat 4 (Peter Espinosa v. Gustavo Garagorry) and a charter question on lifetime term limits.",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/election-docs/notice-of-general-election-special-election-and-sample-ballot-–-november-3-2026.pdf"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Each regular meeting has a Public Comments item near the start of the morning session (item 5) and again at the start of the evening session (item 18). The charter's Citizens' Bill of Rights A(5) gives any interested person the right to appear before the Council, subject to reasonable time limits.",
+     "rules": "No time limit, sign-up method or speaker rules are posted in the agenda, the meeting notice or the clerk's pages; the charter says reasonable time limits may be imposed. Lobbyists must register with the City Clerk first (Resolution 2007-31 and County Code Sec. 2-11.1(s)).",
+     "deadline": "Attend the meeting; comments are taken at the Public Comments item of each session",
+     "url": "https://doral.legistar.com/Calendar.aspx",
+     "source": "https://webapi.legistar.com/v1/doral/events/1514/eventitems?$select=EventItemTitle,EventItemAgendaNumber,EventItemAgendaSequence&$orderby=EventItemAgendaSequence"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment or eComment procedure is posted. Email the City Clerk's office.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:cityclerk@cityofdoral.com",
+     "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Council-Meetings"
+    },
+    {
+     "key": "contact",
+     "how": "Email or call the Mayor and councilmembers through the city switchboard extensions on the Elected Officials page.",
+     "rules": "Main line 305-593-6725; Mayor Christi Fraga x3002, Christi.Fraga@cityofdoral.com.",
+     "deadline": null,
+     "url": "https://www.cityofdoral.com/Elected-officials",
+     "source": "https://www.cityofdoral.com/Elected-officials"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit a public records request through the City Clerk's Public Records Request page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Public-Records-Request",
+     "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "Charter Sec. 5.02: at least 25 electors file an affidavit with the City Clerk forming a Petitioners' Committee, pay a filing fee equal to the circuit court complaint fee, and get the City Attorney's legal sufficiency approval before circulating. If the Council does not adopt the ordinance unchanged within 45 days, it goes to the voters 30 to 60 days later (Sec. 5.02(e)).",
+     "rules": "Signatures of at least 10 percent of the electors registered at the last regular city election (Sec. 5.02(c)(i)), filed within 60 days of starting (Sec. 5.02(c)(iv)). Budgets, capital programs, appropriations, tax levies and salaries are excluded (Sec. 5.02(a)).",
+     "deadline": "60 days from filing the committee affidavit",
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+     "key": "referendum",
+     "how": "Charter Sec. 5.02: electors may require the Council to reconsider an adopted ordinance; if the Council does not repeal it within 30 days, voters approve or reject it at an election 30 to 60 days later. Same committee, fee and attorney review steps as an initiative.",
+     "rules": "Signatures of at least 10 percent of electors registered at the last regular city election (Sec. 5.02(c)(i)), filed within 60 days (Sec. 5.02(c)(iv)); clerk certifies within five business days (Sec. 5.02(d)(i)). Budget, appropriation, tax levy and salary ordinances are excluded.",
+     "deadline": "60 days from filing the committee affidavit",
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+     "key": "recall",
+     "how": "The charter has no recall procedure of its own (recall is mentioned only in Sec. 2.05(c)(vii) on vacancies), so Florida's uniform municipal recall statute, F.S. 100.361, applies.",
+     "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+     "deadline": null,
+     "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+     "key": "qualify",
+     "how": "File a written notice of candidacy and qualifying papers with the City Clerk (Charter Sec. 2.04). Candidates must be city electors who have lived in Doral continuously for at least two years.",
+     "rules": "Qualifying opens at noon on the second Monday of July and closes at noon the following Friday in every general election year, during business hours 8:00 a.m. to 5:00 p.m.",
+     "deadline": "Noon on the Friday after the second Monday of July in even years",
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information",
+     "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information"
+    },
+    {
+     "key": "vote",
+     "how": "City elections are held with the November general election in even years (Charter Sec. 5.01(c)); vote through Miami-Dade Elections by mail, early voting or at your precinct.",
+     "rules": "Registered Doral voters.",
+     "deadline": "Election Day November 3, 2026",
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Apply for advisory boards, committees and commissions through the City Clerk's boards page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Advisory-Boards-Committees-and-Commissions",
+     "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-07-13",
+     "end": "2026-07-17",
+     "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/election-docs/notice-of-qualifying-period-november-3-2026-general-election.pdf"
+    },
+    "terms": "Mayor and four councilmembers elected at large to four-year terms (Charter Sec. 2.03(a)), staggered: Seats 2 and 4 in 2026, Mayor and Seats 1 and 3 in 2028. Limit of two consecutive elected terms (Sec. 2.03(b)); a November 2026 charter question proposes lifetime limits.",
+    "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Connie Diaz, MMC, City Clerk",
+     "email": "cityclerk@cityofdoral.com",
+     "phone": "305-593-6730",
+     "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk",
+     "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "Mayor and Council offices (city switchboard)",
+     "email": null,
+     "phone": "305-593-6725",
+     "url": "https://www.cityofdoral.com/Elected-officials",
+     "source": "https://www.cityofdoral.com/Elected-officials"
+    },
+    {
+     "role": "mayor",
+     "name": "Christi Fraga",
+     "email": "Christi.Fraga@cityofdoral.com",
+     "phone": "305-593-6725 x3002",
+     "url": "https://www.cityofdoral.com/Elected-officials",
+     "source": "https://www.cityofdoral.com/Elected-officials"
+    }
+   ],
+   "notes": "Schedule: the city's events directory posts notices for November 18 and December 9, 2026; Legistar (doral.legistar.com) lists nothing after October 7, 2026 and no 2027 dates, so the file stops at December 2026. 2026 regular meetings held: Jan 15, Feb 18, Mar 11, Apr 8, May 13, Jun 10, Aug 12, Sep 9, Oct 7 (all 10:00 a.m. with 6:00 p.m. evening sessions); budget specials Jul 29 (millage), Aug 21 (workshop), Sep 8 and Sep 22 (hearings, 6:00 p.m.). Agenda lead time is not posted; Legistar agenda revision dates run two to six days before meetings. Public comment time limit, sign-up and written comment rules are not posted anywhere found (agenda, notice PDF, clerk pages); the Municode code pages and the Granicus agenda PDFs could not be fetched (robots or client errors). The charter has no recall procedure. The 2028 seats and the exact seat-to-member mapping come from the Elected Officials page term ranges (Fraga and Pineyro 2022-2028; Cabral and Porras to 2026), not from a seat list. No 2027 budget calendar is posted; the budget phases are the 2026 dates marked yearly. The council department page (cityofdoral.com/government/city-council/) returned an error."
+  },
+  {
    "key": "city-key-biscayne",
    "rosterBody": "city-key-biscayne",
    "name": "Key Biscayne Village Council",
@@ -833,6 +1035,233 @@
    "notes": "Checked 2026-10-22. Schedule: the city calendar (CivicPlus) showed only the October 28, 2026 regular meeting; the November and December list views returned no council meetings, so the posted schedule stops there. The meeting pattern (second and fourth Wednesday, 5:30 p.m.) is from the City Council page; apply it for later dates but confirm on the CivicWeb portal, which blocks automated fetching (robots) and could not be read for agenda lead time, posted schedule or public comment rules. Agenda lead days unknown. Budget: only the second hearing (Sept 23, 2026, 5:01 p.m.) was found as a legal ad on the county site; the first hearing notice and the proposed budget release date for FY 2026-27 were not found (a 2026-09-09 notice URL guess failed). Charter: the city's charter PDF (DocumentCenter/View/396) has no machine-readable text and municode.com returned errors, so initiative, referendum and recall charter sections are missing; the recall lever uses Fla. Stat. 100.361, which the statute says applies to all cities, and the petition lever uses Fla. Stat. 166.031 as the state floor. Only Charter Sec. 6.2 (charter revision commission) and Sec. 2.1 (vice mayor) were confirmed, from a 2014 ballot. Public comment time limit not found. Legal notices moved to legalads.miamidade.gov effective Sept 1, 2025 (city Public Notices page)."
   },
   {
+   "key": "city-palmetto-bay",
+   "rosterBody": "city-palmetto-bay",
+   "name": "Palmetto Bay Village Council",
+   "jurisdiction": "Village of Palmetto Bay",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.palmettobay-fl.gov/",
+    "calendar": "https://www.palmettobay-fl.gov/calendar.aspx?CID=26",
+    "agendas": "https://www.palmettobay-fl.gov/1419/Meeting-Central-Agendas-Minutes-Videos",
+    "minutes": "https://www.palmettobay-fl.gov/1419/Meeting-Central-Agendas-Minutes-Videos",
+    "video": "https://palmettobay.granicus.com/ViewPublisher.php?view_id=3",
+    "clerk": "https://www.palmettobay-fl.gov/267/Village-Clerk"
+   },
+   "meetings": {
+    "pattern": "Regular council meeting once a month, usually the first Monday, 7:00 p.m., Village Hall Council Chambers, 9705 East Hibiscus Street, Palmetto Bay, FL 33157; hybrid (in person and online). Zoning hearings on a later Monday at 7:00 p.m. Charter Sec. 4.1(A) requires at least 11 regular monthly meetings a year.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-11-02",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Regular Council Meeting, Village Hall Council Chambers; schedule is marked preliminary and the council may change it by vote",
+      "source": "https://www.palmettobay-fl.gov/1023/Public-Meetings-Schedule"
+     },
+     {
+      "date": "2026-12-07",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Regular Council Meeting, Village Hall Council Chambers",
+      "source": "https://www.palmettobay-fl.gov/1023/Public-Meetings-Schedule"
+     },
+     {
+      "date": "2026-12-14",
+      "time": "19:00",
+      "kind": "zoning",
+      "note": "Zoning and Land Development Permit Hearing",
+      "source": "https://www.palmettobay-fl.gov/1023/Public-Meetings-Schedule"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Budget workshops and mid-year town halls with the Village Manager",
+     "start": "2026-06-23",
+     "end": "2026-07-28",
+     "repeats": "yearly",
+     "decides": "Council and residents review the manager's spending plan before the proposed millage is set; the 2026 workshops were June 23 and July 28 (schedule page) with a Budget Workshop on July 20 on the agenda portal.",
+     "source": "https://www.palmettobay-fl.gov/1023/Public-Meetings-Schedule"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "First budget hearing (tentative millage and budget)",
+     "start": "2026-09-14",
+     "end": "2026-09-14",
+     "repeats": "yearly",
+     "decides": "Tentative millage rate and tentative FY 2026-27 budget, 7:00 p.m., held with the September regular council meeting.",
+     "source": "https://palmettobay.granicusideas.com/meetings?scope=past"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "Second budget hearing (final millage and budget)",
+     "start": "2026-09-23",
+     "end": "2026-09-23",
+     "repeats": "yearly",
+     "decides": "Final millage rate and the FY 2026-27 budget ordinance, 7:00 p.m. Charter Sec. 4.5(B) requires adoption on or before September 30.",
+     "source": "https://palmettobay.granicusideas.com/meetings?scope=past"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Charter Sec. 4.6: fiscal year runs October 1 through September 30.",
+     "source": "https://www.palmettobay-fl.gov/documentcenter/view/2020"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the November 3, 2026 election",
+     "start": "2026-08-03",
+     "end": "2026-08-14",
+     "repeats": "once",
+     "decides": "Who is on the ballot for Mayor, Council Seat 1 and Council Seat 3; noon August 3 to noon August 14, 2026, filed with the Village Clerk.",
+     "source": "https://www.palmettobay-fl.gov/344/Qualifying-as-a-Candidate"
+    },
+    {
+     "key": "election",
+     "name": "Village general and special election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor, Council Seat 1, Council Seat 3, and six charter amendment questions; polls 7 a.m. to 7 p.m.",
+     "source": "https://www.palmettobay-fl.gov/1710/Elections-Voting-2026"
+    },
+    {
+     "key": "election",
+     "name": "Runoff, if needed",
+     "start": "2026-12-01",
+     "end": "2026-12-01",
+     "repeats": "once",
+     "decides": "Runoff for any 2026 race without a majority winner, 7 a.m. to 7 p.m.",
+     "source": "https://www.palmettobay-fl.gov/334/General-Special-Election-Notices"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak in person at Village Hall or live online by registering through the GoToWebinar link in each meeting's public notice; phone-only attendees cannot speak. Comments on agenda items can also be left through the e-comment feature on the agenda tab of the village site.",
+     "rules": "No time limit stated in the meeting notice or on the schedule page. Speakers address the mayor and follow decorum rules in Village Code Sec. 2-45. Comment forms are not accepted for quasi-judicial items. Charter Sec. 4.1(D): meetings end at midnight unless extended.",
+     "deadline": "Register for live online comment before the meeting through the notice's GoToWebinar link",
+     "url": "https://www.palmettobay-fl.gov/1419/Meeting-Central-Agendas-Minutes-Videos",
+     "source": "https://www.palmettobay-fl.gov/DocumentCenter/View/22976/2026-04-06-Regular-Council-Meeting"
+    },
+    {
+     "key": "written-comment",
+     "how": "Submit the online Public Comments Form. Forms received before 5 p.m. on the day of the council meeting are read aloud by the Village Clerk for one minute during the meeting; later submissions go into the record but are not read.",
+     "rules": "Comments that attack or insult another person, or contain explicit or foul language, are placed in the record but not read aloud. Not available for quasi-judicial items.",
+     "deadline": "5 p.m. on the day of the meeting to be read aloud",
+     "url": "https://www.palmettobay-fl.gov/FormCenter/Public-Comments-Form-10/Public-Comments-Form-Updated-March-3-202-73",
+     "source": "https://www.palmettobay-fl.gov/FormCenter/Public-Comments-Form-10/Public-Comments-Form-Updated-March-3-202-73"
+    },
+    {
+     "key": "contact",
+     "how": "Email or call the mayor and council members directly from the village directory; main line 305-259-1234.",
+     "rules": "Village Hall hours Monday to Friday 8:30 a.m. to 5 p.m.",
+     "deadline": null,
+     "url": "https://www.palmettobay-fl.gov/m/directory/department?did=25",
+     "source": "https://www.palmettobay-fl.gov/Directory.aspx"
+    },
+    {
+     "key": "records-request",
+     "how": "File a public records request through the village's JustFOIA portal; the Village Clerk is the records custodian.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://palmettobayfl.justfoia.com/publicportal/home/search",
+     "source": "https://www.palmettobay-fl.gov/267/Village-Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "Citizen initiative: at least ten electors file an affidavit to start; the petition needs signatures of at least 5 percent of electors registered at the last regular village election, filed within 60 calendar days. The clerk certifies within 20 days; if the council does not adopt the ordinance within 45 days it goes to a vote 30 to 60 days later. Initiatives cannot cover the budget, capital program, appropriations, taxes or salaries.",
+     "rules": "Charter Sec. 5.2(A)(1), (B), (C)(1), (C)(4), (D)(1), (E)(1), (E)(2), (F)(1). Charter amendments by petition follow Sec. 6.03 of the Miami-Dade Home Rule Charter (Charter Sec. 6.1(A)).",
+     "deadline": "60 calendar days from the affidavit to file signatures",
+     "url": "https://www.palmettobay-fl.gov/267/Village-Clerk",
+     "source": "https://www.palmettobay-fl.gov/documentcenter/view/2020"
+    },
+    {
+     "key": "referendum",
+     "how": "Electors may require the council to reconsider any adopted ordinance (same exclusions as initiative). Same 5 percent signature threshold and 60-day filing window; the clerk certifies within five business days; if the council does not repeal within 30 days the ordinance goes to the voters and is repealed if a majority votes for repeal.",
+     "rules": "Charter Sec. 5.2(A)(2), (C)(1), (C)(4), (D)(1), (E)(1), (F)(2).",
+     "deadline": "60 calendar days from the affidavit to file signatures",
+     "url": "https://www.palmettobay-fl.gov/267/Village-Clerk",
+     "source": "https://www.palmettobay-fl.gov/documentcenter/view/2020"
+    },
+    {
+     "key": "recall",
+     "how": "Electors may recall the mayor or a council member as permitted by Florida law. The charter sets the signatures needed to start at 10 percent of electors registered at the last regular village election; the rest of the procedure (30-day collection window, defense statement, second-round petition of 15 percent) follows Fla. Stat. 100.361.",
+     "rules": "Charter Sec. 2.7; Fla. Stat. 100.361(2)(b), (2)(f), (3)(a), (3)(c), (12).",
+     "deadline": "30 days for the first round of signatures under state law",
+     "url": "https://www.palmettobay-fl.gov/267/Village-Clerk",
+     "source": "https://www.palmettobay-fl.gov/documentcenter/view/2020"
+    },
+    {
+     "key": "qualify",
+     "how": "File a written notice of candidacy with the Village Clerk during the qualifying window and pay the $100 village qualifying fee plus the state election assessment (1 percent of salary: $240 mayor, $120 council). Two years of continuous village residency required.",
+     "rules": "Charter Sec. 2.4; 2026 window was noon August 3 to noon August 14. Term limits: Charter Sec. 2.3(E), two consecutive terms in one office, three combined.",
+     "deadline": "Noon on the last day of the qualifying period",
+     "url": "https://www.palmettobay-fl.gov/344/Qualifying-as-a-Candidate",
+     "source": "https://www.palmettobay-fl.gov/344/Qualifying-as-a-Candidate"
+    },
+    {
+     "key": "vote",
+     "how": "Vote in the November 3, 2026 general and special election (Mayor, Seats 1 and 3, six charter questions); runoff December 1, 2026 if needed. Early voting schedule is posted by the county.",
+     "rules": "Registered voters living in the village.",
+     "deadline": "Election day November 3, 2026, 7 a.m. to 7 p.m.",
+     "url": "https://www.palmettobay-fl.gov/1710/Elections-Voting-2026",
+     "source": "https://www.palmettobay-fl.gov/1710/Elections-Voting-2026"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Village boards and committees (Parks and Recreation, Art in Public Places, Resiliency, Tree Advisory, Education Advisory, Youth Community Involvement Task Force, Veterans' Park Task Force) meet monthly at Village Hall or Coral Reef Park; the 2026 Charter Revision Commission met January through June.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.palmettobay-fl.gov/calendar.aspx?CID=26",
+     "source": "https://palmettobay.granicusideas.com/meetings?scope=past"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-08-03",
+     "end": "2026-08-14",
+     "source": "https://www.palmettobay-fl.gov/344/Qualifying-as-a-Candidate"
+    },
+    "terms": "Four years, at large, staggered. General election in each even year on the Tuesday after the first Monday in November (Charter Sec. 5.1(C)). 2026: Mayor, Council Seat 1, Council Seat 3. 2028: Vice Mayor and Council Seat 2. Two consecutive terms per office, three combined (Sec. 2.3(E)). A 2026 ballot question proposes single-member districts and changed term limits.",
+    "source": "https://www.palmettobay-fl.gov/documentcenter/view/2020"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Missy Arocha, Village Clerk",
+     "email": "marocha@palmettobay-fl.gov",
+     "phone": "305-259-1234",
+     "url": "https://www.palmettobay-fl.gov/267/Village-Clerk",
+     "source": "https://www.palmettobay-fl.gov/Directory.aspx"
+    },
+    {
+     "role": "mayor",
+     "name": "Karyn Cunningham",
+     "email": "kcunningham@palmettobay-fl.gov",
+     "phone": "305-799-0695",
+     "url": "https://www.palmettobay-fl.gov/m/directory/department?did=25",
+     "source": "https://www.palmettobay-fl.gov/Directory.aspx"
+    },
+    {
+     "role": "commission office",
+     "name": "Mayor and Village Council",
+     "email": "",
+     "phone": "305-259-1234",
+     "url": "https://www.palmettobay-fl.gov/376/Mayor-Council",
+     "source": "https://www.palmettobay-fl.gov/Directory.aspx"
+    }
+   ],
+   "notes": "Checked 2026-10-22. Schedule: the village's Public Meetings Schedule page lists 2026 only (regular meetings Jan 12, Feb 2, Mar 2, Apr 6, May 4, Jun 1, Jul 6, Sep 14, Oct 5, Nov 2, Dec 7; no August meeting) and no 2027 dates were posted anywhere found. Agenda lead days unknown: the Granicus video portal blocks automated fetching and the Meeting Central page does not state a posting rule; the agenda PDFs are on the granicusideas.com e-comment site. Budget hearing dates (Sep 14 and Sep 23, 2026) come from the agenda portal's past-meeting list, not a legal ad; the proposed budget release date was not found. Public comment time limit for in-person speakers not stated in the notice; only the one-minute reading of written forms is published. Village Code Sec. 2-45 (decorum) was not read because municode.com returned errors. Charter text is from the village's own PDF (DocumentCenter 2020), amended through 2016; the 2020 and 2026 charter amendments are not reflected in it. The 2026 election page's qualifying notice PDFs carry a 2024 label; dates used here are from the page body and the Qualifying as a Candidate page."
+  },
+  {
    "key": "city-sunny-isles-beach",
    "rosterBody": "city-sunny-isles-beach",
    "name": "Sunny Isles Beach City Commission",
@@ -1038,6 +1467,355 @@
     }
    ],
    "notes": "The 2026 schedule page lists all eleven regular meeting dates and stops at Nov 19, 2026; no 2027 schedule posted. The Granicus agenda archive blocks automated fetching, so agenda lead time was not confirmed. The first 2026 budget hearing (Sept 8) comes from the county-hosted legal ad; the second hearing's notice was not found (budget calendar planned Sept 10, and the regular Sept 17 meeting is within the 15-day window). No public comment rules (time limit, sign-up, written comment email) are posted on any reachable city page; the city has no published rules-of-procedure document online. The charter is only on Municode, which refused fetches, so initiative, referendum and recall provisions are missing; the 2023 charter amendment page supplied the qualifying fee, term-start and charter-review sections."
+  },
+  {
+   "key": "county",
+   "rosterBody": "mdc-commission",
+   "name": "Miami-Dade County Commission",
+   "jurisdiction": "Miami-Dade County",
+   "level": "county",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.miamidade.gov/global/government/commission/home.page",
+    "calendar": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf",
+    "agendas": "http://www.miamidade.gov/govaction/agendas.asp?Action=Agendas&Oper=DisplayList",
+    "minutes": "http://www.miamidade.gov/govaction/minutes.asp?Action=Minutes&Oper=DisplayList",
+    "video": "https://www.miamidade.gov/global/webcasting/home.page",
+    "clerk": "https://www.miamidadeclerk.gov/clerk/cob-home.page"
+   },
+   "meetings": {
+    "pattern": "Regular meetings on the first and third Tuesday of each month at 9:30 a.m. (the rules say first and third Tuesday and Thursday, but the posted calendar uses Tuesdays, with a carry-over day the next morning if needed). Zoning and master-plan (CDMP) meetings about once a month on a Thursday at 9:30 a.m. Committees meet the second week of the month. All in the Commission Chambers, 2nd floor, Stephen P. Clark Center, 111 NW 1st Street, Miami 33128. Meetings end no later than 6:30 p.m.",
+    "agendaLeadDays": 4,
+    "schedule": [
+     {
+      "date": "2026-10-20",
+      "time": "09:30",
+      "kind": "regular",
+      "note": "Carry-over Oct 21, 9:30 a.m., if needed",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-10-22",
+      "time": "09:30",
+      "kind": "zoning",
+      "note": "CDMP and zoning hearing",
+      "source": "https://www.miamidade.gov/global/economy/zoning/county-commission-hearings.page"
+     },
+     {
+      "date": "2026-11-09",
+      "time": "09:00",
+      "kind": "regular",
+      "note": "Committees: Policy Council 9:00, Aviation and Seaport 10:30, Safety and Health 12:30",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-11-10",
+      "time": "09:00",
+      "kind": "regular",
+      "note": "Committees: Transportation 9:00, Recreation Tourism and Resiliency 10:30, Housing 12:30",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-11-12",
+      "time": "09:00",
+      "kind": "regular",
+      "note": "Committees: Appropriations 9:00, Intergovernmental and Economic Impact 10:30, Infrastructure Innovation and Technology 12:30",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-11-17",
+      "time": "09:30",
+      "kind": "regular",
+      "note": "Last regular meeting of 2026 posted. Carry-over Nov 18 if needed. Also the day the commissioners elected Nov 3 take office (Charter Sec. 3.01(C)).",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-11-19",
+      "time": "09:30",
+      "kind": "zoning",
+      "note": "CDMP and zoning hearing",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2026-12-03",
+      "time": "10:30",
+      "kind": "regular",
+      "note": "Transportation and Mobility Committee 10:30, Fiscal Priorities 11:30, TPO Governing Board 1:30 p.m. No full-board meeting posted for December.",
+      "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+     },
+     {
+      "date": "2027-01-21",
+      "time": "09:30",
+      "kind": "zoning",
+      "note": "From the PROPOSED 2027 calendar sent to the Board Oct 20, 2026, not yet approved",
+      "source": "https://www.miamidade.gov/govaction/legistarfiles/Matters/Y2026/261528.pdf"
+     },
+     {
+      "date": "2027-09-09",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "First FY 2027-28 budget hearing, from the PROPOSED 2027 calendar, not yet approved",
+      "source": "https://www.miamidade.gov/govaction/legistarfiles/Matters/Y2026/261528.pdf"
+     },
+     {
+      "date": "2027-09-23",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "Second FY 2027-28 budget hearing, from the PROPOSED 2027 calendar, not yet approved",
+      "source": "https://www.miamidade.gov/govaction/legistarfiles/Matters/Y2026/261528.pdf"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "regular",
+     "name": "Departments submit budget requests",
+     "start": "2027-02-01",
+     "end": "2027-02-28",
+     "repeats": "yearly",
+     "decides": "County departments send business plans and budget requests to the Office of Management and Budget; the Mayor gives a budget address in March setting priorities.",
+     "source": "https://www.miamidade.gov/resources/budget/fy-26-27/proposed/budget-process.pdf"
+    },
+    {
+     "key": "budget-proposal",
+     "name": "Mayor's proposed budget and tentative tax rates",
+     "start": "2027-07-01",
+     "end": "2027-07-15",
+     "repeats": "yearly",
+     "decides": "Property Appraiser certifies taxable values by July 1; the Mayor must deliver the proposed budget to the Commission by July 15 (County Code); the Commission sets the tentative millage rates that go on the August TRIM notices.",
+     "source": "https://www.miamidade.gov/resources/budget/fy-26-27/proposed/budget-process.pdf"
+    },
+    {
+     "key": "regular",
+     "name": "TRIM notices and fee meetings",
+     "start": "2027-08-01",
+     "end": "2027-08-31",
+     "repeats": "yearly",
+     "decides": "Notices of proposed property taxes are mailed to every owner; public meetings are held around the county on proposed new or increased fees and taxes.",
+     "source": "https://www.miamidade.gov/resources/budget/fy-26-27/proposed/budget-process.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "Two public budget hearings",
+     "start": "2027-09-09",
+     "end": "2027-09-23",
+     "repeats": "yearly",
+     "decides": "Two evening hearings at 5:01 p.m. The second hearing sets final tax rates, adopts the budget ordinances, the fee schedules and the pay plan. 2026 hearings were Sept 3 and Sept 17; 2027 proposed dates are Sept 9 and Sept 23.",
+     "source": "https://www.miamidade.gov/resources/legal-ads/county/clerk-of-court/2026/2026-09-17-second-budget-hearing.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "The adopted budget takes effect; the fiscal year runs Oct 1 to Sept 30. Supplemental appropriations usually come at mid-year and year-end.",
+     "source": "https://www.miamidade.gov/resources/budget/fy-26-27/proposed/budget-process.pdf"
+    },
+    {
+     "key": "election",
+     "name": "General election (runoffs for county races)",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Runoffs for Commission Districts 2, 4, 6, 8, 10 and 12 where no candidate won a majority in the Aug 18 primary; also county charter questions.",
+     "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf"
+    },
+    {
+     "key": "swearing-in",
+     "name": "New terms begin",
+     "start": "2026-11-17",
+     "end": "2026-11-17",
+     "repeats": "once",
+     "decides": "Commissioners elected in 2026 take office the second Tuesday after the general election (Charter Sec. 3.01(C)).",
+     "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf"
+    },
+    {
+     "key": "recess",
+     "name": "Winter recess",
+     "start": "2026-11-20",
+     "end": "2026-12-31",
+     "repeats": "yearly",
+     "decides": "No full-board or zoning meetings are posted after Nov 19, 2026; only Dec 3 committee meetings. The calendar legend lists spring, summer and winter recess without exact dates.",
+     "source": "https://www.miamidade.gov/resources/commission/documents/2026-bcc-calendar.pdf"
+    },
+    {
+     "key": "recess",
+     "name": "Spring break",
+     "start": "2027-03-22",
+     "end": "2027-03-26",
+     "repeats": "yearly",
+     "decides": "No meetings (proposed 2027 calendar; 2026 spring break was Mar 23-27).",
+     "source": "https://www.miamidade.gov/govaction/legistarfiles/Matters/Y2026/261528.pdf"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak on any public hearing item: register at the Agenda Coordination table in the chamber lobby (first floor) at least 15 minutes before the item is called; you are escorted to the chambers. State your name, address and whom you represent.",
+     "rules": "Up to 5 minutes per speaker on a public hearing item (Rule 6.04). Public hearings are scheduled for 9:30 a.m. You may also waive your time 'in support' or 'in opposition'.",
+     "deadline": "Register at the meeting, at least 15 minutes before the item is discussed",
+     "url": "https://www.miamidade.gov/global/webcasting/home.page",
+     "source": "https://www.miamidade.gov/commission/library/2019-02-05-rules-of-procedure.pdf"
+    },
+    {
+     "key": "public-comment",
+     "how": "Speak on any other agenda item (not a public hearing) during the 'reasonable opportunity to be heard' period under Rule 6.06, which comes near the start of the meeting before the agenda is set. Register with a speaker card the morning of the meeting.",
+     "rules": "2 minutes per speaker, 10 minutes total per side; if more than five people sign up on one side they pick a representative who gets 4 minutes. No one may speak more than 5 minutes total on one agenda. Registration closes 30 minutes after the noticed start time.",
+     "deadline": "Register by 10:00 a.m. for a 9:30 a.m. meeting",
+     "url": "https://www.miamidade.gov/global/webcasting/home.page",
+     "source": "https://www.miamidade.gov/commission/library/2019-02-05-rules-of-procedure.pdf"
+    },
+    {
+     "key": "public-comment",
+     "how": "Citizens' presentation: ask your commissioner or the Mayor to place you on the regular meeting agenda to speak on any matter in the Commission's power. Only a commissioner or the Mayor can place you.",
+     "rules": "5 minutes maximum (agenda item 1E). The Commission cannot act on it unless two thirds of members present agree it needs immediate action.",
+     "deadline": "Request to a commissioner by noon on the Monday of the week before the meeting week",
+     "url": "https://www.miamidade.gov/global/government/commission/home.page",
+     "source": "https://www.miamidade.gov/commission/library/2019-02-05-rules-of-procedure.pdf"
+    },
+    {
+     "key": "public-comment",
+     "how": "Budget hearings: come to the Commission Chambers at 5:01 p.m. on the two September hearing dates and register to speak on the first floor.",
+     "rules": "Register on the first floor; speakers are escorted to the chambers. Accommodation requests to agendco@miamidade.gov or 305-375-2035 in advance.",
+     "deadline": "At the hearing",
+     "url": "https://www.miamidade.gov/global/webcasting/home.page",
+     "source": "https://www.miamidade.gov/resources/legal-ads/county/clerk-of-court/2026/2026-09-17-second-budget-hearing.pdf"
+    },
+    {
+     "key": "written-comment",
+     "how": "No formal written-comment channel is posted in the rules. Write to your district commissioner (DistrictN@miamidade.gov) and the Chair; for zoning items, email presentation materials to the Development Services Division before the hearing with the Z-number.",
+     "rules": "Zoning materials: PowerPoint, 100 MB max, become public record and are shown only while you speak. Emails to commissioners are public records.",
+     "deadline": "Before the meeting",
+     "url": "https://www.miamidade.gov/global/economy/zoning/county-commission-hearings.page",
+     "source": "https://www.miamidade.gov/global/economy/zoning/county-commission-hearings.page"
+    },
+    {
+     "key": "contact",
+     "how": "Find your district on the Commission home page (13 district pages) or the Services Near You map, then email the district office. Each office also has a Stephen P. Clark Center suite and phone.",
+     "rules": "Email pattern DistrictN@miamidade.gov (no leading zero), for example District1@miamidade.gov, 305-375-5694.",
+     "deadline": null,
+     "url": "https://www.miamidade.gov/global/government/commission/home.page",
+     "source": "https://www.miamidade.gov/global/government/commission/district01/home.page"
+    },
+    {
+     "key": "records-request",
+     "how": "Request Commission records (minutes, resolutions, ordinances, backup) through the county public records portal, choosing 'Board of County Commission', or email the Clerk of the Board.",
+     "rules": "Requests get a control number and acknowledgment; processed in order received; a cost estimate is given if applicable. Questions: 305-593-1352.",
+     "deadline": null,
+     "url": "https://miamidadecounty.govqa.us/WEBAPP/_rs/RequestSelect.aspx",
+     "source": "https://www.miamidadeclerk.gov/clerk/public-records-requests.page"
+    },
+    {
+     "key": "petition",
+     "how": "Initiative or referendum (Charter Sec. 8.01): electors may propose passing or repealing a county ordinance. Get the petition form approved by the Clerk of the Circuit Court, then collect signatures.",
+     "rules": "Signatures equal to at least 4 percent of registered county voters, with no more than 25 percent from any one commission district, collected within 120 days of the form's approval. The Board orders a canvass within 30 days of filing and may adopt the ordinance within 30 days of a sufficient petition; otherwise it goes to the ballot. With 8 percent of voters the election is held the first Tuesday after 120 days from certification; otherwise at the next countywide election. Majority vote; effective the day after the election. Signature checks follow Code Sec. 12-23.",
+     "deadline": "120 days from approval of the petition form",
+     "url": "https://www.votemiamidade.gov/elections/voters/petitions.page",
+     "source": "https://www.miamidade.gov/charter/library/home-rule-charter.pdf"
+    },
+    {
+     "key": "petition",
+     "how": "Charter amendment by petition (Charter Sec. 9.07): electors may put a charter amendment on the ballot.",
+     "rules": "Signatures of at least 10 percent of registered electors in the county. The Board must call an election 60 to 120 days after a certified petition is presented. The Board may also propose amendments itself at any time.",
+     "deadline": null,
+     "url": "https://www.votemiamidade.gov/elections/voters/petitions.page",
+     "source": "https://www.miamidade.gov/charter/library/08-01-29-charter.pdf"
+    },
+    {
+     "key": "recall",
+     "how": "Recall of the Mayor or a commissioner (Charter Sec. 8.02): get the petition form approved by the Clerk of the Circuit Court, collect signatures, and file for canvass and certification.",
+     "rules": "Signatures of at least 4 percent of registered voters in the county (for the Mayor) or the district (for a commissioner), collected within 120 days of form approval. No recall petition may be certified within one year after the officer takes office or within one year after a prior recall against them failed. The Board must set the recall election 45 to 90 days after certification.",
+     "deadline": "120 days from approval of the petition form",
+     "url": "https://www.votemiamidade.gov/elections/voters/petitions.page",
+     "source": "https://www.miamidade.gov/charter/library/08-01-29-charter.pdf"
+    },
+    {
+     "key": "qualify",
+     "how": "Run for Commission: file qualifying papers with the Supervisor of Elections during the qualifying window in the election year, paying the fee or filing petition signatures.",
+     "rules": "2026: qualifying 8:00 a.m. May 26 to noon June 9; fee $360 (write-in $300); or petition signatures equal to 1 percent of district voters due noon April 28. Must be a county resident 3 years and district resident 6 months before qualifying (Charter Sec. 1.04). Two consecutive four-year term limit (Sec. 3.01(E)).",
+     "deadline": "Noon on the last day of qualifying (June 9 in 2026; 2028 dates not yet posted)",
+     "url": "https://www.votemiamidade.gov/elections/candidates-campaigns/candidate-qualifying-handbook.page",
+     "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf"
+    },
+    {
+     "key": "vote",
+     "how": "County commissioners are elected by district in the August primary of even years; if no one wins a majority, the top two go to a runoff on the November general election ballot.",
+     "rules": "Even-numbered districts (2, 4, 6, 8, 10, 12) in 2026; odd districts and the Mayor on the 2028 cycle. Nonpartisan.",
+     "deadline": "Nov 3, 2026 runoffs; register 29 days before an election",
+     "url": "https://www.votemiamidade.gov",
+     "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Apply for a seat on a county advisory board through the County Boards and Appointment System (CBAS), which lists active boards, vacancies and liaison contacts. Appointments are made by commissioners or the Mayor.",
+     "rules": "Service is voluntary and unpaid; eligibility rules are in County Code Secs. 2-11.36.1 through 2-11.38.2. Clerk of the Board 305-275-1155.",
+     "deadline": null,
+     "url": "https://www.miamidade.gov/Apps/COB/CBASOnlinePublic/",
+     "source": "https://www.miamidadeclerk.gov/clerk/cob-vacancies.page"
+    },
+    {
+     "key": "public-comment",
+     "how": "Zoning: Community Zoning Appeals Boards (CZABs) hold evening hearings by area (for example CZAB 2 met Sept 22, 2026 at 7:00 p.m. at Highland Oaks Park). Anyone may speak. Zone changes, certain use variances and administrative-decision appeals decided by a CZAB can be appealed to the County Commission.",
+     "rules": "Appeal to the Commission within 14 days after the CZAB result is posted on the appeals log; fee $855 ($923.40 with surcharge); file in person at the Public Hearing Section, Stephen P. Clark Center 11th floor, by 4:30 p.m.; applicant, aggrieved party of record, affected city, or neighborhood association may appeal. Questions 305-375-2640.",
+     "deadline": "14 days after the CZAB decision is posted",
+     "url": "https://www.miamidade.gov/global/economy/zoning/appeals.page",
+     "source": "https://www.miamidade.gov/global/economy/zoning/appeals.page"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": null,
+     "end": null,
+     "source": null
+    },
+    "terms": "Four years, staggered: even districts (2, 4, 6, 8, 10, 12) elected in 2026, odd districts (1, 3, 5, 7, 9, 11, 13) and the Mayor in 2028. Primary in August, runoff in November, term starts the second Tuesday after the November election. Limit of two consecutive four-year terms (terms begun before 2012 do not count).",
+    "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Clerk of the Board (Clerk of the Court and Comptroller)",
+     "email": "cocpubreq@miamidadeclerk.gov",
+     "phone": "305-275-1155",
+     "url": "https://www.miamidadeclerk.gov/clerk/cob-home.page",
+     "source": "https://www.miamidadeclerk.gov/clerk/cob-home.page"
+    },
+    {
+     "role": "commission office",
+     "name": "Office of Agenda Coordination",
+     "email": "agendco@miamidade.gov",
+     "phone": "305-375-2035",
+     "url": "https://www.miamidade.gov/global/government/commission/home.page",
+     "source": "https://www.miamidade.gov/resources/legal-ads/county/clerk-of-court/2026/2026-09-17-second-budget-hearing.pdf"
+    },
+    {
+     "role": "commission office",
+     "name": "District offices (pattern DistrictN@miamidade.gov, N = 1 to 13)",
+     "email": "District1@miamidade.gov",
+     "phone": "305-375-5694",
+     "url": "https://www.miamidade.gov/global/government/commission/home.page",
+     "source": "https://www.miamidade.gov/global/government/commission/district01/home.page"
+    },
+    {
+     "role": "mayor",
+     "name": "Mayor Daniella Levine Cava",
+     "email": "",
+     "phone": "",
+     "url": "https://www.miamidade.gov/global/government/mayor/home.page",
+     "source": "https://www.miamidade.gov/govaction/legistarfiles/Agendas/5546.pdf"
+    },
+    {
+     "role": "commission office",
+     "name": "Supervisor of Elections, petition information",
+     "email": "petitioninformation@votemiamidade.gov",
+     "phone": "305-499-8683",
+     "url": "https://www.votemiamidade.gov/elections/voters/petitions.page",
+     "source": "https://www.votemiamidade.gov/elections/voters/petitions.page"
+    }
+   ],
+   "notes": "Schedule: the 2026 BCC calendar is a PDF grid (revised 9/19/2026) and the text extraction interleaves months, so Oct-Dec entries were reconstructed from day numbers and weekday patterns; Oct 20, Oct 22, Nov 17 and Nov 19 are consistent across reads, and Oct 22 is confirmed by the zoning hearings page. No full-board meeting is posted for December 2026 (winter recess; exact recess dates are not legible). The 2027 calendar is only a proposal sent to the Board on Oct 20, 2026 (item 15(B)4); only the Sept 9 and Sept 23 budget hearings, Jan 21 zoning hearing and Mar 22-26 spring break could be read reliably from it. Public comment rules: the current rules of procedure PDF truncated before Part 6, so Rules 6.02-6.06 were read from the Feb 5, 2019 version; the Sept 1, 2026 agenda confirms citizens' presentations at 5 minutes and Rule 6.06 still in use. Charter Sec. 8.01 was read from the current charter PDF; Secs. 8.02 and 9.07 from the 2008 charter PDF (the current PDF truncated), cross-checked against the Supervisor of Elections petitions page. Elections: 2028 qualifying dates for the Mayor and odd districts are not yet posted; qualifying fields are null. The 2027 elections calendar lists only municipal races. The Mayor's email and phone were not captured. The CZAB schedule page (community-zoning-appeals-boards.page) could not be fetched; CZAB dates come from individual agenda PDFs. Pages saved under scratchpad cycles-src."
   }
  ]
 }

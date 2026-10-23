@@ -1,0 +1,165 @@
+{
+  "key": "city-doral",
+  "rosterBody": "city-doral",
+  "name": "Doral City Council",
+  "jurisdiction": "City of Doral",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Council-Meetings",
+    "calendar": "https://www.cityofdoral.com/Events-directory?dlv_OC%20CL%20City%20Events%20Listing=(dd_OC%20Event%20Categories=Council%20Meetings)(dd_OC%20Composite%20Date=0d)",
+    "agendas": "https://doral.legistar.com/Calendar.aspx",
+    "minutes": "https://doral.legistar.com/Calendar.aspx",
+    "video": "https://cityofdoral.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+  },
+  "meetings": {
+    "pattern": "One regular Council Meeting a month, usually the second Wednesday, split into a 10:00 a.m. morning session and a 6:00 p.m. evening session (public hearings and second readings are in the evening). Doral Government Center Council Chambers, 8401 NW 53 Terrace. The charter requires at least 11 regular monthly meetings a year (Sec. 4.01(a)); no meeting was held in July 2026. Local Planning Agency meets at 5:30 p.m. the same day when there are zoning items.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-11-18", "time": "10:00", "kind": "regular", "note": "Morning session 10:00 a.m.; evening session 6:00 p.m. Council Chambers, 8401 NW 53 Terrace", "source": "https://www.cityofdoral.com/Events-directory/2026-11-18-Notice-Council-Meeting-PUBLISHED" },
+      { "date": "2026-12-09", "time": "10:00", "kind": "regular", "note": "Morning session 10:00 a.m.; evening session 6:00 p.m. Council Chambers, 8401 NW 53 Terrace", "source": "https://www.cityofdoral.com/Events-directory/2026-12-09-Notice-Council-Meeting-PUBLISHED" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-proposal",
+      "name": "Proposed millage and budget workshop",
+      "start": "2026-07-29",
+      "end": "2026-08-21",
+      "repeats": "yearly",
+      "decides": "Special meeting July 29 sets the proposed millage rate for FY 2026-27; Council budget workshop August 21 reviews the City Manager's proposed budget.",
+      "source": "https://webapi.legistar.com/v1/doral/events?$filter=EventDate+ge+datetime%272026-01-01%27&$orderby=EventDate&$select=EventDate,EventTime,EventLocation,EventComment,EventBodyName"
+    },
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-08",
+      "end": "2026-09-22",
+      "repeats": "yearly",
+      "decides": "Two 6:00 p.m. special meetings adopt the millage rate and the FY 2026-27 budget (first hearing September 8, second hearing September 22).",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/departments/finance/budget-brief/adopted-budget-in-brief-fy-2027.pdf"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "The adopted budget takes effect; the charter sets the fiscal year to end September 30 (Sec. 8.07).",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the November 2026 election",
+      "start": "2026-07-13",
+      "end": "2026-07-17",
+      "repeats": "once",
+      "decides": "Who appears on the ballot for Council Seats 2 and 4; noon Monday July 13 to noon Friday July 17, 2026, with the City Clerk.",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/election-docs/notice-of-qualifying-period-november-3-2026-general-election.pdf"
+    },
+    {
+      "key": "election",
+      "name": "General municipal election",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Council Seat 2 (Fernanda Gomes v. Maureen Porras), Seat 4 (Peter Espinosa v. Gustavo Garagorry) and a charter question on lifetime term limits.",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/election-docs/notice-of-general-election-special-election-and-sample-ballot-–-november-3-2026.pdf"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Each regular meeting has a Public Comments item near the start of the morning session (item 5) and again at the start of the evening session (item 18). The charter's Citizens' Bill of Rights A(5) gives any interested person the right to appear before the Council, subject to reasonable time limits.",
+      "rules": "No time limit, sign-up method or speaker rules are posted in the agenda, the meeting notice or the clerk's pages; the charter says reasonable time limits may be imposed. Lobbyists must register with the City Clerk first (Resolution 2007-31 and County Code Sec. 2-11.1(s)).",
+      "deadline": "Attend the meeting; comments are taken at the Public Comments item of each session",
+      "url": "https://doral.legistar.com/Calendar.aspx",
+      "source": "https://webapi.legistar.com/v1/doral/events/1514/eventitems?$select=EventItemTitle,EventItemAgendaNumber,EventItemAgendaSequence&$orderby=EventItemAgendaSequence"
+    },
+    {
+      "key": "written-comment",
+      "how": "No written comment or eComment procedure is posted. Email the City Clerk's office.",
+      "rules": null,
+      "deadline": null,
+      "url": "mailto:cityclerk@cityofdoral.com",
+      "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Council-Meetings"
+    },
+    {
+      "key": "contact",
+      "how": "Email or call the Mayor and councilmembers through the city switchboard extensions on the Elected Officials page.",
+      "rules": "Main line 305-593-6725; Mayor Christi Fraga x3002, Christi.Fraga@cityofdoral.com.",
+      "deadline": null,
+      "url": "https://www.cityofdoral.com/Elected-officials",
+      "source": "https://www.cityofdoral.com/Elected-officials"
+    },
+    {
+      "key": "records-request",
+      "how": "Submit a public records request through the City Clerk's Public Records Request page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Public-Records-Request",
+      "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+    },
+    {
+      "key": "petition",
+      "how": "Charter Sec. 5.02: at least 25 electors file an affidavit with the City Clerk forming a Petitioners' Committee, pay a filing fee equal to the circuit court complaint fee, and get the City Attorney's legal sufficiency approval before circulating. If the Council does not adopt the ordinance unchanged within 45 days, it goes to the voters 30 to 60 days later (Sec. 5.02(e)).",
+      "rules": "Signatures of at least 10 percent of the electors registered at the last regular city election (Sec. 5.02(c)(i)), filed within 60 days of starting (Sec. 5.02(c)(iv)). Budgets, capital programs, appropriations, tax levies and salaries are excluded (Sec. 5.02(a)).",
+      "deadline": "60 days from filing the committee affidavit",
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+      "key": "referendum",
+      "how": "Charter Sec. 5.02: electors may require the Council to reconsider an adopted ordinance; if the Council does not repeal it within 30 days, voters approve or reject it at an election 30 to 60 days later. Same committee, fee and attorney review steps as an initiative.",
+      "rules": "Signatures of at least 10 percent of electors registered at the last regular city election (Sec. 5.02(c)(i)), filed within 60 days (Sec. 5.02(c)(iv)); clerk certifies within five business days (Sec. 5.02(d)(i)). Budget, appropriation, tax levy and salary ordinances are excluded.",
+      "deadline": "60 days from filing the committee affidavit",
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+      "key": "recall",
+      "how": "The charter has no recall procedure of its own (recall is mentioned only in Sec. 2.05(c)(vii) on vacancies), so Florida's uniform municipal recall statute, F.S. 100.361, applies.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+      "key": "qualify",
+      "how": "File a written notice of candidacy and qualifying papers with the City Clerk (Charter Sec. 2.04). Candidates must be city electors who have lived in Doral continuously for at least two years.",
+      "rules": "Qualifying opens at noon on the second Monday of July and closes at noon the following Friday in every general election year, during business hours 8:00 a.m. to 5:00 p.m.",
+      "deadline": "Noon on the Friday after the second Monday of July in even years",
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information",
+      "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information"
+    },
+    {
+      "key": "vote",
+      "how": "City elections are held with the November general election in even years (Charter Sec. 5.01(c)); vote through Miami-Dade Elections by mail, early voting or at your precinct.",
+      "rules": "Registered Doral voters.",
+      "deadline": "Election Day November 3, 2026",
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Election-Information",
+      "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Apply for advisory boards, committees and commissions through the City Clerk's boards page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk/Advisory-Boards-Committees-and-Commissions",
+      "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-07-13", "end": "2026-07-17", "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/election-docs/notice-of-qualifying-period-november-3-2026-general-election.pdf" },
+    "terms": "Mayor and four councilmembers elected at large to four-year terms (Charter Sec. 2.03(a)), staggered: Seats 2 and 4 in 2026, Mayor and Seats 1 and 3 in 2028. Limit of two consecutive elected terms (Sec. 2.03(b)); a November 2026 charter question proposes lifetime limits.",
+    "source": "https://www.cityofdoral.com/files/assets/city/v/2/city-hall/city-clerk/charter-docs/city-of-doral-city-charter-amended-as-of-november-5-2024.pdf"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Connie Diaz, MMC, City Clerk", "email": "cityclerk@cityofdoral.com", "phone": "305-593-6730", "url": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk", "source": "https://www.cityofdoral.com/Government-Center/Office-of-the-City-Clerk" },
+    { "role": "commission office", "name": "Mayor and Council offices (city switchboard)", "email": null, "phone": "305-593-6725", "url": "https://www.cityofdoral.com/Elected-officials", "source": "https://www.cityofdoral.com/Elected-officials" },
+    { "role": "mayor", "name": "Christi Fraga", "email": "Christi.Fraga@cityofdoral.com", "phone": "305-593-6725 x3002", "url": "https://www.cityofdoral.com/Elected-officials", "source": "https://www.cityofdoral.com/Elected-officials" }
+  ],
+  "notes": "Schedule: the city's events directory posts notices for November 18 and December 9, 2026; Legistar (doral.legistar.com) lists nothing after October 7, 2026 and no 2027 dates, so the file stops at December 2026. 2026 regular meetings held: Jan 15, Feb 18, Mar 11, Apr 8, May 13, Jun 10, Aug 12, Sep 9, Oct 7 (all 10:00 a.m. with 6:00 p.m. evening sessions); budget specials Jul 29 (millage), Aug 21 (workshop), Sep 8 and Sep 22 (hearings, 6:00 p.m.). Agenda lead time is not posted; Legistar agenda revision dates run two to six days before meetings. Public comment time limit, sign-up and written comment rules are not posted anywhere found (agenda, notice PDF, clerk pages); the Municode code pages and the Granicus agenda PDFs could not be fetched (robots or client errors). The charter has no recall procedure. The 2028 seats and the exact seat-to-member mapping come from the Elected Officials page term ranges (Fraga and Pineyro 2022-2028; Cabral and Porras to 2026), not from a seat list. No 2027 budget calendar is posted; the budget phases are the 2026 dates marked yearly. The council department page (cityofdoral.com/government/city-council/) returned an error."
+}
