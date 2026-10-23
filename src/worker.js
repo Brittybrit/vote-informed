@@ -2727,8 +2727,10 @@ async function txCandidateDonors(env, name, office) {
   const c = hits[0];
   if (c.summary) return { summary: c.summary, label: city.label, version: data.updated || '' };
   if (c.none) return { none: c.none, label: city.label, version: data.updated || '' };
-  const agg = {}; let total = 0, count = 0, to = '', last = null;
+  const agg = {}; let total = 0, count = 0, to = '', last = null; const unread = [];
   for (const rep of c.reports || []) {
+    // A report the clerk posted that we have not transcribed yet (a scan): never counted, always disclosed.
+    if (rep.unread) { unread.push(rep); continue; }
     if (!last || String(rep.period || '') > String(last.period || '')) last = rep;
     for (const [date, who, type, amount, kind] of rep.rows || []) {
       const amt = Number(amount) || 0;
@@ -2758,7 +2760,8 @@ async function txCandidateDonors(env, name, office) {
     v.type === 'B' ? (/\b(union|local \d+|afscme|seiu|iaff)\b/i.test(v.name) ? 'union' : 'corporation') : 'individual';
   const all = sorted.filter(v => v.amount > 0).map(v => ({ name: v.name, type: kindOf(v), amount: Math.round(v.amount), first: v.first, last: v.date, street: '', zip: '' }));
   return { donors, all, total, count, to, ties: tieNote(sorted.map(v => v.amount), 8), label: city.label, portal: city.portal,
-    pending: city.pending || '', cnote: c.note || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
+    pending: [city.pending || '', unread.length ? 'A later report (' + unread.map(r => r.report).join(', ') + ') is posted but not yet transcribed here; the linked PDF lists every contribution.' : ''].filter(Boolean).join(' '),
+    unread: unread.map(r => ({ report: r.report, url: r.url })), cnote: c.note || '', lastReport: last ? last.report : '', through: last ? String(last.period || '').split('/')[1] || to : to,
     version: data.updated || '' };
 }
 async function refreshTxDonors(env, result, name, office, officeCode) {

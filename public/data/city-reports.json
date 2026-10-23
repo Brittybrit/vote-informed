@@ -1,13 +1,13 @@
 {
  "note": "Hand-transcribed from scanned treasurer's reports. Each report's itemized rows were checked against the totals on its summary page. Row: [date, contributor, type (I individual, B business, F political committee, S the candidate), amount, optional kind (loan, in-kind)]. A candidate with \"summary\" instead of \"reports\" has only the money-to-date total read from the summary page of their latest report. A candidate with \"none\" has no report posted; the text says so.",
- "updated": "2026-10-14",
+ "updated": "2026-10-23",
  "cities": [
   {
    "city": "Pinecrest",
    "match": "^\\s*pinecrest\\b",
    "label": "Village of Pinecrest",
    "portal": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election",
-   "pending": "The village had not posted later reports (G1, G2 and G3) as of 2026-10-12.",
+   "pending": "G2 and G3 are listed for every contested candidate but not yet linked as of Oct 23; the village files its Jul 1 to Oct 2 report as G1.",
    "candidates": [
     {
      "name": "Ken Fairman",
@@ -105,6 +105,13 @@
          479.7
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "2026-07-01/2026-10-02",
+       "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/fairman-ken-2026-g1-rem.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -123,6 +130,19 @@
          "S",
          2500,
          "loan"
+        ]
+       ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "2026-07-01/2026-10-02",
+       "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/gonzalezdiez-ramon-rem.pdf",
+       "rows": [
+        [
+         "2026-09-16",
+         "Ramon Gonzalez-Diez",
+         "S",
+         2000
         ]
        ]
       }
@@ -265,6 +285,272 @@
          1000
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "2026-07-01/2026-10-02",
+       "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/lerner-jill-2026-g1-rem.pdf",
+       "rows": [
+        [
+         "2026-07-07",
+         "Valencia, Adele",
+         "I",
+         100
+        ],
+        [
+         "2026-07-08",
+         "Pollara, Ben",
+         "I",
+         100
+        ],
+        [
+         "2026-07-10",
+         "Lawther, Nancy",
+         "I",
+         250
+        ],
+        [
+         "2026-07-13",
+         "Miller, Francis",
+         "I",
+         50
+        ],
+        [
+         "2026-07-13",
+         "Miller, Debbie",
+         "I",
+         100
+        ],
+        [
+         "2026-07-13",
+         "Winston, Gary",
+         "I",
+         100
+        ],
+        [
+         "2026-07-15",
+         "Randall, Susan",
+         "I",
+         200
+        ],
+        [
+         "2026-07-20",
+         "Burns, Amanda",
+         "I",
+         25
+        ],
+        [
+         "2026-07-20",
+         "Gomar-Salzverg, Gisela",
+         "I",
+         150
+        ],
+        [
+         "2026-07-20",
+         "Salazar, Amelia",
+         "I",
+         25
+        ],
+        [
+         "2026-07-24",
+         "Fisher, Randy",
+         "I",
+         200
+        ],
+        [
+         "2026-07-24",
+         "Rubin, Michael",
+         "I",
+         200
+        ],
+        [
+         "2026-07-29",
+         "Epstein, Benjamin",
+         "I",
+         100
+        ],
+        [
+         "2026-07-30",
+         "Sockloff, Judith",
+         "I",
+         50
+        ],
+        [
+         "2026-07-30",
+         "Buchbinder, Marjorie",
+         "I",
+         100
+        ],
+        [
+         "2026-07-30",
+         "Potter, Debra",
+         "I",
+         100
+        ],
+        [
+         "2026-07-30",
+         "Mander, Ines",
+         "I",
+         100
+        ],
+        [
+         "2026-07-30",
+         "Silverstein, Paul",
+         "I",
+         250
+        ],
+        [
+         "2026-07-30",
+         "Kemper, Elena",
+         "I",
+         500
+        ],
+        [
+         "2026-07-30",
+         "Varat, Andrew",
+         "I",
+         250
+        ],
+        [
+         "2026-07-30",
+         "Pareira, Barbara",
+         "I",
+         200
+        ],
+        [
+         "2026-07-30",
+         "Barrow Travieso, Stefani",
+         "I",
+         36
+        ],
+        [
+         "2026-07-31",
+         "Otto, Phillip",
+         "I",
+         500
+        ],
+        [
+         "2026-07-31",
+         "Hockman, Peter",
+         "I",
+         100
+        ],
+        [
+         "2026-07-31",
+         "Cosner, George",
+         "I",
+         250
+        ],
+        [
+         "2026-07-31",
+         "Rubin, Bruce",
+         "I",
+         100
+        ],
+        [
+         "2026-08-03",
+         "Interian, Monica",
+         "I",
+         50
+        ],
+        [
+         "2026-08-04",
+         "Sorenson, Kathryn",
+         "I",
+         100
+        ],
+        [
+         "2026-08-07",
+         "Romero Roses, Gloria",
+         "I",
+         100
+        ],
+        [
+         "2026-08-08",
+         "Levenson, Barbara",
+         "I",
+         100
+        ],
+        [
+         "2026-08-09",
+         "Patel, Angeli",
+         "I",
+         25
+        ],
+        [
+         "2026-08-10",
+         "Winston, Gary",
+         "I",
+         100
+        ],
+        [
+         "2026-08-11",
+         "DiFilippi, Peter",
+         "I",
+         100
+        ],
+        [
+         "2026-08-14",
+         "Prager, Stanley",
+         "I",
+         1000
+        ],
+        [
+         "2026-08-22",
+         "Winston, Gary",
+         "I",
+         150
+        ],
+        [
+         "2026-08-24",
+         "Stein, Helen",
+         "I",
+         250
+        ],
+        [
+         "2026-08-30",
+         "Richter, Laurie",
+         "I",
+         1000
+        ],
+        [
+         "2026-09-08",
+         "Flinn, Eugene",
+         "I",
+         100
+        ],
+        [
+         "2026-09-15",
+         "Glickman, Susan",
+         "I",
+         100
+        ],
+        [
+         "2026-09-15",
+         "Bodner, Elizabeth",
+         "I",
+         100
+        ],
+        [
+         "2026-09-16",
+         "Pareira, Barbara",
+         "I",
+         100
+        ],
+        [
+         "2026-09-29",
+         "Loring, Andrea",
+         "I",
+         100
+        ],
+        [
+         "2026-09-12",
+         "Weyhe, Harriet",
+         "I",
+         25
+        ]
+       ],
+       "unreconciled": true
       }
      ]
     },
@@ -490,6 +776,133 @@
          "B",
          71.88,
          "in-kind"
+        ]
+       ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "2026-07-01/2026-10-02",
+       "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/sanchez-raphael-2026-g1-rem.pdf",
+       "rows": [
+        [
+         "2026-07-09",
+         "Stephanie Doppelt",
+         "I",
+         118
+        ],
+        [
+         "2026-07-29",
+         "Joaquin Barcelo",
+         "I",
+         500
+        ],
+        [
+         "2026-08-05",
+         "Gio Diez",
+         "I",
+         100
+        ],
+        [
+         "2026-08-17",
+         "Galaxy Orthopedic and Spine Institute",
+         "B",
+         500
+        ],
+        [
+         "2026-08-19",
+         "Jinelle Andujar",
+         "I",
+         100
+        ],
+        [
+         "2026-08-20",
+         "Keren Marti",
+         "I",
+         50
+        ],
+        [
+         "2026-08-28",
+         "Nany Yepez",
+         "I",
+         25
+        ],
+        [
+         "2026-08-28",
+         "Nery Castro",
+         "I",
+         1000
+        ],
+        [
+         "2026-08-28",
+         "Salvador Villegas",
+         "I",
+         1000
+        ],
+        [
+         "2026-09-01",
+         "Sam Rehman",
+         "I",
+         1000
+        ],
+        [
+         "2026-09-03",
+         "Janet Field",
+         "I",
+         100
+        ],
+        [
+         "2026-09-08",
+         "Covington Stanwick",
+         "I",
+         200
+        ],
+        [
+         "2026-09-10",
+         "Romy Hourani",
+         "I",
+         300
+        ],
+        [
+         "2026-09-16",
+         "Elina Pacios",
+         "I",
+         100
+        ],
+        [
+         "2026-09-17",
+         "Cesar Buia",
+         "I",
+         100
+        ],
+        [
+         "2026-09-23",
+         "Michael Cantens",
+         "I",
+         1000
+        ],
+        [
+         "2026-09-28",
+         "Phil Rodriguez",
+         "I",
+         200
+        ],
+        [
+         "2026-09-29",
+         "Thomas Packert",
+         "I",
+         100
+        ],
+        [
+         "2026-09-30",
+         "Mercedes Rengel",
+         "I",
+         50
+        ],
+        [
+         "2026-10-01",
+         "Dennis Gonzalez, Jr",
+         "I",
+         1000
         ]
        ]
       }
@@ -934,10 +1347,193 @@
          "in-kind"
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "2026-07-01/2026-10-02",
+       "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/suarez-james-2026-g1-rem.pdf",
+       "rows": [
+        [
+         "2026-07-21",
+         "Rebecca McBurney",
+         "I",
+         100
+        ],
+        [
+         "2026-07-22",
+         "Daniel Enekes",
+         "I",
+         250
+        ],
+        [
+         "2026-07-23",
+         "Thomas Abbott",
+         "I",
+         50
+        ],
+        [
+         "2026-07-11",
+         "George Williamson",
+         "I",
+         1000
+        ],
+        [
+         "2026-10-02",
+         "Joe Meyer",
+         "I",
+         1000
+        ],
+        [
+         "2026-08-13",
+         "Mark Crofton",
+         "I",
+         250
+        ],
+        [
+         "2026-08-19",
+         "Nancy Lawther",
+         "I",
+         100
+        ],
+        [
+         "2026-08-21",
+         "Ryan Dorris",
+         "I",
+         250
+        ],
+        [
+         "2026-08-21",
+         "Rebecca McBurney",
+         "I",
+         100
+        ],
+        [
+         "2026-08-23",
+         "Bernard Probst",
+         "I",
+         100
+        ],
+        [
+         "2026-08-29",
+         "Teresa B Albert",
+         "I",
+         250
+        ],
+        [
+         "2026-08-30",
+         "Faith Levine",
+         "I",
+         100
+        ],
+        [
+         "2026-08-30",
+         "Thomas Carole Abbott",
+         "I",
+         250
+        ],
+        [
+         "2026-08-31",
+         "Kathryn Sorenson",
+         "I",
+         100
+        ],
+        [
+         "2026-09-13",
+         "Veronica Matzner",
+         "I",
+         200
+        ],
+        [
+         "2026-09-13",
+         "Frank Sioli",
+         "I",
+         1000
+        ],
+        [
+         "2026-10-02",
+         "Karma Garcia",
+         "I",
+         1000
+        ],
+        [
+         "2026-10-02",
+         "Robert Reynolds",
+         "I",
+         500
+        ],
+        [
+         "2026-09-21",
+         "Rebekka Haggard",
+         "I",
+         500
+        ],
+        [
+         "2026-09-21",
+         "Rebecca McBurney",
+         "I",
+         100
+        ],
+        [
+         "2026-09-22",
+         "Antony Page",
+         "I",
+         100
+        ],
+        [
+         "2026-09-22",
+         "Juan Carlos Rivera",
+         "I",
+         100
+        ],
+        [
+         "2026-09-30",
+         "John McWhirter",
+         "I",
+         100
+        ],
+        [
+         "2026-09-30",
+         "Michael Diamond",
+         "I",
+         25
+        ],
+        [
+         "2026-09-30",
+         "Leanne Tellam",
+         "I",
+         50
+        ],
+        [
+         "2026-10-02",
+         "South Florida Vision",
+         "B",
+         1000
+        ],
+        [
+         "2026-08-12",
+         "Florida Political Action Committee (Gray Robinson PA)",
+         "F",
+         250
+        ],
+        [
+         "2026-10-02",
+         "James E. Courtney Investments LLC",
+         "B",
+         250
+        ],
+        [
+         "2026-10-01",
+         "John W. McLuskey and Lori N. McLuskey",
+         "I",
+         500
+        ]
+       ],
+       "unreconciled": true
       }
      ]
     }
-   ]
+   ],
+   "checked": "2026-10-23"
   },
   {
    "city": "North Miami Beach",
@@ -3403,7 +3999,7 @@
    "pending": "The city had not posted later reports (Q3 or general election reports) as of 2026-10-12.",
    "candidates": [
     {
-     "name": "Javier E. Fernández",
+     "name": "Javier E. Fern\u00e1ndez",
      "office": "Mayor",
      "reports": [
       {
@@ -3827,7 +4423,7 @@
    "match": "^\\s*aventura\\b",
    "label": "City of Aventura",
    "portal": "https://www.cityofaventura.com/428/2026-Municipal-Election-Candidate-Inform",
-   "pending": "",
+   "pending": "Reports after G1 (G2 through G5) sit in each candidate's Laserfiche records folder, which refuses automated reads; not yet transcribed as of Oct 23.",
    "candidates": [
     {
      "name": "Howard S. Weinberg",
@@ -4641,14 +5237,15 @@
       }
      ]
     }
-   ]
+   ],
+   "checked": "2026-10-23"
   },
   {
    "city": "El Portal",
    "match": "^\\s*el portal\\b",
    "label": "Village of El Portal",
    "portal": "https://elportalvillage.com/election-information/",
-   "pending": "The village had not posted later reports as of 2026-10-13.",
+   "pending": "G1 reports for all 13 candidates were posted in October as scanned images and have not yet been transcribed; five are waivers (no activity). Nothing later is posted.",
    "candidates": [
     {
      "name": "George Alvarez",
@@ -4685,6 +5282,13 @@
          450
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Alvarez-George-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -4709,6 +5313,12 @@
        "report": "2026 M09 (waiver, no activity)",
        "period": "2026-09-01/2026-09-28",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/09/Nickerson-Omarr-Campaign-Candidate-Report-26M09-Waiver.pdf",
+       "rows": []
+      },
+      {
+       "report": "2026 G1 (waiver, no activity)",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Nickerson-Omarr-Campaign-Candidate-Report-26G1-Waiver.pdf",
        "rows": []
       }
      ],
@@ -4989,6 +5599,13 @@
          150
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Altidor-Kerby-J-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ],
      "note": "The September report's itemized gifts add to $4,275; its summary page says $4,225."
@@ -5021,6 +5638,12 @@
          999
         ]
        ]
+      },
+      {
+       "report": "2026 G1 (waiver, no activity)",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Edelman-Edna-Campaign-Candidate-Report-26G1-Waiver.pdf",
+       "rows": []
       }
      ],
      "note": "Her September report (Sept. 1 to 30) shows $300 more raised, but its contribution page was not posted, so those givers are not listed."
@@ -5054,6 +5677,13 @@
          222
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Pulliam-Thomas-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -5066,7 +5696,15 @@
       "through": "2026-08-31",
       "total": 200,
       "note": "That report lists no individual givers (no contribution page was filed), and his September report is a no-activity waiver."
-     }
+     },
+     "reports": [
+      {
+       "report": "2026 G1 (waiver, no activity)",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Urbom-Anders-Campaign-Candidate-Report-26G1-Waiver.pdf",
+       "rows": []
+      }
+     ]
     },
     {
      "name": "Ashley Lucio",
@@ -5133,6 +5771,12 @@
          50
         ]
        ]
+      },
+      {
+       "report": "2026 G1 (waiver, no activity)",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Lucio-Ashley-Campaign-Candidate-Report-26G1-Waiver.pdf",
+       "rows": []
       }
      ]
     },
@@ -5171,6 +5815,12 @@
          1000
         ]
        ]
+      },
+      {
+       "report": "2026 G1 (waiver, no activity)",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Odabachian-Edward-Nicklas-Campaign-Candidate-Report-26G1-Waiver.pdf",
+       "rows": []
       }
      ],
      "note": "His August summary page was corrected by hand and does not match its one itemized gift ($100)."
@@ -5198,6 +5848,13 @@
        "period": "2026-09-01/2026-09-28",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/09/Winters-Charles-Campaign-Candidate-Report-26M09.pdf",
        "rows": []
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Winters-Charles-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -5216,6 +5873,13 @@
        "period": "2026-09-01/2026-09-28",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/09/Connally-Velvet-Campaign-Candidate-Report-26M09-Waiver.pdf",
        "rows": []
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Connally-Velvet-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -5393,6 +6057,13 @@
          100
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/White-Denise-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     },
@@ -5485,6 +6156,13 @@
          25
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Rojas-Duenas-Daniel-Felipe-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ],
      "note": "Two September gifts (Luis and Madeleine Pacheco) have no date on the report and are shown at the report's end date."
@@ -5526,10 +6204,18 @@
          "loan"
         ]
        ]
+      },
+      {
+       "report": "2026 G1",
+       "period": "",
+       "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Schmidt-Marc-Nicklas-Campaign-Candidate-Report-26G1.pdf",
+       "rows": [],
+       "unread": true
       }
      ]
     }
-   ]
+   ],
+   "checked": "2026-10-23"
   },
   {
    "city": "Medley",
