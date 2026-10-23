@@ -126,9 +126,9 @@ if (fs.existsSync(procDir)) for (const f of fs.readdirSync(procDir).filter(f => 
     return { ...r, matches: m, horizon: 'open' };
   });
   const cap = keep(pr.capitalPlan, 'capital', ['project']).map(r => ({ ...r, total: r.total == null ? Object.values(r.amounts || {}).reduce((n, v) => n + (Number(v) || 0), 0) || null : r.total, horizon: 'plan' }));
-  const exp = keep(pr.expiring, 'expiring', ['vendor', 'expires']).map(r => {
-    const lm = ledgerMatches(pr.rosterBody, r.vendor);
-    const reg = registryMatches(pr.rosterBody, r.vendor);
+  const exp = (pr.expiring || []).filter(r => { const ok = (r.vendor || r.contract) && r.expires && r.source; if (!ok) problems.push(f + ': expiring row dropped (needs contract or vendor, expires and source): ' + JSON.stringify(r).slice(0, 80)); return ok; }).map(r => {
+    const lm = r.vendor ? ledgerMatches(pr.rosterBody, r.vendor) : { priorActions: [], lobbyists: [], ties: [] };
+    const reg = r.vendor ? registryMatches(pr.rosterBody, r.vendor) : [];
     return { ...r, matches: { priorActions: lm.priorActions, lobbyists: [...lm.lobbyists, ...reg.filter(x => !lm.lobbyists.some(y => y.name === x.name))], ties: lm.ties }, horizon: 'expiring' };
   });
   const levers = (pr.levers || []).filter(l => { if (!l.key || !l.source) { problems.push(f + ': lever without key or source dropped'); return false; } return true; });
