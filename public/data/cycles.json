@@ -1846,6 +1846,352 @@
    "notes": "Checked 2026-10-22. The town posts no forward calendar; the schedule here applies the first-Monday rule from the council meetings page, and the Nov 2 meeting was proposed for cancellation on the Oct 5 agenda. 2026 agendas posted so far: Feb 2, Mar 2, Apr 6, May 4, Jun 1, Jun 22 (special), Jul 6, Sep 8, Sep 10 (1st budget), Oct 5; no January or August agenda is listed. Agenda lead time is not stated anywhere found. The second budget hearing date (Sep 22, 2026) is inferred from the Oct 5 agenda's minutes item, not from a notice. Charter: not read; municode.com and the town's municipal code page both failed, so initiative, referendum and recall charter sections and the qualifying period are missing. Recall and petition levers use state statutes. The town's 2026 election notice (with qualifying dates) was not on the 2026 notices page; only the sample ballot was. Public comment rule (three minutes) is from the printed agenda notice. Minutes live in the Laserfiche portal at medleydocs.com, which requires cookies and could not be browsed; legal notices are at medley.realpublicnotices.com, which blocks automated fetching. No video link found."
   },
   {
+   "key": "city-miami-beach",
+   "rosterBody": "city-miami-beach",
+   "name": "Miami Beach City Commission",
+   "jurisdiction": "Miami Beach",
+   "level": "municipal",
+   "checked": "2026-10-23",
+   "links": {
+    "home": "https://www.miamibeachfl.gov/elected-officials/",
+    "calendar": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/",
+    "agendas": "https://portal-miamibeachfl.primegov.com/",
+    "minutes": "https://portal-miamibeachfl.primegov.com/archived?fromiframe=1",
+    "video": "https://www.miamibeachfl.gov/mbtv/",
+    "clerk": "https://www.miamibeachfl.gov/city-hall/city-clerk/"
+   },
+   "meetings": {
+    "pattern": "Regular City Commission meetings about once a month, usually a Wednesday at 8:30 a.m., in the Commission Chamber, Miami Beach City Hall, 1700 Convention Center Drive, 3rd floor. Meetings are hybrid (in person plus Zoom webinar 81392857671). Separate Presentations and Awards meetings at 5:00 p.m. about six times a year. The Commission is in recess in August. The two budget hearings are in September at 5:01 p.m. Agendas are on the PrimeGov portal (not Granicus); the clerk also posts weekly ADA meeting notices and a yearly meeting-dates page. Commission committees (Finance and Economic Resiliency; Land Use and Sustainability; Public Safety and Neighborhood Quality of Life) meet monthly, also hybrid.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-10-27",
+      "time": "11:00",
+      "kind": "regular",
+      "note": "Land Use and Sustainability Committee (commission committee, not the full Commission), 11:00 a.m. to 1:00 p.m., hybrid",
+      "source": "https://events.miamibeachfl.gov/city-meetings/"
+     },
+     {
+      "date": "2026-10-28",
+      "time": "10:30",
+      "kind": "regular",
+      "note": "Finance and Economic Resiliency Committee (commission committee, not the full Commission), 10:30 a.m. to 12:30 p.m., hybrid",
+      "source": "https://events.miamibeachfl.gov/city-meetings/"
+     },
+     {
+      "date": "2026-11-04",
+      "time": "17:00",
+      "kind": "special",
+      "note": "Presentations and Awards meeting, 5:00 p.m.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     },
+     {
+      "date": "2026-11-12",
+      "time": "15:30",
+      "kind": "special",
+      "note": "Special Commission Meeting, 3:30 p.m. Subject not stated on the dates page.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     },
+     {
+      "date": "2026-11-16",
+      "time": "09:00",
+      "kind": "special",
+      "note": "Special Commission Meeting, 9:00 a.m. Subject not stated on the dates page.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     },
+     {
+      "date": "2026-11-18",
+      "time": "08:30",
+      "kind": "regular",
+      "note": "Regular Commission Meeting. Citizens' Forum at 8:30 a.m. and 1:00 p.m.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     },
+     {
+      "date": "2026-11-30",
+      "time": "16:30",
+      "kind": "workshop",
+      "note": "Commission Workshop, 4:30 p.m. Subject not stated on the dates page.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     },
+     {
+      "date": "2026-12-09",
+      "time": "08:30",
+      "kind": "regular",
+      "note": "Regular Commission Meeting; last meeting posted for 2026. No 2027 dates are posted yet.",
+      "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Commission budget retreat",
+     "start": "2026-05-05",
+     "end": "2026-05-05",
+     "repeats": "yearly",
+     "decides": "The Commission and City Manager set priorities for the next fiscal year's budget at a retreat (2026: May 5, 3:30 p.m., Convention Center Room 211, in person only).",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+    },
+    {
+     "key": "budget-proposal",
+     "name": "Finance committee budget briefings and proposed budget",
+     "start": "2026-06-17",
+     "end": "2026-08-31",
+     "repeats": "yearly",
+     "decides": "The Finance and Economic Resiliency Committee gets two budget briefings on the operating and capital budgets and the millage rate (2026: June 17 and July 17, per the posted briefing files). The City Manager's proposed operating and capital budget books and budget message are posted on the budget page (the FY 2027 books were posted in August 2026). State law requires the city to tell the property appraiser its proposed millage and first hearing date within 35 days of the July 1 value certification.",
+     "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget-development-process/"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "Two public budget hearings (TRIM)",
+     "start": "2026-09-10",
+     "end": "2026-09-23",
+     "repeats": "yearly",
+     "decides": "Two evening hearings at 5:01 p.m. in the Commission Chamber. The first adopts the tentative millage and budget; the second adopts the final millage, operating budget, capital budget, and the Normandy Shores, North Beach CRA and City Center RDA budgets (2026 final resolutions 2026-34470 through 2026-34476). 2026 dates: Thursday Sept 10 and Wednesday Sept 23. 2027 dates are not yet posted.",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "The adopted budget and fee schedule take effect. Florida law (s. 166.241(1)) sets every municipal fiscal year to begin October 1. Budget amendments come to the Commission during the year at noticed 5:01 p.m. hearings (for example Nov 20, 2025).",
+     "source": "https://www.flsenate.gov/Laws/Statutes/2026/166.241"
+    },
+    {
+     "key": "recess",
+     "name": "August recess",
+     "start": "2026-08-01",
+     "end": "2026-08-31",
+     "repeats": "yearly",
+     "decides": "No Commission meetings; the dates page says 'August - City Commission in recess'.",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+    },
+    {
+     "key": "election",
+     "name": "Special election (ballot question only)",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "One city ballot question, with the county general election: whether to amend the 1999 lease with RK Rivani LLC at 1691 Michigan Avenue (two 20-year extension options and about 47,000 square feet of new development above the garage), Resolution 2026-34389. No Commission seats are on this ballot.",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/election-information/related-resolutions-november-3-2026/"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the 2027 city election",
+     "start": "2027-09-07",
+     "end": "2027-09-10",
+     "repeats": "once",
+     "decides": "Candidates for Mayor and Commission Groups IV, V and VI file with the City Clerk during the four-day qualifying period after the first Monday of September (Charter Sec. 6.03). County elections calendar lists Sept 7 to Sept 10, 2027. Petition in lieu of fee is due by noon on the 14th day before qualifying opens.",
+     "source": "https://www.miamidade.gov/elections/library/calendar-2027.pdf"
+    },
+    {
+     "key": "campaign",
+     "name": "2027 campaign season",
+     "start": "2027-09-10",
+     "end": "2027-11-02",
+     "repeats": "once",
+     "decides": "Campaigns for Mayor and Groups IV, V, VI. Candidate and committee filings are on VoterFocus; the clerk's 2027 candidate handbook is 'in progress' as of Oct 2026.",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/election-information/november-2-2027-general-and-special-elections/"
+    },
+    {
+     "key": "election",
+     "name": "General election",
+     "start": "2027-11-02",
+     "end": "2027-11-02",
+     "repeats": "once",
+     "decides": "Mayor (two-year term) and Commission Groups IV, V and VI (four-year terms), all at large and nonpartisan. A candidate needs a majority; otherwise the top two go to a runoff. Registration closes Oct 4, 2027.",
+     "source": "https://www.miamidade.gov/elections/library/calendar-2027.pdf"
+    },
+    {
+     "key": "election",
+     "name": "Runoff election",
+     "start": "2027-12-14",
+     "end": "2027-12-14",
+     "repeats": "once",
+     "decides": "Runoff for any race without a majority winner, on the second Tuesday in December after the general election (Charter Sec. 2.01 as amended by the Nov 5, 2024 Referendum 4; county calendar lists Dec 14, 2027). Registration closes Nov 15, 2027.",
+     "source": "https://www.miamidade.gov/elections/library/calendar-2027.pdf"
+    },
+    {
+     "key": "swearing-in",
+     "name": "Installation of Mayor and Commissioners",
+     "start": "2027-12-20",
+     "end": "2027-12-20",
+     "repeats": "once",
+     "decides": "Under amended Charter Sec. 2.01, the Mayor and Commissioners are installed and terms begin on the Monday immediately following the runoff election date (Dec 20, 2027 if the runoff is Dec 14). The Vice-Mayor is chosen at the first meeting after the election (Sec. 2.04).",
+     "source": "https://miamibeachfl.gov/wp-content/uploads/2024/07/Resolution-2024-33171.pdf"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak at the Dr. Stanley Sutnick Citizens' Forum at any regular Commission meeting, on any issue. Come to the Commission Chamber or join the Zoom webinar (ID 81392857671, phone 1.305.224.1968 or 888.475.4499) and use 'raise hand' or press *9.",
+     "rules": "Forum times are 8:30 a.m. and 1:00 p.m., or as soon after as possible, for about 30 minutes each. Two minutes per speaker or a time set by the Mayor. No appointment or advance registration needed. Anyone may speak; the Charter's Citizens' Bill of Rights (item 5) gives any interested person the right to appear on matters within City jurisdiction, subject to reasonable time limits.",
+     "deadline": "Be present at 8:30 a.m. or 1:00 p.m. on meeting day",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/"
+    },
+    {
+     "key": "public-comment",
+     "how": "Speak on a specific agenda item, including second-reading ordinance public hearings and the budget hearings, in person or on Zoom when the item is called. Public hearings are noticed with the time each item will be heard.",
+     "rules": "Raise hand in Zoom or press *9 by phone to be recognized. Audio or visual materials must be emailed to communications@miamibeachfl.gov by 8:30 a.m. one business day before the meeting. Accommodation requests: 305.604.2232; sign language interpreters need five days' notice.",
+     "deadline": "At the meeting when the item is called; presentation files one business day before",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/meetings-and-agendas/",
+     "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/miami-beach/04-11202025-01avmbudgetrelated.pdf"
+    },
+    {
+     "key": "written-comment",
+     "how": "Post an eComment on the item from the agenda page (comment bubble icon under Current and Upcoming Meetings) or email CityClerk@miamibeachfl.gov with the agenda item number in the subject line. Comments go to the Mayor and Commissioners and into the meeting record.",
+     "rules": "Accepted until 5:00 p.m. the day before the meeting.",
+     "deadline": "5:00 p.m. the day before the meeting",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/agenda",
+     "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/miami-beach/04-11202025-01avmbudgetrelated.pdf"
+    },
+    {
+     "key": "contact",
+     "how": "Email the Mayor or any commissioner (pattern FirstnameLastname@miamibeachfl.gov, for example StevenMeiner@miamibeachfl.gov) or call the Commission office. All seven are elected at large, so any of them represents you. Letters to the Commission are posted publicly in the clerk's Laserfiche folder.",
+     "rules": "Commission office 305.673.7035, 1700 Convention Center Drive, 9 a.m. to 5 p.m. Monday to Friday. Emails are public records.",
+     "deadline": null,
+     "url": "https://www.miamibeachfl.gov/elected-officials/",
+     "source": "https://www.miamibeachfl.gov/staff/mayor-steven-meiner/"
+    },
+    {
+     "key": "records-request",
+     "how": "File a public records request on the city's JustFOIA portal, by email to researchrequest@miamibeachfl.gov, by phone, by mail, or in person at the Clerk's office, City Hall first floor.",
+     "rules": "Copies $0.15 per page (charged only above $1.00); certified copies $1; a special service charge applies when staff time exceeds half an hour; the city may ask for a deposit. Each request gets a number.",
+     "deadline": null,
+     "url": "https://miamibeachfl.justfoia.com/publicportal/home/newrequest",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/public-records-request/"
+    },
+    {
+     "key": "petition",
+     "how": "Initiative (Charter Sec. 7.01): electors may petition for an ordinance the Commission has power to adopt. Get the petition form from the City Clerk (Sec. 7.03), collect signatures, and present the papers to the Commission as one instrument (Sec. 7.04).",
+     "rules": "Signatures of 10 percent of the city's registered electors. The Clerk checks the form within 10 days, then has 10 days to send it to the county Elections Department for signature verification. After the certificate of sufficiency the Commission must adopt the ordinance without alteration within 30 days or put it on the ballot at the next city election held more than 60 days after the certificate. With 15 percent of electors, a non-adopted measure goes to a special election within 60 days. A petition found insufficient may be amended once within 30 days (Sec. 7.05). An approved measure takes effect when the Commission accepts the certified results (Sec. 7.06).",
+     "deadline": "No collection time limit is stated in Article VII; 30 days to cure an insufficient petition",
+     "url": "https://miamibeachfl.gov/wp-content/uploads/2024/05/052324-Revd-IP-Code-Form.pdf",
+     "source": "https://www.miamibeachfl.gov/wp-content/uploads/2023/01/Charter-and-Related-Special-Acts.pdf"
+    },
+    {
+     "key": "referendum",
+     "how": "Referendum (Charter Sec. 7.02): electors may petition to repeal an ordinance the Commission has adopted, using the same form and filing steps as an initiative.",
+     "rules": "Signatures of 10 percent of registered electors. The Commission must repeal the ordinance within 30 days of the certificate of sufficiency or submit it to the next eligible city election; with 15 percent, a special election within 60 days.",
+     "deadline": "No collection time limit stated; 30 days to cure an insufficient petition",
+     "url": "https://miamibeachfl.gov/wp-content/uploads/2024/05/052324-Revd-IP-Code-Form.pdf",
+     "source": "https://www.miamibeachfl.gov/wp-content/uploads/2023/01/Charter-and-Related-Special-Acts.pdf"
+    },
+    {
+     "key": "petition",
+     "how": "Charter amendment by initiative: the City Clerk posts a 'City Charter Amendment Initiative Petition' form asking the Commission to put a charter change to the voters. The Charter sections read did not set a separate threshold for charter petitions; the form itself states none.",
+     "rules": "Threshold not found on the city site; the form collects signature, printed name, address, date of birth or voter registration number and date. Ask the Clerk (305.673.7411) for the requirement before collecting.",
+     "deadline": null,
+     "url": "https://miamibeachfl.gov/wp-content/uploads/2024/05/052324-Revd-IP-Ch.-Form.pdf",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/election-information/most-commonly-used-election-forms/"
+    },
+    {
+     "key": "recall",
+     "how": "Recall of the Mayor or a commissioner: the Charter (Sec. 2.08) says they may be removed 'by recall pursuant to State law', so Florida's municipal recall statute s. 100.361 applies. A recall committee files a petition with the City Clerk stating grounds; the county Supervisor of Elections verifies signatures.",
+     "rules": "Miami Beach has more than 25,000 registered electors, so the first petition needs signatures of 5 percent of registered electors (or 1,000, whichever is greater), all gathered and filed within 30 days of the first signature. Grounds are limited to malfeasance, misfeasance, neglect of duty, drunkenness, incompetence, permanent inability to perform official duties, or conviction of a felony involving moral turpitude, in 200 words or fewer. After the official's defense is attached, the committee has 60 days to collect a second round of 15 percent of electors. No recall petition may be filed until the official has served one fourth of the term. The chief judge sets the election 30 to 60 days after the official's 5-day window to resign.",
+     "deadline": "30 days for the first round of signatures; 60 days for the second",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/",
+     "source": "https://flsenate.gov/Laws/Statutes/2026/0100.361"
+    },
+    {
+     "key": "qualify",
+     "how": "Run for Mayor or a Commission group: qualify with the City Clerk during the four-day qualifying period after the first Monday of September in the election year (Sept 7 to 10, 2027 per the county calendar). Pay the qualifying fee or file a petition in lieu of fee.",
+     "rules": "Must be a qualified city elector who has lived in the city for at least one year immediately before qualifying (Charter Sec. 6.03). Fee is 7.5 percent of the office's annual salary; instead you may file petition signatures from at least 2 percent of registered voters by noon on the 14th day before qualifying opens. Fingerprinting and a sworn oath are required. Lifetime limits: two four-year terms for commissioners, three two-year terms for Mayor (Sec. 2.02). You cannot qualify for more than one office.",
+     "deadline": "Petition in lieu of fee by noon 14 days before qualifying; qualifying closes Sept 10, 2027",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/election-information/most-commonly-used-election-forms/",
+     "source": "https://www.miamibeachfl.gov/wp-content/uploads/2019/02/Elections-Miami-Beach-City-Charter-Article-VI-Sec.-6.01-to-6.04.pdf"
+    },
+    {
+     "key": "vote",
+     "how": "City elections are nonpartisan and at large, held the first Tuesday in November of odd years with the runoff the second Tuesday in December. Register through the Miami-Dade Supervisor of Elections.",
+     "rules": "Mayor every two years; Groups I, II, III elected 2025 and every four years; Groups IV, V, VI elected 2027 and every four years. Majority needed to win outright. Registration closes 29 days before each election (Oct 4 and Nov 15, 2027).",
+     "deadline": "Register by Oct 4, 2027 for the general election",
+     "url": "https://www.votemiamidade.gov",
+     "source": "https://www.miamidade.gov/elections/library/calendar-2027.pdf"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Apply for a seat on a city board or committee through the online board application. The clerk's Boards and Committees Coordinator handles applications.",
+     "rules": "Fill out the online application; appointments are by the Mayor and Commissioners. Coordinator Dasha Nenartovich, 305.673.7000 ext. 26427.",
+     "deadline": null,
+     "url": "http://apps.miamibeachfl.gov/Bacapp",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/boards-and-committees/"
+    },
+    {
+     "key": "public-comment",
+     "how": "Sign up for Residents' Right to Know emails, which flag Commission agenda items that may affect neighborhoods and quality of life, so you can comment before the meeting.",
+     "rules": "Free email subscription.",
+     "deadline": null,
+     "url": "https://apps.miamibeachfl.gov/residentsrighttoknow",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/residents-right-to-know/"
+    }
+   ],
+   "elections": {
+    "next": "2027-11-02",
+    "qualifying": {
+     "start": "2027-09-07",
+     "end": "2027-09-10",
+     "source": "https://www.miamidade.gov/elections/library/calendar-2027.pdf"
+    },
+    "terms": "Mayor: two-year term, elected every odd November, lifetime limit of three terms. Six commissioners in Groups I to VI: four-year staggered terms, lifetime limit of two terms. Groups I, II, III were elected Nov 2025 (runoff Dec 9, 2025) and next run in 2029; Groups IV, V, VI and the Mayor run Nov 2, 2027 with a Dec 14, 2027 runoff. All seats are at large and nonpartisan. Since the Nov 5, 2024 charter amendment, terms begin on the Monday after the December runoff date. Nov 3, 2026 is a special election with one lease ballot question and no seats.",
+    "source": "https://www.miamibeachfl.gov/wp-content/uploads/2023/01/Charter-and-Related-Special-Acts.pdf"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Rafael E. Granado, City Clerk",
+     "email": "CityClerk@miamibeachfl.gov",
+     "phone": "305-673-7411",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/election-information/"
+    },
+    {
+     "role": "clerk",
+     "name": "Lilia Cardillo, Agenda Coordinator",
+     "email": "LiliaCardillo@miamibeachfl.gov",
+     "phone": "305-673-7000 ext. 26780",
+     "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/public-records-request/additional-contacts/",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/public-records-request/additional-contacts/"
+    },
+    {
+     "role": "clerk",
+     "name": "Public records (Ethan Lane, Public Records Coordinator)",
+     "email": "ResearchRequest@miamibeachfl.gov",
+     "phone": "305-673-7000 ext. 26556",
+     "url": "https://miamibeachfl.justfoia.com/publicportal/home/newrequest",
+     "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/public-records-request/"
+    },
+    {
+     "role": "commission office",
+     "name": "Office of the Mayor and Commission",
+     "email": "",
+     "phone": "305-673-7035",
+     "url": "https://www.miamibeachfl.gov/elected-officials/",
+     "source": "https://www.miamibeachfl.gov/elected-officials/"
+    },
+    {
+     "role": "mayor",
+     "name": "Mayor Steven Meiner",
+     "email": "StevenMeiner@miamibeachfl.gov",
+     "phone": "305-673-7035",
+     "url": "https://www.miamibeachfl.gov/staff/mayor-steven-meiner/",
+     "source": "https://www.miamibeachfl.gov/staff/mayor-steven-meiner/"
+    },
+    {
+     "role": "commission office",
+     "name": "Office of Management and Budget (Tameka Otto Stewart, Director)",
+     "email": "tamekaottostewart@miamibeachfl.gov",
+     "phone": "305-673-7510",
+     "url": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/",
+     "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/"
+    }
+   ],
+   "notes": "Agenda system is PrimeGov (portal-miamibeachfl.primegov.com), not Granicus; the portal loads meetings by script and its API refused the fetcher, so individual 2026 agendas could not be read. agendaLeadDays is null: no city page states how many days before a meeting the agenda posts (checked the clerk home, meetings-and-agendas, Residents' Right to Know and dates pages). Schedule comes from the clerk's 2026 Commission Meeting Dates page and stops at Dec 9, 2026; no 2027 meeting dates, 2027 budget hearing dates or 2027 budget calendar are posted (the FY 2027 OMB calendar PDF and all other city PDFs under wp-content are blocked to the fetcher by robots.txt, as are docmgmt.miamibeachfl.gov Laserfiche files and library.municode.com). The subjects of the Nov 12 and Nov 16 special meetings and the Nov 30 workshop are not stated. Public comment rules come from the clerk's dates page and the city's own legal notices published on the county legal-ads site; the Commission's rules of procedure document itself was not found. Charter Article VII (Secs. 7.01 to 7.06), Secs. 2.01, 2.02, 2.04, 2.05, 2.07, 2.08 and the Citizens' Bill of Rights were read from the Jan 2023 'Charter and Related Special Acts' PDF (a 2023 text); the Nov 5, 2024 amendments to Secs. 2.01 (December runoff and Monday installation) and 2.07 were read from the ballot resolutions 2024-33171 and 2024-33359, and the Dec 9, 2025 runoff plus the county's Dec 14, 2027 runoff date confirm the runoff change took effect. Sec. 6.03 qualifying rules were read from the clerk's 2019 posting of Article VI. The Charter has no recall article; Sec. 2.08 defers to state law, so recall thresholds are from F.S. 100.361. No charter section setting a threshold for charter-amendment petitions was found; the Clerk's charter initiative form cites none. 2027 qualifying dates are from the Miami-Dade elections 2027 calendar (marked subject to change); the clerk's 2027 election page still reads TBA and the 2027 candidate handbook is 'in progress'. Nightlife, entertainment district, noise, parking and short-term rental items: no notices on these were found on the clerk's meeting-notices page, the events calendar or the city media library for upcoming 2026 meetings; the Public Safety and Neighborhood Quality of Life Committee (met Oct 21, 2026) and Land Use and Sustainability Committee (Oct 27, 2026) are where such items are usually referred, but their agendas could not be read. Source pages saved under scratchpad cycles-src/miami-beach-*.txt."
+  },
+  {
    "key": "city-miami-gardens",
    "rosterBody": "city-miami-gardens",
    "name": "Miami Gardens City Council",
