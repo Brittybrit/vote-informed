@@ -162,3 +162,19 @@ test('connections: only confirmed rows are public and every one cites a record',
   const { body: one } = await get('/api/v1/people/vicki-l-lopez');
   assert.ok(one.connections && typeof one.connections.underReview === 'number');
 });
+
+test('founder board: state is sanitized and tools change it', async () => {
+  const { loadWorker } = await import('./load-worker.mjs');
+  const w = await loadWorker(['boardState', 'runBoardTool', 'BOARD_TOOLS']);
+  const st = w.boardState({ status: { a: 'done', b: 'nope' }, notes: { a: ['x'] }, extra: [{ id: 'x-1', title: 'T', url: 'http://bad' }], overrides: { a: { url: 'https://ok', title: 'New' } } });
+  assert.deepEqual(st.status, { a: 'done' });
+  assert.equal(st.extra[0].url, '');
+  assert.equal(st.overrides.a.url, 'https://ok');
+  assert.equal(typeof w.runBoardTool(st, ['a'], 'set_status', { id: 'zzz', status: 'done' }), 'string');
+  w.runBoardTool(st, ['a'], 'set_status', { id: 'a', status: 'doing' });
+  assert.equal(st.status.a, 'doing');
+  const r = w.runBoardTool(st, ['a'], 'add_step', { track: 'funding', title: 'New card', status: 'waiting' });
+  assert.ok(r.id.startsWith('x-'));
+  assert.equal(st.status[r.id], 'waiting');
+  assert.ok(w.BOARD_TOOLS.some(t => t.name === 'read_platform'));
+});

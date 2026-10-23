@@ -5,7 +5,11 @@ workers_dev = true
 
 routes = [
   { pattern = "ballot305.org", custom_domain = true },
-  { pattern = "www.ballot305.org", custom_domain = true }
+  { pattern = "www.ballot305.org", custom_domain = true },
+  # wethepeople.org must be added to this Cloudflare account as a zone before these deploy; remove them if the deploy fails on the zone.
+  { pattern = "wethepeople.org", custom_domain = true },
+  { pattern = "www.wethepeople.org", custom_domain = true },
+  { pattern = "admin.wethepeople.org", custom_domain = true }
 ]
 
 [assets]
