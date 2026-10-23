@@ -1,17 +1,277 @@
 {
   "checked": "2026-10-23",
-  "vendors": {},
+  "vendors": {
+    "granicus-legistar": {
+      "name": "Legistar (Agenda LE)",
+      "company": "Granicus, LLC",
+      "products": [
+        "Legistar",
+        "Legistar InSite (<client>.legistar.com)",
+        "Legistar Web API",
+        "govMeetings video (ViewPublisher)"
+      ],
+      "api": {
+        "exists": true,
+        "public": true,
+        "docs": "https://webapi.legistar.com/Help",
+        "notes": "REST/OData at https://webapi.legistar.com/v1/{client}/... No auth needed for the clients tested (coralgables, doral, pinecrest, miamidade). Endpoint groups: Events, EventItems, Matters, MatterAttachments, MatterHistories, MatterTexts, MatterSponsors, Bodies, Persons, OfficeRecords, RollCalls, Votes, VoteTypes, Actions, Indexes. Events carry EventAgendaFile and EventMinutesFile PDF URLs plus EventInSiteURL. Supports $filter (substringof), $orderby, $top. Caveats seen: passed flags, votes and tallies were null for Doral and Pinecrest items (clerks do not finalize minutes in Legistar); miamidade client is stale (last event 2018-06-19). /matters/{id}/texts/{ver} returned null text for Pinecrest. Attachment PDFs live on legistar1.granicus.com, which blocks automated fetchers (robots), and LegislationDetail.aspx pages return 'Invalid parameters!' to non-browser clients."
+      },
+      "robots": "webapi.legistar.com allows automated reads (no robots block seen); legistar1.granicus.com attachment/agenda PDFs are robots-disallowed; <client>.legistar.com detail pages reject non-browser requests",
+      "exportFormats": [
+        "json",
+        "xml",
+        "html",
+        "pdf",
+        "rss"
+      ],
+      "source": "https://webapi.legistar.com/Help"
+    },
+    "granicus-govmeetings": {
+      "name": "govMeetings / MediaManager ViewPublisher",
+      "company": "Granicus, LLC",
+      "products": [
+        "govMeetings",
+        "MediaManager",
+        "ViewPublisher.php",
+        "MinutesViewer",
+        "SpeakUp (granicusideas.com)"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "No documented public API. ViewPublisher.php?view_id=N is server-rendered HTML with agenda/minutes PDF and video links; ViewPublisherRSS.php?view_id=N&mode=agendas exists on Granicus hosts but was robots-disallowed to our fetcher on southmiami.granicus.com and sibfl.granicus.com. SpeakUp pages (<client>.granicusideas.com) rendered fine and list agenda items per meeting."
+      },
+      "robots": "blocks automated reads: southmiami.granicus.com, sibfl.granicus.com and palmettobay.granicus.com returned robots_disallowed to the fetcher (robots.txt itself not readable); granicusideas.com allows",
+      "exportFormats": [
+        "html",
+        "pdf",
+        "rss"
+      ],
+      "source": "https://granicus.com/product/agenda-management-onemeeting/"
+    },
+    "primegov": {
+      "name": "PrimeGov / OneMeeting (now Granicus Agenda OE)",
+      "company": "Granicus, LLC (PrimeGov bought by Rock Solid Technologies 2021-03; Rock Solid bought by Granicus 2022-10-12; primegov.com now redirects to granicus.com/product/agenda-management-onemeeting/)",
+      "products": [
+        "OneMeeting / Agenda OE",
+        "Public portal (portal-<client>.primegov.com)",
+        "Swagit video"
+      ],
+      "api": {
+        "exists": true,
+        "public": false,
+        "docs": null,
+        "notes": "Portal is a JS app that loads meetings from /api/v2/PublicPortal/... endpoints (e.g. ListUpcomingMeetings, ListArchivedMeetings); undocumented and unsupported. Our fetcher got client_error on portal-miamibeachfl.primegov.com/api/v2/PublicPortal/ListUpcomingMeetings and the HTML shell rendered with an empty meetings table and noindex,nofollow. miamibeachfl.primegov.com/Portal/Meeting?meetingTemplateId=N pages were robots-disallowed. Third parties (democracy.cc at miamibeachagenda.com) republish Miami Beach agendas, so programmatic access exists but is not documented."
+      },
+      "robots": "blocks automated reads: portal pages noindex,nofollow; Portal/Meeting pages robots-disallowed; API returned client_error to fetcher",
+      "exportFormats": [
+        "html",
+        "pdf",
+        "json"
+      ],
+      "source": "https://granicus.com/product/agenda-management-onemeeting/"
+    },
+    "novusagenda": {
+      "name": "NovusAGENDA",
+      "company": "Granicus, LLC (acquired Novusolutions 2017-08-10)",
+      "products": [
+        "NovusAGENDA",
+        "AgendaPublic (<client>.novusagenda.com/agendapublic/)"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "No API or feed. meetingsresponsive.aspx is server-rendered ASP.NET WebForms HTML with postback sorting; agenda PDF at DisplayAgendaPDF.ashx?MeetingID=N, minutes PDF at DisplayAgendaPDF.ashx?MinutesMeetingID=N, HTML agenda and item views. Scrapeable."
+      },
+      "robots": "allows automated reads (nmb.novusagenda.com fetched fine)",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://www.govtech.com/biz/granicus-acquires-agenda-tech-company-novusolutions.html"
+    },
+    "civicplus-agendacenter": {
+      "name": "Agenda Center (CivicEngage module)",
+      "company": "CivicPlus, LLC",
+      "products": [
+        "CivicEngage CMS",
+        "Agenda Center",
+        "DocumentCenter",
+        "Notify Me"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "No public API. RSS feed per site: /RSSFeed.aspx?ModID=65&CID=All-0 (confirmed on cityofaventura.com: RSS 2.0 'Agenda Creator', items link to /AgendaCenter/PreviousVersions/<id>, no attachments) and /rss.aspx#agendaCenter (Hialeah). Agenda PDF: /AgendaCenter/ViewFile/Agenda/_MMDDYYYY-ID; minutes: /AgendaCenter/ViewFile/Minutes/_MMDDYYYY-ID. HTML listing is server-rendered."
+      },
+      "robots": "allows automated reads (cityofaventura.com, hialeahfl.gov, northmiamifl.gov, miamigardens-fl.gov, opalockafl.gov, palmettobay-fl.gov all fetched)",
+      "exportFormats": [
+        "html",
+        "pdf",
+        "rss"
+      ],
+      "source": "https://www.cityofaventura.com/RSSFeed.aspx?ModID=65&CID=All-0"
+    },
+    "civicplus-civicweb": {
+      "name": "CivicWeb (formerly iCompass)",
+      "company": "CivicPlus, LLC",
+      "products": [
+        "CivicWeb Portal (<client>.civicweb.net/Portal/)",
+        "CivicClerk"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "No documented public API. Portal is server-rendered HTML with document download links; could not be verified because the fetcher was robots-disallowed on miamigardens.civicweb.net."
+      },
+      "robots": "blocks automated reads (miamigardens.civicweb.net robots_disallowed to fetcher)",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://miamigardens.civicweb.net/Portal/Default.aspx"
+    },
+    "escribe": {
+      "name": "eSCRIBE",
+      "company": "OnBoard (Passageways) since 2021-08-04; not Diligent/iCompass",
+      "products": [
+        "eSCRIBE meeting management",
+        "Public portal (pub-<client>.escribemeetings.com)"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "No documented API. Third-party connectors (PublicInput) read the public portal HTML with no API key. Our fetcher got client_error on pub-cutlerbay-fl.escribemeetings.com; the portal is a JS-heavy ASP.NET app (MeetingsCalendarView.aspx, FileStream.ashx for PDFs)."
+      },
+      "robots": "unknown: pub-cutlerbay-fl.escribemeetings.com returned client_error to the fetcher (robots.txt not readable)",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://www.jmi.com/onboard-acquires-leading-public-sector-meeting-management-solution-escribe/"
+    },
+    "champ": {
+      "name": "CHAMP",
+      "company": "Champion Data Systems (champds.com)",
+      "products": [
+        "CHAMP agenda/minutes/video",
+        "Player (play.champds.com/<client>/archive/N)"
+      ],
+      "api": {
+        "exists": true,
+        "public": false,
+        "docs": null,
+        "notes": "play.champds.com is a JavaScript shell that fetches event lists from a backend (playapi) at runtime; nothing documented. Our fetcher received only the empty HTML shell for play.champds.com/northmiamifl/archive/1."
+      },
+      "robots": "unknown: page is JS-rendered; no robots block seen but no content without a browser",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://help.champds.com/knowledgebase/minutes-video-walkthrough/"
+    },
+    "laserfiche-weblink": {
+      "name": "Laserfiche WebLink",
+      "company": "Laserfiche",
+      "products": [
+        "WebLink public portal"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "WebLink is a browse/search UI over a records repository (Browse.aspx?id=&dbid=&repo=). No public API on the WebLink surface; used here only for minutes archives."
+      },
+      "robots": "allows (not probed)",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://www.medleydocs.com/WebLink/Welcome.aspx?dbid=0&repo=LFMedley"
+    },
+    "inhouse-govaction": {
+      "name": "Miami-Dade Legislative Information (govaction)",
+      "company": "Miami-Dade County (in-house ASP pages over a Legistar back end)",
+      "products": [
+        "govaction/agendas.asp",
+        "govaction/minutes.asp",
+        "govaction/matter.asp",
+        "legistarfiles PDFs",
+        "MinMatters PDFs"
+      ],
+      "api": {
+        "exists": true,
+        "public": true,
+        "docs": "https://webapi.legistar.com/Help",
+        "notes": "Legistar Web API client 'miamidade' answers (bodies, events, matters) but is stale: latest event 2018-06-19, matters stop at 2018. Current data is only on the in-house ASP pages: agendas.asp?Action=Agendas&Oper=DisplayAgenda&Agenda=CC, matter.asp?matter=NNNNNN&file=true&yearFolder=YNNNN, PDFs at /govaction/legistarfiles/Matters/YNNNN/NNNNNN.pdf and /MinMatters/YNNNN/NNNNNNmin.pdf. Email agenda subscription (lsubmain.asp); footer RSS is county news only."
+      },
+      "robots": "allows automated reads of legistarfiles PDFs and agendas.asp; some pages (legsearch.asp, robots.txt) returned client_error to fetcher",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "http://www.miamidade.gov/govaction/agendas.asp?Action=Agendas&Oper=DisplayList"
+    },
+    "inhouse-dadeschools": {
+      "name": "M-DCPS School Board agenda pages",
+      "company": "Miami-Dade County Public Schools ITS (in-house)",
+      "products": [
+        "www3.dadeschools.net/SchoolBoard",
+        "pdfs.dadeschools.net/Bdarch/YYYY/BdMMDDYY/agenda/<item>.pdf",
+        "BoardDocs (Board Policies only)"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "Per-item PDFs under a predictable path (Bdarch/<year>/Bd<mmddyy>/agenda/<letter><n>.pdf) plus HTML/ASP agenda change pages. Item H-3 of 2023-07-19 says BoardDocs runs only the Board Policies site and ITS would build a searchable agenda archive in-house. No API, no RSS."
+      },
+      "robots": "allows reads of pdfs.dadeschools.net; www3.dadeschools.net is a JS app that returned only a header to the fetcher",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://pdfs.dadeschools.net/Bdarch/2023/Bd071923/agenda/h3.pdf"
+    },
+    "inhouse-website": {
+      "name": "Municipal website uploads (no agenda system)",
+      "company": "varies: WordPress (El Portal, Virginia Gardens), Revize (Key Biscayne), Vision/Granicus govAccess CMS (Biscayne Park), SpaceNet-Media (Medley)",
+      "products": [
+        "PDF uploads linked from a CMS page"
+      ],
+      "api": {
+        "exists": false,
+        "public": false,
+        "docs": null,
+        "notes": "Agendas and minutes are hand-uploaded PDFs listed on a CMS page. Machine access is page scraping only; file names are sometimes random (Medley, Virginia Gardens numeric scans) and sometimes patterned (El Portal <Type>-<Agenda|Minutes>-YYYYMMDD.pdf; Biscayne Park /vertical/sites/{GUID}/uploads/...)."
+      },
+      "robots": "allows automated reads on all five sites",
+      "exportFormats": [
+        "html",
+        "pdf"
+      ],
+      "source": "https://elportalvillage.com/village-meetings/"
+    }
+  },
   "bodies": [
     {
       "body": "county",
       "rosterBody": "mdc-commission",
       "system": "inhouse-govaction",
       "systemUrl": "http://www.miamidade.gov/govaction/agendas.asp?Action=Agendas&Oper=DisplayList",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "granicus-legistar (back end; webapi.legistar.com/v1/miamidade is stale since 2018-06)",
+        "miamidade.gov/global/webcasting for video"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "agendas.asp index fetched as plain HTML with per-body links; matter and minutes PDFs at /govaction/legistarfiles/ fetched fine; Legistar API answers for client miamidade but latest event is 2018-06-19.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC (Legistar)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -20,16 +280,19 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No Board item awarding or renewing Legistar found. Legistar API title search for Granicus/Legistar/legislative management returned nothing; web hits on miamidade.gov for Granicus were unrelated ITD/CITD items (COTS contract 060B2490021 expiring 2027-09-30, OpenText BW733-2/25, Crayon Microsoft EVN0000270, Kologik L-10534, Priority Dispatch L-9007). The Legistar license may be bought under the COTS reseller contract or below Board threshold; not stated in any record seen. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "school-board",
       "rosterBody": "mdcps-board",
       "system": "inhouse-dadeschools",
       "systemUrl": "https://www3.dadeschools.net/SchoolBoard/",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "pdfs.dadeschools.net/Bdarch item PDFs",
+        "BoardDocs for Board Policies only"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "www3.dadeschools.net/SchoolBoard returned only a JS shell; per-item PDFs at pdfs.dadeschools.net/Bdarch/2025/Bd111925/agenda/sp2.pdf and 2023/Bd071923/agenda/h3.pdf fetched fine.",
       "contract": {
         "vendor": null,
         "approvedOn": null,
@@ -38,20 +301,22 @@
         "expires": null,
         "annualCost": null,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://pdfs.dadeschools.net/Bdarch/2023/Bd071923/agenda/h3.pdf"
       },
-      "notes": "pending"
+      "notes": "In-house. Item H-3 (2023-07-19) states no vendor could provide a searchable archive and directs ITS to build one; BoardDocs is used only for Board Policies. No agenda system contract exists to expire."
     },
     {
       "body": "city-aventura",
       "rosterBody": "city-aventura",
       "system": "civicplus-agendacenter",
       "systemUrl": "https://www.cityofaventura.com/AgendaCenter",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "laserfiche-weblink (egov2.cityofaventura.com/Imaging for archived agendas, minutes, recaps)"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "RSS at /RSSFeed.aspx?ModID=65&CID=All-0 returned RSS 2.0 'Agenda Creator' items linking to AgendaCenter/PreviousVersions/<id>; agenda and minutes PDFs at /AgendaCenter/ViewFile/... fetched fine.",
       "contract": {
-        "vendor": null,
+        "vendor": "CivicPlus, LLC",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -60,16 +325,18 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "Agenda Center is a module of the CivicPlus website contract; no separate agenda system award found. Sampled commission agendas (2019-02-07, 2026-01-13, 2026-02-03) had no CivicPlus item. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-biscayne-park",
       "rosterBody": "city-biscayne-park",
       "system": "inhouse-website",
       "systemUrl": "https://biscayneparkfl.gov/agendas",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "YouTube for video"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "Agendas page lists meetings by type and date linking to PDFs under /vertical/sites/{GUID}/uploads/ (Vision Internet / Granicus govAccess CMS pattern); no feed.",
       "contract": {
         "vendor": null,
         "approvedOn": null,
@@ -80,76 +347,86 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No agenda management system; PDFs on the village CMS. No contract to find."
     },
     {
       "body": "city-coral-gables",
       "rosterBody": "city-coral-gables",
       "system": "granicus-legistar",
       "systemUrl": "https://coralgables.legistar.com/",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "YouTube (coralgablestv) for video"
+      ],
+      "machineReadable": "yes",
+      "howObserved": "webapi.legistar.com/v1/coralgables/events and /matters returned JSON without auth (events back to 2005, matters current to 2026-10-22).",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
         "expires": null,
         "annualCost": null,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://www.coralgables.com/CitywideActiveContracts"
       },
-      "notes": "pending"
+      "notes": "Legistar API title search for Granicus/Legistar/agenda management/legislative management returned no matters. The Citywide Active Contracts List (live page and 2022-06-23 PDF at coralgables.com/media/713) has no Granicus or Legistar row; only Infor ERP (BW 2021-034) and lobbying PSAs. Purchase is likely below Commission threshold. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-cutler-bay",
       "rosterBody": "city-cutler-bay",
       "system": "escribe",
       "systemUrl": "https://pub-cutlerbay-fl.escribemeetings.com/",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "Zoom for live meetings",
+        "time-stamped audio in eScribe"
+      ],
+      "machineReadable": "no",
+      "howObserved": "pub-cutlerbay-fl.escribemeetings.com returned client_error to the fetcher (JS portal); cutlerbay-fl.gov/node/2271 says the portal holds agendas from January 2021 onward.",
       "contract": {
-        "vendor": null,
+        "vendor": "eSCRIBE Software Ltd. (OnBoard)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
         "expires": null,
         "annualCost": null,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://www.cutlerbay-fl.gov/node/2271"
       },
-      "notes": "pending"
+      "notes": "Portal in use since January 2021 per the Town's agendas page. No Town Council award or piggyback found; the only South Florida eSCRIBE award located is Town of Miami Lakes Solicitation 2018-36 (5 years, est. $266,000), a possible piggyback source but not stated in any Cutler Bay record. Town meeting pages on cutlerbay-fl.gov were robots-disallowed. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-doral",
       "rosterBody": "city-doral",
       "system": "granicus-legistar",
       "systemUrl": "https://doral.legistar.com/Calendar.aspx",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "granicus-govmeetings (cityofdoral.granicus.com ViewPublisher view_id=2 for video)",
+        "Granicus govAccess website CMS (NCPA 01-115, item 23-5386)"
+      ],
+      "machineReadable": "yes",
+      "howObserved": "webapi.legistar.com/v1/doral matters, events, eventitems and attachments returned JSON without auth; passed flags and votes are null because minutes are not finalized in Legistar.",
       "contract": {
-        "vendor": null,
-        "approvedOn": null,
-        "approvedBy": null,
-        "term": null,
-        "expires": null,
+        "vendor": "Granicus, Inc.",
+        "approvedOn": "2023-11-08",
+        "approvedBy": "Legistar file 23-5358 (Council Meeting item B, 'Approving Continuing Agreement with Granicus'); prior award file 20-3648 of 2020-03-11 adding Legistar (attachment named Resolution 20-37)",
+        "term": "FY 2023-24 subscription ratified plus five additional years, within budgeted funds per fiscal year; competitive bidding waived under Sec. 2-321",
+        "expires": "2028-09-30",
         "annualCost": null,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://webapi.legistar.com/v1/doral/matters?$filter=MatterFile%20eq%20%2723-5358%27"
       },
-      "notes": "pending"
+      "notes": "Expiration is derived: FY 23-24 plus five fiscal years ends 2028-09-30 if all years are used; the resolution itself gives no calendar date. Annual cost is in the Quote and Purchase Order attachments (legistar1.granicus.com/Doral/attachments/483ca0eb-... and 40f8f0c5-...), which are robots-blocked; the title caps spending at budgeted funds per FY. Vote and resolution number not available in the API (EventItemPassedFlagName null). Related: 23-5386 (2023-12-06) bought Granicus website CMS via NCPA 01-115, NTE $181,977.25 over up to five years; 19-3470 (2019-10-21) and 18-2669 (2018-04-16) continued the video/captioning agreement."
     },
     {
       "body": "city-el-portal",
       "rosterBody": "city-el-portal",
       "system": "inhouse-website",
       "systemUrl": "https://elportalvillage.com/village-meetings/",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "elportalvillage.com/videos/"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "WordPress page lists meetings with Agenda and Minutes PDFs at /wp-content/uploads/YYYY/MM/<Type>-<Agenda|Minutes>-YYYYMMDD.pdf; no feed.",
       "contract": {
         "vendor": null,
         "approvedOn": null,
@@ -160,38 +437,44 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No agenda management system. No contract to find."
     },
     {
       "body": "city-hialeah",
       "rosterBody": "city-hialeah",
       "system": "civicplus-agendacenter",
       "systemUrl": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "YouTube (cityofhialeahgov) for video",
+        "DocumentCenter for resolutions"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "Agenda Center listing fetched as HTML with ViewFile/Agenda/_MMDDYYYY-ID and ViewFile/Minutes links and an RSS link at /rss.aspx#agendaCenter.",
       "contract": {
-        "vendor": null,
-        "approvedOn": null,
-        "approvedBy": null,
-        "term": null,
+        "vendor": "CivicPlus, LLC",
+        "approvedOn": "2025-04-08",
+        "approvedBy": "Resolution No. 2025-099 (7-0)",
+        "term": "Annual renewal of CivicPlus website maintenance and support, AudioEye, NextRequest, Full-Service Supplementation and Online Code Hosting; bid waiver under Sec. 2-816; no period stated",
         "expires": null,
-        "annualCost": null,
+        "annualCost": 69830.5,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://www.hialeahfl.gov/DocumentCenter/View/20264/Resolution-No-2025-099"
       },
-      "notes": "pending"
+      "notes": "Resolution 2025-099 covers the CivicPlus website bundle that hosts Agenda Center; it does not name agenda software separately and gives no end date, so expires is null. Annual cost is the NTE for the whole CivicPlus bundle (account 001.0201.519.340)."
     },
     {
       "body": "city-key-biscayne",
       "rosterBody": "city-key-biscayne",
       "system": "inhouse-website",
       "systemUrl": "https://www.keybiscayne.fl.gov/government/agendas_minutes.php",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "granicus-govmeetings (keybiscayne.granicus.com ViewPublisher view_id=1 for video and meeting publishing)",
+        "Laserfiche portals for contracts and financial reports"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "Revize CMS page ('Powered by revize') fetched as HTML; agendas/minutes are PDFs under /Documents/ and on the Granicus ViewPublisher; no feed.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC (video/publishing)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -200,18 +483,20 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "Village uses Granicus ViewPublisher for meeting video and publishing; no Village Council item awarding Granicus or an agenda system found (searches returned only Biscayne Park and county PDFs). Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-medley",
       "rosterBody": "city-medley",
       "system": "inhouse-website",
       "systemUrl": "https://www.townofmedley.com/council-meetings/2026%20Council%20Meetings%20Agendas",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "laserfiche-weblink (medleydocs.com, repo LFMedley) for minutes"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "Agenda page (SpaceNet-Media site) lists 10 PDF links under /uploads/meetings/ with random file names; minutes are in a Laserfiche WebLink repository; no feed.",
       "contract": {
-        "vendor": null,
+        "vendor": "Laserfiche (minutes archive)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -220,18 +505,22 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No agenda management system; Laserfiche WebLink holds minutes. No Town record of a Laserfiche or agenda contract found. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-miami-beach",
       "rosterBody": "city-miami-beach",
       "system": "primegov",
       "systemUrl": "https://portal-miamibeachfl.primegov.com/",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "Swagit (miamibeachfl.new.swagit.com) for video",
+        "miamibeachfl.gov/wp-content agenda PDFs",
+        "docmgmt.miamibeachfl.gov WebLink for pre-2017 archive"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "Portal HTML rendered with empty meeting table (JS-loaded), noindex,nofollow; /api/v2/PublicPortal/ListUpcomingMeetings returned client_error; Portal/Meeting pages robots-disallowed; agenda PDFs on miamibeachfl.gov fetch fine.",
       "contract": {
-        "vendor": null,
+        "vendor": "PrimeGov / Rock Solid Technologies (now Granicus, LLC)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -240,18 +529,22 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No commission item, LTC or contract award for PrimeGov found. Searched site:miamibeachfl.gov for PrimeGov, Rock Solid, OneMeeting, agenda management; the city's contract search app (apps.miamibeachfl.gov/contractawards/) returned a server error to the fetcher. PrimeGov was acquired by Rock Solid Technology (2021) and Rock Solid by Granicus (2022-10-12), so any renewal would now be with Granicus. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-miami-gardens",
       "rosterBody": "city-miami-gardens",
       "system": "civicplus-civicweb",
       "systemUrl": "https://miamigardens.civicweb.net/Portal/Default.aspx",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "laserfiche-weblink (edocs.miamigardens-fl.gov) for minutes",
+        "civicplus-agendacenter (miamigardens-fl.gov/AgendaCenter, older agendas)",
+        "YouTube for video"
+      ],
+      "machineReadable": "no",
+      "howObserved": "miamigardens.civicweb.net was robots-disallowed to the fetcher; older Agenda Center PDFs on miamigardens-fl.gov fetched fine.",
       "contract": {
-        "vendor": null,
+        "vendor": "CivicPlus, LLC (CivicWeb, formerly iCompass)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -260,18 +553,20 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No council resolution for iCompass/CivicWeb/CivicPlus agenda software found; sampled 2020 agendas (2020-01-08, 2020-02-12) had no such item. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-north-miami-beach",
       "rosterBody": "city-north-miami-beach",
       "system": "novusagenda",
       "systemUrl": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "NMBTV live stream (citynmb.com/174)"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "meetingsresponsive.aspx fetched as server-rendered HTML listing nine meetings 2026-08-20 to 2026-10-06 with HTML agenda, DisplayAgendaPDF.ashx?MeetingID= and ?MinutesMeetingID= links; no RSS/iCal/API.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC (NovusAGENDA)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -280,18 +575,21 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No commission resolution awarding or renewing NovusAGENDA/Granicus found on citynmb.com or nmb.novusagenda.com. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-north-miami",
       "rosterBody": "city-north-miami",
       "system": "champ",
       "systemUrl": "https://play.champds.com/northmiamifl/archive/1",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "civicplus-agendacenter (northmiamifl.gov/AgendaCenter for boards and commissions; council agendas there through 2022)",
+        "NoMi TV"
+      ],
+      "machineReadable": "no",
+      "howObserved": "play.champds.com returned only a JS shell with no meeting data; northmiamifl.gov/477/Agendas-Minutes says council and special magistrate meetings are on CHAMP and boards on Agenda Center.",
       "contract": {
-        "vendor": null,
+        "vendor": "Champion Data Systems (CHAMP)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -300,18 +598,20 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No council resolution or purchase for CHAMP/Champion Data Systems found; Agenda Center hits were 2018 and 2022 agendas with no such item. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-opa-locka",
       "rosterBody": "city-opa-locka",
-      "system": "civicplus-civicengage",
+      "system": "civicplus-agendacenter",
       "systemUrl": "https://opalockafl.gov/304/Agendas-Minutes",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "YouTube (CityofOpaLocka) for video"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "CivicEngage site ('Government Websites by CivicPlus') fetched as HTML; the /304/Agendas and /366/Minutes pages returned navigation only, so listing format (Agenda Center vs DocumentCenter PDFs) is unconfirmed.",
       "contract": {
-        "vendor": null,
+        "vendor": "CivicPlus, LLC",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -320,18 +620,22 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No commission resolution for CivicPlus or an agenda system found on opalockafl.gov. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-palmetto-bay",
       "rosterBody": "city-palmetto-bay",
-      "system": "civicplus-civicengage",
+      "system": "civicplus-agendacenter",
       "systemUrl": "https://www.palmettobay-fl.gov/1419/Meeting-Central-Agendas-Minutes-Videos",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "granicus-govmeetings (palmettobay.granicus.com ViewPublisher view_id=3 and 5 for video)",
+        "SpeakUp (palmettobay.granicusideas.com) for agenda items and comments",
+        "Agenda Center archive 2014-2022"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "CivicPlus Meeting Central page fetched as HTML; palmettobay.granicusideas.com meeting pages fetched with full agenda item lists; palmettobay.granicus.com ViewPublisher robots-disallowed.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC (video and SpeakUp); CivicPlus, LLC (website)",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -340,38 +644,44 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No council item awarding Granicus or CivicPlus found; sampled SpeakUp agendas for 2023-09-11, 2024-09-09, 2025-06-02 and 2025-11-03 had none. Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-pinecrest",
       "rosterBody": "city-pinecrest",
       "system": "granicus-legistar",
       "systemUrl": "https://pinecrest.legistar.com/Calendar.aspx",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "granicus-govmeetings (pinecrest.granicus.com ViewPublisher view_id=2 for video)",
+        "Granicus govAccess website CMS (VOP1415/VOP1427, 2022)"
+      ],
+      "machineReadable": "yes",
+      "howObserved": "webapi.legistar.com/v1/pinecrest/matters and attachments returned JSON without auth (matters current to 2026-10-07); passed dates null; matter text null.",
       "contract": {
-        "vendor": null,
-        "approvedOn": null,
-        "approvedBy": null,
+        "vendor": "Granicus, Inc.",
+        "approvedOn": "2023-01-10",
+        "approvedBy": "Legistar file VOP1551 (Consent Agenda, agenda date 2023-01-10): resolution authorizing the Village Manager to renew Granicus subscription fees for live video streaming services",
         "term": null,
         "expires": null,
         "annualCost": null,
         "renewalsLeft": null,
-        "source": null
+        "source": "https://webapi.legistar.com/v1/pinecrest/matters?$filter=MatterFile%20eq%20%27VOP1551%27"
       },
-      "notes": "pending"
+      "notes": "VOP1551 is a Granicus subscription renewal for video streaming; the attachment 'TAB 5-Subscription Fee Agreement Renewal - Granicus' (legistar1.granicus.com/Pinecrest/attachments/76a3206e-...pdf) is robots-blocked so term, cost and end date are unknown. No matter naming Legistar or agenda management found in the API; Legistar may be bundled in the same Granicus subscription. VOP1415 (2022-06-08) and VOP1427 (2022-07-02) amended the Granicus contract for the website CMS."
     },
     {
       "body": "city-south-miami",
       "rosterBody": "city-south-miami",
       "system": "granicus-govmeetings",
       "systemUrl": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "somifl.gov DocumentCenter for posted agenda PDFs",
+        "Miami-Dade County ITD interlocal for IT support (R-? 2024-05-07, expires 2028-09-30)"
+      ],
+      "machineReadable": "no",
+      "howObserved": "southmiami.granicus.com ViewPublisher and ViewPublisherRSS were robots-disallowed to the fetcher; agenda PDFs on somifl.gov/DocumentCenter fetched fine.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC",
         "approvedOn": null,
         "approvedBy": null,
         "term": null,
@@ -380,36 +690,41 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No commission resolution awarding Granicus found (site:somifl.gov Granicus returned nothing relevant). Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-sunny-isles-beach",
       "rosterBody": "city-sunny-isles-beach",
       "system": "granicus-govmeetings",
       "systemUrl": "https://sibfl.granicus.com/ViewPublisher.php?view_id=2",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "YouTube (cityofsib) live",
+        "Granicus website services"
+      ],
+      "machineReadable": "no",
+      "howObserved": "sibfl.granicus.com ViewPublisher was robots-disallowed to the fetcher; sibfl.gov pages fetched as HTML but link out to Granicus for all agendas.",
       "contract": {
-        "vendor": null,
+        "vendor": "Granicus, LLC",
         "approvedOn": null,
         "approvedBy": null,
-        "term": null,
+        "term": "purchase order for agenda management and website services for FY 2025-26 (third-party meeting summary; not a city record)",
         "expires": null,
         "annualCost": null,
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "A cp.soar.com summary of the 2025-11-20 commission meeting says the commission 'Authorized a purchase order to Granicus for agenda-management and website services for FY25-26'. The city's own agenda for that meeting is on the robots-blocked Granicus host, so approval date, amount and resolution number are not recorded here; expires left null (FY25-26 would end 2026-09-30, within 18 months, if confirmed). Searched the body's own agendas, resolutions and procurement pages 2019 to 2026 via web search for the vendor name plus agenda management, Legistar, PrimeGov, CivicPlus, NovusAGENDA, eScribe, iCompass, Laserfiche; no award, renewal or piggyback found."
     },
     {
       "body": "city-virginia-gardens",
       "rosterBody": "city-virginia-gardens",
       "system": "inhouse-website",
       "systemUrl": "https://virginiagardens-fl.gov/mayor-council/#MembersMeetingsAgenda-2",
-      "alsoUses": [],
-      "machineReadable": null,
-      "howObserved": "",
+      "alsoUses": [
+        "virginiagardens-fl.gov/village-meetings/archive-YYYY/"
+      ],
+      "machineReadable": "partial",
+      "howObserved": "WordPress page with an HTML table (Meeting, Date/Time, Agenda, Minutes) linking to scanned PDFs under /wp-content/uploads with numeric names; paginated; no feed.",
       "contract": {
         "vendor": null,
         "approvedOn": null,
@@ -420,8 +735,8 @@
         "renewalsLeft": null,
         "source": null
       },
-      "notes": "pending"
+      "notes": "No agenda management system. No contract to find."
     }
   ],
-  "notes": "initial skeleton; vendors and contracts pending"
+  "notes": "Vendor tally (primary agenda/minutes system): Granicus Legistar 3 (Coral Gables, Doral, Pinecrest); Granicus govMeetings/ViewPublisher 2 (South Miami, Sunny Isles Beach); Granicus-owned PrimeGov/OneMeeting 1 (Miami Beach); Granicus-owned NovusAGENDA 1 (North Miami Beach); CivicPlus Agenda Center 5 (Aventura, Hialeah, Opa-locka, Palmetto Bay, plus North Miami boards); CivicPlus CivicWeb 1 (Miami Gardens); eSCRIBE (OnBoard) 1 (Cutler Bay); CHAMP 1 (North Miami); in-house 6 (County govaction, School Board, Biscayne Park, El Portal, Medley, Virginia Gardens, Key Biscayne website; Medley and Miami Gardens use Laserfiche WebLink for minutes). Granicus therefore touches 10 of 21 bodies when video hosting (Key Biscayne, Palmetto Bay, Doral) is counted. Only one contract has a derivable expiration (Doral, 2028-09-30, derived from 'five additional years' after FY 2023-24). Hialeah 2025-099 and Pinecrest VOP1551 are dated approvals without end dates. Blockers: the shell cannot reach any government or vendor host (proxy CONNECT 403); the fetcher is robots-blocked on legistar1.granicus.com attachments (quotes, master agreements), <client>.granicus.com ViewPublisher, civicweb.net, miamibeachfl.primegov.com and cutlerbay-fl.gov meeting pages, so contract PDFs attached to Legistar items could not be read. Dates and costs recorded only from the body's own records; third-party summaries are flagged in notes."
 }
