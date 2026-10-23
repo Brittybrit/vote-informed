@@ -93,3 +93,7 @@ City data coverage and public records requests live in `public/data/coverage.jso
 ## Cities with scanned reports
 
 `public/data/city-reports.json` holds donors typed in from cities that post only scanned treasurer's reports (Aventura, Pinecrest, South Miami; North Miami Beach has totals only). Each row is `[date, contributor, type, amount, kind]`: type `I` individual, `B` business, `F` political committee, `S` the candidate; kind `loan` or `in-kind` when it applies. When the clerk posts a new report, add it to the candidate's `reports` with its `period` and `url`, check the rows add up to the report's summary page, bump `updated` (cards refresh when it changes), and deploy.
+
+## We the People 305 (separate Worker)
+
+`wtp/` is a second Cloudflare Worker for wethepeople305.org. It is deployed on its own so nothing in it can affect the voter guide. It serves a holding page at the root and the founder board at admin.wethepeople305.org (behind its own `ADMIN_TOKEN`); the board's chat reads ballot305's public API over HTTPS and has no access to this Worker's storage. First-time setup from `wtp/`: `npx wrangler kv namespace create CACHE` (paste the id into `wtp/wrangler.toml`), `npx wrangler secret put ADMIN_TOKEN`, `npx wrangler secret put ANTHROPIC_API_KEY`, then `npx wrangler deploy`.

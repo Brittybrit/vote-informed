@@ -163,40 +163,12 @@ test('connections: only confirmed rows are public and every one cites a record',
   assert.ok(one.connections && typeof one.connections.underReview === 'number');
 });
 
-test('founder board: state is sanitized and tools change it', async () => {
-  const { loadWorker } = await import('./load-worker.mjs');
-  const w = await loadWorker(['boardState', 'runBoardTool', 'BOARD_TOOLS']);
-  const st = w.boardState({ status: { a: 'done', b: 'nope' }, notes: { a: ['x'] }, extra: [{ id: 'x-1', title: 'T', url: 'http://bad' }], overrides: { a: { url: 'https://ok', title: 'New' } } });
-  assert.deepEqual(st.status, { a: 'done' });
-  assert.equal(st.extra[0].url, '');
-  assert.equal(st.overrides.a.url, 'https://ok');
-  assert.equal(typeof w.runBoardTool(st, ['a'], 'set_status', { id: 'zzz', status: 'done' }), 'string');
-  w.runBoardTool(st, ['a'], 'set_status', { id: 'a', status: 'doing' });
-  assert.equal(st.status.a, 'doing');
-  const r = w.runBoardTool(st, ['a'], 'add_step', { track: 'funding', title: 'New card', status: 'waiting' });
-  assert.ok(r.id.startsWith('x-'));
-  assert.equal(st.status[r.id], 'waiting');
-  assert.ok(w.BOARD_TOOLS.some(t => t.name === 'read_platform'));
-});
-
-test('hosts: ballot305.org root is the home page, the admin host root is the board, nothing else differs', async () => {
-  const { loadWorker, fakeKV } = await import('./load-worker.mjs');
-  const w = await loadWorker([]);
-  const served = [];
-  const wenv = { CACHE: fakeKV(), ASSETS: { fetch: async req => { const u = new URL(req.url); if (u.pathname.startsWith('/data/')) return env.ASSETS.fetch(req); served.push(u.pathname); return new Response('asset:' + u.pathname, { status: 200, headers: { 'content-type': 'text/html' } }); } } };
-  const hit = async (host, path) => { served.length = 0; const r = await w.__default.fetch(new Request('https://' + host + path), wenv, { waitUntil() {} }); return { status: r.status, asset: served[0] || null, text: await r.text() }; };
-  for (const host of ['ballot305.org', 'www.ballot305.org', 'wethepeople305.org', 'www.wethepeople305.org']) {
-    const r = await hit(host, '/');
-    assert.equal(r.status, 200, host);
-    assert.equal(r.asset, '/', host + ' root must come from the static home page');
-    assert.doesNotMatch(r.text, /Not found/, host);
-  }
-  const admin = await hit('admin.wethepeople305.org', '/');
-  assert.equal(admin.asset, '/admin/board.html');
-  // Other pages never reach the Worker in production (assets serve them first), so only the root is checked here.
-  const api = await w.__default.fetch(new Request('https://wethepeople305.org/api/v1'), wenv, { waitUntil() {} });
-  assert.equal(api.status, 200);
-  // The board's state and chat stay behind the token on every host.
-  const board = await w.__default.fetch(new Request('https://ballot305.org/api/admin/board'), wenv, { waitUntil() {} });
-  assert.ok([401, 404].includes(board.status), 'board state is not served without the token');
+test('ballot305 config: only its own domains, no admin host, no board code', async () => {
+  const { readFileSync } = await import('node:fs');
+  const toml = readFileSync(new URL('../wrangler.toml', import.meta.url), 'utf8');
+  const routes = [...toml.matchAll(/pattern = "([^"]+)"/g)].map(m => m[1]);
+  assert.deepEqual(routes, ['ballot305.org', 'www.ballot305.org']);
+  assert.doesNotMatch(toml, /run_worker_first/);
+  const src = readFileSync(new URL('../src/worker.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(src, /wethepeople|boardChat|BOARD_KEY/);
 });

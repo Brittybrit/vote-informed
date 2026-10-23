@@ -1,0 +1,27 @@
+name = "wethepeople"
+main = "src/worker.js"
+compatibility_date = "2026-01-01"
+workers_dev = false
+
+routes = [
+  { pattern = "wethepeople305.org", custom_domain = true },
+  { pattern = "www.wethepeople305.org", custom_domain = true },
+  { pattern = "admin.wethepeople305.org", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+# The root must reach the Worker so the admin host can serve the board instead of the holding page.
+run_worker_first = ["/", "/index.html", "/admin/*", "/api/*"]
+
+# Its own storage, separate from ballot305. Create it once:  npx wrangler kv namespace create CACHE
+# then paste the id it prints below.
+[[kv_namespaces]]
+binding = "CACHE"
+id = "REPLACE_WITH_KV_ID"
+
+[vars]
+PLATFORM_ORIGIN = "https://ballot305.org"
+
+# Secrets (set once with `npx wrangler secret put NAME`): ADMIN_TOKEN, ANTHROPIC_API_KEY
