@@ -33,6 +33,16 @@
  * and cached per isolate until the data file's "updated" date changes.
  */
 
+
+// A term with no end date counts as current unless the roster marks it as a past seat: last seen at a
+// meeting, ended by a successor, or noted as a former member.
+export function seatedOn(t, day) {
+  if (t.start != null && t.start > day) return false;
+  if (t.end != null) return t.end >= day;
+  if (t.endKnown === false && (t.lastSeen || t.endBy || /^Former member/.test(t.note || ''))) return false;
+  return true;
+}
+
 export const API_VERSION = '1';
 // Data license. Code is MIT (LICENSE). The data is published under CC BY 4.0 with attribution to
 // Ballot305 (ballot305.org); the underlying records are public government records.
@@ -496,7 +506,7 @@ function now(data, q) {
     if (!offices.length) continue;
     const cycle = data.cyclesByBody.get(w.body) || null;
     const seats = offices.map(o => {
-      const terms = (data.termsByOffice.get(o.id) || []).filter(t => (t.start == null || t.start <= today) && (t.end == null || t.end >= today));
+      const terms = (data.termsByOffice.get(o.id) || []).filter(t => seatedOn(t, today));
       const holders = terms.map(t => holder(t, data));
       const races = (data.ballotByOffice.get(o.id) || []).map(r => ({ office: r.office, judicial: !!r.judicial, candidates: (r.candidates || []).map(c => ({ person: c.person, name: c.asPrinted || (c.person && data.people.get(c.person) || {}).name || null, party: c.party || null, incumbent: holders.some(h => h.person === c.person) })) }));
       return { office: o.id, name: o.name, district: o.district == null ? null : o.district, kind: o.kind || null, actionScope: o.actionScope || 'all', holders, onBallot: races, contact: data.contacts.offices[o.id] || null };

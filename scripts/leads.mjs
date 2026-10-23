@@ -47,7 +47,7 @@ const COMMON = new Set(['garcia', 'rodriguez', 'martinez', 'hernandez', 'lopez',
 // Officials: everyone seated today on the local bodies we track.
 const today = new Date().toISOString().slice(0, 10);
 const officeById = new Map(roster.offices.map(o => [o.id, o]));
-const seated = roster.terms.filter(t => (t.start == null || t.start <= today) && (t.end == null || t.end >= today));
+const seated = roster.terms.filter(t => (t.start == null || t.start <= today) && (t.end != null ? t.end >= today : !(t.endKnown === false && (t.lastSeen || t.endBy || /^Former member/.test(t.note || '')))));
 const LOCAL = new Set(['county', 'school', 'municipal']);
 const officials = [];
 const seen = new Set();

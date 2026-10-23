@@ -1281,12 +1281,6 @@
    "party": "Democrat"
   },
   {
-   "id": "dan-samaria",
-   "name": "Dan Samaria",
-   "aliases": [],
-   "ids": {}
-  },
-  {
    "id": "dana-goldman",
    "name": "Dana Goldman",
    "aliases": [],
@@ -1334,7 +1328,9 @@
   {
    "id": "daniel-samaria",
    "name": "Daniel Samaria",
-   "aliases": [],
+   "aliases": [
+    "Dan Samaria"
+   ],
    "ids": {}
   },
   {
@@ -14850,7 +14846,7 @@
    "note": "Serving as of 2026-10-18 per the source; start date not stated there."
   },
   {
-   "person": "dan-samaria",
+   "person": "daniel-samaria",
    "office": "city-biscayne-park-member",
    "start": null,
    "end": null,
@@ -27668,7 +27664,7 @@
      "asPrinted": "Daniel Samaria",
      "party": "Nonpartisan",
      "runningMate": null,
-     "matched": "new"
+     "matched": "same person (sourced)"
     }
    ]
   },
