@@ -1,0 +1,155 @@
+{
+  "key": "city-north-miami-beach",
+  "rosterBody": "city-north-miami-beach",
+  "name": "North Miami Beach City Commission",
+  "jurisdiction": "City of North Miami Beach",
+  "level": "municipal",
+  "checked": "2026-10-23",
+  "links": {
+    "home": "https://www.citynmb.com/385/Mayor-City-Commission",
+    "calendar": "https://www.citynmb.com/calendar.aspx?CID=23",
+    "agendas": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx",
+    "minutes": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx",
+    "video": "https://www.citynmb.com/174/NMBTV-Live-Stream",
+    "clerk": "https://www.citynmb.com/273/City-Clerk"
+  },
+  "meetings": {
+    "pattern": "The city calendar shows a monthly cycle on a Tuesday (September 15 and October 20, 2026 were the third Tuesday): CRA Board 4:00 p.m., City Commission Conference 5:00 p.m., City Commission Meeting 6:00 p.m., City Hall Commission Chamber, 17011 NE 19th Avenue. The city's meetings page says conference start times vary with the agenda. Broadcast on Comcast 77 and streamed on NMBTV.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-10-20", "time": "18:00", "kind": "regular", "note": "POSTPONED per the city calendar (Conference 5:00 p.m. and CRA 4:00 p.m. also postponed); no new date posted as of 2026-10-23", "source": "https://www.citynmb.com/calendar.aspx?view=list&year=2026&month=10&day=20&CID=23" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-10",
+      "end": "2026-09-24",
+      "repeats": "yearly",
+      "decides": "Public Budget Hearing September 10 and Second Budget Hearing September 24, 2026 (5:00 p.m., Commission Chamber) adopt the millage and FY 2026-27 budget.",
+      "source": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "The budget adopted at the September hearings takes effect.",
+      "source": "https://www.citynmb.com/calendar.aspx?CID=23"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the November 2026 election",
+      "start": "2026-08-10",
+      "end": "2026-08-15",
+      "repeats": "once",
+      "decides": "Who runs for Commission Groups 2, 4 and 6; Monday August 10 to Friday August 14, 8:00 a.m. to 5:00 p.m., and Saturday August 15 until noon, by appointment with the City Clerk.",
+      "source": "https://www.citynmb.com/1602/2026-Election"
+    },
+    {
+      "key": "election",
+      "name": "General election and charter special election",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Commission Groups 2, 4 and 6 (four-year terms) and eight charter amendment questions, including moving city elections to May of odd years and extending current terms six months (Secs. 4.1, 4.2, 4.4) and making recall follow general law (Sec. 2.9). Run-off December 1, 2026 if needed.",
+      "source": "https://www.citynmb.com/1751/November-3-2026---Special-Election"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Speak at the Public Comment portion of the Commission Meeting or on a public hearing item. The Commission does not discuss matters raised under Public Comment; a commissioner can bring your item back as a recommendation at a later meeting.",
+      "rules": "Three-minute limit per speaker at all public hearings. Longer matters: arrange a meeting with the appropriate official. No sign-up procedure is posted.",
+      "deadline": "At the meeting",
+      "url": "https://www.citynmb.com/990/City-Commission-Meetings",
+      "source": "https://www.citynmb.com/990/City-Commission-Meetings"
+    },
+    {
+      "key": "written-comment",
+      "how": "No written comment procedure is posted. Email the City Clerk.",
+      "rules": null,
+      "deadline": null,
+      "url": "mailto:andrise.bernard@citynmb.com",
+      "source": "https://www.citynmb.com/273/City-Clerk"
+    },
+    {
+      "key": "contact",
+      "how": "Call or visit the Offices of the Mayor and City Commission, 4th floor of City Hall.",
+      "rules": "305-948-2986; City Hall main line 305-947-7581.",
+      "deadline": null,
+      "url": "https://www.citynmb.com/385/Mayor-City-Commission",
+      "source": "https://www.citynmb.com/385/Mayor-City-Commission"
+    },
+    {
+      "key": "records-request",
+      "how": "Submit a public records request through the City Clerk's portal.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.citynmb.com/1320/Public-Records-Request",
+      "source": "https://www.citynmb.com/273/City-Clerk"
+    },
+    {
+      "key": "petition",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/north_miami_beach/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "referendum",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/north_miami_beach/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "recall",
+      "how": "Charter Sec. 2.9 covers recall; a November 3, 2026 charter question (Question 3) would make recall follow general law, meaning F.S. 100.361. The current Sec. 2.9 text could not be read.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://www.citynmb.com/1751/November-3-2026---Special-Election"
+    },
+    {
+      "key": "qualify",
+      "how": "Qualify in person with the City Clerk by appointment during the qualifying week: Statement of Candidate, loyalty oath, Form 1 financial disclosure and a campaign-account check for the fee ($150 Commission, $180 Mayor).",
+      "rules": "2026 window: August 10 to 14, 8:00 a.m. to 5:00 p.m., and August 15 until noon. Groups 2, 4 and 6 are up in 2026; Mayor (Group 1) and Groups 3, 5, 7 in 2028, unless Question 4 passes and moves elections to May of odd years.",
+      "deadline": "Noon on the Saturday closing the qualifying week",
+      "url": "https://www.citynmb.com/1602/2026-Election",
+      "source": "https://www.citynmb.com/DocumentCenter/View/14828/2026-Candidate-Handbook"
+    },
+    {
+      "key": "vote",
+      "how": "Vote in the November 3, 2026 general election (7:00 a.m. to 7:00 p.m.) through Miami-Dade Elections; a run-off, if needed, is December 1, 2026.",
+      "rules": "Registered North Miami Beach voters; commission seats are citywide groups.",
+      "deadline": "Election Day November 3, 2026",
+      "url": "https://www.citynmb.com/1602/2026-Election",
+      "source": "https://www.citynmb.com/1602/2026-Election"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Apply for a board or committee through the Boards and Committees page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.citynmb.com/310/Boards-Committees",
+      "source": "https://www.citynmb.com/273/City-Clerk"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-08-10", "end": "2026-08-15", "source": "https://www.citynmb.com/1602/2026-Election" },
+    "terms": "Mayor (Group 1) and six commissioners (Groups 2 to 7) elected citywide to four-year terms, staggered: Groups 2, 4, 6 in 2026; Groups 1, 3, 5, 7 in 2028. The handbook contains a conflicting line calling Groups 1, 3, 5, 7 two-year seats; it also says that since 2015 they serve four years. Charter Question 4 on the 2026 ballot would move elections to May of odd years and extend current terms six months.",
+    "source": "https://www.citynmb.com/DocumentCenter/View/14828/2026-Candidate-Handbook"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Andrise Bernard, MMC, City Clerk", "email": "andrise.bernard@citynmb.com", "phone": "305-787-6001", "url": "https://www.citynmb.com/273/City-Clerk", "source": "https://www.citynmb.com/273/City-Clerk" },
+    { "role": "commission office", "name": "Offices of the Mayor and City Commission", "email": null, "phone": "305-948-2986", "url": "https://www.citynmb.com/385/Mayor-City-Commission", "source": "https://www.citynmb.com/385/Mayor-City-Commission" },
+    { "role": "mayor", "name": "Michael Joseph, Esq.", "email": null, "phone": "305-948-2986", "url": "https://www.citynmb.com/396/Mayor", "source": "https://www.citynmb.com/385/Mayor-City-Commission" }
+  ],
+  "notes": "The city posts no annual meeting calendar. The Meetings calendar (CID=23) showed the September cycle (moved from Sept 15 to Sept 24: Conference 4:00, Second Budget Hearing 5:00, Commission Meeting 6:00) and the October 20 cycle marked postponed with no new date; November dates checked (4, 10, 18, 24) held only board meetings and December was not opened, so no confirmed future commission meeting is listed and no 2027 dates exist. NovusAgenda lists meetings only through the October 6 workshop and gives no times. Agenda lead time is not posted. Public comment rules come from the City Commission Meetings page; no sign-up or written comment channel is posted. The charter (Municode) could not be loaded, so petition and referendum are null and the recall entry relies on the Sec. 2.9 reference in the 2026 ballot questions plus the state statute. Budget: only the two September hearing dates from NovusAgenda; no proposed budget date was found. The fiscal-year-start date is the standard Florida October 1 implied by September TRIM hearings, not quoted from a city page. The commission office contact page gives phone only. Web search budget ran out before the regular-meeting rule (charter Sec. 2.4) or the postponed meeting's new date could be confirmed."
+}

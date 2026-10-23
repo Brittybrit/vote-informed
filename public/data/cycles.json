@@ -3,6 +3,191 @@
  "note": "Governance calendar and citizen levers per body. Hand-researched from each body's own site, code and charter; every date and rule carries the page it was read from. Source files: scripts/data/cycles/. Rebuild: node scripts/cycles.mjs.",
  "bodies": [
   {
+   "key": "city-biscayne-park",
+   "rosterBody": "city-biscayne-park",
+   "name": "Biscayne Park Village Commission",
+   "jurisdiction": "Village of Biscayne Park",
+   "level": "municipal",
+   "checked": "2026-10-23",
+   "links": {
+    "home": "https://biscayneparkfl.gov/",
+    "calendar": "https://biscayneparkfl.gov/calendar",
+    "agendas": "https://biscayneparkfl.gov/agendas",
+    "minutes": "https://biscayneparkfl.gov/agendas",
+    "video": null,
+    "clerk": "https://biscayneparkfl.gov/contact"
+   },
+   "meetings": {
+    "pattern": "First Tuesday of the month, 6:00 p.m., Log Cabin, 640 NE 114th Street, Biscayne Park, FL 33161; moved to the second Tuesday when the first conflicts (January, August and November 2026). Zoom link printed on agendas.",
+    "agendaLeadDays": 7,
+    "schedule": [
+     {
+      "date": "2026-11-10",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Scheduled for the second Tuesday due to the General Election on Tuesday, November 3, 2026",
+      "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/2026_Commission_Meeting_Schedule.pdf"
+     },
+     {
+      "date": "2026-12-01",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Regular Commission Meeting, Log Cabin",
+      "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/2026_Commission_Meeting_Schedule.pdf"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Tentative millage special meeting and budget workshops (2025 pattern)",
+     "start": "2025-07-17",
+     "end": "2025-08-26",
+     "repeats": "yearly",
+     "decides": "In 2025 the commission set the waste fee and tentative millage at a July 17 special meeting and held budget workshops August 14 and 26, all at 6 p.m. The 2026 dates were not found on a fetchable page.",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Minutes_of_June_3__2025_Modified.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "First and final budget hearings (2025 pattern)",
+     "start": "2025-09-09",
+     "end": "2025-09-24",
+     "repeats": "yearly",
+     "decides": "In 2025: first budget hearing September 9 at 6 p.m., final budget hearing (tentative) September 24 at 6 p.m. The 2026 hearing dates were not found; the 2026 schedule PDF lists only regular meetings.",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Minutes_of_June_3__2025_Modified.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Not confirmed on a fetchable village page; September hearings imply the Florida standard October 1 start. Treat as unverified.",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Minutes_of_June_3__2025_Modified.pdf"
+    },
+    {
+     "key": "election",
+     "name": "Village commission election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Seats on the Village Commission; the 2026 Notice of Candidacy form names the November 3, 2026 election. Number of seats and candidates were not readable.",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Notice_of_Candidacy_2026.pdf"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak during the 'Public Comments' item near the top of the regular agenda at the Log Cabin or through the Zoom link printed on the agenda; the commission then has a 'Commission Reply to Comments' item.",
+     "rules": "No time limit or sign-up rule is printed on the agendas or minutes read (2022, 2023, 2025). The village's rules page could not be fetched (robots).",
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/agendas",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/07.11.2023_Regular_Commission_Meeting_Agenda(1).pdf"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is published. Email the Village Clerk, Pamela Latimore, at villageclerk@biscayneparkfl.gov or Village Hall at villagehall@biscayneparkfl.gov.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:villageclerk@biscayneparkfl.gov",
+     "source": "https://biscayneparkfl.gov/contact"
+    },
+    {
+     "key": "contact",
+     "how": "Call Village Hall at 305-899-8000 or email villagehall@biscayneparkfl.gov; the Mayor and Commissioners page lists members but blocked automated fetching.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/contact",
+     "source": "https://biscayneparkfl.gov/contact"
+    },
+    {
+     "key": "records-request",
+     "how": "Ask the Village Clerk at villageclerk@biscayneparkfl.gov or 305-899-8000.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/contact",
+     "source": "https://biscayneparkfl.gov/contact"
+    },
+    {
+     "key": "petition",
+     "how": "Charter amendment by petition is available under state law: a petition signed by 10 percent of the registered electors as of the last municipal general election forces a referendum at the next general election or a special election.",
+     "rules": "Fla. Stat. 166.031(1). The village charter (2006, manager-commission form) is linked from the village site as 'Charter (Founding Document)' but that page and municode.com both blocked automated fetching, so any charter initiative section is not recorded.",
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/government",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "referendum",
+     "how": "Not found. The charter was not readable (see petition); only the state charter-amendment referendum route under Fla. Stat. 166.031 is confirmed.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/government",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "recall",
+     "how": "Recall follows Florida's uniform municipal recall statute, which applies to every city whether or not its charter has a recall section. For a village with 2,000 to 4,999 registered electors the first petition needs the greater of 250 electors or 10 percent, gathered within 30 days; for 500 to 1,999, the greater of 100 or 10 percent. A second 'Recall Petition and Defense' round needs 15 percent within 60 days.",
+     "rules": "Fla. Stat. 100.361(1), (2)(b), (2)(f), (3)(a), (3)(c), (11), (12). File with the Village Clerk. Elector count not checked; pick the tier from county registration figures.",
+     "deadline": "30 days for the first round; 60 days for the second",
+     "url": "https://biscayneparkfl.gov/contact",
+     "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+     "key": "qualify",
+     "how": "File the Notice of Candidacy form with the Village Clerk; candidates must meet all Charter qualifications. The 2026 qualifying dates were not found on a fetchable page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Notice_of_Candidacy_2026.pdf",
+     "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Notice_of_Candidacy_2026.pdf"
+    },
+    {
+     "key": "vote",
+     "how": "Vote in the November 3, 2026 commission election; the county handles registration, ballots and tallying while the Village Clerk runs the election.",
+     "rules": "Registered voters living in the village.",
+     "deadline": "Election day November 3, 2026",
+     "url": "https://biscayneparkfl.gov/elections",
+     "source": "https://biscayneparkfl.gov/elections"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Apply for a seat on a village board (Arts and Culture, Code Compliance, Parks and Parkways, Planning and Design Review, Sustainability and Resiliency) through the 'Apply for a Board or Committee Position' link on the Government page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://biscayneparkfl.gov/government",
+     "source": "https://biscayneparkfl.gov/government"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": null,
+     "end": null,
+     "source": null
+    },
+    "terms": "Not confirmed from a current page. A 2009 village newsletter described three commission seats filled each election, with the two highest vote-getters getting four-year terms and the third a two-year term; the county municipality directory lists the next election as November 2026, and the 2026 Notice of Candidacy names November 3, 2026.",
+    "source": "https://biscayneparkfl.gov/vertical/sites/%7BC4179EE4-3062-4442-8583-B704F0600806%7D/uploads/Notice_of_Candidacy_2026.pdf"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Pamela Latimore, Village Clerk",
+     "email": "villageclerk@biscayneparkfl.gov",
+     "phone": "305-899-8000",
+     "url": "https://biscayneparkfl.gov/contact",
+     "source": "https://biscayneparkfl.gov/contact"
+    },
+    {
+     "role": "commission office",
+     "name": "Village Hall",
+     "email": "villagehall@biscayneparkfl.gov",
+     "phone": "305-899-8000",
+     "url": "https://biscayneparkfl.gov/contact",
+     "source": "https://biscayneparkfl.gov/contact"
+    }
+   ],
+   "notes": "Checked 2026-10-23. Schedule: the 2026 Commission Meeting Schedule PDF lists all twelve 2026 regular meetings (Jan 13, Feb 3, Mar 3, Apr 7, May 5, Jun 9, Jul 7, Aug 11, Sep 1, Oct 13, Nov 10, Dec 1, all 6 p.m. at the Log Cabin); no 2027 schedule was posted. agendaLeadDays is 7 from the Sept 3, 2025 minutes, where the commission kept a 7-day advance notice requirement for meetings; it is a notice rule, not necessarily an agenda-posting rule. Most village pages (clerk, commission, calendar, meetings, charter, directory) block automated fetching, so: 2026 budget hearing dates are missing (2025 dates given as the pattern), commission member names and emails are missing, the charter's initiative, referendum, recall and election sections are missing, and the 2026 qualifying period and seats are missing. The village uses municode for its full code but that site also returned errors. Web search quota ran out during this municipality, so the missing pages were not re-found through search. Public comment: agendas show a Public Comments item with no printed limit."
+  },
+  {
    "key": "city-coral-gables",
    "rosterBody": "city-coral-gables",
    "name": "Coral Gables City Commission",
@@ -1651,6 +1836,176 @@
     }
    ],
    "notes": "Checked 2026-10-22. Schedule: the city calendar (CivicPlus) showed only the October 28, 2026 regular meeting; the November and December list views returned no council meetings, so the posted schedule stops there. The meeting pattern (second and fourth Wednesday, 5:30 p.m.) is from the City Council page; apply it for later dates but confirm on the CivicWeb portal, which blocks automated fetching (robots) and could not be read for agenda lead time, posted schedule or public comment rules. Agenda lead days unknown. Budget: only the second hearing (Sept 23, 2026, 5:01 p.m.) was found as a legal ad on the county site; the first hearing notice and the proposed budget release date for FY 2026-27 were not found (a 2026-09-09 notice URL guess failed). Charter: the city's charter PDF (DocumentCenter/View/396) has no machine-readable text and municode.com returned errors, so initiative, referendum and recall charter sections are missing; the recall lever uses Fla. Stat. 100.361, which the statute says applies to all cities, and the petition lever uses Fla. Stat. 166.031 as the state floor. Only Charter Sec. 6.2 (charter revision commission) and Sec. 2.1 (vice mayor) were confirmed, from a 2014 ballot. Public comment time limit not found. Legal notices moved to legalads.miamidade.gov effective Sept 1, 2025 (city Public Notices page)."
+  },
+  {
+   "key": "city-north-miami-beach",
+   "rosterBody": "city-north-miami-beach",
+   "name": "North Miami Beach City Commission",
+   "jurisdiction": "City of North Miami Beach",
+   "level": "municipal",
+   "checked": "2026-10-23",
+   "links": {
+    "home": "https://www.citynmb.com/385/Mayor-City-Commission",
+    "calendar": "https://www.citynmb.com/calendar.aspx?CID=23",
+    "agendas": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx",
+    "minutes": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx",
+    "video": "https://www.citynmb.com/174/NMBTV-Live-Stream",
+    "clerk": "https://www.citynmb.com/273/City-Clerk"
+   },
+   "meetings": {
+    "pattern": "The city calendar shows a monthly cycle on a Tuesday (September 15 and October 20, 2026 were the third Tuesday): CRA Board 4:00 p.m., City Commission Conference 5:00 p.m., City Commission Meeting 6:00 p.m., City Hall Commission Chamber, 17011 NE 19th Avenue. The city's meetings page says conference start times vary with the agenda. Broadcast on Comcast 77 and streamed on NMBTV.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-10-20",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "POSTPONED per the city calendar (Conference 5:00 p.m. and CRA 4:00 p.m. also postponed); no new date posted as of 2026-10-23",
+      "source": "https://www.citynmb.com/calendar.aspx?view=list&year=2026&month=10&day=20&CID=23"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-10",
+     "end": "2026-09-24",
+     "repeats": "yearly",
+     "decides": "Public Budget Hearing September 10 and Second Budget Hearing September 24, 2026 (5:00 p.m., Commission Chamber) adopt the millage and FY 2026-27 budget.",
+     "source": "https://nmb.novusagenda.com/agendapublic/meetingsresponsive.aspx"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "The budget adopted at the September hearings takes effect.",
+     "source": "https://www.citynmb.com/calendar.aspx?CID=23"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the November 2026 election",
+     "start": "2026-08-10",
+     "end": "2026-08-15",
+     "repeats": "once",
+     "decides": "Who runs for Commission Groups 2, 4 and 6; Monday August 10 to Friday August 14, 8:00 a.m. to 5:00 p.m., and Saturday August 15 until noon, by appointment with the City Clerk.",
+     "source": "https://www.citynmb.com/1602/2026-Election"
+    },
+    {
+     "key": "election",
+     "name": "General election and charter special election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Commission Groups 2, 4 and 6 (four-year terms) and eight charter amendment questions, including moving city elections to May of odd years and extending current terms six months (Secs. 4.1, 4.2, 4.4) and making recall follow general law (Sec. 2.9). Run-off December 1, 2026 if needed.",
+     "source": "https://www.citynmb.com/1751/November-3-2026---Special-Election"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak at the Public Comment portion of the Commission Meeting or on a public hearing item. The Commission does not discuss matters raised under Public Comment; a commissioner can bring your item back as a recommendation at a later meeting.",
+     "rules": "Three-minute limit per speaker at all public hearings. Longer matters: arrange a meeting with the appropriate official. No sign-up procedure is posted.",
+     "deadline": "At the meeting",
+     "url": "https://www.citynmb.com/990/City-Commission-Meetings",
+     "source": "https://www.citynmb.com/990/City-Commission-Meetings"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is posted. Email the City Clerk.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:andrise.bernard@citynmb.com",
+     "source": "https://www.citynmb.com/273/City-Clerk"
+    },
+    {
+     "key": "contact",
+     "how": "Call or visit the Offices of the Mayor and City Commission, 4th floor of City Hall.",
+     "rules": "305-948-2986; City Hall main line 305-947-7581.",
+     "deadline": null,
+     "url": "https://www.citynmb.com/385/Mayor-City-Commission",
+     "source": "https://www.citynmb.com/385/Mayor-City-Commission"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit a public records request through the City Clerk's portal.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.citynmb.com/1320/Public-Records-Request",
+     "source": "https://www.citynmb.com/273/City-Clerk"
+    },
+    {
+     "key": "recall",
+     "how": "Charter Sec. 2.9 covers recall; a November 3, 2026 charter question (Question 3) would make recall follow general law, meaning F.S. 100.361. The current Sec. 2.9 text could not be read.",
+     "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days.",
+     "deadline": null,
+     "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+     "source": "https://www.citynmb.com/1751/November-3-2026---Special-Election"
+    },
+    {
+     "key": "qualify",
+     "how": "Qualify in person with the City Clerk by appointment during the qualifying week: Statement of Candidate, loyalty oath, Form 1 financial disclosure and a campaign-account check for the fee ($150 Commission, $180 Mayor).",
+     "rules": "2026 window: August 10 to 14, 8:00 a.m. to 5:00 p.m., and August 15 until noon. Groups 2, 4 and 6 are up in 2026; Mayor (Group 1) and Groups 3, 5, 7 in 2028, unless Question 4 passes and moves elections to May of odd years.",
+     "deadline": "Noon on the Saturday closing the qualifying week",
+     "url": "https://www.citynmb.com/1602/2026-Election",
+     "source": "https://www.citynmb.com/DocumentCenter/View/14828/2026-Candidate-Handbook"
+    },
+    {
+     "key": "vote",
+     "how": "Vote in the November 3, 2026 general election (7:00 a.m. to 7:00 p.m.) through Miami-Dade Elections; a run-off, if needed, is December 1, 2026.",
+     "rules": "Registered North Miami Beach voters; commission seats are citywide groups.",
+     "deadline": "Election Day November 3, 2026",
+     "url": "https://www.citynmb.com/1602/2026-Election",
+     "source": "https://www.citynmb.com/1602/2026-Election"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Apply for a board or committee through the Boards and Committees page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.citynmb.com/310/Boards-Committees",
+     "source": "https://www.citynmb.com/273/City-Clerk"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-08-10",
+     "end": "2026-08-15",
+     "source": "https://www.citynmb.com/1602/2026-Election"
+    },
+    "terms": "Mayor (Group 1) and six commissioners (Groups 2 to 7) elected citywide to four-year terms, staggered: Groups 2, 4, 6 in 2026; Groups 1, 3, 5, 7 in 2028. The handbook contains a conflicting line calling Groups 1, 3, 5, 7 two-year seats; it also says that since 2015 they serve four years. Charter Question 4 on the 2026 ballot would move elections to May of odd years and extend current terms six months.",
+    "source": "https://www.citynmb.com/DocumentCenter/View/14828/2026-Candidate-Handbook"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Andrise Bernard, MMC, City Clerk",
+     "email": "andrise.bernard@citynmb.com",
+     "phone": "305-787-6001",
+     "url": "https://www.citynmb.com/273/City-Clerk",
+     "source": "https://www.citynmb.com/273/City-Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "Offices of the Mayor and City Commission",
+     "email": null,
+     "phone": "305-948-2986",
+     "url": "https://www.citynmb.com/385/Mayor-City-Commission",
+     "source": "https://www.citynmb.com/385/Mayor-City-Commission"
+    },
+    {
+     "role": "mayor",
+     "name": "Michael Joseph, Esq.",
+     "email": null,
+     "phone": "305-948-2986",
+     "url": "https://www.citynmb.com/396/Mayor",
+     "source": "https://www.citynmb.com/385/Mayor-City-Commission"
+    }
+   ],
+   "notes": "The city posts no annual meeting calendar. The Meetings calendar (CID=23) showed the September cycle (moved from Sept 15 to Sept 24: Conference 4:00, Second Budget Hearing 5:00, Commission Meeting 6:00) and the October 20 cycle marked postponed with no new date; November dates checked (4, 10, 18, 24) held only board meetings and December was not opened, so no confirmed future commission meeting is listed and no 2027 dates exist. NovusAgenda lists meetings only through the October 6 workshop and gives no times. Agenda lead time is not posted. Public comment rules come from the City Commission Meetings page; no sign-up or written comment channel is posted. The charter (Municode) could not be loaded, so petition and referendum are null and the recall entry relies on the Sec. 2.9 reference in the 2026 ballot questions plus the state statute. Budget: only the two September hearing dates from NovusAgenda; no proposed budget date was found. The fiscal-year-start date is the standard Florida October 1 implied by September TRIM hearings, not quoted from a city page. The commission office contact page gives phone only. Web search budget ran out before the regular-meeting rule (charter Sec. 2.4) or the postponed meeting's new date could be confirmed."
   },
   {
    "key": "city-north-miami",
