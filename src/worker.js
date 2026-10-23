@@ -3688,7 +3688,8 @@ async function handleReport(request, env) {
 const BOARD_COLS = ['todo', 'doing', 'waiting', 'done'];
 function boardState(x) {
   x = x && typeof x === 'object' ? x : {};
-  const st = { status: {}, notes: {}, extra: [], overrides: {} };
+  const st = { status: {}, notes: {}, extra: [], overrides: {}, hidden: [] };
+  for (const h of Array.isArray(x.hidden) ? x.hidden.slice(0, 200) : []) if (typeof h === 'string') st.hidden.push(h.slice(0, 80));
   for (const [k, v] of Object.entries(x.status || {})) if (BOARD_COLS.includes(v)) st.status[String(k).slice(0, 80)] = v;
   for (const [k, v] of Object.entries(x.notes || {})) if (Array.isArray(v)) st.notes[String(k).slice(0, 80)] = v.slice(0, 50).map(n => String(n).slice(0, 400));
   for (const e of Array.isArray(x.extra) ? x.extra.slice(0, 200) : []) if (e && e.id && e.title) st.extra.push({ id: String(e.id).slice(0, 80), track: String(e.track || 'running').slice(0, 20), title: String(e.title).slice(0, 160), route: String(e.route || '').slice(0, 500), cost: String(e.cost || '').slice(0, 60), time: String(e.time || '').slice(0, 60), url: /^https:/.test(String(e.url || '')) ? String(e.url).slice(0, 500) : '' });
@@ -3700,7 +3701,7 @@ const BOARD_TOOLS = [
   { name: 'add_note', description: 'Attach a short note to a step by its id (a decision, a date, a link).', input_schema: { type: 'object', properties: { id: { type: 'string' }, text: { type: 'string' } }, required: ['id', 'text'] } },
   { name: 'edit_step', description: 'Change a step\'s title, its route text, or add or replace its main link (url must be https, label is the button text). Only the fields given change.', input_schema: { type: 'object', properties: { id: { type: 'string' }, title: { type: 'string' }, route: { type: 'string' }, url: { type: 'string' }, label: { type: 'string' } }, required: ['id'] } },
   { name: 'add_step', description: 'Add a new card. track is one of: name, nonprofit, records, comms, funding, running. status defaults to todo.', input_schema: { type: 'object', properties: { track: { type: 'string' }, title: { type: 'string' }, route: { type: 'string' }, cost: { type: 'string' }, time: { type: 'string' }, url: { type: 'string' }, status: { type: 'string' } }, required: ['track', 'title'] } },
-  { name: 'remove_step', description: 'Remove a card that was added in chat (ids starting with x-). Built-in cards cannot be removed.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
+  { name: 'remove_step', description: 'Delete a card from the board by id. Built-in cards are hidden (restorable from the board), added cards are removed.', input_schema: { type: 'object', properties: { id: { type: 'string' } }, required: ['id'] } },
   { name: 'read_platform', description: 'Read the live We the People 305 data API. path is a /api/v1 path with query, for example /api/v1/now?precinct=033.0, /api/v1/upcoming?body=county, /api/v1/procurement/county, /api/v1/payments/county, /api/v1/people/vicki-l-lopez, /api/v1/cycles/county, /api/v1/connections. Returns JSON, truncated to 12000 characters.', input_schema: { type: 'object', properties: { path: { type: 'string' } }, required: ['path'] } }
 ];
 function runBoardTool(st, ids, name, i) {
@@ -3717,7 +3718,7 @@ function runBoardTool(st, ids, name, i) {
     st.overrides[id] = o; return { id, ...o };
   }
   if (name === 'add_step') { const id = 'x-' + Date.now().toString(36); st.extra.push({ id, track: String(i.track || 'running').slice(0, 20), title: String(i.title || '').slice(0, 160), route: String(i.route || '').slice(0, 500), cost: String(i.cost || '').slice(0, 60), time: String(i.time || '').slice(0, 60), url: /^https:/.test(String(i.url || '')) ? String(i.url) : '' }); if (BOARD_COLS.includes(i.status)) st.status[id] = i.status; return { id }; }
-  if (name === 'remove_step') { const id = String(i.id); const n = st.extra.length; st.extra = st.extra.filter(x => x.id !== id); return st.extra.length === n ? 'Error: no added step with id ' + id : { removed: id }; }
+  if (name === 'remove_step') { const id = String(i.id); if (!has(id)) return 'Error: no step with id ' + id; const n = st.extra.length; st.extra = st.extra.filter(x => x.id !== id); if (st.extra.length === n && !st.hidden.includes(id)) st.hidden.push(id); return { removed: id }; }
   return 'Error: unknown tool';
 }
 async function boardChat(env, b, url) {
@@ -3802,7 +3803,7 @@ async function handleAdmin(request, env, url) {
   if (!adminOk(request, env)) return json({ error: 'Unauthorized' }, 401);
   const route = url.pathname.slice('/api/admin/'.length);
   if (request.method === 'GET' && route === 'health') return json(await sourceHealth(env));
-  if (request.method === 'GET' && route === 'board') return json((await env.CACHE.get(BOARD_KEY, 'json')) || { status: {}, notes: {}, extra: [], overrides: {}, updated: null });
+  if (request.method === 'GET' && route === 'board') return json((await env.CACHE.get(BOARD_KEY, 'json')) || { status: {}, notes: {}, extra: [], overrides: {}, hidden: [], updated: null });
   if (request.method === 'GET' && route === 'board-context') return json({ text: (await env.CACHE.get(BOARD_CONTEXT_KEY)) || '' });
   if (request.method === 'GET' && route === 'reports') {
     const list = await env.CACHE.list({ prefix: 'report:', limit: 200 });
