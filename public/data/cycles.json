@@ -621,6 +621,196 @@
    "notes": "Schedule: the city's events directory posts notices for November 18 and December 9, 2026; Legistar (doral.legistar.com) lists nothing after October 7, 2026 and no 2027 dates, so the file stops at December 2026. 2026 regular meetings held: Jan 15, Feb 18, Mar 11, Apr 8, May 13, Jun 10, Aug 12, Sep 9, Oct 7 (all 10:00 a.m. with 6:00 p.m. evening sessions); budget specials Jul 29 (millage), Aug 21 (workshop), Sep 8 and Sep 22 (hearings, 6:00 p.m.). Agenda lead time is not posted; Legistar agenda revision dates run two to six days before meetings. Public comment time limit, sign-up and written comment rules are not posted anywhere found (agenda, notice PDF, clerk pages); the Municode code pages and the Granicus agenda PDFs could not be fetched (robots or client errors). The charter has no recall procedure. The 2028 seats and the exact seat-to-member mapping come from the Elected Officials page term ranges (Fraga and Pineyro 2022-2028; Cabral and Porras to 2026), not from a seat list. No 2027 budget calendar is posted; the budget phases are the 2026 dates marked yearly. The council department page (cityofdoral.com/government/city-council/) returned an error."
   },
   {
+   "key": "city-hialeah",
+   "rosterBody": "city-hialeah",
+   "name": "Hialeah City Council",
+   "jurisdiction": "City of Hialeah",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.hialeahfl.gov/435/City-Council",
+    "calendar": "https://www.hialeahfl.gov/DocumentCenter/View/21855",
+    "agendas": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+    "minutes": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+    "video": "https://www.youtube.com/cityofhialeahgov",
+    "clerk": "https://www.hialeahfl.gov/160/City-Clerk"
+   },
+   "meetings": {
+    "pattern": "Second and fourth Tuesday of each month at 5:30 p.m. Since October 1, 2026 meetings are at the Milander Center, 4800 Palm Avenue, Hialeah 33012 (previously Council Chambers, 3rd floor of City Hall, 501 Palm Avenue). Streamed live on the city's YouTube page.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-10-27",
+      "time": "17:30",
+      "kind": "regular",
+      "note": "Milander Center, 4800 Palm Avenue",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/22434/Public-Notice-City-Council-Meeting-October-27-2026"
+     },
+     {
+      "date": "2026-11-10",
+      "time": "17:30",
+      "kind": "regular",
+      "note": "Calendar marks this date SUBJECT TO CHANGE because of the Veterans Day holiday; check the Agenda Center. Milander Center.",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21855"
+     },
+     {
+      "date": "2026-11-24",
+      "time": "17:30",
+      "kind": "regular",
+      "note": "CANCELLED by Council on September 22, 2026 for Thanksgiving (Charter Sec. 3.01(a))",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/22376/Notice-of-Cancellation-of-the-City-Council-Meetings-of-November-24-2026"
+     },
+     {
+      "date": "2026-12-08",
+      "time": "17:30",
+      "kind": "regular",
+      "note": "Milander Center",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21855"
+     },
+     {
+      "date": "2026-12-22",
+      "time": "17:30",
+      "kind": "regular",
+      "note": "CANCELLED by Council on September 22, 2026 for Christmas (Charter Sec. 3.01(a))",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/22377/Notice-of-Cancellation-of-the-City-Council-Meetings-of-December-22-2026"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-08",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "First reading and public hearing September 8 and second reading and public hearing September 22 (both 5:30 p.m.) adopt the millage and the FY 2027 budget; a budget workshop was held September 14.",
+     "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/hialeah/2026/2026-09-08-budget-hearings.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "FY 2027 runs October 1, 2026 to September 30, 2027.",
+     "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/hialeah/2026/2026-09-08-budget-hearings.pdf"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the Group II special election",
+     "start": "2026-07-06",
+     "end": "2026-07-27",
+     "repeats": "once",
+     "decides": "Who runs for Council Group II (balance of a term ending November 5, 2027); noon Monday July 6 to 5:00 p.m. Monday July 27, 2026 with the City Clerk.",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    },
+    {
+     "key": "election",
+     "name": "Special primary election, Council Group II",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Fills the Group II seat vacated by Jesus Tundidor; run-off (special general) December 8, 2026 if no majority.",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak during the Comments and Questions portion of the meeting on any city business, or on an agenda item when it is heard. The council rules encourage signing in with the City Clerk before the meeting starts.",
+     "rules": "Comments and Questions: one appearance per person, three minutes. Agenda items: up to three speakers in favor and three against, three minutes each. No signs or placards in the chamber. Lobbyists must register with the City Clerk.",
+     "deadline": "Sign in with the Clerk before the meeting begins",
+     "url": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+     "source": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_09222026-1407"
+    },
+    {
+     "key": "written-comment",
+     "how": "Email comments to CityClerk@hialeahfl.gov; they are read into the record for up to three minutes. Visual material to be shown during your comments must go to the Clerk's office ahead of time.",
+     "rules": "For the October 27, 2026 meeting the email deadline was 3:00 p.m. Thursday October 22 (five days before) and the visual-material deadline 5:00 p.m. October 6; each meeting notice sets its own dates.",
+     "deadline": "About five days before the meeting, per the meeting notice",
+     "url": "mailto:CityClerk@hialeahfl.gov",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/22434/Public-Notice-City-Council-Meeting-October-27-2026"
+    },
+    {
+     "key": "contact",
+     "how": "Call City Hall or email the City Clerk, who forwards to the Mayor and Council.",
+     "rules": "City Hall 305-883-5800; Clerk 305-883-5820.",
+     "deadline": null,
+     "url": "https://www.hialeahfl.gov/435/City-Council",
+     "source": "https://www.hialeahfl.gov/435/City-Council"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit a public records request through the City Clerk, the custodian of public records.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.hialeahfl.gov/1115/Public-Records-Request",
+     "source": "https://www.hialeahfl.gov/160/City-Clerk"
+    },
+    {
+     "key": "recall",
+     "how": "Florida's uniform municipal recall statute, F.S. 100.361, applies to Hialeah council members and the Mayor; the charter text could not be checked for a city-specific provision.",
+     "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+     "deadline": null,
+     "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+     "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+     "key": "qualify",
+     "how": "File qualification papers, the qualifying fee and the assessment with the City Clerk during the qualifying period (City Code Sec. 34-2; Charter Art. V Sec. 5.05). Candidates must be resident electors (Sec. 5.01); elections are nonpartisan (Sec. 5.02).",
+     "rules": "Qualifying has run from noon on the first Monday of July to 5:00 p.m. three weeks later (2025: July 7 to July 28; 2026 special: July 6 to July 27). Term limits: Mayor two consecutive terms, Council three consecutive terms (Sec. 2.02(d)).",
+     "deadline": "5:00 p.m. on the last day of the July qualifying period",
+     "url": "https://www.hialeahfl.gov/176/Candidate-Resources",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/21756/Frequently-Asked-Questions--Answers-and-General-Information-about-Elections-and-Canidate-Qualifying-PDF"
+    },
+    {
+     "key": "vote",
+     "how": "Regular city elections are held in November of odd years (primary the first Tuesday after the first Monday, run-off general in December); the 2026 Group II special election is on the November 3, 2026 ballot. Vote through Miami-Dade Elections.",
+     "rules": "Registered Hialeah voters.",
+     "deadline": "November 3, 2026 special primary; December 8, 2026 run-off if needed",
+     "url": "https://www.hialeahfl.gov/163/Voter-Resources",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "Board appointments are made at council meetings (a standing Board Appointments agenda item); ask the City Clerk about openings.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.hialeahfl.gov/160/City-Clerk",
+     "source": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10132026-1412"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-07-06",
+     "end": "2026-07-27",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    },
+    "terms": "Mayor four years, limit two consecutive terms. Seven council members elected at large by group number for four-year terms, limit three consecutive terms. Groups elected in November 2025: Mayor and Groups V, VI, VII (full terms) plus III and IV (special). Group II special election November 3, 2026 fills a term ending November 5, 2027; the next regular election is November 2027 (Groups I, II, III, IV expected).",
+    "source": "https://www.hialeahfl.gov/169/Overview"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Marbelys Fatjo, Esq., CMC, City Clerk",
+     "email": "cityclerk@hialeahfl.gov",
+     "phone": "305-883-5820",
+     "url": "https://www.hialeahfl.gov/160/City-Clerk",
+     "source": "https://www.hialeahfl.gov/160/City-Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "City Council (via City Hall)",
+     "email": null,
+     "phone": "305-883-5800",
+     "url": "https://www.hialeahfl.gov/435/City-Council",
+     "source": "https://www.hialeahfl.gov/435/City-Council"
+    }
+   ],
+   "notes": "Schedule is the city's 2026 Council Meeting Calendar (two versions are posted: DocumentCenter/View/21855 omits July; /21215 lists July 14 and 28; no July agendas exist in the Agenda Center) plus cancellation notices for Nov 24 and Dec 22. No 2027 calendar is posted yet. Agenda lead time is not stated; the council page says only that agendas are available prior to meetings. Public comment rules come from the Meeting Guidelines printed on each agenda and the Council Rules and Regulations PDF (Resolution from 2008, number illegible in the scan). The charter text for initiative, referendum and recall could not be read: every Municode page for Hialeah returned an error and no charter PDF is posted on hialeahfl.gov, so petition and referendum are null and recall cites the state statute only. The 'November of odd years' election pattern is inferred from the 2025 notice (Nov 4, 2025 primary, Dec 9 run-off) and the Group II term ending Nov 5, 2027; the charter section was not read. Budget: only the September hearing notices were found; no proposed-budget release date or 2027 calendar is posted. Clerk email for written comment is CityClerk@hialeahfl.gov per the Oct 27 notice."
+  },
+  {
    "key": "city-key-biscayne",
    "rosterBody": "city-key-biscayne",
    "name": "Key Biscayne Village Council",
@@ -832,6 +1022,216 @@
    "notes": "The village calendar loads events by JavaScript and the Granicus archive blocks automated fetching, so no forward schedule past Oct 13, 2026 was readable; 2026 dates come from the clerk's second-reading notices and stop at Oct 13. No 2027 dates posted. Agenda lead time is not stated. The two September 2026 TRIM hearing dates were not readable (the budget notice PDF is a scanned image); only the Sept 30 adoption announcement and the Aug 19 community meeting were found. The charter is on Municode, which refused fetches, so initiative, referendum and recall sections and thresholds are missing. The council page lists Mayor Rasco's term as 2022-2026 and the clerk page says the mayor qualified in June 2026, but the Nov 3, 2026 sample ballot shows only council seats and a referendum; the mayor's status was not confirmed. Public comment time limit not found in any reachable document."
   },
   {
+   "key": "city-medley",
+   "rosterBody": "city-medley",
+   "name": "Medley Town Council",
+   "jurisdiction": "Town of Medley",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.townofmedley.com/",
+    "calendar": "https://www.townofmedley.com/events",
+    "agendas": "https://www.townofmedley.com/council-meetings/2026%20Council%20Meetings%20Agendas",
+    "minutes": "https://www.medleydocs.com/WebLink/Welcome.aspx?dbid=0&repo=LFMedley",
+    "video": null,
+    "clerk": "https://www.townofmedley.com/town-clerk"
+   },
+   "meetings": {
+    "pattern": "First Monday of every month, 7:00 p.m., Council Chambers at the Medley Municipal Services Facility, 7777 NW 72nd Avenue, Medley, FL 33166. If the Monday is a legal holiday, the meeting moves to the following Tuesday.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-11-02",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Regular meeting by the first-Monday rule. The October 5, 2026 agenda carried item 13A.9, 'Discussion and Action on the Cancellation of the November 2, 2026 Regular Council Meeting'; check with the clerk whether it was cancelled.",
+      "source": "https://www.townofmedley.com/uploads/meetings/ssaQvxyXlwwM1Em5ZCHE4KU4BD81WIt1.pdf"
+     },
+     {
+      "date": "2026-12-07",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Regular meeting by the first-Monday rule on the council meetings page; no agenda posted yet.",
+      "source": "https://www.townofmedley.com/council-meetings"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Budget workshop on the proposed budget and tentative millage",
+     "start": "2026-07-22",
+     "end": "2026-07-22",
+     "repeats": "yearly",
+     "decides": "Council discusses the manager's proposed FY 2026-27 budget and the tentative millage based on the certified taxable value; special meeting 6:00 p.m. at the Municipal Services Facility.",
+     "source": "https://www.townofmedley.com/uploads/notices/SGtB7gb2HzkHi2QpdIoiRmzX0dUyPdav.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "First budget hearing (tentative millage and budget, first reading)",
+     "start": "2026-09-10",
+     "end": "2026-09-10",
+     "repeats": "yearly",
+     "decides": "Proposed tentative millage rate by resolution, tentative budget, and first reading of the budget ordinance for October 1, 2026 through September 30, 2027; Thursday 6:00 p.m.",
+     "source": "https://www.townofmedley.com/uploads/notices/9sXUVEF2B6WkGALBWI4uXfJ3MUuwMTYz.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "Second budget hearing (final millage and budget)",
+     "start": "2026-09-22",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "Final millage and adoption of the FY 2026-27 budget ordinance. Date is from the October 5, 2026 agenda, which approves minutes of the 'Special Council Meeting of September 22, 2026 - 2nd Budget'; the notice itself was not posted on the town's 2026 notices page.",
+     "source": "https://www.townofmedley.com/uploads/meetings/ssaQvxyXlwwM1Em5ZCHE4KU4BD81WIt1.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Budget and millage take effect for October 1, 2026 through September 30, 2027.",
+     "source": "https://www.townofmedley.com/uploads/notices/9sXUVEF2B6WkGALBWI4uXfJ3MUuwMTYz.pdf"
+    },
+    {
+     "key": "election",
+     "name": "Town general election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Two council member seats (vote for up to two) among Edgar Ayala, Gloria Hernandez, Ivan Pacheco, Lizelh Rodriguez and Juan Stefano; polls 7 a.m. to 7 p.m.",
+     "source": "https://www.townofmedley.com/uploads/notices/pL6rQCcdUSiWEcfE8jAGYNS7A8w8tiyv.pdf"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak during the Public Comment item at the regular meeting in the Council Chambers. Budget hearing notices say all interested parties may attend and be heard.",
+     "rules": "Each speaker's comments are limited to three minutes (agenda notice). Decorum rules on the agenda: no insulting or slanderous remarks, no clapping, heckling or signs; the mayor may bar a disruptive speaker unless a majority of the council votes otherwise. No sign-up procedure is printed on the agenda. The town does not provide translation.",
+     "deadline": null,
+     "url": "https://www.townofmedley.com/council-meetings",
+     "source": "https://www.townofmedley.com/uploads/meetings/U7haMxD2jxFUz9qhblGZ2t4hzFSrkVIX.pdf"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is published. Email the Town Clerk, Victoria Martinez, at vmartinez@townofmedley.com or townclerk@townofmedley.com and ask that it be shared with the council.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:vmartinez@townofmedley.com",
+     "source": "https://www.townofmedley.com/town-clerk"
+    },
+    {
+     "key": "contact",
+     "how": "Email the mayor or any council member directly (lstefano, ajinete, eayala, lrodriguez, Lourdes.rodriguez at townofmedley.com) or call Town Hall at 305-887-9541.",
+     "rules": "Town Hall hours Monday to Wednesday 7 a.m. to 5 p.m., Thursday 7 a.m. to 4:30 p.m., closed Friday.",
+     "deadline": null,
+     "url": "https://www.townofmedley.com/town-council",
+     "source": "https://www.townofmedley.com/town-council"
+    },
+    {
+     "key": "records-request",
+     "how": "Call 305-887-9541 or email townclerk@townofmedley.com; the clerk is the records custodian. Many records are in the Laserfiche public library at medleydocs.com.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.medleydocs.com/WebLink/Welcome.aspx?dbid=0&repo=LFMedley",
+     "source": "https://www.townofmedley.com/town-clerk"
+    },
+    {
+     "key": "petition",
+     "how": "Charter amendment by petition is available under state law: a petition signed by 10 percent of the registered electors as of the last municipal general election forces a referendum at the next general election or a special election.",
+     "rules": "Fla. Stat. 166.031(1). The town charter's own initiative section, if any, could not be read: the municode library and the town's municipal code page both returned errors to automated fetching.",
+     "deadline": null,
+     "url": "https://library.municode.com/fl/medley/codes/code_of_ordinances",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "referendum",
+     "how": "Not found. The charter was not readable (see petition); only the state charter-amendment referendum route under Fla. Stat. 166.031 is confirmed.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/medley/codes/code_of_ordinances",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "recall",
+     "how": "Recall follows Florida's uniform municipal recall statute, which applies to every city whether or not its charter has a recall section. For a town with fewer than 500 registered electors the first petition needs the greater of 50 electors or 10 percent, gathered within 30 days; for 500 to 1,999 electors, the greater of 100 or 10 percent. A second 'Recall Petition and Defense' round needs 15 percent within 60 days.",
+     "rules": "Fla. Stat. 100.361(1), (2)(b), (2)(f), (3)(a), (3)(c), (11), (12). File with the Town Clerk. Medley's elector count was not checked; pick the tier from the county's registration figures.",
+     "deadline": "30 days for the first round; 60 days for the second",
+     "url": "https://www.townofmedley.com/town-clerk",
+     "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+     "key": "qualify",
+     "how": "The Town Clerk is the municipal Supervisor of Elections; candidate filings go to the clerk's office at 7777 NW 72nd Avenue. The 2026 qualifying dates were not posted on any fetchable town page.",
+     "rules": "Nonpartisan. Elections are run under Title IX, Florida Statutes (chapters 97-106).",
+     "deadline": null,
+     "url": "https://www.townofmedley.com/town-clerk",
+     "source": "https://www.townofmedley.com/town-clerk"
+    },
+    {
+     "key": "vote",
+     "how": "Vote for up to two council members on November 3, 2026, 7 a.m. to 7 p.m., at the county-run polling place for Medley precincts.",
+     "rules": "Registered voters living in the town.",
+     "deadline": "Election day November 3, 2026",
+     "url": "https://www.townofmedley.com/uploads/notices/pL6rQCcdUSiWEcfE8jAGYNS7A8w8tiyv.pdf",
+     "source": "https://www.townofmedley.com/uploads/notices/pL6rQCcdUSiWEcfE8jAGYNS7A8w8tiyv.pdf"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "No advisory board application page was found; the town's public meetings besides the council are the Code Compliance Special Magistrate hearings.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.townofmedley.com/town-notices/2026%20Notices",
+     "source": "https://www.townofmedley.com/town-notices/2026%20Notices"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": null,
+     "end": null,
+     "source": null
+    },
+    "terms": "Mayor and four council members, four-year staggered terms, nonpartisan; municipal elections every two years in November. 2026: two council seats. The mayor and the other two seats were last elected November 2024.",
+    "source": "https://www.townofmedley.com/town-clerk"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Victoria Martinez, FRP, CMC, Town Clerk",
+     "email": "vmartinez@townofmedley.com",
+     "phone": "305-887-9541 ext. 112",
+     "url": "https://www.townofmedley.com/town-clerk",
+     "source": "https://www.townofmedley.com/town-clerk"
+    },
+    {
+     "role": "clerk",
+     "name": "Town Clerk public records line",
+     "email": "townclerk@townofmedley.com",
+     "phone": "305-887-9541",
+     "url": "https://www.townofmedley.com/town-clerk",
+     "source": "https://www.townofmedley.com/town-clerk"
+    },
+    {
+     "role": "mayor",
+     "name": "Ana 'Lily' Stefano",
+     "email": "lstefano@townofmedley.com",
+     "phone": "305-887-9541",
+     "url": "https://www.townofmedley.com/town-council",
+     "source": "https://www.townofmedley.com/town-council"
+    },
+    {
+     "role": "commission office",
+     "name": "Town Council",
+     "email": "",
+     "phone": "305-887-9541",
+     "url": "https://www.townofmedley.com/town-council",
+     "source": "https://www.townofmedley.com/town-council"
+    }
+   ],
+   "notes": "Checked 2026-10-22. The town posts no forward calendar; the schedule here applies the first-Monday rule from the council meetings page, and the Nov 2 meeting was proposed for cancellation on the Oct 5 agenda. 2026 agendas posted so far: Feb 2, Mar 2, Apr 6, May 4, Jun 1, Jun 22 (special), Jul 6, Sep 8, Sep 10 (1st budget), Oct 5; no January or August agenda is listed. Agenda lead time is not stated anywhere found. The second budget hearing date (Sep 22, 2026) is inferred from the Oct 5 agenda's minutes item, not from a notice. Charter: not read; municode.com and the town's municipal code page both failed, so initiative, referendum and recall charter sections and the qualifying period are missing. Recall and petition levers use state statutes. The town's 2026 election notice (with qualifying dates) was not on the 2026 notices page; only the sample ballot was. Public comment rule (three minutes) is from the printed agenda notice. Minutes live in the Laserfiche portal at medleydocs.com, which requires cookies and could not be browsed; legal notices are at medley.realpublicnotices.com, which blocks automated fetching. No video link found."
+  },
+  {
    "key": "city-miami-gardens",
    "rosterBody": "city-miami-gardens",
    "name": "Miami Gardens City Council",
@@ -1033,6 +1433,244 @@
     }
    ],
    "notes": "Checked 2026-10-22. Schedule: the city calendar (CivicPlus) showed only the October 28, 2026 regular meeting; the November and December list views returned no council meetings, so the posted schedule stops there. The meeting pattern (second and fourth Wednesday, 5:30 p.m.) is from the City Council page; apply it for later dates but confirm on the CivicWeb portal, which blocks automated fetching (robots) and could not be read for agenda lead time, posted schedule or public comment rules. Agenda lead days unknown. Budget: only the second hearing (Sept 23, 2026, 5:01 p.m.) was found as a legal ad on the county site; the first hearing notice and the proposed budget release date for FY 2026-27 were not found (a 2026-09-09 notice URL guess failed). Charter: the city's charter PDF (DocumentCenter/View/396) has no machine-readable text and municode.com returned errors, so initiative, referendum and recall charter sections are missing; the recall lever uses Fla. Stat. 100.361, which the statute says applies to all cities, and the petition lever uses Fla. Stat. 166.031 as the state floor. Only Charter Sec. 6.2 (charter revision commission) and Sec. 2.1 (vice mayor) were confirmed, from a 2014 ballot. Public comment time limit not found. Legal notices moved to legalads.miamidade.gov effective Sept 1, 2025 (city Public Notices page)."
+  },
+  {
+   "key": "city-opa-locka",
+   "rosterBody": "city-opa-locka",
+   "name": "Opa-locka City Commission",
+   "jurisdiction": "City of Opa-locka",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.opalockafl.gov/",
+    "calendar": "https://www.opalockafl.gov/calendar.aspx?CID=14",
+    "agendas": "https://opalockafl.gov/304/Agendas-Minutes",
+    "minutes": "https://opalockafl.gov/366/Minutes",
+    "video": "https://www.youtube.com/user/CityofOpaLocka",
+    "clerk": "https://opalockafl.gov/170/City-Clerk"
+   },
+   "meetings": {
+    "pattern": "Second and fourth Wednesdays of each month, 6:00 p.m., Commission Chambers, Opa-locka Government Center, 780 Fisherman Street, 3rd Floor. Also by Zoom webinar (register on the city site before the meeting) and YouTube livestream. August meetings were cancelled in 2024 and 2026; December meetings are sometimes cancelled.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-07-22",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Regular Commission Meeting",
+      "source": "https://opalockafl.gov/337/Public-Notices"
+     },
+     {
+      "date": "2026-08-25",
+      "time": "15:00",
+      "kind": "special",
+      "note": "Special Commission Meeting (regular August meetings cancelled)",
+      "source": "https://opalockafl.gov/337/Public-Notices"
+     },
+     {
+      "date": "2026-09-08",
+      "time": "18:00",
+      "kind": "budget-hearing",
+      "note": "First Budget Hearing, FY2026-27 millage and budget",
+      "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+     },
+     {
+      "date": "2026-09-09",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Regular Commission Meeting",
+      "source": "https://opalockafl.gov/337/Public-Notices"
+     },
+     {
+      "date": "2026-09-23",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "Second Budget Hearing, final millage and budget adopted",
+      "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+     },
+     {
+      "date": "2026-09-23",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Regular Commission Meeting",
+      "source": "https://opalockafl.gov/337/Public-Notices"
+     },
+     {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Regular Commission Meeting, Municipal Complex 780 Fisherman St",
+      "source": "https://www.opalockafl.gov/Calendar.aspx?EID=2295"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Proposed budget workshop",
+     "start": "2026-07-14",
+     "end": "2026-07-14",
+     "repeats": "yearly",
+     "decides": "Commission reviews the manager's FY2027 proposed budget (workshop at noon).",
+     "source": "https://opalockafl.gov/337/Public-Notices"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-08",
+     "end": "2026-09-23",
+     "repeats": "yearly",
+     "decides": "First hearing Sept 8 at 6:00 p.m. and second hearing Sept 23 at 5:01 p.m. adopt the final millage rate ordinance and the general, proprietary and special funds budget for Oct 1, 2026 to Sept 30, 2027.",
+     "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Fiscal year runs October 1 through September 30 per the budget hearing notice.",
+     "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the 2026 general election",
+     "start": "2026-08-03",
+     "end": "2026-08-14",
+     "repeats": "once",
+     "decides": "Who appears on the Nov 3, 2026 ballot for Mayor and two Commission seats. 9:00 a.m. Aug 3 to noon Aug 14 at the Clerk's office, 780 Fisherman St, 4th Floor.",
+     "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+    },
+    {
+     "key": "election",
+     "name": "General and special election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor (Ervin vs. Tydus) and two at-large Commission seats (Aikens, Bass, Dennis, Dominguez), four-year terms, plus two charter referendums on elected officials' pay ($550 to $1,500 a month) and health and life insurance. Registration closed Oct 5, 2026.",
+     "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026"
+    },
+    {
+     "key": "election",
+     "name": "Runoff election, if needed",
+     "start": "2026-12-08",
+     "end": "2026-12-08",
+     "repeats": "once",
+     "decides": "Runoff for any race not decided on Nov 3.",
+     "source": "https://opalockafl.gov/179/Elections"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Come forward at the citizens' forum or during a public hearing, in person or on Zoom (register on the city site before the meeting to get the link). State your full name and address and any organization you represent; address the Commission as a body.",
+     "rules": "Three minutes per speaker for the citizens' forum and for public hearings (Code of Ordinances Sec. 2-57). Longer matters need an appointment with the City Clerk before the meeting. Decorum rules in Sec. 2-58. Anyone may speak on any agenda item.",
+     "deadline": "Register for Zoom before the meeting starts",
+     "url": "https://opalockafl.gov/318/Participation-at-Commission-Meetings",
+     "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is posted. The Clerk's email (jflores@opalockafl.gov) is the posted contact for meeting questions.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:jflores@opalockafl.gov",
+     "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+    },
+    {
+     "key": "contact",
+     "how": "Each elected official has a posted email (first initial plus last name at opalockafl.gov); the city main line is 305-953-2868.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://opalockafl.gov/174/City-Commission",
+     "source": "https://opalockafl.gov/174/City-Commission"
+    },
+    {
+     "key": "records-request",
+     "how": "Request through the Clerk's public records page; resolutions and ordinances are on the Laserfiche portal.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://opalockafl.gov/192/Public-Records",
+     "source": "https://opalockafl.gov/170/City-Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "The charter is published only through Municode, which refused automated fetches; initiative section numbers and thresholds are not recorded. A Charter Review Board met Jan to Mar 2026 and the Commission placed two charter amendments on the Nov 3, 2026 ballot.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+     "source": "https://opalockafl.gov/337/Public-Notices"
+    },
+    {
+     "key": "referendum",
+     "how": "Charter amendments go to the voters at a special election, as with the two questions on Nov 3, 2026. Citizen referendum thresholds not readable (Municode).",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+     "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026"
+    },
+    {
+     "key": "recall",
+     "how": "The charter has its own recall provisions (Florida AGO 76-167 confirmed they are not displaced by F.S. 100.361), but the section number and threshold could not be read because Municode refused fetches.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+     "source": "https://www.myfloridalegal.com/node/4884"
+    },
+    {
+     "key": "qualify",
+     "how": "File DS-DE 9 and DS-DE 84 first, then qualify in person with the City Clerk (appointment at 305-953-2800) during the posted window with the oath, affidavit of candidacy and residency, Form 1 and the $250 qualifying fee (charter Sec. 5.1(d)) plus the $66 state assessment, both from the campaign account.",
+     "rules": "Must have lived in the city more than 365 days before the election; four-year terms; pay $550 a month",
+     "deadline": "Noon on the last day of qualifying",
+     "url": "https://opalockafl.gov/272/Candidate-Qualifying-Information",
+     "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+    },
+    {
+     "key": "vote",
+     "how": "City elections are held with the county general election, first Tuesday after the first Monday in November of even years; runoff Dec 8, 2026 if needed.",
+     "rules": null,
+     "deadline": "2026-11-03",
+     "url": "https://opalockafl.gov/179/Elections",
+     "source": "https://opalockafl.gov/179/Elections"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-08-03",
+     "end": "2026-08-14",
+     "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+    },
+    "terms": "Mayor and four commissioners, all at large, four-year staggered terms: Mayor and two commission seats in 2026, two commission seats in 2028. The Commission picks a Vice Mayor.",
+    "source": "https://opalockafl.gov/179/Elections"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Joanna Flores, CMC, City Clerk",
+     "email": "jflores@opalockafl.gov",
+     "phone": "305-953-2800",
+     "url": "https://opalockafl.gov/170/City-Clerk",
+     "source": "https://opalockafl.gov/179/Elections"
+    },
+    {
+     "role": "commission office",
+     "name": "Mayor and City Commission",
+     "email": null,
+     "phone": "305-953-2868",
+     "url": "https://opalockafl.gov/174/City-Commission",
+     "source": "https://opalockafl.gov/174/City-Commission"
+    },
+    {
+     "role": "mayor",
+     "name": "John H. Taylor, Jr.",
+     "email": "jtaylor@opalockafl.gov",
+     "phone": "305-953-2868",
+     "url": "https://opalockafl.gov/174/City-Commission",
+     "source": "https://opalockafl.gov/174/City-Commission"
+    }
+   ],
+   "notes": "Opa-locka posts meeting notices one at a time on its Public Notices page and the CivicPlus calendar rather than an annual schedule; the only meeting posted past Sept 23, 2026 is Oct 28, 2026. Nov and Dec 2026 meetings and all of 2027 are not posted (Nov and Dec regular meetings were cancelled in 2024). The CivicClerk agenda portal link was not visible on the Agendas page. Agenda lead time is not stated. Public comment rules come from the city's Participation page citing Code Sec. 2-57 and 2-58; the page still names Sherbondy Village as the venue but 2026 notices put meetings at 780 Fisherman St. The charter is only on Municode, which refused fetches, so initiative, referendum and recall section numbers and thresholds are missing; the qualifying fee citation (Sec. 5.1(d)) comes from the Clerk's qualifying page. The elections page lists the qualifying fee as $316 (city $250 plus state $66). The Budget Reports page was rate-limited and not read; budget dates come from the public notices."
   },
   {
    "key": "city-palmetto-bay",
@@ -1260,6 +1898,213 @@
     }
    ],
    "notes": "Checked 2026-10-22. Schedule: the village's Public Meetings Schedule page lists 2026 only (regular meetings Jan 12, Feb 2, Mar 2, Apr 6, May 4, Jun 1, Jul 6, Sep 14, Oct 5, Nov 2, Dec 7; no August meeting) and no 2027 dates were posted anywhere found. Agenda lead days unknown: the Granicus video portal blocks automated fetching and the Meeting Central page does not state a posting rule; the agenda PDFs are on the granicusideas.com e-comment site. Budget hearing dates (Sep 14 and Sep 23, 2026) come from the agenda portal's past-meeting list, not a legal ad; the proposed budget release date was not found. Public comment time limit for in-person speakers not stated in the notice; only the one-minute reading of written forms is published. Village Code Sec. 2-45 (decorum) was not read because municode.com returned errors. Charter text is from the village's own PDF (DocumentCenter 2020), amended through 2016; the 2020 and 2026 charter amendments are not reflected in it. The 2026 election page's qualifying notice PDFs carry a 2024 label; dates used here are from the page body and the Qualifying as a Candidate page."
+  },
+  {
+   "key": "city-south-miami",
+   "rosterBody": "city-south-miami",
+   "name": "South Miami City Commission",
+   "jurisdiction": "City of South Miami",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.somifl.gov/",
+    "calendar": "https://www.somifl.gov/calendar.aspx?CID=14",
+    "agendas": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "minutes": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "video": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.somifl.gov/418/City-Clerk"
+   },
+   "meetings": {
+    "pattern": "First and third Tuesday of most months, 7:00 p.m., Commission Chambers, City Hall, 6130 Sunset Drive, with Zoom participation (chambers open 6:30 p.m. for in-person comment). Charter Art. II Sec. 5C requires at least two meetings a month generally and at least one a month from Nov 1 to Jan 31 and Jun 1 to Aug 31.",
+    "agendaLeadDays": null,
+    "schedule": [
+     {
+      "date": "2026-09-08",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "First budget hearing, tentative millage and budget (FY2027 budget schedule)",
+      "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule"
+     },
+     {
+      "date": "2026-09-22",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "Final budget hearing and regular meeting per the budget schedule; the schedule's layout also shows a Sept 20 line, so confirm the adoption date against the Granicus agenda",
+      "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule"
+     },
+     {
+      "date": "2026-11-03",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "City Commission Meeting (election day)",
+      "source": "https://www.somifl.gov/Calendar.aspx?EID=3516"
+     },
+     {
+      "date": "2026-11-17",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "City Commission Meeting",
+      "source": "https://www.somifl.gov/Calendar.aspx?EID=3308"
+     },
+     {
+      "date": "2026-12-01",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "City Commission Meeting; also the runoff date if the Nov 3 election ties",
+      "source": "https://www.somifl.gov/calendar.aspx?view=list&year=2026&month=12&day=1&CID=14"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Proposed budget and workshop",
+     "start": "2026-07-01",
+     "end": "2026-07-21",
+     "repeats": "yearly",
+     "decides": "Manager submits the proposed budget July 1 (charter Art. IV Sec. 2 requires it 60 days before the fiscal year); Commission budget workshop July 15 at 4:00 p.m.; proposed millage resolution July 21.",
+     "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-08",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "First hearing Sept 8 at 5:01 p.m. sets the tentative millage and budget; the final hearing adopts both by three affirmative votes before the fiscal year starts (charter Art. IV Sec. 2).",
+     "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Fiscal year runs October 1 through September 30 (same as Miami-Dade County per charter Art. IV Sec. 1).",
+     "source": "https://www.somifl.gov/685/Budget-Reports"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the 2026 general election",
+     "start": "2026-07-27",
+     "end": "2026-08-07",
+     "repeats": "once",
+     "decides": "Who appears on the Nov 3, 2026 ballot for Mayor, Commissioner Group I and Commissioner Group IV. 9:00 a.m. July 27 to 5:00 p.m. Aug 7 by appointment with the City Clerk.",
+     "source": "https://www.somifl.gov/130/Elections"
+    },
+    {
+     "key": "election",
+     "name": "Municipal general and special election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor (Javier E. Fernandez, unopposed), Group I (Steve Calle, unopposed), Group IV (Lisa Bonich, unopposed), plus four charter questions (franchise definition, online ordinance notices, purchasing policy, vacancy special-election timing). Starting with this election the Mayor and these commissioners serve four-year terms (charter Art. V Sec. 2A). Runoff only on a tie, Dec 1, 2026.",
+     "source": "https://www.somifl.gov/130/Elections"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak at public remarks or a public hearing in person at City Hall (chambers open 6:30 p.m.) or on Zoom (zoom.us/j/3056636338; phone +1-786-635-1003). Raise your virtual hand (*9 by phone) only when the Mayor calls for hands; use your real name on Zoom or you may not be called.",
+     "rules": "Three minutes per speaker. No advance sign-up. Members of the public, applicants and their representatives may speak.",
+     "deadline": "During the meeting",
+     "url": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes",
+     "source": "https://www.somifl.gov/DocumentCenter/View/7995/010725-Notice-of-Virtual-City-Commission-meeting"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is posted in the meeting notice. The Clerk's office (CityClerk@SoMiFL.gov, 305-663-6340) is the posted contact.",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:CityClerk@SoMiFL.gov",
+     "source": "https://www.somifl.gov/418/City-Clerk"
+    },
+    {
+     "key": "contact",
+     "how": "Mayor and Commission directory on the city site; City Hall 305-663-6330.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.somifl.gov/Directory.aspx?DID=4",
+     "source": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit through the Clerk's public records request page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.somifl.gov/527/Public-Records-Requests",
+     "source": "https://www.somifl.gov/418/City-Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "Charter Art. V Sec. 6A(1): qualified voters may propose an ordinance by petition signed by at least 15 percent of registered voters at the last regular city election; if the Commission does not adopt it unchanged it goes to the voters. Not allowed for the budget, capital program, appropriations, tax levies or salaries.",
+     "rules": "15 percent of registered voters",
+     "deadline": null,
+     "url": "https://www.somifl.gov/362/South-Miami-Charter",
+     "source": "https://www.somifl.gov/362/South-Miami-Charter"
+    },
+    {
+     "key": "referendum",
+     "how": "Charter Art. V Sec. 6A(2): qualified voters may require the Commission to reconsider an adopted ordinance; the petition must be filed within 30 days and suspends the ordinance. Same subject exclusions as initiative. Charter amendments follow the county Home Rule Charter and state law (Art. VI Sec. 7).",
+     "rules": "15 percent of registered voters; file within 30 days of adoption",
+     "deadline": "30 days after the ordinance is adopted",
+     "url": "https://www.somifl.gov/362/South-Miami-Charter",
+     "source": "https://www.somifl.gov/362/South-Miami-Charter"
+    },
+    {
+     "key": "recall",
+     "how": "Charter Art. V Sec. 6H: a Commission member may be recalled as provided by state law (F.S. 100.361).",
+     "rules": "State recall statute thresholds apply",
+     "deadline": null,
+     "url": "https://www.somifl.gov/362/South-Miami-Charter",
+     "source": "https://www.somifl.gov/362/South-Miami-Charter"
+    },
+    {
+     "key": "qualify",
+     "how": "Schedule an appointment with the City Clerk (305-663-6340, nkenga.payne@somifl.gov) and file during the posted window. Charter Art. V Sec. 2D bars anyone who would serve nine years or more as Mayor or Commissioner.",
+     "rules": "Four-year terms starting with 2026; Vice Mayor is the commissioner with the most votes (Art. II Sec. 2)",
+     "deadline": "5:00 p.m. on the last day of qualifying",
+     "url": "https://www.somifl.gov/130/Elections",
+     "source": "https://www.somifl.gov/130/Elections"
+    },
+    {
+     "key": "vote",
+     "how": "City elections are held in even years on the national general election day. Registration closed Oct 5, 2026; early voting Oct 19 to Nov 1; vote-by-mail requests by 5 p.m. Oct 22.",
+     "rules": null,
+     "deadline": "2026-11-03",
+     "url": "https://www.somifl.gov/130/Elections",
+     "source": "https://www.somifl.gov/130/Elections"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-07-27",
+     "end": "2026-08-07",
+     "source": "https://www.somifl.gov/130/Elections"
+    },
+    "terms": "Mayor and four commissioners (Groups I to IV). Beginning with the 2026 election the Mayor and two commissioners (Groups I and IV) serve four years; the other two groups are elected in 2028. Term limit: no one may appear on the ballot who would serve nine or more years.",
+    "source": "https://www.somifl.gov/362/South-Miami-Charter"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Nkenga Payne, City Clerk",
+     "email": "CityClerk@SoMiFL.gov",
+     "phone": "305-663-6340",
+     "url": "https://www.somifl.gov/418/City-Clerk",
+     "source": "https://www.somifl.gov/418/City-Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "Mayor and Commission",
+     "email": null,
+     "phone": "305-663-6330",
+     "url": "https://www.somifl.gov/Directory.aspx?DID=4",
+     "source": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes"
+    }
+   ],
+   "notes": "The CivicPlus calendar showed only Nov 3, Nov 17 and Dec 1, 2026 commission meetings; the Sept-Oct 2026 and 2027 calendar views failed (rate limit and server error), and the Granicus archive was not fetched, so Oct 2026 meetings and all of 2027 are not recorded. Agenda lead time is not stated. The site's public meeting and hearing notice pages stop at Jan 2025 in the fetched snapshot; the 2026 budget dates come from the FY2027 Budget Schedule PDF, whose layout made the final hearing date ambiguous (Sept 20 is a Sunday; Sept 22 is the listed budget and regular meeting). Public comment rules come from the Jan 7, 2025 meeting notice (three minutes, Zoom hand-raise), not a 2026 notice. The Mayor and Commission directory page refused fetching, so individual emails are not listed. Qualifying fee and swearing-in date not posted."
   },
   {
    "key": "city-sunny-isles-beach",

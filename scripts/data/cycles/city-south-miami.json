@@ -1,0 +1,56 @@
+{
+  "key": "city-south-miami",
+  "rosterBody": "city-south-miami",
+  "name": "South Miami City Commission",
+  "jurisdiction": "City of South Miami",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.somifl.gov/",
+    "calendar": "https://www.somifl.gov/calendar.aspx?CID=14",
+    "agendas": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "minutes": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "video": "https://southmiami.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.somifl.gov/418/City-Clerk"
+  },
+  "meetings": {
+    "pattern": "First and third Tuesday of most months, 7:00 p.m., Commission Chambers, City Hall, 6130 Sunset Drive, with Zoom participation (chambers open 6:30 p.m. for in-person comment). Charter Art. II Sec. 5C requires at least two meetings a month generally and at least one a month from Nov 1 to Jan 31 and Jun 1 to Aug 31.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-09-08", "time": "17:01", "kind": "budget-hearing", "note": "First budget hearing, tentative millage and budget (FY2027 budget schedule)", "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule" },
+      { "date": "2026-09-22", "time": "17:01", "kind": "budget-hearing", "note": "Final budget hearing and regular meeting per the budget schedule; the schedule's layout also shows a Sept 20 line, so confirm the adoption date against the Granicus agenda", "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule" },
+      { "date": "2026-11-03", "time": "19:00", "kind": "regular", "note": "City Commission Meeting (election day)", "source": "https://www.somifl.gov/Calendar.aspx?EID=3516" },
+      { "date": "2026-11-17", "time": "19:00", "kind": "regular", "note": "City Commission Meeting", "source": "https://www.somifl.gov/Calendar.aspx?EID=3308" },
+      { "date": "2026-12-01", "time": "19:00", "kind": "regular", "note": "City Commission Meeting; also the runoff date if the Nov 3 election ties", "source": "https://www.somifl.gov/calendar.aspx?view=list&year=2026&month=12&day=1&CID=14" }
+    ]
+  },
+  "phases": [
+    { "key": "budget-proposal", "name": "Proposed budget and workshop", "start": "2026-07-01", "end": "2026-07-21", "repeats": "yearly", "decides": "Manager submits the proposed budget July 1 (charter Art. IV Sec. 2 requires it 60 days before the fiscal year); Commission budget workshop July 15 at 4:00 p.m.; proposed millage resolution July 21.", "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule" },
+    { "key": "budget-hearings", "name": "September budget hearings", "start": "2026-09-08", "end": "2026-09-22", "repeats": "yearly", "decides": "First hearing Sept 8 at 5:01 p.m. sets the tentative millage and budget; the final hearing adopts both by three affirmative votes before the fiscal year starts (charter Art. IV Sec. 2).", "source": "https://www.somifl.gov/DocumentCenter/View/8911/FY-2027-Budget-Schedule" },
+    { "key": "fiscal-year-start", "name": "Fiscal year begins", "start": "2026-10-01", "end": "2026-10-01", "repeats": "yearly", "decides": "Fiscal year runs October 1 through September 30 (same as Miami-Dade County per charter Art. IV Sec. 1).", "source": "https://www.somifl.gov/685/Budget-Reports" },
+    { "key": "qualifying", "name": "Candidate qualifying for the 2026 general election", "start": "2026-07-27", "end": "2026-08-07", "repeats": "once", "decides": "Who appears on the Nov 3, 2026 ballot for Mayor, Commissioner Group I and Commissioner Group IV. 9:00 a.m. July 27 to 5:00 p.m. Aug 7 by appointment with the City Clerk.", "source": "https://www.somifl.gov/130/Elections" },
+    { "key": "election", "name": "Municipal general and special election", "start": "2026-11-03", "end": "2026-11-03", "repeats": "once", "decides": "Mayor (Javier E. Fernandez, unopposed), Group I (Steve Calle, unopposed), Group IV (Lisa Bonich, unopposed), plus four charter questions (franchise definition, online ordinance notices, purchasing policy, vacancy special-election timing). Starting with this election the Mayor and these commissioners serve four-year terms (charter Art. V Sec. 2A). Runoff only on a tie, Dec 1, 2026.", "source": "https://www.somifl.gov/130/Elections" }
+  ],
+  "levers": [
+    { "key": "public-comment", "how": "Speak at public remarks or a public hearing in person at City Hall (chambers open 6:30 p.m.) or on Zoom (zoom.us/j/3056636338; phone +1-786-635-1003). Raise your virtual hand (*9 by phone) only when the Mayor calls for hands; use your real name on Zoom or you may not be called.", "rules": "Three minutes per speaker. No advance sign-up. Members of the public, applicants and their representatives may speak.", "deadline": "During the meeting", "url": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes", "source": "https://www.somifl.gov/DocumentCenter/View/7995/010725-Notice-of-Virtual-City-Commission-meeting" },
+    { "key": "written-comment", "how": "No written comment procedure is posted in the meeting notice. The Clerk's office (CityClerk@SoMiFL.gov, 305-663-6340) is the posted contact.", "rules": null, "deadline": null, "url": "mailto:CityClerk@SoMiFL.gov", "source": "https://www.somifl.gov/418/City-Clerk" },
+    { "key": "contact", "how": "Mayor and Commission directory on the city site; City Hall 305-663-6330.", "rules": null, "deadline": null, "url": "https://www.somifl.gov/Directory.aspx?DID=4", "source": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes" },
+    { "key": "records-request", "how": "Submit through the Clerk's public records request page.", "rules": null, "deadline": null, "url": "https://www.somifl.gov/527/Public-Records-Requests", "source": "https://www.somifl.gov/418/City-Clerk" },
+    { "key": "petition", "how": "Charter Art. V Sec. 6A(1): qualified voters may propose an ordinance by petition signed by at least 15 percent of registered voters at the last regular city election; if the Commission does not adopt it unchanged it goes to the voters. Not allowed for the budget, capital program, appropriations, tax levies or salaries.", "rules": "15 percent of registered voters", "deadline": null, "url": "https://www.somifl.gov/362/South-Miami-Charter", "source": "https://www.somifl.gov/362/South-Miami-Charter" },
+    { "key": "referendum", "how": "Charter Art. V Sec. 6A(2): qualified voters may require the Commission to reconsider an adopted ordinance; the petition must be filed within 30 days and suspends the ordinance. Same subject exclusions as initiative. Charter amendments follow the county Home Rule Charter and state law (Art. VI Sec. 7).", "rules": "15 percent of registered voters; file within 30 days of adoption", "deadline": "30 days after the ordinance is adopted", "url": "https://www.somifl.gov/362/South-Miami-Charter", "source": "https://www.somifl.gov/362/South-Miami-Charter" },
+    { "key": "recall", "how": "Charter Art. V Sec. 6H: a Commission member may be recalled as provided by state law (F.S. 100.361).", "rules": "State recall statute thresholds apply", "deadline": null, "url": "https://www.somifl.gov/362/South-Miami-Charter", "source": "https://www.somifl.gov/362/South-Miami-Charter" },
+    { "key": "qualify", "how": "Schedule an appointment with the City Clerk (305-663-6340, nkenga.payne@somifl.gov) and file during the posted window. Charter Art. V Sec. 2D bars anyone who would serve nine years or more as Mayor or Commissioner.", "rules": "Four-year terms starting with 2026; Vice Mayor is the commissioner with the most votes (Art. II Sec. 2)", "deadline": "5:00 p.m. on the last day of qualifying", "url": "https://www.somifl.gov/130/Elections", "source": "https://www.somifl.gov/130/Elections" },
+    { "key": "vote", "how": "City elections are held in even years on the national general election day. Registration closed Oct 5, 2026; early voting Oct 19 to Nov 1; vote-by-mail requests by 5 p.m. Oct 22.", "rules": null, "deadline": "2026-11-03", "url": "https://www.somifl.gov/130/Elections", "source": "https://www.somifl.gov/130/Elections" }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-07-27", "end": "2026-08-07", "source": "https://www.somifl.gov/130/Elections" },
+    "terms": "Mayor and four commissioners (Groups I to IV). Beginning with the 2026 election the Mayor and two commissioners (Groups I and IV) serve four years; the other two groups are elected in 2028. Term limit: no one may appear on the ballot who would serve nine or more years.",
+    "source": "https://www.somifl.gov/362/South-Miami-Charter"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Nkenga Payne, City Clerk", "email": "CityClerk@SoMiFL.gov", "phone": "305-663-6340", "url": "https://www.somifl.gov/418/City-Clerk", "source": "https://www.somifl.gov/418/City-Clerk" },
+    { "role": "commission office", "name": "Mayor and Commission", "email": null, "phone": "305-663-6330", "url": "https://www.somifl.gov/Directory.aspx?DID=4", "source": "https://www.somifl.gov/102/Agendas-Meeting-Videos-Minutes" }
+  ],
+  "notes": "The CivicPlus calendar showed only Nov 3, Nov 17 and Dec 1, 2026 commission meetings; the Sept-Oct 2026 and 2027 calendar views failed (rate limit and server error), and the Granicus archive was not fetched, so Oct 2026 meetings and all of 2027 are not recorded. Agenda lead time is not stated. The site's public meeting and hearing notice pages stop at Jan 2025 in the fetched snapshot; the 2026 budget dates come from the FY2027 Budget Schedule PDF, whose layout made the final hearing date ambiguous (Sept 20 is a Sunday; Sept 22 is the listed budget and regular meeting). Public comment rules come from the Jan 7, 2025 meeting notice (three minutes, Zoom hand-raise), not a 2026 notice. The Mayor and Commission directory page refused fetching, so individual emails are not listed. Qualifying fee and swearing-in date not posted."
+}

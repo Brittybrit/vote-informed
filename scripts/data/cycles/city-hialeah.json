@@ -1,0 +1,158 @@
+{
+  "key": "city-hialeah",
+  "rosterBody": "city-hialeah",
+  "name": "Hialeah City Council",
+  "jurisdiction": "City of Hialeah",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.hialeahfl.gov/435/City-Council",
+    "calendar": "https://www.hialeahfl.gov/DocumentCenter/View/21855",
+    "agendas": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+    "minutes": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+    "video": "https://www.youtube.com/cityofhialeahgov",
+    "clerk": "https://www.hialeahfl.gov/160/City-Clerk"
+  },
+  "meetings": {
+    "pattern": "Second and fourth Tuesday of each month at 5:30 p.m. Since October 1, 2026 meetings are at the Milander Center, 4800 Palm Avenue, Hialeah 33012 (previously Council Chambers, 3rd floor of City Hall, 501 Palm Avenue). Streamed live on the city's YouTube page.",
+    "agendaLeadDays": null,
+    "schedule": [
+      { "date": "2026-10-27", "time": "17:30", "kind": "regular", "note": "Milander Center, 4800 Palm Avenue", "source": "https://www.hialeahfl.gov/DocumentCenter/View/22434/Public-Notice-City-Council-Meeting-October-27-2026" },
+      { "date": "2026-11-10", "time": "17:30", "kind": "regular", "note": "Calendar marks this date SUBJECT TO CHANGE because of the Veterans Day holiday; check the Agenda Center. Milander Center.", "source": "https://www.hialeahfl.gov/DocumentCenter/View/21855" },
+      { "date": "2026-11-24", "time": "17:30", "kind": "regular", "note": "CANCELLED by Council on September 22, 2026 for Thanksgiving (Charter Sec. 3.01(a))", "source": "https://www.hialeahfl.gov/DocumentCenter/View/22376/Notice-of-Cancellation-of-the-City-Council-Meetings-of-November-24-2026" },
+      { "date": "2026-12-08", "time": "17:30", "kind": "regular", "note": "Milander Center", "source": "https://www.hialeahfl.gov/DocumentCenter/View/21855" },
+      { "date": "2026-12-22", "time": "17:30", "kind": "regular", "note": "CANCELLED by Council on September 22, 2026 for Christmas (Charter Sec. 3.01(a))", "source": "https://www.hialeahfl.gov/DocumentCenter/View/22377/Notice-of-Cancellation-of-the-City-Council-Meetings-of-December-22-2026" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-08",
+      "end": "2026-09-22",
+      "repeats": "yearly",
+      "decides": "First reading and public hearing September 8 and second reading and public hearing September 22 (both 5:30 p.m.) adopt the millage and the FY 2027 budget; a budget workshop was held September 14.",
+      "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/hialeah/2026/2026-09-08-budget-hearings.pdf"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "FY 2027 runs October 1, 2026 to September 30, 2027.",
+      "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/hialeah/2026/2026-09-08-budget-hearings.pdf"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the Group II special election",
+      "start": "2026-07-06",
+      "end": "2026-07-27",
+      "repeats": "once",
+      "decides": "Who runs for Council Group II (balance of a term ending November 5, 2027); noon Monday July 6 to 5:00 p.m. Monday July 27, 2026 with the City Clerk.",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    },
+    {
+      "key": "election",
+      "name": "Special primary election, Council Group II",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Fills the Group II seat vacated by Jesus Tundidor; run-off (special general) December 8, 2026 if no majority.",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Speak during the Comments and Questions portion of the meeting on any city business, or on an agenda item when it is heard. The council rules encourage signing in with the City Clerk before the meeting starts.",
+      "rules": "Comments and Questions: one appearance per person, three minutes. Agenda items: up to three speakers in favor and three against, three minutes each. No signs or placards in the chamber. Lobbyists must register with the City Clerk.",
+      "deadline": "Sign in with the Clerk before the meeting begins",
+      "url": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+      "source": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_09222026-1407"
+    },
+    {
+      "key": "written-comment",
+      "how": "Email comments to CityClerk@hialeahfl.gov; they are read into the record for up to three minutes. Visual material to be shown during your comments must go to the Clerk's office ahead of time.",
+      "rules": "For the October 27, 2026 meeting the email deadline was 3:00 p.m. Thursday October 22 (five days before) and the visual-material deadline 5:00 p.m. October 6; each meeting notice sets its own dates.",
+      "deadline": "About five days before the meeting, per the meeting notice",
+      "url": "mailto:CityClerk@hialeahfl.gov",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/22434/Public-Notice-City-Council-Meeting-October-27-2026"
+    },
+    {
+      "key": "contact",
+      "how": "Call City Hall or email the City Clerk, who forwards to the Mayor and Council.",
+      "rules": "City Hall 305-883-5800; Clerk 305-883-5820.",
+      "deadline": null,
+      "url": "https://www.hialeahfl.gov/435/City-Council",
+      "source": "https://www.hialeahfl.gov/435/City-Council"
+    },
+    {
+      "key": "records-request",
+      "how": "Submit a public records request through the City Clerk, the custodian of public records.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.hialeahfl.gov/1115/Public-Records-Request",
+      "source": "https://www.hialeahfl.gov/160/City-Clerk"
+    },
+    {
+      "key": "petition",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/hialeah/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "referendum",
+      "how": null,
+      "rules": null,
+      "deadline": null,
+      "url": "https://library.municode.com/fl/hialeah/codes/code_of_ordinances",
+      "source": null
+    },
+    {
+      "key": "recall",
+      "how": "Florida's uniform municipal recall statute, F.S. 100.361, applies to Hialeah council members and the Mayor; the charter text could not be checked for a city-specific provision.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+      "key": "qualify",
+      "how": "File qualification papers, the qualifying fee and the assessment with the City Clerk during the qualifying period (City Code Sec. 34-2; Charter Art. V Sec. 5.05). Candidates must be resident electors (Sec. 5.01); elections are nonpartisan (Sec. 5.02).",
+      "rules": "Qualifying has run from noon on the first Monday of July to 5:00 p.m. three weeks later (2025: July 7 to July 28; 2026 special: July 6 to July 27). Term limits: Mayor two consecutive terms, Council three consecutive terms (Sec. 2.02(d)).",
+      "deadline": "5:00 p.m. on the last day of the July qualifying period",
+      "url": "https://www.hialeahfl.gov/176/Candidate-Resources",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21756/Frequently-Asked-Questions--Answers-and-General-Information-about-Elections-and-Canidate-Qualifying-PDF"
+    },
+    {
+      "key": "vote",
+      "how": "Regular city elections are held in November of odd years (primary the first Tuesday after the first Monday, run-off general in December); the 2026 Group II special election is on the November 3, 2026 ballot. Vote through Miami-Dade Elections.",
+      "rules": "Registered Hialeah voters.",
+      "deadline": "November 3, 2026 special primary; December 8, 2026 run-off if needed",
+      "url": "https://www.hialeahfl.gov/163/Voter-Resources",
+      "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Board appointments are made at council meetings (a standing Board Appointments agenda item); ask the City Clerk about openings.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.hialeahfl.gov/160/City-Clerk",
+      "source": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10132026-1412"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-07-06", "end": "2026-07-27", "source": "https://www.hialeahfl.gov/DocumentCenter/View/21757/Important-Dates-and-Reporting-Dates---2026-Special-Primary-Election-PDF---City-Council" },
+    "terms": "Mayor four years, limit two consecutive terms. Seven council members elected at large by group number for four-year terms, limit three consecutive terms. Groups elected in November 2025: Mayor and Groups V, VI, VII (full terms) plus III and IV (special). Group II special election November 3, 2026 fills a term ending November 5, 2027; the next regular election is November 2027 (Groups I, II, III, IV expected).",
+    "source": "https://www.hialeahfl.gov/169/Overview"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Marbelys Fatjo, Esq., CMC, City Clerk", "email": "cityclerk@hialeahfl.gov", "phone": "305-883-5820", "url": "https://www.hialeahfl.gov/160/City-Clerk", "source": "https://www.hialeahfl.gov/160/City-Clerk" },
+    { "role": "commission office", "name": "City Council (via City Hall)", "email": null, "phone": "305-883-5800", "url": "https://www.hialeahfl.gov/435/City-Council", "source": "https://www.hialeahfl.gov/435/City-Council" }
+  ],
+  "notes": "Schedule is the city's 2026 Council Meeting Calendar (two versions are posted: DocumentCenter/View/21855 omits July; /21215 lists July 14 and 28; no July agendas exist in the Agenda Center) plus cancellation notices for Nov 24 and Dec 22. No 2027 calendar is posted yet. Agenda lead time is not stated; the council page says only that agendas are available prior to meetings. Public comment rules come from the Meeting Guidelines printed on each agenda and the Council Rules and Regulations PDF (Resolution from 2008, number illegible in the scan). The charter text for initiative, referendum and recall could not be read: every Municode page for Hialeah returned an error and no charter PDF is posted on hialeahfl.gov, so petition and referendum are null and recall cites the state statute only. The 'November of odd years' election pattern is inferred from the 2025 notice (Nov 4, 2025 primary, Dec 9 run-off) and the Group II term ending Nov 5, 2027; the charter section was not read. Budget: only the September hearing notices were found; no proposed-budget release date or 2027 calendar is posted. Clerk email for written comment is CityClerk@hialeahfl.gov per the Oct 27 notice."
+}
