@@ -16,6 +16,8 @@ routes = [
 directory = "./public"
 # Lets the Worker read the bundled master ballot (trusted measure summaries).
 binding = "ASSETS"
+# Static files normally win before the Worker runs. The root must reach the Worker so admin.wethepeople305.org can serve the board.
+run_worker_first = ["/", "/index.html"]
 
 # Forks: create your own namespace with `npx wrangler kv namespace create CACHE`
 # and replace the id below. Also replace or delete the routes above.
