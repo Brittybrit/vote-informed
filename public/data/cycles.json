@@ -621,6 +621,224 @@
    "notes": "Schedule: the city's events directory posts notices for November 18 and December 9, 2026; Legistar (doral.legistar.com) lists nothing after October 7, 2026 and no 2027 dates, so the file stops at December 2026. 2026 regular meetings held: Jan 15, Feb 18, Mar 11, Apr 8, May 13, Jun 10, Aug 12, Sep 9, Oct 7 (all 10:00 a.m. with 6:00 p.m. evening sessions); budget specials Jul 29 (millage), Aug 21 (workshop), Sep 8 and Sep 22 (hearings, 6:00 p.m.). Agenda lead time is not posted; Legistar agenda revision dates run two to six days before meetings. Public comment time limit, sign-up and written comment rules are not posted anywhere found (agenda, notice PDF, clerk pages); the Municode code pages and the Granicus agenda PDFs could not be fetched (robots or client errors). The charter has no recall procedure. The 2028 seats and the exact seat-to-member mapping come from the Elected Officials page term ranges (Fraga and Pineyro 2022-2028; Cabral and Porras to 2026), not from a seat list. No 2027 budget calendar is posted; the budget phases are the 2026 dates marked yearly. The council department page (cityofdoral.com/government/city-council/) returned an error."
   },
   {
+   "key": "city-el-portal",
+   "rosterBody": "city-el-portal",
+   "name": "El Portal Village Council",
+   "jurisdiction": "Village of El Portal",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://elportalvillage.com/",
+    "calendar": "https://elportalvillage.com/calendar/",
+    "agendas": "https://elportalvillage.com/village-meetings/",
+    "minutes": "https://elportalvillage.com/village-meetings/",
+    "video": "https://elportalvillage.com/videos/",
+    "clerk": "https://elportalvillage.com/village-clerk/"
+   },
+   "meetings": {
+    "pattern": "Fourth Tuesday of every month except August, 7:00 p.m., Village Hall, 500 NE 87th Street, El Portal, FL 33138. The posted November and December 2026 dates move off the fourth Tuesday for the holidays.",
+    "agendaLeadDays": 4,
+    "schedule": [
+     {
+      "date": "2026-10-27",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Village Council Meeting",
+      "source": "https://elportalvillage.com/village-meetings/"
+     },
+     {
+      "date": "2026-11-17",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Village Council Meeting (third Tuesday, as posted)",
+      "source": "https://elportalvillage.com/village-meetings/"
+     },
+     {
+      "date": "2026-12-08",
+      "time": "19:00",
+      "kind": "regular",
+      "note": "Village Council Meeting (second Tuesday, as posted)",
+      "source": "https://elportalvillage.com/village-meetings/"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Budget workshop on the administration's proposed budget",
+     "start": "2026-09-08",
+     "end": "2026-09-08",
+     "repeats": "yearly",
+     "decides": "Council reviews the proposed 2026-27 budget from the administration, 5:30 p.m. at Village Hall. The proposed (maximum) millage was set at a late-July council session for the TRIM notice.",
+     "source": "https://elportalvillage.com/wp-content/uploads/2026/09/BudgetWorkshop-Agenda-20260908.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "First budget hearing",
+     "start": "2026-09-10",
+     "end": "2026-09-10",
+     "repeats": "yearly",
+     "decides": "Tentative millage rate and tentative annual operating budget ($5,257,909) for FY 2026-27, Thursday 6:30 p.m.",
+     "source": "https://elportalvillage.com/wp-content/uploads/2026/09/FirstBudgetHearing-Agenda-20260910v2.pdf"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "Second and final budget hearing",
+     "start": "2026-09-22",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "Final millage rate and final annual operating budget for FY 2026-27, 6:45 p.m., preceded by a special assessment budget meeting at 6:30 p.m. and followed by the regular council meeting at 7:00 p.m.",
+     "source": "https://elportalvillage.com/wp-content/uploads/2026/09/2ndBudgetHearing-Agenda-20260922.pdf"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "FY 2026-27 budget takes effect. The agenda labels the year '2026-2027 FISCAL YEAR'; the October 1 start is the Florida municipal standard and is not stated on a fetchable village page.",
+     "source": "https://elportalvillage.com/wp-content/uploads/2026/09/2ndBudgetHearing-Agenda-20260922.pdf"
+    },
+    {
+     "key": "recess",
+     "name": "August recess",
+     "start": "2026-08-01",
+     "end": "2026-08-31",
+     "repeats": "yearly",
+     "decides": "No regular council meeting in August.",
+     "source": "https://elportalvillage.com/village-meetings/"
+    },
+    {
+     "key": "election",
+     "name": "Village general election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor and Council Seats 1, 2, 3 and 4 are all on the ballot.",
+     "source": "https://elportalvillage.com/election-information/"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Speak during the Good and Welfare item at the regular council meeting at Village Hall.",
+     "rules": "The agenda asks that comments be limited to three minutes per person and that speakers keep to agenda items. No profanity, shouting, heckling or disruptive behavior; no signs or placards in Village Hall. No sign-up procedure is printed.",
+     "deadline": null,
+     "url": "https://elportalvillage.com/village-meetings/",
+     "source": "https://elportalvillage.com/wp-content/uploads/2026/01/CouncilMeeting-Agenda-20260922.pdf"
+    },
+    {
+     "key": "written-comment",
+     "how": "No written comment procedure is published. Email the Village Clerk, Yenise Jacobi, at yjacobi@villageofelportal.org and ask that it go to the council.",
+     "rules": null,
+     "deadline": "Council packets go out by close of business Friday before the meeting, so send comments before then to reach the packet",
+     "url": "mailto:yjacobi@villageofelportal.org",
+     "source": "https://elportalvillage.com/village-clerk/"
+    },
+    {
+     "key": "contact",
+     "how": "Each council member has a page with a direct email and phone (for example Mayor Omarr Nickerson, onickerson@villageofelportal.org, 305-338-2730). Village Hall main line 305-795-7880.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://elportalvillage.com/mayor/",
+     "source": "https://elportalvillage.com/mayor/"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit the Public Records Request Form to the Village Clerk, who responds to requests.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://elportalvillage.com/wp-content/uploads/2020/09/ElPortal-PublicRecordsFORM.pdf",
+     "source": "https://elportalvillage.com/village-clerk/"
+    },
+    {
+     "key": "petition",
+     "how": "Charter amendment by petition is available under state law: a petition signed by 10 percent of the registered electors as of the last municipal general election forces a referendum at the next general election or a special election.",
+     "rules": "Fla. Stat. 166.031(1). The village charter's own initiative section, if any, could not be read: the village site does not post the charter and municode.com (fl/el_portal) returned errors to automated fetching.",
+     "deadline": null,
+     "url": "https://library.municode.com/fl/el_portal/codes/code_of_ordinances",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "referendum",
+     "how": "Not found. The charter was not readable (see petition); only the state charter-amendment referendum route under Fla. Stat. 166.031 is confirmed.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://library.municode.com/fl/el_portal/codes/code_of_ordinances",
+     "source": "http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0166/Sections/0166.031.html"
+    },
+    {
+     "key": "recall",
+     "how": "Recall follows Florida's uniform municipal recall statute, which applies to every city whether or not its charter has a recall section. For a village with 500 to 1,999 registered electors the first petition needs the greater of 100 electors or 10 percent, gathered within 30 days; for 2,000 to 4,999, the greater of 250 or 10 percent. A second 'Recall Petition and Defense' round needs 15 percent within 60 days.",
+     "rules": "Fla. Stat. 100.361(1), (2)(b), (2)(f), (3)(a), (3)(c), (11), (12). File with the Village Clerk. El Portal's elector count was not checked; pick the tier from county registration figures.",
+     "deadline": "30 days for the first round; 60 days for the second",
+     "url": "https://elportalvillage.com/village-clerk/",
+     "source": "https://www.flsenate.gov/Laws/Statutes/2025/100.361"
+    },
+    {
+     "key": "qualify",
+     "how": "File with the Village Clerk, who is the Supervisor of Elections and official filing officer. The 2026 qualifying dates were not posted on the election page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://elportalvillage.com/election-information/",
+     "source": "https://elportalvillage.com/village-clerk/"
+    },
+    {
+     "key": "vote",
+     "how": "Vote November 3, 2026 for Mayor and all four council seats. Vote-by-mail request forms are linked from the village site.",
+     "rules": "Registered voters living in the village.",
+     "deadline": "Election day November 3, 2026",
+     "url": "https://elportalvillage.com/election-information/",
+     "source": "https://elportalvillage.com/election-information/"
+    },
+    {
+     "key": "serve-on-board",
+     "how": "The village has a Planning and Zoning board that meets as needed at Village Hall; council committee assignments are posted. No application page was found.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://elportalvillage.com/village-meetings/",
+     "source": "https://elportalvillage.com/"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": null,
+     "end": null,
+     "source": null
+    },
+    "terms": "Mayor and four council seats; all five are on the November 3, 2026 ballot. Term length is not stated on a fetchable village page and the charter could not be read; the county municipality directory lists the next election as November 2026.",
+    "source": "https://elportalvillage.com/election-information/"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Yenise Jacobi, Village Clerk",
+     "email": "yjacobi@villageofelportal.org",
+     "phone": "305-795-7880",
+     "url": "https://elportalvillage.com/village-clerk/",
+     "source": "https://elportalvillage.com/village-clerk/"
+    },
+    {
+     "role": "mayor",
+     "name": "Omarr C. Nickerson",
+     "email": "onickerson@villageofelportal.org",
+     "phone": "305-338-2730",
+     "url": "https://elportalvillage.com/mayor/",
+     "source": "https://elportalvillage.com/mayor/"
+    },
+    {
+     "role": "commission office",
+     "name": "Village Council (seat pages)",
+     "email": "",
+     "phone": "305-795-7880",
+     "url": "https://elportalvillage.com/councilperson-seat-1/",
+     "source": "https://elportalvillage.com/"
+    }
+   ],
+   "notes": "Checked 2026-10-22. Schedule: the village meetings page lists Oct 27, Nov 17 and Dec 8, 2026 and nothing for 2027; the 2026 calendar PDF has no readable text. agendaLeadDays is 4 because the clerk page says council packets are distributed by close of business Friday before a Tuesday meeting; the agenda itself may post earlier or later. Budget dates are from the posted agendas. Charter not read: the village does not post it and municode.com (library.municode.com/fl/el_portal) returned errors, so initiative, referendum and recall charter sections, term lengths, and the qualifying period are missing; recall and petition levers use state statutes. The election page lists the Nov 3, 2026 candidates but no qualifying dates or runoff rule. Public comment three-minute limit is from the printed agenda (phrased as a request). Video page exists but was not checked."
+  },
+  {
    "key": "city-hialeah",
    "rosterBody": "city-hialeah",
    "name": "Hialeah City Council",
@@ -1898,6 +2116,246 @@
     }
    ],
    "notes": "Checked 2026-10-22. Schedule: the village's Public Meetings Schedule page lists 2026 only (regular meetings Jan 12, Feb 2, Mar 2, Apr 6, May 4, Jun 1, Jul 6, Sep 14, Oct 5, Nov 2, Dec 7; no August meeting) and no 2027 dates were posted anywhere found. Agenda lead days unknown: the Granicus video portal blocks automated fetching and the Meeting Central page does not state a posting rule; the agenda PDFs are on the granicusideas.com e-comment site. Budget hearing dates (Sep 14 and Sep 23, 2026) come from the agenda portal's past-meeting list, not a legal ad; the proposed budget release date was not found. Public comment time limit for in-person speakers not stated in the notice; only the one-minute reading of written forms is published. Village Code Sec. 2-45 (decorum) was not read because municode.com returned errors. Charter text is from the village's own PDF (DocumentCenter 2020), amended through 2016; the 2020 and 2026 charter amendments are not reflected in it. The 2026 election page's qualifying notice PDFs carry a 2024 label; dates used here are from the page body and the Qualifying as a Candidate page."
+  },
+  {
+   "key": "city-pinecrest",
+   "rosterBody": "city-pinecrest",
+   "name": "Pinecrest Village Council",
+   "jurisdiction": "Village of Pinecrest",
+   "level": "municipal",
+   "checked": "2026-10-22",
+   "links": {
+    "home": "https://www.pinecrest-fl.gov/",
+    "calendar": "https://pinecrest.legistar.com/Calendar.aspx",
+    "agendas": "https://pinecrest.legistar.com/Calendar.aspx",
+    "minutes": "https://pinecrest.legistar.com/Calendar.aspx",
+    "video": "https://pinecrest.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.pinecrest-fl.gov/Government/Clerk"
+   },
+   "meetings": {
+    "pattern": "Usually the second Tuesday of the month at 6:00 p.m., Pinecrest Municipal Center Council Chamber (third floor), 12645 Pinecrest Parkway, with Zoom participation. Dates and times vary (2026 regular meetings ranged from a Monday to a Thursday and 4:00 to 6:00 p.m.). Charter Sec. 4.1(a) requires at least eleven regular monthly meetings a year; no November 2026 meeting is posted.",
+    "agendaLeadDays": 7,
+    "schedule": [
+     {
+      "date": "2026-08-20",
+      "time": "18:00",
+      "kind": "workshop",
+      "note": "Village Manager's Budget Town Hall, Council Chambers, 6:00 to 7:30 p.m.",
+      "source": "https://www.pinecrest-fl.gov/Calendar/August-20-2026-Village-Managers-Budget-Town-Hall"
+     },
+     {
+      "date": "2026-08-26",
+      "time": "09:00",
+      "kind": "workshop",
+      "note": "Village Council Workshop, Pinecrest Gardens Inspiration Center",
+      "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year"
+     },
+     {
+      "date": "2026-09-10",
+      "time": "16:00",
+      "kind": "budget-hearing",
+      "note": "Regular council meeting at 4:00 p.m.; budget hearing at 5:01 p.m. time certain adopts tentative millage and first reading of FY2027 budget ordinance",
+      "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Village-Council-Invites-Residents-to-September-Budget-Hearings"
+     },
+     {
+      "date": "2026-09-22",
+      "time": "17:01",
+      "kind": "budget-hearing",
+      "note": "Special meeting, final budget hearing and adoption",
+      "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Village-Council-Invites-Residents-to-September-Budget-Hearings"
+     },
+     {
+      "date": "2026-10-13",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Village Council",
+      "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year"
+     },
+     {
+      "date": "2026-12-08",
+      "time": "18:00",
+      "kind": "regular",
+      "note": "Village Council; last meeting posted for 2026",
+      "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year"
+     }
+    ]
+   },
+   "phases": [
+    {
+     "key": "budget-proposal",
+     "name": "Budget town hall and workshop",
+     "start": "2026-08-20",
+     "end": "2026-08-26",
+     "repeats": "yearly",
+     "decides": "Manager presents the proposed FY2027 budget to residents (Aug 20) and the council workshops it (Aug 26) before the September hearings.",
+     "source": "https://www.pinecrest-fl.gov/Calendar/August-20-2026-Village-Managers-Budget-Town-Hall"
+    },
+    {
+     "key": "budget-hearings",
+     "name": "September budget hearings",
+     "start": "2026-09-10",
+     "end": "2026-09-22",
+     "repeats": "yearly",
+     "decides": "Sept 10 at 5:01 p.m.: tentative millage and first reading of the budget ordinance. Sept 22 at 5:01 p.m.: final hearing and adoption. Charter Sec. 4.5(b) requires adoption by ordinance on or before September 30.",
+     "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Council-Meeting-Advance-for-Thursday-September-10-at-400-p.m"
+    },
+    {
+     "key": "fiscal-year-start",
+     "name": "Fiscal year begins",
+     "start": "2026-10-01",
+     "end": "2026-10-01",
+     "repeats": "yearly",
+     "decides": "Charter Sec. 4.6: fiscal year begins October 1 and runs through September 30.",
+     "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf"
+    },
+    {
+     "key": "qualifying",
+     "name": "Candidate qualifying for the 2026 election",
+     "start": "2026-06-08",
+     "end": "2026-06-12",
+     "repeats": "once",
+     "decides": "Who appears on the Nov 3, 2026 ballot for Mayor, At-Large Seat 4 and Seat 3 (vacancy, two-year term). Noon to noon at the Village Clerk's office (Code Sec. 2-231).",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    },
+    {
+     "key": "election",
+     "name": "Municipal general and special election",
+     "start": "2026-11-03",
+     "end": "2026-11-03",
+     "repeats": "once",
+     "decides": "Mayor (Shannon del Prado elected without opposition), At-Large Seat 4 (Fairman, Gonzalez-Diez, Lerner) and Seat 3 special election (Sanchez, Suarez). A candidate needs more than 50 percent to win.",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election"
+    },
+    {
+     "key": "election",
+     "name": "Runoff election, if needed",
+     "start": "2026-11-17",
+     "end": "2026-11-17",
+     "repeats": "once",
+     "decides": "Top two for any seat where no one passed 50 percent (charter Sec. 5.1(c): third Tuesday in November).",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    },
+    {
+     "key": "swearing-in",
+     "name": "New terms begin",
+     "start": null,
+     "end": null,
+     "repeats": "once",
+     "decides": "Terms begin at noon on the 7th day after the election is certified.",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    }
+   ],
+   "levers": [
+    {
+     "key": "public-comment",
+     "how": "Attend in person at the Municipal Center or join by Zoom. To speak on Zoom, email clerk@pinecrest-fl.gov with the agenda items you want to address before the registration deadline (noon on the meeting day).",
+     "rules": "No per-speaker time limit is posted on the meetings page or in the meeting advances. Anyone may comment on agenda items.",
+     "deadline": "Noon on the day of the meeting to register for Zoom comment",
+     "url": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video",
+     "source": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video"
+    },
+    {
+     "key": "written-comment",
+     "how": "Email comments on agenda items to council@pinecrest-fl.gov; every council member receives a copy.",
+     "rules": "No word limit or cutoff stated.",
+     "deadline": null,
+     "url": "mailto:council@pinecrest-fl.gov",
+     "source": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video"
+    },
+    {
+     "key": "contact",
+     "how": "Email the full council at council@pinecrest-fl.gov or call 305.234.2121; each seat has its own page under the Village Council section.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.pinecrest-fl.gov/Government/Council",
+     "source": "https://www.pinecrest-fl.gov/Government/Council"
+    },
+    {
+     "key": "records-request",
+     "how": "Submit through the Clerk's public records page.",
+     "rules": null,
+     "deadline": null,
+     "url": "https://www.pinecrest-fl.gov/Government/Clerk/Public-Records",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk"
+    },
+    {
+     "key": "petition",
+     "how": "Charter Sec. 5.2(a)(i): electors may propose ordinances to the council (not the budget, capital program, appropriations, taxes or salaries). Sec. 5.2(c)(i): petitions signed by electors equal to at least 10 percent of those registered at the last regular village election. Sec. 5.2(c)(iv): filed within 60 days.",
+     "rules": "10 percent of registered electors; 60-day filing window",
+     "deadline": "60 days from the start of petition proceedings",
+     "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf",
+     "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf"
+    },
+    {
+     "key": "referendum",
+     "how": "Charter Sec. 5.2(a)(ii): electors may require the council to reconsider an adopted ordinance, with the same 10 percent signature and 60-day filing rules. Charter amendments are proposed by council ordinance (Sec. 6.1(a)) and adopted by a majority of electors voting (Sec. 6.1(d)); a charter revision commission sits every six years from March 2006 (Sec. 6.1(c)).",
+     "rules": "10 percent of registered electors; 60-day filing window",
+     "deadline": "60 days from the start of petition proceedings",
+     "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf",
+     "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf"
+    },
+    {
+     "key": "recall",
+     "how": "Charter Sec. 2.7: a recall petition needs signatures from at least 10 percent of village electors as of the preceding village election.",
+     "rules": "10 percent of electors",
+     "deadline": null,
+     "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf",
+     "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf"
+    },
+    {
+     "key": "qualify",
+     "how": "File Form 1, DS-DE 9, DS-DE 84, DS-DE 302NP, voter registration copy, one-year residency affidavit and the $100 fee (charter Sec. 2.4) with the Village Clerk during the June qualifying week, by appointment at 305.234.2121. Seats 1 to 3 candidates must live in that seat's area; Seat 4 and Mayor are at large. Council members are unpaid (Sec. 2.6).",
+     "rules": "Four-year terms; two consecutive terms per office and eight consecutive years combined (Sec. 2.3(c))",
+     "deadline": "Noon on the last day of qualifying",
+     "url": "https://www.pinecrest-fl.gov/Government/Clerk/Elections",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    },
+    {
+     "key": "vote",
+     "how": "Village elections are held with the county general election in even years; a runoff on the third Tuesday in November if no one passes 50 percent.",
+     "rules": null,
+     "deadline": "2026-11-03",
+     "url": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    }
+   ],
+   "elections": {
+    "next": "2026-11-03",
+    "qualifying": {
+     "start": "2026-06-08",
+     "end": "2026-06-12",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+    },
+    "terms": "Mayor and four council members (Seats 1 to 3 by residential area, Seat 4 at large), four-year staggered terms, nonpartisan, unpaid. Mayor and Seat 4 in 2026 (plus a two-year Seat 3 vacancy term); Seats 1, 2 and 3 in 2028. Two consecutive terms per office, eight consecutive years combined.",
+    "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+   },
+   "contacts": [
+    {
+     "role": "clerk",
+     "name": "Priscilla Torres, MMC, Village Clerk",
+     "email": "clerk@pinecrest-fl.gov",
+     "phone": "305.234.2121",
+     "url": "https://www.pinecrest-fl.gov/Government/Clerk",
+     "source": "https://www.pinecrest-fl.gov/Government/Clerk"
+    },
+    {
+     "role": "commission office",
+     "name": "Village Council (all members)",
+     "email": "council@pinecrest-fl.gov",
+     "phone": "305.234.2121",
+     "url": "https://www.pinecrest-fl.gov/Government/Council",
+     "source": "https://www.pinecrest-fl.gov/Government/Council"
+    },
+    {
+     "role": "mayor",
+     "name": "Joseph M. Corradino (through the 2026 election; Shannon del Prado elected without opposition)",
+     "email": "council@pinecrest-fl.gov",
+     "phone": "305.234.2121",
+     "url": "https://www.pinecrest-fl.gov/Government/Council/Mayor",
+     "source": "https://www.pinecrest-fl.gov/Government/Council"
+    }
+   ],
+   "notes": "Legistar lists 2026 meetings through Dec 8, 2026 with no November meeting and nothing for 2027. Agenda lead time (about one week) is from the village's meetings page. The village posts no fixed meeting-day rule; the second-Tuesday pattern is inferred from the 2026 dates and should be checked against Legistar each month. No per-speaker time limit is published in any reachable page; the charter PDF was read for petition, referendum and recall sections. The elections page lists Seat 3 as a two-year term (vacancy) and gives the runoff date; swearing-in is stated only as noon on the 7th day after certification. Village Hall hours not posted on the clerk page."
   },
   {
    "key": "city-south-miami",

@@ -1,0 +1,60 @@
+{
+  "key": "city-pinecrest",
+  "rosterBody": "city-pinecrest",
+  "name": "Pinecrest Village Council",
+  "jurisdiction": "Village of Pinecrest",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://www.pinecrest-fl.gov/",
+    "calendar": "https://pinecrest.legistar.com/Calendar.aspx",
+    "agendas": "https://pinecrest.legistar.com/Calendar.aspx",
+    "minutes": "https://pinecrest.legistar.com/Calendar.aspx",
+    "video": "https://pinecrest.granicus.com/ViewPublisher.php?view_id=2",
+    "clerk": "https://www.pinecrest-fl.gov/Government/Clerk"
+  },
+  "meetings": {
+    "pattern": "Usually the second Tuesday of the month at 6:00 p.m., Pinecrest Municipal Center Council Chamber (third floor), 12645 Pinecrest Parkway, with Zoom participation. Dates and times vary (2026 regular meetings ranged from a Monday to a Thursday and 4:00 to 6:00 p.m.). Charter Sec. 4.1(a) requires at least eleven regular monthly meetings a year; no November 2026 meeting is posted.",
+    "agendaLeadDays": 7,
+    "schedule": [
+      { "date": "2026-08-20", "time": "18:00", "kind": "workshop", "note": "Village Manager's Budget Town Hall, Council Chambers, 6:00 to 7:30 p.m.", "source": "https://www.pinecrest-fl.gov/Calendar/August-20-2026-Village-Managers-Budget-Town-Hall" },
+      { "date": "2026-08-26", "time": "09:00", "kind": "workshop", "note": "Village Council Workshop, Pinecrest Gardens Inspiration Center", "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year" },
+      { "date": "2026-09-10", "time": "16:00", "kind": "budget-hearing", "note": "Regular council meeting at 4:00 p.m.; budget hearing at 5:01 p.m. time certain adopts tentative millage and first reading of FY2027 budget ordinance", "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Village-Council-Invites-Residents-to-September-Budget-Hearings" },
+      { "date": "2026-09-22", "time": "17:01", "kind": "budget-hearing", "note": "Special meeting, final budget hearing and adoption", "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Village-Council-Invites-Residents-to-September-Budget-Hearings" },
+      { "date": "2026-10-13", "time": "18:00", "kind": "regular", "note": "Village Council", "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year" },
+      { "date": "2026-12-08", "time": "18:00", "kind": "regular", "note": "Village Council; last meeting posted for 2026", "source": "https://pinecrest.legistar.com/Calendar.aspx?Mode=This%20Year" }
+    ]
+  },
+  "phases": [
+    { "key": "budget-proposal", "name": "Budget town hall and workshop", "start": "2026-08-20", "end": "2026-08-26", "repeats": "yearly", "decides": "Manager presents the proposed FY2027 budget to residents (Aug 20) and the council workshops it (Aug 26) before the September hearings.", "source": "https://www.pinecrest-fl.gov/Calendar/August-20-2026-Village-Managers-Budget-Town-Hall" },
+    { "key": "budget-hearings", "name": "September budget hearings", "start": "2026-09-10", "end": "2026-09-22", "repeats": "yearly", "decides": "Sept 10 at 5:01 p.m.: tentative millage and first reading of the budget ordinance. Sept 22 at 5:01 p.m.: final hearing and adoption. Charter Sec. 4.5(b) requires adoption by ordinance on or before September 30.", "source": "https://www.pinecrest-fl.gov/Government/Communications-Division/News/Council-Meeting-Advance-for-Thursday-September-10-at-400-p.m" },
+    { "key": "fiscal-year-start", "name": "Fiscal year begins", "start": "2026-10-01", "end": "2026-10-01", "repeats": "yearly", "decides": "Charter Sec. 4.6: fiscal year begins October 1 and runs through September 30.", "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf" },
+    { "key": "qualifying", "name": "Candidate qualifying for the 2026 election", "start": "2026-06-08", "end": "2026-06-12", "repeats": "once", "decides": "Who appears on the Nov 3, 2026 ballot for Mayor, At-Large Seat 4 and Seat 3 (vacancy, two-year term). Noon to noon at the Village Clerk's office (Code Sec. 2-231).", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" },
+    { "key": "election", "name": "Municipal general and special election", "start": "2026-11-03", "end": "2026-11-03", "repeats": "once", "decides": "Mayor (Shannon del Prado elected without opposition), At-Large Seat 4 (Fairman, Gonzalez-Diez, Lerner) and Seat 3 special election (Sanchez, Suarez). A candidate needs more than 50 percent to win.", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election" },
+    { "key": "election", "name": "Runoff election, if needed", "start": "2026-11-17", "end": "2026-11-17", "repeats": "once", "decides": "Top two for any seat where no one passed 50 percent (charter Sec. 5.1(c): third Tuesday in November).", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" },
+    { "key": "swearing-in", "name": "New terms begin", "start": null, "end": null, "repeats": "once", "decides": "Terms begin at noon on the 7th day after the election is certified.", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" }
+  ],
+  "levers": [
+    { "key": "public-comment", "how": "Attend in person at the Municipal Center or join by Zoom. To speak on Zoom, email clerk@pinecrest-fl.gov with the agenda items you want to address before the registration deadline (noon on the meeting day).", "rules": "No per-speaker time limit is posted on the meetings page or in the meeting advances. Anyone may comment on agenda items.", "deadline": "Noon on the day of the meeting to register for Zoom comment", "url": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video", "source": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video" },
+    { "key": "written-comment", "how": "Email comments on agenda items to council@pinecrest-fl.gov; every council member receives a copy.", "rules": "No word limit or cutoff stated.", "deadline": null, "url": "mailto:council@pinecrest-fl.gov", "source": "https://www.pinecrest-fl.gov/Government/Council/Streaming-Video" },
+    { "key": "contact", "how": "Email the full council at council@pinecrest-fl.gov or call 305.234.2121; each seat has its own page under the Village Council section.", "rules": null, "deadline": null, "url": "https://www.pinecrest-fl.gov/Government/Council", "source": "https://www.pinecrest-fl.gov/Government/Council" },
+    { "key": "records-request", "how": "Submit through the Clerk's public records page.", "rules": null, "deadline": null, "url": "https://www.pinecrest-fl.gov/Government/Clerk/Public-Records", "source": "https://www.pinecrest-fl.gov/Government/Clerk" },
+    { "key": "petition", "how": "Charter Sec. 5.2(a)(i): electors may propose ordinances to the council (not the budget, capital program, appropriations, taxes or salaries). Sec. 5.2(c)(i): petitions signed by electors equal to at least 10 percent of those registered at the last regular village election. Sec. 5.2(c)(iv): filed within 60 days.", "rules": "10 percent of registered electors; 60-day filing window", "deadline": "60 days from the start of petition proceedings", "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf", "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf" },
+    { "key": "referendum", "how": "Charter Sec. 5.2(a)(ii): electors may require the council to reconsider an adopted ordinance, with the same 10 percent signature and 60-day filing rules. Charter amendments are proposed by council ordinance (Sec. 6.1(a)) and adopted by a majority of electors voting (Sec. 6.1(d)); a charter revision commission sits every six years from March 2006 (Sec. 6.1(c)).", "rules": "10 percent of registered electors; 60-day filing window", "deadline": "60 days from the start of petition proceedings", "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf", "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf" },
+    { "key": "recall", "how": "Charter Sec. 2.7: a recall petition needs signatures from at least 10 percent of village electors as of the preceding village election.", "rules": "10 percent of electors", "deadline": null, "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf", "source": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/miscellaneous/village-charter.pdf" },
+    { "key": "qualify", "how": "File Form 1, DS-DE 9, DS-DE 84, DS-DE 302NP, voter registration copy, one-year residency affidavit and the $100 fee (charter Sec. 2.4) with the Village Clerk during the June qualifying week, by appointment at 305.234.2121. Seats 1 to 3 candidates must live in that seat's area; Seat 4 and Mayor are at large. Council members are unpaid (Sec. 2.6).", "rules": "Four-year terms; two consecutive terms per office and eight consecutive years combined (Sec. 2.3(c))", "deadline": "Noon on the last day of qualifying", "url": "https://www.pinecrest-fl.gov/Government/Clerk/Elections", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" },
+    { "key": "vote", "how": "Village elections are held with the county general election in even years; a runoff on the third Tuesday in November if no one passes 50 percent.", "rules": null, "deadline": "2026-11-03", "url": "https://www.pinecrest-fl.gov/Government/Clerk/Elections/2026-Municipal-Election", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-06-08", "end": "2026-06-12", "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections" },
+    "terms": "Mayor and four council members (Seats 1 to 3 by residential area, Seat 4 at large), four-year staggered terms, nonpartisan, unpaid. Mayor and Seat 4 in 2026 (plus a two-year Seat 3 vacancy term); Seats 1, 2 and 3 in 2028. Two consecutive terms per office, eight consecutive years combined.",
+    "source": "https://www.pinecrest-fl.gov/Government/Clerk/Elections"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Priscilla Torres, MMC, Village Clerk", "email": "clerk@pinecrest-fl.gov", "phone": "305.234.2121", "url": "https://www.pinecrest-fl.gov/Government/Clerk", "source": "https://www.pinecrest-fl.gov/Government/Clerk" },
+    { "role": "commission office", "name": "Village Council (all members)", "email": "council@pinecrest-fl.gov", "phone": "305.234.2121", "url": "https://www.pinecrest-fl.gov/Government/Council", "source": "https://www.pinecrest-fl.gov/Government/Council" },
+    { "role": "mayor", "name": "Joseph M. Corradino (through the 2026 election; Shannon del Prado elected without opposition)", "email": "council@pinecrest-fl.gov", "phone": "305.234.2121", "url": "https://www.pinecrest-fl.gov/Government/Council/Mayor", "source": "https://www.pinecrest-fl.gov/Government/Council" }
+  ],
+  "notes": "Legistar lists 2026 meetings through Dec 8, 2026 with no November meeting and nothing for 2027. Agenda lead time (about one week) is from the village's meetings page. The village posts no fixed meeting-day rule; the second-Tuesday pattern is inferred from the 2026 dates and should be checked against Legistar each month. No per-speaker time limit is published in any reachable page; the charter PDF was read for petition, referendum and recall sections. The elections page lists Seat 3 as a two-year term (vacancy) and gives the runoff date; swearing-in is stated only as noon on the 7th day after certification. Village Hall hours not posted on the clerk page."
+}
