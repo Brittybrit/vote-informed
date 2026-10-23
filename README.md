@@ -94,8 +94,6 @@ City data coverage and public records requests live in `public/data/coverage.jso
 
 `public/data/city-reports.json` holds donors typed in from cities that post only scanned treasurer's reports (Aventura, Pinecrest, South Miami; North Miami Beach has totals only). Each row is `[date, contributor, type, amount, kind]`: type `I` individual, `B` business, `F` political committee, `S` the candidate; kind `loan` or `in-kind` when it applies. When the clerk posts a new report, add it to the candidate's `reports` with its `period` and `url`, check the rows add up to the report's summary page, bump `updated` (cards refresh when it changes), and deploy.
 
-## We the People 305 (separate Worker)
+## We the People
 
-We the People 305 is the platform Ballot305 grows into: who decides, what is coming up, what it means for you, and what you can do about it, for citizens and for organizers, with a UI and headless (API and MCP). All of it is open source under this repo's MIT license; the organizer tier charges for timeliness and tooling, never for code or for facts the public cannot get. Planning docs are public at `wtp/public/docs/` (served at wethepeople305.org/docs). Contributions welcome: open an issue or a pull request.
-
-`wtp/` is the public Worker for wethepeople305.org (holding page and docs), deployed on its own so nothing in it can affect the voter guide: `cd wtp && npx wrangler deploy`. The founder board lives in a separate private repo and Worker.
+Ballot305 is the first front door of We the People, an open-source civic intelligence platform (github.com/Brittybrit/wethepeople, wethepeople305.org). The data API at /api/v1 moves there as the platform is built; Ballot305 then calls it over HTTPS like any other client and never touches the platform's storage.
