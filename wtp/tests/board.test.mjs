@@ -49,3 +49,16 @@ test('hosts: admin host serves the board behind the token; public hosts never ex
   r = await hit(w, { ...env(), ADMIN_TOKEN: '' }, 'admin.wethepeople305.org', '/api/admin/board');
   assert.equal(r.status, 404);
 });
+
+test('docs: every file in index.json exists and the chat context loads them', async () => {
+  const { readFileSync } = await import('node:fs');
+  const idx = JSON.parse(readFileSync(new URL('../public/docs/index.json', import.meta.url)));
+  assert.ok(idx.files.length >= 3);
+  for (const f of idx.files) assert.ok(readFileSync(new URL('../public/docs/' + f, import.meta.url), 'utf8').length > 200, f);
+  const w = await loadWorker(['loadDocs']);
+  const e = { ASSETS: { fetch: async req => { const p = new URL(req.url).pathname; try { return new Response(readFileSync(new URL('../public' + p, import.meta.url)), { status: 200 }); } catch { return new Response('', { status: 404 }); } } } };
+  const ctx = await w.loadDocs(e);
+  assert.match(ctx, /===== product\.md =====/);
+  assert.match(ctx, /open source/i);
+  assert.ok(ctx.length < 150001);
+});

@@ -95,8 +95,8 @@ async function boardChat(env, b, url) {
   const board = isStr(b.board) ? b.board.slice(0, 40000) : '';
   const ids = Array.isArray(b.ids) ? b.ids.map(String).slice(0, 500) : [];
   const focus = isStr(b.stepId) && b.stepId ? '\n\nThe owner opened the edit box on step id "' + b.stepId.slice(0, 80) + '" and typed the instruction below. Apply it to that step with edit_step (and set_status or add_note if that is what they mean), then confirm in one short sentence.' : '';
-  const context = (await env.BOARD.get(BOARD_CONTEXT_KEY)) || '';
-  const system = 'You are helping the owner of the founder board for We the People 305, a Miami-Dade civic data nonprofit. The board is a kanban with columns todo, doing, waiting, done. Answer from the board, the project notes and, when the question is about officials, agendas, money or the platform\'s data, the live API through read_platform. If asked to change the board, use the tools, then confirm in one short sentence. You cannot change the website or the repo from here; say so plainly if asked. Plain language, no em dashes, no markdown headers.' + (context ? '\n\nPROJECT NOTES (the owner\'s own planning documents):\n' + context.slice(0, 120000) : '');
+  const context = ((await loadDocs(env)) + '\n\n' + ((await env.BOARD.get(BOARD_CONTEXT_KEY)) || '')).trim();
+  const system = 'You are helping the owner of the founder board for We the People 305, a Miami-Dade civic data nonprofit. The board is a kanban with columns todo, doing, waiting, done. Answer from the board, the project notes and, when the question is about officials, agendas, money or the platform\'s data, the live API through read_platform. If asked to change the board, use the tools, then confirm in one short sentence. You cannot change the website or the repo from here; say so plainly if asked. Plain language, no em dashes, no markdown headers.' + (context ? '\n\nPROJECT DOCS (the planning documents at wethepeople305.org/docs, plus the owner\'s notes):\n' + context.slice(0, 160000) : '');
   const payload = { model: env.MODEL || MODEL, max_tokens: 800, system, tools: BOARD_TOOLS, messages: [{ role: 'user', content: 'BOARD (one JSON line per step):\n' + board + focus + '\n\nINSTRUCTION: ' + q }] };
   let text = '', changed = false;
   for (let round = 0; round < 6; round++) {
@@ -121,6 +121,19 @@ async function boardChat(env, b, url) {
   return { text: text.trim(), state: st, changed };
 }
 
+// The planning docs in public/docs (open, in the repo) are the chat's context. index.json lists them in order.
+async function loadDocs(env) {
+  try {
+    const idx = await (await env.ASSETS.fetch(new Request('https://assets.local/docs/index.json'))).json();
+    const files = Array.isArray(idx.files) ? idx.files.filter(f => /^[\w.-]+\.md$/.test(f)).slice(0, 20) : [];
+    const parts = [];
+    for (const f of files) {
+      const r = await env.ASSETS.fetch(new Request('https://assets.local/docs/' + f));
+      if (r.ok) parts.push('===== ' + f + ' =====\n' + (await r.text()).slice(0, 80000));
+    }
+    return parts.join('\n\n').slice(0, 150000);
+  } catch (e) { return ''; }
+}
 async function callAnthropicOnce(env, payload) {
   const res = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' }, body: JSON.stringify(payload) });
   if (!res.ok) throw new Error('Anthropic API ' + res.status + ': ' + (await res.text()).slice(0, 300));

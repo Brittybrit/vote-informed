@@ -96,4 +96,6 @@ City data coverage and public records requests live in `public/data/coverage.jso
 
 ## We the People 305 (separate Worker)
 
+We the People 305 is the platform Ballot305 grows into: who decides, what is coming up, what it means for you, and what you can do about it, for citizens and for organizers, with a UI and headless (API and MCP). All of it is open source under this repo's MIT license; the organizer tier charges for timeliness and tooling, never for code or for facts the public cannot get. Planning docs are public at `wtp/public/docs/` (served at wethepeople305.org/docs). Contributions welcome: open an issue or a pull request.
+
 `wtp/` is a second Cloudflare Worker for wethepeople305.org. It is deployed on its own so nothing in it can affect the voter guide. It serves a holding page at the root and the founder board at admin.wethepeople305.org (behind its own `ADMIN_TOKEN`); the board's chat reads ballot305's public API over HTTPS and has no access to this Worker's storage. First-time setup from `wtp/`: `npx wrangler kv namespace create BOARD` (paste the id into `wtp/wrangler.toml`), `npx wrangler secret put ADMIN_TOKEN`, `npx wrangler secret put ANTHROPIC_API_KEY`, then `npx wrangler deploy`.
