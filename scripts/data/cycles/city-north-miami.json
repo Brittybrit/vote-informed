@@ -1,0 +1,168 @@
+{
+  "key": "city-north-miami",
+  "rosterBody": "city-north-miami",
+  "name": "North Miami City Council",
+  "jurisdiction": "City of North Miami",
+  "level": "municipal",
+  "checked": "2026-10-22",
+  "links": {
+    "home": "https://northmiamifl.gov/390/Mayor-and-Councils-Office",
+    "calendar": "https://www.northmiamifl.gov/calendar.aspx?CID=26",
+    "agendas": "https://play.champds.com/northmiamifl/archive/1",
+    "minutes": "https://www.northmiamifl.gov/477/Agendas-Minutes",
+    "video": "https://www.northmiamifl.gov/404/NoMi-TV-Online",
+    "clerk": "https://www.northmiamifl.gov/162/City-Clerk"
+  },
+  "meetings": {
+    "pattern": "Second and fourth Tuesday of each month at 7:00 p.m., Council Chambers, 2nd floor of City Hall, 776 NE 125 Street. Summer recess mid-July to late August and winter recess mid-December to late January. Streamed on NoMi TV, YouTube and the CHAMP agenda site.",
+    "agendaLeadDays": 5,
+    "schedule": [
+      { "date": "2026-10-27", "time": "19:00", "kind": "regular", "note": "Council Chambers, 776 NE 125 Street", "source": "https://www.northmiamifl.gov/Calendar.aspx?EID=5435" },
+      { "date": "2026-11-10", "time": "19:00", "kind": "regular", "note": "Meeting notice posted on the Public Notices page (11-10-2026 Regular Council Meeting PDF)", "source": "https://northmiamifl.gov/331/Public-Notices" },
+      { "date": "2026-11-24", "time": "19:00", "kind": "regular", "note": "Meeting notice posted on the Public Notices page (11-24-2026 Regular Council Meeting PDF)", "source": "https://northmiamifl.gov/331/Public-Notices" },
+      { "date": "2026-12-08", "time": "19:00", "kind": "regular", "note": "Meeting notice posted on the Public Notices page (12-08-2026 Regular Council Meeting PDF)", "source": "https://northmiamifl.gov/331/Public-Notices" },
+      { "date": "2026-12-22", "time": "19:00", "kind": "regular", "note": "Meeting notice posted (12-22-2026 Regular Council Meeting PDF); in 2025 the Council recessed from Dec 10, so check for a winter recess notice", "source": "https://northmiamifl.gov/331/Public-Notices" }
+    ]
+  },
+  "phases": [
+    {
+      "key": "budget-hearings",
+      "name": "September budget hearings",
+      "start": "2026-09-04",
+      "end": "2026-09-15",
+      "repeats": "yearly",
+      "decides": "First budget hearing Friday September 4 and final budget hearing Tuesday September 15, 2026, both 5:01 p.m. in Council Chambers, set the millage and adopt the FY 2026-27 budget.",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/23669/Final-Budget-Hearing-Fiscal-Year-2026-2027"
+    },
+    {
+      "key": "fiscal-year-start",
+      "name": "Fiscal year begins",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "repeats": "yearly",
+      "decides": "The FY 2026-2027 budget adopted in September takes effect.",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/23669/Final-Budget-Hearing-Fiscal-Year-2026-2027"
+    },
+    {
+      "key": "recess",
+      "name": "Summer recess",
+      "start": "2026-07-17",
+      "end": "2026-08-24",
+      "repeats": "yearly",
+      "decides": "No regular council meetings; the Council reconvened Tuesday August 25, 2026 at 7:00 p.m.",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/23378/07-28-2026-and-08-11-2025-Summer-Recess-2026-PDF"
+    },
+    {
+      "key": "qualifying",
+      "name": "Candidate qualifying for the November 2026 election",
+      "start": "2026-08-10",
+      "end": "2026-08-20",
+      "repeats": "once",
+      "decides": "Who appears on the ballot for Mayor and Council Districts 2 and 3; 8:30 a.m. Monday August 10 to noon Thursday August 20, 2026 with the City Clerk. Petition candidates had to file by noon July 13.",
+      "source": "https://www.northmiamifl.gov/1587/Qualifying-Times-and-Fees-for-Election"
+    },
+    {
+      "key": "election",
+      "name": "Regular municipal election",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "repeats": "once",
+      "decides": "Mayor (Alix Desulme v. George Morgan), District 2 (Jinks, Medina, Timothe) and District 3 (Estime-Irvin, Jules, Matamoros); winner needs 50 percent plus one or a run-off on December 1, 2026.",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/23922/2026-Regular-Election-of-the-City-of-North-Miami-PDF"
+    }
+  ],
+  "levers": [
+    {
+      "key": "public-comment",
+      "how": "Attend the meeting and speak; meeting notices say interested members of the public are invited to attend and participate. For quasi-judicial items, fill out a speaker card (in favor or against) and hand it to the City Clerk before the comment period for that item.",
+      "rules": "Speaker card: comments no more than 2 minutes, speakers called in the order the Mayor sets, address the Council as a whole, no questions to individual members, and state whether you are a registered lobbyist. Lobbyists must register with the City Clerk before addressing the Council. No general time limit or sign-up rule for non-quasi-judicial comment is posted.",
+      "deadline": "Submit the speaker card before the item's comment period",
+      "url": "https://www.northmiamifl.gov/DocumentCenter/View/3730",
+      "source": "https://www.northmiamifl.gov/DocumentCenter/View/3730"
+    },
+    {
+      "key": "written-comment",
+      "how": "No written comment procedure is posted. Email the City Clerk's office, which also sends agenda copies on request.",
+      "rules": null,
+      "deadline": null,
+      "url": "mailto:cityclerk@northmiamifl.gov",
+      "source": "https://www.northmiamifl.gov/DocumentCenter/View/19955/05-13-2025-PDF"
+    },
+    {
+      "key": "contact",
+      "how": "Call or visit the Mayor and Council Office, 2nd floor of City Hall, weekdays 8 a.m. to 5 p.m.",
+      "rules": "Office 305-895-9815; City Hall 305-893-6511.",
+      "deadline": null,
+      "url": "https://northmiamifl.gov/390/Mayor-and-Councils-Office",
+      "source": "https://northmiamifl.gov/390/Mayor-and-Councils-Office"
+    },
+    {
+      "key": "records-request",
+      "how": "Request public records through the City Clerk's Public Records page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.northmiamifl.gov/161/Public-Records",
+      "source": "https://www.northmiamifl.gov/162/City-Clerk"
+    },
+    {
+      "key": "petition",
+      "how": "City Code Secs. 6-50 to 6-54: voters may propose an ordinance by petition filed with the City Clerk. If the Council does not adopt it unchanged, it must call an election within 45 days of the certificate of sufficiency, held 45 to 60 days later; a majority of those voting adopts it (Sec. 6-54(a)).",
+      "rules": "Verified signatures equal to ten percent of the registered electors of the city as of the last regular city election (Sec. 6-51(b)); the supervisor verifies within 20 days of filing. The committee may withdraw up to the 15th day before the election with at least four committee members (Sec. 6-53(a)).",
+      "deadline": null,
+      "url": "https://www.northmiamifl.gov/162/City-Clerk",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/18052/NOMI-Election-Code"
+    },
+    {
+      "key": "referendum",
+      "how": "City Code Sec. 6-55: voters may petition to repeal an adopted ordinance. The Council must act within 45 days of the certificate of sufficiency and the election is held 45 to 60 days after its resolution; the ordinance is repealed if a majority approve the repeal (Sec. 6-55(j)).",
+      "rules": "Signatures equal to ten percent of the registered electors of the city as of the last regular city election (Sec. 6-55(g)); withdrawal by at least four committee members before the 15th day preceding the election (Sec. 6-55(i)).",
+      "deadline": null,
+      "url": "https://www.northmiamifl.gov/162/City-Clerk",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/18052/NOMI-Election-Code"
+    },
+    {
+      "key": "recall",
+      "how": "City Code Sec. 6-56(a) adopts F.S. 100.361 (Municipal Recall) by reference, so the state procedure applies to the Mayor, Council and elected Clerk.",
+      "rules": "Under F.S. 100.361, in a city with 25,000 or more registered electors the petition needs 1,000 electors or 5 percent, whichever is greater, gathered within 30 days and filed with the clerk within 30 days of the first signature.",
+      "deadline": null,
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/100.361",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/18052/NOMI-Election-Code"
+    },
+    {
+      "key": "qualify",
+      "how": "Qualify with the City Clerk (the city's Supervisor of Elections) by paying a filing fee of 5 percent of salary plus a 1 percent election assessment, or by petition with signatures of 3 percent of the registered electors in the seat's area (City Code Sec. 6-22(a); Ordinance 1512). Candidates must have lived in the city or district at least one year before qualifying.",
+      "rules": "Qualifying window: not before the 43rd day and not later than 5:00 p.m. on the 35th day before the election (Code Sec. 6-24); petitions due by the 113th day before the election. For 2026: petitions by noon July 13; qualifying 8:30 a.m. August 10 to noon August 20. Term limits: two consecutive terms for Mayor (two-year terms) and Council (four-year terms).",
+      "deadline": "Noon on the last qualifying day, about five weeks before the election",
+      "url": "https://www.northmiamifl.gov/1587/Qualifying-Times-and-Fees-for-Election",
+      "source": "https://www.northmiamifl.gov/1587/Qualifying-Times-and-Fees-for-Election"
+    },
+    {
+      "key": "vote",
+      "how": "City elections are on the November general election date in even years (moved from May of odd years by a 2022 charter ordinance). Early voting for the city race is at the North Miami Public Library, 835 NE 132nd Street, October 19 to November 1, 2026.",
+      "rules": "Registered North Miami voters; council seats are voted by district, Mayor at large.",
+      "deadline": "Election Day November 3, 2026; run-off December 1, 2026 if no majority",
+      "url": "https://www.northmiamifl.gov/1425/November-3-2026-Election",
+      "source": "https://northmiamifl.gov/DocumentCenter/View/23922/2026-Regular-Election-of-the-City-of-North-Miami-PDF"
+    },
+    {
+      "key": "serve-on-board",
+      "how": "Apply for city boards and commissions through the Boards and Commissions page.",
+      "rules": null,
+      "deadline": null,
+      "url": "https://www.northmiamifl.gov/232/Boards-Commissions",
+      "source": "https://www.northmiamifl.gov/162/City-Clerk"
+    }
+  ],
+  "elections": {
+    "next": "2026-11-03",
+    "qualifying": { "start": "2026-08-10", "end": "2026-08-20", "source": "https://www.northmiamifl.gov/1587/Qualifying-Times-and-Fees-for-Election" },
+    "terms": "Mayor elected at large to a two-year term (max two consecutive). Four council members elected by single-member district to four-year terms (max two consecutive): Districts 2 and 3 in 2026, Districts 1 and 4 plus the elected City Clerk (four-year term) in 2028. Winner needs 50 percent plus one; otherwise a run-off four weeks later.",
+    "source": "https://www.northmiamifl.gov/1425/November-3-2026-Election"
+  },
+  "contacts": [
+    { "role": "clerk", "name": "Vanessa Joseph, Esq., Elected City Clerk", "email": "cityclerk@northmiamifl.gov", "phone": "305-895-9817", "url": "https://www.northmiamifl.gov/162/City-Clerk", "source": "https://www.northmiamifl.gov/162/City-Clerk" },
+    { "role": "commission office", "name": "Mayor and Council Office", "email": null, "phone": "305-895-9815", "url": "https://northmiamifl.gov/390/Mayor-and-Councils-Office", "source": "https://northmiamifl.gov/390/Mayor-and-Councils-Office" },
+    { "role": "mayor", "name": "Alix Desulme, Ed.D.", "email": null, "phone": "305-895-9815", "url": "https://northmiamifl.gov/mayor", "source": "https://northmiamifl.gov/390/Mayor-and-Councils-Office" }
+  ],
+  "notes": "Schedule: the city calendar (CID=26) shows only October 27, 2026; the remaining 2026 dates come from the titles of regular-meeting notice PDFs listed on the Public Notices page (11-10, 11-24, 12-08, 12-22), which were not individually opened; no 2027 dates are posted. A 12-22 meeting may be dropped by a winter recess notice as in 2025. The 09-22-2026 cancellation PDF and the Boards page returned server errors. Agenda lead time of 5 days is taken from meeting notices that say the agenda will be on the website 'by Thursday' before a Tuesday meeting (2024 and 2025 notices; a 2026 notice was not opened). Public comment: the only posted rule is the quasi-judicial speaker card (2 minutes); no general comment rule or written comment channel was found and Municode would not load for the council rules. Initiative, referendum and recall come from the city's PDF of Code Chapter 6 (Elections), which still shows the pre-2022 May election date in Sec. 6-76; the 2022 ordinance moving elections to November of even years (amending Charter Secs. 10, 36, 58) is cited from a draft posted on CHAMP. Charter Section 5 (districts) is cited from the election page. Budget: only the two September hearing notices were read; the virtual budget workshop and town hall notices were not opened and no proposed-budget date is recorded."
+}
