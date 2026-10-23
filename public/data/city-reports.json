@@ -110,8 +110,104 @@
        "report": "2026 G1",
        "period": "2026-07-01/2026-10-02",
        "url": "https://www.pinecrest-fl.gov/files/sharedassets/village/v/1/government/village-clerk/documents/elections/2026-candidates/fairman-ken-2026-g1-rem.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-07-20",
+         "Tyler Schwartz",
+         "I",
+         250
+        ],
+        [
+         "2026-07-28",
+         "Michael Peredo",
+         "I",
+         100
+        ],
+        [
+         "2026-07-30",
+         "Peter DiFilippi",
+         "I",
+         44
+        ],
+        [
+         "2026-07-30",
+         "Nan Fairman",
+         "I",
+         244
+        ],
+        [
+         "2026-08-01",
+         "Gary Lubel",
+         "I",
+         44
+        ],
+        [
+         "2026-08-02",
+         "Fernan Rodriguez",
+         "I",
+         200
+        ],
+        [
+         "2026-08-04",
+         "Ygrene Energy Fund Florida",
+         "B",
+         1000
+        ],
+        [
+         "2026-08-04",
+         "Rodolfo Pages",
+         "I",
+         250
+        ],
+        [
+         "2026-08-02",
+         "Michael Bileca",
+         "I",
+         1000
+        ],
+        [
+         "2026-08-05",
+         "Lee Mesnekoff",
+         "I",
+         100
+        ],
+        [
+         "2026-08-07",
+         "Michael Bileca",
+         "I",
+         -1000
+        ],
+        [
+         "2026-08-23",
+         "David Gershman",
+         "I",
+         1000
+        ],
+        [
+         "2026-09-04",
+         "Melanie Krakower Levine",
+         "I",
+         100
+        ],
+        [
+         "2026-09-09",
+         "Peter Rabbino",
+         "I",
+         20
+        ],
+        [
+         "2026-09-09",
+         "Michael Guilford",
+         "I",
+         100
+        ],
+        [
+         "2026-09-27",
+         "David Williams",
+         "I",
+         250
+        ]
+       ]
       }
      ]
     },
@@ -5248,7 +5344,7 @@
    "match": "^\\s*el portal\\b",
    "label": "Village of El Portal",
    "portal": "https://elportalvillage.com/election-information/",
-   "pending": "G1 reports (Sept 29 to Oct 2) for all 13 candidates were posted in October as scanned images; Altidor's is transcribed, five are waivers, the other seven are not yet transcribed. Nothing later is posted.",
+   "pending": "G1 reports (Sept 29 to Oct 2) for all 13 candidates were posted in October as scanned images and are transcribed here; six were waivers. Nothing later is posted.",
    "candidates": [
     {
      "name": "George Alvarez",
@@ -5290,8 +5386,7 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Alvarez-George-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": []
       }
      ]
     },
@@ -5739,8 +5834,7 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Pulliam-Thomas-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": []
       }
      ]
     },
@@ -5910,8 +6004,7 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Winters-Charles-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": []
       }
      ]
     },
@@ -5935,8 +6028,15 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Connally-Velvet-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-09-30",
+         "Velvet S. Connally",
+         "S",
+         57,
+         "in-kind"
+        ]
+       ]
       }
      ]
     },
@@ -6119,8 +6219,14 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/White-Denise-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-10-01",
+         "Anthony Johnson",
+         "I",
+         100
+        ]
+       ]
       }
      ]
     },
@@ -6218,8 +6324,14 @@
        "report": "2026 G1",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Rojas-Duenas-Daniel-Felipe-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-09-29",
+         "Madeleine Pacheco",
+         "I",
+         110
+        ]
+       ]
       }
      ],
      "note": "Two September gifts (Luis and Madeleine Pacheco) have no date on the report and are shown at the report's end date."
@@ -6263,11 +6375,10 @@
        ]
       },
       {
-       "report": "2026 G1",
+       "report": "2026 G1 (waiver, no activity)",
        "period": "2026-09-29/2026-10-02",
        "url": "https://elportalvillage.com/wp-content/uploads/2026/10/Schmidt-Marc-Nicklas-Campaign-Candidate-Report-26G1.pdf",
-       "rows": [],
-       "unread": true
+       "rows": []
       }
      ]
     }
@@ -7085,10 +7196,28 @@
       },
       {
        "report": "2026 G2",
-       "period": "",
+       "period": "2026-10-03/2026-10-16",
        "url": "https://virginiagardens-fl.gov/wp-content/uploads/2026/10/1328_001.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-10-08",
+         "Becker & Poliakoff, P.A.",
+         "B",
+         1000
+        ],
+        [
+         "2026-10-09",
+         "Las Mercedes Management, LLC",
+         "B",
+         1000
+        ],
+        [
+         "2026-10-09",
+         "Clinica Las Mercedes LLC",
+         "B",
+         1000
+        ]
+       ]
       }
      ]
     },
@@ -7122,29 +7251,41 @@
       },
       {
        "report": "2026 G2",
-       "period": "",
+       "period": "2026-10-03/2026-10-16",
        "url": "https://virginiagardens-fl.gov/wp-content/uploads/2026/10/1355_001.pdf",
        "rows": [],
-       "unread": true
+       "note": "G2 shows $300 in; the itemized page re-lists her Jul 31 $300 opening deposit already counted under G1, so nothing new is added."
       }
      ]
     },
     {
      "name": "Michael Tur",
      "office": "Council",
-     "none": "The Village of Virginia Gardens posted his first report (2026 G1) in October as a scanned image; it has not been transcribed here yet. The linked PDF lists every contribution.",
      "reports": [
       {
        "report": "2026 G1",
-       "period": "",
+       "period": "2026-07-01/2026-10-02",
        "url": "https://virginiagardens-fl.gov/wp-content/uploads/2026/10/1349_001.pdf",
-       "rows": [],
-       "unread": true
+       "rows": [
+        [
+         "2026-08-13",
+         "Midtown Towing of Miami, Inc",
+         "B",
+         1000
+        ],
+        [
+         "2026-09-25",
+         "Michael Tur",
+         "S",
+         1500,
+         "loan"
+        ]
+       ]
       }
      ]
     }
    ],
-   "pending": "The village posts G1, G2 and G3 (due about Oct 9, Oct 23 and Oct 30). As of Oct 23: G2 posted for Deno and Taylor-Martinez and Tur's first report (G1), all scanned images not yet transcribed; G2 missing for Boylan, Arce and Tur; G3 not yet due.",
+   "pending": "The village posts G1, G2 and G3 (due about Oct 9, Oct 23 and Oct 30). As of Oct 23: G2 is in for Deno and Taylor-Martinez and Tur's G1 is in; G2 not yet posted for Boylan, Arce and Tur; G3 not yet due.",
    "checked": "2026-10-23"
   },
   {
