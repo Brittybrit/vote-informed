@@ -178,3 +178,25 @@ test('founder board: state is sanitized and tools change it', async () => {
   assert.equal(st.status[r.id], 'waiting');
   assert.ok(w.BOARD_TOOLS.some(t => t.name === 'read_platform'));
 });
+
+test('hosts: ballot305.org root is the home page, the admin host root is the board, nothing else differs', async () => {
+  const { loadWorker, fakeKV } = await import('./load-worker.mjs');
+  const w = await loadWorker([]);
+  const served = [];
+  const wenv = { CACHE: fakeKV(), ASSETS: { fetch: async req => { const u = new URL(req.url); if (u.pathname.startsWith('/data/')) return env.ASSETS.fetch(req); served.push(u.pathname); return new Response('asset:' + u.pathname, { status: 200, headers: { 'content-type': 'text/html' } }); } } };
+  const hit = async (host, path) => { served.length = 0; const r = await w.__default.fetch(new Request('https://' + host + path), wenv, { waitUntil() {} }); return { status: r.status, asset: served[0] || null, text: await r.text() }; };
+  for (const host of ['ballot305.org', 'www.ballot305.org', 'wethepeople305.org', 'www.wethepeople305.org']) {
+    const r = await hit(host, '/');
+    assert.equal(r.status, 200, host);
+    assert.equal(r.asset, '/', host + ' root must come from the static home page');
+    assert.doesNotMatch(r.text, /Not found/, host);
+  }
+  const admin = await hit('admin.wethepeople305.org', '/');
+  assert.equal(admin.asset, '/admin/board.html');
+  // Other pages never reach the Worker in production (assets serve them first), so only the root is checked here.
+  const api = await w.__default.fetch(new Request('https://wethepeople305.org/api/v1'), wenv, { waitUntil() {} });
+  assert.equal(api.status, 200);
+  // The board's state and chat stay behind the token on every host.
+  const board = await w.__default.fetch(new Request('https://ballot305.org/api/admin/board'), wenv, { waitUntil() {} });
+  assert.ok([401, 404].includes(board.status), 'board state is not served without the token');
+});

@@ -72,10 +72,39 @@
   footer{border-top:2px solid var(--rule); padding:18px 16px; font-size:14px; color:var(--ink-soft); text-align:center;}
   .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
   [hidden]{display:none !important;}
+  /* Site menu (hamburger), shared across pages */
+  header{position:relative; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;}
+  .menu-btn{order:99; width:42px; height:42px; border:1.5px solid var(--rule); background:var(--paper); color:var(--ink); cursor:pointer; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; padding:0; flex:none;}
+  .menu-btn span{display:block; width:20px; height:2.5px; background:var(--ink);}
+  .menu-btn[aria-expanded=true] span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+  .menu-btn[aria-expanded=true] span:nth-child(2){opacity:0;}
+  .menu-btn[aria-expanded=true] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+  .menu{position:absolute; top:calc(100% + 4px); right:14px; z-index:40; background:var(--paper); border:1.5px solid var(--rule); min-width:260px; max-width:calc(100vw - 28px); box-shadow:4px 4px 0 var(--ink); display:none; text-align:left;}
+  .menu[data-open=true]{display:block;}
+  .menu .mh{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); padding:10px 14px 6px; border-bottom:1.5px solid var(--rule);}
+  .menu a{display:block; padding:11px 14px; color:var(--ink); text-decoration:none; font-weight:700; font-size:14px; border-bottom:1px solid #DDDDD5;}
+  .menu a:last-child{border-bottom:0;}
+  .menu a small{display:block; font-weight:400; font-size:12px; color:var(--ink-soft); margin-top:1px;}
+  .menu a.cur{background:var(--ink); color:var(--paper);}
+  .menu a.cur small{color:var(--paper); opacity:.8;}
 </style>
 </head>
 <body>
-<header><a href="/">Ballot305.org</a><div class="langs" role="group" aria-label="Language / Idioma / Lang"><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="ht">KREYÒL</button></div></header>
+<header><a href="/">Ballot305.org</a><div class="langs" role="group" aria-label="Language / Idioma / Lang"><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="ht">KREYÒL</button></div><button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Menu"><span></span><span></span><span></span></button>
+<nav class="menu" id="siteMenu" data-open="false" aria-label="Site">
+  <div class="mh">Ballot305</div>
+  <a href="/"><span>Your ballot</span><small>Every race and question, with the money behind each candidate</small></a>
+  <a href="/actions"><span>By candidate</span><small>Donors, lobbyists and official actions for each incumbent</small></a>
+  <a href="/decisions"><span>Official actions</span><small>Votes, lobbyists and gifts, by body</small></a>
+  <a href="/lobby"><span>Budget dollars and lobbying money</span><small>State budget requests rolled up by lobbying firm</small></a>
+  <a href="/transparency"><span>City transparency check</span><small>Which cities post donor data, agendas and votes</small></a>
+  <a href="/api"><span>Open data API</span></a>
+  <a href="/methodology"><span>How it works</span></a>
+  <a href="/press"><span>Press</span></a>
+  <a href="/about"><span>About</span></a>
+  <a href="/donate"><span>Donate</span><small>Keep it free and running</small></a>
+</nav>
+</header>
 <main>
   <h1 data-t="title"></h1>
   <p class="lede" data-t="lede"></p>
@@ -241,6 +270,18 @@
   render();
   fetch('/data/transparency.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
     .catch(function(){ document.getElementById('grid').innerHTML = '<tbody><tr><td class="empty">' + esc(t('loadErr')) + '</td></tr></tbody>'; });
+})();
+
+// Site menu (hamburger), shared across pages
+(function(){
+  var b = document.getElementById('menuBtn'), m = document.getElementById('siteMenu');
+  if(!b || !m) return;
+  var here = location.pathname.replace(/\.html$|\/$/, '') || '/';
+  Array.prototype.forEach.call(m.querySelectorAll('a'), function(a){ var p = a.getAttribute('href').replace(/\/$/, '') || '/'; if(p === here) a.classList.add('cur'); });
+  function set(open){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); m.setAttribute('data-open', open ? 'true' : 'false'); }
+  b.addEventListener('click', function(e){ e.stopPropagation(); set(b.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('click', function(e){ if(!m.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') set(false); });
 })();
 </script>
 </body>
