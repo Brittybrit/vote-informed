@@ -1,0 +1,113 @@
+{
+  "body": "city-miami-beach",
+  "rosterBody": "city-miami-beach",
+  "checked": "2026-10-23",
+  "datasets": [
+    {
+      "name": "Vendor and P-Card Payments, FY 2024 (10/01/2023 to 09/30/2024)",
+      "what": "Finance Department PDF titled 'CITY OF MIAMI BEACH VENDOR PAYMENTS': one row per payee with year-to-date payments, alphabetical, about 1,750 vendor rows plus a separate 'P-CARD PAYMENTS (JP Morgan)' table of about 400 rows; 126 pages; no grand total printed. Earlier editions exist for FY 2021 and FY 2023 (partial year). No FY 2025 or FY 2026 edition was found on the site.",
+      "url": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf",
+      "api": null,
+      "asOf": "FY 2024, October 1, 2023 to September 30, 2024",
+      "fields": ["VENDOR NAME", "YTD PAYMENTS"],
+      "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf"
+    },
+    {
+      "name": "FY 2027 Proposed Operating Budget Book and Budget in Brief",
+      "what": "City Manager's proposed operating budget (posted August 2026): department budgets, position counts, personnel services. The final FY 2027 budget was adopted by Resolution 2026-34471 and the millage by 2026-34470 on September 23, 2026; the adopted book was not yet posted on 2026-10-23. The city's robots.txt blocks every PDF ('Disallow: /*.pdf$') so these could not be read here.",
+      "url": "https://www.miamibeachfl.gov/wp-content/uploads/2026/08/FY%202027%20Proposed%20Operating%20Budget%20Book%20%28Electronic%29.pdf",
+      "api": null,
+      "asOf": "FY 2027 (October 1, 2026 to September 30, 2027), proposed",
+      "fields": ["Department", "Fund", "Positions", "Personnel services", "Operating expenditures"],
+      "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget/"
+    },
+    {
+      "name": "FY 2026 Adopted Operating Budget Book",
+      "what": "Prior-year adopted book (posted December 2025) with the same tables; blocked to the fetch tool by robots.txt.",
+      "url": "https://www.miamibeachfl.gov/wp-content/uploads/2025/12/FY-2026-Adopted-Operating-Budget-Book-Electronic-Version-1.pdf",
+      "api": null,
+      "asOf": "FY 2026 adopted",
+      "fields": ["Department", "Fund", "Positions", "Personnel services"],
+      "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget/"
+    },
+    {
+      "name": "Annual Comprehensive Financial Report, fiscal year ended September 30, 2025",
+      "what": "Audited financial statements; the statistical section carries full-time equivalent employees by function for ten years. Issued June 22, 2026. Blocked to the fetch tool by robots.txt.",
+      "url": "https://www.miamibeachfl.gov/wp-content/uploads/2026/07/ACFR-2025-Issued-6.22.2026-with-Non-GAS-Opinion.pdf",
+      "api": null,
+      "asOf": "FY 2025",
+      "fields": ["Function", "Full-time equivalent employees by year"],
+      "source": "https://www.miamibeachfl.gov/city-hall/finance/financial-documents/"
+    },
+    {
+      "name": "Employee salaries",
+      "what": "No salary dataset, salary search or open data portal is published by the city; no OpenGov checkbook was found (the only OpenGov link on the city site is the garage sale permit). Pay by position is in the labor agreements and the pay plan adopted with the budget; individual pay is a public record by request.",
+      "url": null,
+      "api": null,
+      "asOf": null,
+      "fields": [],
+      "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget/"
+    }
+  ],
+  "staffing": {
+    "fiscalYear": "FY2027 (October 1, 2026 to September 30, 2027); adopted September 23, 2026 by Resolution 2026-34471",
+    "positionsTotal": null,
+    "payrollTotal": null,
+    "byDepartment": [],
+    "highestPaidTitles": [],
+    "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget/budget-amendments-resolutions-fy-2027/"
+  },
+  "vendors": {
+    "period": "FY 2024 (October 1, 2023 to September 30, 2024), year-to-date payments by payee as printed in the city's vendor payments PDF; no later edition posted",
+    "total": null,
+    "top": [
+      { "vendor": "US BANK, NA", "amount": 81604078.94, "department": null, "what": "Not stated in the register (bond trustee and debt service payments are typically paid through the trustee bank; the PDF gives no purpose column)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI-DADE COUNTY BOARD OF COUNTY COMMISSIONERS", "amount": 59905728.46, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "CITY PENSION FUND FIREFIGHTERS AND POLICE OFFICERS", "amount": 49908093.33, "department": null, "what": "Pension contributions (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "INTERNAL REVENUE SERVICE (DED)", "amount": 37101623.76, "department": null, "what": "Payroll tax deductions (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI BEACH EMPLOYEES RETIRE", "amount": 29818103.00, "department": null, "what": "Pension contributions (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "BUSLAM COMPANY PARTNERS INC.", "amount": 19757376.00, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI BEACH FOP HEALTH TRUST", "amount": 19232977.24, "department": null, "what": "Police health insurance trust (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "CITY OF MIAMI BEACH", "amount": 18599016.06, "department": null, "what": "Interfund payments to the city itself (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "JPMORGAN CHASE BANK, N.A.", "amount": 11037300.71, "department": null, "what": "Not stated (the city's P-card issuer)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "NATIONWIDE RETIREMENT SOLUTION, INC.", "amount": 9777473.58, "department": null, "what": "Deferred compensation (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "LIMOUSINES OF SOUTH FLORIDA, INC.", "amount": 9597889.78, "department": null, "what": "Not stated (trolley operator)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "GREATER MIAMI CONVENTION & VISITORS BUREAU, INC.", "amount": 9078965.00, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MCGRIFF, SEIBELS & WILLIAMS, INC.", "amount": 9008663.82, "department": null, "what": "Not stated (insurance broker)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "CFC-MB I, LLC", "amount": 9000000.00, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI BEACH CONVENTION CENTER", "amount": 8986611.54, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "SUZANNE A. DOCKERTY, P.A.", "amount": 8130391.27, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "RIC-MAN CONSTRUCTION FLORIDA, INC.", "amount": 7697150.59, "department": null, "what": "Not stated (construction contractor)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "LUNACON ENGINEERING GROUP, CORP", "amount": 6510710.39, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI-DADE COUNTY OFFICE OF STRATEGIC MANAGEMENT", "amount": 6363347.00, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI BEACH FIREFIGHTERS", "amount": 6268318.36, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "CORVEL ENTERPRISE COMP, INC", "amount": 5842331.39, "department": null, "what": "Not stated (claims administration)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "MIAMI BEACH FIREFIGHTERS LOCAL1510 INSURANCE", "amount": 5514038.07, "department": null, "what": "Firefighter health insurance trust (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "SUPERIOR LANDSCAPING & LAWN SERVICE, INC.", "amount": 5498354.64, "department": null, "what": "Not stated (landscaping)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "CDW LLC", "amount": 5254108.29, "department": null, "what": "Not stated (technology reseller)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "THE STOUT GROUP, LLC", "amount": 5182269.14, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "FLORIDA POWER & LIGHT COMPANY", "amount": 4803566.40, "department": null, "what": "Electricity (payee name)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "4 BEST BUSINESS CORP.", "amount": 4604111.21, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "FLORIDA DEPARTMENT OF REVENUE", "amount": 3759685.50, "department": null, "what": "Not stated", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "STATE OF FLORIDA DEPARTMENT OF TRANSPORATION", "amount": 3650842.00, "department": null, "what": "Not stated (spelled as printed)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" },
+      { "vendor": "SFM SERVICES, INC.", "amount": 3612530.88, "department": null, "what": "Not stated (janitorial and grounds contractor)", "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf" }
+    ],
+    "source": "https://miamibeachfl.gov/wp-content/uploads/2024/10/FY-24-Vendor-and-P-Card-Payments2-DC-10.01.2023-to-09.30.2024.pdf"
+  },
+  "unionContracts": [
+    { "union": "AFSCME Local 1554", "covers": "General (blue-collar and clerical) city employees; classifications are in the agreement, not stated on the labor relations page", "term": "2025-2028 agreement, fully executed June 17, 2026 (from the posted file name)", "expires": "2028-09-30", "lastAction": null, "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" },
+    { "union": "CWA Local 3178", "covers": "Communications Workers of America unit (administrative, technical and clerical employees); classifications in the agreement", "term": "2024-2027 agreement, fully executed June 23, 2026 (from the posted file name)", "expires": "2027-09-30", "lastAction": null, "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" },
+    { "union": "FOP William Nichols Lodge No. 8", "covers": "Police officers and sergeants", "term": "October 1, 2024 to September 30, 2027 (as printed in the posted file name)", "expires": "2027-09-30", "lastAction": null, "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" },
+    { "union": "GSAF, OPEIU Local 100", "covers": "Supervisory and professional employees", "term": "2024-2027 agreement (from the posted file name)", "expires": "2027-09-30", "lastAction": null, "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" },
+    { "union": "IAFF Local 1510", "covers": "Firefighters and fire officers", "term": "2024-2027 agreement (from the posted file name)", "expires": "2027-09-30", "lastAction": null, "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" }
+  ],
+  "levers": [
+    { "key": "budget-hearing", "who": "anyone", "how": "Speak at the two September budget hearings at 5:01 p.m. in the Commission Chamber, 1700 Convention Center Drive, in person or on Zoom when the item is called (2026: Thursday Sept 10 and Wednesday Sept 23). The second hearing adopts the final millage (2026-34470), operating budget (2026-34471) and capital budget (2026-34474). Earlier: the Commission budget retreat (2026: May 5, 3:30 p.m.) and the Finance and Economic Resiliency Committee briefings (2026: June 17 and July 17).", "rules": "Raise hand in Zoom or press *9 by phone; eComments and emails to CityClerk@miamibeachfl.gov accepted until 5:00 p.m. the day before. Citizens' Forum at regular meetings: 8:30 a.m. and 1:00 p.m., two minutes, no appointment needed.", "deadline": "At the hearing; written comment by 5:00 p.m. the day before", "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/", "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/city-commission-meeting-dates/" },
+    { "key": "position-list", "who": "anyone", "how": "The proposed operating budget book (posted on the budget page in August) lists positions by department with the prior year; the adopted book follows in December. The FERC July 17, 2026 briefing discussed a $21 million gap, a flat millage rate and eliminating several vacant positions.", "rules": "Books are PDFs under wp-content/uploads; the Budget in Brief summarizes position changes. Office of Management and Budget: 305-673-7510.", "deadline": "Before the September hearings", "url": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget/", "source": "https://www.miamibeachfl.gov/city-hall/office-of-budget-peformance/budget-development-process/" },
+    { "key": "records-request", "who": "anyone", "how": "Request payroll by employee or the full check register from the City Clerk: online portal, email researchrequest@miamibeachfl.gov, or 305.673.7000 ext. 26556.", "rules": "'Copies to be charged (if total exceeds $1.00)': $0.15 per one-sided copy, $1 per certified copy; a special service charge applies when labor is 'extensive', defined as 'labor of 1/2 hour or more'; 'the requester must provide payment in full before the City is required to produce the records.'", "deadline": null, "url": "https://miamibeachfl.justfoia.com/publicportal/home/newrequest", "source": "https://www.miamibeachfl.gov/city-hall/city-clerk/public-records-request/" },
+    { "key": "comment-at-award", "who": "anyone", "how": "Contract awards come to the Commission as agenda items (PrimeGov portal); speak when the item is called in person or on Zoom, or post an eComment.", "rules": "eComment or email with the item number in the subject line, until 5:00 p.m. the day before. Presentation files to communications@miamibeachfl.gov by 8:30 a.m. one business day before.", "deadline": "5:00 p.m. the day before the meeting for written comment", "url": "https://www.miamibeachfl.gov/city-hall/city-clerk/agenda", "source": "https://www.miamidade.gov/resources/legal-ads/municipalities/miami-beach/04-11202025-01avmbudgetrelated.pdf" },
+    { "key": "union-contract-vote", "who": "anyone", "how": "Each collective bargaining agreement is ratified by Commission resolution after the unit votes; the executed agreements are posted on the Employee and Labor Relations page. Four of five agreements (CWA, FOP, GSAF, IAFF) run through September 30, 2027, so successor bargaining falls in 2027.", "rules": "Speak on the ratification item when called or send an eComment by 5:00 p.m. the day before.", "deadline": "Before the ratification vote", "url": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations", "source": "https://miamibeachfl.gov/city-hall/human-resources/employee-labor-relations" },
+    { "key": "audit", "who": "anyone", "how": "Report fraud, waste, abuse of power, mismanagement or corruption to the city's Office of Inspector General: hotline 786.897.1111, office 305.673.7020, CityofMiamiBeachOIG@miamibeachfl.gov, online form, or 1130 Washington Ave, 6th Floor. The OIG was created by charter amendment approved by 81% of voters on November 6, 2018 (Ordinance 2019-4239); it audits any city program, contract or expenditure, can subpoena records, and its reports are posted online. Internal audit (resort tax and contract audits) sits inside the OIG.", "rules": "You 'may remain anonymous'; if you give your name it 'will be protected to the maximum extent of the law.' The Inspector General serves a four-year term and can be removed only by a 5/7 Commission vote.", "deadline": null, "url": "https://www.miamibeachfl.gov/inspectorgeneral/contact/", "source": "https://www.miamibeachfl.gov/inspectorgeneral/" }
+  ],
+  "notes": "Staffing is empty: the city's robots.txt ('Disallow: /*.pdf$') blocks the fetch tool from every PDF, so the FY 2027 proposed and FY 2026 adopted operating budget books, the Budget in Brief, the City Manager's message, the FERC briefings, the ACFR and the adopted-budget resolutions (also Laserfiche at docmgmt.miamibeachfl.gov) could not be read, and no HTML page on the site prints position or payroll totals. The shell cannot reach miamibeachfl.gov. The FY 2024 vendor payments PDF was readable in one fetch before the block applied; its top 30 payees are listed, but the file prints no purpose or department column and no grand total, and it is alphabetical, so the ranking is from the rows the fetch returned (about 2,000 of them) and could miss a payee on an unread page. Several top payees are not vendors in the ordinary sense (pension funds, IRS deductions, the city itself, the County). No FY 2025 or FY 2026 vendor payments file was found. Union terms come from the posted file names on the labor relations page because the agreement PDFs are blocked; 'expires' assumes the city fiscal year end (September 30) for the 2027 and 2028 agreements, as printed for the FOP file. Commission vote dates on the CBAs were not captured. Cycle dates (May 5 retreat, Sept 10 and Sept 23 hearings) match scripts/data/cycles/city-miami-beach.json. Sources saved under scratchpad payments-src (mb-all.txt)."
+}
