@@ -1,4 +1,5 @@
 import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
+import { handleApi } from './api.js';
 /**
  * Ballot305.org (vote-informed): Cloudflare Worker backend for a free, nonpartisan
  * Miami-Dade voter research tool in English, Spanish and Haitian Creole.
@@ -14,6 +15,7 @@ import { POLLING_PLACES, PP_SOURCE } from './polling-places.js';
  *   POST /api/voterinfo        { address } -> Google Civic voter info (polling place, contests when published)
  *   GET  /api/civic-status     whether Google's Nov 3 data is live (fixed public test address)
  *   GET  /api/elections        elections Google currently lists
+ *   GET  /api/v1/...           public read API over the committed data (src/api.js)
  *
  * The Worker is deployed under the name "ballot-intel" (wrangler.toml). Renaming it would create a
  * separate Worker without this one's custom domain, secrets and Durable Object, so the name stays.
@@ -54,6 +56,9 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     try {
+      if (url.pathname === '/api/v1' || url.pathname.startsWith('/api/v1/')) {
+        return handleApi(request, env, url);
+      }
       if (request.method === 'POST' && url.pathname === '/api/parse') {
         return await handleParse(request, env);
       }

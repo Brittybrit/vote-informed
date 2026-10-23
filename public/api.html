@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Data API · BALLOT305.ORG</title>
+<meta name="description" content="Official actions by elected officials joined to their donors and registered lobbyists, as open data. Read-only JSON API and bulk files, CC BY 4.0.">
+<meta property="og:title" content="Public Data API · Ballot305">
+<meta property="og:description" content="Actions, roll calls, lobbyist registrations and donor ties for Miami-Dade officials, as open data.">
+<meta property="og:image" content="https://ballot305.org/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#FAFAF7; --ink:#131F3C; --ink-soft:#3D4763; --rule:#131F3C; --hair:#C9C9C1; --link:#1D4ED8;
+    --sans:'Libre Franklin', 'Franklin Gothic Medium', Arial, sans-serif; --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55;}
+  header{border-bottom:4px solid var(--rule); padding:18px 16px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;}
+  header a{color:var(--ink); text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.01em; font-size:20px;}
+  main{max-width:860px; margin:0 auto; padding:28px 16px 64px;}
+  h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
+  h2{font-weight:800; font-size:18px; margin:28px 0 8px; text-transform:uppercase; letter-spacing:.02em;}
+  p{margin-bottom:10px;}
+  a{color:var(--link);}
+  code,pre{font-family:var(--mono); font-size:13px;}
+  pre{background:#fff; border:1px solid var(--hair); padding:10px 12px; overflow-x:auto; margin:8px 0 14px;}
+  table{border-collapse:collapse; width:100%; font-size:14px; margin:8px 0 14px;}
+  th,td{text-align:left; vertical-align:top; padding:6px 8px; border-bottom:1px solid var(--hair);}
+  th{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+  .box{font-size:14px; border:1px solid var(--rule); padding:8px 12px; margin:14px 0; background:#fff;}
+  footer{max-width:860px; margin:0 auto; padding:0 16px 40px; font-size:13px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<header><a href="/">Ballot305</a><nav style="font-family:var(--mono);font-size:12px"><a href="/decisions">Decisions</a> · <a href="/methodology">Methodology</a> · <a href="/transparency">Transparency</a></nav></header>
+<main>
+<h1>Public data API</h1>
+<p class="lede">Everything on this site about what officials did and who paid them is open data. Read it as JSON, filter it, or take the raw files. No key, no login, CORS on.</p>
+<div class="box">License: <b>CC BY 4.0</b>, attribution "Ballot305 (ballot305.org)". The underlying records are public government records; the joins, matches and hand checks are ours. Corrections: <a href="mailto:corrections@ballot305.org">corrections@ballot305.org</a>. Code: <a href="https://github.com/Brittybrit/vote-informed">GitHub</a> (MIT).</div>
+
+<h2>Start here</h2>
+<pre>GET https://ballot305.org/api/v1
+GET https://ballot305.org/api/v1/openapi.json</pre>
+
+<h2>What is in it</h2>
+<table>
+<tr><th>Thing</th><th>Meaning</th></tr>
+<tr><td><b>body</b></td><td>A decision-making body: county commission, a city council, the Florida House, the U.S. Senate, the Cabinet. Members, their campaign and committee accounts, and a plain-language note on how far the coverage goes.</td></tr>
+<tr><td><b>action</b></td><td>One official act: a vote with a roll call by name, a budget request a legislator filed, a bill they sponsored, a lawsuit an agency brought. Who moved and seconded, the tally, the registered lobbyists on the item, links to the record.</td></tr>
+<tr><td><b>tie</b></td><td>One gift from a donor connected to an action, to an official who took part in it. Each tie says how the donor was connected and when the gift came.</td></tr>
+<tr><td><b>person</b></td><td>One officeholder or candidate from the roster: terms held with dates and sources, races on the ballot, every action they took part in.</td></tr>
+</table>
+
+<h2>Read the caveats as fields</h2>
+<p>A tie is a connection the records support, not a claim of cause. The status of each connection is in the data, so a consumer that shows only numbers still shows what they rest on.</p>
+<table>
+<tr><th>Field</th><th>Values</th></tr>
+<tr><td><code>match</code></td><td><b>party</b> the company the item names gave · <b>lobbyist</b> the lobbyist registered on the item gave · <b>firm</b> that lobbyist's firm, its PAC, or another of its lobbyists gave · <b>office</b> someone registered at the same office address gave · <b>listed</b> a name-only match, flagged · <b>class</b> a kind of business the item helps, not a named party</td></tr>
+<tr><td><code>basis</code></td><td>what the match rests on: <code>occ</code> reported occupation, <code>addr</code> address, <code>name</code> name only</td></tr>
+<tr><td><code>timing</code>, <code>days</code></td><td>gift date against action date: <b>before</b>, <b>after</b>, <b>same</b>, <b>unknown</b>; <code>days</code> is signed (negative = before)</td></tr>
+<tr><td><code>actionSplit</code></td><td>true when any member voted no. Unanimous votes stay in the data; this flag lets you weigh them</td></tr>
+<tr><td><code>rollComplete</code></td><td>false when the roll lists only the members covered, not the whole chamber (state and federal floor votes)</td></tr>
+</table>
+
+<h2>Endpoints</h2>
+<table>
+<tr><th>Path</th><th>Filters</th></tr>
+<tr><td><code>/api/v1/bodies</code>, <code>/bodies/{key}</code></td><td></td></tr>
+<tr><td><code>/api/v1/actions</code></td><td><code>body</code> <code>person</code> <code>kind</code> <code>since</code> <code>until</code> <code>split=1</code> <code>tied=1</code> <code>party</code> <code>q</code></td></tr>
+<tr><td><code>/api/v1/actions/{body}/{id}</code></td><td></td></tr>
+<tr><td><code>/api/v1/ties</code></td><td><code>person</code> <code>body</code> <code>donor</code> <code>timing</code> <code>match</code> <code>since</code> <code>until</code> <code>minAmount</code></td></tr>
+<tr><td><code>/api/v1/people</code>, <code>/people/{id}</code></td><td><code>q</code> <code>onBallot=1</code></td></tr>
+<tr><td><code>/api/v1/transparency</code></td><td></td></tr>
+<tr><td><code>/api/v1/bulk</code></td><td>the raw JSON and CSV files behind everything</td></tr>
+</table>
+<p>Lists take <code>limit</code> (default 100, max 500) and <code>offset</code>, and return <code>total</code> plus an <code>X-Total-Count</code> header. Responses carry an <code>ETag</code> and <code>X-Data-Updated</code>; send <code>If-None-Match</code> to skip unchanged data.</p>
+
+<h2>Examples</h2>
+<pre># County commission votes that split, where a donor to someone on the ballot was tied to the item
+/api/v1/actions?body=county&split=1&tied=1
+
+# Gifts to Vicki Lopez's accounts that came before the vote they are tied to
+/api/v1/ties?person=vicki-l-lopez&timing=before
+
+# Every tie from the company named on the item, $10,000 or more
+/api/v1/ties?match=party&minAmount=10000
+
+# One person: terms, races, actions, ties
+/api/v1/people/vicki-l-lopez</pre>
+
+<h2>Scope and method</h2>
+<p>Miami-Dade County and the cities with races on the November 3, 2026 ballot, the Florida Legislature and Cabinet, and the Miami-Dade members of Congress. Which actions were checked, and how donors and lobbyists were matched, is on the <a href="/methodology">methodology page</a>. The schema is versioned: fields will be added to v1, not removed or renamed.</p>
+</main>
+<footer>Ballot305 is independent, paid for by its creator, and takes no money from candidates, campaigns, parties or political committees.</footer>
+</body>
+</html>

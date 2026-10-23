@@ -8,7 +8,8 @@ import { pathToFileURL } from 'node:url';
 export async function loadWorker(names) {
   const here = path.dirname(new URL(import.meta.url).pathname);
   let src = fs.readFileSync(path.join(here, '..', 'src', 'worker.js'), 'utf8')
-    .replace(/^import .*$/m, 'const POLLING_PLACES = [], PP_SOURCE = "";')
+    .replace(/^import \{ POLLING_PLACES.*$/m, 'const POLLING_PLACES = [], PP_SOURCE = "";')
+    .replace(/^import \{ handleApi \}.*$/m, 'import { handleApi } from ' + JSON.stringify(pathToFileURL(path.join(here, '..', 'src', 'api.js')).href) + ';')
     .replace('export default {', 'const __default = {');
   src += '\nexport { __default, ' + names.join(', ') + ' };\n';
   const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'b305-')), 'worker.mjs');

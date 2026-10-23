@@ -55,6 +55,16 @@ If you deploy a fork, use your own name and domain. Do not present any
 deployment as official or affiliated with an elections authority, and keep
 the independence disclaimer visible.
 
+## Public data API
+
+Everything the site shows about official actions and donors is open data at
+`/api/v1` (docs at [ballot305.org/api](https://ballot305.org/api), OpenAPI at
+`/api/v1/openapi.json`). Read-only, no key, CORS on. Data is CC BY 4.0 with
+attribution to Ballot305; code is MIT. The API is built from the committed
+JSON under `public/data/`, so a deploy is a data release. Each tie between a
+gift and an action carries its match kind, basis and timing as fields, so
+downstream use keeps the caveats. Tests in `tests/api.test.mjs`.
+
 ## Tests
 
 `npm test` runs the checks in `tests/` (no network, no Cloudflare account needed). GitHub runs them on every push. On the live site, /admin.html has a Check data sources button that tests each official source against a known 2026 candidate.
