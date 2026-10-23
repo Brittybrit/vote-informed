@@ -179,6 +179,12 @@ if (!fs.existsSync(reviewPath)) fs.writeFileSync(reviewPath, JSON.stringify(revi
 
 // Public file: confirmed only, plus counts of what is under review per official (no names of the unconfirmed).
 const confirmed = leads.filter(l => l.status === 'confirmed');
+// Hand-entered interests from an official's own disclosure that match no action in the data yet (a
+// statewide candidate's family business, say). Each must name the official record that states it.
+for (const h of review.stated || []) {
+  if (!h.person || !h.other || !h.relationship || !h.record || !/^https:\/\//.test(h.record.url || '')) throw new Error('review.json stated entry needs person, other, relationship and record.url: ' + JSON.stringify(h).slice(0, 120));
+  confirmed.push({ ...h, signal: h.signal || 'stated', evidence: h.evidence || [] });
+}
 const underReview = {};
 for (const l of leads) if (l.status === 'unconfirmed') underReview[l.person] = (underReview[l.person] || 0) + 1;
 fs.writeFileSync(path.join(here, '..', 'public', 'data', 'connections.json'), JSON.stringify({

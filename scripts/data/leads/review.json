@@ -1,4 +1,58 @@
 {
  "note": "Hand review of leads. status: confirmed | dismissed. A confirmed lead needs relationship and record (the official record that states it, with URL). Edit by hand.",
- "leads": {}
+ "leads": {},
+ "stated": [
+  {
+   "person": "byron-donalds",
+   "official": "Byron Donalds",
+   "other": "Onesto, LLC: Optima Management Services, LLC and OptimaEd (charter school services and curriculum)",
+   "otherKind": "business",
+   "relationship": {
+    "en": "His spouse is the sole member of Onesto, LLC, which owns the two companies, per his own U.S. House financial disclosures",
+    "es": "Su cónyuge es la única miembro de Onesto, LLC, dueña de las dos empresas, según sus propias declaraciones financieras ante la Cámara de Representantes de EE.UU.",
+    "ht": "Konjwen li se sèl manm Onesto, LLC, ki posede de konpayi yo, dapre pwòp deklarasyon finansye li nan Chanm Reprezantan Etazini"
+   },
+   "record": {
+    "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2025/10075306.pdf",
+    "label": {
+     "en": "2025 House financial disclosure",
+     "es": "Declaración financiera 2025 ante la Cámara",
+     "ht": "Deklarasyon finansye 2025 nan Chanm nan"
+    },
+    "note": {
+     "en": "2025 report (filed Aug 13, 2026): spouse's interests through Onesto, LLC: Optima Management Services, LLC $250,001-$500,000; OptimaEd, Inc. $500,001-$1,000,000; Dewalt Impact Group, LLC $250,001-$500,000 (business income $100,001-$1,000,000). The 2024 report valued Optima Management Services at $1,000,001-$5,000,000. Spouse salary amounts are not required and are listed N/A.",
+     "es": "Informe de 2025 (presentado el 13 de agosto de 2026): intereses del cónyuge a través de Onesto, LLC: Optima Management Services, LLC $250,001-$500,000; OptimaEd, Inc. $500,001-$1,000,000; Dewalt Impact Group, LLC $250,001-$500,000 (ingresos de negocio $100,001-$1,000,000). El informe de 2024 valoró Optima Management Services en $1,000,001-$5,000,000. Los salarios del cónyuge no se exigen y aparecen como N/A.",
+     "ht": "Rapò 2025 (depoze 13 out 2026): enterè konjwen an atravè Onesto, LLC: Optima Management Services, LLC $250,001-$500,000; OptimaEd, Inc. $500,001-$1,000,000; Dewalt Impact Group, LLC $250,001-$500,000 (revni biznis $100,001-$1,000,000). Rapò 2024 la te evalye Optima Management Services a $1,000,001-$5,000,000. Salè konjwen an pa obligatwa epi yo make N/A."
+    }
+   },
+   "evidence": [
+    {
+     "url": "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/2024/10071583.pdf",
+     "label": {
+      "en": "2024 House financial disclosure",
+      "es": "Declaración financiera 2024",
+      "ht": "Deklarasyon finansye 2024"
+     },
+     "note": {
+      "en": "Describes Onesto, LLC as a holding company in which the filer's spouse is the sole member.",
+      "es": "Describe a Onesto, LLC como una sociedad de cartera de la que el cónyuge del declarante es la única miembro.",
+      "ht": "Li dekri Onesto, LLC kòm yon konpayi kenbe kote konjwen deklaran an se sèl manm."
+     }
+    },
+    {
+     "url": "https://www.tampabay.com/news/florida-politics/elections/2026/10/22/byron-donalds-erika-donalds-charter-schools-optima-finances/",
+     "label": {
+      "en": "Tampa Bay Times / Miami Herald, Oct 22, 2026",
+      "es": "Tampa Bay Times / Miami Herald, 22 oct 2026",
+      "ht": "Tampa Bay Times / Miami Herald, 22 okt 2026"
+     },
+     "note": {
+      "en": "Reported, not an official record: five state-funded charter schools paid the two companies more than $30 million over four years, and OptimaEd is on track to bill the online school Optima Classical Academy $15.7 million in service fees for 2026-27 (Herald/Times analysis of tax filings, state audits and budget documents).",
+      "es": "Reportado, no es un registro oficial: cinco escuelas chárter financiadas por el estado pagaron más de $30 millones a las dos empresas en cuatro años, y OptimaEd va camino de cobrar a la escuela en línea Optima Classical Academy $15.7 millones en tarifas de servicio para 2026-27 (análisis del Herald/Times de declaraciones de impuestos, auditorías estatales y documentos de presupuesto).",
+      "ht": "Rapòte, se pa yon dosye ofisyèl: senk lekòl charter Leta finanse te peye de konpayi yo plis pase $30 milyon an kat ane, epi OptimaEd sou wout pou fakture lekòl anliy Optima Classical Academy $15.7 milyon an frè sèvis pou 2026-27 (analiz Herald/Times sou deklarasyon taks, odit Leta ak dokiman bidjè)."
+     }
+    }
+   ]
+  }
+ ]
 }

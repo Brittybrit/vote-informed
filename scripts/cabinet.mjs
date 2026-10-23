@@ -58,7 +58,7 @@ const actions = C.cards.map(card => {
     a.links = [{ t: 'minutes', url: M.transcript }, { t: 'record', url: M.agenda }, ...(card.pdf ? [{ t: 'record', url: card.pdf }] : [])];
   } else {
     a.roll = { [card.actor]: 'acted' }; a.rollComplete = true; a.agency = true;
-    a.links = [{ t: 'record', url: card.url }];
+    a.links = [{ t: card.urlKind || 'record', url: card.url }, ...(card.links || [])];
   }
   a.gifts = gifts(card.gifts, card.actor || null).filter(g => ONBALLOT.includes(g.to) && (g.to in a.roll) && a.roll[g.to] != null);
   return a;

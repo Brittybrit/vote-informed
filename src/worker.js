@@ -1611,21 +1611,56 @@ function lastFirst(n) {
   const m = String(n || '').match(/^\s*([^,]+),\s*([^,]+?)\s*$/);
   return m ? m[2] + ' ' + m[1] : String(n || '');
 }
-// One candidate search at the Division of Elections (2026 general), tab-separated.
-async function flContribTsv(H, first, last, q) {
+// One candidate search at the Division of Elections (2026 general), tab-separated. The state returns at
+// most FL_ROWLIMIT rows per search (largest gifts first), so a big campaign's search is split by date
+// (flContribAll) until every piece fits.
+const FL_ROWLIMIT = 5000;
+const FL_FROM = '2023-01-01';   // earliest gift date searched for a 2026 race
+async function flContribTsv(H, first, last, q, opt = {}) {
   const body = new URLSearchParams({ election: '20261103-GEN', search_on: '2', CanFName: first, CanLName: last, CanNameSrch: '2',
     office: q.office, cdistrict: q.cdistrict || '', cgroup: q.cgroup || '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All',
     cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '', cdollar_minimum: '', cdollar_maximum: '',
-    rowlimit: '5000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' });
-  // 8s cap: the state's database can hang 30s+ and the read-time refresh is killed ~30s after the
-  // response, before it can save anything. A slow answer counts as a failure (see refreshFlDonors).
-  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body, signal: AbortSignal.timeout(8000) });
+    rowlimit: String(FL_ROWLIMIT), csort1: 'AMT', csort2: 'DAT', cdatefrom: opt.from ? flUsDate(opt.from) : '', cdateto: opt.to ? flUsDate(opt.to) : '',
+    queryformat: '2', Submit: 'Submit' });
+  // Read-time cap 8s: the state's database can hang 30s+ and the read-time refresh is killed ~30s after the
+  // response. The background runner (flDonorsJob) passes a longer timeout. A slow answer is a failure.
+  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body, signal: AbortSignal.timeout(opt.timeoutMs || 8000) });
   if (!r.ok) throw new Error('FL contributions ' + r.status);
   const t = await r.text();
   // The state's database times out under load and answers 200 with an error page inside the TSV.
   // That is not "no contributions": throw so the caller keeps what it has and tries again later.
   if (/Error in \/cgi-bin|ODBC|Query timeout/i.test(t)) throw new Error('FL contributions: state search errored');
   return t;
+}
+const flUsDate = iso => iso.slice(5, 7) + '/' + iso.slice(8, 10) + '/' + iso.slice(0, 4);
+const flDayAdd = (iso, n) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
+// Every row of a candidate search. When a search comes back full (FL_ROWLIMIT rows), the state stopped
+// early, so the date range is cut in half and each half searched, down to a single day. complete is false
+// only if a single day still fills the limit; then the total is a floor and is labeled so.
+async function flContribAll(H, first, last, q, opt = {}) {
+  const dataLines = t => String(t || '').split(/\r?\n/).slice(1).filter(l => l.split('\t').length > 6);
+  const t0 = await flContribTsv(H, first, last, q, opt);
+  const header = String(t0).split(/\r?\n/)[0] || '';
+  let lines = dataLines(t0);
+  if (lines.length < FL_ROWLIMIT) return { tsv: t0, complete: true, searches: 1 };
+  lines = [];
+  let complete = true, searches = 1;
+  const today = new Date().toISOString().slice(0, 10);
+  const todo = [[FL_FROM, today]];
+  while (todo.length) {
+    const [from, to] = todo.shift();
+    const got = dataLines(await flContribTsv(H, first, last, q, { ...opt, from, to }));
+    searches++;
+    if (got.length >= FL_ROWLIMIT && from < to) {
+      const days = Math.round((Date.parse(to) - Date.parse(from)) / 864e5);
+      const mid = flDayAdd(from, Math.floor(days / 2));
+      todo.unshift([from, mid], [flDayAdd(mid, 1), to]);
+      continue;
+    }
+    if (got.length >= FL_ROWLIMIT) complete = false;
+    lines.push(...got);
+  }
+  return { tsv: header + '\n' + lines.join('\n'), complete, searches };
 }
 // Rows of a state search that belong to this candidate. The filer is "Lavin, George  (DEM)(STS)" or, with a
 // two-word surname, "Baez-Geller, Lucia (DEM)(STR)": the filed surname must contain the ballot's last name
@@ -1647,7 +1682,7 @@ function flRowsFor(tsv, name, np) {
   }
   return out;
 }
-async function flCandidateDonors(env, name, office) {
+async function flCandidateDonors(env, name, office, opt = {}) {
   const q = flOfficeQuery(office), np = flNameParts(name);
   if (!q || !np) return null;
   const H = { 'User-Agent': 'Mozilla/5.0 (compatible; ballot305.org nonpartisan voter guide; +https://github.com/Brittybrit/vote-informed)',
@@ -1663,9 +1698,10 @@ async function flCandidateDonors(env, name, office) {
   if (/-/.test(lastWord)) addLast(lastWord);
   addLast(np.last);
   if (words.length >= 3 && !/-/.test(lastWord)) addLast(words.slice(-2).join(' '));
-  let tsv = '';
+  let tsv = '', complete = true;
   for (const ln of lasts) {
-    tsv = await flContribTsv(H, np.first, ln, q);
+    const all = await flContribAll(H, np.first, ln, q, opt);
+    tsv = all.tsv; complete = all.complete;
     if (flRowsFor(tsv, name, np).length) break;
   }
   const agg = {}; let total = 0, n = 0, to = '';
@@ -1682,7 +1718,7 @@ async function flCandidateDonors(env, name, office) {
     agg[giver].kinds.add(c[3]);
     addGave(agg[giver].gave, iso, amt, /^INK$/i.test(c[3]) ? 'inkind' : /^LOA$/i.test(c[3]) ? 'loan' : 'cash', c[8]);
   }
-  if (!n) return { donors: [], count: 0 };
+  if (!n) return { donors: [], count: 0, complete };
   // The DOE export has no contributor type. The candidate's own money is the occupation "candidate", or a
   // giver whose every name word is in the candidate's own name ("Rodriguez, Ana Maria" for Ana Maria
   // Rodriguez), never just a donor who shares a first and last name ("Ana Rodriguez Lopez").
@@ -1710,7 +1746,7 @@ async function flCandidateDonors(env, name, office) {
       ...(loan ? { note: 'includes loans' } : inkind ? { note: 'in-kind (goods or services, not cash)' } : {}),
       ...(type !== 'individual' && type !== 'self-funded' ? { gave: doneGave(v.gave) } : {}) };
   });
-  return { donors, count: n, total, to, ties, local: roundLocal(local) };
+  return { donors, count: n, total, to, ties, local: roundLocal(local), complete };
 }
 
 // State races: spending by committees and parties whose filed purpose names this candidate, from the
@@ -2389,7 +2425,7 @@ async function refreshMdcDonors(env, result, name, office, officeCode) {
     delete result.officialMiss;
     return true;
   }
-  const fresh = result.mdcV === MDC_DONOR_VERSION && result.mdcAt && Date.now() - result.mdcAt < 24 * 3600 * 1000;
+  const fresh = result.mdcV === MDC_DONOR_VERSION && result.mdcAt && Date.now() - result.mdcAt < 6 * 3600 * 1000;
   if (fresh) return false;
   try {
     const d = await mdcCandidateDonors(env, name, office);
@@ -2746,7 +2782,7 @@ function evDate(s) {   // "08/14/26" -> "2026-08-14"
 }
 async function refreshEvDonors(env, result, name, office, officeCode) {
   if (officeCode || !evJurisdiction(office)) return false;
-  const fresh = result.evV === EV_DONOR_VERSION && result.evAt && Date.now() - result.evAt < 24 * 3600 * 1000;
+  const fresh = result.evV === EV_DONOR_VERSION && result.evAt && Date.now() - result.evAt < 6 * 3600 * 1000;
   if (fresh) return false;
   try {
     const d = await evCandidateDonors(env, name, office);
@@ -2976,31 +3012,73 @@ function tieNote(sortedAmounts, shown) {
   const atLeast = sortedAmounts.filter(a => a >= floor).length;
   return atLeast > shown ? ' ' + atLeast + ' givers gave $' + Math.round(floor).toLocaleString('en-US') + ' or more; ' + shown + ' are shown.' : '';
 }
+const FL_FRESH_MS = 6 * 3600 * 1000;   // reports are due on set Fridays; re-read the state four times a day
+// Put the state's numbers on a dossier
+function applyFl(result, fl, at) {
+  result.flV = FL_DONOR_VERSION;
+  result.flAt = at;
+  result.donorSource = 'FL';
+  if (fl.count) {
+    result.donors = fl.donors;
+    const amt = '$' + Math.round(fl.total).toLocaleString('en-US');
+    result.donorDataNote = fl.complete === false
+      ? 'Contributions reported to the Florida Division of Elections for the 2026 election: at least ' + fl.count.toLocaleString('en-US') +
+        ' contributions totaling at least ' + amt + (fl.to ? ', through ' + fl.to : '') + '. The state’s search stops at 5,000 rows, so this is a floor, not the full total. Top givers shown.' +
+        (fl.ties || '') + ' Contributions to allied political committees are listed separately.'
+      : 'Contributions reported to the Florida Division of Elections for the 2026 election: ' + fl.count.toLocaleString('en-US') +
+        ' contributions totaling ' + amt + (fl.to ? ', through ' + fl.to : '') + '. Top givers shown.' + (fl.ties || '') +
+        ' Contributions to allied political committees are listed separately.';
+    result.localMoney = fl.local || null;
+    if (fl.complete === false) result.flFloor = true; else delete result.flFloor;
+  } else {
+    // The state answered and has no contributions for this candidate. Show that instead of web-research
+    // donors, which may come from an aggregator or an older campaign (official sources only).
+    result.donors = [];
+    result.donorDataNote = 'No contributions reported to the Florida Division of Elections for this 2026 race as of ' +
+      new Date(at).toISOString().slice(0, 10) + '. Reports filed later will show here.';
+    result.localMoney = null;
+    delete result.flFloor;
+  }
+}
+// The full pull for one candidate, run by ResearchRunner (15-minute limit) so a big campaign that needs
+// many date-split searches, or a slow search, finishes. The read-time refresh picks the result up from KV.
+async function flDonorsJob(env, key, name, office) {
+  let fl = null, err = null;
+  for (let i = 0; i < 3 && !fl; i++) {
+    try { fl = await flCandidateDonors(env, name, office, { timeoutMs: 60000 }); }
+    catch (e) { err = e; await new Promise(r => setTimeout(r, 5000)); }
+  }
+  if (!fl) { console.log('FL donors job ' + name + ': ' + (err && err.message)); return false; }
+  await env.CACHE.put('fldon:' + key, JSON.stringify({ v: FL_DONOR_VERSION, at: Date.now(), fl }), { expirationTtl: cacheTtl() });
+  return true;
+}
 async function refreshFlDonors(env, key, result, name, office, save) {
   if (!flOfficeQuery(office)) return false;
-  const fresh = result.flV === FL_DONOR_VERSION && result.flAt && Date.now() - result.flAt < 24 * 3600 * 1000;
+  const fresh = result.flV === FL_DONOR_VERSION && result.flAt && Date.now() - result.flAt < FL_FRESH_MS;
+  if (env.RESEARCH && key) {
+    // A finished background pull newer than what the dossier shows goes on now.
+    const bg = await env.CACHE.get('fldon:' + key, 'json');
+    if (bg && bg.v === FL_DONOR_VERSION && bg.fl && (!result.flAt || bg.at > result.flAt || result.flV !== FL_DONOR_VERSION)) {
+      applyFl(result, bg.fl, bg.at);
+      if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
+      return true;
+    }
+    if (fresh) return false;
+    // Otherwise start one (at most every 20 minutes per candidate) and keep what the dossier has meanwhile.
+    if (!(await env.CACHE.get('flq:' + key))) {
+      await env.CACHE.put('flq:' + key, '1', { expirationTtl: 1200 });
+      try {
+        const stub = env.RESEARCH.get(env.RESEARCH.idFromName('fl:' + key));
+        await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ flDonors: true, key, name, office }) });
+      } catch (e) { console.log('FL donors schedule ' + name + ': ' + e.message); }
+    }
+    return false;
+  }
   if (fresh) return false;
   try {
     const fl = await flCandidateDonors(env, name, office);
     if (!fl) return false;
-    result.flV = FL_DONOR_VERSION;
-    result.flAt = Date.now();
-    if (fl.count) {
-      result.donors = fl.donors;
-      result.donorDataNote = 'Contributions reported to the Florida Division of Elections for the 2026 election: ' + fl.count +
-        ' contributions totaling $' + Math.round(fl.total).toLocaleString('en-US') + (fl.to ? ', through ' + fl.to : '') +
-        '. Top givers shown.' + (fl.ties || '') + ' Contributions to allied political committees are listed separately.';
-      result.donorSource = 'FL';
-      result.localMoney = fl.local || null;
-    } else {
-      // The state answered and has no contributions for this candidate. Show that instead of web-research
-      // donors, which may come from an aggregator or an older campaign (official sources only).
-      result.donors = [];
-      result.donorDataNote = 'No contributions reported to the Florida Division of Elections for this 2026 race as of ' +
-        new Date().toISOString().slice(0, 10) + '. Reports filed later will show here.';
-      result.donorSource = 'FL';
-      result.localMoney = null;
-    }
+    applyFl(result, fl, Date.now());
     if (save) await env.CACHE.put(key, JSON.stringify(result), { expirationTtl: cacheTtl() });
     return true;
   } catch (e) {
@@ -4364,7 +4442,9 @@ export class ResearchRunner {
     if (!job) return;
     await this.state.storage.put('running', Date.now());
     try {
-      if (job.warm) {
+      if (job.flDonors) {
+        await flDonorsJob(this.env, job.key, job.name, job.office);   // writes fldon:<key> to KV
+      } else if (job.warm) {
         // The owner's warm-up: same research, plus a record of what it cost.
         const env = Object.create(this.env);
         env.__usage = {};
