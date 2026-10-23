@@ -13,7 +13,9 @@
  *   GET /api/v1/transparency         city records scorecard
  *   GET /api/v1/cycles               governance calendar and citizen levers per body
  *   GET /api/v1/cycles/{key}         one body's cycle
- *   GET /api/v1/now?precinct=033.0   my offices, who holds them, who is running, each body's phase, next meetings, levers
+ *   GET /api/v1/now?precinct=033.0   my offices, who holds them, who is running, each body's phase, next meetings, levers, upcoming items
+ *   GET /api/v1/upcoming             items on posted agendas, with ledger matches and tags; filters body, precinct, since, until, tagged
+ *   GET /api/v1/contacts/{office}    official contact for one roster office
  *   GET /api/v1/bulk                 the raw files behind everything
  *   GET /api/v1/openapi.json         OpenAPI 3 description
  *
@@ -42,7 +44,9 @@ const FILES = {
   transparency: '/data/transparency.json',
   moneySummary: '/data/money-summary.json',
   cycles: '/data/cycles.json',
-  precincts: '/data/precincts.json'
+  precincts: '/data/precincts.json',
+  contacts: '/data/contacts.json',
+  upcoming: '/data/upcoming.json'
 };
 const MAX_LIMIT = 500, DEFAULT_LIMIT = 100;
 
@@ -61,7 +65,7 @@ export async function loadApiData(env) {
     const res = await env.ASSETS.fetch(new Request('https://assets.local' + path));
     raw[k] = res.ok ? await res.json() : null;
   }
-  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf].join('|');
+  const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf, raw.contacts && raw.contacts.updated, raw.upcoming && raw.upcoming.updated].join('|');
   if (cache && cache.key === key) return cache.data;
   cache = { key, data: buildIndex(raw) };
   return cache.data;
@@ -206,6 +210,8 @@ export function buildIndex(raw) {
     cycles: raw.cycles || { updated: null, bodies: [] },
     cyclesByBody: new Map(((raw.cycles && raw.cycles.bodies) || []).map(c => [c.rosterBody, c])),
     precincts: raw.precincts || null,
+    contacts: raw.contacts || { updated: null, offices: {}, bodies: {} },
+    upcoming: raw.upcoming || { updated: null, meetings: [] },
     officesByBody: groupBy(roster.offices || [], o => o.body),
     termsByOffice: groupBy(roster.terms || [], t => t.office),
     ballotByOffice: groupBy(roster.ballot || [], r => r.officeId)
@@ -279,6 +285,27 @@ function route(parts, q, data, url) {
     return c ? { body: c } : notFound('cycle');
   }
   if (a === 'now') return now(data, q);
+  if (a === 'upcoming') {
+    if (b) return notFound('upcoming');
+    return page(filterUpcoming(data, q), q, data);
+  }
+  if (a === 'payments') {
+    const rows = data.upcoming.payments || [];
+    if (!b) return { body: { updated: data.upcoming.updated, bodies: rows.map(p => ({ body: p.body, rosterBody: p.rosterBody, checked: p.checked, datasets: p.datasets.length, topVendors: p.vendors.top.length, departments: p.staffing ? p.staffing.byDepartment.length : 0 })) } };
+    const py = rows.find(p => p.body === b || p.rosterBody === b);
+    return py ? { body: py } : notFound('payments');
+  }
+  if (a === 'procurement') {
+    const rows = data.upcoming.procurement || [];
+    if (!b) return { body: { updated: data.upcoming.updated, bodies: rows.map(p => ({ body: p.body, rosterBody: p.rosterBody, checked: p.checked, open: p.solicitations.length, expiring: p.expiring.length, plan: p.capitalPlan.length })) } };
+    const pr = rows.find(p => p.body === b || p.rosterBody === b);
+    return pr ? { body: pr } : notFound('procurement');
+  }
+  if (a === 'contacts') {
+    if (!b) return { body: { updated: data.contacts.updated, offices: Object.keys(data.contacts.offices).length, bodies: data.contacts.bodies } };
+    const c = data.contacts.offices[b];
+    return c ? { body: c } : notFound('contact');
+  }
   return notFound('endpoint');
 }
 
@@ -301,6 +328,10 @@ function index(data, url) {
       transparency: base + '/transparency',
       cycles: base + '/cycles',
       now: base + '/now?precinct=033.0',
+      upcoming: base + '/upcoming?precinct=033.0&tagged=money',
+      contacts: base + '/contacts/{office}',
+      procurement: base + '/procurement/county',
+      payments: base + '/payments/county',
       bulk: base + '/bulk',
       openapi: base + '/openapi.json'
     },
@@ -332,6 +363,8 @@ function bulk(data, url) {
       { path: o + FILES.transparency, what: 'city records scorecard' },
       { path: o + FILES.cycles, what: 'governance calendar and citizen levers per body' },
       { path: o + FILES.precincts, what: 'precinct to district cross reference (county elections office)' },
+      { path: o + FILES.contacts, what: 'official contacts per office' },
+      { path: o + FILES.upcoming, what: 'items on posted agendas with ledger matches and tags' },
       { path: o + '/data/lobby-ledger.json', what: 'state budget requests by lobbying firm' },
       { path: o + '/data/county-lobbyists.json', what: 'Miami-Dade County lobbyist registrations used for matching' },
       { path: o + '/data/school-board-lobbyists.json', what: 'M-DCPS lobbyist registrations' },
@@ -456,7 +489,7 @@ function now(data, q) {
       const terms = (data.termsByOffice.get(o.id) || []).filter(t => (t.start == null || t.start <= today) && (t.end == null || t.end >= today));
       const holders = terms.map(t => holder(t, data));
       const races = (data.ballotByOffice.get(o.id) || []).map(r => ({ office: r.office, judicial: !!r.judicial, candidates: (r.candidates || []).map(c => ({ person: c.person, name: c.asPrinted || (c.person && data.people.get(c.person) || {}).name || null, party: c.party || null, incumbent: holders.some(h => h.person === c.person) })) }));
-      return { office: o.id, name: o.name, district: o.district == null ? null : o.district, kind: o.kind || null, actionScope: o.actionScope || 'all', holders, onBallot: races };
+      return { office: o.id, name: o.name, district: o.district == null ? null : o.district, kind: o.kind || null, actionScope: o.actionScope || 'all', holders, onBallot: races, contact: data.contacts.offices[o.id] || null };
     });
     bodiesOut.push({
       body: w.body,
@@ -465,7 +498,11 @@ function now(data, q) {
       jurisdiction: offices[0].jurisdiction,
       decisionsBody: (data.bodies.find(b => b.rosterBody === w.body) || {}).key || null,
       seats,
-      cycle: cycle ? cycleNow(cycle, today) : null
+      cycle: cycle ? cycleNow(cycle, today) : null,
+      bodyContact: data.contacts.bodies[w.body] || null,
+      upcoming: upcomingFor(data, w.body, today, { countyDistrict: String(countyCommission), cityBody, cityDistrict }),
+      procurement: procurementFor(data, w.body, today, { countyDistrict: String(countyCommission), cityBody, cityDistrict }),
+      payments: paymentsFor(data, w.body)
     });
   }
   return { body: {
@@ -476,6 +513,76 @@ function now(data, q) {
   } };
 }
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+// Items on this body's posted agendas from today on, each with a relevance block for the precinct.
+function upcomingFor(data, rosterBody, today, me) {
+  const out = [];
+  for (const m of data.upcoming.meetings || []) {
+    if (m.rosterBody !== rosterBody || !m.meeting || m.meeting.date < today) continue;
+    for (const it of m.items || []) out.push(relevance(itemView(m, it), me));
+  }
+  return out;
+}
+// Spending under consideration for this body: open solicitations, expiring contracts, the capital plan,
+// each row with a near flag for the precinct where the row states a district or the body is the city.
+function procurementFor(data, rosterBody, today, me) {
+  const pr = (data.upcoming.procurement || []).find(p => p.rosterBody === rosterBody);
+  if (!pr) return null;
+  const near = loc => { if (!loc) return null; if (rosterBody === 'mdc-commission' && loc.district != null) return String(loc.district) === me.countyDistrict; if (rosterBody === me.cityBody) return loc.district == null || me.cityDistrict == null ? true : String(loc.district) === String(me.cityDistrict); return null; };
+  return {
+    checked: pr.checked, links: pr.links, levers: pr.levers, notes: pr.notes,
+    open: pr.solicitations.filter(s => !s.due || s.due >= today).map(s => ({ ...s, near: near(s.location), daysToDue: s.due ? Math.round((Date.parse(s.due) - Date.parse(today)) / 86400000) : null })),
+    expiring: pr.expiring.map(e => ({ ...e, daysToExpiry: Math.round((Date.parse(e.expires) - Date.parse(today)) / 86400000), money: e.matches && e.matches.ties.length > 0, lobbied: e.matches && e.matches.lobbyists.length > 0 })),
+    plan: pr.capitalPlan.map(c => ({ ...c, near: near(c.location) })),
+    counts: { open: pr.solicitations.length, expiring: pr.expiring.length, plan: pr.capitalPlan.length, planTotal: pr.capitalPlan.reduce((n, c) => n + (c.total || 0), 0) }
+  };
+}
+// Who this body pays: staffing totals, top vendors with their ledger matches, union contracts, levers.
+function paymentsFor(data, rosterBody) {
+  const py = (data.upcoming.payments || []).find(p => p.rosterBody === rosterBody);
+  if (!py) return null;
+  return {
+    checked: py.checked, datasets: py.datasets, staffing: py.staffing,
+    vendors: py.vendors ? { period: py.vendors.period, total: py.vendors.total, source: py.vendors.source, top: py.vendors.top.map(v => ({ ...v, money: v.matches && v.matches.ties.length > 0, lobbied: v.matches && v.matches.lobbyists.length > 0, history: v.matches && v.matches.priorActions.length > 0 })) } : null,
+    unionContracts: py.unionContracts, levers: py.levers, notes: py.notes
+  };
+}
+function itemView(m, it) {
+  return { body: m.body, rosterBody: m.rosterBody, bodyName: m.bodyName, meeting: m.meeting, comment: m.comment || [], ...it };
+}
+// What this item has to do with this precinct: computed from the item's own fields only.
+function relevance(it, me) {
+  const r = { near: null, wallet: !!(it.tags && it.tags.wallet), money: !!(it.tags && it.tags.money), lobbied: !!(it.tags && it.tags.lobbied), hearing: !!(it.tags && it.tags.hearing), why: [] };
+  const loc = it.location || {};
+  if (it.rosterBody === 'mdc-commission' && loc.district != null) { r.near = String(loc.district) === me.countyDistrict; r.why.push(r.near ? 'in your county commission district' : 'county district ' + loc.district + ', not yours'); }
+  else if (it.rosterBody === me.cityBody) { r.near = true; r.why.push('your city'); if (loc.district != null && me.cityDistrict != null) { r.near = String(loc.district) === String(me.cityDistrict); r.why[r.why.length - 1] = r.near ? 'in your city district' : 'city district ' + loc.district + ', not yours'; } }
+  if (r.wallet && it.fiscal) r.why.push('fiscal impact stated: ' + it.fiscal.slice(0, 160));
+  if (r.money) r.why.push(it.matches.ties.length + ' gift' + (it.matches.ties.length === 1 ? '' : 's') + ' from a named party to a member');
+  if (r.lobbied) r.why.push(it.matches.lobbyists.length + ' registered lobbyist' + (it.matches.lobbyists.length === 1 ? '' : 's'));
+  if (it.matches && it.matches.priorActions.length) r.why.push(it.matches.priorActions.length + ' prior action' + (it.matches.priorActions.length === 1 ? '' : 's') + ' on this party');
+  return { ...it, relevance: r };
+}
+function filterUpcoming(data, q) {
+  const body = q.get('body'), since = q.get('since'), until = q.get('until');
+  const tagged = (q.get('tagged') || '').split(',').map(s => s.trim()).filter(Boolean);
+  const pct = normPrecinct(q.get('precinct'));
+  const row = pct && data.precincts && data.precincts.precincts ? data.precincts.precincts[pct] : null;
+  const me = row ? { countyDistrict: String(row[5]), cityBody: muniBody(row[3]), cityDistrict: muniBody(row[3]) === 'city-north-miami' ? (data.precincts.northMiamiDistrict || {})[pct] : muniBody(row[3]) === 'city-miami-gardens' ? (data.precincts.miamiGardensDistrict || {})[pct] : null } : null;
+  const myBodies = me ? new Set(['mdc-commission', 'mdcps-board', me.cityBody].filter(Boolean)) : null;
+  const out = [];
+  for (const m of data.upcoming.meetings || []) {
+    if (body && m.body !== body && m.rosterBody !== body) continue;
+    if (since && m.meeting.date < since) continue;
+    if (until && m.meeting.date > until) continue;
+    if (myBodies && !myBodies.has(m.rosterBody)) continue;
+    for (const it of m.items || []) {
+      const v = me ? relevance(itemView(m, it), me) : itemView(m, it);
+      if (tagged.length && !tagged.every(t => t === 'near' ? (v.relevance && v.relevance.near) : (v.tags && v.tags[t]))) continue;
+      out.push(v);
+    }
+  }
+  return out;
+}
 
 function holder(t, data) {
   const p = data.people.get(t.person) || {};
@@ -569,6 +676,12 @@ function openapi(url) {
       '/transparency': list('City records scorecard', []),
       '/cycles': list('Governance calendar and citizen levers per body', []),
       '/cycles/{key}': { get: { summary: 'One body: meetings, phases, levers, elections, contacts', parameters: [{ name: 'key', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Unknown body' } } } },
+      '/upcoming': list('Items on posted agendas, with ledger matches, tags and, given a precinct, relevance', [['body', 'cycle body key or roster body id'], ['precinct', 'county precinct; limits to the bodies it votes for and adds a relevance block'], ['since', 'YYYY-MM-DD'], ['until', 'YYYY-MM-DD'], ['tagged', 'comma list of money, lobbied, wallet, place, hearing, history, near'], ...paging]),
+      '/payments': list('Who each body pays: staffing by department, top vendors with ledger matches, union contracts, levers', []),
+      '/payments/{body}': { get: { summary: 'One body\'s staffing and vendor payments', parameters: [{ name: 'body', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Not researched' } } } },
+      '/procurement': list('Spending under consideration per body: open solicitations, expiring contracts, capital plan, levers', []),
+      '/procurement/{body}': { get: { summary: 'One body\'s procurement register', parameters: [{ name: 'body', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'Not researched' } } } },
+      '/contacts/{office}': { get: { summary: 'Official contact for one roster office', parameters: [{ name: 'office', in: 'path', required: true, schema: { type: 'string' } }], responses: { 200: { description: 'OK' }, 404: { description: 'No contact on file' } } } },
       '/now': list('For one precinct today: my offices, who holds them, who is running, each body\'s phase, next meetings and what a resident can do', [['precinct', 'county precinct, e.g. 033.0 (required)'], ['date', 'YYYY-MM-DD, defaults to today']]),
       '/bulk': list('Raw data files', [])
     }
