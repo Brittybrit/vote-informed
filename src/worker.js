@@ -1617,7 +1617,9 @@ async function flContribTsv(H, first, last, q) {
     office: q.office, cdistrict: q.cdistrict || '', cgroup: q.cgroup || '', party: 'All', ComName: '', ComNameSrch: '2', committee: 'All',
     cfname: '', clname: '', namesearch: '2', ccity: '', cstate: '', czipcode: '', coccupation: '', cdollar_minimum: '', cdollar_maximum: '',
     rowlimit: '5000', csort1: 'AMT', csort2: 'DAT', cdatefrom: '', cdateto: '', queryformat: '2', Submit: 'Submit' });
-  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body });
+  // 8s cap: the state's database can hang 30s+ and the read-time refresh is killed ~30s after the
+  // response, before it can save anything. A slow answer counts as a failure (see refreshFlDonors).
+  const r = await fetch(FL_BASE + '/cgi-bin/contrib.exe', { method: 'POST', headers: H, body, signal: AbortSignal.timeout(8000) });
   if (!r.ok) throw new Error('FL contributions ' + r.status);
   const t = await r.text();
   // The state's database times out under load and answers 200 with an error page inside the TSV.
