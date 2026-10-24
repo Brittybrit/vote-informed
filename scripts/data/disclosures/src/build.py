@@ -19,6 +19,19 @@ NO8B = "Form 8B memoranda and abstentions in minutes were not searched in this p
 
 # ---------------- federal ----------------
 HC = "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/"
+MOODY_SENATE = {"type": "U.S. Senate Annual Report (CY 2025)", "year": 2025, "filed": "2026-08-13",
+    "url": "https://efdsearch.senate.gov/search/view/annual/7ca4d0a0-27f8-44f1-b393-f61d2d62df02/", "netWorth": None,
+    "assets": [{"name": "Missouri Midway LLC (Largo, FL), holding company for undeveloped land", "kind": "business interest", "value": "$1,001-$15,000 (its land)"},
+               {"name": "Artzibushev - University One Limited Partnership (Tampa, FL), develops and leases commercial real estate", "kind": "business interest", "value": "$1,000,001-$5,000,000 (its property); rent $15,001-$50,000"},
+               {"name": "Gulf to Bay JV Partners LLC (Tampa, FL), develops and leases commercial real estate", "kind": "business interest", "value": "$100,001-$250,000 (its property)"},
+               {"name": "First Tampa Alexander LLC (Plant City, FL), holds commercial real estate", "kind": "business interest", "value": "$100,001-$250,000 (its property)"},
+               {"name": "Young & Moody Building (Plant City, FL)", "kind": "real property", "value": "$100,001-$250,000; rent $15,001-$50,000"},
+               {"name": "Stocks held in Merrill Lynch accounts (shares of family accounts), including Exxon Mobil, Travelers, Truist, Valero, Wells Fargo, Bank of America, BP, Regions", "kind": "securities", "value": "ranges as filed"}],
+    "incomeSources": [{"source": "State of Florida (salary)", "kind": "employer", "amount": 12353.55},
+                      {"source": "City of Plant City (spouse salary)", "kind": "employer", "amount": "over $1,000"}],
+    "liabilities": [],
+    "businesses": [{"name": "Special Olympics Florida", "role": "director", "nature": "nonprofit board, Aug 2019 to May 2025"}],
+    "source": "U.S. Senate Office of Public Records, eFD, Annual Report for Calendar 2025, filed 08/13/2026"}
 FED_FORMS = {
  "mario-diaz-balart": ([{"type": "House Financial Disclosure (annual)", "year": 2025, "filed": "2026-05-11", "url": HC + "2025/10076701.pdf",
     "assets": [A("Apple Inc. (AAPL), dependent child, $1-$1,000", "securities"), A("Bank of America savings account, $50,001-$100,000", "other"),
@@ -76,7 +89,7 @@ FED_FORMS = {
     "source": "U.S. House Clerk, Financial Disclosure Report, Filing ID 10074897 (Schedules A, C, D, E, F)"}],
    "Annual report for 2025 filed 2026-08-13 (after an extension); 41 pages, mostly brokerage holdings, summarized here. He files frequent periodic transaction reports (2024-2026). AshBritt is a FEMA/state disaster-debris contractor; disaster-response contracting and FEMA items are flags. Sunbiz: LCR Consulting LLC (L13000112641, manager Jared E. Moskowitz, inactive since 2023-09-22; address residential, not on his disclosure) and Jared Moskowitz for Congress Inc. (campaign entity).",
    [{"name": "spouse (not named on the disclosure)", "relationship": "spouse", "basis": "Member's 2025 House Financial Disclosure, Schedule A (MOD LLC, owner SP) and Schedule C ('MOD LLC - Spouse Salary')", "entity": "MOD LLC (consulting services, Ft. Lauderdale)", "url": HC + "2025/10074897.pdf"}]),
- "ashley-moody": ([{"type": "Form 6F", "year": 2025, "filed": "2025-03-27", "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=998452",
+ "ashley-moody": ([MOODY_SENATE, {"type": "Form 6F", "year": 2025, "filed": "2025-03-27", "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=998452",
     "netWorth": 4426804,
     "assets": [A("10.51% interest in Moody Investment Limited Partnership, Lexington, SC", "business interest", 677049), A("1.67% interest in Missouri Midway LLC, Largo, FL", "business interest", 12525),
                A("10% interest in Artzibushev - University One Limited Partnership, Tampa", "business interest", 1135240), A("8.33% interest in Young & Moody Building, Plant City", "real property", 166109),
@@ -96,7 +109,7 @@ FED_FORMS = {
                    B("Gulf to Bay JV Partners LLC", "owner", "6%, Tampa"), B("First Tampa Alexander LLC", "owner", "8.33%, Plant City"), B("Missouri Midway LLC / First Tampa Rosery LLC", "owner", "1.67%, Largo"),
                    B("Young & Moody Building", "owner", "8.33%, Plant City; tenant Plant City Chamber")],
     "source": "Florida COE EFDMS, CE Form 6F (final disclosure on leaving the Attorney General's office 2025-01-21), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/72729; assets and liabilities as of 2024-12-31, income for 2024 (attached schedule)"}],
-   "U.S. Senate financial disclosure not read: Senate eFD (efdsearch.senate.gov) requires accepting a usage agreement before searching, which needs the user's go-ahead, so her 2025 Senate annual report is not captured. Used instead her final Florida Form 6F (filed 2025-03-27; assets as of 2024-12-31). Secondary income sources on that form: Staples, Panera Bread/Covelli Enterprises and Regions Bank (tenants of Artzibushev - University One LP) and Plant City Chamber (tenant of Young & Moody Building). Sunbiz: no entity found with her as officer at a matching address.",
+   "Current: U.S. Senate Annual Report for calendar 2025, filed 2026-08-13 (read Oct 24, 2026). Also kept: her final Florida Form 6F (2025-03-27), with fuller family partnership detail.",
    []),
 }
 
