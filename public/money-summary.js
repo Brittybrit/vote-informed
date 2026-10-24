@@ -274,7 +274,7 @@
       if(fed && !R.n && p.body === 'ussenate') acts.push(w.norequests(p));
       groups.push(acts);
     } else {
-      if(!p.total) return w.none(p, b);
+      if(!p.total) return w.none(p, b) + (p.share && p.share.n ? '<br>' + w.share(p, p.share, b) : '');
       groups.push([w.took(p, p.kind === 'cabinet' ? w.whyAct(p) : w.whyBody(p, b))]);
       groups.push([w.timing(p, w.whatVote)]);
       var a2 = [p.kind === 'cabinet' ? w.cabinet(p) : w.voted(p, b)];
