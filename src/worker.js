@@ -71,6 +71,9 @@ export default {
       if (request.method === 'POST' && url.pathname === '/api/measure-impact') {
         return await handleMeasureImpact(request, env, ctx);
       }
+      if (request.method === 'POST' && url.pathname === '/api/property') {
+        return await handleProperty(request, env);
+      }
       if (request.method === 'POST' && url.pathname === '/api/race-money') {
         return await handleRaceMoney(request, env);
       }
@@ -4403,6 +4406,73 @@ async function runImpact(env, key, p) {
   }
 }
 
+/* ---------------- a voter's own property values, for "what this means for you" ---------------- */
+// The voter types their address and chooses to send it (the page says so before they do). It goes to
+// the Miami-Dade Property Appraiser's public search and the values come back. The address is never
+// written to KV, logged or cached; the response carries only the values the page uses.
+const PA_PROXY = 'https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx';
+const LIMIT_PROPERTY_PER_DAY = 40;
+
+function paStreet(address) {
+  // The appraiser matches the street line only ("1155 BLUE RD"), not city or ZIP.
+  return String(address || '').split(',')[0].replace(/\s+/g, ' ').trim().slice(0, 100);
+}
+
+async function paGet(params) {
+  const res = await fetch(PA_PROXY + '?' + new URLSearchParams(Object.assign({ clientAppName: 'PropertySearch' }, params)), {
+    headers: { 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; Ballot305; +https://ballot305.org/about.html)' }
+  });
+  if (!res.ok) throw new Error('Property Appraiser ' + res.status);
+  return res.json();
+}
+
+// Only the numbers the page uses, for the latest year on file.
+function paValues(d) {
+  const latest = list => (Array.isArray(list) ? list : []).filter(x => x && x.Year).sort((a, b) => b.Year - a.Year)[0] || null;
+  const A = latest(d && d.Assessment && d.Assessment.AssessmentInfos);
+  const T = latest(d && d.Taxable && d.Taxable.TaxableInfos);
+  if (!A) return null;
+  const year = A.Year;
+  const ben = ((d.Benefit && d.Benefit.BenefitInfos) || []).filter(b => b && Number(b.TaxYear) === Number(year));
+  const homestead = ben.some(b => /^homestead$/i.test(String(b.Description || '').trim()));
+  const info = d.PropertyInfo || {};
+  const site = Array.isArray(d.SiteAddress) && d.SiteAddress[0] ? d.SiteAddress[0].Address : '';
+  return {
+    folio: String(info.FolioNumber || ''), address: String(site || ''), municipality: String(info.Municipality || ''),
+    use: String(info.DORDescription || ''), year: Number(year),
+    assessed: Number(A.AssessedValue) || 0, homestead,
+    schoolTaxable: T ? Number(T.SchoolTaxableValue) || 0 : null, countyTaxable: T ? Number(T.CountyTaxableValue) || 0 : null,
+    cityTaxable: T ? Number(T.CityTaxableValue) || 0 : null,
+    source: 'https://apps.miamidadepa.gov/propertysearch/'
+  };
+}
+
+async function handleProperty(request, env) {
+  const b = await request.json().catch(() => null);
+  const folio = b && isStr(b.folio) ? b.folio.replace(/\D/g, '') : '';
+  const street = b && isStr(b.address) ? paStreet(b.address) : '';
+  if (!folio && street.length < 5) return json({ error: 'Enter your street address, like 123 NW 1 St.' }, 400);
+  if (folio && folio.length !== 13) return json({ error: 'Bad folio' }, 400);
+  if (!(await rateLimit(env, 'property', clientIP(request), LIMIT_PROPERTY_PER_DAY))) return json({ error: 'Too many lookups today from your connection.' }, 429);
+  try {
+    let strap = folio;
+    if (!strap) {
+      const r = await paGet({ Operation: 'GetAddress', myUnit: isStr(b.unit) ? b.unit.slice(0, 12) : '', from: '1', to: '25', myAddress: street });
+      const hits = (r && Array.isArray(r.MinimumPropertyInfos) ? r.MinimumPropertyInfos : []).filter(x => x && x.Strap);
+      if (!hits.length) return json({ found: 0 });
+      // Several units at one address (condos): let the voter pick. No owner names are passed on.
+      if (hits.length > 1) return json({ found: hits.length, choices: hits.slice(0, 25).map(x => ({ folio: String(x.Strap).replace(/\D/g, ''), address: String(x.SiteAddress || ''), unit: String(x.SiteUnit || ''), municipality: String(x.Municipality || '') })) });
+      strap = String(hits[0].Strap).replace(/\D/g, '');
+    }
+    const v = paValues(await paGet({ Operation: 'GetPropertySearchByFolio', folioNumber: strap }));
+    if (!v) return json({ found: 0 });
+    return json({ found: 1, property: v });
+  } catch (e) {
+    console.log('property lookup failed: ' + (e && e.message ? e.message : e));   // never the address
+    return json({ error: 'The Property Appraiser did not answer. You can look up your values on their site instead.' }, 502);
+  }
+}
+
 async function trustedMeasureSummary(env, ...titles) {
   let pk = await env.CACHE.get(FEATURED_KEY);
   if (!pk) pk = await bundledParseKey(env);
@@ -4466,7 +4536,7 @@ function clientIP(request) {
 //    Settings > Variables, or `npx wrangler secret put FRESH_OFF`) and nothing new reaches the
 //    Anthropic API; everything already researched keeps working. Delete it to turn fresh work back on.
 // KV counters are not atomic, so a burst can slip a few past a limit; the ceilings leave room for that.
-const GLOBAL_LIMITS = { report: 500, research: 800, warm: 400, parse: 300, trballot: 400, btext: 150, money: 2000, group: 6000, voterinfo: 3000 };
+const GLOBAL_LIMITS = { property: 4000, report: 500, research: 800, warm: 400, parse: 300, trballot: 400, btext: 150, money: 2000, group: 6000, voterinfo: 3000 };
 const AI_KINDS = new Set(['research', 'warm', 'parse', 'trballot', 'btext']);
 async function rateLimit(env, kind, ip, limit) {
   if (env.FRESH_OFF === '1' && AI_KINDS.has(kind)) return false;

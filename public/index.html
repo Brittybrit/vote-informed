@@ -3509,6 +3509,11 @@ function impactForm(me, w){
   h += MI.GROUPS.map(function(g){
     return '<label class="chk"><input type="checkbox" name="g" value="' + g + '"' + (MI.has(me, g) ? ' checked' : '') + '> <span>' + esc(w.g[g]) + '</span></label>';
   }).join('');
+  var A = w.addr;
+  h += '<div class="imp-sub">' + esc(A.head) + '</div><p class="help">' + esc(A.note) + '</p>' +
+    '<div class="imp-actions" style="margin-top:6px"><input type="text" id="impAddr" autocomplete="street-address" placeholder="' + esc(A.street) + '">' +
+    '<input type="text" id="impUnit" style="max-width:90px" placeholder="' + esc(A.unit) + '">' +
+    '<button class="btn2" type="button" id="impLook" style="margin-top:0">' + esc(A.btn) + '</button></div><div id="impLookOut" class="help" style="margin-top:6px"></div>';
   h += '<div id="impHome"' + (MI.has(me, 'homestead') ? '' : ' hidden') + '>' +
     '<label class="num" for="impHV">' + esc(w.homeValue) + '</label><input type="text" inputmode="numeric" id="impHV" value="' + esc(v(me.homeValue)) + '" placeholder="$">' +
     '<div class="help">' + esc(w.homeValueHelp) + srcLink(MI.SRC.pa.url, w.lookup) + '</div>' +
@@ -3544,6 +3549,41 @@ function wireImpactForm(ri){
     renderImpact(ri);
   });
   $('impCancel').onclick = function(){ impEditing = false; renderImpact(ri); };
+  // Address lookup: only when the voter presses the button, after the note saying where it goes.
+  var A = MI.words(LANG).addr, out = $('impLookOut');
+  function show(p){
+    out.innerHTML = esc(A.found(p)) + srcLink(p.source, MI.SRC.pa.name) +
+      '<div class="imp-actions"><button type="button" class="btn2" id="impIsHome" style="margin-top:0">' + esc(A.home) + '</button>' +
+      '<button type="button" class="btn2" id="impIsOther" style="margin-top:0">' + esc(A.other) + '</button></div>';
+    function set(home){
+      var box = f.querySelector('input[value="' + (home ? 'homestead' : 'owner_other') + '"]');
+      box.checked = true; box.dispatchEvent(new Event('change', { bubbles: true }));
+      $(home ? 'impHV' : 'impOV').value = String(p.assessed);
+      out.textContent = A.filled;
+    }
+    $('impIsHome').onclick = function(){ set(true); };
+    $('impIsOther').onclick = function(){ set(false); };
+  }
+  async function look(body){
+    out.textContent = A.looking;
+    try{
+      var d = await api('/api/property', body);
+      if(d.property) return show(d.property);
+      if(d.choices){
+        out.innerHTML = esc(A.pick) + '<div class="imp-actions">' + d.choices.map(function(c, i){
+          return '<button type="button" class="imp-link" data-i="' + i + '">' + esc(c.address + (c.unit ? ' #' + c.unit : '')) + '</button>';
+        }).join('') + '</div>';
+        out.querySelectorAll('[data-i]').forEach(function(b){ b.onclick = function(){ look({ folio: d.choices[+b.dataset.i].folio }); }; });
+        return;
+      }
+      out.textContent = A.none;
+    }catch(e){
+      out.innerHTML = esc(e.message) + srcLink(MI.SRC.pa.url, w2.lookup);
+    }
+  }
+  var w2 = MI.words(LANG);
+  $('impLook').onclick = function(){ look({ address: $('impAddr').value, unit: $('impUnit').value }); };
+  $('impAddr').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); $('impLook').click(); } });
   if($('impClear')) $('impClear').onclick = function(){ MI.clear(); impEditing = false; renderImpact(ri); };
 }
 

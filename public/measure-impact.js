@@ -82,6 +82,14 @@
         farm: 'Farmland owners and farm businesses', school_parent: 'Families with children in public school', school_staff: 'School district employees',
         public_employee: 'County and city employees', transit: 'Transit riders', library: 'Library users', park_user: 'Park users', senior: 'People 65 and older'
       },
+      addr: {
+        head: 'Fill in your values from your address',
+        note: 'If you use this, your address goes to the Ballot305 server and on to the Miami-Dade Property Appraiser to find your property’s values. Ballot305 doesn’t keep it. You can skip this and type the numbers yourself.',
+        street: 'Street address (like 123 NW 1 St)', unit: 'Unit (optional)', btn: 'Look up', looking: 'Looking up…',
+        none: 'No property found at that address. Check the spelling, or type your values below.', pick: 'Pick your unit:',
+        found: function(p){ return p.address + (p.municipality && p.address.toLowerCase().indexOf(p.municipality.toLowerCase()) < 0 ? ', ' + p.municipality : '') + ': assessed value ' + usd(p.assessed) + ' (' + p.year + ')' + (p.homestead ? ', with a homestead exemption.' : ', no homestead exemption.'); },
+        home: 'This is my home (I live here)', other: 'I own it but don’t live here', filled: 'Filled in. Check the numbers below.'
+      },
       homeValue: 'Your home’s assessed value', homeValueHelp: 'On your TRIM notice or the Property Appraiser’s site, the line called Assessed Value.',
       nsTax: 'Property taxes on your last bill, leaving out the School Board lines and non-ad valorem assessments (trash, etc.)', nsTaxHelp: 'Optional. Lets us estimate dollars, not just exempt value.',
       otherValue: 'Assessed value of the property you own but don’t live in', lookup: 'Look up your values',
@@ -136,6 +144,14 @@
         farm: 'Dueños de tierras agrícolas y negocios agrícolas', school_parent: 'Familias con hijos en escuelas públicas', school_staff: 'Empleados del distrito escolar',
         public_employee: 'Empleados del condado y de las ciudades', transit: 'Usuarios del transporte público', library: 'Usuarios de bibliotecas', park_user: 'Usuarios de parques', senior: 'Personas de 65 años o más'
       },
+      addr: {
+        head: 'Complete sus valores con su dirección',
+        note: 'Si usa esto, su dirección va al servidor de Ballot305 y de ahí al Tasador de Propiedades de Miami-Dade para buscar los valores de su propiedad. Ballot305 no la guarda. Puede omitir esto y escribir las cifras usted mismo.',
+        street: 'Dirección (por ejemplo 123 NW 1 St)', unit: 'Unidad (opcional)', btn: 'Buscar', looking: 'Buscando…',
+        none: 'No se encontró ninguna propiedad en esa dirección. Revise cómo la escribió o escriba sus valores abajo.', pick: 'Elija su unidad:',
+        found: function(p){ return p.address + (p.municipality && p.address.toLowerCase().indexOf(p.municipality.toLowerCase()) < 0 ? ', ' + p.municipality : '') + ': valor tasado ' + usd(p.assessed) + ' (' + p.year + ')' + (p.homestead ? ', con exención homestead.' : ', sin exención homestead.'); },
+        home: 'Es mi casa (vivo aquí)', other: 'Soy dueño pero no vivo aquí', filled: 'Listo. Revise las cifras abajo.'
+      },
       homeValue: 'Valor tasado (Assessed Value) de su vivienda', homeValueHelp: 'En su aviso TRIM o en el sitio del Tasador de Propiedades, la línea Assessed Value.',
       nsTax: 'Impuestos a la propiedad de su última factura, sin las líneas del School Board ni los cargos que no son ad valorem (basura, etc.)', nsTaxHelp: 'Opcional. Nos permite estimar dólares, no solo el valor exento.',
       otherValue: 'Valor tasado de la propiedad donde no vive', lookup: 'Busque sus valores',
@@ -189,6 +205,14 @@
         homestead: 'Pwopriyetè ki rete nan kay yo', owner_other: 'Pwopriyetè ki gen pwopriyete yo pa rete ladan l', renter: 'Lokatè', business: 'Pwopriyetè biznis',
         farm: 'Pwopriyetè tè agrikòl ak biznis agrikòl', school_parent: 'Fanmi ki gen pitit nan lekòl piblik', school_staff: 'Anplwaye distri lekòl la',
         public_employee: 'Anplwaye konte a ak vil yo', transit: 'Moun ki pran transpò piblik', library: 'Moun ki sèvi ak bibliyotèk', park_user: 'Moun ki sèvi ak pak', senior: 'Moun 65 an oswa plis'
+      },
+      addr: {
+        head: 'Ranpli valè ou yo ak adrès ou',
+        note: 'Si w sèvi ak sa, adrès ou ale sou sèvè Ballot305 epi soti la ale kay Evalyatè Pwopriyete Miami-Dade pou jwenn valè pwopriyete w. Ballot305 pa kenbe l. Ou ka sote sa epi tape chif yo ou menm.',
+        street: 'Adrès (tankou 123 NW 1 St)', unit: 'Inite (si genyen)', btn: 'Chèche', looking: 'N ap chèche…',
+        none: 'Nou pa jwenn okenn pwopriyete nan adrès sa a. Verifye kijan w ekri l, oswa tape valè ou yo anba a.', pick: 'Chwazi inite ou:',
+        found: function(p){ return p.address + (p.municipality && p.address.toLowerCase().indexOf(p.municipality.toLowerCase()) < 0 ? ', ' + p.municipality : '') + ': valè evalyasyon ' + usd(p.assessed) + ' (' + p.year + ')' + (p.homestead ? ', avèk egzanpsyon homestead.' : ', san egzanpsyon homestead.'); },
+        home: 'Se kay mwen (mwen rete la)', other: 'Se pou mwen men mwen pa rete la', filled: 'Li ranpli. Verifye chif yo anba a.'
       },
       homeValue: 'Valè evalyasyon (Assessed Value) kay ou', homeValueHelp: 'Sou avi TRIM ou oswa sou sit Evalyatè Pwopriyete a, liy ki rele Assessed Value.',
       nsTax: 'Taks pwopriyete sou dènye fakti w, san liy School Board yo ak frè ki pa ad valorem yo (fatra, elatriye)', nsTaxHelp: 'Si w vle. Sa pèmèt nou estime an dola, pa sèlman valè ki egzante.',

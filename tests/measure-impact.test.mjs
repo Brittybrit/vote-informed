@@ -73,14 +73,14 @@ test('every wording exists in all three languages', () => {
   const keys = o => Object.keys(o).sort();
   for (const lang of ['es', 'ht']) {
     assert.deepEqual(keys(MI.words(lang)), keys(MI.words('en')), lang);
-    for (const k of ['g', 'o', 'a3', 'lv']) assert.deepEqual(keys(MI.words(lang)[k]), keys(MI.words('en')[k]), lang + ' ' + k);
+    for (const k of ['g', 'o', 'addr', 'a3', 'lv']) assert.deepEqual(keys(MI.words(lang)[k]), keys(MI.words('en')[k]), lang + ' ' + k);
     assert.deepEqual(keys(MI.words(lang).a3.f), keys(MI.words('en').a3.f), lang);
   }
   for (const g of MI.GROUPS) assert.ok(MI.words('en').g[g], g);
 });
 
 /* ---------------- the endpoint ---------------- */
-const w = await loadWorker(['handleMeasureImpact', 'runImpact', 'cleanImpact', 'impactPrompt', 'IMPACT_GROUPS']);
+const w = await loadWorker(['handleMeasureImpact', 'runImpact', 'cleanImpact', 'impactPrompt', 'IMPACT_GROUPS', 'handleProperty', 'paValues']);
 
 test('the endpoint never receives or keys on personal details', () => {
   const p = w.impactPrompt({ name: 'X', summary: 'S', jurisdiction: 'Miami-Dade County', election: '2026' });
@@ -126,5 +126,50 @@ test('fresh request runs in the background, then serves the shared cache', async
     assert.equal(second.result.sources[0].url, 'https://example.gov/a');
     assert.equal(second.result.sources[1].url, '');   // a link the search never returned is dropped
     assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm1:')));
+  } finally { globalThis.fetch = realFetch; }
+});
+
+/* ---------------- property lookup by address ---------------- */
+const FOLIO_DATA = {
+  PropertyInfo: { FolioNumber: '03-4129-026-1461', Municipality: 'Coral Gables', DORDescription: 'RESIDENTIAL - SINGLE FAMILY : 1 UNIT' },
+  SiteAddress: [{ Address: '905 HARDEE RD, Coral Gables, FL 33146' }],
+  Assessment: { AssessmentInfos: [{ Year: 2025, AssessedValue: 670000 }, { Year: 2026, AssessedValue: 693845 }] },
+  Taxable: { TaxableInfos: [{ Year: 2026, CountyTaxableValue: 642434, SchoolTaxableValue: 668845, CityTaxableValue: 642434 }] },
+  Benefit: { BenefitInfos: [{ TaxYear: 2026, Description: 'Save Our Homes Cap', Value: 1 }, { TaxYear: 2026, Description: 'Homestead', Value: 25000 }, { TaxYear: 2026, Description: 'Second Homestead', Value: 26411 }] }
+};
+
+test('paValues reads the latest year and the homestead exemption', () => {
+  const v = w.paValues(FOLIO_DATA);
+  assert.equal(v.year, 2026);
+  assert.equal(v.assessed, 693845);
+  assert.equal(v.homestead, true);
+  assert.equal(v.schoolTaxable, 668845);
+  assert.equal(MI._test.currentNonSchoolExempt(v.assessed), v.assessed - v.countyTaxable);   // our formula matches the appraiser's
+});
+
+test('address lookup returns values, never stores the address', async () => {
+  const CACHE = fakeKV();
+  const env = { CACHE };
+  const realFetch = globalThis.fetch;
+  const asked = [];
+  globalThis.fetch = async u => {
+    asked.push(String(u));
+    const body = /GetAddress/.test(u)
+      ? { MinimumPropertyInfos: /condo/i.test(u) ? [{ Strap: '01-0000-000-0010', SiteAddress: '1 CONDO WAY', SiteUnit: '1', Owner1: 'SOMEONE' }, { Strap: '01-0000-000-0020', SiteAddress: '1 CONDO WAY', SiteUnit: '2', Owner1: 'OTHER' }] : [{ Strap: '03-4129-026-1461', SiteAddress: '905 HARDEE RD' }] }
+      : FOLIO_DATA;
+    return new Response(JSON.stringify(body), { status: 200 });
+  };
+  const call = b => w.handleProperty(new Request('https://x/api/property', { method: 'POST', body: JSON.stringify(b), headers: { 'CF-Connecting-IP': '5.6.7.8' } }), env).then(r => r.json());
+  try {
+    const one = await call({ address: '905 Hardee Rd, Coral Gables, FL 33146' });
+    assert.equal(one.property.assessed, 693845);
+    assert.match(asked[0], /myAddress=905\+Hardee\+Rd(&|$)/);   // street line only
+    const many = await call({ address: '1 Condo Way' });
+    assert.equal(many.choices.length, 2);
+    assert.ok(!JSON.stringify(many).includes('SOMEONE'));   // owner names not passed on
+    const picked = await call({ folio: many.choices[0].folio });
+    assert.equal(picked.found, 1);
+    for (const [k, v] of CACHE.store) assert.ok(!/hardee|condo/i.test(k + v), 'address written to KV: ' + k);
+    assert.equal((await call({ address: '12' })).error !== undefined, true);
   } finally { globalThis.fetch = realFetch; }
 });
