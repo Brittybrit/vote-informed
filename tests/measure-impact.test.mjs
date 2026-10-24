@@ -42,8 +42,6 @@ test('Amendment 3: savings come with what the County loses and what it pays for'
   assert.deepEqual({ ...c.savings }, { y2027: 1432, y2028: 2884 });
   assert.ok(c.reconcile.loss.includes('$385.8 million') && c.reconcile.loss.includes('$696.7 million'));
   assert.ok(c.reconcile.share.includes('$2,884'));
-  assert.ok(c.reconcile.funds.find(f => /bus routes/.test(f.label)).mine);
-  assert.ok(!c.reconcile.funds.find(f => f.label === 'Parks').mine);
   assert.ok(c.sources.every(s => s.url.startsWith('https://')));
 });
 
@@ -57,9 +55,6 @@ test('Amendment 3: a renter sees the services side but no savings', () => {
   const c = MI.calc(A3, MI.normalize({ groups: { renter: true } }), 'es');
   assert.equal(c.savings, undefined);
   assert.equal(c.reconcile.share, '');
-  // parks and libraries are shared by everyone: never tagged as something only some voters use
-  assert.ok(!c.reconcile.funds.find(f => f.label === 'Bibliotecas').mine);
-  assert.ok(!c.reconcile.funds.find(f => f.label === 'Parques').mine);
 });
 
 test('school levy: what you pay against what the district would lose', () => {
@@ -67,7 +62,6 @@ test('school levy: what you pay against what the district would lose', () => {
   assert.equal(c.payHome, 300);   // (325,000 - 25,000) / 1,000
   assert.equal(c.payOther, 200);
   assert.ok(c.reconcile.loss.includes('$585 million'));
-  assert.ok(c.reconcile.mine);
 });
 
 test('other measures get no calculation', () => {
@@ -201,10 +195,14 @@ test('with a city, taxes come from adopted rates and the savings split adds up',
   assert.ok(Math.abs(sum - c.savings.y2028) <= c.reconcile.split.length, sum + ' vs ' + c.savings.y2028);
   // the City of Miami runs its own fire department: County Fire Rescue isn't on the bill or in the split
   const fire = c.reconcile.funds.find(f => f.label === 'Fire Rescue');
-  assert.ok(fire.note && !fire.mine);
+  assert.ok(fire.note);
   assert.ok(!c.reconcile.split.some(x => /Fire/.test(x.label)));
   assert.ok(c.reconcile.split.some(x => x.label === 'Miami-Dade Public Library System'));
-  assert.ok(!c.reconcile.funds.find(f => f.label === 'Libraries').mine);
+});
+
+test('no service is tagged as something only some voters use', () => {
+  const c = MI.calc(A3, MI.normalize({ groups: { homestead: true, transit: true, senior: true }, homeValue: 320000 }), 'en');
+  assert.ok(c.reconcile.funds.every(f => !('mine' in f)) && !('mine' in c.reconcile));
 });
 
 test('parks and libraries are not checkboxes', () => {

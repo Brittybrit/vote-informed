@@ -65,12 +65,12 @@
   // Miami-Dade County's own estimate, "at current tax rates"; and what County property taxes pay for now.
   var COUNTY_LOSS = { y2027: 385.8e6, full: 696.7e6 };
   var COUNTY_FUNDS = [
-    { k: 'fire', amt: 743.7e6, groups: [] },
-    { k: 'roads', amt: 407.1e6, groups: ['transit'] },
-    { k: 'parks', amt: 130.8e6, groups: [] },
-    { k: 'libraries', amt: 128.5e6, groups: [] },
-    { k: 'community', amt: 66.4e6, groups: ['senior'] },
-    { k: 'animals', amt: 31e6, groups: [] }
+    { k: 'fire', amt: 743.7e6 },
+    { k: 'roads', amt: 407.1e6 },
+    { k: 'parks', amt: 130.8e6 },
+    { k: 'libraries', amt: 128.5e6 },
+    { k: 'community', amt: 66.4e6 },
+    { k: 'animals', amt: 31e6 }
   ];
   // School levy: 1 mill ($1 per $1,000 of taxable value). Homesteads get $25,000 off for school taxes.
   var LEVY = { mills: 1, perYear: 585e6, teachers: 88, safety: 12, typical: 316 };
@@ -112,7 +112,7 @@
       privacy: 'Saved on this device only.',
       ifYes: 'If YES wins', ifNo: 'If NO wins', forAll: 'For everyone', community: 'Effects on the whole community', when: 'When', everyone: 'Everyone it covers',
       forYou: 'For you', youSaid: 'You said: ', noneForYou: 'Official sources don’t describe anything this measure changes specifically for the situation you gave, beyond what it changes for everyone.',
-      others: 'What it means for others in your community', money: 'Public money and services at stake', youUse: 'You said you use this',
+      others: 'What it means for others in your community', money: 'Public money and services at stake',
       reconcileHead: 'Your taxes and the services they pay for', unknown: 'Not yet known',
       sources: 'Sources', disc: 'Plain-language consequences compiled with AI from the measure text and official sources, plus calculations from official figures. It does not say how to vote. Check anything that would change your vote against the linked sources.',
       loading: 'Researching what this measure changes, from official sources. This runs once per measure for everyone, usually under a minute; after that it opens instantly. Your address and answers are not part of it.', failed: 'Couldn\u2019t load this right now.', retry: 'Try again',
@@ -180,7 +180,7 @@
       privacy: 'Guardado solo en este dispositivo.',
       ifYes: 'Si gana el SÍ', ifNo: 'Si gana el NO', forAll: 'Para todos', community: 'Efectos en toda la comunidad', when: 'Cuándo', everyone: 'Para todos los que abarca',
       forYou: 'Para usted', youSaid: 'Usted indicó: ', noneForYou: 'Las fuentes oficiales no describen nada que esta medida cambie específicamente para la situación que indicó, más allá de lo que cambia para todos.',
-      others: 'Lo que significa para otros en su comunidad', money: 'Dinero y servicios públicos en juego', youUse: 'Usted indicó que usa esto',
+      others: 'Lo que significa para otros en su comunidad', money: 'Dinero y servicios públicos en juego',
       reconcileHead: 'Sus impuestos y los servicios que pagan', unknown: 'Aún no se sabe',
       sources: 'Fuentes', disc: 'Consecuencias en lenguaje sencillo, compiladas con IA a partir del texto de la medida y fuentes oficiales, más cálculos con cifras oficiales. No indica cómo votar. Verifique con las fuentes enlazadas todo lo que podría cambiar su voto.',
       loading: 'Investigando qué cambia esta medida, con fuentes oficiales. Se hace una sola vez por medida para todos, normalmente en menos de un minuto; después abre al instante. Su dirección y sus respuestas no se usan para esto.', failed: 'No se pudo cargar en este momento.', retry: 'Intentar de nuevo',
@@ -248,7 +248,7 @@
       privacy: 'Sere sou aparèy sa a sèlman.',
       ifYes: 'Si WI genyen', ifNo: 'Si NON genyen', forAll: 'Pou tout moun', community: 'Efè sou tout kominote a', when: 'Kilè', everyone: 'Pou tout moun li kouvri',
       forYou: 'Pou ou', youSaid: 'Ou di: ', noneForYou: 'Sous ofisyèl yo pa dekri anyen mezi sa a chanje espesyalman pou sitiyasyon ou bay la, pi lwen pase sa li chanje pou tout moun.',
-      others: 'Sa sa vle di pou lòt moun nan kominote w', money: 'Lajan piblik ak sèvis ki an jwèt', youUse: 'Ou di ou sèvi ak sa',
+      others: 'Sa sa vle di pou lòt moun nan kominote w', money: 'Lajan piblik ak sèvis ki an jwèt',
       reconcileHead: 'Taks ou ak sèvis yo peye', unknown: 'Nou poko konnen',
       sources: 'Sous', disc: 'Konsekans an langaj senp, ki fèt ak èd entèlijans atifisyèl apati tèks mezi a ak sous ofisyèl, plis kalkil ak chif ofisyèl. Li pa di w kijan pou w vote. Verifye nan sous ki gen lyen yo nenpòt bagay ki ta ka chanje vòt ou.',
       loading: 'N ap chèche sa mezi sa a chanje, nan sous ofisyèl. Sa fèt yon sèl fwa pou chak mezi pou tout moun, anjeneral mwens pase yon minit; apre sa li louvri touswit. Adrès ou ak repons ou yo pa ladan l.', failed: 'Nou pa ka chaje sa kounye a.', retry: 'Eseye ankò',
@@ -413,7 +413,7 @@
       funds: COUNTY_FUNDS.map(function(f){
         // whether the County service is on this voter's bill at all (some cities run their own)
         var on = !P ? null : f.k === 'fire' ? P.fire : f.k === 'libraries' ? P.library : true;
-        return { label: w.f[f.k], amount: big(f.amt, lang), mine: on !== false && f.groups.some(function(g){ return has(me, g); }),
+        return { label: w.f[f.k], amount: big(f.amt, lang),
           note: on === false ? w.notOnBill : '' };
       }),
       fundNote: P ? '' : w.fundNote,
@@ -443,8 +443,7 @@
       loss: w.district(lang),
       fundsHead: '', funds: [],
       fundNote: '',
-      respond: w.ifNo,
-      mine: has(me, 'school_parent') || has(me, 'school_staff')
+      respond: w.ifNo
     };
     return out;
   }

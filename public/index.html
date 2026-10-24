@@ -466,7 +466,6 @@
   .imp-list li{padding:5px 0; border-bottom:1px dotted #C9C9C1;}
   .imp-list li:last-child{border-bottom:none;}
   .imp-who{font-weight:700;}
-  .imp-mine{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; border:1.5px solid currentColor; padding:1px 6px; margin-left:6px; white-space:nowrap;}
   .imp-sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:16px 0 4px;}
   .imp-row{display:grid; grid-template-columns:1fr auto; gap:2px 10px; padding:5px 0; font-size:13px; border-bottom:1px dotted #C9C9C1;}
   .imp-row .amt{font-family:var(--mono); font-size:12.5px; text-align:right; white-space:nowrap;}
@@ -504,7 +503,6 @@
   #impactSec .srclink{white-space:normal;}
   #impactSec .imp-row{grid-template-columns:minmax(0, 1fr) auto;}
   #impactSec .imp-row .amt{white-space:normal; max-width:45vw; text-align:right;}
-  #impactSec .imp-mine{white-space:normal; display:inline-block;}
   #impactSec .imp-form input[type=text], #impactSec select{max-width:100%; box-sizing:border-box;}
   .imp-others summary{cursor:pointer; font-weight:600;}
   .loc-side + .loc-side{margin-top:6px;}
@@ -3915,10 +3913,10 @@ function impactBody(ri, r, calc, me, w){
       }).join('');
     }
     if(rc.explainer && rc.fundNote) b += '<p class="fine">' + esc(rc.fundNote) + '</p>';
-    if(!rc.explainer) b += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
+    if(!rc.explainer) b += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + '</p>';
     if(rc.funds.length){
       b += '<div class="imp-sub">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
-        return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
+        return '<div class="imp-row"><div>' + esc(f.label) + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
       }).join('') + (rc.fundNote ? '<p class="fine">' + esc(rc.fundNote) + '</p>' : '');
     }
     if(rc.share) b += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
@@ -3929,8 +3927,7 @@ function impactBody(ri, r, calc, me, w){
   }
   if(money.length){
     h += exp(w.money + ' (' + money.length + ')', money.map(function(m){
-      var use = (m.groups || []).some(function(g){ return MI.has(me, g); });
-      return '<div class="imp-item"><div><b>' + esc(m.whatNote) + '</b>' + (use ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div>' +
+      return '<div class="imp-item"><div><b>' + esc(m.whatNote) + '</b>' + '</div>' +
         (m.amount ? '<div class="amt">' + esc(m.amount) + '</div>' : '') +
         (m.yesNote ? '<div class="what"><b class="t-yes">' + esc(w.ifYes) + ':</b> ' + esc(m.yesNote) + '</div>' : '') +
         (m.noNote ? '<div class="what"><b class="t-no">' + esc(w.ifNo) + ':</b> ' + esc(m.noNote) + '</div>' : '') +
