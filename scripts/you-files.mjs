@@ -6,6 +6,7 @@
 // device; nothing about the voter is in these files.
 // Run after action-topics.mjs and money-summary.mjs:  node scripts/you-files.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
+import { topicsOf } from './action-topics.mjs';
 
 const root = new URL('../', import.meta.url);
 const J = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -20,6 +21,8 @@ const dir = new URL('public/data/you/', root);
 mkdirSync(dir, { recursive: true });
 for (const f of readdirSync(dir)) if (f.endsWith('.json')) unlinkSync(new URL(f, dir));
 
+// Agenda titles as printed start with legal boilerplate; keep what the item does
+const cleanTitle = t => String(t || '').replace(/^(A |An )?(RESOLUTION|ORDINANCE)( OF THE CITY COMMISSION( OF THE CITY OF [A-Z -]+, FLORIDA)?)?[:,]?\s*/i, '').replace(/^(A |An )?(Resolution|Ordinance) of the City Commission\s*/, '').replace(/^Proposed (resolution|ordinance)\s*/i, '').replace(/^./, c => c.toUpperCase());
 const L3 = x => (x && typeof x === 'object' ? x : { en: String(x || '') });
 let files = 0;
 for (const B of d.bodies) {
@@ -52,7 +55,11 @@ for (const B of d.bodies) {
         name: cal.name, schedule: (cal.meetings && cal.meetings.schedule) || [], pattern: (cal.meetings && cal.meetings.pattern) || '',
         levers: (cal.levers || []).filter(l => ['public-comment', 'written-comment', 'contact'].includes(l.key)).map(l => ({ key: l.key, how: l.how, rules: l.rules, deadline: l.deadline, url: l.url })),
         links: cal.links || {},
-        agenda: agenda.flatMap(mt => (mt.items || []).filter(it => (it.topics || []).some(t => t !== 'other')).map(it => ({ date: mt.meeting.date, title: it.title, topics: it.topics, link: ((it.links || [])[0] || {}).url || null }))),
+        agenda: agenda.flatMap(mt => (mt.items || []).filter(it => it.kind !== 'appointment' && !/^(presentation|special presentation|proclamation|official welcome|recognition|congratulations|discussion)\b/i.test(it.subject || it.title)).map(it => {
+          // the same title-only rules as past actions, on the plain subject when one was written from the full agenda
+          const title = it.subject || cleanTitle(it.title);
+          return { date: mt.meeting.date, title, topics: topicsOf({ subject: title.replace(/\([^)]*\)/g, ' '), kind: it.kind }), ...(it.amount ? { amount: it.amount } : {}), ...(it.publicHearing ? { hearing: true } : {}), link: ((it.links || [])[0] || {}).url || null };
+        }).filter(it => it.topics.length)),
       } : null,
     };
     writeFileSync(new URL(m.person + '.json', dir), JSON.stringify(out));

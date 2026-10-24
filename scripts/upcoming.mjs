@@ -80,6 +80,10 @@ for (const f of fs.readdirSync(srcDir).filter(f => f.endsWith('.json')).sort()) 
   if (!m.body || !m.rosterBody || !m.meeting || !DATE.test(String(m.meeting.date || ''))) { problems.push(f + ': missing body, rosterBody or meeting.date'); continue; }
   if (!m.meeting.agendaUrl) { problems.push(f + ': meeting has no agendaUrl'); }
   const cycle = cycleByKey.get(m.body) || null;
+  // Plain-language subjects written from the full printed agenda (subjects/<same file>): {id: [subject, amount]}
+  const subF = path.join(srcDir, 'subjects', f);
+  const SUB = fs.existsSync(subF) ? JSON.parse(fs.readFileSync(subF, 'utf8')) : {};
+  for (const id of Object.keys(SUB)) if (id[0] !== '_' && !(m.items || []).some(it => it.id === id)) problems.push(f + ': subject for unknown item ' + id);
   const items = [];
   for (const it of m.items || []) {
     if (!it.id || !it.title) { problems.push(f + ': item without id or title dropped'); continue; }
@@ -106,6 +110,8 @@ for (const f of fs.readdirSync(srcDir).filter(f => f.endsWith('.json')).sort()) 
       lobbied: matches.lobbyists.length > 0,
       history: matches.priorActions.length > 0
     };
+    const sub = SUB[it.id];
+    if (sub) { it.subject = sub[0]; if (sub[1] != null && it.amount == null) it.amount = sub[1]; }
     items.push({ ...it, kind, topics, parties, matches, tags });
   }
   const comment = cycle ? cycle.levers.filter(l => /comment/.test(l.key)).map(l => ({ key: l.key, rules: l.rules, deadline: l.deadline, url: l.url, source: l.source })) : [];

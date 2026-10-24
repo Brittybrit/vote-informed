@@ -8,7 +8,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const FILE = new URL('../public/data/decisions.json', import.meta.url);
-const d = JSON.parse(readFileSync(FILE));
 
 // Order matters only for readability; an action can have several topics.
 export const RULES = [
@@ -16,7 +15,7 @@ export const RULES = [
   ['development', /\b(zoning|rezon|land use|variance|site plan|plat\b|replat|special (use|exception)|conditional use|development agreement|master development|\bmda\b|pattern book|development order|comprehensive plan|annex|setback|height|density|mixed[- ]use|subdivision|vacat(e|ion) .*(alley|right[- ]of[- ]way|street)|right[- ]of[- ]way vacation|real estate developer|infill|brownfield)/i],
   ['taxes', /\b(millage|property tax|ad valorem|tax(es)?\b|special assessment|tax assessment|impact fee|user fees?|fee increase|stormwater fee|solid waste fee|utility rate|rate increase|business tax|surtax|non-?ad valorem|tax credit|tax break|tax exemption|homestead exemption)/i],
   ['insurance', /\b(property insur|homeowners? insur|citizens property|windstorm|reinsurance|insurers?\b)/i],
-  ['transit', /\b(transit|bus\b|buses|trolley|metrorail|rail\b|road(way)?s?\b|street|traffic|signal|intersection|sidewalk|crosswalk|parking|garage|bike|bicycl|pedestrian|resurfac|paving|highway|bridges?\b(?! housing)|i-\d+|turnpike|right[- ]of[- ]way|streetscape|road reconstruction|ride[- ]hail|transportation network|freebee|on-demand|shuttle|toll)/i],
+  ['transit', /\b(transit(?!ion)|bus\b|buses|trolley|metrorail|rail\b|(?<!jericho )road(way)?s?\b(?! rescue| finishers| to housing)|street|traffic(?!king)|signal|intersection|sidewalk|crosswalk|parking|garage|bike|bicycl|pedestrian|resurfac|paving|highway|bridges?\b(?! housing)|i-\d+\b(?! industrial| zon| district)|turnpike|right[- ]of[- ]way|streetscape|road reconstruction|ride[- ]hail|transportation network|freebee|on-demand|shuttle|toll)/i],
   ['parks', /\b(park\b|parks\b|recreation|playground|athletic|ball ?field|playing field|turf field|stadium|swimming pool|pool (renovation|resurfac|repair|deck)|aquatic|lifeguard|youth sports|beach (park|access|renourish|restoration)|beaches|marina|boat|golf|tennis|zoo|trail|greenway|nature|botanic|gym\b|youth center|community center|splash)/i],
   ['schools', /\b(school|charter|education|student|teacher|academy|college|universit|pre-?k|preschool|daycare|day care|child care|after-?school|youth program|scholarship|literacy|tutoring)/i],
   ['libraries', /\blibrar(y|ies)\b/i],
@@ -43,12 +42,18 @@ const L = x => (x && typeof x === 'object' ? (x.en || '') : String(x || ''));
 
 export function topicsOf(a) {
   // The item's own words only: a vendor's name (Academy Bus, Affordable Interior Systems) is not a topic
-  const text = [L(a.subject), L(a.title)].join(' | ');
+  // Street addresses are where, not what: "981 East 13th Street" is not a roads item, nor is a Ford Transit van
+  const text = [L(a.subject), L(a.title)].join(' | ')
+    .replace(/\b\d+(-\d+)?\s+([NSEW]\.?|North|South|East|West|NE|NW|SE|SW)?\s*[\w.]+(\s+[\w.]+)?\s+(Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Court|Ct|Place|Pl|Terrace|Ter|Way|Lane|Ln|Parkway|Pkwy|Causeway|Highway|Hwy)\b\.?/g, ' ')
+    .replace(/\b(\d+(-\d+)?\s+)?((NE|NW|SE|SW|N|S|E|W)\.?\s+)\d+(st|nd|rd|th)?\s+(Street|St|Avenue|Ave|Road|Rd|Court|Ct|Place|Pl|Terrace|Terr|Ter|Way|Lane|Ln|Drive|Dr)\b\.?/g, ' ')
+    .replace(/\bFord Transit\b/gi, 'Ford van');
   const t = new Set();
   for (const [k, re] of RULES) if (re.test(text)) t.add(k);
   if (KIND[a.kind]) t.add(KIND[a.kind]);
   // A parking variance on a private lot is building and zoning, not roads and transit
-  if (t.has('transit') && /variance/i.test(text) && !/\b(transit|bus|road|street|traffic|sidewalk|bike)/i.test(text.replace(/parking/ig, ''))) t.delete('transit');
+  if (t.has('transit') && /variance|waiver/i.test(text) && !/\b(transit(?!ion)|bus(es)?\b|road|street|traffic(?!king)|sidewalk|bike)/i.test(text.replace(/parking/ig, ''))) t.delete('transit');
+  // Resurfacing a park's courts or fields is parks, not roads
+  if (t.has('transit') && t.has('parks') && !RULES.find(r => r[0] === 'transit')[1].test(text.replace(/resurfac\w*|paving/ig, ''))) t.delete('transit');
   // University research earmarks are not schools a family uses
   if (t.has('schools') && a.kind === 'request' && /universit|college/i.test(text) && /research|institute|lab|center for/i.test(text) && !/student|scholar|teacher|k-12|school\b/i.test(text)) t.delete('schools');
   // A state or federal law: the business its analysis names is what it does
@@ -57,6 +62,9 @@ export function topicsOf(a) {
   return [...t];
 }
 
+// Run as a script: tag every action. Imported (scripts/you-files.mjs): only topicsOf and the rules.
+if (process.argv[1] && import.meta.url === new URL('file://' + process.argv[1]).href) {
+const d = JSON.parse(readFileSync(FILE));
 let n = 0, none = 0;
 const count = {};
 for (const B of d.bodies) for (const a of B.actions) {
@@ -66,3 +74,4 @@ for (const B of d.bodies) for (const a of B.actions) {
 }
 writeFileSync(FILE, JSON.stringify(d, null, 1) + '\n');
 console.log(`${n} actions, ${none} with no topic;`, JSON.stringify(count));
+}

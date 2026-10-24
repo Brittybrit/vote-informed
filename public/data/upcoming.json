@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "note": "Posted agendas read from each body's own system. Parties are names printed on the item. Matches are name matches against the ledger (prior actions, lobbyist registrations, gifts) and the county and school board registries; each says its basis. A gift tied to a party is a fact from the filings, not a claim about the vote. Source files: scripts/data/upcoming/. Rebuild: node scripts/upcoming.mjs.",
  "meetings": [
   {
@@ -434,6 +434,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30106/texts/31249"
       }
      ],
+     "subject": "Christmas tree sale lot at Coral Gables Baptist Church, 5501 Granada Blvd, Nov 21 to Dec 24 (Coral Gables Firefighter Benevolent Association)",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -488,6 +489,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30141/texts/31289"
       }
      ],
+     "subject": "One month of free base rent for the Miracle Mile ice cream shop on city property while it remodels (Haagen Dazs, Sollie LLC)",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -534,6 +536,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/29910/texts/31035"
       }
      ],
+     "subject": "Zoning code: count enclosed accessory areas under the height exclusion for Mediterranean-style buildings",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -581,6 +584,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/29906/texts/31031"
       }
      ],
+     "subject": "Zoning code: Block 36 of the Crafts Section cannot get extra stories or height through architectural incentives",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -628,6 +632,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/29909/texts/31034"
       }
      ],
+     "subject": "Zoning code: driveway side setback, motor courts on corner lots, and setbacks for mechanical equipment",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -675,6 +680,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30143/texts/31292"
       }
      ],
+     "subject": "Alarm system rules: annual alarm registration and false alarm fees",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -729,6 +735,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30147/texts/31296"
       }
      ],
+     "subject": "Direct the city manager to fix traffic, valet and parking problems on Caballero Blvd and Madruga Ave from the Paseo de la Riviera development",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -776,6 +783,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30150/texts/31299"
       }
      ],
+     "subject": "Add a City Beautiful Nights program: city support or reimbursement for smaller cultural events by foreign governments downtown",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -1021,6 +1029,7 @@
        "url": "https://coralgables.legistar1.com/coralgables/attachments/670d9cfa-ceb8-459e-bb6f-5de2cf53d84e.pdf"
       }
      ],
+     "subject": "Art Cinema expansion construction (Hycon Investments)",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -1074,6 +1083,7 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30142/texts/31290"
       }
      ],
+     "subject": "Lease amendment for the Coral Gables Art Cinema expansion at 240-260 Aragon Ave (Coral Gables Cinemateque)",
      "matches": {
       "priorActions": [],
       "lobbyists": [],
@@ -1130,8 +1140,30 @@
        "url": "https://webapi.legistar.com/v1/coralgables/matters/30073/texts/31215"
       }
      ],
+     "subject": "Buy the Richard Serra sculpture Fin with Art in Public Places reserve money; the Cultural Development Board voted 4-2 to recommend against it (Tresart)",
      "matches": {
-      "priorActions": [],
+      "priorActions": [
+       {
+        "id": "cg-26-1439",
+        "date": "2026-05-05",
+        "ref": "26-1439, 26-1440",
+        "subject": "Regency Parc: temporary CO allowed before park conveyance, bonded",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Lago": "yes",
+         "Anderson": "yes",
+         "Castro": "yes",
+         "Fernandez": "yes",
+         "Lara": "yes"
+        },
+        "basis": "prefix",
+        "party": "Regency Parc"
+       }
+      ],
       "lobbyists": [],
       "ties": []
      },
@@ -1146,11 +1178,5007 @@
       "hearing": false,
       "money": false,
       "lobbied": false,
-      "history": false
+      "history": true
      }
     }
    ],
    "notes": "Read from the Legistar API (events/5070/eventitems and matters texts); agenda PDF 5070_A_City_Commission_26-10-27_Agenda.pdf and attachment PDFs on legistar1.com were robots-blocked, so backup memos were not read; fiscal fields come from the matter body text in the API. Agenda status Final Revised. Skipped: B.-1, B.-2 (approval of Sept 29 and Oct 13 commission minutes) and consent items 1.-1 through 1.-9 (board minutes requiring no action). Protocol item 26-2241 (Coco Plum Woman's Club Day) is in the Oct 27 matters list but not in the event items. Sections G (Boards/Committees), I (City Attorney), J (City Clerk) and K (Discussion) have no items. Ordinances E.-1 to E.-3 are listed under Public Hearings, Ordinances on Second Reading; E.-4 under Ordinances on First Reading. Lobbyist: N/A printed on D.-2 and H.-1."
+  },
+  {
+   "body": "city-hialeah",
+   "rosterBody": "city-hialeah",
+   "bodyName": "Hialeah City Council",
+   "meeting": {
+    "date": "2026-10-27",
+    "time": "17:30",
+    "kind": "regular",
+    "agendaUrl": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416",
+    "postedOn": null,
+    "location": "Milander Center, 4800 Palm Avenue, Hialeah"
+   },
+   "checked": "2026-10-24",
+   "comment": [
+    {
+     "key": "public-comment",
+     "rules": "Comments and Questions: one appearance per person, three minutes. Agenda items: up to three speakers in favor and three against, three minutes each. No signs or placards in the chamber. Lobbyists must register with the City Clerk.",
+     "deadline": "Sign in with the Clerk before the meeting begins",
+     "url": "https://www.hialeahfl.gov/AgendaCenter/City-Council-9",
+     "source": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_09222026-1407"
+    },
+    {
+     "key": "written-comment",
+     "rules": "For the October 27, 2026 meeting the email deadline was 3:00 p.m. Thursday October 22 (five days before) and the visual-material deadline 5:00 p.m. October 6; each meeting notice sets its own dates.",
+     "deadline": "About five days before the meeting, per the meeting notice",
+     "url": "mailto:CityClerk@hialeahfl.gov",
+     "source": "https://www.hialeahfl.gov/DocumentCenter/View/22434/Public-Notice-City-Council-Meeting-October-27-2026"
+    }
+   ],
+   "items": [
+    {
+     "id": "10B",
+     "title": "RESOLUTION: Proposed resolution accepting the Invitation for Bid (\"IFB\") response for IFB No. 2025-26-059 for the linen ...",
+     "kind": "award",
+     "parties": [
+      "Novo Health Services, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 135000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Fire Department linen laundering, pick-up and delivery, 3 years (Novo Health Services, doing business as Simple)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10C",
+     "title": "RESOLUTION: Proposed resolution approving an amendment to the Fiscal Year 2023-2024 State Assistance for Fentanyl Eradic ...",
+     "kind": "resolution",
+     "parties": [
+      "Florida Department of Law Enforcement (FDLE)"
+     ],
+     "lobbyists": [],
+     "sponsor": "POLICE DEPARTMENT",
+     "fiscal": null,
+     "amount": 21750,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "$21,750 more in state fentanyl enforcement grant money for police overtime and investigations",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10D",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback off of the City of Tamarac Contract No. 19-12R for office supplies, ...",
+     "kind": "contract",
+     "parties": [
+      "ODP Business Solutions, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "PURCHASING DIVISION; FINANCE MANAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 110000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Office supplies (ODP Business Solutions, piggybacking Tamarac's contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-217",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-217, item 10FF, 2025-09-23 council meeting",
+        "subject": "Piggyback Tamarac contract: ODP office supplies",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "ODP Business Solutions, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10E",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback off the University of California Purchasing Agreement No. 2018.0002 ...",
+     "kind": "contract",
+     "parties": [
+      "W.W. Grainger, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "PURCHASING DIVISION; FINANCE MANAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 180000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Maintenance and repair supplies (W.W. Grainger, piggybacking a University of California contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-209",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-209, item 10V, 2025-09-23 council meeting",
+        "subject": "Piggyback University of California contract: Grainger supplies",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "W.W. Grainger, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10F",
+     "title": "Request permission to piggyback off of Miami-Dade County Contract No. #EVN0000469 - Purchae of OEM/OE Parts, Services an ...",
+     "kind": "contract",
+     "parties": [
+      "Bachrodt FT LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FLEET DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 50000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "City vehicle parts and repairs (Bachrodt, piggybacking a county contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-10-14-12ZZ",
+        "date": "2025-10-14",
+        "ref": "item 10ZZ, 2025-10-14 council meeting",
+        "subject": "Palmetto Ford of Miami repairs and parts",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "prefix",
+        "party": "Bachrodt FT LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10G",
+     "title": "Request permission to issue a purchase order to Maverick United Elevators LLC, for elevator maintenance and service repair ...",
+     "kind": "contract",
+     "parties": [
+      "Maverick United Elevators LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "CONSTRUCTION AND MAINTENANCE DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 64000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Elevator maintenance and repairs (Maverick United Elevators)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-267",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-267, item 12E, 2025-11-18 council meeting",
+        "subject": "Bid award: Maverick United Elevator City Hall elevator modernization",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "prefix",
+        "party": "Maverick United Elevators LLC"
+       },
+       {
+        "id": "hialeah-res-2025-015",
+        "date": "2025-01-14",
+        "ref": "Res. 2025-015, item 11M, 2025-01-14 council meeting",
+        "subject": "RFP 2023-2024-019 award: elevator maintenance by Maverick United Elevators, $92,400 a year",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Garcia-Roves": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Maverick United Elevators LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10H",
+     "title": "RESOLUTION: Proposed resolution accepting grant funds in the amount of $80,000.00 awarded to the City of Hialeah by the ...",
+     "kind": "resolution",
+     "parties": [
+      "Florida Department of Transportation (FDOT)"
+     ],
+     "lobbyists": [],
+     "sponsor": "POLICE DEPARTMENT",
+     "fiscal": null,
+     "amount": 80000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police",
+      "transit"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "$80,000 FDOT highway traffic safety grant for a police teen driver safety project",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police",
+       "transit"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10I",
+     "title": "Request permission to issue a purchase order to each of the following vendors for electrical, hardware, HVAC, waste disp ...",
+     "kind": "contract",
+     "parties": [
+      "ASP Alarm & Electrical Supplies, Inc.",
+      "Acarssa Supply Inc.",
+      "Trane U.S. Inc.",
+      "Karmi Environmental LLC (doing business as EMC Waste Oil Corp)",
+      "Castilla Glass & Mirror Glass, Inc.",
+      "JobMix Concrete LLC",
+      "Eastern Engineering Group Company",
+      "GNP Engineering Group, Inc.",
+      "Jimaguas Landscaping & Tree Service LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "CONSTRUCTION AND MAINTENANCE DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Purchase orders to nine vendors for electrical, HVAC, waste oil, glass, concrete, engineering and tree service supplies",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-10-14-12L",
+        "date": "2025-10-14",
+        "ref": "item 10L, 2025-10-14 council meeting",
+        "subject": "POs to nine maintenance and repair vendors, $440,500 total",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "ASP Alarm & Electrical Supplies, Inc."
+       },
+       {
+        "id": "hialeah-2025-09-23-12I",
+        "date": "2025-09-23",
+        "ref": "item 10I, 2025-09-23 council meeting",
+        "subject": "POs to 30 vendors for electrical, plumbing, hardware and HVAC supplies, about $1.6 million total",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Acarssa Supply Inc."
+       },
+       {
+        "id": "hialeah-2025-06-24-12F",
+        "date": "2025-06-24",
+        "ref": "item 10F, 2025-06-24 council meeting",
+        "subject": "Raised Eastern Engineering Group services threshold for five city properties",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Eastern Engineering Group Company"
+       },
+       {
+        "id": "hialeah-2025-06-24-12H",
+        "date": "2025-06-24",
+        "ref": "item 10H, 2025-06-24 council meeting",
+        "subject": "Raised GNP Engineering Group services threshold for four city properties",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "GNP Engineering Group, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-157",
+        "date": "2025-06-24",
+        "ref": "Res. 2025-157, item 10M, 2025-06-24 council meeting",
+        "subject": "Jimaguas Landscaping vegetative debris hauling",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Jimaguas Landscaping & Tree Service LLC"
+       },
+       {
+        "id": "hialeah-2025-02-11-10N",
+        "date": "2025-02-11",
+        "ref": "item 10N, 2025-02-11 council meeting",
+        "subject": "Bid waiver: construction debris hauling from the Streets yard",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Zogby": "yes",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Jimaguas Landscaping & Tree Service LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10J",
+     "title": "RESOLUTION: Proposed resolution approving an amendment to the Municipal Bus Circulator Services Agreement awarded to MV ...",
+     "kind": "contract",
+     "parties": [
+      "MV Contract Transportation, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "TRANSIT SECTION; PLANNING DIVISION; COMMUNITY DEVELOPMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 696254.61,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "transit"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Raise the city bus circulator contract by $696,254.61, to $2,257,154.61 for 2026-27 (MV Contract Transportation)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-211",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-211, item 10Z, 2025-09-23 council meeting",
+        "subject": "PO increase of $210,000 for MV Transportation to operate Hialeah Transit (total $2,040,145)",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "MV Contract Transportation, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "transit"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10K",
+     "title": "Request permission to piggyback off of State of Florida Contract No. 56120000-24-NY-ACS - Furniture, All Types, and issu ...",
+     "kind": "contract",
+     "parties": [
+      "Compass Office Solutions LLC",
+      "The HON Company LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "EDUCATION AND COMMUNITY SERVICES DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 53362.58,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Furniture for the Victor Wilde Community Center (Compass Office Solutions)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-08-12-10FF",
+        "date": "2025-08-12",
+        "ref": "item 10FF, 2025-08-12 council meeting",
+        "subject": "Police office furniture from Compass Office Solutions",
+        "result": "approved",
+        "tally": [
+         5,
+         1
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "no",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Compass Office Solutions LLC"
+       },
+       {
+        "id": "hialeah-2025-02-11-10K",
+        "date": "2025-02-11",
+        "ref": "item 10K, 2025-02-11 council meeting",
+        "subject": "State contract purchase of furniture for Bucky Dent Aquatic Center and Park",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Zogby": "yes",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Compass Office Solutions LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10L",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback purchase utilizing Contract No. P20325 between Miami-Dade County and ...",
+     "kind": "contract",
+     "parties": [
+      "Litz Engineering Inc"
+     ],
+     "lobbyists": [],
+     "sponsor": "WATER AND SEWER DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 250000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "water"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Citywide adjustment of water valves and manhole covers (Litz Engineering)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "water"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10M",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on beha ...",
+     "kind": "contract",
+     "parties": [
+      "GS Inima USA Construction Corporation"
+     ],
+     "lobbyists": [],
+     "sponsor": "WATER AND SEWER DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 5100000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "water"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Operating the city's reverse osmosis water treatment plant, 2026-27 (GS Inima USA)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2026-194",
+        "date": "2026-08-11",
+        "ref": "Res. 2026-194, item 10OO, 2026-08-11 council meeting",
+        "subject": "Reverse osmosis plant site work and membrane reimbursement with GS Inima, $5,835,000 (half county-reimbursed)",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "absent",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "GS Inima USA Construction Corporation"
+       },
+       {
+        "id": "hialeah-res-2025-228",
+        "date": "2025-10-14",
+        "ref": "Res. 2025-228, item 10S, 2025-10-14 council meeting",
+        "subject": "FY2026 operation of the reverse osmosis water plant by GS Inima",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "GS Inima USA Construction Corporation"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "water"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10N",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on beha ...",
+     "kind": "contract",
+     "parties": [
+      "MV Contract Transportation, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "TRANSIT SECTION; PLANNING DIVISION; COMMUNITY DEVELOPMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 696254.61,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "transit"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Ratify the $696,254.61 increase to the bus circulator order for 2025-26 (MV Contract Transportation)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-211",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-211, item 10Z, 2025-09-23 council meeting",
+        "subject": "PO increase of $210,000 for MV Transportation to operate Hialeah Transit (total $2,040,145)",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "MV Contract Transportation, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "transit"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10O",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback off of the Maricopa County Contract No. 260006-03 between Maricopa ...",
+     "kind": "contract",
+     "parties": [
+      "Home Depot U.S.A., Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "PURCHASING DIVISION; FINANCE MANAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 250000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Maintenance and repair supplies (Home Depot, piggybacking a Maricopa County contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-09-23-12GG",
+        "date": "2025-09-23",
+        "ref": "item 10GG, 2025-09-23 council meeting",
+        "subject": "Christmas tree sales permits at two Home Depot stores",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Home Depot U.S.A., Inc."
+       },
+       {
+        "id": "hialeah-res-2025-204",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-204, item 10L, 2025-09-23 council meeting",
+        "subject": "Piggyback Maricopa County contract: Home Depot supplies",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Home Depot U.S.A., Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10P",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback off of the Prince William County Public School Contract No. R-TC-1 ...",
+     "kind": "contract",
+     "parties": [
+      "Amazon Services, LLC",
+      "Amazon.com Services, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "PURCHASING DIVISION; FINANCE MANAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 300000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Online purchases (Amazon, piggybacking a Prince William County schools contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-202",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-202, item 10J, 2025-09-23 council meeting",
+        "subject": "Piggyback Prince William County contract: Amazon online purchases",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Amazon.com Services, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10Q",
+     "title": "Request permission to issue a purchase order to each of the following vendors for electrical, plumbing, hardware, HVAC, ...",
+     "kind": "contract",
+     "parties": [
+      "Majestic Locksmith Corp.",
+      "A&B Pipe and Supply, Inc.",
+      "Blalock Plumbing, LLC",
+      "Buy Direct, LLC",
+      "FWC Metal Works LLC",
+      "Global Industrial Equipment Company Inc.",
+      "Royal Electrical Supply, Inc.",
+      "Carrier Enterprise, LLC",
+      "Acarssa Supply Inc.",
+      "Maga Hardware Distributors Inc.",
+      "Manhattan Electric & Hardware Corporation",
+      "Medina Brothers Plumbing Supplies, Inc.",
+      "Miami-Dade Electrical Supply, Inc.",
+      "Fast-Dry Courts, Inc.",
+      "Miami-Dade Electric and A/C Supply, LLC",
+      "Power Depot, Inc.",
+      "Torino Industries Corporation",
+      "Total Truck Parts, Inc.",
+      "South Florida Appliance, Inc.",
+      "Tolfar, Inc., doing business as Toledo Restaurant Equipment Co.",
+      "Uline, Inc.",
+      "Best Garage Doors, Inc.",
+      "Gemaire Distributors LLC",
+      "Quality Power Services, LLC",
+      "Appliance City Corp.",
+      "Biscayne Electric Motor and Pump, Inc.",
+      "Northern Tool & Equipment Company, Inc.",
+      "Lowe's Home Centers, Inc",
+      "All Dade Lawnmowers, Inc.",
+      "L & W Supply Corporation"
+     ],
+     "lobbyists": [],
+     "sponsor": "PURCHASING DIVISION; FINANCE MANAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Purchase orders to 30 vendors for plumbing, electrical, hardware, HVAC and other supplies",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-09-23-12I",
+        "date": "2025-09-23",
+        "ref": "item 10I, 2025-09-23 council meeting",
+        "subject": "POs to 30 vendors for electrical, plumbing, hardware and HVAC supplies, about $1.6 million total",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "A&B Pipe and Supply, Inc."
+       },
+       {
+        "id": "hialeah-2025-09-23-12K",
+        "date": "2025-09-23",
+        "ref": "item 10K, 2025-09-23 council meeting",
+        "subject": "Aluminum roof structures at the police range by FWC Metal Works",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "FWC Metal Works LLC"
+       },
+       {
+        "id": "hialeah-2025-10-14-12L",
+        "date": "2025-10-14",
+        "ref": "item 10L, 2025-10-14 council meeting",
+        "subject": "POs to nine maintenance and repair vendors, $440,500 total",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Acarssa Supply Inc."
+       },
+       {
+        "id": "hialeah-2025-10-14-12GGG",
+        "date": "2025-10-14",
+        "ref": "item 10GGG, 2025-10-14 council meeting",
+        "subject": "Total Truck parts",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "prefix",
+        "party": "Total Truck Parts, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-212",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-212, item 10AA, 2025-09-23 council meeting",
+        "subject": "PO increase for Gemaire A/C parts",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Gemaire Distributors LLC"
+       },
+       {
+        "id": "hialeah-2025-06-24-12T",
+        "date": "2025-06-24",
+        "ref": "item 10T, 2025-06-24 council meeting",
+        "subject": "PO increase for Quality Power Services generator maintenance",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Quality Power Services, LLC"
+       },
+       {
+        "id": "hialeah-2025-09-09-10G",
+        "date": "2025-09-09",
+        "ref": "item 10G, 2025-09-09 council meeting",
+        "subject": "PO increase for Appliance City repairs",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Appliance City Corp."
+       },
+       {
+        "id": "hialeah-2025-05-13-12E",
+        "date": "2025-05-13",
+        "ref": "item 12E, 2025-05-13 council meeting",
+        "subject": "PO increase for Northern Tool shop supplies",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Northern Tool & Equipment Company, Inc."
+       },
+       {
+        "id": "hialeah-ord-2026-055",
+        "date": "2026-08-25",
+        "ref": "Ord. 2026-055, item 17A, 2026-08-25 council meeting",
+        "subject": "Second reading: special use permit for outdoor storage at Lowe's, 1650 W 37 St",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "absent",
+         "Gonzalez": "absent",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Lowe's Home Centers, Inc"
+       },
+       {
+        "id": "hialeah-2026-04-14-16H",
+        "date": "2026-04-14",
+        "ref": "item 16H, 2026-04-14 council meeting",
+        "subject": "First reading: special use permit for outdoor bulk storage at Lowe's, 1650 W 37 St",
+        "result": "firstReading",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Lowe's Home Centers, Inc"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10R",
+     "title": "RESOLUTION: Proposed resolution approving the piggyback off of Miami-Dade County Prequalification Pool No. EVN00 ...",
+     "kind": "contract",
+     "parties": [
+      "Cummins Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "FLEET DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 100000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Diesel engine parts and service for city vehicles (Cummins, through a county bus parts pool)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-252",
+        "date": "2025-10-14",
+        "ref": "Res. 2025-252, item 10BBB, 2025-10-14 council meeting",
+        "subject": "Bid waiver: FY2026 Cummins parts and repairs",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Cummins Inc."
+       },
+       {
+        "id": "hialeah-res-2025-122",
+        "date": "2025-05-27",
+        "ref": "Res. 2025-122, item 12E, 2025-05-27 council meeting",
+        "subject": "Bid waiver: PO increase for Cummins vehicle parts",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Cummins Inc."
+       },
+       {
+        "id": "hialeah-res-2025-079",
+        "date": "2025-03-25",
+        "ref": "Res. 2025-079, item 10D, 2025-03-25 council meeting",
+        "subject": "Bid waiver: $50,000 more for Cummins diesel equipment repairs",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "M. Perez": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Cummins Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10S",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "Miami-Dade County"
+     ],
+     "lobbyists": [],
+     "sponsor": "WATER AND SEWER DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 17900000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "water"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Wholesale water bought from Miami-Dade County for 2026-27",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "water"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10T",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "Miami-Dade County"
+     ],
+     "lobbyists": [],
+     "sponsor": "WATER AND SEWER DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 67200000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "water"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Sewage disposal by Miami-Dade County for 2026-27",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "water"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10U",
+     "title": "RESOLUTION: Proposed resolution accepting grant funds in the amount of $142,771.00 awarded to the City of Hialeah by the ...",
+     "kind": "resolution",
+     "parties": [
+      "Florida Department of Legal Affairs, Office of the Attorney General"
+     ],
+     "lobbyists": [],
+     "sponsor": "POLICE DEPARTMENT",
+     "fiscal": null,
+     "amount": 142771,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "$142,771 state Victims of Crime Act grant for the police victim advocate program",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10V",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "Lou's Police Distributors, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "POLICE DEPARTMENT",
+     "fiscal": null,
+     "amount": 200000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Police uniforms (Lou's Police Distributors, piggybacking Miramar's contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2026-06-09-9C",
+        "date": "2026-06-09",
+        "ref": "item 9C, 2026-06-09 council meeting",
+        "subject": "Miramar bid piggyback: police uniforms from Lou's Police Distributors",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "absent",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Lou's Police Distributors, Inc."
+       },
+       {
+        "id": "hialeah-res-2026-128",
+        "date": "2026-05-12",
+        "ref": "Res. 2026-128, item 10G, 2026-05-12 council meeting",
+        "subject": "Bid waiver: 115 Glock pistols with optics from Lou's Police Distributors",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Lou's Police Distributors, Inc."
+       },
+       {
+        "id": "hialeah-2025-06-10-10J",
+        "date": "2025-06-10",
+        "ref": "item 10J, 2025-06-10 council meeting",
+        "subject": "PO increase for police uniforms",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Lou's Police Distributors, Inc."
+       },
+       {
+        "id": "hialeah-2025-04-08-10J",
+        "date": "2025-04-08",
+        "ref": "item 10J, 2025-04-08 council meeting",
+        "subject": "PO increase for police uniforms",
+        "result": "approved",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Lou's Police Distributors, Inc."
+       },
+       {
+        "id": "hialeah-2025-01-14-11S",
+        "date": "2025-01-14",
+        "ref": "item 11S, 2025-01-14 council meeting",
+        "subject": "Bid waiver: Lou's Police Distributors uniform invoices",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Garcia-Roves": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Lou's Police Distributors, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10W",
+     "title": "RESOLUTION: Proposed resolution reaffirming the agreement between the Board of Trustees of the City of Hialeah Employees ...",
+     "kind": "contract",
+     "parties": [
+      "Fifth Third Bank, N.A."
+     ],
+     "lobbyists": [],
+     "sponsor": "RETIREMENT DIVISION; HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": 173000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Employees' retirement system custodial bank, 2026-27 (Fifth Third Bank)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10X",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "CBIZ CPAS P.C."
+     ],
+     "lobbyists": [],
+     "sponsor": "RETIREMENT DIVISION; HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": 40300,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Audit consulting for the employees' retirement system (CBIZ CPAs)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-268",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-268, item 12F, 2025-11-18 council meeting",
+        "subject": "CBIZ retirement system audit consulting",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "CBIZ CPAS P.C."
+       },
+       {
+        "id": "hialeah-res-2025-020",
+        "date": "2025-01-14",
+        "ref": "Res. 2025-020, item 11U, 2025-01-14 council meeting",
+        "subject": "CBIZ CPAs (formerly Marcum) retirement system audit consulting",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Garcia-Roves": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "CBIZ CPAS P.C."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10Y",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "Angni Enterprises, LLC",
+      "Head to Heels Safety Supplies",
+      "Bound Tree Medical, LLC",
+      "Henry Schein, Inc.",
+      "Medline Industries, LP",
+      "Quadmed, Inc.",
+      "Steede Medical, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 300000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Fire rescue medical supplies from six vendors, 2026-27",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-280",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-280, item 12T, 2025-11-18 council meeting",
+        "subject": "Ratified PO increase for Bound Tree Medical supplies",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Bound Tree Medical, LLC"
+       },
+       {
+        "id": "hialeah-res-2025-294",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-294, item 12TT, 2025-11-18 council meeting",
+        "subject": "Bound Tree Medical FY2026 medical supplies",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Bound Tree Medical, LLC"
+       },
+       {
+        "id": "hialeah-res-2025-007",
+        "date": "2025-01-14",
+        "ref": "Res. 2025-007, item 11E, 2025-01-14 council meeting",
+        "subject": "RFP award: Bound Tree Medical pharmaceuticals and supplies purchase order",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Garcia-Roves": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Bound Tree Medical, LLC"
+       },
+       {
+        "id": "hialeah-res-2026-169",
+        "date": "2026-08-11",
+        "ref": "Res. 2026-169, item 10H, 2026-08-11 council meeting",
+        "subject": "PO increase for Henry Schein fire medical supplies",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "absent",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Henry Schein, Inc."
+       },
+       {
+        "id": "hialeah-res-2026-030",
+        "date": "2026-01-27",
+        "ref": "Res. 2026-030, item 11E, 2026-01-27 council meeting",
+        "subject": "Ratified $20,000 increase to Henry Schein fire medical supplies PO",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "Rodriguez": "yes",
+         "Gonzalez": "yes",
+         "M. Perez": "absent"
+        },
+        "basis": "exact",
+        "party": "Henry Schein, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-290",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-290, item 12NN, 2025-11-18 council meeting",
+        "subject": "Henry Schein FY2026 medical supplies",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Henry Schein, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10Z",
+     "title": "RESOLUTION: Proposed resolution reaffirming the agreement between the City of Hialeah Deferred Compensation and Defined ...",
+     "kind": "contract",
+     "parties": [
+      "Burgess Chambers and Associates, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "RETIREMENT DIVISION; HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": 75000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Investment monitoring for the deferred compensation plan (Burgess Chambers and Associates)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-270",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-270, item 12H, 2025-11-18 council meeting",
+        "subject": "Burgess Chambers deferred compensation plan advisory services",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Burgess Chambers and Associates, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10AA",
+     "title": "Request permission to piggyback off of State of Minnesota Contract No. MMS240162, effective through July 31, 2027, and ...",
+     "kind": "contract",
+     "parties": [
+      "Cardinal Health 110, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 50000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Fire rescue drugs, vaccines and medical supplies (Cardinal Health)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-11-18-12UU",
+        "date": "2025-11-18",
+        "ref": "item 12UU, 2025-11-18 council meeting",
+        "subject": "Cardinal Health pharmaceuticals and supplies",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Cardinal Health 110, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10BB",
+     "title": "RESOLUTION: Proposed resolution reaffirming the agreement between the Board of Trustees of the City of Hialeah Employees ...",
+     "kind": "contract",
+     "parties": [
+      "Capfinancial Partners, LLC",
+      "Captrust Financial Advisors"
+     ],
+     "lobbyists": [],
+     "sponsor": "RETIREMENT DIVISION; HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": 143000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Investment advice for the employees' retirement system (Captrust)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-269",
+        "date": "2025-11-18",
+        "ref": "Res. 2025-269, item 12G, 2025-11-18 council meeting",
+        "subject": "Reaffirmed CapTrust investment advisory services for the retirement system",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "prefix",
+        "party": "Capfinancial Partners, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10CC",
+     "title": "RESOLUTION: Proposed resolution waiving competitive bidding, and authorizing the Mayor or his designee and the City Cler ...",
+     "kind": "contract",
+     "parties": [
+      "UKG Kronos Systems LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 114738.77,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Fire Department staff scheduling software, 3 years, without bids (UKG Telestaff)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2026-227",
+        "date": "2026-09-22",
+        "ref": "Res. 2026-227, item 10I, 2026-09-22 council meeting",
+        "subject": "Bid waiver: UKG Telestaff cloud services",
+        "result": "approved",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "UKG Kronos Systems LLC"
+       },
+       {
+        "id": "hialeah-2025-08-12-10II",
+        "date": "2025-08-12",
+        "ref": "item 10II, 2025-08-12 council meeting",
+        "subject": "UKG Kronos Telestaff subscription renewal",
+        "result": "approved",
+        "tally": [
+         5,
+         1
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "no",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "UKG Kronos Systems LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10DD",
+     "title": "RESOLUTION: Proposed resolution waiving competitive bidding, and authorizing the renewal of the Master Software and Serv ...",
+     "kind": "contract",
+     "parties": [
+      "ImageTrend, LLC."
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 100000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Fire rescue patient care reporting software, without bids (ImageTrend)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2026-097",
+        "date": "2026-04-14",
+        "ref": "Res. 2026-097, item 10D, 2026-04-14 council meeting",
+        "subject": "Bid waiver: renewed ImageTrend fire patient-care software",
+        "result": "approved",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "ImageTrend, LLC."
+       },
+       {
+        "id": "hialeah-res-2025-006",
+        "date": "2025-01-14",
+        "ref": "Res. 2025-006, item 11D, 2025-01-14 council meeting",
+        "subject": "Bid waiver: ImageTrend EPCR software purchase order",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Garcia-Roves": "absent",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "ImageTrend, LLC."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10EE",
+     "title": "Request permission to piggyback off of State of Minnesota Contract No. 041823, effective through June 30, 2027, and iss ...",
+     "kind": "contract",
+     "parties": [
+      "Zoll Medical Corporation"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": 50000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Defibrillator supplies (Zoll Medical)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2026-165",
+        "date": "2026-08-11",
+        "ref": "Res. 2026-165, item 10C, 2026-08-11 council meeting",
+        "subject": "Piggyback PO increase for Zoll medical supplies",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "absent",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Zoll Medical Corporation"
+       },
+       {
+        "id": "hialeah-res-2026-117",
+        "date": "2026-04-28",
+        "ref": "Res. 2026-117, item 10B, 2026-04-28 council meeting",
+        "subject": "Piggyback: 18 Zoll monitor/defibrillators, $1,045,500.08",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Marrero": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Gonzalez": "absent",
+         "G. Perez": "absent"
+        },
+        "basis": "exact",
+        "party": "Zoll Medical Corporation"
+       },
+       {
+        "id": "hialeah-res-2026-039",
+        "date": "2026-02-03",
+        "ref": "Res. 2026-039, item 10C, 2026-02-03 council meeting",
+        "subject": "Piggyback Sourcewell: Zoll defibrillator warranty repairs",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "Rodriguez": "yes",
+         "M. Perez": "absent"
+        },
+        "basis": "exact",
+        "party": "Zoll Medical Corporation"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10FF",
+     "title": "Request permission to issue a purchase order to Dadeland Automotive, LLC, for the purchase Original Equipment Manufactur ...",
+     "kind": "contract",
+     "parties": [
+      "Dadeland Automotive, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "FLEET DIVISION; PUBLIC WORKS DEPARTMENT",
+     "fiscal": null,
+     "amount": 60000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "City vehicle parts (Dadeland Automotive)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-10-14-12CC",
+        "date": "2025-10-14",
+        "ref": "item 10CC, 2025-10-14 council meeting",
+        "subject": "Bomnin Chevrolet Dadeland fleet parts",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "prefix",
+        "party": "Dadeland Automotive, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10GG",
+     "title": "SPECIAL EVENT PERMIT APPLICATION: Request from Rincon de San Lazaro, located at 1190 East 4th Avenue, Hialeah, for a Spe ...",
+     "kind": "other",
+     "parties": [
+      "Rincon de San Lazaro"
+     ],
+     "lobbyists": [],
+     "sponsor": "OFFICE OF THE CITY CLERK",
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "1190 East 4th Avenue, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Special event permit: Rincon de San Lazaro festival, Dec 16-18, with a street procession on Dec 17 along E 4 Ave, E 9 St, E 1 Ave and E 21 St",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2025-11-18-12YY",
+        "date": "2025-11-18",
+        "ref": "item 12YY, 2025-11-18 council meeting",
+        "subject": "Special event permit: Rincon de San Lazaro festival",
+        "result": "approved",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Rincon de San Lazaro"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10HH",
+     "title": "RESOLUTION: Proposed resolution waiving competitive bidding for City-wide landscaping-related services provided by SFM ...",
+     "kind": "contract",
+     "parties": [
+      "SFM Landscape Services, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 175000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Add $175,000 for citywide landscaping, without bids, citywide total $750,381.12 (SFM Landscape Services)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-105",
+        "date": "2025-04-22",
+        "ref": "Res. 2025-105, item 10B, 2025-04-22 council meeting",
+        "subject": "Bid award: SFM Landscape tree and palm planting at Bucky Dent Park",
+        "result": "approved",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "SFM Landscape Services, LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10II",
+     "title": "RESOLUTION: Proposed resolution authorizing the Mayor or his designee and the City Clerk, as attesting witness, on behal ...",
+     "kind": "contract",
+     "parties": [
+      "Insight Public Sector, Inc.",
+      "Microsoft"
+     ],
+     "lobbyists": [],
+     "sponsor": "INFORMATION TECHNOLOGY DEPARTMENT",
+     "fiscal": null,
+     "amount": 724552.44,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Microsoft licensing, 2026-27 (Insight Public Sector)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-218",
+        "date": "2025-09-23",
+        "ref": "Res. 2025-218, item 10II, 2025-09-23 council meeting",
+        "subject": "Piggyback NASPO: three-year Microsoft licensing through Insight Public Sector, $661,552 a year",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Junco": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "Insight Public Sector, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-185",
+        "date": "2025-08-26",
+        "ref": "Res. 2025-185, item 10F, 2025-08-26 council meeting",
+        "subject": "Piggyback: Insight Public Sector technology purchases",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Insight Public Sector, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-064",
+        "date": "2025-02-25",
+        "ref": "Res. 2025-064, item 10P, 2025-02-25 council meeting",
+        "subject": "Piggyback purchase of IT hardware and services from Insight Public Sector",
+        "result": "approved",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Tundidor": "absent",
+         "Garcia-Roves": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Insight Public Sector, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10JJ",
+     "title": "RESOLUTION: Proposed resolution accepting the Request for Proposal (\"RFP\") response from Deviceful Sports Solutions, LL ...",
+     "kind": "award",
+     "parties": [
+      "Deviceful Sports Solutions, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Racquet sports lessons and court management at city parks, 3 years (Deviceful Sports Solutions)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10KK",
+     "title": "RESOLUTION: Proposed resolution ratifying and approving the execution of a Memorandum of Agreement between Miami-Dade C ...",
+     "kind": "resolution",
+     "parties": [
+      "Miami-Dade County"
+     ],
+     "lobbyists": [],
+     "sponsor": "FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Agreement with the County fire rescue department on a shared mobile breathing-air (cascade) system from a federal firefighter grant",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10LL",
+     "title": "SPECIAL EVENT PERMIT APPLICATION: Request from Level II Palmetto, LLC, on behalf of Samurai Fireworks, LLC, located at 2 ...",
+     "kind": "other",
+     "parties": [
+      "Level II Palmetto, LLC",
+      "Samurai Fireworks, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "OFFICE OF THE CITY CLERK",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "business",
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Special event permit: sparkler sales tent at Samurai Fireworks, 2122 W 62 St, Dec 27-31",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2026-10-13-17F",
+        "date": "2026-10-13",
+        "ref": "item 17F, 2026-10-13 council meeting",
+        "subject": "Parking variance at 2122-2124 W 62 St (postponed)",
+        "result": "postponed",
+        "tally": null,
+        "roll": {
+         "Zogby": "unknown",
+         "De La Vega": "unknown",
+         "Gonzalez": "unknown",
+         "Marrero": "unknown",
+         "G. Perez": "unknown",
+         "M. Perez": "unknown",
+         "Rodriguez": "unknown"
+        },
+        "basis": "exact",
+        "party": "Level II Palmetto, LLC"
+       },
+       {
+        "id": "hialeah-2026-09-22-17G",
+        "date": "2026-09-22",
+        "ref": "item 17G, 2026-09-22 council meeting",
+        "subject": "Parking variance for a fireworks business at 2122-2124 W 62 St (postponed)",
+        "result": "postponed",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Level II Palmetto, LLC"
+       }
+      ],
+      "lobbyists": [
+       {
+        "name": "Ceasar Mestre",
+        "for": "Level II Palmetto LLC",
+        "registered": null,
+        "basis": "registered on a prior item naming this party",
+        "party": "Level II Palmetto, LLC"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "business",
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": true,
+      "history": true
+     }
+    },
+    {
+     "id": "10MM",
+     "title": "RESOLUTION: Proposed resolution waiving competitive bidding, and authorizing the Mayor or his designee and the City Cler ...",
+     "kind": "contract",
+     "parties": [
+      "UKG Kronos Systems LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "911 PUBLIC SAFETY COMMUNICATIONS DIVISION; POLICE DEPARTMENT",
+     "fiscal": null,
+     "amount": 33605.16,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "911 communications staff scheduling software, 3 years, without bids (UKG Telestaff)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2026-227",
+        "date": "2026-09-22",
+        "ref": "Res. 2026-227, item 10I, 2026-09-22 council meeting",
+        "subject": "Bid waiver: UKG Telestaff cloud services",
+        "result": "approved",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "UKG Kronos Systems LLC"
+       },
+       {
+        "id": "hialeah-2025-08-12-10II",
+        "date": "2025-08-12",
+        "ref": "item 10II, 2025-08-12 council meeting",
+        "subject": "UKG Kronos Telestaff subscription renewal",
+        "result": "approved",
+        "tally": [
+         5,
+         1
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "no",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "UKG Kronos Systems LLC"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10NN",
+     "title": "RESOLUTION: Proposed resolution accepting the Selection Committee's recommendation for Request for Proposal (\"RFP\") 2025 ...",
+     "kind": "award",
+     "parties": [
+      "Thompson Consulting Services, LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "EMERGENCY MANAGEMENT DIVISION; FIRE DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Disaster debris monitoring after storms, 3 years (Thompson Consulting Services)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10OO",
+     "title": "RESOLUTION: Proposed resolution approving a piggyback off of AEPA Cooperative Contract No. 024-A with APT Acquisition Co ...",
+     "kind": "contract",
+     "parties": [
+      "APT Acquisition Construction Corp.",
+      "Astroturf Corporation"
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 204856,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Synthetic turf at Goodlet Park (AstroTurf, through APT Acquisition)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-128",
+        "date": "2025-06-10",
+        "ref": "Res. 2025-128, item 10C, 2025-06-10 council meeting",
+        "subject": "Piggyback: AstroTurf replacement of two soccer fields at Goodlet Park",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Astroturf Corporation"
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10PP",
+     "title": "RESOLUTION: Proposed resolution waiving competitive bidding for City-wide landscaping-related services provided by Visu ...",
+     "kind": "contract",
+     "parties": [
+      "Visualscape, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 30000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Add $30,000 for citywide landscaping, without bids, citywide total $747,204 (Visualscape)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-res-2025-163",
+        "date": "2025-08-12",
+        "ref": "Res. 2025-163, item 10C, 2025-08-12 council meeting",
+        "subject": "County tree grant: Visualscape tree purchase and planting",
+        "result": "approved",
+        "tally": [
+         5,
+         1
+        ],
+        "roll": {
+         "Tundidor": "yes",
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "no",
+         "Rodriguez": "yes",
+         "Zogby": "yes"
+        },
+        "basis": "exact",
+        "party": "Visualscape, Inc."
+       },
+       {
+        "id": "hialeah-res-2025-152",
+        "date": "2025-06-24",
+        "ref": "Res. 2025-152, item 10E, 2025-06-24 council meeting",
+        "subject": "Tree canopy restoration contract to Visualscape",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Junco": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "Visualscape, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "10QQ",
+     "title": "RESOLUTION: Proposed resolution accepting the Selection Committee recommendation for Request for Proposal (\"RFP\") 2024-2 ...",
+     "kind": "award",
+     "parties": [
+      "State Contracting & Engineering Corporation"
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 7500000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Construction manager for the Hialeah Educational Academy Phase 4 expansion (State Contracting & Engineering)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "10RR",
+     "title": "RESOLUTION: Proposed resolution accepting request for proposal (\"RFP\") response from Koncept Systems,LLC for RFP No. 202 ...",
+     "kind": "award",
+     "parties": [
+      "Koncept Systems,LLC"
+     ],
+     "lobbyists": [],
+     "sponsor": "PARKS AND RECREATION DIVISION; PARKS AND COMMUNITY ENGAGEMENT DEPARTMENT",
+     "fiscal": null,
+     "amount": 557280.42,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Modernize the Goodlet Park Theater's sound, lighting and seating (Koncept Systems)",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "11A",
+     "title": "ORDINANCE: Second reading and public hearing of proposed ordinance amending Chapter 70 entitled \"Retirement and Pension\" ...",
+     "kind": "ordinance",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "RETIREMENT DIVISION; HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": "second",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Second reading: retirement and DROP changes for general employees under the AFSCME Local 161 union contract",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "11B",
+     "title": "RESOLUTION: Proposed resolution ratifying and approving the Collective Bargaining Agreement between the Hialeah Associat ...",
+     "kind": "resolution",
+     "parties": [
+      "Hialeah Association of Firefighters, I.A.F.F., Local 1102"
+     ],
+     "lobbyists": [],
+     "sponsor": "HUMAN RESOURCES DEPARTMENT",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "fire"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Firefighters' union contract (IAFF Local 1102), Oct 2026 to Sept 2028",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "fire"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "FD-000576-2026",
+     "title": "RESOLUTION: Proposed resolution affirming Final Decision No. FD-000576-2026 of the Planning and Zoning Board authorizing ...",
+     "kind": "zoning",
+     "parties": [
+      "Sergio and Silvia Segura"
+     ],
+     "lobbyists": [],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "7228 West 30th Lane, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "housing"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Let an existing backyard aluminum terrace stay 1.67 feet from the rear line (5 feet required), 7228 W 30 Ln",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "housing"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A",
+     "title": "ORDINANCE: First reading of proposed ordinance amending the Future Land Use Map of the City of Hialeah Comprehensive Pla ...",
+     "kind": "landuse",
+     "parties": [
+      "Yiliam Perez"
+     ],
+     "lobbyists": [
+      {
+       "name": "Ceasar Mestre, Esq.",
+       "for": "Yiliam Perez"
+      }
+     ],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "902 East 33rd Street, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "housing",
+      "daycare"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "First reading: change 902 E 33 St from low-density to medium-density residential land use",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [
+       {
+        "name": "Ceasar Mestre, Esq.",
+        "for": "Yiliam Perez",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "Yiliam Perez"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "housing",
+       "daycare"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": true,
+      "history": false
+     }
+    },
+    {
+     "id": "17B",
+     "title": "ORDINANCE: Second reading and public hearing of proposed ordinance approving the closure, vacation and abandonment of th ...",
+     "kind": "land",
+     "parties": [
+      "MPT of Hialeah-Steward, LLC"
+     ],
+     "lobbyists": [
+      {
+       "name": "Javier Vazquez, Esq.",
+       "for": "MPT of Hialeah-Steward, LLC"
+      },
+      {
+       "name": "Jenelly Perez, Esq.",
+       "for": "MPT of Hialeah-Steward, LLC"
+      }
+     ],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "Alley extending easterly from East 6th Avenue, between East 26th Street and East 27th Street, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": "second",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Second reading: vacate (close) a 121-foot alley off E 6 Ave between E 26 and 27 St (for MPT of Hialeah-Steward, the hospital owner)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2026-10-13-17G",
+        "date": "2026-10-13",
+        "ref": "item 17G, 2026-10-13 council meeting",
+        "subject": "First reading: closing an alley east of E 6 Ave for MPT of Hialeah-Steward (hospital owner)",
+        "result": "firstReading",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "MPT of Hialeah-Steward, LLC"
+       },
+       {
+        "id": "hialeah-ord-2025-114",
+        "date": "2025-12-09",
+        "ref": "Ord. 2025-114, item 17E, 2025-12-09 council meeting",
+        "subject": "Second reading: rezoned 612 E 27 St to Parking for Hialeah Hospital",
+        "result": "approved",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "yes"
+        },
+        "basis": "exact",
+        "party": "MPT of Hialeah-Steward, LLC"
+       },
+       {
+        "id": "hialeah-2025-11-18-19I",
+        "date": "2025-11-18",
+        "ref": "item 19I, 2025-11-18 council meeting",
+        "subject": "First reading: rezoning 612 E 27 St to Parking for Hialeah Hospital",
+        "result": "firstReading",
+        "tally": [
+         4,
+         0
+        ],
+        "roll": {
+         "Rodriguez": "yes",
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "M. Perez": "yes",
+         "Tundidor": "absent"
+        },
+        "basis": "exact",
+        "party": "MPT of Hialeah-Steward, LLC"
+       }
+      ],
+      "lobbyists": [
+       {
+        "name": "Javier L. Vazquez",
+        "for": "MPT of Hialeah-Steward, LLC",
+        "registered": null,
+        "basis": "registered on a prior item naming this party",
+        "party": "MPT of Hialeah-Steward, LLC"
+       },
+       {
+        "name": "Jenelly Perez",
+        "for": "MPT of Hialeah-Steward, LLC",
+        "registered": null,
+        "basis": "registered on a prior item naming this party",
+        "party": "MPT of Hialeah-Steward, LLC"
+       },
+       {
+        "name": "Javier Vazquez, Esq.",
+        "for": "MPT of Hialeah-Steward, LLC",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "MPT of Hialeah-Steward, LLC"
+       },
+       {
+        "name": "Jenelly Perez, Esq.",
+        "for": "MPT of Hialeah-Steward, LLC",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "MPT of Hialeah-Steward, LLC"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": true,
+      "history": true
+     }
+    },
+    {
+     "id": "17C",
+     "title": "ORDINANCE: Second reading and public hearing of proposed ordinance granting variances to allow: (i) interior east and we ...",
+     "kind": "zoning",
+     "parties": [
+      "Rios Investment Group Corp",
+      "Danniell Rios"
+     ],
+     "lobbyists": [
+      {
+       "name": "Manny Reus (Architect)",
+       "for": "Rios Investment Group Corp"
+      }
+     ],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "533 East 22nd Street, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "housing"
+     ],
+     "readings": "second",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "Second reading: setback, lot coverage and green-space variances for a multifamily building at 533 E 22 St",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2026-10-13-17H",
+        "date": "2026-10-13",
+        "ref": "item 17H, 2026-10-13 council meeting",
+        "subject": "First reading: multifamily variances at 533 E 22 St",
+        "result": "firstReading",
+        "tally": [
+         6,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "absent",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Rios Investment Group Corp"
+       },
+       {
+        "id": "hialeah-2026-08-11-17E",
+        "date": "2026-08-11",
+        "ref": "item 17E, 2026-08-11 council meeting",
+        "subject": "Multifamily variances at 533 E 22 St (postponed to Sep 22)",
+        "result": "postponed",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "absent",
+         "Rodriguez": "absent"
+        },
+        "basis": "exact",
+        "party": "Rios Investment Group Corp"
+       }
+      ],
+      "lobbyists": [
+       {
+        "name": "Manny Reus",
+        "for": "Rios Investment Group Corp",
+        "registered": null,
+        "basis": "registered on a prior item naming this party",
+        "party": "Rios Investment Group Corp"
+       },
+       {
+        "name": "Manny Reus (Architect)",
+        "for": "Rios Investment Group Corp",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "Rios Investment Group Corp"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "housing"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": true,
+      "history": true
+     }
+    },
+    {
+     "id": "17D",
+     "title": "ORDINANCE: First reading of proposed ordinance granting a variance to allow 34 parking spaces, where 46 parking spaces are ...",
+     "kind": "zoning",
+     "parties": [
+      "Martin and Antonio Nicholls",
+      "Level II Palmetto"
+     ],
+     "lobbyists": [
+      {
+       "name": "Ceasar Mestre, Esq.",
+       "for": "Level II Palmetto LLC"
+      }
+     ],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "2122-2124 West 62nd Street, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "parking",
+      "business"
+     ],
+     "readings": "first",
+     "deferredFrom": "2026-10-13",
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "First reading: parking variance letting a business at 2122-2124 W 62 St have 34 spaces where 46 are required",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "hialeah-2026-10-13-17F",
+        "date": "2026-10-13",
+        "ref": "item 17F, 2026-10-13 council meeting",
+        "subject": "Parking variance at 2122-2124 W 62 St (postponed)",
+        "result": "postponed",
+        "tally": null,
+        "roll": {
+         "Zogby": "unknown",
+         "De La Vega": "unknown",
+         "Gonzalez": "unknown",
+         "Marrero": "unknown",
+         "G. Perez": "unknown",
+         "M. Perez": "unknown",
+         "Rodriguez": "unknown"
+        },
+        "basis": "exact",
+        "party": "Level II Palmetto"
+       },
+       {
+        "id": "hialeah-2026-09-22-17G",
+        "date": "2026-09-22",
+        "ref": "item 17G, 2026-09-22 council meeting",
+        "subject": "Parking variance for a fireworks business at 2122-2124 W 62 St (postponed)",
+        "result": "postponed",
+        "tally": [
+         7,
+         0
+        ],
+        "roll": {
+         "Zogby": "yes",
+         "De La Vega": "yes",
+         "Gonzalez": "yes",
+         "Marrero": "yes",
+         "G. Perez": "yes",
+         "M. Perez": "yes",
+         "Rodriguez": "yes"
+        },
+        "basis": "exact",
+        "party": "Level II Palmetto"
+       }
+      ],
+      "lobbyists": [
+       {
+        "name": "Ceasar Mestre",
+        "for": "Level II Palmetto LLC",
+        "registered": null,
+        "basis": "registered on a prior item naming this party",
+        "party": "Level II Palmetto"
+       },
+       {
+        "name": "Ceasar Mestre, Esq.",
+        "for": "Level II Palmetto LLC",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "Level II Palmetto LLC"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "parking",
+       "business"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": true,
+      "history": true
+     }
+    },
+    {
+     "id": "17E",
+     "title": "ORDINANCE: First reading of proposed ordinance rezoning the property located at 902 East 33rd Street, Hialeah from R-1 O ...",
+     "kind": "zoning",
+     "parties": [
+      "Yiliam Perez"
+     ],
+     "lobbyists": [
+      {
+       "name": "Ceasar Mestre, Esq.",
+       "for": "Yiliam Perez"
+      }
+     ],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "902 East 33rd Street, Hialeah",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "daycare",
+      "housing"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Agenda/_10272026-1416"
+      }
+     ],
+     "subject": "First reading: rezone 902 E 33 St from single-family to multifamily, with a side setback variance",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [
+       {
+        "name": "Ceasar Mestre, Esq.",
+        "for": "Yiliam Perez",
+        "registered": null,
+        "basis": "named on this agenda item",
+        "party": "Yiliam Perez"
+       }
+      ],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "daycare",
+       "housing"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": true,
+      "history": false
+     }
+    }
+   ],
+   "notes": "Read from the Agenda Center PDF (_10272026-1416); item backup was not read, so fiscal fields are null and amount is set only where the item prints a single dollar figure (items printing several figures, e.g. 10B, 10F, 10I, 10J, 10N, 10Q, 10CC, 10HH, 10II, 10MM, 10PP, are null). Titles are the first ~120 characters as printed, cut with '...'. Parties exclude the public agencies whose contracts are piggybacked (City of Tamarac, University of California, Maricopa County, State of Minnesota, etc.) except where the agency is the counterparty. Skipped: opening items 1-9 (call to order, invocation, pledge, guidelines, presentations, public comments, agenda amendments, board appointments with no names printed), 10A (Oct 13 minutes), 14 (oath), 18 (adjournment). 17A (Special Use Permit for a biomedical research center at 6815 West 4th Avenue, Tevere Apartments LLC) is printed but bannered POSTPONED to November 10, 2026, so it is not listed here. 11A first reading approved Oct 13; 16A and 17E concern the same parcel (nursery/child daycare). 10J and 10N print the same vendor and amounts."
+  },
+  {
+   "body": "city-opa-locka",
+   "rosterBody": "city-opa-locka",
+   "bodyName": "Opa-locka City Commission",
+   "meeting": {
+    "date": "2026-10-28",
+    "time": "18:00",
+    "kind": "regular",
+    "agendaUrl": "https://www.opalockafl.gov/DocumentCenter/View/6267",
+    "postedOn": null,
+    "location": "Commission Chamber, 780 Fisherman Street, 3rd Floor, Opa-locka, FL 33054"
+   },
+   "checked": "2026-10-24",
+   "comment": [
+    {
+     "key": "public-comment",
+     "rules": "Three minutes per speaker for the citizens' forum and for public hearings (Code of Ordinances Sec. 2-57). Longer matters need an appointment with the City Clerk before the meeting. Decorum rules in Sec. 2-58. Anyone may speak on any agenda item.",
+     "deadline": "Register for Zoom before the meeting starts",
+     "url": "https://opalockafl.gov/318/Participation-at-Commission-Meetings",
+     "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+    },
+    {
+     "key": "written-comment",
+     "rules": null,
+     "deadline": null,
+     "url": "mailto:jflores@opalockafl.gov",
+     "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+    }
+   ],
+   "items": [
+    {
+     "id": "10",
+     "title": "Special presentation by Vice Mayor Joseph L. Kelley Farm Share, Inc.",
+     "kind": "other",
+     "parties": [
+      "Farm Share, Inc."
+     ],
+     "lobbyists": [],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Presentation by Vice Mayor Kelley: Farm Share",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 1",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AUTHORIZING THE CITY MANAGER TO ACCEPT THE OFFICE OF JUVENILE JUSTICE AND DELINQUENCY PREVENTION FISCAL YEAR 2026 BYRNE DISCRETIONARY COMMUNITY PROJECT ...",
+     "kind": "resolution",
+     "parties": [
+      "Office of Juvenile Justice and Delinquency Prevention"
+     ],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": 1031000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "police"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Accept a $1,031,000 federal Byrne grant for a youth crime prevention and community engagement program",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "police"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 2",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AUTHORIZING THE CITY MANAGER TO PIGGYBACK THE CITY OF MIAMI INVITATION FOR BID NO. 1115382(28) FOR PAVEMENT RESURFACING AND ROADWAY REPAIR SERVICES AND ENTER INTO ...",
+     "kind": "contract",
+     "parties": [
+      "H&R Paving, Inc.",
+      "City of Miami"
+     ],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": 705000,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "transit"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Sidewalk installation and restoration, Phase VIII (H&R Paving, piggybacking a City of Miami contract)",
+     "matches": {
+      "priorActions": [
+       {
+        "id": "opalocka-2026-10-14-13-7",
+        "date": "2026-10-14",
+        "ref": "13-7",
+        "subject": "Piggyback City of Miami contract with H&R Paving for Phase XII milling and resurfacing",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2026-06-24-13-1",
+        "date": "2026-06-24",
+        "ref": "13-1",
+        "subject": "Piggyback City of Miami contract with H&R Paving for Phase XI milling and resurfacing",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2026-06-24-13-4",
+        "date": "2026-06-24",
+        "ref": "13-4",
+        "subject": "Change order No. 1 with H&R Paving for the 21st Court sidewalk project",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-09-10-13-5",
+        "date": "2025-09-10",
+        "ref": "13-5",
+        "subject": "Piggyback City of Miami contract with H&R Paving for Phase I of the sidewalk replacement project",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-07-23-13-3",
+        "date": "2025-07-23",
+        "ref": "13-3",
+        "subject": "Piggyback City of Miami contract with H&R Paving to resurface Ali Baba Avenue",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-05-28-13-2",
+        "date": "2025-05-28",
+        "ref": "13-2",
+        "subject": "Piggyback City of Miami contract with H&R Paving to replace and widen Sherbondy Village concrete trails",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-05-14-13-1",
+        "date": "2025-05-14",
+        "ref": "13-1",
+        "subject": "Piggyback City of Miami contract with H&R Paving for pavement resurfacing",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-03-26-13-6",
+        "date": "2025-03-26",
+        "ref": "13-6",
+        "subject": "Piggyback City of Miami contract with H&R Paving to replace Sherbondy Village basketball courts",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       },
+       {
+        "id": "opalocka-2025-02-12-13-1",
+        "date": "2025-02-12",
+        "ref": "13-1",
+        "subject": "Piggyback City of Miami contract with H&R Paving to replace Ingram Park basketball courts",
+        "result": "adopted",
+        "tally": [
+         5,
+         0
+        ],
+        "roll": {
+         "Taylor": "yes",
+         "Kelley": "yes",
+         "Bass": "yes",
+         "Ervin": "yes",
+         "Santiago": "yes"
+        },
+        "basis": "exact",
+        "party": "H&R Paving, Inc."
+       }
+      ],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "transit"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": true
+     }
+    },
+    {
+     "id": "Consent 3",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, APPROVING THE OPA-LOCKA COMMUNITY REDEVELOPMENT AGENCY'S FISCAL YEAR 2025-2026 GENERAL OPERATING AND TAX INCREMENT FUND BUDGET AMENDMENT NO. 4, AS ...",
+     "kind": "budget",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "business"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Fourth amendment to the Community Redevelopment Agency's 2025-26 budget",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": true,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "business"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 4",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, ADOPTING THE CITY OF OPA-LOCKA'S 2027-2028 LEGISLATIVE PRIORITY LIST, ATTACHED HERETO AS COMPOSITE EXHIBIT \"A\"; AUTHORIZING THE CITY MANAGER TO TAKE ...",
+     "kind": "resolution",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "The city's 2027-2028 state legislative priority list",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 5",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AUTHORIZING THE CITY MANAGER TO REJECT ALL PROPOSALS FOR CITYWIDE TOWING SERVICES SUBMITTED IN RESPONSE TO RFP NO. 26-0812200; FURTHER AUTHORIZING THE ...",
+     "kind": "award",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "towing"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Reject all bids for citywide towing and ask for new ones",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "towing"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 6",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, DIRECTING THE CITY MANAGER TO DEVELOP A COMMUNITY BENEFITS POLICY FOR QUALIFYING DEVELOPMENT PROJECTS; ESTABLISHING GUIDELINES FOR WORKFORCE DEVELOPMENT, ...",
+     "kind": "resolution",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "Mayor Taylor",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "business",
+      "housing"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Direct the city manager to write a community benefits policy for qualifying development projects: local hiring, small business participation, public infrastructure and neighborhood investment",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "business",
+       "housing"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "Consent 7",
+     "title": "A RESOLUTION OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AUTHORIZING THE CITY MANAGER AND CITY ATTORNEY TO IDENTIFY A LAW FIRM APPROPRIATE FOR THE ENFORCEMENT OF FORECLOSURE LIENS; AUTHORIZING CORRESPONDENCE, ...",
+     "kind": "resolution",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "Mayor Taylor",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "housing"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Find a law firm to collect on the city's foreclosure liens",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "housing"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-1",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, CONSIDERING THE REZONING REQUEST FOR APPROXIMATELY 10,742 SQUARE FEET OF LAND LOCATED AT THE INTERSECTION OF SHARAZAD BOULEVARD AND CODADAD STREET, ...",
+     "kind": "zoning",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "Sharazad Boulevard and Codadad Street (Folio No. 08-2121-002-5210)",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: rezone about 10,742 sq ft at Sharazad Blvd and Codadad St from single-family to park",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-2",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AMENDING SECTION 22 101 OF THE LAND DEVELOPMENT REGULATIONS TO REMOVE CERTAIN PARCELS FROM THE HISTORIC DOWNTOWN OPA-LOCKA DISTRICT (HDOD); PROVIDING FOR ...",
+     "kind": "ordinance",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: remove some parcels from the Historic Downtown Opa-locka District",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-3",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, CONSIDERING THE REZONING REQUEST FOR APPROXIMATELY 64,000 SQUARE FEET OF LAND LOCATED AT 13210 ALEXANDRIA DRIVE, IDENTIFIED BY FOLIO NO. 08-2128-007-0270, FROM ...",
+     "kind": "zoning",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "13210 Alexandria Drive (Folio No. 08-2128-007-0270)",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "parks"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: rezone about 64,000 sq ft at 13210 Alexandria Dr from residential to park",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "parks"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-4",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, DEDICATING A PORTION OF CITY-OWNED LAND AS PUBLIC RIGHT-OF-WAY FOR NW 127TH STREET, AS DESCRIBED IN THE LEGAL DESCRIPTION AND SKETCH EXHIBIT \"A\" ATTACHED ...",
+     "kind": "land",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "City Manager",
+     "fiscal": null,
+     "amount": null,
+     "location": {
+      "address": "NW 127th Street",
+      "district": null,
+      "lat": null,
+      "lng": null
+     },
+     "industry": null,
+     "topics": [
+      "transit"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: dedicate city-owned land as public right-of-way for NW 127 St",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": true,
+      "industry": null,
+      "topics": [
+       "transit"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-5",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, AMENDING CHAPTER 13, ARTICLE VIII, ENTITLED \"STREET AND MOBILE VENDORS,\" SPECIFICALLY AMENDING SECTION 13-165; REGULATING THE OVERNIGHT PARKING AND ...",
+     "kind": "ordinance",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "Mayor Taylor",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "business",
+      "parking"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: limit food trucks on commercial lots to one per business, with written permission, no overnight hookups or outdoor equipment",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "business",
+       "parking"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "16A-6",
+     "title": "AN ORDINANCE OF THE CITY COMMISSION OF THE CITY OF OPA-LOCKA, FLORIDA, RENAMING THE OPA-LOCKA GOVERNMENT CENTER IN HONOR OF MAYOR MYRA L. TAYLOR; PROVIDING FOR INCORPORATION OF RECITALS; PROVIDING FOR AUTHORIZATION; ...",
+     "kind": "ordinance",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": "Commissioner Santiago",
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": "first",
+     "deferredFrom": null,
+     "publicHearing": true,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "First reading: rename the Opa-locka Government Center for Mayor Myra L. Taylor",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": true,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    },
+    {
+     "id": "20",
+     "title": "OFFICIAL BOARD APPOINTMENTS:",
+     "kind": "appointment",
+     "parties": [],
+     "lobbyists": [],
+     "sponsor": null,
+     "fiscal": null,
+     "amount": null,
+     "location": null,
+     "industry": null,
+     "topics": [
+      "other"
+     ],
+     "readings": null,
+     "deferredFrom": null,
+     "publicHearing": false,
+     "links": [
+      {
+       "t": "item",
+       "url": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+      }
+     ],
+     "subject": "Appointments to the Civil Service, Charter Review, Historic Preservation, Planning and Zoning, and Teen and Young Adult boards",
+     "matches": {
+      "priorActions": [],
+      "lobbyists": [],
+      "ties": []
+     },
+     "tags": {
+      "wallet": null,
+      "place": false,
+      "industry": null,
+      "topics": [
+       "other"
+      ],
+      "hearing": false,
+      "money": false,
+      "lobbied": false,
+      "history": false
+     }
+    }
+   ],
+   "notes": "Read from the agenda PDF (DocumentCenter/View/6267) linked on calendar event EID=2295; item backup was not read, so fiscal fields are null and amounts are the single figure printed in the title text. Titles are the opening of each printed title, cut with '...'. Skipped procedural items: call to order, roll call, invocation, pledge, approval of consent agenda/pull list, approval of agenda, approval of minutes, county commissioner report, citizens' forum, city manager, board and mayor/commission reports, adjournment. Sections 15 (Planning & Zoning public hearings and appeals), 16B (second reading ordinances) and 16C (resolutions) list no items. Item 20 appointments cover Civil Service, Charter Review, Historic Environmental Preservation, Planning and Zoning, Teen, Young Adult, and Community Relations Advisory boards; no applicants named."
   }
  ],
  "procurement": [

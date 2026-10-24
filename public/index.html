@@ -5182,6 +5182,12 @@ function loadYou(ri, cand){
   var y = pid && YOU[pid] && !YOU[pid].then ? YOU[pid] : null;
   renderYou(ri, cand, sp, y, pid && YOU[pid] && YOU[pid].then);
 }
+// "17:30" -> "5:30 p.m." (es and ht use the 24-hour clock, as the county's Spanish and Creole notices do)
+function clock(hm){
+  var x = String(hm || '').match(/^(\d{1,2}):(\d{2})/); if(!x) return hm;
+  if(LANG !== 'en') return x[1] + ':' + x[2];
+  var h = +x[1]; return (h % 12 || 12) + ':' + x[2] + (h < 12 ? ' a.m.' : ' p.m.');
+}
 function renderYou(ri, cand, sp, y, loading){
   var box = $('youSec');
   if(!box) return;
@@ -5245,9 +5251,14 @@ function renderYou(ri, cand, sp, y, loading){
   var nb = '';
   if(nx){
     var up = (nx.schedule || []).filter(function(m){ return m.date >= today; }).slice(0, 2);
-    if(up.length) nb += '<p class="you-p">' + up.map(function(m){ return t('you.nextMeet', {date: esc(fmtDay(m.date)) + (m.time ? ', ' + esc(m.time) : '')}) + (m.source ? ' ' + srcLink(m.source) : ''); }).join('<br>') + '</p>';
+    if(up.length) nb += '<p class="you-p">' + up.map(function(m){ return t('you.nextMeet', {date: esc(fmtDay(m.date)) + (m.time ? ', ' + esc(clock(m.time)) : '')}) + (m.source ? ' ' + srcLink(m.source) : ''); }).join('<br>') + '</p>';
+    // what the voter said about their household first, then services every household uses
+    var mine = function(it){ return youMatch(it.topics, me).some(function(k){ return EVERYONE.indexOf(k) < 0; }); };
     var ag = (nx.agenda || []).filter(function(it){ return it.date >= today && (!MI || !MI.any(me) || youMatch(it.topics, me).length); });
-    if(ag.length) nb += '<div class="you-p"><strong>' + t('you.agenda') + '</strong><ul>' + ag.slice(0, 8).map(function(it){ return '<li>' + esc(fmtDay(it.date)) + ': ' + esc(it.title) + (it.link ? ' ' + srcLink(it.link) : '') + '</li>'; }).join('') + '</ul></div>';
+    if(MI && MI.any(me)) ag = ag.filter(mine).concat(ag.filter(function(it){ return !mine(it); }));
+    var li = function(it){ return '<li>' + esc(fmtDay(it.date)) + ': ' + esc(it.title) + (it.link ? ' ' + srcLink(it.link) : '') + '</li>'; };
+    if(ag.length) nb += '<div class="you-p"><strong>' + t('you.agenda') + '</strong><ul>' + ag.slice(0, 6).map(li).join('') + '</ul>' +
+      (ag.length > 6 ? '<details class="tie-more"><summary>' + t('you.more', {n: ag.length}) + '</summary><ul>' + ag.slice(6).map(li).join('') + '</ul></details>' : '') + '</div>';
     var lv = nx.levers || [];
     if(lv.length) nb += '<div class="you-p"><strong>' + t('you.speak') + '</strong> <span class="fine">' + t('you.inEn') + '</span><ul>' + lv.map(function(l){
       return '<li>' + esc(l.how || '') + (l.rules ? ' ' + esc(l.rules) : '') + (l.url ? ' ' + srcLink(l.url) : '') + '</li>'; }).join('') + '</ul></div>';
