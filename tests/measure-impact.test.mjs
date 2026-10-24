@@ -124,7 +124,7 @@ test('fresh request runs in the background, then serves the shared cache', async
     assert.equal(second.result.yesNote, 'Y');
     assert.equal(second.result.sources[0].url, 'https://example.gov/a');
     assert.equal(second.result.sources[1].url, '');   // a link the search never returned is dropped
-    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm3:')));
+    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm4:')));
   } finally { globalThis.fetch = realFetch; }
 });
 
@@ -253,4 +253,16 @@ test('jobs are not checkboxes either: public jobs and pay show for everyone', ()
   }
   assert.deepEqual(Object.keys(MI.normalize({ groups: { school_staff: true, public_employee: true, senior: true } }).groups), ['senior']);
   assert.ok(!Object.keys(w.IMPACT_GROUPS).some(k => /school_staff|public_employee/.test(k)));
+});
+
+test('what gets cut first: only what officials said, on the side that removes revenue', () => {
+  for (const lang of ['en', 'es', 'ht']) {
+    const a3 = MI.calc(A3, null, lang).cuts, lv = MI.calc(LEVY, null, lang).cuts;
+    assert.equal(a3.side, 'yes'); assert.ok(a3.items.length && a3.otherNote && a3.statusNote, lang);
+    assert.equal(lv.side, 'no'); assert.equal(lv.items.length, 2, lang);
+  }
+  const r = w.cleanImpact({ cuts: { side: 'yes', items: [{ whatNote: 'Library hours', whoNote: 'County budget office, Sept 2026', sources: [0] }, { whatNote: 'No source given' }], statusNote: 'x' }, sources: [{ name: 'A', url: 'https://a.gov' }] });
+  assert.equal(r.cuts.side, 'yes');
+  assert.equal(r.cuts.items.length, 1);   // a cut without who said it is dropped
+  assert.match(w.impactPrompt({ name: 'X', summary: '', jurisdiction: 'J', election: 'E' }), /never predict cuts yourself/);
 });

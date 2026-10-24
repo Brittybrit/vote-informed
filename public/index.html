@@ -490,6 +490,10 @@
   .imp-you-h{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:4px;}
   .imp-you p{font-weight:600; color:var(--ink);}
   .imp-all p{font-weight:400;}
+  .imp-cuts p{font-weight:400;}
+  .imp-box p.fine{font-size:11px; line-height:1.5;}
+  .imp-cuts .imp-other{color:var(--ink-soft);}
+  .imp-who-s{color:var(--ink-soft);}
   .imp-exp{border-top:1px solid #C9C9C1; padding:2px 0;}
   .imp-exp:last-of-type{border-bottom:1px solid #C9C9C1;}
   .imp-exp > summary{cursor:pointer; font-weight:700; font-size:13.5px; padding:10px 0; overflow-wrap:anywhere;}
@@ -3873,13 +3877,27 @@ function impactBody(ri, r, calc, me, w){
   // 1. Two summary boxes, YES and NO side by side: what the measure does, what it means for you,
   //    and what it means for everyone, whether or not they use the services
   var comm = svc.concat((r && r.community) || []);
+  // what the government says it would cut first, on the side that takes revenue away
+  var cuts = (calc && calc.cuts) || (r && r.cuts && r.cuts.side && (r.cuts.items.length || r.cuts.statusNote) ? r.cuts : null);
+  function cutsHtml(side){
+    if(!cuts || cuts.side !== side) return '';
+    var cs = cuts.sources ? cuts.sources.map(function(x){ return srcLink(x.url, x.name); }).join('') : '';
+    return '<div class="imp-you imp-cuts"><div class="imp-you-h">' + esc(w.cuts) + '</div>' +
+      (cuts.items || []).map(function(c){
+        return typeof c === 'string' ? P(c) : '<p>' + esc(c.whatNote) + ' <span class="imp-who-s">(' + esc(c.whoNote) + ')</span>' + cite(c.sources) + '</p>';
+      }).join('') +
+      (cuts.otherNote ? '<p class="imp-other">' + esc(cuts.otherNote) + '</p>' : '') +
+      (cuts.statusNote ? '<p class="fine">' + esc(cuts.statusNote) + '</p>' : '') +
+      (cs ? '<p class="og-links">' + cs + '</p>' : '') + '</div>';
+  }
   function box(cls, title, general, mineLines, allLines){
     var you = mineLines.filter(Boolean), all = allLines.filter(Boolean);
-    if(!general && !you.length && !all.length) return '';
+    var side = cls === 'side-yes' ? 'yes' : 'no', cut = cutsHtml(side);
+    if(!general && !you.length && !all.length && !cut) return '';
     return '<div class="imp-box"><div class="imp-box-h ' + cls + '">' + esc(title) + '</div>' +
       (general ? '<div class="imp-gen">' + P(general) + '</div>' : '') +
       (you.length ? '<div class="imp-you"><div class="imp-you-h">' + esc(w.forYou) + '</div>' + you.map(P).join('') + '</div>' : '') +
-      (all.length ? '<div class="imp-you imp-all"><div class="imp-you-h">' + esc(w.forAll) + '</div>' + all.map(P).join('') + '</div>' : '') + '</div>';
+      (all.length ? '<div class="imp-you imp-all"><div class="imp-you-h">' + esc(w.forAll) + '</div>' + all.map(P).join('') + '</div>' : '') + cut + '</div>';
   }
   function allFor(which, fixed){
     var out = (fixed || []).slice();

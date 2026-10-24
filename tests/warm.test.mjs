@@ -51,7 +51,7 @@ test('warm-up schedules the same cache slot a visitor would', async () => {
   assert.ok(e2.jobs[1].key.startsWith('resm2:'));
   const r2 = await w.warmRun(e2, { indices: [7] });
   assert.deepEqual(r2.states.map(x => x.state), ['pending']);
-  assert.ok(e2.jobs[2].key.startsWith('impm3:') && e2.jobs[2].impact === true);
+  assert.ok(e2.jobs[2].key.startsWith('impm4:') && e2.jobs[2].impact === true);
 });
 
 test('warm-up skips cached, running and failed contests, and retries failed on request', async () => {

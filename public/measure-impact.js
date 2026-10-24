@@ -81,7 +81,7 @@
   /* ---------- wording ---------- */
   var W = {
     en: {
-      head: 'What this means for you', why: 'Why is this on the ballot?',
+      head: 'What this means for you', cuts: 'What gets cut first', why: 'Why is this on the ballot?',
       intro: 'Add a few details and we’ll lay out what YES and NO would change for someone in your situation, and what public money and services ride on it. Your answers stay on this device. Nothing is sent or saved anywhere else.',
       start: 'Add my situation', edit: 'Edit my situation', clear: 'Clear my answers', saveBtn: 'Show what it means for me', cancel: 'Cancel',
       formHead: 'Check what applies to you. Skip anything you’d rather not say.',
@@ -147,7 +147,7 @@
       }
     },
     es: {
-      head: 'Lo que significa para usted', why: '¿Por qué está esto en la boleta?',
+      head: 'Lo que significa para usted', cuts: 'Qué se recorta primero', why: '¿Por qué está esto en la boleta?',
       intro: 'Agregue algunos datos y le mostraremos lo que el SÍ y el NO cambiarían para alguien en su situación, y qué dinero y servicios públicos dependen de ello. Sus respuestas se quedan en este dispositivo. No se envían ni se guardan en ningún otro lugar.',
       start: 'Agregar mi situación', edit: 'Editar mi situación', clear: 'Borrar mis respuestas', saveBtn: 'Mostrar lo que significa para mí', cancel: 'Cancelar',
       formHead: 'Marque lo que aplica a usted. Omita lo que prefiera no decir.',
@@ -213,7 +213,7 @@
       }
     },
     ht: {
-      head: 'Sa sa vle di pou ou', why: 'Poukisa sa a sou bilten vòt la?',
+      head: 'Sa sa vle di pou ou', cuts: 'Sa yo koupe an premye', why: 'Poukisa sa a sou bilten vòt la?',
       intro: 'Ajoute kèk detay epi n ap montre w sa WI ak NON ta chanje pou yon moun nan sitiyasyon w, ak ki lajan piblik ak sèvis piblik ki depann de sa. Repons ou yo rete sou aparèy sa a. Yo pa voye yo ni sere yo okenn lòt kote.',
       start: 'Ajoute sitiyasyon m', edit: 'Chanje sitiyasyon m', clear: 'Efase repons mwen yo', saveBtn: 'Montre m sa sa vle di pou mwen', cancel: 'Anile',
       formHead: 'Make sa ki aplike pou ou. Kite sa ou pa vle di.',
@@ -328,6 +328,29 @@
     }
   };
   function sumWords(lang){ return SUM[lang] || SUM.en; }
+  // What gets cut first, only as the government or a named official has said it, with the date.
+  var CUTSRC = {
+    a3: { name: 'WLRN, Tax relief vs. government service cuts (Oct 23, 2026)', url: 'https://www.wlrn.org/the-south-florida-roundup/2026-10-23/tax-relief-vs-government-service-cuts-miami-dade-leaders-clash-over-controversial-amendment-3' }
+  };
+  var CUTS = {
+    en: { head: 'What gets cut first',
+      a3: ['Mayor Daniella Levine Cava has named shorter bus hours, cuts to transit corridors, and closing parks, fire stations and libraries (WLRN interview, October 23, 2026).'],
+      a3other: 'Commissioner Roberto J. Gonzalez, who supports it, says government has grown without better services and that public safety will be the top priority.',
+      a3status: 'As of October 24, 2026, we found no official list of cuts from the County or any city.',
+      lv: ['The teacher salary supplements the levy pays would end.', 'The School Board says it could not keep an officer at every school all day without cutting into educational programs.'] },
+    es: { head: 'Qué se recorta primero',
+      a3: ['La alcaldesa Daniella Levine Cava ha mencionado menos horas de autobús, recortes en corredores de transporte y el cierre de parques, estaciones de bomberos y bibliotecas (entrevista con WLRN, 23 de octubre de 2026).'],
+      a3other: 'El comisionado Roberto J. Gonzalez, que la apoya, dice que el gobierno ha crecido sin mejores servicios y que la seguridad pública será la prioridad.',
+      a3status: 'Al 24 de octubre de 2026 no encontramos una lista oficial de recortes del Condado ni de ninguna ciudad.',
+      lv: ['Terminarían los suplementos salariales de maestros que paga el impuesto.', 'La Junta Escolar dice que no podría mantener un oficial en cada escuela todo el día sin afectar los programas educativos.'] },
+    ht: { head: 'Sa yo koupe an premye',
+      a3: ['Majistra Daniella Levine Cava site mwens èdtan bis, koupe nan koridò transpò, ak fèmen pak, estasyon ponpye ak bibliyotèk (entèvyou WLRN, 23 oktòb 2026).'],
+      a3other: 'Komisyonè Roberto J. Gonzalez, ki sipòte l, di gouvènman an grandi san sèvis yo pa vin pi bon e sekirite piblik ap premye priyorite.',
+      a3status: 'Jiska 24 oktòb 2026, nou pa jwenn okenn lis ofisyèl koupe nan men Konte a oswa okenn vil.',
+      lv: ['Siplemantè salè pwofesè taks la peye yo ta fini.', 'Komisyon Lekòl la di li pa ta ka kenbe yon ofisye nan chak lekòl tout jounen san l pa touche pwogram edikasyon yo.'] }
+  };
+  function cutWords(lang){ return CUTS[lang] || CUTS.en; }
+
   function words(lang){ return W[lang] || W.en; }
 
   /* ---------- the calculations official numbers support ---------- */
@@ -392,6 +415,8 @@
     }
     if(has(me, 'owner_other')) out.yes.push(w.other);
     if(has(me, 'renter')) out.yes.push(w.renter);
+    var Cw = cutWords(lang);
+    out.cuts = { side: 'yes', head: Cw.head, items: Cw.a3, otherNote: Cw.a3other, statusNote: Cw.a3status, sources: [CUTSRC.a3] };
     var U = sumWords(lang);
     // yes/no: for this voter; allYes/allNo: for everyone, whether or not they use the services
     out.summary = { yes: [], no: [], allYes: [U.a3All(lang)], allNo: [U.a3AllNo] };
@@ -428,6 +453,8 @@
     }
     if(has(me, 'owner_other') && me.otherValue){ var q = me.otherValue * LEVY.mills / 1000; out.yes.push(w.payOther(q)); out.payOther = Math.round(q); paid = true; }
     if(paid){ out.yes.push(w.yes); out.no.push(w.no); out.approx = true; }
+    var Cl = cutWords(lang);
+    out.cuts = { side: 'no', head: Cl.head, items: Cl.lv, otherNote: '', statusNote: '', sources: [SRC.school] };
     var U = sumWords(lang), tot = (out.payHome || 0) + (out.payOther || 0);
     out.summary = { yes: [], no: [], allYes: [U.lvDistKeep(lang)], allNo: [U.lvDistLose(lang)] };
     if(paid){ out.summary.yes.push(U.lvKeep(tot)); out.summary.no.push(U.lvStop(tot)); }

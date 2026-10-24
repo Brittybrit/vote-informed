@@ -4282,7 +4282,8 @@ async function legacyFingerprint(pdfB64) {
 // how the measure changes things for a fixed set of circumstances (own and live in your home, rent,
 // work for the school district, 65 or older...), and what public money and services ride on it. The page
 // matches that to the answers the voter keeps on their own device. Shared cache, same spend limits.
-const IMPACT_VERSION = 3;   // 2: community-wide (second-order) effects for everyone; 3: why it is on the ballot
+const IMPACT_VERSION = 4;   // 4: what gets cut first
+const IMPACT_VERSION_NOTE = 3;   // 2: community-wide (second-order) effects for everyone; 3: why it is on the ballot
 const IMPACT_GROUPS = {
   homestead: 'owns and lives in their home (homestead exemption)',
   owner_other: 'owns property they do not live in (a rental, second home, land or a business property)',
@@ -4343,6 +4344,7 @@ function impactPrompt(p) {
     'Election: ' + p.election,
     '',
     'WHY IT IS ON THE BALLOT FIRST: find who put this measure on the ballot, the reason its sponsors gave, and the rule that requires a public vote. Use the official record (the resolution, ordinance or bill history) for who, when and the vote; attribute the reason to the sponsors; never guess at motives.',
+    'WHAT GETS CUT FIRST: if a result would take tax revenue away from a government, find what that government (its budget office, a published budget scenario, a staff memo or a named official) says it would cut or reduce first, attributed with the date. Report only what they said; never predict cuts yourself. Give the other side\'s answer on where the money could come from instead.',
     'Describe consequences, not merits. Never say whether the measure is good or bad, never recommend a vote, never use loaded words (relief, burden, giveaway, slash, gut). Say what changes, for whom, by how much, starting when, and who says so.',
     'Only state an effect that the measure text itself states or that an official or reliable source states. Attribute every estimate to its source in the sentence ("the county estimates..."). When sources disagree, give both. If official sources do not say, leave it out and mention it in unknownNote. Never invent a number.',
     'Public services (schools, transit, parks, libraries, fire, police and the rest) affect everyone whether or not they use them: never treat using a service as a circumstance; say what happens to each affected service under money and community, for every resident. ' +
@@ -4359,6 +4361,7 @@ function impactPrompt(p) {
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences, plain text in all string values (no cite tags). Keep each text field under 60 words:',
     '{',
     '  "why": {"whoNote": "who put it on the ballot and how (the Legislature by joint resolution, a citizen petition, the county commission, a city council, the school board, a charter review), with the date and the vote count where an official record gives them", "reasonNote": "the problem or goal its sponsors gave for it, attributed to them by name, plus any event that prompted it as reliable reporting describes it", "requiredNote": "why voters have to decide it rather than officials alone (for example the state constitution can only be changed by voters, a charter requires a referendum for this, state law requires voter approval for a tax levy or bonds beyond a limit), naming the rule", "sources": [0]},',
+    '  "cuts": {"side": "yes or no: the result that would take tax revenue away, else empty", "items": [ {"whatNote": "a service, program or job the government says it would cut or reduce first", "whoNote": "who said so and when (an official budget scenario, staff memo, or a named official), as the source states it", "sources": [0]} ], "otherNote": "what supporters of that result say about where the money can come from instead, attributed, else empty", "statusNote": "whether any government has published an official list of cuts; if none, say so plainly"},',
     '  "yesNote": "what changes if YES wins, plainly",',
     '  "noNote": "what happens if NO wins (what stays the same, or what ends)",',
     '  "whenNote": "when the change would take effect, else empty string",',
@@ -4393,9 +4396,14 @@ function cleanImpact(r) {
   })).filter(c => c.whatNote && (c.yesNote || c.noNote) && c.sources.length).slice(0, 4);
   const wy = r.why || {};
   const why = { whoNote: txt(wy.whoNote), reasonNote: txt(wy.reasonNote), requiredNote: txt(wy.requiredNote), sources: idx(wy.sources) };
+  const ct = r.cuts || {};
+  const cuts = { side: ct.side === 'yes' || ct.side === 'no' ? ct.side : '',
+    items: (Array.isArray(ct.items) ? ct.items : []).map(c => ({ whatNote: txt(c && c.whatNote), whoNote: txt(c && c.whoNote), sources: idx(c && c.sources) }))
+      .filter(c => c.whatNote && c.whoNote).slice(0, 6),
+    otherNote: txt(ct.otherNote), statusNote: txt(ct.statusNote) };
   const ev = r.everyone || {};
   return {
-    why, yesNote: txt(r.yesNote), noNote: txt(r.noNote), whenNote: txt(r.whenNote),
+    why, cuts, yesNote: txt(r.yesNote), noNote: txt(r.noNote), whenNote: txt(r.whenNote),
     everyone: { yesNote: txt(ev.yesNote), noNote: txt(ev.noNote) },
     groups, money, community, unknownNote: txt(r.unknownNote), sources,
     impV: IMPACT_VERSION, researchedAt: new Date().toISOString()
