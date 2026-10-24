@@ -1,0 +1,552 @@
+{
+ "checked": "2026-10-24",
+ "sources": [
+  "Miami-Dade Property Appraiser public service proxy (GetAddress, GetPropertySearchByFolio): https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx",
+  "Florida Division of Corporations (Sunbiz): https://search.sunbiz.org/Inquiry/CorporationSearch/",
+  "Coral Gables Legistar matter pages and attachments: https://coralgables.legistar.com/gateway.aspx?M=L&ID=<matterId>",
+  "Legistar Web API (matter ids, attachments): https://webapi.legistar.com/v1/coralgables/matters",
+  "scripts/data/city/coralgables/llc-owners.json (earlier Sunbiz tracing)",
+  "scripts/data/disclosures/city-coralgables.json (Lago and Castro Form 1, Sunbiz roles)"
+ ],
+ "byAction": {
+  "24-8230": {
+   "address": "1414 Galiano St",
+   "folio": "03-4108-009-3310",
+   "owner": "CREH Galiano LLC (owner 2/3/2023 to 7/2/2026; now Lucky Start South LLC)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341080093310",
+   "officers": [
+    {
+     "name": "Danielle Gonzalez",
+     "title": "P"
+    },
+    {
+     "name": "Todd Rubinstein",
+     "title": "VP"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=M230000014030&aggregateId=forl-m23000001403-9e5c0872-5328-41f7-9b05-0ae60d77cd60&searchTerm=M23000001403",
+   "applicant": "CREH Galiano, LLC (appellant)",
+   "agent": "Mario Garcia-Serra, Gunster",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=13658254&GUID=86855781-9742-4855-B0BF-187718C23266",
+   "note": "Sunbiz M23000001403: foreign LLC filed 2/1/2023, withdrawn 7/31/2026; principal c/o Greenberg Traurig, 333 SE 2nd Ave Ste 4400; officers at 6400 Granada Blvd, Coral Gables."
+  },
+  "24-8339": {
+   "address": "Kenmare St right-of-way east of Harlano St",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "City of Coral Gables Public Works Department",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=13686984&GUID=67A844C9-5B0E-4374-AD47-389E19907437",
+   "note": "Abutting owners not named in cover memo; lobbyists Tucker Gibbs, Wayne Pathman registered. Abutting parcels not traced."
+  },
+  "25-8782": {
+   "address": "950 University Dr",
+   "folio": "03-4118-005-2080",
+   "owner": "Granada Cont Presb Church Inc",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341180052080",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Granada Church (letter of agreement prepared by Compeling Solutions, Inc., 12/13/2024)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27381"
+  },
+  "25-8946": {
+   "address": "545-547 Menendez Ave",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": [
+    {
+     "name": "Jenny Ducret",
+     "title": "MGR"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L210003180940&aggregateId=flal-l21000318094-a695ce55-9c13-43d9-bf06-24a662f256d4&searchTerm=L21000318094",
+   "applicant": "Riviera Gables, LLC, 301 Almeria Ave #330 (letter signed by Jenny Ducret)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27545",
+   "note": "Property Appraiser address search finds no parcel at this number (street listing 501-541 only); owner of record not confirmed. Sunbiz: Riviera Gables, LLC L21000318094, 400 University Dr Ste 300, Coral Gables; RA Yureiba Rojas."
+  },
+  "25-8948": {
+   "address": "549-551 Menendez Ave",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": [
+    {
+     "name": "Jenny Ducret",
+     "title": "MGR"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L210003180940&aggregateId=flal-l21000318094-a695ce55-9c13-43d9-bf06-24a662f256d4&searchTerm=L21000318094",
+   "applicant": "Riviera Gables, LLC, 301 Almeria Ave #330 (letter signed by Jenny Ducret)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27547",
+   "note": "Property Appraiser address search finds no parcel at this number (street listing 501-541 only); owner of record not confirmed. Sunbiz: Riviera Gables, LLC L21000318094, 400 University Dr Ste 300, Coral Gables; RA Yureiba Rojas."
+  },
+  "25-8950": {
+   "address": "1531 Liguria Ave",
+   "folio": "03-4130-002-0961",
+   "owner": "RPG Miami LLC (owner 10/1/2021 to 2/16/2026; now Clven Gamma Theta LLC)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300020961",
+   "officers": [
+    {
+     "name": "RPG Managment, LLC",
+     "title": "Manager"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=M220000133520&aggregateId=forl-m22000013352-86f8fe21-14c6-4832-aaa1-4fdb9de34f51&searchTerm=M22000013352",
+   "applicant": "University of Miami (for a privately owned fraternity house)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27549",
+   "note": "RPG Miami, LLC M22000013352 (IN), 333 N Alabama St #220, Indianapolis."
+  },
+  "25-8967": {
+   "address": "3247 Riviera Dr",
+   "folio": "03-4118-005-0310",
+   "owner": "Jason D Hertzberg Trs / Jason D Hertzberg Trust",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341180050310",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Jason D. Hertzberg, Trust",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27566"
+  },
+  "25-8974": {
+   "address": "5877 Ponce de Leon Blvd",
+   "folio": "03-4130-009-0170",
+   "owner": "Windsor Investments / 5877 Ponce de Leon LLC (since 3/25/2015)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300090170",
+   "officers": [
+    {
+     "name": "Roland Digasbarro",
+     "title": "MGR"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L150000469780&aggregateId=flal-l15000046978-ef3aaf65-cf9c-4129-86cd-41eee941dce3&searchTerm=L15000046978",
+   "applicant": "Empire Engineering Service Corp., for owner Windsor Investments LLC",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27573",
+   "note": "Sunbiz entity is Windsor Investments (5877 Ponce de Leon), LLC, 117 Aragon Ave (same as PA mailing address)."
+  },
+  "25-8976": {
+   "address": "12850 SW 57 Ave, Pinecrest",
+   "folio": "20-5013-008-0031",
+   "owner": "John Crespo and Graciela Crespo",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=2050130080031",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Carlab Engineering, Inc., on behalf of John and Graciela Crespo",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27575"
+  },
+  "25-9293": {
+   "address": "6901 Trionfo St",
+   "folio": "03-4130-008-0260",
+   "owner": "Sergey Koteinikov and Anna Andreeva (since 5/6/2015)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300080260",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Sergey Kotelnikov (appellant)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14323638&GUID=A20BF0BD-4D3F-4943-AD1D-9C548BF58A3D"
+  },
+  "25-9355": {
+   "address": "4311 and 4225 Ponce de Leon Blvd",
+   "folio": "03-4120-017-1240",
+   "owner": "4225 Ponce Ventures LLC (since 2/11/2022)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341200171240",
+   "officers": [
+    {
+     "name": "4225 Ponce Manager, LLC",
+     "title": "Manager"
+    },
+    {
+     "name": "Constellation Real Estate, LLC",
+     "title": "Authorized Member of 4225 Ponce Manager"
+    },
+    {
+     "name": "Eduardo I. Otaola",
+     "title": "MGR of Constellation Real Estate"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L210004593930&aggregateId=flal-l21000459393-1e6248b2-43ab-49f7-b7de-bb5beea2f7c8&searchTerm=L21000459393",
+   "applicant": "4225 Ponce Venture, LLC (Developer)",
+   "agent": "Joe Jimenez, JMZ Group",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14323658&GUID=19699417-E82B-4D3F-A837-C9AAAC30157E",
+   "note": "Chain: 4225 Ponce Manager LLC L21000532130 and Constellation Real Estate LLC L19000175532, all at 95 Merrick Way Ste 518. Folio checked is 4311 Ponce only."
+  },
+  "25-9364": {
+   "address": "Biltmore Hotel west parking lot (city-owned)",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27961",
+   "note": "Operator not named in Legistar; 25-9795 names The Biltmore Hotel Limited Partnership."
+  },
+  "25-9377": {
+   "address": "4125 Santa Maria St",
+   "folio": "03-4119-001-4310",
+   "owner": "Claudio R Alvarez Trs / CNC I Trust (since 6/29/2016)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341190014310",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27974",
+   "note": "Applicant not named on Legistar page."
+  },
+  "25-9465": {
+   "address": "1154 Alfonso Ave",
+   "folio": "03-4130-008-0430",
+   "owner": "Alvaro Gazzolo and Gillian Gaggero Gazzolo (since 1999)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300080430",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Alvaro Gazzolo and Gillian Gaggero-Gazzolo",
+   "agent": "Architect Antonio E. Rodriguez, CAD Studio Architecture; lobbyist Laura Russo",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14745646&GUID=AAF8ABAF-5C60-49EC-B79D-0B3A834029A5"
+  },
+  "25-9678": {
+   "address": "1154 Alfonso Ave",
+   "folio": "03-4130-008-0430",
+   "owner": "Alvaro Gazzolo and Gillian Gaggero Gazzolo (since 1999)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300080430",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Alvaro Gazzolo and Gillian Gaggero-Gazzolo",
+   "agent": "Architect Antonio E. Rodriguez, CAD Studio Architecture; lobbyist Laura Russo",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14745646&GUID=AAF8ABAF-5C60-49EC-B79D-0B3A834029A5"
+  },
+  "25-8776": {
+   "address": "717 N Greenway Dr",
+   "folio": "03-4108-001-4040",
+   "owner": "Laurence Christian Marlin and Kathy Ann Webb Marlin (since 11/29/2018)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341080014040",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27375"
+  },
+  "25-9780": {
+   "address": "Former Biltmore golf course site / 1200 Anastasia Ave (city-owned)",
+   "folio": null,
+   "owner": "City of Coral Gables",
+   "ownerSrc": null,
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "City of Coral Gables",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28377"
+  },
+  "25-9713": {
+   "address": "627 and 635 Anastasia Ave",
+   "folio": "03-4117-008-5210; 03-4117-008-5220",
+   "owner": "The Terraces at Anastasia LLC (since 7/11/2025)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341170085210",
+   "officers": [
+    {
+     "name": "Jorge L Lopez",
+     "title": "MGR"
+    },
+    {
+     "name": "Daniel J Lopez",
+     "title": "MGR"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L250002889780&aggregateId=flal-l25000288978-c76a3737-a17f-403a-8813-e67e508e7072&searchTerm=L25000288978",
+   "applicant": "The Terraces at Anastasia, LLC",
+   "agent": "Joe Jimenez, JMZ Group",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14878980&GUID=30DC4BD8-DA3F-4D41-9859-C27ED4F88137",
+   "note": "Principal address 3750 S Dixie Hwy PH, Miami."
+  },
+  "25-9956": {
+   "address": "275 Giralda Ave Units 6A/6B",
+   "folio": "03-4108-131-0080; 03-4108-131-0090",
+   "owner": "Jacqueline Anne Julio Trs / The Jaqueline Anne Julio Trust (owner 2/11/2022 to 11/19/2025; now Robert A Parra Revocable Trust)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341081310080",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28553"
+  },
+  "25-9846": {
+   "address": "1258 Obispo Ave",
+   "folio": "03-4107-016-0260",
+   "owner": "Javier Avila and Jennifer Ruiz (since 10/2021)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341070160260",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Javier Avila and Jennifer Ruiz",
+   "agent": "Oscar A. De la Rosa, De la Rosa Law, P.A.; lobbyist Ceasar Mestre",
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=14947959&GUID=72415C5C-BAE8-4C1B-8B4B-7C14446D3D6C",
+   "note": "Hardship packet includes bids from Orion Electric, Bold Construction Specialties, Atlas Roofing, Atlas Construction Co, RCAT Appliances, DR Equipment, Red Fine Hardwood Floors."
+  },
+  "25-1238": {
+   "address": "1101 and 1201 Stanford Dr, 5185 Ponce de Leon Blvd",
+   "folio": "03-4130-015-0070",
+   "owner": "University of Miami",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300150070",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "University of Miami",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28835",
+   "note": "1201 Stanford and 5185 Ponce not found by PA address search."
+  },
+  "25-1239": {
+   "address": "1530 Liguria Ave",
+   "folio": "03-4130-002-0992",
+   "owner": "ZBTNH Alpha Omega LLC (since 3/22/2021)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300020992",
+   "officers": [
+    {
+     "name": "ZBT National Housing, Inc.",
+     "title": "Manager"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L210000335460&aggregateId=flal-l21000033546-e054d9c6-9792-44ae-95d3-8ea60e951ffe&searchTerm=L21000033546",
+   "applicant": "Great Minds Engineering, for owner ZBT National Housing",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28836"
+  },
+  "25-1217": {
+   "address": "103 Sevilla Ave / 130 Almeria Ave",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": [
+    {
+     "name": "John Federico Marquez",
+     "title": "MGR"
+    },
+    {
+     "name": "Jose Antonio Vizcarrondo",
+     "title": "MGR"
+    },
+    {
+     "name": "Juan Maroso",
+     "title": "MGR"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L150001045870&aggregateId=flal-l15000104587-3a5e5fef-d726-49f7-ae74-e45d5b5d3b4c&searchTerm=L15000104587",
+   "applicant": "Cade Capital Partners (developer)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28814",
+   "note": "Parcel owner not traced."
+  },
+  "25-9279": {
+   "address": "1150, 1190, 1250, 1320, 1350 S Dixie Hwy",
+   "folio": "03-4130-000-0025; 03-4130-000-0024; 03-4130-004-0010; 03-4130-004-0020; 03-4130-004-0021",
+   "owner": "1150: PS EP 25 LLC (bought 1/7/2026 from Dennys Inc); 1190: Mariposa Plaza LLC; 1250: University Shopping Center LLP (since 3/2015); 1320: University of Miami; 1350: 1350 S Dixie LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300040010",
+   "officers": [
+    {
+     "name": "MT Mariposa Management LLC",
+     "title": "Manager of Mariposa Plaza LLC"
+    },
+    {
+     "name": "1350 S Dixie Mezz Borrower LLC",
+     "title": "Authorized Member of 1350 S Dixie LLC"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=M160000015960&aggregateId=forl-m16000001596-0cbb98b7-eab2-4f08-8215-7b35fbceb41d&searchTerm=M16000001596",
+   "applicant": "City of Coral Gables (per PZB staff report)",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=15125019&GUID=5F5A9CF3-B25F-4031-B3E8-9225078653A9",
+   "note": "Owners for 1190 and 1350 are current PA records (sales history not checked). PS EP 25 LLC and University Shopping Center LLP not found on Sunbiz name search."
+  },
+  "26-1130": {
+   "address": "1231 Dickinson Dr",
+   "folio": "03-4130-015-0020",
+   "owner": "University of Miami",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=1231%20DICKINSON%20DR",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "University of Miami",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28993",
+   "note": "PA address search returns UM parcel with site address 5665 Ponce de Leon Blvd."
+  },
+  "26-1139": {
+   "address": "905 Hardee Rd",
+   "folio": "03-4129-026-1461",
+   "owner": "Miguel Diaz de la Portilla and Elinette Ruiz Diaz de la Portilla (since 3/21/2018)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341290261461",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Mr. Diaz de la Portilla",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29002"
+  },
+  "26-1140": {
+   "address": "110 Phoenetia Ave",
+   "folio": "03-4108-009-1840",
+   "owner": "Century Crystal Group LLC (owner 11/8/2021 to 4/6/2026; now Phoenetia Acquisition LLC)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341080091840",
+   "officers": [
+    {
+     "name": "Tatiana Pino",
+     "title": "Manager"
+    },
+    {
+     "name": "Ricardo Caporal",
+     "title": "Manager"
+    },
+    {
+     "name": "Nicolas Jaramillo",
+     "title": "Manager"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L210002711500&aggregateId=flal-l21000271150-833ee2fb-fed7-4e6e-a63f-b69896098f74&searchTerm=L21000271150",
+   "applicant": null,
+   "agent": "Lobbyist Jorge Navarro",
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29003",
+   "note": "Appellant not named on Legistar page."
+  },
+  "26-1198": {
+   "address": "5851 San Amaro Dr",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "University of Miami",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29061",
+   "note": "PA address search finds no parcel at this address."
+  },
+  "26-1144": {
+   "address": "6100 Caballero Blvd and listed lots",
+   "folio": "03-4130-006-0290",
+   "owner": "Gables Waterway Owner LLC (since 5/24/2025)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300060290",
+   "officers": [
+    {
+     "name": "Edgardo DeFortuna",
+     "title": "Authorized Representative"
+    },
+    {
+     "name": "Nelson Stabile",
+     "title": "Authorized Representative"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=M250000068140&aggregateId=forl-m25000006814-1bcd5b8c-5e9a-499a-a8a8-22b6f5e597d3&searchTerm=M25000006814",
+   "applicant": null,
+   "agent": "Lobbyist Mario Garcia-Serra",
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29007",
+   "note": "Other listed lots not traced."
+  },
+  "26-1415": {
+   "address": "1155 Blue Rd",
+   "folio": "03-4119-002-0010",
+   "owner": "Riviera Country Club of C Gables",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=1155%20BLUE%20RD",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "David Plummer & Associates, on behalf of The Riviera Country Club",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29278"
+  },
+  "24-7193": {
+   "address": "1250 S Dixie Hwy (alley in Block 156)",
+   "folio": "03-4130-004-0010",
+   "owner": "University Shopping Center LLP (since 3/9/2015)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300040010",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": "Lobbyist Laura Russo",
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25806",
+   "note": "PA mailing address 2875 NE 191 St 605, Aventura. Not found on Sunbiz by name."
+  },
+  "26-1439": {
+   "address": "290-244 Valencia Ave, 247/297 Almeria Ave, 2701 Salzedo St",
+   "folio": "03-4117-005-4010",
+   "owner": "Regency Parc LLC (2701 Salzedo)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341170054010",
+   "officers": [
+    {
+     "name": "Codina Manager, LLC",
+     "title": "Manager"
+    },
+    {
+     "name": "Armando Codina",
+     "title": "Authorized Representative"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L120000521460&aggregateId=flal-l12000052146-3da3a1d0-e5ee-4f38-8e45-21408b87fc59&searchTerm=L12000052146",
+   "applicant": null,
+   "agent": "Lobbyist Joe Jimenez",
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29302"
+  },
+  "26-1569": {
+   "address": "320 Giralda Ave",
+   "folio": null,
+   "owner": null,
+   "ownerSrc": null,
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29435",
+   "note": "Operator not named; PA address search finds no parcel at this address."
+  },
+  "26-1629": {
+   "address": "722 Aledo Ave",
+   "folio": "03-4117-004-1770",
+   "owner": "Brian Goldmeier and Nicole Gomez Goldmeier (owner 8/19/2022 to 6/8/2026; now Southern Oasis Property LLC)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341170041770",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29495",
+   "note": "Appellant not named on Legistar page."
+  },
+  "26-1755": {
+   "address": "2701 Indian Mound Trl",
+   "folio": "03-4118-002-0450",
+   "owner": "Edw A McCarthy-Archbishop (Archdiocese of Miami)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=2701%20INDIAN%20MOUND%20TRL",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Kimley-Horn and Associates, Inc., on behalf of The Archdiocese of Miami",
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29620"
+  },
+  "26-1826": {
+   "address": "720 Madeira Ave",
+   "folio": "03-4108-002-0770",
+   "owner": "Charles L Bynum (since 4/15/2026; prior owner 720 Madeira Holdings LLC 8/2024-4/2026)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341080020770",
+   "officers": [
+    {
+     "name": "Venancio I. Torre",
+     "title": "AMBR of 720 Madeira Holdings LLC"
+    },
+    {
+     "name": "Isabella Loret de Mola",
+     "title": "AMBR of 720 Madeira Holdings LLC"
+    }
+   ],
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L240002872500&aggregateId=flal-l24000287250-71a95e9e-e2e8-4d57-8b40-4af8331cb295&searchTerm=L24000287250",
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29691",
+   "note": "Applicant not named on Legistar page; application may have been filed by prior owner 720 Madeira Holdings LLC."
+  }
+ },
+ "conflicts": [],
+ "conflictCheck": "Every owner, applicant, agent and listed officer above was compared to the disclosed interests of Vince Lago (BDI Construction Co; Vicente C Lago PA; VT&C Holdings LLC; Crema Gourmet Thesis LLC; 1424 Ponce LLC; 211 Menores LLC; BDI Holdings LLC; Almeria Holdings LLC; VE Construction & Design Corp; addresses 7270 NW 12 St #200, 5200 San Amaro Dr, 1200 Brickell Ave #1480) and Melissa Castro (M.E.D. Expediters Inc; Florida Building Code Private Provider LLC; 55 Merrick Way #214). No name or address match. No Menendez disclosure is in the file, so his check is incomplete. BDI Construction and M.E.D. Expediters did not appear as contractor or expediter in any packet document read (Legistar pages for all actions above plus the applicant letters/staff reports cited); this was not a full-text search of every attachment.",
+ "notFound": "545-547 and 549-551 Menendez Ave, 5851 San Amaro Dr, 320 Giralda Ave, 1201 Stanford Dr and 5185 Ponce de Leon Blvd: no parcel returned by PA address search. 24-8339 Kenmare abutting owners not named. 25-9364 Biltmore operator not named (see 25-9795). 26-1569 daycare operator not named. Applicants not named on Legistar for 25-9377, 25-8776, 25-9956, 26-1140, 26-1629, 26-1826 (application attachments not opened). 25-1217 parcel owner not traced. PS EP 25 LLC and University Shopping Center LLP not found by Sunbiz name search (likely foreign or LLP filings under other names). 1190 and 1350 S Dixie sales history not checked."
+}

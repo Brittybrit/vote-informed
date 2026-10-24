@@ -1,0 +1,311 @@
+{
+ "checked": "2026-10-24",
+ "sources": [
+  "Miami-Dade Property Appraiser public service proxy (GetAddress, GetPropertySearchByFolio): https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx",
+  "North Miami CHAMP agenda API (tab attachment paths): https://playapi.champds.com/northmiamifl/event/<id>",
+  "North Miami agenda packet PDFs: https://play.champds.com/ATT/northmiamifl/<path>.pdf",
+  "Florida Division of Corporations (Sunbiz): https://search.sunbiz.org/Inquiry/CorporationSearch/",
+  "scripts/data/disclosures/city-northmiami.json (Estimé-Irvin, Timothé, Desulme Form 1 and Sunbiz roles)"
+ ],
+ "byAction": {
+  "2025-R-14": {
+   "address": "1905 NE 146 St",
+   "folio": "06-2221-022-0010",
+   "owner": "PS Florida One Inc (since 2/16/2023)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622210220010",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "PS Florida One, Inc. (owner); Taylor Parker, Bohler Engineering FL LLC, named applicant/agent in resolution",
+   "agent": "Brian S. Adler, Esq., Bilzin; architect O'Brian Architects",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-01/a96ea140d7f6ccc8722ccba193bf7e6e09237fa6.pdf",
+   "note": "PA mailing address 701 Western Ave, Glendale, CA."
+  },
+  "2025-R-12": {
+   "address": "12830-12840 NE 6 Ave and 575 NE 127 St",
+   "folio": "06-2230-024-0330",
+   "owner": "Nomi Holding Group 2 LLC (12830 NE 6 Ave, since 4/27/2022)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300240330",
+   "officers": null,
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L220000944920&aggregateId=flal-l22000094492-0abef6ec-4b96-42de-9988-3ba1a1a20391&searchTerm=L22000094492",
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-01/542a77493da93e2d6279c184a5aa6c9fa70033aa.pdf",
+   "note": "Packet (Tab O) could not be read; Sunbiz officers not yet read. Other two parcels not traced."
+  },
+  "2025-R-13": {
+   "address": "12000 N Bayshore Dr (Mariners Bay Condo)",
+   "folio": "06-2228-049-xxxx (46 unit folios)",
+   "owner": "12000 Property Owner LLC holds 44 of 45 units today; unit 201 bought 4/28/2025, after the 1/14/2025 vote, so ownership at the vote date was split",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280490010",
+   "officers": null,
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=M250000061560&aggregateId=forl-m25000006156-c7c22867-418f-49d1-91cb-07b0a6adcab0&searchTerm=M25000006156",
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-01/5760d8cad0c63722e1ea935bc52d0adced786aba.pdf",
+   "note": "Packet (Tab P) could not be read; 12000 Property Owner LLC is a foreign LLC (mail 49 W 23 St 4th Fl, New York); officers not yet read."
+  },
+  "2025-R-34": {
+   "address": "11950 N Bayshore Dr",
+   "folio": "06-2228-011-4490",
+   "owner": "Alta Bayshore LLC (since 2/22/2022)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280114490",
+   "officers": null,
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L220000297170&aggregateId=flal-l22000029717-0f8a349f-96d1-49ba-a927-82e08d078c69&searchTerm=L22000029717",
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-01/5803e8472d8e2be87a62758cdcc6ec041fb9e107.pdf",
+   "note": "Packet could not be read; officers not yet read. PA mailing 2950 SW 27 Ave #220."
+  },
+  "2025-R-63": {
+   "address": "11950 N Bayshore Dr",
+   "folio": "06-2228-011-4490",
+   "owner": "Alta Bayshore LLC (since 2/22/2022)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280114490",
+   "officers": null,
+   "sunbizSrc": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=DocumentNumber&directionType=Initial&searchNameOrder=L220000297170&aggregateId=flal-l22000029717-0f8a349f-96d1-49ba-a927-82e08d078c69&searchTerm=L22000029717",
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-02/c2d8b9329ee0c0a2c298cb19b0f1bf4288e86926.pdf",
+   "note": "Packet could not be read; officers not yet read. PA mailing 2950 SW 27 Ave #220."
+  },
+  "2025-R-60": {
+   "address": "12290 NE 6 Ave (also 540 NE 123 St, 12280 NE 6 Ave)",
+   "folio": "06-2230-031-0020",
+   "owner": "Botanik Venture LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=12290%20NE%206%20AVE",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Botanik Venture (per minutes)",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-02/bad913b40349528d3c8dac83a29877243124c2fd.pdf",
+   "note": "Sales history and Sunbiz not checked; packet could not be read."
+  },
+  "2025-R-61": {
+   "address": "12290 NE 6 Ave (also 540 NE 123 St, 12280 NE 6 Ave)",
+   "folio": "06-2230-031-0020",
+   "owner": "Botanik Venture LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=12290%20NE%206%20AVE",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Botanik Venture (per minutes)",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-02/a72ceae7181365d9add1e345de39b13f9bfa3de4.pdf",
+   "note": "Sales history and Sunbiz not checked; packet could not be read."
+  },
+  "2025-R-62": {
+   "address": "13300 Memorial Hwy",
+   "folio": "06-2230-000-0331",
+   "owner": "Yes Properties 13300 Memorial Inc (since 7/29/2019)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300000331",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Yes Properties 13300 Memorial, Inc., represented by Adam Kolodkin (application form lists Deon Nathan as property owner)",
+   "agent": "Adam Kolodkin",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-02/09819a0f3bff03a2e9ba1b32ff70022382432aca.pdf"
+  },
+  "2025-R-83": {
+   "address": "550 NE 127 St",
+   "folio": "06-2230-025-0030",
+   "owner": "Solutions RTS LLC (since 10/17/2024, from Cesar Augusto Castaneda and Erika Tatiana Santanilla Herrera)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300250030",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Solutions RTS LLC",
+   "agent": "Ezgi Fitos, Designology LLC; architect ATL Architecture (Danilo/Adolfo D. Lopez, AIA)",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-03/5c5f2cac3f1f4bd174e9e2042f0ab7fabdeb11cd.pdf"
+  },
+  "2026-R-49": {
+   "address": "550 NE 127 St",
+   "folio": "06-2230-025-0030",
+   "owner": "Solutions RTS LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300250030",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Ezgi Fitos (DRC letter), for owner Solutions RTS, LLC",
+   "agent": "Designology LLC with JAM Associates; ATL Architecture",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-03/68063edc89a21be5fe08fc7938092d68cb3a477f.pdf"
+  },
+  "2025-R-174": {
+   "address": "Portion of NW 120 St between NW 7 Ave and I-95",
+   "folio": "06-2125-018-0710, -0705, -0700, -1690, -0330, -0340 (abutting)",
+   "owner": "GRM Property Management LLC (abutting owner; 659 NW 120 St since 11/30/2023)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0621250180710",
+   "officers": [
+    {
+     "name": "Dr. Rudolph G. Moise",
+     "title": "Manager (as signed in request letter)"
+    }
+   ],
+   "sunbizSrc": null,
+   "applicant": "GRM Property Management, LLC (applicant and intended buyer)",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-08/9dee68badd441784a1a806ec70e9fd6c0187a454.pdf",
+   "note": "Sunbiz record not yet read; manager name is from the applicant letter in the packet."
+  },
+  "2025-R-175": {
+   "address": "1510 NW 131 St",
+   "folio": "06-2126-006-0260",
+   "owner": "Arsene Chery & W Marie",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0621260060260",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Arsene and W. Marie Chery (variance applicants/owners); appellant Robert Burden",
+   "agent": "Law Office of Ray Garcia, P.A. (Jose Novo, Esq.) for appellant",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-08/e083f6c1ca67e6b2fd9464015bae257c1f63e25a.pdf"
+  },
+  "2025-R-211": {
+   "address": "1998 NE 135 St",
+   "folio": "06-2229-008-0060; 06-2229-008-0061",
+   "owner": "Monique Joelle Benson Trs / Monique Joelle Benson Living Tr at the 10/28/2025 vote (sold 1/27/2026 to BH 26 Equity Group LLC, then 2/2/2026 to Shelton Miami Inc)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290080060",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Shelton Miami, Inc. (contact Abdullah Kirkincioglu)",
+   "agent": "Rachel A. Streitfeld, Esq., Caldera Law; architect Kobi Karp Architecture and Interior Design, Inc.",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-10/65c3e8f0f5894c299d9410b12a63a730c6d23b83.pdf"
+  },
+  "2026-R-17": {
+   "address": "1998 NE 135 St",
+   "folio": "06-2229-008-0060; 06-2229-008-0061",
+   "owner": "BH 26 Equity Group LLC on the 1/27/2026 vote date (deed recorded same day from Benson trust); Shelton Miami Inc since 2/2/2026",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290080060",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Shelton Miami, Inc.",
+   "agent": "Rachel A. Streitfeld, Esq., Caldera Law; Kobi Karp",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-01/c74f36099193494266cc21f61e4edd59fdfa36af.pdf"
+  },
+  "2025-R-226": {
+   "address": "13132 NE 9 Ave and 895 NE 131 St",
+   "folio": "06-2229-049-0400",
+   "owner": "Ziette LLC (13132 NE 9 Ave, since 1/12/2023)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290490400",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-11/936808107051dc4eaa5a848ca9a7ae6dd8bdbbd0.pdf",
+   "note": "Packet and signed resolution could not be read (scanned). PA mailing 11000 Biscayne Blvd. 895 NE 131 St not traced."
+  },
+  "2025-R-236": {
+   "address": "South of 250 NE 135 St",
+   "folio": "06-2230-086-0010",
+   "owner": "SMST 250 NE 135th St LLC (250 NE 135 St, since 9/18/2024)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300860010",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2025-12/85a309f6c9190a875c70659e73e24a40b56fc379.pdf",
+   "note": "Townhome site is south of this address; whether this folio is the site is unconfirmed. Packet could not be read."
+  },
+  "2026-R-16": {
+   "address": "Alley east of 12255 NE 16 Ave",
+   "folio": "06-2229-086-0010; 06-2229-086-0020 (abutting)",
+   "owner": "1590 NE Holding LLC (since 5/19/2025)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290860010",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "1590 NE Holding LLC (applicant and buyer)",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-01/f233367deca3c857cb73233ad51729cb1609640e.pdf",
+   "note": "Ethan Wasserman spoke at hearing (minutes); his role not stated in packet read."
+  },
+  "2026-R-31": {
+   "address": "1640 NE 127 St; 1605, 1625, 1645 NE 126 St",
+   "folio": "06-2229-007-0210, -0280, -0290, -0300, -0200 (LOI also lists -0190)",
+   "owner": "Arch Creek Apartments LLC (since 7/8/2021, from Johnson & Wales University)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290070210",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Arch Creek Apartments, LLC",
+   "agent": "Pedro Gassant, Esq., Holland & Knight LLP",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-02/c46685008432a42bf4b9a1276e30b98e773e3032.pdf"
+  },
+  "2026-R-40": {
+   "address": "Alley west of NE 17 Ave between NE 126 and 127 St",
+   "folio": "06-2229-007-0210, -0200, -0280, -0290 (abutting)",
+   "owner": "Arch Creek Apartments LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622290070210",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Arch Creek Apartments, LLC (applicant; implied buyer)",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-03/f78244cf0b6ab14b0213cc6a1d687aba3f409fde.pdf"
+  },
+  "2026-R-48": {
+   "address": "750 NE 125 St (MOCA Plaza)",
+   "folio": "06-2230-015-0010",
+   "owner": "GSP Moca Plaza LLC (since 2/26/2020)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622300150010",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "GSP MOCA PLAZA, LLC; tenant Sapori Miami by Café Crème",
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-03/b3d746307ba775985f19c06262d786c3573b6a30.pdf"
+  },
+  "2026-R-59": {
+   "address": "13840, 13860, 13890, 13910, 13950 NW 6 Ct",
+   "folio": "06-2124-002-0770 (13840)",
+   "owner": "Accessories in Fashion Inc (13840 NW 6 Ct; current record, other four parcels not checked)",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetAddress&clientAppName=PropertySearch&myUnit=&from=1&to=200&myAddress=13840%20NW%206%20CT",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": null,
+   "agent": null,
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-04/123ddcd47d1efebbea59896d6e589a28c9e8fb0c.pdf",
+   "note": "Packet could not be read; applicant unknown."
+  },
+  "northmiami-2026-04-28-tabE": {
+   "address": "1850 NE 123 St (applicant site; text applies east of NE 18 Ave and south of NE 123 St)",
+   "folio": "06-2228-001-0270",
+   "owner": "Causeway Village LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280010270",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Causeway Village, LLC n/k/a La Maison 123, LLC",
+   "agent": "Carla A. Jones, Esq.",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-04/8c387e5b11aa91ccb6b36159e87fdae72586c8cb.pdf",
+   "note": "Second-reading packets not read separately; applicant taken from first-reading Tab E/F packets."
+  },
+  "northmiami-2026-04-28-tabF": {
+   "address": "1850 NE 123 St (applicant site; text applies east of NE 18 Ave and south of NE 123 St)",
+   "folio": "06-2228-001-0270",
+   "owner": "Causeway Village LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280010270",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Causeway Village, LLC n/k/a La Maison 123, LLC",
+   "agent": "Carla A. Jones, Esq.",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-04/ca40b7d15502b6fbb1d34d521efc0591aae0b218.pdf",
+   "note": "Second-reading packets not read separately; applicant taken from first-reading Tab E/F packets."
+  },
+  "Ord. 1548": {
+   "address": "1850 NE 123 St (applicant site; text applies east of NE 18 Ave and south of NE 123 St)",
+   "folio": "06-2228-001-0270",
+   "owner": "Causeway Village LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280010270",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Causeway Village, LLC n/k/a La Maison 123, LLC",
+   "agent": "Carla A. Jones, Esq.",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-04/8c387e5b11aa91ccb6b36159e87fdae72586c8cb.pdf",
+   "note": "Second-reading packets not read separately; applicant taken from first-reading Tab E/F packets."
+  },
+  "Ord. 1549": {
+   "address": "1850 NE 123 St (applicant site; text applies east of NE 18 Ave and south of NE 123 St)",
+   "folio": "06-2228-001-0270",
+   "owner": "Causeway Village LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0622280010270",
+   "officers": null,
+   "sunbizSrc": null,
+   "applicant": "Causeway Village, LLC n/k/a La Maison 123, LLC",
+   "agent": "Carla A. Jones, Esq.",
+   "applicantSrc": "https://play.champds.com/ATT/northmiamifl/2026-04/ca40b7d15502b6fbb1d34d521efc0591aae0b218.pdf",
+   "note": "Second-reading packets not read separately; applicant taken from first-reading Tab E/F packets."
+  }
+ },
+ "conflicts": [],
+ "conflictCheck": "Owners, applicants and agents above were compared to the disclosed interests of Mary Estimé-Irvin (Estime & Irvin Consulting LLC; The Estime-Irvin Foundation; North Miami Foundation for Senior Citizens' Services; From Hand 2 Hand Corp; addresses 155 NE 131 St, 12865 W Dixie Hwy, 820 NE 125 St), Kassandra Timothé (Elevate Your Brand LLC, 950 NE 129 St; Greater North Miami Chamber of Commerce) and Alix (Pierre Frantz) Desulme (Lead To Excel USA Corp; Engage Florida Inc; International English Institute; 12794 W Dixie Hwy; liability to IMC Group, 696 NW 125 St). No name or address match. Incomplete: Sunbiz officers for most North Miami owner LLCs were not read (fetch limit), so an officer-level match cannot be ruled out.",
+ "notFound": "Stopped at the WebFetch hourly limit. Not done: Sunbiz officer records for PS Florida One, Nomi Holding Group 2, Alta Bayshore, 12000 Property Owner, Yes Properties 13300 Memorial, Solutions RTS, GRM Property Management, Shelton Miami, Ziette, SMST 250 NE 135th St, 1590 NE Holding, Arch Creek Apartments, GSP Moca Plaza, Causeway Village/La Maison 123, Botanik Venture. Packets that failed to load (client_error): 2025-R-12, 2025-R-13, 2025-R-34, 2025-R-60, 2025-R-61, 2025-R-63, 2025-R-226, 2025-R-236, 2026-R-59. 750 NE 125 St not found by PA address search (folio taken from packet). 2026-R-59 parcels 13860-13950 NW 6 Ct not checked. Resume notes in owners.progress.md."
+}

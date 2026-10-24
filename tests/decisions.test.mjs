@@ -49,7 +49,7 @@ test('every body and action is well formed', () => {
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
       }
       if (a.rollComplete && B.key !== 'county' && !a.agency) assert.ok(a.tally, id + ' complete roll needs a tally');
-      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr', 'news'].includes(l.t), id + ' link type'); }
+      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr', 'news', 'property', 'sunbiz', 'packet'].includes(l.t), id + ' link type'); }
       for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
         assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot: ' + g.to);
