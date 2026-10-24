@@ -1,0 +1,43 @@
+# s5 progress
+
+- 2026-2: A reused from stageA.jsonl
+- 2025-252: B failed (h6503c.JDC.PDF client_error x2); retry later
+- through 2025-253 done (A: 2025-249..253, 2026-2; B: all but 2025-252)
+- 2026-4: b:true judged from analysis body (no private-sector section in h0697z)
+- 2026-4: C House concurrence PDF HouseVote_h00697c1837 failed x2; retry later
+- through 2026-5 done (A,B). Next: 2026-6
+- 2026-7: C Senate PDF SenateVote_h00399e1009 failed x2; retry later
+- through 2026-9 done (A,B). Next: 2026-10
+- 2026-11: A recorded without URLs (hrefs missing, retry failed); B title-class OGSR
+- through 2026-13 done. Next: 2026-14
+- through 2026-16 done. Next: 2026-17
+- through 2026-19 done. Next: 2026-20
+- 2026-21: B failed (2026s00288.rc.PDF client_error x2); retry at end
+- through 2026-22 done. Next: 2026-23
+- through 2026-25 done. Next: 2026-26
+- through 2026-28 done. Next: 2026-29
+- 2026-30: B used .fp (latest non-pre, non-hms Senate analysis); beneficiaries are nonprofit foundations so b:false
+- through 2026-31 done. Next: 2026-32
+- 2026-32: B failed (h1113z1.CRM.PDF client_error x2); retry at end
+- 2026-34: Private Sector Impact says None, though bill grants enclave owners residential development path; flagged b:false for coordinator review
+- 2026-35 (HB 1093): A failed. Bill page showed no hrefs and no floor votes (last action 2/20/2026?? looks stale/partial); BillHistory tab client_error. Retry later
+- through 2026-34 done. Next: 2026-36
+- 2026-36: B failed (h1103z1.NRD.PDF client_error x2); retry at end
+- through 2026-37 done (A,B,C). Next: 2026-38
+- through 2026-40 done. Next: 2026-41
+- 2026-41: C House PDF HouseVote_h01137c1586 failed x2; retry at end
+- through 2026-43 done. Next: 2026-44
+- 2026-44: B failed (h0441z1.NRD.PDF client_error x2); retry at end
+- 2026-45: no private-sector section; bill shields carbon-intensive products from local fees but analysis names no business; b:false, flag for review
+- through 2026-46 done. Next: 2026-47
+- 2026-48: enacted.json maps to SB 50, but SB 50 was tabled (HB 199 substituted, and HB 199 = ch. 2026-128). Mapping suspect, B/C skipped. Coordinator: verify ch. 2026-48 on laws.flrules.org
+- through 2026-49 done. Next: 2026-50
+- through 2026-52 done. Next: 2026-53
+- 2026-54 (HB 895): bill page had no hrefs; BillHistory retry hit WebFetch HOURLY LIMIT. Stopped here.
+
+## Status at stop (WebFetch hourly limit)
+- A done: 2025-249..253, 2026-2..34, 2026-36..53 (2026-11 without URLs; 2026-48 mapping suspect). A missing: 2026-35, 2026-54..58.
+- B pending/failed: 2025-252, 2026-21, 2026-32, 2026-36, 2026-44 (analysis PDF client_error); 2026-35, 2026-48, 2026-54..58.
+- B true: 2026-4 (pharmacies vs PBMs), 2026-7 (developers), 2026-37 (RV parks), 2026-41 (alcoholic beverage distributors), 2026-50 (funeral/cemetery industry).
+- C pending: 2026-4 House concurrence (HouseVote_h00697c1837), 2026-7 Senate (SenateVote_h00399e1009), 2026-41 House (HouseVote_h01137c1586).
+- Resume: skip chapters already in s5-A/s5-B; retry the failed URLs above.

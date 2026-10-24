@@ -1,0 +1,268 @@
+{
+ "HB 655 · 2025": {
+  "tags": [
+   "insurance-other",
+   "insurance-health"
+  ],
+  "re": "PET |PET$|TRUPANION|HEALTHY PAWS|EMBRACE"
+ },
+ "HB 615 · 2025": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
+ },
+ "SB 678 · 2025": {
+  "tags": [],
+  "re": "PAWN"
+ },
+ "SB 1388 · 2025": {
+  "tags": [],
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+ },
+ "HB 429 · 2025": {
+  "tags": [
+   "autos-dealers"
+  ],
+  "not": "JM FAMILY"
+ },
+ "HB 715 · 2025": {
+  "tags": [],
+  "re": "ROOF"
+ },
+ "HB 735 · 2025": {
+  "tags": [],
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+ },
+ "SB 944 · 2025": {
+  "tags": [],
+  "re": "PSYCHOLOG"
+ },
+ "HB 1525 · 2025": {
+  "tags": [
+   "ride-hailing"
+  ],
+  "re": "UBER|LYFT"
+ },
+ "HB 903 · 2025": {
+  "tags": [
+   "private-prisons"
+  ]
+ },
+ "HB 6025 · 2025": {
+  "tags": [
+   "firearms"
+  ]
+ },
+ "SB 322 · 2025": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "COMMERCIAL REAL|SHOPPING|RETAIL PROPERT|OFFICE PROPERT|COMMERCIAL PROPERT"
+ },
+ "HB 551 · 2025": {
+  "tags": [],
+  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM"
+ },
+ "HB 733 · 2025": {
+  "tags": [],
+  "re": "BROWNFIELD|REMEDIATION|ENVIRONMENTAL CLEAN"
+ },
+ "HB 1103 · 2025": {
+  "tags": [
+   "insurance-health"
+  ]
+ },
+ "HB 633 · 2025": {
+  "tags": [],
+  "re": "BEHAVIORAL|MENTAL HEALTH|MANAGING ENTIT"
+ },
+ "HB 683 · 2025": {
+  "tags": [
+   "construction",
+   "engineering"
+  ],
+  "re": "CONSTRUCTION|CONTRACTOR|BUILDER|INSPECT|PLAN REVIEW|ENGINEER",
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|CONCRETE|ELECTRICAL|ROAD"
+ },
+ "HB 847 · 2025": {
+  "tags": [],
+  "re": " LAB|LABORATOR|GENETIC|DNA"
+ },
+ "SB 910 · 2025": {
+  "tags": [],
+  "re": "VETERAN.*CONSULT|FINGERPRINT|LIVESCAN"
+ },
+ "SB 1516 · 2025": {
+  "tags": [
+   "aerospace"
+  ]
+ },
+ "SB 1662 · 2025": {
+  "tags": [
+   "construction",
+   "cruise-maritime"
+  ],
+  "re": "FTBA|TRANSPORTATION BUILDER|ROAD|PAVING|ASPHALT|AGGREGATE|HIGHWAY|BRIDGE|SHIPBUILD|SHIPYARD",
+  "not": "CRUISE|PILOT|LONGSHORE"
+ },
+ "SB 282 · 2025": {
+  "tags": [],
+  "re": "WARRANT"
+ },
+ "SB 784 · 2025": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "SB 180 · 2025": {
+  "tags": [
+   "agriculture-other",
+   "agriculture-sugar",
+   "agriculture-citrus"
+  ],
+  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
+ },
+ "SB 2502 · 2025": {
+  "tags": [
+   "grocery",
+   "retail"
+  ],
+  "re": "PUBLIX|WALMART|7-ELEVEN|7 ELEVEN|CIRCLE K|WAWA|RACETRAC|SPEEDWAY|WINN-DIXIE|CONVENIENCE STORE"
+ },
+ "SB 2510 · 2025": {
+  "tags": [
+   "charter-schools"
+  ]
+ },
+ "SB 2514 · 2025": {
+  "tags": [
+   "health-other",
+   "hospitals"
+  ],
+  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER"
+ },
+ "HB 7031 · 2025": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel",
+   "airlines",
+   "tech-software"
+  ],
+  "re": "GULFSTREAM|TAMPA BAY DOWNS|HOMESTEAD|SPEEDWAY|BESTBET|CARDROOM|PARI-MUTUEL|PARI MUTUEL|RACING|JAI|AIRLINE|AIRWAYS|DATA CENTER",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "HB 4031 · 2025": {
+  "tags": [],
+  "re": "OVIEDO"
+ },
+ "HB 697 · 2026": {
+  "tags": [
+   "pharmacies-pbm"
+  ]
+ },
+ "HB 399 · 2026": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "SB 118 · 2026": {
+  "tags": [],
+  "re": "RV PARK|CAMPGROUND|RV RESORT"
+ },
+ "HB 1137 · 2026": {
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "DISTRIBUT|WHOLESAL|SOUTHERN GLAZER|BEVERAGE PAC",
+  "not": "PEPSI|SYSCO|COCA"
+ },
+ "SB 598 · 2026": {
+  "tags": [],
+  "re": "FUNERAL|CEMETER|MORTUAR"
+ },
+ "HB 927 · 2026": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "SB 578 · 2026": {
+  "tags": [],
+  "re": "ALZHEIMER"
+ },
+ "SB 1434 · 2026": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "HB 1175 · 2026": {
+  "tags": [
+   "physicians"
+  ]
+ },
+ "HB 167 · 2026": {
+  "tags": [],
+  "re": "PHOSPHATE|MOSAIC"
+ },
+ "SB 1030 · 2026": {
+  "tags": [],
+  "re": "RECOVERY|ADDICTION|SUBSTANCE|BEHAVIORAL|DETOX"
+ },
+ "HB 7031 · 2026": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel"
+  ],
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "SB 1028 · 2026": {
+  "tags": [
+   "insurance-property",
+   "insurance-other"
+  ],
+  "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
+  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
+ },
+ "HB 1389 · 2026": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders",
+   "affordable-housing"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "HB 4033 · 2026": {
+  "tags": [],
+  "re": "DAY CARE|DAYCARE|CHILD CARE"
+ },
+ "HB 5301-E · 2026": {
+  "tags": [
+   "hospitals",
+   "nursing-homes"
+  ],
+  "re": "HOSPITAL|NURSING|REHAB|HEALTH SYSTEM|TENET|MOUNT SINAI|TAMPA GENERAL|HSA |SAFETY NET|HEALTH RESORT|HCA"
+ },
+ "HB 7031-E · 2026": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel",
+   "agriculture-citrus"
+  ],
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM|PACKING",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ }
+}

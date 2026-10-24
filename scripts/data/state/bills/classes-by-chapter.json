@@ -1,0 +1,268 @@
+{
+ "2025-11": {
+  "tags": [
+   "insurance-other",
+   "insurance-health"
+  ],
+  "re": "PET |PET$|TRUPANION|HEALTHY PAWS|EMBRACE"
+ },
+ "2025-16": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
+ },
+ "2025-33": {
+  "tags": [],
+  "re": "PAWN"
+ },
+ "2025-35": {
+  "tags": [],
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+ },
+ "2025-41": {
+  "tags": [],
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+ },
+ "2025-38": {
+  "tags": [
+   "autos-dealers"
+  ],
+  "not": "JM FAMILY"
+ },
+ "2025-40": {
+  "tags": [],
+  "re": "ROOF"
+ },
+ "2025-45": {
+  "tags": [],
+  "re": "PSYCHOLOG"
+ },
+ "2025-66": {
+  "tags": [
+   "ride-hailing"
+  ],
+  "re": "UBER|LYFT"
+ },
+ "2025-81": {
+  "tags": [
+   "private-prisons"
+  ]
+ },
+ "2025-103": {
+  "tags": [
+   "firearms"
+  ]
+ },
+ "2025-112": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "COMMERCIAL REAL|SHOPPING|RETAIL PROPERT|OFFICE PROPERT|COMMERCIAL PROPERT"
+ },
+ "2025-115": {
+  "tags": [],
+  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM"
+ },
+ "2025-116": {
+  "tags": [],
+  "re": "BROWNFIELD|REMEDIATION|ENVIRONMENTAL CLEAN"
+ },
+ "2025-130": {
+  "tags": [
+   "insurance-health"
+  ]
+ },
+ "2025-137": {
+  "tags": [],
+  "re": "BEHAVIORAL|MENTAL HEALTH|MANAGING ENTIT"
+ },
+ "2025-140": {
+  "tags": [
+   "construction",
+   "engineering"
+  ],
+  "re": "CONSTRUCTION|CONTRACTOR|BUILDER|INSPECT|PLAN REVIEW|ENGINEER",
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|CONCRETE|ELECTRICAL|ROAD"
+ },
+ "2025-141": {
+  "tags": [],
+  "re": " LAB|LABORATOR|GENETIC|DNA"
+ },
+ "2025-150": {
+  "tags": [],
+  "re": "VETERAN.*CONSULT|FINGERPRINT|LIVESCAN"
+ },
+ "2025-154": {
+  "tags": [
+   "aerospace"
+  ]
+ },
+ "2025-155": {
+  "tags": [
+   "construction",
+   "cruise-maritime"
+  ],
+  "re": "FTBA|TRANSPORTATION BUILDER|ROAD|PAVING|ASPHALT|AGGREGATE|HIGHWAY|BRIDGE|SHIPBUILD|SHIPYARD",
+  "not": "CRUISE|PILOT|LONGSHORE"
+ },
+ "2025-160": {
+  "tags": [],
+  "re": "WARRANT"
+ },
+ "2025-164": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "2025-190": {
+  "tags": [
+   "agriculture-other",
+   "agriculture-sugar",
+   "agriculture-citrus"
+  ],
+  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
+ },
+ "2025-199": {
+  "tags": [
+   "grocery",
+   "retail"
+  ],
+  "re": "PUBLIX|WALMART|7-ELEVEN|7 ELEVEN|CIRCLE K|WAWA|RACETRAC|SPEEDWAY|WINN-DIXIE|CONVENIENCE STORE"
+ },
+ "2025-203": {
+  "tags": [
+   "charter-schools"
+  ]
+ },
+ "2025-204": {
+  "tags": [
+   "health-other",
+   "hospitals"
+  ],
+  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER"
+ },
+ "2025-208": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel",
+   "airlines",
+   "tech-software"
+  ],
+  "re": "GULFSTREAM|TAMPA BAY DOWNS|HOMESTEAD|SPEEDWAY|BESTBET|CARDROOM|PARI-MUTUEL|PARI MUTUEL|RACING|JAI|AIRLINE|AIRWAYS|DATA CENTER",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "2025-233": {
+  "tags": [],
+  "re": "OVIEDO"
+ },
+ "2026-4": {
+  "tags": [
+   "pharmacies-pbm"
+  ]
+ },
+ "2026-7": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "2026-64": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "2026-84": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "2026-179": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders",
+   "affordable-housing"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+ },
+ "2026-37": {
+  "tags": [],
+  "re": "RV PARK|CAMPGROUND|RV RESORT"
+ },
+ "2026-41": {
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "DISTRIBUT|WHOLESAL|SOUTHERN GLAZER|BEVERAGE PAC",
+  "not": "PEPSI|SYSCO|COCA"
+ },
+ "2026-89": {
+  "tags": [
+   "physicians"
+  ]
+ },
+ "2026-123": {
+  "tags": [],
+  "re": "RECOVERY|ADDICTION|SUBSTANCE|BEHAVIORAL|DETOX"
+ },
+ "2026-137": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel"
+  ],
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "2026-239": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel",
+   "agriculture-citrus"
+  ],
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM|PACKING",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "2026-150": {
+  "tags": [
+   "insurance-property",
+   "insurance-other"
+  ],
+  "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
+  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
+ },
+ "2026-236": {
+  "tags": [
+   "hospitals",
+   "nursing-homes"
+  ],
+  "re": "HOSPITAL|NURSING|REHAB|HEALTH SYSTEM|TENET|MOUNT SINAI|TAMPA GENERAL|HSA |SAFETY NET|HEALTH RESORT|HCA"
+ },
+ "2026-103": {
+  "tags": [],
+  "re": "PHOSPHATE|MOSAIC"
+ },
+ "2026-50": {
+  "tags": [],
+  "re": "FUNERAL|CEMETER|MORTUAR"
+ },
+ "2026-83": {
+  "tags": [],
+  "re": "ALZHEIMER"
+ },
+ "2026-198": {
+  "tags": [],
+  "re": "DAY CARE|DAYCARE|CHILD CARE"
+ }
+}

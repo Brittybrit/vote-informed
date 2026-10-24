@@ -35,3 +35,7 @@ Budget: about 3 fetches per bill (≈1,500 total) means at ~100/hour this needs 
   2. After ~60 page fetches with 4-6 in parallel, flsenate.gov returned HTTP 429 to every request for 25+ minutes. Next run: go serial, about 1 request every 3-5 s.
   3. flhouse.gov (myfloridahouse.gov redirects there) loaddoc.aspx serves an F5 bot-challenge page to fetch(), not the document. I didn't try to get past it.
 - Browser rule for picking the final analysis: House "h####z/z1" final analysis if present, else the latest-dated non-".pre." Senate analysis; skip House Message Summaries (.hms.).
+
+## 2026-10-24 later: resume attempt with Claude in Chrome
+- The coordinator reports flsenate.gov PDFs load again.
+- Claude in Chrome: tabs_context_mcp returned "Browser extension is not connected" on both tries. The built-in browser tools are disconnected too, so nothing was fetched in this attempt. State is the same as above (stage A 43/493, stage B 2, stage C 1).

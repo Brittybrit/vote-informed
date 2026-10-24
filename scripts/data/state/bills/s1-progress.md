@@ -1,0 +1,36 @@
+# s1 progress
+- A: 2025-1..40 copied from stageA.jsonl.
+- B shortcut (title class): 2025-3,4,5,6 (Florida Statutes), 2025-12 (trust fund re-creation), 2025-20,25,26,27 (OGSR).
+- FAIL C: 2025-11 Senate vote PDF SenateVote_h00655__052.PDF (client_error x2) - retry later.
+- B done: 2025-1,2,7,8,9,10,11(b:true),13,14,15,16(b:true). C: 2025-11 House done.
+- B done: 2025-17,18,19,21. C: 2025-16 H+S done. 2025-11 Senate PDF failed again (3rd try).
+- B done: 2025-22 (UNVERIFIED, fiscal section past text limit),23,24,28 (borderline generic positive).
+- FAIL B: 2025-30 h1447z1.CRM.PDF client_error x2 - retry later.
+- FAIL B: 2025-33 2025s00678.rc.PDF client_error x2 - retry later.
+- FAIL B: 2025-34 2025s00830.fp.PDF client_error x2 - retry later.
+- B: 2025-31,32 none; 2025-35 b:true (Clean Marina lease savings). C: 2025-35 H+S done (Garcia changed Y->N after roll call).
+- FAIL B: 2025-37 h0307e.SAC.PDF client_error x2 (no z analysis; bonuses for property appraiser employees, likely b:false) - retry later.
+- B: 2025-36 none; 2025-38 b:true (franchised auto dealers). C: 2025-38 Senate done; FAIL House PDF HouseVote_h00429c2170.PDF x2.
+- B: 2025-39 none; 2025-40 b:true (roofing contractors). C: 2025-40 H+S done. Next: stage A from 2025-41.
+- A/B 2025-41 done, b:true (marine manufacturers, Clean Marina). C: House done; FAIL Senate PDF SenateVote_h00735__016.PDF x2.
+- A/B 2025-42, 2025-43 done (b:false).
+- A 2025-44,45 done. B 2025-44 b:false (borderline insurer savings). FAIL B: 2025-45 2025s00944.rc.PDF x2.
+- A 2025-46,47 done. B 2025-46 none. FAIL B: 2025-47 2025s01514.rc.PDF x2.
+- A/B 2025-48,49 done (b:false).
+- A/B 2025-50,51 done (b:false).
+- A 2025-52,53 done; B 2025-52 none.
+- A/B 2025-53 none; 2025-54 b:true (nonprofit ag org health plans; judgment call). C: 2025-54 House done; FAIL Senate SenateVote_s00480c2006.PDF x2.
+- A/B 2025-55 none, A 2025-56 done.
+- A/B 2025-56,57 none; A 2025-58 done.
+- A/B 2025-58,59 none; A 2025-60 done.
+- A/B 2025-60,61 none; A 2025-62 done.
+- B 2025-62 none; 2025-33 b:true via AEG analysis (pawnbrokers); 2025-30 still failing (3rd try).
+- B 2025-45 b:true via HP analysis (psychologists). Still failing: 2025-34 fp+aeg, 2025-33 votes H+S.
+- B 2025-47 none (AED), 2025-37 none (WMC). C 2025-45 Senate done; FAIL House HouseVote_s00944c1288.PDF.
+
+## Status at end of run 1
+- A: 62/62 (2025-1..62). B: 61/62, only 2025-34 missing (SB 830 Migrant Vessels: fp, aeg, en analyses all client_error).
+- b:true: 2025-11 HB 655 pet insurers; 2025-16 HB 615 landlords; 2025-33 SB 678 pawnbrokers; 2025-35 SB 1388 clean-marina boat manufacturers; 2025-38 HB 429 franchised auto dealers; 2025-40 HB 715 roofing contractors; 2025-41 HB 735 marine manufacturers; 2025-45 SB 944 psychologists; 2025-54 SB 480 nonprofit ag org health plans (judgment call).
+- B read from an earlier analysis because the final one failed: 2025-30 (JDC), 2025-33 (AEG), 2025-37 (WMC), 2025-45 (HP), 2025-47 (AED). 2025-22 is unverified (fiscal section beyond the converted-text limit).
+- C missing vote PDFs (client_error after repeated retries): 2025-11 S SenateVote_h00655__052; 2025-33 H HouseVote_s00678c1305 + S SenateVote_s00678c1041; 2025-38 H HouseVote_h00429c2170; 2025-41 S SenateVote_h00735__016; 2025-45 H HouseVote_s00944c1288; 2025-54 S SenateVote_s00480c2006.
+- C done: 2025-11 H; 2025-16 H+S; 2025-35 H+S; 2025-38 S; 2025-40 H+S; 2025-41 H; 2025-45 S; 2025-54 H.
