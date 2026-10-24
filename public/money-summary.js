@@ -260,7 +260,7 @@
     if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
     if(p.kind === 'federal' || p.kind === 'state'){
       var fed = p.kind === 'federal', R = p.requests || {n: 0, money: 0}, Bl = p.bills || {votes: 0, yes: 0, money: 0};
-      if(!p.total) return fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : w.none(p, b);
+      if(!p.total) return (fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : w.none(p, b)) + (p.share && p.share.n ? '<br>' + w.share(p, p.share, b) : '');
       groups.push([w.took(p, w.whyAct(p))]);
       var from = [];
       if(R.money) from.push(w.fromReq(p, R, fed, b));
