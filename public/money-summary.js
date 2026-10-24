@@ -87,6 +87,7 @@
         var q = pair(S.tied, S.n), r = S.n - S.tied;
         var what = S.def === 'county' ? 'commission actions ' + he(p) + ' took part in that benefited a named company or group'
           : S.def === 'lobbied' ? 'items before ' + this.before(b) + ' that a registered lobbyist worked on and ' + he(p) + ' voted on'
+          : S.def === 'actions' ? 'actions of ' + this.before(b) + ' since January 2025 that benefited a named company or group, while ' + he(p) + ' held the seat'
           : S.def === 'requests' ? 'budget requests ' + he(p) + ' filed'
           : S.def === 'earmarks' ? 'earmark requests ' + he(p) + ' filed'
           : 'Cabinet items and actions of ' + his(p) + ' office that were reviewed';
@@ -162,6 +163,7 @@
         var q = pair(S.tied, S.n), r = S.n - S.tied;
         var what = S.def === 'county' ? 'actos de la comisión en que participó y que beneficiaron a una empresa o grupo con nombre'
           : S.def === 'lobbied' ? 'asuntos ante ' + this.before(b) + ' en que trabajó un cabildero registrado y que votó'
+          : S.def === 'actions' ? 'actos de ' + this.before(b) + ' desde enero de 2025 que beneficiaron a una empresa o grupo con nombre, mientras ocupaba el cargo'
           : S.def === 'requests' ? 'solicitudes de presupuesto que presentó'
           : S.def === 'earmarks' ? 'solicitudes de fondos federales para proyectos que presentó'
           : 'asuntos del Gabinete y actos de su oficina revisados';
@@ -237,6 +239,7 @@
         var q = pair(S.tied, S.n), r = S.n - S.tied;
         var what = S.def === 'county' ? 'aksyon komisyon an li te patisipe ladan yo, ki te benefisye yon konpayi oswa yon gwoup ki gen non'
           : S.def === 'lobbied' ? 'dosye devan ' + this.before(b) + ' yon lobiyis anrejistre te travay sou yo epi li te vote sou yo'
+          : S.def === 'actions' ? 'aksyon ' + this.before(b) + ' depi janvye 2025 ki te benefisye yon konpayi oswa yon gwoup ki gen non, pandan li te nan pòs la'
           : S.def === 'requests' ? 'demann bidjè li te depoze'
           : S.def === 'earmarks' ? 'demann lajan federal pou pwojè li te depoze'
           : 'dosye Kabinè ak aksyon biwo li nou revize';

@@ -37,6 +37,7 @@ function shareOf(B, key, tied) {
   if (B.type === 'requests') { pool = B.actions.filter(a => a.kind === 'request' && a.roll && a.roll[key] === 'requested'); def = B.level === 'federal' ? 'earmarks' : 'requests'; }
   else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size } : undefined; }
   else if (B.key === 'county') { pool = B.actions.filter(sat); def = 'county'; }
+  else if (B.universe && B.universe.built === 'actions') { pool = B.actions.filter(a => a.universe && sat(a)); def = 'actions'; }
   else if (DONOR_FIRST.has(B.key)) return { def: 'donorFirst' };
   else { pool = B.actions.filter(a => sat(a) && (a.lobbied || []).length); def = 'lobbied'; }
   if (!pool.length) return undefined;
