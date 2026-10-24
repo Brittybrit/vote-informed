@@ -3510,16 +3510,20 @@ function impactForm(me, w){
   h += MI.GROUPS.map(function(g){
     return '<label class="chk"><input type="checkbox" name="g" value="' + g + '"' + (MI.has(me, g) ? ' checked' : '') + '> <span>' + esc(w.g[g]) + '</span></label>';
   }).join('');
+  // Everyone: the city decides which services the County runs for them and which tax rates apply. No address needed.
+  h += '<label class="num" for="impPlace">' + esc(w.place) + '</label><select id="impPlace" style="font:inherit;font-size:14px;padding:6px 8px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);max-width:100%">' +
+      '<option value="">' + esc(w.placeNone) + '</option>' +
+      MI.places().map(function(p){ return '<option value="' + esc(p) + '"' + (me.place === p ? ' selected' : '') + '>' + esc(p === 'Unincorporated' ? w.placeUmsa : p) + '</option>'; }).join('') +
+    '</select><div class="help">' + esc(w.placeHelp) + '</div>';
+  // Owners only: the address lookup fills in property values, which renters don't need.
+  var owns = MI.has(me, 'homestead') || MI.has(me, 'owner_other');
+  h += '<div id="impAddrBox"' + (owns ? '' : ' hidden') + '>';
   var A = w.addr;
   h += '<div class="imp-sub">' + esc(A.head) + '</div><p class="help">' + esc(A.note) + '</p>' +
     '<div class="imp-actions" style="margin-top:6px"><input type="text" id="impAddr" autocomplete="street-address" placeholder="' + esc(A.street) + '">' +
     '<input type="text" id="impUnit" style="max-width:90px" placeholder="' + esc(A.unit) + '">' +
-    '<button class="btn2" type="button" id="impLook" style="margin-top:0">' + esc(A.btn) + '</button></div><div id="impLookOut" class="help" style="margin-top:6px"></div>';
+    '<button class="btn2" type="button" id="impLook" style="margin-top:0">' + esc(A.btn) + '</button></div><div id="impLookOut" class="help" style="margin-top:6px"></div></div>';
   h += '<div id="impHome"' + (MI.has(me, 'homestead') ? '' : ' hidden') + '>' +
-    '<label class="num" for="impPlace">' + esc(w.place) + '</label><select id="impPlace" style="font:inherit;font-size:14px;padding:6px 8px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);max-width:100%">' +
-      '<option value="">' + esc(w.placeNone) + '</option>' +
-      MI.places().map(function(p){ return '<option value="' + esc(p) + '"' + (me.place === p ? ' selected' : '') + '>' + esc(p === 'Unincorporated' ? w.placeUmsa : p) + '</option>'; }).join('') +
-    '</select><div class="help">' + esc(w.placeHelp) + '</div>' +
     '<label class="num" for="impHV">' + esc(w.homeValue) + '</label><input type="text" inputmode="numeric" id="impHV" value="' + esc(v(me.homeValue)) + '" placeholder="$">' +
     '<div class="help">' + esc(w.homeValueHelp) + srcLink(MI.SRC.pa.url, w.lookup) + '</div>' +
     '<label class="num" for="impNS">' + esc(w.nsTax) + '</label><input type="text" inputmode="numeric" id="impNS" value="' + esc(v(me.nsTax)) + '" placeholder="$">' +
@@ -3545,6 +3549,7 @@ function wireImpactForm(ri){
       if(other) other.checked = false;
     }
     $('impHome').hidden = !f.querySelector('input[value="homestead"]').checked;
+    $('impAddrBox').hidden = !(f.querySelector('input[value="homestead"]').checked || f.querySelector('input[value="owner_other"]').checked);
     $('impOther').hidden = !f.querySelector('input[value="owner_other"]').checked;
   });
   f.addEventListener('submit', function(e){
