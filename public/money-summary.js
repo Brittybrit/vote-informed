@@ -263,7 +263,7 @@
     if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
     if(p.kind === 'federal' || p.kind === 'state'){
       var fed = p.kind === 'federal', R = p.requests || {n: 0, money: 0}, Bl = p.bills || {votes: 0, yes: 0, money: 0};
-      if(!p.total) return (fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : w.none(p, b)) + (p.share && p.share.n ? '<br>' + w.share(p, p.share, b) : '');
+      if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + (fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : w.none(p, b));
       groups.push([w.took(p, w.whyAct(p))]);
       var from = [];
       if(R.money) from.push(w.fromReq(p, R, fed, b));
@@ -277,15 +277,18 @@
       if(fed && !R.n && p.body === 'ussenate') acts.push(w.norequests(p));
       groups.push(acts);
     } else {
-      if(!p.total) return w.none(p, b) + (p.share && p.share.n ? '<br>' + w.share(p, p.share, b) : '');
+      if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + w.none(p, b);
       groups.push([w.took(p, p.kind === 'cabinet' ? w.whyAct(p) : w.whyBody(p, b))]);
       groups.push([w.timing(p, w.whatVote)]);
       var a2 = [p.kind === 'cabinet' ? w.cabinet(p) : w.voted(p, b)];
       if(p.split) a2.push(w.split(p));
       groups.push(a2);
     }
-    if(p.share && (p.share.def === 'donorFirst' || p.share.n)) groups.push([w.share(p, p.share, b)]);
-    if(p.bills && p.bills.universe && p.bills.universe.n) groups.push([w.billShare(p, p.bills.universe, p.kind === 'federal')]);
+    // The percentages lead (Brit, Oct 24, 2026): share of actions tied to donors, then the share of laws
+    var top = [];
+    if(p.share && (p.share.def === 'donorFirst' || p.share.n)) top.push([w.share(p, p.share, b)]);
+    if(p.bills && p.bills.universe && p.bills.universe.n) top.push([w.billShare(p, p.bills.universe, p.kind === 'federal')]);
+    groups = top.concat(groups);
     return groups.filter(function(g){ return g.length; }).map(function(g){ return g.join(' '); }).join('<br>');
   }
   moneySummary.howLabel = function(lang){ return (W[lang] || W.en).how; };
