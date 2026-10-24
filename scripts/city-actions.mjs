@@ -5,59 +5,12 @@
 // a donor to an on-ballot member whose name is the party's name (company suffixes ignored).
 // Firm and lobbyist gifts are added afterwards by scripts/city-firm-gifts.mjs.
 // Run: node scripts/city-actions.mjs && node scripts/city-firm-gifts.mjs && node scripts/money-summary.mjs
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+import { writeFileSync, existsSync } from 'node:fs';
+import { P, J, norm, GENERIC, pkey, donorsFor as donorsOf, partyGifts } from './lib/city.mjs';
 
-const root = new URL('../', import.meta.url);
-const P = p => new URL(p, root);
-const J = p => JSON.parse(readFileSync(P(p)));
 const FILE = 'public/data/decisions.json';
 const d = J(FILE);
-
-const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/&/g, ' AND ').replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
-const SUFFIX = new Set(['INC', 'LLC', 'LLLP', 'LP', 'LTD', 'CORP', 'CORPORATION', 'CO', 'COMPANY', 'PA', 'PLLC', 'LLP', 'THE', 'OF', 'AND', 'A', 'P', 'L', 'C', 'INCORPORATED']);
-const GENERIC = new Set(['MIAMI', 'FLORIDA', 'DORAL', 'GROUP', 'SERVICES', 'HOLDINGS', 'DEVELOPMENT', 'PROPERTIES', 'ASSOCIATES', 'PARTNERS', 'MANAGEMENT', 'CONSTRUCTION', 'FOUNDATION', 'CITY', 'COUNTY', 'INTERNATIONAL', 'USA', 'AMERICA', 'SOUTH', 'NORTH', 'NATIONAL', 'CENTER', 'INVESTMENTS', 'ENTERPRISES']);
-// The words of a party's name that identify it. Too short or too generic to match on its own: no key.
-function pkey(name) {
-  const w = norm(String(name).replace(/\(.*?\)/g, ' ').replace(/\bd\/?b\/?a\b.*$/i, ' ')).split(' ').filter(x => x && !SUFFIX.has(x));
-  if (!w.length) return '';
-  if (w.length === 1 && (w[0].length < 5 || GENERIC.has(w[0]))) return '';
-  if (w.every(x => GENERIC.has(x))) return '';
-  return w.join(' ');
-}
-const dkey = n => norm(n).split(' ').filter(x => x && !SUFFIX.has(x)).join(' ');
-const csv = s => { const out = []; let f = '', q = false, row = []; for (let i = 0; i < s.length; i++) { const c = s[i]; if (q) { if (c === '"' && s[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; } else if (c === '"') q = true; else if (c === ',') { row.push(f); f = ''; } else if (c === '\n') { row.push(f); out.push(row); row = []; f = ''; } else if (c !== '\r') f += c; } if (f || row.length) { row.push(f); out.push(row); } return out; };
-
-// Donors for each on-ballot member: VoterFocus exports in scripts/data/city/<slug>/<acct>.csv, else the
-// hand-typed reports in public/data/city-reports.json (no occupation there).
-function donorsFor(slug, B) {
-  const out = [];
-  const dir = `scripts/data/city/${slug}/`;
-  const files = existsSync(P(dir)) ? readdirSync(P(dir)) : [];
-  for (const [key, ob] of Object.entries(B.onBallot)) for (const acct of ob.accounts) {
-    // one export per account (<acct>.csv), or one per report (<acct>_g2.csv, <acct>_g3.csv ...)
-    for (const f of files.filter(n => n === acct + '.csv' || (n.startsWith(acct + '_') && n.endsWith('.csv'))).map(n => dir + n)) {
-      const [h, ...rows] = csv(readFileSync(P(f), 'utf8'));
-      const ix = n => h.indexOf(n);
-      for (const r of rows) {
-        if (r[ix('Cont/Exp')] !== 'C' || r[ix('Amend. code')] === 'D') continue;
-        const amt = Number(r[ix('amount')]); if (!(amt > 0)) continue;
-        out.push({ to: key, acct, donor: r[ix('name')].replace(/\s+/g, ' ').trim(), amount: amt, date: r[ix('item date')], addr: r[ix('address 1')], occ: r[ix('occupation')] || '' });
-      }
-    }
-  }
-  // No export: the hand-typed treasurer's reports (rows [date, name, type, amount, note]; 'S' is the
-  // candidate's own money and a note marks a loan or refund)
-  const reports = J('public/data/city-reports.json').cities.find(c => c.city === CITY[slug]);
-  for (const [key, ob] of Object.entries(B.onBallot)) {
-    if (out.some(g => g.to === key) || !reports) continue;
-    const m = B.members.find(x => x.key === key);
-    const c = reports.candidates.find(x => x.name === (BALLOT[key] || m.name));
-    for (const r of (c && c.reports) || []) for (const x of r.rows) if (x[2] !== 'S' && !x[4] && x[3] > 0)
-      out.push({ to: key, acct: ob.accounts[0], donor: String(x[1]).replace(/\s+/g, ' ').trim(), amount: x[3], date: x[0], addr: '', occ: '' });
-  }
-  return out;
-}
-const CITY = { aventura: 'Aventura', nmb: 'North Miami Beach', northmiami: 'North Miami', sunnyisles: 'Sunny Isles Beach', southmiami: 'South Miami', pinecrest: 'Pinecrest', medley: 'Medley' };
+const donorsFor = (slug, B) => donorsOf(slug, B, BALLOT);
 
 const MAP = { coralgables: 'coralgables', doral: 'doral', aventura: 'aventura', nmb: 'nmb', northmiami: 'northmiami', hialeah: 'hialeah', southmiami: 'southmiami', pinecrest: 'pinecrest', medley: 'medley', cutlerbay: 'cutlerbay', opalocka: 'opalocka', keybiscayne: 'keybiscayne', sunnyisles: 'sunnyisles' };
 // Who held a seat on a date (public/data/roster.json), for actions whose minutes give no vote
@@ -167,12 +120,7 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
       ...(u.amount ? { amount: u.amount } : {}), links: u.url ? [{ t: 'minutes', url: u.url }] : [], universe: true
     };
     // party gifts: a donor whose name is one of the parties (to members who voted on it)
-    const keys = a.parties.map(pkey).filter(Boolean);
-    for (const g of donors) {
-      if (!(g.to in a.roll) || a.roll[g.to] == null) continue;
-      const dk = dkey(g.donor);
-      if (keys.some(k => dk === k || (k.split(' ').length >= 2 && dk.startsWith(k + ' ')))) a.gifts.push({ ...g, kind: 'party' });
-    }
+    a.gifts.push(...partyGifts(a, donors));
     if (leg && !old) {
       used.add(leg.id);
       a.gifts.push(...split(leg, a).filter(g => !a.gifts.some(x => x.donor === g.donor && x.date === g.date && x.amount === g.amount)));

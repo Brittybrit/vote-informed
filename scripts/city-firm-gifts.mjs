@@ -5,7 +5,8 @@
 // hand-transcribed treasurer's reports (public/data/city-reports.json) for Aventura and North Miami Beach,
 // which carry no occupation, so those are name matches and say so. Idempotent.
 // Run: node scripts/city-firm-gifts.mjs && node scripts/money-summary.mjs
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { donorsFor } from './lib/city.mjs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -55,6 +56,15 @@ const DON = {
   aventura: hand('Aventura', 'Howard S. Weinberg', 'Weinberg', 'weinberg'),
   nmb: [...hand('North Miami Beach', 'Jay R. Chernoff', 'Chernoff', 'chernoff'), ...hand('North Miami Beach', 'Phyllis Smith', 'Smith', 'smith')],
 };
+// Every other city list: its VoterFocus exports or hand-typed reports (scripts/lib/city.mjs)
+for (const B of d.bodies) if (!DON[B.key] && B.universe && B.universe.built === 'actions' && existsSync(P(`scripts/data/city/${B.key}/actions.json`))) {
+  const BJ = existsSync(P(`scripts/data/city/${B.key}/body.json`)) ? J(`scripts/data/city/${B.key}/body.json`) : {};
+  DON[B.key] = donorsFor(B.key, B, BJ.ballotNames || {}).map(r => ({ ...r, typ: '' }));
+}
+// Lobbyists each city's own registry or record names with their firm (scripts/data/city/<slug>/lobbyists.json)
+for (const B of d.bodies) if (existsSync(P(`scripts/data/city/${B.key}/lobbyists.json`)))
+  for (const list of Object.values(J(`scripts/data/city/${B.key}/lobbyists.json`).byAction || {})) for (const l of list || [])
+    if (l && l.firm && l.name && ['registry', 'record'].includes(l.basis)) add(l.firm, l.name, B.name && B.name.en || B.key);
 for (const k in DON) { DON[k] = DON[k].filter(r => r.amount > 0 && !SKIP.some(x => x.test(norm(r.donor)))); for (const r of DON[k]) { r.n = norm(r.donor); r.w = new Set(r.n.split(' ')); } }
 // Which firm a card lobbyist belongs to when the card does not say
 const firmOf = l => { if (l.firm) return l.firm; const [lasts, first] = parts(l.name); for (const k in roster) { const p = roster[k].get(lasts.join(' ') + '|' + first); if (p) return p.firm; } return null; };
@@ -68,7 +78,7 @@ let added = 0, total = 0; const log = [];
 for (const B of d.bodies) {
   const rows = DON[B.key]; if (!rows) continue;
   for (const a of B.actions) {
-    const have = new Set(a.gifts.map(gKey));
+    const have = new Set(a.gifts.map(gKey)); const n0 = a.gifts.length;
     const push = g => { if (!(g.to in (a.roll || {})) || have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${B.key} ${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist} ${g.why ? '(' + g.why.en + ')' : ''}`); };
     for (const l of a.lobbied || []) {
       const firm = firmOf(l); const fk = firm ? fkey(firm) : '';
@@ -86,7 +96,7 @@ for (const B of d.bodies) {
           push({ to: r.to, acct: r.acct, kind: 'firm', rel: 'firmlob', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, firmName: firm, why: NOTE(p.name, p.src, p.firm, r.hand, r.occ) });
       }
     }
-    a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
+    if (a.gifts.length !== n0) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
