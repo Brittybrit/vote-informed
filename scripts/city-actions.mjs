@@ -64,11 +64,14 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   const prior = new Map(B.actions.map(a => [a.id, a]));
   const donors = donorsFor(slug, B);
   const used = new Set();
+  // Ids must be unique across every body: prefix bare file numbers with the city's prefix
+  const PFX = { coralgables: 'cg-' }[slug] || slug + '-';
+  for (const u of U.actions) if (!String(u.id).startsWith(PFX) && !String(u.id).startsWith(slug)) { u.bareId = u.id; u.id = PFX + u.id; }
   const actions = U.actions.map(u => {
-    const old = prior.get(u.id);
-    if (old) { used.add(u.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true; return old; }
+    const old = prior.get(u.id) || (u.prevId && prior.get(u.prevId));
+    if (old) { used.add(old.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true; return old; }
     const a = {
-      id: u.id, date: u.date, ref: u.ref || '', kind: KIND[u.kind] || u.kind, subject: { en: u.title, ...(TR[u.id] || {}) }, parties: u.parties || [],
+      id: u.id, date: u.date, ref: u.ref || '', kind: KIND[u.kind] || u.kind, subject: { en: u.title, ...(TR[u.bareId || u.id] || TR[u.id] || {}) }, parties: u.parties || [],
       result: u.result || 'adopted', tally: u.tally || null, roll: u.roll || {}, rollComplete: !!u.roll && Object.keys(u.roll).length > 0,
       ...(u.consent != null ? { consent: u.consent } : {}), mover: u.mover || '', second: u.second || '', lobbied: [], namedLobbyist: '', gifts: [],
       ...(u.amount ? { amount: u.amount } : {}), links: u.url ? [{ t: 'minutes', url: u.url }] : [], universe: true

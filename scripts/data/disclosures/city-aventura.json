@@ -1,0 +1,96 @@
+{
+ "body": "city-aventura",
+ "rosterBody": "city-aventura",
+ "checked": "2026-10-23",
+ "officials": [
+  {
+   "person": "howard-s-weinberg",
+   "office": "city-aventura-mayor",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-06-01",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1075436",
+     "assets": [
+      {
+       "name": "Bank account",
+       "kind": "other"
+      },
+      {
+       "name": "401K, Hotwire Communications",
+       "kind": "securities"
+      }
+     ],
+     "incomeSources": [
+      {
+       "source": "Hotwire Communications, 2100 W Cypress Creek Rd, Fort Lauderdale (fiber optics)",
+       "kind": "employer"
+      },
+      {
+       "source": "Howard S Weinberg PA, 3370 NE 190th St #1414, Aventura (law)",
+       "kind": "business"
+      },
+      {
+       "source": "ASW3, 3370 NE 190th St #1414, Aventura (investment)",
+       "kind": "business"
+      }
+     ],
+     "liabilities": [
+      {
+       "creditor": "Warren Henry, North Miami"
+      }
+     ],
+     "businesses": [
+      {
+       "name": "Hotwire Communications",
+       "role": "employee",
+       "nature": "fiber optics / telecom provider"
+      },
+      {
+       "name": "Howard S Weinberg PA",
+       "role": "owner",
+       "nature": "law"
+      },
+      {
+       "name": "ASW3",
+       "role": "owner",
+       "nature": "investment"
+      }
+     ],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/55413"
+    }
+   ],
+   "sunbiz": [
+    {
+     "entity": "HOWARD S. WEINBERG, P.A.",
+     "docNumber": "P93000053912",
+     "role": "DPTS; registered agent",
+     "status": "ACTIVE (filed 1993-07-28; 2026 annual report filed 2026-02-12)",
+     "address": "3370 NE 190 St Suite 1414, Aventura, FL 33180",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domp-p93000053912-a9900bce-585f-48f7-806a-963ad4692511"
+    },
+    {
+     "entity": "ASW3 LLC",
+     "docNumber": "L23000313992",
+     "role": "MGR; registered agent",
+     "status": "ACTIVE (filed 2023-07-05; 2026 annual report filed 2026-02-12)",
+     "address": "3370 NE 190th St #1414, Aventura, FL 33180",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=flal-l23000313992-e288969a-5412-477c-b621-2ecf28db2a19"
+    }
+   ],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "2025 Form 1 filed 2026-06-01. Hotwire Communications is a telecom/fiber provider that contracts with condominium associations; any City item touching Hotwire or competing providers is a flag. Sunbiz: older Larkspur entities (inactive) list a Howard Weinberg at 10800 Biscayne Blvd; not recorded. Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  }
+ ],
+ "rules": {
+  "conflictOrdinance": "Miami-Dade County Code Sec. 2-11.1 (Conflict of Interest and Code of Ethics Ordinance) applies to municipal officials in the County: https://library.municode.com/fl/miami_-_dade_county/codes/code_of_ordinances?nodeId=PTIIICOOR_CH2AD_ARTIINGE_S2-11.1COINCOET ; F.S. ch. 112 part III (Code of Ethics for Public Officers and Employees).",
+  "abstentionRule": "F.S. 112.3143(3): a municipal officer may not vote on a measure inuring to the special private gain or loss of the officer, a principal, a relative or a business associate; must state the interest before the vote and file Form 8B within 15 days with the person recording the minutes. https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0112/Sections/0112.3143.html",
+  "ethicsBody": "Miami-Dade Commission on Ethics and Public Trust (https://ethics.miamidade.gov/) and Florida Commission on Ethics (https://ethics.state.fl.us/)."
+ },
+ "notes": "Municipal elected officials filed CE Form 1 for 2025 (enforcement of SB 774's move to Form 6 is enjoined for municipal officials in Loper v. Lukis, S.D. Fla. No. 1:24-cv-20604). Form 1 reports sources and categories, not dollar values. Forms read 2026-10-23 from Florida COE EFDMS through its public JSON endpoints (/api/PublicFiling/SearchPublicFilers and /api/PublicFiling/SearchFilingHistory) and the filing PDFs (/Report/GetFormContent?filingId=<id>, viewable at /Report/PrintForm/?filingId=<id>). Sunbiz: officer/registered-agent searches by name on search.sunbiz.org; rows marked 'name and filed address match' share a business address printed on the official's own form. Home addresses are not recorded."
+}

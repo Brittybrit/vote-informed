@@ -1,0 +1,98 @@
+{
+ "body": "city-north-miami-beach",
+ "rosterBody": "city-north-miami-beach",
+ "checked": "2026-10-23",
+ "officials": [
+  {
+   "person": "jay-r-chernoff",
+   "office": "city-north-miami-beach-group-2",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-06-22",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1097673",
+     "assets": [],
+     "incomeSources": [
+      {
+       "source": "Social Security (retirement income)",
+       "kind": "other"
+      }
+     ],
+     "liabilities": [],
+     "businesses": [],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/501823"
+    }
+   ],
+   "sunbiz": [],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "2025 Form 1 filed 2026-06-22 (candidate for Commissioner Seat 2). Only Social Security listed as primary income; City of North Miami Beach entered under secondary sources. No business interests. Sunbiz: only inactive entities (Jay R. Chernoff, P.A. P99000102024, dissolved 2009; Jay Chernoff, P.A.; Marbin & Chernoff Realty, Inc.; Sunny Isles Beach Chamber of Commerce); none active. Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  },
+  {
+   "person": "phyllis-smith",
+   "office": "city-north-miami-beach-group-6",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-06-30",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1106076",
+     "assets": [
+      {
+       "name": "Real property, 11618 NW 7 Avenue, Miami, FL 33168 (described as 'Family Business')",
+       "kind": "real property"
+      },
+      {
+       "name": "Cemetery plots, 10301 NW 25 Street, Miami",
+       "kind": "real property"
+      },
+      {
+       "name": "Stocks, Merrill Lynch",
+       "kind": "securities"
+      },
+      {
+       "name": "IRAs, bank",
+       "kind": "securities"
+      }
+     ],
+     "incomeSources": [
+      {
+       "source": "Real estate broker associate, real estate brokerage firm at 18205 Biscayne Blvd Suite 2205, Aventura, FL 33160 (firm name not stated)",
+       "kind": "employer"
+      },
+      {
+       "source": "Social Security",
+       "kind": "other"
+      },
+      {
+       "source": "City of North Miami Beach (commissioner)",
+       "kind": "employer"
+      }
+     ],
+     "liabilities": [],
+     "businesses": [
+      {
+       "name": "Real estate brokerage at 18205 Biscayne Blvd Suite 2205, Aventura (firm not named)",
+       "role": "employee",
+       "nature": "broker associate"
+      }
+     ],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/52534"
+    }
+   ],
+   "sunbiz": [],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "2025 Form 1 filed 2026-06-30. Brokerage firm name not given on the form; property at 11618 NW 7 Ave is described as 'Family Business' without naming the business. Sunbiz: 40 'Smith, Phyllis' entities statewide; none at an address on her form, none recorded (too common a name to list name-only hits). Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  }
+ ],
+ "rules": {
+  "conflictOrdinance": "Miami-Dade County Code Sec. 2-11.1 (Conflict of Interest and Code of Ethics Ordinance) applies to municipal officials in the County: https://library.municode.com/fl/miami_-_dade_county/codes/code_of_ordinances?nodeId=PTIIICOOR_CH2AD_ARTIINGE_S2-11.1COINCOET ; F.S. ch. 112 part III (Code of Ethics for Public Officers and Employees).",
+  "abstentionRule": "F.S. 112.3143(3): a municipal officer may not vote on a measure inuring to the special private gain or loss of the officer, a principal, a relative or a business associate; must state the interest before the vote and file Form 8B within 15 days with the person recording the minutes. https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0112/Sections/0112.3143.html",
+  "ethicsBody": "Miami-Dade Commission on Ethics and Public Trust (https://ethics.miamidade.gov/) and Florida Commission on Ethics (https://ethics.state.fl.us/)."
+ },
+ "notes": "Municipal elected officials filed CE Form 1 for 2025 (enforcement of SB 774's move to Form 6 is enjoined for municipal officials in Loper v. Lukis, S.D. Fla. No. 1:24-cv-20604). Form 1 reports sources and categories, not dollar values. Forms read 2026-10-23 from Florida COE EFDMS through its public JSON endpoints (/api/PublicFiling/SearchPublicFilers and /api/PublicFiling/SearchFilingHistory) and the filing PDFs (/Report/GetFormContent?filingId=<id>, viewable at /Report/PrintForm/?filingId=<id>). Sunbiz: officer/registered-agent searches by name on search.sunbiz.org; rows marked 'name and filed address match' share a business address printed on the official's own form. Home addresses are not recorded."
+}

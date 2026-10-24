@@ -1,0 +1,69 @@
+{
+ "body": "city-doral",
+ "rosterBody": "city-doral",
+ "checked": "2026-10-23",
+ "officials": [
+  {
+   "person": "maureen-porras",
+   "office": "city-doral-seat-2",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-06-01",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1079507",
+     "assets": [
+      {
+       "name": "Bank account, Bank of America",
+       "kind": "other"
+      },
+      {
+       "name": "IRA, Janney Montgomery Scott",
+       "kind": "securities"
+      }
+     ],
+     "incomeSources": [
+      {
+       "source": "'Legal Counsel', 4370 NW 107 Ave #104, Doral, FL 33178 (legal representation)",
+       "kind": "business"
+      },
+      {
+       "source": "City of Doral (councilwoman)",
+       "kind": "employer"
+      }
+     ],
+     "liabilities": [],
+     "businesses": [
+      {
+       "name": "Law practice at 4370 NW 107 Ave #104, Doral (name filed only as 'Legal Counsel')",
+       "role": "owner",
+       "nature": "legal representation"
+      }
+     ],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/500140"
+    }
+   ],
+   "sunbiz": [
+    {
+     "entity": "IMMIGRATION DEFENSE BAR ASSOCIATION, INC.",
+     "docNumber": "N21000006955",
+     "role": "D (director)",
+     "status": "ACTIVE (filed 2021-05-21; 2026 annual report filed 2026-04-29)",
+     "address": "2828 Coral Way, Suite 540, Miami, FL 33145",
+     "basis": "name only",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domnp-n21000006955-d9a8615f-4ac0-4fcb-9615-35477e12243e"
+    }
+   ],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "2025 Form 1 filed 2026-06-01 (also her candidate filing for Doral Council Seat 2). The law practice is listed by description only, not by entity name. Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  }
+ ],
+ "rules": {
+  "conflictOrdinance": "Miami-Dade County Code Sec. 2-11.1 (Conflict of Interest and Code of Ethics Ordinance) applies to municipal officials in the County: https://library.municode.com/fl/miami_-_dade_county/codes/code_of_ordinances?nodeId=PTIIICOOR_CH2AD_ARTIINGE_S2-11.1COINCOET ; F.S. ch. 112 part III (Code of Ethics for Public Officers and Employees).",
+  "abstentionRule": "F.S. 112.3143(3): a municipal officer may not vote on a measure inuring to the special private gain or loss of the officer, a principal, a relative or a business associate; must state the interest before the vote and file Form 8B within 15 days with the person recording the minutes. https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0112/Sections/0112.3143.html",
+  "ethicsBody": "Miami-Dade Commission on Ethics and Public Trust (https://ethics.miamidade.gov/) and Florida Commission on Ethics (https://ethics.state.fl.us/)."
+ },
+ "notes": "Municipal elected officials filed CE Form 1 for 2025 (enforcement of SB 774's move to Form 6 is enjoined for municipal officials in Loper v. Lukis, S.D. Fla. No. 1:24-cv-20604). Form 1 reports sources and categories, not dollar values. Forms read 2026-10-23 from Florida COE EFDMS through its public JSON endpoints (/api/PublicFiling/SearchPublicFilers and /api/PublicFiling/SearchFilingHistory) and the filing PDFs (/Report/GetFormContent?filingId=<id>, viewable at /Report/PrintForm/?filingId=<id>). Sunbiz: officer/registered-agent searches by name on search.sunbiz.org; rows marked 'name and filed address match' share a business address printed on the official's own form. Home addresses are not recorded."
+}

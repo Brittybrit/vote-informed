@@ -1,0 +1,104 @@
+{
+ "body": "city-pinecrest",
+ "rosterBody": "city-pinecrest",
+ "checked": "2026-10-23",
+ "officials": [
+  {
+   "person": "ken-fairman",
+   "office": "city-pinecrest-seat-4",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-06-02",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1081214",
+     "assets": [
+      {
+       "name": "Real property, Hutchinson Island, FL (address omitted)",
+       "kind": "real property"
+      },
+      {
+       "name": "Savings and checking accounts, TD Bank",
+       "kind": "other"
+      },
+      {
+       "name": "Stocks and bonds, Charles Schwab",
+       "kind": "securities"
+      }
+     ],
+     "incomeSources": [
+      {
+       "source": "Florida Pavement Services, Inc., 10901 SW 60 Avenue, Pinecrest FL 33156 (paving contractor)",
+       "kind": "business"
+      },
+      {
+       "source": "Charles Schwab (financial services)",
+       "kind": "other"
+      },
+      {
+       "source": "TD Bank (banking)",
+       "kind": "other"
+      }
+     ],
+     "liabilities": [],
+     "businesses": [
+      {
+       "name": "Florida Pavement Services, Inc.",
+       "role": "owner",
+       "nature": "paving contractor, 10901 SW 60 Ave, Pinecrest; major customers listed: Publix Supermarkets; CenterPoint Properties (commercial property management)"
+      }
+     ],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/46082"
+    }
+   ],
+   "sunbiz": [
+    {
+     "entity": "FLORIDA PAVEMENT SERVICES, INC.",
+     "docNumber": "P12000067371",
+     "role": "President (Kenneth J. Fairman)",
+     "status": "ACTIVE (filed 2012-08-03; 2026 annual report filed 2026-03-30)",
+     "address": "10901 SW 60th Ave, Pinecrest, FL 33156",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domp-p12000067371-71df4f00-af7e-4935-a484-e619c02f733b"
+    },
+    {
+     "entity": "TREEMENDOUS MIAMI, INC.",
+     "docNumber": "N99000000399",
+     "role": "President (officer address 10901 SW 60 Ave)",
+     "status": "ACTIVE (2026 annual report filed 2026-03-09)",
+     "address": "10665 SW 62 Avenue, Miami, FL 33156",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domnp-n99000000399-9db56ac0-fd03-4e87-b4d7-ba280e05b1c1"
+    },
+    {
+     "entity": "FRIENDS OF PINECREST GARDENS, INC.",
+     "docNumber": "N20000009544",
+     "role": "Director",
+     "status": "ACTIVE (filed 2020-08-04; 2026 annual report filed 2026-04-01)",
+     "address": "12645 Pinecrest Parkway, Pinecrest, FL 33156",
+     "basis": "name only",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domnp-n20000009544-8f79ea2e-92c5-4f61-a929-7c40c6dcaa1a"
+    },
+    {
+     "entity": "MIRACLE LEAGUE OF MIAMI-DADE INC.",
+     "docNumber": "N10000005016",
+     "role": "Director of Baseball Operations",
+     "status": "ACTIVE (2026 annual report filed 2026-02-18)",
+     "address": "8300 SW 164th Terrace, Palmetto Bay, FL 33157",
+     "basis": "name only",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domnp-n10000005016-c9811550-cad1-41ce-8896-4767a53a8422"
+    }
+   ],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "2025 Form 1 filed 2026-06-02. Secondary sources: Florida Pavement Services' major customers are Publix Supermarkets (Lakeland) and CenterPoint Properties (Fort Lauderdale). Any Village paving contract or Publix/CenterPoint matter is a flag. Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  }
+ ],
+ "rules": {
+  "conflictOrdinance": "Miami-Dade County Code Sec. 2-11.1 (Conflict of Interest and Code of Ethics Ordinance) applies to municipal officials in the County: https://library.municode.com/fl/miami_-_dade_county/codes/code_of_ordinances?nodeId=PTIIICOOR_CH2AD_ARTIINGE_S2-11.1COINCOET ; F.S. ch. 112 part III (Code of Ethics for Public Officers and Employees).",
+  "abstentionRule": "F.S. 112.3143(3): a municipal officer may not vote on a measure inuring to the special private gain or loss of the officer, a principal, a relative or a business associate; must state the interest before the vote and file Form 8B within 15 days with the person recording the minutes. https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0112/Sections/0112.3143.html",
+  "ethicsBody": "Miami-Dade Commission on Ethics and Public Trust (https://ethics.miamidade.gov/) and Florida Commission on Ethics (https://ethics.state.fl.us/)."
+ },
+ "notes": "Municipal elected officials filed CE Form 1 for 2025 (enforcement of SB 774's move to Form 6 is enjoined for municipal officials in Loper v. Lukis, S.D. Fla. No. 1:24-cv-20604). Form 1 reports sources and categories, not dollar values. Forms read 2026-10-23 from Florida COE EFDMS through its public JSON endpoints (/api/PublicFiling/SearchPublicFilers and /api/PublicFiling/SearchFilingHistory) and the filing PDFs (/Report/GetFormContent?filingId=<id>, viewable at /Report/PrintForm/?filingId=<id>). Sunbiz: officer/registered-agent searches by name on search.sunbiz.org; rows marked 'name and filed address match' share a business address printed on the official's own form. Home addresses are not recorded."
+}

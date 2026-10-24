@@ -1,0 +1,98 @@
+{
+ "body": "city-hialeah",
+ "rosterBody": "city-hialeah",
+ "checked": "2026-10-23",
+ "officials": [
+  {
+   "person": "luis-gonzalez",
+   "office": "city-hialeah-group-2",
+   "forms": [
+    {
+     "type": "Form 1",
+     "year": 2025,
+     "filed": "2026-07-15",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1063058",
+     "assets": [
+      {
+       "name": "Real property: 2129, 2131, 2133 and 2135 West 60 Street, Hialeah, FL 33016",
+       "kind": "real property"
+      },
+      {
+       "name": "Real property: three parcels in Cape Coral, FL (1401 Everest Park Way; 1417 SE 28 Terrace; 2214 SE 14 Terrace)",
+       "kind": "real property"
+      },
+      {
+       "name": "Real property: one other Hialeah parcel (address omitted)",
+       "kind": "real property"
+      },
+      {
+       "name": "Bank account, Vital Graphics and Signs, Inc.",
+       "kind": "business interest"
+      },
+      {
+       "name": "Bank account, Santa Fe Family, Inc.",
+       "kind": "business interest"
+      }
+     ],
+     "incomeSources": [
+      {
+       "source": "Vital Graphics, 2131 West 60th Street (printing)",
+       "kind": "business"
+      }
+     ],
+     "liabilities": [
+      {
+       "creditor": "Ocean Bank"
+      },
+      {
+       "creditor": "Shellpoint Mortgage"
+      }
+     ],
+     "businesses": [
+      {
+       "name": "Vital Graphics and Signs, Inc.",
+       "role": "owner",
+       "nature": "printing, 2131 West 60th Street, Hialeah"
+      },
+      {
+       "name": "Santa Fe Family, Inc.",
+       "role": "owner",
+       "nature": "entity whose bank account is listed as an asset; activity not stated"
+      }
+     ],
+     "source": "Florida Commission on Ethics EFDMS, CE Form 1 (Statement of Financial Interests), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/45929"
+    }
+   ],
+   "sunbiz": [
+    {
+     "entity": "VITAL GRAPHICS AND SIGNS INC.",
+     "docNumber": "P12000000923",
+     "role": "P (president); registered agent",
+     "status": "ACTIVE (filed 2012-01-04)",
+     "address": "2131 West 60 St, Hialeah, FL 33016",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domp-p12000000923-d8c78c6f-9b14-42b8-9092-91101cd49be0"
+    },
+    {
+     "entity": "SANTA FE FAMILY, INC.",
+     "docNumber": "P05000042297",
+     "role": "PS (president/secretary)",
+     "status": "ACTIVE (filed 2005-03-21)",
+     "address": "2131 West 60 Street, Hialeah, FL 33016",
+     "basis": "name and filed address match",
+     "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=X&aggregateId=domp-p05000042297-732f4fa8-bd30-4a9e-a045-1731884121d6"
+    }
+   ],
+   "abstentions": [],
+   "ethicsMatters": [],
+   "relatives": [],
+   "notes": "Filed as Luis Enrique Gonzalez, Acting Council Member Group II and candidate. 2025 Form 1 filed 2026-07-15. His prior filings stop at 2016 (earlier council service), so this is his first form since returning. EFDMS lists several other Luis Gonzalez filers; this one is identified by the Hialeah City Council organization. Sunbiz: the form names Vital Graphics and Santa Fe Family, Inc.; both are at 2131 West 60 Street (a property on his form). Over 50 other 'Gonzalez, Luis E' entities statewide were not recorded. Form 8B memoranda and abstentions in minutes were not searched in this pass."
+  }
+ ],
+ "rules": {
+  "conflictOrdinance": "Miami-Dade County Code Sec. 2-11.1 (Conflict of Interest and Code of Ethics Ordinance) applies to municipal officials in the County: https://library.municode.com/fl/miami_-_dade_county/codes/code_of_ordinances?nodeId=PTIIICOOR_CH2AD_ARTIINGE_S2-11.1COINCOET ; F.S. ch. 112 part III (Code of Ethics for Public Officers and Employees).",
+  "abstentionRule": "F.S. 112.3143(3): a municipal officer may not vote on a measure inuring to the special private gain or loss of the officer, a principal, a relative or a business associate; must state the interest before the vote and file Form 8B within 15 days with the person recording the minutes. https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0100-0199/0112/Sections/0112.3143.html",
+  "ethicsBody": "Miami-Dade Commission on Ethics and Public Trust (https://ethics.miamidade.gov/) and Florida Commission on Ethics (https://ethics.state.fl.us/)."
+ },
+ "notes": "Municipal elected officials filed CE Form 1 for 2025 (enforcement of SB 774's move to Form 6 is enjoined for municipal officials in Loper v. Lukis, S.D. Fla. No. 1:24-cv-20604). Form 1 reports sources and categories, not dollar values. Forms read 2026-10-23 from Florida COE EFDMS through its public JSON endpoints (/api/PublicFiling/SearchPublicFilers and /api/PublicFiling/SearchFilingHistory) and the filing PDFs (/Report/GetFormContent?filingId=<id>, viewable at /Report/PrintForm/?filingId=<id>). Sunbiz: officer/registered-agent searches by name on search.sunbiz.org; rows marked 'name and filed address match' share a business address printed on the official's own form. Home addresses are not recorded."
+}

@@ -1,0 +1,4708 @@
+{
+ "city": "North Miami",
+ "body": "northmiami",
+ "window": [
+  "2025-01-01",
+  "2026-10-13"
+ ],
+ "sources": [
+  "CHAMP meeting portal agendas and attachments: https://playapi.champds.com/northmiamifl/event/<id> and https://play.champds.com/northmiamifl/event/<id>",
+  "Summary minutes PDFs (posted as Tab A attachments of the following meeting) on play.champds.com/ATT/northmiamifl/",
+  "Signed resolutions index: https://www.northmiamifl.gov/321/Resolutions (2026-R-1 to 2026-R-121, 2025-R-217 to 2025-R-236 linked)",
+  "public/data/decisions.json body \"northmiami\" (legacy ids kept as legacyId)"
+ ],
+ "method": "Every council meeting from 2025-01-14 to 2026-10-13 was read from its summary minutes. Every numbered item was screened; kept items that name or benefit a private party (contracts, purchases, bid waivers, piggybacks, zoning/site plans, leases, land sales, grants, settlements, union contracts, agreements with named private organizations). Excluded proclamations, recognitions, street designations, appointments, budgets/millage, internal staffing, and items whose only parties are governments. Rolls come from the minutes: roll-call absences and named no votes; \"unknown\" means the recorded tally does not match the members present and the minutes do not say who did not vote. Donors were not consulted.",
+ "meetings": [
+  {
+   "date": "2025-01-14",
+   "url": "https://play.champds.com/northmiamifl/event/522",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf"
+  },
+  {
+   "date": "2025-01-28",
+   "url": "https://play.champds.com/northmiamifl/event/523",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf"
+  },
+  {
+   "date": "2025-02-25",
+   "url": "https://play.champds.com/northmiamifl/event/526",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf"
+  },
+  {
+   "date": "2025-03-11",
+   "url": "https://play.champds.com/northmiamifl/event/529",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf"
+  },
+  {
+   "date": "2025-03-25",
+   "url": "https://play.champds.com/northmiamifl/event/532",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/8d8a99226766c2f8ed8a6a5a3eacd2ec8733d9ab.pdf"
+  },
+  {
+   "date": "2025-04-07",
+   "url": "https://play.champds.com/northmiamifl/event/535",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf"
+  },
+  {
+   "date": "2025-04-22",
+   "url": "https://play.champds.com/northmiamifl/event/536",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf"
+  },
+  {
+   "date": "2025-05-13",
+   "url": "https://play.champds.com/northmiamifl/event/540",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf"
+  },
+  {
+   "date": "2025-05-27",
+   "url": "https://play.champds.com/northmiamifl/event/542",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf"
+  },
+  {
+   "date": "2025-06-10",
+   "url": "https://play.champds.com/northmiamifl/event/543",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-06/6dcc19983ca534744b4dab71afc2d07275217beb.pdf"
+  },
+  {
+   "date": "2025-06-24",
+   "url": "https://play.champds.com/northmiamifl/event/545",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf"
+  },
+  {
+   "date": "2025-07-08",
+   "url": "https://play.champds.com/northmiamifl/event/547",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf"
+  },
+  {
+   "date": "2025-08-26",
+   "url": "https://play.champds.com/northmiamifl/event/552",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf"
+  },
+  {
+   "date": "2025-09-09",
+   "url": "https://play.champds.com/northmiamifl/event/557",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf"
+  },
+  {
+   "date": "2025-09-11",
+   "url": "https://play.champds.com/northmiamifl/event/556",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/6f01ea9e97ed504afddc2727c3d69b5d1fdd01d6.pdf"
+  },
+  {
+   "date": "2025-09-25",
+   "url": "https://play.champds.com/northmiamifl/event/560",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/6f01ea9e97ed504afddc2727c3d69b5d1fdd01d6.pdf"
+  },
+  {
+   "date": "2025-10-14",
+   "url": "https://play.champds.com/northmiamifl/event/564",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf"
+  },
+  {
+   "date": "2025-10-28",
+   "url": "https://play.champds.com/northmiamifl/event/565",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf"
+  },
+  {
+   "date": "2025-11-10",
+   "url": "https://play.champds.com/northmiamifl/event/569",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf"
+  },
+  {
+   "date": "2025-11-25",
+   "url": "https://play.champds.com/northmiamifl/event/571",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-12/9d6fdeb040643dcf38bbe231fda10fd911047030.pdf"
+  },
+  {
+   "date": "2025-12-09",
+   "url": "https://play.champds.com/northmiamifl/event/573",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-01/c055e3912a09d49e84f4763b5451c27535244ca8.pdf"
+  },
+  {
+   "date": "2026-01-27",
+   "url": "https://play.champds.com/northmiamifl/event/576",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf"
+  },
+  {
+   "date": "2026-02-24",
+   "url": "https://play.champds.com/northmiamifl/event/578",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf"
+  },
+  {
+   "date": "2026-03-10",
+   "url": "https://play.champds.com/northmiamifl/event/581",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/f8a63b7baf1338733a14c0ef7f212c0bd74fb562.pdf"
+  },
+  {
+   "date": "2026-03-24",
+   "url": "https://play.champds.com/northmiamifl/event/585",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf"
+  },
+  {
+   "date": "2026-04-14",
+   "url": "https://play.champds.com/northmiamifl/event/589",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/47b9422bb520acb7e9b68f5181d31fe9f325ae45.pdf"
+  },
+  {
+   "date": "2026-04-28",
+   "url": "https://play.champds.com/northmiamifl/event/592",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-05/54c5687131d1ee04b050630fd46575d624104823.pdf"
+  },
+  {
+   "date": "2026-05-12",
+   "url": "https://play.champds.com/northmiamifl/event/595",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-05/c98f489b37550d38b1598efb6c2d3fbb03e94653.pdf"
+  },
+  {
+   "date": "2026-05-26",
+   "url": "https://play.champds.com/northmiamifl/event/600",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e8e39369e6e096015f10aff28783a073c30037d3.pdf"
+  },
+  {
+   "date": "2026-06-09",
+   "url": "https://play.champds.com/northmiamifl/event/602",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e252365a77ef0934795b7aa6b585c80363b42183.pdf"
+  },
+  {
+   "date": "2026-06-23",
+   "url": "https://play.champds.com/northmiamifl/event/603",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-07/4acb625e917535da5367358681c92492555806d6.pdf"
+  },
+  {
+   "date": "2026-07-14",
+   "url": "https://play.champds.com/northmiamifl/event/607",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf"
+  },
+  {
+   "date": "2026-08-25",
+   "url": "https://play.champds.com/northmiamifl/event/615",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/3adb960e10382579f7401c4231241732f2b236a6.pdf"
+  },
+  {
+   "date": "2026-09-04",
+   "url": "https://play.champds.com/northmiamifl/event/617",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/902944c6f58f24b29a686cfdab7cc304c31088f2.pdf"
+  },
+  {
+   "date": "2026-09-09",
+   "url": "https://play.champds.com/northmiamifl/event/618",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf"
+  },
+  {
+   "date": "2026-09-15",
+   "url": "https://play.champds.com/northmiamifl/event/620",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf"
+  },
+  {
+   "date": "2026-10-13",
+   "url": "https://play.champds.com/northmiamifl/event/626",
+   "read": true,
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf"
+  },
+  {
+   "date": "2026-10-27",
+   "url": "https://play.champds.com/northmiamifl/event/631",
+   "read": false
+  }
+ ],
+ "actions": [
+  {
+   "id": "2025-R-6",
+   "date": "2025-01-14",
+   "ref": "Tab D, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Paid $82,500 to settle Raynell Hodge v. Jean Lafalaise Fabre and City of North Miami",
+   "kind": "settlement",
+   "parties": [
+    "Raynell Hodge"
+   ],
+   "amount": 82500,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-8",
+   "date": "2025-01-14",
+   "ref": "Tab I, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Let the Housing department use the CRA's pre-qualified housing rehabilitation contractor list (RFQ 56-23-24)",
+   "kind": "contract",
+   "parties": [
+    "NMCRA pre-qualified housing rehabilitation contractors (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Contractors are not named in the minutes."
+  },
+  {
+   "id": "2025-R-9",
+   "date": "2025-01-14",
+   "ref": "Tab J, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Hired The Southern Group of Florida for state lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "The Southern Group of Florida, Inc."
+   ],
+   "amount": "6,670/month",
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Minutes record one motion and vote covering Tabs J through L."
+  },
+  {
+   "id": "2025-R-10",
+   "date": "2025-01-14",
+   "ref": "Tab K, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Hired Becker & Poliakoff for federal lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "Becker & Poliakoff, P.A."
+   ],
+   "amount": "6,670/month",
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Minutes record one motion and vote covering Tabs J through L.",
+   "legacyId": "northmiami-2025-01-14-2"
+  },
+  {
+   "id": "2025-R-11",
+   "date": "2025-01-14",
+   "ref": "Tab L, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Hired Ronald L. Book, P.A. for state lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "Ronald L. Book, P.A."
+   ],
+   "amount": "6,670/month",
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "",
+   "legacyId": "northmiami-2025-01-14-0"
+  },
+  {
+   "id": "2025-R-14",
+   "date": "2025-01-14",
+   "ref": "Tab N, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Approved the site plan for a 6-story self-storage building at 1905 NE 146 St",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1905 NE 146 St (applicant's agent not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "unknown",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Burns",
+   "second": "Charles",
+   "notes": "Minutes say passed 4-1 but do not name the no vote. Estimé-Irvin first moved to table, then withdrew."
+  },
+  {
+   "id": "2025-R-12",
+   "date": "2025-01-14",
+   "ref": "Tab O, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Approved the site plan for an 11-story, 240-unit mixed-use building at 12830-12840 NE 6 Ave and 575 NE 127 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 12830 NE 6 Ave (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Estimé-Irvin",
+   "notes": "Approved with 80-90% income-restricted units."
+  },
+  {
+   "id": "2025-R-13",
+   "date": "2025-01-14",
+   "ref": "Tab P, 2025-01-14 council meeting (CHAMP event 522)",
+   "title": "Approved the site plan for a 22-story, 267-unit building at 12000 N Bayshore Dr",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 12000 N Bayshore Dr (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/522",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-01/297c21e8434cffa3a41c99ba6da48d580fe4bbf0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "unknown",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Recorded 4-0 with all five at roll call; minutes do not say who did not vote."
+  },
+  {
+   "id": "2025-R-31",
+   "date": "2025-01-28",
+   "ref": "Tab C, 2025-01-28 council meeting (CHAMP event 523)",
+   "title": "Hired Peanut Butter Inc. to run the employee student-loan repayment benefit for 2025-2026",
+   "kind": "contract",
+   "parties": [
+    "Peanut Butter Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/523",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-33",
+   "date": "2025-01-28",
+   "ref": "Tab E, 2025-01-28 council meeting (CHAMP event 523)",
+   "title": "Authorized up to $250,000 in computer purchases from CDW Government, piggybacking a Sourcewell contract",
+   "kind": "contract",
+   "parties": [
+    "CDW Government, LLC"
+   ],
+   "amount": 250000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/523",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-34",
+   "date": "2025-01-28",
+   "ref": "Tab H, 2025-01-28 council meeting (CHAMP event 523)",
+   "title": "Granted a conditional use permit for height (238 ft) and density (96 units) bonuses at 11950 N Bayshore Dr",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 11950 N Bayshore Dr (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/523",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-02/e6773359dd71f16ccbf292797889677d2ab91e9c.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Timothe not present."
+  },
+  {
+   "id": "2025-R-44",
+   "date": "2025-02-25",
+   "ref": "Tab C, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Set up a pre-qualified list of housing inspection firms, up to $60,000 a year (RFP 69-23-24)",
+   "kind": "contract",
+   "parties": [
+    "Housing inspection firms (not named in minutes)"
+   ],
+   "amount": 60000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Timothe",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-46",
+   "date": "2025-02-25",
+   "ref": "Tab E, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Hired Gabriel, Roeder, Smith & Company for actuarial work tied to expected litigation, up to $50,000",
+   "kind": "contract",
+   "parties": [
+    "Gabriel, Roeder, Smith & Company"
+   ],
+   "amount": 50000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Timothe",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-50",
+   "date": "2025-02-25",
+   "ref": "Tab J, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Awarded the Penny Sugarman Tennis Center court resurfacing to Sport Surfaces, up to $270,600",
+   "kind": "contract",
+   "parties": [
+    "Sport Surfaces, LLC"
+   ],
+   "amount": 270600,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-53",
+   "date": "2025-02-25",
+   "ref": "Tab L, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Authorized up to $174,000 in cloud backup and IT purchases from Blue Ally Technology Solutions",
+   "kind": "contract",
+   "parties": [
+    "Blue Ally Technology Solutions, LLC"
+   ],
+   "amount": 174000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-54",
+   "date": "2025-02-25",
+   "ref": "Tab M, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Bought council chamber audio upgrades from Maritime Mobile Communications without bidding, up to $84,378",
+   "kind": "contract",
+   "parties": [
+    "Maritime Mobile Communications, LLC"
+   ],
+   "amount": 84378,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Bid waiver."
+  },
+  {
+   "id": "2025-R-55",
+   "date": "2025-02-25",
+   "ref": "Tab N, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Authorized up to $85,794 a year for Microsoft licenses from LAN Infotech",
+   "kind": "contract",
+   "parties": [
+    "LAN Infotech, LLC"
+   ],
+   "amount": 85794,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-56",
+   "date": "2025-02-25",
+   "ref": "Tab O, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Bought laptops from Computers At Work! (VTECHIO), up to $73,794",
+   "kind": "contract",
+   "parties": [
+    "Computers At Work!, Inc. d/b/a VTECHIO"
+   ],
+   "amount": 73794,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-60",
+   "date": "2025-02-25",
+   "ref": "Tab S, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Granted a conditional use permit with bonus units for a 4-story, 48-unit building at 12290 NE 6 Ave (Botanik Venture)",
+   "kind": "zoning",
+   "parties": [
+    "Botanik Venture"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Charles",
+   "notes": "One motion covered Tabs S and T.",
+   "legacyId": "northmiami-2025-02-25-8"
+  },
+  {
+   "id": "2025-R-61",
+   "date": "2025-02-25",
+   "ref": "Tab T, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Approved the site plan for the 48-unit building at 12290 NE 6 Ave (Botanik Venture)",
+   "kind": "zoning",
+   "parties": [
+    "Botanik Venture"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Charles",
+   "notes": "One motion covered Tabs S and T."
+  },
+  {
+   "id": "2025-R-62",
+   "date": "2025-02-25",
+   "ref": "Tab U, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Granted a conditional use permit for an 8-foot masonry wall at 13300 Memorial Hwy",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 13300 Memorial Hwy (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-63",
+   "date": "2025-02-25",
+   "ref": "Tab V, 2025-02-25 council meeting (CHAMP event 526)",
+   "title": "Approved the site plan for a 22-story, 96-unit building at 11950 N Bayshore Dr",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 11950 N Bayshore Dr (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/526",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/85ceeb719886ffa70470c3d37f72f79162ad8959.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "recused",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": "Timothe recused herself on the record."
+  },
+  {
+   "id": "northmiami-2025-03-11-tabH",
+   "date": "2025-03-11",
+   "ref": "Tab H, 2025-03-11 council meeting (CHAMP event 529)",
+   "title": "Tabled indefinitely a no-bid lobbying contract with Rubin, Turnbull & Associates ($7,500 a month)",
+   "kind": "contract",
+   "parties": [
+    "Rubin, Turnbull & Associates, Inc."
+   ],
+   "amount": "7,500/month",
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/529",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "consent": false,
+   "result": "tabled",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "absent",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Motion to table indefinitely passed 3-0 with four present; minutes do not say who did not vote. The minutes list 2025-R-75 next to the tab but the item was tabled."
+  },
+  {
+   "id": "2025-R-78",
+   "date": "2025-03-11",
+   "ref": "Tab K, 2025-03-11 council meeting (CHAMP event 529)",
+   "title": "Reinstated and amended the City Hall cell tower lease with MetroPCS Florida",
+   "kind": "lease",
+   "parties": [
+    "MetroPCS Florida, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/529",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-80",
+   "date": "2025-03-11",
+   "ref": "Tab M, 2025-03-11 council meeting (CHAMP event 529)",
+   "title": "Approved the first amendment to the city land lease with Redwood CP Dev for 1525 NW 135 St",
+   "kind": "lease",
+   "parties": [
+    "Redwood CP Dev, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/529",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-03/6f7db0083adebf69043507a2805833d67ade3dfe.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "",
+   "legacyId": "northmiami-2025-03-11-5"
+  },
+  {
+   "id": "2025-R-82",
+   "date": "2025-03-25",
+   "ref": "Tab D, 2025-03-25 council meeting (CHAMP event 532)",
+   "title": "Ratified an emergency purchase from CROM Coatings and Restorations for Pump Station G repairs, $167,630",
+   "kind": "contract",
+   "parties": [
+    "CROM, LLC (Crom Coatings and Restorations)"
+   ],
+   "amount": 167630,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/8d8a99226766c2f8ed8a6a5a3eacd2ec8733d9ab.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/532",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/8d8a99226766c2f8ed8a6a5a3eacd2ec8733d9ab.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Emergency procurement ratified."
+  },
+  {
+   "id": "2025-R-83",
+   "date": "2025-03-25",
+   "ref": "Tab F, 2025-03-25 council meeting (CHAMP event 532)",
+   "title": "Granted a conditional use permit for a 3-story, 16-unit apartment building at 550 NE 127 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 550 NE 127 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/8d8a99226766c2f8ed8a6a5a3eacd2ec8733d9ab.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/532",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/8d8a99226766c2f8ed8a6a5a3eacd2ec8733d9ab.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-91",
+   "date": "2025-04-07",
+   "ref": "Tab C, 2025-04-07 council meeting (CHAMP event 535)",
+   "title": "Bought Cisco firewall software upgrades from AIP US, $41,385",
+   "kind": "contract",
+   "parties": [
+    "AIP US, LLC"
+   ],
+   "amount": 41385,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/535",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-94",
+   "date": "2025-04-07",
+   "ref": "Tab F, 2025-04-07 council meeting (CHAMP event 535)",
+   "title": "Renewed Davies Claims North America as workers' compensation claims administrator, up to $58,350",
+   "kind": "contract",
+   "parties": [
+    "Davies Claims North America, Inc."
+   ],
+   "amount": 58350,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/535",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Estimé-Irvin absent for the vote."
+  },
+  {
+   "id": "northmiami-2025-04-07-tabG",
+   "date": "2025-04-07",
+   "ref": "Tab G, 2025-04-07 council meeting (CHAMP event 535)",
+   "title": "Amended the Greenwise Group tree trimming contract, up to $50,000 more a year",
+   "kind": "contract",
+   "parties": [
+    "Greenwise Group, LLC"
+   ],
+   "amount": 50000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/535",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Estimé-Irvin absent for the vote. Minutes give no resolution number."
+  },
+  {
+   "id": "2025-R-95",
+   "date": "2025-04-07",
+   "ref": "Tab H, 2025-04-07 council meeting (CHAMP event 535)",
+   "title": "Approved a tentative plat splitting 12599 NE 2 Ave into two lots for Waterstone Capital Holding",
+   "kind": "zoning",
+   "parties": [
+    "Waterstone Capital Holding, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/535",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-04/7d2f46fa630f0c36582a061d845b20a07f1f5981.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Burns",
+   "notes": "Estimé-Irvin absent for the vote."
+  },
+  {
+   "id": "2025-R-96",
+   "date": "2025-04-22",
+   "ref": "Tab B, 2025-04-22 council meeting (CHAMP event 536)",
+   "title": "Donated retired police horse Lexus to Lexus of North Miami, Inc.",
+   "kind": "other",
+   "parties": [
+    "Lexus of North Miami, Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/536",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-99",
+   "date": "2025-04-22",
+   "ref": "Tab E, 2025-04-22 council meeting (CHAMP event 536)",
+   "title": "Approved a rent subsidy of up to $8.34 million over 12 years for the Redwood CP Devco project at 1525 NW 135 St",
+   "kind": "grant",
+   "parties": [
+    "Redwood CP Devco, LLC"
+   ],
+   "amount": 8340000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/536",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "unknown",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Minutes say passed 4-1 but do not name the no vote."
+  },
+  {
+   "id": "2025-R-103",
+   "date": "2025-04-22",
+   "ref": "Tab H, 2025-04-22 council meeting (CHAMP event 536)",
+   "title": "Amended and consolidated the Toshiba copier lease for 39 months, up to $54,528 a year",
+   "kind": "lease",
+   "parties": [
+    "Toshiba America Business Solutions, Inc."
+   ],
+   "amount": 54528,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/536",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/60ae8481a2507499618cd00758c8a5eea99411aa.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Desulme absent for the vote."
+  },
+  {
+   "id": "2025-R-108",
+   "date": "2025-05-13",
+   "ref": "Tab F, 2025-05-13 council meeting (CHAMP event 540)",
+   "title": "Approved a police reports agreement with LexisNexis Coplogic Solutions",
+   "kind": "agreement",
+   "parties": [
+    "LexisNexis Coplogic Solutions Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/540",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-109",
+   "date": "2025-05-13",
+   "ref": "Tab G, 2025-05-13 council meeting (CHAMP event 540)",
+   "title": "Approved an interpretation and translation services agreement with Languagers, Inc.",
+   "kind": "contract",
+   "parties": [
+    "Languagers, Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/540",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-110",
+   "date": "2025-05-13",
+   "ref": "Tab H, 2025-05-13 council meeting (CHAMP event 540)",
+   "title": "Bought sodium hypochlorite from Allied Universal for one year, up to $120,000, piggybacking another agency's contract",
+   "kind": "contract",
+   "parties": [
+    "Allied Universal Corporation"
+   ],
+   "amount": 120000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/540",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-112",
+   "date": "2025-05-13",
+   "ref": "Tab J, 2025-05-13 council meeting (CHAMP event 540)",
+   "title": "Approved a $51,000 change order for Sport Surfaces on the tennis court resurfacing",
+   "kind": "contract",
+   "parties": [
+    "Sport Surfaces, LLC"
+   ],
+   "amount": 51000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/540",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-05/0c02d6f84277edfdf0b45434f70e237af1432ce0.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Charles",
+   "notes": "Change order."
+  },
+  {
+   "id": "2025-R-119",
+   "date": "2025-05-27",
+   "ref": "Tab H, 2025-05-27 council meeting (CHAMP event 542)",
+   "title": "Partnered with Prosperity Social Community Development Group for an after-school and summer camp at the library",
+   "kind": "agreement",
+   "parties": [
+    "Prosperity Social Community Development Group Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/542",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-120",
+   "date": "2025-05-27",
+   "ref": "Tab I, 2025-05-27 council meeting (CHAMP event 542)",
+   "title": "Authorized selling city land between NE 138-139 St and NE 11 Ave-W Dixie Hwy to Zenith 79, LLC",
+   "kind": "sale",
+   "parties": [
+    "Zenith 79, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/542",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Timothe and Estimé-Irvin not present. Minutes record the motion under Tab J covering I and J."
+  },
+  {
+   "id": "2025-R-121",
+   "date": "2025-05-27",
+   "ref": "Tab J, 2025-05-27 council meeting (CHAMP event 542)",
+   "title": "Hired AJ Center for tutoring at Sunkist Grove Community Center, up to $100,000",
+   "kind": "contract",
+   "parties": [
+    "AJ Center, Inc."
+   ],
+   "amount": 100000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/542",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Timothe and Estimé-Irvin not present."
+  },
+  {
+   "id": "2025-R-124",
+   "date": "2025-05-27",
+   "ref": "Tab K, 2025-05-27 council meeting (CHAMP event 542)",
+   "title": "Amended the AECOM engineering contract for sewer model work, up to $364,817 more",
+   "kind": "contract",
+   "parties": [
+    "AECOM Technical Services, Inc."
+   ],
+   "amount": 364817,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/542",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": "Minutes label this Tab M in one place and Tab K in the vote line. Timothe and Estimé-Irvin not present."
+  },
+  {
+   "id": "2025-R-139",
+   "date": "2025-06-24",
+   "ref": "Tab C, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Signed a workforce education partnership with Barry University",
+   "kind": "agreement",
+   "parties": [
+    "Barry University"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-140",
+   "date": "2025-06-24",
+   "ref": "Tab D, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Signed a tuition discount partnership with St. Thomas University",
+   "kind": "agreement",
+   "parties": [
+    "St. Thomas University"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-144",
+   "date": "2025-06-24",
+   "ref": "Tab H, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Ratified the 2024-2027 police officers and sergeants union contract with the South Florida PBA",
+   "kind": "agreement",
+   "parties": [
+    "South Florida Police Benevolent Association"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-145",
+   "date": "2025-06-24",
+   "ref": "Tab I, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Gave a $60,000 housing grant for emergency roof repairs at 2105 Ixora Road",
+   "kind": "grant",
+   "parties": [
+    "Owner of 2105 Ixora Road (not named in minutes)"
+   ],
+   "amount": 60000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2025-R-146",
+   "date": "2025-06-24",
+   "ref": "Tab J, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Amended the city land lease with Zenith 79, LLC for the NE 138-139 St parcel",
+   "kind": "lease",
+   "parties": [
+    "Zenith 79, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2025-R-147",
+   "date": "2025-06-24",
+   "ref": "Tab K, 2025-06-24 council meeting (CHAMP event 545)",
+   "title": "Bought a police dispatch and records system from Mark43 without bidding, up to $1,369,577.50",
+   "kind": "contract",
+   "parties": [
+    "Mark43, Inc."
+   ],
+   "amount": 1369577.5,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/545",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-07/3e3763264722248d33bb875b2781160923c9bec8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Bid waiver. Desulme absent."
+  },
+  {
+   "id": "2025-R-161",
+   "date": "2025-07-08",
+   "ref": "Tab L, 2025-07-08 council meeting (CHAMP event 547)",
+   "title": "Ranked Performance Services first for an energy and water savings contract to replace water meters (RFQ 30-24-25)",
+   "kind": "contract",
+   "parties": [
+    "Performance Services, Inc."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/547",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-08/d4399ef5f3b5cfa03b5e86c8a52e72e51c27bf16.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "no",
+    "Timothe": "yes",
+    "Burns": "no",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Minutes say passed 5-0 and also that Burns and Desulme voted no; tally here follows the named no votes."
+  },
+  {
+   "id": "2025-R-169",
+   "date": "2025-08-26",
+   "ref": "Tab D, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Awarded the C-8 canal pedestrian bridge replacement to General Asphalt, up to $3,314,515.72",
+   "kind": "contract",
+   "parties": [
+    "General Asphalt Co., LLC"
+   ],
+   "amount": 3314515.72,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-170",
+   "date": "2025-08-26",
+   "ref": "Tab E, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Bought a 3-year Varonis cybersecurity subscription from NXT GEN Technologies, up to $299,415",
+   "kind": "contract",
+   "parties": [
+    "NXT GEN Technologies, Inc."
+   ],
+   "amount": 299415,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs E and F."
+  },
+  {
+   "id": "2025-R-171",
+   "date": "2025-08-26",
+   "ref": "Tab F, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Bought Microsoft 365 government cloud licenses from Computers At Work! (VTECHIO), up to $260,075",
+   "kind": "contract",
+   "parties": [
+    "Computers At Work!, Inc. d/b/a VTECHIO"
+   ],
+   "amount": 260075,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs E and F."
+  },
+  {
+   "id": "2025-R-172",
+   "date": "2025-08-26",
+   "ref": "Tab G, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Ratified an emergency purchase from Absolute Construction Services to replace a 72-inch pipe on NE 15 Ave, $142,690",
+   "kind": "contract",
+   "parties": [
+    "Absolute Construction Services, Inc."
+   ],
+   "amount": 142690,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Emergency procurement ratified."
+  },
+  {
+   "id": "2025-R-173",
+   "date": "2025-08-26",
+   "ref": "Tab H, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Approved a $50,000 change order for Green Wise Group tree trimming",
+   "kind": "contract",
+   "parties": [
+    "Green Wise Group, LLC"
+   ],
+   "amount": 50000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Change order."
+  },
+  {
+   "id": "2025-R-174",
+   "date": "2025-08-26",
+   "ref": "Tab K, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Vacated a portion of NW 120 St between NW 7 Ave and I-95 and authorized its sale at 90% of the highest appraisal",
+   "kind": "sale",
+   "parties": [
+    "Buyer not named in minutes"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-175",
+   "date": "2025-08-26",
+   "ref": "Tab L, 2025-08-26 council meeting (CHAMP event 552)",
+   "title": "Acting as zoning appeals board, upheld an administrative variance for an RV in the side yard at 1510 NW 131 St, with conditions",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1510 NW 131 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/552",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "no",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Burns voted no."
+  },
+  {
+   "id": "2025-R-178",
+   "date": "2025-09-09",
+   "ref": "Tab C, 2025-09-09 council meeting (CHAMP event 557)",
+   "title": "Authorized payments to Eventology Miami for event consulting",
+   "kind": "contract",
+   "parties": [
+    "Eventology Miami, LLC"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/557",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-179",
+   "date": "2025-09-09",
+   "ref": "Tab D, 2025-09-09 council meeting (CHAMP event 557)",
+   "title": "Authorized up to $62,000 more for Metro Express on the Arch Creek East walking path",
+   "kind": "contract",
+   "parties": [
+    "Metro Express, Inc."
+   ],
+   "amount": 62000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/557",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-180",
+   "date": "2025-09-09",
+   "ref": "Tab F, 2025-09-09 council meeting (CHAMP event 557)",
+   "title": "Selected WSB, LLC for engineering inspection on the C-8 bridge, up to $324,517",
+   "kind": "contract",
+   "parties": [
+    "WSB, LLC"
+   ],
+   "amount": 324517,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/557",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-181",
+   "date": "2025-09-09",
+   "ref": "Tab G, 2025-09-09 council meeting (CHAMP event 557)",
+   "title": "Ratified an emergency purchase from Atmost Air for Joe Celestin Center HVAC replacement, $338,786",
+   "kind": "contract",
+   "parties": [
+    "Atmost Air, Inc."
+   ],
+   "amount": 338786,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/557",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Estimé-Irvin",
+   "notes": "Emergency procurement ratified."
+  },
+  {
+   "id": "2025-R-182",
+   "date": "2025-09-09",
+   "ref": "Tab H, 2025-09-09 council meeting (CHAMP event 557)",
+   "title": "Ratified an emergency purchase from Ric-Man Construction Florida for two water main crossings, up to $595,231",
+   "kind": "contract",
+   "parties": [
+    "Ric-Man Construction Florida, Inc."
+   ],
+   "amount": 595231,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/557",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-09/e3e5c40438dc4a0fed2b7500d77349f290c804ea.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Emergency procurement ratified."
+  },
+  {
+   "id": "2025-R-197",
+   "date": "2025-10-14",
+   "ref": "Tab H, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Raised the Cagni Park North Phase I contingency to 10%, up to $767,846 more",
+   "kind": "contract",
+   "parties": [
+    "Cagni Park North Phase I contractor (not named in minutes)"
+   ],
+   "amount": 767846,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-198",
+   "date": "2025-10-14",
+   "ref": "Tab I, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Hired We Strategize, LLC for lobbying for one year without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "We Strategize, LLC"
+   ],
+   "amount": "6,670/month",
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Bid waiver.",
+   "legacyId": "northmiami-2025-10-14-4"
+  },
+  {
+   "id": "2025-R-199",
+   "date": "2025-10-14",
+   "ref": "Tab J, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Awarded the library roof replacement to CMM Roofing, up to $155,636.80",
+   "kind": "contract",
+   "parties": [
+    "CMM Roofing, Inc."
+   ],
+   "amount": 155636.8,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Timothe",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-200",
+   "date": "2025-10-14",
+   "ref": "Tab K, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Amended the 300 Engineering Group contract for sewer survey work, up to $458,002 more",
+   "kind": "contract",
+   "parties": [
+    "300 Engineering Group, LLC"
+   ],
+   "amount": 458002,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs K and L."
+  },
+  {
+   "id": "2025-R-201",
+   "date": "2025-10-14",
+   "ref": "Tab L, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Amended the 300 Engineering Group contract for lead and copper rule work, up to $76,000 more",
+   "kind": "contract",
+   "parties": [
+    "300 Engineering Group, LLC"
+   ],
+   "amount": 76000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs K and L."
+  },
+  {
+   "id": "2025-R-202",
+   "date": "2025-10-14",
+   "ref": "Tab M, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Extended excess workers' compensation coverage through Brown & Brown (T.R. Jones), up to $242,539",
+   "kind": "contract",
+   "parties": [
+    "Brown & Brown of Florida, Inc. d/b/a T.R. Jones and Company"
+   ],
+   "amount": 242539,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "One motion covered Tabs M through O."
+  },
+  {
+   "id": "2025-R-203",
+   "date": "2025-10-14",
+   "ref": "Tab N, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Extended police professional liability coverage through Public Risk Insurance Advisors, up to $306,263",
+   "kind": "contract",
+   "parties": [
+    "Risk Management Associates, Inc. d/b/a Public Risk Insurance Advisors"
+   ],
+   "amount": 306263,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "One motion covered Tabs M through O."
+  },
+  {
+   "id": "2025-R-204",
+   "date": "2025-10-14",
+   "ref": "Tab O, 2025-10-14 council meeting (CHAMP event 564)",
+   "title": "Extended public officials and employment practices liability coverage through Public Risk Insurance Advisors, up to $108,329",
+   "kind": "contract",
+   "parties": [
+    "Risk Management Associates, Inc. d/b/a Public Risk Insurance Advisors"
+   ],
+   "amount": 108329,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/564",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-10/abfd10d2e65109081d8f7107141c7bc9a31937ed.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "One motion covered Tabs M through O."
+  },
+  {
+   "id": "2025-R-207",
+   "date": "2025-10-28",
+   "ref": "Tab C, 2025-10-28 council meeting (CHAMP event 565)",
+   "title": "Amended the 300 Engineering Group contract for the Croton force main project, up to $200,433 more",
+   "kind": "contract",
+   "parties": [
+    "300 Engineering Group, LLC"
+   ],
+   "amount": 200433,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/565",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2025-R-208",
+   "date": "2025-10-28",
+   "ref": "Tab D, 2025-10-28 council meeting (CHAMP event 565)",
+   "title": "Awarded pavilion roof replacements at Enchanted Forest Elaine Gordon Park to Rooftecs of Florida, $72,000",
+   "kind": "contract",
+   "parties": [
+    "Rooftecs of Florida, LLC"
+   ],
+   "amount": 72000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/565",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2025-R-209",
+   "date": "2025-10-28",
+   "ref": "Tab E, 2025-10-28 council meeting (CHAMP event 565)",
+   "title": "Bought 2025 holiday lighting from The Christmas Palace without bidding, up to $250,000",
+   "kind": "contract",
+   "parties": [
+    "The Christmas Palace, LLC"
+   ],
+   "amount": 250000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/565",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "no",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "First motion (Charles/Estimé-Irvin) recorded as failed 3-1; reconsidered 4-0 on Burns' motion; then approved. Minutes record the final vote as 4-0 and also say Burns voted no; tally here follows the named no vote. Desulme absent."
+  },
+  {
+   "id": "2025-R-211",
+   "date": "2025-10-28",
+   "ref": "Tab I, 2025-10-28 council meeting (CHAMP event 565)",
+   "title": "Granted a conditional use permit for an 11-story, 18-unit building at 1998 NE 135 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1998 NE 135 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/565",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/e0c2bd37e653db3c4a7e41238b973bf46cc63058.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "no",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Burns",
+   "second": "Charles",
+   "notes": "Roll call vote; Estimé-Irvin voted no. Desulme absent."
+  },
+  {
+   "id": "2025-R-216",
+   "date": "2025-11-10",
+   "ref": "Tab F, 2025-11-10 council meeting (CHAMP event 569)",
+   "title": "Partnered with Circle of Love Empowers Women and Girls (Y.O.V.E.) for an after-school mentoring program at the library",
+   "kind": "agreement",
+   "parties": [
+    "Circle of Love Empowers Women and Girls, Inc. d/b/a Youth of Valor Empowerment"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/569",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-218",
+   "date": "2025-11-10",
+   "ref": "Tab H, 2025-11-10 council meeting (CHAMP event 569)",
+   "title": "Donated retired police horse Pouncer to retired officer Nelson Seda",
+   "kind": "other",
+   "parties": [
+    "Nelson Seda"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22271/2025-R-218-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/569",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-221",
+   "date": "2025-11-10",
+   "ref": "Tab K, 2025-11-10 council meeting (CHAMP event 569)",
+   "title": "Selected Cigna Healthcare for employee health, dental and vision coverage for 2026",
+   "kind": "contract",
+   "parties": [
+    "Cigna Healthcare"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22268/2025-R-221-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/569",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-222",
+   "date": "2025-11-10",
+   "ref": "Tab L, 2025-11-10 council meeting (CHAMP event 569)",
+   "title": "Bought a patch truck from Jet-Vac Equipment, about $252,000, piggybacking a cooperative contract",
+   "kind": "contract",
+   "parties": [
+    "Jet-Vac Equipment Company, LLC"
+   ],
+   "amount": 252000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22267/2025-R-222-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/569",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-11/97e60f31097a0f52bea84b201275e1c539fe070a.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2025-R-224",
+   "date": "2025-11-25",
+   "ref": "Tab C, 2025-11-25 council meeting (CHAMP event 571)",
+   "title": "Bought ammonium sulfate from Hawkins Water Treatment Group, up to $75,000 a year with two renewals",
+   "kind": "contract",
+   "parties": [
+    "Hawkins Water Treatment Group, Inc."
+   ],
+   "amount": 75000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22061/2025-R-224-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/571",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-12/9d6fdeb040643dcf38bbe231fda10fd911047030.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2025-R-226",
+   "date": "2025-11-25",
+   "ref": "Tab H, 2025-11-25 council meeting (CHAMP event 571)",
+   "title": "Approved the site plan for a 9-story, 35-unit building at 13132 NE 9 Ave and 895 NE 131 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 13132 NE 9 Ave (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22059/2025-R-226-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/571",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2025-12/9d6fdeb040643dcf38bbe231fda10fd911047030.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Timothe",
+   "notes": "Roll call vote."
+  },
+  {
+   "id": "2025-R-231",
+   "date": "2025-12-09",
+   "ref": "Tab F, 2025-12-09 council meeting (CHAMP event 573)",
+   "title": "Bought network infrastructure upgrades from AIP US, up to $327,674",
+   "kind": "contract",
+   "parties": [
+    "AIP US, LLC"
+   ],
+   "amount": 327674,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22288/2025-R-231-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/573",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-01/c055e3912a09d49e84f4763b5451c27535244ca8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Recorded 4-0. Desulme arrived at 8:07 pm and may not have been seated; minutes do not say who did not vote."
+  },
+  {
+   "id": "2025-R-233",
+   "date": "2025-12-09",
+   "ref": "Tab H, 2025-12-09 council meeting (CHAMP event 573)",
+   "title": "Approved a library kiosk maintenance agreement with EnvisionWare, up to $67,000",
+   "kind": "contract",
+   "parties": [
+    "EnvisionWare, Inc."
+   ],
+   "amount": 67000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22286/2025-R-233-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/573",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-01/c055e3912a09d49e84f4763b5451c27535244ca8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Recorded 4-0. Desulme arrived at 8:07 pm; minutes do not say who did not vote."
+  },
+  {
+   "id": "2025-R-234",
+   "date": "2025-12-09",
+   "ref": "Tab I, 2025-12-09 council meeting (CHAMP event 573)",
+   "title": "Amended the Government & ERP Implementation Services consulting contract, up to $150,000 more",
+   "kind": "contract",
+   "parties": [
+    "Government & ERP Implementation Services, LLC"
+   ],
+   "amount": 150000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22285/2025-R-234-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/573",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-01/c055e3912a09d49e84f4763b5451c27535244ca8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Recorded 4-0. Desulme arrived at 8:07 pm; minutes do not say who did not vote."
+  },
+  {
+   "id": "2025-R-236",
+   "date": "2025-12-09",
+   "ref": "Tab O, 2025-12-09 council meeting (CHAMP event 573)",
+   "title": "Approved the site plan for a 29-unit townhome development south of 250 NE 135 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22283/2025-R-236-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/573",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-01/c055e3912a09d49e84f4763b5451c27535244ca8.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "no",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Roll call vote; Desulme voted no."
+  },
+  {
+   "id": "2026-R-8",
+   "date": "2026-01-27",
+   "ref": "Tab H, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Ratified a ForceMetrics police analytics software subscription, up to $91,926.90",
+   "kind": "contract",
+   "parties": [
+    "ForceMetrics"
+   ],
+   "amount": 91926.9,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22599/2026-R-8-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Burns",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-9",
+   "date": "2026-01-27",
+   "ref": "Tab I, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Renewed Becker & Poliakoff for federal lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "Becker & Poliakoff, P.A."
+   ],
+   "amount": "6,670/month",
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22600/2026-R-9-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": "Bid waiver.",
+   "legacyId": "northmiami-2026-01-27-3"
+  },
+  {
+   "id": "2026-R-10",
+   "date": "2026-01-27",
+   "ref": "Tab J, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Renewed Ronald L. Book, P.A. for state lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "Ronald L. Book, P.A."
+   ],
+   "amount": "6,670/month",
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22601/2026-R-10-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": "Bid waiver.",
+   "legacyId": "northmiami-2026-01-27-1"
+  },
+  {
+   "id": "2026-R-11",
+   "date": "2026-01-27",
+   "ref": "Tab K, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Renewed The Southern Group of Florida for lobbying without bidding, up to $6,670 a month",
+   "kind": "contract",
+   "parties": [
+    "The Southern Group of Florida, Inc."
+   ],
+   "amount": "6,670/month",
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22602/2026-R-11-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": "Bid waiver."
+  },
+  {
+   "id": "2026-R-12",
+   "date": "2026-01-27",
+   "ref": "Tab M, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Ratified an emergency purchase from Murphy Pipeline Contractors to replace a water main at Arch Creek Preserve, up to $1,461,320",
+   "kind": "contract",
+   "parties": [
+    "Murphy Pipeline Contractors, LLC"
+   ],
+   "amount": 1461320,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22603/2026-R-12-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Desulme",
+   "notes": "Emergency procurement ratified."
+  },
+  {
+   "id": "2026-R-13",
+   "date": "2026-01-27",
+   "ref": "Tab N, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Bought a bucket truck from Custom Truck One Source, about $180,000, piggybacking Sourcewell",
+   "kind": "contract",
+   "parties": [
+    "Custom Truck One Source"
+   ],
+   "amount": 180000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22604/2026-R-13-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-14",
+   "date": "2026-01-27",
+   "ref": "Tab O, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Hired KONE to modernize a police headquarters elevator without bidding, up to $153,750",
+   "kind": "contract",
+   "parties": [
+    "KONE, Inc."
+   ],
+   "amount": 153750,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22605/2026-R-14-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Bid waiver."
+  },
+  {
+   "id": "2026-R-15",
+   "date": "2026-01-27",
+   "ref": "Tab Q, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Bought e-procurement software from Carahsoft, up to $215,706, piggybacking NASPO",
+   "kind": "contract",
+   "parties": [
+    "Carahsoft Technology Corp."
+   ],
+   "amount": 215706,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22606/2026-R-15-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": "Vendor later changed to Vertosoft by 2026-R-127."
+  },
+  {
+   "id": "2026-R-16",
+   "date": "2026-01-27",
+   "ref": "Tab T, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Vacated and sold part of a city alley east of 12255 NE 16 Ave for $245,000",
+   "kind": "sale",
+   "parties": [
+    "Buyer not named in minutes (Ethan Wasserman spoke at the hearing)"
+   ],
+   "amount": 245000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22607/2026-R-16-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Roll call vote."
+  },
+  {
+   "id": "2026-R-17",
+   "date": "2026-01-27",
+   "ref": "Tab U, 2026-01-27 council meeting (CHAMP event 576)",
+   "title": "Approved the site plan for an 11-story, 18-unit building at 1998 NE 135 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1998 NE 135 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22608/2026-R-17-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/576",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-02/0100203f13bec2fcb3df9f8cff663bcf9fbc4556.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "absent",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Charles",
+   "notes": "Roll call; Estimé-Irvin not present for the vote."
+  },
+  {
+   "id": "2026-R-23",
+   "date": "2026-02-24",
+   "ref": "Tab E, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Partnered with Morebility Corporation for workshops at the library",
+   "kind": "agreement",
+   "parties": [
+    "Morebility Corporation"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22782/2026-R-23-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2026-R-24",
+   "date": "2026-02-24",
+   "ref": "Tab F, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Signed a police data-sharing agreement with the City of Miami and ForceMetrics",
+   "kind": "agreement",
+   "parties": [
+    "ForceMetrics, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22781/2026-R-24-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2026-R-25",
+   "date": "2026-02-24",
+   "ref": "Tab G, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Bought a modular building for the Building Department from Williams Scotsman, up to $351,848.08",
+   "kind": "contract",
+   "parties": [
+    "Williams Scotsman, Inc."
+   ],
+   "amount": 351848.08,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22780/2026-R-25-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-26",
+   "date": "2026-02-24",
+   "ref": "Tab H, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Set up a pre-qualified list of residential rehabilitation general contractors, up to $60,000",
+   "kind": "contract",
+   "parties": [
+    "Residential rehabilitation general contractors (not named in minutes)"
+   ],
+   "amount": 60000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22779/2026-R-26-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-27",
+   "date": "2026-02-24",
+   "ref": "Tab I, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Set up a pre-qualified list of specialty trade contractors for housing work, up to $10,000 per project",
+   "kind": "contract",
+   "parties": [
+    "Specialty trade contractors (not named in minutes)"
+   ],
+   "amount": "10,000/project",
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22778/2026-R-27-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-28",
+   "date": "2026-02-24",
+   "ref": "Tab J, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Bought library playground shade structures from Shade Systems without bidding, up to $106,094",
+   "kind": "contract",
+   "parties": [
+    "Shade Systems, Inc."
+   ],
+   "amount": 106094,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22777/2026-R-28-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Estimé-Irvin",
+   "notes": "Bid waiver."
+  },
+  {
+   "id": "2026-R-29",
+   "date": "2026-02-24",
+   "ref": "Tab K, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Hired Trane U.S. for emergency HVAC replacement, up to $859,376",
+   "kind": "contract",
+   "parties": [
+    "Trane U.S., Inc."
+   ],
+   "amount": 859376,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22776/2026-R-29-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-31",
+   "date": "2026-02-24",
+   "ref": "Tab Q, 2026-02-24 council meeting (CHAMP event 578)",
+   "title": "Granted a conditional use permit to convert 15 dormitory units to apartments in a two-building redevelopment",
+   "kind": "zoning",
+   "parties": [
+    "Applicant (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22774/2026-R-31-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/578",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/47c5f4f8c56d1c4ae28428b789b8b2f622671d29.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Desulme",
+   "notes": "Roll call vote."
+  },
+  {
+   "id": "2026-R-37",
+   "date": "2026-03-10",
+   "ref": "Tab H, 2026-03-10 council meeting (CHAMP event 581)",
+   "title": "Added up to $1,000,000 more contingency for the Cagni Park North Phase I project",
+   "kind": "contract",
+   "parties": [
+    "Cagni Park North Phase I contractor (not named in minutes)"
+   ],
+   "amount": 1000000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22872/2026-R-37-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/581",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/f8a63b7baf1338733a14c0ef7f212c0bd74fb562.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-38",
+   "date": "2026-03-10",
+   "ref": "Tab I, 2026-03-10 council meeting (CHAMP event 581)",
+   "title": "Ratified purchase orders to Baron International for eight wayfinding monuments, up to $483,717.43",
+   "kind": "contract",
+   "parties": [
+    "Baron International, LLC"
+   ],
+   "amount": 483717.43,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22871/2026-R-38-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/581",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/f8a63b7baf1338733a14c0ef7f212c0bd74fb562.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-39",
+   "date": "2026-03-10",
+   "ref": "Tab J, 2026-03-10 council meeting (CHAMP event 581)",
+   "title": "Hired Davies US for workers' compensation claims administration for 3 years without bidding, up to $180,300",
+   "kind": "contract",
+   "parties": [
+    "Davies US, LLC"
+   ],
+   "amount": 180300,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22870/2026-R-39-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/581",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/f8a63b7baf1338733a14c0ef7f212c0bd74fb562.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Burns",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-40",
+   "date": "2026-03-10",
+   "ref": "Tab M, 2026-03-10 council meeting (CHAMP event 581)",
+   "title": "Vacated and authorized sale of part of a city alley west of NE 17 Ave between NE 126-127 St",
+   "kind": "sale",
+   "parties": [
+    "Buyer not named in minutes"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22869/2026-R-40-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/581",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-03/f8a63b7baf1338733a14c0ef7f212c0bd74fb562.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Roll call vote."
+  },
+  {
+   "id": "2026-R-45",
+   "date": "2026-03-24",
+   "ref": "Tab E, 2026-03-24 council meeting (CHAMP event 585)",
+   "title": "Hired WT Partnership for downtown revitalization advisory work, up to $944,400",
+   "kind": "contract",
+   "parties": [
+    "WTP America, LLC d/b/a WT Partnership"
+   ],
+   "amount": 944400,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22865/2026-R-45-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/585",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "no",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Burns voted no."
+  },
+  {
+   "id": "2026-R-46",
+   "date": "2026-03-24",
+   "ref": "Tab H, 2026-03-24 council meeting (CHAMP event 585)",
+   "title": "Signed the master installation agreement with Performance Services for citywide smart water meters (AMI)",
+   "kind": "contract",
+   "parties": [
+    "Performance Services, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22864/2026-R-46-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/585",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-47",
+   "date": "2026-03-24",
+   "ref": "Tab I, 2026-03-24 council meeting (CHAMP event 585)",
+   "title": "Started talks with Redwood CP Dev to change the Claude Pepper Park development plans",
+   "kind": "agreement",
+   "parties": [
+    "Redwood CP Dev, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22863/2026-R-47-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/585",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "no",
+    "Timothe": "yes",
+    "Burns": "no",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Desulme and Burns voted no.",
+   "legacyId": "northmiami-2026-03-24-6"
+  },
+  {
+   "id": "2026-R-48",
+   "date": "2026-03-24",
+   "ref": "Tab L, 2026-03-24 council meeting (CHAMP event 585)",
+   "title": "Modified a restrictive covenant to allow open-air dining on public property at 750 NE 125 St",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 750 NE 125 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22862/2026-R-48-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/585",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Roll call; Desulme not present for the vote."
+  },
+  {
+   "id": "2026-R-49",
+   "date": "2026-03-24",
+   "ref": "Tab M, 2026-03-24 council meeting (CHAMP event 585)",
+   "title": "Approved the site plan for a 3-story, 16-unit building at 550 NE 127 St",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 550 NE 127 St (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/22861/2026-R-49-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/585",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/6cab0c9489b9ddfe574604fcf0002e8a0d19c2e6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Roll call; Desulme not present for the vote."
+  },
+  {
+   "id": "2026-R-53",
+   "date": "2026-04-14",
+   "ref": "Tab F, 2026-04-14 council meeting (CHAMP event 589)",
+   "title": "Partnered with Florida Fresh Market Enterprises to produce the 2026 North Miami Night Market",
+   "kind": "agreement",
+   "parties": [
+    "Florida Fresh Market Enterprises, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23040/2026-R-53-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/589",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/47b9422bb520acb7e9b68f5181d31fe9f325ae45.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda. Timothe absent."
+  },
+  {
+   "id": "2026-R-59",
+   "date": "2026-04-14",
+   "ref": "Tab M, 2026-04-14 council meeting (CHAMP event 589)",
+   "title": "Approved the site plan for a 20-story, 352-room hotel and convention center",
+   "kind": "zoning",
+   "parties": [
+    "Applicant (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23034/2026-R-59-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/589",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-04/47b9422bb520acb7e9b68f5181d31fe9f325ae45.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "absent",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Roll call. Timothe absent."
+  },
+  {
+   "id": "northmiami-2026-04-28-tabE",
+   "date": "2026-04-28",
+   "ref": "Tab E, 2026-04-28 council meeting (CHAMP event 592)",
+   "title": "First reading: comprehensive plan amendment for certain Biscayne Blvd corridor properties sought by a private applicant",
+   "kind": "zoning",
+   "parties": [
+    "Applicant development team (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-05/54c5687131d1ee04b050630fd46575d624104823.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/592",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-05/54c5687131d1ee04b050630fd46575d624104823.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "no",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Roll call; Timothe voted no. Members disclosed ex parte contact with the applicant and lobbyist."
+  },
+  {
+   "id": "northmiami-2026-04-28-tabF",
+   "date": "2026-04-28",
+   "ref": "Tab F, 2026-04-28 council meeting (CHAMP event 592)",
+   "title": "First reading: raised allowed height from 110 to 210 feet for certain Biscayne Blvd corridor properties",
+   "kind": "zoning",
+   "parties": [
+    "Applicant development team (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-05/54c5687131d1ee04b050630fd46575d624104823.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/592",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-05/54c5687131d1ee04b050630fd46575d624104823.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "no",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "Roll call; Timothe voted no. Members disclosed ex parte contact with the applicant and lobbyist."
+  },
+  {
+   "id": "2026-R-75",
+   "date": "2026-05-12",
+   "ref": "Tab K, 2026-05-12 council meeting (CHAMP event 595)",
+   "title": "Approved a sewer improvements agreement giving Bellamonte at Golden Glades a $109,197.87 impact fee refund",
+   "kind": "agreement",
+   "parties": [
+    "Bellamonte at Golden Glades, LLC"
+   ],
+   "amount": 109197.87,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23206/2026-R-75-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/595",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-05/c98f489b37550d38b1598efb6c2d3fbb03e94653.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-78",
+   "date": "2026-05-26",
+   "ref": "Tab D, 2026-05-26 council meeting (CHAMP event 600)",
+   "title": "Amended the TR NM Holdings ground lease for 1810 NE 146 St (start date June 1, 2026) and approved a sublease",
+   "kind": "lease",
+   "parties": [
+    "TR NM Holdings, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23266/2026-R-78-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/600",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e8e39369e6e096015f10aff28783a073c30037d3.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "no"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Burns",
+   "second": "Desulme",
+   "notes": "Charles voted no."
+  },
+  {
+   "id": "2026-R-80",
+   "date": "2026-05-26",
+   "ref": "Tab F, 2026-05-26 council meeting (CHAMP event 600)",
+   "title": "Authorized agreements with a pre-qualified pool of disaster debris removal contractors, piggybacking City of Miami RFQ 1250387",
+   "kind": "contract",
+   "parties": [
+    "Disaster debris removal contractors (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23264/2026-R-80-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/600",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e8e39369e6e096015f10aff28783a073c30037d3.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Desulme not present for the vote."
+  },
+  {
+   "id": "2026-R-81",
+   "date": "2026-05-26",
+   "ref": "Tab G, 2026-05-26 council meeting (CHAMP event 600)",
+   "title": "Bought sodium hypochlorite from Allied Universal for one year plus three renewals, up to $140,000 a year",
+   "kind": "contract",
+   "parties": [
+    "Allied Universal Corporation"
+   ],
+   "amount": 140000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23263/2026-R-81-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/600",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e8e39369e6e096015f10aff28783a073c30037d3.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Title says one hundred twenty thousand but shows $140,000. Desulme not present for the vote."
+  },
+  {
+   "id": "2026-R-83",
+   "date": "2026-06-09",
+   "ref": "Tab C, 2026-06-09 council meeting (CHAMP event 602)",
+   "title": "Joined the Carfax for Police program",
+   "kind": "agreement",
+   "parties": [
+    "Carfax, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23446/2026-R-83-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/602",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e252365a77ef0934795b7aa6b585c80363b42183.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda (Tabs A-G moved to consent)."
+  },
+  {
+   "id": "2026-R-87",
+   "date": "2026-06-09",
+   "ref": "Tab G, 2026-06-09 council meeting (CHAMP event 602)",
+   "title": "Amended the Tyler Technologies police software support contract to month-to-month, up to $232,848",
+   "kind": "contract",
+   "parties": [
+    "Tyler Technologies, Inc."
+   ],
+   "amount": 232848,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23442/2026-R-87-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/602",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-06/e252365a77ef0934795b7aa6b585c80363b42183.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda (Tabs A-G moved to consent)."
+  },
+  {
+   "id": "2026-R-92",
+   "date": "2026-06-23",
+   "ref": "Tab F, 2026-06-23 council meeting (CHAMP event 603)",
+   "title": "Settled Gerard v. City of North Miami (Case 2026-005982-CA-01)",
+   "kind": "settlement",
+   "parties": [
+    "Darren Gerard",
+    "Roni Gerard"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23608/2026-R-92-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/603",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-07/4acb625e917535da5367358681c92492555806d6.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "absent"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda. Charles absent. Amount not stated in minutes."
+  },
+  {
+   "id": "2026-R-93",
+   "date": "2026-06-23",
+   "ref": "Tab G, 2026-06-23 council meeting (CHAMP event 603)",
+   "title": "Settled Sun Light Sans Souci, LLC v. City of North Miami (Case 2026-006541-CA-01)",
+   "kind": "settlement",
+   "parties": [
+    "Sun Light Sans Souci, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23607/2026-R-93-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/603",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-07/4acb625e917535da5367358681c92492555806d6.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "absent"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Estimé-Irvin",
+   "notes": "Consent agenda. Charles absent. Amount not stated in minutes."
+  },
+  {
+   "id": "2026-R-96",
+   "date": "2026-07-14",
+   "ref": "Tab C, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Paid Cristo Rey Miami High School Work Study Program for four student workers, up to $34,800",
+   "kind": "contract",
+   "parties": [
+    "Cristo Rey Miami High School Work Study Program, Inc."
+   ],
+   "amount": 34800,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23684/2026-R-96-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2026-R-97",
+   "date": "2026-07-14",
+   "ref": "Tab D, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Amended the DeCarr Consulting police support contract, up to $48,000 more",
+   "kind": "contract",
+   "parties": [
+    "DeCarr Consulting, LLC"
+   ],
+   "amount": 48000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23683/2026-R-97-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": true,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": "Consent agenda."
+  },
+  {
+   "id": "2026-R-99",
+   "date": "2026-07-14",
+   "ref": "Tab F, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Hired LMK Pipe Renewal for sewer repairs, up to $1,100,000, piggybacking City of Clermont RFB 26-039",
+   "kind": "contract",
+   "parties": [
+    "LMK Pipe Renewal, LLC"
+   ],
+   "amount": 1100000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23681/2026-R-99-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burns",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-100",
+   "date": "2026-07-14",
+   "ref": "Tab G, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Hired Atlantic Pipe Services for sewer repairs, up to $1,400,000, piggybacking St. Johns County RFB 2536",
+   "kind": "contract",
+   "parties": [
+    "Atlantic Pipe Services, LLC"
+   ],
+   "amount": 1400000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23680/2026-R-100-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-101",
+   "date": "2026-07-14",
+   "ref": "Tab H, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Awarded the Griffing Community Center tennis and pickleball conversion to Fast Dry Courts, up to $267,289",
+   "kind": "contract",
+   "parties": [
+    "Tennis Holdings Acquisition, LLC d/b/a Fast Dry Courts"
+   ],
+   "amount": 267289,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23679/2026-R-101-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "no",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Timothe",
+   "notes": "Desulme voted no."
+  },
+  {
+   "id": "2026-R-104",
+   "date": "2026-07-14",
+   "ref": "Tab L, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Hired Tetra Tech for disaster debris monitoring, up to $650,000 per event",
+   "kind": "contract",
+   "parties": [
+    "Tetra Tech, Inc."
+   ],
+   "amount": "650,000/event",
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23676/2026-R-104-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-105",
+   "date": "2026-07-14",
+   "ref": "Tab M, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Bought 2026 holiday lighting from The Christmas Palace, up to $250,000, piggybacking a City of Pompano Beach contract",
+   "kind": "contract",
+   "parties": [
+    "The Christmas Palace, LLC"
+   ],
+   "amount": 250000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23689/2026-R-105-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-106",
+   "date": "2026-07-14",
+   "ref": "Tab N, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Hired AJ Center for tutoring at Sunkist Grove Community Center, up to $100,000",
+   "kind": "contract",
+   "parties": [
+    "AJ Center, Inc."
+   ],
+   "amount": 100000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23688/2026-R-106-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Timothe",
+   "notes": "Minutes label the vote as Tab M."
+  },
+  {
+   "id": "Ord. 1548",
+   "date": "2026-07-14",
+   "ref": "Tab R, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Second reading: adopted the comprehensive plan amendment for certain Biscayne Blvd corridor properties",
+   "kind": "zoning",
+   "parties": [
+    "Applicant development team (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "First reading 2026-04-28 Tab E."
+  },
+  {
+   "id": "Ord. 1549",
+   "date": "2026-07-14",
+   "ref": "Tab S, 2026-07-14 council meeting (CHAMP event 607)",
+   "title": "Second reading: raised allowed height from 110 to 210 feet for certain Biscayne Blvd corridor properties",
+   "kind": "zoning",
+   "parties": [
+    "Applicant development team (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/607",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-08/9d3a07fefc159057522a25e336d60e54b9c0d984.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": "First reading 2026-04-28 Tab F."
+  },
+  {
+   "id": "2026-R-110",
+   "date": "2026-08-25",
+   "ref": "Tab C, 2026-08-25 council meeting (CHAMP event 615)",
+   "title": "Approved the second amendment with Redwood CP Dev: no pool, park work in three phases, and $3 million more in park fees",
+   "kind": "agreement",
+   "parties": [
+    "Redwood CP Dev, LLC"
+   ],
+   "amount": 3000000,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23898/2026-R-110-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/615",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/3adb960e10382579f7401c4231241732f2b236a6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Timothe",
+   "notes": "",
+   "legacyId": "northmiami-2026-08-25-7"
+  },
+  {
+   "id": "2026-R-112",
+   "date": "2026-08-25",
+   "ref": "Tab E, 2026-08-25 council meeting (CHAMP event 615)",
+   "title": "Awarded Phase II of the septic-to-sewer project to Marcdan, up to $2,291,240",
+   "kind": "contract",
+   "parties": [
+    "Marcdan, Inc."
+   ],
+   "amount": 2291240,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23896/2026-R-112-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/615",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/3adb960e10382579f7401c4231241732f2b236a6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Desulme",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-113",
+   "date": "2026-08-25",
+   "ref": "Tab F, 2026-08-25 council meeting (CHAMP event 615)",
+   "title": "Awarded the NE 3 Ct drainage project to Master Road Finishers, up to $1,611,843.51",
+   "kind": "contract",
+   "parties": [
+    "Master Road Finishers Corp."
+   ],
+   "amount": 1611843.51,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23895/2026-R-113-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/615",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/3adb960e10382579f7401c4231241732f2b236a6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Desulme",
+   "second": "Charles",
+   "notes": ""
+  },
+  {
+   "id": "2026-R-114",
+   "date": "2026-08-25",
+   "ref": "Tab H, 2026-08-25 council meeting (CHAMP event 615)",
+   "title": "Approved the site plan for a six-story Palmetto Alfa Romeo Fiat showroom at NE 123 St and NE 15 Ave",
+   "kind": "zoning",
+   "parties": [
+    "Palmetto Alfa Romeo Fiat"
+   ],
+   "amount": null,
+   "url": "https://www.northmiamifl.gov/DocumentCenter/View/23894/2026-R-114-PDF",
+   "agenda": "https://play.champds.com/northmiamifl/event/615",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-09/3adb960e10382579f7401c4231241732f2b236a6.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "yes",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Timothe",
+   "second": "Desulme",
+   "notes": "",
+   "legacyId": "northmiami-2026-08-25-10"
+  },
+  {
+   "id": "2026-R-127",
+   "date": "2026-09-09",
+   "ref": "Tab G, 2026-09-09 council meeting (CHAMP event 618)",
+   "title": "Switched the e-procurement software vendor from Carahsoft to Vertosoft and lowered the price below $215,706",
+   "kind": "contract",
+   "parties": [
+    "Vertosoft LLC",
+    "Carahsoft Technology Corp."
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/618",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "unknown",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs G and H. Recorded 4-0 with all five at roll call; minutes do not say who did not vote."
+  },
+  {
+   "id": "2026-R-128",
+   "date": "2026-09-09",
+   "ref": "Tab H, 2026-09-09 council meeting (CHAMP event 618)",
+   "title": "Bought budgeting software from Vertosoft, up to $564,792",
+   "kind": "contract",
+   "parties": [
+    "Vertosoft LLC"
+   ],
+   "amount": 564792,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/618",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/9508b6fbd498b08e1ebbe031a84bf465bf261c15.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "unknown",
+    "Timothe": "unknown",
+    "Burns": "unknown",
+    "Estimé-Irvin": "unknown",
+    "Charles": "unknown"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "One motion covered Tabs G and H. Recorded 4-0 with all five at roll call; minutes do not say who did not vote."
+  },
+  {
+   "id": "2026-R-136",
+   "date": "2026-10-13",
+   "ref": "Tab I, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Ratified the union contract with the International Union of Police Associations, Local 6008, for non-professional white-collar employees",
+   "kind": "agreement",
+   "parties": [
+    "International Union of Police Associations, AFL-CIO, Local 6008"
+   ],
+   "amount": null,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2026-R-137",
+   "date": "2026-10-13",
+   "ref": "Tab J, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Extended excess workers' compensation coverage through Brown & Brown (T.R. Jones), up to $239,854",
+   "kind": "contract",
+   "parties": [
+    "Brown & Brown of Florida, Inc. d/b/a T.R. Jones and Company"
+   ],
+   "amount": 239854,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Moved to consent agenda per minutes. Desulme absent."
+  },
+  {
+   "id": "2026-R-138",
+   "date": "2026-10-13",
+   "ref": "Tab K, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Extended police professional liability coverage through Public Risk Insurance Advisors, up to $311,409",
+   "kind": "contract",
+   "parties": [
+    "Risk Management Associates, Inc. d/b/a Public Risk Insurance Advisors"
+   ],
+   "amount": 311409,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Moved to consent agenda per minutes. Desulme absent."
+  },
+  {
+   "id": "2026-R-139",
+   "date": "2026-10-13",
+   "ref": "Tab L, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Extended public officials liability coverage through Public Risk Insurance Advisors, up to $108,454",
+   "kind": "contract",
+   "parties": [
+    "Risk Management Associates, Inc. d/b/a Public Risk Insurance Advisors"
+   ],
+   "amount": 108454,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Moved to consent agenda per minutes. Desulme absent."
+  },
+  {
+   "id": "2026-R-140",
+   "date": "2026-10-13",
+   "ref": "Tab M, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Bought traffic calming speed tables and signs from Traffic Logix, about $650,000",
+   "kind": "contract",
+   "parties": [
+    "Traffic Logix Corporation"
+   ],
+   "amount": 650000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Estimé-Irvin",
+   "notes": "Desulme absent."
+  },
+  {
+   "id": "2026-R-141",
+   "date": "2026-10-13",
+   "ref": "Tab N, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Hired R2 Builders to install speed tables without bidding, up to $160,000",
+   "kind": "contract",
+   "parties": [
+    "R2 Builders, Inc."
+   ],
+   "amount": 160000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Charles",
+   "second": "Timothe",
+   "notes": "Bid waiver. Desulme absent."
+  },
+  {
+   "id": "2026-R-142",
+   "date": "2026-10-13",
+   "ref": "Tab O, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Amended the AECOM engineering contract for hydraulic modeling, up to $96,050 more",
+   "kind": "contract",
+   "parties": [
+    "AECOM Technical Services, Inc."
+   ],
+   "amount": 96050,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Moved to consent agenda per minutes. Desulme absent."
+  },
+  {
+   "id": "2026-R-143",
+   "date": "2026-10-13",
+   "ref": "Tab P, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Ratified an emergency purchase from Active Fire Sprinkler for a fire suppression system replacement, $319,200",
+   "kind": "contract",
+   "parties": [
+    "Active Fire Sprinkler, Inc."
+   ],
+   "amount": 319200,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Emergency procurement ratified. Desulme absent."
+  },
+  {
+   "id": "2026-R-144",
+   "date": "2026-10-13",
+   "ref": "Tab Q, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Ratified an emergency purchase from Active Fire Sprinkler for a museum fire alarm replacement, $165,000",
+   "kind": "contract",
+   "parties": [
+    "Active Fire Sprinkler, Inc."
+   ],
+   "amount": 165000,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Emergency procurement ratified. Desulme absent."
+  },
+  {
+   "id": "2026-R-145",
+   "date": "2026-10-13",
+   "ref": "Tab R, 2026-10-13 council meeting (CHAMP event 626)",
+   "title": "Hired KONE to modernize two police headquarters elevators without bidding, up to $291,400",
+   "kind": "contract",
+   "parties": [
+    "KONE, Inc."
+   ],
+   "amount": 291400,
+   "url": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "agenda": "https://play.champds.com/northmiamifl/event/626",
+   "minutes": "https://play.champds.com/ATT/northmiamifl/2026-10/11a1798ed1f22f4a1cd813ade3e116a03aa82ced.pdf",
+   "consent": false,
+   "result": "passed",
+   "roll": {
+    "Desulme": "absent",
+    "Timothe": "yes",
+    "Burns": "yes",
+    "Estimé-Irvin": "yes",
+    "Charles": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Estimé-Irvin",
+   "second": "Charles",
+   "notes": "Bid waiver. Desulme absent."
+  }
+ ],
+ "gaps": [
+  "Oct 27, 2026 meeting has not happened/has no minutes yet (agenda posted, CHAMP event 631).",
+  "Signed resolution scans were not read (they are image-only PDFs); votes come from the summary minutes. Resolution links for 2025-R-1 to 2025-R-216 are not listed on the city page, so those items link to the minutes PDF.",
+  "Applicant names for most zoning and site-plan items are not in the minutes; the agenda backup PDFs (Tab attachments) name them but could not be read reliably because the shared browser tab was repeatedly navigated by another session. Only 2025-R-14 was checked (agent of record, unnamed in extract).",
+  "Several split votes are recorded without naming the dissenter: 2025-R-14 (4-1), 2025-R-99 (4-1). Several 4-0 votes with five present do not say who did not vote: 2025-R-13, 2025-R-231, 2025-R-233, 2025-R-234, 2026-R-127, 2026-R-128.",
+  "Minutes contradictions: 2025-R-161 recorded 5-0 but names Burns and Desulme as no votes; 2025-R-209 recorded 4-0 but names Burns as a no vote.",
+  "Settlement amounts for 2026-R-92 and 2026-R-93 are not in the minutes.",
+  "Special budget hearings (2025-09-11, 2025-09-25, 2026-09-04, 2026-09-15) and special meetings were read; they held no qualifying private-party actions beyond budget items.",
+  "Legacy decisions.json item northmiami-2025-10-28-9 (Centennial Committee appointment, 2025-R-205) is an appointment and is excluded under this standard."
+ ]
+}
