@@ -455,7 +455,8 @@
   var A1SRC = [
     { name: 'Florida TaxWatch, Taxpayer’s Guide to the 2026 Constitutional Amendments', url: 'https://floridataxwatch.org/the-florida-taxpayers-guide-for-the-2026-constitutional-amendments/' },
     { name: 'Ballotpedia, Florida Budget Stabilization Fund Amendment (2026)', url: 'https://ballotpedia.org/Florida_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)' },
-    { name: 'WUWF, Ballot explainer: Amendment 1', url: 'https://www.wuwf.org/local-news/2026-10-23/ballot-explainer-amendment-1-budget-stabilization-fund' }
+    { name: 'WUWF, Ballot explainer: Amendment 1', url: 'https://www.wuwf.org/local-news/2026-10-23/ballot-explainer-amendment-1-budget-stabilization-fund' },
+    { name: 'WUSF, Florida Democrats think they\u2019ll break Republican supermajorities', url: 'https://wusf.org/text/politics-issues/2026-10-01/florida-democrats-break-republican-supermajorities-what-does-that-mean' }
   ];
   function isAmend1(title){ return /budget stabilization fund/i.test(title); }
   var A1W = {
@@ -474,6 +475,11 @@
       r: ['Deposits can be skipped in a year when lawmakers take money out for a shortfall, an emergency or a critical need.',
           'They can also skip a deposit to spend the money on a critical state need, by a two-thirds vote of each chamber in its own bill, no more than once every five years.',
           'New: when the fund is above 15%, lawmakers can take money out for a one-time “critical state need” by a two-thirds vote, but not below 10%. The amendment doesn’t define “critical state need.”'],
+      who: 'Who decides what a \u201crainy day\u201d is',
+      whoItems: ['A revenue shortfall: the Legislature, when the money coming in falls short of what the budget spends. Same today and under YES.',
+        'An emergency: the Governor declares it. Same today and under YES.',
+        'A \u201ccritical state need\u201d (new, only under YES): the Legislature alone, by a two-thirds vote of each chamber in a bill for that purpose. The amendment gives no definition, list or outside check, so it is whatever two-thirds of lawmakers agree it is.',
+        'Today Republicans hold just over two-thirds of both chambers (WUSF, October 2026), so one party can reach that bar on its own. This election could change that.'],
       sides: 'Who is for and against it',
       sidesTxt: 'For: Senate President Ben Albritton, House Speaker Daniel Perez and Florida TaxWatch, who say a bigger reserve protects the state in a downturn. Against: Gov. Ron DeSantis, who calls the fund already maxed out, plus the Florida Education Association, the League of Women Voters of Florida and Americans for Tax Reform, who say the money should go to current needs or back to taxpayers.',
       needs: 'Needs 60% of the vote to pass. The Legislature put it on the ballot (HJR 5019, 2025).'
@@ -493,6 +499,11 @@
       r: ['Los depósitos pueden omitirse en un año en que los legisladores saquen dinero por una caída de ingresos, una emergencia o una necesidad crítica.',
           'También pueden omitir un depósito para gastar en una necesidad crítica del estado, con dos tercios de cada cámara en una ley aparte, no más de una vez cada cinco años.',
           'Nuevo: cuando el fondo pasa del 15%, los legisladores pueden sacar dinero para una “necesidad crítica” de una sola vez, con dos tercios de los votos, sin bajar del 10%. La enmienda no define “necesidad crítica”.'],
+      who: 'Quién decide qué es un \u201cdía de lluvia\u201d',
+      whoItems: ['Una caída de ingresos: la Legislatura, cuando el dinero que entra no alcanza para lo que gasta el presupuesto. Igual hoy y con el SÍ.',
+        'Una emergencia: la declara el Gobernador. Igual hoy y con el SÍ.',
+        'Una \u201cnecesidad crítica del estado\u201d (nueva, solo con el SÍ): solo la Legislatura, con dos tercios de cada cámara en una ley para ese fin. La enmienda no da definición, lista ni control externo, así que es lo que dos tercios de los legisladores acuerden.',
+        'Hoy los republicanos tienen algo más de dos tercios de ambas cámaras (WUSF, octubre de 2026), así que un solo partido puede alcanzar ese umbral. Esta elección podría cambiarlo.'],
       sides: 'Quién está a favor y en contra',
       sidesTxt: 'A favor: el presidente del Senado Ben Albritton, el presidente de la Cámara Daniel Perez y Florida TaxWatch, que dicen que una reserva mayor protege al estado en una crisis. En contra: el gobernador Ron DeSantis, que dice que el fondo ya está al máximo, y la Florida Education Association, la League of Women Voters of Florida y Americans for Tax Reform, que dicen que el dinero debe ir a necesidades actuales o volver a los contribuyentes.',
       needs: 'Necesita el 60% de los votos. La Legislatura la puso en la boleta (HJR 5019, 2025).'
@@ -512,6 +523,11 @@
       r: ['Yo ka sote depo yo nan yon ane lè lejislatè yo retire lajan pou yon mank revni, yon ijans oswa yon bezwen kritik.',
           'Yo ka sote yon depo tou pou depanse lajan an sou yon bezwen kritik Leta, ak de tyè vòt nan chak chanm nan yon lwa apa, pa plis pase yon fwa chak senk ane.',
           'Nouvo: lè fon an depase 15%, lejislatè yo ka retire lajan pou yon “bezwen kritik” yon sèl fwa ak de tyè vòt, men pa anba 10%. Amannman an pa defini “bezwen kritik”.'],
+      who: 'Kiyès ki deside sa ki yon \u201cmove jou\u201d',
+      whoItems: ['Yon mank revni: Lejislati a, lè lajan k ap antre a pa ase pou sa bidjè a depanse. Menm jan jodi a ak avèk WI.',
+        'Yon ijans: Gouvènè a deklare l. Menm jan jodi a ak avèk WI.',
+        'Yon \u201cbezwen kritik Leta\u201d (nouvo, sèlman avèk WI): Lejislati a sèl, ak de tyè vòt nan chak chanm nan yon lwa pou sa. Amannman an pa bay okenn definisyon, lis oswa kontwòl deyò, kidonk se sa de tyè lejislatè yo dakò li ye.',
+        'Jodi a Repibliken yo gen yon ti kras plis pase de tyè nan tou de chanm yo (WUSF, oktòb 2026), kidonk yon sèl pati ka rive nan nivo sa a poukont li. Eleksyon sa a ka chanje sa.'],
       sides: 'Kiyès ki pou ak kiyès ki kont',
       sidesTxt: 'Pou: Prezidan Sena a Ben Albritton, Prezidan Chanm nan Daniel Perez ak Florida TaxWatch, ki di yon rezèv pi gwo pwoteje Leta a nan yon kriz. Kont: Gouvènè Ron DeSantis, ki di fon an deja plen, plis Florida Education Association, League of Women Voters of Florida ak Americans for Tax Reform, ki di lajan an ta dwe ale nan bezwen jodi a oswa retounen bay kontribyab yo.',
       needs: 'Li bezwen 60% vòt pou l pase. Lejislati a te mete l sou bilten an (HJR 5019, 2025).'
@@ -528,7 +544,7 @@
         splitHead: w.numbers, split: w.n.map(function(x){ return { label: x[0], text: x[1] }; }),
         loss: w.whatTxt, fundsHead: '', funds: [], fundNote: w.nNote,
         respond: '', share: '',
-        extra: [{ head: w.rules, items: w.r }, { head: w.sides, items: [w.sidesTxt, w.needs] }]
+        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.sidesTxt, w.needs] }]
       }
     };
   }

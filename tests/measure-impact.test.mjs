@@ -224,7 +224,7 @@ test('Amendment 1 is explained the same way for everyone, with no answers needed
     const c = MI.calc(A1, null, lang);
     assert.ok(c.explainer && c.general.yes && c.general.no, lang);
     assert.equal(c.reconcile.split.length, 5, lang);
-    assert.equal(c.reconcile.extra.length, 2, lang);
+    assert.equal(c.reconcile.extra.length, 3, lang);
     assert.ok(c.sources.every(s => s.url.startsWith('https://')));
   }
   assert.deepEqual(JSON.parse(JSON.stringify(MI.calc(A1, MI.normalize({ groups: { renter: true } }), 'en'))), JSON.parse(JSON.stringify(MI.calc(A1, null, 'en'))));
