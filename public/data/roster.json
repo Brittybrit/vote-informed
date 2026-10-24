@@ -7056,6 +7056,12 @@
    "name": "Jacqueline Garcia-Roves",
    "aliases": [],
    "ids": {}
+  },
+  {
+   "id": "shannon-del-prado",
+   "name": "Shannon del Prado",
+   "aliases": [],
+   "ids": {}
   }
  ],
  "offices": [
@@ -14543,6 +14549,18 @@
    "kind": "board",
    "actionScope": "all",
    "seats": 7,
+   "note": "Used where the minutes give the member but not the seat number."
+  },
+  {
+   "id": "city-pinecrest-council",
+   "name": "Pinecrest, Councilmember (seat not stated)",
+   "level": "municipal",
+   "jurisdiction": "Pinecrest",
+   "district": null,
+   "body": "city-pinecrest",
+   "kind": "board",
+   "actionScope": "all",
+   "seats": 4,
    "note": "Used where the minutes give the member but not the seat number."
   }
  ],
@@ -26957,6 +26975,23 @@
    "servingFrom": "2025-01-14",
    "lastSeen": "2025-10-14",
    "note": "Council Vice President in the minutes from Jan 14 through Oct 14, 2025, before his reelection on Nov 4, 2025."
+  },
+  {
+   "person": "shannon-del-prado",
+   "office": "city-pinecrest-council",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://legistar1.granicus.com/Pinecrest/attachments/23d9d2ff-62bf-4757-9cb0-5222b91bd7be.pdf",
+    "https://legistar1.granicus.com/Pinecrest/attachments/377d8e3a-9306-4ee8-89fc-5c6858f46502.pdf"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2026-04-14",
+   "note": "Listed voting in the Village Council minutes from Jan 14, 2025 through Apr 14, 2026; seat not stated there."
   }
  ],
  "ballot": [
