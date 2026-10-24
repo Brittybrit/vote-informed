@@ -74,6 +74,8 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   const U = J(f), B = d.bodies.find(b => b.key === key);
   // Spanish and Kreyol titles, keyed by action id (scripts/data/city/<slug>/translations.json)
   TR = existsSync(P(`scripts/data/city/${slug}/translations.json`)) ? J(`scripts/data/city/${slug}/translations.json`) : {};
+  // Notes shown on a card (a contradiction in the minutes, say), in all three languages, keyed by action id
+  const NOTES = existsSync(P(`scripts/data/city/${slug}/card-notes.json`)) ? J(`scripts/data/city/${slug}/card-notes.json`) : {};
   if (!B) { report.push(slug + ': no body in decisions.json'); continue; }
   const prior = new Map(B.actions.map(a => [a.id, a]));
   // How many new actions each old card stands for (one card sometimes covered several resolutions)
@@ -105,9 +107,12 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
       used.add(leg.id);
       a.gifts.push(...split(leg, a).filter(g => !a.gifts.some(x => x.donor === g.donor && x.date === g.date && x.amount === g.amount)));
       a.lobbied = leg.lobbied || []; a.namedLobbyist = leg.namedLobbyist || '';
-      if (a.gifts.length && leg.note) a.note = leg.note;
+      // the old note describes all of its gifts: only where every one of them landed
+      if (leg.note && leg.gifts.length && leg.gifts.every(g => a.gifts.some(x => x.donor === g.donor && x.date === g.date && x.amount === g.amount))) a.note = leg.note;
       if (leg.giftNotes) a.giftNotes = leg.giftNotes;
     }
+    const cn = NOTES[u.bareId || u.id] || NOTES[u.id];
+    if (cn) a.note = a.note ? { en: cn.en + ' ' + a.note.en, es: cn.es + ' ' + a.note.es, ht: cn.ht + ' ' + a.note.ht } : cn;
     return a;
   });
   // Prior actions not found in the full list (outside its window, or not an action on a named party) stay, flagged.
