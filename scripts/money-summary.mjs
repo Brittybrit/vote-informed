@@ -72,6 +72,9 @@ export function build(decisions, officesHeld) {
         // On a voting body (city, county), a tie needs a vote the member cast: absent, excused, abstained,
         // recused or a vote the minutes do not give is not counted (Brit, Oct 24, 2026).
         if (!state && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
+        // Once a body's bill cards are a full list, a bill card outside it (picked from donors earlier) no
+        // longer adds money or ties: only laws whose analysis names the business count
+        if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
         const gs = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
         if (gs.length) tied.push([a, gs]);
       }
@@ -169,6 +172,7 @@ export function tiedActions(B, key) {
   const out = [];
   for (const a of B.actions) {
     if (B.type !== 'requests' && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
+    if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
     const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
     if (!gifts.length) continue;
     const x = { ...a, gifts };

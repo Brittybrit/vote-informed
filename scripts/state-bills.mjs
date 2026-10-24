@@ -54,12 +54,15 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
     for (const v of ((bill.votes || {})[chamber] ? [].concat(bill.votes[chamber]) : [])) {
       if (!v || !v.roll || !Object.keys(v.roll).length) continue;
       const roll = {};
-      for (const k of members) if (k in v.roll) roll[k] = v.roll[k] === 'not voting' ? 'nv' : v.roll[k];
-      if (!Object.keys(roll).length) continue;
+      for (const k of members) {
+        const x = String(v.roll[k] == null ? 'not seated' : v.roll[k]).toLowerCase();
+        roll[k] = /not seated/.test(x) ? null : /excused/.test(x) ? 'excused' : /not voting|absent/.test(x) ? 'nv' : x;
+      }
+      if (!Object.values(roll).some(x => x)) continue;
       const seq = (String(v.url || '').match(/(\d{3,5})\.PDF$/i) || [])[1] || String(added);
       const date = isoOf(v.date);
       const gifts = [];
-      for (const k of Object.keys(roll)) for (const r of donorRows[k]) {
+      for (const k of Object.keys(roll).filter(k => roll[k])) for (const r of donorRows[k]) {
         if (r.date < CYCLE) continue;
         if (fits(r.donor, r.occ)) gifts.push({ to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ });
       }

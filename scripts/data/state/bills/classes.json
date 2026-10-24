@@ -68,6 +68,12 @@
   "tags": [],
   "re": "BROWNFIELD|REMEDIATION|ENVIRONMENTAL CLEAN"
  },
+ "HB 703 · 2025": {
+  "tags": [
+   "telecom"
+  ],
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+ },
  "HB 1103 · 2025": {
   "tags": [
    "insurance-health"
@@ -118,6 +124,25 @@
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
+ "SB 68 · 2025": {
+  "tags": [
+   "hospitals",
+   "nursing-homes",
+   "health-other"
+  ],
+  "re": "HOSPITAL|HEALTH SYSTEM|NURSING|SENIOR LIVING|CONTINUING CARE|TENET|HCA|BAPTIST|ADVENTHEALTH|ORLANDO HEALTH|MOUNT SINAI"
+ },
+ "SB 738 · 2025": {
+  "tags": [
+   "private-schools",
+   "education-other"
+  ],
+  "re": "PRESCHOOL|CHILD CARE|DAYCARE|DAY CARE|EARLY LEARNING|MONTESSORI"
+ },
+ "SB 954 · 2025": {
+  "tags": [],
+  "re": "RECOVERY RESIDENCE|SOBER|RECOVERY"
+ },
  "SB 180 · 2025": {
   "tags": [
    "agriculture-other",
@@ -159,6 +184,14 @@
   "tags": [],
   "re": "OVIEDO"
  },
+ "HB 4053 · 2025": {
+  "tags": [],
+  "re": "EVENT CENT|EVENT VENUE|JACKSONVILLE.*EVENT"
+ },
+ "HB 4067 · 2025": {
+  "tags": [],
+  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN"
+ },
  "HB 697 · 2026": {
   "tags": [
    "pharmacies-pbm"
@@ -186,6 +219,14 @@
  "SB 598 · 2026": {
   "tags": [],
   "re": "FUNERAL|CEMETER|MORTUAR"
+ },
+ "HB 803 · 2026": {
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|ROOF|PLUMB|ELECTRIC",
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD"
  },
  "HB 927 · 2026": {
   "tags": [
@@ -220,6 +261,12 @@
   "tags": [],
   "re": "RECOVERY|ADDICTION|SUBSTANCE|BEHAVIORAL|DETOX"
  },
+ "SB 1602 · 2026": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD"
+ },
  "HB 7031 · 2026": {
   "tags": [
    "gambling-casinos",
@@ -228,6 +275,10 @@
   "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
   "not": "SEMINOLE|MICCOSUKEE|VGW"
  },
+ "SB 394 · 2026": {
+  "tags": [],
+  "re": "REINSURANCE|REINSURER|INTERMEDIARY"
+ },
  "SB 1028 · 2026": {
   "tags": [
    "insurance-property",
@@ -235,6 +286,10 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
+ },
+ "HB 477 · 2026": {
+  "tags": [],
+  "re": "DRUG TEST|TESTING EQUIPMENT|TOXICOLOG"
  },
  "HB 1389 · 2026": {
   "tags": [

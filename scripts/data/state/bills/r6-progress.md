@@ -1,0 +1,30 @@
+# r6 progress
+- Work: B 2025-94, 2026-195, 2026-223; C 21 vote PDFs from universe.json missing.C
+- C 2025-11 S failed (https, ?r=3, http, .pdf -> "document not found"; VoteHistory tab failed)
+- C 2025-33 S failed (https, ?r=3, http)
+- B 2025-94 failed (z.HPP https/?r=3/http/.pdf; b.HHS). ByCategory OK: only z.HPP, b.HHS listed
+- B 2026-195 done b:false (z1.IAS via ?r=3)
+- B 2026-223 done b:false (z1.IAS via ?r=3)
+- C 2025-38 H done (?r=3). Using ?r=3 first from here
+- C 2025-41 S done; 2025-45 H done
+- C 2025-81 H failed (?r=3, https, http, .pdf not found). Note: lowercase .pdf always gives 'not found', so skip that variant
+- C 2025-116 H done
+- C 2025-122 H done
+- C 2025-155 S done
+- C 2025-181 S failed (?r=3, https, http)
+- C 2025-204 H failed (?r=3, https, http)
+- C 2025-233 H done
+- C 2025-243 H done
+- C 2026-4 H failed (?r=3, https, http)
+- C 2026-41 H done
+- C 2026-63 H done
+- C 2026-83 H done
+- C 2026-83 S done
+- C 2026-89 S failed (?r=3, https, http)
+- C 2026-125 H done (Gantt, Nixon not voting)
+- C 2026-146 H done (Gantt the lone nay). First pass done; retrying failures
+- B 2025-94 done b:false flagged (b.HHS fallback via ?r=3)
+## End of r6 (2026-10-24)
+- B: 3/3 (2026-195, 2026-223 b:false from z1.IAS; 2025-94 b:false flagged, b.HHS fallback).
+- C: 14/21 written. Still failing after https, ?r=3, http, .pdf and a retry: 2025-11 S (h00655__052), 2025-33 S (s00678c1041), 2025-81 H (h00903c2129), 2025-181 S (s00738c1002), 2025-204 H (s02514__438), 2026-4 H (h00697c1837), 2026-89 S (h01175c1022). None of these has a second vote PDF for the same final action (2025-81 ByCategory confirmed only the one House vote).
+- Notable: 2026-146 H Gantt the lone nay; 2026-125 H Gantt and Nixon not voting.

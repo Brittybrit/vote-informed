@@ -264,5 +264,60 @@
  "2026-198": {
   "tags": [],
   "re": "DAY CARE|DAYCARE|CHILD CARE"
+ },
+ "2025-122": {
+  "tags": [
+   "telecom"
+  ],
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+ },
+ "2025-179": {
+  "tags": [
+   "hospitals",
+   "nursing-homes",
+   "health-other"
+  ],
+  "re": "HOSPITAL|HEALTH SYSTEM|NURSING|SENIOR LIVING|CONTINUING CARE|TENET|HCA|BAPTIST|ADVENTHEALTH|ORLANDO HEALTH|MOUNT SINAI"
+ },
+ "2025-181": {
+  "tags": [
+   "private-schools",
+   "education-other"
+  ],
+  "re": "PRESCHOOL|CHILD CARE|DAYCARE|DAY CARE|EARLY LEARNING|MONTESSORI"
+ },
+ "2025-182": {
+  "tags": [],
+  "re": "RECOVERY RESIDENCE|SOBER|RECOVERY"
+ },
+ "2025-243": {
+  "tags": [],
+  "re": "EVENT CENT|EVENT VENUE|JACKSONVILLE.*EVENT"
+ },
+ "2025-248": {
+  "tags": [],
+  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN"
+ },
+ "2026-63": {
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|ROOF|PLUMB|ELECTRIC",
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD"
+ },
+ "2026-125": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD"
+ },
+ "2026-146": {
+  "tags": [],
+  "re": "REINSURANCE|REINSURER|INTERMEDIARY"
+ },
+ "2026-157": {
+  "tags": [],
+  "re": "DRUG TEST|TESTING EQUIPMENT|TOXICOLOG"
  }
 }

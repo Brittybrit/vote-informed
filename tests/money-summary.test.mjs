@@ -40,7 +40,7 @@ test('gifts before the cycle are not counted', () => {
 test('totals add up', () => {
   for (const [pid, p] of Object.entries(saved.people)) {
     if (p.kind === 'votes') assert.equal(p.yes + p.no + p.away + (p.abst || 0) + (p.unk || 0), p.items, pid);
-    if (p.kind === 'state') assert.ok(Math.abs(p.requests.money + p.bills.money - p.total) < 0.01, pid);
+    if (p.kind === 'state') assert.ok(Math.abs(p.requests.money + p.bills.money + (p.bills.otherMoney || 0) - p.total) < 0.01, pid);
     if (p.kind !== 'none') assert.ok(p.beforeAmt <= p.total && p.before <= p.gifts, pid);
   }
 });
@@ -55,7 +55,7 @@ test('renders in all three languages with no leftovers', () => {
   // the percentages first (Brit, Oct 24, 2026), then the money, then the actions
   const r = render(saved.people['mike-redondo'], 'en');
   assert.match(r, /^Of the 89 budget requests he filed/);
-  assert.ok(r.indexOf('Of the 89') < r.indexOf('Mike Redondo took $193,555 from 31 donors'));
+  assert.ok(r.indexOf('Of the 89') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
   assert.ok(r.indexOf('took') < r.indexOf('asked for $110.5 million'));
   // the parts add up to the total when both are shown
   for (const p of Object.values(saved.people)) {
