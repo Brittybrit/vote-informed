@@ -115,7 +115,7 @@
       others: 'What it means for others in your community', money: 'Public money and services at stake', youUse: 'You said you use this',
       reconcileHead: 'Your taxes and the services they pay for', unknown: 'Not yet known',
       sources: 'Sources', disc: 'Plain-language consequences compiled with AI from the measure text and official sources, plus calculations from official figures. It does not say how to vote. Check anything that would change your vote against the linked sources.',
-      loading: 'Looking up what this measure changes, and for whom. Usually 20 to 60 seconds.', failed: 'Couldn’t load this right now.', retry: 'Try again',
+      loading: 'Researching what this measure changes, from official sources. This runs once per measure for everyone, usually under a minute; after that it opens instantly. Your address and answers are not part of it.', failed: 'Couldn\u2019t load this right now.', retry: 'Try again',
       approx: 'Estimate. Tax rates are set every year, so the real number will differ.',
       a3: {
         exempt: function(c, n27, n28){ return 'Today ' + usd(c) + ' of your home’s assessed value is exempt from non-school property taxes. With YES that becomes ' + usd(n27) + ' in 2027 and ' + usd(n28) + ' in 2028 (then it rises with inflation).'; },
@@ -183,7 +183,7 @@
       others: 'Lo que significa para otros en su comunidad', money: 'Dinero y servicios públicos en juego', youUse: 'Usted indicó que usa esto',
       reconcileHead: 'Sus impuestos y los servicios que pagan', unknown: 'Aún no se sabe',
       sources: 'Fuentes', disc: 'Consecuencias en lenguaje sencillo, compiladas con IA a partir del texto de la medida y fuentes oficiales, más cálculos con cifras oficiales. No indica cómo votar. Verifique con las fuentes enlazadas todo lo que podría cambiar su voto.',
-      loading: 'Buscando qué cambia esta medida y para quién. Normalmente de 20 a 60 segundos.', failed: 'No se pudo cargar en este momento.', retry: 'Intentar de nuevo',
+      loading: 'Investigando qué cambia esta medida, con fuentes oficiales. Se hace una sola vez por medida para todos, normalmente en menos de un minuto; después abre al instante. Su dirección y sus respuestas no se usan para esto.', failed: 'No se pudo cargar en este momento.', retry: 'Intentar de nuevo',
       approx: 'Estimado. Las tasas de impuestos se fijan cada año, así que la cifra real será distinta.',
       a3: {
         exempt: function(c, n27, n28){ return 'Hoy ' + usd(c) + ' del valor tasado de su vivienda está exento de los impuestos a la propiedad que no son escolares. Con el SÍ serían ' + usd(n27) + ' en 2027 y ' + usd(n28) + ' en 2028 (luego sube con la inflación).'; },
@@ -251,7 +251,7 @@
       others: 'Sa sa vle di pou lòt moun nan kominote w', money: 'Lajan piblik ak sèvis ki an jwèt', youUse: 'Ou di ou sèvi ak sa',
       reconcileHead: 'Taks ou ak sèvis yo peye', unknown: 'Nou poko konnen',
       sources: 'Sous', disc: 'Konsekans an langaj senp, ki fèt ak èd entèlijans atifisyèl apati tèks mezi a ak sous ofisyèl, plis kalkil ak chif ofisyèl. Li pa di w kijan pou w vote. Verifye nan sous ki gen lyen yo nenpòt bagay ki ta ka chanje vòt ou.',
-      loading: 'N ap chèche sa mezi sa a chanje, ak pou kiyès. Anjeneral 20 a 60 segonn.', failed: 'Nou pa ka chaje sa kounye a.', retry: 'Eseye ankò',
+      loading: 'N ap chèche sa mezi sa a chanje, nan sous ofisyèl. Sa fèt yon sèl fwa pou chak mezi pou tout moun, anjeneral mwens pase yon minit; apre sa li louvri touswit. Adrès ou ak repons ou yo pa ladan l.', failed: 'Nou pa ka chaje sa kounye a.', retry: 'Eseye ankò',
       approx: 'Estimasyon. To taks yo fikse chak ane, kidonk vrè chif la ap diferan.',
       a3: {
         exempt: function(c, n27, n28){ return 'Jodi a ' + usd(c) + ' nan valè evalyasyon kay ou egzante de taks pwopriyete ki pa pou lekòl. Avèk WI sa vin ' + usd(n27) + ' an 2027 ak ' + usd(n28) + ' an 2028 (apre sa li monte ak enflasyon).'; },

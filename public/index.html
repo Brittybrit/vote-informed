@@ -3511,7 +3511,11 @@ function renderImpact(ri){
   var calc = MI.calc(ballot.races[ri].office, me, LANG);
   var got = impCache[key];
   if(!got){
-    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-loading"><div class="oval-anim"></div><p>' + esc(w.loading) + '</p></div>';
+    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-loading"><div class="oval-anim"></div><p>' + esc(w.loading) + '</p><p class="fine" id="impClock"></p></div>';
+    var t0 = Date.now(), clock = setInterval(function(){
+      var c = $('impClock'); if(!c){ clearInterval(clock); return; }
+      c.textContent = Math.round((Date.now() - t0) / 1000) + 's';
+    }, 1000);
     $('impEdit').onclick = function(){ impEditing = true; renderImpact(ri); };
     impactFetch(ballot.races[ri]).then(function(r){
       impCache[key] = { result: r };

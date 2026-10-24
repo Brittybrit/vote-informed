@@ -4006,7 +4006,7 @@ async function masterIndex(env) {
   if (!pk) pk = await bundledParseKey(env);
   if (!pk) return null;
   if (MASTER_INDEX && MASTER_INDEX.pk === pk) return MASTER_INDEX;
-  const items = await warmItems(env);
+  const items = await warmItems(env, false);
   if (!items) return null;
   const byOffice = new Map(), byName = new Map();
   for (const x of items) {
@@ -4049,18 +4049,19 @@ async function onMaster(env, body) {
   return Object.assign({}, body, { name: hit.name, office: hit.office, jurisdiction: hit.jurisdiction, election: hit.election, summary: hit.summary });
 }
 
-async function warmItems(env) {
+async function warmItems(env, withImpact = true) {
   let pk = await env.CACHE.get(FEATURED_KEY);
   if (!pk) pk = await bundledParseKey(env);
   const master = pk ? await env.CACHE.get(pk, 'json') : null;
   if (!master || !Array.isArray(master.races)) return null;
   const jurisdiction = master.jurisdiction || '';
   const election = [master.electionName, master.electionDate].filter(Boolean).join(' ');
-  const items = [];
+  const items = [], impacts = [];
   for (const race of master.races) {
     if (!race || !isStr(race.office)) continue;
     if (race.isMeasure) {
       items.push({ label: race.office, kind: 'measure', body: { name: race.office, office: 'Ballot measure', jurisdiction, election, isJudicial: false, isMeasure: true, summary: race.summary || '' } });
+      impacts.push({ label: race.office + ' (what it means for you)', kind: 'impact', body: { name: race.office, jurisdiction, election, summary: race.summary || '' } });
       continue;
     }
     let people = (race.candidates || []).filter(c => c && isStr(c.name) && c.name.trim() && !WARM_YESNO.test(c.name.trim()) && !/write[\s-]*in/i.test(c.name));
@@ -4073,7 +4074,9 @@ async function warmItems(env) {
       items.push({ label: c.name + ' (' + race.office + ')', kind: judge ? 'judge' : 'candidate', body: { name: c.name, office: race.office, jurisdiction, election, isJudicial: !!race.isJudicial } });
     }
   }
-  return items;
+  // "What it means for you" research goes last so the dossiers warm first. withImpact is off for the
+  // master index, which only matches candidates and measures.
+  return withImpact ? items.concat(impacts) : items;
 }
 async function warmList(env) {
   const items = await warmItems(env);
@@ -4082,6 +4085,14 @@ async function warmList(env) {
 }
 const WARM_LANGS = ['es', 'ht'];
 async function warmState(env, item) {
+  if (item.kind === 'impact') {
+    // translated on first read in each language (short strings), so ready once researched
+    const { key } = await impactSlot(env, item.body);
+    if (await env.CACHE.get('hold:' + key)) return { key, state: 'held' };
+    const cost = await env.CACHE.get('warmcost:' + key, 'json');
+    const state = (await env.CACHE.get(key)) ? 'cached' : (await env.CACHE.get('fail:' + key)) ? 'failed' : (await env.CACHE.get('pend:' + key)) ? 'pending' : 'todo';
+    return cost ? { key, at: key, state, cost: usageCost(cost) } : { key, at: key, state };
+  }
   const { key, alias, prefix } = await researchSlot(env, item.body);
   if (await env.CACHE.get('hold:' + key)) return { key, state: 'held' };
   let at = (await env.CACHE.get(key)) ? key : null;
@@ -4144,10 +4155,11 @@ async function warmRun(env, b) {
     }
     else if (s.state !== 'todo') { out.push({ i, state: s.state }); continue; }
     if (!(await rateLimit(env, 'warm', 'owner', GLOBAL_LIMITS.warm))) { out.push({ i, state: 'stopped', error: env.FRESH_OFF === '1' ? 'New research is switched off (FRESH_OFF=1).' : 'Daily warm-up limit reached.' }); break; }
-    const { key, params } = await researchSlot(env, items[i].body);
+    const impact = items[i].kind === 'impact';
+    const { key, params } = impact ? await impactSlot(env, items[i].body) : await researchSlot(env, items[i].body);
     await env.CACHE.put('pend:' + key, '1', { expirationTtl: 900 });
     const stub = env.RESEARCH.get(env.RESEARCH.idFromName(key));
-    await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ key, params, warm: true }) });
+    await stub.fetch('https://research/run', { method: 'POST', body: JSON.stringify({ key, params, warm: true, impact }) });
     out.push({ i, state: 'pending' });
   }
   return { states: out };
@@ -4329,7 +4341,7 @@ async function handleMeasureImpact(request, env, ctx) {
 function impactPrompt(p) {
   const groups = Object.keys(IMPACT_GROUPS).map(k => '  - "' + k + '": a voter who ' + IMPACT_GROUPS[k]).join('\n');
   return [
-    'A voter wants to know what this BALLOT MEASURE would change for people in their situation, and what public money and public services depend on it. Use web search. You have at most 4 searches: look first for official sources (the measure\'s full text, the resolution or ordinance that put it on the ballot, government staff reports, budget documents, the state Revenue Estimating Conference or Financial Impact Estimating Conference, the school district or county\'s own published estimates), then reliable news coverage.',
+    'A voter wants to know what this BALLOT MEASURE would change for people in their situation, and what public money and public services depend on it. Use web search. You have at most 3 searches: look first for official sources (the measure\'s full text, the resolution or ordinance that put it on the ballot, government staff reports, budget documents, the state Revenue Estimating Conference or Financial Impact Estimating Conference, the school district or county\'s own published estimates), then reliable news coverage.',
     '',
     'Measure: ' + p.name,
     'Ballot summary as printed: ' + (p.summary || '(not provided)'),
@@ -4398,7 +4410,7 @@ async function runImpact(env, key, p) {
       max_tokens: 6000,
       temperature: 0,
       messages: [{ role: 'user', content: impactPrompt(p) }],
-      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 4 }]
+      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 3 }]
     }, seen);
     const result = cleanImpact(extractJSON(text));
     result._links = verifyUrls(result, seen);   // links must be pages the search returned
@@ -4662,7 +4674,10 @@ export class ResearchRunner {
     await this.state.storage.put('running', Date.now());
     try {
       if (job.impact) {
-        await runImpact(this.env, job.key, job.params);   // writes result or fail: key to KV itself
+        const env = Object.create(this.env);
+        env.__usage = {};
+        try { await runImpact(env, job.key, job.params); }   // writes result or fail: key to KV itself
+        finally { if (job.warm) await this.env.CACHE.put('warmcost:' + job.key, JSON.stringify(env.__usage), { expirationTtl: cacheTtl() }); }
       } else if (job.flDonors) {
         await flDonorsJob(this.env, job.key, job.name, job.office);   // writes fldon:<key> to KV
       } else if (job.warm) {

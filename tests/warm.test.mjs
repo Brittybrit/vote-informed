@@ -30,7 +30,8 @@ test('warm list reads the ballot the way the page does', async () => {
     ['judge', 'Jane Roe'],
     ['candidate', 'Maria Elvira Salazar'], ['candidate', 'Other Person'],
     ['judge', 'A. Judge'], ['judge', 'B. Judge'],
-    ['measure', 'City of Miami Question 3']
+    ['measure', 'City of Miami Question 3'],
+    ['impact', 'City of Miami Question 3']   // "what it means for you" research, warmed last
   ]);
   assert.equal(items[0].body.election, 'General Election November 3, 2026');
 });
@@ -48,6 +49,9 @@ test('warm-up schedules the same cache slot a visitor would', async () => {
   assert.equal(e2.jobs[0].key, visitorKey);
   assert.equal(e2.jobs[0].warm, true);
   assert.ok(e2.jobs[1].key.startsWith('resm2:'));
+  const r2 = await w.warmRun(e2, { indices: [7] });
+  assert.deepEqual(r2.states.map(x => x.state), ['pending']);
+  assert.ok(e2.jobs[2].key.startsWith('impm2:') && e2.jobs[2].impact === true);
 });
 
 test('warm-up skips cached, running and failed contests, and retries failed on request', async () => {
