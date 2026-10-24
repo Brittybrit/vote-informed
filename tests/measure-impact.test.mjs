@@ -36,7 +36,7 @@ test('current non-school homestead exemption follows the 2026 amounts', () => {
 });
 
 test('Amendment 3: savings come with what the County loses and what it pays for', () => {
-  const me = MI.normalize({ groups: { homestead: true, transit: true }, homeValue: 320000, nsTax: 3900 });
+  const me = MI.normalize({ groups: { homestead: true }, homeValue: 320000, nsTax: 3900 });
   const c = MI.calc(A3, me, 'en');
   // 98,589 and 198,589 more exempt, at 3,900 / 268,589 of taxable value
   assert.deepEqual({ ...c.savings }, { y2027: 1432, y2028: 2884 });
@@ -58,7 +58,7 @@ test('Amendment 3: a renter sees the services side but no savings', () => {
 });
 
 test('school levy: what you pay against what the district would lose', () => {
-  const c = MI.calc(LEVY, MI.normalize({ groups: { homestead: true, owner_other: true, school_parent: true }, homeValue: 325000, otherValue: 200000 }), 'en');
+  const c = MI.calc(LEVY, MI.normalize({ groups: { homestead: true, owner_other: true }, homeValue: 325000, otherValue: 200000 }), 'en');
   assert.equal(c.payHome, 300);   // (325,000 - 25,000) / 1,000
   assert.equal(c.payOther, 200);
   assert.ok(c.reconcile.loss.includes('$585 million'));
@@ -201,13 +201,16 @@ test('with a city, taxes come from adopted rates and the savings split adds up',
 });
 
 test('no service is tagged as something only some voters use', () => {
-  const c = MI.calc(A3, MI.normalize({ groups: { homestead: true, transit: true, senior: true }, homeValue: 320000 }), 'en');
+  const c = MI.calc(A3, MI.normalize({ groups: { homestead: true, senior: true }, homeValue: 320000 }), 'en');
   assert.ok(c.reconcile.funds.every(f => !('mine' in f)) && !('mine' in c.reconcile));
 });
 
 test('parks and libraries are not checkboxes', () => {
-  assert.ok(!MI.GROUPS.includes('library') && !MI.GROUPS.includes('park_user'));
-  assert.equal(Object.keys(MI.normalize({ groups: { library: true, park_user: true } }).groups).length, 0);   // old saved answers drop out
+  for (const k of ['library', 'park_user', 'transit', 'school_parent']) {
+    assert.ok(!MI.GROUPS.includes(k), k);
+    for (const l of ['en', 'es', 'ht']) assert.ok(MI.words(l).svc[k], l + ' ' + k);   // old research rows show as services
+  }
+  assert.equal(Object.keys(MI.normalize({ groups: { library: true, park_user: true, transit: true, school_parent: true } }).groups).length, 0);   // old saved answers drop out
 });
 
 test('lookup values are used only for the value they came with', () => {

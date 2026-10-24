@@ -9,7 +9,7 @@
 // and what that money pays for now. No prediction of what a government will cut.
 (function(){
   var KEY = 'ballot305.me';
-  var GROUPS = ['homestead', 'owner_other', 'renter', 'business', 'farm', 'school_parent', 'school_staff', 'public_employee', 'transit', 'senior'];
+  var GROUPS = ['homestead', 'owner_other', 'renter', 'business', 'farm', 'school_staff', 'public_employee', 'senior'];
 
   function usd(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('en-US'); }
   function big(n, lang){
@@ -88,15 +88,16 @@
       g: {
         homestead: 'I own the home I live in (homestead exemption)', owner_other: 'I own property I don’t live in (rental, second home, land, business property)',
         renter: 'I rent my home', business: 'I own a business', farm: 'I own or lease farmland, or run a farm or agritourism business',
-        school_parent: 'I have a child in a public school (district or charter)', school_staff: 'I work for the school district',
-        public_employee: 'I work for the county or a city (including police and fire)', transit: 'I ride the bus, Metrorail or Metromover',
+        school_staff: 'I work for the school district',
+        public_employee: 'I work for the county or a city (including police and fire)',
         senior: 'I’m 65 or older'
       },
       o: {
         homestead: 'Homeowners who live in their home', owner_other: 'Owners of property they don\u2019t live in', renter: 'Renters', business: 'Business owners',
-        farm: 'Farmland owners and farm businesses', school_parent: 'Families with children in public school', school_staff: 'School district employees',
-        public_employee: 'County and city employees', transit: 'Transit riders', senior: 'People 65 and older'
+        farm: 'Farmland owners and farm businesses', school_staff: 'School district employees',
+        public_employee: 'County and city employees', senior: 'People 65 and older'
       },
+      svc: { school_parent: 'Public schools', transit: 'Public transit', library: 'Public libraries', park_user: 'Public parks' },
       addr: {
         head: 'Fill in your values from your address',
         note: 'If you use this, your address goes to the Ballot305 server and on to the Miami-Dade Property Appraiser to find your property’s values. Ballot305 doesn’t keep it. You can skip this and type the numbers yourself.',
@@ -156,15 +157,16 @@
       g: {
         homestead: 'Soy dueño de la casa donde vivo (exención homestead)', owner_other: 'Tengo una propiedad donde no vivo (alquiler, segunda casa, terreno, local comercial)',
         renter: 'Alquilo mi vivienda', business: 'Tengo un negocio', farm: 'Soy dueño o arrendatario de tierras agrícolas, o tengo una finca o negocio de agroturismo',
-        school_parent: 'Tengo un hijo en una escuela pública (del distrito o chárter)', school_staff: 'Trabajo para el distrito escolar',
-        public_employee: 'Trabajo para el condado o una ciudad (incluida policía y bomberos)', transit: 'Uso el autobús, Metrorail o Metromover',
+        school_staff: 'Trabajo para el distrito escolar',
+        public_employee: 'Trabajo para el condado o una ciudad (incluida policía y bomberos)',
         senior: 'Tengo 65 años o más'
       },
       o: {
         homestead: 'Dueños que viven en su vivienda', owner_other: 'Dueños de propiedades donde no viven', renter: 'Inquilinos', business: 'Dueños de negocios',
-        farm: 'Dueños de tierras agrícolas y negocios agrícolas', school_parent: 'Familias con hijos en escuelas públicas', school_staff: 'Empleados del distrito escolar',
-        public_employee: 'Empleados del condado y de las ciudades', transit: 'Usuarios del transporte público', senior: 'Personas de 65 años o más'
+        farm: 'Dueños de tierras agrícolas y negocios agrícolas', school_staff: 'Empleados del distrito escolar',
+        public_employee: 'Empleados del condado y de las ciudades', senior: 'Personas de 65 años o más'
       },
+      svc: { school_parent: 'Escuelas públicas', transit: 'Transporte público', library: 'Bibliotecas públicas', park_user: 'Parques públicos' },
       addr: {
         head: 'Complete sus valores con su dirección',
         note: 'Si usa esto, su dirección va al servidor de Ballot305 y de ahí al Tasador de Propiedades de Miami-Dade para buscar los valores de su propiedad. Ballot305 no la guarda. Puede omitir esto y escribir las cifras usted mismo.',
@@ -224,15 +226,16 @@
       g: {
         homestead: 'Mwen se pwopriyetè kay mwen rete a (egzanpsyon homestead)', owner_other: 'Mwen gen yon pwopriyete mwen pa rete ladan l (lokasyon, dezyèm kay, tè, lokal biznis)',
         renter: 'Mwen lwe kay mwen', business: 'Mwen gen yon biznis', farm: 'Mwen posede oswa lwe tè agrikòl, oswa mwen gen yon fèm oswa biznis agwotouris',
-        school_parent: 'Mwen gen yon pitit nan yon lekòl piblik (distri oswa chartè)', school_staff: 'Mwen travay pou distri lekòl la',
-        public_employee: 'Mwen travay pou konte a oswa yon vil (sa gen ladan l lapolis ak ponpye)', transit: 'Mwen pran bis, Metrorail oswa Metromover',
+        school_staff: 'Mwen travay pou distri lekòl la',
+        public_employee: 'Mwen travay pou konte a oswa yon vil (sa gen ladan l lapolis ak ponpye)',
         senior: 'Mwen gen 65 an oswa plis'
       },
       o: {
         homestead: 'Pwopriyetè ki rete nan kay yo', owner_other: 'Pwopriyetè ki gen pwopriyete yo pa rete ladan l', renter: 'Lokatè', business: 'Pwopriyetè biznis',
-        farm: 'Pwopriyetè tè agrikòl ak biznis agrikòl', school_parent: 'Fanmi ki gen pitit nan lekòl piblik', school_staff: 'Anplwaye distri lekòl la',
-        public_employee: 'Anplwaye konte a ak vil yo', transit: 'Moun ki pran transpò piblik', senior: 'Moun 65 an oswa plis'
+        farm: 'Pwopriyetè tè agrikòl ak biznis agrikòl', school_staff: 'Anplwaye distri lekòl la',
+        public_employee: 'Anplwaye konte a ak vil yo', senior: 'Moun 65 an oswa plis'
       },
+      svc: { school_parent: 'Lekòl piblik', transit: 'Transpò piblik', library: 'Bibliyotèk piblik', park_user: 'Pak piblik' },
       addr: {
         head: 'Ranpli valè ou yo ak adrès ou',
         note: 'Si w sèvi ak sa, adrès ou ale sou sèvè Ballot305 epi soti la ale kay Evalyatè Pwopriyete Miami-Dade pou jwenn valè pwopriyete w. Ballot305 pa kenbe l. Ou ka sote sa epi tape chif yo ou menm.',

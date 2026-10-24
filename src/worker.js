@@ -4280,7 +4280,7 @@ async function legacyFingerprint(pdfB64) {
 /* ---------------- what a ballot measure means for different households ---------------- */
 // The page never sends a voter's own details here. This asks, once per measure and for everyone,
 // how the measure changes things for a fixed set of circumstances (own and live in your home, rent,
-// a child in public school, ride transit...), and what public money and services ride on it. The page
+// work for the school district, 65 or older...), and what public money and services ride on it. The page
 // matches that to the answers the voter keeps on their own device. Shared cache, same spend limits.
 const IMPACT_VERSION = 3;   // 2: community-wide (second-order) effects for everyone; 3: why it is on the ballot
 const IMPACT_GROUPS = {
@@ -4289,10 +4289,8 @@ const IMPACT_GROUPS = {
   renter: 'rents their home',
   business: 'owns a business',
   farm: 'owns or leases farmland or runs a farm or agritourism business',
-  school_parent: 'has a child in a public school (district or charter)',
   school_staff: 'works for the public school district (teacher or other staff)',
   public_employee: 'works for the county or a city government (including police and fire)',
-  transit: 'rides public transit',
   senior: 'is 65 or older'
 };
 const IMPACT_TEXT_MAX = 600;
@@ -4349,7 +4347,7 @@ function impactPrompt(p) {
     'WHY IT IS ON THE BALLOT FIRST: find who put this measure on the ballot, the reason its sponsors gave, and the rule that requires a public vote. Use the official record (the resolution, ordinance or bill history) for who, when and the vote; attribute the reason to the sponsors; never guess at motives.',
     'Describe consequences, not merits. Never say whether the measure is good or bad, never recommend a vote, never use loaded words (relief, burden, giveaway, slash, gut). Say what changes, for whom, by how much, starting when, and who says so.',
     'Only state an effect that the measure text itself states or that an official or reliable source states. Attribute every estimate to its source in the sentence ("the county estimates..."). When sources disagree, give both. If official sources do not say, leave it out and mention it in unknownNote. Never invent a number.',
-    'Parks and libraries are shared by the whole community: never treat them as a circumstance or limit them to people who use them; cover them under community and money. ' +
+    'Public services (schools, transit, parks, libraries, fire, police and the rest) affect everyone whether or not they use them: never treat using a service as a circumstance; say what happens to each affected service under money and community, for every resident. ' +
     'EVERYONE, NOT ONLY USERS: public services affect people who never use them (schools and libraries affect property values, safety, the workforce and the local economy; transit affects traffic and jobs). In community, give these second-order effects for the whole community, but only as an official body, a research institution or reliable reporting states them, attributed in the sentence, never as your own reasoning. Up to 4 items.',
     'MONEY BOTH WAYS: when the measure changes taxes or public revenue, say who pays less or more AND which government loses or gains money, how much (from the official estimate), and which public services that money pays for now. Where a government would have less money, state what it may do in response only as its own officials or the measure text describe it (cuts, reserves, other revenue, rate changes); never predict which it will choose.',
     'Name the government that runs each service (the county, the city, the school district, a special district). Some cities in a county run their own police, fire, parks or libraries; say so when a source does instead of implying every resident is served by the county.',

@@ -3862,13 +3862,17 @@ function impactBody(ri, r, calc, me, w){
   // only circumstances the page still asks about (older cached research may carry retired ones)
   var known = (r && r.groups || []).filter(function(g){ return MI.GROUPS.indexOf(g.group) >= 0; });
   var mine = known.filter(function(g){ return MI.has(me, g.group); });
+  // public services are shown to everyone, never as a box to check. Research cached before that change
+  // filed some services as user groups; show those rows as service effects for everyone.
+  var svc = (r && r.groups || []).filter(function(g){ return w.svc[g.group]; })
+    .map(function(g){ return { whatNote: w.svc[g.group], yesNote: g.yesNote, noNote: g.noNote, sources: g.sources }; });
   var others = known.filter(function(g){ return !MI.has(me, g.group); });
   var sum = (calc && calc.summary) || { yes: [], no: [] };
   var P = function(x){ return '<p>' + esc(x) + '</p>'; };
 
   // 1. Two summary boxes, YES and NO side by side: what the measure does, what it means for you,
   //    and what it means for everyone, whether or not they use the services
-  var comm = (r && r.community) || [];
+  var comm = svc.concat((r && r.community) || []);
   function box(cls, title, general, mineLines, allLines){
     var you = mineLines.filter(Boolean), all = allLines.filter(Boolean);
     if(!general && !you.length && !all.length) return '';
@@ -3880,7 +3884,7 @@ function impactBody(ri, r, calc, me, w){
   function allFor(which, fixed){
     var out = (fixed || []).slice();
     if(r && r.everyone && r.everyone[which]) out.push(r.everyone[which]);
-    comm.slice(0, 2).forEach(function(c){ if(c[which] && !/^(no change|nothing changes|unchanged)\.?$/i.test(c[which].trim())) out.push(c.whatNote + ': ' + c[which]); });
+    comm.slice(0, 3).forEach(function(c){ if(c[which] && !/^(no change|nothing changes|unchanged)\.?$/i.test(c[which].trim())) out.push(c.whatNote + ': ' + c[which]); });
     return out;
   }
   var h = '<div class="imp-boxes">' +
@@ -5152,11 +5156,12 @@ function loadTies(ri, cand){
 // what's next is the body's next meetings, posted agenda items and how to speak (/data/cycles.json).
 var YOU = {}, youEditing = false;
 var TOPIC_GROUPS = { housing: ['renter', 'homestead', 'owner_other'], development: ['homestead', 'owner_other'], taxes: ['homestead', 'owner_other', 'business'],
-  insurance: ['homestead', 'owner_other'], transit: ['transit'], parks: ['park_user'], schools: ['school_parent', 'school_staff'], libraries: ['library'],
+  insurance: ['homestead', 'owner_other'], schools: ['school_staff'],
   seniors: ['senior'], labor: ['public_employee'], business: ['business'], farming: ['farm'],
   // topics of posted agenda items (scripts/upcoming.mjs) that name the same things
-  daycare: ['school_parent', 'school_staff'], parking: ['transit'], cycling: ['transit'], boating: ['park_user'], nightlife: ['business'], towing: ['business'] };
-var EVERYONE = ['police', 'fire', 'water', 'trash', 'noise'];   // services every household uses; listed separately
+  nightlife: ['business'], towing: ['business'] };
+// public services: shown to every voter whether or not they use them, never a box to check
+var EVERYONE = ['police', 'fire', 'water', 'trash', 'noise', 'transit', 'parks', 'schools', 'libraries', 'daycare', 'parking', 'cycling', 'boating'];
 function youTopicLabel(k){ var x = t('topic.' + k); return x === 'topic.' + k ? k : x; }
 function youMatch(topics, me){
   return (topics || []).filter(function(k){ return EVERYONE.indexOf(k) >= 0 || (TOPIC_GROUPS[k] || []).some(function(g){ return MI && MI.has(me, g); }); });
