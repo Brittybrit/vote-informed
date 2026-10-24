@@ -2438,6 +2438,7 @@ function t(key, vars){
 }
 </script>
 <script src="/money-summary.js"></script>
+<script src="/millage-2026.js"></script>
 <script src="/measure-impact.js"></script>
 <script src="/decision-card.js"></script>
 <script src="/precinct-filter.js"></script>
@@ -3515,6 +3516,10 @@ function impactForm(me, w){
     '<input type="text" id="impUnit" style="max-width:90px" placeholder="' + esc(A.unit) + '">' +
     '<button class="btn2" type="button" id="impLook" style="margin-top:0">' + esc(A.btn) + '</button></div><div id="impLookOut" class="help" style="margin-top:6px"></div>';
   h += '<div id="impHome"' + (MI.has(me, 'homestead') ? '' : ' hidden') + '>' +
+    '<label class="num" for="impPlace">' + esc(w.place) + '</label><select id="impPlace" style="font:inherit;font-size:14px;padding:6px 8px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);max-width:100%">' +
+      '<option value="">' + esc(w.placeNone) + '</option>' +
+      MI.places().map(function(p){ return '<option value="' + esc(p) + '"' + (me.place === p ? ' selected' : '') + '>' + esc(p === 'Unincorporated' ? w.placeUmsa : p) + '</option>'; }).join('') +
+    '</select><div class="help">' + esc(w.placeHelp) + '</div>' +
     '<label class="num" for="impHV">' + esc(w.homeValue) + '</label><input type="text" inputmode="numeric" id="impHV" value="' + esc(v(me.homeValue)) + '" placeholder="$">' +
     '<div class="help">' + esc(w.homeValueHelp) + srcLink(MI.SRC.pa.url, w.lookup) + '</div>' +
     '<label class="num" for="impNS">' + esc(w.nsTax) + '</label><input type="text" inputmode="numeric" id="impNS" value="' + esc(v(me.nsTax)) + '" placeholder="$">' +
@@ -3528,8 +3533,10 @@ function impactForm(me, w){
   return h;
 }
 
+var impPA = null;   // taxable values from the Property Appraiser lookup, kept only with the value they came with
 function wireImpactForm(ri){
   var f = $('impForm');
+  impPA = (MI.load() || {}).pa || null;
   f.addEventListener('change', function(e){
     if(e.target.name !== 'g') return;
     // owning the home you live in and renting it are not both true
@@ -3544,7 +3551,7 @@ function wireImpactForm(ri){
     e.preventDefault();
     var g = {};
     f.querySelectorAll('input[name="g"]:checked').forEach(function(x){ g[x.value] = true; });
-    MI.save({ groups: g, homeValue: $('impHV').value, nsTax: $('impNS').value, otherValue: $('impOV').value });
+    MI.save({ groups: g, homeValue: $('impHV').value, nsTax: $('impNS').value, otherValue: $('impOV').value, place: $('impPlace').value, pa: impPA });
     impEditing = false;
     renderImpact(ri);
   });
@@ -3559,6 +3566,10 @@ function wireImpactForm(ri){
       var box = f.querySelector('input[value="' + (home ? 'homestead' : 'owner_other') + '"]');
       box.checked = true; box.dispatchEvent(new Event('change', { bubbles: true }));
       $(home ? 'impHV' : 'impOV').value = String(p.assessed);
+      if(home){
+        impPA = { assessed: p.assessed, countyTaxable: p.countyTaxable, schoolTaxable: p.schoolTaxable };
+        var k = MI.placeKey(p.municipality); if(k) $('impPlace').value = k;
+      }
       out.textContent = A.filled;
     }
     $('impIsHome').onclick = function(){ set(true); };
@@ -3614,11 +3625,16 @@ function impactBody(ri, r, calc, me, w){
   if(rc || money.length){
     h += '<div class="imp-sub">' + esc(rc ? w.reconcileHead : w.money) + '</div>';
     if(rc){
-      h += '<p class="imp-intro">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
+      if(rc.split && rc.split.length){
+        h += '<div class="imp-sub" style="margin-top:6px">' + esc(rc.splitHead) + '</div>' + rc.split.map(function(x){
+          return '<div class="imp-row"><div>' + esc(x.label) + '</div><div class="amt">' + esc(MI.usd(x.amount)) + '</div>' + (x.note ? '<div class="what">' + esc(x.note) + '</div>' : '') + '</div>';
+        }).join('');
+      }
+      h += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
       if(rc.funds.length){
         h += '<div class="imp-sub" style="margin-top:6px">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
-          return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div></div>';
-        }).join('') + '<p class="fine">' + esc(rc.fundNote) + '</p>';
+          return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
+        }).join('') + (rc.fundNote ? '<p class="fine">' + esc(rc.fundNote) + '</p>' : '');
       }
       if(rc.share) h += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
       h += '<p class="imp-intro">' + esc(rc.respond) + '</p>';

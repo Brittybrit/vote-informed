@@ -17,6 +17,19 @@
     var x = (Math.round(n / 1e5) / 10).toFixed(1).replace(/\.0$/, '');
     return '$' + x + (lang === 'es' ? ' millones' : lang === 'ht' ? ' milyon' : ' million');
   }
+  // Which row of the millage chart a city name (the Property Appraiser's, or the voter's pick) is.
+  function rates(){ return (typeof window !== 'undefined' && window.MILLAGE_2026) || null; }
+  function squash(x){ return String(x || '').toLowerCase().replace(/^(city|town|village) of /, '').replace(/[^a-z]/g, ''); }
+  function placeKey(name){
+    var M = rates(); if(!M || !name) return '';
+    var n = squash(name);
+    if(/^unincorporated|^umsa/.test(n)) return 'Unincorporated';
+    var keys = Object.keys(M.places);
+    for(var i = 0; i < keys.length; i++) if(squash(keys[i]) === n) return keys[i];
+    if(n === 'bayharbor' || n === 'bayharborisland') return 'Bay Harbor Islands';
+    if(n === 'sunnyisles') return 'Sunny Isles Beach';
+    return '';
+  }
   function num(v){ var n = parseFloat(String(v == null ? '' : v).replace(/[$,\s]/g, '')); return isFinite(n) && n > 0 ? n : 0; }
 
   /* ---------- the voter's answers, on this device only ---------- */
@@ -28,7 +41,9 @@
     var g = {};
     GROUPS.forEach(function(k){ if(o.groups && o.groups[k]) g[k] = true; });
     if(g.homestead && g.renter) delete g.renter;
-    return { groups: g, homeValue: num(o.homeValue), nsTax: num(o.nsTax), otherValue: num(o.otherValue) };
+    var pa = o.pa && typeof o.pa === 'object' ? { assessed: num(o.pa.assessed), countyTaxable: num(o.pa.countyTaxable), schoolTaxable: num(o.pa.schoolTaxable) } : null;
+    return { groups: g, homeValue: num(o.homeValue), nsTax: num(o.nsTax), otherValue: num(o.otherValue),
+      place: placeKey(o.place), pa: pa && pa.assessed ? pa : null };
   }
   function save(o){ var n = normalize(o); try{ localStorage.setItem(KEY, JSON.stringify(n)); }catch(e){} return n; }
   function clear(){ try{ localStorage.removeItem(KEY); }catch(e){} }
@@ -93,6 +108,7 @@
       homeValue: 'Your home’s assessed value', homeValueHelp: 'On your TRIM notice or the Property Appraiser’s site, the line called Assessed Value.',
       nsTax: 'Property taxes on your last bill, leaving out the School Board lines and non-ad valorem assessments (trash, etc.)', nsTaxHelp: 'Optional. Lets us estimate dollars, not just exempt value.',
       otherValue: 'Assessed value of the property you own but don’t live in', lookup: 'Look up your values',
+      place: 'City your home is in', placeNone: 'Not sure', placeUmsa: 'Unincorporated Miami-Dade', placeHelp: 'Used with the 2026 adopted tax rates for your city.',
       privacy: 'Saved on this device only.',
       ifYes: 'If YES wins', ifNo: 'If NO wins', when: 'When', everyone: 'Everyone it covers',
       forYou: 'For you', youSaid: 'You said: ', noneForYou: 'Official sources don’t describe anything this measure changes specifically for the situation you gave, beyond what it changes for everyone.',
@@ -104,7 +120,12 @@
       a3: {
         exempt: function(c, n27, n28){ return 'Today ' + usd(c) + ' of your home’s assessed value is exempt from non-school property taxes. With YES that becomes ' + usd(n27) + ' in 2027 and ' + usd(n28) + ' in 2028 (then it rises with inflation).'; },
         save: function(s27, s28, t){ return 'At today’s tax rates, your non-school property taxes of ' + usd(t) + ' a year would be about ' + usd(s27) + ' lower in 2027 and ' + usd(s28) + ' lower in 2028.'; },
-        noTax: 'Add the tax amount from your last bill to see this in dollars.',
+        noTax: 'Pick your city above, or add the tax amount from your last bill, to see this in dollars.',
+        now: function(ns, sc, y){ return 'At the ' + y + ' adopted tax rates, your home pays about ' + usd(ns) + ' a year in non-school property taxes and ' + usd(sc) + ' in school taxes.'; },
+        umsa: 'Miami-Dade County, unincorporated area services (UMSA)', cityOf: function(n){ return 'City of ' + n; },
+        county: 'Miami-Dade County, countywide', fireD: 'Miami-Dade Fire Rescue', libD: 'Miami-Dade Public Library System', trust: 'The Children’s Trust', regional: 'Water management and inland navigation districts',
+        debt: 'Payments on voter-approved bonds (County and city)', debtNote: 'Bond payment rates are reset each year to cover the payments, so this part would shift to other taxpayers rather than go away.',
+        splitHead: 'Who would collect less from you (2028, at 2026 rates)', notOnBill: 'Not on your bill: your city runs its own',
         noValue: 'Add your home’s assessed value to see your own numbers.',
         no: 'With NO, your exemption stays as it is today. School taxes are not affected either way.',
         other: 'The yearly cap on increases in your property’s assessed value for non-school taxes drops from 10% to 5% starting in 2027. The homestead exemption doesn’t apply to property you don’t live in.',
@@ -155,6 +176,7 @@
       homeValue: 'Valor tasado (Assessed Value) de su vivienda', homeValueHelp: 'En su aviso TRIM o en el sitio del Tasador de Propiedades, la línea Assessed Value.',
       nsTax: 'Impuestos a la propiedad de su última factura, sin las líneas del School Board ni los cargos que no son ad valorem (basura, etc.)', nsTaxHelp: 'Opcional. Nos permite estimar dólares, no solo el valor exento.',
       otherValue: 'Valor tasado de la propiedad donde no vive', lookup: 'Busque sus valores',
+      place: 'Ciudad donde está su vivienda', placeNone: 'No estoy seguro', placeUmsa: 'Miami-Dade no incorporado', placeHelp: 'Se usa con las tasas de impuestos adoptadas para 2026 en su ciudad.',
       privacy: 'Guardado solo en este dispositivo.',
       ifYes: 'Si gana el SÍ', ifNo: 'Si gana el NO', when: 'Cuándo', everyone: 'Para todos los que abarca',
       forYou: 'Para usted', youSaid: 'Usted indicó: ', noneForYou: 'Las fuentes oficiales no describen nada que esta medida cambie específicamente para la situación que indicó, más allá de lo que cambia para todos.',
@@ -166,7 +188,12 @@
       a3: {
         exempt: function(c, n27, n28){ return 'Hoy ' + usd(c) + ' del valor tasado de su vivienda está exento de los impuestos a la propiedad que no son escolares. Con el SÍ serían ' + usd(n27) + ' en 2027 y ' + usd(n28) + ' en 2028 (luego sube con la inflación).'; },
         save: function(s27, s28, t){ return 'Con las tasas de hoy, sus impuestos no escolares de ' + usd(t) + ' al año bajarían unos ' + usd(s27) + ' en 2027 y ' + usd(s28) + ' en 2028.'; },
-        noTax: 'Agregue el monto de impuestos de su última factura para verlo en dólares.',
+        noTax: 'Elija su ciudad arriba, o agregue el monto de impuestos de su última factura, para verlo en dólares.',
+        now: function(ns, sc, y){ return 'Con las tasas adoptadas para ' + y + ', su vivienda paga unos ' + usd(ns) + ' al año en impuestos a la propiedad no escolares y ' + usd(sc) + ' en impuestos escolares.'; },
+        umsa: 'Condado de Miami-Dade, servicios del área no incorporada (UMSA)', cityOf: function(n){ return 'Ciudad de ' + n; },
+        county: 'Condado de Miami-Dade, todo el condado', fireD: 'Bomberos y Rescate de Miami-Dade', libD: 'Sistema de Bibliotecas Públicas de Miami-Dade', trust: 'The Children’s Trust', regional: 'Distritos de manejo de agua y navegación interior',
+        debt: 'Pagos de bonos aprobados por los votantes (Condado y ciudad)', debtNote: 'Las tasas para pagar bonos se ajustan cada año para cubrir los pagos, así que esta parte pasaría a otros contribuyentes en vez de desaparecer.',
+        splitHead: 'Quién le cobraría menos (2028, con tasas de 2026)', notOnBill: 'No está en su factura: su ciudad tiene el suyo',
         noValue: 'Agregue el valor tasado de su vivienda para ver sus propias cifras.',
         no: 'Con el NO, su exención queda como está hoy. Los impuestos escolares no cambian en ningún caso.',
         other: 'El tope anual de aumento del valor tasado de su propiedad para impuestos no escolares baja del 10% al 5% a partir de 2027. La exención homestead no aplica a propiedades donde usted no vive.',
@@ -217,6 +244,7 @@
       homeValue: 'Valè evalyasyon (Assessed Value) kay ou', homeValueHelp: 'Sou avi TRIM ou oswa sou sit Evalyatè Pwopriyete a, liy ki rele Assessed Value.',
       nsTax: 'Taks pwopriyete sou dènye fakti w, san liy School Board yo ak frè ki pa ad valorem yo (fatra, elatriye)', nsTaxHelp: 'Si w vle. Sa pèmèt nou estime an dola, pa sèlman valè ki egzante.',
       otherValue: 'Valè evalyasyon pwopriyete ou pa rete ladan l', lookup: 'Chèche valè ou yo',
+      place: 'Vil kay ou ye a', placeNone: 'Mwen pa sèten', placeUmsa: 'Miami-Dade ki pa enkòpore', placeHelp: 'Nou sèvi ak li ansanm ak to taks ki adopte pou 2026 nan vil ou.',
       privacy: 'Sere sou aparèy sa a sèlman.',
       ifYes: 'Si WI genyen', ifNo: 'Si NON genyen', when: 'Kilè', everyone: 'Pou tout moun li kouvri',
       forYou: 'Pou ou', youSaid: 'Ou di: ', noneForYou: 'Sous ofisyèl yo pa dekri anyen mezi sa a chanje espesyalman pou sitiyasyon ou bay la, pi lwen pase sa li chanje pou tout moun.',
@@ -228,7 +256,12 @@
       a3: {
         exempt: function(c, n27, n28){ return 'Jodi a ' + usd(c) + ' nan valè evalyasyon kay ou egzante de taks pwopriyete ki pa pou lekòl. Avèk WI sa vin ' + usd(n27) + ' an 2027 ak ' + usd(n28) + ' an 2028 (apre sa li monte ak enflasyon).'; },
         save: function(s27, s28, t){ return 'Ak to taks jodi a, taks ki pa pou lekòl ou yo, ' + usd(t) + ' pa ane, ta bese anviwon ' + usd(s27) + ' an 2027 ak ' + usd(s28) + ' an 2028.'; },
-        noTax: 'Ajoute montan taks sou dènye fakti w pou w wè sa an dola.',
+        noTax: 'Chwazi vil ou anlè a, oswa ajoute montan taks sou dènye fakti w, pou w wè sa an dola.',
+        now: function(ns, sc, y){ return 'Ak to taks ki adopte pou ' + y + ' yo, kay ou peye anviwon ' + usd(ns) + ' pa ane an taks pwopriyete ki pa pou lekòl ak ' + usd(sc) + ' an taks lekòl.'; },
+        umsa: 'Konte Miami-Dade, sèvis zòn ki pa enkòpore (UMSA)', cityOf: function(n){ return 'Vil ' + n; },
+        county: 'Konte Miami-Dade, tout konte a', fireD: 'Ponpye ak Sekou Miami-Dade', libD: 'Sistèm Bibliyotèk Piblik Miami-Dade', trust: 'The Children’s Trust', regional: 'Distri jesyon dlo ak navigasyon andedan',
+        debt: 'Peman sou obligasyon votè yo te apwouve (Konte ak vil)', debtNote: 'To pou peye obligasyon yo ajiste chak ane pou kouvri peman yo, kidonk pati sa a ta pase sou lòt kontribyab olye li disparèt.',
+        splitHead: 'Kiyès ki ta kolekte mwens nan men w (2028, ak to 2026)', notOnBill: 'Pa sou fakti w: vil ou gen pa l',
         noValue: 'Ajoute valè evalyasyon kay ou pou w wè pwòp chif ou.',
         no: 'Avèk NON, egzanpsyon w rete jan li ye jodi a. Taks lekòl yo pa chanje nan okenn ka.',
         other: 'Plafon chak ane sou ogmantasyon valè evalyasyon pwopriyete w pou taks ki pa pou lekòl desann soti 10% rive 5% apati 2027. Egzanpsyon homestead pa aplike pou pwopriyete ou pa rete ladan l.',
@@ -256,34 +289,80 @@
 
   /* ---------- the calculations official numbers support ---------- */
   // Returns { yes: [...], no: [...], reconcile: {...} } in plain data; the page turns it into HTML.
+  // Today's taxes on the voter's home at the 2026 adopted rates, split by who collects them.
+  // Taxable values come from the Property Appraiser lookup when the voter used it for this value,
+  // otherwise from the assessed value and the homestead exemption.
+  function homeTaxes(me){
+    var M = rates(), A = me.homeValue, P = M && me.place ? M.places[me.place] : null;
+    if(!A || !P) return null;
+    var S = M.shared, pa = me.pa && me.pa.assessed === A ? me.pa : null;
+    var ns = pa ? pa.countyTaxable : Math.max(0, A - currentNonSchoolExempt(A));
+    var sc = pa ? pa.schoolTaxable : Math.max(0, A - 25000);
+    var mills = {
+      city: P.city, cityDebt: P.cityDebt, county: S.county, countyDebt: S.countyDebt,
+      fire: P.fire ? S.fire : 0, library: P.library ? S.library : 0, trust: S.trust, regional: S.regional + S.find
+    };
+    var nsMills = 0; Object.keys(mills).forEach(function(k){ nsMills += mills[k]; });
+    return { place: me.place, P: P, mills: mills, nsMills: nsMills, nsTaxable: ns, schoolTaxable: sc,
+      nsTax: ns * nsMills / 1000, schoolTax: sc * (S.schoolOps + S.schoolVoted + S.schoolDebt) / 1000 };
+  }
   function amend3(me, lang){
-    var w = words(lang).a3, out = { yes: [], no: [], approx: false, reconcile: null, sources: [SRC.senate, SRC.edr, SRC.county] };
-    var A = me.homeValue, s28 = 0;
+    var w = words(lang).a3, M = rates();
+    var out = { yes: [], no: [], approx: false, reconcile: null, sources: [SRC.senate, SRC.edr, SRC.county] };
+    var A = me.homeValue, s28 = 0, split = null;
     if(has(me, 'homestead')){
       if(A){
         var c = currentNonSchoolExempt(A), n27 = Math.min(A, 150000), n28 = Math.min(A, 250000);
         out.yes.push(w.exempt(c, n27, n28));
-        if(me.nsTax){
-          // effective non-school rate on today's taxable value, applied to the extra exempt value
-          var base = A - c, rate = base > 0 ? me.nsTax / base : 0;
-          var s27 = Math.min(me.nsTax, Math.max(0, n27 - c) * rate);
-          s28 = Math.min(me.nsTax, Math.max(0, n28 - c) * rate);
-          out.yes.push(w.save(s27, s28, me.nsTax));
+        var T = homeTaxes(me);
+        if(T){
+          // extra exempt value, never more than what is taxed today, at each authority's 2026 rate
+          var d27 = Math.min(T.nsTaxable, Math.max(0, n27 - c)), d28 = Math.min(T.nsTaxable, Math.max(0, n28 - c));
+          var s27 = d27 * T.nsMills / 1000; s28 = d28 * T.nsMills / 1000;
+          out.yes.push(w.now(T.nsTax, T.schoolTax, M.year));
+          out.yes.push(w.save(s27, s28, T.nsTax));
+          var part = function(m){ return Math.round(d28 * m / 1000); };
+          var cityName = T.place === 'Unincorporated' ? w.umsa : w.cityOf(T.place);
+          split = [
+            { label: cityName, amount: part(T.mills.city) },
+            { label: w.county, amount: part(T.mills.county) },
+            T.mills.fire ? { label: w.fireD, amount: part(T.mills.fire) } : null,
+            T.mills.library ? { label: w.libD, amount: part(T.mills.library) } : null,
+            { label: w.trust, amount: part(T.mills.trust) },
+            { label: w.regional, amount: part(T.mills.regional) },
+            { label: w.debt, amount: part(T.mills.cityDebt + T.mills.countyDebt), note: w.debtNote }
+          ].filter(function(x){ return x && x.amount > 0; });
           out.approx = true;
           out.savings = { y2027: Math.round(s27), y2028: Math.round(s28) };
+          out.sources.push(M.source);
+        } else if(me.nsTax){
+          // no city picked: the effective rate on the bill the voter typed in
+          var base = A - c, rate = base > 0 ? me.nsTax / base : 0;
+          var t27 = Math.min(me.nsTax, Math.max(0, n27 - c) * rate);
+          s28 = Math.min(me.nsTax, Math.max(0, n28 - c) * rate);
+          out.yes.push(w.save(t27, s28, me.nsTax));
+          out.approx = true;
+          out.savings = { y2027: Math.round(t27), y2028: Math.round(s28) };
         } else out.yes.push(w.noTax);
       } else out.yes.push(w.noValue);
       out.no.push(w.no);
     }
     if(has(me, 'owner_other')) out.yes.push(w.other);
     if(has(me, 'renter')) out.yes.push(w.renter);
+    var P = M && me.place ? M.places[me.place] : null;
     out.reconcile = {
+      splitHead: split ? w.splitHead : '', split: split || [],
       loss: w.loss(lang),
       fundsHead: w.funds,
-      funds: COUNTY_FUNDS.map(function(f){ return { label: w.f[f.k], amount: big(f.amt, lang), mine: f.groups.some(function(g){ return has(me, g); }) }; }),
-      fundNote: w.fundNote,
+      funds: COUNTY_FUNDS.map(function(f){
+        // whether the County service is on this voter's bill at all (some cities run their own)
+        var on = !P ? null : f.k === 'fire' ? P.fire : f.k === 'libraries' ? P.library : true;
+        return { label: w.f[f.k], amount: big(f.amt, lang), mine: on !== false && f.groups.some(function(g){ return has(me, g); }),
+          note: on === false ? w.notOnBill : '' };
+      }),
+      fundNote: P ? '' : w.fundNote,
       respond: w.respond,
-      share: s28 ? w.share(s28, lang) : ''
+      share: s28 && !split ? w.share(s28) : ''
     };
     return out;
   }
@@ -291,13 +370,17 @@
     var w = words(lang).lv, out = { yes: [], no: [], approx: false, reconcile: null, sources: [SRC.school] };
     var paid = false;
     if(has(me, 'homestead')){
-      if(me.homeValue){ var p = Math.max(0, me.homeValue - 25000) * LEVY.mills / 1000; out.yes.push(w.pay(p)); out.payHome = Math.round(p); paid = true; }
+      if(me.homeValue){
+        var sc = me.pa && me.pa.assessed === me.homeValue ? me.pa.schoolTaxable : Math.max(0, me.homeValue - 25000);
+        var p = sc * LEVY.mills / 1000; out.yes.push(w.pay(p)); out.payHome = Math.round(p); paid = true;
+      }
       else out.yes.push(w.noValue);
     }
     if(has(me, 'owner_other') && me.otherValue){ var q = me.otherValue * LEVY.mills / 1000; out.yes.push(w.payOther(q)); out.payOther = Math.round(q); paid = true; }
     if(paid){ out.yes.push(w.yes); out.no.push(w.no); out.approx = true; }
     else if(!has(me, 'homestead')) out.yes.push(w.typical);
     out.reconcile = {
+      splitHead: '', split: [],
       loss: w.district(lang),
       fundsHead: '', funds: [],
       fundNote: '',
@@ -315,7 +398,7 @@
 
   window.measureImpact = {
     GROUPS: GROUPS, SRC: SRC, load: load, save: save, clear: clear, normalize: normalize, has: has, any: any,
-    words: words, calc: calc, usd: usd,
-    _test: { currentNonSchoolExempt: currentNonSchoolExempt, isAmend3: isAmend3, isSchoolLevy: isSchoolLevy }
+    words: words, calc: calc, usd: usd, placeKey: placeKey, places: function(){ var M = rates(); return M ? Object.keys(M.places) : []; },
+    _test: { homeTaxes: homeTaxes, currentNonSchoolExempt: currentNonSchoolExempt, isAmend3: isAmend3, isSchoolLevy: isSchoolLevy }
   };
 })();

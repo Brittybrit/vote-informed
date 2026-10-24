@@ -3,10 +3,13 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import { loadWorker, fakeKV } from './load-worker.mjs';
+import { build as buildMillage } from '../scripts/millage.mjs';
 
 const store = new Map();
 const ctx = { window: {}, localStorage: { getItem: k => store.get(k) ?? null, setItem: (k, v) => store.set(k, v), removeItem: k => store.delete(k) } };
-vm.runInNewContext(readFileSync(new URL('../public/measure-impact.js', import.meta.url), 'utf8'), ctx);
+vm.createContext(ctx);
+vm.runInContext(readFileSync(new URL('../public/millage-2026.js', import.meta.url), 'utf8'), ctx);
+vm.runInContext(readFileSync(new URL('../public/measure-impact.js', import.meta.url), 'utf8'), ctx);
 const MI = ctx.window.measureImpact;
 
 const A3 = 'No. 3 Constitutional Amendment: Increased Homestead Exemption; Lower Cap on Increases in Non-Homestead Property Assessments';
@@ -15,7 +18,7 @@ const LEVY = 'School Board Referendum: Renewal of Existing Ad Valorem Levy for T
 test('answers stay on the device and only known fields are kept', () => {
   MI.save({ groups: { homestead: true, renter: true, bogus: true }, homeValue: '$320,000', nsTax: 'abc', address: '1 Main St' });
   const saved = JSON.parse(store.get('ballot305.me'));
-  assert.deepEqual(Object.keys(saved).sort(), ['groups', 'homeValue', 'nsTax', 'otherValue']);
+  assert.deepEqual(Object.keys(saved).sort(), ['groups', 'homeValue', 'nsTax', 'otherValue', 'pa', 'place']);
   assert.deepEqual(saved.groups, { homestead: true });   // owner and renter can't both be true; unknown keys dropped
   assert.equal(saved.homeValue, 320000);
   assert.equal(saved.nsTax, 0);
@@ -172,4 +175,38 @@ test('address lookup returns values, never stores the address', async () => {
     for (const [k, v] of CACHE.store) assert.ok(!/hardee|condo/i.test(k + v), 'address written to KV: ' + k);
     assert.equal((await call({ address: '12' })).error !== undefined, true);
   } finally { globalThis.fetch = realFetch; }
+});
+
+/* ---------------- 2026 adopted tax rates by city ---------------- */
+test('millage-2026.js matches the chart rows (run node scripts/millage.mjs)', () => {
+  const built = buildMillage(readFileSync(new URL('../scripts/data/millage/2026-adopted-rows.txt', import.meta.url), 'utf8'));
+  assert.deepEqual(JSON.parse(JSON.stringify(ctx.window.MILLAGE_2026)), JSON.parse(JSON.stringify(built)));
+  assert.equal(Object.keys(built.places).length, 35);
+});
+
+test('Property Appraiser city names map to the chart', () => {
+  for (const [name, key] of [['Miami', 'Miami'], ['City of Miami Beach', 'Miami Beach'], ['Unincorporated County', 'Unincorporated'], ['Opa-locka', 'Opa-Locka'], ['Bay Harbor Islands', 'Bay Harbor Islands'], ['Sunny Isles Beach', 'Sunny Isles Beach'], ['Atlantis', '']])
+    assert.equal(MI.placeKey(name), key, name);
+});
+
+test('with a city, taxes come from adopted rates and the savings split adds up', () => {
+  const me = MI.normalize({ groups: { homestead: true, library: true }, homeValue: 320000, place: 'Miami' });
+  const T = MI._test.homeTaxes(me);
+  assert.equal(Math.round(T.nsMills * 1e4) / 1e4, 13.3314);   // 19.9544 total less 6.6230 school
+  assert.equal(Math.round(T.nsTax), 3581);
+  const c = MI.calc(A3, me, 'en');
+  const sum = c.reconcile.split.reduce((a, x) => a + x.amount, 0);
+  assert.ok(Math.abs(sum - c.savings.y2028) <= c.reconcile.split.length, sum + ' vs ' + c.savings.y2028);
+  // the City of Miami runs its own fire department: County Fire Rescue isn't on the bill or in the split
+  const fire = c.reconcile.funds.find(f => f.label === 'Fire Rescue');
+  assert.ok(fire.note && !fire.mine);
+  assert.ok(!c.reconcile.split.some(x => /Fire/.test(x.label)));
+  assert.ok(c.reconcile.split.some(x => x.label === 'Miami-Dade Public Library System'));
+  assert.ok(c.reconcile.funds.find(f => f.label === 'Libraries').mine);
+});
+
+test('lookup values are used only for the value they came with', () => {
+  const pa = { assessed: 693845, countyTaxable: 600000, schoolTaxable: 668845 };
+  assert.equal(MI._test.homeTaxes(MI.normalize({ groups: { homestead: true }, homeValue: 693845, place: 'Coral Gables', pa })).nsTaxable, 600000);
+  assert.equal(MI._test.homeTaxes(MI.normalize({ groups: { homestead: true }, homeValue: 700000, place: 'Coral Gables', pa })).nsTaxable, 700000 - 51411);
 });
