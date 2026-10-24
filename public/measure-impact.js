@@ -454,6 +454,7 @@
   var BSF = { balance: 5.056e9, share: 9.75, transfer: 750e6, gr: 51.9e9, reach: 2049, added: 16.4e9 };
   var A1SRC = [
     { name: 'Florida TaxWatch, Taxpayer’s Guide to the 2026 Constitutional Amendments', url: 'https://floridataxwatch.org/the-florida-taxpayers-guide-for-the-2026-constitutional-amendments/' },
+    { name: 'Florida Senate, HJR 5019 (2025) bill history', url: 'https://www.flsenate.gov/Session/Bill/2025/5019' },
     { name: 'Ballotpedia, Florida Budget Stabilization Fund Amendment (2026)', url: 'https://ballotpedia.org/Florida_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)' },
     { name: 'WUWF, Ballot explainer: Amendment 1', url: 'https://www.wuwf.org/local-news/2026-10-23/ballot-explainer-amendment-1-budget-stabilization-fund' },
     { name: 'WUSF, Florida Democrats think they\u2019ll break Republican supermajorities', url: 'https://wusf.org/text/politics-issues/2026-10-01/florida-democrats-break-republican-supermajorities-what-does-that-mean' }
@@ -480,9 +481,9 @@
         'An emergency: the Governor declares it. Same today and under YES.',
         'A \u201ccritical state need\u201d (new, only under YES): the Legislature alone, by a two-thirds vote of each chamber in a bill for that purpose. The amendment gives no definition, list or outside check, so it is whatever two-thirds of lawmakers agree it is.',
         'Today Republicans hold just over two-thirds of both chambers (WUSF, October 2026), so one party can reach that bar on its own. This election could change that.'],
-      sides: 'Who is for and against it',
+      sides: 'Where it came from, and who is for and against it',
       sidesTxt: 'For: Senate President Ben Albritton, House Speaker Daniel Perez and Florida TaxWatch, who say a bigger reserve protects the state in a downturn. Against: Gov. Ron DeSantis, who calls the fund already maxed out, plus the Florida Education Association, the League of Women Voters of Florida and Americans for Tax Reform, who say the money should go to current needs or back to taxpayers.',
-      needs: 'Needs 60% of the vote to pass. The Legislature put it on the ballot (HJR 5019, 2025).'
+      needs: 'Where it came from: lawmakers, not a petition. Rep. Lawrence McClure filed it (HJR 5019) on June 4, 2025, while the Legislature was finishing that year\u2019s budget; Sen. Ed Hooper had a similar Senate version. It passed June 16, 2025, 100 to 1 in the House and 29 to 4 in the Senate. The Legislature can put amendments straight on the ballot; the Governor has no say. Lawmakers also wrote the first $750 million deposits into the last two budgets, pending this vote, and Gov. DeSantis vetoed both. It needs 60% of the vote to pass.'
     },
     es: {
       gYes: 'Florida tendría que ahorrar más. Su fondo de reserva podría crecer del 10% al 25% de los ingresos generales de un año, y los legisladores tendrían que depositar $750 millones al año hasta llegar ahí.',
@@ -504,9 +505,9 @@
         'Una emergencia: la declara el Gobernador. Igual hoy y con el SÍ.',
         'Una \u201cnecesidad crítica del estado\u201d (nueva, solo con el SÍ): solo la Legislatura, con dos tercios de cada cámara en una ley para ese fin. La enmienda no da definición, lista ni control externo, así que es lo que dos tercios de los legisladores acuerden.',
         'Hoy los republicanos tienen algo más de dos tercios de ambas cámaras (WUSF, octubre de 2026), así que un solo partido puede alcanzar ese umbral. Esta elección podría cambiarlo.'],
-      sides: 'Quién está a favor y en contra',
+      sides: 'De dónde salió, y quién está a favor y en contra',
       sidesTxt: 'A favor: el presidente del Senado Ben Albritton, el presidente de la Cámara Daniel Perez y Florida TaxWatch, que dicen que una reserva mayor protege al estado en una crisis. En contra: el gobernador Ron DeSantis, que dice que el fondo ya está al máximo, y la Florida Education Association, la League of Women Voters of Florida y Americans for Tax Reform, que dicen que el dinero debe ir a necesidades actuales o volver a los contribuyentes.',
-      needs: 'Necesita el 60% de los votos. La Legislatura la puso en la boleta (HJR 5019, 2025).'
+      needs: 'De dónde salió: de los legisladores, no de una petición. El representante Lawrence McClure la presentó (HJR 5019) el 4 de junio de 2025, mientras la Legislatura terminaba el presupuesto de ese año; el senador Ed Hooper tenía una versión parecida en el Senado. Se aprobó el 16 de junio de 2025, 100 a 1 en la Cámara y 29 a 4 en el Senado. La Legislatura puede poner enmiendas directamente en la boleta; el Gobernador no participa. Los legisladores también incluyeron los primeros depósitos de $750 millones en los dos últimos presupuestos, sujetos a esta votación, y el gobernador DeSantis vetó ambos. Necesita el 60% de los votos.'
     },
     ht: {
       gYes: 'Florid ta oblije sere plis. Fon pou move jou li a ta ka grandi soti 10% rive 25% nan revni jeneral yon ane, e lejislatè yo ta oblije mete $750 milyon chak ane jiskaske li rive la.',
@@ -528,9 +529,9 @@
         'Yon ijans: Gouvènè a deklare l. Menm jan jodi a ak avèk WI.',
         'Yon \u201cbezwen kritik Leta\u201d (nouvo, sèlman avèk WI): Lejislati a sèl, ak de tyè vòt nan chak chanm nan yon lwa pou sa. Amannman an pa bay okenn definisyon, lis oswa kontwòl deyò, kidonk se sa de tyè lejislatè yo dakò li ye.',
         'Jodi a Repibliken yo gen yon ti kras plis pase de tyè nan tou de chanm yo (WUSF, oktòb 2026), kidonk yon sèl pati ka rive nan nivo sa a poukont li. Eleksyon sa a ka chanje sa.'],
-      sides: 'Kiyès ki pou ak kiyès ki kont',
+      sides: 'Kote li soti, ak kiyès ki pou ak kiyès ki kont',
       sidesTxt: 'Pou: Prezidan Sena a Ben Albritton, Prezidan Chanm nan Daniel Perez ak Florida TaxWatch, ki di yon rezèv pi gwo pwoteje Leta a nan yon kriz. Kont: Gouvènè Ron DeSantis, ki di fon an deja plen, plis Florida Education Association, League of Women Voters of Florida ak Americans for Tax Reform, ki di lajan an ta dwe ale nan bezwen jodi a oswa retounen bay kontribyab yo.',
-      needs: 'Li bezwen 60% vòt pou l pase. Lejislati a te mete l sou bilten an (HJR 5019, 2025).'
+      needs: 'Kote li soti: nan men lejislatè yo, pa yon petisyon. Reprezantan Lawrence McClure te depoze l (HJR 5019) 4 jen 2025, pandan Lejislati a t ap fini bidjè ane sa a; Senatè Ed Hooper te gen yon vèsyon ki sanble nan Sena a. Li pase 16 jen 2025, 100 kont 1 nan Chanm nan ak 29 kont 4 nan Sena a. Lejislati a ka mete amannman dirèkteman sou bilten an; Gouvènè a pa gen mo pou l di. Lejislatè yo te mete premye depo $750 milyon yo nan de dènye bidjè yo tou, annatandan vòt sa a, e Gouvènè DeSantis te mete veto sou tou de. Li bezwen 60% vòt pou l pase.'
     }
   };
   function amend1(lang){
@@ -544,7 +545,7 @@
         splitHead: w.numbers, split: w.n.map(function(x){ return { label: x[0], text: x[1] }; }),
         loss: w.whatTxt, fundsHead: '', funds: [], fundNote: w.nNote,
         respond: '', share: '',
-        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.sidesTxt, w.needs] }]
+        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.needs, w.sidesTxt] }]
       }
     };
   }
