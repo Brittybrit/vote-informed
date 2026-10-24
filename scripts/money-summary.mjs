@@ -19,6 +19,9 @@ function giverKey(n) {
 }
 const giftKey = g => [g.acct, giverKey(g.donor), Number(g.amount), g.date].join('|');
 
+const PRON = (() => { try { return JSON.parse(readFileSync(new URL('./data/pronouns.json', import.meta.url), 'utf8')); } catch (e) { return { she: [], he: [] }; } })();
+const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? 'he' : undefined;
+
 export function build(decisions, officesHeld) {
   const byPerson = {};
   for (const [k, pid] of Object.entries(officesHeld.byBallot)) (byPerson[pid] = byPerson[pid] || []).push(k);
@@ -27,6 +30,7 @@ export function build(decisions, officesHeld) {
     // A person with actions in two bodies (Ingoglia: Senate requests, then Cabinet votes) keeps the line
     // with more money behind it; the dossier still shows both bodies' cards.
     if (people[pid] && (people[pid].total || 0) > (entry.total || 0)) return;
+    if (pronOf(pid)) entry.pron = pronOf(pid);
     people[pid] = entry;
     for (const k of byPerson[pid] || []) byBallot[k] = pid;
   };

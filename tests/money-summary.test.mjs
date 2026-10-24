@@ -65,6 +65,10 @@ test('renders in all three languages with no leftovers', () => {
       assert.equal(Math.round(p.campaignAmt + p.committeeAmt), Math.round(p.total), p.pid + ' accounts');
     }
   }
+  // a name is never repeated inside one sentence; pronouns are used instead
+  for (const lang of ['en', 'es', 'ht']) for (const p of Object.values(saved.people)) if (p.last)
+    for (const sentence of render(p, lang).replace(/<br>/g, ' ').split(/(?<=\.)\s+/))
+      assert.ok(sentence.split(p.last).length <= 2, p.pid + ' ' + lang + ': ' + sentence);
   // no "the rest" or other words that make the reader work out a number
   for (const p of Object.values(saved.people)) assert.doesNotMatch(render(p, 'en'), /the rest|of that|\bmore\b/i, p.pid);
 });
