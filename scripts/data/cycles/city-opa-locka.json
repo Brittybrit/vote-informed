@@ -1,60 +1,245 @@
 {
-  "key": "city-opa-locka",
-  "rosterBody": "city-opa-locka",
-  "name": "Opa-locka City Commission",
-  "jurisdiction": "City of Opa-locka",
-  "level": "municipal",
-  "checked": "2026-10-22",
-  "links": {
-    "home": "https://www.opalockafl.gov/",
-    "calendar": "https://www.opalockafl.gov/calendar.aspx?CID=14",
-    "agendas": "https://opalockafl.gov/304/Agendas-Minutes",
-    "minutes": "https://opalockafl.gov/366/Minutes",
-    "video": "https://www.youtube.com/user/CityofOpaLocka",
-    "clerk": "https://opalockafl.gov/170/City-Clerk"
+ "key": "city-opa-locka",
+ "rosterBody": "city-opa-locka",
+ "name": "Opa-locka City Commission",
+ "jurisdiction": "City of Opa-locka",
+ "level": "municipal",
+ "checked": "2026-10-22",
+ "links": {
+  "home": "https://www.opalockafl.gov/",
+  "calendar": "https://www.opalockafl.gov/calendar.aspx?CID=14",
+  "agendas": "https://opalockafl.gov/304/Agendas-Minutes",
+  "minutes": "https://opalockafl.gov/366/Minutes",
+  "video": "https://www.youtube.com/user/CityofOpaLocka",
+  "clerk": "https://opalockafl.gov/170/City-Clerk"
+ },
+ "meetings": {
+  "pattern": "Second and fourth Wednesdays of each month, 6:00 p.m., Commission Chambers, Opa-locka Government Center, 780 Fisherman Street, 3rd Floor. Also by Zoom webinar (register on the city site before the meeting) and YouTube livestream. August meetings were cancelled in 2024 and 2026; December meetings are sometimes cancelled.",
+  "agendaLeadDays": null,
+  "schedule": [
+   {
+    "date": "2026-07-22",
+    "time": "18:00",
+    "kind": "regular",
+    "note": "Regular Commission Meeting",
+    "source": "https://opalockafl.gov/337/Public-Notices"
+   },
+   {
+    "date": "2026-08-25",
+    "time": "15:00",
+    "kind": "special",
+    "note": "Special Commission Meeting (regular August meetings cancelled)",
+    "source": "https://opalockafl.gov/337/Public-Notices"
+   },
+   {
+    "date": "2026-09-08",
+    "time": "18:00",
+    "kind": "budget-hearing",
+    "note": "First Budget Hearing, FY2026-27 millage and budget",
+    "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+   },
+   {
+    "date": "2026-09-09",
+    "time": "18:00",
+    "kind": "regular",
+    "note": "Regular Commission Meeting",
+    "source": "https://opalockafl.gov/337/Public-Notices"
+   },
+   {
+    "date": "2026-09-23",
+    "time": "17:01",
+    "kind": "budget-hearing",
+    "note": "Second Budget Hearing, final millage and budget adopted",
+    "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
+   },
+   {
+    "date": "2026-09-23",
+    "time": "18:00",
+    "kind": "regular",
+    "note": "Regular Commission Meeting",
+    "source": "https://opalockafl.gov/337/Public-Notices"
+   },
+   {
+    "date": "2026-10-28",
+    "time": "18:00",
+    "kind": "regular",
+    "note": "Regular Commission Meeting, Municipal Complex 780 Fisherman St",
+    "source": "https://www.opalockafl.gov/Calendar.aspx?EID=2295"
+   },
+   {
+    "date": "2026-11-09",
+    "time": "18:00",
+    "kind": "regular",
+    "note": "Regular Commission Meeting, moved from Nov 11 for Veterans Day, Opa-locka Government Center, 780 Fisherman Street, 3rd Floor",
+    "source": "https://www.opalockafl.gov/DocumentCenter/View/6267"
+   }
+  ]
+ },
+ "phases": [
+  {
+   "key": "budget-proposal",
+   "name": "Proposed budget workshop",
+   "start": "2026-07-14",
+   "end": "2026-07-14",
+   "repeats": "yearly",
+   "decides": "Commission reviews the manager's FY2027 proposed budget (workshop at noon).",
+   "source": "https://opalockafl.gov/337/Public-Notices"
   },
-  "meetings": {
-    "pattern": "Second and fourth Wednesdays of each month, 6:00 p.m., Commission Chambers, Opa-locka Government Center, 780 Fisherman Street, 3rd Floor. Also by Zoom webinar (register on the city site before the meeting) and YouTube livestream. August meetings were cancelled in 2024 and 2026; December meetings are sometimes cancelled.",
-    "agendaLeadDays": null,
-    "schedule": [
-      { "date": "2026-07-22", "time": "18:00", "kind": "regular", "note": "Regular Commission Meeting", "source": "https://opalockafl.gov/337/Public-Notices" },
-      { "date": "2026-08-25", "time": "15:00", "kind": "special", "note": "Special Commission Meeting (regular August meetings cancelled)", "source": "https://opalockafl.gov/337/Public-Notices" },
-      { "date": "2026-09-08", "time": "18:00", "kind": "budget-hearing", "note": "First Budget Hearing, FY2026-27 millage and budget", "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM" },
-      { "date": "2026-09-09", "time": "18:00", "kind": "regular", "note": "Regular Commission Meeting", "source": "https://opalockafl.gov/337/Public-Notices" },
-      { "date": "2026-09-23", "time": "17:01", "kind": "budget-hearing", "note": "Second Budget Hearing, final millage and budget adopted", "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM" },
-      { "date": "2026-09-23", "time": "18:00", "kind": "regular", "note": "Regular Commission Meeting", "source": "https://opalockafl.gov/337/Public-Notices" },
-      { "date": "2026-10-28", "time": "18:00", "kind": "regular", "note": "Regular Commission Meeting, Municipal Complex 780 Fisherman St", "source": "https://www.opalockafl.gov/Calendar.aspx?EID=2295" }
-    ]
+  {
+   "key": "budget-hearings",
+   "name": "September budget hearings",
+   "start": "2026-09-08",
+   "end": "2026-09-23",
+   "repeats": "yearly",
+   "decides": "First hearing Sept 8 at 6:00 p.m. and second hearing Sept 23 at 5:01 p.m. adopt the final millage rate ordinance and the general, proprietary and special funds budget for Oct 1, 2026 to Sept 30, 2027.",
+   "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
   },
-  "phases": [
-    { "key": "budget-proposal", "name": "Proposed budget workshop", "start": "2026-07-14", "end": "2026-07-14", "repeats": "yearly", "decides": "Commission reviews the manager's FY2027 proposed budget (workshop at noon).", "source": "https://opalockafl.gov/337/Public-Notices" },
-    { "key": "budget-hearings", "name": "September budget hearings", "start": "2026-09-08", "end": "2026-09-23", "repeats": "yearly", "decides": "First hearing Sept 8 at 6:00 p.m. and second hearing Sept 23 at 5:01 p.m. adopt the final millage rate ordinance and the general, proprietary and special funds budget for Oct 1, 2026 to Sept 30, 2027.", "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM" },
-    { "key": "fiscal-year-start", "name": "Fiscal year begins", "start": "2026-10-01", "end": "2026-10-01", "repeats": "yearly", "decides": "Fiscal year runs October 1 through September 30 per the budget hearing notice.", "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM" },
-    { "key": "qualifying", "name": "Candidate qualifying for the 2026 general election", "start": "2026-08-03", "end": "2026-08-14", "repeats": "once", "decides": "Who appears on the Nov 3, 2026 ballot for Mayor and two Commission seats. 9:00 a.m. Aug 3 to noon Aug 14 at the Clerk's office, 780 Fisherman St, 4th Floor.", "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information" },
-    { "key": "election", "name": "General and special election", "start": "2026-11-03", "end": "2026-11-03", "repeats": "once", "decides": "Mayor (Ervin vs. Tydus) and two at-large Commission seats (Aikens, Bass, Dennis, Dominguez), four-year terms, plus two charter referendums on elected officials' pay ($550 to $1,500 a month) and health and life insurance. Registration closed Oct 5, 2026.", "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026" },
-    { "key": "election", "name": "Runoff election, if needed", "start": "2026-12-08", "end": "2026-12-08", "repeats": "once", "decides": "Runoff for any race not decided on Nov 3.", "source": "https://opalockafl.gov/179/Elections" }
-  ],
-  "levers": [
-    { "key": "public-comment", "how": "Come forward at the citizens' forum or during a public hearing, in person or on Zoom (register on the city site before the meeting to get the link). State your full name and address and any organization you represent; address the Commission as a body.", "rules": "Three minutes per speaker for the citizens' forum and for public hearings (Code of Ordinances Sec. 2-57). Longer matters need an appointment with the City Clerk before the meeting. Decorum rules in Sec. 2-58. Anyone may speak on any agenda item.", "deadline": "Register for Zoom before the meeting starts", "url": "https://opalockafl.gov/318/Participation-at-Commission-Meetings", "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings" },
-    { "key": "written-comment", "how": "No written comment procedure is posted. The Clerk's email (jflores@opalockafl.gov) is the posted contact for meeting questions.", "rules": null, "deadline": null, "url": "mailto:jflores@opalockafl.gov", "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings" },
-    { "key": "contact", "how": "Each elected official has a posted email (first initial plus last name at opalockafl.gov); the city main line is 305-953-2868.", "rules": null, "deadline": null, "url": "https://opalockafl.gov/174/City-Commission", "source": "https://opalockafl.gov/174/City-Commission" },
-    { "key": "records-request", "how": "Request through the Clerk's public records page; resolutions and ordinances are on the Laserfiche portal.", "rules": null, "deadline": null, "url": "https://opalockafl.gov/192/Public-Records", "source": "https://opalockafl.gov/170/City-Clerk" },
-    { "key": "petition", "how": "The charter is published only through Municode, which refused automated fetches; initiative section numbers and thresholds are not recorded. A Charter Review Board met Jan to Mar 2026 and the Commission placed two charter amendments on the Nov 3, 2026 ballot.", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances", "source": "https://opalockafl.gov/337/Public-Notices" },
-    { "key": "referendum", "how": "Charter amendments go to the voters at a special election, as with the two questions on Nov 3, 2026. Citizen referendum thresholds not readable (Municode).", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances", "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026" },
-    { "key": "recall", "how": "The charter has its own recall provisions (Florida AGO 76-167 confirmed they are not displaced by F.S. 100.361), but the section number and threshold could not be read because Municode refused fetches.", "rules": null, "deadline": null, "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances", "source": "https://www.myfloridalegal.com/node/4884" },
-    { "key": "qualify", "how": "File DS-DE 9 and DS-DE 84 first, then qualify in person with the City Clerk (appointment at 305-953-2800) during the posted window with the oath, affidavit of candidacy and residency, Form 1 and the $250 qualifying fee (charter Sec. 5.1(d)) plus the $66 state assessment, both from the campaign account.", "rules": "Must have lived in the city more than 365 days before the election; four-year terms; pay $550 a month", "deadline": "Noon on the last day of qualifying", "url": "https://opalockafl.gov/272/Candidate-Qualifying-Information", "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information" },
-    { "key": "vote", "how": "City elections are held with the county general election, first Tuesday after the first Monday in November of even years; runoff Dec 8, 2026 if needed.", "rules": null, "deadline": "2026-11-03", "url": "https://opalockafl.gov/179/Elections", "source": "https://opalockafl.gov/179/Elections" }
-  ],
-  "elections": {
-    "next": "2026-11-03",
-    "qualifying": { "start": "2026-08-03", "end": "2026-08-14", "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information" },
-    "terms": "Mayor and four commissioners, all at large, four-year staggered terms: Mayor and two commission seats in 2026, two commission seats in 2028. The Commission picks a Vice Mayor.",
-    "source": "https://opalockafl.gov/179/Elections"
+  {
+   "key": "fiscal-year-start",
+   "name": "Fiscal year begins",
+   "start": "2026-10-01",
+   "end": "2026-10-01",
+   "repeats": "yearly",
+   "decides": "Fiscal year runs October 1 through September 30 per the budget hearing notice.",
+   "source": "https://opalockafl.gov/DocumentCenter/View/6116/Notice-of-Public-Hearings-FY-2026-2027-Budget-Hearings-Tuesday-September-8-2026-at-600-PM-and-Wednesday-September-23-2026-at-501-PM"
   },
-  "contacts": [
-    { "role": "clerk", "name": "Joanna Flores, CMC, City Clerk", "email": "jflores@opalockafl.gov", "phone": "305-953-2800", "url": "https://opalockafl.gov/170/City-Clerk", "source": "https://opalockafl.gov/179/Elections" },
-    { "role": "commission office", "name": "Mayor and City Commission", "email": null, "phone": "305-953-2868", "url": "https://opalockafl.gov/174/City-Commission", "source": "https://opalockafl.gov/174/City-Commission" },
-    { "role": "mayor", "name": "John H. Taylor, Jr.", "email": "jtaylor@opalockafl.gov", "phone": "305-953-2868", "url": "https://opalockafl.gov/174/City-Commission", "source": "https://opalockafl.gov/174/City-Commission" }
-  ],
-  "notes": "Opa-locka posts meeting notices one at a time on its Public Notices page and the CivicPlus calendar rather than an annual schedule; the only meeting posted past Sept 23, 2026 is Oct 28, 2026. Nov and Dec 2026 meetings and all of 2027 are not posted (Nov and Dec regular meetings were cancelled in 2024). The CivicClerk agenda portal link was not visible on the Agendas page. Agenda lead time is not stated. Public comment rules come from the city's Participation page citing Code Sec. 2-57 and 2-58; the page still names Sherbondy Village as the venue but 2026 notices put meetings at 780 Fisherman St. The charter is only on Municode, which refused fetches, so initiative, referendum and recall section numbers and thresholds are missing; the qualifying fee citation (Sec. 5.1(d)) comes from the Clerk's qualifying page. The elections page lists the qualifying fee as $316 (city $250 plus state $66). The Budget Reports page was rate-limited and not read; budget dates come from the public notices."
+  {
+   "key": "qualifying",
+   "name": "Candidate qualifying for the 2026 general election",
+   "start": "2026-08-03",
+   "end": "2026-08-14",
+   "repeats": "once",
+   "decides": "Who appears on the Nov 3, 2026 ballot for Mayor and two Commission seats. 9:00 a.m. Aug 3 to noon Aug 14 at the Clerk's office, 780 Fisherman St, 4th Floor.",
+   "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+  },
+  {
+   "key": "election",
+   "name": "General and special election",
+   "start": "2026-11-03",
+   "end": "2026-11-03",
+   "repeats": "once",
+   "decides": "Mayor (Ervin vs. Tydus) and two at-large Commission seats (Aikens, Bass, Dennis, Dominguez), four-year terms, plus two charter referendums on elected officials' pay ($550 to $1,500 a month) and health and life insurance. Registration closed Oct 5, 2026.",
+   "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026"
+  },
+  {
+   "key": "election",
+   "name": "Runoff election, if needed",
+   "start": "2026-12-08",
+   "end": "2026-12-08",
+   "repeats": "once",
+   "decides": "Runoff for any race not decided on Nov 3.",
+   "source": "https://opalockafl.gov/179/Elections"
+  }
+ ],
+ "levers": [
+  {
+   "key": "public-comment",
+   "how": "Come forward at the citizens' forum or during a public hearing, in person or on Zoom (register on the city site before the meeting to get the link). State your full name and address and any organization you represent; address the Commission as a body.",
+   "rules": "Three minutes per speaker for the citizens' forum and for public hearings (Code of Ordinances Sec. 2-57). Longer matters need an appointment with the City Clerk before the meeting. Decorum rules in Sec. 2-58. Anyone may speak on any agenda item.",
+   "deadline": "Register for Zoom before the meeting starts",
+   "url": "https://opalockafl.gov/318/Participation-at-Commission-Meetings",
+   "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+  },
+  {
+   "key": "written-comment",
+   "how": "No written comment procedure is posted. The Clerk's email (jflores@opalockafl.gov) is the posted contact for meeting questions.",
+   "rules": null,
+   "deadline": null,
+   "url": "mailto:jflores@opalockafl.gov",
+   "source": "https://opalockafl.gov/318/Participation-at-Commission-Meetings"
+  },
+  {
+   "key": "contact",
+   "how": "Each elected official has a posted email (first initial plus last name at opalockafl.gov); the city main line is 305-953-2868.",
+   "rules": null,
+   "deadline": null,
+   "url": "https://opalockafl.gov/174/City-Commission",
+   "source": "https://opalockafl.gov/174/City-Commission"
+  },
+  {
+   "key": "records-request",
+   "how": "Request through the Clerk's public records page; resolutions and ordinances are on the Laserfiche portal.",
+   "rules": null,
+   "deadline": null,
+   "url": "https://opalockafl.gov/192/Public-Records",
+   "source": "https://opalockafl.gov/170/City-Clerk"
+  },
+  {
+   "key": "petition",
+   "how": "The charter is published only through Municode, which refused automated fetches; initiative section numbers and thresholds are not recorded. A Charter Review Board met Jan to Mar 2026 and the Commission placed two charter amendments on the Nov 3, 2026 ballot.",
+   "rules": null,
+   "deadline": null,
+   "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+   "source": "https://opalockafl.gov/337/Public-Notices"
+  },
+  {
+   "key": "referendum",
+   "how": "Charter amendments go to the voters at a special election, as with the two questions on Nov 3, 2026. Citizen referendum thresholds not readable (Municode).",
+   "rules": null,
+   "deadline": null,
+   "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+   "source": "https://opalockafl.gov/DocumentCenter/View/6257/Notice-of-General-and-Special-Elections---Tuesday-November-3-2026"
+  },
+  {
+   "key": "recall",
+   "how": "The charter has its own recall provisions (Florida AGO 76-167 confirmed they are not displaced by F.S. 100.361), but the section number and threshold could not be read because Municode refused fetches.",
+   "rules": null,
+   "deadline": null,
+   "url": "https://library.municode.com/fl/opa-locka/codes/code_of_ordinances",
+   "source": "https://www.myfloridalegal.com/node/4884"
+  },
+  {
+   "key": "qualify",
+   "how": "File DS-DE 9 and DS-DE 84 first, then qualify in person with the City Clerk (appointment at 305-953-2800) during the posted window with the oath, affidavit of candidacy and residency, Form 1 and the $250 qualifying fee (charter Sec. 5.1(d)) plus the $66 state assessment, both from the campaign account.",
+   "rules": "Must have lived in the city more than 365 days before the election; four-year terms; pay $550 a month",
+   "deadline": "Noon on the last day of qualifying",
+   "url": "https://opalockafl.gov/272/Candidate-Qualifying-Information",
+   "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+  },
+  {
+   "key": "vote",
+   "how": "City elections are held with the county general election, first Tuesday after the first Monday in November of even years; runoff Dec 8, 2026 if needed.",
+   "rules": null,
+   "deadline": "2026-11-03",
+   "url": "https://opalockafl.gov/179/Elections",
+   "source": "https://opalockafl.gov/179/Elections"
+  }
+ ],
+ "elections": {
+  "next": "2026-11-03",
+  "qualifying": {
+   "start": "2026-08-03",
+   "end": "2026-08-14",
+   "source": "https://opalockafl.gov/272/Candidate-Qualifying-Information"
+  },
+  "terms": "Mayor and four commissioners, all at large, four-year staggered terms: Mayor and two commission seats in 2026, two commission seats in 2028. The Commission picks a Vice Mayor.",
+  "source": "https://opalockafl.gov/179/Elections"
+ },
+ "contacts": [
+  {
+   "role": "clerk",
+   "name": "Joanna Flores, CMC, City Clerk",
+   "email": "jflores@opalockafl.gov",
+   "phone": "305-953-2800",
+   "url": "https://opalockafl.gov/170/City-Clerk",
+   "source": "https://opalockafl.gov/179/Elections"
+  },
+  {
+   "role": "commission office",
+   "name": "Mayor and City Commission",
+   "email": null,
+   "phone": "305-953-2868",
+   "url": "https://opalockafl.gov/174/City-Commission",
+   "source": "https://opalockafl.gov/174/City-Commission"
+  },
+  {
+   "role": "mayor",
+   "name": "John H. Taylor, Jr.",
+   "email": "jtaylor@opalockafl.gov",
+   "phone": "305-953-2868",
+   "url": "https://opalockafl.gov/174/City-Commission",
+   "source": "https://opalockafl.gov/174/City-Commission"
+  }
+ ],
+ "notes": "Opa-locka posts meeting notices one at a time on its Public Notices page and the CivicPlus calendar rather than an annual schedule; the only meeting posted past Sept 23, 2026 is Oct 28, 2026. Nov and Dec 2026 meetings and all of 2027 are not posted (Nov and Dec regular meetings were cancelled in 2024). The CivicClerk agenda portal link was not visible on the Agendas page. Agenda lead time is not stated. Public comment rules come from the city's Participation page citing Code Sec. 2-57 and 2-58; the page still names Sherbondy Village as the venue but 2026 notices put meetings at 780 Fisherman St. The charter is only on Municode, which refused fetches, so initiative, referendum and recall section numbers and thresholds are missing; the qualifying fee citation (Sec. 5.1(d)) comes from the Clerk's qualifying page. The elections page lists the qualifying fee as $316 (city $250 plus state $66). The Budget Reports page was rate-limited and not read; budget dates come from the public notices."
 }
