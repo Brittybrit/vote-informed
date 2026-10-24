@@ -1,0 +1,130 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import vm from 'node:vm';
+import { loadWorker, fakeKV } from './load-worker.mjs';
+
+const store = new Map();
+const ctx = { window: {}, localStorage: { getItem: k => store.get(k) ?? null, setItem: (k, v) => store.set(k, v), removeItem: k => store.delete(k) } };
+vm.runInNewContext(readFileSync(new URL('../public/measure-impact.js', import.meta.url), 'utf8'), ctx);
+const MI = ctx.window.measureImpact;
+
+const A3 = 'No. 3 Constitutional Amendment: Increased Homestead Exemption; Lower Cap on Increases in Non-Homestead Property Assessments';
+const LEVY = 'School Board Referendum: Renewal of Existing Ad Valorem Levy for Teachers, Instructional Personnel, Student Safety and Security';
+
+test('answers stay on the device and only known fields are kept', () => {
+  MI.save({ groups: { homestead: true, renter: true, bogus: true }, homeValue: '$320,000', nsTax: 'abc', address: '1 Main St' });
+  const saved = JSON.parse(store.get('ballot305.me'));
+  assert.deepEqual(Object.keys(saved).sort(), ['groups', 'homeValue', 'nsTax', 'otherValue']);
+  assert.deepEqual(saved.groups, { homestead: true });   // owner and renter can't both be true; unknown keys dropped
+  assert.equal(saved.homeValue, 320000);
+  assert.equal(saved.nsTax, 0);
+  MI.clear();
+  assert.equal(MI.load(), null);
+});
+
+test('current non-school homestead exemption follows the 2026 amounts', () => {
+  const f = MI._test.currentNonSchoolExempt;
+  assert.equal(f(20000), 20000);
+  assert.equal(f(40000), 25000);
+  assert.equal(f(60000), 35000);
+  assert.equal(f(76411), 51411);
+  assert.equal(f(900000), 51411);
+});
+
+test('Amendment 3: savings come with what the County loses and what it pays for', () => {
+  const me = MI.normalize({ groups: { homestead: true, transit: true }, homeValue: 320000, nsTax: 3900 });
+  const c = MI.calc(A3, me, 'en');
+  // 98,589 and 198,589 more exempt, at 3,900 / 268,589 of taxable value
+  assert.deepEqual({ ...c.savings }, { y2027: 1432, y2028: 2884 });
+  assert.ok(c.reconcile.loss.includes('$385.8 million') && c.reconcile.loss.includes('$696.7 million'));
+  assert.ok(c.reconcile.share.includes('$2,884'));
+  assert.ok(c.reconcile.funds.find(f => /bus routes/.test(f.label)).mine);
+  assert.ok(!c.reconcile.funds.find(f => f.label === 'Parks').mine);
+  assert.ok(c.sources.every(s => s.url.startsWith('https://')));
+});
+
+test('Amendment 3: savings never exceed the tax paid, and small homes go to zero', () => {
+  const c = MI.calc(A3, MI.normalize({ groups: { homestead: true }, homeValue: 120000, nsTax: 1000 }), 'en');
+  assert.equal(c.savings.y2027, 1000);
+  assert.equal(c.savings.y2028, 1000);
+});
+
+test('Amendment 3: a renter sees the services side but no savings', () => {
+  const c = MI.calc(A3, MI.normalize({ groups: { renter: true, library: true } }), 'es');
+  assert.equal(c.savings, undefined);
+  assert.equal(c.reconcile.share, '');
+  assert.ok(c.reconcile.funds.find(f => f.label === 'Bibliotecas').mine);
+});
+
+test('school levy: what you pay against what the district would lose', () => {
+  const c = MI.calc(LEVY, MI.normalize({ groups: { homestead: true, owner_other: true, school_parent: true }, homeValue: 325000, otherValue: 200000 }), 'en');
+  assert.equal(c.payHome, 300);   // (325,000 - 25,000) / 1,000
+  assert.equal(c.payOther, 200);
+  assert.ok(c.reconcile.loss.includes('$585 million'));
+  assert.ok(c.reconcile.mine);
+});
+
+test('other measures get no calculation', () => {
+  assert.equal(MI.calc('County Referendum 6: Charter Amendment Expanding Allowable Advertising at Parks', MI.normalize({ groups: { park_user: true } }), 'en'), null);
+});
+
+test('every wording exists in all three languages', () => {
+  const keys = o => Object.keys(o).sort();
+  for (const lang of ['es', 'ht']) {
+    assert.deepEqual(keys(MI.words(lang)), keys(MI.words('en')), lang);
+    for (const k of ['g', 'o', 'a3', 'lv']) assert.deepEqual(keys(MI.words(lang)[k]), keys(MI.words('en')[k]), lang + ' ' + k);
+    assert.deepEqual(keys(MI.words(lang).a3.f), keys(MI.words('en').a3.f), lang);
+  }
+  for (const g of MI.GROUPS) assert.ok(MI.words('en').g[g], g);
+});
+
+/* ---------------- the endpoint ---------------- */
+const w = await loadWorker(['handleMeasureImpact', 'runImpact', 'cleanImpact', 'impactPrompt', 'IMPACT_GROUPS']);
+
+test('the endpoint never receives or keys on personal details', () => {
+  const p = w.impactPrompt({ name: 'X', summary: 'S', jurisdiction: 'Miami-Dade County', election: '2026' });
+  for (const k of Object.keys(w.IMPACT_GROUPS)) assert.ok(p.includes('"' + k + '"'), k);
+  assert.match(p, /never recommend a vote/);
+  assert.match(p, /MONEY BOTH WAYS/);
+});
+
+test('cleanImpact keeps only known groups, valid source indexes and plain text', () => {
+  const r = w.cleanImpact({
+    yesNote: 'Raises the exemption.', noNote: 'Nothing changes.',
+    groups: [{ group: 'homestead', yesNote: 'Lower bill.', sources: [0, 7] }, { group: 'aliens', yesNote: 'x' }, { group: 'homestead', yesNote: 'dupe' }, { group: 'renter' }],
+    money: [{ whatNote: 'County Fire Rescue', amount: '$743.7 million a year', yesNote: 'Less money.', groups: ['homestead', 'nope'], sources: [0] }, { whatNote: 'empty' }],
+    sources: [{ name: 'County', url: 'https://example.gov/a' }],
+    extra: 'dropped'
+  });
+  assert.deepEqual(r.groups.map(g => g.group), ['homestead']);
+  assert.deepEqual(r.groups[0].sources, [0]);
+  assert.equal(r.money.length, 1);
+  assert.deepEqual(r.money[0].groups, ['homestead']);
+  assert.equal(r.extra, undefined);
+});
+
+test('fresh request runs in the background, then serves the shared cache', async () => {
+  const CACHE = fakeKV();
+  const env = { CACHE, ANTHROPIC_API_KEY: 'k' };
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    stop_reason: 'end_turn',
+    content: [{ type: 'web_search_tool_result', content: [{ type: 'web_search_result', url: 'https://example.gov/a', title: 'A' }] },
+      { type: 'text', text: JSON.stringify({ yesNote: 'Y', noNote: 'N', groups: [], money: [], sources: [{ name: 'A', url: 'https://example.gov/a' }, { name: 'B', url: 'https://made.up/b' }] }) }]
+  }), { status: 200 });
+  const waits = [];
+  const ctx = { waitUntil: p => waits.push(p) };
+  const req = () => new Request('https://x/api/measure-impact', { method: 'POST', body: JSON.stringify({ name: 'County Referendum 6: Parks', jurisdiction: 'Miami-Dade County', election: 'November 3, 2026' }), headers: { 'CF-Connecting-IP': '1.2.3.4' } });
+  try {
+    const first = await (await w.handleMeasureImpact(req(), env, ctx)).json();
+    assert.equal(first.pending, true);
+    await Promise.all(waits);
+    const second = await (await w.handleMeasureImpact(req(), env, ctx)).json();
+    assert.equal(second.cached, true);
+    assert.equal(second.result.yesNote, 'Y');
+    assert.equal(second.result.sources[0].url, 'https://example.gov/a');
+    assert.equal(second.result.sources[1].url, '');   // a link the search never returned is dropped
+    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm1:')));
+  } finally { globalThis.fetch = realFetch; }
+});

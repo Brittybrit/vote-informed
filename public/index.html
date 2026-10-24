@@ -458,6 +458,27 @@
     background:none; border:0; border-bottom:2px solid currentColor; padding:0 0 5px; margin:22px 0 8px;}
   .fin-side.side-yes{color:var(--ok-fg);}
   .fin-side.side-no{color:var(--no-bg);}
+  /* What a measure means for you: the voter's own answers, kept on their device */
+  .imp-intro{font-size:13.5px; line-height:1.5; margin-bottom:10px;}
+  .imp-me{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin-bottom:6px;}
+  .imp-me button, .imp-link{background:none; border:0; padding:0; font:inherit; color:var(--ink); text-decoration:underline; cursor:pointer;}
+  .imp-list{list-style:none; padding:0; margin:0; font-size:13.5px; line-height:1.5;}
+  .imp-list li{padding:5px 0; border-bottom:1px dotted #C9C9C1;}
+  .imp-list li:last-child{border-bottom:none;}
+  .imp-who{font-weight:700;}
+  .imp-mine{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; border:1.5px solid currentColor; padding:1px 6px; margin-left:6px; white-space:nowrap;}
+  .imp-sub{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:16px 0 4px;}
+  .imp-row{display:grid; grid-template-columns:1fr auto; gap:2px 10px; padding:5px 0; font-size:13px; border-bottom:1px dotted #C9C9C1;}
+  .imp-row .amt{font-family:var(--mono); font-size:12.5px; text-align:right; white-space:nowrap;}
+  .imp-row .what{grid-column:1 / -1; font-size:12px; color:var(--ink-soft);}
+  .imp-form label.chk{display:flex; gap:8px; align-items:flex-start; font-size:13.5px; line-height:1.4; padding:5px 0; cursor:pointer;}
+  .imp-form label.chk input{margin-top:3px; flex:0 0 auto;}
+  .imp-form .num{display:block; font-size:13px; margin:10px 0 2px;}
+  .imp-form input[type=text]{width:100%; max-width:220px; font:inherit; font-size:14px; padding:6px 8px; border:1.5px solid var(--ink); background:var(--paper); color:var(--ink);}
+  .imp-form .help{font-size:11.5px; color:var(--ink-soft); line-height:1.4;}
+  .imp-actions{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px;}
+  .imp-others{margin-top:14px; font-size:13px;}
+  .imp-others summary{cursor:pointer; font-weight:600;}
   .loc-side + .loc-side{margin-top:6px;}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
 
@@ -2417,6 +2438,7 @@ function t(key, vars){
 }
 </script>
 <script src="/money-summary.js"></script>
+<script src="/measure-impact.js"></script>
 <script src="/decision-card.js"></script>
 <script src="/precinct-filter.js"></script>
 <script src="/find-precinct.js"></script>
@@ -3383,6 +3405,7 @@ function renderMeasureDossier(ri, r, cached){
   if(r.summary){
     html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p>' + summarySourcesHtml(r) + '</div>';
   }
+  html += '<div class="dsec" id="impactSec"></div>';
 
   var fin = r.financing || {};
   if(fin.filed){
@@ -3413,8 +3436,175 @@ function renderMeasureDossier(ri, r, cached){
   html += '<p class="disclaimer">' + t('disc.measure') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + (r.researchedAt ? ' ' + t('disc.date', {d: esc(fmtDay(r.researchedAt))}) : '') + '</p>' + reportBox();
   html += '</div>';
   $('dossierContent').innerHTML = html;
+  renderImpact(ri);
   loadBackers(r, true);
   $('dossier').scrollTop = 0;
+}
+
+/* ---------------- what a measure means for you ---------------- */
+// The voter's answers live in localStorage only and never leave the page. The page fetches each
+// measure's effects by circumstance (the same for everyone), then matches them here. Any tax change
+// is shown next to the money the government collecting it would gain or lose and what that pays for.
+var impCache = {}, impEditing = false;
+var MI = window.measureImpact;
+
+async function impactFetch(race){
+  var payload = { name: race.office, summary: race.summary || '', jurisdiction: ballot.jurisdiction || '',
+    election: [ballot.electionName, ballot.electionDate].filter(Boolean).join(' '), lang: LANG };
+  for(var i = 0; i < 45; i++){
+    var data;
+    try{ data = await api('/api/measure-impact', payload); }
+    catch(e){ if(i > 0 && /load failed|failed to fetch|network/i.test(String(e.message))){ await sleep(4000); continue; } throw e; }
+    if(data.result) return data.result;
+    await sleep(4000);
+  }
+  throw new Error(t('err.slow'));
+}
+
+function renderImpact(ri){
+  var box = $('impactSec');
+  if(!box || !MI) return;
+  var w = MI.words(LANG), me = MI.load();
+  var h = '<h4>' + esc(w.head) + '</h4>';
+  if(impEditing || !MI.any(me)){
+    if(!impEditing){
+      box.innerHTML = h + '<p class="imp-intro">' + esc(w.intro) + '</p><button class="btn2" type="button" id="impStart">' + esc(w.start) + '</button>';
+      $('impStart').onclick = function(){ impEditing = true; renderImpact(ri); };
+      return;
+    }
+    box.innerHTML = h + impactForm(me, w);
+    wireImpactForm(ri);
+    return;
+  }
+  var key = LANG + ':' + ballot.races[ri].office;   // the office, not its position: a new ballot reorders races
+  var said = MI.GROUPS.filter(function(g){ return MI.has(me, g); }).map(function(g){ return w.g[g]; });
+  h += '<p class="imp-me">' + (said.length ? esc(w.youSaid + said.join('; ') + '. ') : '') + '<button type="button" id="impEdit">' + esc(w.edit) + '</button> · ' + esc(w.privacy) + '</p>';
+  var calc = MI.calc(ballot.races[ri].office, me, LANG);
+  var got = impCache[key];
+  if(!got){
+    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-loading"><div class="oval-anim"></div><p>' + esc(w.loading) + '</p></div>';
+    $('impEdit').onclick = function(){ impEditing = true; renderImpact(ri); };
+    impactFetch(ballot.races[ri]).then(function(r){
+      impCache[key] = { result: r };
+      if(activeKey === 'm:' + ri) renderImpact(ri);
+    }).catch(function(e){
+      impCache[key] = { error: e.message };
+      if(activeKey === 'm:' + ri) renderImpact(ri);
+    });
+    return;
+  }
+  if(got.error){
+    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-error">' + esc(w.failed) + ' ' + esc(got.error) + '<br><button type="button" id="impRetry">' + esc(w.retry) + '</button></div>';
+    $('impRetry').onclick = function(){ delete impCache[key]; renderImpact(ri); };
+  } else {
+    box.innerHTML = h + impactBody(ri, got.result, calc, me, w);
+  }
+  $('impEdit').onclick = function(){ impEditing = true; renderImpact(ri); };
+}
+
+function impactForm(me, w){
+  me = me || { groups: {} };
+  var v = function(n){ return n ? String(n) : ''; };
+  var h = '<form class="imp-form" id="impForm"><p class="imp-intro">' + esc(w.formHead) + '</p>';
+  h += MI.GROUPS.map(function(g){
+    return '<label class="chk"><input type="checkbox" name="g" value="' + g + '"' + (MI.has(me, g) ? ' checked' : '') + '> <span>' + esc(w.g[g]) + '</span></label>';
+  }).join('');
+  h += '<div id="impHome"' + (MI.has(me, 'homestead') ? '' : ' hidden') + '>' +
+    '<label class="num" for="impHV">' + esc(w.homeValue) + '</label><input type="text" inputmode="numeric" id="impHV" value="' + esc(v(me.homeValue)) + '" placeholder="$">' +
+    '<div class="help">' + esc(w.homeValueHelp) + srcLink(MI.SRC.pa.url, w.lookup) + '</div>' +
+    '<label class="num" for="impNS">' + esc(w.nsTax) + '</label><input type="text" inputmode="numeric" id="impNS" value="' + esc(v(me.nsTax)) + '" placeholder="$">' +
+    '<div class="help">' + esc(w.nsTaxHelp) + '</div></div>';
+  h += '<div id="impOther"' + (MI.has(me, 'owner_other') ? '' : ' hidden') + '>' +
+    '<label class="num" for="impOV">' + esc(w.otherValue) + '</label><input type="text" inputmode="numeric" id="impOV" value="' + esc(v(me.otherValue)) + '" placeholder="$"></div>';
+  h += '<div class="imp-actions"><button class="btn2" type="submit">' + esc(w.saveBtn) + '</button>' +
+    '<button class="imp-link" type="button" id="impCancel">' + esc(w.cancel) + '</button>' +
+    (MI.any(me) ? '<button class="imp-link" type="button" id="impClear">' + esc(w.clear) + '</button>' : '') + '</div>' +
+    '<p class="fine">' + esc(w.privacy) + '</p></form>';
+  return h;
+}
+
+function wireImpactForm(ri){
+  var f = $('impForm');
+  f.addEventListener('change', function(e){
+    if(e.target.name !== 'g') return;
+    // owning the home you live in and renting it are not both true
+    if(e.target.checked && (e.target.value === 'homestead' || e.target.value === 'renter')){
+      var other = f.querySelector('input[value="' + (e.target.value === 'homestead' ? 'renter' : 'homestead') + '"]');
+      if(other) other.checked = false;
+    }
+    $('impHome').hidden = !f.querySelector('input[value="homestead"]').checked;
+    $('impOther').hidden = !f.querySelector('input[value="owner_other"]').checked;
+  });
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var g = {};
+    f.querySelectorAll('input[name="g"]:checked').forEach(function(x){ g[x.value] = true; });
+    MI.save({ groups: g, homeValue: $('impHV').value, nsTax: $('impNS').value, otherValue: $('impOV').value });
+    impEditing = false;
+    renderImpact(ri);
+  });
+  $('impCancel').onclick = function(){ impEditing = false; renderImpact(ri); };
+  if($('impClear')) $('impClear').onclick = function(){ MI.clear(); impEditing = false; renderImpact(ri); };
+}
+
+function impactBody(ri, r, calc, me, w){
+  r = r || null;
+  var src = (r && r.sources) || [];
+  var cite = function(ix){ return (ix || []).map(function(i){ var s = src[i]; return s ? srcLink(s.url, s.name) : ''; }).join(''); };
+  var mine = (r && r.groups || []).filter(function(g){ return MI.has(me, g.group); });
+  var others = (r && r.groups || []).filter(function(g){ return !MI.has(me, g.group); });
+  function side(cls, title, general, every, which, calcLines){
+    var items = [];
+    if(general) items.push('<li>' + esc(general) + '</li>');
+    if(every) items.push('<li><span class="imp-who">' + esc(w.everyone) + ':</span> ' + esc(every) + '</li>');
+    (calcLines || []).forEach(function(x){ items.push('<li><span class="imp-who">' + esc(w.forYou) + ':</span> ' + esc(x) + '</li>'); });
+    mine.forEach(function(g){ if(g[which]) items.push('<li><span class="imp-who">' + esc(w.forYou) + ' (' + esc(w.o[g.group].toLowerCase()) + '):</span> ' + esc(g[which]) + cite(g.sources) + '</li>'); });
+    if(!items.length) return '';
+    return '<div class="fin-side ' + cls + '">' + esc(title) + '</div><ul class="imp-list">' + items.join('') + '</ul>';
+  }
+  var h = '';
+  h += side('side-yes', w.ifYes, r && r.yesNote, r && r.everyone && r.everyone.yesNote, 'yesNote', calc && calc.yes);
+  h += side('side-no', w.ifNo, r && r.noNote, r && r.everyone && r.everyone.noNote, 'noNote', calc && calc.no);
+  if(calc && calc.approx) h += '<p class="fine">' + esc(w.approx) + '</p>';
+  if(r && r.whenNote) h += '<p class="imp-intro" style="margin-top:10px"><span class="imp-who">' + esc(w.when) + ':</span> ' + esc(r.whenNote) + '</p>';
+  if(r && !mine.length && !(calc && (calc.yes.length || calc.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
+
+  // money both ways: what you'd pay or save, next to what the government loses and what it pays for
+  var rc = calc && calc.reconcile, money = (r && r.money) || [];
+  if(rc || money.length){
+    h += '<div class="imp-sub">' + esc(rc ? w.reconcileHead : w.money) + '</div>';
+    if(rc){
+      h += '<p class="imp-intro">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
+      if(rc.funds.length){
+        h += '<div class="imp-sub" style="margin-top:6px">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
+          return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div></div>';
+        }).join('') + '<p class="fine">' + esc(rc.fundNote) + '</p>';
+      }
+      if(rc.share) h += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
+      h += '<p class="imp-intro">' + esc(rc.respond) + '</p>';
+      h += '<p class="og-links">' + calc.sources.map(function(s){ return srcLink(s.url, s.name); }).join(' ') + '</p>';
+      if(money.length) h += '<div class="imp-sub">' + esc(w.money) + '</div>';
+    }
+    h += money.map(function(m){
+      var use = (m.groups || []).some(function(g){ return MI.has(me, g); });
+      return '<div class="imp-row"><div><b>' + esc(m.whatNote) + '</b>' + (use ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div>' +
+        '<div class="amt">' + esc(m.amount || '') + '</div>' +
+        (m.yesNote ? '<div class="what"><b>' + esc(w.ifYes) + ':</b> ' + esc(m.yesNote) + '</div>' : '') +
+        (m.noNote ? '<div class="what"><b>' + esc(w.ifNo) + ':</b> ' + esc(m.noNote) + '</div>' : '') +
+        '<div class="what">' + cite(m.sources) + '</div></div>';
+    }).join('');
+  }
+  if(others.length){
+    h += '<details class="imp-others"><summary>' + esc(w.others) + '</summary><ul class="imp-list">' + others.map(function(g){
+      return '<li><span class="imp-who">' + esc(w.o[g.group]) + '</span>' +
+        (g.yesNote ? '<br><b>' + esc(w.ifYes) + ':</b> ' + esc(g.yesNote) : '') +
+        (g.noNote ? '<br><b>' + esc(w.ifNo) + ':</b> ' + esc(g.noNote) : '') + cite(g.sources) + '</li>';
+    }).join('') + '</ul></details>';
+  }
+  if(r && r.unknownNote) h += '<p class="imp-intro" style="margin-top:12px"><span class="imp-who">' + esc(w.unknown) + ':</span> ' + esc(r.unknownNote) + '</p>';
+  if(r && src.length) h += '<p class="og-links" style="margin-top:8px">' + esc(w.sources) + ':' + src.map(function(s){ return s.url ? srcLink(s.url, s.name) : ' ' + esc(s.name); }).join(' ·') + '</p>';
+  if(r) h += '<p class="disclaimer">' + esc(w.disc) + '</p>';
+  return h;
 }
 
 /* ---------------- dossier rendering ---------------- */
