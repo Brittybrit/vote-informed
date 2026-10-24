@@ -1,0 +1,567 @@
+{
+ "city": "North Miami Beach",
+ "sources": [
+  {
+   "name": "NMB Registered Lobbyist List as of Aug 13, 2026",
+   "url": "https://www.citynmb.com/DocumentCenter/View/14893/Registered-Lobbyist-List-as-of-August-13-2026-PDF",
+   "viewed": "2026-10-24",
+   "covers": "2026 registrations (63 rows) with principal and issue"
+  },
+  {
+   "name": "NMB 2025 Registered Lobbyist List",
+   "url": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+   "viewed": "2026-10-24",
+   "covers": "2025 registrations; some rows lost the lobbyist name in text extraction and were not used"
+  },
+  {
+   "name": "NMB 2024 Registered Lobbyist List",
+   "url": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+   "viewed": "2026-10-24",
+   "covers": "2024 registrations (used where 2025 registration postdates the action)"
+  },
+  {
+   "name": "NMB registry index page",
+   "url": "https://www.citynmb.com/285/Lobbyist-Registration",
+   "viewed": "2026-10-24",
+   "covers": "Links to yearly lists 2013-2026"
+  },
+  {
+   "name": "NMB minutes on NovusAgenda (MinutesMeetingID 420, 423, 425, 438, 466, 475)",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=475",
+   "viewed": "2026-10-24",
+   "covers": "Record reps; 475 re-read today; 420/423/425/438/466 are scanned (no text layer to the fetcher), so their names come from actions.json parties already read by OCR in the prior pass"
+  },
+  {
+   "name": "Miami-Dade County lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-24",
+   "covers": "otherBody matches only; not ties"
+  }
+ ],
+ "byAction": {
+  "R2025-46": [
+   {
+    "name": "Ari Sklar",
+    "firm": "SKLARchitecture",
+    "for": "Applicant for 317 NE 168 St",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=420",
+    "date": "2025-05-20"
+   }
+  ],
+  "R2025-49": [
+   {
+    "name": "Jose K. Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "ProTransportation, Inc.",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-01-19"
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "ProTransportation, Inc.",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-01-19"
+   },
+   {
+    "name": "Mackenson Jeanty",
+    "firm": "We Strategize LLC",
+    "for": "ProTransportation Inc. dba Prokel Mobility",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-03-22"
+   },
+   {
+    "name": "Mackenson Jeanty",
+    "firm": "We Strategize LLC",
+    "for": "ProTransportation Inc. dba ProKel Mobility",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-01-03"
+   }
+  ],
+  "nmb-2025-05-20-7": [
+   {
+    "name": "Jose K. Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "ProTransportation, Inc.",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-01-19"
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "ProTransportation, Inc.",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-01-19"
+   },
+   {
+    "name": "Mackenson Jeanty",
+    "firm": "We Strategize LLC",
+    "for": "ProTransportation Inc. dba Prokel Mobility",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-03-22"
+   },
+   {
+    "name": "Mackenson Jeanty",
+    "firm": "We Strategize LLC",
+    "for": "ProTransportation Inc. dba ProKel Mobility",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-01-03"
+   }
+  ],
+  "R2025-80": [
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Danielle Mejia",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Kendrick Meek, Jr.",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Wesley Hevia",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Michelle Burger",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Nicole Gomez",
+    "firm": "LSN Partners",
+    "for": "Raising Canes Restaurants LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2024-12-19"
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Partners",
+    "for": "Raising Cane's",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=438",
+    "date": "2025-06-17"
+   }
+  ],
+  "R2025-88": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez & Larkin, PLLC",
+    "for": "Dixie Investments and Realty, LLC and Roe Dixie, LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-01-09"
+   },
+   {
+    "name": "Matthew Amster",
+    "firm": "Bercow Radell Fernandez & Larkin, PLLC",
+    "for": "Dixie Investments and Realty, LLC and Roe Dixie, LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-01-09"
+   },
+   {
+    "name": "Mitchell H. Edelstein",
+    "firm": "Strategic Campaign Consultants, Inc.",
+    "for": "Dixie Investments and Realty, LLC and Roe Dixie, LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-02-03"
+   },
+   {
+    "name": "Matt Amster",
+    "firm": "Bercow Radell Fernandez & Larkin, PLLC",
+    "for": "Applicant for 17400 W Dixie Hwy",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=423",
+    "date": "2025-06-26"
+   }
+  ],
+  "R2025-94": [
+   {
+    "name": "Katia Saint Fleur",
+    "firm": "The Southern Group",
+    "for": "Core & Main LP",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14893/Registered-Lobbyist-List-as-of-August-13-2026-PDF",
+    "date": "2026-04-09"
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16"
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Mark Stempler",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22"
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   }
+  ],
+  "R2025-105": [
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "John McWilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22"
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09"
+   }
+  ],
+  "R2025-110": [
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Applicant (NE 140 St and Highland Dr)",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=425",
+    "date": "2025-07-15"
+   }
+  ],
+  "R2025-109": [
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Applicant (NE 140 St and Highland Dr)",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=425",
+    "date": "2025-07-15"
+   }
+  ],
+  "R2025-120": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   },
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   }
+  ],
+  "nmb-2025-09-08-0": [
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17"
+   },
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17"
+   }
+  ],
+  "nmb-2025-10-21-2": [
+   {
+    "name": "Katia Saint Fleur",
+    "firm": "The Southern Group",
+    "for": "Taboo Miami by G5ive",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14893/Registered-Lobbyist-List-as-of-August-13-2026-PDF",
+    "date": "2026-06-02"
+   },
+   {
+    "name": "Oneca Lowery",
+    "firm": "The Southern Group",
+    "for": "Taboo Miami by G5ive",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14893/Registered-Lobbyist-List-as-of-August-13-2026-PDF",
+    "date": "2026-06-02"
+   }
+  ],
+  "R2025-174": [
+   {
+    "name": "Jodi B. Davidson",
+    "firm": "Rubin, Turnbull and Associates",
+    "for": "AECOM",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-07-21"
+   }
+  ],
+  "nmb-2025-11-17-16": [
+   {
+    "name": "Matthew Amster",
+    "firm": "Bercow Radell Fernandez & Larkin, PLLC",
+    "for": "Horizon at NoMi LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-07-10"
+   },
+   {
+    "name": "Jeffy Mondesir",
+    "firm": "Jeffy Van, LLC",
+    "for": "The Horrizon Group",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-07-08"
+   },
+   {
+    "name": "Mitchell H. Edelstein",
+    "firm": "Strategic Campaign Consultants, Inc.",
+    "for": "Horizon at NoMi LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14893/Registered-Lobbyist-List-as-of-August-13-2026-PDF",
+    "date": "2026-08-12"
+   }
+  ],
+  "R2026-02": [
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "Brown & Caldwell",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07"
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Brown & Caldwell",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22"
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Brown & Caldwell",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22"
+   }
+  ],
+  "R2026-35": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   }
+  ],
+  "R2026-45": [
+   {
+    "name": "Jeffy Mondesir",
+    "firm": "Jeffy Van, LLC",
+    "for": "Anthony Brunson PA",
+    "basis": "review",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-08-16",
+    "why": "2024 registration for Anthony Brunson PA was for an audit RFP, a different matter from this contract"
+   },
+   {
+    "name": "Michael McDearmaid",
+    "firm": "McDearmaid and Associates Consulting LLC",
+    "for": "Anthony Brunson PA",
+    "basis": "review",
+    "src": "https://www.citynmb.com/DocumentCenter/View/12769/2024-Registered-Lobbyist-List-PDF",
+    "date": "2024-08-19",
+    "why": "2024 registration for Anthony Brunson PA was for an audit RFP, a different matter from this contract"
+   }
+  ],
+  "nmb-2026-06-22-15": [
+   {
+    "name": "Steven J. Wernick",
+    "firm": "Day Pitney LLP",
+    "for": "Blue Quinta163 St LLC",
+    "basis": "registry",
+    "src": "https://www.citynmb.com/DocumentCenter/View/14272/2025-Registered-Lobbyist-List-PDF",
+    "date": "2025-01-10"
+   },
+   {
+    "name": "Steve Wernick",
+    "firm": "Day Pitney LLP",
+    "for": "Blue Quinta163 St LLC",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=466",
+    "date": "2026-06-22"
+   },
+   {
+    "name": "Javier Font",
+    "firm": null,
+    "for": "Blue Quinta163 St LLC",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=466",
+    "date": "2026-06-22"
+   }
+  ],
+  "R2026-96": [
+   {
+    "name": "Michael Kesti",
+    "firm": null,
+    "for": "Global Empowerment Mission",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-19"
+   }
+  ],
+  "R2026-117": [
+   {
+    "name": "Carlos Ballbe",
+    "firm": null,
+    "for": "Prestige Imports",
+    "basis": "record",
+    "src": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=475",
+    "date": "2026-08-27",
+    "quote": "appeared before the Mayor and Commission on behalf of the applicant"
+   }
+  ]
+ },
+ "notFound": "Record names for R2025-46, R2025-80, R2025-88, R2025-109/110 and nmb-2026-06-22-15 come from the parties field of actions.json (prior OCR read of scanned minutes); the scanned PDFs return no text to the fetcher today, so no quotes. Firms for Ballbe, Font, Sklar not stated beyond what minutes give. 2023 list not read. Not linked, needs owner names: R2025-61, R2026-82 (ROW vacations), R2025-162 Palm Aire covenant release (PPG ARK Equishares Owner, LLC is registered with Bercow/Amster for 'NE 167th St properties' but the minutes do not name the owner), R2025-15 Soleste developer, R2026-115 Aventura Rehab developer, R2025-148/R2026-47 low bidders. R2025-110/109 applicant is probably Arch Creek Equities, LLC (registered with Holland & Knight: Gassant, Madrid, San Roman, Goldstein, Adams, Arce for 'Arch Creek Apartments'), but only press (FloridaYIMBY) ties that entity to the project, so those are left out of byAction pending the resolution text. Pirtle Construction registered (Pekar & Abramson: Handfinger, Salomon, 11/25/25) for a bid protest on Washington Park; Pirtle is not a party to R2025-189/R2026-47. Michael McDearmaid registered for 'Horizon Group' (2024) with no issue tied to the lease; omitted. Saint Fleur/Lowery (G5ive), Saint Fleur (Core & Main) and Edelstein (Horizon) registered after the action date; dates kept so the matcher can judge. Amazon Services LLC vs county 'Amazon.com Services LLC' and Coral Gables 'Marckenson' (Pro Transportation) not added. Allied Universal Corporation (chemicals, R2025-184) is a different company from the county's Allied Universal Security; not matched."
+}

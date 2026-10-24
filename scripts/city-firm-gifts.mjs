@@ -74,7 +74,9 @@ const NOTE = (who, src, firm, hand, occ) => ({
   es: `${who}, listado en ${firm} en el registro de cabilderos de ${src === 'Legislature' ? 'la Legislatura' : src === 'county' ? 'el condado' : src}` + (hand ? '; coincidencia solo por nombre, el reporte no indica ocupación ni dirección' : `; el reporte indica la ocupación “${occ}”`),
   ht: `${who}, nan lis ${firm} nan rejis lobiyis ${src === 'Legislature' ? 'Lejislati a' : src === 'county' ? 'konte a' : src}` + (hand ? '; koresponn sou non sèlman, rapò a pa bay okipasyon ni adrès' : `; rapò a di okipasyon an se “${occ}”`) });
 
-let added = 0, total = 0; const log = [];
+let added = 0, total = 0; const log = []; const nameOnly = [];
+// A lobbyist's own gift counts only when the report's occupation (or address) confirms it is the lobbyist; a
+// name-only match from a hand-typed report is listed in scripts/data/city/lobbyist-name-only.txt for review.
 for (const B of d.bodies) {
   const rows = DON[B.key]; if (!rows) continue;
   for (const a of B.actions) {
@@ -84,7 +86,8 @@ for (const B of d.bodies) {
       const firm = firmOf(l); const fk = firm ? fkey(firm) : '';
       // the named lobbyist
       const [lasts, first] = parts(l.name);
-      for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && (r.hand || LOB.test(r.occ))) push({ to: r.to, acct: r.acct, kind: 'lobbyist', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, basis: r.hand ? 'name' : 'occ', ...(r.hand ? { why: { en: 'name match only; the report gives no occupation or address', es: 'coincidencia solo por nombre; el reporte no indica ocupación ni dirección', ht: 'koresponn sou non sèlman; rapò a pa bay okipasyon ni adrès' } } : {}) });
+      for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && r.hand) nameOnly.push(`${B.key} ${a.id}: ${r.donor} $${r.amount} ${r.date} to ${r.to} matches lobbyist ${l.name} by name only`);
+      for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && LOB.test(r.occ)) push({ to: r.to, acct: r.acct, kind: 'lobbyist', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, basis: r.hand ? 'name' : 'occ', ...(r.hand ? { why: { en: 'name match only; the report gives no occupation or address', es: 'coincidencia solo por nombre; el reporte no indica ocupación ni dirección', ht: 'koresponn sou non sèlman; rapò a pa bay okipasyon ni adrès' } } : {}) });
       if (!fk || !roster[fk]) continue;
       // the firm itself
       const ph = ' ' + norm(firm).split(' ').filter(x => !FSTOP.has(x)).slice(0, 2).join(' ') + ' ';
@@ -100,4 +103,5 @@ for (const B of d.bodies) {
   }
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
+writeFileSync(P('scripts/data/city/lobbyist-name-only.txt'), [...new Set(nameOnly)].join('\n') + '\n');
 console.log(log.join('\n')); console.log(`added ${added} gifts, $${total.toLocaleString()}`);

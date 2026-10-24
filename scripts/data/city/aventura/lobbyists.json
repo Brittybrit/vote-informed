@@ -1,0 +1,785 @@
+{
+ "city": "Aventura",
+ "sources": [
+  {
+   "name": "City of Aventura 2026 Registered Lobbyists and Principals (updated 5/06/2026)",
+   "url": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+   "viewed": "2026-10-24",
+   "covers": "Every lobbyist/principal still on file, with month/year registered (some back to 2005); registry dates are YYYY-MM because the list gives only month/year. Withdrawn entries marked."
+  },
+  {
+   "name": "Agenda packet June 2, 2026 (includes May 5, 2026 minutes)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_06022026-505",
+   "viewed": "2026-10-24",
+   "covers": "Who spoke for applicants on Res. 2026-30, 31, 32"
+  },
+  {
+   "name": "Agenda packet Sept 8, 2026 (includes July 7 and July 23, 2026 minutes)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09082026-516",
+   "viewed": "2026-10-24",
+   "covers": "Aventura City Center sign variance; Ord. 2026-12 (no applicant comments)"
+  },
+  {
+   "name": "Agenda packet April 8, 2025 (includes March 4, 2025 minutes; Centtral sign item)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_04082025-429",
+   "viewed": "2026-10-24",
+   "covers": "Gulfstream items, Belmont Village variance, Centtral Aventura agent"
+  },
+  {
+   "name": "Agenda packet May 5, 2026 (April 7 minutes)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_05052026-496",
+   "viewed": "2026-10-24",
+   "covers": "Adler for Aventura 2999 on TC1 hotel ordinance (no action in list)"
+  },
+  {
+   "name": "Agenda packet Oct 8, 2025 (Sept 2, 2025 minutes)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_10082025-466",
+   "viewed": "2026-10-24",
+   "covers": "No list actions; Adler for Aventura Mixed Use/Dixie (later items)"
+  },
+  {
+   "name": "Agenda packet Feb 3, 2026 (Jan 13 and Jan 22, 2026 minutes)",
+   "url": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_02032026-478",
+   "viewed": "2026-10-24",
+   "covers": "No vendor speakers on Pirtle CMAR or BrightView"
+  },
+  {
+   "name": "Miami-Dade County lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-24",
+   "covers": "otherBody matches only; not ties"
+  }
+ ],
+ "byAction": {
+  "2025-15": [
+   {
+    "name": "Armando Hassun",
+    "firm": "Shutts & Bowen, LLP",
+    "for": "The Fresh Market",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   }
+  ],
+  "aventura-2025-03-04-14": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   }
+  ],
+  "2025-22": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   }
+  ],
+  "ord-2025-03": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   }
+  ],
+  "ord-2025-04": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_04082025-429",
+    "date": "2025-03-04"
+   }
+  ],
+  "ord-2025-05": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   }
+  ],
+  "2025-23": [
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Belmont Village Aventura Property Owner LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_04082025-429",
+    "date": "2025-03-04"
+   }
+  ],
+  "2025-27": [
+   {
+    "name": "Alan S. Rosenthal",
+    "firm": "Rosenthal Rosenthal Rasco, LLC",
+    "for": "Centtral Aventura LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_04082025-429",
+    "date": "2025-04-08"
+   },
+   {
+    "name": "Alan S. Rosenthal",
+    "firm": "Rosenthal Rosenthal Rasco, LLC",
+    "for": "Centtral Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2020-09"
+   }
+  ],
+  "aventura-2025-05-06-15": [
+   {
+    "name": "Alan S. Krischer",
+    "firm": "Holland & Knight LLP",
+    "for": "Regency Centers Corporation",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-05"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Regency Centers",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2017-04"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": null,
+    "for": "Regency Centers Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17"
+   }
+  ],
+  "2025-40": [
+   {
+    "name": "Roberto Bezold",
+    "firm": "Zyscovich Architects",
+    "for": "Aventura Opportunity Owner LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-05"
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": "Zyscovich Architects",
+    "for": "Aventura Opportunity Owner LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-05"
+   }
+  ],
+  "aventura-2026-06-02-19": [
+   {
+    "name": "Roberto Bezold",
+    "firm": "Zyscovich Architects",
+    "for": "Aventura Opportunity Owner LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-05"
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": "Zyscovich Architects",
+    "for": "Aventura Opportunity Owner LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-05"
+   }
+  ],
+  "2025-42": [
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Padel Park Aventura, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-11"
+   }
+  ],
+  "aventura-2025-07-01-16": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   }
+  ],
+  "2025-44": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   }
+  ],
+  "ord-2025-11": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   }
+  ],
+  "ord-2025-12": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Miami Off Center Associates, LLP",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-01"
+   }
+  ],
+  "2025-62": [
+   {
+    "name": "Joseph Bober",
+    "firm": null,
+    "for": "Dade County Police Benevolent Association d/b/a South Florida Police Benevolent Association",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06"
+   }
+  ],
+  "2025-63": [
+   {
+    "name": "Roberto Sanchez",
+    "firm": null,
+    "for": "Axon Enterprise, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06"
+   }
+  ],
+  "2026-23": [
+   {
+    "name": "Roberto Sanchez",
+    "firm": null,
+    "for": "Axon Enterprise, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06"
+   }
+  ],
+  "aventura-2026-03-03-17": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": "Civica Architecture",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   }
+  ],
+  "2026-22": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": "Civica Architecture",
+    "for": "KLA Academy Aventura LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-02"
+   }
+  ],
+  "2026-29": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Graham Penn",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Gulfstream Park Racing Association, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2024-06"
+   }
+  ],
+  "aventura-2026-05-05-0": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Aventura 2999, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-02"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Aventura 2999, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-02"
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": "Bass Law",
+    "for": "Aventura 2999 LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-05"
+   },
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura City Center, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Oliver Wechsler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura City Center, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura 2999, LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_06022026-505",
+    "date": "2026-05-05",
+    "quote": "provided comments on behalf of the applicant"
+   }
+  ],
+  "aventura-2026-07-07-1": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Aventura 2999, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-02"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Aventura 2999, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2023-02"
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": "Bass Law",
+    "for": "Aventura 2999 LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-05"
+   },
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura City Center, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Oliver Wechsler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura City Center, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Brian Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Aventura 2999 LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_09082026-516",
+    "date": "2026-07-07"
+   }
+  ],
+  "2026-31": [
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices at Uptown Aventura, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Oliver Wechsler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices at Uptown Aventura, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices of Uptown Aventura, LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_06022026-505",
+    "date": "2026-05-05",
+    "quote": "provided comments on behalf of the applicant"
+   }
+  ],
+  "aventura-2026-05-05-18": [
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices at Uptown Aventura, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Oliver Wechsler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices at Uptown Aventura, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2025-02"
+   },
+   {
+    "name": "Brian S. Adler",
+    "firm": "Bilzin Sumberg Baena Price & Axelrod LLP",
+    "for": "Medical Offices of Uptown Aventura, LLC",
+    "basis": "record",
+    "src": "https://www.cityofaventura.com/AgendaCenter/ViewFile/Agenda/_06022026-505",
+    "date": "2026-05-05",
+    "quote": "provided comments on behalf of the applicant"
+   }
+  ],
+  "aventura-2026-06-02-2": [
+   {
+    "name": "Jeffrey Bercow",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Mount Sinai Medical Center",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-03"
+   },
+   {
+    "name": "Michael J. Marrero",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Mount Sinai Medical Center",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-03"
+   },
+   {
+    "name": "Benjamin Sherry",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
+    "for": "Mount Sinai Medical Center",
+    "basis": "registry",
+    "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals",
+    "date": "2026-03"
+   },
+   {
+    "name": "Jeffrey Bercow",
+    "firm": null,
+    "for": "Mount Sinai Medical Center",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07"
+   },
+   {
+    "name": "Michael Marrero",
+    "firm": null,
+    "for": "Mount Sinai Medical Center",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17"
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Mount Sinai Medical Center",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15"
+   }
+  ]
+ },
+ "notFound": "Agenda packets/minutes that would not load (server errors, then the hourly fetch limit): June 3 2025, July 1 2025, July 24 2025, Aug 8 2025, Sept 2 2025, Nov 4 2025, Mar 3 2026, Apr 7 2026, July 7 2026, Sept 15 2026, Oct 6 2026, Feb 4 2025. So record-basis reps for Cassa (July 1 2025), 20801 Biscayne (June 3 2025, June 2 2026), KLA (Mar 3 2026), Padel (July 1 2025), Fresh Market are not checked; those rest on the registry only. Laserfiche resolution links (egov2) return a cookie-error page to the fetcher. Contract vendors (Pirtle, Currie Sowards Aguila, Charter Schools USA, HPF, Axon, CBIZ, etc.) have no Aventura registration and no recorded speakers in packets read. Doral and state firm lists hold no client names, so they cannot match parties. Ord. 2026-12 (July 7) minutes say no comments were given for Mount Sinai."
+}
