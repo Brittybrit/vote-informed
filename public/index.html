@@ -3639,8 +3639,10 @@ function impactBody(ri, r, calc, me, w){
   r = r || null;
   var src = (r && r.sources) || [];
   var cite = function(ix){ return (ix || []).map(function(i){ var s = src[i]; return s ? srcLink(s.url, s.name) : ''; }).join(''); };
-  var mine = (r && r.groups || []).filter(function(g){ return MI.has(me, g.group); });
-  var others = (r && r.groups || []).filter(function(g){ return !MI.has(me, g.group); });
+  // only circumstances the page still asks about (older cached research may carry retired ones)
+  var known = (r && r.groups || []).filter(function(g){ return MI.GROUPS.indexOf(g.group) >= 0; });
+  var mine = known.filter(function(g){ return MI.has(me, g.group); });
+  var others = known.filter(function(g){ return !MI.has(me, g.group); });
   var sum = (calc && calc.summary) || { yes: [], no: [] };
   var P = function(x){ return '<p>' + esc(x) + '</p>'; };
 

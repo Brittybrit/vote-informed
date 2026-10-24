@@ -54,10 +54,12 @@ test('Amendment 3: savings never exceed the tax paid, and small homes go to zero
 });
 
 test('Amendment 3: a renter sees the services side but no savings', () => {
-  const c = MI.calc(A3, MI.normalize({ groups: { renter: true, library: true } }), 'es');
+  const c = MI.calc(A3, MI.normalize({ groups: { renter: true } }), 'es');
   assert.equal(c.savings, undefined);
   assert.equal(c.reconcile.share, '');
-  assert.ok(c.reconcile.funds.find(f => f.label === 'Bibliotecas').mine);
+  // parks and libraries are shared by everyone: never tagged as something only some voters use
+  assert.ok(!c.reconcile.funds.find(f => f.label === 'Bibliotecas').mine);
+  assert.ok(!c.reconcile.funds.find(f => f.label === 'Parques').mine);
 });
 
 test('school levy: what you pay against what the district would lose', () => {
@@ -69,7 +71,7 @@ test('school levy: what you pay against what the district would lose', () => {
 });
 
 test('other measures get no calculation', () => {
-  assert.equal(MI.calc('County Referendum 6: Charter Amendment Expanding Allowable Advertising at Parks', MI.normalize({ groups: { park_user: true } }), 'en'), null);
+  assert.equal(MI.calc('County Referendum 6: Charter Amendment Expanding Allowable Advertising at Parks', MI.normalize({ groups: { renter: true } }), 'en'), null);
 });
 
 test('every wording exists in all three languages', () => {
@@ -190,7 +192,7 @@ test('Property Appraiser city names map to the chart', () => {
 });
 
 test('with a city, taxes come from adopted rates and the savings split adds up', () => {
-  const me = MI.normalize({ groups: { homestead: true, library: true }, homeValue: 320000, place: 'Miami' });
+  const me = MI.normalize({ groups: { homestead: true }, homeValue: 320000, place: 'Miami' });
   const T = MI._test.homeTaxes(me);
   assert.equal(Math.round(T.nsMills * 1e4) / 1e4, 13.3314);   // 19.9544 total less 6.6230 school
   assert.equal(Math.round(T.nsTax), 3581);
@@ -202,7 +204,12 @@ test('with a city, taxes come from adopted rates and the savings split adds up',
   assert.ok(fire.note && !fire.mine);
   assert.ok(!c.reconcile.split.some(x => /Fire/.test(x.label)));
   assert.ok(c.reconcile.split.some(x => x.label === 'Miami-Dade Public Library System'));
-  assert.ok(c.reconcile.funds.find(f => f.label === 'Libraries').mine);
+  assert.ok(!c.reconcile.funds.find(f => f.label === 'Libraries').mine);
+});
+
+test('parks and libraries are not checkboxes', () => {
+  assert.ok(!MI.GROUPS.includes('library') && !MI.GROUPS.includes('park_user'));
+  assert.equal(Object.keys(MI.normalize({ groups: { library: true, park_user: true } }).groups).length, 0);   // old saved answers drop out
 });
 
 test('lookup values are used only for the value they came with', () => {

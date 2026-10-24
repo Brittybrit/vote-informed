@@ -9,7 +9,7 @@
 // and what that money pays for now. No prediction of what a government will cut.
 (function(){
   var KEY = 'ballot305.me';
-  var GROUPS = ['homestead', 'owner_other', 'renter', 'business', 'farm', 'school_parent', 'school_staff', 'public_employee', 'transit', 'library', 'park_user', 'senior'];
+  var GROUPS = ['homestead', 'owner_other', 'renter', 'business', 'farm', 'school_parent', 'school_staff', 'public_employee', 'transit', 'senior'];
 
   function usd(n){ return '$' + Math.round(Number(n) || 0).toLocaleString('en-US'); }
   function big(n, lang){
@@ -67,8 +67,8 @@
   var COUNTY_FUNDS = [
     { k: 'fire', amt: 743.7e6, groups: [] },
     { k: 'roads', amt: 407.1e6, groups: ['transit'] },
-    { k: 'parks', amt: 130.8e6, groups: ['park_user'] },
-    { k: 'libraries', amt: 128.5e6, groups: ['library'] },
+    { k: 'parks', amt: 130.8e6, groups: [] },
+    { k: 'libraries', amt: 128.5e6, groups: [] },
     { k: 'community', amt: 66.4e6, groups: ['senior'] },
     { k: 'animals', amt: 31e6, groups: [] }
   ];
@@ -90,12 +90,12 @@
         renter: 'I rent my home', business: 'I own a business', farm: 'I own or lease farmland, or run a farm or agritourism business',
         school_parent: 'I have a child in a public school (district or charter)', school_staff: 'I work for the school district',
         public_employee: 'I work for the county or a city (including police and fire)', transit: 'I ride the bus, Metrorail or Metromover',
-        library: 'I use public libraries', park_user: 'I use public parks', senior: 'I’m 65 or older'
+        senior: 'I’m 65 or older'
       },
       o: {
         homestead: 'Homeowners who live in their home', owner_other: 'Owners of property they don\u2019t live in', renter: 'Renters', business: 'Business owners',
         farm: 'Farmland owners and farm businesses', school_parent: 'Families with children in public school', school_staff: 'School district employees',
-        public_employee: 'County and city employees', transit: 'Transit riders', library: 'Library users', park_user: 'Park users', senior: 'People 65 and older'
+        public_employee: 'County and city employees', transit: 'Transit riders', senior: 'People 65 and older'
       },
       addr: {
         head: 'Fill in your values from your address',
@@ -158,12 +158,12 @@
         renter: 'Alquilo mi vivienda', business: 'Tengo un negocio', farm: 'Soy dueño o arrendatario de tierras agrícolas, o tengo una finca o negocio de agroturismo',
         school_parent: 'Tengo un hijo en una escuela pública (del distrito o chárter)', school_staff: 'Trabajo para el distrito escolar',
         public_employee: 'Trabajo para el condado o una ciudad (incluida policía y bomberos)', transit: 'Uso el autobús, Metrorail o Metromover',
-        library: 'Uso las bibliotecas públicas', park_user: 'Uso los parques públicos', senior: 'Tengo 65 años o más'
+        senior: 'Tengo 65 años o más'
       },
       o: {
         homestead: 'Dueños que viven en su vivienda', owner_other: 'Dueños de propiedades donde no viven', renter: 'Inquilinos', business: 'Dueños de negocios',
         farm: 'Dueños de tierras agrícolas y negocios agrícolas', school_parent: 'Familias con hijos en escuelas públicas', school_staff: 'Empleados del distrito escolar',
-        public_employee: 'Empleados del condado y de las ciudades', transit: 'Usuarios del transporte público', library: 'Usuarios de bibliotecas', park_user: 'Usuarios de parques', senior: 'Personas de 65 años o más'
+        public_employee: 'Empleados del condado y de las ciudades', transit: 'Usuarios del transporte público', senior: 'Personas de 65 años o más'
       },
       addr: {
         head: 'Complete sus valores con su dirección',
@@ -226,12 +226,12 @@
         renter: 'Mwen lwe kay mwen', business: 'Mwen gen yon biznis', farm: 'Mwen posede oswa lwe tè agrikòl, oswa mwen gen yon fèm oswa biznis agwotouris',
         school_parent: 'Mwen gen yon pitit nan yon lekòl piblik (distri oswa chartè)', school_staff: 'Mwen travay pou distri lekòl la',
         public_employee: 'Mwen travay pou konte a oswa yon vil (sa gen ladan l lapolis ak ponpye)', transit: 'Mwen pran bis, Metrorail oswa Metromover',
-        library: 'Mwen sèvi ak bibliyotèk piblik', park_user: 'Mwen sèvi ak pak piblik', senior: 'Mwen gen 65 an oswa plis'
+        senior: 'Mwen gen 65 an oswa plis'
       },
       o: {
         homestead: 'Pwopriyetè ki rete nan kay yo', owner_other: 'Pwopriyetè ki gen pwopriyete yo pa rete ladan l', renter: 'Lokatè', business: 'Pwopriyetè biznis',
         farm: 'Pwopriyetè tè agrikòl ak biznis agrikòl', school_parent: 'Fanmi ki gen pitit nan lekòl piblik', school_staff: 'Anplwaye distri lekòl la',
-        public_employee: 'Anplwaye konte a ak vil yo', transit: 'Moun ki pran transpò piblik', library: 'Moun ki sèvi ak bibliyotèk', park_user: 'Moun ki sèvi ak pak', senior: 'Moun 65 an oswa plis'
+        public_employee: 'Anplwaye konte a ak vil yo', transit: 'Moun ki pran transpò piblik', senior: 'Moun 65 an oswa plis'
       },
       addr: {
         head: 'Ranpli valè ou yo ak adrès ou',
