@@ -5156,12 +5156,12 @@ function loadTies(ri, cand){
 // what's next is the body's next meetings, posted agenda items and how to speak (/data/cycles.json).
 var YOU = {}, youEditing = false;
 var TOPIC_GROUPS = { housing: ['renter', 'homestead', 'owner_other'], development: ['homestead', 'owner_other'], taxes: ['homestead', 'owner_other', 'business'],
-  insurance: ['homestead', 'owner_other'], schools: ['school_staff'],
-  seniors: ['senior'], labor: ['public_employee'], business: ['business'], farming: ['farm'],
+  insurance: ['homestead', 'owner_other'],
+  seniors: ['senior'], business: ['business'], farming: ['farm'],
   // topics of posted agenda items (scripts/upcoming.mjs) that name the same things
   nightlife: ['business'], towing: ['business'] };
-// public services: shown to every voter whether or not they use them, never a box to check
-var EVERYONE = ['police', 'fire', 'water', 'trash', 'noise', 'transit', 'parks', 'schools', 'libraries', 'daycare', 'parking', 'cycling', 'boating'];
+// public services and public jobs: shown to every voter whether or not they use or work in them, never a box to check
+var EVERYONE = ['police', 'fire', 'water', 'trash', 'noise', 'transit', 'parks', 'schools', 'libraries', 'daycare', 'parking', 'cycling', 'boating', 'labor'];
 function youTopicLabel(k){ var x = t('topic.' + k); return x === 'topic.' + k ? k : x; }
 function youMatch(topics, me){
   return (topics || []).filter(function(k){ return EVERYONE.indexOf(k) >= 0 || (TOPIC_GROUPS[k] || []).some(function(g){ return MI && MI.has(me, g); }); });

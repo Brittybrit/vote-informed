@@ -245,3 +245,12 @@ test('every measure researches why it is on the ballot', () => {
   assert.deepEqual({ ...r.why, sources: [...r.why.sources] }, { whoNote: 'The county commission, 9-4.', reasonNote: 'Sponsors say X.', requiredNote: 'The charter requires a vote.', sources: [0] });
   assert.equal(MI.calc('No. 1 Constitutional Amendment: Budget Stabilization Fund', null, 'es').why.length, 2);
 });
+
+test('jobs are not checkboxes either: public jobs and pay show for everyone', () => {
+  for (const k of ['school_staff', 'public_employee']) {
+    assert.ok(!MI.GROUPS.includes(k), k);
+    for (const l of ['en', 'es', 'ht']) { assert.ok(MI.words(l).svc[k], l + ' ' + k); assert.ok(!MI.words(l).g[k] && !MI.words(l).o[k], l + ' ' + k); }
+  }
+  assert.deepEqual(Object.keys(MI.normalize({ groups: { school_staff: true, public_employee: true, senior: true } }).groups), ['senior']);
+  assert.ok(!Object.keys(w.IMPACT_GROUPS).some(k => /school_staff|public_employee/.test(k)));
+});

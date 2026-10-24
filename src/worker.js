@@ -4289,8 +4289,6 @@ const IMPACT_GROUPS = {
   renter: 'rents their home',
   business: 'owns a business',
   farm: 'owns or leases farmland or runs a farm or agritourism business',
-  school_staff: 'works for the public school district (teacher or other staff)',
-  public_employee: 'works for the county or a city government (including police and fire)',
   senior: 'is 65 or older'
 };
 const IMPACT_TEXT_MAX = 600;
@@ -4348,6 +4346,7 @@ function impactPrompt(p) {
     'Describe consequences, not merits. Never say whether the measure is good or bad, never recommend a vote, never use loaded words (relief, burden, giveaway, slash, gut). Say what changes, for whom, by how much, starting when, and who says so.',
     'Only state an effect that the measure text itself states or that an official or reliable source states. Attribute every estimate to its source in the sentence ("the county estimates..."). When sources disagree, give both. If official sources do not say, leave it out and mention it in unknownNote. Never invent a number.',
     'Public services (schools, transit, parks, libraries, fire, police and the rest) affect everyone whether or not they use them: never treat using a service as a circumstance; say what happens to each affected service under money and community, for every resident. ' +
+    'Public jobs and pay (teachers, school staff, police, firefighters, county and city workers) are effects on the whole community too: put them in community, never as a circumstance.',
     'EVERYONE, NOT ONLY USERS: public services affect people who never use them (schools and libraries affect property values, safety, the workforce and the local economy; transit affects traffic and jobs). In community, give these second-order effects for the whole community, but only as an official body, a research institution or reliable reporting states them, attributed in the sentence, never as your own reasoning. Up to 4 items.',
     'MONEY BOTH WAYS: when the measure changes taxes or public revenue, say who pays less or more AND which government loses or gains money, how much (from the official estimate), and which public services that money pays for now. Where a government would have less money, state what it may do in response only as its own officials or the measure text describe it (cuts, reserves, other revenue, rate changes); never predict which it will choose.',
     'Name the government that runs each service (the county, the city, the school district, a special district). Some cities in a county run their own police, fire, parks or libraries; say so when a source does instead of implying every resident is served by the county.',
