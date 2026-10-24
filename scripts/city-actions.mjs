@@ -45,8 +45,19 @@ function donorsFor(slug, B) {
       }
     }
   }
+  // No export: the hand-typed treasurer's reports (rows [date, name, type, amount, note]; 'S' is the
+  // candidate's own money and a note marks a loan or refund)
+  const reports = J('public/data/city-reports.json').cities.find(c => c.city === CITY[slug]);
+  for (const [key, ob] of Object.entries(B.onBallot)) {
+    if (out.some(g => g.to === key) || !reports) continue;
+    const m = B.members.find(x => x.key === key);
+    const c = reports.candidates.find(x => x.name === m.name);
+    for (const r of (c && c.reports) || []) for (const x of r.rows) if (x[2] !== 'S' && !x[4] && x[3] > 0)
+      out.push({ to: key, acct: ob.accounts[0], donor: String(x[1]).replace(/\s+/g, ' ').trim(), amount: x[3], date: x[0], addr: '', occ: '' });
+  }
   return out;
 }
+const CITY = { aventura: 'Aventura', nmb: 'North Miami Beach', northmiami: 'North Miami', sunnyisles: 'Sunny Isles Beach' };
 
 const MAP = { coralgables: 'coralgables', doral: 'doral', aventura: 'aventura', nmb: 'nmb', northmiami: 'northmiami', hialeah: 'hialeah', southmiami: 'southmiami', pinecrest: 'pinecrest', medley: 'medley' };
 // The page's words for each kind of action
