@@ -20,7 +20,7 @@
   function his(p){ return p.pron === 'she' ? 'her' : p.pron === 'he' ? 'his' : esc(p.last) + '\u2019s'; }
   function him(p){ return p.pron === 'she' ? 'her' : p.pron === 'he' ? 'him' : esc(p.last); }
   // two shares of the same count that always add up to 100%
-  function pair(t, n){ var a = Math.round(t / n * 100); return [a + '%', (100 - a) + '%']; }
+  function pair(t, n){ var a = Math.round(t / n * 100); if(t && !a) return ['<1%', '>99%']; if(t < n && a === 100) return ['>99%', '<1%']; return [a + '%', (100 - a) + '%']; }
   function He(p){ var x = he(p); return x.charAt(0).toUpperCase() + x.slice(1); }
   function nv(Bl){ return Math.max(0, (Bl.votes || 0) - (Bl.yes || 0) - (Bl.no || 0)); }
   var W = {

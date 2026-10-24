@@ -68,9 +68,9 @@ test('renders in all three languages with no leftovers', () => {
   // the share of actions tied to donors names its denominator and its two halves add up
   for (const p of Object.values(saved.people)) if (p.share && p.share.n) {
     assert.ok(p.share.tied <= p.share.n, p.pid);
-    const m = render(p, 'en').split('<br>').pop().match(/Of the (\d+) .*?, (\d+) \((\d+)%\) .*?\. (\d+) \((\d+)%\) did not\./);
+    const m = render(p, 'en').split('<br>').pop().match(/Of the (\d+) .*?, (\d+) \(([<>]?\d+)%\) .*?\. (\d+) \(([<>]?\d+)%\) did not\./);
     assert.ok(m, p.pid + ' share sentence');
-    assert.equal(+m[2] + +m[4], +m[1], p.pid); assert.equal(+m[3] + +m[5], 100, p.pid);
+    assert.equal(+m[2] + +m[4], +m[1], p.pid); if (!/[<>]/.test(m[3])) assert.equal(+m[3] + +m[5], 100, p.pid);
   }
   // a name is never repeated inside one sentence; pronouns are used instead
   for (const lang of ['en', 'es', 'ht']) for (const p of Object.values(saved.people)) if (p.last)
