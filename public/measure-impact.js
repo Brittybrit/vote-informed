@@ -448,7 +448,92 @@
     };
     return out;
   }
+  // Amendment 1, Florida's rainy-day fund. Nothing in it is personal, so it is explained the same way
+  // for everyone, in plain words, with the numbers that give it scale. Florida TaxWatch's guide is the
+  // source for the balance and projections; the joint resolution (HJR 5019, 2025) for the rules.
+  var BSF = { balance: 5.056e9, share: 9.75, transfer: 750e6, gr: 51.9e9, reach: 2049, added: 16.4e9 };
+  var A1SRC = [
+    { name: 'Florida TaxWatch, Taxpayer’s Guide to the 2026 Constitutional Amendments', url: 'https://floridataxwatch.org/the-florida-taxpayers-guide-for-the-2026-constitutional-amendments/' },
+    { name: 'Ballotpedia, Florida Budget Stabilization Fund Amendment (2026)', url: 'https://ballotpedia.org/Florida_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)' },
+    { name: 'WUWF, Ballot explainer: Amendment 1', url: 'https://www.wuwf.org/local-news/2026-10-23/ballot-explainer-amendment-1-budget-stabilization-fund' }
+  ];
+  function isAmend1(title){ return /budget stabilization fund/i.test(title); }
+  var A1W = {
+    en: {
+      gYes: 'Florida would have to save more. Its rainy-day fund could grow from 10% to 25% of a year’s general revenue, and lawmakers would have to put in $750 million a year until it gets there.',
+      gNo: 'The rainy-day fund stays capped at 10% of a year’s general revenue. It is already nearly full, so there are no required deposits.',
+      you: 'No change to your taxes either way. It decides how much of the state’s money is saved instead of spent or returned in tax cuts.',
+      allYes: 'About $750 million a year would go into savings that lawmakers could otherwise spend on things like schools, health care or roads, or use for tax cuts. In return the state would have a bigger cushion for a recession or a hurricane.',
+      allNo: 'That $750 million a year stays available for the yearly budget or tax cuts. The fund keeps today’s cushion of about $5.1 billion.',
+      what: 'What it is',
+      whatTxt: 'The Budget Stabilization Fund is the state’s savings account, created in 1993. Today it can only be used to cover a revenue shortfall or an emergency the Governor declares, like a hurricane.',
+      numbers: 'The numbers',
+      n: [['Fund today', '$5.06 billion'], ['Share of a year’s general revenue', '9.75% (the cap is 10%)'], ['Yearly deposit if YES', '$750 million, about 1.4% of general revenue'], ['Cap if YES', '25% of general revenue'], ['When it would be full, at $750 million a year', 'about 2049, after about $16.4 billion in deposits']],
+      nNote: 'Projection is Florida TaxWatch’s. It also found that if revenue grows 3% a year, $750 million deposits never reach 25%. The 1.4% is our math from TaxWatch’s figures.',
+      rules: 'The new rules if YES',
+      r: ['Deposits can be skipped in a year when lawmakers take money out for a shortfall, an emergency or a critical need.',
+          'They can also skip a deposit to spend the money on a critical state need, by a two-thirds vote of each chamber in its own bill, no more than once every five years.',
+          'New: when the fund is above 15%, lawmakers can take money out for a one-time “critical state need” by a two-thirds vote, but not below 10%. The amendment doesn’t define “critical state need.”'],
+      sides: 'Who is for and against it',
+      sidesTxt: 'For: Senate President Ben Albritton, House Speaker Daniel Perez and Florida TaxWatch, who say a bigger reserve protects the state in a downturn. Against: Gov. Ron DeSantis, who calls the fund already maxed out, plus the Florida Education Association, the League of Women Voters of Florida and Americans for Tax Reform, who say the money should go to current needs or back to taxpayers.',
+      needs: 'Needs 60% of the vote to pass. The Legislature put it on the ballot (HJR 5019, 2025).'
+    },
+    es: {
+      gYes: 'Florida tendría que ahorrar más. Su fondo de reserva podría crecer del 10% al 25% de los ingresos generales de un año, y los legisladores tendrían que depositar $750 millones al año hasta llegar ahí.',
+      gNo: 'El fondo de reserva sigue con un tope del 10% de los ingresos generales de un año. Ya está casi lleno, así que no hay depósitos obligatorios.',
+      you: 'Sus impuestos no cambian en ningún caso. Decide cuánto del dinero del estado se ahorra en vez de gastarse o devolverse con rebajas de impuestos.',
+      allYes: 'Unos $750 millones al año irían a ahorros que los legisladores podrían usar en escuelas, salud o carreteras, o en rebajas de impuestos. A cambio, el estado tendría un colchón mayor para una recesión o un huracán.',
+      allNo: 'Esos $750 millones al año siguen disponibles para el presupuesto anual o rebajas de impuestos. El fondo mantiene el colchón actual de unos $5,100 millones.',
+      what: 'Qué es',
+      whatTxt: 'El Fondo de Estabilización Presupuestaria es la cuenta de ahorros del estado, creada en 1993. Hoy solo puede usarse para cubrir una caída de ingresos o una emergencia que declare el Gobernador, como un huracán.',
+      numbers: 'Las cifras',
+      n: [['Fondo hoy', '$5,060 millones'], ['Parte de los ingresos generales de un año', '9.75% (el tope es 10%)'], ['Depósito anual si gana el SÍ', '$750 millones, cerca del 1.4% de los ingresos generales'], ['Tope si gana el SÍ', '25% de los ingresos generales'], ['Cuándo se llenaría, con $750 millones al año', 'alrededor de 2049, tras unos $16,400 millones en depósitos']],
+      nNote: 'La proyección es de Florida TaxWatch. También halló que si los ingresos crecen 3% al año, los depósitos de $750 millones nunca llegan al 25%. El 1.4% es nuestro cálculo con cifras de TaxWatch.',
+      rules: 'Las nuevas reglas si gana el SÍ',
+      r: ['Los depósitos pueden omitirse en un año en que los legisladores saquen dinero por una caída de ingresos, una emergencia o una necesidad crítica.',
+          'También pueden omitir un depósito para gastar en una necesidad crítica del estado, con dos tercios de cada cámara en una ley aparte, no más de una vez cada cinco años.',
+          'Nuevo: cuando el fondo pasa del 15%, los legisladores pueden sacar dinero para una “necesidad crítica” de una sola vez, con dos tercios de los votos, sin bajar del 10%. La enmienda no define “necesidad crítica”.'],
+      sides: 'Quién está a favor y en contra',
+      sidesTxt: 'A favor: el presidente del Senado Ben Albritton, el presidente de la Cámara Daniel Perez y Florida TaxWatch, que dicen que una reserva mayor protege al estado en una crisis. En contra: el gobernador Ron DeSantis, que dice que el fondo ya está al máximo, y la Florida Education Association, la League of Women Voters of Florida y Americans for Tax Reform, que dicen que el dinero debe ir a necesidades actuales o volver a los contribuyentes.',
+      needs: 'Necesita el 60% de los votos. La Legislatura la puso en la boleta (HJR 5019, 2025).'
+    },
+    ht: {
+      gYes: 'Florid ta oblije sere plis. Fon pou move jou li a ta ka grandi soti 10% rive 25% nan revni jeneral yon ane, e lejislatè yo ta oblije mete $750 milyon chak ane jiskaske li rive la.',
+      gNo: 'Fon pou move jou a rete ak plafon 10% nan revni jeneral yon ane. Li prèske plen deja, kidonk pa gen depo obligatwa.',
+      you: 'Taks ou pa chanje nan okenn ka. Li deside konbyen lajan Leta a sere olye li depanse l oswa remèt li an diminisyon taks.',
+      allYes: 'Anviwon $750 milyon chak ane ta ale nan ekonomi lejislatè yo ta ka depanse sou lekòl, swen sante oswa wout, oswa sèvi pou diminye taks. An retou, Leta a ta gen yon kousen pi gwo pou yon resesyon oswa yon siklòn.',
+      allNo: '$750 milyon sa a chak ane rete disponib pou bidjè anyèl la oswa pou diminye taks. Fon an kenbe kousen jodi a ki anviwon $5.1 milya.',
+      what: 'Sa li ye',
+      whatTxt: 'Fon Estabilizasyon Bidjè a se kont epay Leta a, yo te kreye l an 1993. Jodi a yo ka sèvi avè l sèlman pou kouvri yon mank revni oswa yon ijans Gouvènè a deklare, tankou yon siklòn.',
+      numbers: 'Chif yo',
+      n: [['Fon an jodi a', '$5.06 milya'], ['Pati nan revni jeneral yon ane', '9.75% (plafon an se 10%)'], ['Depo chak ane si WI genyen', '$750 milyon, anviwon 1.4% revni jeneral'], ['Plafon si WI genyen', '25% revni jeneral'], ['Kilè li ta plen, ak $750 milyon pa ane', 'anviwon 2049, apre anviwon $16.4 milya depo']],
+      nNote: 'Pwojeksyon an se pa Florida TaxWatch. Li jwenn tou si revni grandi 3% pa ane, depo $750 milyon yo pa janm rive 25%. 1.4% la se kalkil pa nou ak chif TaxWatch.',
+      rules: 'Nouvo règ yo si WI genyen',
+      r: ['Yo ka sote depo yo nan yon ane lè lejislatè yo retire lajan pou yon mank revni, yon ijans oswa yon bezwen kritik.',
+          'Yo ka sote yon depo tou pou depanse lajan an sou yon bezwen kritik Leta, ak de tyè vòt nan chak chanm nan yon lwa apa, pa plis pase yon fwa chak senk ane.',
+          'Nouvo: lè fon an depase 15%, lejislatè yo ka retire lajan pou yon “bezwen kritik” yon sèl fwa ak de tyè vòt, men pa anba 10%. Amannman an pa defini “bezwen kritik”.'],
+      sides: 'Kiyès ki pou ak kiyès ki kont',
+      sidesTxt: 'Pou: Prezidan Sena a Ben Albritton, Prezidan Chanm nan Daniel Perez ak Florida TaxWatch, ki di yon rezèv pi gwo pwoteje Leta a nan yon kriz. Kont: Gouvènè Ron DeSantis, ki di fon an deja plen, plis Florida Education Association, League of Women Voters of Florida ak Americans for Tax Reform, ki di lajan an ta dwe ale nan bezwen jodi a oswa retounen bay kontribyab yo.',
+      needs: 'Li bezwen 60% vòt pou l pase. Lejislati a te mete l sou bilten an (HJR 5019, 2025).'
+    }
+  };
+  function amend1(lang){
+    var w = A1W[lang] || A1W.en;
+    return {
+      yes: [], no: [], approx: false, explainer: true, sources: A1SRC,
+      general: { yes: w.gYes, no: w.gNo },
+      summary: { yes: [w.you], no: [], allYes: [w.allYes], allNo: [w.allNo] },
+      reconcile: {
+        head: w.what, explainer: true,
+        splitHead: w.numbers, split: w.n.map(function(x){ return { label: x[0], text: x[1] }; }),
+        loss: w.whatTxt, fundsHead: '', funds: [], fundNote: w.nNote,
+        respond: '', share: '',
+        extra: [{ head: w.rules, items: w.r }, { head: w.sides, items: [w.sidesTxt, w.needs] }]
+      }
+    };
+  }
   function calc(title, me, lang){
+    if(isAmend1(title)) return amend1(lang);   // same for everyone, no answers needed
     if(!me) return null;
     if(isAmend3(title)) return amend3(me, lang);
     if(isSchoolLevy(title)) return schoolLevy(me, lang);

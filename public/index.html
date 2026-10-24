@@ -3672,7 +3672,9 @@ function renderImpact(ri){
   var h = '<h4>' + esc(w.head) + '</h4>';
   if(impEditing || !MI.any(me)){
     if(!impEditing){
-      box.innerHTML = h + '<p class="imp-intro">' + esc(w.intro) + '</p><button class="btn2" type="button" id="impStart">' + esc(w.start) + '</button>';
+      var ex = MI.calc(ballot.races[ri].office, null, LANG);   // explainers that need no answers (Amendment 1)
+      box.innerHTML = h + (ex && ex.explainer ? impactBody(ri, null, ex, { groups: {} }, w) : '<p class="imp-intro">' + esc(w.intro) + '</p><button class="btn2" type="button" id="impStart">' + esc(w.start) + '</button>');
+      if(!$('impStart')) return;
       $('impStart').onclick = function(){ impEditing = true; renderImpact(ri); };
       return;
     }
@@ -3840,8 +3842,8 @@ function impactBody(ri, r, calc, me, w){
     return out;
   }
   var h = '<div class="imp-boxes">' +
-    box('side-yes', w.ifYes, r && r.yesNote, sum.yes.length ? sum.yes : mine.map(function(g){ return g.yesNote; }), allFor('yesNote', sum.allYes)) +
-    box('side-no', w.ifNo, r && r.noNote, sum.no.length ? sum.no : mine.map(function(g){ return g.noNote; }), allFor('noNote', sum.allNo)) + '</div>';
+    box('side-yes', w.ifYes, (calc && calc.general && calc.general.yes) || (r && r.yesNote), sum.yes.length ? sum.yes : mine.map(function(g){ return g.yesNote; }), allFor('yesNote', sum.allYes)) +
+    box('side-no', w.ifNo, (calc && calc.general && calc.general.no) || (r && r.noNote), sum.no.length ? sum.no : mine.map(function(g){ return g.noNote; }), allFor('noNote', sum.allNo)) + '</div>';
   if(r && r.whenNote) h += '<p class="imp-intro"><span class="imp-who">' + esc(w.when) + ':</span> ' + esc(r.whenNote) + '</p>';
   if(calc && calc.approx) h += '<p class="fine">' + esc(w.approx) + '</p>';
   if(r && !mine.length && !(calc && (sum.yes.length || sum.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
@@ -3870,21 +3872,26 @@ function impactBody(ri, r, calc, me, w){
   var rc = calc && calc.reconcile, money = (r && r.money) || [];
   if(rc){
     var b = '';
+    if(rc.explainer) b += '<p class="imp-intro">' + esc(rc.loss) + '</p>';
     if(rc.split && rc.split.length){
-      b += '<div class="imp-sub">' + esc(rc.splitHead) + '</div>' + rc.split.map(function(x){
+      b += (rc.splitHead ? '<div class="imp-sub">' + esc(rc.splitHead) + '</div>' : '') + rc.split.map(function(x){
+        // worded figures stack under their label; dollar amounts sit in a right column
+        if(x.text) return '<div class="imp-item"><div>' + esc(x.label) + '</div><div class="amt">' + esc(x.text) + '</div></div>';
         return '<div class="imp-row"><div>' + esc(x.label) + '</div><div class="amt">' + esc(MI.usd(x.amount)) + '</div>' + (x.note ? '<div class="what">' + esc(x.note) + '</div>' : '') + '</div>';
       }).join('');
     }
-    b += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
+    if(rc.explainer && rc.fundNote) b += '<p class="fine">' + esc(rc.fundNote) + '</p>';
+    if(!rc.explainer) b += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
     if(rc.funds.length){
       b += '<div class="imp-sub">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
         return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
       }).join('') + (rc.fundNote ? '<p class="fine">' + esc(rc.fundNote) + '</p>' : '');
     }
     if(rc.share) b += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
-    b += '<p class="imp-intro">' + esc(rc.respond) + '</p>';
+    if(rc.respond) b += '<p class="imp-intro">' + esc(rc.respond) + '</p>';
+    (rc.extra || []).forEach(function(x){ b += '<div class="imp-sub">' + esc(x.head) + '</div><ul class="imp-list">' + x.items.map(function(i){ return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>'; });
     b += '<ul class="imp-srcs">' + calc.sources.map(function(s){ return '<li>' + srcLink(s.url, s.name) + '</li>'; }).join('') + '</ul>';
-    h += exp(w.reconcileHead, b);
+    h += exp(rc.head || w.reconcileHead, b);
   }
   if(money.length){
     h += exp(w.money + ' (' + money.length + ')', money.map(function(m){
