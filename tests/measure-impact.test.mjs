@@ -124,7 +124,7 @@ test('fresh request runs in the background, then serves the shared cache', async
     assert.equal(second.result.yesNote, 'Y');
     assert.equal(second.result.sources[0].url, 'https://example.gov/a');
     assert.equal(second.result.sources[1].url, '');   // a link the search never returned is dropped
-    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm2:')));
+    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm3:')));
   } finally { globalThis.fetch = realFetch; }
 });
 
@@ -226,4 +226,19 @@ test('Amendment 1 is explained the same way for everyone, with no answers needed
     assert.ok(c.sources.every(s => s.url.startsWith('https://')));
   }
   assert.deepEqual(JSON.parse(JSON.stringify(MI.calc(A1, MI.normalize({ groups: { renter: true } }), 'en'))), JSON.parse(JSON.stringify(MI.calc(A1, null, 'en'))));
+});
+
+test('with no answers, Amendment 3 and the school levy still give the for-everyone side', () => {
+  const a3 = MI.calc(A3, null, 'en');
+  assert.ok(a3.summary.allYes[0].includes('$696.7 million'));
+  assert.equal(a3.summary.yes.length, 0);
+  assert.ok(MI.calc(LEVY, null, 'en').summary.allNo[0].includes('$585 million'));
+});
+
+test('every measure researches why it is on the ballot', () => {
+  const p = w.impactPrompt({ name: 'X', summary: '', jurisdiction: 'Miami-Dade County', election: '2026' });
+  assert.match(p, /WHY IT IS ON THE BALLOT FIRST/);
+  const r = w.cleanImpact({ why: { whoNote: 'The county commission, 9-4.', reasonNote: 'Sponsors say X.', requiredNote: 'The charter requires a vote.', sources: [0, 9] }, sources: [{ name: 'County', url: 'https://example.gov' }] });
+  assert.deepEqual({ ...r.why, sources: [...r.why.sources] }, { whoNote: 'The county commission, 9-4.', reasonNote: 'Sponsors say X.', requiredNote: 'The charter requires a vote.', sources: [0] });
+  assert.equal(MI.calc('No. 1 Constitutional Amendment: Budget Stabilization Fund', null, 'es').why.length, 2);
 });

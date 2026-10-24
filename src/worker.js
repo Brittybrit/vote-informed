@@ -4282,7 +4282,7 @@ async function legacyFingerprint(pdfB64) {
 // how the measure changes things for a fixed set of circumstances (own and live in your home, rent,
 // a child in public school, ride transit...), and what public money and services ride on it. The page
 // matches that to the answers the voter keeps on their own device. Shared cache, same spend limits.
-const IMPACT_VERSION = 2;   // 2: community-wide (second-order) effects for everyone
+const IMPACT_VERSION = 3;   // 2: community-wide (second-order) effects for everyone; 3: why it is on the ballot
 const IMPACT_GROUPS = {
   homestead: 'owns and lives in their home (homestead exemption)',
   owner_other: 'owns property they do not live in (a rental, second home, land or a business property)',
@@ -4346,6 +4346,7 @@ function impactPrompt(p) {
     'Where the voter lives: ' + p.jurisdiction,
     'Election: ' + p.election,
     '',
+    'WHY IT IS ON THE BALLOT FIRST: find who put this measure on the ballot, the reason its sponsors gave, and the rule that requires a public vote. Use the official record (the resolution, ordinance or bill history) for who, when and the vote; attribute the reason to the sponsors; never guess at motives.',
     'Describe consequences, not merits. Never say whether the measure is good or bad, never recommend a vote, never use loaded words (relief, burden, giveaway, slash, gut). Say what changes, for whom, by how much, starting when, and who says so.',
     'Only state an effect that the measure text itself states or that an official or reliable source states. Attribute every estimate to its source in the sentence ("the county estimates..."). When sources disagree, give both. If official sources do not say, leave it out and mention it in unknownNote. Never invent a number.',
     'Parks and libraries are shared by the whole community: never treat them as a circumstance or limit them to people who use them; cover them under community and money. ' +
@@ -4360,6 +4361,7 @@ function impactPrompt(p) {
     '',
     'After searching, respond with ONLY a JSON object, no prose before or after, no markdown fences, plain text in all string values (no cite tags). Keep each text field under 60 words:',
     '{',
+    '  "why": {"whoNote": "who put it on the ballot and how (the Legislature by joint resolution, a citizen petition, the county commission, a city council, the school board, a charter review), with the date and the vote count where an official record gives them", "reasonNote": "the problem or goal its sponsors gave for it, attributed to them by name, plus any event that prompted it as reliable reporting describes it", "requiredNote": "why voters have to decide it rather than officials alone (for example the state constitution can only be changed by voters, a charter requires a referendum for this, state law requires voter approval for a tax levy or bonds beyond a limit), naming the rule", "sources": [0]},',
     '  "yesNote": "what changes if YES wins, plainly",',
     '  "noNote": "what happens if NO wins (what stays the same, or what ends)",',
     '  "whenNote": "when the change would take effect, else empty string",',
@@ -4392,9 +4394,11 @@ function cleanImpact(r) {
   const community = (Array.isArray(r.community) ? r.community : []).map(c => ({
     whatNote: txt(c && c.whatNote), yesNote: txt(c && c.yesNote), noNote: txt(c && c.noNote), sources: idx(c && c.sources)
   })).filter(c => c.whatNote && (c.yesNote || c.noNote) && c.sources.length).slice(0, 4);
+  const wy = r.why || {};
+  const why = { whoNote: txt(wy.whoNote), reasonNote: txt(wy.reasonNote), requiredNote: txt(wy.requiredNote), sources: idx(wy.sources) };
   const ev = r.everyone || {};
   return {
-    yesNote: txt(r.yesNote), noNote: txt(r.noNote), whenNote: txt(r.whenNote),
+    why, yesNote: txt(r.yesNote), noNote: txt(r.noNote), whenNote: txt(r.whenNote),
     everyone: { yesNote: txt(ev.yesNote), noNote: txt(ev.noNote) },
     groups, money, community, unknownNote: txt(r.unknownNote), sources,
     impV: IMPACT_VERSION, researchedAt: new Date().toISOString()

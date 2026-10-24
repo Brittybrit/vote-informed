@@ -81,7 +81,7 @@
   /* ---------- wording ---------- */
   var W = {
     en: {
-      head: 'What this means for you',
+      head: 'What this means for you', why: 'Why is this on the ballot?',
       intro: 'Add a few details and we’ll lay out what YES and NO would change for someone in your situation, and what public money and services ride on it. Your answers stay on this device. Nothing is sent or saved anywhere else.',
       start: 'Add my situation', edit: 'Edit my situation', clear: 'Clear my answers', saveBtn: 'Show what it means for me', cancel: 'Cancel',
       formHead: 'Check what applies to you. Skip anything you’d rather not say.',
@@ -149,7 +149,7 @@
       }
     },
     es: {
-      head: 'Lo que significa para usted',
+      head: 'Lo que significa para usted', why: '¿Por qué está esto en la boleta?',
       intro: 'Agregue algunos datos y le mostraremos lo que el SÍ y el NO cambiarían para alguien en su situación, y qué dinero y servicios públicos dependen de ello. Sus respuestas se quedan en este dispositivo. No se envían ni se guardan en ningún otro lugar.',
       start: 'Agregar mi situación', edit: 'Editar mi situación', clear: 'Borrar mis respuestas', saveBtn: 'Mostrar lo que significa para mí', cancel: 'Cancelar',
       formHead: 'Marque lo que aplica a usted. Omita lo que prefiera no decir.',
@@ -217,7 +217,7 @@
       }
     },
     ht: {
-      head: 'Sa sa vle di pou ou',
+      head: 'Sa sa vle di pou ou', why: 'Poukisa sa a sou bilten vòt la?',
       intro: 'Ajoute kèk detay epi n ap montre w sa WI ak NON ta chanje pou yon moun nan sitiyasyon w, ak ki lajan piblik ak sèvis piblik ki depann de sa. Repons ou yo rete sou aparèy sa a. Yo pa voye yo ni sere yo okenn lòt kote.',
       start: 'Ajoute sitiyasyon m', edit: 'Chanje sitiyasyon m', clear: 'Efase repons mwen yo', saveBtn: 'Montre m sa sa vle di pou mwen', cancel: 'Anile',
       formHead: 'Make sa ki aplike pou ou. Kite sa ou pa vle di.',
@@ -482,7 +482,8 @@
         'Today Republicans hold just over two-thirds of both chambers (WUSF, October 2026), so one party can reach that bar on its own. This election could change that.'],
       sides: 'Where it came from, and who is for and against it',
       sidesTxt: 'For: Senate President Ben Albritton, House Speaker Daniel Perez and Florida TaxWatch, who say a bigger reserve protects the state in a downturn. Against: Gov. Ron DeSantis, who calls the fund already maxed out, plus the Florida Education Association, the League of Women Voters of Florida and Americans for Tax Reform, who say the money should go to current needs or back to taxpayers.',
-      needs: 'Where it came from: lawmakers, not a petition. Rep. Lawrence McClure filed it (HJR 5019) on June 4, 2025, while the Legislature was finishing that year\u2019s budget; Sen. Ed Hooper had a similar Senate version. It passed June 16, 2025, 100 to 1 in the House and 29 to 4 in the Senate. The Legislature can put amendments straight on the ballot; the Governor has no say. Lawmakers also wrote the first $750 million deposits into the last two budgets, pending this vote, and Gov. DeSantis vetoed both. It needs 60% of the vote to pass.'
+      needs: 'Where it came from: lawmakers, not a petition. Rep. Lawrence McClure filed it (HJR 5019) on June 4, 2025, while the Legislature was finishing that year\u2019s budget; Sen. Ed Hooper had a similar Senate version. It passed June 16, 2025, 100 to 1 in the House and 29 to 4 in the Senate. The Legislature can put amendments straight on the ballot; the Governor has no say. Lawmakers also wrote the first $750 million deposits into the last two budgets, pending this vote, and Gov. DeSantis vetoed both. It needs 60% of the vote to pass.',
+      whyReason: 'Its sponsors say Florida needs a bigger cushion for the next recession or disaster: Senate President Ben Albritton said it makes the state\u2019s balance sheet more durable in difficult times. Changing the cap or the rules for using it takes a change to the state constitution, and only voters can approve that.'
     },
     es: {
       gYes: 'Florida tendría que ahorrar más. Su fondo de reserva podría crecer del 10% al 25% de los ingresos generales de un año, y los legisladores tendrían que depositar $750 millones al año hasta llegar ahí.',
@@ -506,7 +507,8 @@
         'Hoy los republicanos tienen algo más de dos tercios de ambas cámaras (WUSF, octubre de 2026), así que un solo partido puede alcanzar ese umbral. Esta elección podría cambiarlo.'],
       sides: 'De dónde salió, y quién está a favor y en contra',
       sidesTxt: 'A favor: el presidente del Senado Ben Albritton, el presidente de la Cámara Daniel Perez y Florida TaxWatch, que dicen que una reserva mayor protege al estado en una crisis. En contra: el gobernador Ron DeSantis, que dice que el fondo ya está al máximo, y la Florida Education Association, la League of Women Voters of Florida y Americans for Tax Reform, que dicen que el dinero debe ir a necesidades actuales o volver a los contribuyentes.',
-      needs: 'De dónde salió: de los legisladores, no de una petición. El representante Lawrence McClure la presentó (HJR 5019) el 4 de junio de 2025, mientras la Legislatura terminaba el presupuesto de ese año; el senador Ed Hooper tenía una versión parecida en el Senado. Se aprobó el 16 de junio de 2025, 100 a 1 en la Cámara y 29 a 4 en el Senado. La Legislatura puede poner enmiendas directamente en la boleta; el Gobernador no participa. Los legisladores también incluyeron los primeros depósitos de $750 millones en los dos últimos presupuestos, sujetos a esta votación, y el gobernador DeSantis vetó ambos. Necesita el 60% de los votos.'
+      needs: 'De dónde salió: de los legisladores, no de una petición. El representante Lawrence McClure la presentó (HJR 5019) el 4 de junio de 2025, mientras la Legislatura terminaba el presupuesto de ese año; el senador Ed Hooper tenía una versión parecida en el Senado. Se aprobó el 16 de junio de 2025, 100 a 1 en la Cámara y 29 a 4 en el Senado. La Legislatura puede poner enmiendas directamente en la boleta; el Gobernador no participa. Los legisladores también incluyeron los primeros depósitos de $750 millones en los dos últimos presupuestos, sujetos a esta votación, y el gobernador DeSantis vetó ambos. Necesita el 60% de los votos.',
+      whyReason: 'Sus impulsores dicen que Florida necesita un colchón mayor para la próxima recesión o desastre: el presidente del Senado Ben Albritton dijo que hace más sólido el balance del estado en tiempos difíciles. Cambiar el tope del fondo o las reglas para usarlo requiere cambiar la constitución estatal, y solo los votantes pueden aprobarlo.'
     },
     ht: {
       gYes: 'Florid ta oblije sere plis. Fon pou move jou li a ta ka grandi soti 10% rive 25% nan revni jeneral yon ane, e lejislatè yo ta oblije mete $750 milyon chak ane jiskaske li rive la.',
@@ -530,13 +532,14 @@
         'Jodi a Repibliken yo gen yon ti kras plis pase de tyè nan tou de chanm yo (WUSF, oktòb 2026), kidonk yon sèl pati ka rive nan nivo sa a poukont li. Eleksyon sa a ka chanje sa.'],
       sides: 'Kote li soti, ak kiyès ki pou ak kiyès ki kont',
       sidesTxt: 'Pou: Prezidan Sena a Ben Albritton, Prezidan Chanm nan Daniel Perez ak Florida TaxWatch, ki di yon rezèv pi gwo pwoteje Leta a nan yon kriz. Kont: Gouvènè Ron DeSantis, ki di fon an deja plen, plis Florida Education Association, League of Women Voters of Florida ak Americans for Tax Reform, ki di lajan an ta dwe ale nan bezwen jodi a oswa retounen bay kontribyab yo.',
-      needs: 'Kote li soti: nan men lejislatè yo, pa yon petisyon. Reprezantan Lawrence McClure te depoze l (HJR 5019) 4 jen 2025, pandan Lejislati a t ap fini bidjè ane sa a; Senatè Ed Hooper te gen yon vèsyon ki sanble nan Sena a. Li pase 16 jen 2025, 100 kont 1 nan Chanm nan ak 29 kont 4 nan Sena a. Lejislati a ka mete amannman dirèkteman sou bilten an; Gouvènè a pa gen mo pou l di. Lejislatè yo te mete premye depo $750 milyon yo nan de dènye bidjè yo tou, annatandan vòt sa a, e Gouvènè DeSantis te mete veto sou tou de. Li bezwen 60% vòt pou l pase.'
+      needs: 'Kote li soti: nan men lejislatè yo, pa yon petisyon. Reprezantan Lawrence McClure te depoze l (HJR 5019) 4 jen 2025, pandan Lejislati a t ap fini bidjè ane sa a; Senatè Ed Hooper te gen yon vèsyon ki sanble nan Sena a. Li pase 16 jen 2025, 100 kont 1 nan Chanm nan ak 29 kont 4 nan Sena a. Lejislati a ka mete amannman dirèkteman sou bilten an; Gouvènè a pa gen mo pou l di. Lejislatè yo te mete premye depo $750 milyon yo nan de dènye bidjè yo tou, annatandan vòt sa a, e Gouvènè DeSantis te mete veto sou tou de. Li bezwen 60% vòt pou l pase.',
+      whyReason: 'Moun ki pote l yo di Florid bezwen yon kousen pi gwo pou pwochen resesyon oswa dezas: Prezidan Sena a Ben Albritton te di li rann bilan Leta a pi solid nan moman difisil. Pou chanje plafon fon an oswa règ pou sèvi avè l, fòk yo chanje konstitisyon Leta a, e se sèlman votè yo ki ka apwouve sa.'
     }
   };
   function amend1(lang){
     var w = A1W[lang] || A1W.en;
     return {
-      yes: [], no: [], approx: false, explainer: true, sources: A1SRC,
+      yes: [], no: [], approx: false, explainer: true, sources: A1SRC, why: [w.needs, w.whyReason],
       general: { yes: w.gYes, no: w.gNo },
       summary: { yes: [w.you], no: [], allYes: [w.allYes], allNo: [w.allNo] },
       reconcile: {
@@ -544,13 +547,13 @@
         splitHead: w.numbers, split: w.n.map(function(x){ return { label: x[0], text: x[1] }; }),
         loss: w.whatTxt, fundsHead: '', funds: [], fundNote: w.nNote,
         respond: '', share: '',
-        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.needs, w.sidesTxt] }]
+        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.sidesTxt] }]
       }
     };
   }
   function calc(title, me, lang){
     if(isAmend1(title)) return amend1(lang);   // same for everyone, no answers needed
-    if(!me) return null;
+    me = me || normalize({ groups: {} });      // no answers yet: the for-everyone part still applies
     if(isAmend3(title)) return amend3(me, lang);
     if(isSchoolLevy(title)) return schoolLevy(me, lang);
     return null;

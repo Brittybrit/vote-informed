@@ -460,6 +460,8 @@
   .fin-side.side-no{color:var(--no-bg);}
   /* What a measure means for you: the voter's own answers, kept on their device */
   .imp-intro{font-size:13.5px; line-height:1.5; margin-bottom:10px;}
+  .imp-why{margin-bottom:22px;}
+  .imp-why p{font-size:14px; line-height:1.55; margin:0 0 8px;}
   .imp-me{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin-bottom:6px;}
   .imp-me button, .imp-link{background:none; border:0; padding:0; font:inherit; color:var(--ink); text-decoration:underline; cursor:pointer;}
   .imp-list{list-style:none; padding:0; margin:0; font-size:13.5px; line-height:1.5;}
@@ -3627,11 +3629,11 @@ function sideList(list, emptyMsg){
 function renderMeasureDossier(ri, r, cached){
   var race = ballot.races[ri];
   var html = measureHead(race, cached) + measureVoteBar(ri, race) + '<div class="dossier-body">';
+  html += '<div class="dsec" id="impactSec"></div>';   // why it's on the ballot, then what it means for you
 
   if(r.summary){
     html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p>' + summarySourcesHtml(r) + '</div>';
   }
-  html += '<div class="dsec" id="impactSec"></div>';
 
   var fin = r.financing || {};
   if(fin.filed){
@@ -3691,47 +3693,55 @@ function renderImpact(ri){
   var box = $('impactSec');
   if(!box || !MI) return;
   var w = MI.words(LANG), me = MI.load();
-  var h = '<h4>' + esc(w.head) + '</h4>';
-  if(impEditing || !MI.any(me)){
-    if(!impEditing){
-      var ex = MI.calc(ballot.races[ri].office, null, LANG);   // explainers that need no answers (Amendment 1)
-      box.innerHTML = h + (ex && ex.explainer ? impactBody(ri, null, ex, { groups: {} }, w) : '<p class="imp-intro">' + esc(w.intro) + '</p><button class="btn2" type="button" id="impStart">' + esc(w.start) + '</button>');
-      if(!$('impStart')) return;
-      $('impStart').onclick = function(){ impEditing = true; renderImpact(ri); };
-      return;
-    }
-    box.innerHTML = h + impactForm(me, w);
+  if(impEditing){
+    box.innerHTML = '<h4>' + esc(w.head) + '</h4>' + impactForm(me, w);
     wireImpactForm(ri);
     return;
   }
+  var has = MI.any(me);
+  // The research is the same for everyone (cached), so it loads whether or not the voter added answers.
   var key = LANG + ':' + ballot.races[ri].office;   // the office, not its position: a new ballot reorders races
-  var said = MI.GROUPS.filter(function(g){ return MI.has(me, g); }).map(function(g){ return w.g[g]; });
-  h += '<p class="imp-me">' + (said.length ? esc(w.youSaid + said.join('; ') + '. ') : '') + '<button type="button" id="impEdit">' + esc(w.edit) + '</button> · ' + esc(w.privacy) + '</p>';
-  var calc = MI.calc(ballot.races[ri].office, me, LANG);
-  var got = impCache[key];
+  var calc = MI.calc(ballot.races[ri].office, has ? me : null, LANG);
+  var got = impCache[key], r = got && got.result ? got.result : null;
+  var said = has ? MI.GROUPS.filter(function(g){ return MI.has(me, g); }).map(function(g){ return w.g[g]; }) : [];
+  var top = has
+    ? '<p class="imp-me">' + (said.length ? esc(w.youSaid + said.join('; ') + '. ') : '') + '<button type="button" id="impEdit">' + esc(w.edit) + '</button> · ' + esc(w.privacy) + '</p>'
+    : '<p class="imp-intro">' + esc(w.intro) + '</p><button class="btn2" type="button" id="impEdit" style="margin:0 0 12px">' + esc(w.start) + '</button>';
+  var h = whyHtml(r, calc, w) + '<h4>' + esc(w.head) + '</h4>' + top + impactBody(ri, r, calc, has ? me : { groups: {} }, w);
   if(!got){
-    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-loading"><div class="oval-anim"></div><p>' + esc(w.loading) + '</p><p class="fine" id="impClock"></p></div>';
+    h += '<div class="d-loading"><div class="oval-anim"></div><p>' + esc(w.loading) + '</p><p class="fine" id="impClock"></p></div>';
+    box.innerHTML = h;
     var t0 = Date.now(), clock = setInterval(function(){
       var c = $('impClock'); if(!c){ clearInterval(clock); return; }
       c.textContent = Math.round((Date.now() - t0) / 1000) + 's';
     }, 1000);
-    $('impEdit').onclick = function(){ impEditing = true; renderImpact(ri); };
-    impactFetch(ballot.races[ri]).then(function(r){
-      impCache[key] = { result: r };
+    impactFetch(ballot.races[ri]).then(function(res){
+      impCache[key] = { result: res };
       if(activeKey === 'm:' + ri) renderImpact(ri);
     }).catch(function(e){
       impCache[key] = { error: e.message };
       if(activeKey === 'm:' + ri) renderImpact(ri);
     });
-    return;
-  }
-  if(got.error){
-    box.innerHTML = h + impactBody(ri, null, calc, me, w) + '<div class="d-error">' + esc(w.failed) + ' ' + esc(got.error) + '<br><button type="button" id="impRetry">' + esc(w.retry) + '</button></div>';
+  } else if(got.error){
+    box.innerHTML = h + '<div class="d-error">' + esc(w.failed) + ' ' + esc(got.error) + '<br><button type="button" id="impRetry">' + esc(w.retry) + '</button></div>';
     $('impRetry').onclick = function(){ delete impCache[key]; renderImpact(ri); };
-  } else {
-    box.innerHTML = h + impactBody(ri, got.result, calc, me, w);
-  }
+  } else box.innerHTML = h;
   $('impEdit').onclick = function(){ impEditing = true; renderImpact(ri); };
+}
+
+// "Why is this on the ballot?" opens every measure: who put it there, the reason they gave,
+// and the rule that makes it a public vote. A hand-checked version (calc.why) wins over research.
+function whyHtml(r, calc, w){
+  var lines = [], cites = '';
+  if(calc && calc.why) lines = calc.why.slice();
+  else if(r && r.why){
+    var y = r.why, src = r.sources || [];
+    [y.whoNote, y.reasonNote, y.requiredNote].forEach(function(x){ if(x) lines.push(x); });
+    cites = (y.sources || []).map(function(i){ var s = src[i]; return s ? srcLink(s.url, s.name) : ''; }).join('');
+  }
+  if(!lines.length) return '';
+  return '<div class="imp-why"><h4>' + esc(w.why) + '</h4>' + lines.map(function(x){ return '<p>' + esc(x) + '</p>'; }).join('') +
+    (cites ? '<p class="og-links">' + cites + '</p>' : '') + '</div>';
 }
 
 function impactForm(me, w){
@@ -3878,7 +3888,7 @@ function impactBody(ri, r, calc, me, w){
     box('side-no', w.ifNo, (calc && calc.general && calc.general.no) || (r && r.noNote), sum.no.length ? sum.no : mine.map(function(g){ return g.noNote; }), allFor('noNote', sum.allNo)) + '</div>';
   if(r && r.whenNote) h += '<p class="imp-intro"><span class="imp-who">' + esc(w.when) + ':</span> ' + esc(r.whenNote) + '</p>';
   if(calc && calc.approx) h += '<p class="fine">' + esc(w.approx) + '</p>';
-  if(r && !mine.length && !(calc && (sum.yes.length || sum.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
+  if(r && MI.any(me) && !mine.length && !(calc && (sum.yes.length || sum.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
 
   // 2. Line items, each in its own expander
   function exp(title, body){ return body ? '<details class="imp-exp"><summary>' + esc(title) + '</summary><div class="imp-exp-b">' + body + '</div></details>' : ''; }
