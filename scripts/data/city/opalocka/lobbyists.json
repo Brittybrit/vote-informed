@@ -1,0 +1,736 @@
+{
+ "city": "Opa-locka",
+ "sources": [
+  {
+   "name": "Opa-locka City Clerk, Lobbyist Registration (registered lobbyists 2020-2026)",
+   "url": "https://opalockafl.gov/314/Lobbyist-Registration",
+   "viewed": "2026-10-24",
+   "covers": "2024, 2025, 2026 lists read; names, firms, clients; no registration dates"
+  },
+  {
+   "name": "Opa-locka CivicClerk agenda packets (prior-meeting minutes attached)",
+   "url": "https://opalockafl.api.civicclerk.com/v1/Events",
+   "viewed": "2026-10-24",
+   "covers": "packets 7524, 7644, 7725, 7755, 7821-7823, 7853, 7976, 7991, 8008-8010, 8018, 8030, 8114"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody only: county lobbyists and clients, 2026"
+  },
+  {
+   "name": "Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody only"
+  },
+  {
+   "name": "Doral authorized lobbyists list (repo JSON)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "otherBody only; list has no clients, so no matches possible"
+  }
+ ],
+ "byAction": {
+  "opalocka-2025-05-28-13-3": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "City National Bank of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"City National Bank\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "City National Bank of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"City National Bank\""
+   }
+  ],
+  "opalocka-2025-06-11-13-5": [
+   {
+    "name": "Gustavo Eckardt",
+    "firm": null,
+    "for": "Premiere Design Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-20",
+    "note": "Miami-Dade County registry client \"Premiere Design Solutions, Inc\""
+   }
+  ],
+  "opalocka-2025-06-11-13-6": [
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Roly Marante",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-27",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Jonathan Jallad",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-17",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Corey Mcmeeking",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-17",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Corey McMeeking",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   },
+   {
+    "name": "Jonathan Jallad",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   }
+  ],
+  "opalocka-2025-06-23-13-5": [
+   {
+    "name": "Carlos San Jose",
+    "firm": null,
+    "for": "Hera Property Registry, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-19",
+    "note": "Miami-Dade County registry client \"Hera Property Registry, LLC\""
+   }
+  ],
+  "opalocka-2025-08-25-6-5": [
+   {
+    "name": "Sebastian Jaramillo",
+    "firm": null,
+    "for": "Papuchis LLC",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7725,plainText=true)",
+    "date": "2025-09-10",
+    "note": "Named as counsel for Papuchis LLC in the settlement agreement notice section (Sept 10, 2025 packet). Litigation counsel."
+   }
+  ],
+  "opalocka-2025-08-25-6-7": [
+   {
+    "name": "Vincent T. Brown",
+    "firm": null,
+    "for": "Lubotes Dauphin",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7725,plainText=true)",
+    "date": "2025-09-10",
+    "note": "Named as counsel for Lubotes Dauphin in the settlement agreement notice section (Sept 10, 2025 packet). Litigation counsel."
+   }
+  ],
+  "opalocka-2025-09-10-13-1": [
+   {
+    "name": "Sebastian Jaramillo",
+    "firm": null,
+    "for": "Papuchis LLC",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7725,plainText=true)",
+    "date": "2025-09-10",
+    "note": "Named as counsel for Papuchis LLC in the settlement agreement notice section (Sept 10, 2025 packet). Litigation counsel."
+   }
+  ],
+  "opalocka-2025-09-10-13-3": [
+   {
+    "name": "Vincent T. Brown",
+    "firm": null,
+    "for": "Lubotes Dauphin",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7725,plainText=true)",
+    "date": "2025-09-10",
+    "note": "Named as counsel for Lubotes Dauphin in the settlement agreement notice section (Sept 10, 2025 packet). Litigation counsel."
+   }
+  ],
+  "opalocka-2025-09-24-13-10": [
+   {
+    "name": "Mark Whalen",
+    "firm": null,
+    "for": "Indivior",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-07-07",
+    "note": "Miami-Dade County registry client \"INDIVIOR INC\""
+   }
+  ],
+  "opalocka-2025-11-12-13-4": [
+   {
+    "name": "Eric Poms",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC>\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC>\""
+   },
+   {
+    "name": "Jose Espinoza",
+    "firm": null,
+    "for": "Orange Bowl Committee",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"ORANGE BOWL COMMITTEE, INC\""
+   }
+  ],
+  "opalocka-2025-11-12-13-7": [
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Roly Marante",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-27",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Jonathan Jallad",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-17",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Corey Mcmeeking",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-17",
+    "note": "Miami-Dade County registry client \"FOUNDATION RISK PARTNERS\""
+   },
+   {
+    "name": "Corey McMeeking",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   },
+   {
+    "name": "Jonathan Jallad",
+    "firm": null,
+    "for": "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-11",
+    "note": "Coral Gables registry client \"Foundation Risk Partners dba Acentria Public Risk\""
+   }
+  ],
+  "opalocka-2025-12-10-13-2": [
+   {
+    "name": "Gustavo Eckardt",
+    "firm": null,
+    "for": "Premiere Design Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-20",
+    "note": "Miami-Dade County registry client \"Premiere Design Solutions, Inc\""
+   }
+  ],
+  "opalocka-2025-12-10-15-1": [
+   {
+    "name": "Sabrina Escobar",
+    "firm": null,
+    "for": "Applicant for 2466 Ali Baba Avenue",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7853,plainText=true)",
+    "date": "2025-12-10",
+    "quote": "representing the applicant",
+    "note": "Dec 10, 2025 minutes, in the Jan 14, 2026 agenda packet."
+   }
+  ],
+  "opalocka-2025-12-10-15-2": [
+   {
+    "name": "Sabrina Escobar",
+    "firm": null,
+    "for": "Applicant for 2466 Ali Baba Avenue",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=7853,plainText=true)",
+    "date": "2025-12-10",
+    "quote": "representing the applicant",
+    "note": "Dec 10, 2025 minutes, in the Jan 14, 2026 agenda packet."
+   }
+  ],
+  "opalocka-2025-12-10-15-4": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2025-12-10-15-5": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2025-12-10-16-1": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2025-12-10-16-2": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-01-14-13-9": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-01-28-13-1": [
+   {
+    "name": "Phillip Rizzo",
+    "firm": null,
+    "for": "Oracle America, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "note": "Miami-Dade County registry client \"ORACLE AMERICA, INC\""
+   },
+   {
+    "name": "Daniel Johnson",
+    "firm": null,
+    "for": "Oracle America, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "note": "Miami-Dade County registry client \"ORACLE AMERICA, INC\""
+   },
+   {
+    "name": "Trevor Davies",
+    "firm": null,
+    "for": "Oracle America, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "note": "Miami-Dade County registry client \"ORACLE AMERICA, INC\""
+   },
+   {
+    "name": "Margie Garrison",
+    "firm": null,
+    "for": "Oracle America, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "note": "Miami-Dade County registry client \"ORACLE AMERICA, INC\""
+   },
+   {
+    "name": "Claudia Santacoloma",
+    "firm": null,
+    "for": "Oracle America, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-07-22",
+    "note": "Miami-Dade County registry client \"ORACLE AMERICA, INC\""
+   }
+  ],
+  "opalocka-2026-04-08-13-5": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-06-10-15-1": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-06-10-15-2": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-06-10-16-1": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-06-10-16-2": [
+   {
+    "name": "Hope W. Calhoun",
+    "firm": "Miskel Backman LLP",
+    "for": "1700 Service Holdings, LLC",
+    "basis": "registry",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. Listed in 2025 and 2026 registered lobbyists (no registration date shown)."
+   },
+   {
+    "name": "Willis P. Howard",
+    "firm": "Urban Initiatives Inc.",
+    "for": "1700 Holdings LLC",
+    "basis": "review",
+    "src": "https://opalockafl.gov/314/Lobbyist-Registration",
+    "date": null,
+    "note": "Action does not name the applicant; tie rests on the registered client name matching the 1700 Service Road address. Review before publishing. 2025 list names client \"1700 Holdings LLC\" (no \"Service\"); weaker match.",
+    "why": "Registered client \"1700 Holdings LLC\" is not clearly the 1700 Service Road applicant"
+   }
+  ],
+  "opalocka-2026-09-09-15-2": [
+   {
+    "name": "Oscar Reviner",
+    "firm": "Reviner and Associates",
+    "for": "Applicant for 13060 Cairo Lane",
+    "basis": "record",
+    "src": "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=8114,plainText=true)",
+    "date": "2026-09-09",
+    "quote": "appearing as the applicant's engineer",
+    "note": "Sept 9, 2026 minutes, in the Sept 23, 2026 agenda packet. Engineer, not a registered lobbyist."
+   }
+  ],
+  "opalocka-2026-10-14-13-1": [
+   {
+    "name": "Alexander Gonzalez",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC. OF FLORIDA\""
+   },
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC. OF FLORIDA\""
+   },
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC OF FLORIDA\""
+   },
+   {
+    "name": "Christopher Carey",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC. OF FLORIDA\""
+   },
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC. OF FLORIDA\""
+   },
+   {
+    "name": "Jason Neal",
+    "firm": null,
+    "for": "Waste Management Inc. of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-19",
+    "note": "Miami-Dade County registry client \"WASTE MANAGEMENT INC. OF FLORIDA\""
+   }
+  ]
+ },
+ "notFound": "Packets list applicants only as \"Sponsored by City Manager\". Minutes for the 1700 Service Road hearings name no representative (Dec 10, 2025: \"A representative of the applicant\", unnamed; the Jun 24, 2026 packet that should hold the Jun 10 minutes returned no text). Minutes for 2025-01-22, 2025-05-28 (self-storage plat: \"the developer's attorney\", unnamed) and 2026-04-22 (LDM Florida) name no one, or their packet text would not load. Registry clients not tied to any action: Florida Residential Solutions (Holland & Knight), Segura Holdings (Simon Ferro), McDowell Housing Partners (McDearmaid, Starks, Mondesir; possibly Wellspring, but not stated), Waste Pro (Howard, Pizzi). Derek Gutierrez appeared for the 1700 Service Road owner at the Jun 24, 2026 citizens' forum, which is not a vote. News (cp.soar.com) names Hope Calhoun as the 1700 Service Road applicant's counsel at P&Z, which is consistent with the registry link but is not an official record.",
+ "basisNote": "otherBody: party matched as a listed client in another body's registry; for review only, not to be published as a tie (same-body rule)."
+}

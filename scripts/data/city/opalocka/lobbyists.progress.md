@@ -1,0 +1,18 @@
+# Opa-locka lobbyist links: progress
+- [x] otherBody matches computed offline (county, Coral Gables, Doral registries)
+- [x] Registry page https://opalockafl.gov/314/Lobbyist-Registration read 2026-10-24 (inline lists 2024-2026, no dates)
+  - 2025: Hope Calhoun (Miskel Backman) + Willis P. Howard (Urban Initiatives) for 1700 Service Holdings / 1700 Holdings LLC
+  - 2025: Pedro Gassant, James Williams Jr (Holland & Knight) for Florida Residential Solutions LLC
+  - 2025: Simon Ferro (Avila Rodriguez Hernandez Mena & Garro) for Segura Holdings of Florida
+  - 2025: McDearmaid, Dante Starks, Jeffy Mondesir for McDowell Housing Partners
+  - 2025: Willis Howard, Michael Pizzi for Waste Pro (not an action party)
+  - 2026: Hope Calhoun for 1700 Service Holdings
+- [ ] confirm 1700 Service Road applicant name in agenda
+- CivicClerk agendas/notices for 2025-12-10 and 2026-06-10 name no applicant/agent for 1700 Service Road; packet text unreadable (plainText empty/truncated).
+- News (cp.soar.com, not official) says Hope Calhoun was applicant's land-use counsel at P&Z for 1700 Service Road -> supports registry link to 1700 Service Holdings but address-to-entity tie is inferred from client name.
+- 2025-09-10 packet (fileId 7725) read in 3 chunks: Rafe/Wellspring agents not named. Settlement notice sections: Sebastian Jaramillo, Esq. counsel for Papuchis LLC; Vincent T. Brown, Esq. counsel for Lubotes Dauphin (record).
+- 2026-01-14 packet (7853) has 12/10/2025 minutes: Sabrina Escobar "representing the applicant" 2466 Ali Baba (15-A.1/2). 1700 Service Rd rep unnamed.
+- 2026-09-23 packet (8114) has 9/9/2026 minutes: Oscar Reviner (Reviner and Associates) "appearing as the applicant's engineer" 13060 Cairo Lane (15-A.2).
+- 2026-07-08 packet (8030) has 6/24/2026 minutes: Derek Gutierrez "appeared on behalf of the property owner at 1700 Service Road" (citizens forum, not an action).
+- TODO: minutes for 2025-01-22, 2025-05-28, 2025-09-10, 2026-04-22, 2026-06-10 zoning items.
+- [x] lobbyists.json written 2026-10-24 (rerun from notFound list)

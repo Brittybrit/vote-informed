@@ -1,0 +1,880 @@
+{
+ "city": "Sunny Isles Beach",
+ "sources": [
+  {
+   "name": "Sunny Isles Beach City Clerk, Lobbyist Registration page",
+   "url": "https://www.sibfl.gov/City-Hall/City-Leadership/City-Clerk/Lobbyist-Registration",
+   "viewed": "2026-10-24",
+   "covers": "forms and ordinance only; no list posted"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody only: county lobbyists and clients, 2026"
+  },
+  {
+   "name": "Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody only"
+  },
+  {
+   "name": "Doral authorized lobbyists list (repo JSON)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "otherBody only; list has no clients, so no matches possible"
+  }
+ ],
+ "byAction": {
+  "sunnyisles-2025-01-16-9L": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "note": "Miami-Dade County registry client \"COMTECH ENGINEERING\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   }
+  ],
+  "sunnyisles-2025-01-16-9O": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "United Healthcare",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNITED HEALTHCARE\""
+   },
+   {
+    "name": "Manuel Manny\"\" Reyes",
+    "firm": null,
+    "for": "United Healthcare",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-09",
+    "note": "Miami-Dade County registry client \"UNITED HEALTHCARE\""
+   }
+  ],
+  "sunnyisles-2025-05-15-9A": [
+   {
+    "name": "Avery Mazur",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Kelly Mallette",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Zaba St. George Castro",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Ronald Book",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   }
+  ],
+  "sunnyisles-2025-05-15-9I": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNIVERSAL PROTECTION SERVICE, LLC D/B/A ALLIED UNIVERSAL SECURITY SERVICES\""
+   },
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNIVERSAL PROTECTION SERVICES LLC D/B/A ALLIED UNIVERSAL SECURITY SERVICES\""
+   }
+  ],
+  "sunnyisles-2025-07-17-9K": [
+   {
+    "name": "David Coviello",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Victoria Méndez",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Armando Hassun",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-06-24",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-18",
+    "note": "Coral Gables registry client \"Publix Super Markets\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   }
+  ],
+  "sunnyisles-2025-09-18-9B": [
+   {
+    "name": "Avery Mazur",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Kelly Mallette",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Zaba St. George Castro",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Ronald Book",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "RedSpeed Florida LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   }
+  ],
+  "sunnyisles-2025-09-18-9Q": [
+   {
+    "name": "David Coviello",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Victoria Méndez",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Armando Hassun",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-06-24",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-18",
+    "note": "Coral Gables registry client \"Publix Super Markets\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   }
+  ],
+  "sunnyisles-2025-10-16-9E": [
+   {
+    "name": "Don Deloach",
+    "firm": null,
+    "for": "PC Solutions and Integration, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-20",
+    "note": "Miami-Dade County registry client \"PC SOLUTIONS & INTEGRATION, INC.\""
+   }
+  ],
+  "sunnyisles-2025-10-16-9H": [
+   {
+    "name": "David Coviello",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Victoria Méndez",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Armando Hassun",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-06-24",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-18",
+    "note": "Coral Gables registry client \"Publix Super Markets\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   }
+  ],
+  "sunnyisles-2025-10-16-9K": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Bermello Ajamil & Partners",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Bermello Ajamil & Partners, LLC\""
+   }
+  ],
+  "sunnyisles-2025-11-20-9O": [
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "AUM Construction, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"AUM CONSTRUCTION, INC\""
+   },
+   {
+    "name": "Roly Marante",
+    "firm": null,
+    "for": "AUM Construction, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-27",
+    "note": "Miami-Dade County registry client \"AUM CONSTRUCTION, INC\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "AUM Construction, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"AUM CONSTRUCTION, INC\""
+   }
+  ],
+  "sunnyisles-2026-01-15-9J": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "United Healthcare",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNITED HEALTHCARE\""
+   },
+   {
+    "name": "Manuel Manny\"\" Reyes",
+    "firm": null,
+    "for": "United Healthcare",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-09",
+    "note": "Miami-Dade County registry client \"UNITED HEALTHCARE\""
+   }
+  ],
+  "sunnyisles-2026-02-19-9L": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "note": "Miami-Dade County registry client \"COMTECH ENGINEERING\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Comtech Engineering, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"Comtech Engineering, Inc.\""
+   }
+  ],
+  "sunnyisles-2026-03-19-9Q": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Rodriguez Architects, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RODRIGUEZ ARCHITECTS, INC\""
+   }
+  ],
+  "sunnyisles-2026-04-16-9K": [
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Kristin Strobel",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-16",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Jr., Pedro Amaro",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Cesar Ruiz",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-02-25",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Codeye Woody",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-10-02",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   }
+  ],
+  "sunnyisles-2026-04-16-9P": [
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Miami-Dade County League of Cities",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"Miami-Dade County League of Cities\""
+   }
+  ],
+  "sunnyisles-2026-05-14-9E": [
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "DRC Emergency Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"DRC EMERGENCY SERVICES, LLC\""
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "DRC Emergency Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"DRC EMERGENCY SERVICES, LLC\""
+   },
+   {
+    "name": "Adele Valencia",
+    "firm": null,
+    "for": "DRC Emergency Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"DRC EMERGENCY SERVICES, LLC\""
+   }
+  ],
+  "sunnyisles-2026-06-18-9E": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNIVERSAL PROTECTION SERVICE, LLC D/B/A ALLIED UNIVERSAL SECURITY SERVICES\""
+   },
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Universal Protection Service, LLC d/b/a Allied Universal Security Services",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UNIVERSAL PROTECTION SERVICES LLC D/B/A ALLIED UNIVERSAL SECURITY SERVICES\""
+   }
+  ],
+  "sunnyisles-2026-08-20-9F": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Carahsoft (OpenGov)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"CARAHSOFT\""
+   },
+   {
+    "name": "Jesse Manzano",
+    "firm": null,
+    "for": "Carahsoft (OpenGov)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"CARAHSOFT\""
+   },
+   {
+    "name": "Jeremy Ring",
+    "firm": null,
+    "for": "Carahsoft (OpenGov)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"CARAHSOFT\""
+   }
+  ],
+  "sunnyisles-2026-09-17-9K": [
+   {
+    "name": "David Coviello",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Victoria Méndez",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Armando Hassun",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-06-24",
+    "note": "Miami-Dade County registry client \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-18",
+    "note": "Coral Gables registry client \"Publix Super Markets\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "note": "Coral Gables registry client \"Publix Super Markets, Inc.\""
+   }
+  ],
+  "sunnyisles-2026-10-15-9C": [
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Kristin Strobel",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-16",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Jr., Pedro Amaro",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Timothy Riera-Gomez",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Cesar Ruiz",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-02-25",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   },
+   {
+    "name": "Codeye Woody",
+    "firm": null,
+    "for": "Microsoft Corporation",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-10-02",
+    "note": "Miami-Dade County registry client \"MICROSOFT CORPORATION\""
+   }
+  ],
+  "sunnyisles-2026-10-15-9D": [
+   {
+    "name": "Don Deloach",
+    "firm": null,
+    "for": "PC Solutions and Integration, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-20",
+    "note": "Miami-Dade County registry client \"PC SOLUTIONS & INTEGRATION, INC.\""
+   }
+  ],
+  "sunnyisles-2026-10-15-9J": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Rodriguez Architects, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RODRIGUEZ ARCHITECTS, INC\""
+   }
+  ]
+ },
+ "notFound": "No registry is posted (clerk 305-792-1703). Summary minutes (legistarweb-production S3) and Granicus are robots-blocked, and the Legistar API client name was not found, so no record links. The 19051 Collins (MB RE Investments) and La Playa / Dezer items are the best targets for a manual check.",
+ "basisNote": "otherBody: party matched as a listed client in another body's registry; for review only, not to be published as a tie (same-body rule)."
+}

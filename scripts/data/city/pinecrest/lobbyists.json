@@ -1,0 +1,880 @@
+{
+ "city": "Pinecrest",
+ "sources": [
+  {
+   "name": "Pinecrest Village Clerk page",
+   "url": "https://www.pinecrest-fl.gov/Government/Clerk",
+   "viewed": "2026-10-24",
+   "covers": "links a Lobbyist Registration page; no list on the clerk page"
+  },
+  {
+   "name": "Pinecrest Legistar Web API (matters)",
+   "url": "https://webapi.legistar.com/v1/pinecrest/matters/3466",
+   "viewed": "2026-10-24",
+   "covers": "True North matter: no attachments, no minutes note"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody only: county lobbyists and clients, 2026"
+  },
+  {
+   "name": "Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody only"
+  },
+  {
+   "name": "Doral authorized lobbyists list (repo JSON)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "otherBody only; list has no clients, so no matches possible"
+  }
+ ],
+ "byAction": {
+  "pinecrest-2025-03-11-9": [
+   {
+    "name": "Esq, Oliver Wechsler",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Hugo Arza",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Alberto Torres",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   },
+   {
+    "name": "Jr., Juan Mayol",
+    "firm": null,
+    "for": "True North Classical Academy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"True North Classical Academy, Inc.\""
+   }
+  ],
+  "pinecrest-2025-05-22-11": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "pinecrest-2025-05-22-12": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "pinecrest-2025-09-16-2": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   }
+  ],
+  "pinecrest-2025-12-09-3": [
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Aquatic Control Group, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"AQUATIC CONTROL GROUP, INC.\""
+   }
+  ],
+  "pinecrest-2026-01-20-5": [
+   {
+    "name": "Christopher Penelas",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Hugo Benitez",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Matthew Cozzo",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Danielle Mejia",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jamie Gentile",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Nelson Diaz",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Pamela Rauch",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jr., Albert Dotson",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Alberto Torres",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Armando Fernandez",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "James Williams",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Addys Kuryla",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Danielle Sanabria",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Christopher Ferreira",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Andres Martinez",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Chelsea Lunn",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jacqueline Carmona",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Stephen Heiman",
+    "firm": null,
+    "for": "Florida Power and Light Company (FPL)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-04-28",
+    "note": "Miami-Dade County registry client \"FLORIDA POWER & LIGHT COMPANY\""
+   }
+  ],
+  "pinecrest-2026-02-10-5": [
+   {
+    "name": "Avery Mazur",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Kelly Mallette",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Zaba St. George Castro",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Ronald Book",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "RedSpeed",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"REDSPEED USA\""
+   }
+  ],
+  "pinecrest-2026-03-10-3": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "pinecrest-2026-03-10-5": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "pinecrest-2026-06-11-1": [
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS, INC.\""
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS, INC.\""
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"WASTE CONNECTIONS OF FLORIDA, INC.\""
+   }
+  ],
+  "pinecrest-2026-10-13-4": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ]
+ },
+ "notFound": "The Lobbyist Registration page and the legistar1.granicus.com attachments (minutes/agendas) are robots-blocked. The Legistar API has no minutes notes or attachments for the True North matter.",
+ "basisNote": "otherBody: party matched as a listed client in another body's registry; for review only, not to be published as a tie (same-body rule)."
+}

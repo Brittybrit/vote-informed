@@ -1,0 +1,409 @@
+{
+ "city": "Key Biscayne",
+ "sources": [
+  {
+   "name": "Key Biscayne agenda packets (Granicus CloudFront)",
+   "url": "https://keybiscayne.granicus.com/ViewPublisher.php?view_id=1",
+   "viewed": "2026-10-24",
+   "covers": "packets for 2025-12-16, 2026-01-13, 2026-06-30, 2026-09-08 read; others failed to load"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody only: county lobbyists and clients, 2026"
+  },
+  {
+   "name": "Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody only"
+  },
+  {
+   "name": "Doral authorized lobbyists list (repo JSON)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "otherBody only; list has no clients, so no matches possible"
+  }
+ ],
+ "byAction": {
+  "keybiscayne-2025-08-19-10C": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "keybiscayne-2025-08-19-9B": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   }
+  ],
+  "keybiscayne-2025-09-29-3B": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOTOROLA SOLUTIONS\""
+   }
+  ],
+  "keybiscayne-2025-11-18-10A": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"FRIENDS OF THE UNDERLINE, INC.\""
+   },
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "note": "Miami-Dade County registry client \"FRIENDS OF THE UNDERLINE, INC.\""
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-18",
+    "note": "Coral Gables registry client \"Friends of the Underline\""
+   },
+   {
+    "name": "Miriam Soler Ramos",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-06-01",
+    "note": "Coral Gables registry client \"The Friends of the Underline\""
+   }
+  ],
+  "keybiscayne-2025-11-18-10B": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "keybiscayne-2026-01-13-10D": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC ENGINEERING , INC.\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Victor Herrera",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "note": "Miami-Dade County registry client \"BCC Engineering, LLC\""
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "BCC Engineering, LLC",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-12-20",
+    "note": "Coral Gables registry client \"BCC Engineering LLC\""
+   }
+  ],
+  "keybiscayne-2026-06-09-8B": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   }
+  ],
+  "keybiscayne-2026-06-30-5A": [
+   {
+    "name": "Javier E. Fernández",
+    "firm": "SMGQ Law",
+    "for": "The Island House Apartments, Inc.",
+    "basis": "record",
+    "src": "https://d3n9y02raazwpg.cloudfront.net/keybiscayne/e1a888ad-6375-11f1-9b4d-005056a89546-43ce76d4-5f8d-410a-b24a-4c928f357aa8-1782762773.pdf",
+    "date": "2026-06-30",
+    "quote": "Grantor's Counsel Javier E. Fernández",
+    "note": "Prepared the easement and is the notice contact for the grantor."
+   }
+  ],
+  "keybiscayne-2026-08-25-8F": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   }
+  ],
+  "keybiscayne-2026-09-08-9A": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   }
+  ],
+  "keybiscayne-2026-10-13-10B": [
+   {
+    "name": "Roberto Sanchez",
+    "firm": null,
+    "for": "Axon Enterprise, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "note": "Miami-Dade County registry client \"AXON ENTERPRISE, INC.\""
+   }
+  ],
+  "keybiscayne-2026-10-13-10C": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Moffatt & Nichol, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"MOFFATT & NICHOL, INC.\""
+   }
+  ]
+ },
+ "notFound": "No lobbyist list is posted online (agendas say only that lobbyists must register with the Village Clerk). Granicus MinutesViewer is robots-blocked. CloudFront packets for 2025-10-14, 2025-11-18, 2026-06-09, 2026-08-25 and 2026-10-13 failed to load. No applicant agent is named for 101 Harbor Drive, the Mashta variances, or the Key Biscayne Real Properties easement. Officers who signed for PADL and Moffatt & Nichol were left out because they are company officers, not representatives.",
+ "basisNote": "otherBody: party matched as a listed client in another body's registry; for review only, not to be published as a tie (same-body rule)."
+}

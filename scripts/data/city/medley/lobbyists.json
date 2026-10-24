@@ -1,0 +1,277 @@
+{
+ "city": "Medley",
+ "sources": [
+  {
+   "name": "Town of Medley Lobbyist Registration page",
+   "url": "https://www.townofmedley.com/lobbyist-registration",
+   "viewed": "2026-10-24",
+   "covers": "forms and ordinance only; no list posted"
+  },
+  {
+   "name": "Town of Medley council agendas",
+   "url": "https://www.townofmedley.com/council-meetings",
+   "viewed": "2026-10-24",
+   "covers": "agendas 2025-03-03, 2025-12-01, 2026-02-02, 2026-03-02, 2026-04-06; no agents named; no packets posted"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo copy public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody only: county lobbyists and clients, 2026"
+  },
+  {
+   "name": "Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody only"
+  },
+  {
+   "name": "Doral authorized lobbyists list (repo JSON)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "otherBody only; list has no clients, so no matches possible"
+  }
+ ],
+ "byAction": {
+  "medley-2025-11-03-12C": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Metrocom Advertising, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"METROCOM ADVERTISING, INC.\""
+   }
+  ],
+  "medley-2026-02-02-13K": [
+   {
+    "name": "Jared",
+    "firm": null,
+    "for": "American Traffic Solutions, Inc. d/b/a Verra Mobility",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-04-01",
+    "note": "Coral Gables registry client \"American Traffic Solutions, Inc. d/b/a Verra Mobility\"; lobbyist name is truncated to \"Jared\" in the source CSV"
+   }
+  ],
+  "medley-2026-02-02-13L": [
+   {
+    "name": "Tracy Slavens",
+    "firm": null,
+    "for": "HRP Medley, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"HRP MEDLEY, LLC\""
+   }
+  ],
+  "medley-2026-03-02-12A": [
+   {
+    "name": "Jared",
+    "firm": null,
+    "for": "American Traffic Solutions, Inc. d/b/a Verra Mobility",
+    "basis": "otherBody",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-04-01",
+    "note": "Coral Gables registry client \"American Traffic Solutions, Inc. d/b/a Verra Mobility\"; lobbyist name is truncated to \"Jared\" in the source CSV"
+   }
+  ],
+  "medley-2026-04-06-12C": [
+   {
+    "name": "Krista De Castro",
+    "firm": null,
+    "for": "Res-Des Palmetto, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RES-DES PALMETTO, LLC\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Res-Des Palmetto, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RES-DES PALMETTO, LLC\""
+   }
+  ],
+  "medley-2026-04-06-12D": [
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "UniCapital Medley QOZB, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UniCapital Medley QOZB LLC\""
+   }
+  ],
+  "medley-2026-06-01-12H": [
+   {
+    "name": "Krista De Castro",
+    "firm": null,
+    "for": "Res-Des Palmetto, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RES-DES PALMETTO, LLC\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Res-Des Palmetto, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"RES-DES PALMETTO, LLC\""
+   }
+  ],
+  "medley-2026-06-01-12I": [
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "UniCapital Medley QOZB, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"UniCapital Medley QOZB LLC\""
+   }
+  ],
+  "medley-2026-07-06-12D": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "note": "Miami-Dade County registry client \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "medley-2026-07-06-13A8": [
+   {
+    "name": "Michael Kesti",
+    "firm": null,
+    "for": "Global Empowerment Mission",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-19",
+    "note": "Miami-Dade County registry client \"GLOBAL EMPOWERMENT MISSION\""
+   }
+  ],
+  "medley-2026-10-05-12A": [
+   {
+    "name": "Joseph Bober",
+    "firm": null,
+    "for": "Dade County Police Benevolent Association",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "note": "Miami-Dade County registry client \"Dade County Police Benevolent Association d/b/a South Florida Police Benevolent Association\""
+   },
+   {
+    "name": "Joseph Bober",
+    "firm": null,
+    "for": "Dade County Police Benevolent Association",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "note": "Miami-Dade County registry client \"Dade County Police Benevolent Association d/b/a South Florida PBA\""
+   }
+  ]
+ },
+ "notFound": "No registry is posted (the clerk is vmartinez@townofmedley.com, 305-887-9541 x112). Agendas name parties but no agents. The Laserfiche minutes archive is blocked, and no packets are posted on the council page.",
+ "basisNote": "otherBody: party matched as a listed client in another body's registry; for review only, not to be published as a tie (same-body rule)."
+}
