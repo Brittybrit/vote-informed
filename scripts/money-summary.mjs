@@ -22,6 +22,27 @@ const giftKey = g => [g.acct, giverKey(g.donor), Number(g.amount), g.date].join(
 const PRON = (() => { try { return JSON.parse(readFileSync(new URL('./data/pronouns.json', import.meta.url), 'utf8')); } catch (e) { return { she: [], he: [] }; } })();
 const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? 'he' : undefined;
 
+// Share of the official's actions tied to a donor, out of a list that was NOT built by starting from donors
+// (otherwise every item would tie to one by construction and the share would mean nothing):
+// - county: every commission action that benefited a named company or group, while seated
+// - cities with a lobbyist registry: every item a registered lobbyist worked on, while seated
+// - state legislators and Congress: every budget or earmark request the member filed
+// - Cabinet: every Board of Trustees item while seated plus the office's own actions reviewed
+// Cities whose lists start from donors (no registry online) get no share.
+const DONOR_FIRST = new Set(['northmiami', 'southmiami', 'pinecrest', 'medley', 'hialeah']);
+function shareOf(B, key, tied) {
+  const tiedIds = new Set(tied.map(([a]) => a.id));
+  const sat = a => a.roll && a.roll[key] != null;
+  let pool, def;
+  if (B.type === 'requests') { pool = B.actions.filter(a => a.kind === 'request' && a.roll && a.roll[key] === 'requested'); def = B.level === 'federal' ? 'earmarks' : 'requests'; }
+  else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size } : undefined; }
+  else if (B.key === 'county') { pool = B.actions.filter(sat); def = 'county'; }
+  else if (DONOR_FIRST.has(B.key)) return { def: 'donorFirst' };
+  else { pool = B.actions.filter(a => sat(a) && (a.lobbied || []).length); def = 'lobbied'; }
+  if (!pool.length) return undefined;
+  return { def, n: pool.length, tied: pool.filter(a => tiedIds.has(a.id)).length };
+}
+
 export function build(decisions, officesHeld) {
   const byPerson = {};
   for (const [k, pid] of Object.entries(officesHeld.byBallot)) (byPerson[pid] = byPerson[pid] || []).push(k);
@@ -104,6 +125,7 @@ export function build(decisions, officesHeld) {
         if (B.cabinet) { e.acted = v.acted; e.votes = tied.length - v.acted; }
         e.split = tied.filter(([a]) => a.tally && a.tally[1] > 0).length;
       }
+      e.share = shareOf(B, key, tied);
       add(m.person, e);
     }
   }

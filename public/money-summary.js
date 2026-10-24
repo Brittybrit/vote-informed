@@ -18,6 +18,9 @@
   // he / his, she / her; a person with no pronoun on file is named instead
   function he(p){ return p.pron === 'she' ? 'she' : p.pron === 'he' ? 'he' : esc(p.last); }
   function his(p){ return p.pron === 'she' ? 'her' : p.pron === 'he' ? 'his' : esc(p.last) + '\u2019s'; }
+  function him(p){ return p.pron === 'she' ? 'her' : p.pron === 'he' ? 'him' : esc(p.last); }
+  // two shares of the same count that always add up to 100%
+  function pair(t, n){ var a = Math.round(t / n * 100); return [a + '%', (100 - a) + '%']; }
   function He(p){ var x = he(p); return x.charAt(0).toUpperCase() + x.slice(1); }
   function nv(Bl){ return Math.max(0, (Bl.votes || 0) - (Bl.yes || 0) - (Bl.no || 0)); }
   var W = {
@@ -79,6 +82,19 @@
         return He(p) + ' ' + parts.join(', and ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'It was a split vote (at least one member voted no).' : p.split + ' of the ' + p.items + ' were split votes (at least one member voted no).'; },
+      share: function(p, S, b){
+        if(S.def === 'donorFirst') return 'This city’s list was built by starting from ' + his(p) + ' donors, because the city posts no usable lobbyist registry. So there is no fair count of the actions that did not involve a donor.';
+        var q = pair(S.tied, S.n), r = S.n - S.tied;
+        var what = S.def === 'county' ? 'commission actions ' + he(p) + ' took part in that benefited a named company or group'
+          : S.def === 'lobbied' ? 'items before ' + this.before(b) + ' that a registered lobbyist worked on and ' + he(p) + ' voted on'
+          : S.def === 'requests' ? 'budget requests ' + he(p) + ' filed'
+          : S.def === 'earmarks' ? 'earmark requests ' + he(p) + ' filed'
+          : 'Cabinet items and actions of ' + his(p) + ' office that were reviewed';
+        var tie = S.def === 'requests' ? 'had a lobbying firm, or a group getting the money, that gave to ' + him(p)
+          : S.def === 'earmarks' ? 'were for groups whose federal lobbying firm, its PAC or its lobbyists gave to ' + him(p)
+          : 'involved one of ' + his(p) + ' donors';
+        return 'Of the ' + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') did not.';
+      },
       none: function(p, b){ return 'No donors found with business before ' + this.before(b) + ' in 2025 or 2026.'; },
       nogivers: function(p){ return esc(p.name) + '’s reports show no outside donors.'; },
       nodata: function(p){ return 'No itemized donor reports are posted for ' + esc(p.name) + ', so this could not be checked.'; },
@@ -141,6 +157,19 @@
         var x = parts.join(', y '); return x.charAt(0).toUpperCase() + x.slice(1) + '.';
       },
       split: function(p){ return p.items === 1 ? 'Fue una votación dividida (al menos un miembro votó en contra).' : p.split + ' de los ' + p.items + ' fueron votaciones divididas (al menos un miembro votó en contra).'; },
+      share: function(p, S, b){
+        if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos que sirva. Así que no hay un conteo justo de los actos sin donante.';
+        var q = pair(S.tied, S.n), r = S.n - S.tied;
+        var what = S.def === 'county' ? 'actos de la comisión en que participó y que beneficiaron a una empresa o grupo con nombre'
+          : S.def === 'lobbied' ? 'asuntos ante ' + this.before(b) + ' en que trabajó un cabildero registrado y que votó'
+          : S.def === 'requests' ? 'solicitudes de presupuesto que presentó'
+          : S.def === 'earmarks' ? 'solicitudes de fondos federales para proyectos que presentó'
+          : 'asuntos del Gabinete y actos de su oficina revisados';
+        var tie = S.def === 'requests' ? 'tenían una firma de cabildeo, o un grupo que recibiría el dinero, que le donó'
+          : S.def === 'earmarks' ? 'eran para grupos cuya firma de cabildeo federal, su comité político o sus cabilderos le donaron'
+          : 'involucraban a uno de sus donantes';
+        return ((S.def === 'requests' || S.def === 'earmarks') ? 'De las ' : 'De los ') + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') no.';
+      },
       none: function(p, b){ return 'No se encontraron donantes con asuntos ante ' + this.before(b) + ' en 2025 ni 2026.'; },
       nogivers: function(p){ return 'Los informes de ' + esc(p.name) + ' no muestran donantes externos.'; },
       nodata: function(p){ return 'No hay informes detallados de donantes publicados para ' + esc(p.name) + ', así que esto no se pudo revisar.'; },
@@ -203,6 +232,19 @@
         return 'Li ' + parts.join(', epi ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'Se te yon vòt divize (omwen yon manm te vote non).' : p.split + ' nan ' + p.items + ' yo se te vòt divize (omwen yon manm te vote non).'; },
+      share: function(p, S, b){
+        if(S.def === 'donorFirst') return 'Lis vil sa a kòmanse ak donatè li yo, paske vil la pa pibliye yon rejis lobiyis nou ka itilize. Kidonk pa gen yon fason jis pou konte aksyon ki pa t gen donatè.';
+        var q = pair(S.tied, S.n), r = S.n - S.tied;
+        var what = S.def === 'county' ? 'aksyon komisyon an li te patisipe ladan yo, ki te benefisye yon konpayi oswa yon gwoup ki gen non'
+          : S.def === 'lobbied' ? 'dosye devan ' + this.before(b) + ' yon lobiyis anrejistre te travay sou yo epi li te vote sou yo'
+          : S.def === 'requests' ? 'demann bidjè li te depoze'
+          : S.def === 'earmarks' ? 'demann lajan federal pou pwojè li te depoze'
+          : 'dosye Kabinè ak aksyon biwo li nou revize';
+        var tie = S.def === 'requests' ? 'te gen yon fèm lobiyis, oswa yon gwoup ki t ap resevwa lajan an, ki te ba li lajan'
+          : S.def === 'earmarks' ? 'te pou gwoup kote fèm lobi federal la, komite politik li oswa lobiyis li yo te ba li lajan'
+          : 'te gen youn nan donatè li yo ladan';
+        return 'Sou ' + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') pa t genyen.';
+      },
       none: function(p, b){ return 'Nou pa jwenn okenn donatè ki te gen dosye devan ' + this.before(b) + ' an 2025 oswa 2026.'; },
       nogivers: function(p){ return 'Rapò ' + esc(p.name) + ' yo pa montre okenn donatè deyò.'; },
       nodata: function(p){ return 'Pa gen rapò donatè detaye ki afiche pou ' + esc(p.name) + ', kidonk nou pa t ka verifye.'; },
@@ -239,6 +281,7 @@
       if(p.split) a2.push(w.split(p));
       groups.push(a2);
     }
+    if(p.share && (p.share.def === 'donorFirst' || p.share.n)) groups.push([w.share(p, p.share, b)]);
     return groups.filter(function(g){ return g.length; }).map(function(g){ return g.join(' '); }).join('<br>');
   }
   moneySummary.howLabel = function(lang){ return (W[lang] || W.en).how; };
