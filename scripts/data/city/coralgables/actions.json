@@ -1,0 +1,4055 @@
+{
+ "city": "Coral Gables",
+ "body": "coralgables",
+ "window": {
+  "from": "2025-01-01",
+  "to": "2025-12-09"
+ },
+ "sources": [
+  "https://webapi.legistar.com/v1/coralgables/events",
+  "https://webapi.legistar.com/v1/coralgables/events/{id}/eventitems",
+  "https://webapi.legistar.com/v1/coralgables/eventitems/{id}/votes",
+  "https://webapi.legistar.com/v1/coralgables/matters/{id}"
+ ],
+ "meetings": [
+  {
+   "date": "2025-01-14",
+   "eventId": 4567,
+   "read": true
+  },
+  {
+   "date": "2025-01-28",
+   "eventId": 4580,
+   "read": true
+  },
+  {
+   "date": "2025-02-11",
+   "eventId": 4581,
+   "read": true
+  },
+  {
+   "date": "2025-02-25",
+   "eventId": 4582,
+   "read": true
+  },
+  {
+   "date": "2025-03-11",
+   "eventId": 4621,
+   "read": true
+  },
+  {
+   "date": "2025-04-25",
+   "eventId": 4998,
+   "read": true
+  },
+  {
+   "date": "2025-05-06",
+   "eventId": 4999,
+   "read": true
+  },
+  {
+   "date": "2025-05-20",
+   "eventId": 4584,
+   "read": true
+  },
+  {
+   "date": "2025-06-11",
+   "eventId": 4586,
+   "read": true
+  },
+  {
+   "date": "2025-07-01",
+   "eventId": 4587,
+   "read": true
+  },
+  {
+   "date": "2025-07-02",
+   "eventId": 4588,
+   "read": true
+  },
+  {
+   "date": "2025-08-26",
+   "eventId": 4589,
+   "read": true
+  },
+  {
+   "date": "2025-09-10",
+   "eventId": 4590,
+   "read": true
+  },
+  {
+   "date": "2025-09-12",
+   "eventId": 4591,
+   "read": true
+  },
+  {
+   "date": "2025-09-12",
+   "eventId": 4592,
+   "read": true
+  },
+  {
+   "date": "2025-09-25",
+   "eventId": 4593,
+   "read": true
+  },
+  {
+   "date": "2025-09-25",
+   "eventId": 4594,
+   "read": true
+  },
+  {
+   "date": "2025-10-14",
+   "eventId": 4595,
+   "read": true
+  },
+  {
+   "date": "2025-10-28",
+   "eventId": 4596,
+   "read": true
+  },
+  {
+   "date": "2025-11-18",
+   "eventId": 4597,
+   "read": true
+  },
+  {
+   "date": "2025-12-09",
+   "eventId": 4598,
+   "read": true
+  }
+ ],
+ "actions": [
+  {
+   "id": "24-8230",
+   "date": "2025-01-14",
+   "ref": "24-8230; Res. 2025-12",
+   "matterId": 26831,
+   "title": "Appeal of historic landmark designation of 1414 Galiano Street",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Lago",
+   "second": "Fernandez",
+   "notes": "Appeal of HPB 10/16/2024 designation; Legistar does not name the owner or say whether the appeal was granted. Previous build excluded board appeals.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/26831"
+  },
+  {
+   "id": "24-8431",
+   "date": "2025-01-14",
+   "ref": "24-8431; RFQ 2024-034",
+   "matterId": 27032,
+   "title": "General planning services contracts with three firms",
+   "kind": "contract",
+   "parties": [
+    "The Corradino Group, Inc.",
+    "Inspire Placemaking Collective, Inc.",
+    "Chen Moore and Associates, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27032"
+  },
+  {
+   "id": "24-8432",
+   "date": "2025-01-14",
+   "ref": "24-8432; IFB 2024-048",
+   "matterId": 27033,
+   "title": "Tree replacement project contract",
+   "kind": "contract",
+   "parties": [
+    "Margarita's Gardens, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda; roll is the consent block vote.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27033"
+  },
+  {
+   "id": "24-8444",
+   "date": "2025-01-14",
+   "ref": "24-8444; RFP 2024-033",
+   "matterId": 27045,
+   "title": "Citywide landscaping services contract",
+   "kind": "contract",
+   "parties": [
+    "SFM Landscaping Services, LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27045"
+  },
+  {
+   "id": "24-8502",
+   "date": "2025-01-14",
+   "ref": "24-8502",
+   "matterId": 27102,
+   "title": "City backs Orchestra Miami as presenter of Centennial concert at Venetian Pool",
+   "kind": "other",
+   "parties": [
+    "Orchestra Miami"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Lago",
+   "second": "Fernandez",
+   "notes": "Sponsored by Mayor Lago. No dollar amount in record; implies use of city venue.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27102"
+  },
+  {
+   "id": "24-7071",
+   "date": "2025-01-28",
+   "ref": "24-7071",
+   "matterId": 25685,
+   "title": "Long-term loan of five Jean Ward sculptures to The Underline",
+   "kind": "agreement",
+   "parties": [
+    "The Underline"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/25685"
+  },
+  {
+   "id": "24-8339",
+   "date": "2025-01-28",
+   "ref": "24-8339; Ord. 2025-02",
+   "matterId": 26940,
+   "title": "Vacation of remaining Kenmare Street right-of-way east of Harlano Street",
+   "kind": "sale",
+   "parties": [
+    "Abutting owner(s), Kenmare St (lobbyists Tucker Gibbs, Wayne Pathman)"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Public right-of-way vacated to private use. First reading 2025-01-14 (5-0, Castro/Anderson). Applicant not named in Legistar.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/26940"
+  },
+  {
+   "id": "24-8407",
+   "date": "2025-01-28",
+   "ref": "24-8407",
+   "matterId": 27008,
+   "title": "Funding to Dade Heritage Trust for Arva Parks McCabe sculpture",
+   "kind": "grant",
+   "parties": [
+    "Dade Heritage Trust"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "From Art in Public Places reserve; amount not in title. Deferred 2025-01-14.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27008"
+  },
+  {
+   "id": "25-8542",
+   "date": "2025-01-28",
+   "ref": "25-8542",
+   "matterId": 27141,
+   "title": "Bid waiver: interior design contract",
+   "kind": "contract",
+   "parties": [
+    "Robert Rionda Interiors"
+   ],
+   "amount": 115000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; special procurement, not to exceed. Mover/second not recorded on item.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27141"
+  },
+  {
+   "id": "24-8504",
+   "prevId": "cg-24-8504",
+   "date": "2025-02-11",
+   "ref": "24-8504",
+   "matterId": 27104,
+   "title": "Jaume Plensa art donation meeting 4241 Aurora project's public-art requirement",
+   "kind": "other",
+   "parties": [
+    "4241 Aurora, LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Uses escrow funds from 4225 Ponce de Leon Blvd project.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27104"
+  },
+  {
+   "id": "25-8570",
+   "date": "2025-02-11",
+   "ref": "25-8570",
+   "matterId": 27169,
+   "title": "Sole-source renewal of Quantela platform subscription",
+   "kind": "contract",
+   "parties": [
+    "Quantela"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27169"
+  },
+  {
+   "id": "25-8603",
+   "date": "2025-02-11",
+   "ref": "25-8603",
+   "matterId": 27202,
+   "title": "Sole-source police ammunition purchase",
+   "kind": "contract",
+   "parties": [
+    "Florida Bullet Inc."
+   ],
+   "amount": 61256,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27202"
+  },
+  {
+   "id": "24-7817",
+   "date": "2025-02-25",
+   "ref": "24-7817",
+   "matterId": 26420,
+   "title": "Commission original musical score for Gables GO! centennial experience",
+   "kind": "contract",
+   "parties": [
+    "University of Miami",
+    "Frost Symphony Orchestra"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/26420"
+  },
+  {
+   "id": "24-8460",
+   "prevId": "cg-24-8460",
+   "date": "2025-02-25",
+   "ref": "24-8460",
+   "matterId": 27061,
+   "title": "St. Theresa Catholic School expansion: multipurpose building, enrollment cap 881 to 945",
+   "kind": "zoning",
+   "parties": [
+    "St. Theresa Catholic School (Archdiocese of Miami)"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Menendez",
+   "notes": "2701 Indian Mound Trail; lobbyist Suzanne A. Dockerty. First reading 2025-02-11 (Anderson/Menendez).",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27061"
+  },
+  {
+   "id": "25-8628",
+   "date": "2025-02-25",
+   "ref": "25-8628; RFQ 2024-023",
+   "matterId": 27227,
+   "title": "Civil and environmental engineering services contracts with six firms",
+   "kind": "contract",
+   "parties": [
+    "AECOM Technical Services, Inc.",
+    "Ardurra Group, Inc.",
+    "Hazen and Sawyer",
+    "Kimley-Horn and Associates, Inc.",
+    "Milian Swain & Associates, Inc.",
+    "NOVA Consulting Services, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27227"
+  },
+  {
+   "id": "25-8662",
+   "date": "2025-02-25",
+   "ref": "25-8662; IFB 2024-049",
+   "matterId": 27261,
+   "title": "Automotive body repair services contracts",
+   "kind": "contract",
+   "parties": [
+    "Molina Garage, Inc.",
+    "Espana Body Repair Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27261"
+  },
+  {
+   "id": "25-8669",
+   "date": "2025-02-25",
+   "ref": "25-8669",
+   "matterId": 27268,
+   "title": "Sole-source purchase of Meridian vehicle barrier system for police",
+   "kind": "contract",
+   "parties": [
+    "Meridian Rapid Defense Group Sales LLC"
+   ],
+   "amount": 249775.17,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27268"
+  },
+  {
+   "id": "25-8673",
+   "date": "2025-02-25",
+   "ref": "25-8673",
+   "matterId": 27272,
+   "title": "Bid waiver: North Ponce historic resources survey",
+   "kind": "contract",
+   "parties": [
+    "PLUSURBIA Design"
+   ],
+   "amount": 98000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "tally": [
+    5,
+    0
+   ],
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27272"
+  },
+  {
+   "id": "25-8709",
+   "date": "2025-03-11",
+   "ref": "25-8709",
+   "matterId": 27308,
+   "title": "Property and casualty insurance renewal and broker fees, 2025-26",
+   "kind": "contract",
+   "parties": [
+    "Arthur J. Gallagher Risk Management Services, Inc."
+   ],
+   "amount": 3423716,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "tally": [
+    5,
+    0
+   ],
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27308"
+  },
+  {
+   "id": "25-8716",
+   "date": "2025-03-11",
+   "ref": "25-8716",
+   "matterId": 27315,
+   "title": "Sole-source Gables Go! extended reality experience",
+   "kind": "contract",
+   "parties": [
+    "IMX3, LLC"
+   ],
+   "amount": 250000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "tally": [
+    5,
+    0
+   ],
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27315"
+  },
+  {
+   "id": "25-8741",
+   "prevId": "cg-25-8741",
+   "date": "2025-03-11",
+   "ref": "25-8741",
+   "matterId": 27340,
+   "title": "Firefighters' union agreement creating a Technical Response Team",
+   "kind": "agreement",
+   "parties": [
+    "International Association of Fire Fighters, Local 1210"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Menendez",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27340"
+  },
+  {
+   "id": "25-8742",
+   "date": "2025-03-11",
+   "ref": "25-8742; IFB 2023-012",
+   "matterId": 27341,
+   "title": "Pump Station 3 force main contract contingency increase",
+   "kind": "contract",
+   "parties": [
+    "Pabon Engineering, Inc."
+   ],
+   "amount": 250000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Change order / contract modification.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27341"
+  },
+  {
+   "id": "25-8743",
+   "date": "2025-03-11",
+   "ref": "25-8743; IFB 2023-013",
+   "matterId": 27342,
+   "title": "Ponce de Leon and Granada force main contract contingency increase",
+   "kind": "contract",
+   "parties": [
+    "Roadway Construction, LLC"
+   ],
+   "amount": 500000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Change order / contract modification.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27342"
+  },
+  {
+   "id": "25-8745",
+   "date": "2025-03-11",
+   "ref": "25-8745; IFB 2024-029",
+   "matterId": 27344,
+   "title": "Pump Station 6 force main contract modification",
+   "kind": "contract",
+   "parties": [
+    "Stonehenge Construction, LLC"
+   ],
+   "amount": 75000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda; change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27344"
+  },
+  {
+   "id": "25-8746",
+   "date": "2025-03-11",
+   "ref": "25-8746",
+   "matterId": 27345,
+   "title": "Bid waiver: temporary offices for elected officials",
+   "kind": "contract",
+   "parties": [
+    "Thornton Construction Company, Inc."
+   ],
+   "amount": 500000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "tally": [
+    5,
+    0
+   ],
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27345"
+  },
+  {
+   "id": "25-8752",
+   "date": "2025-03-11",
+   "ref": "25-8752",
+   "matterId": 27351,
+   "title": "Bid waiver: golf instruction and camps at Granada Golf Course",
+   "kind": "contract",
+   "parties": [
+    "Golf Academy of South Florida"
+   ],
+   "amount": 80000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27351"
+  },
+  {
+   "id": "25-8754",
+   "date": "2025-03-11",
+   "ref": "25-8754",
+   "matterId": 27353,
+   "title": "Bid waiver: dance programming at War Memorial Youth Center",
+   "kind": "contract",
+   "parties": [
+    "Furia Flamenca"
+   ],
+   "amount": 50000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27353"
+  },
+  {
+   "id": "25-8755",
+   "date": "2025-03-11",
+   "ref": "25-8755",
+   "matterId": 27354,
+   "title": "Bid waiver: theater programming at War Memorial Youth Center",
+   "kind": "contract",
+   "parties": [
+    "Evolve Theatre"
+   ],
+   "amount": 94500,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27354"
+  },
+  {
+   "id": "25-8756",
+   "date": "2025-03-11",
+   "ref": "25-8756",
+   "matterId": 27355,
+   "title": "Bid waiver: LEGO and robotics camps at War Memorial Youth Center",
+   "kind": "contract",
+   "parties": [
+    "Bricks 4 Kidz"
+   ],
+   "amount": 75000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27355"
+  },
+  {
+   "id": "25-8757",
+   "date": "2025-03-11",
+   "ref": "25-8757",
+   "matterId": 27356,
+   "title": "Bid waiver: art programming at War Memorial Youth Center",
+   "kind": "contract",
+   "parties": [
+    "Abrakadoodle"
+   ],
+   "amount": 75000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27356"
+  },
+  {
+   "id": "25-8758",
+   "date": "2025-03-11",
+   "ref": "25-8758",
+   "matterId": 27357,
+   "title": "Bid waiver: dish machine rental at Country Club",
+   "kind": "contract",
+   "parties": [
+    "Ecolab"
+   ],
+   "amount": 8000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27357"
+  },
+  {
+   "id": "25-8759",
+   "prevId": "cg-25-8759",
+   "date": "2025-03-11",
+   "ref": "25-8759; IFB 2024-025",
+   "matterId": 27358,
+   "title": "Up to $800,000 more for Venetian Pool bottom and pump contract",
+   "kind": "contract",
+   "parties": [
+    "John Bell Construction, Inc."
+   ],
+   "amount": 800000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27358"
+  },
+  {
+   "id": "25-8760",
+   "date": "2025-03-11",
+   "ref": "25-8760; IFB 2024-026",
+   "matterId": 27359,
+   "title": "More spending authority: Blue Road Park construction",
+   "kind": "contract",
+   "parties": [
+    "M&J General Contractors"
+   ],
+   "amount": 75000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda; change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27359"
+  },
+  {
+   "id": "25-8761",
+   "date": "2025-03-11",
+   "ref": "25-8761; IFB 2024-005",
+   "matterId": 27360,
+   "title": "More spending authority: City Hall Cottage renovations",
+   "kind": "contract",
+   "parties": [
+    "M&J General Contractors"
+   ],
+   "amount": 150000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Menendez",
+   "notes": "Change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27360"
+  },
+  {
+   "id": "25-8762",
+   "date": "2025-03-11",
+   "ref": "25-8762; IFB 2024-017",
+   "matterId": 27361,
+   "title": "More spending authority: Toledo and Alava Park construction",
+   "kind": "contract",
+   "parties": [
+    "M&J General Contractors"
+   ],
+   "amount": 75000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda; change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27361"
+  },
+  {
+   "id": "25-8763",
+   "date": "2025-03-11",
+   "ref": "25-8763; IFB 2023-027",
+   "matterId": 27362,
+   "title": "More spending authority: Passport Building renovations",
+   "kind": "contract",
+   "parties": [
+    "Lee Construction Group, Inc."
+   ],
+   "amount": 150000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Castro",
+   "notes": "Change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27362"
+  },
+  {
+   "id": "25-8764",
+   "date": "2025-03-11",
+   "ref": "25-8764; IFB 2022-020",
+   "matterId": 27363,
+   "title": "More spending authority: Venetian Pool concession renovations",
+   "kind": "contract",
+   "parties": [
+    "Vercetti Enterprises"
+   ],
+   "amount": 150000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Castro",
+   "second": "Menendez",
+   "notes": "Change order.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27363"
+  },
+  {
+   "id": "25-8768",
+   "date": "2025-03-11",
+   "ref": "25-8768",
+   "matterId": 27367,
+   "title": "Retroactive bid waiver: baseball programming at War Memorial Youth Center",
+   "kind": "contract",
+   "parties": [
+    "Diamond Degree Baseball"
+   ],
+   "amount": 30000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27367"
+  },
+  {
+   "id": "25-8774",
+   "date": "2025-03-11",
+   "ref": "25-8774",
+   "matterId": 27373,
+   "title": "Sole-source floodplain management contract, three years",
+   "kind": "contract",
+   "parties": [
+    "Forerunner Industries, Inc."
+   ],
+   "amount": 54900,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27373"
+  },
+  {
+   "id": "25-8782",
+   "date": "2025-03-11",
+   "ref": "25-8782",
+   "matterId": 27381,
+   "title": "Sewer connection agreement for 950 University Dr outside the sewer district",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 950 University Dr"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Menendez": "yes"
+   },
+   "mover": "Menendez",
+   "second": "Anderson",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27381"
+  },
+  {
+   "id": "23-5861",
+   "date": "2025-05-20",
+   "ref": "23-5861",
+   "matterId": 24477,
+   "title": "Buy Frank Stella artwork for Ponce Circle Park from the Stella estate",
+   "kind": "contract",
+   "parties": [
+    "Estate of Frank Stella"
+   ],
+   "amount": 2040000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Funded from art reserve. Cultural Development Board recommended 5-2.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/24477"
+  },
+  {
+   "id": "24-8206",
+   "prevId": "cg-24-8206",
+   "date": "2025-05-20",
+   "ref": "24-8206, 24-8207",
+   "matterId": 26809,
+   "title": "299 Minorca: receipt of transferred development rights and remote parking",
+   "kind": "zoning",
+   "parties": [
+    "Minorca Ventures LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "no",
+    "Fernandez": "no",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Two resolutions (TDR receipt; conditional use for remote parking). Roll reused from previous build. Lobbyists Jorge Navarro, Devon Vickers.",
+   "tally": [
+    3,
+    2
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/26809"
+  },
+  {
+   "id": "25-8565",
+   "date": "2025-05-20",
+   "ref": "25-8565",
+   "matterId": 27164,
+   "title": "Riviera Country Club site plan amendment, 1155 Blue Road",
+   "kind": "zoning",
+   "parties": [
+    "Riviera Country Club"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Second reading. First reading 2025-03-11 (5-0, Castro/Menendez). Lobbyists Nelson de Leon, David Schoop.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27164"
+  },
+  {
+   "id": "25-8853",
+   "date": "2025-05-20",
+   "ref": "25-8853; RFP 2024-041",
+   "matterId": 27452,
+   "title": "Special assessment district consulting contract",
+   "kind": "contract",
+   "parties": [
+    "Progressive Urban Management Associates, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27452"
+  },
+  {
+   "id": "25-8854",
+   "date": "2025-05-20",
+   "ref": "25-8854",
+   "matterId": 27453,
+   "title": "US 1 median landscape services contract",
+   "kind": "contract",
+   "parties": [
+    "Brightview Landscape Services, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27453"
+  },
+  {
+   "id": "25-8856",
+   "date": "2025-05-20",
+   "ref": "25-8856; RFP 2018-009A/B/C",
+   "matterId": 27455,
+   "title": "Disaster debris removal contracts extended, rate increase for 009A",
+   "kind": "contract",
+   "parties": [
+    "Holders of RFP 2018-009A, 009B, 009C (not named in title)"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda. Contractors not named in Legistar title; the 2026 extension (26-1478) names Ashbritt, Inc., Phillips Heavy, Inc., Ceres Environmental Services, Inc.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27455"
+  },
+  {
+   "id": "25-8857",
+   "date": "2025-05-20",
+   "ref": "25-8857; RFP 2018-001",
+   "matterId": 27456,
+   "title": "Disaster debris monitoring contract extended with rate adjustment",
+   "kind": "contract",
+   "parties": [
+    "Tetra Tech, Inc."
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27456"
+  },
+  {
+   "id": "25-8858",
+   "date": "2025-05-20",
+   "ref": "25-8858; RFP 2019-008",
+   "matterId": 27457,
+   "title": "Disaster debris monitoring (additional services) contract extended",
+   "kind": "contract",
+   "parties": [
+    "Goodwyn Mills Cawood, LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27457"
+  },
+  {
+   "id": "25-8935",
+   "date": "2025-05-20",
+   "ref": "25-8935",
+   "matterId": 27534,
+   "title": "More spending authority on existing contract (change order)",
+   "kind": "contract",
+   "parties": [
+    "Unitec, Inc."
+   ],
+   "amount": 60000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27534"
+  },
+  {
+   "id": "25-8946",
+   "date": "2025-05-20",
+   "ref": "25-8946",
+   "matterId": 27545,
+   "title": "Sewer connection agreement, 545-547 Menendez Ave (outside sewer district)",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 545-547 Menendez Ave"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27545"
+  },
+  {
+   "id": "25-8948",
+   "date": "2025-05-20",
+   "ref": "25-8948",
+   "matterId": 27547,
+   "title": "Sewer connection agreement, 549-551 Menendez Ave (outside sewer district)",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 549-551 Menendez Ave"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27547"
+  },
+  {
+   "id": "25-8950",
+   "date": "2025-05-20",
+   "ref": "25-8950",
+   "matterId": 27549,
+   "title": "Sewer connection agreement, 1531 Liguria Ave (UM sewer service area)",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 1531 Liguria Avenue"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27549"
+  },
+  {
+   "id": "25-8955",
+   "prevId": "cg-25-8955",
+   "date": "2025-05-20",
+   "ref": "25-8955",
+   "matterId": 27554,
+   "title": "Development management agreement for Ponce Circle Park and road work, bidding waived",
+   "kind": "agreement",
+   "parties": [
+    "Ponce Park Residences, LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Lobbyist Javier Fernandez.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27554"
+  },
+  {
+   "id": "25-8956",
+   "prevId": "cg-25-8956",
+   "date": "2025-05-20",
+   "ref": "25-8956",
+   "matterId": 27555,
+   "title": "Sale of development rights from city-owned 286 Miracle Mile to Minorca Ventures",
+   "kind": "sale",
+   "parties": [
+    "Minorca Ventures, LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Proceeds to Historic Building Fund. Lobbyists Jorge Navarro, Devon Vickers.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27555"
+  },
+  {
+   "id": "25-8957",
+   "prevId": "cg-25-8957",
+   "date": "2025-05-20",
+   "ref": "25-8957",
+   "matterId": 27556,
+   "title": "Tree relocation plan for The George townhomes, 717-741 Valencia Ave",
+   "kind": "zoning",
+   "parties": [
+    "The George Residences LLC"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Lobbyist Mario Garcia-Serra.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27556"
+  },
+  {
+   "id": "25-8967",
+   "date": "2025-05-20",
+   "ref": "25-8967",
+   "matterId": 27566,
+   "title": "Sewer connection agreement, 3247 Riviera Drive (outside sewer district)",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 3247 Riviera Drive"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27566"
+  },
+  {
+   "id": "25-8974",
+   "date": "2025-05-20",
+   "ref": "25-8974",
+   "matterId": 27573,
+   "title": "Sewer connection agreement, 5877 Ponce de Leon (outside sewer district)",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 5877 Ponce de Leon"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27573"
+  },
+  {
+   "id": "25-8976",
+   "date": "2025-05-20",
+   "ref": "25-8976",
+   "matterId": 27575,
+   "title": "Sewer connection agreement, 12850 SW 57 Ave, Pinecrest",
+   "kind": "agreement",
+   "parties": [
+    "Owner of 12850 SW 57 Avenue, Pinecrest"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27575"
+  },
+  {
+   "id": "25-9020",
+   "date": "2025-05-20",
+   "ref": "25-9020; IFB 2024-042",
+   "matterId": 27619,
+   "title": "Garage 6 corridor door replacement contract modification",
+   "kind": "contract",
+   "parties": [
+    "Gavarette Inc."
+   ],
+   "amount": 20000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; change order, estimated.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27619"
+  },
+  {
+   "id": "25-9021",
+   "date": "2025-05-20",
+   "ref": "25-9021; IFB 2024-035",
+   "matterId": 27620,
+   "title": "Trolley depot fuel station slab contract modification",
+   "kind": "contract",
+   "parties": [
+    "Coreland Construction Corp."
+   ],
+   "amount": 10000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; change order, estimated.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27620"
+  },
+  {
+   "id": "25-9034",
+   "date": "2025-05-20",
+   "ref": "25-9034",
+   "matterId": 27633,
+   "title": "More spending authority on existing technology contract",
+   "kind": "contract",
+   "parties": [
+    "Insight Public Sector, Inc."
+   ],
+   "amount": 800000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "tally": [
+    5,
+    0
+   ],
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27633"
+  },
+  {
+   "id": "25-9039",
+   "date": "2025-05-20",
+   "ref": "25-9039",
+   "matterId": 27638,
+   "title": "Retroactive bid waiver: fitness instruction at Golf and Country Club",
+   "kind": "contract",
+   "parties": [
+    "Luis F. Mora Molina"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    5,
+    0
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27638"
+  },
+  {
+   "id": "25-9067",
+   "date": "2025-05-20",
+   "ref": "25-9067",
+   "matterId": 27665,
+   "title": "City buys undeveloped parcel at 1031 Valencia Ave, procurement rules waived",
+   "kind": "sale",
+   "parties": [
+    "Eugenia S. Schmid, as trustee of the Eugenia S. Schmid Declaration of Trust dated August 7, 1998"
+   ],
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "no",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Ordinance; purchase price not in title.",
+   "tally": [
+    4,
+    1
+   ],
+   "amount": null,
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27665"
+  },
+  {
+   "id": "25-9196",
+   "date": "2025-07-01",
+   "ref": "25-9196; RFP 2025-004",
+   "matterId": null,
+   "title": "School-zone speed camera contract",
+   "kind": "contract",
+   "parties": [
+    "Jenoptik Smart Mobility Solutions, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Lobbyists Miriam Soler Ramos, Daniel Hanlon.",
+   "prevId": "cg-25-9196",
+   "tally": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "25-9283",
+   "date": "2025-07-01",
+   "ref": "25-9283",
+   "matterId": 27880,
+   "title": "More spending authority on public safety communications master contract (piggyback)",
+   "kind": "contract",
+   "parties": [
+    "NASPO ValuePoint master contract #00318 vendor (not named)"
+   ],
+   "amount": 4065113.19,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Cooperative contract; vendor not named in title.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27880"
+  },
+  {
+   "id": "25-9293",
+   "date": "2025-07-01",
+   "ref": "25-9293",
+   "matterId": 27890,
+   "title": "Appeal of Board of Architects denial of garage door, 6901 Trionfo Street",
+   "kind": "license",
+   "parties": [
+    "Owner of 6901 Trionfo Street"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lago",
+   "notes": "Outcome (granted or denied) not stated in Legistar title; owner not named.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27890"
+  },
+  {
+   "id": "25-9296",
+   "date": "2025-07-01",
+   "ref": "25-9296; RFQ 2024-005",
+   "matterId": 27893,
+   "title": "Architectural consulting contracts with six firms",
+   "kind": "contract",
+   "parties": [
+    "Bermello Ajamil & Partners, Inc.",
+    "R.J. Heisenbottle Architects, P.A.",
+    "Gurri Matute, P.A.",
+    "M.C. Harry and Associates, Inc.",
+    "Ferguson, Glasgow, Schuster, Soto, Inc.",
+    "Alleguez Architecture, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27893"
+  },
+  {
+   "id": "25-9297",
+   "date": "2025-07-01",
+   "ref": "25-9297; IFB 2025-007",
+   "matterId": 27894,
+   "title": "Trash receptacle purchase",
+   "kind": "contract",
+   "parties": [
+    "Tiger Companies, LLC"
+   ],
+   "amount": 68000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27894"
+  },
+  {
+   "id": "25-9315",
+   "date": "2025-07-01",
+   "ref": "25-9315",
+   "matterId": 27912,
+   "title": "Ratify emergency shoring work at City Hall",
+   "kind": "contract",
+   "parties": [
+    "Gavarrete Inc."
+   ],
+   "amount": 84744,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; emergency procurement.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27912"
+  },
+  {
+   "id": "25-9316",
+   "date": "2025-07-01",
+   "ref": "25-9316",
+   "matterId": 27913,
+   "title": "Six-month license for city retail space, 290 Miracle Mile",
+   "kind": "lease",
+   "parties": [
+    "Pedrido Arte"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27913"
+  },
+  {
+   "id": "25-9317",
+   "date": "2025-07-01",
+   "ref": "25-9317",
+   "matterId": 27914,
+   "title": "One-year extension of city-owned retail lease, 240 Aragon Ave",
+   "kind": "lease",
+   "parties": [
+    "Patio & Things, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; sixth lease amendment.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27914"
+  },
+  {
+   "id": "25-9328",
+   "date": "2025-07-01",
+   "ref": "25-9328; IFB 2025-003",
+   "matterId": 27925,
+   "title": "Emergency generator purchase and installation",
+   "kind": "contract",
+   "parties": [
+    "AGC Electric, Inc."
+   ],
+   "amount": 574505,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27925"
+  },
+  {
+   "id": "25-9330",
+   "date": "2025-07-01",
+   "ref": "25-9330",
+   "matterId": 27927,
+   "title": "Bid waiver: temporary commission offices at Minorca Garage",
+   "kind": "contract",
+   "parties": [
+    "Gavarrete, Inc."
+   ],
+   "amount": 636481,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27927"
+  },
+  {
+   "id": "25-9355",
+   "date": "2025-07-01",
+   "ref": "25-9355",
+   "matterId": 27952,
+   "title": "4311 Ponce: underground-utility requirement replaced with public-realm payment",
+   "kind": "zoning",
+   "parties": [
+    "Developer of 4311 Ponce (not named in title)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Site plan amendment, 4311 and 4225 Ponce de Leon Blvd.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27952"
+  },
+  {
+   "id": "25-9364",
+   "date": "2025-07-01",
+   "ref": "25-9364",
+   "matterId": 27961,
+   "title": "Authorize negotiating terms letting Biltmore Hotel operators charge for city west parking lot",
+   "kind": "agreement",
+   "parties": [
+    "Operators of the Biltmore Hotel"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "Sponsored by Mayor Lago. Authorizes negotiation; final agreement may come later.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27961"
+  },
+  {
+   "id": "25-9370",
+   "date": "2025-07-01",
+   "ref": "25-9370",
+   "matterId": 27967,
+   "title": "Approve concept for public artwork by artist Adler",
+   "kind": "other",
+   "parties": [
+    "Artist Adler (Adler Guerrier)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Lago",
+   "second": "Anderson",
+   "notes": "Concept approval; full proposal to come at next meeting.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/27967"
+  },
+  {
+   "id": "25-9405",
+   "date": "2025-08-26",
+   "ref": "25-9405",
+   "matterId": 28002,
+   "title": "Beer and wine (2COP) license for indoor golf club, 1300 Ponce de Leon Blvd",
+   "kind": "license",
+   "parties": [
+    "Scoring Club LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28002"
+  },
+  {
+   "id": "25-9436",
+   "date": "2025-08-26",
+   "ref": "25-9436",
+   "matterId": 28033,
+   "title": "Phillips Park renovation construction contract",
+   "kind": "contract",
+   "parties": [
+    "HG Construction Development & Investment, Inc."
+   ],
+   "amount": 3882824.84,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28033"
+  },
+  {
+   "id": "25-9437",
+   "date": "2025-08-26",
+   "ref": "25-9437",
+   "matterId": 28034,
+   "title": "Citywide drainage improvements contracts",
+   "kind": "contract",
+   "parties": [
+    "GPE Engineering & General Contractor Corp.",
+    "FG Construction, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28034"
+  },
+  {
+   "id": "25-9438",
+   "date": "2025-08-26",
+   "ref": "25-9438",
+   "matterId": 28035,
+   "title": "Country Club windows and doors replacement contract",
+   "kind": "contract",
+   "parties": [
+    "LEE Construction Group, LLC."
+   ],
+   "amount": 615000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28035"
+  },
+  {
+   "id": "25-9439",
+   "date": "2025-08-26",
+   "ref": "25-9439",
+   "matterId": 28036,
+   "title": "Heavy equipment rental contract",
+   "kind": "contract",
+   "parties": [
+    "Equipmentshare.com, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28036"
+  },
+  {
+   "id": "25-9462",
+   "date": "2025-08-26",
+   "ref": "25-9462",
+   "matterId": 28059,
+   "title": "Accept annual audit (ACFR) from outside auditor",
+   "kind": "contract",
+   "parties": [
+    "RSM US LLP"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Consent agenda. Acceptance of audit deliverables; borderline.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28059"
+  },
+  {
+   "id": "25-9483",
+   "date": "2025-08-26",
+   "ref": "25-9483",
+   "matterId": 28080,
+   "title": "City as title sponsor of Centennial 'Gables-Opoly' fundraiser",
+   "kind": "grant",
+   "parties": [
+    "Mark A. Trowbridge Chamber Foundation"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Sponsored by Mayor Lago; sponsorship amount not in title.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28080"
+  },
+  {
+   "id": "25-9486",
+   "date": "2025-08-26",
+   "ref": "25-9486; RFP 2025-012",
+   "matterId": 28083,
+   "title": "Security guard services contract",
+   "kind": "contract",
+   "parties": [
+    "FPI Security Services, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28083"
+  },
+  {
+   "id": "25-9489",
+   "date": "2025-08-26",
+   "ref": "25-9489",
+   "matterId": 28086,
+   "title": "Public art commission by Michele Oka Doner for The Aurelian development",
+   "kind": "other",
+   "parties": [
+    "Michele Oka Doner",
+    "The Aurelian (912 E. Ponce de Leon Blvd)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Meets the development's Art in Public Places requirement.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28086"
+  },
+  {
+   "id": "25-9494",
+   "date": "2025-08-26",
+   "ref": "25-9494",
+   "matterId": 28091,
+   "title": "Sole-source window and door replacement at City Hall and Annex",
+   "kind": "contract",
+   "parties": [
+    "Ocean Impact, LLC"
+   ],
+   "amount": 3473393.53,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28091"
+  },
+  {
+   "id": "25-9495",
+   "date": "2025-08-26",
+   "ref": "25-9495",
+   "matterId": 28092,
+   "title": "Ratify emergency stabilization work at 1021 Hardee Road",
+   "kind": "contract",
+   "parties": [
+    "Gavarrete Inc."
+   ],
+   "amount": 190000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Consent agenda; emergency procurement, cap.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28092"
+  },
+  {
+   "id": "25-9538",
+   "date": "2025-08-26",
+   "ref": "25-9538",
+   "matterId": 28135,
+   "title": "Sole-source police Peregrine platform agreement",
+   "kind": "contract",
+   "parties": [
+    "Peregrine"
+   ],
+   "amount": 95000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28135"
+  },
+  {
+   "id": "25-9539",
+   "date": "2025-08-26",
+   "ref": "25-9539",
+   "matterId": 28136,
+   "title": "Sole-source three-year lease of 11 police motorcycles",
+   "kind": "contract",
+   "parties": [
+    "Peterson's Harley-Davidson of Miami, LLC"
+   ],
+   "amount": 346500,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28136"
+  },
+  {
+   "id": "25-9540",
+   "date": "2025-08-26",
+   "ref": "25-9540",
+   "matterId": 28137,
+   "title": "Sole-source purchase of 20 police rifle patrol packages",
+   "kind": "contract",
+   "parties": [
+    "Special Ops Tactical LLC"
+   ],
+   "amount": 32626.5,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "absent",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "tally": [
+    4,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28137"
+  },
+  {
+   "id": "25-9377",
+   "date": "2025-09-10",
+   "ref": "25-9377",
+   "matterId": null,
+   "title": "Historic property tax relief for 4125 Santa Maria Street",
+   "kind": "other",
+   "parties": [
+    "Owner of 4125 Santa Maria Street"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Ad valorem tax exemption for contributing historic resource; owner not named.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9377)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9465",
+   "date": "2025-09-10",
+   "ref": "25-9465",
+   "matterId": 28062,
+   "title": "Conditional use: split 1154 Alfonso Ave into two building sites",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1154 Alfonso Avenue (lobbyist Laura Russo)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Approved 2025-08-26 (first reading, Fernandez absent) and 2025-09-10 (second reading). Owner not named in title.",
+   "tally": [
+    5,
+    0
+   ],
+   "url": "https://webapi.legistar.com/v1/coralgables/matters/28062"
+  },
+  {
+   "id": "25-9644",
+   "date": "2025-09-10",
+   "ref": "25-9644",
+   "matterId": null,
+   "title": "GIS enterprise license agreement purchase",
+   "kind": "contract",
+   "parties": [
+    "ESRI"
+   ],
+   "amount": 49000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9644)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9659",
+   "date": "2025-09-10",
+   "ref": "25-9659",
+   "matterId": null,
+   "title": "Final re-plat for Ponce Park Residences, dedicating right-of-way",
+   "kind": "zoning",
+   "parties": [
+    "Ponce Park Residences, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Lobbyist Javier Fernandez. 3000 Ponce de Leon Blvd area. Kind 'plat' in previous build.",
+   "prevId": "cg-25-9659",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9659)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9678",
+   "date": "2025-09-10",
+   "ref": "25-9678",
+   "matterId": null,
+   "title": "Release of restrictive covenant on 1154 Alfonso Ave",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1154 Alfonso Avenue (lobbyist Laura Russo)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9678)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9720",
+   "date": "2025-09-10",
+   "ref": "25-9720",
+   "matterId": null,
+   "title": "Contract modification: George H. Fink Studio improvements",
+   "kind": "contract",
+   "parties": [
+    "Robert Rionda Interiors"
+   ],
+   "amount": 74000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda; amends bid-waiver contract from 25-8542.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9720)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9721",
+   "date": "2025-09-10",
+   "ref": "25-9721",
+   "matterId": null,
+   "title": "Bid waiver: holiday decorations on Miracle Mile and Giralda Plaza",
+   "kind": "contract",
+   "parties": [
+    "Joy by for Custom Decorations"
+   ],
+   "amount": 298926.5,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Vendor name as summarized from title; verify spelling.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9721)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9731",
+   "date": "2025-09-10",
+   "ref": "25-9731",
+   "matterId": null,
+   "title": "Second amendment extending consulting agreement, retroactive payment",
+   "kind": "contract",
+   "parties": [
+    "Stantec Consulting Services, Inc."
+   ],
+   "amount": 50000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9731)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9747",
+   "date": "2025-09-10",
+   "ref": "25-9747",
+   "matterId": null,
+   "title": "Contract modification: Coral Way and Granada intersection",
+   "kind": "contract",
+   "parties": [
+    "FG Construction, LLC"
+   ],
+   "amount": 50000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda; change order.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9747)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-8776",
+   "date": "2025-09-25",
+   "ref": "25-8776",
+   "matterId": null,
+   "title": "Historic property tax relief for 717 North Greenway Drive",
+   "kind": "other",
+   "parties": [
+    "Owner of 717 North Greenway Drive"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Ad valorem tax exemption; owner not named.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-8776)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9765",
+   "date": "2025-09-25",
+   "ref": "25-9765",
+   "matterId": null,
+   "title": "Fuel station maintenance contract modification",
+   "kind": "contract",
+   "parties": [
+    "Advanced Petroleum Systems"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; IFB 2020-016.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9765)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9774",
+   "date": "2025-09-25",
+   "ref": "25-9774",
+   "matterId": null,
+   "title": "Sole-source police equipment purchase and service agreement",
+   "kind": "contract",
+   "parties": [
+    "Earth Power Solutions, Inc."
+   ],
+   "amount": 104776,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9774)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9775",
+   "date": "2025-09-25",
+   "ref": "25-9775",
+   "matterId": null,
+   "title": "Storm water system cleaning contract",
+   "kind": "contract",
+   "parties": [
+    "Flotech Environmental, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "IFB 2025-020; not to exceed budget.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9775)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9780",
+   "date": "2025-09-25",
+   "ref": "25-9780",
+   "matterId": null,
+   "title": "Approve location of Gondola Building at former Biltmore golf course site",
+   "kind": "zoning",
+   "parties": [
+    "Not named (city-owned Biltmore property)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Zoning Code 1-104 location approval; HPB asked for review (25-9810). Benefiting party unclear; borderline.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9780)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9784",
+   "date": "2025-09-25",
+   "ref": "25-9784",
+   "matterId": null,
+   "title": "Contract modification: Parking Lots 8 and 17 improvements",
+   "kind": "contract",
+   "parties": [
+    "Gavarrete Inc."
+   ],
+   "amount": 20000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; IFB 2024-031.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9784)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9786",
+   "date": "2025-09-25",
+   "ref": "25-9786",
+   "matterId": null,
+   "title": "Contract modification: Youth Center gym floor",
+   "kind": "contract",
+   "parties": [
+    "Commercial Interior Contractors, Corp."
+   ],
+   "amount": 40000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda; IFB 2024-037.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9786)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9795",
+   "date": "2025-09-25",
+   "ref": "25-9795",
+   "matterId": null,
+   "title": "Parking management agreement letting Biltmore operator run paid parking on city West Lot",
+   "kind": "agreement",
+   "parties": [
+    "The Biltmore Hotel Limited Partnership"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "no",
+    "Lara": "yes"
+   },
+   "mover": "Castro",
+   "second": "Anderson",
+   "notes": "Follows 25-9364 (2025-07-01) authorization to negotiate.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9795)",
+   "tally": [
+    4,
+    1
+   ]
+  },
+  {
+   "id": "25-9813",
+   "date": "2025-09-25",
+   "ref": "25-9813",
+   "matterId": null,
+   "title": "Bid waiver: holiday park, Santa House and tree services",
+   "kind": "contract",
+   "parties": [
+    "Plant Professionals, Inc."
+   ],
+   "amount": 150000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9813)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9510",
+   "date": "2025-10-14",
+   "ref": "25-9510",
+   "matterId": null,
+   "title": "Fire plans review services contract",
+   "kind": "contract",
+   "parties": [
+    "Fire Code Pro, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9510)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9839",
+   "date": "2025-10-14",
+   "ref": "25-9839",
+   "matterId": null,
+   "title": "Bid waiver: high-water rescue vehicle purchase",
+   "kind": "contract",
+   "parties": [
+    "Sherp USA"
+   ],
+   "amount": 212045,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9839)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9890",
+   "date": "2025-10-14",
+   "ref": "25-9890",
+   "matterId": null,
+   "title": "Fire plans review services contract",
+   "kind": "contract",
+   "parties": [
+    "Robert Nance"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9890)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9909",
+   "date": "2025-10-14",
+   "ref": "25-9909",
+   "matterId": null,
+   "title": "Join SB 180 lawsuit and retain outside law firm",
+   "kind": "contract",
+   "parties": [
+    "Weiss Serota Helfman Cole + Bierman, PL"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9909)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9922",
+   "date": "2025-10-14",
+   "ref": "25-9922",
+   "matterId": null,
+   "title": "$2,500 sponsorship plus trolley and parking for Ronald McDonald pickleball tournament",
+   "kind": "grant",
+   "parties": [
+    "Ronald McDonald Paddles for a Purpose Pickleball Tournament"
+   ],
+   "amount": 2500,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "",
+   "url": "https://coralgables.legistar.com/Legislation.aspx (file 25-9922)",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9261",
+   "date": "2025-10-28",
+   "ref": "25-9261",
+   "title": "Buy Agustin Cardenas sculpture 'Le Couple' through Latin Art Core",
+   "kind": "contract",
+   "parties": [
+    "Latin Art Core"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Art in Public Places reserve; amount not in title.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9261'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9713",
+   "date": "2025-10-28",
+   "ref": "25-9713, 25-9715",
+   "title": "627 and 635 Anastasia Ave: land use change to multifamily and rezoning to MF3",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 627 and 635 Anastasia Avenue (lobbyist Joe Jimenez)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Second reading (first reading 2025-10-14, 5-0, Anderson/Lara). Owner not named in title.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9713'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9929",
+   "date": "2025-10-28",
+   "ref": "25-9929",
+   "title": "Theater programming services contract",
+   "kind": "contract",
+   "parties": [
+    "Evolve Theatre Company"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda; RFP 2025-016.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9929'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9930",
+   "date": "2025-10-28",
+   "ref": "25-9930",
+   "title": "STEM program services contract",
+   "kind": "contract",
+   "parties": [
+    "Study Smart Tutors, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda; RFP 2025-018.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9930'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9931",
+   "date": "2025-10-28",
+   "ref": "25-9931",
+   "title": "Insurance brokerage and risk management services contract",
+   "kind": "contract",
+   "parties": [
+    "Arthur J. Gallagher Risk Management Services, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "RFP 2025-019.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9931'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9932",
+   "date": "2025-10-28",
+   "ref": "25-9932",
+   "title": "Disaster debris monitoring contracts, three firms",
+   "kind": "contract",
+   "parties": [
+    "Tetra Tech, Inc.",
+    "Thompson Consulting Services, LLC",
+    "Debristech, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "RFP 2025-022; Tetra Tech primary.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9932'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9945",
+   "date": "2025-10-28",
+   "ref": "25-9945",
+   "title": "Bid waiver: baseball, softball and t-ball instruction",
+   "kind": "contract",
+   "parties": [
+    "Diamond Degree Baseball"
+   ],
+   "amount": 50000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9945'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9948",
+   "date": "2025-10-28",
+   "ref": "25-9948",
+   "title": "Construction manager at risk for City Hall renovation",
+   "kind": "contract",
+   "parties": [
+    "Thornton Construction Company, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "RFQ 2025-031; negotiate agreement.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9948'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9956",
+   "date": "2025-10-28",
+   "ref": "25-9956",
+   "title": "Release of unity of title, 275 Giralda Ave Units 6A and 6B",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 275 Giralda Avenue Units 6A/6B"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9956'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9964",
+   "date": "2025-10-28",
+   "ref": "25-9964",
+   "title": "Extend labor services agreement at Golf and Country Club",
+   "kind": "contract",
+   "parties": [
+    "Hernas Salgado Corp."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Consent agenda.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9964'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9966",
+   "date": "2025-10-28",
+   "ref": "25-9966",
+   "title": "Mobility Hub design consultant change order",
+   "kind": "contract",
+   "parties": [
+    "M. Arthur Gensler Jr. & Associates, Inc."
+   ],
+   "amount": 750000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "no",
+    "Fernandez": "no",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Lara",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9966'",
+   "tally": [
+    3,
+    2
+   ]
+  },
+  {
+   "id": "25-1000",
+   "date": "2025-11-18",
+   "ref": "25-1000",
+   "title": "Sixth lease amendment: city rents 338 Minorca Ave offices, three more years",
+   "kind": "lease",
+   "parties": [
+    "338 Minorca Law Center, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda. City is tenant.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1000'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1023",
+   "date": "2025-11-18",
+   "ref": "25-1023",
+   "title": "Disaster debris removal contracts extended (change order)",
+   "kind": "contract",
+   "parties": [
+    "Holders of RFP 2018-009A, B, C (not named in title)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1023'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1024",
+   "date": "2025-11-18",
+   "ref": "25-1024",
+   "title": "Marine fire rescue vessel purchase",
+   "kind": "contract",
+   "parties": [
+    "DGS Boats, Corp"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda; IFB 2025-036.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1024'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1049",
+   "date": "2025-11-18",
+   "ref": "25-1049",
+   "title": "Sole-source public safety counseling and wellness services",
+   "kind": "contract",
+   "parties": [
+    "Law Enforcement Psychological and Counseling Associates"
+   ],
+   "amount": 28000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1049'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1086",
+   "date": "2025-11-18",
+   "ref": "25-1086",
+   "title": "Terminate 2021 preconstruction services agreement for convenience",
+   "kind": "contract",
+   "parties": [
+    "The Weitz Company, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda. Termination, included as contract action; may involve termination payment.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1086'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1091",
+   "date": "2025-11-18",
+   "ref": "25-1091",
+   "title": "Bid waiver: golf services at Country Club through spring 2026",
+   "kind": "contract",
+   "parties": [
+    "Golf Academy of South Florida"
+   ],
+   "amount": 50000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda; annual cap.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1091'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1092",
+   "date": "2025-11-18",
+   "ref": "25-1092",
+   "title": "Bid waiver: gymnastics at War Memorial Youth Center through spring 2026",
+   "kind": "contract",
+   "parties": [
+    "Tumblebees Gymnastics"
+   ],
+   "amount": 150000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda; annual cap.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1092'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1093",
+   "date": "2025-11-18",
+   "ref": "25-1093",
+   "title": "Ponce de Leon median Phase 3 contract modification",
+   "kind": "contract",
+   "parties": [
+    "FG Construction, LLC"
+   ],
+   "amount": 500000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Change order.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1093'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1095",
+   "date": "2025-11-18",
+   "ref": "25-1095",
+   "title": "Three-year city lease of 2020 Ponce Suite 102A for Finance staff",
+   "kind": "lease",
+   "parties": [
+    "2020 Ponce de Leon, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "City is tenant.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1095'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1096",
+   "date": "2025-11-18",
+   "ref": "25-1096",
+   "title": "Three-year city lease of 2020 Ponce Suite 1200 for City Hall staff",
+   "kind": "lease",
+   "parties": [
+    "2020 Ponce, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "City is tenant.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1096'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1097",
+   "date": "2025-11-18",
+   "ref": "25-1097",
+   "title": "City lease at 475 Biltmore Way for Code Enforcement staff",
+   "kind": "lease",
+   "parties": [
+    "475 Biltmore MOB, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Lara",
+   "second": "Anderson",
+   "notes": "Consent agenda; three years two months; city is tenant.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1097'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1018",
+   "date": "2025-12-09",
+   "ref": "25-1018",
+   "title": "University of Miami 2025 campus art master plan",
+   "kind": "other",
+   "parties": [
+    "University of Miami"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Castro",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1018'",
+   "prevId": "cg-25-1018",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1087",
+   "date": "2025-12-09",
+   "ref": "25-1087, 25-1089",
+   "title": "Alexan Crafts: some work allowed after temporary CO, bonded",
+   "kind": "zoning",
+   "parties": [
+    "Maple Coral Gables LLC (Alexan Crafts)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "First reading 2025-11-18 (Anderson/Castro, 5-0). Lobbyist Jorge Navarro.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1087'",
+   "prevId": "cg-25-1087",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1141",
+   "date": "2025-12-09",
+   "ref": "25-1141",
+   "title": "More spending authority on technology contract",
+   "kind": "contract",
+   "parties": [
+    "Alturna Tech"
+   ],
+   "amount": 600000,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1141'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1154",
+   "date": "2025-12-09",
+   "ref": "25-1154",
+   "title": "Ponce Park Residences: site plan conditions on park completion timing",
+   "kind": "zoning",
+   "parties": [
+    "Ponce Park Residences, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Lara",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1154'",
+   "prevId": "cg-25-1154",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1157",
+   "date": "2025-12-09",
+   "ref": "25-1157",
+   "title": "Bid waiver: temporary offices build-out at 2020 Ponce",
+   "kind": "contract",
+   "parties": [
+    "Lee Construction"
+   ],
+   "amount": 519700,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "absent",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1157'",
+   "tally": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "25-1161",
+   "date": "2025-12-09",
+   "ref": "25-1161",
+   "title": "Electric franchise for Florida Power & Light",
+   "kind": "license",
+   "parties": [
+    "Florida Power & Light Company"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Franchise with monthly payments to city.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1161'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-1162",
+   "date": "2025-12-09",
+   "ref": "25-1162",
+   "title": "Parking management agreement for city lots on 300 block of Aragon, bidding waived",
+   "kind": "agreement",
+   "parties": [
+    "Asta Parking, Inc."
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-1162'",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9739",
+   "date": "2025-12-09",
+   "ref": "25-9739, 25-9740, 25-9741",
+   "title": "760 Ponce: land use change, rezoning and planned area development",
+   "kind": "zoning",
+   "parties": [
+    "760 Ponce De Leon, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "no",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Fernandez",
+   "second": "Anderson",
+   "notes": "Second reading. First reading 2025-11-18 (25-9739 4-1, Castro no; Anderson/Fernandez). Lobbyist Jorge Navarro.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9739'",
+   "prevId": "cg-25-9739",
+   "tally": [
+    4,
+    1
+   ]
+  },
+  {
+   "id": "25-9742",
+   "date": "2025-12-09",
+   "ref": "25-9742",
+   "title": "760 Ponce: conditional uses and Mediterranean design bonuses",
+   "kind": "zoning",
+   "parties": [
+    "760 Ponce De Leon, LLC"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "yes",
+    "Fernandez": "yes",
+    "Lara": "yes"
+   },
+   "mover": "Anderson",
+   "second": "Fernandez",
+   "notes": "Roll reused from previous build.",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9742'",
+   "prevId": "cg-25-9742",
+   "tally": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "25-9846",
+   "date": "2025-12-09",
+   "ref": "25-9846",
+   "title": "Appeal of HPB denial of hardship demolition, 1258 Obispo Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 1258 Obispo Avenue (lobbyist Ceasar Mestre)"
+   ],
+   "amount": null,
+   "roll": {
+    "Lago": "yes",
+    "Anderson": "yes",
+    "Castro": "no",
+    "Fernandez": "no",
+    "Lara": "yes"
+   },
+   "mover": "Lago",
+   "second": "Anderson",
+   "notes": "Appeal of Historic Preservation Board denial; resolution outcome not stated in title. Owner not named. Earlier hearing 2025-10-28 (Anderson/Fernandez, 5-0, likely continuance).",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9846'",
+   "tally": [
+    3,
+    2
+   ]
+  }
+ ],
+ "gaps": [
+  "Votes for consent-agenda items were taken as the meeting's consent block roll; each meeting's consent roll was spot-checked against at least one item's /votes record.",
+  "Borderline items left out (directions to explore or negotiate, no benefit conferred yet): 24-8506 Merrick Festival Caroling Competition (2025-01-14); 25-8702 explore buying 110 Phoenetia Ave (2025-03-11); 25-8771 explore buying 4916 Washington Dr (2025-03-11).",
+  "Left out because no private party is named: 25-8753 youth soccer travel program bid waiver $168,400 (2025-03-11); 25-8717 cultural grant guidelines (no grantees named).",
+  "2025-04-25 (investiture) and 2025-06-11 (capital workshop) had no qualifying items. 2025-05-06 special meeting: only charter/election/governance items plus City Manager resignation and severance (25-9057), excluded as internal staffing.",
+  "Left out: 25-8951 (2025-05-20) five-year lease of 224 Minorca Ave space to the Miami-Dade County Tax Collector (government-only party); 25-8931 Intervals art series $110,000 (no party named); 25-8954 appeal of variances at 1501-1505 Sunset Dr was deferred (no action).",
+  "Sewer connection agreements for individual properties are listed by address because Legistar titles do not name owners.",
+  "2025-07-01: Commissioner Fernandez recorded Absent on every vote checked. 25-9106 FY2025-26 cultural grant recipients approved (Anderson/Lara) but the Legistar title names no recipients or amounts; left out pending the attachment list. 25-9322 Keep America Beautiful grant is money to the city; left out. 25-9363 office-space agreement with State Rep. Demi Busatta left out (government official). 25-9360/61/62 Commission sitting as city-controlled condo associations; left out.",
+  "2025-07-02 budget meeting: no qualifying items.",
+  "2025-08-26: Commissioner Fernandez recorded Absent on every vote checked. Left out: 25-9502 state arts grant to the city for Morel Doucet exhibition (money to city); 25-9556 renewal of City Manager authority to evaluate Aragon Ave lots with Gables Projects, LLC (no vote recorded, passed flag null); 25-9510 Fire Code Pro, Inc. fire plans review contract does not appear on this meeting's item list (check later meetings); 25-9591 FDOT agreement (government only).",
+  "2025-09-12 (budget and special-assessment hearings) and 2025-09-25 second budget hearing: no qualifying items.",
+  "2025-10-14: 25-9846 appeal of HPB denial of demolition at 1258 Obispo Ave (lobbyist Ceasar Mestre) shows no mover or vote; check later meetings. Grants to the city (FDOT trolley, FDEP, EMS) left out as government-only.",
+  "Mover and second on 2025-09 and 2025-10 consent items were taken from each item; rolls for consent items use the consent block (all Yea where checked).",
+  "2025-10-28: University Station rezoning (25-9279/9280, 1150-1350 S Dixie Hwy) adopted without a named applicant in the title; left out pending owner identification, flag for review. 25-9938 Mobility Hub site plan amendment is a city project; left out.",
+  "2025-12-09: 25-1136 Murrhee v. City of Coral Gables retiree COLA hearing (4-1, Castro no) left out as employee benefits; 25-1150 authorizing litigation against War Memorial Youth Center Association (3-2) is adverse, not a benefit; 25-1174 Special Master appointment left out.",
+  "2025-11-18: Several Dec 9 zoning items (760 Ponce, Alexan Crafts) had first readings on 2025-11-18; listed once at final adoption with first reading noted."
+ ]
+}
