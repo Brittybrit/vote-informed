@@ -81,6 +81,7 @@
         return He(p) + ' ' + parts.join(', and ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'It was a split vote (at least one member voted no).' : p.split + ' of the ' + p.items + (p.split === 1 ? ' was a split vote' : ' were split votes') + ' (at least one member voted no).'; },
+      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'Of the ' + U.n + ' laws passed since January 2025 that the official analysis says help a kind of business, and that ' + he(p) + ' voted on, ' + U.tied + ' (' + q[0] + ') drew money from ' + (fed ? 'PACs' : 'donors') + ' in that kind of business. ' + (U.n - U.tied) + ' (' + q[1] + ') did not.'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'This city’s list was built by starting from ' + his(p) + ' donors, because the city posts no usable lobbyist registry. So there is no fair count of the actions that did not involve a donor.';
         var q = pair(S.tied, S.n), r = S.n - S.tied;
@@ -156,6 +157,7 @@
         var x = parts.join(', y '); return x.charAt(0).toUpperCase() + x.slice(1) + '.';
       },
       split: function(p){ return p.items === 1 ? 'Fue una votación dividida (al menos un miembro votó en contra).' : p.split + ' de los ' + p.items + (p.split === 1 ? ' fue una votación dividida' : ' fueron votaciones divididas') + ' (al menos un miembro votó en contra).'; },
+      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'De las ' + U.n + ' leyes aprobadas desde enero de 2025 que, según el análisis oficial, benefician a un tipo de negocio, y que votó, ' + U.tied + ' (' + q[0] + ') recibieron dinero de ' + (fed ? 'comités políticos' : 'donantes') + ' de ese tipo de negocio. ' + (U.n - U.tied) + ' (' + q[1] + ') no.'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos que sirva. Así que no hay un conteo justo de los actos sin donante.';
         var q = pair(S.tied, S.n), r = S.n - S.tied;
@@ -231,6 +233,7 @@
         return 'Li ' + parts.join(', epi ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'Se te yon vòt divize (omwen yon manm te vote non).' : p.split + ' nan ' + p.items + ' yo se te vòt divize (omwen yon manm te vote non).'; },
+      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'Sou ' + U.n + ' lwa yo pase depi janvye 2025 ke analiz ofisyèl la di ede yon kalite biznis, e li te vote sou yo, ' + U.tied + ' (' + q[0] + ') te gen lajan ' + (fed ? 'komite politik' : 'donatè') + ' nan kalite biznis sa a. ' + (U.n - U.tied) + ' (' + q[1] + ') pa t genyen.'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'Lis vil sa a kòmanse ak donatè li yo, paske vil la pa pibliye yon rejis lobiyis nou ka itilize. Kidonk pa gen yon fason jis pou konte aksyon ki pa t gen donatè.';
         var q = pair(S.tied, S.n), r = S.n - S.tied;
@@ -282,6 +285,7 @@
       groups.push(a2);
     }
     if(p.share && (p.share.def === 'donorFirst' || p.share.n)) groups.push([w.share(p, p.share, b)]);
+    if(p.bills && p.bills.universe && p.bills.universe.n) groups.push([w.billShare(p, p.bills.universe, p.kind === 'federal')]);
     return groups.filter(function(g){ return g.length; }).map(function(g){ return g.join(' '); }).join('<br>');
   }
   moneySummary.howLabel = function(lang){ return (W[lang] || W.en).how; };

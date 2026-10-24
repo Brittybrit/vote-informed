@@ -119,6 +119,15 @@ export function build(decisions, officesHeld) {
           no: bills.filter(([a]) => a.roll[key] === 'no').length,
           otherMoney: sum(billOther), otherDonors: new Set(billOther.map(g => g.donor)).size,
         };
+        // When the body's bill cards are a full list (every enacted law whose analysis names a kind of business
+        // it helps, built without looking at donors), count the laws the member voted on and how many drew
+        // money from donors in that kind of business. One law can have a vote in each chamber: counted once.
+        const uni = B.actions.filter(a => a.kind === 'bill' && a.universe && ['yes', 'no'].includes(a.roll[key]));
+        if (uni.length) {
+          const laws = new Set(uni.map(a => a.ref));
+          const tiedLaws = new Set(uni.filter(a => (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START)).map(a => a.ref));
+          e.bills.universe = { n: laws.size, tied: tiedLaws.size };
+        }
       } else {
         const v = { yes: 0, no: 0, away: 0, acted: 0, abst: 0, unk: 0 };
         for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else if (x === 'acted') v.acted++; else if (x === 'abstain' || x === 'recused') v.abst++; else if (x === 'unknown') v.unk++; else v.away++; }

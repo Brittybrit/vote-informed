@@ -1,0 +1,2707 @@
+{
+ "sources": [
+  "Public laws list: api.congress.gov/v3/law/119 (Library of Congress), read 2026-10-24",
+  "CRS bill summaries: api.congress.gov /summaries and govinfo.gov/bulkdata/BILLSUM/119",
+  "CRA overturned rules: federalregister.gov documents (linked per law)",
+  "CBO cost estimates: cbo.gov (linked per law where used)",
+  "Floor actions: api.congress.gov /actions (recordedVotes)",
+  "House roll calls: clerk.house.gov/evs and api.congress.gov/v3/house-vote",
+  "Senate roll calls: senate.gov LIS roll_call_votes XML",
+  "Prior verified votes: scripts/data/federal/floor-votes.json"
+ ],
+ "rule": "Universe = every public law of the 119th Congress (from 2025-01-03) whose CRS summary, CBO estimate, or (for CRA resolutions) the overturned rule names a kind of business that benefits. \"affected\" lists businesses regulated but not benefited; those are not counted.",
+ "counts": {
+  "laws": 134,
+  "qualifying": 35,
+  "members": {
+   "Diaz-Balart": {
+    "yes": 28,
+    "no": 0,
+    "not voting": 4,
+    "not seated": 0,
+    "voice/UC": 3,
+    "missing": 0
+   },
+   "Salazar": {
+    "yes": 24,
+    "no": 0,
+    "not voting": 8,
+    "not seated": 0,
+    "voice/UC": 3,
+    "missing": 0
+   },
+   "Gimenez": {
+    "yes": 30,
+    "no": 0,
+    "not voting": 2,
+    "not seated": 0,
+    "voice/UC": 3,
+    "missing": 0
+   },
+   "Moskowitz": {
+    "yes": 12,
+    "no": 20,
+    "not voting": 0,
+    "not seated": 0,
+    "voice/UC": 3,
+    "missing": 0
+   },
+   "Donalds": {
+    "yes": 27,
+    "no": 4,
+    "not voting": 1,
+    "not seated": 0,
+    "voice/UC": 3,
+    "missing": 0
+   },
+   "Moody": {
+    "yes": 27,
+    "no": 0,
+    "not voting": 0,
+    "not seated": 0,
+    "voice/UC": 8,
+    "missing": 0
+   }
+  }
+ },
+ "laws": [
+  {
+   "pl": "119-1",
+   "bill": "S. 5",
+   "title": "Laken Riley Act",
+   "date": "2025-01-29",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/5/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS summary names no business"
+  },
+  {
+   "pl": "119-2",
+   "bill": "H.J.Res. 35",
+   "title": "Disapproval of EPA waste emissions charge for petroleum and natural gas systems",
+   "date": "2025-03-14",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/35",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/35/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Oil and gas",
+    "named": [],
+    "quote": "oil or gas facilities"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-02-26",
+     "roll": "52",
+     "tally": [
+      220,
+      206
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll052.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-02-27",
+     "roll": "97",
+     "tally": [
+      52,
+      47
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00097.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-3",
+   "bill": "S.J.Res. 11",
+   "title": "Disapproval of BOEM marine archaeological resources rule",
+   "date": "2025-03-14",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/11",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/11/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Offshore oil and gas",
+    "named": [],
+    "quote": "lessees and operators"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-06",
+     "roll": "61",
+     "tally": [
+      221,
+      202
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll061.xml",
+     "members": {
+      "Diaz-Balart": "not voting",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-02-25",
+     "roll": "92",
+     "tally": [
+      54,
+      44
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00092.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-4",
+   "bill": "H.R. 1968",
+   "title": "Full-Year Continuing Appropriations and Extensions Act, 2025",
+   "date": "2025-03-15",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1968",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1968/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Hospitals",
+    "named": [],
+    "quote": "certain small rural hospitals"
+   },
+   "note": "full-year CR; many extenders",
+   "votes": {
+    "house": {
+     "date": "2025-03-11",
+     "roll": "70",
+     "tally": [
+      217,
+      213
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll070.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-03-14",
+     "roll": "133",
+     "tally": [
+      54,
+      46
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00133.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-5",
+   "bill": "H.J.Res. 25",
+   "title": "Disapproval of IRS digital asset broker gross proceeds reporting rule",
+   "date": "2025-04-10",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/25",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/25/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Crypto / digital asset brokers",
+    "named": [],
+    "quote": "Brokers That Regularly Provide Services Effectuating Digital Asset Sales"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-11",
+     "roll": "71",
+     "tally": [
+      292,
+      132
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll071.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-03-26",
+     "roll": "151",
+     "tally": [
+      70,
+      28
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00151.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-6",
+   "bill": "H.J.Res. 20",
+   "title": "Disapproval of DOE gas-fired instantaneous water heater standards",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/20",
+   "analysisUrl": "https://www.federalregister.gov/documents/2024/12/26/2024-30369/energy-conservation-program-energy-conservation-standards-for-consumer-gas-fired-instantaneous-water",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Gas water heater manufacturers",
+    "named": [],
+    "quote": "the INPV for manufacturers of gas-fired instantaneous water heaters"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-02-27",
+     "roll": "53",
+     "tally": [
+      221,
+      198
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll053.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "not voting"
+     }
+    },
+    "senate": {
+     "date": "2025-04-10",
+     "roll": "207",
+     "tally": [
+      53,
+      44
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00207.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-7",
+   "bill": "H.J.Res. 24",
+   "title": "Disapproval of DOE walk-in cooler/freezer standards",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/24",
+   "analysisUrl": "https://www.federalregister.gov/documents/2024/12/23/2024-28474/energy-conservation-program-energy-conservation-standards-for-walk-in-coolers-and-walk-in-freezers",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Commercial refrigeration equipment manufacturers",
+    "named": [],
+    "quote": "DOE estimates that the INPV for manufacturers of walk-in display doors"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-27",
+     "roll": "77",
+     "tally": [
+      203,
+      182
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll077.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-04-03",
+     "roll": "162",
+     "tally": [
+      53,
+      42
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00162.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-8",
+   "bill": "H.J.Res. 42",
+   "title": "Disapproval of DOE appliance certification/test procedure rule",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/42",
+   "analysisUrl": "https://www.federalregister.gov/documents/2024/10/09/2024-21950/energy-conservation-program-for-appliance-standards-certification-requirements-labeling-requirements",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Appliance and equipment manufacturers",
+    "named": [],
+    "quote": "Manufacturers of most covered products and covered equipment must submit a certification report"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-05",
+     "roll": "59",
+     "tally": [
+      222,
+      203
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll059.xml",
+     "members": {
+      "Diaz-Balart": "not voting",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-04-30",
+     "roll": "223",
+     "tally": [
+      52,
+      46
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00223.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-9",
+   "bill": "H.J.Res. 75",
+   "title": "Disapproval of DOE commercial refrigeration equipment standards",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/75",
+   "analysisUrl": "https://www.federalregister.gov/documents/2025/01/21/2024-31214/energy-conservation-program-energy-conservation-standards-for-commercial-refrigerators-freezers-and",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Commercial refrigeration equipment manufacturers",
+    "named": [],
+    "quote": "for manufacturers of CRE"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-27",
+     "roll": "78",
+     "tally": [
+      214,
+      193
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll078.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-01",
+     "roll": "228",
+     "tally": [
+      52,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00228.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-10",
+   "bill": "S.J.Res. 18",
+   "title": "Disapproval of CFPB overdraft lending rule",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/18",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/18/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Banks and credit unions",
+    "named": [],
+    "quote": "at very large financial institutions"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-04-09",
+     "roll": "96",
+     "tally": [
+      217,
+      211
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll096.xml",
+     "members": {
+      "Moskowitz": "no",
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-03-27",
+     "roll": "153",
+     "tally": [
+      52,
+      48
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00153.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-11",
+   "bill": "S.J.Res. 28",
+   "title": "Disapproval of CFPB digital payment applications rule",
+   "date": "2025-05-09",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/28",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/28/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Payment apps / nonbank fintech",
+    "named": [],
+    "quote": "larger participants in the general-use digital consumer payment application market"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-04-09",
+     "roll": "95",
+     "tally": [
+      219,
+      211
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll095.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-03-05",
+     "roll": "106",
+     "tally": [
+      51,
+      47
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00106.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-12",
+   "bill": "S. 146",
+   "title": "TAKE IT DOWN Act",
+   "date": "2025-05-19",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/146",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/146/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names online platforms as regulated (new duties), not benefited",
+   "flag": "regulates platforms",
+   "affected": {
+    "category": "Online platforms",
+    "quote": "certain online platforms (e.g., social media platforms)"
+   }
+  },
+  {
+   "pl": "119-13",
+   "bill": "H.J.Res. 60",
+   "title": "Disapproval of Glen Canyon motor vehicles rule",
+   "date": "2025-05-23",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/60",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/60/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-14",
+   "bill": "H.J.Res. 61",
+   "title": "Disapproval of EPA rubber tire manufacturing NESHAP",
+   "date": "2025-05-23",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/61",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/61/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Tire manufacturers",
+    "named": [],
+    "quote": "removes emission regulations on hazardous air pollutants under the rubber tire manufacturing source category"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-03-05",
+     "roll": "58",
+     "tally": [
+      216,
+      202
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll058.xml",
+     "members": {
+      "Diaz-Balart": "not voting",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-06",
+     "roll": "232",
+     "tally": [
+      55,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00232.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-15",
+   "bill": "H.J.Res. 87",
+   "title": "Disapproval of California Advanced Clean Trucks waiver",
+   "date": "2025-06-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/87",
+   "analysisUrl": "https://www.federalregister.gov/documents/2023/04/06/2023-07184/california-state-motor-vehicle-and-engine-pollution-control-standards-heavy-duty-vehicle-and-engine",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Truck makers",
+    "named": [],
+    "quote": "requires that manufacturers produce and sell increasing percentages"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "roll": "111",
+     "tally": [
+      231,
+      191
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll111.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-22",
+     "roll": "279",
+     "tally": [
+      51,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00279.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-16",
+   "bill": "H.J.Res. 88",
+   "title": "Disapproval of California Advanced Clean Cars II waiver",
+   "date": "2025-06-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/88",
+   "analysisUrl": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/html/2024-31128.htm",
+   "analysisSource": "rule",
+   "benefits": {
+    "category": "Automakers",
+    "named": [],
+    "quote": "a requirement for vehicle manufacturers to sell increasing percentages of ZEVs"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-05-01",
+     "roll": "114",
+     "tally": [
+      246,
+      164
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll114.xml",
+     "members": {
+      "Moskowitz": "yes",
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-22",
+     "roll": "277",
+     "tally": [
+      51,
+      44
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00277.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-17",
+   "bill": "H.J.Res. 89",
+   "title": "Disapproval of California Omnibus Low NOx rule waiver",
+   "date": "2025-06-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/89",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/89/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Truck and engine makers",
+    "named": [],
+    "quote": "on-road heavy-duty vehicles and engines, off-road diesel engines"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "roll": "112",
+     "tally": [
+      225,
+      196
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll112.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-22",
+     "roll": "281",
+     "tally": [
+      49,
+      46
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00281.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-18",
+   "bill": "S. 160",
+   "title": "Aerial Firefighting Enhancement Act of 2025",
+   "date": "2025-06-12",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/160",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/160/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-19",
+   "bill": "S.J.Res. 13",
+   "title": "Disapproval of OCC Bank Merger Act rule",
+   "date": "2025-06-20",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/13",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/13/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Banks",
+    "named": [],
+    "quote": "applications for proposed bank mergers"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-05-20",
+     "roll": "137",
+     "tally": [
+      220,
+      207
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll137.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-07",
+     "roll": "237",
+     "tally": [
+      52,
+      47
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00237.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-20",
+   "bill": "S.J.Res. 31",
+   "title": "Disapproval of EPA Clean Air Act Section 112 reclassification rule",
+   "date": "2025-06-20",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/31",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/31/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Industrial plants with hazardous air emissions",
+    "named": [],
+    "quote": "sources that seek to reclassify as area sources"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-05-22",
+     "roll": "143",
+     "tally": [
+      216,
+      212
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll143.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-05-01",
+     "roll": "229",
+     "tally": [
+      52,
+      46
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00229.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-21",
+   "bill": "H.R. 1",
+   "title": "One Big Beautiful Bill Act (reconciliation)",
+   "date": "2025-07-04",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Businesses (tax breaks); oil and gas",
+    "named": [],
+    "quote": "This section extends bonus depreciation for qualified property"
+   },
+   "note": "CRS also: oil and natural gas leasing on federal land (Sec. 80101); PBM rules",
+   "votes": {
+    "house": {
+     "date": "2025-07-03",
+     "roll": "190",
+     "tally": [
+      218,
+      214
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll190.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-07-01",
+     "roll": "372",
+     "tally": [
+      50,
+      50
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00372.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-22",
+   "bill": "H.R. 42",
+   "title": "Alaska Native Settlement Trust Eligibility Act",
+   "date": "2025-07-07",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/42",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/42/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-23",
+   "bill": "H.R. 43",
+   "title": "Alaska Native Village Municipal Lands Restoration Act of 2025",
+   "date": "2025-07-07",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/43",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/43/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "Alaska Native village corporations must convey land (obligation, not benefit)"
+  },
+  {
+   "pl": "119-24",
+   "bill": "H.R. 618",
+   "title": "Apex Area Technical Corrections Act",
+   "date": "2025-07-15",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/618",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/618/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "benefits a city industrial park's infrastructure permitting; no business category named",
+   "flag": "borderline: industrial park"
+  },
+  {
+   "pl": "119-25",
+   "bill": "H.R. 2215",
+   "title": "Salem Maritime National Historical Park Redesignation and Boundary Study Act",
+   "date": "2025-07-15",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2215",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2215",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-26",
+   "bill": "S. 331",
+   "title": "HALT Fentanyl Act",
+   "date": "2025-07-16",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/331",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/331/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-27",
+   "bill": "S. 1582",
+   "title": "GENIUS Act",
+   "date": "2025-07-18",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+   "analysisUrl": "https://www.cbo.gov/publication/61551",
+   "analysisSource": "cbo",
+   "benefits": {
+    "category": "Crypto / stablecoin issuers",
+    "named": [],
+    "quote": "The act also would establish a regulatory framework for stablecoin issuers."
+   },
+   "votes": {
+    "house": {
+     "date": "2025-07-17",
+     "roll": "200",
+     "tally": [
+      308,
+      122
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll200.xml",
+     "members": {
+      "Moskowitz": "yes",
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-06-17",
+     "roll": "318",
+     "tally": [
+      68,
+      30
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00318.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-28",
+   "bill": "H.R. 4",
+   "title": "Rescissions Act of 2025",
+   "date": "2025-07-24",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "rescinds Corporation for Public Broadcasting funds; no business benefits"
+  },
+  {
+   "pl": "119-29",
+   "bill": "H.R. 517",
+   "title": "Filing Relief for Natural Disasters Act",
+   "date": "2025-07-24",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/517",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/517/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-30",
+   "bill": "S. 1596",
+   "title": "Jocelyn Nungaray National Wildlife Refuge Act",
+   "date": "2025-07-24",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1596",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1596",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-31",
+   "bill": "H.R. 1815",
+   "title": "VA Home Loan Program Reform Act",
+   "date": null,
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1815",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1815/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "grants to public or nonprofit housing entities; no business"
+  },
+  {
+   "pl": "119-32",
+   "bill": "S. 201",
+   "title": "ACES Act of 2025",
+   "date": "2025-08-14",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/201",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/201/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-33",
+   "bill": "S. 423",
+   "title": "PRO Veterans Act of 2025",
+   "date": "2025-08-14",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/423",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/423/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-34",
+   "bill": "H.R. 1316",
+   "title": "Maintaining American Superiority by Improving Export Control Transparency Act",
+   "date": "2025-08-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1316",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1316/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "export control reporting; covered entities regulated, not benefited"
+  },
+  {
+   "pl": "119-35",
+   "bill": "H.R. 2170",
+   "title": "Toms River, NJ VA clinic naming",
+   "date": "2025-09-05",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2170",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2170",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-36",
+   "bill": "H.R. 2808",
+   "title": "Homebuyers Privacy Protection Act",
+   "date": "2025-09-05",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2808",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2808/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "restricts credit reporting agencies (trigger leads); regulates, not benefits",
+   "flag": "regulates credit bureaus",
+   "affected": {
+    "category": "Credit bureaus",
+    "quote": "credit reporting agencies may provide consumer credit reports to third parties"
+   }
+  },
+  {
+   "pl": "119-37",
+   "bill": "H.R. 5371",
+   "title": "Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026",
+   "date": "2025-11-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5371/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS summary names no business (CR + extensions)"
+  },
+  {
+   "pl": "119-38",
+   "bill": "H.R. 4405",
+   "title": "Epstein Files Transparency Act",
+   "date": "2025-11-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4405",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/procedural: records release; no business"
+  },
+  {
+   "pl": "119-39",
+   "bill": "H.R. 998",
+   "title": "Internal Revenue Service Math and Taxpayer Help Act",
+   "date": "2025-11-25",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/998",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/998/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-40",
+   "bill": "H.R. 2316",
+   "title": "Wetlands Conservation and Access Improvement Act of 2025",
+   "date": "2025-11-25",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2316",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2316/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "funding source is excise tax on firearms/ammo; no business benefits"
+  },
+  {
+   "pl": "119-41",
+   "bill": "S. 260",
+   "title": "Bottles and Breastfeeding Equipment Screening Enhancement Act",
+   "date": "2025-11-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/260",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/260/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-42",
+   "bill": "S. 2392",
+   "title": "Veterans' Compensation Cost-of-Living Adjustment Act of 2025",
+   "date": "2025-11-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2392",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2392/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "veterans COLA; no business"
+  },
+  {
+   "pl": "119-43",
+   "bill": "H.R. 695",
+   "title": "Medal of Honor Act",
+   "date": "2025-12-01",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/695",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/695",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-44",
+   "bill": "H.R. 2483",
+   "title": "SUPPORT for Patients and Communities Reauthorization Act of 2025",
+   "date": "2025-12-01",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2483",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2483/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Pharmacies",
+    "named": [],
+    "quote": "allows pharmacies to deliver to prescribing practitioners"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-06-04",
+     "roll": "151",
+     "tally": [
+      366,
+      57
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll151.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    },
+    "senate": {
+     "date": "2025-09-18",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-45",
+   "bill": "H.R. 1512",
+   "title": "Taiwan Assurance Implementation Act",
+   "date": null,
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1512",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1512/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-46",
+   "bill": "H.J.Res. 133",
+   "title": "National Mall and Washington Monument display arrangements",
+   "date": "2025-12-02",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/133",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/133",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-47",
+   "bill": "S.J.Res. 80",
+   "title": "Disapproval of NPR-A Integrated Activity Plan Record of Decision",
+   "date": "2025-12-05",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/80",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/80/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Oil and gas",
+    "named": [],
+    "quote": "reopens portions of the National Petroleum Reserve for oil and gas leasing"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-11-18",
+     "roll": "296",
+     "tally": [
+      216,
+      209
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll296.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-10-30",
+     "roll": "599",
+     "tally": [
+      52,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00599.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-48",
+   "bill": "H.J.Res. 104",
+   "title": "Disapproval of Miles City Field Office Record of Decision",
+   "date": "2025-12-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/104",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/104/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Coal mining",
+    "named": [],
+    "quote": "to coal leasing"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-09-03",
+     "roll": "224",
+     "tally": [
+      211,
+      208
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll224.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-10-08",
+     "roll": "549",
+     "tally": [
+      52,
+      47
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00549.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-49",
+   "bill": "H.J.Res. 105",
+   "title": "Disapproval of North Dakota Field Office Record of Decision",
+   "date": "2025-12-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/105",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/105/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Oil, gas and coal",
+    "named": [],
+    "quote": "limiting development of oil and gas in low-potential areas"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-09-03",
+     "roll": "226",
+     "tally": [
+      215,
+      211
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-10-08",
+     "roll": "556",
+     "tally": [
+      50,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00556.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-50",
+   "bill": "H.J.Res. 106",
+   "title": "Disapproval of Central Yukon Record of Decision",
+   "date": "2025-12-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/106",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/106/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS summary names no industry",
+   "flag": "rule may concern mineral entry; not in CRS text"
+  },
+  {
+   "pl": "119-51",
+   "bill": "H.J.Res. 130",
+   "title": "Disapproval of Buffalo Field Office Record of Decision",
+   "date": "2025-12-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/130",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/130/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Coal mining",
+    "named": [],
+    "quote": "make coal available for leasing"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-11-18",
+     "roll": "294",
+     "tally": [
+      214,
+      212
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll294.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-11-20",
+     "roll": "623",
+     "tally": [
+      51,
+      43
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00623.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-52",
+   "bill": "H.J.Res. 131",
+   "title": "Disapproval of Coastal Plain Oil and Gas Leasing Program Record of Decision",
+   "date": "2025-12-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/131",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/131/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Oil and gas",
+    "named": [],
+    "quote": "opens public land for oil and gas leasing"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-11-18",
+     "roll": "295",
+     "tally": [
+      217,
+      209
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll295.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-12-04",
+     "roll": "632",
+     "tally": [
+      49,
+      45
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00632.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-53",
+   "bill": "H.R. 452",
+   "title": "Miracle on Ice Congressional Gold Medal Act",
+   "date": "2025-12-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/452",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/452",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-54",
+   "bill": "H.R. 970",
+   "title": "Fairness for Servicemembers and their Families Act of 2025",
+   "date": "2025-12-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/970",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/970/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-55",
+   "bill": "H.R. 983",
+   "title": "Montgomery GI Bill Selected Reserves Tuition Fairness Act of 2025",
+   "date": "2025-12-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/983",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/983/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "tuition rules for schools; GI benefit for reservists; no business benefits"
+  },
+  {
+   "pl": "119-56",
+   "bill": "H.R. 1912",
+   "title": "Veteran Fraud Reimbursement Act of 2025",
+   "date": "2025-12-12",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1912",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1912/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-57",
+   "bill": "S. 616",
+   "title": "Foundation of the Federal Bar Association Charter Amendments Act of 2025",
+   "date": "2025-12-12",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/616",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/616",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "charter amendment for a foundation"
+  },
+  {
+   "pl": "119-58",
+   "bill": "S. 356",
+   "title": "Secure Rural Schools Reauthorization Act of 2025",
+   "date": "2025-12-18",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/356",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/356/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "payments to counties; no business"
+  },
+  {
+   "pl": "119-59",
+   "bill": "S. 2283",
+   "title": "Oscar J. Upham Post Office designation",
+   "date": "2025-12-18",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2283",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2283",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-60",
+   "bill": "S. 1071",
+   "title": "National Defense Authorization Act for Fiscal Year 2026",
+   "date": "2025-12-18",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1071",
+   "analysisUrl": "https://www.everycrsreport.com/reports/IN12641.html",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Defense contractors",
+    "named": [],
+    "quote": "The enacted FY2026 NDAA authorized $890.6 billion for national defense"
+   },
+   "flag": "CRS quote names spending, not a business; reused from floor-votes.json",
+   "votes": {
+    "house": {
+     "date": "2025-12-10",
+     "roll": "320",
+     "tally": [
+      312,
+      112
+     ],
+     "url": "https://clerk.house.gov/evs/2025/roll320.xml",
+     "members": {
+      "Moskowitz": "yes",
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "not voting",
+      "Donalds": "no"
+     }
+    },
+    "senate": {
+     "date": "2025-12-17",
+     "roll": "648",
+     "tally": [
+      77,
+      20
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00648.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-61",
+   "bill": "H.R. 165",
+   "title": "Wounded Knee Massacre Memorial and Sacred Site Act",
+   "date": "2025-12-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/165",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/165",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-62",
+   "bill": "H.R. 187",
+   "title": "MAPWaters Act of 2025",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/187",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/187/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-63",
+   "bill": "H.R. 410",
+   "title": "Alaska Native Vietnam Era Veterans Land Allotment Extension Act of 2025",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/410",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/410/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-64",
+   "bill": "H.R. 1491",
+   "title": "Disaster Related Extension of Deadlines Act",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1491",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1491/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-65",
+   "bill": "S. 216",
+   "title": "Save Our Seas 2.0 Amendments Act",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/216",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/216/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-66",
+   "bill": "S. 284",
+   "title": "Congressional Award Program Reauthorization Act",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/284",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/284",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-67",
+   "bill": "S. 2878",
+   "title": "Great Lakes Fishery Research Reauthorization Act",
+   "date": "2025-12-26",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2878",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2878/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-68",
+   "bill": "H.R. 1043",
+   "title": "La Paz County Solar Energy and Job Creation Act",
+   "date": null,
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1043",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1043/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "land conveyance to county; CRS body names no business (land withdrawn from mining laws)",
+   "flag": "title says solar energy; check CBO"
+  },
+  {
+   "pl": "119-69",
+   "bill": "S. 222",
+   "title": "Whole Milk for Healthy Kids Act of 2025",
+   "date": "2026-01-14",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/222",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/222/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business",
+   "flag": "dairy implied (whole milk in schools) but not named"
+  },
+  {
+   "pl": "119-70",
+   "bill": "H.R. 224",
+   "title": "Disabled Veterans Housing Support Act",
+   "date": "2026-01-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/224",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/224/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-71",
+   "bill": "H.R. 1823",
+   "title": "VA Budget Shortfall Accountability Act",
+   "date": "2026-01-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1823",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1823/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-72",
+   "bill": "H.R. 4446",
+   "title": "FAST VETS Act",
+   "date": "2026-01-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4446",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4446/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-73",
+   "bill": "H.R. 4323",
+   "title": "Trafficking Survivors Relief Act",
+   "date": "2026-01-23",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4323",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4323/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-74",
+   "bill": "H.R. 6938",
+   "title": "Commerce, Justice, Science; Energy and Water; Interior and Environment Appropriations Act, 2026",
+   "date": "2026-01-23",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/6938",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6938/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS summary names no business"
+  },
+  {
+   "pl": "119-75",
+   "bill": "H.R. 7148",
+   "title": "Consolidated Appropriations Act, 2026",
+   "date": "2026-02-03",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/7148",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7148/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names 'health care authorities and programs' and trade preferences; no business category",
+   "flag": "AGOA/Haiti trade preferences and health extenders"
+  },
+  {
+   "pl": "119-76",
+   "bill": "S. 3424",
+   "title": "Bankruptcy Administration Improvement Act of 2025",
+   "date": "2026-02-06",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3424",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/3424/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "raises pay to bankruptcy trustees; not a business category",
+   "flag": "borderline: private Chapter 7 trustees"
+  },
+  {
+   "pl": "119-77",
+   "bill": "S. 269",
+   "title": "Ending Improper Payments to Deceased People Act",
+   "date": "2026-02-10",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/269",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/269/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-78",
+   "bill": "H.J.Res. 142",
+   "title": "Disapproval of D.C. Income and Franchise Tax Conformity Act",
+   "date": "2026-02-18",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/142",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/142/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Businesses (DC tax breaks)",
+    "named": [],
+    "quote": "authorize businesses to deduct 100% of research and experimental costs"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-02-04",
+     "roll": "56",
+     "tally": [
+      215,
+      210
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll056.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2026-02-12",
+     "roll": "37",
+     "tally": [
+      49,
+      47
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00037.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-79",
+   "bill": "S. 3705",
+   "title": "Semiquincentennial Congressional Time Capsule Act",
+   "date": "2026-02-18",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3705",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/3705",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-80",
+   "bill": "S. 4138",
+   "title": "Posthumous honorary promotion, Captain Cody Khork",
+   "date": "2026-03-20",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4138",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4138",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-81",
+   "bill": "H.R. 7211",
+   "title": "Medal of Honor award authorization, John W. Ripley",
+   "date": "2026-03-26",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/7211",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7211",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-82",
+   "bill": "S. 1884",
+   "title": "Holocaust Expropriated Art Recovery Act of 2025",
+   "date": "2026-04-13",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1884",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1884/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-83",
+   "bill": "S. 3971",
+   "title": "Small Business Innovation and Economic Security Act",
+   "date": "2026-04-13",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3971",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/3971/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Small business R&D contractors",
+    "named": [],
+    "quote": "competitive awards for domestic small businesses"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-03-17",
+     "roll": "89",
+     "tally": [
+      345,
+      41
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll089.xml",
+     "members": {
+      "Diaz-Balart": "not voting",
+      "Salazar": "not voting",
+      "Gimenez": "not voting",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    },
+    "senate": {
+     "date": "2026-03-03",
+     "method": "voice vote",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-84",
+   "bill": "H.R. 8322",
+   "title": "FISA Title VII extension through April 30, 2026",
+   "date": "2026-04-18",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/8322",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/8322",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "FISA short extension; no business"
+  },
+  {
+   "pl": "119-85",
+   "bill": "H.J.Res. 140",
+   "title": "Disapproval of BLM Public Land Order No. 7917",
+   "date": "2026-04-27",
+   "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/140",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/140/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Mining and geothermal",
+    "named": [],
+    "quote": "exploration and development of minerals and geothermal energy"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-01-21",
+     "roll": "38",
+     "tally": [
+      214,
+      208
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll038.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2026-04-16",
+     "roll": "84",
+     "tally": [
+      50,
+      49
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00084.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-86",
+   "bill": "H.R. 7147",
+   "title": "Homeland Security and Further Additional Continuing Appropriations Act, 2026",
+   "date": "2026-04-30",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/7147",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7147/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-87",
+   "bill": "S. 4465",
+   "title": "FISA Amendments Act of 2008 extension",
+   "date": "2026-04-30",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4465",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4465/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-88",
+   "bill": "S. 723",
+   "title": "Tribal Trust Land Homeownership Act of 2025",
+   "date": "2026-05-04",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/723",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/723/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "BIA must notify lenders (procedure); no business benefit named"
+  },
+  {
+   "pl": "119-89",
+   "bill": "S. 98",
+   "title": "Rural Broadband Protection Act of 2025",
+   "date": "2026-05-11",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/98",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/98/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-90",
+   "bill": "S. 1020",
+   "title": "Hydropower construction deadline extension (FERC)",
+   "date": "2026-05-11",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1020",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1020/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Hydropower",
+    "named": [],
+    "quote": "hydropower projects that were issued a license before March 13, 2020"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-04-21",
+     "roll": "129",
+     "tally": [
+      394,
+      14
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll129.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-07-29",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-91",
+   "bill": "H.R. 972",
+   "title": "Sloan Canyon Conservation and Lateral Pipeline Act",
+   "date": "2026-05-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/972",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/972/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "beneficiary is Southern Nevada Water Authority (public utility)"
+  },
+  {
+   "pl": "119-92",
+   "bill": "H.R. 2066",
+   "title": "Investing in All of America Act of 2025",
+   "date": "2026-05-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2066",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2066/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Small business investment firms (SBICs)",
+    "named": [],
+    "quote": "increases from $350 million to $475 million the maximum financing"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-12-01",
+     "method": "voice vote",
+     "roll": null,
+     "members": null
+    },
+    "senate": {
+     "date": "2026-04-15",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-93",
+   "bill": "H.R. 2815",
+   "title": "Cape Fox Land Entitlement Finalization Act of 2025",
+   "date": "2026-05-19",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2815",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2815/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Alaska Native corporation",
+    "named": [
+     "Cape Fox Corporation"
+    ],
+    "quote": "Cape Fox is an Alaska Native village corporation"
+   },
+   "votes": {
+    "house": {
+     "date": "2025-12-15",
+     "method": "voice vote",
+     "roll": null,
+     "members": null
+    },
+    "senate": {
+     "date": "2026-02-26",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-94",
+   "bill": "H.R. 3497",
+   "title": "Medal of Sacrifice Act",
+   "date": "2026-05-28",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3497",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3497",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-95",
+   "bill": "S. 4530",
+   "title": "Capitol Police retirement age increase",
+   "date": "2026-05-29",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4530",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/4530",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-96",
+   "bill": "H.R. 3490",
+   "title": "Gerald E. Connolly Esophageal Cancer Awareness Act of 2025",
+   "date": "2026-06-09",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3490",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3490",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-97",
+   "bill": "S. 2393",
+   "title": "FY2025 Veterans Affairs Major Medical Facility Authorization Act",
+   "date": "2026-06-09",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2393",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2393/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-98",
+   "bill": "S. 2",
+   "title": "Secure America Act",
+   "date": "2026-06-10",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-99",
+   "bill": "S. 254",
+   "title": "ARTIST Act",
+   "date": "2026-06-12",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/254",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/254/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "Alaska Native artisans (individuals), not a business category",
+   "flag": "borderline"
+  },
+  {
+   "pl": "119-100",
+   "bill": "S. 1003",
+   "title": "Lulu's Law",
+   "date": "2026-06-26",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1003",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/1003/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-101",
+   "bill": "H.R. 6644",
+   "title": "21st Century ROAD to Housing Act",
+   "date": "2026-07-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/6644",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6644/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Manufactured home builders; banks",
+    "named": [],
+    "quote": "eliminates the requirement that manufactured homes must be constructed with a permanent chassis"
+   },
+   "note": "also restricts large institutional single-family investors",
+   "votes": {
+    "house": {
+     "date": "2026-06-23",
+     "roll": "224",
+     "tally": [
+      358,
+      32
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll224.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    },
+    "senate": {
+     "date": "2026-06-22",
+     "roll": "182",
+     "tally": [
+      85,
+      5
+     ],
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00182.xml",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   }
+  },
+  {
+   "pl": "119-102",
+   "bill": "S. 629",
+   "title": "Emergency Conservation Program Improvement Act of 2025",
+   "date": "2026-07-12",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/629",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/629/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Farms and forest landowners",
+    "named": [],
+    "quote": "agricultural producers and owners of forest land"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-06-23",
+     "roll": "223",
+     "tally": [
+      368,
+      19
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll223.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2026-03-24",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-103",
+   "bill": "H.R. 6500",
+   "title": "Continuing Appropriations and Extensions Act, 2027",
+   "date": "2026-09-02",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/6500",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6500/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names apparel products (duty-free treatment), not a business",
+   "flag": "apparel/textile imports; strong candidate if products count"
+  },
+  {
+   "pl": "119-104",
+   "bill": "S. 858",
+   "title": "Hershel \"Woody\" Williams National Medal of Honor Monument Location Act",
+   "date": "2026-09-10",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/858",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/858",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-105",
+   "bill": "H.R. 1276",
+   "title": "Paducah, Kentucky land restriction removal",
+   "date": "2026-09-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1276",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1276/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-106",
+   "bill": "H.R. 2069",
+   "title": "Stop Secret Spending Act of 2025",
+   "date": "2026-09-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2069",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2069/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-107",
+   "bill": "H.R. 2196",
+   "title": "National Emergency Medical Services Memorial Extension Act",
+   "date": "2026-09-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2196",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2196",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-108",
+   "bill": "H.R. 5366",
+   "title": "Doug LaMalfa Federal Disaster Tax Relief Certainty Act",
+   "date": "2026-09-11",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/5366",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5366/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "individual taxpayers; no business"
+  },
+  {
+   "pl": "119-109",
+   "bill": "S. 32",
+   "title": "LACA",
+   "date": "2026-09-16",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/32",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/32/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "court venues; no business"
+  },
+  {
+   "pl": "119-110",
+   "bill": "S. 307",
+   "title": "Prison Staff Safety Enhancement Act",
+   "date": "2026-09-16",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/307",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/307/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-111",
+   "bill": "H.R. 5334",
+   "title": "Lindsey O. Graham Sanctioning Russia and Iran Act of 2026",
+   "date": "2026-09-18",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/5334",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5334",
+   "analysisSource": "none",
+   "benefits": null,
+   "why": "no CRS summary of enacted (Senate-amended sanctions) text found",
+   "flag": "GAP: check CBO/CRS for Russia/Iran sanctions version"
+  },
+  {
+   "pl": "119-112",
+   "bill": "H.R. 3657",
+   "title": "Hydropower Licensing Transparency Act",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3657",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3657/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business category (FERC reporting)",
+   "flag": "hydropower licensing; CRS text names only FERC"
+  },
+  {
+   "pl": "119-113",
+   "bill": "H.R. 7250",
+   "title": "Fort Peck Reservation Rural Water System Act reauthorization",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/7250",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7250/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "public rural water systems"
+  },
+  {
+   "pl": "119-114",
+   "bill": "S. 550",
+   "title": "Illinois Indian land dispute settlement",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/550",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/550/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "tribal land claim"
+  },
+  {
+   "pl": "119-115",
+   "bill": "S. 603",
+   "title": "General George C. Marshall House affiliated area designation",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/603",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/603",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-116",
+   "bill": "S. 759",
+   "title": "Modernizing Access to Our Public Oceans Act",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/759",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/759/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-117",
+   "bill": "S. 790",
+   "title": "Casper Historic Trails Interpretive Center redesignation",
+   "date": "2026-09-25",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/790",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/790",
+   "analysisSource": "bulk",
+   "benefits": null,
+   "why": "commemorative/naming/ceremonial or personnel"
+  },
+  {
+   "pl": "119-118",
+   "bill": "S. 2398",
+   "title": "Kay Hagan Tick Reauthorization Act",
+   "date": "2026-09-30",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2398",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2398/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "public health agencies"
+  },
+  {
+   "pl": "119-119",
+   "bill": "H.R. 5345",
+   "title": "Improving Social Security's Service to Victims of Identity Theft Act",
+   "date": "2026-10-07",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/5345",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/5345/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-120",
+   "bill": "S. 766",
+   "title": "Billion Dollar Boondoggle Act of 2025",
+   "date": "2026-10-07",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/766",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/766/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-121",
+   "bill": "S. 195",
+   "title": "American Music Tourism Act of 2025",
+   "date": "2026-10-09",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/195",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/195/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Music venues and festivals (tourism)",
+    "named": [],
+    "quote": "U.S. music festivals, concert venues, and other music-related attractions and locations"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-09-15",
+     "method": "voice vote",
+     "roll": null,
+     "members": null
+    },
+    "senate": {
+     "date": "2025-05-14",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-122",
+   "bill": "S. 240",
+   "title": "Crow Tribe Water Rights Settlement Amendments Act of 2025",
+   "date": "2026-10-15",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/240",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/240/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "hydropower rights go to a tribe, not a business"
+  },
+  {
+   "pl": "119-123",
+   "bill": "S. 283",
+   "title": "Illegal Red Snapper and Tuna Enforcement Act",
+   "date": "2026-10-15",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/283",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/283/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "seafood import enforcement; regulates, no beneficiary business named",
+   "flag": "borderline: seafood",
+   "affected": {
+    "category": "Seafood",
+    "quote": "prepared food (including raw preparations of seafood such as sushi)"
+   }
+  },
+  {
+   "pl": "119-124",
+   "bill": "S. 2403",
+   "title": "Retire through Ownership Act",
+   "date": "2026-10-15",
+   "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2403",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/senate-bill/2403/summary",
+   "analysisSource": "crs",
+   "benefits": {
+    "category": "Employee-owned (ESOP) companies",
+    "named": [],
+    "quote": "a closely held business"
+   },
+   "votes": {
+    "house": {
+     "date": "2026-09-16",
+     "roll": "314",
+     "tally": [
+      401,
+      14
+     ],
+     "url": "https://clerk.house.gov/evs/2026/roll314.xml",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "not voting",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    "senate": {
+     "date": "2025-10-09",
+     "method": "unanimous consent",
+     "roll": null,
+     "members": null
+    }
+   }
+  },
+  {
+   "pl": "119-125",
+   "bill": "H.R. 227",
+   "title": "Clergy Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/227",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/227/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "clergy individuals; no business"
+  },
+  {
+   "pl": "119-126",
+   "bill": "H.R. 837",
+   "title": "Pleasant Valley Ranger District Administrative Site conveyance",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/837",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/837/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "land conveyance to county"
+  },
+  {
+   "pl": "119-127",
+   "bill": "H.R. 1721",
+   "title": "Critical Infrastructure Manufacturing Feasibility Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/1721",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/1721/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "feasibility study; names products not business"
+  },
+  {
+   "pl": "119-128",
+   "bill": "H.R. 2388",
+   "title": "Lower Elwha Klallam Tribe Project Lands Restoration Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2388",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2388/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "prohibits gaming on trust land; restricts, no beneficiary",
+   "affected": {
+    "category": "Gaming",
+    "quote": "the bill prohibits gaming on the land taken into trust"
+   }
+  },
+  {
+   "pl": "119-129",
+   "bill": "H.R. 2481",
+   "title": "Romance Scam Prevention Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/2481",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/2481/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "imposes notice duty on dating services",
+   "affected": {
+    "category": "Online dating services",
+    "quote": "online dating service providers"
+   }
+  },
+  {
+   "pl": "119-130",
+   "bill": "H.R. 3620",
+   "title": "Southcentral Foundation Land Transfer Act of 2025",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/3620",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3620/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "land to Southcentral Foundation (tribal nonprofit health provider)"
+  },
+  {
+   "pl": "119-131",
+   "bill": "H.R. 4307",
+   "title": "Enhancing Detection of Human Trafficking Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4307",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4307/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-132",
+   "bill": "H.R. 4467",
+   "title": "Vicksburg National Military Park Boundary Modification Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4467",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/4467/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "land conveyance to state"
+  },
+  {
+   "pl": "119-133",
+   "bill": "H.R. 6380",
+   "title": "Chiricahua National Park Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/6380",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6380/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "CRS names no business"
+  },
+  {
+   "pl": "119-134",
+   "bill": "H.R. 7831",
+   "title": "License to Drill Act",
+   "date": "2026-10-20",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/7831",
+   "analysisUrl": "https://www.congress.gov/bill/119th-congress/house-bill/7831/summary",
+   "analysisSource": "crs",
+   "benefits": null,
+   "why": "extends BLM fee on oil/gas permit applications (cost on industry; benefit not stated)",
+   "affected": {
+    "category": "Oil and gas",
+    "quote": "oil and gas permit processing fees"
+   }
+  }
+ ],
+ "moodyRequests": [],
+ "moodyRequestsNote": {
+  "status": "none found (not confirmed zero)",
+  "checked": "2026-10-24",
+  "evidence": [
+   {
+    "url": "https://www.moody.senate.gov/",
+    "finding": "No CDS or appropriations-requests page in site navigation or How Can I Help page (Senate rules require senators to post CDS requests on their official site)"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/fy26_interior_cds.pdf",
+    "finding": "Full read: no Moody requestor, no Florida rows"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/milcon-va_fy26_cds.pdf",
+    "finding": "Full read: no Moody requestor, no Florida rows (only Moody Air Force Base, GA)"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/ag_fy26_cds.pdf",
+    "finding": "Full read: no Moody requestor, no Florida rows"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/fy26_thud_cds.pdf",
+    "finding": "Partial read (truncated at Illinois): no Moody"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/fy26_lhhs_cds.pdf",
+    "finding": "Partial read (truncated at Kentucky): no Moody"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/imo/media/doc/cjs_fy26_cds.pdf",
+    "finding": "Partial read: no Moody, no Florida"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/congressionally-directed-spending-requests-fy2026",
+    "finding": "Request chart rendered empty to fetcher"
+   },
+   {
+    "url": "https://www.appropriations.senate.gov/congressionally-directed-spending-requests-fy2027",
+    "finding": "Request chart rendered empty to fetcher"
+   }
+  ],
+  "todo": "Confirm in a browser: FY26/FY27 request charts filtered to Florida; remaining parts of THUD, LHHS, CJS, EWD, FSGG, Homeland PDFs."
+ }
+}

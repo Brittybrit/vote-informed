@@ -1,0 +1,13 @@
+{"status":"none found (not confirmed zero)","checked":"2026-10-24",
+"evidence":[
+ {"url":"https://www.moody.senate.gov/","finding":"No CDS or appropriations-requests page in site navigation or How Can I Help page (Senate rules require senators to post CDS requests on their official site)"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/fy26_interior_cds.pdf","finding":"Full read: no Moody requestor, no Florida rows"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/milcon-va_fy26_cds.pdf","finding":"Full read: no Moody requestor, no Florida rows (only Moody Air Force Base, GA)"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/ag_fy26_cds.pdf","finding":"Full read: no Moody requestor, no Florida rows"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/fy26_thud_cds.pdf","finding":"Partial read (truncated at Illinois): no Moody"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/fy26_lhhs_cds.pdf","finding":"Partial read (truncated at Kentucky): no Moody"},
+ {"url":"https://www.appropriations.senate.gov/imo/media/doc/cjs_fy26_cds.pdf","finding":"Partial read: no Moody, no Florida"},
+ {"url":"https://www.appropriations.senate.gov/congressionally-directed-spending-requests-fy2026","finding":"Request chart rendered empty to fetcher"},
+ {"url":"https://www.appropriations.senate.gov/congressionally-directed-spending-requests-fy2027","finding":"Request chart rendered empty to fetcher"}
+],
+"todo":"Confirm in a browser: FY26/FY27 request charts filtered to Florida; remaining parts of THUD, LHHS, CJS, EWD, FSGG, Homeland PDFs."}

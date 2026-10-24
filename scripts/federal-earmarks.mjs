@@ -58,11 +58,12 @@ const MOTION = {
   passage: { house: { en: 'final passage in the House', es: 'aprobación final en la Cámara', ht: 'adopsyon final nan Chanm nan' },
     senate: { en: 'final passage in the Senate', es: 'aprobación final en el Senado', ht: 'adopsyon final nan Sena a' } },
   passageHouseAmdt: { house: { en: 'House passage of the final version worked out with the Senate', es: 'aprobación en la Cámara de la versión final acordada con el Senado', ht: 'Chanm nan adopte vèsyon final yo te negosye ak Sena a' } },
+  concurHouse: { house: { en: 'House vote to accept the Senate’s changes, sending it to the President', es: 'voto de la Cámara para aceptar los cambios del Senado y enviarla al Presidente', ht: 'Chanm nan vote pou aksepte chanjman Sena a epi voye l bay Prezidan an' } },
   concur: { senate: { en: 'Senate vote to accept the House version, sending it to the President', es: 'voto del Senado para aceptar la versión de la Cámara y enviarla al Presidente', ht: 'Sena a vote pou aksepte vèsyon Chanm nan epi voye l bay Prezidan an' } },
 };
 const voteUrl = v => v.chamber === 'house'
   ? 'https://clerk.house.gov/Votes/' + v.date.slice(0, 4) + String(v.roll).padStart(3, '0')
-  : 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_' + String(v.roll).padStart(5, '0') + '.htm';
+  : (y => 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote119' + y + '/vote_119_' + y + '_' + String(v.roll).padStart(5, '0') + '.htm')(v.date < '2026' ? 1 : 2);
 const receiptsUrl = (cmte, name) => 'https://www.fec.gov/data/receipts/?committee_id=' + cmte + '&contributor_name=' + encodeURIComponent(name) + '&two_year_transaction_period=2026';
 
 // One gift row per company per member: the PAC's total, number of receipts and date range.
@@ -99,7 +100,9 @@ function voteNote(bill, v, cls) {
     const intro = { en: 'Floor vote: ', es: 'Votación en el pleno: ', ht: 'Vòt nan sesyon plenyè: ' }[l] + m[l] + '. ';
     const quote = l === 'en' ? '“' + q.en + '”' : '“' + q[l] + '”';
     let body;
-    if (q.pre && q.inline) body = q.pre[l] + ' ' + quote + ' (' + q.src[l] + (l === 'en' ? '' : l === 'es' ? '; en inglés, traducción' : '; an angle, tradiksyon') + ').';
+    // a quote kept in English (short analysis wording) says so instead of claiming a translation
+    const tr = q.es === q.en ? { es: '; en inglés', ht: '; an angle' } : { es: '; en inglés, traducción', ht: '; an angle, tradiksyon' };
+    if (q.pre && q.inline) body = q.pre[l] + ' ' + quote + ' (' + q.src[l] + (l === 'en' ? '' : tr[l]) + ').';
     else body = (q.pre ? q.pre[l] + ' ' : '') + q.src[l] + (l === 'en' ? say.en : say[l]) + quote;
     if (q.post) body += ' ' + q.post[l];
     out[l] = intro + body + ' ' + tail[l];
@@ -120,7 +123,7 @@ export function floorVotes(chamber, members) {
     actions.push({
       id: 'USV-' + bill.key + '-' + (chamber === 'house' ? 'H' : 'S') + v.roll, date: v.date, ref: bill.ref, kind: 'bill',
       subject: bill.subject, parties: [], result: 'passed', tally: v.tally, notVoting: v.notVoting,
-      roll: { ...v.members }, rollComplete: false, lobbied: [], gifts, note: voteNote(bill, v, cls), motion: v.motion, links,
+      roll: { ...v.members }, rollComplete: false, lobbied: [], gifts, note: voteNote(bill, v, cls), motion: v.motion, links, ...(bill.universe ? { universe: true } : {}),
     });
   }
   return actions;

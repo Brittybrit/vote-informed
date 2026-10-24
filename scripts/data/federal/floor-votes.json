@@ -63,7 +63,8 @@
       "Moody": "yes"
      }
     }
-   ]
+   ],
+   "universe": true
   },
   {
    "key": "sjres18",
@@ -121,7 +122,8 @@
       "Donalds": "yes"
      }
     }
-   ]
+   ],
+   "universe": true
   },
   {
    "key": "hjres88",
@@ -185,7 +187,8 @@
       "Moody": "yes"
      }
     }
-   ]
+   ],
+   "universe": true
   },
   {
    "key": "s1582",
@@ -249,7 +252,8 @@
       "Donalds": "yes"
      }
     }
-   ]
+   ],
+   "universe": true
   },
   {
    "key": "s1071",
@@ -310,6 +314,1692 @@
      "notVoting": 3,
      "members": {
       "Moody": "yes"
+     }
+    }
+   ],
+   "universe": true
+  },
+  {
+   "key": "sjres11",
+   "ref": "S.J.Res. 11 · 2025",
+   "law": "P.L. 119-3",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/11",
+   "subject": {
+    "en": "Repeal of an offshore drilling rule on protecting shipwrecks and artifacts",
+    "es": "Derogación de una regla de perforación en alta mar sobre la protección de naufragios y artefactos",
+    "ht": "Anilasyon yon règ sou forage nan lanmè pou pwoteje epav ak atifak"
+   },
+   "class": "oilgas",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/11/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps offshore oil and gas companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de petróleo y gas en alta mar, que el análisis describe así:",
+     "ht": "Li ede konpayi petwòl ak gaz nan lanmè, analiz la dekri yo konsa:"
+    },
+    "en": "lessees and operators",
+    "es": "lessees and operators",
+    "ht": "lessees and operators"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 61,
+     "date": "2025-03-06",
+     "tally": [
+      221,
+      202
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "nv",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 92,
+     "date": "2025-02-25",
+     "tally": [
+      54,
+      44
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hr1968",
+   "ref": "H.R. 1968 · 2025",
+   "law": "P.L. 119-4",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-bill/1968",
+   "subject": {
+    "en": "Full-year government funding for 2025 (continuing resolution)",
+    "es": "Financiamiento del gobierno para todo 2025 (resolución continua)",
+    "ht": "Finansman gouvènman an pou tout 2025 (rezolisyon kontinyèl)"
+   },
+   "class": "hospitals",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/1968/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps hospitals, which the analysis describes this way:",
+     "es": "Beneficia a hospitales, que el análisis describe así:",
+     "ht": "Li ede lopital, analiz la dekri yo konsa:"
+    },
+    "en": "certain small rural hospitals",
+    "es": "certain small rural hospitals",
+    "ht": "certain small rural hospitals"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 70,
+     "date": "2025-03-11",
+     "tally": [
+      217,
+      213
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 133,
+     "date": "2025-03-14",
+     "tally": [
+      54,
+      46
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres25",
+   "ref": "H.J.Res. 25 · 2025",
+   "law": "P.L. 119-5",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/25",
+   "subject": {
+    "en": "Repeal of the IRS rule on reporting by crypto brokers",
+    "es": "Derogación de la regla del IRS sobre reportes de corredores de criptomonedas",
+    "ht": "Anilasyon règ IRS sou rapò koutye kripto"
+   },
+   "class": "crypto",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/25/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps crypto brokers, which the analysis describes this way:",
+     "es": "Beneficia a corredores de criptomonedas, que el análisis describe así:",
+     "ht": "Li ede koutye kripto, analiz la dekri yo konsa:"
+    },
+    "en": "Brokers That Regularly Provide Services Effectuating Digital Asset Sales",
+    "es": "Brokers That Regularly Provide Services Effectuating Digital Asset Sales",
+    "ht": "Brokers That Regularly Provide Services Effectuating Digital Asset Sales"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 71,
+     "date": "2025-03-11",
+     "tally": [
+      292,
+      132
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 151,
+     "date": "2025-03-26",
+     "tally": [
+      70,
+      28
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres20",
+   "ref": "H.J.Res. 20 · 2025",
+   "law": "P.L. 119-6",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/20",
+   "subject": {
+    "en": "Repeal of energy standards for gas tankless water heaters",
+    "es": "Derogación de normas de energía para calentadores de agua a gas sin tanque",
+    "ht": "Anilasyon nòm enèji pou chofaj dlo gaz san rezèvwa"
+   },
+   "class": "appliances",
+   "universe": true,
+   "quote": {
+    "t": "fr",
+    "url": "https://www.federalregister.gov/documents/2024/12/26/2024-30369/energy-conservation-program-energy-conservation-standards-for-consumer-gas-fired-instantaneous-water",
+    "src": {
+     "en": "The rule being overturned",
+     "es": "La regla que se anula",
+     "ht": "Règ y ap anile a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps water heater makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de calentadores de agua, que el análisis describe así:",
+     "ht": "Li ede manifakti chofaj dlo, analiz la dekri yo konsa:"
+    },
+    "en": "the INPV for manufacturers of gas-fired instantaneous water heaters",
+    "es": "the INPV for manufacturers of gas-fired instantaneous water heaters",
+    "ht": "the INPV for manufacturers of gas-fired instantaneous water heaters"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 53,
+     "date": "2025-02-27",
+     "tally": [
+      221,
+      198
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "nv"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 207,
+     "date": "2025-04-10",
+     "tally": [
+      53,
+      44
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres24",
+   "ref": "H.J.Res. 24 · 2025",
+   "law": "P.L. 119-7",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/24",
+   "subject": {
+    "en": "Repeal of energy standards for walk-in coolers and freezers",
+    "es": "Derogación de normas de energía para cámaras frigoríficas",
+    "ht": "Anilasyon nòm enèji pou chanm frijidè ak frizè"
+   },
+   "class": "appliances",
+   "universe": true,
+   "quote": {
+    "t": "fr",
+    "url": "https://www.federalregister.gov/documents/2024/12/23/2024-28474/energy-conservation-program-energy-conservation-standards-for-walk-in-coolers-and-walk-in-freezers",
+    "src": {
+     "en": "The rule being overturned",
+     "es": "La regla que se anula",
+     "ht": "Règ y ap anile a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps commercial refrigeration makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de refrigeración comercial, que el análisis describe así:",
+     "ht": "Li ede manifakti refrijerasyon komèsyal, analiz la dekri yo konsa:"
+    },
+    "en": "DOE estimates that the INPV for manufacturers of walk-in display doors",
+    "es": "DOE estimates that the INPV for manufacturers of walk-in display doors",
+    "ht": "DOE estimates that the INPV for manufacturers of walk-in display doors"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 77,
+     "date": "2025-03-27",
+     "tally": [
+      203,
+      182
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "nv",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 162,
+     "date": "2025-04-03",
+     "tally": [
+      53,
+      42
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres42",
+   "ref": "H.J.Res. 42 · 2025",
+   "law": "P.L. 119-8",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/42",
+   "subject": {
+    "en": "Repeal of an energy rule on appliance testing and certification",
+    "es": "Derogación de una regla de energía sobre pruebas y certificación de electrodomésticos",
+    "ht": "Anilasyon yon règ enèji sou tès ak sètifikasyon aparèy"
+   },
+   "class": "appliances",
+   "universe": true,
+   "quote": {
+    "t": "fr",
+    "url": "https://www.federalregister.gov/documents/2024/10/09/2024-21950/energy-conservation-program-for-appliance-standards-certification-requirements-labeling-requirements",
+    "src": {
+     "en": "The rule being overturned",
+     "es": "La regla que se anula",
+     "ht": "Règ y ap anile a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps appliance and equipment makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de electrodomésticos y equipos, que el análisis describe así:",
+     "ht": "Li ede manifakti aparèy ak ekipman, analiz la dekri yo konsa:"
+    },
+    "en": "Manufacturers of most covered products and covered equipment must submit a certification report",
+    "es": "Manufacturers of most covered products and covered equipment must submit a certification report",
+    "ht": "Manufacturers of most covered products and covered equipment must submit a certification report"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 59,
+     "date": "2025-03-05",
+     "tally": [
+      222,
+      203
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "nv",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 223,
+     "date": "2025-04-30",
+     "tally": [
+      52,
+      46
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres75",
+   "ref": "H.J.Res. 75 · 2025",
+   "law": "P.L. 119-9",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/75",
+   "subject": {
+    "en": "Repeal of energy standards for commercial refrigerators and freezers",
+    "es": "Derogación de normas de energía para refrigeradores y congeladores comerciales",
+    "ht": "Anilasyon nòm enèji pou frijidè ak frizè komèsyal"
+   },
+   "class": "appliances",
+   "universe": true,
+   "quote": {
+    "t": "fr",
+    "url": "https://www.federalregister.gov/documents/2025/01/21/2024-31214/energy-conservation-program-energy-conservation-standards-for-commercial-refrigerators-freezers-and",
+    "src": {
+     "en": "The rule being overturned",
+     "es": "La regla que se anula",
+     "ht": "Règ y ap anile a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps commercial refrigeration makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de refrigeración comercial, que el análisis describe así:",
+     "ht": "Li ede manifakti refrijerasyon komèsyal, analiz la dekri yo konsa:"
+    },
+    "en": "for manufacturers of CRE",
+    "es": "for manufacturers of CRE",
+    "ht": "for manufacturers of CRE"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 78,
+     "date": "2025-03-27",
+     "tally": [
+      214,
+      193
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 228,
+     "date": "2025-05-01",
+     "tally": [
+      52,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "sjres28",
+   "ref": "S.J.Res. 28 · 2025",
+   "law": "P.L. 119-11",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/28",
+   "subject": {
+    "en": "Repeal of federal oversight of large payment apps",
+    "es": "Derogación de la supervisión federal de grandes aplicaciones de pago",
+    "ht": "Anilasyon sipèvizyon federal sou gwo aplikasyon peman"
+   },
+   "class": "payments",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/28/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps large payment app companies, which the analysis describes this way:",
+     "es": "Beneficia a grandes empresas de aplicaciones de pago, que el análisis describe así:",
+     "ht": "Li ede gwo konpayi aplikasyon peman, analiz la dekri yo konsa:"
+    },
+    "en": "larger participants in the general-use digital consumer payment application market",
+    "es": "larger participants in the general-use digital consumer payment application market",
+    "ht": "larger participants in the general-use digital consumer payment application market"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 95,
+     "date": "2025-04-09",
+     "tally": [
+      219,
+      211
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 106,
+     "date": "2025-03-05",
+     "tally": [
+      51,
+      47
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres61",
+   "ref": "H.J.Res. 61 · 2025",
+   "law": "P.L. 119-14",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/61",
+   "subject": {
+    "en": "Repeal of air pollution limits for tire factories",
+    "es": "Derogación de límites de contaminación del aire para fábricas de neumáticos",
+    "ht": "Anilasyon limit polisyon lè pou faktori kawotchou"
+   },
+   "class": "tires",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/61/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps tire makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de neumáticos, que el análisis describe así:",
+     "ht": "Li ede manifakti kawotchou, analiz la dekri yo konsa:"
+    },
+    "en": "removes emission regulations on hazardous air pollutants under the rubber tire manufacturing source category",
+    "es": "removes emission regulations on hazardous air pollutants under the rubber tire manufacturing source category",
+    "ht": "removes emission regulations on hazardous air pollutants under the rubber tire manufacturing source category"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 58,
+     "date": "2025-03-05",
+     "tally": [
+      216,
+      202
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "nv",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 232,
+     "date": "2025-05-06",
+     "tally": [
+      55,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres87",
+   "ref": "H.J.Res. 87 · 2025",
+   "law": "P.L. 119-15",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/87",
+   "subject": {
+    "en": "Blocking California’s rule requiring more zero-emission trucks",
+    "es": "Bloqueo de la regla de California que exige más camiones de cero emisiones",
+    "ht": "Bloke règ Kalifòni ki egzije plis kamyon zewo emisyon"
+   },
+   "class": "autos",
+   "universe": true,
+   "quote": {
+    "t": "fr",
+    "url": "https://www.federalregister.gov/documents/2023/04/06/2023-07184/california-state-motor-vehicle-and-engine-pollution-control-standards-heavy-duty-vehicle-and-engine",
+    "src": {
+     "en": "The rule being overturned",
+     "es": "La regla que se anula",
+     "ht": "Règ y ap anile a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps truck makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de camiones, que el análisis describe así:",
+     "ht": "Li ede manifakti kamyon, analiz la dekri yo konsa:"
+    },
+    "en": "requires that manufacturers produce and sell increasing percentages",
+    "es": "requires that manufacturers produce and sell increasing percentages",
+    "ht": "requires that manufacturers produce and sell increasing percentages"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 111,
+     "date": "2025-04-30",
+     "tally": [
+      231,
+      191
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 279,
+     "date": "2025-05-22",
+     "tally": [
+      51,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres89",
+   "ref": "H.J.Res. 89 · 2025",
+   "law": "P.L. 119-17",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/89",
+   "subject": {
+    "en": "Blocking California’s rule on truck and engine pollution",
+    "es": "Bloqueo de la regla de California sobre la contaminación de camiones y motores",
+    "ht": "Bloke règ Kalifòni sou polisyon kamyon ak motè"
+   },
+   "class": "autos",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/89/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps truck and engine makers, which the analysis describes this way:",
+     "es": "Beneficia a fabricantes de camiones y motores, que el análisis describe así:",
+     "ht": "Li ede manifakti kamyon ak motè, analiz la dekri yo konsa:"
+    },
+    "en": "on-road heavy-duty vehicles and engines, off-road diesel engines",
+    "es": "on-road heavy-duty vehicles and engines, off-road diesel engines",
+    "ht": "on-road heavy-duty vehicles and engines, off-road diesel engines"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 112,
+     "date": "2025-04-30",
+     "tally": [
+      225,
+      196
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 281,
+     "date": "2025-05-22",
+     "tally": [
+      49,
+      46
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "sjres13",
+   "ref": "S.J.Res. 13 · 2025",
+   "law": "P.L. 119-19",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/13",
+   "subject": {
+    "en": "Repeal of the bank regulator’s rule on reviewing bank mergers",
+    "es": "Derogación de la regla del regulador bancario sobre fusiones de bancos",
+    "ht": "Anilasyon règ regilatè bank lan sou fizyon bank yo"
+   },
+   "class": "banks",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/13/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps banks, which the analysis describes this way:",
+     "es": "Beneficia a bancos, que el análisis describe así:",
+     "ht": "Li ede bank, analiz la dekri yo konsa:"
+    },
+    "en": "applications for proposed bank mergers",
+    "es": "applications for proposed bank mergers",
+    "ht": "applications for proposed bank mergers"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 137,
+     "date": "2025-05-20",
+     "tally": [
+      220,
+      207
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 237,
+     "date": "2025-05-07",
+     "tally": [
+      52,
+      47
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "sjres31",
+   "ref": "S.J.Res. 31 · 2025",
+   "law": "P.L. 119-20",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/31",
+   "subject": {
+    "en": "Repeal of an EPA rule on how polluting plants can change category",
+    "es": "Derogación de una regla de la EPA sobre cómo las plantas contaminantes cambian de categoría",
+    "ht": "Anilasyon yon règ EPA sou kijan faktori ki polye ka chanje kategori"
+   },
+   "class": "industrial",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/31/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps industrial plants, which the analysis describes this way:",
+     "es": "Beneficia a plantas industriales, que el análisis describe así:",
+     "ht": "Li ede faktori endistriyèl, analiz la dekri yo konsa:"
+    },
+    "en": "sources that seek to reclassify as area sources",
+    "es": "sources that seek to reclassify as area sources",
+    "ht": "sources that seek to reclassify as area sources"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 143,
+     "date": "2025-05-22",
+     "tally": [
+      216,
+      212
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 229,
+     "date": "2025-05-01",
+     "tally": [
+      52,
+      46
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hr1",
+   "ref": "H.R. 1 · 2025",
+   "law": "P.L. 119-21",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-bill/1",
+   "subject": {
+    "en": "One Big Beautiful Bill Act (taxes, spending, energy)",
+    "es": "Ley One Big Beautiful Bill (impuestos, gasto, energía)",
+    "ht": "Lwa One Big Beautiful Bill (taks, depans, enèji)"
+   },
+   "class": "oilgas",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/1/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps oil and gas companies, among other businesses, which the analysis describes this way:",
+     "es": "Beneficia a empresas de petróleo y gas, entre otras, que el análisis describe así:",
+     "ht": "Li ede konpayi petwòl ak gaz, pami lòt biznis, analiz la dekri yo konsa:"
+    },
+    "en": "This section extends bonus depreciation for qualified property",
+    "es": "This section extends bonus depreciation for qualified property",
+    "ht": "This section extends bonus depreciation for qualified property"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 190,
+     "date": "2025-07-03",
+     "tally": [
+      218,
+      214
+     ],
+     "notVoting": null,
+     "motion": "concurHouse",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 372,
+     "date": "2025-07-01",
+     "tally": [
+      50,
+      50
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hr2483",
+   "ref": "H.R. 2483 · 2025",
+   "law": "P.L. 119-44",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-bill/2483",
+   "subject": {
+    "en": "Reauthorization of opioid treatment and recovery programs (SUPPORT Act)",
+    "es": "Reautorización de programas de tratamiento y recuperación de opioides (Ley SUPPORT)",
+    "ht": "Re-otorizasyon pwogram tretman ak gerizon opioyid (Lwa SUPPORT)"
+   },
+   "class": "pharmacies",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/2483/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps pharmacies, which the analysis describes this way:",
+     "es": "Beneficia a farmacias, que el análisis describe así:",
+     "ht": "Li ede famasi, analiz la dekri yo konsa:"
+    },
+    "en": "allows pharmacies to deliver to prescribing practitioners",
+    "es": "allows pharmacies to deliver to prescribing practitioners",
+    "ht": "allows pharmacies to deliver to prescribing practitioners"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 151,
+     "date": "2025-06-04",
+     "tally": [
+      366,
+      57
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    }
+   ]
+  },
+  {
+   "key": "sjres80",
+   "ref": "S.J.Res. 80 · 2025",
+   "law": "P.L. 119-47",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/80",
+   "subject": {
+    "en": "Reopening parts of Alaska’s National Petroleum Reserve to drilling",
+    "es": "Reapertura de partes de la Reserva Nacional de Petróleo de Alaska a la perforación",
+    "ht": "Relouvri kèk pati nan Rezèv Petwòl Nasyonal Alaska pou forage"
+   },
+   "class": "oilgas",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/80/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps oil and gas companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de petróleo y gas, que el análisis describe así:",
+     "ht": "Li ede konpayi petwòl ak gaz, analiz la dekri yo konsa:"
+    },
+    "en": "reopens portions of the National Petroleum Reserve for oil and gas leasing",
+    "es": "reopens portions of the National Petroleum Reserve for oil and gas leasing",
+    "ht": "reopens portions of the National Petroleum Reserve for oil and gas leasing"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 296,
+     "date": "2025-11-18",
+     "tally": [
+      216,
+      209
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 599,
+     "date": "2025-10-30",
+     "tally": [
+      52,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres104",
+   "ref": "H.J.Res. 104 · 2025",
+   "law": "P.L. 119-48",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/104",
+   "subject": {
+    "en": "Reopening federal land in Montana to coal leasing (Miles City)",
+    "es": "Reapertura de tierras federales en Montana al arrendamiento de carbón (Miles City)",
+    "ht": "Relouvri tè federal nan Montana pou lokasyon chabon (Miles City)"
+   },
+   "class": "coal",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/104/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps coal mining companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de minería de carbón, que el análisis describe así:",
+     "ht": "Li ede konpayi min chabon, analiz la dekri yo konsa:"
+    },
+    "en": "to coal leasing",
+    "es": "to coal leasing",
+    "ht": "to coal leasing"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 224,
+     "date": "2025-09-03",
+     "tally": [
+      211,
+      208
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "nv",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 549,
+     "date": "2025-10-08",
+     "tally": [
+      52,
+      47
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres105",
+   "ref": "H.J.Res. 105 · 2025",
+   "law": "P.L. 119-49",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/105",
+   "subject": {
+    "en": "Reopening federal land in North Dakota to oil, gas and coal",
+    "es": "Reapertura de tierras federales en Dakota del Norte al petróleo, gas y carbón",
+    "ht": "Relouvri tè federal nan Dakota di Nò pou petwòl, gaz ak chabon"
+   },
+   "class": "oilgas",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/105/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps oil, gas and coal companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de petróleo, gas y carbón, que el análisis describe así:",
+     "ht": "Li ede konpayi petwòl, gaz ak chabon, analiz la dekri yo konsa:"
+    },
+    "en": "limiting development of oil and gas in low-potential areas",
+    "es": "limiting development of oil and gas in low-potential areas",
+    "ht": "limiting development of oil and gas in low-potential areas"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 226,
+     "date": "2025-09-03",
+     "tally": [
+      215,
+      211
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 556,
+     "date": "2025-10-08",
+     "tally": [
+      50,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres130",
+   "ref": "H.J.Res. 130 · 2025",
+   "law": "P.L. 119-51",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/130",
+   "subject": {
+    "en": "Reopening federal land in Wyoming to coal leasing (Buffalo)",
+    "es": "Reapertura de tierras federales en Wyoming al arrendamiento de carbón (Buffalo)",
+    "ht": "Relouvri tè federal nan Wyoming pou lokasyon chabon (Buffalo)"
+   },
+   "class": "coal",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/130/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps coal mining companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de minería de carbón, que el análisis describe así:",
+     "ht": "Li ede konpayi min chabon, analiz la dekri yo konsa:"
+    },
+    "en": "make coal available for leasing",
+    "es": "make coal available for leasing",
+    "ht": "make coal available for leasing"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 294,
+     "date": "2025-11-18",
+     "tally": [
+      214,
+      212
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 623,
+     "date": "2025-11-20",
+     "tally": [
+      51,
+      43
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres131",
+   "ref": "H.J.Res. 131 · 2025",
+   "law": "P.L. 119-52",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/131",
+   "subject": {
+    "en": "Reopening Alaska’s Arctic refuge coastal plain to oil and gas leasing",
+    "es": "Reapertura de la llanura costera del refugio ártico de Alaska al petróleo y gas",
+    "ht": "Relouvri plèn kotyè refij Aktik Alaska pou petwòl ak gaz"
+   },
+   "class": "oilgas",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/131/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps oil and gas companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas de petróleo y gas, que el análisis describe así:",
+     "ht": "Li ede konpayi petwòl ak gaz, analiz la dekri yo konsa:"
+    },
+    "en": "opens public land for oil and gas leasing",
+    "es": "opens public land for oil and gas leasing",
+    "ht": "opens public land for oil and gas leasing"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 295,
+     "date": "2025-11-18",
+     "tally": [
+      217,
+      209
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 632,
+     "date": "2025-12-04",
+     "tally": [
+      49,
+      45
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres142",
+   "ref": "H.J.Res. 142 · 2026",
+   "law": "P.L. 119-78",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/142",
+   "subject": {
+    "en": "Blocking a D.C. law on business income taxes",
+    "es": "Bloqueo de una ley de D. C. sobre impuestos a la renta de empresas",
+    "ht": "Bloke yon lwa D.C. sou taks sou revni biznis"
+   },
+   "class": "dcbiz",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/142/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps businesses in Washington, D.C., which the analysis describes this way:",
+     "es": "Beneficia a empresas en Washington D. C., que el análisis describe así:",
+     "ht": "Li ede biznis nan Washington D.C., analiz la dekri yo konsa:"
+    },
+    "en": "authorize businesses to deduct 100% of research and experimental costs",
+    "es": "authorize businesses to deduct 100% of research and experimental costs",
+    "ht": "authorize businesses to deduct 100% of research and experimental costs"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 56,
+     "date": "2026-02-04",
+     "tally": [
+      215,
+      210
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 37,
+     "date": "2026-02-12",
+     "tally": [
+      49,
+      47
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s3971",
+   "ref": "S. 3971 · 2026",
+   "law": "P.L. 119-83",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-bill/3971",
+   "subject": {
+    "en": "Renewal of federal research grants for small businesses (SBIR/STTR)",
+    "es": "Renovación de becas federales de investigación para pequeñas empresas (SBIR/STTR)",
+    "ht": "Renouvèlman sibvansyon rechèch federal pou ti biznis (SBIR/STTR)"
+   },
+   "class": "smallrd",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3971/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps small businesses doing federal research, which the analysis describes this way:",
+     "es": "Beneficia a pequeñas empresas que hacen investigación federal, que el análisis describe así:",
+     "ht": "Li ede ti biznis k ap fè rechèch federal, analiz la dekri yo konsa:"
+    },
+    "en": "competitive awards for domestic small businesses",
+    "es": "competitive awards for domestic small businesses",
+    "ht": "competitive awards for domestic small businesses"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 89,
+     "date": "2026-03-17",
+     "tally": [
+      345,
+      41
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "nv",
+      "Salazar": "nv",
+      "Gimenez": "nv",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hjres140",
+   "ref": "H.J.Res. 140 · 2026",
+   "law": "P.L. 119-85",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/140",
+   "subject": {
+    "en": "Reopening federal land in Minnesota to mining",
+    "es": "Reapertura de tierras federales en Minnesota a la minería",
+    "ht": "Relouvri tè federal nan Minnesota pou min"
+   },
+   "class": "mining",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-joint-resolution/140/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps mining and geothermal companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas mineras y geotérmicas, que el análisis describe así:",
+     "ht": "Li ede konpayi min ak jeyotèmik, analiz la dekri yo konsa:"
+    },
+    "en": "exploration and development of minerals and geothermal energy",
+    "es": "exploration and development of minerals and geothermal energy",
+    "ht": "exploration and development of minerals and geothermal energy"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 38,
+     "date": "2026-01-21",
+     "tally": [
+      214,
+      208
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "no",
+      "Donalds": "yes"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 84,
+     "date": "2026-04-16",
+     "tally": [
+      50,
+      49
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s1020",
+   "ref": "S. 1020 · 2026",
+   "law": "P.L. 119-90",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-bill/1020",
+   "subject": {
+    "en": "More time to build licensed hydropower projects",
+    "es": "Más plazo para construir proyectos hidroeléctricos con licencia",
+    "ht": "Plis tan pou bati pwojè idwoelektrik ki gen lisans"
+   },
+   "class": "hydro",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1020/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps hydropower companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas hidroeléctricas, que el análisis describe así:",
+     "ht": "Li ede konpayi idwoelektrik, analiz la dekri yo konsa:"
+    },
+    "en": "hydropower projects that were issued a license before March 13, 2020",
+    "es": "hydropower projects that were issued a license before March 13, 2020",
+    "ht": "hydropower projects that were issued a license before March 13, 2020"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 129,
+     "date": "2026-04-21",
+     "tally": [
+      394,
+      14
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "yes",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "hr6644",
+   "ref": "H.R. 6644 · 2026",
+   "law": "P.L. 119-101",
+   "bill": "https://www.congress.gov/bill/119th-congress/house-bill/6644",
+   "subject": {
+    "en": "ROAD to Housing Act (manufactured homes and housing finance)",
+    "es": "Ley ROAD to Housing (casas prefabricadas y financiamiento de vivienda)",
+    "ht": "Lwa ROAD to Housing (kay prefabrike ak finansman lojman)"
+   },
+   "class": "housing",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6644/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps manufactured-home builders and banks, which the analysis describes this way:",
+     "es": "Beneficia a constructores de casas prefabricadas y bancos, que el análisis describe así:",
+     "ht": "Li ede konstriktè kay prefabrike ak bank, analiz la dekri yo konsa:"
+    },
+    "en": "eliminates the requirement that manufactured homes must be constructed with a permanent chassis",
+    "es": "eliminates the requirement that manufactured homes must be constructed with a permanent chassis",
+    "ht": "eliminates the requirement that manufactured homes must be constructed with a permanent chassis"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 224,
+     "date": "2026-06-23",
+     "tally": [
+      358,
+      32
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "nv",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "no"
+     }
+    },
+    {
+     "chamber": "senate",
+     "roll": 182,
+     "date": "2026-06-22",
+     "tally": [
+      85,
+      5
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Moody": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s629",
+   "ref": "S. 629 · 2026",
+   "law": "P.L. 119-102",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-bill/629",
+   "subject": {
+    "en": "Faster disaster aid for farms and forest land",
+    "es": "Ayuda más rápida por desastres para granjas y bosques",
+    "ht": "Èd pi rapid pou katastwòf pou fèm ak tè forè"
+   },
+   "class": "farms",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/629/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps farms and forest owners, which the analysis describes this way:",
+     "es": "Beneficia a granjas y dueños de bosques, que el análisis describe así:",
+     "ht": "Li ede fèm ak pwopriyetè forè, analiz la dekri yo konsa:"
+    },
+    "en": "agricultural producers and owners of forest land",
+    "es": "agricultural producers and owners of forest land",
+    "ht": "agricultural producers and owners of forest land"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 223,
+     "date": "2026-06-23",
+     "tally": [
+      368,
+      19
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "nv",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s2403",
+   "ref": "S. 2403 · 2026",
+   "law": "P.L. 119-124",
+   "bill": "https://www.congress.gov/bill/119th-congress/senate-bill/2403",
+   "subject": {
+    "en": "Retire through Ownership Act (employee-owned companies)",
+    "es": "Ley Retire through Ownership (empresas propiedad de sus empleados)",
+    "ht": "Lwa Retire through Ownership (konpayi ki pou anplwaye yo)"
+   },
+   "class": "esop",
+   "universe": true,
+   "quote": {
+    "t": "crs",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2403/summary",
+    "src": {
+     "en": "The Congressional Research Service summary",
+     "es": "El resumen del Servicio de Investigación del Congreso",
+     "ht": "Rezime Sèvis Rechèch Kongrè a"
+    },
+    "inline": true,
+    "pre": {
+     "en": "It helps employee-owned companies, which the analysis describes this way:",
+     "es": "Beneficia a empresas propiedad de sus empleados, que el análisis describe así:",
+     "ht": "Li ede konpayi ki pou anplwaye yo, analiz la dekri yo konsa:"
+    },
+    "en": "a closely held business",
+    "es": "a closely held business",
+    "ht": "a closely held business"
+   },
+   "votes": [
+    {
+     "chamber": "house",
+     "roll": 314,
+     "date": "2026-09-16",
+     "tally": [
+      401,
+      14
+     ],
+     "notVoting": null,
+     "motion": "passage",
+     "members": {
+      "Diaz-Balart": "yes",
+      "Salazar": "nv",
+      "Gimenez": "yes",
+      "Moskowitz": "yes",
+      "Donalds": "yes"
      }
     }
    ]
@@ -792,6 +2482,143 @@
      }
     ]
    ]
+  },
+  "hospitals": {
+   "label": {
+    "en": "hospitals",
+    "es": "hospitales",
+    "ht": "lopital"
+   },
+   "donors": []
+  },
+  "pharmacies": {
+   "label": {
+    "en": "pharmacies",
+    "es": "farmacias",
+    "ht": "famasi"
+   },
+   "donors": []
+  },
+  "appliances": {
+   "label": {
+    "en": "appliance and equipment makers",
+    "es": "fabricantes de electrodomésticos y equipos",
+    "ht": "manifakti aparèy ak ekipman"
+   },
+   "donors": []
+  },
+  "payments": {
+   "label": {
+    "en": "payment app companies",
+    "es": "empresas de aplicaciones de pago",
+    "ht": "konpayi aplikasyon peman"
+   },
+   "donors": []
+  },
+  "tires": {
+   "label": {
+    "en": "tire makers",
+    "es": "fabricantes de neumáticos",
+    "ht": "manifakti kawotchou"
+   },
+   "donors": []
+  },
+  "industrial": {
+   "label": {
+    "en": "industrial plants",
+    "es": "plantas industriales",
+    "ht": "faktori endistriyèl"
+   },
+   "donors": []
+  },
+  "coal": {
+   "label": {
+    "en": "coal mining companies",
+    "es": "empresas de minería de carbón",
+    "ht": "konpayi min chabon"
+   },
+   "donors": []
+  },
+  "mining": {
+   "label": {
+    "en": "mining and geothermal companies",
+    "es": "empresas mineras y geotérmicas",
+    "ht": "konpayi min ak jeyotèmik"
+   },
+   "donors": []
+  },
+  "dcbiz": {
+   "label": {
+    "en": "businesses in Washington, D.C.",
+    "es": "empresas en Washington D. C.",
+    "ht": "biznis nan Washington D.C."
+   },
+   "donors": []
+  },
+  "smallrd": {
+   "label": {
+    "en": "small businesses doing federal research",
+    "es": "pequeñas empresas que hacen investigación federal",
+    "ht": "ti biznis k ap fè rechèch federal"
+   },
+   "donors": []
+  },
+  "hydro": {
+   "label": {
+    "en": "hydropower companies",
+    "es": "empresas hidroeléctricas",
+    "ht": "konpayi idwoelektrik"
+   },
+   "donors": []
+  },
+  "sbic": {
+   "label": {
+    "en": "small business investment firms",
+    "es": "firmas de inversión en pequeñas empresas",
+    "ht": "fèm envestisman nan ti biznis"
+   },
+   "donors": []
+  },
+  "native": {
+   "label": {
+    "en": "an Alaska Native corporation",
+    "es": "una corporación nativa de Alaska",
+    "ht": "yon kòporasyon natif Alaska"
+   },
+   "donors": []
+  },
+  "housing": {
+   "label": {
+    "en": "manufactured-home builders and banks",
+    "es": "constructores de casas prefabricadas y bancos",
+    "ht": "konstriktè kay prefabrike ak bank"
+   },
+   "donors": []
+  },
+  "farms": {
+   "label": {
+    "en": "farms and forest owners",
+    "es": "granjas y dueños de bosques",
+    "ht": "fèm ak pwopriyetè forè"
+   },
+   "donors": []
+  },
+  "music": {
+   "label": {
+    "en": "music venues and festivals",
+    "es": "locales y festivales de música",
+    "ht": "sal ak festival mizik"
+   },
+   "donors": []
+  },
+  "esop": {
+   "label": {
+    "en": "employee-owned companies",
+    "es": "empresas propiedad de sus empleados",
+    "ht": "konpayi ki pou anplwaye yo"
+   },
+   "donors": []
   }
- }
+ },
+ "universeNote": "Every law enacted from Jan 3, 2025 through Oct 20, 2026 (P.L. 119-1 to 119-134) was screened; the 35 whose CRS summary, CBO estimate or overturned rule names a kind of business it helps are listed. Screening: scripts/data/federal/laws/universe.json."
 }
