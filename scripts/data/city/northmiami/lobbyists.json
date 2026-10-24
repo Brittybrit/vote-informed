@@ -1,0 +1,669 @@
+{
+ "city": "North Miami",
+ "sources": [
+  {
+   "name": "City of North Miami City Clerk, Lobbyists page (registration affidavits by year, 2023-2024 to 2026-2027, and withdrawals)",
+   "url": "https://www.northmiamifl.gov/287/Lobbyists",
+   "viewed": "2026-10-24",
+   "covers": "Lobbyist name and principal for each registration affidavit; affidavit PDFs at northmiamifl.gov/DocumentCenter/View/<id>"
+  },
+  {
+   "name": "City of North Miami lobbyist FAQ",
+   "url": "https://northmiamifl.gov/m/faq?cat=23",
+   "viewed": "2026-10-24",
+   "covers": "Registration rules ($250 annual fee; register within 5 business days of retention)"
+  },
+  {
+   "name": "City of Doral authorized lobbyist list (repo snapshot scripts/data/city/doral/lobbyists-2026.json)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "Used only to fill the firm of a registered lobbyist (entries carry firmSource)"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo snapshot public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody matches only; not a North Miami tie"
+  },
+  {
+   "name": "City of Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody matches only"
+  }
+ ],
+ "byAction": {
+  "2025-R-13": [
+   {
+    "name": "Misch Cetoute",
+    "firm": null,
+    "for": "12000 Property Owner, LLC (applicant for 12000 N Bayshore Dr, inferred)",
+    "basis": "review",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19233",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Cetoute, Misch (PDF) 12000 Property Owner, LLC",
+    "matchNote": "Minutes do not name the applicant; the registered principal 12000 Property Owner, LLC carries the site address. Review before publishing.",
+    "why": "Minutes do not name the applicant; linked by the address in the registered client name"
+   },
+   {
+    "name": "Pedro Gassant",
+    "firm": "Holland & Knight",
+    "for": "12000 Property Owner, LLC (applicant for 12000 N Bayshore Dr, inferred)",
+    "basis": "review",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19231",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Gassant, Pedro (PDF) 12000 Property Owner, LLC",
+    "matchNote": "Minutes do not name the applicant; the registered principal 12000 Property Owner, LLC carries the site address. Review before publishing.",
+    "firmSource": "firm from City of Doral authorized lobbyist list",
+    "why": "Minutes do not name the applicant; linked by the address in the registered client name"
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "12000 Property Owner, LLC (applicant for 12000 N Bayshore Dr, inferred)",
+    "basis": "review",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19228",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "San Roman, Alessandria (PDF) 12000 Property Owner, LLC.",
+    "matchNote": "Minutes do not name the applicant; the registered principal 12000 Property Owner, LLC carries the site address. Review before publishing.",
+    "firmSource": "firm from City of Doral authorized lobbyist list",
+    "why": "Minutes do not name the applicant; linked by the address in the registered client name"
+   }
+  ],
+  "2025-R-60": [
+   {
+    "name": "Michael McDearmaid",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19717",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDearmaid, Michael (PDF) Botanik Venture, LLC."
+   },
+   {
+    "name": "Carter N. McDowell",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19941",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDowell, Carter N. (PDF) Botanik Venture, LLC"
+   },
+   {
+    "name": "Jeffy Mondesir",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19715",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Mondesir, Jeffy (PDF) Botanik Ventures, LLC."
+   }
+  ],
+  "2025-R-61": [
+   {
+    "name": "Michael McDearmaid",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19717",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDearmaid, Michael (PDF) Botanik Venture, LLC."
+   },
+   {
+    "name": "Carter N. McDowell",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19941",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDowell, Carter N. (PDF) Botanik Venture, LLC"
+   },
+   {
+    "name": "Jeffy Mondesir",
+    "firm": null,
+    "for": "Botanik Venture",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19715",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Mondesir, Jeffy (PDF) Botanik Ventures, LLC."
+   }
+  ],
+  "2025-R-80": [
+   {
+    "name": "Philippe Bien Aime",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/20501",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Bien Aime, Philippe (PDF) Redwood CP Dev. LLC."
+   },
+   {
+    "name": "David A Burstyn",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19138",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Burstyn, David A (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Michael R. Goldstein",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19023",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Goldstein, Michael R. (PDF) Redwood CP DEV, LLC."
+   },
+   {
+    "name": "Dorval Herby",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19137",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Herby, Dorval (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Michael McDearmaid",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19718",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDearmaid, Michael (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19723",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Brian A. Sidman",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19713",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Sidman, Brian A. (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/21875",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Marckenson Jeanty",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "quote": null
+   },
+   {
+    "name": "Kobi Karp",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adele Valencia",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "2025-R-99": [
+   {
+    "name": "Philippe Bien Aime",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/20501",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Bien Aime, Philippe (PDF) Redwood CP Dev. LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "David A Burstyn",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19138",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Burstyn, David A (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Michael R. Goldstein",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19023",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Goldstein, Michael R. (PDF) Redwood CP DEV, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Dorval Herby",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19137",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Herby, Dorval (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Michael McDearmaid",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19718",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "McDearmaid, Michael (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19723",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Brian A. Sidman",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19713",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Sidman, Brian A. (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   },
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Devco, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/21875",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC.",
+    "matchNote": "Action party is \"Redwood CP Devco, LLC\"; registry principal is \"Redwood CP Dev, LLC\". Same Claude Pepper Park project; confirm same entity."
+   }
+  ],
+  "2025-R-161": [
+   {
+    "name": "Arthur Sorey III",
+    "firm": null,
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/21015",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Sorey III, Arthur (PDF) Performances Services",
+    "matchNote": "Registry lists the principal as \"Performances Services\" (2024-2025)."
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/22729",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Fuentes, Jose (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/22728",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Losner, Max (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "2025-R-221": [
+   {
+    "name": "Oscar Braynon II",
+    "firm": null,
+    "for": "Cigna Healthcare",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/19133",
+    "date": null,
+    "regYear": "2024-2025",
+    "quote": null,
+    "registryEntry": "Braynon, II Oscar (PDF) Cigna",
+    "matchNote": "Registry principal is \"Cigna\"; action party is Cigna Healthcare."
+   }
+  ],
+  "2026-R-46": [
+   {
+    "name": "Jose Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/22729",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Fuentes, Jose (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/22728",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Losner, Max (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Jose K. Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/24145",
+    "date": null,
+    "regYear": "2026-2027",
+    "quote": null,
+    "registryEntry": "Fuentes, Jose K. (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Performance Services, Inc.",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/23963",
+    "date": null,
+    "regYear": "2026-2027",
+    "quote": null,
+    "registryEntry": "Losner, Max (PDF) Performance Services, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "2026-R-47": [
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/21875",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Marckenson Jeanty",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "quote": null
+   },
+   {
+    "name": "Kobi Karp",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adele Valencia",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "2026-R-104": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "2026-R-110": [
+   {
+    "name": "Andre Dominique Pierre",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "registry",
+    "src": "https://www.northmiamifl.gov/DocumentCenter/View/21875",
+    "date": null,
+    "regYear": "2025-2026",
+    "quote": null,
+    "registryEntry": "Pierre, Andre Dominique (PDF) Redwood CP Dev, LLC."
+   },
+   {
+    "name": "Marckenson Jeanty",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "quote": null
+   },
+   {
+    "name": "Kobi Karp",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adele Valencia",
+    "firm": null,
+    "for": "Redwood CP Dev, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ]
+ },
+ "notFound": "North Miami summary minutes and agenda packets (play.champds.com / playapi.champds.com) could not be fetched in this run (fetch permission request timed out), so no \"record\" links were collected; the minutes summaries in actions.json mostly do not name applicants for zoning items. North Miami resolution PDFs (northmiamifl.gov/321/Resolutions) are scanned without text, and individual lobbyist affidavit PDFs returned server errors or illegible OCR, so registration dates and the specific issue on each affidavit were not read: registry links rely on the City Clerk lobbyist page listing (lobbyist name + principal per registration year) and carry regYear instead of date. Not linked (uncertain): Cristo Rey Miami High School, Inc. (registered 2023-2025 via Alessandria San Roman / Pedro Gassant / Joseph Goldstein; withdrawn 2026-27) vs action party Cristo Rey Miami High School Work Study Program, Inc. (2026-R-96); Ethan B. Wasserman spoke at the 2026-R-16 alley sale hearing but the minutes do not say for whom (he is registered for 1150 Nomi LLC, Nomi Holding Group 2, 1590 NE 123rd St LLC, Oleta Partners, Dezer Museum Properties); Mischael Cetoute, Pedro Gassant, Alessandria San Roman (Holland & Knight) are registered for Alta Bayshore, Alta Developers, Prestige City View, Klaus Haus, Arch Creek Apartments, SV La Belle @ Arch Creek and others whose names do not appear as parties in actions.json, where most zoning applicants are \"not named in minutes\". Rerun once champds minutes/agenda packets are reachable to fill applicant names and \"record\" links for the 24 zoning items."
+}

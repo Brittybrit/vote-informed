@@ -12,7 +12,7 @@ const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
 const J = p => JSON.parse(readFileSync(P(p)));
 const d = J('public/data/decisions.json');
-const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/&/g, ' AND ').replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/&/g, ' AND ').replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim().replace(/\bPOLLAKOFF\b/g, 'POLIAKOFF'); // a report's misspelling of the firm
 const SUF = /\b(JR|SR|II|III|ESQ)\b\.?/gi;
 const ORG = /\b(INC|LLC|PAC|COMMITTEE|CORP|GROUP|TRUST|ASSOCIATES|P A|PA|PLLC|LLP)\b/;
 const LOB = /LOBBY|GOVERNMENT|GOVT|GOV\b|CONSULT|ATTORNEY|LAWYER|LAW\b|PUBLIC AFFAIRS|ADVOCA/i;

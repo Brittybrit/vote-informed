@@ -1,0 +1,4831 @@
+{
+ "city": "Hialeah",
+ "sources": [
+  {
+   "name": "City of Hialeah City Council minutes (AgendaCenter), \"Registered Lobbyist:\" lines and REPORT/\"on behalf of\" lines under each item",
+   "url": "https://www.hialeahfl.gov/AgendaCenter",
+   "viewed": "2026-10-24",
+   "covers": "All 45 posted council meetings 2025-01-14 to 2026-10-13 that are in actions.json; every item read for representatives"
+  },
+  {
+   "name": "City of Hialeah Lobbyist Registration page (Ord. 2024-077)",
+   "url": "https://www.hialeahfl.gov/178/Lobbyist-Registration",
+   "viewed": "2026-10-24",
+   "covers": "Explains annual registration with the City Clerk via the Tyler EnerGov portal; no public list of registered lobbyists is posted"
+  },
+  {
+   "name": "City of Doral authorized lobbyist list (repo snapshot scripts/data/city/doral/lobbyists-2026.json)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "Used only to fill the firm of a lobbyist the Hialeah minutes name (entries carry firmSource)"
+  },
+  {
+   "name": "Miami-Dade County Clerk of the Board lobbyist registration (repo snapshot public/data/county-lobbyists.json, asOf 2026-10-18)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "otherBody matches only (party listed as client); not a Hialeah tie"
+  },
+  {
+   "name": "City of Coral Gables lobbyist registrations 2025-2026 (repo CSVs)",
+   "url": "scripts/data/city/coralgables/lobbyists-2025.csv",
+   "viewed": "2026-10-24",
+   "covers": "otherBody matches only"
+  }
+ ],
+ "byAction": {
+  "hialeah-2025-01-14-17C": [
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01142025-1203",
+    "date": "2025-01-14",
+    "quote": "Registered Lobbyist: Erica J. Adams",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01142025-1203",
+    "date": "2025-01-14",
+    "quote": "Hugo Arza, 701 Brickell Avenue, Registered Lobbyist, illustrated a PowerPoint",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01142025-1203",
+    "date": "2025-01-14",
+    "quote": "Hugo P. Azra, Alessandria San Roman,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01142025-1203",
+    "date": "2025-01-14",
+    "quote": "Alessandria San Roman, and Alejandro J. Arias,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-008": [
+   {
+    "name": "Felix M. Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "JEC Property Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Felix M. Lasarte, Esq., 3250 NE 1 Ave Suite 334",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-01-28-15B": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Empyrean Townhomes LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq."
+   }
+  ],
+  "hialeah-ord-2025-009": [
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Erica J. Adams, Hugo P. Azra, Alessandria San Roman",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Hugo Arza, registered lobbyist, 701 Brickell Avenue, addressed the City Council",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Hugo P. Azra, Alessandria San Roman, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Alessandria San Roman, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-01-28-16B": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Alessandria San Roman Esq., Amanda M. Naldjieff Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Amanda M. Naldjieff",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Alessandria San Roman Esq., Amanda M. Naldjieff Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Amanda M. Naldjieff Esq., Alejandro J. Adams Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Hugo Arza, Registered Lobbyist, 701 Brickell Avenue, addressed the City Council",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Hugo P. Arza Esq., and Erica C. Adams Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-01-28-16C": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Allarian Rehabilitation and Senior Living Propco, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Javier Vazquez, Esq ... on behalf of Allarian"
+   }
+  ],
+  "hialeah-2025-01-28-16E": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Registered Lobbyist: Alessandria San Roman Esq, Alejandro J. Arias Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Alejandro Arias, Registered Lobbyist, 701 Brickell Avenue, addressed the City Council",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Alejandro J. Arias Esq., Hugo Azra, Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01282025-1205",
+    "date": "2025-01-28",
+    "quote": "Erica C. Adams, Esq., 701 Brickell Avenue 3300 Miami, FL 33131",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-res-2025-043": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mark Stempler",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-02-11-15A": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Cornerstone Property Ventures II, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Javier Vazquez (registered lobbyist), 1450 Brickell Ave, addressed the City Council."
+   }
+  ],
+  "hialeah-ord-2025-012": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Alessandria San Roman Esq., Amanda M. Naldjieff Esq.,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Amanda M. Naldjieff",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Amanda M. Naldjieff Esq., Alejandro J. Arias Esq.,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Alejandro J. Arias Esq., Hugo P. Arza Esq.,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Hugo Arza (registered lobbyist), 701 Brickell Avenue, presented to the City Council",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "ITA Regio, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Hugo P. Arza Esq., and Erica C. Adams Esq.,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-013": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Allarian Rehabilitation and Senior Living Propco, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "on behalf of Allarian Rehabilitation and Senior Living Propco, LLC."
+   }
+  ],
+  "hialeah-ord-2025-015": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Alessandria San Roman Esq,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Alejandro J. Arias Esq.,",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Hugo Azra, Esq. and Erica C. Adams, Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "Prestige 7551, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "Hugo Azra, Esq. and Erica C. Adams, Esq.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-02-11-16E": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Cornerstone Property Ventures II, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "on behalf of Cornerstone Property Ventures II, LLC."
+   }
+  ],
+  "hialeah-2025-02-11-16F": [
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "555 E 25th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210",
+    "date": "2025-02-11",
+    "quote": "on behalf of 555 E 25th Street, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-res-2025-055": [
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "JVA Engineering Contractor Inc",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-059": [
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "JVA Engineering Contractor Inc",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-061": [
+   {
+    "name": "Carlos San Jose",
+    "firm": null,
+    "for": "Hera Property Registry, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-19",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-022": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Cornerstone Property Ventures II, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Cornerstone Property Ventures II, LLC"
+   }
+  ],
+  "hialeah-2025-02-25-15B": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry"
+   }
+  ],
+  "hialeah-ord-2025-023": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Cornerstone Property Ventures II, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Cornerstone Property Ventures II, LLC"
+   }
+  ],
+  "hialeah-ord-2025-024": [
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "555 E 25th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "Registered Lobbyist: Alejandro J. Arias Esq., 701 Brickell Avenue 3300 Miami",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-02-25-16C": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC"
+   }
+  ],
+  "hialeah-2025-02-25-16D": [
+   {
+    "name": "Felix M. Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "JEC Property Holdings LLC et al.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Elena Lapica, Magaly Cueto, Carmen Carrodeguas, and JEC Property Holdings LLC",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "JEC Property Holdings LLC et al.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "William Riley ... (registered lobbyist)"
+   }
+  ],
+  "hialeah-2025-02-25-16E": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Metro Park West, LLC"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "Melissa Tapanes Llahues (registered lobbyist), 200 South Biscayne Boulevard",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Metro Park West, LLC"
+   }
+  ],
+  "hialeah-2025-02-25-16F": [
+   {
+    "name": "Felix M. Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "Hialeah 40 Investments, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Hialeah 40 Investments, LLC",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Hialeah 40 Investments, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Hialeah 40 Investments, LLC"
+   }
+  ],
+  "hialeah-2025-02-25-16G": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Lago Bello Property Holdings LLC and VistaLago Properties Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Lago Bello Property Holdings LLC and VistaLago Properties Corp."
+   }
+  ],
+  "hialeah-2025-02-25-16H": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC"
+   }
+  ],
+  "hialeah-2025-02-25-16J": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Jorge Socarras TRS- Home Solution Land Trust",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02252025-1217",
+    "date": "2025-02-25",
+    "quote": "on behalf of Jorge Socarras TRS- Home Solution Land Trust"
+   }
+  ],
+  "hialeah-2025-03-11-10E": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-029": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC."
+   }
+  ],
+  "hialeah-ord-2025-030": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Station II Prop Co LLC and Metro Station, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Station II Prop Co LLC and Metro Station, LLC."
+   }
+  ],
+  "hialeah-ord-2025-031": [
+   {
+    "name": "Felix M. Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "JEC Property Holdings LLC et al.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Elena Lapica, Magaly Cueto, Carmen Carrodeguas, and JEC Property Holdings LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-032": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Metro Park West, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Metro Park West, LLC."
+   }
+  ],
+  "hialeah-ord-2025-033": [
+   {
+    "name": "Felix M. Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "Hialeah 40 Investments, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Hialeah 40 Investments, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-034": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Lago Bello Property Holdings LLC and VistaLago Properties Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of Lago Bello Property Holdings LLC and VistaLago Properties Corp."
+   }
+  ],
+  "hialeah-ord-2025-035": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "1395 East 11th Avenue HIL, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "on behalf of 1395 East 11th Avenue HIL, LLC."
+   }
+  ],
+  "hialeah-2025-03-11-16J": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Maxvale Holdings LLC / William Lopez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03112025-1222",
+    "date": "2025-03-11",
+    "quote": "registered lobbyist as confirmed by the Office of the City Clerk"
+   }
+  ],
+  "hialeah-ord-2025-039": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Maxvale Holdings, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03252025-1226",
+    "date": "2025-03-25",
+    "quote": "on behalf of Maxvale Holdings, LLC"
+   }
+  ],
+  "hialeah-2025-03-25-16D": [
+   {
+    "name": "Jerry B. Proctor",
+    "firm": "Jerry B. Proctor, P.A.",
+    "for": "2090 Palm LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03252025-1226",
+    "date": "2025-03-25",
+    "quote": "on behalf of 2090 Palm LLC"
+   }
+  ],
+  "hialeah-res-2025-101": [
+   {
+    "name": "Hugo Arza",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Pedro Gassant",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Daniel Hanlon",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-105": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "SFM Landscape Services, LLC",
+    "basis": "otherBody",
+    "body": "City of Coral Gables",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-18",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-109": [
+   {
+    "name": "Don Deloach",
+    "firm": null,
+    "for": "PC Solutions & Integration, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-20",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-04-22-16D": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "RHM Development LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04222025-1235",
+    "date": "2025-04-22",
+    "quote": "Registered Lobbyist: Ceasar Mestre ... on behalf of RHM Development LLC."
+   }
+  ],
+  "hialeah-2025-04-22-16F": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Sarria Holdings, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04222025-1235",
+    "date": "2025-04-22",
+    "quote": "Registered Lobbyist: William Riley ... on behalf of Sarria Holdings, Inc."
+   }
+  ],
+  "hialeah-ord-2025-046": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "RHM Development LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05132025-1251",
+    "date": "2025-05-13",
+    "quote": "on behalf of RHM Development LLC"
+   }
+  ],
+  "hialeah-ord-2025-047": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Sarria Holdings, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05132025-1251",
+    "date": "2025-05-13",
+    "quote": "on behalf of Sarria Holdings, Inc."
+   }
+  ],
+  "hialeah-res-2025-119": [
+   {
+    "name": "Malva Danger",
+    "firm": null,
+    "for": "Amuary Diaz De La Nunez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05132025-1251",
+    "date": "2025-05-13",
+    "quote": "on behalf of Amuary Diaz De La Nunez"
+   }
+  ],
+  "hialeah-2025-05-27-16B": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Empyrean Townhomes LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "on behalf of Empyrean Townhomes LLC."
+   }
+  ],
+  "hialeah-2025-05-27-16C": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Ziad E. Hawatmeh",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "on behalf of Ziad E. Hawatmeh."
+   }
+  ],
+  "hialeah-2025-05-27-18B": [
+   {
+    "name": "Robert H. Fernandez",
+    "firm": null,
+    "for": "Stor-All 27 E 8th Ave Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "on behalf of Stor-All 27th East 8th Avenue."
+   }
+  ],
+  "hialeah-2025-05-27-18E": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-05-27-18F": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Ziad E. Hawatmeh",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05272025-1246",
+    "date": "2025-05-27",
+    "quote": "on behalf of Ziad E. Hawatmeh."
+   }
+  ],
+  "hialeah-2025-06-10-11C": [
+   {
+    "name": "Daniel Milian",
+    "firm": null,
+    "for": "Marcia Flats",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "on behalf of Marcia Flats"
+   }
+  ],
+  "hialeah-ord-2025-050": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Empyrean Townhomes LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq."
+   }
+  ],
+  "hialeah-ord-2025-051": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Ziad E. Hawatmeh",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "on behalf of Ziad E. Hawatmeh"
+   }
+  ],
+  "hialeah-ord-2025-053": [
+   {
+    "name": "Robert H. Fernandez",
+    "firm": null,
+    "for": "Stor-All 27 E 8th Ave Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Robert H. Fernandez"
+   },
+   {
+    "name": "Felix Pardo",
+    "firm": null,
+    "for": "Stor-All 27 E 8th Ave Hialeah, LLC",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Felix Pardo, Architect on behalf of Stor-All 27 E 8th Ave Hialeah, LLC",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-ord-2025-056": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "CW Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyists: Hugo P. Azra, Erica J. Adams, and Alejandro J. Arias",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-052": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Ziad E. Hawatmeh",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-06-10-16H": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Arno Lemus, Jr.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Frank de la Paz"
+   }
+  ],
+  "hialeah-2025-06-10-16I": [
+   {
+    "name": "Al Cruz",
+    "firm": null,
+    "for": "Curious Minds Learning Center Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Al Cruz"
+   }
+  ],
+  "hialeah-2025-06-10-16K": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06102025-1253",
+    "date": "2025-06-10",
+    "quote": "Registered Lobbyist: Martiza Haro Salgado, Melissa Tapanes Llahues, and Benjamin R. Sherry"
+   },
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-06-24-12C": [
+   {
+    "name": "Francois Illas",
+    "firm": null,
+    "for": "Sustainability Partners LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-12",
+    "quote": null
+   },
+   {
+    "name": "Roly Marante",
+    "firm": null,
+    "for": "Sustainability Partners LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-27",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-153": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-159": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-058": [
+   {
+    "name": "Daniel Milian",
+    "firm": null,
+    "for": "Marcia Flats",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06242025-1259",
+    "date": "2025-06-24",
+    "quote": "on behalf of Marcia Flats."
+   }
+  ],
+  "hialeah-2025-07-28-16B": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Arno Lemus, Jr.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_07282025-1264",
+    "date": "2025-07-28",
+    "quote": "on behalf of Arno Lemus, Jr."
+   }
+  ],
+  "hialeah-2025-07-28-16C": [
+   {
+    "name": "Al Cruz",
+    "firm": null,
+    "for": "Curious Minds Learning Center Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_07282025-1264",
+    "date": "2025-07-28",
+    "quote": "on behalf of Curious Minds Learning Center Corp."
+   }
+  ],
+  "hialeah-2025-07-28-16E": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_07282025-1264",
+    "date": "2025-07-28",
+    "quote": "on behalf of Waste Connections of Florida, Inc."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_07282025-1264",
+    "date": "2025-07-28",
+    "quote": "on behalf of Waste Connections of Florida, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_07282025-1264",
+    "date": "2025-07-28",
+    "quote": "on behalf of Waste Connections of Florida, Inc."
+   },
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-173": [
+   {
+    "name": "Roberto Sanchez",
+    "firm": null,
+    "for": "Axon Enterprise, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-08-12-15B": [
+   {
+    "name": "Octavio A. Santurio",
+    "firm": null,
+    "for": "Marvall LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Marvall LLC."
+   }
+  ],
+  "hialeah-2025-08-12-15C": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1356 West 76 Street LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of 1356 West 76 Street LLC."
+   }
+  ],
+  "hialeah-ord-2025-067": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Arno Lemus, Jr.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Arno Lemus, Jr."
+   }
+  ],
+  "hialeah-ord-2025-068": [
+   {
+    "name": "Al Cruz",
+    "firm": null,
+    "for": "Curious Minds Learning Center Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Curious Minds Learning Center Corp."
+   }
+  ],
+  "hialeah-ord-2025-069": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Waste Connections of Florida, Inc."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Waste Connections of Florida, Inc.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   },
+   {
+    "name": "Benjamin R. Sherry",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Waste Connections of Florida, Inc."
+   },
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-08-12-16F": [
+   {
+    "name": "Octavio A. Santurio",
+    "firm": null,
+    "for": "Marvall LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08122025-1269",
+    "date": "2025-08-12",
+    "quote": "on behalf of Marvall LLC."
+   }
+  ],
+  "hialeah-res-2025-188": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "BeeFree, LLC (Freebee)",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "BeeFree, LLC (Freebee)",
+    "basis": "otherBody",
+    "body": "City of Coral Gables",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-10-03",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-072": [
+   {
+    "name": "Octavio A. Santurio",
+    "firm": null,
+    "for": "Marvall LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "Registered Lobbyist: Octavio A. Santurio"
+   }
+  ],
+  "hialeah-ord-2025-073": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1356 West 76 Street LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "Registered Lobbyist: Ceasar Mestre"
+   }
+  ],
+  "hialeah-ord-2025-074": [
+   {
+    "name": "Octavio A. Santurio",
+    "firm": null,
+    "for": "Marvall LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "Registered Lobbyist: Octavio A. Santurio"
+   }
+  ],
+  "hialeah-ord-2025-075": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "Two One Plaza, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "REPORT: Hugo Arza, Esq., presented with a visual presentation.",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-2025-08-26-16D": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1356 West 76 Street LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "Registered Lobbyist: Ceasar Mestre"
+   }
+  ],
+  "hialeah-2025-08-26-16F": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "S&S Investors Corporation",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08262025-1271",
+    "date": "2025-08-26",
+    "quote": "Registered Lobbyist: Frank De La Paz"
+   }
+  ],
+  "hialeah-res-2025-193": [
+   {
+    "name": "Don Deloach",
+    "firm": null,
+    "for": "PC Solutions & Integration, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-20",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-081": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1356 West 76 Street LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09092025-1276",
+    "date": "2025-09-09",
+    "quote": "on behalf of 1356 West 76 Street LLC"
+   }
+  ],
+  "hialeah-ord-2025-083": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "S&S Investors Corporation",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09092025-1276",
+    "date": "2025-09-09",
+    "quote": "on behalf of S&S Investors Corporation"
+   }
+  ],
+  "hialeah-2025-09-09-16F": [
+   {
+    "name": "Hadley Peterson",
+    "firm": null,
+    "for": "Hialeah Property, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09092025-1276",
+    "date": "2025-09-09",
+    "quote": "on behalf of Hialeah Property, LLC"
+   },
+   {
+    "name": "Ruben Cruz",
+    "firm": null,
+    "for": "Hialeah Property, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09092025-1276",
+    "date": "2025-09-09",
+    "quote": "on behalf of Hialeah Property, LLC"
+   }
+  ],
+  "hialeah-2025-09-09-16G": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Children's Paradise Learning Center",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09092025-1276",
+    "date": "2025-09-09",
+    "quote": "on behalf of Children's Paradise Learning Center"
+   }
+  ],
+  "hialeah-2025-09-23-12I": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Power Depot, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-202": [
+   {
+    "name": "Sam Blatt",
+    "firm": null,
+    "for": "Amazon.com Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Amazon.com Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Giovanni Castro",
+    "firm": null,
+    "for": "Amazon.com Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "Amazon.com Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-204": [
+   {
+    "name": "David Butter",
+    "firm": null,
+    "for": "Home Depot U.S.A., Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Home Depot U.S.A., Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-215": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-09-23-12GG": [
+   {
+    "name": "David Butter",
+    "firm": null,
+    "for": "Home Depot U.S.A., Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Home Depot U.S.A., Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-09-23-11A": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of City of Hialeah Education Academy, Inc. (COHEA)",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-res-2025-203": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of City of Hialeah Education Academy, Inc. (COHEA)",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-087": [
+   {
+    "name": "Hadley Peterson",
+    "firm": null,
+    "for": "Hialeah Property, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of Hialeah Property, LLC."
+   },
+   {
+    "name": "Ruben Cruz",
+    "firm": null,
+    "for": "Hialeah Property, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of Hialeah Property, LLC."
+   }
+  ],
+  "hialeah-ord-2025-088": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Children's Paradise Learning Center",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of Children's Paradise Learning Center."
+   }
+  ],
+  "hialeah-2025-09-23-16F": [
+   {
+    "name": "Vanessa M. Bertran",
+    "firm": "Vanessa M. Bertran, P.A.",
+    "for": "PHAT Investments, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09232025-1285",
+    "date": "2025-09-23",
+    "quote": "on behalf of PHAT Investments, LLC"
+   }
+  ],
+  "hialeah-res-2025-220": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-231": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-232": [
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-233": [
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "JVA Engineering Contractor Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-235": [
+   {
+    "name": "Hugo Arza",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Pedro Gassant",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Daniel Hanlon",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "L3Harris Technologies, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-244": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mark Stempler",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "Core & Main LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2025-248": [
+   {
+    "name": "Nelson Diaz",
+    "firm": null,
+    "for": "Sunshine Gasoline Distributors, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-097": [
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight",
+    "for": "City of Hialeah Educational Academy",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10142025-1290",
+    "date": "2025-10-14",
+    "quote": "on behalf of City of Hialeah Education Academy, Inc. (COHEA)",
+    "firmSource": "firm from City of Doral authorized lobbyist list"
+   }
+  ],
+  "hialeah-ord-2025-099": [
+   {
+    "name": "Vanessa M. Bertran",
+    "firm": "Vanessa M. Bertran, P.A.",
+    "for": "PHAT Investments, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10142025-1290",
+    "date": "2025-10-14",
+    "quote": "on behalf of PHAT Investments, LLC"
+   }
+  ],
+  "hialeah-2025-10-14-15G": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Jacinto Lam",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10142025-1290",
+    "date": "2025-10-14",
+    "quote": "Ceasar Mestre, Esq., registered lobbyist spoke"
+   }
+  ],
+  "hialeah-2025-10-14-15I": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "De Paz Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10142025-1290",
+    "date": "2025-10-14",
+    "quote": "Ceasar Mestre, Esq., registered lobbyist, spoke."
+   }
+  ],
+  "hialeah-res-2025-266": [
+   {
+    "name": "Alfredo Gonzalez",
+    "firm": null,
+    "for": "JVA Engineering Contractor Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-2025-11-18-18A": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-2025-11-18-18B": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Jessica Alcantara, Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-ord-2025-104": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Jacinto Lam",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered Lobbyist: Ceaser Mestre"
+   }
+  ],
+  "hialeah-2025-11-18-19D": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Empyrean Townhomes, LLC",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "on behalf of Empyrean Townhomes, LLC",
+    "matchNote": "Minutes name this representative under this item number but for a differently worded party (Empyrean Townhomes, LLC); review.",
+    "why": "Minutes name this representative under this item number but for a differently worded party (Empyrean Townhomes, LLC); review."
+   }
+  ],
+  "hialeah-2025-11-18-19E": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Bal Holdings LLC",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Javier Vasque (registered lobbyist), in representation of Bal Holdings LLC",
+    "matchNote": "Minutes name this representative under this item number but for a differently worded party (Bal Holdings LLC); review.",
+    "why": "Minutes name this representative under this item number but for a differently worded party (Bal Holdings LLC); review."
+   }
+  ],
+  "hialeah-2025-11-18-19H": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1116 Property Holdings OZ LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-11-18-19I": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "MPT of Hialeah-Steward, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered Lobbyist: Javier L. Vasquez, Esq., 600 Brickell Avenue"
+   }
+  ],
+  "hialeah-2025-11-18-19J": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Jessica Alcantara, Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-2025-11-18-19K": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-2025-11-18-19M": [
+   {
+    "name": "Felix Pardo",
+    "firm": null,
+    "for": "Public Storage Operating Company / SAR 8th Avenue Hialeah, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_11182025-1302",
+    "date": "2025-11-18",
+    "quote": "Registered lobbyist: Felix Pardo"
+   }
+  ],
+  "hialeah-2025-12-09-10L": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2025-108": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-ord-2025-109": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Jessica Alcantara, Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-ord-2025-110": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Empyrean Townhomes, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq. ... on behalf of Empyrean Townhomes, LLC"
+   }
+  ],
+  "hialeah-ord-2025-112": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Raul Bolufe, Carlos Rodriguez, Rubacabal Property Management LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registerd Lobbyist: Javier Vazquez"
+   }
+  ],
+  "hialeah-ord-2025-113": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "First Loyal OZ Fund LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-ord-2025-114": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "MPT of Hialeah-Steward, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Javier L. Vasquez, Esq."
+   }
+  ],
+  "hialeah-ord-2025-115": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Jessica Alcantara, Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-ord-2025-116": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "Carlos Garcia, Jose Garcia",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: William W. Riley, Esq."
+   }
+  ],
+  "hialeah-2025-12-09-17I": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Luxor Hialeah 47 Street LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-12-09-17K": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "11 East 8 St LLC, CEMC Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-12-09-17L": [
+   {
+    "name": "Carlos Enrique",
+    "firm": null,
+    "for": "Esmelia Enriquez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Carlos Enrique, 7480 Fairway Drive, Suite 205, Miami Lakes"
+   }
+  ],
+  "hialeah-2025-12-09-17M": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "375 E 17 St LLC, DP Real Estate Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-12-09-17N": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Snow White and Seven Dwarfs, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2025-12-09-17P": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "Guillermo A. Aleman, Zoila E. Aleman",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_12092025-1306",
+    "date": "2025-12-09",
+    "quote": "Registered Lobbyist: Javier Vazquez, 600 Brickell Avenue"
+   }
+  ],
+  "hialeah-ord-2026-010": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1002 E 19 St LLC, CEMC Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01272026-1314",
+    "date": "2026-01-27",
+    "quote": "Applicant: Ceasar Mestre, Esq., on behalf of:"
+   }
+  ],
+  "hialeah-ord-2026-011": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "1002 E 19 St LLC, CEMC Holdings LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01272026-1314",
+    "date": "2026-01-27",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq., 8105 NW 155 Street"
+   }
+  ],
+  "hialeah-ord-2026-013": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Yusvani Alfonso",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01272026-1314",
+    "date": "2026-01-27",
+    "quote": "Registered lobbysit: Frank De La Paz, 1100 Southwest 104 Street"
+   }
+  ],
+  "hialeah-ord-2026-016": [
+   {
+    "name": "William W. Riley",
+    "firm": null,
+    "for": "JPC Real Estate Holdings, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_01272026-1314",
+    "date": "2026-01-27",
+    "quote": "Registered Lobbyist: William Riley, 1643 Southwest 256 Street, on behalf of"
+   }
+  ],
+  "hialeah-2026-02-24-16A": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02242026-1323",
+    "date": "2026-02-24",
+    "quote": "Registered Lobbyist: Manny Reus, Architect"
+   },
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02242026-1323",
+    "date": "2026-02-24",
+    "quote": "Ceasar Mestre, Esq., (registered lobbyist)"
+   }
+  ],
+  "hialeah-ord-2026-019": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Snow White and Seven Dwarfs, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02242026-1323",
+    "date": "2026-02-24",
+    "quote": "Registered Lobbyist: Ceaser Mestre, Esq."
+   }
+  ],
+  "hialeah-2026-02-24-17C": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02242026-1323",
+    "date": "2026-02-24",
+    "quote": "Registered Lobbyist: Manny Reus, 18501 Pines Boulevard"
+   },
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02242026-1323",
+    "date": "2026-02-24",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq., 8105 NW 155 Street"
+   }
+  ],
+  "hialeah-res-2026-084": [
+   {
+    "name": "Miguel Jimenez",
+    "firm": null,
+    "for": "YCH Capital LLC",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Miguel Jimenez, engineer on behalf of the owner",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-ord-2026-023": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Registered Lobbyist: Manny Reus (Architect)"
+   },
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq."
+   }
+  ],
+  "hialeah-ord-2026-024": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Registered Lobbyist: Manny Reus (Architect)"
+   },
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Westland Baptist Church, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq."
+   }
+  ],
+  "hialeah-2026-03-10-17F": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "ABC Institute, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "Registered Lobbyist: Javier Vazquez, Esq."
+   }
+  ],
+  "hialeah-ord-2026-020": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Owner of 7000 West 12th Avenue (not named on the agenda)",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03102026-1329",
+    "date": "2026-03-10",
+    "quote": "(from cached hl data / decisions.json)",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-ord-2026-028": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "ABC Institute, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03242026-1334",
+    "date": "2026-03-24",
+    "quote": "on behalf of ABC Institute, Inc."
+   }
+  ],
+  "hialeah-res-2026-092": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Pedro Gonzalez",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03242026-1334",
+    "date": "2026-03-24",
+    "quote": "on behalf of property owner Pedro Gonzalez.",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-ord-2026-030": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "ABC Institute, Inc.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03242026-1334",
+    "date": "2026-03-24",
+    "quote": "Registered Lobbyist: Javier Vazquez, Esq."
+   }
+  ],
+  "hialeah-2026-03-24-5C": [
+   {
+    "name": "Julio Perez",
+    "firm": null,
+    "for": "East Point Properties, LLC",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_03242026-1334",
+    "date": "2026-03-24",
+    "quote": "(power of attorney)",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-res-2026-104": [
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Florida East Coast Railway, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Florida East Coast Railway, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-105": [
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Florida East Coast Railway, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Florida East Coast Railway, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-111": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Core & Main, LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mark Stempler",
+    "firm": null,
+    "for": "Core & Main, LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Core & Main, LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Core & Main, LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Courtney Whitney",
+    "firm": null,
+    "for": "Core & Main, LP",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-2026-04-14-15A": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos VI LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "on behalf of the property owner, Casa Amigos VI LLC."
+   }
+  ],
+  "hialeah-ord-2026-032": [
+   {
+    "name": "Julio Perez",
+    "firm": null,
+    "for": "East Point Properties, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "Mr. Perez is the holder of a Power"
+   }
+  ],
+  "hialeah-ord-2026-033": [
+   {
+    "name": "Marbely Hernandez Moye",
+    "firm": null,
+    "for": "Vicente R. Hernandez and Alba G. Hernandez Living Trust",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "spoke on behalf of the applicant.",
+    "matchNote": "Minutes name this representative under this item number but for a differently worded party (Vicente R. Hernandez and Alba G. Hernandez Living Trust); review.",
+    "why": "Minutes name this representative under this item number but for a differently worded party (Vicente R. Hernandez and Alba G. Hernandez Living Trust); review."
+   }
+  ],
+  "hialeah-2026-04-14-16F": [
+   {
+    "name": "Alejandro Vilarello",
+    "firm": null,
+    "for": "Prestige 29th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "on behalf of the property owner, Prestige 29th Street, LLC."
+   },
+   {
+    "name": "Valerie M. Sanchez",
+    "firm": null,
+    "for": "Prestige 29th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "on behalf of the property owner, Prestige 29th Street, LLC."
+   }
+  ],
+  "hialeah-2026-04-14-16G": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Dr. Pablo M. Guala",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "on behalf of property owner, Dr. Pablo M. Guala.",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-2026-04-14-16H": [
+   {
+    "name": "Richie Chapman",
+    "firm": null,
+    "for": "Lowes Home Centers, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "Richie Chapman, on behalf of Lowes Home Centers, LLC."
+   }
+  ],
+  "hialeah-2026-04-14-16I": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos VI LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04142026-1341",
+    "date": "2026-04-14",
+    "quote": "on behalf of the property owner, Casa Amigos VI LLC."
+   }
+  ],
+  "hialeah-ord-2026-036": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos VI LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of the property owner, Casa Amigos VI LLC"
+   }
+  ],
+  "hialeah-ord-2026-037": [
+   {
+    "name": "Alejandro Vilarello",
+    "firm": null,
+    "for": "Prestige 29th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of the property owner, Prestige 29th Street, LLC"
+   },
+   {
+    "name": "Valerie M. Sanchez",
+    "firm": null,
+    "for": "Prestige 29th Street, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of the property owner, Prestige 29th Street, LLC"
+   }
+  ],
+  "hialeah-ord-2026-038": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos VI LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of the property owner, Casa Amigos VI LLC"
+   }
+  ],
+  "hialeah-2026-04-28-16G": [
+   {
+    "name": "Ben J. Fernandez",
+    "firm": null,
+    "for": "SBDC Management, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of property owner, SBDC Management, LLC"
+   },
+   {
+    "name": "Paul Hernandez",
+    "firm": null,
+    "for": "SBDC Management, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of property owner, SBDC Management, LLC"
+   },
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "SBDC Management, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_04282026-1349",
+    "date": "2026-04-28",
+    "quote": "on behalf of property owner, SBDC Management, LLC"
+   }
+  ],
+  "hialeah-res-2026-131": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-041": [
+   {
+    "name": "Ben J. Fernandez",
+    "firm": null,
+    "for": "SBDC Management LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05122026-1356",
+    "date": "2026-05-12",
+    "quote": "Registered Lobbyists: Ben J. Fernandez, Paul Hernandez, and Maritza Haro Salgado"
+   },
+   {
+    "name": "Paul Hernandez",
+    "firm": null,
+    "for": "SBDC Management LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05122026-1356",
+    "date": "2026-05-12",
+    "quote": "Registered Lobbyists: Ben J. Fernandez, Paul Hernandez, and Maritza Haro Salgado"
+   },
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "SBDC Management LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05122026-1356",
+    "date": "2026-05-12",
+    "quote": "Registered Lobbyists: Ben J. Fernandez, Paul Hernandez, and Maritza Haro Salgado"
+   }
+  ],
+  "hialeah-res-2026-143": [
+   {
+    "name": "Francois Illas",
+    "firm": null,
+    "for": "Sustainability Partners, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-12",
+    "quote": null
+   },
+   {
+    "name": "Roly Marante",
+    "firm": null,
+    "for": "Sustainability Partners, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-27",
+    "quote": null
+   }
+  ],
+  "hialeah-2026-05-26-14A": [
+   {
+    "name": "Dulce Conde",
+    "firm": null,
+    "for": "Alexis Gonzalez, Eduardo F. Martinez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05262026-1360",
+    "date": "2026-05-26",
+    "quote": "Registered lobbyist: Dulce Conde, 11410 North Kendall Drive Suite 208"
+   }
+  ],
+  "hialeah-2026-05-26-15F": [
+   {
+    "name": "Dulce Conde",
+    "firm": null,
+    "for": "Alexis Gonzalez, Eduardo F. Martinez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_05262026-1360",
+    "date": "2026-05-26",
+    "quote": "Registered lobbyist: Dulce Conde, 11410 North Kendall Drive Suite 208"
+   }
+  ],
+  "hialeah-res-2026-145": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-043": [
+   {
+    "name": "Dulce Conde",
+    "firm": null,
+    "for": "Alexis Gonzalez, Eduardo F. Martinez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06092026-1363",
+    "date": "2026-06-09",
+    "quote": "Registered lobbyist: Dulce Conde, 11410 North Kendall Drive Suite 208"
+   }
+  ],
+  "hialeah-ord-2026-046": [
+   {
+    "name": "Dulce Conde",
+    "firm": null,
+    "for": "Alexis Gonzalez, Eduardo F. Martinez",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06092026-1363",
+    "date": "2026-06-09",
+    "quote": "Registered lobbyist: Dulce Conde, 11410 North Kendall Drive Suite 208"
+   }
+  ],
+  "hialeah-res-2026-161": [
+   {
+    "name": "Al Cruz",
+    "firm": null,
+    "for": "Amauris Alvarez Ramos",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06232026-1366",
+    "date": "2026-06-23",
+    "quote": "Registered Lobbyist: Al Cruz, on behalf of Cunano Builders Corporation"
+   }
+  ],
+  "hialeah-ord-2026-049": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Pablo M. Guala",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_06232026-1366",
+    "date": "2026-06-23",
+    "quote": "on behalf of property owner, Dr. Pablo M. Guala.",
+    "why": "Named as the owner's proxy or design professional, not as a registered lobbyist"
+   }
+  ],
+  "hialeah-res-2026-175": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-179": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Bermello, Ajamil & Partners, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-180": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-181": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "quote": null
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-186": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-187": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Gustavo Eckardt",
+    "firm": null,
+    "for": "Premiere Design Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-20",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-188": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-190": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering Company",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-191": [
+   {
+    "name": "Gustavo Eckardt",
+    "firm": null,
+    "for": "Premiere Design Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-20",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-192": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "HBC Engineering, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "HBC Engineering, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "quote": null
+   }
+  ],
+  "hialeah-2026-08-11-17D": [
+   {
+    "name": "John Lukas",
+    "firm": null,
+    "for": "Ricardo Lago",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08112026-1372",
+    "date": "2026-08-11",
+    "quote": "Registered Lobbyist: John Lukas, 2655 South Lejeune Road, Coral Gables"
+   }
+  ],
+  "hialeah-2026-08-11-17E": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Rios Investment Group Corp.",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08112026-1372",
+    "date": "2026-08-11",
+    "quote": "Registered Lobbyist: Manny Reus, 18501 Pines Boulevard, Suite #342"
+   }
+  ],
+  "hialeah-res-2026-200": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "quote": null
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-203": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC dba Freebee",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC dba Freebee",
+    "basis": "otherBody",
+    "body": "City of Coral Gables",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-10-03",
+    "quote": null
+   }
+  ],
+  "hialeah-2026-08-25-16B": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists:Jose Vazquez, Esq., and Hugo P. Arza, Esq., Holland and Knight, LLP"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists:Jose Vazquez, Esq., and Hugo P. Arza, Esq., Holland and Knight, LLP"
+   }
+  ],
+  "hialeah-ord-2026-055": [
+   {
+    "name": "Douglas Baptist",
+    "firm": null,
+    "for": "Lowes Home Centers, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyist: Douglas Baptist, 1992 Southwest 1st Street ... Lowes Home Centers, LLC."
+   },
+   {
+    "name": "Richie Chapman",
+    "firm": null,
+    "for": "Lowes Home Centers, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Applicant: Richie Chapman, on behalf of Lowes Home Centers, LLC."
+   }
+  ],
+  "hialeah-2026-08-25-17D": [
+   {
+    "name": "John Lukas",
+    "firm": null,
+    "for": "Ricardo Lago",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyist: John Lukas, Esq., 2655 South Lejeune Road"
+   }
+  ],
+  "hialeah-2026-08-25-17E": [
+   {
+    "name": "Alter Gambarte",
+    "firm": null,
+    "for": "Eliecer Viamontes",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyist: Alter Gambarte, 16450 Miami Drive"
+   }
+  ],
+  "hialeah-2026-08-25-17F": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists:Jose Vazquez, Esq., and Hugo P. Arza, Esq, Holland and Knight"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists:Jose Vazquez, Esq., and Hugo P. Arza, Esq, Holland and Knight"
+   }
+  ],
+  "hialeah-2026-08-25-17G": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "1025 Hialeah Development, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered lobbyist: Maritza Haro Salgado, Esq., 200 South Biscayne Boulevard"
+   }
+  ],
+  "hialeah-2026-08-25-17H": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists: Jose Vazquez, Esq., and Hugo P. Arza, Esq., Holland and Knight"
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_08252026-1383",
+    "date": "2026-08-25",
+    "quote": "Registered Lobbyists: Jose Vazquez, Esq., and Hugo P. Arza, Esq., Holland and Knight"
+   }
+  ],
+  "hialeah-res-2026-220": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "quote": null
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-058": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   }
+  ],
+  "hialeah-2026-09-08-16B": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Raul Fernandez / Suny Comfort Home",
+    "basis": "review",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Raul Fernandez of Suny Comfort Home.",
+    "matchNote": "Minutes name this representative under this item number but for a differently worded party (Raul Fernandez / Suny Comfort Home); review.",
+    "why": "Minutes name this representative under this item number but for a differently worded party (Raul Fernandez / Suny Comfort Home); review."
+   }
+  ],
+  "hialeah-ord-2026-059": [
+   {
+    "name": "Alter Gambarte",
+    "firm": null,
+    "for": "Eliecer Viamontes",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Eliecer Viamontes."
+   }
+  ],
+  "hialeah-ord-2026-060": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   }
+  ],
+  "hialeah-ord-2026-061": [
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "1025 Hialeah Development LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of 1025 Hialeah Development LLC."
+   }
+  ],
+  "hialeah-ord-2026-062": [
+   {
+    "name": "Jose Vazquez",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   },
+   {
+    "name": "Hugo P. Arza",
+    "firm": "Holland & Knight LLP",
+    "for": "Okeechobee Hialeah Property LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09082026-1396",
+    "date": "2026-09-08",
+    "quote": "on behalf of Okeechobee Hialeah Property LLC."
+   }
+  ],
+  "hialeah-res-2026-223": [
+   {
+    "name": "Nelson Diaz",
+    "firm": null,
+    "for": "Sunshine Gasoline Distributors, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-233": [
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Zaba St. George Castro",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Elizabeth Pedersen",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "City of Coral Gables",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-01",
+    "quote": null
+   },
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "SFM Services Inc.",
+    "basis": "otherBody",
+    "body": "City of Coral Gables",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-01",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-235": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-069": [
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight LLP",
+    "for": "Lennar Homes, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09222026-1407",
+    "date": "2026-09-22",
+    "quote": "on behalf of Lennar Homes, LLC."
+   },
+   {
+    "name": "Oliver Wechsler",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Avery Mazur",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Alexandra Barshel",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Miriam Ramos",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Erica Adams",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Thomas Mullin",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Carlos Gonzalez",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mischael Cetoute",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Phil Serrate",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Lilibeth Hauck",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Hugo Arza",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Alberto Torres",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Carli Koshal",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Pedro Gassant",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Jose Gonzalez",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-12",
+    "quote": null
+   },
+   {
+    "name": "Jr., Juan Mayol",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Jeffrey Bercow",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Howard Nelson",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Pedro Portela",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Maria Herrera",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "James Williams",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "quote": null
+   },
+   {
+    "name": "Maria Lievano-cruz",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-12",
+    "quote": null
+   },
+   {
+    "name": "Amanda Naldjieff",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Melissa Bolivar",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Yadira Werley",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Savannah Bergeron",
+    "firm": null,
+    "for": "Lennar Homes, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-073": [
+   {
+    "name": "Frank De La Paz",
+    "firm": null,
+    "for": "Raul Fernandez / Suny Comfort Home",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09222026-1407",
+    "date": "2026-09-22",
+    "quote": "on behalf of Raul Fernandez of Suny Comfort Home."
+   }
+  ],
+  "hialeah-2026-09-22-17E": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos 5 LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09222026-1407",
+    "date": "2026-09-22",
+    "quote": "on behalf of Casa Amigos 5 LLC."
+   }
+  ],
+  "hialeah-2026-09-22-17F": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Gregory Carlin and Shannon Bustamante",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09222026-1407",
+    "date": "2026-09-22",
+    "quote": "Registered Lobbyist: Ceasar Mestre, Esq., 8105 NW 155 st"
+   }
+  ],
+  "hialeah-2026-09-22-17G": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Level II Palmetto LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_09222026-1407",
+    "date": "2026-09-22",
+    "quote": "on behalf of Level II Palmetto LLC"
+   }
+  ],
+  "hialeah-res-2026-256": [
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "DRC Emergency Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "DRC Emergency Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Adele Valencia",
+    "firm": null,
+    "for": "DRC Emergency Services, LLC",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-276": [
+   {
+    "name": "Roger Pou",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Sherry Benjamin",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Anthony Recio",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "quote": null
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   },
+   {
+    "name": "Chad Friedman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   },
+   {
+    "name": "Grant Smith",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Mitchell Bierman",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "quote": null
+   },
+   {
+    "name": "Maritza Haro Salgado",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "quote": null
+   },
+   {
+    "name": "Thomas Robertson",
+    "firm": null,
+    "for": "Waste Connections of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-278": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-res-2026-279": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "quote": null
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Coastal Waste & Recycling of Florida, Inc.",
+    "basis": "otherBody",
+    "body": "Miami-Dade County",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "quote": null
+   }
+  ],
+  "hialeah-ord-2026-076": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Casa Amigos 5 LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of Casa Amigos 5 LLC"
+   }
+  ],
+  "hialeah-ord-2026-077": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Shannon Bustamante",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of Shannon Bustamante"
+   }
+  ],
+  "hialeah-2026-10-13-17F": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Level II Palmetto LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of Level II Palmetto LLC"
+   }
+  ],
+  "hialeah-2026-10-13-17G": [
+   {
+    "name": "Javier L. Vazquez",
+    "firm": null,
+    "for": "MPT of Hialeah-Steward, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of MPT of Hialeah-Steward, LLC"
+   },
+   {
+    "name": "Jenelly Perez",
+    "firm": null,
+    "for": "MPT of Hialeah-Steward, LLC",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of MPT of Hialeah-Steward, LLC"
+   }
+  ],
+  "hialeah-2026-10-13-17H": [
+   {
+    "name": "Manny Reus",
+    "firm": null,
+    "for": "Rios Investment Group Corp",
+    "basis": "record",
+    "src": "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_10132026-1412",
+    "date": "2026-10-13",
+    "quote": "on behalf of Danniell Rios, representative of the Rios Investments Group Corp."
+   }
+  ]
+ },
+ "notFound": "No public Hialeah lobbyist registry list: the City Clerk takes registrations through the Tyler EnerGov self-service portal (needs an account; not used), so no action has basis \"registry\". Links come from the minutes, which print \"Registered Lobbyist:\" and \"on behalf of\" lines under zoning items; the minutes do not name lobbyists for contract, purchase or permit items, so most of the 526 contract actions have only otherBody (Miami-Dade County / Coral Gables) client matches, which are not Hialeah ties. Firms are given only where the minutes state one (Holland & Knight, Jerry B. Proctor P.A., Vanessa M. Bertran P.A.) or the City of Doral list gives it (marked firmSource). Representatives named for items not in actions.json (e.g. 8 Ball Cafeteria 2025-03-11 11H, Florida Waste Haulers 2025-06-24 11C, Lowe's and Guala second readings, Prestige 29th St 2026-03-24 8G) were not attached. Ambiguous: 2026-03-10 items 11A (Ceasar Mestre) and 11D (Javier Vazquez) name a registered lobbyist without a party and match no kept action; 2026-02-24 11E (Caroline Friedman Frank for an unnamed owner) not attached. Manny Reus is an architect; the minutes list him as \"Registered Lobbyist\" on some items and only as architect on others, so he is attached only where the minutes say lobbyist or \"on behalf of\". Family members, property managers and holders of a power of attorney for individual owners were included only where the minutes say \"on behalf of\" (Julio Perez, Marbely Hernandez Moye, Jose Enrique Cueto); review before publishing as lobbyist ties."
+}

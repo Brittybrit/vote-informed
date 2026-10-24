@@ -27,7 +27,10 @@ for (const slug of ONLY) {
   const pfx = KEY[slug] || slug + '-';
   const byId = new Map();
   for (const a of B.actions) { byId.set(a.id, a); if (String(a.id).startsWith(pfx)) byId.set(String(a.id).slice(pfx.length), a); }
-  const find = id => byId.get(id) || byId.get(pfx + id);
+  // An action kept from an older card keeps that card's id; actions.json says which (prevId, legacyId)
+  const alias = new Map();
+  if (existsSync(P(`scripts/data/city/${slug}/actions.json`))) for (const u of J(`scripts/data/city/${slug}/actions.json`).actions || []) for (const o of [u.prevId, u.legacyId]) if (o) alias.set(String(u.id), o);
+  const find = id => byId.get(id) || byId.get(pfx + id) || byId.get(alias.get(id)) || byId.get(alias.get(String(id).replace(pfx, '')));
   const n = { votes: 0, owners: 0, lob: 0, review: 0, party: 0, missing: 0 };
 
   // 1. Roll calls found later, for actions whose record gave none
@@ -85,9 +88,10 @@ for (const slug of ONLY) {
   for (const a of B.actions) {
     if (!a.universe) continue;
     a.gifts = a.gifts || [];
-    const have = new Set(a.gifts.map(giftKey));
+    const same = g => [g.to, norm(g.donor), Number(g.amount), g.date].join('|');
+    const have = new Set(a.gifts.map(same));
     let added = false;
-    for (const g of partyGifts(a, donors)) if (!have.has(giftKey(g))) { a.gifts.push(g); have.add(giftKey(g)); n.party++; added = true; }
+    for (const g of partyGifts(a, donors)) if (!have.has(same(g))) { a.gifts.push(g); have.add(same(g)); n.party++; added = true; }
     if (added) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
   report.push(`${slug}: votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
