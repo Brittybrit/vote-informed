@@ -1,0 +1,3936 @@
+{
+ "city": "Doral",
+ "sources": [
+  {
+   "name": "City of Doral authorized lobbyist list (export dated 2025-12-18, with principals and issues)",
+   "url": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+   "viewed": "2026-10-24",
+   "covers": "registrations listed 2024-01 to 2025-09 (the 2025 cycle); read via WebFetch, transcribed by principal"
+  },
+  {
+   "name": "City of Doral authorized lobbyists list (current)",
+   "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+   "viewed": "2026-10-22",
+   "covers": "2026 registrations, names/firms/dates only (scripts/data/city/doral/lobbyists-2026.json); used only for links carried from the hand-built cards"
+  },
+  {
+   "name": "Doral City Council minutes (Granicus)",
+   "url": "https://cityofdoral.granicus.com/ViewPublisher.php?view_id=2",
+   "viewed": "2026-10-24",
+   "covers": "record basis taken only from minutes notes already in actions.json; minutes could not be re-read (robots block)"
+  },
+  {
+   "name": "Miami-Dade County Clerk lobbyist registration (otherBody, not published)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "2026 county registrations (public/data/county-lobbyists.json)"
+  }
+ ],
+ "byAction": {
+  "doral-25-5982-2025-01-15": [
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Carahsoft",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"CARAHSOFT\""
+   },
+   {
+    "name": "Jesse Manzano",
+    "firm": null,
+    "for": "Carahsoft",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"CARAHSOFT\""
+   },
+   {
+    "name": "Jeremy Ring",
+    "firm": null,
+    "for": "Carahsoft",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"CARAHSOFT\""
+   }
+  ],
+  "doral-25-5993-2025-01-15": [
+   {
+    "name": "Carlos Cejas",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Jose Abreu",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Naldo Gonzalez",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Yurfa Glenny",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   }
+  ],
+  "doral-25-5995-2025-01-15": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-02",
+    "issue": "Miami-Dade County registration; client listed as \"EXP - U.S. SERVICES, INC.\""
+   },
+   {
+    "name": "Pablo Acosta",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-07",
+    "issue": "Miami-Dade County registration; client listed as \"EXP - U.S. SERVICES, INC.\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "EXP U.S. Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"EXP - U.S. SERVICES, INC.\""
+   }
+  ],
+  "doral-25-6008-2025-01-15": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-25-5998": [
+   {
+    "name": "Felix M Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-15",
+    "issue": null
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": "The Lasarte Law Firm",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-15",
+    "issue": "Zoning and redevelopment at resort"
+   },
+   {
+    "name": "Elinette Ruiz-diaz De La Portilla",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   }
+  ],
+  "doral-24-5774-2025-01-15": [
+   {
+    "name": "Felix M Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-15",
+    "issue": null
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": "The Lasarte Law Firm",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-15",
+    "issue": "Zoning and redevelopment at resort"
+   },
+   {
+    "name": "Elinette Ruiz-diaz De La Portilla",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   }
+  ],
+  "doral-25-6003-2025-01-15": [
+   {
+    "name": "Felix M Lasarte",
+    "firm": "Felix Lasarte PL",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-15",
+    "issue": null
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": "The Lasarte Law Firm",
+    "for": "Trump Endeavor 12, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-15",
+    "issue": "Zoning and redevelopment at resort"
+   },
+   {
+    "name": "Elinette Ruiz-diaz De La Portilla",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   },
+   {
+    "name": "Felix Lasarte",
+    "firm": null,
+    "for": "Trump Endeavor 12 LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TRUMP ENDEAVOR 12 LLC\""
+   }
+  ],
+  "doral-25-6038-2025-02-12": [
+   {
+    "name": "Carlos Cejas",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Jose Abreu",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Naldo Gonzalez",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Yurfa Glenny",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   }
+  ],
+  "doral-25-6040-2025-02-12": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"ARDURRA GROUP\""
+   }
+  ],
+  "doral-25-6079-2025-03-12": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Edward Swakon",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   }
+  ],
+  "doral-25-6077-2025-03-12": [
+   {
+    "name": "Roberto Alvarez",
+    "firm": "Bercow Radell Fernandez Larkin and Tapanes",
+    "for": "Doral LPIV, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-23",
+    "issue": "Site plan, 3511 NW 91 Ave."
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin and Tapanes",
+    "for": "Doral LPIV, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-23",
+    "issue": "Site plan, 3511 NW 91 Ave"
+   }
+  ],
+  "doral-25-6108-2025-04-16": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"MOTOROLA SOLUTIONS\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"MOTOROLA SOLUTIONS\""
+   }
+  ],
+  "doral-25-6131-2025-04-16": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC (Freebee)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"Beefree LLC\""
+   }
+  ],
+  "doral-25-6132-2025-04-16": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC (Freebee)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"Beefree LLC\""
+   }
+  ],
+  "doral-25-6173": [
+   {
+    "name": "Benjamin Hedrick",
+    "firm": "Akerman LLP",
+    "for": "Bridge Point Doral 2700, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": null
+   },
+   {
+    "name": "Benjamin Hedrick",
+    "firm": null,
+    "for": "Bridge Point Doral (developer)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"BRIDGE POINT DORAL 2700, LLC\""
+   }
+  ],
+  "doral-25-6155-2025-05-14": [
+   {
+    "name": "Carlos Cejas",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Jose Abreu",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Naldo Gonzalez",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Yurfa Glenny",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   }
+  ],
+  "doral-25-6153-2025-05-14": [
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "IMF Doral, LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": "Doral Inn & Suites"
+   }
+  ],
+  "doral-25-6217-2025-06-04": [
+   {
+    "name": "Daniel Hanlon",
+    "firm": "Holland & Knight, LLP",
+    "for": "Loud & Live Entertainment, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "RFP#2024-03, Doral Central Park amphitheater management"
+   },
+   {
+    "name": "Jose Garcia Tunon",
+    "firm": "Loud and Live, Inc.",
+    "for": "Loud and Live, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-02-28",
+    "issue": "Events"
+   },
+   {
+    "name": "Gilbert Paz",
+    "firm": "Loud and Live, Inc.",
+    "for": "Loud and Live, Inc.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-02-28",
+    "issue": "Events"
+   },
+   {
+    "name": "Jose Garcia-Tunon",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-19",
+    "issue": "Miami-Dade County registration; client listed as \"Loud And Live Management Group, LLC\""
+   },
+   {
+    "name": "Avery Mazur",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Hugo Arza",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Miguel De Grandy",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"Loud And Live Management Group, LLC\""
+   },
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Daniel Hanlon",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Richard Perez",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"LOUD AND LIVE ENGAGE, LLC\""
+   },
+   {
+    "name": "Benjamin Tyler",
+    "firm": null,
+    "for": "Loud and Live",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"Loud And Live Management Group, LLC\""
+   }
+  ],
+  "doral-25-6183-2025-06-04": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "RollKall Technologies, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"ROLLKALL TECHNOLOGIES, LLC\""
+   }
+  ],
+  "doral-25-6190-2025-06-04": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-25-6191-2025-06-04": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-25-6196-2025-06-04": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-25-6253-2025-08-13": [
+   {
+    "name": "Benjamin Hedrick",
+    "firm": "Akerman, LLP",
+    "for": "Doral Marketplace, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-20",
+    "issue": "Retail site plan and related development approvals"
+   }
+  ],
+  "doral-25-6242-2025-08-13": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   }
+  ],
+  "doral-25-6243-2025-08-13": [
+   {
+    "name": "Edgar Castro",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SFM SERVICES\""
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SFM SERVICES\""
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SFM SERVICES\""
+   },
+   {
+    "name": "Zaba St. George Castro",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"SFM SERVICES\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SFM SERVICES\""
+   }
+  ],
+  "doral-25-6256-2025-08-13": [
+   {
+    "name": "Wesley Hevia",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "Development approvals, 7705 NW 48 Street and 7775-7785 NW 48 Street"
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "7705 NW 48 St approvals"
+   }
+  ],
+  "doral-25-6300-2025-09-10": [
+   {
+    "name": "Amy Bisceglia",
+    "firm": null,
+    "for": "Gartner, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-19",
+    "issue": "Miami-Dade County registration; client listed as \"Gartner, Inc.\""
+   }
+  ],
+  "doral-25-6307": [
+   {
+    "name": "Jose Manuel Gonzalez",
+    "firm": "GLC Real Estate, Inc",
+    "for": "PSBP INDUSTRIAL, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": null
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Law, PA",
+    "for": "PSBP Industrial LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": null
+   }
+  ],
+  "doral-25-6313-2025-09-10": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "InSite Street Media",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"SIGNAL OUTDOOR ADVERTISING LLC D/B/A INSITE STREET MEDIA\""
+   },
+   {
+    "name": "Kelly Mallette",
+    "firm": null,
+    "for": "InSite Street Media",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SIGNAL / DBA COA-INSITE STREET MEDIA\""
+   },
+   {
+    "name": "Javier Vazquez",
+    "firm": null,
+    "for": "InSite Street Media",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-09",
+    "issue": "Miami-Dade County registration; client listed as \"INSITE STREET MEDIA, LLC\""
+   },
+   {
+    "name": "Ronald Book",
+    "firm": null,
+    "for": "InSite Street Media",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SIGNAL / DBA COA-INSITE STREET MEDIA\""
+   }
+  ],
+  "doral-25-6304-2025-09-10": [
+   {
+    "name": "Wesley Hevia",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "Development approvals, 7705 NW 48 Street and 7775-7785 NW 48 Street"
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "7705 NW 48 St approvals"
+   }
+  ],
+  "doral-25-6306-2025-09-10": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Midtown PUD modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Modification of declaration of restrictions, clubhouse use"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and/or MDA amendments"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and MDA amendments"
+   }
+  ],
+  "doral-25-6256": [
+   {
+    "name": "Wesley Hevia",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "Development approvals, 7705 NW 48 Street and 7775-7785 NW 48 Street"
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Law, P.A.",
+    "for": "BP Doral 826 FL, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-12-09",
+    "issue": "7705 NW 48 St approvals"
+   }
+  ],
+  "doral-25-6318": [
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": null
+   },
+   {
+    "name": "Alejandro J. Arias",
+    "firm": "Holland & Knight",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Century Town Center II, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": null
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight",
+    "for": "Century Homebuilders Group LLC/Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": null
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Midtown PUD modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Modification of declaration of restrictions, clubhouse use"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and/or MDA amendments"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and MDA amendments"
+   }
+  ],
+  "doral-25-6306-2025-10-08": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Midtown PUD modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Modification of declaration of restrictions, clubhouse use"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and/or MDA amendments"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and MDA amendments"
+   }
+  ],
+  "doral-25-6317-2025-10-08": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Midtown PUD modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Modification of declaration of restrictions, clubhouse use"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Midtown Properties, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Clubhouse and park donation agreement modification"
+   },
+   {
+    "name": "Alejandro Arias",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and/or MDA amendments"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Century Homebuilders Group LLC / Century Town Center 1 & 2",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Nature preserve conveyance and MDA amendments"
+   }
+  ],
+  "doral-25-6399-2025-11-12": [
+   {
+    "name": "Joseph Bober",
+    "firm": null,
+    "for": "South Florida Police Benevolent Association",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "issue": "Miami-Dade County registration; client listed as \"Dade County Police Benevolent Association d/b/a South Florida Police Benevolent Association\""
+   }
+  ],
+  "doral-25-6402-2025-11-12": [
+   {
+    "name": "Joseph Bober",
+    "firm": null,
+    "for": "South Florida Police Benevolent Association",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "issue": "Miami-Dade County registration; client listed as \"Dade County Police Benevolent Association d/b/a South Florida Police Benevolent Association\""
+   }
+  ],
+  "doral-25-6383-2025-11-12": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-25-6436": [
+   {
+    "name": "Jose K. Fuentes",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Grupo Eulen",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Max Losner",
+    "firm": "Becker & Poliakoff, P.A.",
+    "for": "Grupo Eulen",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   }
+  ],
+  "doral-25-6431-2025-12-10": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Approvals, 3825 and 3268 NW 107 Ave"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals, 3825 and 3268 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "Eurocon LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   }
+  ],
+  "doral-25-6432-2025-12-10": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Approvals, 3825 and 3268 NW 107 Ave"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals, 3825 and 3268 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "Eurocon LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   }
+  ],
+  "doral-26-6469-2026-01-15": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-25-6190-2026-01-15": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-25-6191-2026-01-15": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-25-6196-2026-01-15": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-26-6460-2026-01-15": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Land use, zoning and permitting"
+   }
+  ],
+  "doral-26-6480-2026-02-18": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-26-6514": [
+   {
+    "name": "Jose Manuel Gonzalez",
+    "firm": "GLC Real Estate, Inc",
+    "for": "PSBP INDUSTRIAL, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": null
+   },
+   {
+    "name": "Tracy Slavens",
+    "firm": "LSN Law, PA",
+    "for": "PSBP Industrial LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": null
+   }
+  ],
+  "doral-26-6525-2026-03-11": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"ARDURRA GROUP\""
+   }
+  ],
+  "doral-26-6516": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "review",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-04",
+    "issue": null,
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "review",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null,
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Zoning approvals, new store at 9755 NW 41 St",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Supermarkets, Inc.",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-15",
+    "issue": "Zoning approvals, new store at 9755 NW 41 St.",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Supermarkets, Inc.",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "New store zoning approvals, 9755 NW 41 St",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   }
+  ],
+  "doral-26-6517": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "review",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-04",
+    "issue": null,
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "review",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null,
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "Zoning approvals, new store at 9755 NW 41 St",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Supermarkets, Inc.",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-15",
+    "issue": "Zoning approvals, new store at 9755 NW 41 St.",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Supermarkets, Inc.",
+    "basis": "review",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "New store zoning approvals, 9755 NW 41 St",
+    "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   }
+  ],
+  "doral-25-6431-2026-03-11": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Approvals, 3825 and 3268 NW 107 Ave"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals, 3825 and 3268 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "Eurocon LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   }
+  ],
+  "doral-25-6432-2026-03-11": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Approvals, 3825 and 3268 NW 107 Ave"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals, 3825 and 3268 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "Eurocon LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   }
+  ],
+  "doral-26-6515-2026-03-11": [
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Approvals, 3825 and 3268 NW 107 Ave"
+   },
+   {
+    "name": "Alan Krischer",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals, 3825 and 3268 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "Nerio Javier Romero Martinez",
+    "firm": "USA Latin Networking, LLC.",
+    "for": "Eurocon LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Eurocon, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "3825 and 3268 NW 107 Ave approvals"
+   }
+  ],
+  "doral-26-6568-2026-04-08": [
+   {
+    "name": "Erica Adams",
+    "firm": "Holland & Knight, LLP",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Oasis at Doral"
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Oasis at Doral"
+   },
+   {
+    "name": "Mischael Cetoute",
+    "firm": "Holland & Knight, LLP",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Oasis at Doral"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Doral Costa Capital. LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Oasis at Doral"
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight, LLP",
+    "for": "Doral Costa Capital. LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Oasis at Doral"
+   }
+  ],
+  "doral-26-6562-2026-04-08": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-26-6551-2026-05-13": [
+   {
+    "name": "Patrick Malarney",
+    "firm": null,
+    "for": "Wells Fargo Bank, N.A.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"WELLS FARGO BANK, N.A.\""
+   },
+   {
+    "name": "Stephen Lenehan",
+    "firm": null,
+    "for": "Wells Fargo Bank, N.A.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"WELLS FARGO BANK, N.A.\""
+   }
+  ],
+  "doral-26-6593-2026-05-13": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC (Freebee)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"Beefree LLC\""
+   }
+  ],
+  "doral-26-6594-2026-05-13": [
+   {
+    "name": "Luis Gazitua",
+    "firm": null,
+    "for": "Beefree, LLC (Freebee)",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"Beefree LLC\""
+   }
+  ],
+  "doral-26-6595-2026-05-13": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   }
+  ],
+  "doral-26-6612-2026-06-10": [
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Motorola Solutions",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"MOTOROLA SOLUTIONS\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Motorola Solutions",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"MOTOROLA SOLUTIONS\""
+   }
+  ],
+  "doral-26-6615-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6617-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6616-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6618-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6620-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6621-2026-06-10": [
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6723-2026-08-12": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "doral-26-6708": [
+   {
+    "name": "Donald Clark DeLoach",
+    "firm": "DDGov Consulting LLC",
+    "for": "Thrive Operations, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-29",
+    "issue": null
+   }
+  ],
+  "doral-26-6707": [
+   {
+    "name": "Erica Chanti",
+    "firm": "Rubin Turnbull",
+    "for": "Fresh Service & Repair Corp",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-08-10",
+    "issue": null
+   }
+  ],
+  "doral-26-6693": [
+   {
+    "name": "Roberto A. Alvarez",
+    "firm": "Bercow Radell Fernandez Larkin and Tapanes",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": null
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Tom Robertson",
+    "firm": "Bercow Radell Fernandez Larkin & Tapanes",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-06-17",
+    "issue": null
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight, LLP",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Site plan, parcel on NW 41 St"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "NW 41 St site plan approval"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Cedeco 41, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "NW 41 St site plan approval"
+   }
+  ],
+  "doral-26-6698-2026-08-12": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": "Holland & Knight, LLP",
+    "for": "CM Doral Development Company LLC (Downtown Doral)",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals for Downtown Doral"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "CM Doral Development Company LLC (Downtown Doral)",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Downtown Doral and Downtown Doral South"
+   },
+   {
+    "name": "Joe Jimenez",
+    "firm": null,
+    "for": "Downtown Doral MDA applicant (Codina)",
+    "basis": "record",
+    "src": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=839&doc_id=7db21e55-96b5-11f1-bb61-005056a89546",
+    "date": "2026-08-12",
+    "issue": null
+   }
+  ],
+  "doral-26-6615": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6616-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6617-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6618-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6620-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6621-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6695-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6697-2026-08-12": [
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": null
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": null
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": null
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": null
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-08-21",
+    "issue": "Land use and zoning entitlements, multifamily"
+   },
+   {
+    "name": "Jacob Grohoski",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "Multifamily development, 1625 NW 107 Avenue"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Juan Mayol",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "Ana Pedrajo",
+    "firm": "Greystar Development East, LLC",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-05-01",
+    "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Miriam Soler-Ramos",
+    "firm": "Holland & Knight, LLP",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Sears parcel redevelopment, Miami International Mall"
+   },
+   {
+    "name": "James Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-04-24",
+    "issue": "1625 NW 107 Ave multifamily development"
+   }
+  ],
+  "doral-26-6760": [
+   {
+    "name": "Claudia M. McKenna",
+    "firm": "Claudia Modder McKenna, Attorney at Law",
+    "for": "SDE Media LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-03",
+    "issue": null
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "SDE Media, LLC",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-22",
+    "issue": "General representation"
+   },
+   {
+    "name": "Claudia M. McKenna",
+    "firm": "Claudia M. McKenna, Attorney",
+    "for": "SDE Media, LLC.",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2025-06-04",
+    "issue": null
+   },
+   {
+    "name": "Andres Rivero",
+    "firm": null,
+    "for": "SDE Media LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"SDE MEDIA LLC\""
+   },
+   {
+    "name": "Nicholas Noto",
+    "firm": null,
+    "for": "SDE Media LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SDE MEDIA LLC\""
+   },
+   {
+    "name": "Brian Adler",
+    "firm": null,
+    "for": "SDE Media LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"SDE MEDIA LLC\""
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "SDE Media LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"SDE MEDIA LLC\""
+   }
+  ],
+  "doral-26-6746-2026-09-09": [
+   {
+    "name": "Carlos Cejas",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Jose Abreu",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Naldo Gonzalez",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   },
+   {
+    "name": "Yurfa Glenny",
+    "firm": null,
+    "for": "Gannett Fleming, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"GANNETT FLEMING, INC\""
+   }
+  ],
+  "doral-26-6698-2026-09-09": [
+   {
+    "name": "Joseph Goldstein",
+    "firm": "Holland & Knight, LLP",
+    "for": "CM Doral Development Company LLC (Downtown Doral)",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Development approvals for Downtown Doral"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight, LLP",
+    "for": "CM Doral Development Company LLC (Downtown Doral)",
+    "basis": "registry",
+    "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
+    "date": "2024-11-14",
+    "issue": "Downtown Doral and Downtown Doral South"
+   },
+   {
+    "name": "Joe Jimenez",
+    "firm": null,
+    "for": "Downtown Doral MDA applicant (Codina)",
+    "basis": "record",
+    "src": "https://cityofdoral.granicus.com/MinutesViewer.php?view_id=2&clip_id=849&doc_id=f67155f4-aca4-11f1-a183-005056a89546",
+    "date": "2026-09-09",
+    "issue": null
+   }
+  ],
+  "doral-26-6703": [
+   {
+    "name": "Jerry B. Proctor",
+    "firm": "Jerry B. Proctor, PA",
+    "for": "Emre Tuna Investment LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-04-17",
+    "issue": null
+   }
+  ]
+ },
+ "notFound": "Doral minutes (Granicus) could not be re-read here (robots block for WebFetch, proxy block for the shell), so record links come only from minutes notes already in actions.json (26-6698, Joe Jimenez). The 2026 current list (cityapps.cityofdoral.com) has no principals and was not readable, so 2026 registrations are only those carried from the hand-built cards. No registry match for: Collection Suites II (UF Communications), Prime Square, Smash Padel, Shelton Academy, Mediterranea Centre II (8300 Invest), Royal Atlantic Realty, Emre Tuna (card only), La Joya, Upland Park, Codina Partners debris sites, the 26-6681 sports facility applicant, Doral 10 settlement, and vendor contracts. Doral 2025 list dates are the \"date listed\" column in the 2025-12-18 export (not labeled as registration date). Publix 2025 registration issue is a new store at 9755 NW 41 St; matched to the Doral Plaza Publix items 26-6516/26-6517 on that basis (check address). otherBody rows are for review only."
+}

@@ -1,0 +1,2485 @@
+{
+ "city": "Coral Gables",
+ "sources": [
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2025",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-24",
+   "covers": "registrations paid 2024-12 to 2025-12 (scripts/data/city/coralgables/lobbyists-2025.csv)"
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2026",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-24",
+   "covers": "registrations paid 2025-12 to 2026-10 (scripts/data/city/coralgables/lobbyists-2026.csv)"
+  },
+  {
+   "name": "Coral Gables Legistar matter titles (\"Lobbyist:\" line)",
+   "url": "https://webapi.legistar.com/v1/coralgables/matters?$filter=substringof('Lobbyist',MatterTitle) and MatterIntroDate ge datetime'2024-09-01'",
+   "viewed": "2026-10-24",
+   "covers": "208 matters introduced since 2024-09-01; lobbyist named on the agenda item"
+  },
+  {
+   "name": "Miami-Dade County Clerk lobbyist registration (otherBody, not published)",
+   "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+   "viewed": "2026-10-18",
+   "covers": "2026 county registrations (public/data/county-lobbyists.json)"
+  }
+ ],
+ "byAction": {
+  "24-8230": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26831",
+    "date": "2025-01-14",
+    "issue": null
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Creh Galiano LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "issue": "Zoning & Building approvals re 1414 Galiano Street, Coral Gables, Florida"
+   }
+  ],
+  "24-8339": [
+   {
+    "name": "Tucker Gibbs",
+    "firm": null,
+    "for": "Abutting owner(s), Kenmare St (lobbyists Tucker Gibbs, Wayne Pathman)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26940",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "Wayne Pathman",
+    "firm": null,
+    "for": "Abutting owner(s), Kenmare St (lobbyists Tucker Gibbs, Wayne Pathman)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26940",
+    "date": "2025-01-28",
+    "issue": null
+   },
+   {
+    "name": "W. Tucker Gibbs",
+    "firm": null,
+    "for": "Hillary and Javier Rodriguez",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2024-01-13",
+    "issue": "Vacation of 148 foot long right of way stub (Kenmare Street)"
+   }
+  ],
+  "24-8504": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "4241 Aurora, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-13",
+    "issue": "Mixed use entitlement for property located at 4241 Aurora Street, Coral Gables."
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "4241 Aurora, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-13",
+    "issue": "Mixed use entitlement for property located at 4241 Aurora Street, Coral Gables."
+   }
+  ],
+  "24-7817": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Edward Swakon",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   }
+  ],
+  "24-8460": [
+   {
+    "name": "Suzanne A. Dockerty",
+    "firm": null,
+    "for": "St. Theresa Catholic School (Archdiocese of Miami)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27061",
+    "date": "2025-02-25",
+    "issue": null
+   },
+   {
+    "name": "Michael Ehrling",
+    "firm": null,
+    "for": "Archdiocese of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-08-20",
+    "issue": null
+   },
+   {
+    "name": "Suzanne A. Dockerty",
+    "firm": null,
+    "for": "The Most Rev. Thomas G. Wenski, Archbishop of the Archdiocese of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-04-02",
+    "issue": null
+   }
+  ],
+  "25-8628": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Ardurra Group, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"ARDURRA GROUP\""
+   },
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   }
+  ],
+  "25-8759": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "John Bell Construction, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-07-10",
+    "issue": "Construction Services"
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "John Bell Construction, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"John Bell Construction, Inc.\""
+   }
+  ],
+  "25-8763": [
+   {
+    "name": "Guillermo Cuadra",
+    "firm": null,
+    "for": "Lee Construction Group, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"LEE Construction Group, Inc.\""
+   }
+  ],
+  "24-8206": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26809",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26809",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "All zoning related approvals for proposed mixed use development at the site."
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "All zoning related approvals for proposed mixed use development at the site."
+   }
+  ],
+  "25-8565": [
+   {
+    "name": "Nelson de Leon",
+    "firm": null,
+    "for": "Riviera Country Club",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27164",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "David Schoop",
+    "firm": null,
+    "for": "Riviera Country Club",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27164",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Nelson de Leon",
+    "firm": null,
+    "for": "Riviera Country Club (registered principal: Nelson de Leon; issue names Riviera Country Club tennis facility, 1155 Blue Road)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-05",
+    "issue": "Development approvals for townhome project; Development approvals for new tennis facility at the Riviera Country Club (project: 1155 Blue Road)"
+   },
+   {
+    "name": "David Schopp",
+    "firm": null,
+    "for": "Riviera Country Club (registered principal: David Schopp; project Riviera Country Club Tennis Center)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-05",
+    "issue": "Riviera Country Club- Tennis Center"
+   }
+  ],
+  "25-8857": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   }
+  ],
+  "25-8955": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27554",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-05",
+    "issue": "Replat (project: Ponce Park Residences)"
+   }
+  ],
+  "25-8956": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Minorca Ventures, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27555",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Minorca Ventures, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27555",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "All zoning related approvals for proposed mixed use development at the site."
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Minorca Ventures LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "All zoning related approvals for proposed mixed use development at the site."
+   }
+  ],
+  "25-8957": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27556",
+    "date": "2025-05-20",
+    "issue": null
+   },
+   {
+    "name": "Maria de la Guardia",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-07-08",
+    "issue": null
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-06-13",
+    "issue": null
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-27",
+    "issue": "3150 Columbus Boulevard; 4951 University Drive, Coral Gables, Florida"
+   },
+   {
+    "name": "Melissa Tapanes Llahues",
+    "firm": null,
+    "for": "THE GEORGE RESIDENCES LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-04-07",
+    "issue": "Land Use and Zoning Matters for the Property at 737 Valencia Avenue"
+   },
+   {
+    "name": "Paul C. Savage",
+    "firm": null,
+    "for": "THE GEORGE RESIDENCES LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-04-07",
+    "issue": "Land Use and Zoning Matters for the Property at 737 Valencia Avenue"
+   }
+  ],
+  "25-9196": [
+   {
+    "name": "Miriam Soler Ramos",
+    "firm": null,
+    "for": "Jenoptik Smart Mobility Solutions, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27793",
+    "date": "2025-07-01",
+    "issue": null
+   },
+   {
+    "name": "Daniel Hanlon",
+    "firm": null,
+    "for": "Jenoptik Smart Mobility Solutions, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=27793",
+    "date": "2025-07-01",
+    "issue": null
+   },
+   {
+    "name": "Daniel Hanlon",
+    "firm": null,
+    "for": "Jenoptik Smart Mobility",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-26",
+    "issue": "Represent on RFP 2025-004"
+   },
+   {
+    "name": "Miriam Soler Ramos",
+    "firm": null,
+    "for": "JENOPTIK Smart Mobility Solutions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-02-06",
+    "issue": "Request for proposal"
+   }
+  ],
+  "25-9296": [
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Bermello Ajamil & Partners, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"Bermello Ajamil & Partners, LLC\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "R.J. Heisenbottle Architects, P.A.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"R.J. HEISENBOTTLE ARCHITECTS, P.A.\""
+   }
+  ],
+  "25-9438": [
+   {
+    "name": "Guillermo Cuadra",
+    "firm": null,
+    "for": "LEE Construction Group, LLC.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"LEE Construction Group, Inc.\""
+   }
+  ],
+  "25-9462": [
+   {
+    "name": "Gabriel Groisman",
+    "firm": null,
+    "for": "RSM US LLP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"RSM US LLP\""
+   }
+  ],
+  "25-9465": [
+   {
+    "name": "Laura Russo",
+    "firm": null,
+    "for": "Owner of 1154 Alfonso Avenue (lobbyist Laura Russo)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28062",
+    "date": "2025-09-10",
+    "issue": null
+   }
+  ],
+  "25-9659": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28256",
+    "date": "2025-09-10",
+    "issue": null
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-05",
+    "issue": "Replat (project: Ponce Park Residences)"
+   }
+  ],
+  "25-9678": [
+   {
+    "name": "Laura Russo",
+    "firm": null,
+    "for": "Owner of 1154 Alfonso Avenue (lobbyist Laura Russo)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9678'",
+    "date": "2025-09-10",
+    "issue": null
+   }
+  ],
+  "25-9713": [
+   {
+    "name": "Joe Jimenez",
+    "firm": null,
+    "for": "Owner of 627 and 635 Anastasia Avenue (lobbyist Joe Jimenez)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9713'",
+    "date": "2025-10-28",
+    "issue": null
+   },
+   {
+    "name": "Joe Jimenez",
+    "firm": null,
+    "for": "Owner of 627 and 635 Anastasia Avenue (registered principal: Joe Jimenez; project 627/635 Anastasia)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-26",
+    "issue": "AIPP Approval; Site Plan Revision; New Construction; FLUM Amendment, Zoning Map Amendment, new construction (project: 627/635 Anastasia)"
+   }
+  ],
+  "25-9932": [
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Jose Fuentes",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Timothy Riera-gomez",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Max Losner",
+    "firm": null,
+    "for": "Tetra Tech, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"TETRA TECH, INC.\""
+   },
+   {
+    "name": "Jean-paul Chavez",
+    "firm": null,
+    "for": "Thompson Consulting Services, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-04-08",
+    "issue": "Miami-Dade County registration; client listed as \"Thompson Consulting Services, LLC\""
+   },
+   {
+    "name": "Carlos Curbelo",
+    "firm": null,
+    "for": "Thompson Consulting Services, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-04-09",
+    "issue": "Miami-Dade County registration; client listed as \"Thompson Consulting Services, LLC\""
+   }
+  ],
+  "25-1086": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "The Weitz Company, LLC",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"THE WEITZ COMPANY, LLC\""
+   }
+  ],
+  "25-1018": [
+   {
+    "name": "Ben Hutchens",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-11-19",
+    "issue": "All Matters of Site Zoning,Planning,Construction and Design (project: University of Miami Gables Village)"
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-08-11",
+    "issue": "Federal ID#:590624458; General representation in matters related to campus development. Providing services as an attorney."
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Jorge Luis Hernandez",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": "Defense against Appeal for Demolition"
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Rachel Streitfeld",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": null
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-12",
+    "issue": "Federal ID#:590624458; Eaton Residence Hall, Historic Preservation Board, 12/18/2025"
+   },
+   {
+    "name": "Robert W. Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-08-21",
+    "issue": "Federal ID#:590624458; All matters relating to the University of Miami"
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-01-15",
+    "issue": "Federal ID 590624458- Matters related to or affecting the university of Miami"
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Edward Swakon",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   }
+  ],
+  "25-1087": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Maple Coral Gables LLC (Alexan Crafts)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28684",
+    "date": "2025-12-09",
+    "issue": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Maple Coral Gables LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-18",
+    "issue": "Entitlements for Property located at 130 Almeria Avenue, Coral Gables, FL"
+   }
+  ],
+  "25-1154": [
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-05",
+    "issue": "Replat (project: Ponce Park Residences)"
+   }
+  ],
+  "25-9739": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "760 Ponce De Leon, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28336",
+    "date": "2025-12-09",
+    "issue": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "760 Ponce De Leon, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-18",
+    "issue": "Entitlements for Property located at 130 Almeria Avenue, Coral Gables, FL"
+   }
+  ],
+  "25-9742": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "760 Ponce De Leon, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=28339",
+    "date": "2025-12-09",
+    "issue": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "760 Ponce De Leon, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-18",
+    "issue": "Entitlements for Property located at 130 Almeria Avenue, Coral Gables, FL"
+   }
+  ],
+  "25-9846": [
+   {
+    "name": "Ceasar Mestre",
+    "firm": null,
+    "for": "Owner of 1258 Obispo Avenue (lobbyist Ceasar Mestre)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '25-9846'",
+    "date": "2025-12-09",
+    "issue": null
+   },
+   {
+    "name": "Ceasar Mestre, Esq.",
+    "firm": null,
+    "for": "Javier Avila (owner, 1258 Obispo Ave per registration)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-17",
+    "issue": "Special Certificate of Appropriateness for Demolition (project: 1258 Obispo Ave)"
+   }
+  ],
+  "26-1031": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Friends of the Underline",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-18",
+    "issue": "Federal ID#:590624458; Federal ID 590624458 (project: The Underline)"
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   },
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "Friends of the Underline, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   }
+  ],
+  "25-1161": [
+   {
+    "name": "Christopher Penelas",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-23",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Hugo Benitez",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Matthew Cozzo",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Danielle Mejia",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jamie Gentile",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-13",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Nelson Diaz",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Pamela Rauch",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jr., Albert Dotson",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Alberto Torres",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Eric Singer",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Armando Fernandez",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Erin Hendrix",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Michael Llorente",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Diana Mendez",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "James Williams",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-30",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jerry Proctor",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"Robert Beaulieu/ Florida Power & Light Company\""
+   },
+   {
+    "name": "Addys Kuryla",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Danielle Sanabria",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Oscar Braynon Ii",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Christopher Ferreira",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-06",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Andres Martinez",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Chelsea Lunn",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Jacqueline Carmona",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Catherine Carbonell",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Stephen Heiman",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-04-28",
+    "issue": "Miami-Dade County registration; client listed as \"FLORIDA POWER & LIGHT COMPANY\""
+   },
+   {
+    "name": "Robert Curtis",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-08-24",
+    "issue": "Miami-Dade County registration; client listed as \"Robert Beaulieu/ Florida Power & Light Company\""
+   },
+   {
+    "name": "William Heikkinen",
+    "firm": null,
+    "for": "Florida Power & Light Company",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-08-24",
+    "issue": "Miami-Dade County registration; client listed as \"Robert Beaulieu/ Florida Power & Light Company\""
+   }
+  ],
+  "25-1217": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Cade Capital Partners (registration for 130 Almeria Ave)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-12",
+    "issue": "Entitlements for Property located at 130 Almeria Avenue, Coral Gables, FL"
+   }
+  ],
+  "25-9279": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "University Shopping Center LLP (registration for 1250 S. Dixie Hwy)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-09",
+    "issue": "Land Use and Zoning matters for 1250 S. Dixie Highway."
+   }
+  ],
+  "26-1081": [
+   {
+    "name": "Mark Stempler",
+    "firm": null,
+    "for": "Integrity Janitorial Service Corp.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"INTEGRITY JANITORIAL SERVICE CORP.\""
+   }
+  ],
+  "26-1140": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner/developer of 110 Phoenetia Avenue (lobbyist Jorge Navarro)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '26-1140'",
+    "date": "2026-02-10",
+    "issue": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Century Crystal Group LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-03-18",
+    "issue": "110 Phoenetia Avenue - Mixed Uses"
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "FRC Realty",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-13",
+    "issue": "Mixed use entitlements for redevelopment of properties located at 110 Phoenetia Avenue"
+   }
+  ],
+  "26-1189": [
+   {
+    "name": "Miguel Diaz De La Portilla",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-22",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "John Mcwilliams",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Adrian Dabkowski",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cory Dorman",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Jill Capelli",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ken Pasken",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Raquel Selanikio",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Ariel Centurion",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Luis Silva",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Cesar Borges",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Maria Trebol Rojas",
+    "firm": null,
+    "for": "Kimley-Horn and Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-03-09",
+    "issue": "Miami-Dade County registration; client listed as \"KIMLEY-HORN AND ASSOCIATES INC\""
+   },
+   {
+    "name": "Javier Vazquez",
+    "firm": null,
+    "for": "Miller, Legg & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-09",
+    "issue": "Miami-Dade County registration; client listed as \"MILLER LEGG\""
+   },
+   {
+    "name": "Dylan Larson",
+    "firm": null,
+    "for": "Miller, Legg & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"MILLER LEGG\""
+   },
+   {
+    "name": "Leslie Hernandez",
+    "firm": null,
+    "for": "Miller, Legg & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"MILLER LEGG\""
+   },
+   {
+    "name": "Michael Kroll",
+    "firm": null,
+    "for": "Miller, Legg & Associates, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"MILLER LEGG\""
+   }
+  ],
+  "26-1195": [
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "Kaufman Lynn Construction, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29058",
+    "date": "2026-02-24",
+    "issue": null
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Kaufman Lynn Construction",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-06",
+    "issue": "Approval of mixed-use project in Coral Gables."
+   }
+  ],
+  "26-1144": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 6100 Caballero Boulevard and listed lots (lobbyist Mario Garcia-Serra)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '26-1144'",
+    "date": "2026-04-14",
+    "issue": null
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Gables Waterway Associates, LLC (registration for 6100 Caballero Blvd)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-08",
+    "issue": "Obtaining the necessary land use and zoning approvals for proposed development of a new multifamily residential building for property located at 6100 Caballero Boulevard in Coral Gables, Florida"
+   }
+  ],
+  "24-7193": [
+   {
+    "name": "Laura Russo",
+    "firm": null,
+    "for": "Owner of 1250 S Dixie Highway (lobbyist Laura Russo)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '24-7193'",
+    "date": "2026-05-05",
+    "issue": null
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "University Shopping Center LLP (registration for 1250 S. Dixie Hwy)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-09",
+    "issue": "Land Use and Zoning matters for 1250 S. Dixie Highway."
+   }
+  ],
+  "26-1373": [
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "US Champions Soccer Academy, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29236",
+    "date": "2026-05-05",
+    "issue": null
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "US Champions Soccer Academy",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-03-08",
+    "issue": "Soccer Program Management Services"
+   }
+  ],
+  "26-1439": [
+   {
+    "name": "Joe Jimenez",
+    "firm": null,
+    "for": "Developer of Regency Parc (lobbyist Joe Jimenez)",
+    "basis": "record",
+    "src": "https://webapi.legistar.com/v1/coralgables/matters?$filter=MatterFile eq '26-1439'",
+    "date": "2026-05-05",
+    "issue": null
+   }
+  ],
+  "26-1441": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29304",
+    "date": "2026-05-05",
+    "issue": null
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Publix Super Markets",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-18",
+    "issue": "Applications for vacation of alley regarding 1401 Monza Avenue, Coral Gables, Florida"
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "issue": "property located at 2552 LeJeune Road, Coral Gables, Fl 33134 (project: property located at 2552 LeJeune Road, Coral Gabls, Fl)"
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-09",
+    "issue": "Assist in obtaining zoning approvals in connection with proposed redevelopment of property."
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-30",
+    "issue": "property located at 2552 LeJeune Road, Coral Gables, FL."
+   },
+   {
+    "name": "David Coviello",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Victoria M\u00e9ndez",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"PUBLIX SUPER MARKETS, INC\""
+   },
+   {
+    "name": "Armando Hassun",
+    "firm": null,
+    "for": "Publix Super Markets, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-06-24",
+    "issue": "Miami-Dade County registration; client listed as \"PUBLIX SUPER MARKETS, INC\""
+   }
+  ],
+  "26-1478": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Ashbritt, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-03-06",
+    "issue": "Disaster debris monitoring services"
+   }
+  ],
+  "26-1482": [
+   {
+    "name": "Amanda Quirke Hand",
+    "firm": null,
+    "for": "Satchmo Blues Bar and Grill, Inc. d/b/a Fritz & Franz Bierhaus",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-05-18",
+    "issue": "Special event approval- world cup"
+   }
+  ],
+  "26-1629": [
+   {
+    "name": "Jeffrey Rodriguez",
+    "firm": null,
+    "for": "Brian Goldmeier and Nicole (registration for pool variance at 722 Aledo)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-04-02",
+    "issue": "Client is requesting a variance to keep existing pool equipment within the required setback. (project: Pool Variance at 722 Aledo)"
+   }
+  ],
+  "26-1647": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Ashbritt, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-03-06",
+    "issue": "Disaster debris monitoring services"
+   }
+  ],
+  "26-1656": [
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "The Underline Management Organization, Inc. d/b/a The Underline Conservancy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "issue": "Miami-Dade County registration; client listed as \"THE UNDERLINE MANAGEMENT ORGANIZATION, INC\""
+   }
+  ],
+  "26-1737": [
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "John Bell Construction, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29602",
+    "date": "2026-07-07",
+    "issue": null
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "John Bell Construction, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-06",
+    "issue": "Approval of mixed-use project in Coral Gables."
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "John Bell Construction, Inc.",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"John Bell Construction, Inc.\""
+   }
+  ],
+  "26-1777": [
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29642",
+    "date": "2026-07-07",
+    "issue": null
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29642",
+    "date": "2026-07-07",
+    "issue": null
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-05",
+    "issue": "Replat (project: Ponce Park Residences)"
+   }
+  ],
+  "26-1779": [
+   {
+    "name": "Robert Ruano",
+    "firm": null,
+    "for": "Junior Orange Bowl",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"JUNIOR ORANGE BOWL COMMITTEE, INC\""
+   }
+  ],
+  "26-1780": [
+   {
+    "name": "Ben Hutchens",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-11-19",
+    "issue": "All Matters of Site Zoning,Planning,Construction and Design (project: University of Miami Gables Village)"
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-12",
+    "issue": "Federal ID#:590624458; General representation in matters related to campus development. Providing services as an attorney."
+   },
+   {
+    "name": "Jorge Luis Hernandez",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": "Defense against Appeal for Demolition"
+   },
+   {
+    "name": "Rachel Streitfeld",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": null
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-12",
+    "issue": "Federal ID#:590624458; Eaton Residence Hall, Historic Preservation Board, 12/18/2025"
+   },
+   {
+    "name": "Robert W. Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-08-21",
+    "issue": "Federal ID#:590624458; All matters relating to the University of Miami"
+   },
+   {
+    "name": "Frank L. Presta.",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-09",
+    "issue": "Numerous projects University of Miami Campus (project: Numerous on campus projects)"
+   },
+   {
+    "name": "Ricky Hernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-07",
+    "issue": "Numerous projects UM (project: numerous on campus projects)"
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Edward Swakon",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   }
+  ],
+  "26-1816": [
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29681",
+    "date": "2026-07-07",
+    "issue": null
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "Ponce Park Residences, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29681",
+    "date": "2026-07-07",
+    "issue": null
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "Ponce Park Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-09-05",
+    "issue": "Replat (project: Ponce Park Residences)"
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-06",
+    "issue": "Project Land Use & Zoning approvals. (project: Ponce Park Residences)"
+   },
+   {
+    "name": "W. Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-06",
+    "issue": "RC Acquisitions, LLC. development"
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-06",
+    "issue": "Project Land Use & Zoning approvals. (project: Ponce Park Residences)"
+   }
+  ],
+  "26-1692": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "FRC Realty, Inc., Century Crystal Group LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29557",
+    "date": "2026-08-25",
+    "issue": null
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "FRC Realty, Inc., Century Crystal Group LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29557",
+    "date": "2026-08-25",
+    "issue": null
+   },
+   {
+    "name": "David Butter",
+    "firm": null,
+    "for": "FRC Realty, Inc., Century Crystal Group LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29557",
+    "date": "2026-08-25",
+    "issue": null
+   },
+   {
+    "name": "David Butter",
+    "firm": null,
+    "for": "FRC Realty, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-01",
+    "issue": "Mixed use entitlements for redevelopment of properties located at 110 Phoenetia Avenue"
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "FRC Realty Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-01",
+    "issue": "Mixed use entitlements for redevelopment of properties located at 110 Phoenetia Avenue"
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "FRC Realty",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-13",
+    "issue": "Mixed use entitlements for redevelopment of properties located at 110 Phoenetia Avenue"
+   }
+  ],
+  "26-1817": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Maple Coral Gables LLC (Alexan Crafts)",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29682",
+    "date": "2026-08-25",
+    "issue": null
+   },
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Maple Coral Gables LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-12",
+    "issue": "Variance Approval for Single Family located at 240 Edgewater Drive, Coral Gables, FL"
+   }
+  ],
+  "26-1829": [
+   {
+    "name": "Gabriel Groisman",
+    "firm": null,
+    "for": "RSM US LLP",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-05",
+    "issue": "Miami-Dade County registration; client listed as \"RSM US LLP\""
+   }
+  ],
+  "26-1849": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Friends of the Underline",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-18",
+    "issue": "Federal ID#:590624458; Federal ID 590624458 (project: The Underline)"
+   },
+   {
+    "name": "Miriam Soler Ramos",
+    "firm": null,
+    "for": "The Friends of the Underline",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-06-01",
+    "issue": "Federal ID#:464028150; Representation of Procurement of Matters"
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Friends of The Underline",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   },
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "Friends of The Underline",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   }
+  ],
+  "26-1894": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Friends of the Underline",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-06-18",
+    "issue": "Federal ID#:590624458; Federal ID 590624458 (project: The Underline)"
+   },
+   {
+    "name": "Miriam Soler Ramos",
+    "firm": null,
+    "for": "The Friends of the Underline",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-06-01",
+    "issue": "Federal ID#:464028150; Representation of Procurement of Matters"
+   },
+   {
+    "name": "Jose Diaz",
+    "firm": null,
+    "for": "Friends of The Underline",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   },
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "Friends of The Underline",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "issue": "Miami-Dade County registration; client listed as \"FRIENDS OF THE UNDERLINE, INC.\""
+   }
+  ],
+  "26-1955": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Urban 301 Madeira, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29819",
+    "date": "2026-09-15",
+    "issue": null
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Urban 301 Madeira, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-09",
+    "issue": "Assist in obtaining zoning approvals in connection with proposed redevelopment of property."
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Urban 301 Madeira, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-09-14",
+    "issue": "Obtaining the necessary land use and zoning approvals for proposed development of mixed use project at 301-341 Madeira Avenue in Coral Gables, Florida"
+   }
+  ],
+  "26-1859": [
+   {
+    "name": "Jeff Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29724",
+    "date": "2026-09-29",
+    "issue": null
+   },
+   {
+    "name": "Ben Hutchens",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-11-19",
+    "issue": "All Matters of Site Zoning,Planning,Construction and Design (project: University of Miami Gables Village)"
+   },
+   {
+    "name": "Jorge Luis Hernandez",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": "Defense against Appeal for Demolition"
+   },
+   {
+    "name": "Rachel Streitfeld",
+    "firm": null,
+    "for": "University of Miami c/o Jessica Brumley",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-16",
+    "issue": null
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2025.csv",
+    "date": "2025-12-12",
+    "issue": "Federal ID#:590624458; Eaton Residence Hall, Historic Preservation Board, 12/18/2025"
+   },
+   {
+    "name": "Frank L. Presta.",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-09",
+    "issue": "Numerous projects University of Miami Campus (project: Numerous on campus projects)"
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-01-12",
+    "issue": "Federal ID#:590624458; General representation in matters related to campus development. Providing services as an attorney."
+   },
+   {
+    "name": "Ricky Hernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2026.csv",
+    "date": "2026-07-07",
+    "issue": "Numerous projects UM (project: numerous on campus projects)"
+   },
+   {
+    "name": "Miguel Abad",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Felipe Angulo",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Mabelys Melton",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-30",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jorge Lopez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-18",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Brian May",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-16",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-15",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   },
+   {
+    "name": "Edward Swakon",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2025-12-17",
+    "issue": "Miami-Dade County registration; client listed as \"UNIVERSITY OF MIAMI\""
+   }
+  ],
+  "26-2170": [
+   {
+    "name": "Daniel Balmori",
+    "firm": null,
+    "for": "The Underline Management Organization, Inc. d/b/a The Underline Conservancy",
+    "basis": "otherBody",
+    "src": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
+    "date": "2026-01-14",
+    "issue": "Miami-Dade County registration; client listed as \"THE UNDERLINE MANAGEMENT ORGANIZATION, INC\""
+   }
+  ]
+ },
+ "notFound": "No registry or record lobbyist found for the other Coral Gables actions. Most are vendor contracts, sewer connection agreements and grants whose Legistar title says \"Lobbyist: N/A\". 85 actions are not in the Legistar \"Lobbyist\" title query (older or differently titled items, e.g. 24-8504, 25-1018, 26-1780, 25-9279, 26-1569, 26-1629, 25-9956); their agenda pages were not re-read because the WebFetch hourly limit was reached, so record links for them may be missing. Registry links use name and address matches against the clerk export; registrations by the property owner or architect as their own principal (Nelson de Leon, David Schopp, Joe Jimenez) are listed with the registered principal named in \"for\". Legistar spells one lobbyist \"David Schoop\"; the registry has \"David Schopp\". otherBody rows (Miami-Dade County registrations) are for review only."
+}

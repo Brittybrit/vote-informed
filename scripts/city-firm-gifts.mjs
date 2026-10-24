@@ -64,7 +64,7 @@ for (const B of d.bodies) if (!DON[B.key] && B.universe && B.universe.built === 
 // Lobbyists each city's own registry or record names with their firm (scripts/data/city/<slug>/lobbyists.json)
 for (const B of d.bodies) if (existsSync(P(`scripts/data/city/${B.key}/lobbyists.json`)))
   for (const list of Object.values(J(`scripts/data/city/${B.key}/lobbyists.json`).byAction || {})) for (const l of list || [])
-    if (l && l.firm && l.name && ['registry', 'record'].includes(l.basis)) add(l.firm, l.name, B.name && B.name.en || B.key);
+    if (l && l.firm && l.name && l.basis === 'registry') add(l.firm, l.name, B.name && B.name.en || B.key);
 for (const k in DON) { DON[k] = DON[k].filter(r => r.amount > 0 && !SKIP.some(x => x.test(norm(r.donor)))); for (const r of DON[k]) { r.n = norm(r.donor); r.w = new Set(r.n.split(' ')); } }
 // Which firm a card lobbyist belongs to when the card does not say
 const firmOf = l => { if (l.firm) return l.firm; const [lasts, first] = parts(l.name); for (const k in roster) { const p = roster[k].get(lasts.join(' ') + '|' + first); if (p) return p.firm; } return null; };
