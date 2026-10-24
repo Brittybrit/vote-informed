@@ -5,7 +5,7 @@
 // a donor to an on-ballot member whose name is the party's name (company suffixes ignored).
 // Firm and lobbyist gifts are added afterwards by scripts/city-firm-gifts.mjs.
 // Run: node scripts/city-actions.mjs && node scripts/city-firm-gifts.mjs && node scripts/money-summary.mjs
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -31,9 +31,11 @@ const csv = s => { const out = []; let f = '', q = false, row = []; for (let i =
 // hand-typed reports in public/data/city-reports.json (no occupation there).
 function donorsFor(slug, B) {
   const out = [];
+  const dir = `scripts/data/city/${slug}/`;
+  const files = existsSync(P(dir)) ? readdirSync(P(dir)) : [];
   for (const [key, ob] of Object.entries(B.onBallot)) for (const acct of ob.accounts) {
-    const f = `scripts/data/city/${slug}/${acct}.csv`;
-    if (existsSync(P(f))) {
+    // one export per account (<acct>.csv), or one per report (<acct>_g2.csv, <acct>_g3.csv ...)
+    for (const f of files.filter(n => n === acct + '.csv' || (n.startsWith(acct + '_') && n.endsWith('.csv'))).map(n => dir + n)) {
       const [h, ...rows] = csv(readFileSync(P(f), 'utf8'));
       const ix = n => h.indexOf(n);
       for (const r of rows) {
@@ -48,6 +50,18 @@ function donorsFor(slug, B) {
 
 const MAP = { coralgables: 'coralgables', doral: 'doral', aventura: 'aventura', nmb: 'nmb', northmiami: 'northmiami', hialeah: 'hialeah', southmiami: 'southmiami', pinecrest: 'pinecrest', medley: 'medley' };
 // The page's words for each kind of action
+// Votes as the page shows them (null on the page means not yet seated; a vote the minutes do not give is 'unknown')
+const VOTE = { yes: 'yes', no: 'no', absent: 'absent', excused: 'excused', abstain: 'abstain', recused: 'recused', unknown: 'unknown' };
+const vote = r => Object.fromEntries(Object.entries(r || {}).map(([k, v]) => [k, v in VOTE ? VOTE[v] : v]));
+// Results as the page's labels name them
+const RES = { 'first reading': 'firstReading', 'second reading': 'adopted' };
+// Gifts on an old card that bundled several actions: the item's lobbyist and the people listed for it go on
+// every action; a gift from a party (or a person whose occupation names it) only on actions naming that party.
+function split(old, a) {
+  const keys = a.parties.map(pkey).filter(Boolean);
+  const hit = g => { const w = new Set(norm(g.donor + ' ' + (g.occ || '')).split(' ')); return keys.some(k => { const f = k.split(' ')[0]; return f.length >= 3 && !GENERIC.has(f) && w.has(f); }); };
+  return old.gifts.filter(g => !['party', 'class'].includes(g.kind) || hit(g));
+}
 const KIND = { contract: 'award', grant: 'funding', license: 'permit', sale: 'land', agreement: 'agreement', easement: 'easement', settlement: 'settlement', zoning: 'zoning', lease: 'lease' };
 let TR = {};
 let report = [];
@@ -62,17 +76,21 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   TR = existsSync(P(`scripts/data/city/${slug}/translations.json`)) ? J(`scripts/data/city/${slug}/translations.json`) : {};
   if (!B) { report.push(slug + ': no body in decisions.json'); continue; }
   const prior = new Map(B.actions.map(a => [a.id, a]));
+  // How many new actions each old card stands for (one card sometimes covered several resolutions)
+  const nLegacy = {}; for (const u of U.actions) if (u.legacyId) nLegacy[u.legacyId] = (nLegacy[u.legacyId] || 0) + 1;
   const donors = donorsFor(slug, B);
   const used = new Set();
   // Ids must be unique across every body: prefix bare file numbers with the city's prefix
   const PFX = { coralgables: 'cg-' }[slug] || slug + '-';
   for (const u of U.actions) if (!String(u.id).startsWith(PFX) && !String(u.id).startsWith(slug)) { u.bareId = u.id; u.id = PFX + u.id; }
   const actions = U.actions.map(u => {
-    const old = prior.get(u.id) || (u.prevId && prior.get(u.prevId));
+    u.roll = vote(u.roll); u.result = RES[u.result] || u.result;
+    const leg = u.legacyId && prior.get(u.legacyId);
+    const old = prior.get(u.id) || (u.prevId && prior.get(u.prevId)) || (leg && nLegacy[u.legacyId] === 1 ? leg : null);
     if (old) { used.add(old.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true; return old; }
     const a = {
       id: u.id, date: u.date, ref: u.ref || '', kind: KIND[u.kind] || u.kind, subject: { en: u.title, ...(TR[u.bareId || u.id] || TR[u.id] || {}) }, parties: u.parties || [],
-      result: u.result || 'adopted', tally: u.tally || null, roll: u.roll || {}, rollComplete: !!u.roll && Object.keys(u.roll).length > 0,
+      result: u.result || 'adopted', tally: u.tally || null, roll: u.roll || {}, rollComplete: !!u.roll && Object.keys(u.roll).length > 0 && Object.values(u.roll).every(v => v != null && v !== 'unknown'),
       ...(u.consent != null ? { consent: u.consent } : {}), mover: u.mover || '', second: u.second || '', lobbied: [], namedLobbyist: '', gifts: [],
       ...(u.amount ? { amount: u.amount } : {}), links: u.url ? [{ t: 'minutes', url: u.url }] : [], universe: true
     };
@@ -82,6 +100,13 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
       if (!(g.to in a.roll) || a.roll[g.to] == null) continue;
       const dk = dkey(g.donor);
       if (keys.some(k => dk === k || (k.split(' ').length >= 2 && dk.startsWith(k + ' ')))) a.gifts.push({ ...g, kind: 'party' });
+    }
+    if (leg && !old) {
+      used.add(leg.id);
+      a.gifts.push(...split(leg, a).filter(g => !a.gifts.some(x => x.donor === g.donor && x.date === g.date && x.amount === g.amount)));
+      a.lobbied = leg.lobbied || []; a.namedLobbyist = leg.namedLobbyist || '';
+      if (a.gifts.length && leg.note) a.note = leg.note;
+      if (leg.giftNotes) a.giftNotes = leg.giftNotes;
     }
     return a;
   });

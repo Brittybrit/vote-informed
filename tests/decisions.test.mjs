@@ -43,7 +43,7 @@ test('every body and action is well formed', () => {
       else { for (const l of LANGS) assert.ok(a.subject[l], id + ' subject ' + l); assert.ok(en.has('kind.' + a.kind), id + ' kind ' + a.kind); if (a.kind !== 'bill') assert.ok(a.parties.length, id + ' party'); }
       assert.ok(en.has('res.' + a.result), id + ' result ' + a.result);
       assert.match(a.date, /^\d{4}-\d{2}-\d{2}$/);
-      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', null].concat(B.type === 'requests' ? ['requested', 'nv', 'abstain'] : []).concat(B.cabinet ? ['acted'] : []).includes(v), id + ' vote ' + v);
+      for (const v of Object.values(a.roll)) assert.ok(['yes', 'no', 'absent', 'excused', 'abstain', 'recused', 'unknown', null].concat(B.type === 'requests' ? ['requested', 'nv', 'abstain'] : []).concat(B.cabinet ? ['acted'] : []).includes(v), id + ' vote ' + v);
       if (a.rollComplete && a.tally) {
         const vals = Object.values(a.roll);
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
