@@ -1,0 +1,3336 @@
+{
+ "city": "Opa-locka",
+ "body": "Opa-locka City Commission",
+ "window": {
+  "from": "2025-01-01",
+  "to": "2026-10-24",
+  "latestRecordRead": "2026-10-14"
+ },
+ "members": {
+  "Taylor": "John H. Taylor Jr. (Mayor)",
+  "Kelley": "Joseph L. Kelley (Vice Mayor)",
+  "Bass": "Dr. Sherelean Bass (Commissioner)",
+  "Ervin": "Natasha L. Ervin (Commissioner)",
+  "Santiago": "Luis B. Santiago (Commissioner)"
+ },
+ "standard": "Every action benefiting a named private party (contracts, purchases, renewals, change orders, piggybacks, zoning/land use/variances/plats/site plans/development agreements, leases and sales of public land, grants and fee waivers to named organizations, settlements, easements, licenses). Excludes proclamations, ceremonial items, appointments, internal staffing, government-only items. Built without reference to donors.",
+ "sources": [
+  {
+   "name": "Opa-locka CivicClerk API (events, agendas, minutes attachments)",
+   "url": "https://opalockafl.api.civicclerk.com/v1/Events"
+  },
+  {
+   "name": "Opa-locka CivicClerk portal",
+   "url": "https://opalockafl.portal.civicclerk.com/"
+  },
+  {
+   "name": "Commission minutes PDFs attached to the next meeting agenda item \"Approval of Minutes\"",
+   "url": "https://opalockafl.portal.civicclerk.com/"
+  }
+ ],
+ "meetings": [
+  {
+   "date": "2025-01-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2483/files",
+   "read": true
+  },
+  {
+   "date": "2025-01-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2495/files",
+   "read": true
+  },
+  {
+   "date": "2025-02-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2484/files",
+   "read": true
+  },
+  {
+   "date": "2025-02-25",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2532/files",
+   "read": true
+  },
+  {
+   "date": "2025-03-12",
+   "name": "Regular Commission Meeting (no quorum)",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2485/files",
+   "read": true
+  },
+  {
+   "date": "2025-03-26",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2497/files",
+   "read": true
+  },
+  {
+   "date": "2025-04-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2486/files",
+   "read": true
+  },
+  {
+   "date": "2025-04-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2498/files",
+   "read": true
+  },
+  {
+   "date": "2025-05-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2487/files",
+   "read": true
+  },
+  {
+   "date": "2025-05-28",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2499/files",
+   "read": true
+  },
+  {
+   "date": "2025-06-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2488/files",
+   "read": true
+  },
+  {
+   "date": "2025-06-23",
+   "name": "Regular Commission Meeting (rescheduled from June 25)",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2500/files",
+   "read": true
+  },
+  {
+   "date": "2025-07-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "read": true
+  },
+  {
+   "date": "2025-07-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2501/files",
+   "read": true
+  },
+  {
+   "date": "2025-08-25",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "read": true
+  },
+  {
+   "date": "2025-09-09",
+   "name": "First Budget Hearing",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2547/files",
+   "read": true
+  },
+  {
+   "date": "2025-09-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "read": true
+  },
+  {
+   "date": "2025-09-24",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "read": true
+  },
+  {
+   "date": "2025-09-24",
+   "name": "Second Budget Hearing",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2548/files",
+   "read": true
+  },
+  {
+   "date": "2025-10-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2552/files",
+   "read": true
+  },
+  {
+   "date": "2025-10-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2564/files",
+   "read": true
+  },
+  {
+   "date": "2025-11-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2553/files",
+   "read": true
+  },
+  {
+   "date": "2025-11-14",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2583/files",
+   "read": true
+  },
+  {
+   "date": "2025-11-24",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2584/files",
+   "read": true
+  },
+  {
+   "date": "2025-12-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "read": true
+  },
+  {
+   "date": "2026-01-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "read": true
+  },
+  {
+   "date": "2026-01-28",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2567/files",
+   "read": true
+  },
+  {
+   "date": "2026-02-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2601/files",
+   "read": true
+  },
+  {
+   "date": "2026-02-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2613/files",
+   "read": true
+  },
+  {
+   "date": "2026-03-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2602/files",
+   "read": true
+  },
+  {
+   "date": "2026-03-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2614/files",
+   "read": true
+  },
+  {
+   "date": "2026-04-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2603/files",
+   "read": true
+  },
+  {
+   "date": "2026-04-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "read": true
+  },
+  {
+   "date": "2026-05-04",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2638/files",
+   "read": true
+  },
+  {
+   "date": "2026-05-27",
+   "name": "Regular Commission Meeting (agenda only)",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2616/files",
+   "read": false,
+   "note": "Agenda only; no minutes posted"
+  },
+  {
+   "date": "2026-06-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2560/files",
+   "read": true
+  },
+  {
+   "date": "2026-06-24",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2572/files",
+   "read": true
+  },
+  {
+   "date": "2026-07-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2561/files",
+   "read": true
+  },
+  {
+   "date": "2026-07-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2618/files",
+   "read": true
+  },
+  {
+   "date": "2026-08-25",
+   "name": "Special Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2651/files",
+   "read": true
+  },
+  {
+   "date": "2026-09-08",
+   "name": "First Budget Hearing",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2649/files",
+   "read": true
+  },
+  {
+   "date": "2026-09-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "read": true
+  },
+  {
+   "date": "2026-09-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2620/files",
+   "read": true
+  },
+  {
+   "date": "2026-09-23",
+   "name": "Second Budget Hearing",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2650/files",
+   "read": true
+  },
+  {
+   "date": "2026-10-14",
+   "name": "Regular Commission Meeting (draft minutes)",
+   "url": "https://opalockafl.portal.civicclerk.com/event/2609/files",
+   "read": true
+  }
+ ],
+ "actions": [
+  {
+   "id": "opalocka-2025-01-08-16-1",
+   "date": "2025-01-08",
+   "ref": "16-1",
+   "title": "Lease of city rental space at 780 Fisherman Street to South Florida School of Excellence (ordinance)",
+   "kind": "lease",
+   "parties": [
+    "SFSE LLC d/b/a South Florida School of Excellence"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2483/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Lease ordinance; later readings on 2025-07-23 and 2025-08-25"
+  },
+  {
+   "id": "opalocka-2025-01-22-13-2",
+   "date": "2025-01-22",
+   "ref": "13-2",
+   "title": "Accept proposals and sign multiple continuing architectural and engineering services agreements",
+   "kind": "contract",
+   "parties": [
+    "Firms selected under RFQ 24-1028200 (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2495/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-01-22-15-1",
+   "date": "2025-01-22",
+   "ref": "15-1",
+   "title": "Special exception for a place of religious worship at 3400 NW 135th Street",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 3400 NW 135th Street, Building B (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2495/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-02-12-13-1",
+   "date": "2025-02-12",
+   "ref": "13-1",
+   "title": "Piggyback City of Miami contract with H&R Paving to replace Ingram Park basketball courts",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 50000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2484/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-02-12-13-2",
+   "date": "2025-02-12",
+   "ref": "13-2",
+   "title": "Piggyback Sourcewell contract with Team Contracting for Phase II construction work",
+   "kind": "contract",
+   "parties": [
+    "Team Contracting, Inc."
+   ],
+   "amount": 284000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2484/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-02-12-13-4",
+   "date": "2025-02-12",
+   "ref": "13-4",
+   "title": "Subordination agreement among the city, Ten North Group and International Finance Bank",
+   "kind": "agreement",
+   "parties": [
+    "Opa-locka Community Development Corporation, Inc. d/b/a Ten North Group",
+    "International Finance Bank"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2484/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-02-12-13-7",
+   "date": "2025-02-12",
+   "ref": "13-7",
+   "title": "Settlement of Town Center O-L I, LLC v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Town Center O-L I, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2484/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-03-26-13-11",
+   "date": "2025-03-26",
+   "ref": "13-11",
+   "title": "Rescind acceptance of Florida Industrial Properties Eight's offer for city surplus land and reject all bids under RFP 24-0501200",
+   "kind": "sale",
+   "parties": [
+    "Florida Industrial Properties Eight, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2497/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "no"
+   },
+   "tally": "4-1",
+   "mover": "Santiago",
+   "second": "Kelley",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-03-26-13-2",
+   "date": "2025-03-26",
+   "ref": "13-2",
+   "title": "Piggyback Sourcewell agreement to buy a 2025 street sweeper from Elgin Sweeper (net of trade-in)",
+   "kind": "contract",
+   "parties": [
+    "Elgin Sweeper Company"
+   ],
+   "amount": 286319.2,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2497/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-03-26-13-6",
+   "date": "2025-03-26",
+   "ref": "13-6",
+   "title": "Piggyback City of Miami contract with H&R Paving to replace Sherbondy Village basketball courts",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 50000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2497/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-03-26-16-1",
+   "date": "2025-03-26",
+   "ref": "16-1",
+   "title": "Select Leasing 2, Inc. to finance the new street sweeper with a three-year capital lease (first reading)",
+   "kind": "contract",
+   "parties": [
+    "Leasing 2, Inc."
+   ],
+   "amount": 104490.44,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2497/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Amount is each of three annual payments"
+  },
+  {
+   "id": "opalocka-2025-04-23-16-1",
+   "date": "2025-04-23",
+   "ref": "16-1",
+   "title": "Select Leasing 2, Inc. to finance the new street sweeper with a three-year capital lease (second reading)",
+   "kind": "contract",
+   "parties": [
+    "Leasing 2, Inc."
+   ],
+   "amount": 104490.44,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2498/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "absent",
+    "Ervin": "yes",
+    "Santiago": "absent"
+   },
+   "tally": "3-0",
+   "mover": "Ervin",
+   "second": "Kelley",
+   "notes": "Amount is each of three annual payments"
+  },
+  {
+   "id": "opalocka-2025-05-14-13-1",
+   "date": "2025-05-14",
+   "ref": "13-1",
+   "title": "Piggyback City of Miami contract with H&R Paving for pavement resurfacing",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 155088.75,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2487/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-05-14-13-5",
+   "date": "2025-05-14",
+   "ref": "13-5",
+   "title": "Hire Hip Rock Star, LLC to produce the Arabian Nights Festival",
+   "kind": "contract",
+   "parties": [
+    "Hip Rock Star, LLC"
+   ],
+   "amount": 150000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2487/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Pulled from consent; withdrawn by Mayor Taylor after discussion; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-05-28-13-1",
+   "date": "2025-05-28",
+   "ref": "13-1",
+   "title": "End the ArtPad art-in-the-right-of-way agreement and accept Creative Order's project proposal",
+   "kind": "contract",
+   "parties": [
+    "Creative Order, LLC",
+    "ArtPad Inc."
+   ],
+   "amount": 125000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2499/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-05-28-13-2",
+   "date": "2025-05-28",
+   "ref": "13-2",
+   "title": "Piggyback City of Miami contract with H&R Paving to replace and widen Sherbondy Village concrete trails",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 81997.5,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2499/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-05-28-13-3",
+   "date": "2025-05-28",
+   "ref": "13-3",
+   "title": "Direct steps to address the city's Series 2015B bond debt to City National Bank of Florida",
+   "kind": "other",
+   "parties": [
+    "City National Bank of Florida"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2499/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-05-28-15-1",
+   "date": "2025-05-28",
+   "ref": "15-1",
+   "title": "Final plat for a self-storage facility at 14301 NW 27th Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 14301 NW 27th Avenue (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2499/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-06-11-13-4",
+   "date": "2025-06-11",
+   "ref": "13-4",
+   "title": "Hire Keith and Associates for Nile Gardens drainage and roadway engineering",
+   "kind": "contract",
+   "parties": [
+    "Keith and Associates, Inc."
+   ],
+   "amount": 219780,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2488/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-06-11-13-5",
+   "date": "2025-06-11",
+   "ref": "13-5",
+   "title": "Hire Premiere Design Solutions for an ADA compliance assessment and transition plan",
+   "kind": "contract",
+   "parties": [
+    "Premiere Design Solutions, Inc."
+   ],
+   "amount": 94548.67,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2488/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-06-11-13-6",
+   "date": "2025-06-11",
+   "ref": "13-6",
+   "title": "Select Acentria Public Risk as insurance agent of record",
+   "kind": "contract",
+   "parties": [
+    "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2488/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-06-11-13-9",
+   "date": "2025-06-11",
+   "ref": "13-9",
+   "title": "City co-sponsorship of a June 14 father and son/daughter basketball tournament with S.W.A.T.",
+   "kind": "grant",
+   "parties": [
+    "Success We Achieve Together, Inc. (S.W.A.T.)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2488/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": null,
+   "second": null,
+   "notes": "Consent agenda; minutes record no mover or second for the consent vote"
+  },
+  {
+   "id": "opalocka-2025-06-23-13-1",
+   "date": "2025-06-23",
+   "ref": "13-1",
+   "title": "Ratify past structural plans cost and sign a project agreement with M.C. Harry & Associates for remaining architectural work",
+   "kind": "contract",
+   "parties": [
+    "M.C. Harry & Associates Inc."
+   ],
+   "amount": 8141.22,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2500/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-06-23-13-3",
+   "date": "2025-06-23",
+   "ref": "13-3",
+   "title": "Piggyback Texas Region 8 contract with Hydromax for fire hydrant maintenance and repair",
+   "kind": "contract",
+   "parties": [
+    "Hydromax USA LLC"
+   ],
+   "amount": 60000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2500/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-06-23-13-4",
+   "date": "2025-06-23",
+   "ref": "13-4",
+   "title": "Piggyback State of Florida contract with BCA Watson Rice for an efficiency audit",
+   "kind": "contract",
+   "parties": [
+    "BCA Watson Rice, LLP"
+   ],
+   "amount": 95000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2500/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-06-23-13-5",
+   "date": "2025-06-23",
+   "ref": "13-5",
+   "title": "Piggyback City of Jacksonville contract with Hera Property Registry for foreclosed and vacant property registration",
+   "kind": "contract",
+   "parties": [
+    "Hera Property Registry, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2500/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda; capped at $100 per registered property"
+  },
+  {
+   "id": "opalocka-2025-07-09-13-1",
+   "date": "2025-07-09",
+   "ref": "13-1",
+   "title": "Accept conveyance of the water meter manifold system at the Opa Park LLC facility (1951 NW 141st Street) and sign an agreement with the owner",
+   "kind": "other",
+   "parties": [
+    "Opa Park LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-07-09-13-2",
+   "date": "2025-07-09",
+   "ref": "13-2",
+   "title": "Piggyback Miami-Dade County contract for an extended SmartCover service agreement",
+   "kind": "contract",
+   "parties": [
+    "Hadronex, Inc. d/b/a SmartCover Systems"
+   ],
+   "amount": 26702,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-07-09-13-3",
+   "date": "2025-07-09",
+   "ref": "13-3",
+   "title": "Hire Flotech Environmental for stormwater drain cleaning, CCTV evaluation and repair",
+   "kind": "contract",
+   "parties": [
+    "Flotech Environmental, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-07-09-13-4",
+   "date": "2025-07-09",
+   "ref": "13-4",
+   "title": "Hire Elementz Reconstruction for water, storm and sewer infrastructure management",
+   "kind": "contract",
+   "parties": [
+    "Elementz Reconstruction LLC"
+   ],
+   "amount": 120000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda; amount is annual"
+  },
+  {
+   "id": "opalocka-2025-07-09-13-8",
+   "date": "2025-07-09",
+   "ref": "13-8",
+   "title": "Hire Becker & Poliakoff for federal, state and local lobbying",
+   "kind": "contract",
+   "parties": [
+    "Becker & Poliakoff, P.A."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2489/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-07-23-13-3",
+   "date": "2025-07-23",
+   "ref": "13-3",
+   "title": "Piggyback City of Miami contract with H&R Paving to resurface Ali Baba Avenue",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 278700,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2501/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-07-23-13-4",
+   "date": "2025-07-23",
+   "ref": "13-4",
+   "title": "Piggyback Miami-Dade County contract with Quality Paving for drainage work at NW 133rd Street",
+   "kind": "contract",
+   "parties": [
+    "Quality Paving Corp."
+   ],
+   "amount": 94023.19,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2501/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-07-23-14-1",
+   "date": "2025-07-23",
+   "ref": "14-1",
+   "title": "Piggyback Miami-Dade County contract with Cocoa Tree Service for downtown tree maintenance",
+   "kind": "contract",
+   "parties": [
+    "Cocoa Tree Service Corp."
+   ],
+   "amount": 49500,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2501/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Add-on item"
+  },
+  {
+   "id": "opalocka-2025-07-23-16-1",
+   "date": "2025-07-23",
+   "ref": "16-1",
+   "title": "Lease of city rental space at 780 Fisherman Street (Suite 335) to South Florida School of Excellence (ordinance)",
+   "kind": "lease",
+   "parties": [
+    "SFSE LLC d/b/a South Florida School of Excellence"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2501/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-08-25-6-1",
+   "date": "2025-08-25",
+   "ref": "6-1",
+   "title": "Employee medical, dental, vision and AD&D insurance contracts with AvMed and MetLife",
+   "kind": "contract",
+   "parties": [
+    "AvMed, Inc.",
+    "MetLife"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "absent",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-08-25-6-3",
+   "date": "2025-08-25",
+   "ref": "6-3",
+   "title": "Code compliance fine reduction for 2920 NW 135th Street",
+   "kind": "other",
+   "parties": [
+    "Owner of 2920 NW 135th Street (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": {
+    "Taylor": "no",
+    "Kelley": "no",
+    "Bass": "absent",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "2-2",
+   "mover": "Santiago",
+   "second": "Taylor",
+   "notes": "Motion failed"
+  },
+  {
+   "id": "opalocka-2025-08-25-6-5",
+   "date": "2025-08-25",
+   "ref": "6-5",
+   "title": "Settlement of Papuchis LLC v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Papuchis LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Died for lack of a motion; approved 2025-09-10; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-08-25-6-6",
+   "date": "2025-08-25",
+   "ref": "6-6",
+   "title": "Settlement of Esin Daniel Abia v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Esin Daniel Abia"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "absent",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-08-25-6-7",
+   "date": "2025-08-25",
+   "ref": "6-7",
+   "title": "Settlement of Lubotes Dauphin v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Lubotes Dauphin"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred to 2025-09-10; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-08-25-7-1",
+   "date": "2025-08-25",
+   "ref": "7-1",
+   "title": "Lease of city rental space at 780 Fisherman Street (Suite 335) to South Florida School of Excellence (ordinance)",
+   "kind": "lease",
+   "parties": [
+    "SFSE LLC d/b/a South Florida School of Excellence"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2546/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "absent",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": null,
+   "second": null,
+   "notes": "Minutes record no mover or second"
+  },
+  {
+   "id": "opalocka-2025-09-10-13-1",
+   "date": "2025-09-10",
+   "ref": "13-1",
+   "title": "Settlement of Papuchis LLC v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Papuchis LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "no",
+    "Bass": "no",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "3-2",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-09-10-13-2",
+   "date": "2025-09-10",
+   "ref": "13-2",
+   "title": "Settlement of Esin Daniel Abia v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Esin Daniel Abia"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda; also approved 2025-08-25"
+  },
+  {
+   "id": "opalocka-2025-09-10-13-3",
+   "date": "2025-09-10",
+   "ref": "13-3",
+   "title": "Settlement of Lubotes Dauphin v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Lubotes Dauphin"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-10-13-5",
+   "date": "2025-09-10",
+   "ref": "13-5",
+   "title": "Piggyback City of Miami contract with H&R Paving for Phase I of the sidewalk replacement project",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 127554.5,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-10-13-7",
+   "date": "2025-09-10",
+   "ref": "13-7",
+   "title": "Hire AtkinsRealis for Safe Streets for All quick-build feasibility studies",
+   "kind": "contract",
+   "parties": [
+    "AtkinsRealis Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-10-14-1",
+   "date": "2025-09-10",
+   "ref": "14-1",
+   "title": "Correct the development agreement name to Wellspring LLC for a senior affordable housing project at 14803 NW 27th Avenue",
+   "kind": "agreement",
+   "parties": [
+    "Wellspring LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-09-10-15-1",
+   "date": "2025-09-10",
+   "ref": "15-1",
+   "title": "Final site plan for Rafe Investments' residential and live-work units on Ali Baba Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Rafe Investments, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-09-10-15-2",
+   "date": "2025-09-10",
+   "ref": "15-2",
+   "title": "Development agreement with Rafe Investments for residential and live-work units on Ali Baba Avenue",
+   "kind": "agreement",
+   "parties": [
+    "Rafe Investments, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2491/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-09-24-13-10",
+   "date": "2025-09-24",
+   "ref": "13-10",
+   "title": "Opt into the national opioid settlement with secondary manufacturers",
+   "kind": "settlement",
+   "parties": [
+    "Alvogen",
+    "Amneal",
+    "Apotex",
+    "Hikma",
+    "Indivior",
+    "Mylan",
+    "Sun",
+    "Zydus"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-2",
+   "date": "2025-09-24",
+   "ref": "13-2",
+   "title": "Three-party MOU with Miami-Dade County and Community Youth Against Violence on the juvenile curfew",
+   "kind": "agreement",
+   "parties": [
+    "Community Youth Against Violence, Inc.",
+    "Miami-Dade County"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-3",
+   "date": "2025-09-24",
+   "ref": "13-3",
+   "title": "Accept conveyance of water and sewer systems at Wellspring Apartments and sign an agreement with the owner/developer",
+   "kind": "other",
+   "parties": [
+    "Owner/developer of Wellspring Apartments, 14703 NW 27th Avenue"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-4",
+   "date": "2025-09-24",
+   "ref": "13-4",
+   "title": "Hire Eco Tech Consulting for water, sewer and stormwater environmental compliance",
+   "kind": "contract",
+   "parties": [
+    "Eco Tech Consulting, LLC"
+   ],
+   "amount": 103500,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-5",
+   "date": "2025-09-24",
+   "ref": "13-5",
+   "title": "Renew property, liability and workers' compensation insurance through the Florida League of Cities for FY 2025-26",
+   "kind": "contract",
+   "parties": [
+    "Florida League of Cities, Inc. (Florida Municipal Insurance Trust)"
+   ],
+   "amount": 3672490,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-8",
+   "date": "2025-09-24",
+   "ref": "13-8",
+   "title": "Settlement of the city's lawsuits with Ten North Group",
+   "kind": "settlement",
+   "parties": [
+    "Opa-locka Community Development Corporation, Inc. d/b/a Ten North Group"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda; settlement item also approved 2025-10-22"
+  },
+  {
+   "id": "opalocka-2025-09-24-13-9",
+   "date": "2025-09-24",
+   "ref": "13-9",
+   "title": "Opt into the Purdue Pharma / Sackler opioid settlement",
+   "kind": "settlement",
+   "parties": [
+    "Purdue Pharma, L.P.",
+    "Sackler family"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2503/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-10-08-13-1",
+   "date": "2025-10-08",
+   "ref": "13-1",
+   "title": "Amend the Shiff Construction contract for Lift Station No. 9 to add a pump seal failure module",
+   "kind": "contract",
+   "parties": [
+    "Shiff Construction & Development, LLC"
+   ],
+   "amount": 24825.84,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2552/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-10-22-13-2",
+   "date": "2025-10-22",
+   "ref": "13-2",
+   "title": "Piggyback Purchasing Cooperative of America contract for repairs at lift stations 5, 6 and 7",
+   "kind": "contract",
+   "parties": [
+    "Infrastructure Rehabilitation U.S.A., Inc."
+   ],
+   "amount": 64547.5,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2564/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-10-22-13-3",
+   "date": "2025-10-22",
+   "ref": "13-3",
+   "title": "Ratify emergency dewatering and second amendment to the Shiff Construction contract for Lift Station No. 16",
+   "kind": "contract",
+   "parties": [
+    "Shiff Construction & Development, LLC"
+   ],
+   "amount": 86063.43,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2564/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-10-22-13-4",
+   "date": "2025-10-22",
+   "ref": "13-4",
+   "title": "Settlement of the city's lawsuits with Ten North Group",
+   "kind": "settlement",
+   "parties": [
+    "Opa-locka Community Development Corporation, Inc. d/b/a Ten North Group"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2564/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-11-12-13-4",
+   "date": "2025-11-12",
+   "ref": "13-4",
+   "title": "Pursue a formal partnership with the Orange Bowl Committee to redevelop Ingram Park as \"Orange Bowl Field at Ingram Park\"",
+   "kind": "agreement",
+   "parties": [
+    "Orange Bowl Committee"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2553/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-11-12-13-5",
+   "date": "2025-11-12",
+   "ref": "13-5",
+   "title": "Emergency contract with Hernandez Underground for a force main at Pump Station No. 16",
+   "kind": "contract",
+   "parties": [
+    "Hernandez Underground Corp."
+   ],
+   "amount": 92458.26,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2553/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-11-12-13-7",
+   "date": "2025-11-12",
+   "ref": "13-7",
+   "title": "Amend the agent-of-record insurance agreement with Acentria Public Risk",
+   "kind": "contract",
+   "parties": [
+    "Foundation Risk Partners, Corp. d/b/a Acentria Public Risk"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2553/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Kelley",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-12-10-13-1",
+   "date": "2025-12-10",
+   "ref": "13-1",
+   "title": "Agreement with Landshore Enterprises to restore and stabilize the Burlington Street canal shoreline",
+   "kind": "contract",
+   "parties": [
+    "Landshore Enterprises, LLC"
+   ],
+   "amount": 875560,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-12-10-13-2",
+   "date": "2025-12-10",
+   "ref": "13-2",
+   "title": "Accept Premiere Design Solutions' proposal for an ADA compliance assessment and transition plan",
+   "kind": "contract",
+   "parties": [
+    "Premiere Design Solutions, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-12-10-13-4",
+   "date": "2025-12-10",
+   "ref": "13-4",
+   "title": "Accept Florida Industrial Properties Eight's offer to buy city-owned property under RFP 24-0501200",
+   "kind": "sale",
+   "parties": [
+    "Florida Industrial Properties Eight, LLC"
+   ],
+   "amount": 280000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2025-12-10-13-6",
+   "date": "2025-12-10",
+   "ref": "13-6",
+   "title": "Field usage agreement with We Make Footballers Miami",
+   "kind": "agreement",
+   "parties": [
+    "We Make Footballers Miami, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2025-12-10-15-1",
+   "date": "2025-12-10",
+   "ref": "15-1",
+   "title": "Site plan for a 43,000 sq ft catering facility at 2466 Ali Baba Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 2466 Ali Baba Avenue (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-12-10-15-2",
+   "date": "2025-12-10",
+   "ref": "15-2",
+   "title": "Development agreement for a 43,000 sq ft catering facility at 2466 Ali Baba Avenue",
+   "kind": "agreement",
+   "parties": [
+    "Applicant for 2466 Ali Baba Avenue (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-12-10-15-3",
+   "date": "2025-12-10",
+   "ref": "15-3",
+   "title": "Special exception for a liquor store at 13449 NW 42nd Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 13449 NW 42nd Avenue (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Bass",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2025-12-10-15-4",
+   "date": "2025-12-10",
+   "ref": "15-4",
+   "title": "Final site plan for two commercial mixed-use buildings at 1700 Service Road",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-12-10-15-5",
+   "date": "2025-12-10",
+   "ref": "15-5",
+   "title": "Development agreement for two commercial mixed-use buildings at 1700 Service Road",
+   "kind": "agreement",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-12-10-16-1",
+   "date": "2025-12-10",
+   "ref": "16-1",
+   "title": "Small-scale land use map amendment for 7.58 acres at 1700 Service Road",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-12-10-16-2",
+   "date": "2025-12-10",
+   "ref": "16-2",
+   "title": "Rezoning 7.58 acres at 1700 Service Road from R-TH to B-3",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2025-12-10-16-3",
+   "date": "2025-12-10",
+   "ref": "16-3",
+   "title": "Agreement with Florida Industrial Properties Eight to sell the \"Water Tank Property\" and relocate the water main (first reading)",
+   "kind": "sale",
+   "parties": [
+    "Florida Industrial Properties Eight, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2554/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-01-14-13-12",
+   "date": "2026-01-14",
+   "ref": "13-12",
+   "title": "Piggyback TIPS contract with Hydromax for fire hydrant flow testing",
+   "kind": "contract",
+   "parties": [
+    "Hydromax USA LLC"
+   ],
+   "amount": 52845.25,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-01-14-13-13",
+   "date": "2026-01-14",
+   "ref": "13-13",
+   "title": "Piggyback DuPage County contract with Insituform for sewer main repair",
+   "kind": "contract",
+   "parties": [
+    "Insituform Technologies USA, LLC"
+   ],
+   "amount": 79072.06,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-01-14-13-4",
+   "date": "2026-01-14",
+   "ref": "13-4",
+   "title": "Mentorship program MOU with Big Brothers Big Sisters Miami",
+   "kind": "agreement",
+   "parties": [
+    "Big Brothers Big Sisters Miami, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-01-14-13-9",
+   "date": "2026-01-14",
+   "ref": "13-9",
+   "title": "Assignment and assumption of the brownfield site rehabilitation agreement for 1700 Service Road",
+   "kind": "agreement",
+   "parties": [
+    "Assignor and assignee of the 1700 Service Road brownfield agreement (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-01-14-15-1",
+   "date": "2026-01-14",
+   "ref": "15-1",
+   "title": "Temporary use permit for a truck parking business at 13449 NW 42nd Avenue",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 13449 NW 42nd Avenue (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Withdrawn by the City Manager; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-01-14-16-1",
+   "date": "2026-01-14",
+   "ref": "16-1",
+   "title": "Agreement with Florida Industrial Properties Eight to sell the \"Water Tank Property\" and relocate the water main (second reading)",
+   "kind": "sale",
+   "parties": [
+    "Florida Industrial Properties Eight, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2600/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-01-28-13-1",
+   "date": "2026-01-28",
+   "ref": "13-1",
+   "title": "Piggyback Key Biscayne's agreement with Oracle America for police public safety software",
+   "kind": "contract",
+   "parties": [
+    "Oracle America, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2567/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "absent"
+   },
+   "tally": "4-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-01-28-13-2",
+   "date": "2026-01-28",
+   "ref": "13-2",
+   "title": "Contract amendment with Shiff Construction for Lift Station No. 9",
+   "kind": "contract",
+   "parties": [
+    "Shiff Construction & Development, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2567/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "absent"
+   },
+   "tally": "4-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-02-11-13-2",
+   "date": "2026-02-11",
+   "ref": "13-2",
+   "title": "Facility use agreement for Soccer Star Elite's youth soccer program at Sherbondy Park",
+   "kind": "agreement",
+   "parties": [
+    "ADC International Group Inc. d/b/a Soccer Star Elite"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2601/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred to 2026-02-25; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-02-25-13-1",
+   "date": "2026-02-25",
+   "ref": "13-1",
+   "title": "Facility use agreement for Soccer Star Elite's youth soccer program at Sherbondy Park",
+   "kind": "agreement",
+   "parties": [
+    "ADC International Group Inc. d/b/a Soccer Star Elite"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2613/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred from 2026-02-11; no vote recorded, approved 2026-03-25; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-03-11-13-1",
+   "date": "2026-03-11",
+   "ref": "13-1",
+   "title": "Pay Becker & Poliakoff for 2023 legislative session lobbying",
+   "kind": "contract",
+   "parties": [
+    "Becker & Poliakoff, P.A."
+   ],
+   "amount": 24000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2602/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "absent"
+   },
+   "tally": "4-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-03-11-13-3",
+   "date": "2026-03-11",
+   "ref": "13-3",
+   "title": "Piggyback Osceola County schools contract with Pro Playgrounds for playground equipment and repair",
+   "kind": "contract",
+   "parties": [
+    "Legacy Construction Services Group Inc. d/b/a Pro Playgrounds"
+   ],
+   "amount": 49999,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2602/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "absent"
+   },
+   "tally": "4-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-03-25-13-1",
+   "date": "2026-03-25",
+   "ref": "13-1",
+   "title": "Facility use agreement for Soccer Star Elite's youth soccer program at Sherbondy Park",
+   "kind": "agreement",
+   "parties": [
+    "ADC International Group Inc. d/b/a Soccer Star Elite"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2614/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-03-25-13-2",
+   "date": "2026-03-25",
+   "ref": "13-2",
+   "title": "Piggyback Miami-Dade County contract with Big D Engineering for sidewalk improvements",
+   "kind": "contract",
+   "parties": [
+    "Big D Engineering Inc."
+   ],
+   "amount": 94919.13,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2614/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-04-08-13-1",
+   "date": "2026-04-08",
+   "ref": "13-1",
+   "title": "Assignment and assumption of the brownfield site rehabilitation agreement for 12705 NW 42nd Avenue",
+   "kind": "agreement",
+   "parties": [
+    "Assignor and assignee of the 12705 NW 42nd Avenue brownfield agreement (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2603/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "absent",
+    "Santiago": "yes"
+   },
+   "tally": "3-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-04-08-13-5",
+   "date": "2026-04-08",
+   "ref": "13-5",
+   "title": "Amended assignment and assumption of the brownfield site rehabilitation agreement for 1700 Service Road",
+   "kind": "agreement",
+   "parties": [
+    "Assignor and assignee of the 1700 Service Road brownfield agreement (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2603/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Ervin": "absent",
+    "Santiago": "yes"
+   },
+   "tally": "3-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-2",
+   "date": "2026-04-22",
+   "ref": "13-2",
+   "title": "Change order No. 1, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Kelley",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-3",
+   "date": "2026-04-22",
+   "ref": "13-3",
+   "title": "Change order No. 2, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Kelley",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-4",
+   "date": "2026-04-22",
+   "ref": "13-4",
+   "title": "Change order No. 3, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-5",
+   "date": "2026-04-22",
+   "ref": "13-5",
+   "title": "Change order No. 4, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-6",
+   "date": "2026-04-22",
+   "ref": "13-6",
+   "title": "Change order No. 5, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-7",
+   "date": "2026-04-22",
+   "ref": "13-7",
+   "title": "Change order No. 6, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-13-8",
+   "date": "2026-04-22",
+   "ref": "13-8",
+   "title": "Change order No. 7, Cairo Lane / NW 127th Street roadway reconstruction",
+   "kind": "contract",
+   "parties": [
+    "Cairo Lane / NW 127th Street project contractor (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-04-22-15-1",
+   "date": "2026-04-22",
+   "ref": "15-1",
+   "title": "Site plan for an office and mechanical repair building at 14800 NW 24th Court",
+   "kind": "zoning",
+   "parties": [
+    "LDM Florida LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-04-22-15-2",
+   "date": "2026-04-22",
+   "ref": "15-2",
+   "title": "Development agreement for an office and mechanical repair building at 14800 NW 24th Court",
+   "kind": "agreement",
+   "parties": [
+    "LDM Florida LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2615/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Kelley",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-05-27-13-2",
+   "date": "2026-05-27",
+   "ref": "13-2",
+   "title": "Accept all proposals and sign agreements with a pool of contractors for the owner-occupied minor home repair program",
+   "kind": "contract",
+   "parties": [
+    "Pre-qualified general contractors under RFP 26-0316200 (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2616/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Agenda only; minutes not posted; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-05-27-13-3",
+   "date": "2026-05-27",
+   "ref": "13-3",
+   "title": "Hire Hydrocorp for cross-connection control program management",
+   "kind": "contract",
+   "parties": [
+    "Hydrocorp, LLC"
+   ],
+   "amount": 385463.47,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2616/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Agenda only; minutes not posted; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-05-27-13-4",
+   "date": "2026-05-27",
+   "ref": "13-4",
+   "title": "Hire Diamanti Construction for the urban forestry revitalization initiative",
+   "kind": "contract",
+   "parties": [
+    "Diamanti Construction & Development, Inc."
+   ],
+   "amount": 496814,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2616/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Agenda only; minutes not posted; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-06-10-15-1",
+   "date": "2026-06-10",
+   "ref": "15-1",
+   "title": "Final site plan for two commercial-industrial mixed-use buildings at 1700 Service Road",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2560/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred to a date not certain; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-06-10-15-2",
+   "date": "2026-06-10",
+   "ref": "15-2",
+   "title": "Development agreement for two commercial-industrial mixed-use buildings at 1700 Service Road",
+   "kind": "agreement",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2560/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred to a date not certain; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-06-10-16-1",
+   "date": "2026-06-10",
+   "ref": "16-1",
+   "title": "Small-scale land use map amendment for 7.58 acres at 1700 Service Road",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2560/files",
+   "roll": {
+    "Taylor": "no",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "no",
+    "Santiago": "no"
+   },
+   "tally": "2-3",
+   "mover": "Kelley",
+   "second": "Bass",
+   "notes": "Motion failed"
+  },
+  {
+   "id": "opalocka-2026-06-10-16-2",
+   "date": "2026-06-10",
+   "ref": "16-2",
+   "title": "Rezoning 7.58 acres at 1700 Service Road from R-TH to B-3",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 1700 Service Road (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2560/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Withdrawn after the land use amendment failed; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-06-24-13-1",
+   "date": "2026-06-24",
+   "ref": "13-1",
+   "title": "Piggyback City of Miami contract with H&R Paving for Phase XI milling and resurfacing",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 300000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2572/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-06-24-13-4",
+   "date": "2026-06-24",
+   "ref": "13-4",
+   "title": "Change order No. 1 with H&R Paving for the 21st Court sidewalk project",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2572/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-06-24-13-6",
+   "date": "2026-06-24",
+   "ref": "13-6",
+   "title": "Agreement with Professional Outdoor Systems to install bus benches, trash cans and shelters",
+   "kind": "contract",
+   "parties": [
+    "Professional Outdoor Systems, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2572/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-07-08-13-11",
+   "date": "2026-07-08",
+   "ref": "13-11",
+   "title": "Settlement of Amarok Security, LLC v. City of Opa-locka",
+   "kind": "settlement",
+   "parties": [
+    "Amarok Security, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2561/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-07-08-13-4",
+   "date": "2026-07-08",
+   "ref": "13-4",
+   "title": "Piggyback City of Lauderdale Lakes bid and contract with SAFA Construction for Segal Park drainage",
+   "kind": "contract",
+   "parties": [
+    "SAFA Construction, LLC"
+   ],
+   "amount": 200000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2561/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-07-08-13-5",
+   "date": "2026-07-08",
+   "ref": "13-5",
+   "title": "Amend the Stantec agreement for infrastructure vulnerability and resiliency planning",
+   "kind": "contract",
+   "parties": [
+    "Stantec Consulting Services, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2561/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-07-22-13-4",
+   "date": "2026-07-22",
+   "ref": "13-4",
+   "title": "Change order for emergency repairs after the NW 127th Street water main rupture",
+   "kind": "contract",
+   "parties": [
+    "Contractor for NW 127th Street water main repair (not named in title)"
+   ],
+   "amount": 186500,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2618/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-08-25-6-1",
+   "date": "2026-08-25",
+   "ref": "6-1",
+   "title": "Employee medical, dental, vision and AD&D insurance contracts with AvMed and MetLife",
+   "kind": "contract",
+   "parties": [
+    "AvMed, Inc.",
+    "MetLife"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2651/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-08-25-6-2",
+   "date": "2026-08-25",
+   "ref": "6-2",
+   "title": "MOU with 5000 Role Models of Excellence Project for a youth crime-prevention initiative",
+   "kind": "agreement",
+   "parties": [
+    "5000 Role Models of Excellence Project, Inc."
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2651/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Kelley",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-09-09-13-1",
+   "date": "2026-09-09",
+   "ref": "13-1",
+   "title": "Accept Luxurious Machine's proposal for vending machine services",
+   "kind": "contract",
+   "parties": [
+    "Luxurious Machine LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-10",
+   "date": "2026-09-09",
+   "ref": "13-10",
+   "title": "Professional services agreement with APAS Consulting for the transit system's Title VI program",
+   "kind": "contract",
+   "parties": [
+    "APAS Consulting LLC"
+   ],
+   "amount": 55000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-13",
+   "date": "2026-09-09",
+   "ref": "13-13",
+   "title": "Amendment No. 4 to the EAC Consulting design agreement for NW 131st Street reconstruction",
+   "kind": "contract",
+   "parties": [
+    "EAC Consulting, Inc."
+   ],
+   "amount": 64430,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-14",
+   "date": "2026-09-09",
+   "ref": "13-14",
+   "title": "Ratify sanitary sewer rerouting at Pump Station No. 16 by SAFA Construction",
+   "kind": "contract",
+   "parties": [
+    "SAFA Construction, LLC"
+   ],
+   "amount": 124550,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-15",
+   "date": "2026-09-09",
+   "ref": "13-15",
+   "title": "Change order No. 3 to the Shiff Construction contract for supplemental work",
+   "kind": "contract",
+   "parties": [
+    "Shiff Construction & Development LLC"
+   ],
+   "amount": 68365.84,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Bass",
+   "second": "Santiago",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-2",
+   "date": "2026-09-09",
+   "ref": "13-2",
+   "title": "Facility use agreement for Lead By Example Elite's basketball program at Sherbondy Village",
+   "kind": "agreement",
+   "parties": [
+    "Lead By Example Elite LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "no",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "4-1",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-5",
+   "date": "2026-09-09",
+   "ref": "13-5",
+   "title": "Accept My Lawn Service estimates for one-time restoration of Pine Tree Lake",
+   "kind": "contract",
+   "parties": [
+    "My Lawn Service Inc."
+   ],
+   "amount": 38500,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Ervin",
+   "notes": "Pulled from consent"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-7",
+   "date": "2026-09-09",
+   "ref": "13-7",
+   "title": "Ratify emergency excavation and water line capping on Cairo Lane by SAFA Construction, waiving competitive bidding",
+   "kind": "contract",
+   "parties": [
+    "SAFA Construction, LLC"
+   ],
+   "amount": 48373,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-09-13-9",
+   "date": "2026-09-09",
+   "ref": "13-9",
+   "title": "Consent to assigning Elementz Reconstruction's city agreements and purchase orders to APAS Build",
+   "kind": "agreement",
+   "parties": [
+    "Elementz Reconstruction, LLC",
+    "APAS Build LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-09-15-1",
+   "date": "2026-09-09",
+   "ref": "15-1",
+   "title": "Site plan for a concrete batching plant at 13060 Cairo Lane",
+   "kind": "zoning",
+   "parties": [
+    "Applicant for 13060 Cairo Lane (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-09-09-15-2",
+   "date": "2026-09-09",
+   "ref": "15-2",
+   "title": "Development agreement for a concrete batching plant at 13060 Cairo Lane",
+   "kind": "agreement",
+   "parties": [
+    "Applicant for 13060 Cairo Lane (not named in minutes)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Ervin",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-09-09-16-2",
+   "date": "2026-09-09",
+   "ref": "16-2",
+   "title": "Rezone about 1.6 acres on NW 135th Street from B-3 to I-4 industrial (first reading)",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 3570, 3530 and 3450 NW 135th Street (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2563/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Ervin",
+   "second": "Bass",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-09-23-13-3",
+   "date": "2026-09-23",
+   "ref": "13-3",
+   "title": "Piggyback state contract with Berry Dunn for a code compliance assessment",
+   "kind": "contract",
+   "parties": [
+    "Berry, Dunn, McNeil & Parker LLC"
+   ],
+   "amount": 25000,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2620/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Bass",
+   "notes": "Consent agenda"
+  },
+  {
+   "id": "opalocka-2026-09-23-16-2",
+   "date": "2026-09-23",
+   "ref": "16-2",
+   "title": "Rezone about 1.6 acres on NW 135th Street from B-3 to I-4 industrial (second reading)",
+   "kind": "zoning",
+   "parties": [
+    "Owner of 3570, 3530 and 3450 NW 135th Street (not named in title)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2620/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Kelley",
+   "second": "Santiago",
+   "notes": null
+  },
+  {
+   "id": "opalocka-2026-10-14-13-1",
+   "date": "2026-10-14",
+   "ref": "13-1",
+   "title": "Accept Waste Management's proposal for solid waste collection services",
+   "kind": "contract",
+   "parties": [
+    "Waste Management Inc. of Florida"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2609/files",
+   "roll": null,
+   "tally": null,
+   "mover": null,
+   "second": null,
+   "notes": "Deferred by the City Manager; No vote recorded in the posted record"
+  },
+  {
+   "id": "opalocka-2026-10-14-13-2",
+   "date": "2026-10-14",
+   "ref": "13-2",
+   "title": "Supplemental utility license agreement for water meter infrastructure for BP Gratigny Industrial Park at Miami-Opa Locka Executive Airport",
+   "kind": "license",
+   "parties": [
+    "BP Gratigny Industrial Park (owner, 4700 NW 135th Street)"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2609/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda; draft minutes"
+  },
+  {
+   "id": "opalocka-2026-10-14-13-3",
+   "date": "2026-10-14",
+   "ref": "13-3",
+   "title": "Accept conveyance of a sewer force main at the Nomi Square development from North Miami Ventures",
+   "kind": "other",
+   "parties": [
+    "North Miami Ventures, LLC"
+   ],
+   "amount": null,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2609/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda; draft minutes"
+  },
+  {
+   "id": "opalocka-2026-10-14-13-7",
+   "date": "2026-10-14",
+   "ref": "13-7",
+   "title": "Piggyback City of Miami contract with H&R Paving for Phase XII milling and resurfacing",
+   "kind": "contract",
+   "parties": [
+    "H&R Paving, Inc."
+   ],
+   "amount": 765264,
+   "url": "https://opalockafl.portal.civicclerk.com/event/2609/files",
+   "roll": {
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Ervin": "yes",
+    "Santiago": "yes"
+   },
+   "tally": "5-0",
+   "mover": "Santiago",
+   "second": "Bass",
+   "notes": "Consent agenda; draft minutes"
+  }
+ ],
+ "gaps": [
+  {
+   "date": "2026-05-27",
+   "issue": "Regular meeting held (agenda and packet posted) but no minutes attached to any later agenda; private-party agenda items listed with roll null"
+  },
+  {
+   "date": "2026-10-14",
+   "issue": "Minutes read are the draft attached to the 2026-10-28 agenda; not yet approved"
+  },
+  {
+   "date": "2026-10-28",
+   "issue": "Meeting not yet held as of 2026-10-24; agenda posted but not included"
+  },
+  {
+   "date": "2025-03-12",
+   "issue": "No quorum; no actions taken"
+  },
+  {
+   "issue": "Cancelled regular meetings (no records): 2025-02-26, 2025-08-13, 2025-08-27, 2025-11-26, 2025-12-24, 2026-05-13, 2026-08-12, 2026-08-26"
+  },
+  {
+   "issue": "Several consent-agenda votes (2025-05-14, 2025-05-28, 2025-06-11) and the 2025-08-25 lease vote record a 5-0 or 4-0 roll but no mover or second; mover and second are null"
+  },
+  {
+   "issue": "Consent items carry the roll of the single consent-agenda vote; pulled items carry their own vote"
+  },
+  {
+   "issue": "Applicants for site plans, plats, special exceptions and rezonings (3400 NW 135 St, 14301 NW 27 Ave, 2466 Ali Baba Ave, 13449 NW 42 Ave, 1700 Service Road, 13060 Cairo Lane, 3570/3530/3450 NW 135 St) are not named in the minutes or titles; the contractor on the seven Cairo Lane/NW 127 St change orders and the NW 127 St water-main change order is not named either"
+  },
+  {
+   "issue": "Budget hearings (2025-09-09, 2025-09-24, 2026-09-08, 2026-09-23) and special meetings of 2025-11-14 and 2025-11-24 were read; they hold only millage, budget and code items, with no private-party actions"
+  },
+  {
+   "issue": "Interlocal agreements, state and federal grants, mutual aid, RFP issuances naming no vendor, code amendments, scholarships and union contracts are excluded under the standard"
+  }
+ ]
+}
