@@ -109,7 +109,7 @@ FED_FORMS = {
                    B("Gulf to Bay JV Partners LLC", "owner", "6%, Tampa"), B("First Tampa Alexander LLC", "owner", "8.33%, Plant City"), B("Missouri Midway LLC / First Tampa Rosery LLC", "owner", "1.67%, Largo"),
                    B("Young & Moody Building", "owner", "8.33%, Plant City; tenant Plant City Chamber")],
     "source": "Florida COE EFDMS, CE Form 6F (final disclosure on leaving the Attorney General's office 2025-01-21), filing history https://disclosure.floridaethics.gov/PublicSearch/FilingHistory/72729; assets and liabilities as of 2024-12-31, income for 2024 (attached schedule)"}],
-   "Current: U.S. Senate Annual Report for calendar 2025, filed 2026-08-13 (read Oct 24, 2026). Also kept: her final Florida Form 6F (2025-03-27), with fuller family partnership detail.",
+   "Current: U.S. Senate Annual Report for calendar 2025, filed 2026-08-13 (read Oct 24, 2026). Also kept: her final Florida Form 6F (2025-03-27), with fuller family partnership detail; its secondary income sources (tenants of the family partnerships) were Staples, Panera Bread/Covelli Enterprises and Regions Bank.",
    []),
 }
 
