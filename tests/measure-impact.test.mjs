@@ -128,7 +128,7 @@ test('fresh request runs in the background, then serves the shared cache', async
     assert.equal(second.result.yesNote, 'Y');
     assert.equal(second.result.sources[0].url, 'https://example.gov/a');
     assert.equal(second.result.sources[1].url, '');   // a link the search never returned is dropped
-    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm1:')));
+    assert.ok([...CACHE.store.keys()].some(k => k.startsWith('impm2:')));
   } finally { globalThis.fetch = realFetch; }
 });
 

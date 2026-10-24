@@ -110,7 +110,7 @@
       otherValue: 'Assessed value of the property you own but don’t live in', lookup: 'Look up your values',
       place: 'City you live in', placeNone: 'Not sure', placeUmsa: 'Unincorporated Miami-Dade', placeHelp: 'Shows which services your city runs and which the County runs, and, for owners, the 2026 tax rates. No address needed.',
       privacy: 'Saved on this device only.',
-      ifYes: 'If YES wins', ifNo: 'If NO wins', when: 'When', everyone: 'Everyone it covers',
+      ifYes: 'If YES wins', ifNo: 'If NO wins', forAll: 'For everyone', community: 'Effects on the whole community', when: 'When', everyone: 'Everyone it covers',
       forYou: 'For you', youSaid: 'You said: ', noneForYou: 'Official sources don’t describe anything this measure changes specifically for the situation you gave, beyond what it changes for everyone.',
       others: 'What it means for others in your community', money: 'Public money and services at stake', youUse: 'You said you use this',
       reconcileHead: 'Your taxes and the services they pay for', unknown: 'Not yet known',
@@ -178,7 +178,7 @@
       otherValue: 'Valor tasado de la propiedad donde no vive', lookup: 'Busque sus valores',
       place: 'Ciudad donde vive', placeNone: 'No estoy seguro', placeUmsa: 'Miami-Dade no incorporado', placeHelp: 'Muestra qué servicios presta su ciudad y cuáles el Condado y, para propietarios, las tasas de impuestos de 2026. No hace falta la dirección.',
       privacy: 'Guardado solo en este dispositivo.',
-      ifYes: 'Si gana el SÍ', ifNo: 'Si gana el NO', when: 'Cuándo', everyone: 'Para todos los que abarca',
+      ifYes: 'Si gana el SÍ', ifNo: 'Si gana el NO', forAll: 'Para todos', community: 'Efectos en toda la comunidad', when: 'Cuándo', everyone: 'Para todos los que abarca',
       forYou: 'Para usted', youSaid: 'Usted indicó: ', noneForYou: 'Las fuentes oficiales no describen nada que esta medida cambie específicamente para la situación que indicó, más allá de lo que cambia para todos.',
       others: 'Lo que significa para otros en su comunidad', money: 'Dinero y servicios públicos en juego', youUse: 'Usted indicó que usa esto',
       reconcileHead: 'Sus impuestos y los servicios que pagan', unknown: 'Aún no se sabe',
@@ -246,7 +246,7 @@
       otherValue: 'Valè evalyasyon pwopriyete ou pa rete ladan l', lookup: 'Chèche valè ou yo',
       place: 'Vil kote w rete', placeNone: 'Mwen pa sèten', placeUmsa: 'Miami-Dade ki pa enkòpore', placeHelp: 'Li montre ki sèvis vil ou bay ak ki sa Konte a bay, epi pou pwopriyetè, to taks 2026 yo. Ou pa bezwen bay adrès.',
       privacy: 'Sere sou aparèy sa a sèlman.',
-      ifYes: 'Si WI genyen', ifNo: 'Si NON genyen', when: 'Kilè', everyone: 'Pou tout moun li kouvri',
+      ifYes: 'Si WI genyen', ifNo: 'Si NON genyen', forAll: 'Pou tout moun', community: 'Efè sou tout kominote a', when: 'Kilè', everyone: 'Pou tout moun li kouvri',
       forYou: 'Pou ou', youSaid: 'Ou di: ', noneForYou: 'Sous ofisyèl yo pa dekri anyen mezi sa a chanje espesyalman pou sitiyasyon ou bay la, pi lwen pase sa li chanje pou tout moun.',
       others: 'Sa sa vle di pou lòt moun nan kominote w', money: 'Lajan piblik ak sèvis ki an jwèt', youUse: 'Ou di ou sèvi ak sa',
       reconcileHead: 'Taks ou ak sèvis yo peye', unknown: 'Nou poko konnen',
@@ -285,6 +285,55 @@
       }
     }
   };
+  // One or two plain lines per side for the summary boxes. Details go in the expanders.
+  var SUM = {
+    en: {
+      a3Save: function(a, b){ return 'You’d pay about ' + usd(a) + ' less in 2027 and ' + usd(b) + ' less a year from 2028.'; },
+      a3Gov: function(b){ return 'Your city, the County and other local districts would collect that ' + usd(b) + ' less from you, at today’s rates.'; },
+      a3Same: 'Your property taxes and exemption stay as they are.',
+      a3GovSame: 'Local governments keep collecting what they do today.',
+      a3Renter: 'What you pay doesn’t change directly.',
+      a3All: function(lang){ return 'Local governments would collect less: the County estimates about ' + big(COUNTY_LOSS.full, lang) + ' a year less for itself from 2028, plus what cities and other districts lose. That money now pays for fire rescue, transit and roads, parks, libraries and senior services: services the whole community shares, whether or not a person uses them directly.'; },
+      a3AllNo: 'Local services keep the property tax money they have today.',
+      a3Other: 'Yearly increases in the taxed value of property you don’t live in are capped at 5% instead of 10%.',
+      a3OtherNo: 'The 10% yearly cap stays.',
+      lvKeep: function(p){ return 'You keep paying about ' + usd(p) + ' a year for it, through June 2031.'; },
+      lvStop: function(p){ return 'You stop paying about ' + usd(p) + ' a year after June 2027.'; },
+      lvDistKeep: function(lang){ return 'The school district keeps about ' + big(LEVY.perYear, lang) + ' a year for teacher pay and school officers.'; },
+      lvDistLose: function(lang){ return 'The school district loses about ' + big(LEVY.perYear, lang) + ' a year that now pays for teacher pay and school officers.'; }
+    },
+    es: {
+      a3Save: function(a, b){ return 'Pagaría unos ' + usd(a) + ' menos en 2027 y ' + usd(b) + ' menos al año desde 2028.'; },
+      a3Gov: function(b){ return 'Su ciudad, el Condado y otros distritos locales le cobrarían esos ' + usd(b) + ' menos, con las tasas de hoy.'; },
+      a3Same: 'Sus impuestos a la propiedad y su exención quedan como están.',
+      a3GovSame: 'Los gobiernos locales siguen recaudando lo mismo que hoy.',
+      a3Renter: 'Lo que usted paga no cambia directamente.',
+      a3All: function(lang){ return 'Los gobiernos locales recaudarían menos: el Condado estima unos ' + big(COUNTY_LOSS.full, lang) + ' al año menos para sí mismo desde 2028, más lo que pierdan las ciudades y otros distritos. Ese dinero hoy paga bomberos y rescate, transporte y calles, parques, bibliotecas y servicios para personas mayores: servicios que comparte toda la comunidad, los use o no cada persona.'; },
+      a3AllNo: 'Los servicios locales mantienen el dinero de impuestos a la propiedad que tienen hoy.',
+      a3Other: 'Los aumentos anuales del valor gravable de propiedades donde no vive tendrían un tope del 5% en vez del 10%.',
+      a3OtherNo: 'El tope anual del 10% se mantiene.',
+      lvKeep: function(p){ return 'Sigue pagando unos ' + usd(p) + ' al año por esto, hasta junio de 2031.'; },
+      lvStop: function(p){ return 'Deja de pagar unos ' + usd(p) + ' al año después de junio de 2027.'; },
+      lvDistKeep: function(lang){ return 'El distrito escolar mantiene unos ' + big(LEVY.perYear, lang) + ' al año para salarios de maestros y oficiales escolares.'; },
+      lvDistLose: function(lang){ return 'El distrito escolar pierde unos ' + big(LEVY.perYear, lang) + ' al año que hoy pagan salarios de maestros y oficiales escolares.'; }
+    },
+    ht: {
+      a3Save: function(a, b){ return 'Ou ta peye anviwon ' + usd(a) + ' mwens an 2027 ak ' + usd(b) + ' mwens chak ane apati 2028.'; },
+      a3Gov: function(b){ return 'Vil ou, Konte a ak lòt distri lokal ta kolekte ' + usd(b) + ' sa a mwens nan men w, ak to jodi a.'; },
+      a3Same: 'Taks pwopriyete w ak egzanpsyon w rete jan yo ye.',
+      a3GovSame: 'Gouvènman lokal yo kontinye kolekte sa yo kolekte jodi a.',
+      a3Renter: 'Sa w peye pa chanje dirèkteman.',
+      a3All: function(lang){ return 'Gouvènman lokal yo ta kolekte mwens: Konte a estime anviwon ' + big(COUNTY_LOSS.full, lang) + ' mwens pa ane pou tèt li apati 2028, plis sa vil yo ak lòt distri pèdi. Lajan sa a peye ponpye ak sekou, transpò ak wout, pak, bibliyotèk ak sèvis pou granmoun jodi a: sèvis tout kominote a pataje, kit yon moun sèvi ak yo dirèkteman kit non.'; },
+      a3AllNo: 'Sèvis lokal yo kenbe lajan taks pwopriyete yo genyen jodi a.',
+      a3Other: 'Ogmantasyon chak ane nan valè taksab pwopriyete ou pa rete ladan l ta gen plafon 5% olye 10%.',
+      a3OtherNo: 'Plafon 10% chak ane a rete.',
+      lvKeep: function(p){ return 'Ou kontinye peye anviwon ' + usd(p) + ' pa ane pou sa, jiska jen 2031.'; },
+      lvStop: function(p){ return 'Ou sispann peye anviwon ' + usd(p) + ' pa ane apre jen 2027.'; },
+      lvDistKeep: function(lang){ return 'Distri lekòl la kenbe anviwon ' + big(LEVY.perYear, lang) + ' pa ane pou salè pwofesè ak ofisye lekòl yo.'; },
+      lvDistLose: function(lang){ return 'Distri lekòl la pèdi anviwon ' + big(LEVY.perYear, lang) + ' pa ane ki peye salè pwofesè ak ofisye lekòl jodi a.'; }
+    }
+  };
+  function sumWords(lang){ return SUM[lang] || SUM.en; }
   function words(lang){ return W[lang] || W.en; }
 
   /* ---------- the calculations official numbers support ---------- */
@@ -349,6 +398,13 @@
     }
     if(has(me, 'owner_other')) out.yes.push(w.other);
     if(has(me, 'renter')) out.yes.push(w.renter);
+    var U = sumWords(lang);
+    // yes/no: for this voter; allYes/allNo: for everyone, whether or not they use the services
+    out.summary = { yes: [], no: [], allYes: [U.a3All(lang)], allNo: [U.a3AllNo] };
+    if(out.savings){ out.summary.yes.push(U.a3Save(out.savings.y2027, out.savings.y2028), U.a3Gov(out.savings.y2028)); out.summary.no.push(U.a3Same); }
+    else if(has(me, 'homestead')){ out.summary.no.push(U.a3Same); }
+    else if(has(me, 'renter')){ out.summary.yes.push(U.a3Renter); }
+    if(has(me, 'owner_other')){ out.summary.yes.push(U.a3Other); out.summary.no.push(U.a3OtherNo); }
     var P = M && me.place ? M.places[me.place] : null;
     out.reconcile = {
       splitHead: split ? w.splitHead : '', split: split || [],
@@ -378,7 +434,10 @@
     }
     if(has(me, 'owner_other') && me.otherValue){ var q = me.otherValue * LEVY.mills / 1000; out.yes.push(w.payOther(q)); out.payOther = Math.round(q); paid = true; }
     if(paid){ out.yes.push(w.yes); out.no.push(w.no); out.approx = true; }
-    else if(!has(me, 'homestead')) out.yes.push(w.typical);
+    var U = sumWords(lang), tot = (out.payHome || 0) + (out.payOther || 0);
+    out.summary = { yes: [], no: [], allYes: [U.lvDistKeep(lang)], allNo: [U.lvDistLose(lang)] };
+    if(paid){ out.summary.yes.push(U.lvKeep(tot)); out.summary.no.push(U.lvStop(tot)); }
+    if(!paid && !has(me, 'homestead')) out.yes.push(w.typical);
     out.reconcile = {
       splitHead: '', split: [],
       loss: w.district(lang),
@@ -398,7 +457,7 @@
 
   window.measureImpact = {
     GROUPS: GROUPS, SRC: SRC, load: load, save: save, clear: clear, normalize: normalize, has: has, any: any,
-    words: words, calc: calc, usd: usd, placeKey: placeKey, places: function(){ var M = rates(); return M ? Object.keys(M.places) : []; },
+    words: words, sumWords: sumWords, calc: calc, usd: usd, placeKey: placeKey, places: function(){ var M = rates(); return M ? Object.keys(M.places) : []; },
     _test: { homeTaxes: homeTaxes, currentNonSchoolExempt: currentNonSchoolExempt, isAmend3: isAmend3, isSchoolLevy: isSchoolLevy }
   };
 })();

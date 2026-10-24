@@ -478,6 +478,34 @@
   .imp-form .help{font-size:11.5px; color:var(--ink-soft); line-height:1.4;}
   .imp-actions{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:12px;}
   .imp-others{margin-top:14px; font-size:13px;}
+  /* YES / NO summary boxes: outlined, never filled (filled blocks read as bars); the title carries the color */
+  .imp-boxes{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:10px; margin:6px 0 10px;}
+  .imp-box{border:1.5px solid #C9C9C1; padding:12px 14px; min-width:0; overflow-wrap:anywhere;}
+  .imp-box-h{font-weight:800; font-size:15px; margin-bottom:6px;}
+  .imp-box-h.side-yes{color:var(--ok-fg);} .imp-box-h.side-no{color:var(--no-bg);}
+  .imp-box p{font-size:13.5px; line-height:1.5; margin:0 0 6px;}
+  .imp-gen p{color:var(--ink-soft);}
+  .imp-you{margin-top:8px; padding-top:8px; border-top:1px dotted #C9C9C1;}
+  .imp-you-h{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:4px;}
+  .imp-you p{font-weight:600; color:var(--ink);}
+  .imp-all p{font-weight:400;}
+  .imp-exp{border-top:1px solid #C9C9C1; padding:2px 0;}
+  .imp-exp:last-of-type{border-bottom:1px solid #C9C9C1;}
+  .imp-exp > summary{cursor:pointer; font-weight:700; font-size:13.5px; padding:10px 0; overflow-wrap:anywhere;}
+  .imp-exp-b{padding:0 0 12px;}
+  .t-yes{color:var(--ok-fg);} .t-no{color:var(--no-bg);}
+  .imp-item{padding:8px 0; font-size:13px; border-bottom:1px dotted #C9C9C1;}
+  .imp-item:last-child{border-bottom:none;}
+  .imp-item .amt{font-family:var(--mono); font-size:12px; margin-top:2px;}
+  .imp-item .what{font-size:12.5px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
+  .imp-srcs{list-style:none; padding:0; margin:10px 0 0; line-height:1.6;}
+  /* long source names and amounts wrap inside the dossier instead of running off the edge */
+  #impactSec, #impactSec *{min-width:0; overflow-wrap:anywhere;}
+  #impactSec .srclink{white-space:normal;}
+  #impactSec .imp-row{grid-template-columns:minmax(0, 1fr) auto;}
+  #impactSec .imp-row .amt{white-space:normal; max-width:45vw; text-align:right;}
+  #impactSec .imp-mine{white-space:normal; display:inline-block;}
+  #impactSec .imp-form input[type=text], #impactSec select{max-width:100%; box-sizing:border-box;}
   .imp-others summary{cursor:pointer; font-weight:600;}
   .loc-side + .loc-side{margin-top:6px;}
   .tag.amtchip{background:var(--ink); color:var(--paper);}
@@ -3609,61 +3637,92 @@ function impactBody(ri, r, calc, me, w){
   var cite = function(ix){ return (ix || []).map(function(i){ var s = src[i]; return s ? srcLink(s.url, s.name) : ''; }).join(''); };
   var mine = (r && r.groups || []).filter(function(g){ return MI.has(me, g.group); });
   var others = (r && r.groups || []).filter(function(g){ return !MI.has(me, g.group); });
-  function side(cls, title, general, every, which, calcLines){
-    var items = [];
-    if(general) items.push('<li>' + esc(general) + '</li>');
-    if(every) items.push('<li><span class="imp-who">' + esc(w.everyone) + ':</span> ' + esc(every) + '</li>');
-    (calcLines || []).forEach(function(x){ items.push('<li><span class="imp-who">' + esc(w.forYou) + ':</span> ' + esc(x) + '</li>'); });
-    mine.forEach(function(g){ if(g[which]) items.push('<li><span class="imp-who">' + esc(w.forYou) + ' (' + esc(w.o[g.group].toLowerCase()) + '):</span> ' + esc(g[which]) + cite(g.sources) + '</li>'); });
-    if(!items.length) return '';
-    return '<div class="fin-side ' + cls + '">' + esc(title) + '</div><ul class="imp-list">' + items.join('') + '</ul>';
-  }
-  var h = '';
-  h += side('side-yes', w.ifYes, r && r.yesNote, r && r.everyone && r.everyone.yesNote, 'yesNote', calc && calc.yes);
-  h += side('side-no', w.ifNo, r && r.noNote, r && r.everyone && r.everyone.noNote, 'noNote', calc && calc.no);
-  if(calc && calc.approx) h += '<p class="fine">' + esc(w.approx) + '</p>';
-  if(r && r.whenNote) h += '<p class="imp-intro" style="margin-top:10px"><span class="imp-who">' + esc(w.when) + ':</span> ' + esc(r.whenNote) + '</p>';
-  if(r && !mine.length && !(calc && (calc.yes.length || calc.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
+  var sum = (calc && calc.summary) || { yes: [], no: [] };
+  var P = function(x){ return '<p>' + esc(x) + '</p>'; };
 
-  // money both ways: what you'd pay or save, next to what the government loses and what it pays for
+  // 1. Two summary boxes, YES and NO side by side: what the measure does, what it means for you,
+  //    and what it means for everyone, whether or not they use the services
+  var comm = (r && r.community) || [];
+  function box(cls, title, general, mineLines, allLines){
+    var you = mineLines.filter(Boolean), all = allLines.filter(Boolean);
+    if(!general && !you.length && !all.length) return '';
+    return '<div class="imp-box"><div class="imp-box-h ' + cls + '">' + esc(title) + '</div>' +
+      (general ? '<div class="imp-gen">' + P(general) + '</div>' : '') +
+      (you.length ? '<div class="imp-you"><div class="imp-you-h">' + esc(w.forYou) + '</div>' + you.map(P).join('') + '</div>' : '') +
+      (all.length ? '<div class="imp-you imp-all"><div class="imp-you-h">' + esc(w.forAll) + '</div>' + all.map(P).join('') + '</div>' : '') + '</div>';
+  }
+  function allFor(which, fixed){
+    var out = (fixed || []).slice();
+    if(r && r.everyone && r.everyone[which]) out.push(r.everyone[which]);
+    comm.slice(0, 2).forEach(function(c){ if(c[which] && !/^(no change|nothing changes|unchanged)\.?$/i.test(c[which].trim())) out.push(c.whatNote + ': ' + c[which]); });
+    return out;
+  }
+  var h = '<div class="imp-boxes">' +
+    box('side-yes', w.ifYes, r && r.yesNote, sum.yes.length ? sum.yes : mine.map(function(g){ return g.yesNote; }), allFor('yesNote', sum.allYes)) +
+    box('side-no', w.ifNo, r && r.noNote, sum.no.length ? sum.no : mine.map(function(g){ return g.noNote; }), allFor('noNote', sum.allNo)) + '</div>';
+  if(r && r.whenNote) h += '<p class="imp-intro"><span class="imp-who">' + esc(w.when) + ':</span> ' + esc(r.whenNote) + '</p>';
+  if(calc && calc.approx) h += '<p class="fine">' + esc(w.approx) + '</p>';
+  if(r && !mine.length && !(calc && (sum.yes.length || sum.no.length))) h += '<p class="fine">' + esc(w.noneForYou) + '</p>';
+
+  // 2. Line items, each in its own expander
+  function exp(title, body){ return body ? '<details class="imp-exp"><summary>' + esc(title) + '</summary><div class="imp-exp-b">' + body + '</div></details>' : ''; }
+  function sideList(title, cls, lines){ return lines.length ? '<div class="fin-side ' + cls + '">' + esc(title) + '</div><ul class="imp-list">' + lines.join('') + '</ul>' : ''; }
+  var yesL = [], noL = [];
+  (calc && calc.yes || []).forEach(function(x){ yesL.push('<li>' + esc(x) + '</li>'); });
+  (calc && calc.no || []).forEach(function(x){ noL.push('<li>' + esc(x) + '</li>'); });
+  mine.forEach(function(g){
+    var who = '<span class="imp-who">' + esc(w.o[g.group]) + ':</span> ';
+    if(g.yesNote) yesL.push('<li>' + who + esc(g.yesNote) + cite(g.sources) + '</li>');
+    if(g.noNote) noL.push('<li>' + who + esc(g.noNote) + cite(g.sources) + '</li>');
+  });
+  h += exp(w.forYou, sideList(w.ifYes, 'side-yes', yesL) + sideList(w.ifNo, 'side-no', noL));
+  if(comm.length){
+    h += exp(w.community + ' (' + comm.length + ')', '<ul class="imp-list">' + comm.map(function(c){
+      return '<li><span class="imp-who">' + esc(c.whatNote) + '</span>' +
+        (c.yesNote ? '<br><b class="t-yes">' + esc(w.ifYes) + ':</b> ' + esc(c.yesNote) : '') +
+        (c.noNote ? '<br><b class="t-no">' + esc(w.ifNo) + ':</b> ' + esc(c.noNote) : '') + cite(c.sources) + '</li>';
+    }).join('') + '</ul>');
+  }
+
+  // money both ways: what you'd pay or save, next to who collects it and what that pays for
   var rc = calc && calc.reconcile, money = (r && r.money) || [];
-  if(rc || money.length){
-    h += '<div class="imp-sub">' + esc(rc ? w.reconcileHead : w.money) + '</div>';
-    if(rc){
-      if(rc.split && rc.split.length){
-        h += '<div class="imp-sub" style="margin-top:6px">' + esc(rc.splitHead) + '</div>' + rc.split.map(function(x){
-          return '<div class="imp-row"><div>' + esc(x.label) + '</div><div class="amt">' + esc(MI.usd(x.amount)) + '</div>' + (x.note ? '<div class="what">' + esc(x.note) + '</div>' : '') + '</div>';
-        }).join('');
-      }
-      h += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
-      if(rc.funds.length){
-        h += '<div class="imp-sub" style="margin-top:6px">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
-          return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
-        }).join('') + (rc.fundNote ? '<p class="fine">' + esc(rc.fundNote) + '</p>' : '');
-      }
-      if(rc.share) h += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
-      h += '<p class="imp-intro">' + esc(rc.respond) + '</p>';
-      h += '<p class="og-links">' + calc.sources.map(function(s){ return srcLink(s.url, s.name); }).join(' ') + '</p>';
-      if(money.length) h += '<div class="imp-sub">' + esc(w.money) + '</div>';
+  if(rc){
+    var b = '';
+    if(rc.split && rc.split.length){
+      b += '<div class="imp-sub">' + esc(rc.splitHead) + '</div>' + rc.split.map(function(x){
+        return '<div class="imp-row"><div>' + esc(x.label) + '</div><div class="amt">' + esc(MI.usd(x.amount)) + '</div>' + (x.note ? '<div class="what">' + esc(x.note) + '</div>' : '') + '</div>';
+      }).join('');
     }
-    h += money.map(function(m){
+    b += '<p class="imp-intro" style="margin-top:10px">' + esc(rc.loss) + (rc.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</p>';
+    if(rc.funds.length){
+      b += '<div class="imp-sub">' + esc(rc.fundsHead) + '</div>' + rc.funds.map(function(f){
+        return '<div class="imp-row"><div>' + esc(f.label) + (f.mine ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div><div class="amt">' + esc(f.amount) + '</div>' + (f.note ? '<div class="what">' + esc(f.note) + '</div>' : '') + '</div>';
+      }).join('') + (rc.fundNote ? '<p class="fine">' + esc(rc.fundNote) + '</p>' : '');
+    }
+    if(rc.share) b += '<p class="imp-intro" style="margin-top:8px">' + esc(rc.share) + '</p>';
+    b += '<p class="imp-intro">' + esc(rc.respond) + '</p>';
+    b += '<ul class="imp-srcs">' + calc.sources.map(function(s){ return '<li>' + srcLink(s.url, s.name) + '</li>'; }).join('') + '</ul>';
+    h += exp(w.reconcileHead, b);
+  }
+  if(money.length){
+    h += exp(w.money + ' (' + money.length + ')', money.map(function(m){
       var use = (m.groups || []).some(function(g){ return MI.has(me, g); });
-      return '<div class="imp-row"><div><b>' + esc(m.whatNote) + '</b>' + (use ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div>' +
-        '<div class="amt">' + esc(m.amount || '') + '</div>' +
-        (m.yesNote ? '<div class="what"><b>' + esc(w.ifYes) + ':</b> ' + esc(m.yesNote) + '</div>' : '') +
-        (m.noNote ? '<div class="what"><b>' + esc(w.ifNo) + ':</b> ' + esc(m.noNote) + '</div>' : '') +
+      return '<div class="imp-item"><div><b>' + esc(m.whatNote) + '</b>' + (use ? ' <span class="imp-mine">' + esc(w.youUse) + '</span>' : '') + '</div>' +
+        (m.amount ? '<div class="amt">' + esc(m.amount) + '</div>' : '') +
+        (m.yesNote ? '<div class="what"><b class="t-yes">' + esc(w.ifYes) + ':</b> ' + esc(m.yesNote) + '</div>' : '') +
+        (m.noNote ? '<div class="what"><b class="t-no">' + esc(w.ifNo) + ':</b> ' + esc(m.noNote) + '</div>' : '') +
         '<div class="what">' + cite(m.sources) + '</div></div>';
-    }).join('');
+    }).join(''));
   }
   if(others.length){
-    h += '<details class="imp-others"><summary>' + esc(w.others) + '</summary><ul class="imp-list">' + others.map(function(g){
+    h += exp(w.others + ' (' + others.length + ')', '<ul class="imp-list">' + others.map(function(g){
       return '<li><span class="imp-who">' + esc(w.o[g.group]) + '</span>' +
-        (g.yesNote ? '<br><b>' + esc(w.ifYes) + ':</b> ' + esc(g.yesNote) : '') +
-        (g.noNote ? '<br><b>' + esc(w.ifNo) + ':</b> ' + esc(g.noNote) : '') + cite(g.sources) + '</li>';
-    }).join('') + '</ul></details>';
+        (g.yesNote ? '<br><b class="t-yes">' + esc(w.ifYes) + ':</b> ' + esc(g.yesNote) : '') +
+        (g.noNote ? '<br><b class="t-no">' + esc(w.ifNo) + ':</b> ' + esc(g.noNote) : '') + cite(g.sources) + '</li>';
+    }).join('') + '</ul>');
   }
-  if(r && r.unknownNote) h += '<p class="imp-intro" style="margin-top:12px"><span class="imp-who">' + esc(w.unknown) + ':</span> ' + esc(r.unknownNote) + '</p>';
-  if(r && src.length) h += '<p class="og-links" style="margin-top:8px">' + esc(w.sources) + ':' + src.map(function(s){ return s.url ? srcLink(s.url, s.name) : ' ' + esc(s.name); }).join(' ·') + '</p>';
+  if(r && r.unknownNote) h += exp(w.unknown, '<p class="imp-intro">' + esc(r.unknownNote) + '</p>');
+  if(r && src.length) h += exp(w.sources + ' (' + src.length + ')', '<ul class="imp-list">' + src.map(function(s){ return '<li>' + (s.url ? srcLink(s.url, s.name) : esc(s.name)) + '</li>'; }).join('') + '</ul>');
   if(r) h += '<p class="disclaimer">' + esc(w.disc) + '</p>';
   return h;
 }

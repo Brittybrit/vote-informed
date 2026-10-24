@@ -4270,7 +4270,7 @@ async function legacyFingerprint(pdfB64) {
 // how the measure changes things for a fixed set of circumstances (own and live in your home, rent,
 // a child in public school, ride transit...), and what public money and services ride on it. The page
 // matches that to the answers the voter keeps on their own device. Shared cache, same spend limits.
-const IMPACT_VERSION = 1;
+const IMPACT_VERSION = 2;   // 2: community-wide (second-order) effects for everyone
 const IMPACT_GROUPS = {
   homestead: 'owns and lives in their home (homestead exemption)',
   owner_other: 'owns property they do not live in (a rental, second home, land or a business property)',
@@ -4338,6 +4338,7 @@ function impactPrompt(p) {
     '',
     'Describe consequences, not merits. Never say whether the measure is good or bad, never recommend a vote, never use loaded words (relief, burden, giveaway, slash, gut). Say what changes, for whom, by how much, starting when, and who says so.',
     'Only state an effect that the measure text itself states or that an official or reliable source states. Attribute every estimate to its source in the sentence ("the county estimates..."). When sources disagree, give both. If official sources do not say, leave it out and mention it in unknownNote. Never invent a number.',
+    'EVERYONE, NOT ONLY USERS: public services affect people who never use them (schools and libraries affect property values, safety, the workforce and the local economy; transit affects traffic and jobs). In community, give these second-order effects for the whole community, but only as an official body, a research institution or reliable reporting states them, attributed in the sentence, never as your own reasoning. Up to 4 items.',
     'MONEY BOTH WAYS: when the measure changes taxes or public revenue, say who pays less or more AND which government loses or gains money, how much (from the official estimate), and which public services that money pays for now. Where a government would have less money, state what it may do in response only as its own officials or the measure text describe it (cuts, reserves, other revenue, rate changes); never predict which it will choose.',
     'Name the government that runs each service (the county, the city, the school district, a special district). Some cities in a county run their own police, fire, parks or libraries; say so when a source does instead of implying every resident is served by the county.',
     '',
@@ -4353,6 +4354,7 @@ function impactPrompt(p) {
     '  "whenNote": "when the change would take effect, else empty string",',
     '  "everyone": {"yesNote": "effect on every resident it covers if YES wins, else empty", "noNote": "same if NO wins, else empty"},',
     '  "groups": [ {"group": "one of the circumstance keys above", "yesNote": "what YES changes for them", "noNote": "what NO means for them", "sources": [0]} ],',
+    '  "community": [ {"whatNote": "an effect on the whole community, whether or not a person uses the service directly (for example what school quality, libraries, parks, transit or public safety mean for property values, safety, jobs and the local economy)", "yesNote": "what YES means for it", "noNote": "what NO means for it", "sources": [0]} ],',
     '  "money": [ {"whatNote": "a public revenue stream or a service it pays for, naming the government that runs it", "amount": "the dollar figure exactly as the source gives it, with its period (e.g. $585 million a year), else empty", "yesNote": "what YES means for this money or service", "noNote": "what NO means for it", "groups": ["circumstance keys of people who use or depend on it"], "sources": [0]} ],',
     '  "unknownNote": "what official sources do not yet say that a voter would want to know, else empty",',
     '  "sources": [ {"name": "publication or government body", "url": "direct link taken from your search results"} ]',
@@ -4376,11 +4378,14 @@ function cleanImpact(r) {
     whatNote: txt(m && m.whatNote), amount: txt(m && m.amount).slice(0, 80), yesNote: txt(m && m.yesNote), noNote: txt(m && m.noNote),
     groups: (Array.isArray(m && m.groups) ? m.groups : []).filter(k => IMPACT_GROUPS[k]), sources: idx(m && m.sources)
   })).filter(m => m.whatNote && (m.yesNote || m.noNote)).slice(0, 8);
+  const community = (Array.isArray(r.community) ? r.community : []).map(c => ({
+    whatNote: txt(c && c.whatNote), yesNote: txt(c && c.yesNote), noNote: txt(c && c.noNote), sources: idx(c && c.sources)
+  })).filter(c => c.whatNote && (c.yesNote || c.noNote) && c.sources.length).slice(0, 4);
   const ev = r.everyone || {};
   return {
     yesNote: txt(r.yesNote), noNote: txt(r.noNote), whenNote: txt(r.whenNote),
     everyone: { yesNote: txt(ev.yesNote), noNote: txt(ev.noNote) },
-    groups, money, unknownNote: txt(r.unknownNote), sources,
+    groups, money, community, unknownNote: txt(r.unknownNote), sources,
     impV: IMPACT_VERSION, researchedAt: new Date().toISOString()
   };
 }
