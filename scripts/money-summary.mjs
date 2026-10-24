@@ -120,9 +120,11 @@ export function build(decisions, officesHeld) {
           otherMoney: sum(billOther), otherDonors: new Set(billOther.map(g => g.donor)).size,
         };
       } else {
-        const v = { yes: 0, no: 0, away: 0, acted: 0 };
-        for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else if (x === 'acted') v.acted++; else v.away++; }
+        const v = { yes: 0, no: 0, away: 0, acted: 0, abst: 0, unk: 0 };
+        for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else if (x === 'acted') v.acted++; else if (x === 'abstain' || x === 'recused') v.abst++; else if (x === 'unknown') v.unk++; else v.away++; }
         e.items = tied.length; e.yes = v.yes; e.no = v.no; e.away = v.away;
+        if (v.abst) e.abst = v.abst;
+        if (v.unk) e.unk = v.unk;
         if (B.cabinet) { e.acted = v.acted; e.votes = tied.length - v.acted; }
         e.split = tied.filter(([a]) => a.tally && a.tally[1] > 0).length;
         // The share line counts actions since January 2025; when older cards are in the items, say from when

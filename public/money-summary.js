@@ -66,14 +66,13 @@
       },
       voted: function(p, b){
         var on = (p.items === 1 ? 'the one item' : p.items + ' items') + (p.since ? ' since ' + p.since : '') + ' before ' + this.before(b) + ' where a donor had business';
-        var s;
-        if(p.items === 1) s = He(p) + (p.yes ? ' voted yes on ' : p.no ? ' voted no on ' : ' was absent for ') + on;
-        else {
-          s = 'Of the ' + on + ', ' + he(p) + ' voted yes on ' + p.yes;
-          if(p.no) s += (p.away ? ', no on ' : ' and no on ') + p.no;
-          if(p.away) s += ', and was absent for ' + p.away;
-        }
-        return s + '.';
+        if(p.items === 1) return He(p) + (p.yes ? ' voted yes on ' : p.no ? ' voted no on ' : p.abst ? ' abstained or recused on ' : p.unk ? ' has no vote given in the minutes on ' : ' was absent for ') + on + '.';
+        var parts = ['voted yes on ' + p.yes];
+        if(p.no) parts.push('no on ' + p.no);
+        if(p.abst) parts.push('abstained or recused on ' + p.abst);
+        if(p.away) parts.push('was absent for ' + p.away);
+        if(p.unk) parts.push('the minutes do not give ' + his(p) + ' vote on ' + p.unk);
+        return 'Of the ' + on + ', ' + he(p) + ' ' + (parts.length > 1 ? parts.slice(0, -1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length - 1] : parts[0]) + '.';
       },
       cabinet: function(p){
         var parts = [];
@@ -142,14 +141,13 @@
       },
       voted: function(p, b){
         var on = (p.items === 1 ? 'el único asunto' : p.items + ' asuntos') + (p.since ? ' desde ' + p.since : '') + ' ante ' + this.before(b) + ' en que un donante tenía interés';
-        var s;
-        if(p.items === 1) s = (p.yes ? 'Votó a favor en ' : p.no ? 'Votó en contra en ' : 'Estuvo ausente en ') + on;
-        else {
-          s = 'De los ' + on + ', votó a favor en ' + p.yes;
-          if(p.no) s += (p.away ? ', en contra en ' : ' y en contra en ') + p.no;
-          if(p.away) s += ', y estuvo ausente en ' + p.away;
-        }
-        return s + '.';
+        if(p.items === 1) return (p.yes ? 'Votó a favor en ' : p.no ? 'Votó en contra en ' : p.abst ? 'Se abstuvo o se inhibió en ' : p.unk ? 'El acta no indica su voto en ' : 'Estuvo ausente en ') + on + '.';
+        var parts = ['votó a favor en ' + p.yes];
+        if(p.no) parts.push('en contra en ' + p.no);
+        if(p.abst) parts.push('se abstuvo o se inhibió en ' + p.abst);
+        if(p.away) parts.push('estuvo ausente en ' + p.away);
+        if(p.unk) parts.push('el acta no indica su voto en ' + p.unk);
+        return 'De los ' + on + ', ' + (parts.length > 1 ? parts.slice(0, -1).join(', ') + ' y ' + parts[parts.length - 1] : parts[0]) + '.';
       },
       cabinet: function(p){
         var parts = [];
@@ -218,14 +216,13 @@
       },
       voted: function(p, b){
         var on = (p.items === 1 ? 'sèl dosye' : p.items + ' dosye') + (p.since ? ' depi ' + p.since : '') + ' devan ' + this.before(b) + ' kote yon donatè te gen enterè';
-        var s;
-        if(p.items === 1) s = 'Li' + (p.yes ? ' te vote wi sou ' : p.no ? ' te vote non sou ' : ' te absan pou ') + on;
-        else {
-          s = 'Sou ' + on + ', li te vote wi sou ' + p.yes;
-          if(p.no) s += (p.away ? ', non sou ' : ' epi non sou ') + p.no;
-          if(p.away) s += ', epi li te absan pou ' + p.away;
-        }
-        return s + '.';
+        if(p.items === 1) return (p.yes ? 'Li te vote wi sou ' : p.no ? 'Li te vote non sou ' : p.abst ? 'Li te abstni oswa retire tèt li sou ' : p.unk ? 'Rapò reyinyon an pa bay vòt li sou ' : 'Li te absan pou ') + on + '.';
+        var parts = ['li te vote wi sou ' + p.yes];
+        if(p.no) parts.push('non sou ' + p.no);
+        if(p.abst) parts.push('li te abstni oswa retire tèt li sou ' + p.abst);
+        if(p.away) parts.push('li te absan pou ' + p.away);
+        if(p.unk) parts.push('rapò reyinyon an pa bay vòt li sou ' + p.unk);
+        return 'Sou ' + on + ', ' + (parts.length > 1 ? parts.slice(0, -1).join(', ') + ' epi ' + parts[parts.length - 1] : parts[0]) + '.';
       },
       cabinet: function(p){
         var parts = [];

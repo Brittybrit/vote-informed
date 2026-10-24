@@ -2,6 +2,7 @@
 // Itemized reports: G2 (Oct 3-16, 2026; 54 gifts dated Oct 13) and G3 (Oct 17-29, 2026; 27 gifts dated Oct 23
 // as of Oct 23). Every 2026 council agenda was text-searched for each donor; votes come from the posted minutes.
 // Run: node scripts/city-hialeah.mjs (safe to re-run), then node scripts/money-summary.mjs
+if (process.argv[2] !== "--legacy") { console.log("Superseded: Hialeah is now built action-first by scripts/city-actions.mjs hialeah (scripts/data/city/hialeah). Re-running this would replace that list; pass --legacy to run it anyway."); process.exit(0); }
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const FILE = new URL('../public/data/decisions.json', import.meta.url);
