@@ -1,0 +1,817 @@
+{
+ "taxonomy": [
+  "realestate-dev",
+  "affordable-housing",
+  "homebuilders",
+  "construction",
+  "engineering",
+  "land-use-law",
+  "lobbying",
+  "law-firm",
+  "insurance-property",
+  "insurance-health",
+  "insurance-auto",
+  "insurance-other",
+  "banks",
+  "credit-unions",
+  "payday-consumer-finance",
+  "securities-investment",
+  "crypto",
+  "hospitals",
+  "physicians",
+  "nursing-homes",
+  "pharma",
+  "pharmacies-pbm",
+  "health-other",
+  "oil-gas",
+  "electric-utility",
+  "gas-utility",
+  "telecom",
+  "solar-renewables",
+  "autos-dealers",
+  "auto-manufacturers",
+  "towing",
+  "trucking-logistics",
+  "airlines",
+  "cruise-maritime",
+  "ports",
+  "rail",
+  "ride-hailing",
+  "defense",
+  "aerospace",
+  "tech-software",
+  "tobacco-vaping",
+  "alcohol-beverage",
+  "gambling-casinos",
+  "pari-mutuel",
+  "restaurants-hospitality",
+  "hotels-tourism",
+  "retail",
+  "grocery",
+  "agriculture-sugar",
+  "agriculture-citrus",
+  "agriculture-other",
+  "waste-environment",
+  "water-utility",
+  "private-prisons",
+  "firearms",
+  "charter-schools",
+  "private-schools",
+  "education-other",
+  "labor-union",
+  "trade-association",
+  "political-committee",
+  "party",
+  "self",
+  "individual-noindustry",
+  "other"
+ ],
+ "donors": {
+  "AMERICA'S CREDIT UNIONS PAC OF CREDIT UNION NATIONAL ASSOCIATION, INC.": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "credit-unions"
+   ],
+   "basis": "website",
+   "src": "https://www.cuna.org/"
+  },
+  "AMERICAN BANKERS ASSOCIATION PAC": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "ANDURIL INDUSTRIES, INC. PAC (ANDURIL PAC)": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.anduril.com/"
+  },
+  "BAE SYSTEMS INC. POLITICAL ACTION COMMITTEE (BAE SYSTEMS USA PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.baesystems.com/en-us/who-we-are"
+  },
+  "BAE SYSTEMS USA PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.baesystems.com/en-us/who-we-are"
+  },
+  "BOEING POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.boeing.com/"
+  },
+  "BOOZ ALLEN HAMILTON INC. PAC (BOOZ ALLEN PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.boozallen.com/about.html"
+  },
+  "CACI INTERNATIONAL INC PAC ('CACI PAC')": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://en.wikipedia.org/wiki/CACI"
+  },
+  "CHEVRON EMPLOYEES PAC - CHEVRON CORPORATION": {
+   "tags": [
+    "political-committee",
+    "oil-gas"
+   ],
+   "basis": "website",
+   "src": "https://www.chevron.com/"
+  },
+  "CUBIC CORPORATION EMPLOYEES' PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "other"
+   ],
+   "basis": "website",
+   "src": "https://www.cubic.com/about-us"
+  },
+  "CUBIC CORPORATION EMPLOYEES' POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "other"
+   ],
+   "basis": "website",
+   "src": "https://www.cubic.com/about-us"
+  },
+  "EMPLOYEES OF NORTHROP GRUMMAN CORP PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.northropgrumman.com/"
+  },
+  "EMPLOYEES OF NORTHROP GRUMMAN CORPORATION PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.northropgrumman.com/"
+  },
+  "EMPLOYEES OF RTX CORPORATION PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.rtx.com/"
+  },
+  "EMPLOYEES OF RTX CORPORATION POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.rtx.com/"
+  },
+  "GENERAL ATOMICS PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.ga.com/about"
+  },
+  "GENERAL ATOMICS POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.ga.com/about"
+  },
+  "GENERAL DYNAMICS CORPORATION PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.gd.com/"
+  },
+  "GENERAL DYNAMICS CORPORATION POLITICAL ACTION COMMITTEE (GDC PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.gd.com/"
+  },
+  "HUNTINGTON INGALLS INDUSTRIES INC. PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "cruise-maritime"
+   ],
+   "basis": "website",
+   "src": "https://www.hii.com/"
+  },
+  "HUNTINGTON INGALLS INDUSTRIES PAC (SHIPPAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "cruise-maritime"
+   ],
+   "basis": "website",
+   "src": "https://www.hii.com/"
+  },
+  "KRATOS DEFENSE & SECURITY SOLUTIONS, INC. PAC (KRATOS PAC)": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.kratosdefense.com/"
+  },
+  "L3HARRIS TECHNOLOGIES, INC. PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.l3harris.com/"
+  },
+  "LEIDOS INC. PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.leidos.com/company"
+  },
+  "LEIDOS INC. POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.leidos.com/company"
+  },
+  "LEONARDO DRS PAC": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.leonardodrs.com/"
+  },
+  "LOCKHEED MARTIN CORPORATION EMPLOYEES' POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.lockheedmartin.com/"
+  },
+  "LOCKHEED MARTIN EPAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.lockheedmartin.com/"
+  },
+  "RED SIX AEROSPACE INC. PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://red6ar.com/"
+  },
+  "REGIONS FINANCIAL CORPORATION PAC": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.regions.com/about-regions"
+  },
+  "SAAB, INC. EMPLOYEES PAC (SAAB PAC)": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.saab.com/"
+  },
+  "SIERRA NEVADA CORPORATION PAC": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.sncorp.com/suppliers/doing-business-with-snc/"
+  },
+  "THE BOEING COMPANY POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.boeing.com/"
+  },
+  "THE WILLIAMS COMPANIES, INC. PAC": {
+   "tags": [
+    "political-committee",
+    "oil-gas"
+   ],
+   "basis": "website",
+   "src": "https://www.williams.com/"
+  },
+  "TOYOTA MOTOR NORTH AMERICA, INC PAC (TOYOTA/LEXUS PAC)": {
+   "tags": [
+    "political-committee",
+    "auto-manufacturers"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "TOYOTA MOTOR NORTH AMERICA, INC POLITICAL ACTION COMMITTEE (TOYOTA/LEXUS PAC)": {
+   "tags": [
+    "political-committee",
+    "auto-manufacturers"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "AMERICAN BANKERS ASSOCIATION PAC (BANKPAC)": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "BAE SYSTEMS INC. PAC (BAE SYSTEMS USA PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.baesystems.com/en-us/who-we-are"
+  },
+  "GENERAL DYNAMICS CORPORATION PAC (GDC PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.gd.com/"
+  },
+  "JM FAMILY ENTERPRISES, INC. PAC": {
+   "tags": [
+    "political-committee",
+    "autos-dealers",
+    "securities-investment",
+    "insurance-auto"
+   ],
+   "basis": "website",
+   "src": "https://jmfamily.com/"
+  },
+  "LOCKHEED MARTIN CORPORATION EMPLOYEES' PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.lockheedmartin.com/"
+  },
+  "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION VOLUNTARY PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.saic.com/"
+  },
+  "SES SPACE AND DEFENSE, INC. PAC": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense",
+    "telecom"
+   ],
+   "basis": "website",
+   "src": "https://www.ses.com/"
+  },
+  "SIERRA NEVADA COMPANY, LLC PAC": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.sncorp.com/suppliers/doing-business-with-snc/"
+  },
+  "THE BOEING COMPANY PAC": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.boeing.com/"
+  },
+  "AMERICA'S CREDIT UNION PAC OF CREDIT UNION NATIONAL ASSOCIATION INC.": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "credit-unions"
+   ],
+   "basis": "website",
+   "src": "https://www.cuna.org/"
+  },
+  "BIPARTISAN VOLUNTARY PUBLIC AFFAIRS COMMITTEE OF THE PNC FINANCIAL SERVICES GROUP, INC. (PNC PAC)": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.pnc.com/en/about-pnc.html"
+  },
+  "BMO FINANCIAL CORP GOOD GOVERNANCE FUND: FEDERAL (BMO PAC)": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.bmo.com/en-us/main/about-bmo/"
+  },
+  "CADENCE BANK PAC": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "CAPITAL ONE FINANCIAL CORP. ASSOC. POLITICAL FUND": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.capitalone.com/about/"
+  },
+  "CHEVRON EMPLOYEES POLITICAL ACTION COMMITTEE - CHEVRON CORPORATION": {
+   "tags": [
+    "political-committee",
+    "oil-gas"
+   ],
+   "basis": "website",
+   "src": "https://www.chevron.com/"
+  },
+  "CITIGROUP INC. PAC - FEDERAL (CITI PAC - FEDERAL)": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.citigroup.com/global/about-us"
+  },
+  "COINBASE, INC. INNOVATION PAC (COINBASE INNOVATION PAC)": {
+   "tags": [
+    "political-committee",
+    "crypto"
+   ],
+   "basis": "website",
+   "src": "https://www.coinbase.com/about"
+  },
+  "EMPLOYEES OF NORTHROP GRUMMAN": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.northropgrumman.com/"
+  },
+  "ENGINEERING AND SOFTWARE SYSTEMS SOLUTIONS, INC. PAC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace",
+    "engineering"
+   ],
+   "basis": "website",
+   "src": "https://www.es3inc.com/?p=56"
+  },
+  "FIFTH THIRD BANCORP FEDERAL POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "GENERAL DYNAMICS CORPORATION POLITICAL ACTION COMMITTEE (GENERAL DYNAMICS EMPLOYEE PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.gd.com/"
+  },
+  "GENERAL MOTORS COMPANY POLITICAL ACTION COMMITTEE (GM PAC)": {
+   "tags": [
+    "political-committee",
+    "auto-manufacturers"
+   ],
+   "basis": "website",
+   "src": "https://www.gm.com/company/about-gm"
+  },
+  "HUNTINGTON BANCSHARES INC. POLITICAL ACTION COMMITTEE (HBI-PAC)": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "JM FAMILY ENTERPRISES, INC PAC": {
+   "tags": [
+    "political-committee",
+    "autos-dealers",
+    "securities-investment",
+    "insurance-auto"
+   ],
+   "basis": "website",
+   "src": "https://jmfamily.com/"
+  },
+  "JPMORGAN CHASE & CO. FEDERAL PAC": {
+   "tags": [
+    "political-committee",
+    "banks",
+    "securities-investment"
+   ],
+   "basis": "website",
+   "src": "https://www.jpmorganchase.com/about"
+  },
+  "KRATOS DEFENSE & SECURITY SOLUTIONS, INC. POLITICAL ACTION COMMITTEE (KRATOS PAC)": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.kratosdefense.com/"
+  },
+  "MANTECH  INTERNATIONAL CORPORATION POLITIICAL ACTION COMMITTEE (A.K.A 'MANTECH PAC')": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.mantech.com/"
+  },
+  "NATIONAL AUTOMOBILE DEALERS ASSOCIATION POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "autos-dealers"
+   ],
+   "basis": "website",
+   "src": "https://www.nada.org/about-nada"
+  },
+  "PHILLIPS 66 PAC": {
+   "tags": [
+    "political-committee",
+    "oil-gas"
+   ],
+   "basis": "website",
+   "src": "https://www.phillips66.com/"
+  },
+  "PNC PAC": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.pnc.com/en/about-pnc.html"
+  },
+  "REGIONS FINANCIAL CORPORATION POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.regions.com/about-regions"
+  },
+  "SAAB, INC. EMPLOYEES POLITICAL ACTION COMMITTEE (SAAB PAC)": {
+   "tags": [
+    "political-committee",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.saab.com/"
+  },
+  "SANTANDER HOLDINGS USA INC. PAC (SANTANDER US PAC)": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.santanderus.com/"
+  },
+  "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION VOLUNTARY POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "tech-software"
+   ],
+   "basis": "website",
+   "src": "https://www.saic.com/"
+  },
+  "SERCO INC. PAC (SERCO PAC)": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "other"
+   ],
+   "basis": "website",
+   "src": "https://www.serco.com/na/about"
+  },
+  "SIERRA NEVADA COMPANY, LLC POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "aerospace",
+    "defense"
+   ],
+   "basis": "website",
+   "src": "https://www.sncorp.com/suppliers/doing-business-with-snc/"
+  },
+  "THE WILLIAMS COMPANIES, INC. POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "oil-gas"
+   ],
+   "basis": "website",
+   "src": "https://www.williams.com/"
+  },
+  "TOYOTA MOTOR NORTH AMERICA, INC. POLITICAL ACTION COMMITTEE (TOYOTA/LEXUS PAC)": {
+   "tags": [
+    "political-committee",
+    "auto-manufacturers"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "TRUIST FINANCIAL CORPORATION FEDERAL, STATE & LOCAL POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.truist.com/who-we-are"
+  },
+  "U.S. BANCORP FEDERAL POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "AMERICA'S CREDIT UNIONS": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "credit-unions"
+   ],
+   "basis": "website",
+   "src": "https://www.cuna.org/"
+  },
+  "AMERICA'S CREDIT UNIONS PAC OF CREDIT UNION NATIONAL ASSOCIA": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "credit-unions"
+   ],
+   "basis": "website",
+   "src": "https://www.cuna.org/"
+  },
+  "BANK OF AMERICA CORPORATION FEDERAL PAC": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "name",
+   "src": null
+  },
+  "CITIGROUP INC. POLITICAL ACTION COMMITTEE - FEDERAL (CITIGRO": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.citigroup.com/global/about-us"
+  },
+  "GENERAL DYNAMICS CORPORATION POLITICAL ACTION COMMITTEE (GDC": {
+   "tags": [
+    "political-committee",
+    "defense",
+    "aerospace"
+   ],
+   "basis": "website",
+   "src": "https://www.gd.com/"
+  },
+  "JM FAMILY ENTERPRISES INC. PAC": {
+   "tags": [
+    "political-committee",
+    "autos-dealers",
+    "securities-investment",
+    "insurance-auto"
+   ],
+   "basis": "website",
+   "src": "https://jmfamily.com/"
+  },
+  "JPMORGAN CHASE & CO. FEDERAL POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "banks",
+    "securities-investment"
+   ],
+   "basis": "website",
+   "src": "https://www.jpmorganchase.com/about"
+  },
+  "NATIONAL AUTOMOBILE DEALERS ASSOCIATION POLITICAL ACTION COM": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "autos-dealers"
+   ],
+   "basis": "website",
+   "src": "https://www.nada.org/about-nada"
+  },
+  "TRUIST FINANCIAL CORPORATION FEDERAL PAC (FORMERLY SUNTRUST": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.truist.com/who-we-are"
+  },
+  "WELLS FARGO AND COMPANY EMPLOYEES GOOD GOVERNMENT FEDERAL FU": {
+   "tags": [
+    "political-committee",
+    "banks"
+   ],
+   "basis": "website",
+   "src": "https://www.wellsfargo.com/about/"
+  }
+ }
+}
