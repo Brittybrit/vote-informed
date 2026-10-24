@@ -51,7 +51,7 @@ const vf = (file, to, acct) => table(readFileSync(P(file), 'utf8')).filter(r => 
 const reports = J('public/data/city-reports.json').cities;
 const hand = (city, cand, to, acct) => { const c = reports.find(x => x.city === city).candidates.find(x => x.name === cand); return (c.reports || []).flatMap(r => r.rows.filter(x => x[2] !== 'S' && !x[4]).map(x => ({ to, acct, date: x[0], amount: x[3], donor: x[1], addr: '', occ: '', typ: x[2], hand: true }))); };
 const DON = {
-  coralgables: [...vf('scripts/data/city/coralgables/lago.csv', 'Lago', 'lago'), ...vf('scripts/data/city/coralgables/castro.csv', 'Castro', 'castro'), ...vf('scripts/data/city/coralgables/menendez.csv', 'Menendez', 'menendez')],
+  coralgables: [...vf('scripts/data/city/coralgables/lago.csv', 'Lago', 'lago'), ...vf('scripts/data/city/coralgables/castro.csv', 'Castro', 'castro')],
   doral: vf('scripts/data/city/doral/porras.csv', 'Porras', 'porras'),
   aventura: hand('Aventura', 'Howard S. Weinberg', 'Weinberg', 'weinberg'),
   nmb: [...hand('North Miami Beach', 'Jay R. Chernoff', 'Chernoff', 'chernoff'), ...hand('North Miami Beach', 'Phyllis Smith', 'Smith', 'smith')],
@@ -74,12 +74,15 @@ const NOTE = (who, src, firm, hand, occ) => ({
   es: `${who}, listado en ${firm} en el registro de cabilderos de ${src === 'Legislature' ? 'la Legislatura' : src === 'county' ? 'el condado' : src}` + (hand ? '; coincidencia solo por nombre, el reporte no indica ocupación ni dirección' : `; el reporte indica la ocupación “${occ}”`),
   ht: `${who}, nan lis ${firm} nan rejis lobiyis ${src === 'Legislature' ? 'Lejislati a' : src === 'county' ? 'konte a' : src}` + (hand ? '; koresponn sou non sèlman, rapò a pa bay okipasyon ni adrès' : `; rapò a di okipasyon an se “${occ}”`) });
 
-let added = 0, total = 0; const log = []; const nameOnly = [];
+let added = 0, total = 0, removed = 0; const log = []; const nameOnly = [];
 // A lobbyist's own gift counts only when the report's occupation (or address) confirms it is the lobbyist; a
 // name-only match from a hand-typed report is listed in scripts/data/city/lobbyist-name-only.txt for review.
 for (const B of d.bodies) {
   const rows = DON[B.key]; if (!rows) continue;
   for (const a of B.actions) {
+    // a lobbyist or firm gift whose lobbyist is no longer on the card (a link taken off on review) goes too
+    const onCard = new Set((a.lobbied || []).map(l => norm(l.name)));
+    const before = a.gifts.length; a.gifts = a.gifts.filter(g => !['lobbyist', 'firm'].includes(g.kind) || !g.lobbyist || onCard.has(norm(g.lobbyist))); removed += before - a.gifts.length;
     const have = new Set(a.gifts.map(gKey)); const n0 = a.gifts.length;
     const push = g => { if (!(g.to in (a.roll || {})) || have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${B.key} ${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist} ${g.why ? '(' + g.why.en + ')' : ''}`); };
     for (const l of a.lobbied || []) {
@@ -104,4 +107,4 @@ for (const B of d.bodies) {
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyist-name-only.txt'), [...new Set(nameOnly)].join('\n') + '\n');
-console.log(log.join('\n')); console.log(`added ${added} gifts, $${total.toLocaleString()}`);
+console.log(log.join('\n')); console.log(`removed ${removed} gifts no longer backed by a lobbyist on the card`); console.log(`added ${added} gifts, $${total.toLocaleString()}`);

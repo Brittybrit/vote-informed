@@ -21366,8 +21366,9 @@
     },
     {
      "key": "Menendez",
-     "name": "Nestor Menendez",
-     "person": "nestor-menendez"
+     "name": "Kirk Menendez",
+     "person": "kirk-menendez",
+     "former": true
     }
    ],
    "onBallot": {
@@ -21390,17 +21391,6 @@
      "accounts": [
       "castro"
      ]
-    },
-    "Menendez": {
-     "race": {
-      "en": "Commission Group IV (left the commission in April 2025)",
-      "es": "Comisión, Grupo IV (dejó la comisión en abril de 2025)",
-      "ht": "Komisyon, Gwoup IV (li te kite komisyon an an avril 2025)"
-     },
-     "accounts": [
-      "menendez"
-     ],
-     "former": true
     }
    },
    "accounts": {
@@ -21421,15 +21411,6 @@
       "ht": "Kanpay Melissa Castro"
      },
      "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=41&rellevel=3&committee=N"
-    },
-    "menendez": {
-     "owner": "Menendez",
-     "name": {
-      "en": "Nestor Menendez campaign",
-      "es": "Campaña de Nestor Menendez",
-      "ht": "Kanpay Nestor Menendez"
-     },
-     "url": "https://www.voterfocus.com/CampaignFinance/candidate_pr.php?op=cv&e=8&c=muncoralgables&ca=40&rellevel=3&committee=N"
     }
    },
    "registries": [
@@ -31586,29 +31567,6 @@
      "namedLobbyist": "",
      "gifts": [
       {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "firm",
-       "donor": "PANTIN GOV LLC",
-       "amount": 1000,
-       "date": "2026-04-22",
-       "occ": "GOVT RELATIONS",
-       "lobbyist": "Leslie E Pantin",
-       "forParty": "John Bell Construction, Inc."
-      },
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "lobbyist",
-       "donor": "LES PANTIN",
-       "amount": 1000,
-       "date": "2026-04-22",
-       "occ": "LOBBYIST",
-       "lobbyist": "Leslie E Pantin",
-       "forParty": "John Bell Construction, Inc.",
-       "basis": "occ"
-      },
-      {
        "to": "Lago",
        "acct": "lago",
        "kind": "lobbyist",
@@ -32312,20 +32270,7 @@
       }
      ],
      "namedLobbyist": "",
-     "gifts": [
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "lobbyist",
-       "donor": "JORGE L NAVARRO",
-       "amount": 1000,
-       "date": "2026-05-15",
-       "occ": "ATTORNEY",
-       "lobbyist": "Jorge Navarro",
-       "forParty": "4241 Aurora, LLC",
-       "basis": "occ"
-      }
-     ],
+     "gifts": [],
      "giftNotes": {},
      "firstReading": null,
      "links": [
@@ -32647,69 +32592,7 @@
       }
      ],
      "namedLobbyist": "",
-     "gifts": [
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "lobbyist",
-       "donor": "MARIO J GARCIA-SERRA",
-       "amount": 1000,
-       "date": "2026-05-15",
-       "occ": "ATTORNEY",
-       "lobbyist": "Mario Garcia-Serra",
-       "forParty": "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)",
-       "basis": "occ"
-      },
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "firm",
-       "rel": "firmlob",
-       "donor": "ROBERTO BEHAR",
-       "amount": 1000,
-       "date": "2026-05-15",
-       "occ": "ATTORNEY",
-       "lobbyist": "Mario Garcia-Serra",
-       "forParty": "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)",
-       "firmName": "Gunster",
-       "why": {
-        "en": "Roberto Behar, listed at Gunster in the county lobbyist registry; the report lists the occupation as “ATTORNEY”",
-        "es": "Roberto Behar, listado en Gunster en el registro de cabilderos de el condado; el reporte indica la ocupación “ATTORNEY”",
-        "ht": "Roberto Behar, nan lis Gunster nan rejis lobiyis konte a; rapò a di okipasyon an se “ATTORNEY”"
-       }
-      },
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "firm",
-       "rel": "firmlob",
-       "donor": "MIGUEL DIAZ DE LA PORTILLA",
-       "amount": 500,
-       "date": "2026-07-30",
-       "occ": "ATTORNEY",
-       "lobbyist": "Mario Garcia-Serra",
-       "forParty": "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)",
-       "firmName": "Gunster",
-       "why": {
-        "en": "Miguel Diaz de la Portilla, listed at Gunster, Yoakley & Stewart, P.A. in the Doral City Council lobbyist registry; the report lists the occupation as “ATTORNEY”",
-        "es": "Miguel Diaz de la Portilla, listado en Gunster, Yoakley & Stewart, P.A. en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “ATTORNEY”",
-        "ht": "Miguel Diaz de la Portilla, nan lis Gunster, Yoakley & Stewart, P.A. nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “ATTORNEY”"
-       }
-      },
-      {
-       "to": "Menendez",
-       "acct": "menendez",
-       "kind": "firm",
-       "rel": "firm",
-       "donor": "GUNSTER PAC, INC",
-       "amount": 1000,
-       "date": "2026-07-31",
-       "occ": "PAC",
-       "lobbyist": "Mario Garcia-Serra",
-       "forParty": "Owner of 1414 Galiano Street (lobbyist Mario Garcia-Serra)",
-       "firmName": "Gunster"
-      }
-     ],
+     "gifts": [],
      "links": [
       {
        "t": "minutes",
@@ -33635,39 +33518,10 @@
         "2026-03-03"
        ],
        "firm": "Claudia Modder McKenna, Attorney at Law"
-      },
-      {
-       "name": "Miguel Diaz de la Portilla",
-       "for": "SDE Media, LLC",
-       "firm": "Gunster, Yoakley & Stewart, P.A.",
-       "regs": [
-        "2024-11-22"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       }
      ],
      "namedLobbyist": "",
-     "gifts": [
-      {
-       "to": "Porras",
-       "acct": "porras",
-       "kind": "firm",
-       "rel": "firmlob",
-       "donor": "James Williams",
-       "amount": 1000,
-       "date": "2026-09-02",
-       "occ": "Lawyer",
-       "lobbyist": "Miguel Diaz de la Portilla",
-       "forParty": "SDE Media, LLC",
-       "firmName": "Gunster, Yoakley & Stewart, P.A.",
-       "why": {
-        "en": "James Williams, listed at Gunster, Yoakley & Stewart, P.A. in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
-        "es": "James Williams, listado en Gunster, Yoakley & Stewart, P.A. en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
-        "ht": "James Williams, nan lis Gunster, Yoakley & Stewart, P.A. nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
-       }
-      }
-     ],
+     "gifts": [],
      "giftNotes": {},
      "firstReading": null,
      "links": [
@@ -33836,16 +33690,6 @@
        "firm": "Greystar Development East, LLC",
        "regs": [
         "2025-05-01"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
        ],
        "basis": "registry",
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
@@ -34113,16 +33957,6 @@
        "firm": "Greystar Development East, LLC",
        "regs": [
         "2025-05-01"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
        ],
        "basis": "registry",
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
@@ -34399,16 +34233,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -34675,16 +34499,6 @@
        "firm": "Greystar Development East, LLC",
        "regs": [
         "2025-05-01"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
        ],
        "basis": "registry",
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
@@ -34961,16 +34775,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -35237,16 +35041,6 @@
        "firm": "Greystar Development East, LLC",
        "regs": [
         "2025-05-01"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
        ],
        "basis": "registry",
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
@@ -36075,16 +35869,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -36348,16 +36132,6 @@
        "firm": "Greystar Development East, LLC",
        "regs": [
         "2025-05-01"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
        ],
        "basis": "registry",
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
@@ -37463,16 +37237,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -37524,7 +37288,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37542,7 +37306,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37554,25 +37318,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37586,11 +37338,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37608,7 +37378,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37698,16 +37468,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -37759,7 +37519,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37777,7 +37537,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37789,25 +37549,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37821,11 +37569,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37843,7 +37609,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -37933,16 +37699,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -37994,7 +37750,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38012,7 +37768,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38024,25 +37780,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38056,11 +37800,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38078,7 +37840,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38168,16 +37930,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -38229,7 +37981,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38247,7 +37999,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38259,25 +38011,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38291,11 +38031,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38313,7 +38071,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38403,16 +38161,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -38464,7 +38212,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38482,7 +38230,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38494,25 +38242,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38526,11 +38262,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38548,7 +38302,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38638,16 +38392,6 @@
        "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
       },
       {
-       "name": "Vanessa Madrid",
-       "for": "Greystar Development East, LLC",
-       "firm": "Holland & Knight, LLP",
-       "regs": [
-        "2024-11-14"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf"
-      },
-      {
        "name": "Juan Mayol",
        "for": "Greystar Development East, LLC",
        "firm": "Holland & Knight, LLP",
@@ -38699,7 +38443,7 @@
        "amount": 1000,
        "date": "2026-05-20",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38717,7 +38461,7 @@
        "amount": 250,
        "date": "2026-05-27",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38729,25 +38473,13 @@
       {
        "to": "Porras",
        "acct": "porras",
-       "kind": "lobbyist",
-       "donor": "Vanessa Madrid",
-       "amount": 300,
-       "date": "2026-05-28",
-       "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
-       "forParty": "Greystar Development East, LLC",
-       "basis": "occ"
-      },
-      {
-       "to": "Porras",
-       "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
        "donor": "Alan Krischer",
        "amount": 100,
        "date": "2026-05-28",
        "occ": "Attorney",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38761,11 +38493,29 @@
        "acct": "porras",
        "kind": "firm",
        "rel": "firmlob",
+       "donor": "Vanessa Madrid",
+       "amount": 300,
+       "date": "2026-05-28",
+       "occ": "Lawyer",
+       "lobbyist": "Juan Mayol",
+       "forParty": "Greystar Development East, LLC",
+       "firmName": "Holland & Knight, LLP",
+       "why": {
+        "en": "Vanessa Madrid, listed at Holland & Knight, LLP in the Doral City Council lobbyist registry; the report lists the occupation as “Lawyer”",
+        "es": "Vanessa Madrid, listado en Holland & Knight, LLP en el registro de cabilderos de Doral City Council; el reporte indica la ocupación “Lawyer”",
+        "ht": "Vanessa Madrid, nan lis Holland & Knight, LLP nan rejis lobiyis Doral City Council; rapò a di okipasyon an se “Lawyer”"
+       }
+      },
+      {
+       "to": "Porras",
+       "acct": "porras",
+       "kind": "firm",
+       "rel": "firmlob",
        "donor": "Alejandro Arias",
        "amount": 500,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -38783,7 +38533,7 @@
        "amount": 1000,
        "date": "2026-05-29",
        "occ": "Lawyer",
-       "lobbyist": "Vanessa Madrid",
+       "lobbyist": "Juan Mayol",
        "forParty": "Greystar Development East, LLC",
        "firmName": "Holland & Knight, LLP",
        "why": {
@@ -56547,32 +56297,9 @@
        ],
        "basis": "registry",
        "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals"
-      },
-      {
-       "name": "Michael J. Marrero",
-       "for": "Regency Centers",
-       "firm": "Bercow Radell Fernandez Larkin & Tapanes PLLC",
-       "regs": [
-        "2017-04"
-       ],
-       "basis": "registry",
-       "src": "https://www.cityofaventura.com/DocumentCenter/View/4161/Registered-Lobbyists-and-Principals"
       }
      ],
-     "gifts": [
-      {
-       "to": "Weinberg",
-       "acct": "weinberg",
-       "kind": "firm",
-       "rel": "firm",
-       "donor": "Bercow Radell",
-       "amount": 1000,
-       "date": "2026-05-21",
-       "lobbyist": "Michael J. Marrero",
-       "forParty": "Regency Centers",
-       "firmName": "Bercow Radell Fernandez Larkin & Tapanes PLLC"
-      }
-     ],
+     "gifts": [],
      "giftNotes": {
       "Weinberg": {
        "en": "The applicants are Equity One Florida Portfolio LLC and Regency Center L.P. Resolution 2025-31.",
@@ -70747,29 +70474,9 @@
      "consent": false,
      "mover": "Estimé-Irvin",
      "second": "Desulme",
-     "lobbied": [
-      {
-       "name": "Oscar Braynon II",
-       "for": "Cigna Healthcare",
-       "basis": "registry",
-       "src": "https://www.northmiamifl.gov/DocumentCenter/View/19133"
-      }
-     ],
+     "lobbied": [],
      "namedLobbyist": "",
-     "gifts": [
-      {
-       "to": "Timothe",
-       "acct": "timothe",
-       "kind": "firm",
-       "rel": "firm",
-       "donor": "THE SOUTHERN GROUP POLITICAL",
-       "amount": 1000,
-       "date": "2026-10-13",
-       "lobbyist": "Oscar Braynon II",
-       "forParty": "Cigna Healthcare",
-       "firmName": "The Southern Group"
-      }
-     ],
+     "gifts": [],
      "links": [
       {
        "t": "minutes",

@@ -68,6 +68,10 @@ for (const slug of ONLY) {
   if (existsSync(P(`scripts/data/city/${slug}/lobbyists.json`))) {
     const L = J(`scripts/data/city/${slug}/lobbyists.json`);
     const rv = review.cities[slug] = {};
+    // Links this step added earlier (they carry a basis) that the file no longer supports are taken off
+    const keep = new Map();
+    for (const [id, list] of Object.entries(L.byAction || {})) { const a = find(id); if (a) for (const l of list || []) if (l && ['registry', 'record'].includes(l.basis)) (keep.get(a.id) || keep.set(a.id, new Set()).get(a.id)).add(norm(l.name)); }
+    for (const a of B.actions) if (a.lobbied) { const k = keep.get(a.id) || new Set(); const n0 = a.lobbied.length; a.lobbied = a.lobbied.filter(l => !l.basis || k.has(norm(l.name))); n.dropped = (n.dropped || 0) + n0 - a.lobbied.length; }
     for (const [id, list] of Object.entries(L.byAction || {})) {
       const a = find(id); if (!a) { n.missing++; continue; }
       for (const l of list || []) {
@@ -94,7 +98,7 @@ for (const slug of ONLY) {
     for (const g of partyGifts(a, donors)) if (!have.has(same(g))) { a.gifts.push(g); have.add(same(g)); n.party++; added = true; }
     if (added) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
-  report.push(`${slug}: votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
+  report.push(`${slug}: dropped ${n.dropped || 0}, votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
 }
 writeFileSync(P(FILE), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyists-review.json'), JSON.stringify(review, null, 1) + '\n');
