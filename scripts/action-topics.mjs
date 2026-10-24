@@ -26,7 +26,7 @@ export const RULES = [
   ['fire', /\b(fire\b|fire rescue|firefighter|fire station|fire alarm|sprinkler|hurricane|emergency management|evacuat|disaster)/i],
   ['water', /\b(water(?! heater)|sewer|wastewater|stormwater|drainage|flood|resilien|seawall|septic|pump station|lift station|canal|force main|water main|hypochlorite|water treatment)/i],
   ['trash', /\b(solid waste|garbage|trash|recycl|sanitation|waste collection|bulk pickup|landfill|debris)/i],
-  ['business', /\b(small business|(?<!comcast |toshiba |amazon )business\b|businesses|business licens|liquor licens|permit fee|liquor|alcohol|beverage|nightlife|bar\b(?! association)|restaurant|vendor program|economic development|grant to (businesses|merchants)|merchant|retail|cardroom|pari-?mutuel|casino|lottery retailer|pawn|towing|contractor licens|food truck|special event permit|sidewalk caf)/i],
+  ['business', /\b(small business|(?<!comcast |toshiba |amazon )business\b|businesses|business licens|liquor licens|permit fee|liquor|alcohol|beverage|nightlife|bar\b(?! association)|restaurant|vendor program|economic development|grant to (businesses|merchants)|merchant|retail|cardroom|pari-?mutuel|casino|lottery retailer|pawn|towing|contractor licens|food truck|sidewalk caf)/i],
   ['labor', /\b(union|collective bargaining|bargaining unit|pension|retirement plan|salar(y|ies)|wage|cost of living|employees?\b.*(contract|agreement)|fop\b|iaff|afscme|teamsters|cwa\b)/i],
   ['farming', /\b(farm|agricultur|grower|nursery|citrus|cattle|ranch|packinghouse)/i],
 ];
@@ -38,7 +38,7 @@ export const GROUPS = {
   libraries: ['library'], seniors: ['senior'], labor: ['public_employee'], business: ['business'], farming: ['farm'],
   health: ['all'], police: ['all'], fire: ['all'], water: ['all'], trash: ['all'],
 };
-const KIND = { zoning: 'development', landuse: 'development', plat: 'development', easement: 'development', permit: 'business' };
+const KIND = { zoning: 'development', landuse: 'development', plat: 'development', easement: 'development' };  // a permit is business only when its words say so (alcohol, vendor), not a church procession
 const L = x => (x && typeof x === 'object' ? (x.en || '') : String(x || ''));
 
 export function topicsOf(a) {
