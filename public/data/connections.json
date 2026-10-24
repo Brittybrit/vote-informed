@@ -3,6 +3,32 @@
  "note": "Connections between officials and the parties, donors, lobbyists and vendors before them, published only when an official record states the relationship: the official's own financial disclosure, a Sunbiz officer listing with a matching filed address, a voting-conflict memo, an ethics opinion or complaint. Leads the tool is still checking are counted per official but not named. Rebuild: node scripts/leads.mjs.",
  "confirmed": [
   {
+   "person": "sherelean-bass",
+   "official": "Sherelean Bass",
+   "other": "Miami-Dade County",
+   "otherKind": "party",
+   "signal": "stated",
+   "relationship": "stated interest on the official's own disclosure",
+   "record": {
+    "note": "stated business (Form 1 2025): Miami-Dade County Public Schools",
+    "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1107989"
+   },
+   "evidence": [
+    {
+     "note": "stated business (Form 1 2025): Miami-Dade County Public Schools",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1107989"
+    },
+    {
+     "note": "item opalocka-2025-09-24-13-2 (2025-09-24)",
+     "url": "https://opalockafl.portal.civicclerk.com/event/2503/files"
+    },
+    {
+     "note": "stated income source (Form 1 2025): Miami-Dade County Public Schools, 600 Ahmad Street, Opa-locka (education)",
+     "url": "https://disclosure.floridaethics.gov/Report/PrintForm/?filingId=1107989"
+    }
+   ]
+  },
+  {
    "person": "byron-donalds",
    "official": "Byron Donalds",
    "other": "Onesto, LLC: Optima Management Services, LLC and OptimaEd (charter school services and curriculum)",
@@ -67,6 +93,7 @@
   "anthony-rodriguez": 22,
   "ariel-fernandez": 2,
   "gelien-perez": 5,
+  "jerry-joseph": 1,
   "luis-rodriguez": 2,
   "michael-joseph": 1,
   "monica-perez": 5,

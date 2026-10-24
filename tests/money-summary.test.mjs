@@ -39,7 +39,7 @@ test('gifts before the cycle are not counted', () => {
 
 test('totals add up', () => {
   for (const [pid, p] of Object.entries(saved.people)) {
-    if (p.kind === 'votes') assert.equal(p.yes + p.no + p.away, p.items, pid);
+    if (p.kind === 'votes') assert.equal(p.yes + p.no + p.away + (p.abst || 0) + (p.unk || 0), p.items, pid);
     if (p.kind === 'state') assert.ok(Math.abs(p.requests.money + p.bills.money - p.total) < 0.01, pid);
     if (p.kind !== 'none') assert.ok(p.beforeAmt <= p.total && p.before <= p.gifts, pid);
   }

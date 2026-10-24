@@ -144,6 +144,9 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   // Ids must be unique across every body: prefix bare file numbers with the city's prefix
   const PFX = { coralgables: 'cg-' }[slug] || slug + '-';
   for (const u of U.actions) if (!String(u.id).startsWith(PFX) && !String(u.id).startsWith(slug)) { u.bareId = u.id; u.id = PFX + u.id; }
+  // An action that names no private party cannot be checked against donors: left out of the list and counted
+  const unnamed = U.actions.filter(u => !(u.parties || []).length).length;
+  U.actions = U.actions.filter(u => (u.parties || []).length);
   const actions = U.actions.map(u => {
     // No vote in the record (an agenda-only meeting): every member seated that day, vote not given
     if (!u.roll || !Object.values(u.roll).some(v => v)) { u.roll = {}; for (const m of B.members) if (m.person && seatedOn(B, m.person, u.date)) u.roll[m.key] = 'unknown'; u.tally = null; }
@@ -190,7 +193,13 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   const dates = U.actions.map(a => a.date).sort();
   const from = win.from || dates[0], to = (U.meetings || []).map(m => m.date).filter(x => x <= (win.to || '9999')).sort().pop() || dates[dates.length - 1];
   B.universe = { built: 'actions', from, to, meetings: (U.meetings || []).length, file: f, gaps: U.gaps || [] };
+  B.universe.unnamed = unnamed;
   B.coverage = coverage(B, from, to, (U.meetings || []).length, BJ.coverageNote);
+  if (unnamed) {
+    B.coverage.en += ` ${unnamed} more action${unnamed === 1 ? '' : 's'} benefit${unnamed === 1 ? 's' : ''} a party the record does not name, so ${unnamed === 1 ? 'it is' : 'they are'} not listed or counted.`;
+    B.coverage.es += ` Otro${unnamed === 1 ? '' : 's'} ${unnamed} acto${unnamed === 1 ? '' : 's'} beneficia${unnamed === 1 ? '' : 'n'} a una parte que el registro no nombra, así que no se muestra${unnamed === 1 ? '' : 'n'} ni se cuenta${unnamed === 1 ? '' : 'n'}.`;
+    B.coverage.ht += ` ${unnamed} lòt aksyon benefisye yon pati dosye a pa nonmen, kidonk nou pa montre yo ni konte yo.`;
+  }
   report.push(`${slug}: ${U.actions.length} actions (${used.size} kept from before, ${U.actions.length - used.size} new, ${[...prior.keys()].filter(k => !used.has(k)).length} prior not in list); party gifts on new: ${actions.filter(a => a.universe && !prior.has(a.id)).reduce((n, a) => n + a.gifts.length, 0)}`);
 }
 writeFileSync(P(FILE), JSON.stringify(d, null, 1) + '\n');
