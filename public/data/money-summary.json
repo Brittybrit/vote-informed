@@ -310,13 +310,15 @@
    "accounts": 1,
    "campaignAmt": 6000,
    "committeeAmt": 0,
-   "items": 9,
-   "yes": 9,
+   "items": 10,
+   "yes": 10,
    "no": 0,
    "away": 0,
    "split": 1,
    "share": {
-    "def": "donorFirst"
+    "def": "actions",
+    "n": 148,
+    "tied": 9
    },
    "pron": "she"
   },
@@ -346,7 +348,9 @@
    "away": 0,
    "split": 0,
    "share": {
-    "def": "donorFirst"
+    "def": "actions",
+    "n": 148,
+    "tied": 5
    },
    "pron": "she"
   },
@@ -376,7 +380,9 @@
    "away": 1,
    "split": 0,
    "share": {
-    "def": "donorFirst"
+    "def": "actions",
+    "n": 148,
+    "tied": 1
    },
    "pron": "he"
   },
@@ -550,13 +556,15 @@
    "accounts": 1,
    "campaignAmt": 9000,
    "committeeAmt": 0,
-   "items": 18,
-   "yes": 16,
+   "items": 26,
+   "yes": 22,
    "no": 0,
-   "away": 2,
-   "split": 4,
+   "away": 4,
+   "split": 7,
    "share": {
-    "def": "donorFirst"
+    "def": "actions",
+    "n": 341,
+    "tied": 26
    },
    "pron": "he"
   },

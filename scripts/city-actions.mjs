@@ -63,6 +63,8 @@ function split(old, a) {
   return old.gifts.filter(g => !['party', 'class'].includes(g.kind) || hit(g));
 }
 const KIND = { contract: 'award', grant: 'funding', license: 'permit', sale: 'land', agreement: 'agreement', easement: 'easement', settlement: 'settlement', zoning: 'zoning', lease: 'lease' };
+// Members who voted in the window but have left the body (roster ids in public/data/roster.json)
+const FORMER = { hialeah: [['Junco', 'Juan Junco', 'juan-junco'], ['Tundidor', 'Jesus Tundidor', 'jesus-tundidor'], ['Garcia-Roves', 'Jacqueline Garcia-Roves', 'jacqueline-garcia-roves']] };
 let TR = {};
 let report = [];
 // Only the cities named on the command line are merged, so a list still being built is never published.
@@ -77,6 +79,7 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   // Notes shown on a card (a contradiction in the minutes, say), in all three languages, keyed by action id
   const NOTES = existsSync(P(`scripts/data/city/${slug}/card-notes.json`)) ? J(`scripts/data/city/${slug}/card-notes.json`) : {};
   if (!B) { report.push(slug + ': no body in decisions.json'); continue; }
+  for (const [k, name, person] of FORMER[slug] || []) if (!B.members.some(m => m.key === k)) B.members.push({ key: k, name, person, former: true });
   const prior = new Map(B.actions.map(a => [a.id, a]));
   // How many new actions each old card stands for (one card sometimes covered several resolutions)
   const nLegacy = {}; for (const u of U.actions) if (u.legacyId) nLegacy[u.legacyId] = (nLegacy[u.legacyId] || 0) + 1;
@@ -87,6 +90,11 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   for (const u of U.actions) if (!String(u.id).startsWith(PFX) && !String(u.id).startsWith(slug)) { u.bareId = u.id; u.id = PFX + u.id; }
   const actions = U.actions.map(u => {
     u.roll = vote(u.roll); u.result = RES[u.result] || u.result;
+    // the page's tally is [yes, no]; absences and abstentions are in the roll
+    if (Array.isArray(u.tally)) u.tally = u.tally.slice(0, 2);
+    // no tally printed but every vote known: count it from the roll
+    const vs = Object.values(u.roll || {});
+    if (!u.tally && vs.length && vs.every(v => v != null && v !== 'unknown')) u.tally = [vs.filter(v => v === 'yes').length, vs.filter(v => v === 'no').length];
     const leg = u.legacyId && prior.get(u.legacyId);
     const old = prior.get(u.id) || (u.prevId && prior.get(u.prevId)) || (leg && nLegacy[u.legacyId] === 1 ? leg : null);
     if (old) { used.add(old.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true; return old; }

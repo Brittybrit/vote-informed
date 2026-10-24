@@ -81,7 +81,7 @@
         if(p.acted) parts.push('took ' + p.acted + ' action' + (p.acted === 1 ? '' : 's') + ' as head of the office that named a donor, or a kind of business that gave');
         return He(p) + ' ' + parts.join(', and ') + '.';
       },
-      split: function(p){ return p.items === 1 ? 'It was a split vote (at least one member voted no).' : p.split + ' of the ' + p.items + ' were split votes (at least one member voted no).'; },
+      split: function(p){ return p.items === 1 ? 'It was a split vote (at least one member voted no).' : p.split + ' of the ' + p.items + (p.split === 1 ? ' was a split vote' : ' were split votes') + ' (at least one member voted no).'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'This city’s list was built by starting from ' + his(p) + ' donors, because the city posts no usable lobbyist registry. So there is no fair count of the actions that did not involve a donor.';
         var q = pair(S.tied, S.n), r = S.n - S.tied;
@@ -157,13 +157,13 @@
         if(p.acted) parts.push('tomó ' + p.acted + ' acci' + (p.acted === 1 ? 'ón' : 'ones') + ' como ' + (p.pron === 'she' ? 'jefa' : 'jefe') + ' de la oficina que nombra a un donante, o a un tipo de negocio que donó');
         var x = parts.join(', y '); return x.charAt(0).toUpperCase() + x.slice(1) + '.';
       },
-      split: function(p){ return p.items === 1 ? 'Fue una votación dividida (al menos un miembro votó en contra).' : p.split + ' de los ' + p.items + ' fueron votaciones divididas (al menos un miembro votó en contra).'; },
+      split: function(p){ return p.items === 1 ? 'Fue una votación dividida (al menos un miembro votó en contra).' : p.split + ' de los ' + p.items + (p.split === 1 ? ' fue una votación dividida' : ' fueron votaciones divididas') + ' (al menos un miembro votó en contra).'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos que sirva. Así que no hay un conteo justo de los actos sin donante.';
         var q = pair(S.tied, S.n), r = S.n - S.tied;
         var what = S.def === 'county' ? 'actos de la comisión en que participó y que beneficiaron a una empresa o grupo con nombre'
           : S.def === 'lobbied' ? 'asuntos ante ' + this.before(b) + ' en que trabajó un cabildero registrado y que votó'
-          : S.def === 'actions' ? 'actos de ' + this.before(b) + ' desde enero de 2025 que beneficiaron a una empresa o grupo con nombre, mientras ocupaba el cargo'
+          : S.def === 'actions' ? 'actos ' + (/^el /.test(this.before(b)) ? 'del ' + this.before(b).slice(3) : 'de ' + this.before(b)) + ' desde enero de 2025 que beneficiaron a una empresa o grupo con nombre, mientras ocupaba el cargo'
           : S.def === 'requests' ? 'solicitudes de presupuesto que presentó'
           : S.def === 'earmarks' ? 'solicitudes de fondos federales para proyectos que presentó'
           : 'asuntos del Gabinete y actos de su oficina revisados';

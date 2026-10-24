@@ -1,6 +1,6 @@
 {
  "sampled": 125,
- "checked": 85,
+ "checked": 125,
  "checkedIds": [
   "hialeah-2025-01-14-11Q",
   "hialeah-2025-01-14-17C",
@@ -86,7 +86,47 @@
   "hialeah-ord-2026-023",
   "hialeah-ord-2026-024",
   "hialeah-res-2026-078",
-  "hialeah-res-2026-083"
+  "hialeah-res-2026-083",
+  "hialeah-ord-2026-028",
+  "hialeah-res-2026-085",
+  "hialeah-2026-04-14-16G",
+  "hialeah-res-2026-101",
+  "hialeah-res-2026-111",
+  "hialeah-res-2026-119",
+  "hialeah-res-2026-131",
+  "hialeah-res-2026-133",
+  "hialeah-2026-05-26-10C",
+  "hialeah-2026-05-26-10H",
+  "hialeah-2026-06-09-14B",
+  "hialeah-2026-06-09-15F",
+  "hialeah-2026-06-09-9M",
+  "hialeah-2026-06-09-9O",
+  "hialeah-res-2026-151",
+  "hialeah-2026-06-23-17C",
+  "hialeah-2026-08-11-10Q",
+  "hialeah-2026-08-11-10T",
+  "hialeah-2026-08-11-17E",
+  "hialeah-res-2026-189",
+  "hialeah-2026-08-25-16B",
+  "hialeah-2026-08-25-17D",
+  "hialeah-2026-08-25-17F",
+  "hialeah-2026-08-25-17H",
+  "hialeah-ord-2026-054",
+  "hialeah-ord-2026-056",
+  "hialeah-res-2026-200",
+  "hialeah-res-2026-202",
+  "hialeah-res-2026-218",
+  "hialeah-ord-2026-058",
+  "hialeah-ord-2026-060",
+  "hialeah-ord-2026-061",
+  "hialeah-ord-2026-062",
+  "hialeah-res-2026-229",
+  "hialeah-res-2026-236",
+  "hialeah-res-2026-242",
+  "hialeah-2026-10-13-17I",
+  "hialeah-res-2026-254",
+  "hialeah-res-2026-263",
+  "hialeah-res-2026-275"
  ],
  "fieldErrors": {
   "ref": 6,
@@ -193,7 +233,97 @@
    "minutesValue": "\"APPROVED 5-1\" printed, but only 5 members present and AYE roll lists all 5; no NAY named. Almost certainly a clerk typo for 5-0.",
    "where": "12/09/2025 minutes consent item 10L",
    "severity": "info"
+  },
+  {
+   "id": "hialeah-2026-06-09-9O",
+   "field": "amount",
+   "listValue": "72718",
+   "minutesValue": "17,500 + 55,218 increases (matches sum), but minutes add \"REPORT: Mayor Calvo stated that the expenditure amount had an extra zero on the agenda\" and do not show a corrected figure",
+   "where": "06/09/2026 minutes consent item 9O",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-2026-06-09-15F",
+   "field": "vote",
+   "listValue": "first reading, 3-2-2 (De La Vega, M. Perez no)",
+   "minutesValue": "vote line \"APPROVED 3-2-2\" matches, but a following postponement motion lists all five present as AYE; minutes do not reconcile",
+   "where": "06/09/2026 minutes item 15F",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-2026-06-23-17C",
+   "field": "parties",
+   "listValue": "Victor J. Barone",
+   "minutesValue": "Victor J. Babone (trustee) in minutes; list spelling Barone is consistent with the 2014 Barone Family Trust and is likely right",
+   "where": "06/23/2026 minutes item 17C",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-2026-08-25-17D",
+   "field": "parties",
+   "listValue": "Ricardo Largo",
+   "minutesValue": "owner line \"Ricardo Largo\"; lobbyist line \"on behalf of Ricardo Lago\"",
+   "where": "08/25/2026 minutes item 17D",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-ord-2026-054",
+   "field": "vote",
+   "listValue": "5-1-1, M. Perez no, Rodriguez absent",
+   "minutesValue": "result line matches; the AYE block below it lists all seven incl. M. Perez and Rodriguez (clerk inconsistency)",
+   "where": "08/25/2026 minutes item 16A",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-2026-08-25-17H",
+   "field": "vote",
+   "listValue": "5-2, De La Vega and M. Perez no",
+   "minutesValue": "result line prints \"APPROVED 5-0-2\" but names De La Vega and M. Perez voting No and NAY block lists both; list reading 5-2 is right",
+   "where": "08/25/2026 minutes item 17H",
+   "severity": "info"
+  },
+  {
+   "id": "hialeah-ord-2026-061",
+   "field": "amount",
+   "listValue": "null",
+   "minutesValue": "no contract amount; approval conditioned on \"a $30,000.00 contribution to the City's HiaLine initiative\" by the owner",
+   "where": "09/08/2026 minutes item 17D",
+   "severity": "info"
   }
  ],
- "notes": "PO-increase items record the increase, not the new cumulative total; consistent across the sample, but the site should label it as an increase. 2025-06-24: every consent item in actions.json (21 items) is labeled section 12; the minutes number the consent agenda as section 10, so all 21 refs at that meeting look systematically off by section number (resolution numbers are unaffected). Same section-number error at 2025-09-23 (24 consent items labeled 12x, minutes say 10x) and 2025-10-14 (59 items labeled 12x, minutes say 10x). Meetings 2025-05-13, 2025-05-27 and 2025-11-18 really do number the consent agenda 12 (they have extra appointment/election sections), which is probably where the extractor picked up the habit. hialeah-2025-12-09-10L should not be shown as having a no vote; display as 5-0 or as unclear, not 5-1."
+ "notes": "PO-increase items record the increase, not the new cumulative total; consistent across the sample, but the site should label it as an increase. 2025-06-24: every consent item in actions.json (21 items) is labeled section 12; the minutes number the consent agenda as section 10, so all 21 refs at that meeting look systematically off by section number (resolution numbers are unaffected). Same section-number error at 2025-09-23 (24 consent items labeled 12x, minutes say 10x) and 2025-10-14 (59 items labeled 12x, minutes say 10x). Meetings 2025-05-13, 2025-05-27 and 2025-11-18 really do number the consent agenda 12 (they have extra appointment/election sections), which is probably where the extractor picked up the habit. hialeah-2025-12-09-10L should not be shown as having a no vote; display as 5-0 or as unclear, not 5-1. Method: every sampled item was checked against the minutes PDF through WebFetch with prompts asking for verbatim quotes of the item caption, resolution/ordinance number, parties, amounts and the printed vote line (plus AYE/NAY blocks where present); section headings were pulled separately to check item numbering. This is the same fetch tool the list was built with, so it is not a fully independent read of the PDF; but quotes were requested verbatim and it did push back when an item did not exist (06/24/2025 '12D'). Where the minutes themselves are internally inconsistent (tally vs AYE block, owner-name typos) the list generally took the printed result line or the more plausible spelling; those are logged as severity 'info' and not counted as errors. All 65 dissent/denied actions matched the minutes on mover-independent fields (who voted no/absent, tally, result).",
+ "sampleDesign": {
+  "seed": 305,
+  "random": 60,
+  "randomStratified": "one per meeting date (36 dates) + 24 more at random from non-dissent items",
+  "allDissentOrDenied": 65,
+  "total": 125
+ },
+ "errorRates": {
+  "ref": "6/125 (4.8%); 6/60 (10%) of the random stratum; 0/65 of dissent/denied",
+  "parties": "1/125 (0.8%)",
+  "amount": "0/125",
+  "vote": "0/125",
+  "result": "0/125",
+  "date": "0/125"
+ },
+ "systemic": [
+  {
+   "issue": "Consent agenda items labeled section 12 where the minutes number the consent agenda 10",
+   "meetings": [
+    "2025-06-24 (21 items)",
+    "2025-09-23 (24 items)",
+    "2025-10-14 (59 items)"
+   ],
+   "affected": 104,
+   "fix": "In those three meetings, rewrite 'item 12X' to 'item 10X' for consent items (kind consent/contract with consent=true). Res./Ord. numbers are unaffected. Leave 2025-05-13, 2025-05-27, 2025-11-18 alone: their consent agenda really is section 12."
+  }
+ ],
+ "corrections": [
+  "Fix the 104 consent refs above.",
+  "hialeah-2025-08-12-10FF: minutes name the vendor 'Office Compass Solutions'; list says 'Compass Office Solutions, LLC'. Confirm legal name from PO/agenda backup, then make parties and title agree.",
+  "hialeah-2025-12-09-10L: minutes print 5-1 with only five members present and all five AYE. Do not show it as a dissent; show 5-0 with a note, or 'tally unclear'.",
+  "Standardize Maxvale/Maxuale Holdings across hialeah-2025-03-11-16J and hialeah-ord-2025-039 (minutes use both; Maxvale Holdings, LLC is the likelier legal name).",
+  "Optional: label PO-increase amounts as 'increase' since amount holds the increase, not the cumulative cap."
+ ]
 }

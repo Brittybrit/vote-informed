@@ -79,6 +79,21 @@ D={'city':'Hialeah','body':'hialeah','window':['2025-01-01','2026-10-13'],
  'sources':['Hialeah AgendaCenter minutes and agendas: https://www.hialeahfl.gov/AgendaCenter (ViewFile/Minutes/_<id>, ViewFile/Agenda/_<id>)','public/data/decisions.json body "hialeah" (legacy ids kept as legacyId)'],
  'method':'Every posted City Council regular and special meeting from 2025-01-14 to 2026-10-13 was read from its minutes. Kept voted items that name or benefit a private party: contracts, purchase orders and increases, bid waivers, piggybacks, zoning/land use/variances/special use permits/plats, leases, grants and subrecipient agreements, union contracts, agreements, alley vacations, special event and fireworks permits. Excluded proclamations, appointments, minutes, budgets/millage, internal staffing, generic code changes and government-only items. Each reading of an ordinance is a separate action. Donors were not consulted. "Perez" in 2025 minutes is Monica Perez (M. Perez).',
  'meetings':meetings,'actions':actions,'gaps':gaps}
+# Corrections from the check against the minutes (spotcheck.json, 2026-10-24) and Sunbiz
+for a in actions:
+    # At these three meetings the minutes number the consent agenda as section 10, not 12
+    if a['date'] in ('2025-06-24','2025-09-23','2025-10-14'):
+        a['ref']=re.sub(r'item 12([A-Z]+)', r'item 10\1', a['ref'])
+    # Sunbiz: COMPASS OFFICE SOLUTIONS LLC (M06000000058); the minutes reverse the words
+    if a['id']=='hialeah-2025-08-12-10FF':
+        a['title']=a['title'].replace('Office Compass Solutions','Compass Office Solutions')
+        a['notes']=(a['notes']+' ' if a['notes'] else '')+'The minutes name the vendor "Office Compass Solutions"; the registered company is Compass Office Solutions LLC (Sunbiz M06000000058).'
+    # Sunbiz: MAXVALE HOLDINGS, LLC (L13000077172); the minutes also print "Maxuale"
+    a['parties']=['Maxvale Holdings, LLC' if x in ('Maxuale Holdings LLC','Maxvale Holdings LLC') else x for x in a['parties']]
+    # The minutes print "APPROVED 5-1" with five members present, all voting yes: a typo, not a dissent
+    if a['id']=='hialeah-2025-12-09-10L':
+        a['tally']=[5,0]; a['roll']={k:'yes' for k in a['roll']}
+        a['notes']='The minutes print "APPROVED 5-1", but list five members present and all five voting yes; shown as 5-0.'
 json.dump(D,open(OUT,'w'),ensure_ascii=False,indent=1)
 print(len(meetings),len(actions),collections.Counter(a['kind'] for a in actions),collections.Counter(a['result'] for a in actions))
 print('missing legacy',missing); print('mismatch',len(mism)); [print(x) for x in mism]

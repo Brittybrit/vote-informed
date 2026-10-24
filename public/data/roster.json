@@ -7038,6 +7038,24 @@
    "name": "Zuzer Calero",
    "aliases": [],
    "ids": {}
+  },
+  {
+   "id": "jesus-tundidor",
+   "name": "Jesus Tundidor",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "juan-junco",
+   "name": "Juan Junco",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "jacqueline-garcia-roves",
+   "name": "Jacqueline Garcia-Roves",
+   "aliases": [],
+   "ids": {}
   }
  ],
  "offices": [
@@ -14514,6 +14532,18 @@
    "kind": "legislative",
    "actionScope": "all",
    "seats": 2
+  },
+  {
+   "id": "city-hialeah-council",
+   "name": "Hialeah, Council Member (seat not stated)",
+   "level": "municipal",
+   "jurisdiction": "Hialeah",
+   "district": null,
+   "body": "city-hialeah",
+   "kind": "board",
+   "actionScope": "all",
+   "seats": 7,
+   "note": "Used where the minutes give the member but not the seat number."
   }
  ],
  "terms": [
@@ -26846,6 +26876,86 @@
     "https://bioguide.congress.gov/search/bio/M001244",
     "https://github.com/unitedstates/congress-legislators"
    ]
+  },
+  {
+   "person": "jesus-tundidor",
+   "office": "city-hialeah-council",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2025-12-09",
+   "note": "Listed in the council roll call in the minutes from Jan 14 through Dec 9, 2025; seat not stated there."
+  },
+  {
+   "person": "juan-junco",
+   "office": "city-hialeah-council",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2025-10-14",
+   "note": "Listed in the council roll call in the minutes from Jan 14 through Oct 14, 2025; lost the Seat 6 race on Nov 4, 2025."
+  },
+  {
+   "person": "jacqueline-garcia-roves",
+   "office": "city-hialeah-council",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2025-04-22",
+   "note": "Council President in the minutes from Jan 14 through Apr 22, 2025; later interim mayor."
+  },
+  {
+   "person": "melinda-de-la-vega",
+   "office": "city-hialeah-council",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2025-10-14",
+   "note": "Interim council member, listed in the council roll call in the minutes from Jan 14 through Oct 14, 2025, before winning Seat 6 on Nov 4, 2025."
+  },
+  {
+   "person": "luis-rodriguez",
+   "office": "city-hialeah-group-7",
+   "start": null,
+   "end": null,
+   "via": "elected",
+   "sources": [
+    "https://www.hialeahfl.gov/AgendaCenter/ViewFile/Minutes/_02112025-1210"
+   ],
+   "sourceKind": "official",
+   "startKnown": false,
+   "endKnown": false,
+   "servingFrom": "2025-01-14",
+   "lastSeen": "2025-10-14",
+   "note": "Council Vice President in the minutes from Jan 14 through Oct 14, 2025, before his reelection on Nov 4, 2025."
   }
  ],
  "ballot": [
