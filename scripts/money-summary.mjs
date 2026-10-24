@@ -29,10 +29,11 @@ const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? '
 // - state legislators and Congress: every budget or earmark request the member filed
 // - Cabinet: every Board of Trustees item while seated plus the office's own actions reviewed
 // Cities whose lists start from donors (no registry online) get no share.
+const CAST = new Set(['yes', 'no']);
 const DONOR_FIRST = new Set(['southmiami', 'pinecrest', 'medley']);
 function shareOf(B, key, tied) {
   const tiedIds = new Set(tied.map(([a]) => a.id));
-  const sat = a => a.roll && a.roll[key] != null;
+  const sat = a => a.roll && CAST.has(a.roll[key]);
   let pool, def;
   if (B.type === 'requests') { pool = B.actions.filter(a => a.kind === 'request' && a.roll && a.roll[key] === 'requested'); def = B.level === 'federal' ? 'earmarks' : 'requests'; }
   else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size } : undefined; }
@@ -41,6 +42,9 @@ function shareOf(B, key, tied) {
   else if (DONOR_FIRST.has(B.key)) return { def: 'donorFirst' };
   else { pool = B.actions.filter(a => sat(a) && (a.lobbied || []).length); def = 'lobbied'; }
   if (!pool.length) return undefined;
+  // A list whose record gives most of the member's votes as unknown (agenda-only meetings) gets no share:
+  // the few recorded votes are not a fair count of what the member did.
+  if (def === 'actions') { const seated = B.actions.filter(a => a.universe && a.roll && a.roll[key] != null).length; if (pool.length * 2 < seated && B.actions.filter(a => a.universe && a.roll && a.roll[key] === 'unknown').length * 2 > seated) return undefined; }
   return { def, n: pool.length, tied: pool.filter(a => tiedIds.has(a.id)).length };
 }
 
@@ -65,6 +69,9 @@ export function build(decisions, officesHeld) {
       const accts = new Set(ob.accounts);
       const tied = [];
       for (const a of B.actions) {
+        // On a voting body (city, county), a tie needs a vote the member cast: absent, excused, abstained,
+        // recused or a vote the minutes do not give is not counted (Brit, Oct 24, 2026).
+        if (!state && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
         const gs = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
         if (gs.length) tied.push([a, gs]);
       }
@@ -161,6 +168,7 @@ export function tiedActions(B, key) {
   const accts = new Set(B.onBallot[key].accounts);
   const out = [];
   for (const a of B.actions) {
+    if (B.type !== 'requests' && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
     const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
     if (!gifts.length) continue;
     const x = { ...a, gifts };
