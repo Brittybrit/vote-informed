@@ -91,6 +91,7 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
   const actions = U.actions.map(u => {
     u.roll = vote(u.roll); u.result = RES[u.result] || u.result;
     // the page's tally is [yes, no]; absences and abstentions are in the roll
+    if (typeof u.tally === 'string') { const m = u.tally.match(/^(\d+)-(\d+)/); u.tally = m ? [+m[1], +m[2]] : null; }
     if (Array.isArray(u.tally)) u.tally = u.tally.slice(0, 2);
     // no tally printed but every vote known: count it from the roll
     const vs = Object.values(u.roll || {});

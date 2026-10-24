@@ -65,7 +65,7 @@
         return s + (parts.length && nv(Bl) ? ', and did not vote ' + nv(Bl) + (nv(Bl) === 1 ? ' time' : ' times') : '') + '.';
       },
       voted: function(p, b){
-        var on = (p.items === 1 ? 'the one item' : p.items + ' items') + ' before ' + this.before(b) + ' where a donor had business';
+        var on = (p.items === 1 ? 'the one item' : p.items + ' items') + (p.since ? ' since ' + p.since : '') + ' before ' + this.before(b) + ' where a donor had business';
         var s;
         if(p.items === 1) s = He(p) + (p.yes ? ' voted yes on ' : p.no ? ' voted no on ' : ' was absent for ') + on;
         else {
@@ -141,7 +141,7 @@
         return s + (parts.length && nv(Bl) ? ', y no votó ' + nv(Bl) + (nv(Bl) === 1 ? ' vez' : ' veces') : '') + '.';
       },
       voted: function(p, b){
-        var on = (p.items === 1 ? 'el único asunto' : p.items + ' asuntos') + ' ante ' + this.before(b) + ' en que un donante tenía interés';
+        var on = (p.items === 1 ? 'el único asunto' : p.items + ' asuntos') + (p.since ? ' desde ' + p.since : '') + ' ante ' + this.before(b) + ' en que un donante tenía interés';
         var s;
         if(p.items === 1) s = (p.yes ? 'Votó a favor en ' : p.no ? 'Votó en contra en ' : 'Estuvo ausente en ') + on;
         else {
@@ -217,7 +217,7 @@
         return s + (parts.length && nv(Bl) ? ', epi li pa t vote ' + nv(Bl) + ' fwa' : '') + '.';
       },
       voted: function(p, b){
-        var on = (p.items === 1 ? 'sèl dosye' : p.items + ' dosye') + ' devan ' + this.before(b) + ' kote yon donatè te gen enterè';
+        var on = (p.items === 1 ? 'sèl dosye' : p.items + ' dosye') + (p.since ? ' depi ' + p.since : '') + ' devan ' + this.before(b) + ' kote yon donatè te gen enterè';
         var s;
         if(p.items === 1) s = 'Li' + (p.yes ? ' te vote wi sou ' : p.no ? ' te vote non sou ' : ' te absan pou ') + on;
         else {

@@ -125,6 +125,9 @@ export function build(decisions, officesHeld) {
         e.items = tied.length; e.yes = v.yes; e.no = v.no; e.away = v.away;
         if (B.cabinet) { e.acted = v.acted; e.votes = tied.length - v.acted; }
         e.split = tied.filter(([a]) => a.tally && a.tally[1] > 0).length;
+        // The share line counts actions since January 2025; when older cards are in the items, say from when
+        const y0 = tied.map(([a]) => a.date).sort()[0];
+        if (B.universe && y0 && y0 < '2025') e.since = Number(y0.slice(0, 4));
       }
       e.share = shareOf(B, key, tied);
       add(m.person, e);
