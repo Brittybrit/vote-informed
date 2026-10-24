@@ -515,6 +515,19 @@
   .og-body{overflow-wrap:anywhere; min-width:0;}
   .fulllist{white-space:normal;}
   @media (max-width:480px){ .dossier-body{padding:16px;} .donor-row .damt{max-width:45%;} }
+.you-sec{border:2px solid var(--ink); padding:14px 16px; background:var(--paper);}
+  .you-sec h4{margin-top:0;}
+  .you-sub{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin:14px 0 6px;}
+  .you-line p{font-size:15px; line-height:1.5; margin:0 0 8px;}
+  .you-p{font-size:14px; line-height:1.5; margin:0 0 8px;}
+  .you-p ul{margin:4px 0 0 18px; padding:0;}
+  .you-row{border-top:1px solid var(--rule, rgba(0,0,0,.15)); padding:8px 0;}
+  .you-when{font-family:var(--mono); font-size:11px; opacity:.75;}
+  .you-title{font-size:14px; line-height:1.4; margin:2px 0;}
+  .you-meta{font-size:13px;}
+  .you-tie{font-weight:600;}
+  details.evid{margin:10px 0 26px; border-top:2px solid var(--ink); padding-top:10px;}
+  details.evid > summary{cursor:pointer; font-weight:600; font-size:15px; line-height:1.4; margin-bottom:14px;}
   .dsec{margin-bottom:26px;}
   .dsec h4{
     font-weight:800; text-transform:uppercase; font-size:12.5px; letter-spacing:.08em;
@@ -1108,6 +1121,60 @@ en: {
   'cat.canvass': 'Door-knocking and field', 'cat.radio': 'Radio', 'cat.ads': 'Ads (type not stated)', 'cat.other': 'Other',
   'sec.committee': 'Money to Allied Committees',
   'sec.ties': 'Donors, Lobbyists and Official Actions',
+  'you.h': 'What this means for you',
+  'you.line': 'The bottom line',
+  'you.noRecord': '{name} has no voting record in this office to show. Who is paying for the campaign is in the money record below.',
+  'you.conn1': 'An official record states 1 business interest or connection. It is under &ldquo;Business interests and connections&rdquo; below.',
+  'you.connN': 'Official records state {n} business interests or connections. They are under &ldquo;Business interests and connections&rdquo; below.',
+  'you.touch': 'Decisions that touch you',
+  'you.setup': 'Tell us about your household to see which of these touch you. Your answers stay on this device, and they are the same answers the ballot measures use.',
+  'you.setupBtn': 'Describe my household',
+  'you.edit': 'Change',
+  'you.counts': 'Of the {n} decisions {name} voted on or asked for, the most common topics: ',
+  'you.none': 'None of the decisions {name} voted on or asked for matched what you told us.',
+  'you.of': '{k} of the {n} decisions {name} voted on or asked for touched what you told us.',
+  'you.ofTied': '{k} of those involved a donor of {name}.',
+  'you.vote.yes': 'Voted yes',
+  'you.vote.no': 'Voted no',
+  'you.vote.requested': 'Asked for it',
+  'you.split': 'split vote',
+  'you.donor': 'a donor of theirs was involved',
+  'you.more': 'Show all {n}',
+  'you.how': 'Matched by topic from words in each item&rsquo;s own title.',
+  'you.common': 'Services every household uses (water, police, fire rescue, trash): {n}',
+  'you.next': 'What they decide next',
+  'you.nextMeet': 'Next meeting: {date}',
+  'you.agenda': 'On a posted agenda',
+  'you.speak': 'How to speak up',
+  'you.inEn': '(as the body posts it, in English)',
+  'you.stateNext': 'The Florida Legislature meets next on November 17, 2026 (the organization session after the election). The 2027 regular session starts March 2, 2027.',
+  'you.fedNext': 'This Congress serves until January 3, 2027, when the next one is sworn in.',
+  'you.evid': 'Follow the money: offices held, business connections, donors, outside spending and every action behind the numbers',
+  'topic.housing': 'Housing',
+  'topic.development': 'Building and zoning',
+  'topic.taxes': 'Taxes and fees',
+  'topic.insurance': 'Property insurance',
+  'topic.transit': 'Roads, transit and parking',
+  'topic.parks': 'Parks and recreation',
+  'topic.schools': 'Schools and child care',
+  'topic.libraries': 'Libraries',
+  'topic.seniors': 'Seniors',
+  'topic.health': 'Health',
+  'topic.police': 'Police and safety',
+  'topic.fire': 'Fire rescue and storms',
+  'topic.water': 'Water, sewer and flooding',
+  'topic.trash': 'Trash and recycling',
+  'topic.business': 'Business and permits',
+  'topic.labor': 'Public workers',
+  'topic.farming': 'Farming',
+  'topic.daycare': 'Child care',
+  'topic.parking': 'Parking',
+  'topic.cycling': 'Cycling',
+  'topic.boating': 'Boating',
+  'topic.nightlife': 'Nightlife',
+  'topic.towing': 'Towing',
+  'topic.noise': 'Noise',
+  'topic.pets': 'Pets',
   'sec.conn': 'Business Interests and Connections', 'conn.sub': 'Connections an official record states: the candidate\u2019s own financial disclosure, a state business filing, an ethics filing. Dollar figures from news reports are labeled as reported.', 'sec.offices': 'Offices Held', 'off.sub': 'Public offices in this site\u2019s records (federal, state, Miami-Dade County, School Board, cities, special districts and courts), with the dates each source gives. Most records start in 2023.', 'off.none': 'No public office found in this site\u2019s records.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Since {a}', 'off.until': 'Start date not stated \u2013 left {b}', 'off.now': 'Serving now; start date not stated in the source', 'off.seen': 'Seated in official meeting records from {a} to {b}', 'off.seenFrom': 'Seated in official meeting records since at least {a}', 'off.endBy': '(left by {b})', 'off.elected': 'elected', 'off.appointed': 'appointed',
   'ties.notIn': '{name} does not hold a seat here now, so there are no official actions to show.',
   'ties.current': '{name} serves on the {body} now. Their official actions have not been reviewed for this section yet.',
@@ -1647,6 +1714,60 @@ es: {
   'cat.canvass': 'Visitas puerta a puerta', 'cat.radio': 'Radio', 'cat.ads': 'Anuncios (tipo no indicado)', 'cat.other': 'Otro',
   'sec.committee': 'Dinero a comités aliados',
   'sec.ties': 'Donantes, cabilderos y acciones oficiales',
+  'you.h': 'Qué significa para usted',
+  'you.line': 'Lo esencial',
+  'you.noRecord': '{name} no tiene historial de votos en este cargo. Quién paga la campaña está en el registro del dinero más abajo.',
+  'you.conn1': 'Un registro oficial indica 1 interés comercial o conexión. Está en &ldquo;Intereses comerciales y conexiones&rdquo; más abajo.',
+  'you.connN': 'Los registros oficiales indican {n} intereses comerciales o conexiones. Están en &ldquo;Intereses comerciales y conexiones&rdquo; más abajo.',
+  'you.touch': 'Decisiones que le afectan',
+  'you.setup': 'Cuéntenos sobre su hogar para ver cuáles le afectan. Sus respuestas se quedan en este dispositivo y son las mismas que usan las medidas de la boleta.',
+  'you.setupBtn': 'Describir mi hogar',
+  'you.edit': 'Cambiar',
+  'you.counts': 'De las {n} decisiones que {name} votó o pidió, los temas más comunes: ',
+  'you.none': 'Ninguna de las decisiones que {name} votó o pidió coincide con lo que nos dijo.',
+  'you.of': '{k} de las {n} decisiones que {name} votó o pidió tocan lo que nos dijo.',
+  'you.ofTied': '{k} de ellas involucraron a un donante de {name}.',
+  'you.vote.yes': 'Votó a favor',
+  'you.vote.no': 'Votó en contra',
+  'you.vote.requested': 'Lo pidió',
+  'you.split': 'voto dividido',
+  'you.donor': 'involucró a uno de sus donantes',
+  'you.more': 'Ver las {n}',
+  'you.how': 'Emparejado por tema según palabras del título de cada asunto.',
+  'you.common': 'Servicios que usan todos los hogares (agua, policía, bomberos, basura): {n}',
+  'you.next': 'Lo que decide después',
+  'you.nextMeet': 'Próxima reunión: {date}',
+  'you.agenda': 'En una agenda publicada',
+  'you.speak': 'Cómo hacerse oír',
+  'you.inEn': '(tal como lo publica el organismo, en inglés)',
+  'you.stateNext': 'La Legislatura de Florida se reúne de nuevo el 17 de noviembre de 2026 (sesión de organización después de la elección). La sesión ordinaria de 2027 empieza el 2 de marzo de 2027.',
+  'you.fedNext': 'Este Congreso sirve hasta el 3 de enero de 2027, cuando se juramenta el siguiente.',
+  'you.evid': 'Siga el dinero: cargos ocupados, conexiones comerciales, donantes, gasto externo y cada acción detrás de las cifras',
+  'topic.housing': 'Vivienda',
+  'topic.development': 'Construcción y zonificación',
+  'topic.taxes': 'Impuestos y tarifas',
+  'topic.insurance': 'Seguro de propiedad',
+  'topic.transit': 'Calles, transporte y estacionamiento',
+  'topic.parks': 'Parques y recreación',
+  'topic.schools': 'Escuelas y cuidado infantil',
+  'topic.libraries': 'Bibliotecas',
+  'topic.seniors': 'Personas mayores',
+  'topic.health': 'Salud',
+  'topic.police': 'Policía y seguridad',
+  'topic.fire': 'Bomberos y tormentas',
+  'topic.water': 'Agua, alcantarillado e inundaciones',
+  'topic.trash': 'Basura y reciclaje',
+  'topic.business': 'Negocios y permisos',
+  'topic.labor': 'Trabajadores públicos',
+  'topic.farming': 'Agricultura',
+  'topic.daycare': 'Cuidado infantil',
+  'topic.parking': 'Estacionamiento',
+  'topic.cycling': 'Bicicletas',
+  'topic.boating': 'Navegación',
+  'topic.nightlife': 'Vida nocturna',
+  'topic.towing': 'Remolque',
+  'topic.noise': 'Ruido',
+  'topic.pets': 'Mascotas',
   'sec.conn': 'Intereses comerciales y conexiones', 'conn.sub': 'Conexiones que consta en un registro oficial: la declaraci\u00f3n financiera del propio candidato, un registro estatal de empresas, una presentaci\u00f3n de \u00e9tica. Las cifras tomadas de noticias se marcan como reportadas.', 'sec.offices': 'Cargos ocupados', 'off.sub': 'Cargos p\u00fablicos en los registros de este sitio (federales, estatales, del Condado Miami-Dade, la Junta Escolar, las ciudades, los distritos especiales y los tribunales), con las fechas que da cada fuente. La mayor\u00eda de los registros empieza en 2023.', 'off.none': 'No se encontr\u00f3 ning\u00fan cargo p\u00fablico en los registros de este sitio.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Desde {a}', 'off.until': 'Fecha de inicio no indicada \u2013 dej\u00f3 el cargo el {b}', 'off.now': 'En el cargo; la fuente no indica la fecha de inicio', 'off.seen': 'Aparece en las actas oficiales de {a} a {b}', 'off.seenFrom': 'Aparece en las actas oficiales desde al menos {a}', 'off.endBy': '(dej\u00f3 el cargo antes del {b})', 'off.elected': 'elegido', 'off.appointed': 'nombrado',
   'ties.notIn': '{name} no ocupa un cargo aquí ahora, así que no hay acciones oficiales que mostrar.',
   'ties.current': '{name} forma parte de {body} ahora. Sus acciones oficiales aún no se han revisado para esta sección.',
@@ -2186,6 +2307,60 @@ ht: {
   'cat.canvass': 'Vizit pòt an pòt', 'cat.radio': 'Radyo', 'cat.ads': 'Piblisite (kalite pa endike)', 'cat.other': 'Lòt',
   'sec.committee': 'Lajan bay komite alye',
   'sec.ties': 'Donatè, lobiyis ak aksyon ofisyèl',
+  'you.h': 'Sa sa vle di pou ou',
+  'you.line': 'Esansyèl la',
+  'you.noRecord': '{name} pa gen dosye vòt nan pòs sa a pou nou montre. Ki moun k ap peye kanpay la nan dosye lajan an pi ba.',
+  'you.conn1': 'Yon dosye ofisyèl montre 1 enterè biznis oswa koneksyon. Li anba &ldquo;Enterè biznis ak koneksyon&rdquo; pi ba.',
+  'you.connN': 'Dosye ofisyèl yo montre {n} enterè biznis oswa koneksyon. Yo anba &ldquo;Enterè biznis ak koneksyon&rdquo; pi ba.',
+  'you.touch': 'Desizyon ki touche ou',
+  'you.setup': 'Pale nou de kay ou pou w wè kilès ki touche ou. Repons ou rete sou aparèy sa a, epi se menm repons mezi bilten an itilize.',
+  'you.setupBtn': 'Dekri kay mwen',
+  'you.edit': 'Chanje',
+  'you.counts': 'Sou {n} desizyon {name} te vote oswa mande, sijè ki parèt plis yo: ',
+  'you.none': 'Okenn nan desizyon {name} te vote oswa mande pa koresponn ak sa ou di nou.',
+  'you.of': '{k} sou {n} desizyon {name} te vote oswa mande touche sa ou di nou.',
+  'you.ofTied': '{k} ladan yo te gen yon donatè {name}.',
+  'you.vote.yes': 'Li vote wi',
+  'you.vote.no': 'Li vote non',
+  'you.vote.requested': 'Li te mande l',
+  'you.split': 'vòt divize',
+  'you.donor': 'youn nan donatè li yo te ladan l',
+  'you.more': 'Wè tout {n}',
+  'you.how': 'Nou chwazi yo dapre mo ki nan tit chak dosye.',
+  'you.common': 'Sèvis tout kay itilize (dlo, polis, ponpye, fatra): {n}',
+  'you.next': 'Sa l ap deside apre',
+  'you.nextMeet': 'Pwochen reyinyon: {date}',
+  'you.agenda': 'Sou yon ajennda ki pibliye',
+  'you.speak': 'Kijan pou w pale',
+  'you.inEn': '(jan òganis lan pibliye l, an angle)',
+  'you.stateNext': 'Lejislati Florid la reyini ankò 17 novanm 2026 (sesyon òganizasyon apre eleksyon an). Sesyon regilye 2027 la kòmanse 2 mas 2027.',
+  'you.fedNext': 'Kongrè sa a sèvi jiska 3 janvye 2027, lè pwochen an prete sèman.',
+  'you.evid': 'Swiv lajan an: pòs li te genyen, koneksyon biznis, donatè, depans deyò ak chak aksyon dèyè chif yo',
+  'topic.housing': 'Lojman',
+  'topic.development': 'Konstriksyon ak zonaj',
+  'topic.taxes': 'Taks ak frè',
+  'topic.insurance': 'Asirans pwopriyete',
+  'topic.transit': 'Wout, transpò ak pakin',
+  'topic.parks': 'Pak ak lwazi',
+  'topic.schools': 'Lekòl ak gadri',
+  'topic.libraries': 'Bibliyotèk',
+  'topic.seniors': 'Granmoun',
+  'topic.health': 'Sante',
+  'topic.police': 'Polis ak sekirite',
+  'topic.fire': 'Ponpye ak tanpèt',
+  'topic.water': 'Dlo, egou ak inondasyon',
+  'topic.trash': 'Fatra ak resiklaj',
+  'topic.business': 'Biznis ak pèmi',
+  'topic.labor': 'Travayè piblik',
+  'topic.farming': 'Agrikilti',
+  'topic.daycare': 'Gadri',
+  'topic.parking': 'Pakin',
+  'topic.cycling': 'Bisiklèt',
+  'topic.boating': 'Bato',
+  'topic.nightlife': 'Lavi lannwit',
+  'topic.towing': 'Remòkaj',
+  'topic.noise': 'Bri',
+  'topic.pets': 'Bèt kay',
   'sec.conn': 'Enter\u00e8 biznis ak koneksyon', 'conn.sub': 'Koneksyon yon dosye ofisy\u00e8l di: deklarasyon finansye kandida a menm, yon dosye biznis Leta, yon dosye etik. Chif nou pran nan nouv\u00e8l yo make k\u00f2m rap\u00f2te.', 'sec.offices': 'P\u00f2s li te okipe', 'off.sub': 'P\u00f2s piblik ki nan dosye sit sa a (federal, Leta, Konte Miami-Dade, Konsey Lek\u00f2l, vil yo, distri espesyal ak tribinal), ak dat chak sous bay. Pif\u00f2 dosye k\u00f2manse an 2023.', 'off.none': 'Nou pa jwenn okenn p\u00f2s piblik nan dosye sit sa a.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Depi {a}', 'off.until': 'Dat k\u00f2mansman pa bay \u2013 li kite {b}', 'off.now': 'Nan p\u00f2s la kounye a; sous la pa bay dat k\u00f2mansman', 'off.seen': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo soti {a} rive {b}', 'off.seenFrom': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo depi omwen {a}', 'off.endBy': '(li te kite anvan {b})', 'off.elected': 'eli', 'off.appointed': 'nonmen',
   'ties.notIn': '{name} pa gen okenn pòs isit la kounye a, kidonk pa gen aksyon ofisyèl pou montre.',
   'ties.current': '{name} sèvi nan {body} kounye a. Nou poko revize aksyon ofisyèl li yo pou seksyon sa a.',
@@ -3570,7 +3745,9 @@ function impactForm(me, w){
 }
 
 var impPA = null;   // taxable values from the Property Appraiser lookup, kept only with the value they came with
-function wireImpactForm(ri){
+function wireImpactForm(ri, done){
+  // done: what to redraw after save, cancel or clear (the measure panel by default; a dossier passes its own)
+  var finish = done || function(){ impEditing = false; renderImpact(ri); };
   var f = $('impForm');
   impPA = (MI.load() || {}).pa || null;
   f.addEventListener('change', function(e){
@@ -3589,10 +3766,9 @@ function wireImpactForm(ri){
     var g = {};
     f.querySelectorAll('input[name="g"]:checked').forEach(function(x){ g[x.value] = true; });
     MI.save({ groups: g, homeValue: $('impHV').value, nsTax: $('impNS').value, otherValue: $('impOV').value, place: $('impPlace').value, pa: impPA });
-    impEditing = false;
-    renderImpact(ri);
+    finish();
   });
-  $('impCancel').onclick = function(){ impEditing = false; renderImpact(ri); };
+  $('impCancel').onclick = function(){ finish(); };
   // Address lookup: only when the voter presses the button, after the note saying where it goes.
   var A = MI.words(LANG).addr, out = $('impLookOut');
   function show(p){
@@ -3632,7 +3808,7 @@ function wireImpactForm(ri){
   var w2 = MI.words(LANG);
   $('impLook').onclick = function(){ look({ address: $('impAddr').value, unit: $('impUnit').value }); };
   $('impAddr').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); $('impLook').click(); } });
-  if($('impClear')) $('impClear').onclick = function(){ MI.clear(); impEditing = false; renderImpact(ri); };
+  if($('impClear')) $('impClear').onclick = function(){ MI.clear(); finish(); };
 }
 
 function impactBody(ri, r, calc, me, w){
@@ -4416,6 +4592,8 @@ function renderDossier(cand, race, r, cached){
   var html = dossierHead(cand, race, cached);
   if(ri >= 0) html += race.isRetention ? retentionVoteBar(ri) : voteBar(ri, ci);
   html += '<div class="dossier-body">';
+  // What this means for you: the bottom line, the decisions that touch the voter's household, what comes next
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec you-sec" id="youSec"></div>';
 
   if(r.summary){
     html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(r.summary) + '</p>' + summarySourcesHtml(r) + '</div>';
@@ -4443,6 +4621,45 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
+  // Who backs them and who rates them, before the money record
+  var who = '';
+  who += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
+  if(r.endorsements && r.endorsements.length){
+    who += groupedEndorsements(r.endorsements);
+  } else {
+    who += '<p class="empty">' + t('endorse.none') + '</p>';
+  }
+  who += '</div>';
+
+  if(r.opposition && r.opposition.length){
+    who += '<div class="dsec"><h4>' + t('sec.oppose') + '</h4>' +
+      '<p class="sec-sub">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
+    who += groupedEndorsements(r.opposition);
+    who += '</div>';
+  }
+
+  // drop grades from voter-guide / tracker sites; keep only org scorecards and bar/official reviews
+  var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|election tracker/i;
+  if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'') + ' ' + (e.type_en||'')); });
+  if(r.ratings && r.ratings.length){
+    who += '<div class="dsec"><h4>' + t('sec.ratings') + '</h4>' +
+      '<p class="sec-sub">' + t('ratings.sub') + '</p>';
+    who += r.ratings.map(function(e){
+      return '<div class="endo"><div class="eorg">' + esc(e.org) +
+      (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
+      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
+      '<div class="tagrow">' + leanTag(e.lean, e) +
+      groupTag(e) +
+      srcLink(e.url) +
+      '</div></div>';
+    }).join('');
+    who += '</div>';
+  }
+
+  html += who;
+  // The full money record, collapsed: it is the evidence behind the bottom line above
+  var isCand = ri >= 0 && !race.isMeasure;
+  if(isCand) html += '<details class="evid"><summary>' + t('you.evid') + '</summary>';
   if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="officesSec" hidden></div>';
   if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
   var fedRace = ri >= 0 && isFederalRace(race);
@@ -4552,39 +4769,7 @@ function renderDossier(cand, race, r, cached){
   // Biggest backers: after the campaign's donors and outside spending
   if(r.outsideSpending || committeeRows(r).length) html += '<div class="dsec" id="backersSec"></div>';
 
-  html += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
-  if(r.endorsements && r.endorsements.length){
-    html += groupedEndorsements(r.endorsements);
-  } else {
-    html += '<p class="empty">' + t('endorse.none') + '</p>';
-  }
-  html += '</div>';
-
-  if(r.opposition && r.opposition.length){
-    html += '<div class="dsec"><h4>' + t('sec.oppose') + '</h4>' +
-      '<p class="sec-sub">' + t(race.isRetention ? 'oppose.subRet' : 'oppose.sub') + '</p>';
-    html += groupedEndorsements(r.opposition);
-    html += '</div>';
-  }
-
-  // drop grades from voter-guide / tracker sites; keep only org scorecards and bar/official reviews
-  var JUNK_RATER = /decode\s*the\s*vote|ballotpedia|isidewith|vote\s*smart|votesmart|ballotready|independent evaluation|voter guide|aggregator|election tracker/i;
-  if(r.ratings) r.ratings = r.ratings.filter(function(e){ return !JUNK_RATER.test((e.org||'') + ' ' + (e.type||'') + ' ' + (e.type_en||'')); });
-  if(r.ratings && r.ratings.length){
-    html += '<div class="dsec"><h4>' + t('sec.ratings') + '</h4>' +
-      '<p class="sec-sub">' + t('ratings.sub') + '</p>';
-    html += r.ratings.map(function(e){
-      return '<div class="endo"><div class="eorg">' + esc(e.org) +
-      (e.rating ? ' <span class="ratingval">' + esc(e.rating) + '</span>' : '') + '</div>' +
-      (e.note ? '<div class="enote">' + esc(e.note) + '</div>' : '') +
-      '<div class="tagrow">' + leanTag(e.lean, e) +
-      groupTag(e) +
-      srcLink(e.url) +
-      '</div></div>';
-    }).join('');
-    html += '</div>';
-  }
-
+  if(isCand) html += '</details>';
   if(r.sources && r.sources.length){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
@@ -4602,6 +4787,7 @@ function renderDossier(cand, race, r, cached){
   if(ri >= 0 && !race.isMeasure) loadOffices(ri, cand);
   if(ri >= 0 && !race.isMeasure) loadConnections(ri, cand);
   if(ri >= 0 && !race.isMeasure) loadTies(ri, cand);
+  if(ri >= 0 && !race.isMeasure) loadYou(ri, cand);
 }
 
 // Newspaper editorial boards lead the endorsement list; everything else keeps its order.
@@ -4911,6 +5097,113 @@ function loadTies(ri, cand){
   if(!hit) hit = sharedCache[key] = api('/api/shared-donors', { races: peers.races });
   hit.then(function(d){ sharedCache[key] = d; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, d, false, peers.city, dec); })
      .catch(function(){ delete sharedCache[key]; if(tiesActive(ri, cand)) renderTies(ri, cand, acts, {error: true}, false, peers.city, dec); });
+}
+// What this means for you (top of every candidate dossier). The bottom line comes from the money summary;
+// the decisions are the official's own votes since 2025 (/data/you/<person>.json), matched by topic to the
+// household the voter described on this device (the same answers the measure panel uses, never sent anywhere);
+// what's next is the body's next meetings, posted agenda items and how to speak (/data/cycles.json).
+var YOU = {}, youEditing = false;
+var TOPIC_GROUPS = { housing: ['renter', 'homestead', 'owner_other'], development: ['homestead', 'owner_other'], taxes: ['homestead', 'owner_other', 'business'],
+  insurance: ['homestead', 'owner_other'], transit: ['transit'], parks: ['park_user'], schools: ['school_parent', 'school_staff'], libraries: ['library'],
+  seniors: ['senior'], labor: ['public_employee'], business: ['business'], farming: ['farm'],
+  // topics of posted agenda items (scripts/upcoming.mjs) that name the same things
+  daycare: ['school_parent', 'school_staff'], parking: ['transit'], cycling: ['transit'], boating: ['park_user'], nightlife: ['business'], towing: ['business'] };
+var EVERYONE = ['police', 'fire', 'water', 'trash', 'noise'];   // services every household uses; listed separately
+function youTopicLabel(k){ var x = t('topic.' + k); return x === 'topic.' + k ? k : x; }
+function youMatch(topics, me){
+  return (topics || []).filter(function(k){ return EVERYONE.indexOf(k) >= 0 || (TOPIC_GROUPS[k] || []).some(function(g){ return MI && MI.has(me, g); }); });
+}
+function youActive(ri, cand){ return $('youSec') && activeKey && parseInt(activeKey.split(':')[0], 10) === ri && ballot.races[ri].candidates.some(function(c){ return c.name === cand.name; }); }
+function loadYou(ri, cand){
+  if(SUMMARY === null){ summaryWait.push(function(){ loadYou(ri, cand); }); return; }
+  if(CONN === null){ connWait.push(function(){ loadYou(ri, cand); });
+    if(connWait.length === 1) fetch('/data/connections.json').then(function(r){ return r.json(); }).then(function(j){ CONN = j; }).catch(function(){ CONN = {confirmed: []}; }).then(function(){ var w = connWait; connWait = []; w.forEach(function(f){ f(); }); });
+    return; }
+  var sp = summaryFor(cand, ballot.races[ri]);
+  var pid = sp && sp.pid;
+  if(pid && YOU[pid] === undefined){
+    YOU[pid] = fetch('/data/you/' + encodeURIComponent(pid) + '.json').then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(j){ YOU[pid] = j; }).catch(function(){ YOU[pid] = false; })
+      .then(function(){ if(youActive(ri, cand)) loadYou(ri, cand); });
+  }
+  var y = pid && YOU[pid] && !YOU[pid].then ? YOU[pid] : null;
+  renderYou(ri, cand, sp, y, pid && YOU[pid] && YOU[pid].then);
+}
+function renderYou(ri, cand, sp, y, loading){
+  var box = $('youSec');
+  if(!box) return;
+  var me = MI ? MI.load() : null, nm = esc(String(cand.name).split(/\s+and\s+/i)[0]);
+  var h = '<h4>' + t('you.h') + '</h4>';
+  // 1. The bottom line
+  h += '<div class="you-sub">' + t('you.line') + '</div><div class="you-line">';
+  if(sp && window.moneySummary){
+    // the percentage lines, then the money line
+    var nTop = (sp.share && (sp.share.def === 'donorFirst' || sp.share.n) ? 1 : 0) + (sp.bills && sp.bills.universe && sp.bills.universe.n ? 1 : 0);
+    var lines = window.moneySummary(sp, LANG).split('<br>').slice(0, nTop + 1);
+    h += lines.map(function(x){ return '<p>' + x + '</p>'; }).join('');
+  } else h += '<p>' + t('you.noRecord', {name: nm}) + '</p>';
+  var nConn = sp && sp.pid ? (CONN.confirmed || []).filter(function(c){ return c.person === sp.pid; }).length : 0;
+  if(nConn) h += '<p>' + t(nConn === 1 ? 'you.conn1' : 'you.connN', {n: nConn}) + '</p>';
+  h += '</div>';
+  // 2. Decisions that touch you
+  if(y && y.actions && y.actions.length){
+    h += '<div class="you-sub">' + t('you.touch') + '</div>';
+    if(youEditing){
+      box.innerHTML = h + impactForm(me, MI.words(LANG));
+      wireImpactForm(null, function(){ youEditing = false; renderYou(ri, cand, sp, y, false); });
+      return;
+    }
+    if(!MI || !MI.any(me)){
+      var cnt = {};
+      y.actions.forEach(function(a){ (a.topics || []).forEach(function(k){ cnt[k] = (cnt[k] || 0) + 1; }); });
+      var top = Object.keys(cnt).sort(function(a, b){ return cnt[b] - cnt[a]; }).slice(0, 6);
+      if(top.length) h += '<p class="you-p">' + t('you.counts', {n: y.actions.length, name: nm}) + top.map(function(k){ return esc(youTopicLabel(k)) + ' ' + cnt[k]; }).join(' · ') + '.</p>';
+      h += '<p class="you-p">' + t('you.setup') + '</p><button class="btn2" type="button" id="youStart">' + t('you.setupBtn') + '</button>';
+    } else {
+      // Decisions on the voter's own topics first; services everyone uses are counted and listed apart
+      var mine = function(ts){ return (ts || []).filter(function(k){ return (TOPIC_GROUPS[k] || []).some(function(g){ return MI.has(me, g); }); }); };
+      var hits = y.actions.map(function(a){ return {a: a, m: mine(a.topics)}; }).filter(function(x){ return x.m.length; });
+      var common = y.actions.filter(function(a){ return !mine(a.topics).length && (a.topics || []).some(function(k){ return EVERYONE.indexOf(k) >= 0; }); })
+        .map(function(a){ return {a: a, m: a.topics.filter(function(k){ return EVERYONE.indexOf(k) >= 0; })}; });
+      var said = MI.GROUPS.filter(function(g){ return MI.has(me, g); }).map(function(g){ return MI.words(LANG).g[g]; });
+      h += '<p class="imp-me">' + esc(MI.words(LANG).youSaid + said.join('; ') + '. ') + '<button type="button" id="youEdit">' + t('you.edit') + '</button></p>';
+      var row = function(x){
+          var a = x.a, title = (a.title && (a.title[LANG] || a.title.en)) || '';
+          return '<div class="you-row"><div class="you-when">' + esc(fmtDay(a.date)) + ' · ' + x.m.map(function(k){ return esc(youTopicLabel(k)); }).join(', ') + '</div>' +
+            '<div class="you-title">' + esc(title) + '</div><div class="you-meta"><strong>' + t('you.vote.' + a.vote) + '</strong>' +
+            (a.split ? ' · ' + t('you.split') : '') + (a.tied ? ' · <span class="you-tie">' + t('you.donor') + '</span>' : '') +
+            (a.link ? ' ' + srcLink(a.link) : '') + '</div></div>';
+        };
+      if(!hits.length) h += '<p class="you-p">' + t('you.none', {name: nm}) + '</p>';
+      else {
+        var tied = hits.filter(function(x){ return x.a.tied; }).length;
+        h += '<p class="you-p">' + t('you.of', {k: hits.length, n: y.actions.length, name: nm}) + (tied ? ' ' + t('you.ofTied', {k: tied, name: nm}) : '') + '</p>';
+        var CUT = 6;
+        h += hits.slice(0, CUT).map(row).join('');
+        if(hits.length > CUT) h += '<details class="tie-more"><summary>' + t('you.more', {n: hits.length}) + '</summary>' + hits.slice(CUT).map(row).join('') + '</details>';
+      }
+      if(common.length) h += '<details class="tie-more"><summary>' + t('you.common', {n: common.length}) + '</summary>' + common.map(row).join('') + '</details>';
+      h += '<p class="fine">' + t('you.how') + '</p>';
+    }
+  } else if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
+  // 3. What they decide next
+  var nx = y && y.next, lvl = y && y.body && y.body.level;
+  var today = new Date().toISOString().slice(0, 10);
+  var nb = '';
+  if(nx){
+    var up = (nx.schedule || []).filter(function(m){ return m.date >= today; }).slice(0, 2);
+    if(up.length) nb += '<p class="you-p">' + up.map(function(m){ return t('you.nextMeet', {date: esc(fmtDay(m.date)) + (m.time ? ', ' + esc(m.time) : '')}) + (m.source ? ' ' + srcLink(m.source) : ''); }).join('<br>') + '</p>';
+    var ag = (nx.agenda || []).filter(function(it){ return it.date >= today && (!MI || !MI.any(me) || youMatch(it.topics, me).length); });
+    if(ag.length) nb += '<div class="you-p"><strong>' + t('you.agenda') + '</strong><ul>' + ag.slice(0, 8).map(function(it){ return '<li>' + esc(fmtDay(it.date)) + ': ' + esc(it.title) + (it.link ? ' ' + srcLink(it.link) : '') + '</li>'; }).join('') + '</ul></div>';
+    var lv = nx.levers || [];
+    if(lv.length) nb += '<div class="you-p"><strong>' + t('you.speak') + '</strong> <span class="fine">' + t('you.inEn') + '</span><ul>' + lv.map(function(l){
+      return '<li>' + esc(l.how || '') + (l.rules ? ' ' + esc(l.rules) : '') + (l.url ? ' ' + srcLink(l.url) : '') + '</li>'; }).join('') + '</ul></div>';
+  } else if(lvl === 'state') nb += '<p class="you-p">' + t('you.stateNext') + '</p>';
+  else if(y && y.body && /^us/.test(y.body.key)) nb += '<p class="you-p">' + t('you.fedNext') + '</p>';
+  if(nb && sp) h += '<div class="you-sub">' + t('you.next') + '</div>' + nb;
+  box.innerHTML = h;
+  if($('youStart')) $('youStart').onclick = function(){ youEditing = true; renderYou(ri, cand, sp, y, false); };
+  if($('youEdit')) $('youEdit').onclick = function(){ youEditing = true; renderYou(ri, cand, sp, y, false); };
 }
 var TIESF = {};   // person id -> tie file, a pending promise, or false
 var DC = window.DecisionCard ? window.DecisionCard(function(){ return LANG; }) : null;
