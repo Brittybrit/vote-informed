@@ -1395,6 +1395,7 @@ en: {
   'vb.noPrecinct': 'Load your own sample ballot (it lists your precinct) to see your polling place here, or find it with the',
   'vb.findMine': 'Find my polling place',
   'vb.pctFrom': 'From the sample ballot you loaded',
+  'vb.pctFromAddr': 'From the address you looked up',
   'vb.pctNum': 'Precinct {p}',
   'vb.pctCheck': 'Make sure this is your precinct before you go. The county lookup shows your precinct and polling place.',
   'vb.pctBtn': 'Look up my precinct',
@@ -1988,6 +1989,7 @@ es: {
   'vb.noPrecinct': 'Cargue su propia boleta de muestra (indica su precinto) para ver aquí su lugar de votación, o encuéntrelo con la',
   'vb.findMine': 'Encontrar mi lugar de votación',
   'vb.pctFrom': 'De la boleta de muestra que cargó',
+  'vb.pctFromAddr': 'De la dirección que buscó',
   'vb.pctNum': 'Precinto {p}',
   'vb.pctCheck': 'Antes de ir, confirme que este es su precinto. La búsqueda del condado muestra su precinto y su lugar de votación.',
   'vb.pctBtn': 'Buscar mi precinto',
@@ -2581,6 +2583,7 @@ ht: {
   'vb.noPrecinct': 'Chaje pwòp echantiyon bilten vòt ou (li gen pwesen w sou li) pou w wè biwo vòt ou isit la, oswa jwenn li ak',
   'vb.findMine': 'Jwenn biwo vòt mwen',
   'vb.pctFrom': 'Dapre egzanp bilten vòt ou chaje a',
+  'vb.pctFromAddr': 'Dapre adrès ou chèche a',
   'vb.pctNum': 'Pwesen {p}',
   'vb.pctCheck': 'Asire w se pwesen ou anvan ou ale. Rechèch konte a montre pwesen ou ak biwo vòt ou.',
   'vb.pctBtn': 'Chèche pwesen mwen',
@@ -3139,6 +3142,23 @@ function ensurePrecinctsForBallot(){
 /* ---------------- find my ballot by address or location ---------------- */
 // Address -> precinct (/find-precinct.js), then the countywide ballot filtered to that precinct,
 // the same path a typed precinct number takes. Split precincts (116.0 / 116.1) ask the voter.
+// Where the voter told us they live, for this visit only: the address they typed (or their location) and its
+// point. Never written to storage, so the "not saved" promise on the lookup holds; the precinct it found is
+// saved with the ballot plan, as a typed precinct number is. Used to prefill the next thing that needs a place.
+var voterAt = null;
+function voterPrecinct(){
+  var p = ballot && (ballot.precinct || ballot.filterPct);
+  return p && window.precinctFilter ? window.precinctFilter.normPrecinct(p) : (p || '');
+}
+// The voter's city from their precinct (the county's precinct list), as the measure panel's city names it
+function voterPlace(){
+  var p = voterPrecinct(); if(!p || !PRECINCTS || !MI) return '';
+  var row = PRECINCTS.precincts[p] || PRECINCTS.precincts[p.replace(/\.\d$/, '.0')];
+  if(!row) return '';
+  // the precinct list abbreviates (N MIAMI BEACH) and the millage chart drops 'Village' for Indian Creek
+  var name = String(row[3] || '').replace(/^N /, 'North ').replace(/^INDIAN CREEK VILLAGE$/, 'Indian Creek');
+  return MI.placeKey(name);
+}
 function wireFindPrecinct(){
   var f = $('findForm'), loc = $('fpLoc');
   if(!f || !window.findPrecinct) return;
@@ -3155,8 +3175,10 @@ function wireFindPrecinct(){
       loadPrecincts().then(function(){ renderBallot(); setStatus(t('status.fromPct', {p: esc(p)}), false); }).catch(function(){ renderBallot(); });
     });
   }
+  var typed = '';
   function resolve(point){
     return fp.precinctAt(point.lat, point.lng).then(function(whole){
+      if(whole) voterAt = { lat: point.lat, lon: point.lng, addr: typed };
       if(!whole) return fail('fp.outside');
       return loadPrecincts().then(function(d){
         var c = fp.candidates(whole, d);
@@ -3175,12 +3197,14 @@ function wireFindPrecinct(){
     ev.preventDefault();
     var a = fp.cleanAddress($('fpIn').value);
     if(!a || !/\d/.test(a)) return fail('fp.empty');
+    typed = String($('fpIn').value || '').trim();
     busy(true); say(t('fp.working') + '<span class="dots"></span>');
     fp.geocode(a).then(resolve).catch(function(e){
       fail(e && e.message === 'nomatch' ? 'fp.nomatch' : 'fp.fail');
     });
   });
   loc.addEventListener('click', function(){
+    typed = '';
     busy(true); say(t('fp.working') + '<span class="dots"></span>');
     fp.locate().then(resolve).catch(function(e){
       fail(e && (e.code === 1 || e.message === 'unsupported') ? 'fp.denied' : 'fp.fail');
@@ -3809,6 +3833,16 @@ function wireImpactForm(ri, done){
   }
   var w2 = MI.words(LANG);
   $('impLook').onclick = function(){ look({ address: $('impAddr').value, unit: $('impUnit').value }); };
+  // Prefill from what the voter already gave: the address typed in "Find my ballot" (this visit only) and the
+  // city of their precinct. Nothing is looked up until they press the button.
+  if(voterAt && voterAt.addr && !$('impAddr').value) $('impAddr').value = voterAt.addr;
+  if(!$('impPlace').value && voterPrecinct()) loadPrecincts().then(function(){
+    var k = voterPlace(), sel = $('impPlace');
+    if(!k || !sel || sel.value || !document.body.contains(sel)) return;
+    sel.value = k;
+    var hl = sel.nextElementSibling;
+    if(hl) hl.textContent = MI.words(LANG).placeFrom(voterPrecinct()) + ' ' + hl.textContent;
+  }).catch(function(){});
   $('impAddr').addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); $('impLook').click(); } });
   if($('impClear')) $('impClear').onclick = function(){ MI.clear(); finish(); };
 }
@@ -5646,7 +5680,7 @@ function evStatusLine(ph){
 
 function renderVoteBar(){
   var bar = $('voteBar'), ph = votePhase(), html = '';
-  var precinct = ballot && ballot.precinct ? ballot.precinct : '';
+  var precinct = voterPrecinct();
   if(ph.kind === 'over'){ bar.className = 'votenow'; bar.innerHTML = ''; return; }
 
   if(ph.kind === 'pre-ev' || ph.kind === 'ev'){
@@ -5816,6 +5850,17 @@ async function showNearestSites(){
     });
   };
 
+  // Start from what the voter already gave: the address they looked up this visit, then their precinct's
+  // polling place (its ZIP), and only then ask the browser for a location
+  if(voterAt) return render({lat: voterAt.lat, lon: voterAt.lon});
+  var pct = voterPrecinct();
+  if(pct){
+    try{
+      if(myPlaceFor !== pct){ var pr = await fetch('/api/pollingplace?p=' + encodeURIComponent(pct)); myPlace = pr.ok ? await pr.json() : null; myPlaceFor = pct; }
+      var zt = myPlace && myPlace.zip ? await getZipTable() : null, zc = zt && zt[myPlace.zip];
+      if(zc) return render({lat: zc[0], lon: zc[1], zip: myPlace.zip});
+    }catch(e){}
+  }
   if(!navigator.geolocation) return render(null);
   navigator.geolocation.getCurrentPosition(
     function(pos){ render({lat:pos.coords.latitude, lon:pos.coords.longitude}); },
@@ -5826,7 +5871,7 @@ async function showNearestSites(){
 // The precinct comes from reading the sample ballot, so a digit can be misread or the voter may have
 // loaded someone else's ballot. Show it first and put the county's own lookup right next to it.
 function precinctCheck(precinct){
-  return '<div class="vb-pct"><div><div class="vb-kicker">' + t('vb.pctFrom') + '</div>' +
+  return '<div class="vb-pct"><div><div class="vb-kicker">' + t(ballot && ballot.precinct ? 'vb.pctFrom' : 'vb.pctFromAddr') + '</div>' +
     '<div class="vb-pctnum">' + t('vb.pctNum', {p: esc(precinct)}) + '</div>' +
     '<div class="vb-note" style="margin-top:2px">' + t('vb.pctCheck') + '</div></div>' +
     '<a class="vb-btn" href="' + esc(VOTE.lookup) + '" target="_blank" rel="noopener">' + t('vb.pctBtn') + ' &#8599;</a></div>';
