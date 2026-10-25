@@ -39,7 +39,8 @@ for line in open(SP + '/decisions.txt'):
     if it['clip'] == '710' and 'PuigCorve' not in roll and roll and all(v == 'yes' for v in roll.values()) \
             and 'unanimously' in (it['motion'] or ''):
         roll['PuigCorve'] = 'yes'
-        notes.append('Minutes attendance list repeats Pineyro in place of Vice Mayor Puig-Corve; the minutes state all members were present and the vote was unanimous.')
+        mq = re.search(r'(By consensus, )?(Roll call vote - )?motion passes unanimously', it['motion']).group(0)
+        notes.append('Minutes attendance list repeats "Rafael Pineyro" in place of Vice Mayor Puig-Corve. Puig-Corve recorded yes because the minutes state "Meeting was called to order at 10:05 a.m. All members were present." and, for this vote, "%s".' % mq)
         fixes.append(it['file'])
     y = sum(v == 'yes' for v in roll.values()); n = sum(v == 'no' for v in roll.values())
     m = re.search(r'Ordinance #(\d{4}-\d+)', it['title'])
