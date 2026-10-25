@@ -26,3 +26,4 @@ LFIR fiscal years to add: FY2021-22 (2021 session), FY2022-23, FY2023-24, FY2024
 3. python3 -I stageC.py -> Senate rolls for every b:true chapter here and in ../flhouse/bills/stageB.jsonl (rerun after flhouse finishes its 2024 stage B too).
 Nothing in this slice needs Chrome anymore: DOE donors are done; all remaining fetches (bill pages, analysis and vote PDFs) work from shell curl.
 - 13:54:02 chunk1: stageA to 2022-50 (325/541), stageB through 2022-50 done, stageC run (109 roll sheets incl. 2024 flhouse-qualified).
+- 15:35:05 chunk2: stageA to 2022-191 (465/541), stageB through 2022-191 done.
