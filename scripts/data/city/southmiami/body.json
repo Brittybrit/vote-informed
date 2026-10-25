@@ -24,6 +24,12 @@
    "key": "Rodriguez",
    "name": "Danny Rodriguez",
    "person": "danny-rodriguez"
+  },
+  {
+   "key": "Liebman",
+   "name": "Josh Liebman",
+   "person": "josh-liebman",
+   "former": true
   }
  ],
  "onBallot": {
@@ -47,5 +53,20 @@
  },
  "ballotNames": {
   "Fernandez": "Javier E. Fernández"
+ },
+ "since": "2022-11-08",
+ "tenure": {
+  "Fernandez": {
+   "start": "2022-11-08",
+   "giftsFrom": "2020-01-01"
+  },
+  "Bonich": {
+   "start": "2022-11-08",
+   "giftsFrom": "2020-01-01"
+  },
+  "Calle": {
+   "start": "2022-11-08",
+   "giftsFrom": "2020-01-01"
+  }
  }
 }
