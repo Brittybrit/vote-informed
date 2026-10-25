@@ -4,3 +4,23 @@
 - silvia-p-tarafa: done | interests 1 | ties 0 | Form 1 from KB qualifying docs; salary source at 520 Crandon (education) unnamed on form
 - oscar-sardinas: done | interests 3 | ties 0 | EFDMS 1105918; no action names OELS LLC, Kopu, or Ambassador Condo
 - fernando-a-vazquez: done | interests 2 | ties 8 | Keith ranked in KB RFQ 2026-03 (vote outcome not posted); Keith contracts in SIB, Opa-locka, Pinecrest, Doral
+- edgar-ayala: done | interests 3 | ties 0 | only income is Town of Medley (his own body); Medley rolls not posted, so no budget/benefit votes can be read
+- lizelh-rodriguez: done | interests 2 | ties 0 | UM employer; no Medley item names UM
+- ivan-pacheco: done | interests 1 | ties 0 | latest public Form 1 is 2023 (Town of Medley employee)
+- juan-stefano: done | interests 0 (null line) | ties 0 | no filing found; Medley qualifying papers not online
+- gloria-hernandez: done | interests 0 (null line) | ties 0 | no filing found
+- fred-spencer-deno-iv: done | interests 1 | ties 0 | USPS employee; no VG item names USPS
+- jorge-arce: done | interests 1 | ties 0 | SSA only
+- elizabeth-taylor-martinez: done | interests 1 | ties 0 | income from Village General Fund (own body); no business ties
+- fernando-a-vazquez (update): +1 tie FACTS (FDOT, 35 Keith contracts); federal (USAspending) none; Miami-Dade County none found
+- magaly-gordo: done | interests 1 | ties 0 | Ocean Mortgages & Investments LLC, name+address match to her DS-DE 9
+- robert-balciunas: done | interests 1 | ties 0 | Libero AM Corp name only
+- dana-goldman: done | interests 1 | ties 0 | name only; 2022 Form 1 not public
+- alex-brisk: done | interests 1 | ties 0 | name only
+- steve-hirsch: done | interests 0 (null) | ties 0
+- david-vergel: done | interests 0 (null) | ties 0
+- carolina-cruz-gonzalez: done | interests 0 (null) | ties 0
+- robert-j-spence-iii: done | interests 0 (null) | ties 0
+- larisa-svechin: done | interests 1 | ties 0 | recused herself at 7:21pm 2025-06-17 for the rest of the meeting (no reason in minutes), which included the Keith 9E vote; not tied to her interests
+- tim-boylan: done | interests 0 (null) | ties 0
+- michael-tur: done | interests 0 (null) | ties 0
