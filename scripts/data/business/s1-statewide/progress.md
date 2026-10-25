@@ -1,0 +1,1 @@
+- byron-donalds: done | interests 9 | ties 34 | House FD CY2023A/2024/2025; 5 schools 990s (IRS e-file via ProPublica) + Auditor General audits FY21-25 + OCA FY26 audit + 25-26/26-27 budgets ($15,719,881 confirmed); FL House votes 2017-20 + US roll 102/2024; FACTS/USAspending no hits; Collier BoardDocs 403. See donalds-optima.md
