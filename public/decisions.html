@@ -140,6 +140,18 @@
   try { var s0 = localStorage.getItem('ballot305.lang'); if (S[s0]) LANG = s0; } catch(e){}
 
   var GS = [];   // race groups, built once the data loads (DC.groupsOf)
+  var LOADING = {};   // body key -> its file's fetch, once started
+  // /data/decisions/index.json has every body without its actions; a race's body files load when it is opened.
+  function need(G){
+    G.parts.forEach(function(p){
+      var k = p.B.key;
+      if(Array.isArray(p.B.actions) || LOADING[k]) return;
+      LOADING[k] = fetch('/data/decisions/' + encodeURIComponent(k) + '.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(B){
+        DATA.bodies = DATA.bodies.map(function(x){ return x.key === k ? B : x; });
+        GS = DC.groupsOf(DATA); render();
+      }).catch(function(){ delete LOADING[k]; if(BK === G.key) document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('loadErr')) + '</p>'; });
+    });
+  }
   var LEGACY = {ushouse: 'us-house', ussenate: 'us-senate', flhouse: 'fl-house', flsenate: 'fl-senate'};
   function cur(){ for (var i = 0; i < GS.length; i++) if (GS[i].key === BK) return GS[i]; return null; }
   function fromHash(){
@@ -183,12 +195,13 @@
     if(!BK && GS.length) BK = fromHash();
     var PICK = !BK, G = cur();
     if(!PICK && BK !== '_others' && !G){ BK = null; PICK = true; }
+    if(G && !G.cards) need(G);
     document.querySelector('.tools').hidden = PICK || !GS.length;
-    document.getElementById('how').innerHTML = PICK || BK === '_others' ? '<p>' + t('how2').slice(Math.max(0, t('how2').search(/[^.>]*<a href="\/methodology/))) + '</p>' : howFor(G);
-    document.getElementById('bodies').innerHTML = GS.map(function(g){ return '<a href="#' + g.key + '" data-b="' + g.key + '"><span class="' + (g.key === BK ? 'on' : '') + '">' + esc(tabName(g)) + ' <small>' + g.cards.length + '</small></span></a>'; }).join('') +
+    document.getElementById('how').innerHTML = PICK || BK === '_others' ? '<p>' + t('how2').slice(Math.max(0, t('how2').search(/[^.>]*<a href="\/methodology/))) + '</p>' : G.cards ? howFor(G) : '';
+    document.getElementById('bodies').innerHTML = GS.map(function(g){ return '<a href="#' + g.key + '" data-b="' + g.key + '"><span class="' + (g.key === BK ? 'on' : '') + '">' + esc(tabName(g)) + ' <small>' + g.count + '</small></span></a>'; }).join('') +
       (DATA && DATA.others ? '<a href="#_others" data-b="_others"><span class="' + (BK === '_others' ? 'on' : '') + '">' + t('othersH') + '</span></a>' : '');
     document.querySelectorAll('#bodies [data-b]').forEach(function(x){ x.addEventListener('click', function(e){ e.preventDefault(); BK = x.getAttribute('data-b'); try { history.replaceState(null, '', '#' + BK); } catch(err){} render(); }); });
-    var fk = G ? ['all'].concat(['gift', 'split', 'lob', 'unreg', 'fund', 'bill'].filter(function(k){ return G.cards.some(FLAGS[k]); })) : [];
+    var fk = G && G.cards ? ['all'].concat(['gift', 'split', 'lob', 'unreg', 'fund', 'bill'].filter(function(k){ return G.cards.some(FLAGS[k]); })) : [];
     if(fk.indexOf(F) < 0) F = 'all';
     document.getElementById('filters').innerHTML = fk.map(function(k){
       return '<button data-f="' + k + '" class="' + (F === k ? 'on' : '') + '">' + t('f' + k.charAt(0).toUpperCase() + k.slice(1)) + '</button>';
@@ -203,6 +216,11 @@
     if(BK === '_others'){
       document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
       document.getElementById('list').innerHTML = othersHtml(); filter(); return;
+    }
+    if(!G.cards){
+      document.getElementById('stats').innerHTML = ''; document.getElementById('ballot').innerHTML = '';
+      document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('loading')) + '</p>';
+      document.getElementById('noresult').hidden = true; return;
     }
     var C = G.cards;
     document.getElementById('stats').innerHTML =
@@ -250,7 +268,7 @@
   render();
   var SUM = null;
   fetch('/data/money-summary.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ SUM = j; if(DATA) render(); }).catch(function(){});
-  fetch('/data/decisions.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
+  fetch('/data/decisions/index.json').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){ DATA = j; render(); })
     .catch(function(){ document.getElementById('list').innerHTML = '<p class="empty">' + esc(t('loadErr')) + '</p>'; });
 })();
 

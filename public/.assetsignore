@@ -1,0 +1,4 @@
+# Files under public/ that are not uploaded as static assets (Cloudflare Workers .assetsignore, gitignore syntax).
+# decisions.json is the pipeline's source of truth and will outgrow the 25 MiB per-asset limit; the site serves
+# its split in data/decisions/ (scripts/split-decisions.mjs).
+/data/decisions.json

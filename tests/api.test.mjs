@@ -100,7 +100,9 @@ test('people search, transparency, bulk, openapi, etag', async () => {
   const { body: tr } = await get('/api/v1/transparency');
   assert.ok(tr.cities.length >= 18);
   const { body: bulk } = await get('/api/v1/bulk');
-  assert.ok(bulk.files.some(f => f.path.endsWith('/data/decisions.json')));
+  assert.ok(bulk.files.some(f => f.path.endsWith('/data/decisions/index.json')));
+  assert.ok(bulk.files.some(f => f.path.endsWith('/data/decisions/county.json')));
+  assert.ok(!bulk.files.some(f => f.path.endsWith('/data/decisions.json')), 'decisions.json is not deployed');
   const { body: oa } = await get('/api/v1/openapi.json');
   assert.equal(oa.openapi, '3.0.3');
   assert.ok(oa.paths['/ties']);

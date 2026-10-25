@@ -305,8 +305,13 @@
           part.keys.push(k);
         });
       });
+      // A body read from /data/decisions/index.json has no actions until its own file loads; then the group's
+      // cards are null (pending) and its count comes from the index (B.cardCounts).
       out.forEach(function(G){
         var cards = [];
+        G.count = 0;
+        G.parts.forEach(function(p){ if(!Array.isArray(p.B.actions)){ cards = null; G.count += (p.B.cardCounts || {})[G.key] || 0; } });
+        if(!cards){ G.cards = null; return; }
         G.parts.forEach(function(p){
           var B = p.B, ob = {};
           p.keys.forEach(function(k){ ob[k] = B.onBallot[k]; });
@@ -321,6 +326,7 @@
         });
         cards.sort(function(x, y){ return String(y.a.date).localeCompare(String(x.a.date)); });
         G.cards = cards;
+        G.count = cards.length;
       });
       out.sort(function(x, y){ return x.order - y.order; });
       return out;

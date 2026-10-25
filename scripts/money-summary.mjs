@@ -1,10 +1,12 @@
 // One-line money summary per incumbent on the Nov 3 ballot, built from public/data/decisions.json.
-// Run: node scripts/money-summary.mjs   (writes public/data/money-summary.json)
+// Run: node scripts/money-summary.mjs   (writes public/data/money-summary.json, public/data/ties/, and the
+// served split of decisions.json in public/data/decisions/ via scripts/split-decisions.mjs)
 // tests/money-summary.test.mjs fails if the JSON and this builder disagree.
 //
 // Rules:
 // - Only gifts dated 2025-01-01 or later count (2025-2026 cycle rule), except federal members, whose gifts
-//   count from one cycle before their tenure began (giftStart); so do county members with a tenure entry (Gilbert).
+//   count from one cycle before their tenure began (giftStart); so do county members with a tenure entry (Gilbert)
+//   and the full-tenure city lists (TENURE_CITIES).
 // - A gift is counted once, however many actions it ties to.
 // - "Before": a gift dated before at least one action it ties to.
 // - State legislators: money tied to budget requests and money tied only to bill votes are kept apart.
@@ -15,7 +17,10 @@ export const CYCLE_START = '2025-01-01';
 // Federal bodies built over each member's full tenure (B.tenure[key] = { start, giftsFrom }) count gifts
 // from one cycle before the member took office (Brit, Oct 25, 2026). The County Commission does the same for each
 // member with a B.tenure entry (Gilbert: from 2019); members without one (Lopez) and everything else keep CYCLE_START.
-export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county') && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
+// City lists built back to each incumbent's tenure start (Coral Gables, Doral, South Miami) do the same, from
+// scripts/data/city/<slug>/body.json tenure (Lago from 2011, Castro 2021, Porras 2020, South Miami 2020).
+export const TENURE_CITIES = new Set(['coralgables', 'doral', 'southmiami']);
+export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county' || TENURE_CITIES.has(B.key)) && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {
   let s = String(n || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
@@ -235,4 +240,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   for (const f of readdirSync(dir)) if (f.endsWith('.json') && !ties[f.slice(0, -5)]) unlinkSync(new URL(f, dir));
   for (const [pid, t] of Object.entries(ties)) writeFileSync(new URL(pid + '.json', dir), JSON.stringify(t) + '\n');
   console.log(Object.keys(out.people).length + ' people, ' + Object.keys(ties).length + ' tie files');
+  // The site serves decisions.json split per body (public/data/decisions/); keep the split current.
+  const { writeSplit } = await import('./split-decisions.mjs');
+  const { bodies } = writeSplit(d);
+  console.log('decisions split: index.json + ' + Object.keys(bodies).length + ' body files');
 }

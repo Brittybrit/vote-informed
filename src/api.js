@@ -49,7 +49,9 @@ export const API_VERSION = '1';
 export const DATA_LICENSE = { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/', attribution: 'Ballot305 (ballot305.org)' };
 
 const FILES = {
-  decisions: '/data/decisions.json',
+  // decisions.json is split for serving (scripts/split-decisions.mjs): this index has every body without
+  // its actions; each body's file is DECISIONS_BODY(key). loadApiData joins them back into one object.
+  decisions: '/data/decisions/index.json',
   roster: '/data/roster.json',
   transparency: '/data/transparency.json',
   moneySummary: '/data/money-summary.json',
@@ -59,6 +61,7 @@ const FILES = {
   upcoming: '/data/upcoming.json',
   connections: '/data/connections.json'
 };
+const DECISIONS_BODY = key => '/data/decisions/' + encodeURIComponent(key) + '.json';
 const MAX_LIMIT = 500, DEFAULT_LIMIT = 100;
 
 const CORS = {
@@ -72,12 +75,19 @@ let cache = null; // { key, data } per isolate
 
 export async function loadApiData(env) {
   const raw = {};
-  for (const [k, path] of Object.entries(FILES)) {
+  const asset = async path => {
     const res = await env.ASSETS.fetch(new Request('https://assets.local' + path));
-    raw[k] = res.ok ? await res.json() : null;
-  }
+    return res.ok ? await res.json() : null;
+  };
+  for (const [k, path] of Object.entries(FILES)) raw[k] = await asset(path);
   const key = [raw.decisions && raw.decisions.updated, raw.roster && raw.roster.updated, raw.transparency && raw.transparency.updated, raw.cycles && raw.cycles.updated, raw.precincts && raw.precincts.asOf, raw.contacts && raw.contacts.updated, raw.upcoming && raw.upcoming.updated, raw.connections && raw.connections.updated].join('|');
   if (cache && cache.key === key) return cache.data;
+  // The body files are read only when the data version changed.
+  if (raw.decisions) {
+    const bodies = await Promise.all((raw.decisions.bodies || []).map(b => asset(DECISIONS_BODY(b.key))));
+    if (bodies.some(b => !b)) throw new Error('decisions body file missing');
+    raw.decisions = { ...raw.decisions, bodies };
+  }
   cache = { key, data: buildIndex(raw) };
   return cache.data;
 }
@@ -156,7 +166,7 @@ export function buildIndex(raw) {
         note: text(a.note),
         notes: a.note || null,
         links: a.links || [],
-        source: { file: FILES.decisions, updated: dec.updated || null }
+        source: { file: DECISIONS_BODY(b.key), updated: dec.updated || null }
       };
       // Carry any field this view does not name so nothing is lost; the named ones win.
       for (const [k, v] of Object.entries(a)) if (!(k in act) && k !== 'gifts' && k !== 'roll' && k !== 'subject' && k !== 'note') act[k] = v;
@@ -372,7 +382,8 @@ function bulk(data, url) {
     updated: data.updated,
     license: DATA_LICENSE,
     files: [
-      { path: o + FILES.decisions, what: 'every body, action, roll call, lobbyist registration and tied gift (site-native shape)' },
+      { path: o + FILES.decisions, what: 'every body without its actions (site-native shape); each body\'s actions, roll calls, lobbyist registrations and tied gifts are in the files below' },
+      ...data.bodies.map(b => ({ path: o + DECISIONS_BODY(b.key), what: text(b.names) + ': the body with every action, roll call, lobbyist registration and tied gift (site-native shape)' })),
       { path: o + '/data/donor-actions.json', what: 'hand-checked candidate action cards' },
       { path: o + '/data/donor-actions.csv', what: 'the same cards as CSV' },
       { path: o + FILES.roster, what: 'officeholder roster: people, offices, terms, ballot' },

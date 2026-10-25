@@ -43,7 +43,8 @@ const parts = s => { // "Last, First" or "First Last"
 const tidy = s => { s = String(s).replace(SUF, '').replace(/"/g, '').replace(/\s+/g, ' ').trim(); if (s.includes(',')) { const [l, f] = s.split(',').map(x => x.trim()); s = `${f} ${l}`; } return s === s.toUpperCase() ? s.toLowerCase().replace(/(^|[\s\-'])([a-z])/g, (m, a, b) => a + b.toUpperCase()).replace(/\bDe La\b/g, 'de la').replace(/\bDe\b/g, 'de') : s; };
 for (const l of J('scripts/data/city/doral/lobbyists-2026.json').lobbyists) add(l.firm, l.name, 'Doral');
 for (const l of J('public/data/county-lobbyists.json').lobbyists) { const o = OFFICE[akey(l.addr)]; if (o) add(o, l.name, 'county'); }
-for (const y of ['2025', '2026']) { let cur = null; for (const r of table(readFileSync(P(`scripts/data/city/coralgables/lobbyists-${y}.csv`), 'utf8'))) { if (r.Lobbyist1) cur = { name: r.Lobbyist1, addr: (r.Textbox31 || '').split('\n').pop() }; if (!cur) continue; const o = OFFICE[akey(cur.addr)]; if (o) add(o, cur.name, 'Coral Gables'); } }
+// Coral Gables registries back to 2017 (the full-tenure list reaches 2013; no CSV before 2017 is posted)
+for (const y of ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026']) { let cur = null; for (const r of table(readFileSync(P(`scripts/data/city/coralgables/lobbyists-${y}.csv`), 'utf8'))) { if (r.Lobbyist1) cur = { name: r.Lobbyist1, addr: (r.Textbox31 || '').split('\n').pop() }; if (!cur) continue; const o = OFFICE[akey(cur.addr)]; if (o) add(o, cur.name, 'Coral Gables'); } }
 const FIRMS = J('scripts/data/state/lobbyfirms/firms.json').firms; for (const f in FIRMS) for (const p of FIRMS[f]) add(f, p, 'Legislature');
 
 // Donors per body
@@ -51,8 +52,9 @@ const vf = (file, to, acct) => table(readFileSync(P(file), 'utf8')).filter(r => 
 const reports = J('public/data/city-reports.json').cities;
 const hand = (city, cand, to, acct) => { const c = reports.find(x => x.city === city).candidates.find(x => x.name === cand); return (c.reports || []).flatMap(r => r.rows.filter(x => x[2] !== 'S' && !x[4]).map(x => ({ to, acct, date: x[0], amount: x[3], donor: x[1], addr: '', occ: '', typ: x[2], hand: true }))); };
 const DON = {
-  coralgables: [...vf('scripts/data/city/coralgables/lago.csv', 'Lago', 'lago'), ...vf('scripts/data/city/coralgables/castro.csv', 'Castro', 'castro')],
-  doral: vf('scripts/data/city/doral/porras.csv', 'Porras', 'porras'),
+  // every report export for each account (<acct>.csv for this cycle, <acct>_<year>.csv for earlier races)
+  coralgables: [...['lago', 'lago_2021', 'lago_2023', 'lago_2025'].flatMap(f => vf(`scripts/data/city/coralgables/${f}.csv`, 'Lago', 'lago')), ...['castro', 'castro_2023'].flatMap(f => vf(`scripts/data/city/coralgables/${f}.csv`, 'Castro', 'castro'))],
+  doral: ['porras', 'porras_2022'].flatMap(f => vf(`scripts/data/city/doral/${f}.csv`, 'Porras', 'porras')),
   aventura: hand('Aventura', 'Howard S. Weinberg', 'Weinberg', 'weinberg'),
   nmb: [...hand('North Miami Beach', 'Jay R. Chernoff', 'Chernoff', 'chernoff'), ...hand('North Miami Beach', 'Phyllis Smith', 'Smith', 'smith')],
 };

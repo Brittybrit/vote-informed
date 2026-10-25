@@ -107,7 +107,7 @@
         return s0 + act + '. On ' + r + ' (' + q[1] + '), they did not.';
       },
       tookBills: function(p, Bl, fed){ var n = p.donors; return He(p) + ' took ' + usd(p.total) + ' from ' + (fed ? (n === 1 ? '1 PAC' : n + ' PACs') : this.donors(n)) + ' in industries helped by ' + (Bl.bills === 1 ? 'a bill' : 'bills') + ' ' + he(p) + ' voted for.'; },
-      none: function(p, b){ return 'No donors found with business before ' + this.before(b) + ' in 2025 or 2026.'; },
+      none: function(p, b){ return 'No donors found with business before ' + this.before(b) + (p.giftsFrom ? ' from ' + p.giftsFrom.slice(0, 4) + ' on.' : ' in 2025 or 2026.'); },
       nogivers: function(p){ return esc(p.name) + '’s reports show no outside donors.'; },
       nodata: function(p){ return 'No itemized donor reports are posted for ' + esc(p.name) + ', so this could not be checked.'; },
       noneCity: 'No donors found with business before the city in 2025 or 2026.',
@@ -182,7 +182,7 @@
           : 'votó en ' + S.tied + ' acciones (' + q[0] + ') que involucraron a uno de sus donantes';
         return s0 + act + '. En ' + r + ' (' + q[1] + '), no.';
       },
-      none: function(p, b){ return 'No se encontraron donantes con asuntos ante ' + this.before(b) + ' en 2025 ni 2026.'; },
+      none: function(p, b){ return 'No se encontraron donantes con asuntos ante ' + this.before(b) + (p.giftsFrom ? ' desde ' + p.giftsFrom.slice(0, 4) + '.' : ' en 2025 ni 2026.'); },
       nogivers: function(p){ return 'Los informes de ' + esc(p.name) + ' no muestran donantes externos.'; },
       nodata: function(p){ return 'No hay informes detallados de donantes publicados para ' + esc(p.name) + ', así que esto no se pudo revisar.'; },
       noneCity: 'No se encontraron donantes con asuntos ante la ciudad en 2025 ni 2026.',
@@ -257,7 +257,7 @@
           : 'li te vote sou ' + S.tied + ' aksyon (' + q[0] + ') ki te gen youn nan donatè li yo ladan';
         return s0 + act + '. Pou ' + r + ' (' + q[1] + '), pa t genyen.';
       },
-      none: function(p, b){ return 'Nou pa jwenn okenn donatè ki te gen dosye devan ' + this.before(b) + ' an 2025 oswa 2026.'; },
+      none: function(p, b){ return 'Nou pa jwenn okenn donatè ki te gen dosye devan ' + this.before(b) + (p.giftsFrom ? ' depi ' + p.giftsFrom.slice(0, 4) + '.' : ' an 2025 oswa 2026.'); },
       nogivers: function(p){ return 'Rapò ' + esc(p.name) + ' yo pa montre okenn donatè deyò.'; },
       nodata: function(p){ return 'Pa gen rapò donatè detaye ki afiche pou ' + esc(p.name) + ', kidonk nou pa t ka verifye.'; },
       noneCity: 'Nou pa jwenn okenn donatè ki te gen dosye devan vil la an 2025 oswa 2026.',

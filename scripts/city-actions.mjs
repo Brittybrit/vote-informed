@@ -79,6 +79,9 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
     for (const m of BJ.members || []) { const x = B.members.find(y => y.key === m.key); if (!x) B.members.push(m); else if (!x.person) x.person = m.person; }
     for (const [k, v] of Object.entries(BJ.onBallot || {})) if (!B.onBallot[k]) B.onBallot[k] = v;
     for (const [k, v] of Object.entries(BJ.accounts || {})) if (!B.accounts[k]) B.accounts[k] = v;
+    // Full-tenure lists (body.json tenure: { key: { start, giftsFrom } }): gifts count from giftsFrom (scripts/money-summary.mjs)
+    if (BJ.tenure) B.tenure = BJ.tenure;
+    if (BJ.since) B.since = BJ.since;
     const names = new Set(Object.values(BJ.ballotNames || {}));
     for (const o of d.others || []) o.people = o.people.filter(p => !names.has(p.name));
     d.others = (d.others || []).filter(o => o.people.length);
@@ -112,7 +115,13 @@ for (const [slug, key] of Object.entries(MAP).filter(([s]) => ONLY.includes(s)))
     if (!u.tally && vs.length && vs.every(v => v != null && v !== 'unknown')) u.tally = [vs.filter(v => v === 'yes').length, vs.filter(v => v === 'no').length];
     const leg = u.legacyId && prior.get(u.legacyId);
     const old = prior.get(u.id) || (u.prevId && prior.get(u.prevId)) || (leg && nLegacy[u.legacyId] === 1 ? leg : null);
-    if (old) { used.add(old.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true; return old; }
+    if (old) {
+      used.add(old.id); if (!old.roll || !Object.keys(old.roll).length) { old.roll = u.roll; old.tally = u.tally; } old.universe = true;
+      // a card note added after the card was first built (idempotent: added once)
+      const cn0 = NOTES[u.bareId || u.id] || NOTES[u.id];
+      if (cn0 && !(old.note && old.note.en && old.note.en.includes(cn0.en))) old.note = old.note ? { en: cn0.en + ' ' + old.note.en, es: cn0.es + ' ' + old.note.es, ht: cn0.ht + ' ' + old.note.ht } : cn0;
+      return old;
+    }
     const a = {
       id: u.id, date: u.date, ref: u.ref || '', kind: KIND[u.kind] || u.kind, subject: { en: u.title, ...(TR[u.bareId || u.id] || TR[u.id] || {}) }, parties: u.parties || [],
       result: u.result || 'adopted', tally: u.tally || null, roll: u.roll || {}, rollComplete: !!u.roll && Object.keys(u.roll).length > 0 && Object.values(u.roll).every(v => v != null && v !== 'unknown'),

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import vm from 'node:vm';
-import { build, buildTies, CYCLE_START, giftStart } from '../scripts/money-summary.mjs';
+import { build, buildTies, CYCLE_START, giftStart, TENURE_CITIES } from '../scripts/money-summary.mjs';
 
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 const decisions = JSON.parse(read('../public/data/decisions.json'));
@@ -35,8 +35,8 @@ test('gifts before the cycle are not counted', () => {
   // Congress members' gifts count from one cycle before their tenure began (giftStart); everyone else from CYCLE_START
   for (const B of decisions.bodies) for (const a of B.actions) for (const g of a.gifts)
     assert.ok(g.date >= giftStart(B, g.to), B.key + ' ' + a.id + ' gift dated ' + g.date);
-  // Full-tenure county members with a tenure entry (Gilbert) count from one cycle before their start; others from CYCLE_START
-  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), B.key === 'county' && B.tenure && B.tenure[k] ? B.tenure[k].giftsFrom : CYCLE_START, B.key + ' ' + k);
+  // Full-tenure county members with a tenure entry (Gilbert) and the full-tenure city lists count from one cycle before their start; others from CYCLE_START
+  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), (B.key === 'county' || TENURE_CITIES.has(B.key)) && B.tenure && B.tenure[k] ? B.tenure[k].giftsFrom : CYCLE_START, B.key + ' ' + k);
   const C = decisions.bodies.find(b => b.key === 'county');
   assert.equal(giftStart(C, 'Gilbert'), '2019-01-01'); assert.equal(giftStart(C, 'Lopez'), CYCLE_START);
   assert.ok(!saved.people['natasha-l-ervin'].total);
