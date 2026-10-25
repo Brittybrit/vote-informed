@@ -150,7 +150,10 @@ function disclosureLeads() {
       const nn = norm(n.name); if (nn.length < 6) continue;
       for (const t of targets) {
         const nt = norm(t.name); if (!nt) continue;
-        if (nn === nt || (nn.length >= 10 && nt.length >= 10 && (nn.startsWith(nt) || nt.startsWith(nn)))) addLead({ signal: n.auto ? (n.kind.startsWith('Sunbiz') ? 'officer' : 'stated') : 'officer', person: of.person, official: (roster.people.find(p => p.id === of.person) || {}).name, other: t.name, otherKind: t.kind, weak: !n.auto, autoConfirm: n.auto, evidence: [{ note: n.kind + ': ' + n.name, url: n.url || null }, { note: t.note, url: t.url }] });
+        // Only an exact name match can auto-confirm: a prefix match ('Miami-Dade County Public Schools' vs 'Miami-Dade County')
+        // can be a different entity, so it stays a lead for review.
+        const exact = nn === nt;
+        if (exact || (nn.length >= 10 && nt.length >= 10 && (nn.startsWith(nt) || nt.startsWith(nn)))) addLead({ signal: n.auto ? (n.kind.startsWith('Sunbiz') ? 'officer' : 'stated') : 'officer', person: of.person, official: (roster.people.find(p => p.id === of.person) || {}).name, other: t.name, otherKind: t.kind, weak: !n.auto || !exact, autoConfirm: n.auto && exact, evidence: [{ note: n.kind + ': ' + n.name, url: n.url || null }, { note: t.note, url: t.url }] });
       }
     }
     for (const ad of addrs) {

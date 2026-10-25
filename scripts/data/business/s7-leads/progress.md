@@ -1,0 +1,137 @@
+# s7-leads progress
+
+One line per lead decided (key: status). Rerun skips keys already in decisions.jsonl. First pass was regenerated once after a wording fix.
+
+- stated|sherelean-bass|miami dade county|party: dismissed
+- employer|james-uthmeier|williams communications|donor who reports working for a party: confirmed
+- surname|juan-carlos-bermudez|bermudez luis|registered lobbyist: dismissed
+- surname|juan-carlos-bermudez|bermudez gabriel|registered lobbyist: dismissed
+- surname|juan-carlos-bermudez|bermudez jose|registered lobbyist: dismissed
+- employer|luis-gonzalez|ignacio serracta|donor who reports working for a party: dismissed
+- employer|melissa-castro|coral gables pro firefighters|donor who reports working for a party: dismissed
+- surname|micky-steinberg|steinberg david|registered lobbyist: dismissed
+- surname|raquel-a-regalado|roberto regalado|lobbyist: dismissed
+- surname|raquel-a-regalado|regalado roberto|registered lobbyist: dismissed
+- surname|william-marrero|alberto marrero|party: dismissed
+- surname|william-marrero|marrero armor|party: dismissed
+- surname|anthony-rodriguez|rodriguez ana|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez joshua|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez juan|registered lobbyist: dismissed
+- surname|anthony-rodriguez|lourdes rodriguez lorido|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez michael|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez julio|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez mercedes|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez yesenia|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez caballero nicholas|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez mayoly|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez janina|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez manuel|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez iraida|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez torres christian|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez alex|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez karla|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez mari|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez anton jordan|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez raul|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez ariana|registered lobbyist: dismissed
+- surname|anthony-rodriguez|rodriguez giselle|registered lobbyist: dismissed
+- surname|anthony-rodriguez|quincosa rodriguez melissa|registered lobbyist: dismissed
+- surname|ariel-fernandez|javier e fernandez|lobbyist: dismissed
+- surname|ariel-fernandez|rodolfo fernandez|lobbyist: dismissed
+- surname|ariel-fernandez|javier fernandez|lobbyist: dismissed
+- surname|gelien-perez|jenelly perez|lobbyist: dismissed
+- surname|gelien-perez|ernesto perez|party: dismissed
+- surname|gelien-perez|julio perez|lobbyist: dismissed
+- surname|gelien-perez|carlos perez|party: dismissed
+- surname|gelien-perez|demetrio perez|party: dismissed
+- surname|gelien-perez|barbara perez|party: dismissed
+- surname|gelien-perez|emanuel perez|party: dismissed
+- surname|gelien-perez|yiliam perez|party on upcoming item: dismissed
+- surname|jerry-joseph|joseph milton|party: dismissed
+- surname|luis-gonzalez|leonardo gonzalez|party: dismissed
+- surname|luis-gonzalez|alexis gonzalez|party: dismissed
+- surname|luis-gonzalez|pedro gonzalez|party: dismissed
+- surname|luis-gonzalez|xiomara gonzalez|party: dismissed
+- surname|luis-gonzalez|karel gonzalez duardo|party: dismissed
+- surname|luis-gonzalez|kirenia gonzalez moreno|party: dismissed
+- surname|luis-gonzalez|maritza gonzalez casamayor|party: dismissed
+- surname|luis-gonzalez|yovanny gonzalez|party: dismissed
+- surname|luis-rodriguez|carlos rodriguez|party: dismissed
+- surname|luis-rodriguez|roque g rodriguez and family owners|party: dismissed
+- surname|michael-joseph|joseph g goldstein|lobbyist: dismissed
+- surname|monica-perez|jenelly perez|lobbyist: dismissed
+- surname|monica-perez|ernesto perez|party: dismissed
+- surname|monica-perez|julio perez|lobbyist: dismissed
+- surname|monica-perez|carlos perez|party: dismissed
+- surname|monica-perez|demetrio perez|party: dismissed
+- surname|monica-perez|barbara perez|party: dismissed
+- surname|monica-perez|emanuel perez|party: dismissed
+- surname|monica-perez|yiliam perez|party on upcoming item: dismissed
+- surname|oliver-g-gilbert-iii|gilbert ben|registered lobbyist: dismissed
+- surname|oliver-g-gilbert-iii|gonzalez gilbert|registered lobbyist: dismissed
+- surname|oliver-g-gilbert-iii|gilbert robert|registered lobbyist: dismissed
+- surname|phyllis-smith|smith equipment and supply|party: dismissed
+- surname|rene-garcia|mario j garcia serra|donor: dismissed
+- surname|rene-garcia|manuel garcia tunon|lobbyist: dismissed
+- surname|rene-garcia|garcia clara|lobbyist: dismissed
+- surname|rene-garcia|francisco garcia|lobbyist: dismissed
+- surname|rene-garcia|mario garcia serra|lobbyist: dismissed
+- surname|rene-garcia|garcia randy|registered lobbyist: dismissed
+- surname|rene-garcia|garcia tunon jose|registered lobbyist: dismissed
+- surname|rene-garcia|garcia sarah|registered lobbyist: dismissed
+- surname|rene-garcia|garcia jaime|registered lobbyist: dismissed
+- surname|rene-garcia|clara garcia|registered lobbyist: dismissed
+- surname|rene-garcia|garcia serra mario|registered lobbyist: dismissed
+- surname|rene-garcia|garcia janet|registered lobbyist: dismissed
+- surname|rene-garcia|garcia toledo rafael|registered lobbyist: dismissed
+- surname|rene-garcia|garcia tunon manuel|registered lobbyist: dismissed
+- surname|rene-garcia|garcia samantha|registered lobbyist: dismissed
+- surname|rene-garcia|garcia luis|registered lobbyist: dismissed
+- surname|rene-garcia|garcia elio|registered lobbyist: dismissed
+- surname|rene-garcia|garcia brian|registered lobbyist: dismissed
+- surname|rene-garcia|khell garcia nina|registered lobbyist: dismissed
+- surname|rene-garcia|garcia armando|registered lobbyist: dismissed
+- surname|rene-garcia|garcia francisco|registered lobbyist: dismissed
+- surname|rene-garcia|garcia gustavo|registered lobbyist: dismissed
+- surname|rene-garcia|garcia jose|registered lobbyist: dismissed
+- surname|rene-garcia|garcia elizabeth|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|alfredo l gonzalez|donor: dismissed
+- surname|roberto-j-gonzalez|gonzalez alfredo j|donor: dismissed
+- surname|roberto-j-gonzalez|jose gonzalez|lobbyist: dismissed
+- surname|roberto-j-gonzalez|alexander gonzalez|lobbyist: dismissed
+- surname|roberto-j-gonzalez|alfredo gonzalez|lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez jose|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez robiou georgina|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez christoher|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez alexander|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez jorge|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez yaritza|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez alfredo|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez carlos|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez ray|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez mauricio|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez naldo|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez alexandra|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez cristina|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez pavel|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez rosie|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez natalia|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|bello gonzalez ana|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez denise|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez gilbert|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez joseph|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez alejandro|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez bernie|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez beatrice|registered lobbyist: dismissed
+- surname|roberto-j-gonzalez|gonzalez caridad|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez jorge|donor: dismissed
+- surname|vicki-l-lopez|jorge lopez|lobbyist: dismissed
+- surname|vicki-l-lopez|lopez christopher|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez daniel|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez jorge|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez juary|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez ruiz rebecca|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez anne|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez alexander|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez jessica|registered lobbyist: dismissed
+- surname|vicki-l-lopez|lopez adalberto|registered lobbyist: dismissed
