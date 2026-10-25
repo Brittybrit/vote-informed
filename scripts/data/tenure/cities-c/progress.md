@@ -64,7 +64,13 @@ Hialeah AgendaCenter minutes work via WebFetch.
   Laserfiche WebLink at http://docucenter.sibfl.net/WebLink/ : host does not resolve from this sandbox and the WebFetch
   permission request timed out. RESULT: no 2016-11 .. 2024-12 roll calls available. Months missing: all of Nov 2016 - Dec 2024.
 - Donors: EasyVote API answers only its own origin (403 to curl); 2016, 2018, 2020 and 2022 Svechin reports not pulled.
-- 2026-10-25: SUNNY ISLES NOT EXTENDED (pending agenda-only pass if time allows).
+- 2026-10-25: SUNNY ISLES NOT EXTENDED with votes. Agenda-only pass done instead:
+  Granicus AgendaViewer links for 2016-11 .. 2021-04 redirect to the retired NovusAgenda site ("This Agenda is not available").
+  2021-05-20 .. 2024-12-02 agendas read (PDFs + GeneratedAgendaViewer HTML, 74 files, scratchpad sib/ag). Added 288 agenda-only
+  actions (2021: 54, 2022: 76, 2023: 77, 2024: 81) in 42 meetings, roll null, to sunnyisles_rows.tsv (meeting keys g<date><clip>),
+  titles/translations, cfg window 2021-05-20. actions.json now 547.
+- Missing: votes for all of Nov 2016 - Dec 2024; any record at all for Nov 2016 - Apr 2021; 2022-11-17 regular (no agenda).
+- SUNNY ISLES DONE (agenda-only 2021-2024).
 
 ## Medley
 - Ayala since Nov 19, 2012; Lizelh Rodriguez since Nov 3, 2020 (roster). Town site has agenda pages 2015-2026
@@ -95,3 +101,29 @@ Hialeah AgendaCenter minutes work via WebFetch.
   posted for Nickerson or Urbom, nothing for 2017-2022. 2026 hand-typed reports stay in city-reports.json. Nothing added.
 - NOTE for coordinator: elportal is not in scripts/city-actions.mjs MAP and has no body.json; not changed (outside my remit).
 - EL PORTAL DONE.
+
+## Biscayne Park
+- Samaria: current tenure from the Nov 5, 2024 election (certified Res. 2024-54, Dec 3, 2024); first meeting seated
+  Nov 12, 2024 (roll call). Earlier term Nov 2018 - Nov 2022 is separate, not continuous; not covered.
+- 2026-10-25 added Nov 12, 2024 (Res. 2024-45 Nabors Giblin & Nickerson amendment; Res. 2024-47 David T. Caserta lobbying)
+  and Dec 3, 2024 (Res. 2024-55 / 2024-56 PGIT insurance renewals, $249,313 / $174,191) - 4 actions, all 5-0 with full rolls
+  (Kennedy added as former-member column). Nov 26, 2024 special (interim manager employment, 3-2) excluded. Minutes are scans, OCR.
+  cfg window 2024-11-12. actions.json now 71 actions.
+- Missing: none for Nov 2024 - Sep 2026 beyond existing cfg gaps (Oct 2026 minutes not posted).
+- Donors: no campaign reports posted online. Gap.
+- NOTE for coordinator: biscaynepark not in scripts/city-actions.mjs MAP and has no body.json; not changed.
+- BISCAYNE PARK DONE.
+
+## Virginia Gardens
+- Tenure starts (careers.jsonl): Taylor-Martinez Sept 11, 2001 (continuity not confirmed); Arce Sept 13, 2005; Deno council 2001,
+  mayor Sept 9, 2003 (not a voting member in minutes); Conover and Fernandez on council by July 2023 (2024 qualifying list);
+  Tur appointed Jan 26, 2026 (already fully covered).
+- The Mayor & Council page lists 2026 only, but the WordPress media library (wp-json/wp/v2/media) holds unlisted scans from
+  Aug 2023. OCR'd all council minutes Jul 20, 2023 - Oct 16, 2025 (scratchpad vg/o2).
+- 2026-10-25 added 16 actions (2023: 6, 2024: 4, 2025: 6), 41 meetings (w01..w41), Block added as former-member column,
+  cfg window 2023-07-20. All rolls from attendance + printed tally (all unanimous of those present). actions.json now 23.
+- Missing: everything before Jul 20, 2023 (Arce 2005-2023, Taylor-Martinez 2001-2023, Conover/Fernandez earlier years);
+  no records found for Dec 2023, Jun 2024, Dec 2024, Jun 2025, Aug 2025, Dec 2025; Nov 13, 2025 agenda only.
+- Donors: none posted online (no campaign treasurer reports on the site). Gap.
+- NOTE for coordinator: virginiagardens not in scripts/city-actions.mjs MAP and has no body.json; not changed.
+- VIRGINIA GARDENS DONE.
