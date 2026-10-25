@@ -1,0 +1,80 @@
+[
+  {
+    "pid": "bruno-a-barreiro",
+    "office": "County Commissioner",
+    "body": "mdc-commission",
+    "district": "5",
+    "start": "1998-06-02",
+    "end": "2018-03-31",
+    "startNote": "Elected in the June 2, 1998 District 5 special election; the Board approved the canvassing certificate (file 981791) on 1998-06-16, his first meeting in the minutes. No oath record online.",
+    "endNote": "Last meeting in the minutes 2018-03-21; District 5 is listed vacant from the 2018-04-04 special meeting, which called the special election to fill it (R-290-18). 2018-03-31 is the resignation date in careers.jsonl; the minutes confirm only that he left between 2018-03-21 and 2018-04-04.",
+    "votesFrom": "1998-06-16",
+    "votesTo": "2018-03-21",
+    "rollKey": "Barreiro",
+    "giftsFrom": "1996-06-01",
+    "giftsNote": "One cycle before the 1998 start. VoterFocus has county reports only from the 2002 cycle on, so gifts are covered from 2002-01-16; the 1998 special and 2000 campaigns are not online.",
+    "source": { "label": "Miami-Dade Clerk of the Board, BCC minutes 1998-06-16 (item 13B2, canvassing certificate) and 2018-04-04 (District 5 vacant)", "url": "https://www.miamidade.gov/govaction/commminute.asp?cmbmeetdate=580&file=false" },
+    "files": [
+      "scripts/data/tenure/prior-county/actions.json",
+      "scripts/data/tenure/prior-county/unnamed.json",
+      "scripts/data/tenure/prior-county/vetoes.json",
+      "scripts/data/tenure/prior-county/body.json",
+      "scripts/data/tenure/prior-county/donors/barreiro-campaign-2004.csv",
+      "scripts/data/tenure/prior-county/donors/barreiro-campaign-2008.csv",
+      "scripts/data/tenure/prior-county/donors/barreiro-campaign-2012.csv",
+      "scripts/data/tenure/prior-county/donors/barreiro-campaign-2016.csv",
+      "scripts/data/tenure/prior-county/gifts-preview.json"
+    ]
+  },
+  {
+    "pid": "carlos-a-gimenez",
+    "office": "County Commissioner",
+    "body": "mdc-commission",
+    "district": "7",
+    "start": "2004-11-17",
+    "end": "2011-04-12",
+    "startNote": "Elected 2004-11-02; first meeting in the minutes 2004-11-17 (used as the start). No oath record online.",
+    "endNote": "Last meeting in the minutes 2011-04-11; District 7 is listed vacant at the 2011-04-13 meeting, which called the special election to fill it (R-273-11). Exact resignation date not in the records read; 2011-04-12 is the latest day he can have held the seat.",
+    "votesFrom": "2004-11-17",
+    "votesTo": "2011-04-11",
+    "rollKey": "Gimenez",
+    "giftsFrom": "2002-11-01",
+    "giftsNote": "VoterFocus reports start 2003-07-22 (2004 cycle, ca=286) and run through the 2008 cycle (ca=572).",
+    "source": { "label": "Miami-Dade Clerk of the Board, BCC minutes 2004-11-17 (attendance) and 2011-04-13 (District 7 vacant)", "url": "https://www.miamidade.gov/govaction/commminute.asp?cmbmeetdate=3058&file=false" },
+    "files": [
+      "scripts/data/tenure/prior-county/actions.json",
+      "scripts/data/tenure/prior-county/unnamed.json",
+      "scripts/data/tenure/prior-county/vetoes.json",
+      "scripts/data/tenure/prior-county/body.json",
+      "scripts/data/tenure/prior-county/donors/gimenez-campaign-2004.csv",
+      "scripts/data/tenure/prior-county/donors/gimenez-campaign-2008.csv",
+      "scripts/data/tenure/prior-county/gifts-preview.json"
+    ]
+  },
+  {
+    "pid": "carlos-a-gimenez",
+    "office": "Mayor of Miami-Dade County",
+    "body": "mdc-mayor",
+    "district": null,
+    "start": "2011-06-28",
+    "end": "2020-11-17",
+    "startNote": "Won the 2011-06-28 special runoff; canvassing certificate (file 111508) accepted 2011-07-19; first BCC meeting as mayor 2011-07-07. No oath record online; 2011-06-28 is the election date, not a sworn date.",
+    "endNote": "Term ended when the next mayor took office 2020-11-17; last BCC meeting of his term 2020-11-16.",
+    "actionsFrom": "2011-07-07",
+    "actionsTo": "2020-11-16",
+    "mayorFields": "Each action in this window has a 'mayor' block with raw facts (cover memo From line and RECOMMENDATION text from the matter page, requester, sponsors, whether the title authorizes the Mayor to execute or ratifies his action, whether the Clerk's file type is 'Mayoral Veto') and, for vetoed files, 'veto.overrideVotes'. None of it is converted into a vote.",
+    "giftsFrom": "2011-02-01",
+    "giftsNote": "Mayoral campaigns 2011 special (ca=971), 2012 (ca=1049), 2016 (ca=1454). No official record found tying a political committee to him; Miami-Dade Residents First is saved but not counted (needs-browser.md).",
+    "source": { "label": "Miami-Dade Clerk of the Board, BCC minutes 2011-07-07 and 2011-07-19 (file 111508)", "url": "https://www.miamidade.gov/govaction/matter.asp?matter=111508&file=true&yearFolder=Y2011" },
+    "files": [
+      "scripts/data/tenure/prior-county/actions.json",
+      "scripts/data/tenure/prior-county/unnamed.json",
+      "scripts/data/tenure/prior-county/vetoes.json",
+      "scripts/data/tenure/prior-county/donors/gimenez-mayor-2011.csv",
+      "scripts/data/tenure/prior-county/donors/gimenez-mayor-2012.csv",
+      "scripts/data/tenure/prior-county/donors/gimenez-mayor-2016.csv",
+      "scripts/data/tenure/prior-county/donors/pc-miami-dade-residents-first.csv",
+      "scripts/data/tenure/prior-county/gifts-preview.json"
+    ]
+  }
+]
