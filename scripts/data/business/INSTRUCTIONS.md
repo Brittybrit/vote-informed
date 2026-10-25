@@ -57,3 +57,7 @@ with what is missing. Amounts and dates exactly as the record states.
   variants (http/https, query string removed). If a site blocks you entirely, note it in progress.md and move on.
 - Finish with a short summary in `summary.md`: candidates done, interests found, ties found, what could not be
   reached and why.
+
+## Rule set by Brit (Oct 25, 2026)
+Loans or grants any eligible business could get by applying (PPP, EIDL, SBA COVID-era grants and loans,
+Shuttered Venue grants) are not official acts and are not counted or shown as ties.
