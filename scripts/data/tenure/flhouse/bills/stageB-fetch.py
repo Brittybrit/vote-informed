@@ -20,7 +20,11 @@ def get(u, path):
         time.sleep(30 * (t + 1))
     return False
 def section(t):
-    m = re.search(r'(Direct Economic Impact on (the )?Private Sector|Private Sector Impact)', t, re.I)
+    m = None
+    for pat in (r'[A-D]\.\s*DIRECT ECONOMIC IMPACT ON (THE )?PRIVATE SECTOR:', r'Private Sector Impact:',
+                r'(Direct Economic Impact on (the )?Private Sector|Private Sector Impact)'):
+        ms = list(re.finditer(pat, t, re.I))
+        if ms: m = ms[-1] if pat.startswith('[A-D]') else ms[0]; break
     if not m: return None
     s = t[m.start():m.start() + 2500]
     e = re.search(r'\n\s*(3\.\s*Fiscal Comments|C\.\s*Government Sector Impact|D\.\s*FISCAL COMMENTS|FISCAL COMMENTS|III\.\s*COMMENTS|VI\.\s*Technical|VII\.\s*Related)', s[40:], re.I)

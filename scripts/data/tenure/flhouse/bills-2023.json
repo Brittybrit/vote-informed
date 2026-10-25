@@ -4,64 +4,11 @@
  "rule": "Every law enacted in sessions 2022A, 2022D, 2023, 2023B, 2023C whose final staff analysis names a kind of business or company that benefits (same test as universe.json). House floor roll calls only (the members are House members); a member is \"not seated\" on dates outside their House tenure.",
  "counts": {
   "enacted": 357,
-  "screened": 125,
-  "qualifying": 7
+  "screened": 194,
+  "qualifying": 20
  },
  "missing": {
   "A": [
-   "2023-267",
-   "2023-268",
-   "2023-269",
-   "2023-270",
-   "2023-271",
-   "2023-272",
-   "2023-273",
-   "2023-274",
-   "2023-275",
-   "2023-276",
-   "2023-277",
-   "2023-278",
-   "2023-279",
-   "2023-280",
-   "2023-281",
-   "2023-282",
-   "2023-283",
-   "2023-284",
-   "2023-285",
-   "2023-286",
-   "2023-287",
-   "2023-288",
-   "2023-289",
-   "2023-290",
-   "2023-291",
-   "2023-292",
-   "2023-293",
-   "2023-294",
-   "2023-295",
-   "2023-296",
-   "2023-297",
-   "2023-298",
-   "2023-299",
-   "2023-300",
-   "2023-301",
-   "2023-302",
-   "2023-303",
-   "2023-304",
-   "2023-305",
-   "2023-306",
-   "2023-307",
-   "2023-308",
-   "2023-309",
-   "2023-310",
-   "2023-311",
-   "2023-312",
-   "2023-313",
-   "2023-314",
-   "2023-315",
-   "2023-316",
-   "2023-317",
-   "2023-318",
-   "2023-319",
    "2023-320",
    "2023-321",
    "2023-322",
@@ -100,75 +47,6 @@
    "2022-270"
   ],
   "B": [
-   "2023-124",
-   "2023-125",
-   "2023-126",
-   "2023-127",
-   "2023-128",
-   "2023-129",
-   "2023-130",
-   "2023-131",
-   "2023-132",
-   "2023-133",
-   "2023-134",
-   "2023-135",
-   "2023-136",
-   "2023-137",
-   "2023-138",
-   "2023-139",
-   "2023-140",
-   "2023-141",
-   "2023-142",
-   "2023-143",
-   "2023-144",
-   "2023-145",
-   "2023-146",
-   "2023-147",
-   "2023-148",
-   "2023-149",
-   "2023-150",
-   "2023-151",
-   "2023-152",
-   "2023-153",
-   "2023-154",
-   "2023-155",
-   "2023-156",
-   "2023-157",
-   "2023-158",
-   "2023-159",
-   "2023-160",
-   "2023-161",
-   "2023-162",
-   "2023-163",
-   "2023-164",
-   "2023-165",
-   "2023-166",
-   "2023-167",
-   "2023-168",
-   "2023-169",
-   "2023-170",
-   "2023-171",
-   "2023-172",
-   "2023-173",
-   "2023-174",
-   "2023-175",
-   "2023-176",
-   "2023-177",
-   "2023-178",
-   "2023-179",
-   "2023-180",
-   "2023-181",
-   "2023-182",
-   "2023-183",
-   "2023-184",
-   "2023-185",
-   "2023-186",
-   "2023-187",
-   "2023-188",
-   "2023-189",
-   "2023-190",
-   "2023-191",
-   "2023-192",
    "2023-193",
    "2023-194",
    "2023-195",
@@ -368,6 +246,71 @@
     "2023-118",
     "H",
     "https://www.flsenate.gov/Session/Bill/2023/838/Vote/HouseVote_s00838c2425.PDF"
+   ],
+   [
+    "2023-127",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/737/Vote/HouseVote_h00737c1345.PDF"
+   ],
+   [
+    "2023-134",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/346/Vote/HouseVote_s00346c2437.PDF"
+   ],
+   [
+    "2023-139",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/1318/Vote/HouseVote_s01318e1441.PDF"
+   ],
+   [
+    "2023-140",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/33/Vote/HouseVote_h00033c1153.PDF"
+   ],
+   [
+    "2023-155",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/1307/Vote/HouseVote_h01307c1207.PDF"
+   ],
+   [
+    "2023-157",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/7063/Vote/HouseVote_h07063__500.PDF"
+   ],
+   [
+    "2023-162",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/485/Vote/HouseVote_h00485c1160.PDF"
+   ],
+   [
+    "2023-169",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/1379/Vote/HouseVote_h01379c2463.PDF"
+   ],
+   [
+    "2023-171",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/766/Vote/HouseVote_s00766e1412.PDF"
+   ],
+   [
+    "2023-174",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/657/Vote/HouseVote_h00657c2323.PDF"
+   ],
+   [
+    "2023-176",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/881/Vote/HouseVote_h00881e1202.PDF"
+   ],
+   [
+    "2023-180",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/1480/Vote/HouseVote_s01480c2407.PDF"
+   ],
+   [
+    "2023-186",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/965/Vote/HouseVote_h00965c1494.PDF"
    ]
   ]
  },
@@ -1790,10 +1733,10 @@
    "chapter": "2023-124",
    "title": "Removal of Unknown Parties in Possession",
    "url": "https://www.flsenate.gov/Session/Bill/2023/441",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/441/Analyses/h0441z2.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may reduce the amount of time and financial resources a property owner must utilize when attempting to evict unknown parties from his or her property.",
+   "note": "benefit to property owners (individuals)"
   },
   {
    "bill": "HB 607",
@@ -1801,10 +1744,10 @@
    "chapter": "2023-125",
    "title": "Money Services Businesses",
    "url": "https://www.flsenate.gov/Session/Bill/2023/607",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/607/Analyses/h0607z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has a minimal impact on vendors from a slight increase or decrease in the number of individuals subject to fingerprinting.54",
+   "note": "minimal impact on vendors"
   },
   {
    "bill": "HB 641",
@@ -1812,9 +1755,9 @@
    "chapter": "2023-126",
    "title": "Restoration of Osborne Reef",
    "url": "https://www.flsenate.gov/Session/Bill/2023/641",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/641/Analyses/h0641z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1823,10 +1766,15 @@
    "chapter": "2023-127",
    "title": "Secondhand Goods",
    "url": "https://www.flsenate.gov/Session/Bill/2023/737",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/737/Analyses/h0737z1.RRS.PDF",
+   "benefits": {
+    "category": "secondhand dealers buying precious-metal bullion",
+    "named": [],
+    "quote": "Secondhand dealers who purchase bullion may see a cost benefit because these items are expressly excluded from the definition of a secondhand goods"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Secondhand dealers who purchase bullion may see a cost benefit because these items are expressly excluded from the definition of a secondhand goods and therefore, are no longer required to be held for 30 days.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 825",
@@ -1834,9 +1782,9 @@
    "chapter": "2023-128",
    "title": "Assault or Battery on Hospital Personnel",
    "url": "https://www.flsenate.gov/Session/Bill/2023/825",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/825/Analyses/h0825z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1845,9 +1793,9 @@
    "chapter": "2023-129",
    "title": "Venomous Reptiles",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1161",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1161/Analyses/h1161z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1856,10 +1804,10 @@
    "chapter": "2023-130",
    "title": "Consumer Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1185",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1185/Analyses/h1185z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has an indeterminate positive and negative direct economic impact on the private sector. As a result of the public adjuster provisions set forth in the bill, public adjusters may receive less compensation for their services. As such, consumers who use the services of public adjusters may save money on those services.",
+   "note": "public adjusters lose compensation; consumers save"
   },
   {
    "bill": "SB 50",
@@ -1867,10 +1815,10 @@
    "chapter": "2023-131",
    "title": "Public Records/Judicial Assistants",
    "url": "https://www.flsenate.gov/Session/Bill/2023/50",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/50/Analyses/2023s00050.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Any individual or business that currently obtains location information that is covered by the definition of “home addresses” in the bill will not be able to obtain that information from the records custodian without a signed waiver if the employee or the employee’s agency requests that the home address information be exempted.",
+   "note": "restriction on data users"
   },
   {
    "bill": "SB 218",
@@ -1878,10 +1826,10 @@
    "chapter": "2023-132",
    "title": "Genetic Counselors Using Telehealth",
    "url": "https://www.flsenate.gov/Session/Bill/2023/218",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/218/Analyses/2023s00218.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may reduce the costs to patients receiving genetic counseling services by not requiring patients to travel long distances to receive test results or follow-up counseling.",
+   "note": "savings to patients"
   },
   {
    "bill": "SB 232",
@@ -1889,9 +1837,9 @@
    "chapter": "2023-133",
    "title": "Exploitation of Vulnerable Persons",
    "url": "https://www.flsenate.gov/Session/Bill/2023/232",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/232/Analyses/2023s00232.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1900,10 +1848,15 @@
    "chapter": "2023-134",
    "title": "Public Construction",
    "url": "https://www.flsenate.gov/Session/Bill/2023/346",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/346/Analyses/2023s00346.rc.PDF",
+   "benefits": {
+    "category": "building contractors on public works",
+    "named": [],
+    "quote": "The bill may have a positive financial impact on building contractors to the extent payments of undisputed amounts under contracts are paid more promptly."
+   },
+   "screen": "Private Sector Impact: The bill may have a positive financial impact on building contractors to the extent payments of undisputed amounts under contracts are paid more promptly. The change to the definition of “public works project” may result in a shift in the award of certain construction contracts among locally-based and out-of-town contractors. Preventing political subdivisions from imposing certain predetermined wage, benefit, and staffing requirements for certain public works projects may have a positive fiscal impact on contractors and a potential negative fiscal impact on contractor employees.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 708",
@@ -1911,9 +1864,9 @@
    "chapter": "2023-135",
    "title": "Estoppel Letters",
    "url": "https://www.flsenate.gov/Session/Bill/2023/708",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/708/Analyses/2023s00708.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1922,10 +1875,10 @@
    "chapter": "2023-136",
    "title": "Motor Vehicle Glass",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1002",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1002/Analyses/2023s01002.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Motor vehicle repair shops will be prohibited from providing certain inducements to customers. This may negatively affect their businesses. Indeterminate with respect to insurance premiums. A reduction in auto glass costs resulting in a reduction in insurance premiums for auto comprehensive coverage is difficult to estimate as comprehensive coverage includes a wide variety of coverages including, but not limited to, flood, hail, theft, and hurricane.",
+   "note": "negative for repair shops; insurer premium effect indeterminate"
   },
   {
    "bill": "SB 1068",
@@ -1933,9 +1886,9 @@
    "chapter": "2023-137",
    "title": "Drone Delivery Services",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1068",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1068/Analyses/2023s01068.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1944,9 +1897,9 @@
    "chapter": "2023-138",
    "title": "Labor Pool Act",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1154",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1154/Analyses/2023s01154.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1955,10 +1908,15 @@
    "chapter": "2023-139",
    "title": "Spaceflight Entity Liability",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1318",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1318/Analyses/2023s01318.rc.PDF",
+   "benefits": {
+    "category": "commercial spaceflight companies",
+    "named": [],
+    "quote": "This bill has the potential to limit the cost of litigation to businesses engaging in spaceflight activities."
+   },
+   "screen": "Private Sector Impact: The bill grants limited civil liability immunity to a spaceflight entity for injury to or death of a crew member or participant resulting from the risks of spaceflight activities, as long as the required warning is given to and signed by the participants and crew members. This bill has the potential to limit the cost of litigation to businesses engaging in spaceflight activities.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 33",
@@ -1966,10 +1924,15 @@
    "chapter": "2023-140",
    "title": "Psychology Interjurisdictional Compact",
    "url": "https://www.flsenate.gov/Session/Bill/2023/33",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/33/Analyses/h0033z1.HRS.PDF",
+   "benefits": {
+    "category": "psychologists (licensed practices)",
+    "named": [],
+    "quote": "Fees associated with applying for a license in a compact state would be eliminated for a psychologist whose home state is Florida"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Fees associated with applying for a license in a compact state would be eliminated for a psychologist whose home state is Florida and wants to practice in a compact state, as well as a psychologist whose home state is in a compact state and wishes to practice in Florida.",
+   "note": "same class as 2025-45 (psychologists) in the 2025 universe",
+   "votes": {}
   },
   {
    "bill": "HB 35",
@@ -1977,9 +1940,9 @@
    "chapter": "2023-141",
    "title": "Pub. Rec. and Meetings/Psychology Interjurisdictional Compact",
    "url": "https://www.flsenate.gov/Session/Bill/2023/35",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/35/Analyses/h0035z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1988,9 +1951,9 @@
    "chapter": "2023-142",
    "title": "Abandoned and Historic Cemeteries",
    "url": "https://www.flsenate.gov/Session/Bill/2023/49",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/49/Analyses/h0049z1.CRG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1999,9 +1962,9 @@
    "chapter": "2023-143",
    "title": "Tampa Bay Area Regional Transit Authority",
    "url": "https://www.flsenate.gov/Session/Bill/2023/155",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/155/Analyses/h0155z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2010,10 +1973,10 @@
    "chapter": "2023-144",
    "title": "Department of Financial Services",
    "url": "https://www.flsenate.gov/Session/Bill/2023/487",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/487/Analyses/h0487z2.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill requires warranty associations to have a reserve of $100 million, instead of $10 million. The bill requires motor vehicle insurers bear the entire cost of mediation. It makes various other changes that have an indeterminate, negative fiscal impact.",
+   "note": "costs to warranty associations and insurers"
   },
   {
    "bill": "HB 535",
@@ -2021,9 +1984,9 @@
    "chapter": "2023-145",
    "title": "Funeral Service Benefits for Public Safety Officers",
    "url": "https://www.flsenate.gov/Session/Bill/2023/535",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/535/Analyses/h0535z1.CRG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2032,9 +1995,9 @@
    "chapter": "2023-146",
    "title": "Custody and Supervision of Specified Offenders",
    "url": "https://www.flsenate.gov/Session/Bill/2023/537",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/537/Analyses/h0537z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2043,10 +2006,10 @@
    "chapter": "2023-147",
    "title": "Unmanned Aircraft Systems Act",
    "url": "https://www.flsenate.gov/Session/Bill/2023/645",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/645/Analyses/h0645z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate.",
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 667",
@@ -2054,9 +2017,9 @@
    "chapter": "2023-148",
    "title": "Victims of Crime",
    "url": "https://www.flsenate.gov/Session/Bill/2023/667",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/667/Analyses/h0667z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2065,10 +2028,10 @@
    "chapter": "2023-149",
    "title": "Paid Family Leave Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2023/721",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/721/Analyses/h0721z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Employees eligible to receive family leave insurance benefits can receive compensation they would not have otherwise received while unable to work due to eligible parental leave or their own or their family member’s serious health condition or military service. Although the paid family leave insurance is optional for private employers not otherwise covered under FMLA, the insurance policy would be funded by the employer and/or the employee.",
+   "note": "benefit to employees"
   },
   {
    "bill": "HB 761",
@@ -2076,10 +2039,10 @@
    "chapter": "2023-150",
    "title": "Telephone Solicitation",
    "url": "https://www.flsenate.gov/Session/Bill/2023/761",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/761/Analyses/h0761z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate negative fiscal impact on legitimate telemarketers to the extent they do not currently engage in business practices consistent with the requirements in the bill.",
+   "note": "negative for telemarketers"
   },
   {
    "bill": "HB 847",
@@ -2087,9 +2050,9 @@
    "chapter": "2023-151",
    "title": "Vessel Regulations",
    "url": "https://www.flsenate.gov/Session/Bill/2023/847",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/847/Analyses/h0847z1.WST.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2098,9 +2061,9 @@
    "chapter": "2023-152",
    "title": "Child Support",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1087",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1087/Analyses/h1087z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2109,9 +2072,9 @@
    "chapter": "2023-153",
    "title": "Pub. Rec./Inspectors and Investigators/DACS",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1215",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1215/Analyses/h1215z.RRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2120,9 +2083,9 @@
    "chapter": "2023-154",
    "title": "Department of Agriculture and Consumer Services",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1279",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1279/Analyses/h1279z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2131,10 +2094,15 @@
    "chapter": "2023-155",
    "title": "Department of Agriculture and Consumer Services",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1307",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1307/Analyses/h1307z1.RRS.PDF",
+   "benefits": {
+    "category": "LP gas dealers and gas station owners",
+    "named": [],
+    "quote": "expands services that certain LP gas licensees may conduct, and provides fuel theft protections for gas station owners and operators"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: STORAGE NAME: h1307z1.DOCX PAGE: 12 DATE: 5/30/2023 The bill may have a positive economic impact on the private sector. The bill streamlines professional licensure requirements, allows for reduced late fees for license renewals, reduces registration fee requirements for charitable organizations, expands services that certain LP gas licensees may conduct, and provides fuel theft protections for gas station owners and operators. Class “K” Firearms Instructors may experience an indeterminate reduction in demand for their services to the extent they will not be used due to the waiver of their annual firearms training for Class “G” Statewide Firearms License renewals.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1595",
@@ -2142,9 +2110,9 @@
    "chapter": "2023-156",
    "title": "Law Enforcement Operations",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1595",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1595/Analyses/h1595z1.LFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2153,10 +2121,15 @@
    "chapter": "2023-157",
    "title": "Taxation",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7063",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7063/Analyses/h7063z1.WMC.PDF",
+   "benefits": {
+    "category": "commercial landlords; renewable natural gas producers; agricultural producers; private investigative agencies",
+    "named": [],
+    "quote": "a reduction in the sales tax on commercial rent from 5.5% to 4.5%; and permanent exemptions for ... machinery and equipment used to produce renewable natural gas, certain agricultural fencing, firearm storage devices, and small private investigative agency services"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill provides for a number of temporary and permanent sales tax benefits: two separate 14-day sales tax holidays for back-to-school; two separate 14-day sales tax holidays for disaster preparation supplies; one 3-month holiday for recreational items and activities; a 7-day sales tax holiday for skilled worker tools; a 1-year exemption on certain energy star appliances and gas ranges and cooktops; a reduction in the sales tax on commercial rent from 5.5% to 4.5%; and permanent exemptions for specified baby and toddler products and clothes, adult incontinence products, oral hygiene products, machinery and equipment used to produce renewable natural gas, certain agricultural fencing, firearm storage devices, and small private investigative agency services. The bill also provides a number of property tax benefits, including: several changes to expand, clarify, or correct provisions related to homestead benefits for permanently and totally disabled veterans, first responders, and surviving spouses of either; allowing an educational facility to qualify for an exemption if they have a bona fide 98-year lease with nominal payments or have received an educational exemption for ten prior consecutive years; and making technical and clarifying changes to several sections of existing law.",
+   "note": "tax package; the analysis lists the exempted business activities",
+   "votes": {}
   },
   {
    "bill": "SB 274",
@@ -2164,10 +2137,10 @@
    "chapter": "2023-158",
    "title": "Nursing Education Pathway for Military Combat Medics",
    "url": "https://www.flsenate.gov/Session/Bill/2023/274",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/274/Analyses/2023s00274.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Should the workgroup process result in identifying additional equivalencies for military training and experience, students may be eligible to receive postsecondary credit toward an accredited pre-licensure nursing program. Credits from this experience may save the student time and the cost of receiving a nursing degree at a state university.22",
+   "note": "savings to students"
   },
   {
    "bill": "SB 574",
@@ -2175,10 +2148,10 @@
    "chapter": "2023-159",
    "title": "Termination of Agreements by a Servicemember",
    "url": "https://www.flsenate.gov/Session/Bill/2023/574",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/574/Analyses/2023s00574.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may have an indeterminate, likely insignificant, negative fiscal impact on the private sector based on the number of rental agreements terminated by servicemembers. The bill may expand the situations in which a servicemember may lawfully terminate a rental agreement.",
+   "note": "negative for landlords"
   },
   {
    "bill": "SB 732",
@@ -2186,9 +2159,9 @@
    "chapter": "2023-160",
    "title": "Collegiate Purple Star Campuses",
    "url": "https://www.flsenate.gov/Session/Bill/2023/732",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/732/Analyses/2023s00732.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2197,9 +2170,9 @@
    "chapter": "2023-161",
    "title": "Benefits, Training, and Employment for Veterans and Their Spouses",
    "url": "https://www.flsenate.gov/Session/Bill/2023/139",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/139/Analyses/h0139z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2208,10 +2181,15 @@
    "chapter": "2023-162",
    "title": "Veterans' Services and Recognition",
    "url": "https://www.flsenate.gov/Session/Bill/2023/485",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/485/Analyses/h0485z1.LFS.PDF",
+   "benefits": {
+    "category": "private contractors operating veterans' service programs",
+    "named": [],
+    "quote": "Qualifying private contractors that are currently providing services in other settings may now be eligible for designation as operators."
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Qualifying private contractors that are currently providing services in other settings may now be eligible for designation as operators.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 621",
@@ -2219,9 +2197,9 @@
    "chapter": "2023-163",
    "title": "Death Benefits for Active Duty Servicemembers",
    "url": "https://www.flsenate.gov/Session/Bill/2023/621",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/621/Analyses/h0621z1.LFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2230,9 +2208,9 @@
    "chapter": "2023-164",
    "title": "Dental Services for Veterans",
    "url": "https://www.flsenate.gov/Session/Bill/2023/635",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/635/Analyses/h0635z1.LFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2241,9 +2219,9 @@
    "chapter": "2023-165",
    "title": "Interstate Education Compacts",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1125",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1125/Analyses/h1125z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2252,9 +2230,9 @@
    "chapter": "2023-166",
    "title": "Pub. Rec. and Meetings/Interstate Teacher Mobility Compact",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1127",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1127/Analyses/h1127z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2263,10 +2241,10 @@
    "chapter": "2023-167",
    "title": "Florida State Guard",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1285",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1285/Analyses/h1285z1.SAC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Individuals who volunteer for the FSG will receive reimbursement for per diem and travel expenses incurred to attend required training or in the course of active service.",
+   "note": "benefit to volunteers"
   },
   {
    "bill": "SB 478",
@@ -2274,9 +2252,9 @@
    "chapter": "2023-168",
    "title": "Early Childhood Music Education Incentive Program",
    "url": "https://www.flsenate.gov/Session/Bill/2023/478",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/478/Analyses/2023s00478.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2285,10 +2263,15 @@
    "chapter": "2023-169",
    "title": "Environmental Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1379",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1379/Analyses/h1379z1.WST.PDF",
+   "benefits": {
+    "category": "septic system (OSTDS) replacement contractors",
+    "named": [],
+    "quote": "The bill may have an indeterminate positive fiscal impact on contractors and businesses associated with the replacement of OSTDSs"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate positive fiscal impact on contractors and businesses associated with the replacement of OSTDSs and an indeterminate negative fiscal impact on property owners. The bill may have an indeterminate negative fiscal impact on private sewage disposal facilities as it relates to disposal into certain waterbodies without providing advanced waste treatment approved by DEP. The bill provides a consistent annual appropriation of funds to the Florida Forever Program and improves the land acquisition process to be more efficient and expeditious which may encourage more land owners, including those located in the Florida Wildlife Corridor, to consider selling their lands to the state for conservation and preservation of critical natural resources.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 662",
@@ -2296,10 +2279,10 @@
    "chapter": "2023-170",
    "title": "Student Online Personal Information Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2023/662",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/662/Analyses/2023s00662.ju.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Because the bill prohibits operators from engaging in targeted advertising; places new and significant restrictions on operators’ collection and use of students’ online personal information; and prohibits operators from sharing, selling, or renting such information, operators will no longer be able to financially benefit from such activities. Additionally, because the bill requires operators to adhere to new baseline privacy and security protections in connection with students’ online personal information, operators will incur costs associated with implementing these measures and complying with the bill. BILL: SB 662 Page 13",
+   "note": "restrictions on operators"
   },
   {
    "bill": "SB 766",
@@ -2307,10 +2290,15 @@
    "chapter": "2023-171",
    "title": "Enforcement of School Bus Passing Infractions",
    "url": "https://www.flsenate.gov/Session/Bill/2023/766",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/766/Analyses/2023s00766.fp.PDF",
+   "benefits": {
+    "category": "school bus camera enforcement vendors",
+    "named": [],
+    "quote": "the bill will have a positive fiscal impact on private vendors providing enforcement system installation"
+   },
+   "screen": "Private Sector Impact: The bill authorizes school districts to contract with a private vendor or manufacturer to provide a school bus infraction detection system on each bus within its fleet, whether owned, contracted, or leased, and for services including, but not limited to, the installation, operation, and maintenance of the system. As such, the bill will have a positive fiscal impact on private vendors providing enforcement system installation, operation, and maintenance. Registered motor vehicle owners may be negatively impacted by financial penalties imposed by the bill if their vehicle is identified by a school bus infraction detection system to have not stopped for a school bus when required. However, the financial penalties for a violation enforced by a school bus infraction detection system are less than those enforced by in-person law enforcement. Individuals that submit false affidavits defending the imposition of a traffic infraction may be subject to jail time and fines if found guilty of a second degree misdemeanor. BILL: CS/CS/SB 766 Page 13",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 7052",
@@ -2318,10 +2306,10 @@
    "chapter": "2023-172",
    "title": "Insurer Accountability",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7052",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7052/Analyses/2023s07052.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill should have a positive impact on individuals and businesses whose premiums for property insurance and motor vehicle insurance will include consideration the impact of recent legislative reforms on projected losses. Property insurance customers should benefit from more frequent updates to mitigation credits and greater public awareness of their availability. The additional reporting requirements created by the bill will have an indeterminate impact on insurers.",
+   "note": "benefit to policyholders"
   },
   {
    "bill": "HB 5",
@@ -2329,10 +2317,10 @@
    "chapter": "2023-173",
    "title": "Economic Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2023/5",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/5/Analyses/h0005z1.COM.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate.",
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 657",
@@ -2340,10 +2328,15 @@
    "chapter": "2023-174",
    "title": "Enforcement of School Zone Speed Limits",
    "url": "https://www.flsenate.gov/Session/Bill/2023/657",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/657/Analyses/h0657z1.TMS.PDF",
+   "benefits": {
+    "category": "speed camera vendors",
+    "named": [],
+    "quote": "The bill may have a positive impact on the revenues of vendors who sell or lease speed detection systems"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on the revenues of vendors who sell or lease speed detection systems to the extent that local governments may contract with them to implement a school zone speed detection program. A portion of the funds generated from authorized fines is provided for school crossing guard recruitment and retention programs, which may include stipends to third parties for the recruitment of new crossing guards. The bill may have a positive impact on any such third party’s revenue if a local government chooses to spend the funds in that manner.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 799",
@@ -2351,10 +2344,10 @@
    "chapter": "2023-175",
    "title": "Property Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2023/799",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/799/Analyses/h0799z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "direct economic impact on the private sector. The bill was approved by the Governor on May 31, 2023, ch. 2023-175, L.O.F., and will become effective on July 1, 2023. This document does not reflect the intent or official position of the bill sponsor or House of Representatives . STORAGE NAME: h0799z1.DOCX DATE: 6/1/2023 I. SUBSTANTIVE INFORMATION A. EFFECT OF CHANGES: Windstorm Coverage Background APPROVAL OF INSURANCE RATE FILINGS In general, insurers must file a copy of rates, rating schedules, rating manuals, premium credits or discount schedules, and surcharge schedules, and changes to these documents, for approval by the Office of Insurance Regulation (OIR).1 OIR must review insurers’ rate filings to determine whether rates are excessive, inadequate, or unfairly discriminatory.2 In doing so, OIR must consider factors including, but not limited to, the following:  Past and prospective loss experience in and out of Florida.  Past and prospective expenses.  Degree of competition among insurers for particular risk to be insured.  Investment income reasonably expected by the insurer.  Reasonableness of the judgment reflected in the filing.  Dividends, savings, or unabsorbed premium deposits allowed or returns to policyholders, members or subscribers in Florida.  Adequacy of loss reserves.  Cost of reinsurance.  Trend factors.  Conflagration and catastrophe hazards, if applicable.  Projected hurricane losses.  Projected flood losses.  Reasonable margin for underwri",
+   "note": "final analysis h0799z1 section C: positive impact 'if rates are reduced' - benefit to policyholders, no business named"
   },
   {
    "bill": "HB 881",
@@ -2362,10 +2355,15 @@
    "chapter": "2023-176",
    "title": "My Safe Florida Home Program",
    "url": "https://www.flsenate.gov/Session/Bill/2023/881",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/881/Analyses/h0881z1.IBS.PDF",
+   "benefits": {
+    "category": "hurricane mitigation contractors",
+    "named": [],
+    "quote": "Hurricane mitigation contractors may also see an increase in project activity."
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: To the extent that homes that participate in the MSFH Program receive mitigation credits under their insurance policies and are less exposed to risk as a result of mitigation retrofitting using grant funds, the MSFH Program will have a positive direct economic impact on homeowners. Hurricane mitigation contractors may also see an increase in project activity.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 552",
@@ -2373,10 +2371,10 @@
    "chapter": "2023-177",
    "title": "Public Records/Broadband Opportunity Program",
    "url": "https://www.flsenate.gov/Session/Bill/2023/552",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/552/Analyses/2023s00552.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The private sector will continue to be subject to the cost associated with an agency’s review and redactions of exempt records in response to a public records request.",
+   "note": "public-records redaction costs"
   },
   {
    "bill": "SB 664",
@@ -2384,10 +2382,10 @@
    "chapter": "2023-178",
    "title": "Contracts Entered into by the Department of Children and Families",
    "url": "https://www.flsenate.gov/Session/Bill/2023/664",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/664/Analyses/2023s00664.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may have an indeterminate fiscal impact on the private sector as the lead agency may be required to change operations, increase support, or increase contract amounts for the requirement to complete specified portions of a home study no later than 90 days after the filing of a petition for the termination of parental rights. However, it is likely that a lead agency can absorb this impact within current operating budgets. BILL: CS/SB 664 Page 11",
+   "note": "indeterminate for lead agencies"
   },
   {
    "bill": "SB 726",
@@ -2395,9 +2393,9 @@
    "chapter": "2023-179",
    "title": "Library Cooperative Grants",
    "url": "https://www.flsenate.gov/Session/Bill/2023/726",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/726/Analyses/2023s00726.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2406,10 +2404,15 @@
    "chapter": "2023-180",
    "title": "Grants for Nonprofit Organization Safety",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1480",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1480/Analyses/2023s01480.fp.PDF",
+   "benefits": {
+    "category": "nonprofit organizations at risk of attacks (security grants)",
+    "named": [],
+    "quote": "Nonprofit organizations that are at high risk for violent attacks or hate crimes which meet the application criteria may be eligible to receive a grant"
+   },
+   "screen": "Private Sector Impact: Nonprofit organizations that are at high risk for violent attacks or hate crimes which meet the application criteria may be eligible to receive a grant for the purchase and installation of security infrastructure or the addition of security and other staff. Additionally, the installation of security infrastructure or the addition of security and other staff may also lead to safer communities and lower crimes rates.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 133",
@@ -2417,10 +2420,10 @@
    "chapter": "2023-181",
    "title": "Fees in Lieu of Security Deposits",
    "url": "https://www.flsenate.gov/Session/Bill/2023/133",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/133/Analyses/h0133z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may, by creating guardrails for an agreement to pay a fee in lieu of a security deposit and for the payment of a security deposit in monthly installments while the tenant participates in the fee program, protect from financial loss or harm landlords and tenants who enter into such agreements.",
+   "note": "protects landlords and tenants from loss; no benefit stated for a business kind beyond guardrails"
   },
   {
    "bill": "HB 179",
@@ -2428,10 +2431,10 @@
    "chapter": "2023-182",
    "title": "Florida Kratom Consumer Protection Act",
    "url": "https://www.flsenate.gov/Session/Bill/2023/179",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/179/Analyses/h0179z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Kratom processors will need to cover any associated costs of complying with new age verification requirements, however such cost should be insignificant.",
+   "note": "costs to processors"
   },
   {
    "bill": "HB 391",
@@ -2439,9 +2442,9 @@
    "chapter": "2023-183",
    "title": "Home Health Aides for Medically Fragile Children",
    "url": "https://www.flsenate.gov/Session/Bill/2023/391",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/391/Analyses/h0391z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2450,9 +2453,9 @@
    "chapter": "2023-184",
    "title": "Opioid Abatement",
    "url": "https://www.flsenate.gov/Session/Bill/2023/783",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/783/Analyses/h0783z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2461,10 +2464,10 @@
    "chapter": "2023-185",
    "title": "Dosage Form Animal Health Products",
    "url": "https://www.flsenate.gov/Session/Bill/2023/959",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/959/Analyses/h0959z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will require distributors of dosage form animal products to comply with Commercial Feed Law regulatory requirements governed by DACS, including the payment of fees and enforcement of penalties. Dosage form animal health products currently sold may need to be recalled to be accurately labelled, which may have a negative fiscal impact to the distributors and business owners of those products.",
+   "note": "costs to distributors"
   },
   {
    "bill": "HB 965",
@@ -2472,10 +2475,17 @@
    "chapter": "2023-186",
    "title": "Driver License, Identification Card, and Motor Vehicle Registration",
    "url": "https://www.flsenate.gov/Session/Bill/2023/965",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/965/Analyses/h0965z1.TMS.PDF",
+   "benefits": {
+    "category": "motor vehicle dealers; Best Buddies International",
+    "named": [
+     "Best Buddies International"
+    ],
+    "quote": "Motor vehicle dealers will save the expense of certifying air pollution equipment for certain leased vehicles. Best Buddies International may see additional revenues"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate. Motor vehicle dealers will save the expense of certifying air pollution equipment for certain leased vehicles. Best Buddies International may see additional revenues associated with these voluntary contributions on motor vehicle, driver license, and identification card application forms to support its mission to end the social, physical, and economic isolation of people with intellectual and developmental disabilities.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1123",
@@ -2483,9 +2493,9 @@
    "chapter": "2023-187",
    "title": "Commercial Service Airport Transparency and Accountability",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1123",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1123/Analyses/h1123z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2494,9 +2504,9 @@
    "chapter": "2023-188",
    "title": "Regional Transportation Planning",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1397",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1397/Analyses/h1397z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2505,9 +2515,9 @@
    "chapter": "2023-189",
    "title": "Automatic Sealing of Criminal History Records and Making Confidential and Exempt Related Court Records",
    "url": "https://www.flsenate.gov/Session/Bill/2023/376",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/376/Analyses/2023s00376.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2516,9 +2526,9 @@
    "chapter": "2023-190",
    "title": "Violent Offenses Committed Against Criminal Defense Attorneys",
    "url": "https://www.flsenate.gov/Session/Bill/2023/384",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/384/Analyses/2023s00384.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2527,9 +2537,9 @@
    "chapter": "2023-191",
    "title": "Problem-solving Courts",
    "url": "https://www.flsenate.gov/Session/Bill/2023/508",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/508/Analyses/2023s00508.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2538,9 +2548,9 @@
    "chapter": "2023-192",
    "title": "Blood Clot and Pulmonary Embolism Policy Workgroup",
    "url": "https://www.flsenate.gov/Session/Bill/2023/612",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/612/Analyses/2023s00612.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
