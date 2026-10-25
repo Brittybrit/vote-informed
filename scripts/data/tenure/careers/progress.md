@@ -1,0 +1,197 @@
+# Careers progress (one line per candidate done). Rerun: skip pids listed here.
+# Source notes: history.house.gov (House History office mirror of bioguide) works via curl; bioguide.congress.gov and congress.gov 403 for curl and WebFetch needs approval.
+# flsenate.gov historical rosters /Senators/YYYY-YYYY work via curl (1998-2026; 1990-1996 pages empty). flhouse.gov rosters ?legislativetermid=78..91 (1998-2026) work via WebFetch only (curl rejected by WAF).
+# dos.elections.myflorida.com and results.elections.myflorida.com: Cloudflare challenge, not reachable. miamidade.gov works via curl.
+- mario-diaz-balart done
+- maria-elvira-salazar done
+- carlos-a-gimenez done
+- byron-donalds done
+- jared-moskowitz done
+- david-jolly done
+- gwen-graham done
+- bryan-avila done
+- blaise-ingoglia done
+- annette-taddeo done
+- wilton-simpson done
+- jose-javier-rodriguez done
+- ana-maria-rodriguez done
+- ileana-garcia done
+- alexis-calatayud done
+- daphne-campbell done
+- angela-nixon done
+- kevin-d-chambliss done
+- ashley-viola-gantt done
+- fabian-basabe done
+- omar-blanco done
+- juan-carlos-porras done
+- mike-redondo done
+- vicki-l-lopez done
+- carlos-g-muniz done
+- kansas-r-gooden done
+- monica-gordo done
+- fleur-jeannine-lobree done
+- thomas-w-logue done
+- bronwyn-catherine-miller done
+- javier-fernandez done (2 office terms)
+- ashley-moody done (3 office terms)
+- oliver-g-gilbert-iii done (3 office terms)
+- charles-burkett done (3 office terms)
+- ruben-a-coto done (2 office terms)
+- bruno-a-barreiro done (2 office terms)
+- lucia-baez-geller done (1 office terms)
+- katrina-wilson done (1 office terms)
+- howard-s-weinberg done (3 office terms)
+- judi-hamelburg done (no office found)
+- daniel-samaria done (1 office terms)
+- vince-c-lago done (2 office terms)
+- melissa-castro done (1 office terms)
+- suzy-lord done (1 office terms)
+- mary-ann-mixon done (1 office terms)
+- maureen-porras done (1 office terms)
+- omarr-c-nickerson done (1 office terms)
+- anders-urbom done (1 office terms)
+- charles-winters done (1 office terms)
+- luis-gonzalez done (2 office terms)
+- luis-f-de-la-cruz done (1 office terms)
+- oscar-sardinas done (1 office terms)
+- fernando-a-vazquez done (1 office terms)
+- edgar-ayala done (1 office terms)
+- lizelh-rodriguez done (1 office terms)
+- ivan-pacheco done (1 office terms)
+- alix-desulme done (3 office terms)
+- kassandra-timothe done (1 office terms)
+- mary-estime-irvin done (1 office terms)
+- jay-r-chernoff done (2 office terms)
+- phyllis-smith done (2 office terms)
+- natasha-l-ervin done (1 office terms)
+- rose-tydus done (1 office terms)
+- sherelean-bass done (1 office terms)
+- david-m-singer done (1 office terms)
+- steve-calle done (1 office terms)
+- lisa-bonich done (1 office terms)
+- dana-goldman done (2 office terms)
+- larisa-svechin done (2 office terms)
+- fred-spencer-deno-iv done (2 office terms)
+- jorge-arce done (1 office terms)
+- elizabeth-taylor-martinez done (1 office terms)
+- robert-duncan done (2 office terms)
+- richard-ramirez done (1 office terms)
+- ken-fairman done (3 office terms)
+- james-uthmeier done (1 office terms)
+- scott-singer done (2 office terms)
+- nestor-menendez done (1 office terms)
+- michael-tur done (1 office terms)
+- erwin-santacruz done (1 office terms)
+- neil-j-gillespie done (no office found)
+- te-mayonna-brown done (no office found)
+- peter-jassenoff done (no office found)
+- nicole-locklin done (no office found)
+- deborah-ann-meidinger-hosey done (no office found)
+- eliott-rodriguez done (no office found)
+- phil-ehr done (no office found)
+- eddy-rojas done (no office found)
+- scott-eckhard-jewett done (no office found)
+- nicole-skelly done (no office found)
+- frank-j-russo done (no office found)
+- rachel-rodriguez done (no office found)
+- moliere-dimanche done (no office found)
+- benjiman-rojas done (no office found)
+- dean-ocean-abrams done (no office found)
+- joe-van-vactor done (no office found)
+- jeffrey-peter-datto done (no office found)
+- juan-santana done (no office found)
+- joey-mendoza-atkins done (no office found)
+- elizabeth-jeanty done (no office found)
+- george-lavin done (no office found)
+- richard-lamondin-jr done (no office found)
+- jeffrey-solomon done (no office found)
+- jose-antonio-stoute done (no office found)
+- ramiro-orta done (no office found)
+- wancito-francius done (no office found)
+- gloria-romero-roses done (no office found)
+- marcos-reyes done (no office found)
+- ashley-perez-biliskov done (no office found)
+- nicolas-ramos done (no office found)
+- miguel-granda done (no office found)
+- armando-castillo done (no office found)
+- rey-lazaro-sordo done (no office found)
+- arthur-lemar-mcneil done (no office found)
+- monica-segura done (no office found)
+- rita-maria-baez done (no office found)
+- bonita-jones-peabody done (no office found)
+- rob-piper done (no office found)
+- linda-cothiere done (no office found)
+- alberto-zaltzberg done (no office found)
+- howard-goldmann done (no office found)
+- laureano-cancio done (no office found)
+- jackson-rip-holmes done (no office found)
+- gonzalo-sanabria done (no office found)
+- nikki-whiting done (no office found)
+- ricardo-de-melo-gomes done (no office found)
+- clint-rodriguez done (no office found)
+- ricky-fernandez done (no office found)
+- james-richie-hawkins done (no office found)
+- rene-gomez done (no office found)
+- fernanda-gomes done (no office found)
+- peter-espinosa done (no office found)
+- gustavo-garagorry done (no office found)
+- george-alvarez done (no office found)
+- kerby-j-altidor done (no office found)
+- edna-edelman done (no office found)
+- thomas-pulliam done (no office found)
+- ashley-lucio done (no office found)
+- edward-odabachian done (no office found)
+- velvet-s-connally done (no office found)
+- denise-white done (no office found)
+- danny-rojas done (no office found)
+- nick-schmidt done (no office found)
+- mariana-v-chavez done (no office found)
+- claire-amerena-london done (no office found)
+- silvia-p-tarafa done (no office found)
+- gloria-hernandez done (no office found)
+- juan-stefano done (no office found)
+- mykita-cherry-prime done (no office found)
+- rod-mack done (no office found)
+- george-morgan done (no office found)
+- brian-jinks done (no office found)
+- hector-medina done (no office found)
+- jobans-jules done (no office found)
+- carolina-matamoros done (no office found)
+- whitney-padote done (no office found)
+- jasmine-rivera done (no office found)
+- eunice-diona-flowers done (no office found)
+- linda-joseph done (no office found)
+- margaret-mary-love done (no office found)
+- dayanara-torres done (no office found)
+- ariel-e-vasquez done (no office found)
+- randolph-aikens done (no office found)
+- brian-dennis done (no office found)
+- audrey-dominguez done (no office found)
+- karen-baez-wallis done (no office found)
+- tamara-mourino done (no office found)
+- pam-gorman done (no office found)
+- tana-llinas done (no office found)
+- lasaly-changkachith done (no office found)
+- carl-crawford done (no office found)
+- alan-farquharson done (no office found)
+- a-j-lara done (no office found)
+- ralph-sanchez done (no office found)
+- james-suarez done (no office found)
+- ramon-gonzalez-diez done (no office found)
+- jill-lerner done (no office found)
+- robert-j-spence-iii done (no office found)
+- robert-balciunas done (no office found)
+- alex-brisk done (no office found)
+- steve-hirsch done (no office found)
+- david-vergel done (no office found)
+- carolina-cruz-gonzalez done (no office found)
+- magaly-gordo done (no office found)
+- tim-boylan done (no office found)
+- giovanna-sousa done (no office found)
+
+# Gaps (for a rerun)
+# - Unopposed winners never appear on a ballot, so the county results archive misses them; a candidate who only ever won unopposed may be wrongly marked "no office found". Check city clerk swearing-in minutes for: El Portal, Virginia Gardens, Biscayne Park, Medley, Opa-locka, Cutler Bay, Pinecrest, Palmetto Bay, Key Biscayne challengers.
+# - Pre-1996 Miami-Dade results and pre-1998 FL House/Senate rosters not online (Barreiro House 1992-98 start from Beacon Council bio; Diaz-Balart 1988-1992 from bioguide).
+# - Boca Raton (Singer), Lee County (V. Lopez), Parkland and Broward (Moskowitz), Hillsborough (Moody judgeship), Hernando (Ingoglia) records not pulled; bios used.
+# - roster.json lists Nestor Menendez as a Coral Gables commissioner from Feb 2025: likely Kirk Menendez; not confirmed.
+# - Exact Miami Gardens appointment date (Gilbert 2008), Coral Gables Lago 2017 term, Surfside Coto 2004 seat end, El Portal Nickerson mayoral start, Virginia Gardens Deno mayoral terms after 2003: not in archive.
