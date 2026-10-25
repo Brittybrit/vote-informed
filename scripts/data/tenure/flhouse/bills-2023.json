@@ -4,8 +4,8 @@
  "rule": "Every law enacted in sessions 2022A, 2022D, 2023, 2023B, 2023C whose final staff analysis names a kind of business or company that benefits (same test as universe.json). House floor roll calls only (the members are House members); a member is \"not seated\" on dates outside their House tenure.",
  "counts": {
   "enacted": 357,
-  "screened": 223,
-  "qualifying": 26
+  "screened": 239,
+  "qualifying": 32
  },
  "missing": {
   "A": [
@@ -15,22 +15,6 @@
   ],
   "B": [
    "2023-193",
-   "2023-223",
-   "2023-224",
-   "2023-225",
-   "2023-226",
-   "2023-227",
-   "2023-228",
-   "2023-229",
-   "2023-230",
-   "2023-231",
-   "2023-232",
-   "2023-233",
-   "2023-234",
-   "2023-235",
-   "2023-236",
-   "2023-237",
-   "2023-238",
    "2023-239",
    "2023-240",
    "2023-241",
@@ -149,38 +133,7 @@
    "2022-272",
    "2022-270"
   ],
-  "C": [
-   [
-    "2023-197",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/425/Vote/HouseVote_h00425e1229.PDF"
-   ],
-   [
-    "2023-205",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/180/Vote/HouseVote_s00180e1369.PDF"
-   ],
-   [
-    "2023-206",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/599/Vote/HouseVote_h00599c1142.PDF"
-   ],
-   [
-    "2023-211",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/869/Vote/HouseVote_h00869c2343.PDF"
-   ],
-   [
-    "2023-219",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/600/Vote/HouseVote_s00600c2181.PDF"
-   ],
-   [
-    "2023-222",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2023/892/Vote/HouseVote_s00892__373.PDF"
-   ]
-  ]
+  "C": []
  },
  "bills": [
   {
@@ -2859,7 +2812,26 @@
    },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Certain portions of the bill may result in cost savings to the private sector, while the provision requiring marine general liability insurance of bridge construction or maintenance over navigable waters may 118 S. 316.126(1)(c), F.S. STORAGE NAME: h0425z1.DOCX PAGE: 24 DATE: 6/14/2023 increase costs to the private sector. According to DOT, however, private vendors who bid on these projects normally include such costs in their bids, thus passing this cost back to the state. The fiscal impact of this provision is indeterminate. The road and bridge industry may experience improved employee recruitment as a result of DOT’s workforce development program.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-04-26",
+     "motion": "third reading",
+     "tally": [
+      113,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/425/Vote/HouseVote_h00425e1229.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 829",
@@ -2952,7 +2924,26 @@
    },
    "screen": "Private Sector Impact: Many of the provisions in the bill are designed to promote capital formation for small businesses and opportunities for Florida investors. An issuer filing an application to register securities is currently required to pay a filing fee of $1,000 per application. The bill maintains the $1,000 filing fee for offerings that exceed the amount provided in s. 3(b) of the Securities Act of 1933, as amended, which is five million dollars, but reduces the fee to $200 per application for each offering that does not exceed the amount provided in s. 3(b) of the Securities Act of 1933, as amended. The bill eliminates the requirement for an issuer to register with the Office of Financial Regulation (OFR). Currently, issuers are required to disclose all material facts about themselves when registering an offering of securities. BILL: CS/SB 180 Page 11 The bill allows all issuers meeting certain criteria, not only corporations, to use a simplified offering circular to register securities. The bill requires associated persons of investment advisers to attain at least 12 continuing education credits each year to maintain their registration and will incur continuing education reporting fee of three dollars per credit hour.33",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-05-02",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/180/Vote/HouseVote_s00180e1369.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 599",
@@ -2968,7 +2959,26 @@
    },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Credit counseling organizations and debtors residing in Florida would experience fiscal impact from this bill. Specifically, the change in fees to the greater of 15% of the amount paid monthly by the debtor and $75 would likely result in an increase in some revenue for credit counseling organizations. On the other hand, the increase in the maximum chargeable amount might have a negative, possibly significant, fiscal impact on debtors residing in Florida. 17",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-04-20",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/599/Vote/HouseVote_h00599c1142.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 619",
@@ -3028,7 +3038,26 @@
    },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: There may be a positive impact on the private sector by expanding the geographical scope of practice for those registered electrical contractors who choose to take advantage of the grandfathering provision. It would also allow more electrical contractors to work across the state.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-04-28",
+     "motion": "third reading",
+     "tally": [
+      106,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/869/Vote/HouseVote_h00869c2343.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 897",
@@ -3121,7 +3150,26 @@
    },
    "screen": "Private Sector Impact: The bill will positively impact assignees by granting them discretion in determining whether to record full schedules with the original assignment. If assignees decide against recording full schedules with the original assignment, fewer administrative costs and fees associated with assignment recordation will be paid. The bill will grant assignment courts more flexibility in setting the effective date of assignees’ rejection of unexpired leases of nonresidential property or of personal property. Earlier effective dates will result in fewer post-assignment administrative rent claims that assignees will be forced to defend in court, thereby reducing assignees’ legal fees and costs. The bill will positively impact assignees by allowing the giving of negative notice in connection with assignees’ rejections of unexpired leases of nonresidential property or of personal property. Explicitly allowing negative notice will eliminate some administrative claims and avoid unnecessary hearings in situations where there are no significant objections to the lease rejection, thereby reducing legal fees and costs. The bill will positively impact all parties to an assignment proceeding by granting courts the discretion to decide how often to hold status conferences or require status reports in assignment proceedings. Granting this discretion to courts will likely result in fewer conferences and reports, which will decrease legal fees and costs for all parties. The bill wi",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-04-20",
+     "motion": "third reading",
+     "tally": [
+      112,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/600/Vote/HouseVote_s00600c2181.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "not voting",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 676",
@@ -3159,7 +3207,26 @@
    },
    "screen": "Private Sector Impact: The owners of minor league baseball teams may pay less to their salaried players.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2023-05-02",
+     "motion": "third reading",
+     "tally": [
+      86,
+      30
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/892/Vote/HouseVote_s00892__373.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "no",
+      "Chambliss": "no",
+      "Porras": "yes",
+      "Nixon": "no",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 213",
@@ -3168,9 +3235,33 @@
    "title": "Limitation of Actions Involving Real Estate Appraisers and Appraisal Management Companies",
    "url": "https://www.flsenate.gov/Session/Bill/2023/213",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/213/Analyses/h0213z1.CJS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "real estate appraisers and appraisal management companies",
+    "named": [],
+    "quote": "The bill limits the liability of appraisers and appraisal management companies by imposing statutes of limitations and repose on actions for damages"
+   },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill limits the liability of appraisers and appraisal management companies by imposing statutes of limitations and repose on actions for damages against such persons or companies for acts or omissions in the performance of appraisal services or appraisal management services.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2023-04-26",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/213/Vote/HouseVote_h00213c2238.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 327",
@@ -3179,9 +3270,33 @@
    "title": "Fire Sprinkler System Projects",
    "url": "https://www.flsenate.gov/Session/Bill/2023/327",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/327/Analyses/h0327z1.RRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "fire protection (sprinkler) contractors",
+    "named": [],
+    "quote": "The bill may have a positive economic impact on consumers and contractors by allowing a fire protection system contractor to work on fire sprinkler projects immediately"
+   },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: STORAGE NAME: h0327z1.DOCX PAGE: 10 DATE: 6/16/2023 The bill may have a positive economic impact on consumers and contractors by allowing a fire protection system contractor to work on fire sprinkler projects immediately without having to go through the plans review process before repairing broken equipment or systems.",
-   "note": "not yet judged"
+   "note": "same class as 2025-115",
+   "votes": {
+    "house": {
+     "date": "2023-03-31",
+     "motion": "third reading",
+     "tally": [
+      110,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/327/Vote/HouseVote_h00327e1068.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "not voting",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 329",
@@ -3189,10 +3304,34 @@
    "chapter": "2023-225",
    "title": "Electronic Monitoring of Persons Charged with or Convicted of Offenses Involving Schools or Students",
    "url": "https://www.flsenate.gov/Session/Bill/2023/329",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/329/Analyses/h0329z1.CRJ.PDF",
+   "benefits": {
+    "category": "electronic monitoring service contractors",
+    "named": [],
+    "quote": "may increase the revenues of any contracted company providing such services"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may result in an increase in court-imposed electronic monitoring, which may increase the revenues of any contracted company providing such services.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2023-03-31",
+     "motion": "third reading",
+     "tally": [
+      112,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/329/Vote/HouseVote_h00329c1071.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 331",
@@ -3200,10 +3339,34 @@
    "chapter": "2023-226",
    "title": "Liens and Bonds",
    "url": "https://www.flsenate.gov/Session/Bill/2023/331",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/331/Analyses/h0331z1.CJS.PDF",
+   "benefits": {
+    "category": "construction subcontractors and material suppliers",
+    "named": [],
+    "quote": "The bill may cause more subcontractors, laborers, and material suppliers to receive compensation for the labor, services, or materials they supply"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may cause more subcontractors, laborers, and material suppliers to receive compensation for the labor, services, or materials they supply for construction projects, which may have a positive indeterminate impact on the private sector. However, the bill may have a negative indeterminate impact on the private sector by making it costlier to transfer a lien to a payment bond, and an indeterminate impact on the private sector by eliminating and replacing certain alternative forms of security that a contractor working on public project may file in lieu of a payment bond.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2023-04-26",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/331/Vote/HouseVote_h00331e1239.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 407",
@@ -3211,9 +3374,9 @@
    "chapter": "2023-227",
    "title": "Apalachicola Bay Area of Critical State Concern",
    "url": "https://www.flsenate.gov/Session/Bill/2023/407",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/407/Analyses/h0407z1.WST.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3222,10 +3385,10 @@
    "chapter": "2023-228",
    "title": "Homeowners' Associations",
    "url": "https://www.flsenate.gov/Session/Bill/2023/919",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/919/Analyses/h0919z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 29 S. 720.303(8)(a), F.S. 30 S. 720.303(8)(b), F.S. 31 S. 720.303(8)(c), F.S. STORAGE NAME: h0919z1.DOCX PAGE: 8 DATE: 6/21/2023 The bill may reduce fines paid by members to the HOA and provide greater fiscal responsibility of the officers and directors.",
+   "note": "benefit to HOA members"
   },
   {
    "bill": "HB 89",
@@ -3233,10 +3396,34 @@
    "chapter": "2023-229",
    "title": "Building Construction",
    "url": "https://www.flsenate.gov/Session/Bill/2023/89",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/89/Analyses/h0089z1.RRS.PDF",
+   "benefits": {
+    "category": "construction companies (permitting)",
+    "named": [],
+    "quote": "The bill may have a positive impact on construction industry professionals and companies due to increased information on completing a permit application timely."
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on construction industry professionals and companies due to increased information on completing a permit application timely.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2023-05-03",
+     "motion": "passage",
+     "tally": [
+      114,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/89/Vote/HouseVote_h00089c2469.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "yes",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 95",
@@ -3244,9 +3431,9 @@
    "chapter": "2023-230",
    "title": "Rights of Law Enforcement Officers and Correctional Officers",
    "url": "https://www.flsenate.gov/Session/Bill/2023/95",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/95/Analyses/h0095z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3255,9 +3442,9 @@
    "chapter": "2023-231",
    "title": "Flooding and Sea Level Rise Vulnerability Studies",
    "url": "https://www.flsenate.gov/Session/Bill/2023/111",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/111/Analyses/h0111z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3266,9 +3453,9 @@
    "chapter": "2023-232",
    "title": "Visiting County and Municipal Detention Facilities",
    "url": "https://www.flsenate.gov/Session/Bill/2023/119",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/119/Analyses/h0119z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3277,10 +3464,34 @@
    "chapter": "2023-233",
    "title": "Motor Vehicle Dealers, Manufacturers, Importers, and Distributors",
    "url": "https://www.flsenate.gov/Session/Bill/2023/637",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/637/Analyses/h0637z1.RRS.PDF",
+   "benefits": {
+    "category": "franchised motor vehicle dealers",
+    "named": [],
+    "quote": "The bill may have a positive economic impact on franchised dealers in the state"
+   },
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive economic impact on franchised dealers in the state as it protects their current business model even where the licensee with whom they have the agreement expands into EV production and sales. However, the bill may have a negative economic impact on consumers in the state to the extent that it prevents them from buying a vehicle using the potentially less-expensive direct-to-consumer sales model.",
+   "note": "same class as 2025-38",
+   "votes": {
+    "house": {
+     "date": "2023-04-26",
+     "motion": "third reading",
+     "tally": [
+      113,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2023/637/Vote/HouseVote_h00637c2198.PDF",
+     "roll": {
+      "Basabe": "yes",
+      "Gantt": "yes",
+      "Chambliss": "yes",
+      "Porras": "yes",
+      "Nixon": "no",
+      "Redondo": "not seated",
+      "Blanco": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1105",
@@ -3288,10 +3499,10 @@
    "chapter": "2023-234",
    "title": "Rapid DNA Grant Program",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1105",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1105/Analyses/h1105z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate positive impact on the private sector as the bill authorizes FDLE to grant funds to county jails and sheriffs’ offices for the purchase of Rapid DNA machines and other necessary supplies, which may be purchased from a private entity.",
+   "note": "purchases 'may be' from a private entity; no kind of business named"
   },
   {
    "bill": "HB 1327",
@@ -3299,9 +3510,9 @@
    "chapter": "2023-235",
    "title": "Pub. Rec./Investigative Genetic Genealogy Information and Materials",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1327",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1327/Analyses/h1327z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3310,9 +3521,9 @@
    "chapter": "2023-236",
    "title": "Unlawful Dumping",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1367",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1367/Analyses/h1367z1.LFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3321,9 +3532,9 @@
    "chapter": "2023-237",
    "title": "Battery by Strangulation",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1375",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1375/Analyses/h1375z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -3332,10 +3543,10 @@
    "chapter": "2023-238",
    "title": "Real Property Fraud",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1419",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1419/Analyses/h1419z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive economic impact on the private sector to the extent that it reduces title fraud in the state.",
+   "note": "private sector generally (title fraud)"
   },
   {
    "bill": "SB 2500",

@@ -76,3 +76,22 @@ Hialeah AgendaCenter minutes work via WebFetch.
 - Donors: 2026 hand-typed reports only (public/data/city-reports.json); earlier Medley campaign reports are in the clerk
   SharePoint folder, not reachable here. Gap.
 - MEDLEY DONE (agenda-only).
+
+## El Portal
+- Tenure starts (Miami-Dade Elections results + roll calls in the minutes): Nickerson on the council continuously since the
+  Feb 8, 2011 special election (Seat 3; vice mayor in 2017-2020 minutes; mayor from Nov 2020). Urbom since the Apr 2, 2019
+  special (Seat 1; first roll call May 28, 2019). Winters since Nov 5, 2024 election, sworn in Nov 12, 2024 (minutes).
+- Village WordPress media library (wp-json/wp/v2/media, curl works) lists council minutes/agendas from Mar 2017 only.
+  Downloaded all 2017-2024 council, special and budget minutes/agendas to scratchpad small/ep; scanned agendas OCR'd (cover pages).
+  Minutes: summary minutes Mar-Jun 2017 (votes printed), verbatim transcripts from Sep 2017.
+- Rolls: tools/eproll3 (speaker labels) + eproll4 (clerk call order) + epvote (must match clerk's announced tally). Hand-checked
+  every mismatch; manual rolls noted in the row notes. Partial rolls (an answer [inaudible]) marked "~".
+- 2026-10-25 added 154 actions 2017-03-28 .. 2024-12-10 (2017: 9, 2018: 11, 2019: 8, 2020: 11, 2021: 19, 2022: 31, 2023: 23,
+  2024: 42) to _small/src/elportal_rows.tsv (meeting keys p<yyyymmdd>[s]), 59 meetings, titles-en/translations, cfg window
+  2017-03-28, former members Pirela, Cubillos, Mathis, Dreher, Roman added as columns. Rebuilt actions.json: 195 actions.
+  141 with member votes (136 complete, 5 partial), 13 agenda-only / voice vote (roll null).
+- Missing: Feb 2011 - Feb 2017 (no council records online) = Nickerson's first ~6 years. Agenda-only meetings listed in cfg gaps.
+- Donors: only 2024 reports online for Winters (one $600 self-loan, no outside gifts) and Pirela (not an incumbent); no 2024 report
+  posted for Nickerson or Urbom, nothing for 2017-2022. 2026 hand-typed reports stay in city-reports.json. Nothing added.
+- NOTE for coordinator: elportal is not in scripts/city-actions.mjs MAP and has no body.json; not changed (outside my remit).
+- EL PORTAL DONE.
