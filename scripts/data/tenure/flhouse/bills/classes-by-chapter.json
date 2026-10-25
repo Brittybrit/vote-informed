@@ -169,5 +169,27 @@
    "autos-dealers"
   ],
   "not": "JM FAMILY"
+ },
+ "2023-249": {
+  "tags": [],
+  "re": "DAY CARE|DAYCARE|CHILD CARE"
+ },
+ "2023-250": {
+  "tags": [
+   "nursing-homes"
+  ],
+  "re": "NURSING|SKILLED|REHAB|HEALTH CARE ASSOC|SENIOR LIVING|LONG-TERM CARE|LONG TERM CARE"
+ },
+ "2023-269": {
+  "tags": [
+   "gambling-casinos",
+   "pari-mutuel"
+  ],
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
+  "not": "SEMINOLE|MICCOSUKEE|VGW"
+ },
+ "2023-276": {
+  "tags": [],
+  "re": "OPERATION NEW HOPE"
  }
 }
