@@ -1,0 +1,6417 @@
+{
+ "source": "scripts/data/tenure/flhouse/donors/*-pre2025.tsv (DOE, 2020-11-04 to 2024-12-31), tagged with scripts/data/industry/build/tag_state.py and overrides.json, same scope as state-donors.json (total >= $500 across all state files, or any organisation; INT and REF rows excluded). Only names not already in scripts/data/industry/state-donors.json; that file wins for any name in both.",
+ "donors": {
+  "NOBOA LUIS": {
+   "tags": [
+    "tech-software"
+   ],
+   "basis": "occupation",
+   "occ": "COMPUTER SOFTWARE EXECUTIVE / MARKETING EXECUTIVE",
+   "src": null
+  },
+  "LOGAN WILLIE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "NON-PROFIT ORGANIZATION CEO / CEO/ OPA LOCKA CDC / CEO/OPALOCKACOMMDVLPMCORP",
+   "src": null
+  },
+  "LAWTHER NANCY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED / CONSULTANT",
+   "src": null
+  },
+  "BROWN ALEXIS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FOUNDER/ SOCIALXCHANGE / EVENT PRODUCER / OWNER/SOCIALXCHANGE / CEO/ SOCIALXCHANGE",
+   "src": null
+  },
+  "LEWIS CHELSEA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER",
+   "src": null
+  },
+  "ADAMS BONITA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "PRYOR NIKEISHA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER/ THE PRYOR LAW GROUP, P",
+   "src": null
+  },
+  "BRIGGS LAURIE": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "LOUIMA GARRY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER",
+   "src": null
+  },
+  "GAMBLE KEAIRA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "EVENT PRODUCER/ CAMILLUS HOUSE / EVENT PRODUCER / CREATIVE DIRECTOR / EVENT PRODUCER/ KEAIRA CHANTEL",
+   "src": null
+  },
+  "ASHTON ANNIKA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER",
+   "src": null
+  },
+  "SORENSON KATHRYN": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "BYERS VANESSA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "VICKERS DEVON": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER / ASSOCIATE/ GREENBERG TRAURIG P",
+   "src": null
+  },
+  "CARD JIMMY": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "LOBBYIST / BIKE SHOP OWNER",
+   "src": null
+  },
+  "REDONDO MARCOS": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED / TEACHER",
+   "src": null
+  },
+  "CASTELLANO MAURICE": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "INVESTMENT FIRM",
+   "src": null
+  },
+  "NOVELA MARCELLA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ART CONSULTANT",
+   "src": null
+  },
+  "BREEZY OAKS FARM WEST, LLC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "FARM",
+   "src": null
+  },
+  "WALLACK REAL ESTATE INVESTMENTS, LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "DAVID WALLACK REAL ESTATE, LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "BREEZY OAKS FARM, LLC": {
+   "tags": [
+    "restaurants-hospitality",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "GETTY CHRISTINA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PRIVATE EQUALITY",
+   "src": null
+  },
+  "FAIETA JESSICA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "GOLDSTEIN GERALD STUART": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "FIREFIGHTER / RETIRED",
+   "src": null
+  },
+  "CHINA MOON": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "SOUTHERN PROPERTY INVESTMENT GROUP, LLC D/B/A THE CADET HOTEL": {
+   "tags": [
+    "securities-investment",
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "PROPERTY INVESTMENT",
+   "src": null
+  },
+  "JERNIGAN LISA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DEZER PROPERTIES II LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "27 WEST 20TH STREET LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "DEZER PROPERTIES 4 LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "DEZER PROPERTIES 48 LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "DEZER PROPERTIES 40 LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "SANCTUARY SOUTH BEACH, INC.": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "G.F.I. INVESTMENT INC": {
+   "tags": [
+    "realestate-dev",
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "RENAISSANCE RETIREMENT": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "GALBUT RUSSELL W": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "SACHS JEFFREY A": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "DENTIST",
+   "src": null
+  },
+  "WEST FLAGLER ASSOCIATES LIMITED": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ENTERTAINMENT",
+   "src": null
+  },
+  "BOUCHER STEVEN": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "HOSPITALITY EXECUTIVE",
+   "src": null
+  },
+  "PLESSNER RENE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "BUSINESS MANAGEMENT CONSULTANT",
+   "src": null
+  },
+  "AMERICAN FLOOD ACTION PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA PHYSICAL THERAPY ASSO. PAC": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "RODRIGUEZ MONICA L": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENTAL CONSULTANT",
+   "src": null
+  },
+  "GRAYROBINSON, P.A., FLORIDA POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "COMMITTEE OF AUTOMOTIVE RETAILERS POLITICAL ACTION COMMITTEE OF FLORIDA": {
+   "tags": [
+    "political-committee",
+    "autos-dealers",
+    "retail"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "THE CHRYSALIS CENTER, INC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTH CARE",
+   "src": null
+  },
+  "SMITH, BRYAN & MYERS, INC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT AFFAIRS",
+   "src": null
+  },
+  "CONTINENTAL STRATEGY LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / GOVERMENT RELATIONS",
+   "src": null
+  },
+  "THE CAPSULE GROUP, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "MANUFACTURING",
+   "src": null
+  },
+  "YARKOSKY TAYLOR": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONTRACTOR / CONSTRUCTION",
+   "src": null
+  },
+  "FLORIDA ALWAYS FIRST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "RAPPAPORT ERIC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "BLISKO MICHAEL": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTH CARE EXECUTIVE",
+   "src": null
+  },
+  "ST. JOHNS CONSERVATIVE ACTION COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "HITTLE HENRY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "CLIENT SERVICES REPRESENTATIVE",
+   "src": null
+  },
+  "MARRACHE URIEL": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "RENE' LLC": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "BUILDING MATERIALS SUPPLIER",
+   "src": null
+  },
+  "ISSA-KHAN, INC": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "AI ADVISORY INC.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ARTIFICIAL INTELLIGENCE",
+   "src": null
+  },
+  "FLORIDIAN PARTNERS, LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENTAL CONSULTING",
+   "src": null
+  },
+  "33 BAKER REVOCABLE TRUST": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "FLORIDA POLICE BENEVOLENT ASSOCIATION INC. FPBA LAW AND ORDER PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "GULF COAST BEVERAGE, LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTION",
+   "src": null
+  },
+  "MANGO'S TROPICAL CAFE": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "QUALITY ACQUISTITION COMPANY LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTION",
+   "src": null
+  },
+  "E.C. MANAGEMENT CORPORATION": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FOOD SERVICE",
+   "src": null
+  },
+  "ABC PAC": {
+   "tags": [
+    "political-committee",
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "NATIONAL FEDERATION OF INDEPENDENT BUSINESS FLORIDA POLITICAL ACTION COMMIT": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA VALUES COALITION": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BURKETT CHARLES": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "INVESTMENTS",
+   "src": null
+  },
+  "ABITBOL LAURENT": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE EXECUTIVE",
+   "src": null
+  },
+  "LAPIDES BARRY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MIAMI-DADE VICTORY COALITION": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "COMMUNITIES FIRST PROJECT PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "LOPEZ ORLY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "POLICE SERGEANT",
+   "src": null
+  },
+  "WATERFIELD J.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FINANCE EXECUTIVE",
+   "src": null
+  },
+  "WATERFIELD CHARMAINE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "MIAMI CITY BALLET BOARD MEMBER",
+   "src": null
+  },
+  "BROWARD BUILDERS PAC": {
+   "tags": [
+    "political-committee",
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FREEDOM ROCKS PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SALVER + SALVER, CPAS, LLP": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "CERTIFIED PUBLIC ACCOUNTANTS",
+   "src": null
+  },
+  "MMF ENTERPRISES LTD": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "PROPERTY HOLDINGS",
+   "src": null
+  },
+  "LEONI PROPERTIES, INC.": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "RATNER BRETT": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PRODUCTION EXECUTIVE",
+   "src": null
+  },
+  "MEENAN, P.A.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "FLORIDA THOROUGHBRED POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / PAC",
+   "src": null
+  },
+  "ATCO MARINA INC.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "MARINA",
+   "src": null
+  },
+  "INTERNATIONAL LONGSHOREMAN ASSOCIATION LOCAL 1416 POLITICAL ACTION COMMITTE": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "MARTINEZ CONSULTING GROUP, INC.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTING",
+   "src": null
+  },
+  "MARK PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "name",
+   "occ": "POLICIAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA HOME BUILDERS ASSOCIATION": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "homebuilders",
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "HOME BUILDERS / POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLAGER STARTEGIES LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTING",
+   "src": null
+  },
+  "BECKER AND POLIAKOFF": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "",
+   "src": null
+  },
+  "MIAMI DOLPHINS LTD.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "SPORTS TEAM",
+   "src": null
+  },
+  "SOUTH FLORIDA STADIUM, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "SPORTS STADIUM COMPANY",
+   "src": null
+  },
+  "TRULIEVE GA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "",
+   "src": null
+  },
+  "CAPITAL ADVOCACY GROUP": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "FERNANDEZ JAVIER": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DONNA DEMOCRATS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PC",
+   "src": null
+  },
+  "BECKER AND POLLAKOFF, PA": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "LOBBYING FIRM",
+   "src": null
+  },
+  "PROTECTING COASTAL COMMUNITIES": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "",
+   "src": null
+  },
+  "FLORIDA FARM BUREAU": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "BECKER AND POLLIAKOFF": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DOSAL": {
+   "tags": [
+    "tobacco-vaping"
+   ],
+   "basis": "occupation",
+   "occ": "TOBACCO SUPPLIER",
+   "src": null
+  },
+  "PUBLIX SUPERMARKET, INC.": {
+   "tags": [
+    "grocery"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "EAGLE BRANDS SALES, LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTORS",
+   "src": null
+  },
+  "TMOBILE": {
+   "tags": [
+    "telecom"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "AGRO INDUSTRIAL MANAGEMENT INC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "name",
+   "occ": "CROP PRODUCTION AND PROCESS CO",
+   "src": null
+  },
+  "CROP PRODUCTION AND PROCESS CONSULTING SERVICE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "WHOLESALE DISTRIBUTION",
+   "src": null
+  },
+  "CAPUTO JULIE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTANT",
+   "src": null
+  },
+  "SEIU FLORIDA STATE COUNCIL PC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "DUKE ENERGY CORP": {
+   "tags": [
+    "electric-utility"
+   ],
+   "basis": "name",
+   "occ": "ENERGY COMPANY",
+   "src": null
+  },
+  "COMMITTED TO HOMESTEAD PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PITTMAN LAW FIRM": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "NANCY GOODELL SITTIG TRUST": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "GUZMAN JULIO": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE BROKER",
+   "src": null
+  },
+  "FLORIDA DEMOCRATIC PARTY": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "STATE PARTY / POLITICAL PARTY",
+   "src": null
+  },
+  "RESTORING INTEGRITY PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ALACHUA COUNTY DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "COUNTY PARTY / POLITICAL PARTY",
+   "src": null
+  },
+  "BROWARD COUNTY DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "COUNTY PARTY / POLITICAL PARTY",
+   "src": null
+  },
+  "DUVAL COUNTY DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "COUNTY PARTY / POLITICAL PARTY",
+   "src": null
+  },
+  "FLORIDA RECYCLERS ASSOCIATION INC": {
+   "tags": [
+    "political-committee",
+    "waste-environment",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "WILBUR B BELL LIVING TRUST": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "CMTG INC": {
+   "tags": [
+    "retail"
+   ],
+   "basis": "occupation",
+   "occ": "RETAIL",
+   "src": null
+  },
+  "CAPITOL ALLIANCE GROUP INC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "DOWN BALLOTS DEMOCRATS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MIAMI PROPERTY PARTNERS, LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "TRADEMARK METALS RECYCLING, LLC": {
+   "tags": [
+    "waste-environment"
+   ],
+   "basis": "occupation",
+   "occ": "RECYCLING BUSINESS",
+   "src": null
+  },
+  "COALITION FOR BETTER CARE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PC / PAC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FOCUSED ON FLORIDA'S FUTURE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": " / PAC",
+   "src": null
+  },
+  "MIAMI DADE OPTOMETRIC PHYSICIANS": {
+   "tags": [
+    "physicians",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": " / OPTICIANS",
+   "src": null
+  },
+  "ACKERMAN LLP": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "LOBBYIST FIRM",
+   "src": null
+  },
+  "FLORIDA CITY FOREVER": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "FLORIDA CPA PAC- SOUTH": {
+   "tags": [
+    "political-committee",
+    "other"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "PROTECT OUR FUTURE, PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "TRULIEVE, INC.": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "MARIJUANA DISPENSARY",
+   "src": null
+  },
+  "BOOK PA RON": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "LOBBYIST",
+   "src": null
+  },
+  "HOME BUILDERS ASSOCIATION": {
+   "tags": [
+    "trade-association",
+    "homebuilders",
+    "construction"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "BUILDING STRONGER COMMUNITIES": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": " / PAC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "AGRO-INDUSTRIAL MANAGAEMENT, INC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "SOUTHERN GARDENS CITRUS NURSERY": {
+   "tags": [
+    "agriculture-citrus",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "SOUTH CENTRAL FLORIDA EXPRESS": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE / TRAIN COMPANY",
+   "src": null
+  },
+  "WALDMAN JUDY": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "UNIVERSAL CITY DEVELOPMENT PARTNERS LTD.": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "name",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "FLORIDA DENTAL ASSOCIATION PC": {
+   "tags": [
+    "political-committee",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "PC",
+   "src": null
+  },
+  "1199 SEIU FLORIDA PC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "AIF PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "name",
+   "occ": "BUSINESS",
+   "src": null
+  },
+  "AFFILIATED HEALTH CARE CENTERS": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "STOFIN CO., INC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "COMITTE FOR A GREATER MIAMI": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PC",
+   "src": null
+  },
+  "FNGLA PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "name",
+   "occ": "",
+   "src": null
+  },
+  "SUMNER DYLAN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PARTNER/ DELIVER",
+   "src": null
+  },
+  "GODDARD GREGORY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT / POLITICAL CONSULTANT SELF-EMPL",
+   "src": null
+  },
+  "JOHN ELROY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "OLADIPO A. ABIDEMI": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "LAFRANCE HOUSON": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / LAWYER",
+   "src": null
+  },
+  "TIPTON KEVIN": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "NURSE",
+   "src": null
+  },
+  "ULVERT CHRISTIAN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT / EVENT PLANNER / CONSULTANT",
+   "src": null
+  },
+  "HOLMES YVETTE MAUREEN": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "PROFESSOR/ UNIVERSITY OF MIAMI",
+   "src": null
+  },
+  "LEWIS JOHN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED / RELATIONSHIP MANAGER",
+   "src": null
+  },
+  "OKPALOBI BRANDON": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PRESIDENT / CAO",
+   "src": null
+  },
+  "BULLARD DWIGHT": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "SR. POLITICAL ADVISOR / NON-PROFIT / POLITICAL ADVISOR",
+   "src": null
+  },
+  "HUDSON ALEXIA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ROS MERITXELL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MCKINNEY AISHA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "RUTHS LIST FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "GC MURRAY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "VALBRUN DUNIER": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "TEACHER",
+   "src": null
+  },
+  "GANTT ANTHONY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED MILITARY",
+   "src": null
+  },
+  "PEARSON MELBA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ONE POSITIVE STEP, INC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PC",
+   "src": null
+  },
+  "VANITY NUMBER LEASING, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "PHONE NUMBER LEASING",
+   "src": null
+  },
+  "LEWIN MERICK T": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "MICHELLE MERICK T": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "SCHOOL COUNSELOR",
+   "src": null
+  },
+  "601 POMPANO LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "COMPLEX TRANSACTIONS LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "DIFFICULT BUSINESS TRANSACTION",
+   "src": null
+  },
+  "7501 PARKLAND LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "PROPERTY MANAGEMENT",
+   "src": null
+  },
+  "400 PLANTATION LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "PROPERTY MANAGEMENT",
+   "src": null
+  },
+  "URBAN GATEWAYS, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FIRM ENGAGING YOUTH IN ART",
+   "src": null
+  },
+  "WILLIAMS KEON": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ASST DIR/ URBAN PHILANTHROPIES",
+   "src": null
+  },
+  "HARRIS ULTRINA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SOCIAL SERVICES EXECUTIVE / CEO/ TOUCHING MIAMI WITH LOVE",
+   "src": null
+  },
+  "MYERS HOLLANDERS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / RETIRED",
+   "src": null
+  },
+  "PIERRE JOSEPH": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "BRAUFMAN JILL": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "HOMEMAKER",
+   "src": null
+  },
+  "MOONS TERRENCE": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "PIZZO JASON": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ANDRADE CARLOS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "EVENT PLANNER / EVENT DESIGN/ IYG EVENTS",
+   "src": null
+  },
+  "VANWIERINGEN KAYLA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "VP OF POLITICAL & PROGRAMS",
+   "src": null
+  },
+  "PENA MAYTE": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "COLEMAN COURTNEY": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "ADMINISTRATION/ UNIVERSITY OF",
+   "src": null
+  },
+  "THE MIAMI WOMAN'S PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "LALANNE BRUNELEY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "HORNE CHRISTOPHER": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "SAUNDERS LEON": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "EVANS LATOYA": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "CHIROPRACTOR / CHIROPRACTOR/ ISLAND BREEZE CH",
+   "src": null
+  },
+  "TAYLOR ANTHONY": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "FIREFIGHTER / FIREFIGHTER/ MDFR",
+   "src": null
+  },
+  "JOHNSON STEPHEN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "BENNA ADAM": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / ATORNEY",
+   "src": null
+  },
+  "FOR A BRIGHTER FUTURE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "DEAN CORNELIA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "URBAN DESTINATIONS, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRAVEL AGENCY",
+   "src": null
+  },
+  "STUEWE REBECCA ELISE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "TRAINING DIRECTOR / GOTV DIRECTOR/ EDGE COMMUNICAT",
+   "src": null
+  },
+  "THOMAS SHANNON": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT OWNER",
+   "src": null
+  },
+  "WHITELY YHANIQUE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SALES",
+   "src": null
+  },
+  "D MOSS & ASSOCIATES, LLC": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "ACCOUNTING FIRM",
+   "src": null
+  },
+  "BROWN VINCENT T": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "LAWRENCE CAROL D": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "DIR REHABILITATION/NORTH SHORE",
+   "src": null
+  },
+  "SAMUELS RENITA": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "RIVERS MICHAEL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "HUMAN SERVICES",
+   "src": null
+  },
+  "FLORIDIANS FOR TRUTH NOW": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / PC",
+   "src": null
+  },
+  "T.L. COVERSON": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "ACCOUNTING FIRM",
+   "src": null
+  },
+  "MCQUEEN JAMES D": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "GARNER RIDGE PARTNERS LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "BALOYRA ALBERT TERESA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SALES/ AMGEN",
+   "src": null
+  },
+  "CHUKWUMA JEFF": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER / CHUKWUMA LAW GROUP / ATTORNEY",
+   "src": null
+  },
+  "KROLL JEREMY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "AFSCME COUNCIL 79 POLITICAL COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "PC / PAC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "GASSANT MAKEBA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CEO/ GASSANT ENTERPRISES",
+   "src": null
+  },
+  "TREVARTHEN SUSAN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "BOOK LAUREN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CEO/ LAUREN�S KIDS",
+   "src": null
+  },
+  "1199 SEIU FLORIDA POLITICAL COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / PC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MAKING FLORIDA BETTER": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "WAY TO LEAD FLORIDA PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "GORACZKO CAROL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PARALEGAL/ STEWART TILGHMAN FO",
+   "src": null
+  },
+  "SEARCY DENNEY SCAROLA BARNHART & SHIPLEY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "KELLEY UUSTAL PLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "HICKEY LAW FIRM P.A.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "GROSSMAN ROTH YAFFA COHEN PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "MCKINNON LEGAL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "MUBARAK, SHERIF & OLADIPO, PLLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "ANDERSON JENNIFER": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "GOOD GOVERNMENT": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "LEVINE MICHAEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER / ATTORNEY",
+   "src": null
+  },
+  "LEVINE SARI": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "AUDIOLOGIST/ SOUTH FL ENT ASSO",
+   "src": null
+  },
+  "GRAHAM JOSIAH": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "JOHNSON HARDEMAN BARBARA": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENTAL CONSULTANT",
+   "src": null
+  },
+  "HARDEMAN BILLY": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "B AND B PROFESSIONAL CONSULTANT INC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENTAL CONSULTING",
+   "src": null
+  },
+  "BLANCO EVA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "JIMENEZ CARLOS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "JACKSON JASMELY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "OWNER",
+   "src": null
+  },
+  "CLUB TIPICO DOMINICANO RESTAURANT": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "MCCARRON DOUGLAS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ZEBERSKY EDWARD": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "TRIAL LAWYER",
+   "src": null
+  },
+  "PARRISH PHILIP": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ECHARTE PEDRO": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ADP STRATEGIC RESULTS LLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "COMMITTEE TO ELECT MICHAEL HEPBURN": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PC",
+   "src": null
+  },
+  "COLLINS COURTNE": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE ADMINISTRATOR",
+   "src": null
+  },
+  "PERRY WINGS PLUS MIAMI": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "HARRIS ANDREW": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "OVADIA LAW GROUP, PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "NORTH FLORIDA CITIZENS FOR JUSTICE, CCE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "CENTRAL FLORIDA CITIZENS FOR JUSTICE, CCE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "SOUTH FLORIDA CITIZENS FOR JUSTICE, CCE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "LIBERMAN CABRERA THOMPSON & REITMAN PLLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "RICHARD BARRY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "KAPLAN TRIAL LAWYERS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "EMILY'S LIST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "LAWRENE J SMITH, P.A.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "TEACHERS FOR PUBLIC SCHOOLS EXCELLENCE INC": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "TEACHERS UNION",
+   "src": null
+  },
+  "UNITED TEACHERS OF DADE TIGER COPE NORTH": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "TEACHERS UNION",
+   "src": null
+  },
+  "UNITED TEACHERS OF DADE TIGER COPE SOUTH": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "TEACHERS UNION",
+   "src": null
+  },
+  "FREEDLAND MICHAEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "PEREZ JANELLE": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "NETWORK DVLPM/ DOCTORS HEALTH",
+   "src": null
+  },
+  "PIZZO APRIL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ADMIN ASSISTANT/ MOSS",
+   "src": null
+  },
+  "LEADERSHIP FOR FLORIDA PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "GERSON MARGARITA": {
+   "tags": [
+    "self"
+   ],
+   "basis": "occupation",
+   "occ": "STAFF DIRECTOR/ FL LEGISLATOR",
+   "src": null
+  },
+  "PIZZO EILEEN": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "HCA NORTH FLORIDA AND GOOD GOVERNMENT GROUP": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "FLORIDA MEDICAL ASSOCIATION POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "PITTMAN LAW GROUP, P.L.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "FLORIDA HEALTH CARE POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "LEWIN MERICK": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "LEWIN MICHELLE": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "SCHOOL COUNSELOR",
+   "src": null
+  },
+  "CLUB TIPICO DOMINICANO": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "LOFTON POITIER ARLEEN": {
+   "tags": [
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "CLINICAL HOSPITAL PHARMACIST",
+   "src": null
+  },
+  "WALKER JUANITA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "DAYCARE OWNER",
+   "src": null
+  },
+  "PROTECT OUR FUTURE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "AUTOMATED HEALTHCARE SOLUTIONS LLC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE BILLING",
+   "src": null
+  },
+  "LAWRENCE CAROL": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "REHAB DIRECTOR/ NORTH SHORE ME",
+   "src": null
+  },
+  "CENTRAL FLORIDA CITIZENS FOR JUSTICE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "NORTH FLORIDA CITIZENS FOR JUSTICE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDIANS FOR BETTER GOVERNMENT PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "RUTH'S LIST FLORIDA RUTH'S LIST FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "THERILUS THERESA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "PIERROT LAW, PLLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "AFFECTIONATELY BUILDING COMMUNITIES PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "FAULKNER DESIREE": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE AGENT",
+   "src": null
+  },
+  "CAMPBELL THEMA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "NON PROFIT CEO/GIRLPOWERROCKS / NON-PROFIT CEO/ GIRL POWER ROC",
+   "src": null
+  },
+  "FRIENDS OF HILLARY CASSEL": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "FRIEDIN BROWN, PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "SERVICE EMPLOYEES INTERNATIONAL UNION LOCAL 1991 PC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "EBS ENGINEERING, INC": {
+   "tags": [
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "ENGINEERING FIRM",
+   "src": null
+  },
+  "DADE COUNTY MEDICAL ASSOCIATION": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "PAC / POLITICAL COMMITTEE",
+   "src": null
+  },
+  "JUSTICE FOR FLORIDA PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "ORTIZ EUNIC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED / ATTORNEY",
+   "src": null
+  },
+  "RICHARDSON CAROL": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "EDUCATOR/DADE SCHOOLS /  / EDUCATORMDCPS / EDUCATOR MDCPS / EDUCATOR / TEACHER",
+   "src": null
+  },
+  "HATHAWAY KATIE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED / NOT EMPLOYED NOT EMPLOYED / REGIONAL ORGANIZER / ORGANIZER",
+   "src": null
+  },
+  "TOUCHTON WHITNEY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "OPERATIONS ASSISTANT/904FORWAR / OPERATIONS AND DEVELOPMENT ASS / NONPROFIT / NONPROFIT DIRECTOR / NOT EMPLOYED",
+   "src": null
+  },
+  "MERTEN ILARAE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "B&B OWNER/SELF / B&B OWNERSELF / B&B OWNER SELF / B&B OWNER / DIRECTOR",
+   "src": null
+  },
+  "MONTGOMERY INGRID": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED / NOT EMPLOYED NOT EMPLOYED / REGIONAL ORGANIZING DIRECTOR",
+   "src": null
+  },
+  "HICKS JOSHUA": {
+   "tags": [
+    "affordable-housing"
+   ],
+   "basis": "occupation",
+   "occ": "PLATFORM ADMIN/COLORECTAL CANC / PLATFORM ADMIN / PLATFORM ADMINCOLORECTAL CANCE / PLATFORM ADMIN COLORECTAL CANC / PROGRAM DIR COLORECTAL CANCER / RETIRED / INDIVIDUAL / AFFORDABLE HOUSING DIRECTOR / ",
+   "src": null
+  },
+  "WILLIAMS JERLYSHA": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "AIR TRAFFIC CONTROLLER/FAA / ENTREPRENEUR",
+   "src": null
+  },
+  "COWART JENNIFER": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN/MAYO / PHYSICIAN/MAYO CLINIC / DOCTOR/MAYO CLINIC / PHYSICIAN / PHYSICIANMAYO CLINIC FLORIDA / PHYSICIAN MAYO CLINIC FLORIDA / ",
+   "src": null
+  },
+  "NULAND KAREN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "EVENT COORDINATOR/JAX HISTORIC / NOT EMPLOYED",
+   "src": null
+  },
+  "WARTHEN CASSANDRA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FLIGHT ATTENDANT/UNITED / FLIGHT ATTENDANT UNITED / FLIGHT ATTENDANT UNITED AIRLIN / FLIGHT ATTENDANT",
+   "src": null
+  },
+  "FERRELL MORRIS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT/SELF",
+   "src": null
+  },
+  "HENDRIX BONNIE": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED / NOT EMPLOYED NOT EMPLOYED",
+   "src": null
+  },
+  "NORTH FLORIDA SALES": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEER DISTRIBUTOR",
+   "src": null
+  },
+  "PELUSO JAMES": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "GOVT AFFAIRS/STATE / GOVT AFFAIRS",
+   "src": null
+  },
+  "TOMO DEVELOPMENT": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "DEVELOPMENT COMPANY",
+   "src": null
+  },
+  "BRENZEL LAUREN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ORGANIZING DIRECTOR/PLANNED PA",
+   "src": null
+  },
+  "JACKSON YOLANDA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY/BECKER / ATTY / ATTORNEY",
+   "src": null
+  },
+  "RESTORING INTEGRITY": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "GREEN JAMES": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED / TRANSPORTATION PLANNERFLORIDA / TRANSPORTATION PLANNER FLORIDA / TRANSPORTATION PLANNER / NOT EMPLOYED / ",
+   "src": null
+  },
+  "THE FLORIDA CITIZENS FOR JUSTICE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "MINION JAMES": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONTRACTOR / SIGN CONTRACTOR/SELF",
+   "src": null
+  },
+  "BRAKKEN ERIC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTING / CONSULTING EJB STRATEGIES LLC / SELF EMPLOYED / CONSULTANT",
+   "src": null
+  },
+  "MORALES MELISSA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "VICE PRESIDENT",
+   "src": null
+  },
+  "ABC LIQUORS": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "LIQUOR COMPANY",
+   "src": null
+  },
+  "DOGGIE STYLE PETS, INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "PET STORE",
+   "src": null
+  },
+  "SOUTHERN GARDENS GROVE CORPORATION": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "FARM CORP",
+   "src": null
+  },
+  "RSA CONSULTING GROUP LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTING FIRM / GOVERNMENT CONSULTINIG",
+   "src": null
+  },
+  "DE VILLIERS NICHOLAS": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "ENGLISH PROFESSORUNIVERSITY OF / PROFESSOR",
+   "src": null
+  },
+  "GRIFFIN MARK": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PASTOR",
+   "src": null
+  },
+  "DELEGAL JULIE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "WRITER/PARALEGAL DELEGAL & POI / PARALEGAL / WRITER / WRITER/PARALEGAL",
+   "src": null
+  },
+  "MAY KOLISNYK KELSEY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ASSOCIATE PRODUCER OPUS AGENCY",
+   "src": null
+  },
+  "GLASGAL KIM": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "IT SELF",
+   "src": null
+  },
+  "MATLOW JEREMY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PIZZA MAKER GAINES STREET PIES / PIZZA MAKER",
+   "src": null
+  },
+  "DEEGAN DONNA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "BUSINESS OWNER SELF / SMALL BUSINESS",
+   "src": null
+  },
+  "HARDEN DONNA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CHEF SELF",
+   "src": null
+  },
+  "SHEFFIELD NATJAN": {
+   "tags": [
+    "political-committee",
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY HERZOG & SHEFFIELD PC",
+   "src": null
+  },
+  "HODGES BILL": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED NOT EMPLOYED / NOT EMPLOYED",
+   "src": null
+  },
+  "GREY DANE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "TRANSPORTATION",
+   "src": null
+  },
+  "FLORIDA CONSUMERS FIRST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "KOLISNYK KELSEY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ASSOCIATE PRODUCER OPUS AGENCY",
+   "src": null
+  },
+  "POLSON TRACYE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "LICENSED CLINICAL SOCIAL WORKE / CLINICAL SOCIAL WORKER",
+   "src": null
+  },
+  "MIAMI DADE DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY",
+   "src": null
+  },
+  "POLK DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY",
+   "src": null
+  },
+  "OSCEOLA DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY",
+   "src": null
+  },
+  "PALM BEACH DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY",
+   "src": null
+  },
+  "SEMINOLE DEC": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY",
+   "src": null
+  },
+  "CONVERGE CREATIVE SOLUTIONS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ORGANIZATION",
+   "src": null
+  },
+  "DAVIDSON ELSIE": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REALTOR",
+   "src": null
+  },
+  "GUERRA REBECCA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SENIOR ASSOCIATE",
+   "src": null
+  },
+  "UNITED FACULTY OF FLORIDA PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MANN ANGELA": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "PROFESSOR / UNIVERSITY OF NORTH FLORIDA",
+   "src": null
+  },
+  "PERRY PHILIP": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "VP CLIENT SERVICES",
+   "src": null
+  },
+  "JACKSONVILLE ASSOC OF FIREFIGHTERS LOCAL 122 PC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "JACKSONVILLE NOW PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "B.A.T FUND": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CONSOLIDATED LOCAL UNION 177": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SHEET METAL WORKERS LOCAL 435": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CONNOR ERICA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT",
+   "src": null
+  },
+  "BURGESS JOY": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "FIX JEFFREY": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "HOTEL MANAGEMENT",
+   "src": null
+  },
+  "DESHAUTEURS LINDA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "NORTH FLORIDA CENTRAL LABOR COUNCIL": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MAKING FLORIDA BETTER PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA ACRE PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CWA COPE PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SEIU FPSU PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SEIU 1991 JACKSON NURSES PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "GUNSTER LAW OFFICE": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "JURVETSON KARLA": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "NORTHEAST FLORIDA COMMITTEE FOR ECONOMIC GROWTH": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CLU-PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MARATHON LIVE INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "MANAGEMENT RESOURCE SERVICES",
+   "src": null
+  },
+  "FLIC VOTES": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "VISA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CREDIT",
+   "src": null
+  },
+  "SEIU FLORIDA PUBLIC SERVICE UNION PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MAYFIELD ALPHONSO": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ORGANIZER",
+   "src": null
+  },
+  "JONES COYUCA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT",
+   "src": null
+  },
+  "RAVEN DOUGLAS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL DIRECTOR",
+   "src": null
+  },
+  "MARRACCINI NINA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "DIRECTOR OF COMMUNITY SERVICES",
+   "src": null
+  },
+  "NAJJAR ORAYB": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "AL-SHEHAIL MANSOOR": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "NANJI SUHAIL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "EYECAST",
+   "src": null
+  },
+  "RIZVI JAMIL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "AAR AIRCRAFT SERVICES MIAMI",
+   "src": null
+  },
+  "OKUN EMILY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FREELANCE FILM INDUSTRY",
+   "src": null
+  },
+  "HAMOUI NABEEL": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "SELF EMPLOYED / PHYSICIAN",
+   "src": null
+  },
+  "LORSBACH MICHAEL": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "UNEMPLOYED",
+   "src": null
+  },
+  "HALIM KHITAM": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "AVIS",
+   "src": null
+  },
+  "NORTHEAST FLORIDA OPOMETRIC SOCIETY": {
+   "tags": [
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "OPOMETRIC SOCIETY",
+   "src": null
+  },
+  "FIGHTING FOR FLORIDA'S FUTURE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "WOLFBURG JAKE": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "GHAFOOR NASRULLAH": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "KAPITAN RIMA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "QUBBAJ SARA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FACULTY",
+   "src": null
+  },
+  "KHATIB YAZAN": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "KHALIQ AFIFA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PROGRAMMER / PROGRAM DIRECTOR / PROGRAM MANAGER / PROGRAM / ",
+   "src": null
+  },
+  "ABDOU TAREK": {
+   "tags": [
+    "engineering",
+    "tech-software"
+   ],
+   "basis": "occupation",
+   "occ": "SOFTWARE ENGINEER / ENGINEER",
+   "src": null
+  },
+  "MIRZA KHALID": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PRESIDENT",
+   "src": null
+  },
+  "MERCHANT RIAZ": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CEO",
+   "src": null
+  },
+  "BARAKAT NIDAL": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "BUELOW FRIEDERIKE": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "NOT EMPLOYED",
+   "src": null
+  },
+  "BECKER & POLIAKOFF": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "ARMUSANDNEEBOM CONSULTING, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "BUSINESS CONSULTING",
+   "src": null
+  },
+  "WARREN NICHOLAS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "JAMAL ASAD": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CEO",
+   "src": null
+  },
+  "QUADER SYEDA": {
+   "tags": [
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "ANALYTICS ENGINEER",
+   "src": null
+  },
+  "SPILLER JUSTIN": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE AGENT",
+   "src": null
+  },
+  "LOCAL2GLOBAL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FIRST RESPONDERS",
+   "src": null
+  },
+  "HENRICHSEN NEIL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MILKIN WESTON": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "DIRECTOR",
+   "src": null
+  },
+  "CAMPBELL JOSEPH": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "MANAGER",
+   "src": null
+  },
+  "WHITFIELD OD'JUAN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SOCIAL JUSTICE",
+   "src": null
+  },
+  "DEBRIERE KATHERINE": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "PITTMAN LAWGROUP": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "FINDLATER CHRISTOPHER": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "NETPRENEUR",
+   "src": null
+  },
+  "FLORIDA RUTH'S LIST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "JARROD CAROL": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "KIDWAI ARIF": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "MODAK SUHAIL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "VP TECHNICAL OPERATIONS",
+   "src": null
+  },
+  "BAGDADI AASIF": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CTO",
+   "src": null
+  },
+  "SARWAR ZAHIR": {
+   "tags": [
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "PHYSICIAN",
+   "src": null
+  },
+  "TALUKDAR SHAHED": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "AGILE COACH",
+   "src": null
+  },
+  "JONES COYUCA RAE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL DIRECTOR",
+   "src": null
+  },
+  "REYNOLDS ANDY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SENIOR VP",
+   "src": null
+  },
+  "KEEPING FLORIDA GREAT": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDIANS FOR ECONOMIC ADVANCEMENT": {
+   "tags": [
+    "political-committee",
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ASSOCIATED BUILDERS AND CONTRACTORS FLORIDA EAST COAST CHAPTER": {
+   "tags": [
+    "political-committee",
+    "trade-association",
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA POLICE BENEVOLENT ASSOCIATION INV LAW AND ORDER PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "DADE COUNTY POLICE BENEVOLENT ASSOC INC PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BUILDING A BETTER FLORIDA POLITICAL COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA FEDERATION FOR CHILDREN PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "TECO ENERGY INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ENERGY",
+   "src": null
+  },
+  "FLORIDA INSURNACE COUNSIL POLITICAL COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA RIGHT SOLUTIONS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "THE VESTCOR COMPANIES INC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE DEVELOPMENT",
+   "src": null
+  },
+  "PHILLIPS AND JORDAN INC": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONSTRUCTIONS / CONSTRUCTION",
+   "src": null
+  },
+  "OD-EYEPAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "HCA NORTH FLORIDA DIVISIONAND GOOD GOVERNMENT GROUP": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ADDITIVE STRATEGIES LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "NORDVAST HOLDINGS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TECHNOLOGY",
+   "src": null
+  },
+  "THE BIG EASY CASINO": {
+   "tags": [
+    "gambling-casinos"
+   ],
+   "basis": "occupation",
+   "occ": "CASINO",
+   "src": null
+  },
+  "DOSAL TOBACCO CORP": {
+   "tags": [
+    "tobacco-vaping"
+   ],
+   "basis": "occupation",
+   "occ": "TOBACCO",
+   "src": null
+  },
+  "NEXTERA ENERGY CAPITAL HOLDINGS": {
+   "tags": [
+    "electric-utility"
+   ],
+   "basis": "occupation",
+   "occ": "UTILITIES",
+   "src": null
+  },
+  "13TH FLOOR MANAGER LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "ANHEUSER BUSCH": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTION",
+   "src": null
+  },
+  "JEDA CORP": {
+   "tags": [
+    "tech-software"
+   ],
+   "basis": "occupation",
+   "occ": "TECH COMPANY",
+   "src": null
+  },
+  "ADS TECHNOLOGY CORP": {
+   "tags": [
+    "tech-software"
+   ],
+   "basis": "occupation",
+   "occ": "TECH COMPANY",
+   "src": null
+  },
+  "SUAREZ DAVID": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CYBER SECURITY",
+   "src": null
+  },
+  "ROYAL CARIBBEAN GROUP USA INC": {
+   "tags": [
+    "cruise-maritime"
+   ],
+   "basis": "occupation",
+   "occ": "CRUISE LINE",
+   "src": null
+  },
+  "GRAYROBINSON PA PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "GLOBALSKY HEALTH LLC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "name",
+   "occ": "WELLNESS",
+   "src": null
+  },
+  "BECKER AND POLIAKOFF PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "UNITED AUTOMOBILE INSURANCE COMPANY": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "SMY WINES LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTOR",
+   "src": null
+  },
+  "CONSERVATIVES FOR A BETTER FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "AFSCME": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "LABOR UNION",
+   "src": null
+  },
+  "TEAMSTERS LOCAL 79 PAC FOR BETTER GOVERNMENT": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA VETERINARY MEDICAL ASSOCIATION PAC": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CAVALIER HOTEL": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "HOSPITALITY",
+   "src": null
+  },
+  "BORTUNK DEBORAH": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "ACCOUNTANT",
+   "src": null
+  },
+  "ABC LIQUORS, INC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTOR",
+   "src": null
+  },
+  "SU GALE PROPERTIES, LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "REG FINANCIAL, LLC": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "FINANCIAL SERVICES",
+   "src": null
+  },
+  "RENAISSANCE RETIREMENT COMMUNITY, INC.": {
+   "tags": [
+    "realestate-dev",
+    "nursing-homes"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "FLORIDA POLICE BENEVOLENT ASSOCIATION INC FBPA LAW AND ORDER PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SCHWARTZ BERNICE": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "SIXTH STREET MIAMI PARTNERS LLC": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "GLOBAL INVESTMENT FIRM",
+   "src": null
+  },
+  "KEEPING FLORIDA AFFORDABLE PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "CITIZENS FOR PRINCIPLES LEADERSHIP PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "KILMAN JONATHAN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "CONSULTING / IT EXECUTIVE / POLITICAL CONSULTANT",
+   "src": null
+  },
+  "CREI HOLDINGS LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE HOLDINGS / REAL ESTATE",
+   "src": null
+  },
+  "BRAMAN MOTORS, INC": {
+   "tags": [
+    "autos-dealers"
+   ],
+   "basis": "occupation",
+   "occ": "AUTO DEALER",
+   "src": null
+  },
+  "DEL REY JULIO": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE INVESTOR",
+   "src": null
+  },
+  "OVADIA LAW GROUP, PA.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "IWP": {
+   "tags": [
+    "pharmacies-pbm"
+   ],
+   "basis": "occupation",
+   "occ": "PHARMACY / GOVERNEMNT AFFAIRS",
+   "src": null
+  },
+  "THE LEWIS BEAR COMPANY": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE WHOLESALER",
+   "src": null
+  },
+  "PURE SOURCE, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "VITAMIN MANUFACTURER",
+   "src": null
+  },
+  "AMERICAN BEVERAGE ASSOCIATION": {
+   "tags": [
+    "alcohol-beverage",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "TRADE ASSOCIATION",
+   "src": null
+  },
+  "RED SPEED FLORIDA, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "RED LIGHT CAMERAS",
+   "src": null
+  },
+  "FLORIDA INSURANCE COUNCIL": {
+   "tags": [
+    "political-committee",
+    "insurance-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PHILLIPS AND JORDAN, INC.": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONSTRUCTION COMPANY",
+   "src": null
+  },
+  "MOORE CLARENCE S": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "FLORIDA HARBOR PILOTS ASSOCIATION, INC.": {
+   "tags": [
+    "cruise-maritime",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "TRADE ASSOCIATION",
+   "src": null
+  },
+  "RAYONIER OPERATING COMPANY LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "NORTHPORT HEALTH SERVICES OF FLORIDA LLC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "SOUTHERN GLAZERS WINE AND SPIRITS LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTOR",
+   "src": null
+  },
+  "RENE HERING TTEE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "THE COMMITTEE FOR JUSTICE, TRANSPORTATION AND BUSINESS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "THE HOME DEPOT INC. POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "retail"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "NUNEZ LAW, P.L.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ZIEGLER DR. JAN L.": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "DENTIST",
+   "src": null
+  },
+  "PORRAS SANTIAGO": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "FOOD DISTRIBUTION",
+   "src": null
+  },
+  "MIRANDA ADVOCACY GROUP": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "BARRANTES DR. GONZALO": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "DENTIST",
+   "src": null
+  },
+  "RODRIGUEZ MONICA": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / POLITICAL CONSULTANT",
+   "src": null
+  },
+  "ARMSTRONG DAVID": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "EDUCATION ADMINISTRATOR",
+   "src": null
+  },
+  "GRAY ROBINSON PA FLORIDA POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "RONALD L. BOOK, PA.": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "CAPITOL PARTNERS LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / GOVERMENT RELATIONS",
+   "src": null
+  },
+  "MAX-NEW COMPANY": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "AIR CONDITIONING",
+   "src": null
+  },
+  "SERVICARGO MIAMI, INC.": {
+   "tags": [
+    "trucking-logistics"
+   ],
+   "basis": "occupation",
+   "occ": "FREIGHT FORWARDING",
+   "src": null
+  },
+  "GLOBAL EAGLE FOOD CORP": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "FOOD DISTRIBUTION",
+   "src": null
+  },
+  "JP ALL IN ONE, LLC": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONTRACTOR",
+   "src": null
+  },
+  "ROUBY, CHAIT, & SICKING, PL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEYS",
+   "src": null
+  },
+  "PENATE DR. LUIS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "DOCTOR",
+   "src": null
+  },
+  "MARTIR JAYLIN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "AIR CONDITIONING",
+   "src": null
+  },
+  "LEON DANIEL": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "CHANTI ERICA": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / GOVERNMENT CONSULTANT",
+   "src": null
+  },
+  "SCHOOL DEVELOPMENT HC FINANCEE, LLC": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "EDUCATION",
+   "src": null
+  },
+  "PORRAS JUAN CARLOS": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "FOOD DISTRIBUTION",
+   "src": null
+  },
+  "FERNANDEZ RYAN": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "DIAZ ALEJANDRO": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "PENA CARLOS": {
+   "tags": [
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "ENGINEER",
+   "src": null
+  },
+  "UNIVISTA INSURANCE CORPORATION": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "UNIVISTA ADVERTISING GROUP INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ADVERTISING",
+   "src": null
+  },
+  "POOL DEPOT AND PATIOS LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POOLS",
+   "src": null
+  },
+  "PROTECT OUR FAMILY VALUES": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "PEOPLE ABOVE POLITICS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "HCA NORTH FLORIDA DIVISION GOOD GOVERNMENT GROUP": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BREIER COREY": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "RUBIN TURNBULL & ASSOCIATES": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "BLANTON TRAVIS": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT CONSULTANT",
+   "src": null
+  },
+  "US INTERNATIONAL CORP": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "FOOD DISTRIBUTION",
+   "src": null
+  },
+  "BELLINA DANIEL": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "FINANCIAL SERVICE / FINANCIAL SERVICES",
+   "src": null
+  },
+  "PHARMACISTS FOR IMPROVED HEALTH CARE OUTCOMES FSHP PAC": {
+   "tags": [
+    "political-committee",
+    "pharmacies-pbm",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "LIBERTATEM": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BUILDING FLORIDA'S FUTURE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA BUSINESS LEADERSHIP": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA ACCOUNTABILTY FUND": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "A BOLD FLORIDA FUTURE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FAICPAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FCCI INSURANCE GROUP": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "BREIER ROSE": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "CITIZENS FOR BUILDING FLORIDA'S FUTURE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "BUILDING A BRIGHTER FUTURE FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "LOPEZ AVERY RAPHAEL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT",
+   "src": null
+  },
+  "CONSERVATIVE FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BROWNING DAVID": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / GOVERNMENT AFFAIRS",
+   "src": null
+  },
+  "FLORIDA FARMERS AND RANCHERS UNITED": {
+   "tags": [
+    "political-committee",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "COMMITTEE TO PROTECT NW FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "JACKSONVILLE KENNEL CLUB INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "KENNEL",
+   "src": null
+  },
+  "ALVAREZ JOSE": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONTRACTOR",
+   "src": null
+  },
+  "LAUNCHED": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "EDUCATION",
+   "src": null
+  },
+  "CHARTER SCHOOLS USA INC": {
+   "tags": [
+    "charter-schools",
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "CHARTER SCHOOL",
+   "src": null
+  },
+  "RED APPLE DEVELOPMENT, LLC": {
+   "tags": [
+    "construction"
+   ],
+   "basis": "occupation",
+   "occ": "CONSTRUCTION",
+   "src": null
+  },
+  "FLORIDIANS UNITED": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "PATRIOT ONCOLOGY LLC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "PRESCRIPTION FOR FLORIDA PROSPERITY": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ISLAND DOCTORS OF NEW SMYRNA BEACH MEDICAL CENTER": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "BRAVE RIFLES PA": {
+   "tags": [
+    "firearms"
+   ],
+   "basis": "occupation",
+   "occ": "FIREARMS",
+   "src": null
+  },
+  "ECHO MANAGED CARE, LLC.": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "RMMS INVESTMENTS, LLC": {
+   "tags": [
+    "securities-investment"
+   ],
+   "basis": "occupation",
+   "occ": "INVESTMENTS",
+   "src": null
+  },
+  "PEOPLE'S TRUST PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "AMERICAN FIRE SPRINKLER ASSOCIATION": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "ASSOCIATION / PAC / TRADE ASSOCIATION",
+   "src": null
+  },
+  "FLORIDIANS FIRST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "TURANCHIK JOHN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ZAPATA JUAN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTANT",
+   "src": null
+  },
+  "ROBERT M LEVY AND ASSOCIATES INC.": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "ELEVATED LLC": {
+   "tags": [
+    "gambling-casinos"
+   ],
+   "basis": "occupation",
+   "occ": "GAMING",
+   "src": null
+  },
+  "THE GEO GROUP": {
+   "tags": [
+    "private-prisons"
+   ],
+   "basis": "occupation",
+   "occ": "CORRECTIONS MANAGEMENT",
+   "src": null
+  },
+  "JP MORGAN CHASE AND CO": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FINANCIAL INSTITUTION",
+   "src": null
+  },
+  "AVMED": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "WE ALL SHOULD HELP": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "NATALIE KATO PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "HCA EAST FLORIDA DIVISION OF GOOD GOVERNMENT PAC": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "PEREZ WILLIAM L.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "HUMAN RESOURCES",
+   "src": null
+  },
+  "FLORIDA MEDICAL ASSOCIATION": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "MIRANDA ALEJANDRO": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATION CONSULTANT",
+   "src": null
+  },
+  "THE REPUBLICAN PARTY OF FLORIDA": {
+   "tags": [
+    "party",
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL PARTY / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FRIENDS OF RICKY TSAY": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA FREE ENTERPRISE FUND": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ACTION FOR BEHAVIORAL HEALTHCARE": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BALIDO ALBERTO": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTANT",
+   "src": null
+  },
+  "JOHNSTON & STEWARD GOVERNMENT STRATEGIES": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "FRIENDS OF MIKE GIALLOMBARDO": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDA BEER WHOLESALES GOOD GOVERNMENT COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FRIENDS OF RANDY FINE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FCCI SERVICES, LLC": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "FOSTER SHAWN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTANT",
+   "src": null
+  },
+  "A BOLDER FLORIDA PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "SOUTHERN GARDENS CITRUST HOLDINGS CORP": {
+   "tags": [
+    "agriculture-citrus",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "LEWIS LONGMAN & WALKER PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "LATIN SANDWHICH EXPESS, INC.": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "RG AMBULANCE SERVICE, INC.": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "name",
+   "occ": "ER SERVICES",
+   "src": null
+  },
+  "CORREOSO JAVIER": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTING",
+   "src": null
+  },
+  "FLORIDA ACADEMY OF PHYSICIAN ASSISTANTS PAC": {
+   "tags": [
+    "political-committee",
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "COMMITTEE FOR A GREATHER MIAMI": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA CONSERVATIVE FEDERATIONS": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "LOCKHART KARIS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "POLITICAL CONSULTANT",
+   "src": null
+  },
+  "CORAL GABLES FIRST": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CEOMC FLORIDA INC C/O RESOURCE PROPERTY MANAGEMENT": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "PROPERTY MANAGEMENT",
+   "src": null
+  },
+  "ALLSTATE INSURANCE COMPANY": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "RIZO JR ALEJANDRO": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "SMALL BUSINESS OWNER",
+   "src": null
+  },
+  "FLORIDA ARCHITECTS POLITICAL ACTION COMITTEE": {
+   "tags": [
+    "political-committee",
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "DADE COUNTY MEDICAL ASSOCIATION PAC": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "ELEVATING FLORIDA'S FUTURE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "THE SOUTHERN GROUP OF FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "THE FIORENTINO GROUP LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "MAXIM HEALTHCARE SERVICES": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "FRIENDS OF JESSICA BAKER": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "EMILSON CARL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "IMPORTER DISTRIBUTOR",
+   "src": null
+  },
+  "FIRE SAFE FLORIDA POLITICAL COMMITTEE INC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE / PAC",
+   "src": null
+  },
+  "FCCI SERVICES INC.": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE",
+   "src": null
+  },
+  "FLORIDA RESTAURANT AND LODGING ASSC PAC.": {
+   "tags": [
+    "political-committee",
+    "restaurants-hospitality",
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FRIENDS OF LANDSCAPE ARCHITECTURE POLITICAL COMMITTEE": {
+   "tags": [
+    "political-committee",
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "CYBER CITIZENZ FOR JUSTICE INC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "ADVOCACY GROUP",
+   "src": null
+  },
+  "ISSENBERG TARA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "HOMEMAKER",
+   "src": null
+  },
+  "FERNANDEZ RODOLFO J": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT AFFAIRS",
+   "src": null
+  },
+  "TOUBY, CHAIT, & SICKING PL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "ENTERPRISE HOLDINGS INC PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "BRAMAN CADILLAC INC": {
+   "tags": [
+    "autos-dealers"
+   ],
+   "basis": "occupation",
+   "occ": "AUTO DEALERSHIP",
+   "src": null
+  },
+  "REALTORS PAC": {
+   "tags": [
+    "political-committee",
+    "realestate-dev",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "THE MAERNICK GROUP": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "RED SPEED FLORIDA": {
+   "tags": [
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "TRAFFIC CAMERAS",
+   "src": null
+  },
+  "FPBA LAW AND ORDER PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "THE CHRYSALIS CENTER INC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "537, LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS",
+   "src": null
+  },
+  "UNIVERSAL CITY DEVELOPMENT PARTNERS LTD": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT RELATIONS / HOSPITALITY / GOVERMENT RELATIONS",
+   "src": null
+  },
+  "BESTBEST HOLDINGS, INC.": {
+   "tags": [
+    "pari-mutuel"
+   ],
+   "basis": "occupation",
+   "occ": "PARIMUTUEL",
+   "src": null
+  },
+  "PHARMACIST FOR IMPROVED HEALTH CAR OUTCOMES FSHP PAC": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "MERCK SHARP AND DOHME LLC": {
+   "tags": [
+    "pharma"
+   ],
+   "basis": "name",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "SYSCO": {
+   "tags": [
+    "political-committee",
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "AKERMANN LLP": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "ZENECA": {
+   "tags": [
+    "pharma"
+   ],
+   "basis": "occupation",
+   "occ": "PHARMACEUTICALS",
+   "src": null
+  },
+  "SEMINOLE TRIBE OF INDIANS": {
+   "tags": [
+    "gambling-casinos"
+   ],
+   "basis": "name",
+   "occ": "INDIAN TRIBE",
+   "src": null
+  },
+  "LATIN SANDWICH EXPRESS, INC": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "FLORIDA CPA PAC - SOUTH": {
+   "tags": [
+    "political-committee",
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "SUNSHINE DADE INVESTMENTS LLC": {
+   "tags": [
+    "securities-investment",
+    "oil-gas"
+   ],
+   "basis": "occupation",
+   "occ": "FUEL DISTRIBUTOR",
+   "src": null
+  },
+  "ASSURANT INC PAC": {
+   "tags": [
+    "political-committee",
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "JP MORGAN CHASE AND CO PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "WEST COAST UNIVERSITY INC": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "EDUCATION",
+   "src": null
+  },
+  "EDUARDO GOMEZ PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "BRAMAN HONDA": {
+   "tags": [
+    "autos-dealers"
+   ],
+   "basis": "name",
+   "occ": "AUTO INDUSTRY",
+   "src": null
+  },
+  "BRAMAN MOTORCARS": {
+   "tags": [
+    "autos-dealers"
+   ],
+   "basis": "name",
+   "occ": "AUTO INDUSTRY",
+   "src": null
+  },
+  "CARDENAS LAW FIRM LLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "AGRO INDSUTRIAL MANAGEMENT INC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "SOTHERN GLAZER'S WINE AND SPIRITS LLC": {
+   "tags": [
+    "alcohol-beverage"
+   ],
+   "basis": "occupation",
+   "occ": "BEVERAGE DISTRIBUTORS",
+   "src": null
+  },
+  "FLORIDA CABLE TELECOMMUNICATIONS ASSOCIATION INC": {
+   "tags": [
+    "political-committee",
+    "telecom",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "TELECOMMUNICATIONS / PAC",
+   "src": null
+  },
+  "ATT FLORIDA PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "A DUDA & SONS INC": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "THE FERRARO LAW FIRM": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "MARCMAN BUSINESS SOLUTIONS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "MANAGEMENT CONSULTING",
+   "src": null
+  },
+  "FL ORAL AND MAXILLOFACIAL SURGEONS PAC": {
+   "tags": [
+    "political-committee",
+    "physicians",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "COMMITTEE FOR GREATER MIAMI": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "PAC",
+   "src": null
+  },
+  "ROBERT M LEVY AND ASSOCIATES INC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT AFFAIRS",
+   "src": null
+  },
+  "FLORIDA STATE LODGE FRATERNAL ORDER OF POLICE": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "name",
+   "occ": "UNIOIN",
+   "src": null
+  },
+  "ST LUCIE RIVER COMPNAY LTD": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "DADE FIRST PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "MARIN & SONS INC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT CONSULTINIG",
+   "src": null
+  },
+  "ALCOBA JULIET": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "THOMPSON WAYLON": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "PAJCIC CURRY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "BELLO DAX": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "WAUGH CHRISTIAN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "GARAY GABRIEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "TINTSMAN ERIC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "POSGAY MATTHEW": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "BALENT ALVAN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "HERNANDEZ ANDY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "SURIEL AMANDA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "NU�EZ BOBBY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DIAZ-BALART DANIEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DE LAS SALAS GABRIEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MITCHELL, JR. PHILLIP J.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "REDONDO ANA MARIA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "HINES MICHAEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "DIAZ-BALART LINCOLN": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MOSELY JONI": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "RILEY JASON": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FACILITY PROCESS TRAINER",
+   "src": null
+  },
+  "LAW OFFICE OF RICK KOZELL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "MEILER MICHAL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "HAGGARD MICHAEL": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "LAFFERE STACY": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ALONSO ANDRES": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "ANESTHESIOLOGY LEADERSHIP COUNCIL 2": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "ANESTHESIOLOGY LEADERSHIP COUNCIL 1": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "SUN CORN, INC.": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "NEW FARM, INC.": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "JOHNSON & ASSOCIATES": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERMENT RELATIONS",
+   "src": null
+  },
+  "MIAMI UNITED PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "ALSTON TOREY": {
+   "tags": [
+    "education-other"
+   ],
+   "basis": "occupation",
+   "occ": "SCHOOL BOARD MEMBER",
+   "src": null
+  },
+  "DRURY CHRISTOPHER": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "LEWIS LONGMAN & WALKER P.A": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "MAYERNICK FRANK": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERMENT RELATIONS",
+   "src": null
+  },
+  "PROTECT OUR FLORIDA VALUES": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "MITCHELL PAUL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERMENT AFFAIRS",
+   "src": null
+  },
+  "VELIZ RENE": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "FRANCHISE OPERATORS",
+   "src": null
+  },
+  "TRUJILLO CARLOS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAWYER",
+   "src": null
+  },
+  "HALLEY DANIEL": {
+   "tags": [
+    "engineering"
+   ],
+   "basis": "occupation",
+   "occ": "ENGINEERING",
+   "src": null
+  },
+  "GONZALEZ OSVALDO": {
+   "tags": [
+    "insurance-other"
+   ],
+   "basis": "occupation",
+   "occ": "INSURANCE BROKER",
+   "src": null
+  },
+  "BUCHANAN FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "LAUNCHING FLORIDA'S FUTURE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "GROWING FLORIDA'S LEADERSHIP": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "VARGAS GONZALEZ BALDWIN DELOMBARD": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "ANDREW J. VARGAS PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "TURNBULL HEATHER L": {
+   "tags": [
+    "lobbying",
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY / GOVERNMENT CONSULTANT",
+   "src": null
+  },
+  "COMMITTEE TO PROTECT NORTH WEST FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PINA ALICIO": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "FRIENDS OF TOMMY GREGORY": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "REDONDO LAW P.A.": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "CONSERVATIVES FOR A BETTER MIAMI DADE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "ICON FLOORS LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "FLOOR POLISHING/RESTORATION",
+   "src": null
+  },
+  "RUIZ DANIEL F.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "ACCOUNT EXECUTIVE",
+   "src": null
+  },
+  "BRIGHT FUTURE FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "DI PIETRO PARTNERS": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "MCGUIREWOODS LLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "FRIENDS OF TRACI KOSTER": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "RT HOLDINGS, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "HOLDINGS COMPANY",
+   "src": null
+  },
+  "BANYAN 5520 LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "TIFFANY FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PASCO PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "DADE COUNTY POLICE BENEVOLENT ASSOC INC. PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "HEARTLAND PROSPERITY": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "KEEP FLORIDA MOVING FORWARD": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "CONSERVATIVES FOR CLEAN WATER": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FRIENDS OF SPENCER ROACH": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "CONSERVATIVES FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "JOHN SNYDER FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "LATIN SANDWICH EXPRESS, INC.": {
+   "tags": [
+    "restaurants-hospitality"
+   ],
+   "basis": "occupation",
+   "occ": "RESTAURANT",
+   "src": null
+  },
+  "YEAGUER FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDIANS PARTNERS, LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "GOVERMENT AFFAIRS",
+   "src": null
+  },
+  "FLORIDA INTERNET & TELEVISION": {
+   "tags": [
+    "telecom"
+   ],
+   "basis": "occupation",
+   "occ": "TELECOMMUNICATIONS",
+   "src": null
+  },
+  "JOHNSTON & STEWART GOVERNMENT STRATEGIES": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERMENT RELATIONS",
+   "src": null
+  },
+  "SOUTHERN GARDEN GROVES CORPORATION": {
+   "tags": [
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "SOUTHERN GARDENS CITRUS HOLDING CORP.": {
+   "tags": [
+    "agriculture-citrus",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "SOUTHERN GARDENS CITRUS NURSERY, LLC": {
+   "tags": [
+    "agriculture-citrus",
+    "agriculture-other"
+   ],
+   "basis": "occupation",
+   "occ": "AGRICULTURE",
+   "src": null
+  },
+  "HCA WEST FLORIDA DIVISION AND GOOD GOVERNMENT": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "HCA NORTH FLORIDA DIVISION & GOOD GOVERNMENT GROUP": {
+   "tags": [
+    "political-committee",
+    "hospitals"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL ACTION COMMITTEE / POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "SMITH, BRYAN & MYERS, INC.": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "GOVERMENTAL AFFAIRS",
+   "src": null
+  },
+  "FLORIDA CHIROPRACTIC COALITION PAC": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDA OPTOMETRIC PAC": {
+   "tags": [
+    "political-committee",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "AUTOMATED HEALTHCARE SOLUTIONS, LLC": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTHCARE",
+   "src": null
+  },
+  "RAMBA LAW GROUP, LLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "FLORIDA CAMPGROUND PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "CANTENS CRISTINA": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "CONSULTING EXECUTIVE",
+   "src": null
+  },
+  "FUENTES JOSE K.": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "FIREFIGHTER",
+   "src": null
+  },
+  "FRIENDS OF RYAN CHAMBERLIN": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "COALITION OF AFFORDABLE HOUSING PROVIDERS PC": {
+   "tags": [
+    "political-committee",
+    "affordable-housing"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC) / POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "CREGO RAMON": {
+   "tags": [
+    "towing"
+   ],
+   "basis": "occupation",
+   "occ": "TOWING",
+   "src": null
+  },
+  "ROUSH TOM": {
+   "tags": [
+    "physicians",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "MEDICAL DOCTOR",
+   "src": null
+  },
+  "HIGHSMITH JASON": {
+   "tags": [
+    "physicians",
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "MEDICAL DOCTOR",
+   "src": null
+  },
+  "HEAVENS TO OCEANS (H20)": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "THE RIGHT FUTURE FOR FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "ROCK HOLDINGS INC STATE PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE",
+   "src": null
+  },
+  "FLORIDA WORKERS ADVOCATES PC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "MICHAEL REDONDO 2024 CAMPAIGN": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "CAMPAIGN",
+   "src": null
+  },
+  "COLORADO AURORA PROP-PARTNERS, LLC": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "PROPERTY MANAGEMENT",
+   "src": null
+  },
+  "HERNANDEZ ARIEL": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "MANAGER",
+   "src": null
+  },
+  "FLORIDA POLICE BENEVOLENT ASSOCIATION INC. JUSTICE PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PIERCE JENNIFER": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "MARKETING DIRECTOR",
+   "src": null
+  },
+  "FLANIGAN JAMES": {
+   "tags": [
+    "hotels-tourism"
+   ],
+   "basis": "occupation",
+   "occ": "HOSPITALITY EXECUTIVE",
+   "src": null
+  },
+  "COUNCIL FOR SENIOR FLORIDIANS": {
+   "tags": [
+    "political-committee",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLANIGAN ANN": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "FLORIDA WORKERS ADVOCATES PAC": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "THE MAYERNICK GROUP": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT CONSULTANT",
+   "src": null
+  },
+  "DIAZ BALART PLLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "WESTERN HEMISPHERE STRATEGIES LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "BUSNIESS MNGT CONSULTANTS",
+   "src": null
+  },
+  "DIAZ BALART LAW, PLLC": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "BISCAYNE STRATEGIC LLC": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "GOVERMENT AFFAIRS",
+   "src": null
+  },
+  "REMEDIO DIAZ-OLIVER REVOCABLE TRUST": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "MILO JR. ALBERT": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REALTOR",
+   "src": null
+  },
+  "PEREZ NICHOLAS": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "occupation",
+   "occ": "PRESIDENT CONDO DIV.",
+   "src": null
+  },
+  "PEREZ JOHN PAUL": {
+   "tags": [
+    "realestate-dev"
+   ],
+   "basis": "occupation",
+   "occ": "REAL ESTATE",
+   "src": null
+  },
+  "ROBERT ALLEN LAW": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "GRAYROBINSON PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEYS",
+   "src": null
+  },
+  "ROANLD L BOOK PA": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "LAW FIRM",
+   "src": null
+  },
+  "AI ADVISORY, INC.": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERNMENT CONSULTING",
+   "src": null
+  },
+  "FLORIDA CABLE TELECOMMUNICATIONS ASSOCIATION, INC": {
+   "tags": [
+    "telecom",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "TELECOMMUNICATIONS",
+   "src": null
+  },
+  "HOLCOMBE GREG": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "RETIRED",
+   "src": null
+  },
+  "THE CAMPAIGN ACCOUNT OF BY THE PEOPLE, FOR THE PEOPLE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "BENJAMIN LEON JR. REVOCABLE TRUST": {
+   "tags": [
+    "unknown"
+   ],
+   "basis": "name",
+   "occ": "TRUST",
+   "src": null
+  },
+  "SURGI PAC-NORTH": {
+   "tags": [
+    "political-committee",
+    "physicians"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDA RESTAURANT & LODGING ASSOC POLITICAL ACTION COMMITTEE INC": {
+   "tags": [
+    "political-committee",
+    "restaurants-hospitality",
+    "hotels-tourism",
+    "trade-association"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "SANTA ROSA COUNTY FEDERAL CREDIT UNION": {
+   "tags": [
+    "credit-unions",
+    "banks"
+   ],
+   "basis": "occupation",
+   "occ": "BANKING",
+   "src": null
+  },
+  "COMMITTEE TO PROTECT NORTHWEST FLORIDA": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "COMMITTEE FOR ACCESSIBLE GOVERNMENT": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "850 CONSULTING GROUP LLC": {
+   "tags": [
+    "lobbying"
+   ],
+   "basis": "occupation",
+   "occ": "GOVERMENT RELATIONS",
+   "src": null
+  },
+  "FAIA IMPACT": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "PATRICOFF JR HAROLD E": {
+   "tags": [
+    "law-firm"
+   ],
+   "basis": "occupation",
+   "occ": "ATTORNEY",
+   "src": null
+  },
+  "PATRICOFF NELEA": {
+   "tags": [
+    "individual-noindustry"
+   ],
+   "basis": "occupation",
+   "occ": "HOMEMAKER",
+   "src": null
+  },
+  "FLORIDA CPA PAC INC - SOUTH": {
+   "tags": [
+    "political-committee",
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "AT&T FLORIDA PAC": {
+   "tags": [
+    "political-committee",
+    "telecom"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FIRE SAFE FLORIDA POLITICAL COMMITTE INC.": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "GRAYROBINSON POLICE BENEVOLENT ASSOCIATION INC. JUSTICE PAC": {
+   "tags": [
+    "political-committee",
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL ACTION COMMITTEE",
+   "src": null
+  },
+  "THE FLORIDA HOUSE REPUBLICAN CAMPAIGN COMMITTEE": {
+   "tags": [
+    "party"
+   ],
+   "basis": "occupation",
+   "occ": "AFFILIATED PARTY COMMITTEE",
+   "src": null
+  },
+  "FLORIDA CPA POLITICAL ACTION COMMITTEE, INC. - SOUTH": {
+   "tags": [
+    "political-committee",
+    "other"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FLORIDA RV POLITICAL ACTION COMMITTEE": {
+   "tags": [
+    "political-committee"
+   ],
+   "basis": "occupation",
+   "occ": "POLITICAL COMMITTEE (PC)",
+   "src": null
+  },
+  "FUENTES JOSE KEICHI": {
+   "tags": [
+    "labor-union"
+   ],
+   "basis": "occupation",
+   "occ": "FIREFIGHTER",
+   "src": null
+  },
+  "HUMAN INC.": {
+   "tags": [
+    "health-other"
+   ],
+   "basis": "occupation",
+   "occ": "HEALTH CARE",
+   "src": null
+  }
+ }
+}
