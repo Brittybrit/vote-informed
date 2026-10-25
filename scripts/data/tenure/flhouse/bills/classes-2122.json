@@ -1,0 +1,259 @@
+{
+ "2021-7": {
+  "tags": [
+   "agriculture-other",
+   "agriculture-sugar",
+   "agriculture-citrus"
+  ],
+  "re": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH"
+ },
+ "2021-22": {
+  "re": "CHICKEE|SEMINOLE TRIBE|MICCOSUKEE"
+ },
+ "2021-24": {
+  "tags": [
+   "telecom"
+  ],
+  "re": "BROADBAND|TELECOM|COMCAST|CHARTER|AT&T|CABLE|INTERNET|WIRELESS"
+ },
+ "2021-31": {
+  "tags": [
+   "affordable-housing",
+   "realestate-dev"
+  ],
+  "re": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING",
+  "not": "AUTHORITY"
+ },
+ "2021-56": {
+  "re": "OUTDOOR RECREATION|CAMPGROUND|HUNTING|RANCH|PLANTATION|EQUESTRIAN"
+ },
+ "2021-79": {
+  "re": "AQUACULTURE|FISH FARM|HATCHERY|BASS"
+ },
+ "2021-95": {
+  "tags": [
+   "health-other"
+  ],
+  "re": "AMBULANCE|MEDICAL TRANSPORT|EMS"
+ },
+ "2021-101": {
+  "tags": [
+   "insurance-property",
+   "insurance-other"
+  ],
+  "re": "REINSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|UNDERWRIT|PROPERTY INSURANCE",
+  "not": "TITLE|AGENT|AGENCY"
+ },
+ "2021-103": {
+  "tags": [
+   "banks",
+   "credit-unions"
+  ],
+  "re": "BANK|CREDIT UNION|FINANCIAL INSTITUTION"
+ },
+ "2021-110": {
+  "tags": [
+   "construction"
+  ],
+  "re": "ALARM|ELECTRICAL CONTRACT|ELECTRIC CONTRACT|SECURITY SYSTEM|ELECTRICIAN"
+ },
+ "2021-123": {
+  "tags": [
+   "construction"
+  ],
+  "re": "SPRINKLER|FIRE PROTECTION"
+ },
+ "2021-124": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|SUBCONTRACT|CONSTRUCTION|BUILDER|CONCRETE|ROOFING|PLUMBING|DRYWALL|ELECTRICAL",
+  "not": "FTBA|TRANSPORTATION BUILDERS|ROAD"
+ },
+ "2021-125": {
+  "tags": [
+   "waste-environment"
+  ],
+  "re": "WASTE|RECYCL|HAULER|SANITATION|DISPOSAL|REPUBLIC SERVICES|WASTE MANAGEMENT|WASTE PRO"
+ },
+ "2021-135": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|ELECTRICAL|BUILDER|COSMETIC",
+  "not": "FTBA|TRANSPORTATION BUILDERS|ROAD"
+ },
+ "2021-136": {
+  "tags": [
+   "physicians"
+  ],
+  "re": "PODIATR|FOOT AND ANKLE|FOOT & ANKLE"
+ },
+ "2021-154": {
+  "tags": [
+   "pharmacies-pbm",
+   "physicians"
+  ],
+  "re": "PHARMAC|PHYSICIAN|NEUROLOG|M\\.D\\.|\\bMD\\b",
+  "not": "PHARMACEUTICAL"
+ },
+ "2021-160": {
+  "tags": [
+   "private-schools",
+   "education-other"
+  ],
+  "re": "PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL",
+  "not": "CHARTER|UNIVERSITY|COLLEGE|PUBLIC SCHOOL"
+ },
+ "2021-166": {
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "DISTILL|SPIRITS"
+ },
+ "2021-194": {
+  "tags": [
+   "construction",
+   "engineering"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+ },
+ "2021-197": {
+  "tags": [
+   "aerospace"
+  ],
+  "re": "SPACE|AEROSPACE|LAUNCH|ROCKET|BLUE ORIGIN|SPACEX"
+ },
+ "2021-201": {
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR",
+  "not": "FTBA|TRANSPORTATION|ROAD"
+ },
+ "2021-202": {
+  "re": "HOME BASED|HOME-BASED|SELF-EMPLOYED|SELF EMPLOYED|SMALL BUSINESS OWNER|NFIB"
+ },
+ "2021-206": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|LAND|REAL ESTATE|HOMEBUILD|HOME BUILD|BUILDER",
+  "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
+ },
+ "2021-218": {
+  "re": "BARBER"
+ },
+ "2021-268": {
+  "tags": [
+   "pari-mutuel",
+   "gambling-casinos"
+  ],
+  "re": "PARI|RACING|RACETRACK|JAI|KENNEL|GREYHOUND|CASINO|GAMING|POKER|GULFSTREAM|MAGIC CITY|HIALEAH PARK",
+  "not": "SEMINOLE TRIBE"
+ },
+ "2022-10": {
+  "tags": [
+   "hospitals",
+   "physicians",
+   "nursing-homes",
+   "health-other"
+  ],
+  "re": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\.",
+  "not": "INSURANCE|HEALTH PLAN|BEHAVIORAL HEALTH NETWORK"
+ },
+ "2022-35": {
+  "tags": [
+   "hospitals"
+  ],
+  "re": "HOSPITAL|HEALTH SYSTEM|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET",
+  "not": "ANIMAL|VETERINAR"
+ },
+ "2022-48": {
+  "tags": [
+   "health-other"
+  ],
+  "re": "HOME HEALTH|HOME CARE|AMBULANCE|HOMECARE|NURSING SERVICES"
+ },
+ "2022-61": {
+  "tags": [
+   "nursing-homes"
+  ],
+  "re": "NURSING|REHAB|ASSISTED LIVING|HEALTH CARE ASSOCIATION|SKILLED"
+ },
+ "2022-74": {
+  "tags": [
+   "electric-utility"
+  ],
+  "re": "UTILIT|ELECTRIC|POWER|ENERGY|CHESAPEAKE",
+  "not": "COOPERATIVE|MUNICIPAL"
+ },
+ "2022-90": {
+  "tags": [
+   "construction"
+  ],
+  "re": "POOL|SPA"
+ },
+ "2022-96": {
+  "tags": [
+   "securities-investment",
+   "banks"
+  ],
+  "re": "TRUST COMPANY|FAMILY OFFICE|WEALTH|TRUST CO"
+ },
+ "2022-105": {
+  "re": "SEPTIC|SEWAGE|INSPECTION|ONSITE"
+ },
+ "2022-113": {
+  "tags": [
+   "crypto"
+  ],
+  "re": "CRYPTO|BITCOIN|BLOCKCHAIN|VIRTUAL CURRENCY|DIGITAL ASSET|COINBASE"
+ },
+ "2022-122": {
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|REAL ESTATE|HOMEBUILD|HOME BUILD|BUILDER|LAND",
+  "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
+ },
+ "2022-124": {
+  "tags": [
+   "construction"
+  ],
+  "re": "ALARM|FIRE PROTECTION|SECURITY SYSTEM|ELECTRICAL CONTRACT"
+ },
+ "2022-130": {
+  "tags": [
+   "payday-consumer-finance"
+  ],
+  "re": "CONSUMER FINANCE|LOAN|LENDING|FINANCE COMPANY|AMSCOT|CREDIT",
+  "not": "CREDIT UNION|BANK"
+ },
+ "2022-138": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|ROOFING|CONCRETE|WORKERS COMP",
+  "not": "FTBA|TRANSPORTATION BUILDERS|ROAD"
+ },
+ "2022-139": {
+  "tags": [
+   "insurance-property",
+   "insurance-other"
+  ],
+  "re": "INSURANCE COMPANY|INSURANCE HOLDINGS|UNDERWRIT|PROPERTY INSURANCE|CASUALTY|MUTUAL",
+  "not": "TITLE|AGENT|AGENCY|ADVISOR"
+ },
+ "2022-176": {
+  "tags": [
+   "affordable-housing",
+   "realestate-dev"
+  ],
+  "re": "AFFORDABLE|HOUSING|DEVELOP|MULTIFAMILY|APARTMENT",
+  "not": "AUTHORITY"
+ }
+}
