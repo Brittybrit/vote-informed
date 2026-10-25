@@ -65,3 +65,14 @@ Hialeah AgendaCenter minutes work via WebFetch.
   permission request timed out. RESULT: no 2016-11 .. 2024-12 roll calls available. Months missing: all of Nov 2016 - Dec 2024.
 - Donors: EasyVote API answers only its own origin (403 to curl); 2016, 2018, 2020 and 2022 Svechin reports not pulled.
 - 2026-10-25: SUNNY ISLES NOT EXTENDED (pending agenda-only pass if time allows).
+
+## Medley
+- Ayala since Nov 19, 2012; Lizelh Rodriguez since Nov 3, 2020 (roster). Town site has agenda pages 2015-2026
+  (council-meetings/<year> Council Meetings Agendas; 2015 page name is "Meeting Agendas"). Agendas via curl work.
+- Read 2016-2024 agendas (33 scanned, OCR; 12 were upside down, rotated). Added 275 agenda-only actions, 71 meetings, roll null
+  (pipeline marks seated members "unknown"). Minutes: Laserfiche medleydocs.com returns a sign-in page to curl; not readable.
+- Missing: all minutes 2012-11 .. 2024-12; agendas 2012-11 .. 2015-08 not online; 2015-09 .. 2015-12 agendas not read;
+  2016-12-05 agenda skipped (undated text).
+- Donors: 2026 hand-typed reports only (public/data/city-reports.json); earlier Medley campaign reports are in the clerk
+  SharePoint folder, not reachable here. Gap.
+- MEDLEY DONE (agenda-only).

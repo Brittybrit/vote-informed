@@ -1,0 +1,1078 @@
+{
+ "note": "LDA (lda.gov API /filings, client_name search) registrations and quarterly reports, filing years 2021-2024, for FY2022-FY2025 earmark recipients. client -> [[registrant, lobbyists named for this client (any report), first report posted, a filing uuid, number of report periods, filing years]]. Filing URL: https://lda.gov/filings/public/filing/<uuid>/print/. Read Oct 25, 2026. Same shape as scripts/data/federal/lda-clients.json plus the years column.",
+ "clients": {
+  "COLLIER COUNTY": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "AMANDA WOOD",
+     "OMAR FRANCO",
+     "SADIE HAIRE"
+    ],
+    "2021-04-20",
+    "a406443f-e78c-4ae8-a013-143cf0375a6b",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF FORT LAUDERDALE": [
+   [
+    "ALCALDE & FAY",
+    [
+     "MAURICE KURLAND"
+    ],
+    "2021-04-20",
+    "d7d34801-b35a-4977-8847-0880acca19e2",
+    18,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "AKIN GUMP STRAUSS HAUER & FELD",
+    [
+     "CARYN LESTER",
+     "GEOFF VERHOFF",
+     "ILEANA ROS-LEHTINEN",
+     "JOSE BORJON",
+     "SUSAN LENT"
+    ],
+    "2021-12-30",
+    "d8518832-839a-442f-89a2-d6eb43471520",
+    14,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF SOUTH MIAMI": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "OMAR FRANCO",
+     "PERRY ADAIR"
+    ],
+    "2021-04-20",
+    "d3dfbc5c-2af9-4d3d-9714-b5bcc6bd675c",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "MOUNT SINAI MEDICAL CENTER": [
+   [
+    "NATIONAL GROUP, LLP",
+    [
+     "MATT TRANT",
+     "VINCENT VERSAGE"
+    ],
+    "2021-04-20",
+    "fe76aaf3-5a5d-4b40-82b3-5325d93c64ac",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "BALLARD PARTNERS",
+    [
+     "BRIAN BALLARD",
+     "DANIEL MCFAUL",
+     "TOLA THOMPSON"
+    ],
+    "2023-09-28",
+    "885a1a37-ac7e-48a6-8e88-45cd81acd187",
+    7,
+    [
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF HOMESTEAD": [
+   [
+    "ALCALDE & FAY",
+    [
+     "NANCY PROWITT",
+     "PAIGE MELLERIO"
+    ],
+    "2021-04-16",
+    "06fc4ed0-51b9-4762-a983-d429793daf29",
+    17,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "ALFONSO LOPEZ",
+     "OMAR FRANCO",
+     "PERRY ADAIR"
+    ],
+    "2024-05-16",
+    "ab41cd3c-0cff-4524-b59d-b812b9ef612a",
+    4,
+    [
+     2024
+    ]
+   ]
+  ],
+  "MIAMI-DADE COUNTY": [
+   [
+    "SQUIRE PATTON BOGGS",
+    [
+     "CAROLINA MEDEROS",
+     "PHILLIP BIANCHI",
+     "VICTORIA CRAM"
+    ],
+    "2021-04-14",
+    "195a9553-7f82-4a4f-b25c-6426892a73d4",
+    14,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "ALCALDE & FAY",
+    [
+     "HECTOR ALCALDE",
+     "LOIS MOORE",
+     "NANCY PROWITT"
+    ],
+    "2021-04-16",
+    "6f1a72ec-7779-420b-8f6b-40daa43c3a85",
+    17,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "AKERMAN LLP",
+    [
+     "JANE SARGENT",
+     "RICHARD SPEES"
+    ],
+    "2021-04-16",
+    "34ab3421-2587-4a00-998e-f4048e75d9c1",
+    13,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "GREENBERG TRAURIG, LLP",
+    [
+     "DIANE BLAGMAN",
+     "GREGORY NOLL"
+    ],
+    "2021-04-19",
+    "17537ef3-ab74-4cf5-9dc5-3a1c7be42b4d",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "THORN RUN PARTNERS",
+    [
+     "GREGORY BURNS",
+     "JAMES DAVENPORT"
+    ],
+    "2024-02-15",
+    "9fe5d142-0853-4f97-85a0-e001e4c0ddda",
+    6,
+    [
+     2024
+    ]
+   ],
+   [
+    "BALLARD PARTNERS",
+    [
+     "BRIAN BALLARD",
+     "DANIEL MCFAUL",
+     "HUNTER MORGEN",
+     "JOSE DIAZ"
+    ],
+    "2024-02-27",
+    "4bfa310f-4743-4977-abf4-491c52c2c295",
+    5,
+    [
+     2024
+    ]
+   ],
+   [
+    "LSN PARTNERS, LLC",
+    [
+     "JOSE FUENTES",
+     "TOM QUINN"
+    ],
+    "2024-02-29",
+    "aeff6830-b77b-4504-9e1e-529e98ba5c40",
+    5,
+    [
+     2024
+    ]
+   ],
+   [
+    "EMPIRE CONSULTING GROUP",
+    [
+     "BRIAN GREER",
+     "E. GARRETT",
+     "MIKE MCKAY"
+    ],
+    "2024-03-06",
+    "b024b798-d77a-4fd5-9a84-2a14a5ca67db",
+    5,
+    [
+     2024
+    ]
+   ],
+   [
+    "CONTINENTAL STRATEGY, LLC",
+    [
+     "CARLOS TRUJILLO"
+    ],
+    "2024-03-20",
+    "ac864934-3b94-4ea0-88b3-953fcaac71c6",
+    5,
+    [
+     2024
+    ]
+   ],
+   [
+    "PITTMAN LAW GROUP",
+    [
+     "JAVON KNIGHT",
+     "SEAN PITTMAN"
+    ],
+    "2024-05-28",
+    "2c6620c0-40f5-45a2-875f-1a105f5ff45d",
+    5,
+    [
+     2024
+    ]
+   ]
+  ],
+  "LEE COUNTY": [
+   [
+    "THE FERGUSON GROUP",
+    [
+     "EARL STOCKDALE",
+     "WILLIAM GWINN",
+     "ZACHARY ISRAEL"
+    ],
+    "2021-04-20",
+    "55baed3d-34e3-4093-8d48-847936cff6e6",
+    11,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ]
+  ],
+  "LEE COUNTY PORT AUTHORITY": [
+   [
+    "HOGAN LOVELLS CADWALADER US LLP (FKA HOGAN LOVELLS US LLP)",
+    [
+     "C. GILLILAND"
+    ],
+    "2021-04-20",
+    "89c8f893-59a9-456e-87f0-49da130d1b3f",
+    5,
+    [
+     2021,
+     2022
+    ]
+   ]
+  ],
+  "PALM BEACH COUNTY": [
+   [
+    "BARLOW CONSULTING, INC",
+    [
+     "THOMAS BARLOW"
+    ],
+    "2021-04-06",
+    "fd8159f7-a615-4984-a619-228fc7e0450a",
+    8,
+    [
+     2021,
+     2022
+    ]
+   ],
+   [
+    "THORN RUN PARTNERS",
+    [
+     "JAMES DAVENPORT"
+    ],
+    "2021-04-20",
+    "56b5ebb9-f37e-42df-952d-5e408855dd52",
+    12,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ],
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "OMAR FRANCO"
+    ],
+    "2021-04-20",
+    "b92752df-f48a-4b9c-bcdd-4d4ef73ef44f",
+    12,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ],
+   [
+    "KAPLAN KIRSCH LLP (FORMERLY KAPLAN KIRSCH & ROCKWELL LLP)",
+    [
+     "PETER KIRSCH",
+     "STEVEN OSIT"
+    ],
+    "2023-07-18",
+    "dca954a5-b948-4949-84da-401d838f0e7c",
+    3,
+    [
+     2023
+    ]
+   ]
+  ],
+  "CITY OF DEERFIELD BEACH": [
+   [
+    "ALCALDE & FAY",
+    [
+     "MAURICE KURLAND"
+    ],
+    "2021-04-20",
+    "5589bbf3-6162-46bb-80c4-e48f41f7ab6f",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "CML CONSULTING SERVICES INC. (FORMERLY L.A. SKIP BAFALIS)",
+    [
+     "LOUIS BAFALIS"
+    ],
+    "2021-04-21",
+    "33e37675-454a-485f-bf81-829f905e3bbf",
+    8,
+    [
+     2021,
+     2022
+    ]
+   ]
+  ],
+  "MUSEUM OF SCIENCE (FROST SCIENCE)": [
+   [
+    "RASKY PARTNERS, INC.",
+    [
+     "BETHANY BASSETT",
+     "GRAHAM SHALGIAN",
+     "RUTH SEIM"
+    ],
+    "2021-04-20",
+    "7b4789ed-cf9f-44ef-aec4-60e2ad1c36f5",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "NOVA SOUTHEASTERN UNIVERSITY": [
+   [
+    "THE CORMAC GROUP, LLC",
+    [
+     "COLIN MUELLER"
+    ],
+    "2021-04-19",
+    "138746d6-f59c-4d7f-a1bf-b01e6ed73469",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "BALLARD PARTNERS",
+    [
+     "BRIAN BALLARD",
+     "DANIEL MCFAUL",
+     "JUSTIN SAYFIE",
+     "SYLVESTER LUKIS"
+    ],
+    "2021-04-20",
+    "f69c2d73-2878-4216-8b84-0534c9b03ab3",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "HOGAN LOVELLS CADWALADER US LLP (FKA HOGAN LOVELLS US LLP)",
+    [
+     "AARON CUTLER",
+     "ADAM FRIDMAN"
+    ],
+    "2021-04-20",
+    "9f6e9d84-d4e3-4903-b7f7-1de93c99620c",
+    8,
+    [
+     2021,
+     2022
+    ]
+   ],
+   [
+    "CARTWRIGHT & RILEY, INC.",
+    [
+     "RUSSELL CARTWRIGHT"
+    ],
+    "2021-05-10",
+    "2276e577-a824-4731-abaf-56e1e0cb5c26",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "ROSETTA GROUP LLC",
+    [
+     "ALI AMIRHOOSHMAND"
+    ],
+    "2021-05-18",
+    "bf605c30-5e84-4d25-998f-b4bff7e0c3d7",
+    10,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ]
+  ],
+  "CITY OF MIAMI": [
+   [
+    "KING & SPALDING LLP",
+    [
+     "ALEXANDER (\"ANDER\") CRENSHAW",
+     "ALLISON KASSIR",
+     "AMIRAH SALAAM",
+     "KENDRICK MEEK",
+     "MATTHEW REED",
+     "THOMAS SPULAK"
+    ],
+    "2021-07-15",
+    "112937eb-d895-46b8-bfc6-ecd0c7b62e86",
+    10,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ],
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "CHRISTOPHER BERARDINI",
+     "CLARENCE WILLIAMS",
+     "OMAR FRANCO",
+     "PERRY ADAIR"
+    ],
+    "2022-04-22",
+    "47fdbe4e-91f5-41e5-a6ef-a1d07f7522d1",
+    12,
+    [
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF MIAMI SPRINGS": [
+   [
+    "NEW CENTURY GOVERNMENT AFFAIRS (F/K/A TERRENCE C. WOLFE)",
+    [
+     "TERRENCE WOLFE"
+    ],
+    "2025-01-16",
+    "e0972d05-16c5-4c4d-8189-9da69aea0fce",
+    1,
+    [
+     2024
+    ]
+   ]
+  ],
+  "NEIGHBORS AND NEIGHBORS ASSOCIATION": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "AMANDA WOOD"
+    ],
+    "2021-02-08",
+    "cee127aa-c0cb-4bb7-8c8b-444e88a4eec5",
+    6,
+    [
+     2021,
+     2022
+    ]
+   ]
+  ],
+  "CITY OF CORAL GABLES": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "ANTHONY BEDELL",
+     "OMAR FRANCO",
+     "PERRY ADAIR"
+    ],
+    "2021-04-20",
+    "f2e15b5e-c5a6-4ffb-891a-4bc70eb9f5ea",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "BROWARD SHERIFF'S OFFICE": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "AMANDA WOOD",
+     "CLARENCE WILLIAMS"
+    ],
+    "2021-02-08",
+    "1373a562-ce30-4e2e-adf8-4dcb00cd4b64",
+    17,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "BANYAN COMMUNITY HEALTH CENTER": [
+   [
+    "CONGRESSIONAL PARTNERS",
+    [
+     "JACOB SAVAGE",
+     "XAVIER WARREN"
+    ],
+    "2021-04-19",
+    "418ab1e3-da72-49b2-a65b-35ddaff41c23",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "BALLARD PARTNERS",
+    [
+     "BRIAN BALLARD",
+     "GERALD JOHN O'HANLON",
+     "JOSE DIAZ"
+    ],
+    "2023-11-20",
+    "a17f0ea1-d5f7-4e31-bb22-99c3280a1667",
+    4,
+    [
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "FLORIDA INTERNATIONAL UNIVERSITY": [
+   [
+    "FLORIDA INTERNATIONAL UNIVERSITY",
+    [
+     "CARLOS BECERRA"
+    ],
+    "2021-04-20",
+    "43eae8d8-ba23-4948-afe5-e7c3eee53379",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "CLARK HILL, PLC",
+    [
+     "JAMES BURTON",
+     "LETICIA MEDEROS"
+    ],
+    "2022-05-10",
+    "45574346-a2f8-4726-a1e4-aff50492cb92",
+    5,
+    [
+     2022,
+     2023
+    ]
+   ],
+   [
+    "ACTUM I, LLC",
+    [
+     "LETICIA MEDEROS"
+    ],
+    "2023-10-12",
+    "81644fdc-5496-4cda-93f7-8cce82527a8c",
+    5,
+    [
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF LIGHTHOUSE POINT": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "CLARENCE WILLIAMS",
+     "OMAR FRANCO"
+    ],
+    "2022-12-30",
+    "2a4d2117-cb9c-47bf-97df-194b8cd6f88a",
+    10,
+    [
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "MICCOSUKEE TRIBE": [
+   [
+    "ALSTON & BIRD LLP",
+    [
+     "CAROLYN SMITH",
+     "EARL POMEROY",
+     "JANE LUCAS",
+     "ROBERT SIGGINS"
+    ],
+    "2021-04-20",
+    "0664c9b8-1896-456e-aca8-28e6f9d6f0ef",
+    9,
+    [
+     2021,
+     2022,
+     2023
+    ]
+   ],
+   [
+    "THE FARLEY GROUP, INC.",
+    [
+     "JENNIFER GASS"
+    ],
+    "2021-05-24",
+    "8d1e8b61-5696-4e6c-a06d-efc98cdb87d6",
+    5,
+    [
+     2021,
+     2022
+    ]
+   ],
+   [
+    "HBW RESOURCES",
+    [
+     "DENNIS FORSGREN",
+     "JAMES HAYES",
+     "JOHN NORTHINGTON",
+     "MICHAEL ZEHR"
+    ],
+    "2021-06-03",
+    "02fdd3b2-0387-4752-af6e-95ece76f498d",
+    5,
+    [
+     2021,
+     2022
+    ]
+   ],
+   [
+    "CARLYLE CONSULTING",
+    [
+     "THOMAS RODGERS"
+    ],
+    "2022-12-12",
+    "168c5059-cdfb-4073-9d5d-cbe021622d5b",
+    10,
+    [
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "BROWNSTEIN HYATT FARBER SCHRECK, LLP",
+    [
+     "BELLA SEWALL WOLITZ",
+     "BRIAN WILD",
+     "GRACE SAUNDERS",
+     "MELISSA KUIPERS BLAKE",
+     "OSIRIS MOREL",
+     "RYAN SMITH",
+     "SARAH MURRAY"
+    ],
+    "2023-04-13",
+    "994b2f2e-e604-49a0-b120-7badf3c57c60",
+    11,
+    [
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "MIAMI DADE COLLEGE FOUNDATION (F.K.A. FRIENDS OF MIAMI DADE COLLEGE": [
+   [
+    "BALLARD PARTNERS",
+    [
+     "BRIAN BALLARD",
+     "DANIEL MCFAUL",
+     "REBECCA BENN",
+     "SYLVESTER LUKIS",
+     "TOLA THOMPSON"
+    ],
+    "2021-04-19",
+    "8f087f99-8af3-407d-acc6-484491975f52",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "MONROE COUNTY SCHOOL DISTRICT": [
+   [
+    "NEW CENTURY GOVERNMENT AFFAIRS (F/K/A TERRENCE C. WOLFE)",
+    [
+     "TERRENCE WOLFE"
+    ],
+    "2022-11-02",
+    "07ea38e0-d02f-4854-8afd-2a3660699c6a",
+    10,
+    [
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "MONROE COUNTY": [
+   [
+    "THORN RUN PARTNERS",
+    [
+     "GREGORY BURNS"
+    ],
+    "2021-04-20",
+    "c2f76a52-7591-4d89-b370-c549fdc1e51f",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF CORAL SPRINGS": [
+   [
+    "ALCALDE & FAY",
+    [
+     "MAURICE KURLAND"
+    ],
+    "2021-04-20",
+    "77f2d5b2-d03d-4710-ac37-f9149f532fa5",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF FORT MYERS": [
+   [
+    "VAN SCOYOC ASSOCIATES",
+    [
+     "HARRY GLENN",
+     "JAMES CRUM",
+     "WILL SMITH"
+    ],
+    "2021-04-20",
+    "f6660a1e-52e0-45b2-bcab-a881f70d0440",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF CAPE CORAL": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "AMANDA WOOD",
+     "SADIE HAIRE"
+    ],
+    "2021-04-20",
+    "b7b87bba-ecfd-45a2-b706-875a94eb0d26",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF COCONUT CREEK": [
+   [
+    "VAN SCOYOC ASSOCIATES",
+    [
+     "HARRY GLENN",
+     "JAMES CRUM",
+     "MAGGIE MCGRANE",
+     "WILL SMITH"
+    ],
+    "2021-04-19",
+    "0533692e-b11b-44b5-bf6b-135e4d7eeb92",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "BROWARD COUNTY": [
+   [
+    "NEW CENTURY GOVERNMENT AFFAIRS (F/K/A TERRENCE C. WOLFE)",
+    [
+     "TERRENCE WOLFE"
+    ],
+    "2021-04-19",
+    "b6fb999a-1cab-48ce-a84d-411a98b50782",
+    17,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "THORN RUN PARTNERS",
+    [
+     "GREGORY BURNS"
+    ],
+    "2021-04-20",
+    "cb8ffb56-8111-490e-928c-e2e215b8a5c6",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "THE CORMAC GROUP, LLC",
+    [
+     "COLIN MUELLER",
+     "JAMES LINK",
+     "JOHN TIMMONS",
+     "JONATHAN SLADE"
+    ],
+    "2021-04-20",
+    "1dbab1fc-1d80-476c-ac80-725b26568cef",
+    16,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ],
+   [
+    "VAN SCOYOC ASSOCIATES",
+    [
+     "HARRY GLENN"
+    ],
+    "2021-04-20",
+    "d00b772f-1cfb-46a4-9bb7-db821ffa5a6a",
+    1,
+    [
+     2021
+    ]
+   ]
+  ],
+  "ACE THEATER FOUNDATION": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "AMANDA WOOD"
+    ],
+    "2021-12-16",
+    "63c273f4-58a6-4751-bc1f-7a69669ea810",
+    4,
+    [
+     2021,
+     2022
+    ]
+   ]
+  ],
+  "CITY OF HIALEAH": [
+   [
+    "FRANCO GOVERNMENT RELATIONS, INC.",
+    [
+     "OMAR FRANCO"
+    ],
+    "2021-04-20",
+    "1ea89e7a-9b8b-4c93-9a96-e874fb27f828",
+    4,
+    [
+     2021
+    ]
+   ],
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "OMAR FRANCO",
+     "PERRY ADAIR"
+    ],
+    "2021-12-16",
+    "08205800-a7ab-4967-854a-65370ec734a9",
+    14,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "FLORIDA GULF COAST UNIVERSITY FOUNDATION": [
+   [
+    "BECKER & POLIAKOFF, P.A.",
+    [
+     "OMAR FRANCO",
+     "SHANNON DUNCANSON"
+    ],
+    "2022-04-22",
+    "f9a48164-2eb1-41e6-948e-2d35a4c9b4cc",
+    12,
+    [
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "CITY OF POMPANO BEACH": [
+   [
+    "MERCHANT MCINTYRE & ASSOCIATES, LLC",
+    [
+     "ALICIA CANNON",
+     "BRENT MERCHANT",
+     "KATHRYN PETERSON",
+     "MARK MCINTYRE"
+    ],
+    "2021-07-20",
+    "b7402e15-8573-4be6-bbaf-af140e1e204c",
+    17,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ],
+  "PACE CENTER FOR GIRLS": [
+   [
+    "THE RABEN GROUP",
+    [
+     "JASMINE BURTON",
+     "KATHARINE HUFFMAN",
+     "RACHEL MOTLEY",
+     "SYDNEY OLAY"
+    ],
+    "2021-04-19",
+    "9c65f3f6-f990-4007-9c99-9b760d467040",
+    15,
+    [
+     2021,
+     2022,
+     2023,
+     2024
+    ]
+   ]
+  ]
+ }
+}
