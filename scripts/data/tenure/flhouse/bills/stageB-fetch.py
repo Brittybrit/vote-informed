@@ -7,15 +7,15 @@ from datetime import datetime
 H = os.path.dirname(os.path.abspath(__file__))
 PS = os.path.join(H, 'ps'); os.makedirs(PS, exist_ok=True)
 def pick(an):
-    an = [a for a in an if '.pre.' not in a[1] and '.hms.' not in a[1].lower()]
+    an = [a for a in an if '.pre.' not in a[1] and '.hms.' not in a[1].lower() and 'Conference Report' not in a[1]]
     if not an: return None
     z = [a for a in an if re.search(r'/h\d+z\d*\.', a[1])]
     if z: return z[-1][1]
     d = lambda a: datetime.strptime(a[0], '%m/%d/%Y') if a[0].count('/') == 2 else datetime.min
     return max(an, key=d)[1]
 def get(u, path):
-    for t in range(6):
-        r = subprocess.run(['curl', '-sS', '-m', '90', '-o', path, '-w', '%{http_code}', u], capture_output=True, text=True)
+    for t in range(4):
+        r = subprocess.run(['curl', '-sS', '-m', '90', '-o', path, '-w', '%{http_code}', u.replace(' ', '%20')], capture_output=True, text=True)
         if r.stdout == '200' and os.path.getsize(path) > 3000 and open(path, 'rb').read(4) == b'%PDF': return True
         time.sleep(30 * (t + 1))
     return False
