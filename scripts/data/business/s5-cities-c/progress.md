@@ -16,3 +16,13 @@ Method for incumbents: every action in scripts/data/city/{cutlerbay,pinecrest,so
 - mary-ann-mixon: done | interests 1 | ties 0 | Mixon Inc dissolved 2009; no awards. As a past council member (to 2018) her votes predate the repo window and were not reviewed.
 - ricky-fernandez: done | interests 1 | ties 0 | Advanced Custom Pool Services dissolved 1998; no awards. (Wedobiz Corp got a $45,000 SBA loan 2021 but address does not match him; not recorded.)
 - rene-gomez: done | interests 1 (null) | ties 0 | no filing; Sunbiz name-only matches not tied by address.
+Palmetto Bay: no actions.json in repo. Read all 61 Granicus agenda packets posted Jan 2025 to Oct 2026 (palmettobay.granicus.com view_id=3; minutes are inside the packets) and grepped for every entity; candidate treasurer reports from the village EasyVote API (filer/documentsearch) used as the address key. None of the Palmetto Bay candidates sits on the current council, so no votes in the window.
+- david-m-singer: done | interests 4 | ties 0 | no county PO, FACTS, USAspending or village packet hit for his LLCs. Former councilmember (to ~2020); votes outside window not reviewed.
+- tamara-mourino: done | interests 4 | ties 3 | Legacy III Insurance Agency PPP $54,293 + EIDL loan $150,000; PBBA fee waivers $9,047.50 (Feb 2023-May 2026).
+- karen-baez-wallis: done | interests 1 | ties 1 (unverified) | 'Hurricane Cheer-Howard Drive' fee waiver $836, name differs.
+- pam-gorman: done | interests 1 | ties 0
+- tana-llinas: done | interests 2 | ties 4 | Brand Poets: EIDL grant $4,000, PPP $46,000 + $46,000, EIDL loan $150,000.
+- lasaly-changkachith: done | interests 1 | ties 0
+- carl-crawford: done | interests 1 (null) | ties 0
+- alan-farquharson: done | interests 1 | ties 0 | Alan Air Conditioning: no awards/permits found in records searched.
+- a-j-lara: done | interests 1 (null) | ties 0
