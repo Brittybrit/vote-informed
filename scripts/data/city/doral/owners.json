@@ -1,0 +1,53 @@
+{
+ "checked": "2026-10-25",
+ "sources": [
+  "Miami-Dade Property Appraiser (PaServicesProxy GetPropertySearchByFolio, sales history)"
+ ],
+ "byAction": {
+  "doral-23-5282-2023-09-27": {
+   "address": "8080 NW 36 Street",
+   "folio": "35-3027-001-0091",
+   "owner": "Landwirth Rlty LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=3530270010091",
+   "applicant": null,
+   "note": "Owner of record on the action date per Property Appraiser (no recorded sale after the action; last recorded sale 2006). Added for the tenure extension.",
+   "tenure": true
+  },
+  "doral-23-5282-2023-10-18": {
+   "address": "8080 NW 36 Street",
+   "folio": "35-3027-001-0091",
+   "owner": "Landwirth Rlty LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=3530270010091",
+   "applicant": null,
+   "note": "Owner of record on the action date per Property Appraiser (no recorded sale after the action; last recorded sale 2006). Added for the tenure extension.",
+   "tenure": true
+  },
+  "doral-24-5551-2024-03-20": {
+   "address": "10603 NW 12 Street",
+   "folio": "35-3032-008-0125",
+   "owner": "325 Doral LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=3530320080125",
+   "applicant": null,
+   "note": "Owner of record on the action date per Property Appraiser: buyer in the 2012-12-31 sale, no later sale. Added for the tenure extension.",
+   "tenure": true
+  },
+  "doral-24-5715-2024-08-14": {
+   "address": "10450 NW 33 Street",
+   "folio": "35-3029-118-0010",
+   "owner": "Harborgenix LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=3530291180010",
+   "applicant": null,
+   "note": "Owner of record on the action date per Property Appraiser: buyer in the 2022-06-08 sale (folio 35-3029-118-0010, one unit of a multi-unit building); the ordinance is titled \"Harborgenix Rezoning\". Added for the tenure extension.",
+   "tenure": true
+  },
+  "doral-24-5715-2024-09-11": {
+   "address": "10450 NW 33 Street",
+   "folio": "35-3029-118-0010",
+   "owner": "Harborgenix LLC",
+   "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=3530291180010",
+   "applicant": null,
+   "note": "Owner of record on the action date per Property Appraiser: buyer in the 2022-06-08 sale (folio 35-3029-118-0010, one unit of a multi-unit building); the ordinance is titled \"Harborgenix Rezoning\". Added for the tenure extension.",
+   "tenure": true
+  }
+ }
+}

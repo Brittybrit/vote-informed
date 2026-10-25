@@ -24,6 +24,69 @@
    "url": "https://miamidade.gov/Apps/COB/LobbyistOnline/Views/Queries/Lobbyist_Inquiry.aspx",
    "viewed": "2026-10-18",
    "covers": "2026 county registrations (public/data/county-lobbyists.json)"
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2017",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2017 dashboard year (scripts/data/city/coralgables/lobbyists-2017.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2018",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2018 dashboard year (scripts/data/city/coralgables/lobbyists-2018.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2019",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2019 dashboard year (scripts/data/city/coralgables/lobbyists-2019.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2020",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2020 dashboard year (scripts/data/city/coralgables/lobbyists-2020.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2021",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2021 dashboard year (scripts/data/city/coralgables/lobbyists-2021.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2022",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2022 dashboard year (scripts/data/city/coralgables/lobbyists-2022.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2023",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2023 dashboard year (scripts/data/city/coralgables/lobbyists-2023.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables City Clerk lobbyist dashboard export, 2024",
+   "url": "https://cgitwebapps.coralgables.com/CGDashboards/CityClerkLobbyistsDashboard.aspx",
+   "viewed": "2026-10-25",
+   "covers": "2024 dashboard year (scripts/data/city/coralgables/lobbyists-2024.csv)",
+   "tenure": true
+  },
+  {
+   "name": "Coral Gables Legistar matter titles (\"Lobbyist:\" line), 2013-2024",
+   "url": "https://webapi.legistar.com/v1/coralgables/events/{id}/eventitems",
+   "viewed": "2026-10-25",
+   "covers": "tenure actions 2013-04-13 to 2024-12-31; titles carry \"Lobbyist:\" lines from about 2021",
+   "tenure": true
   }
  ],
  "byAction": {
@@ -1751,7 +1814,7 @@
     "issue": "Miami-Dade County registration; client listed as \"PUBLIX SUPER MARKETS, INC\""
    },
    {
-    "name": "Victoria M\u00e9ndez",
+    "name": "Victoria Méndez",
     "firm": null,
     "for": "Publix Super Markets, Inc.",
     "basis": "otherBody",
@@ -2479,7 +2542,6306 @@
     "date": "2026-01-14",
     "issue": "Miami-Dade County registration; client listed as \"THE UNDERLINE MANAGEMENT ORGANIZATION, INC\""
    }
+  ],
+  "16-5654": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   }
+  ],
+  "17-5751": [
+   {
+    "name": "Marc David Sarnoffs",
+    "firm": null,
+    "for": "In-telligent LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-02-07",
+    "issue": "Intelligent emergency notification",
+    "tenure": true
+   }
+  ],
+  "17-5740": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-5863": [
+   {
+    "name": "A. Vicky Leiva",
+    "firm": null,
+    "for": "Starbucks Corporation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-02-16",
+    "issue": "Addressing City Code Enforcement issues for Starbucks at 475 South Dixie Highway",
+    "tenure": true
+   }
+  ],
+  "17-6054": [
+   {
+    "name": "A. Vicky Leiva",
+    "firm": null,
+    "for": "Starbucks Corporation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-02-16",
+    "issue": "Addressing City Code Enforcement issues for Starbucks at 475 South Dixie Highway",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "Starbucks Corporation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-04-18",
+    "issue": "All land use/zoning matter relating to property located at 292 Miracle Mile, Coral Gables",
+    "tenure": true
+   },
+   {
+    "name": "Javier F. Aviño",
+    "firm": null,
+    "for": "Starbucks Corporation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-04-06",
+    "issue": "Al l land use/zoning matters re lat ing to property located at 292 Miracle Mile. Coral Gables. FL",
+    "tenure": true
+   }
+  ],
+  "17-6141": [
+   {
+    "name": "Luis Andre Gazitua",
+    "firm": null,
+    "for": "MV Transportation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Transportation Matters",
+    "tenure": true
+   }
+  ],
+  "17-6235": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-6376": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-6385": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-6523": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "The Weitz Company, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-08-25",
+    "issue": "Construction Services for Public Safety Building",
+    "tenure": true
+   }
+  ],
+  "17-6592": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-6795": [
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": null,
+    "issue": "Internal Road and other University of Miami related matters",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-04",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-30",
+    "issue": "Matters relating to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-27",
+    "issue": "All issues related to University",
+    "tenure": true
+   }
+  ],
+  "17-6509": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Sunset Place Luxury Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-18",
+    "issue": "Land use and zoning issues for property located at 1515 San Remo Avenue, Coral Gables, FL, specifically to appear before the Citys Boards and attend meetings with City staff and elected officials on behalf of Sunset Place Luxury Holdings, LLC.",
+    "tenure": true
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": null,
+    "for": "Sunset Place Luxury Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-05-01",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Raul Carreras",
+    "firm": null,
+    "for": "Sunset Place Luxury Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-06-20",
+    "issue": "Land use and zoning issues for property located at 1515 San Remo Avenue, Coral Gables, Florida, specifically to appear before the City's Boards and attend meetings with City staff and elected officials on behalf of Sunset Place Luxuty Holdings, LLC.",
+    "tenure": true
+   },
+   {
+    "name": "Willy A. Bermello",
+    "firm": null,
+    "for": "Sunset Place Luxury Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-06-20",
+    "issue": "Land use and zoning issues for property located at 1515 San Remo Avenue, Coral Gables, Florida, specifically to appear before the City's Boards and attend meetings with City staff and elected officials on behalf of Sunset Place Luxuty Holdings, LLC.",
+    "tenure": true
+   }
+  ],
+  "18-7347": [
+   {
+    "name": "Jose Felix Diaz",
+    "firm": null,
+    "for": "AshBritt Inc",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-05-24",
+    "issue": "Bid Protest - RFP 2018-009",
+    "tenure": true
+   }
+  ],
+  "18-7575": [
+   {
+    "name": "Eric R. Zichella",
+    "firm": null,
+    "for": "Park One of Florida",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-04-13",
+    "issue": "Centralized Valet",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Park One of Florida",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-04-10",
+    "issue": "Centralized Valet",
+    "tenure": true
+   }
+  ],
+  "18-7611": [
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-06-12",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-04",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-04",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-26",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   }
+  ],
+  "18-7615": [
+   {
+    "name": "Brent M. Reynolds",
+    "firm": null,
+    "for": "1350 S Dixie LLC (Registered Agent: Brent M. Reynolds)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-09-01",
+    "issue": "Entitlements for the property located at 1350 S. Dixie Highway, Coral Gables, FL 33146. related to the mixed use project commonly known as Paseo de Ia Riviera.",
+    "tenure": true
+   },
+   {
+    "name": "Thomas Christopoul",
+    "firm": null,
+    "for": "1350 S Dixie LLC (Registered Agent: Brent M. Reynolds)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-09-01",
+    "issue": "Entitlements for the property located at 1350 S. Dixie Highway, Coral Gables. FL 33146. related to the mixed use project commonly known as Paseo de Ia Riviera.",
+    "tenure": true
+   }
+  ],
+  "18-7717": [
+   {
+    "name": "Amy Brigham Boulris",
+    "firm": null,
+    "for": "MML Properties, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-07-10",
+    "issue": "Appear before the City Commission and other City boards and attend meetings with City staff and elected officials on behalf of MML Properties, LLC, in connection with the proposed demolition of the structure located at 2341/2345 LeJeune Road.",
+    "tenure": true
+   }
+  ],
+  "18-7718": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Skinny Labs, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-04-19",
+    "issue": "Mobility Issues",
+    "tenure": true
+   },
+   {
+    "name": "Daniel Diaz Leyva",
+    "firm": null,
+    "for": "Skinny Labs, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-08-07",
+    "issue": "Bike share",
+    "tenure": true
+   }
+  ],
+  "17-6508": [
+   {
+    "name": "F.W. Zeke Guilford, ESQ",
+    "firm": null,
+    "for": "Biltmore Parc Homes, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-20",
+    "issue": "Replat of property from eight lots to fifteen lots and dedication of alley",
+    "tenure": true
+   }
+  ],
+  "18-7684": [
+   {
+    "name": "Glenn H Pratt",
+    "firm": null,
+    "for": "TWJ Zamora",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-06-01",
+    "issue": "44 Zamora Avenue Land Use, Zoning and Building Matters",
+    "tenure": true
+   }
+  ],
+  "18-8000": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-06-12",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-04",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-04",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-26",
+    "issue": "University of Miami Student Housing and all University related matters",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   },
+   {
+    "name": "Bernando Font",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2017.csv",
+    "date": "2017-01-03",
+    "issue": "University of Miami Student Housing",
+    "tenure": true
+   }
+  ],
+  "18-8028": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "The Weitz Company, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "Construction Services for Public Safety Building",
+    "tenure": true
+   }
+  ],
+  "18-8043": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "The Weitz Company, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "Construction Services for Public Safety Building",
+    "tenure": true
+   }
+  ],
+  "18-8259": [
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "18-8054": [
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "18-8055": [
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "18-8057": [
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-27",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": "Historic PreservationBoard Meeting 03-15-2018. 5489 San Amaro. THe Arnold Volpe Music Building",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-01-19",
+    "issue": "All issues related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-8457": [
+   {
+    "name": "Janna P. Lhota",
+    "firm": null,
+    "for": "Cellco Partnership, L.P. d/b/a Verizon Wireless",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-14",
+    "issue": "Proposed Revised Ordinance relating to placement of communications services facilities in public right-of way",
+    "tenure": true
+   }
+  ],
+  "18-8107": [
+   {
+    "name": "Robert Behar",
+    "firm": null,
+    "for": "Nor Peru Capital 2, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-24",
+    "issue": "Planning and Zoning Board",
+    "tenure": true
+   }
+  ],
+  "18-8129": [
+   {
+    "name": "Jorge L. Navarro",
+    "firm": null,
+    "for": "Global Rental E&P, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Separation/Establishment of Residential Building-Matter is still open",
+    "tenure": true
+   }
+  ],
+  "19-8445": [
+   {
+    "name": "Jorge L. Navarro",
+    "firm": null,
+    "for": "Global Rental E&P, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Separation/Establishment of Residential Building-Matter is still open",
+    "tenure": true
+   }
+  ],
+  "19-8504": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "All issues related to the university",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-8512": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "All issues related to the university",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-08-22",
+    "issue": "6500 Red Road Land Use applications Historic Preservation applications",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-8602": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Gary Tarbe",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-07",
+    "issue": "Frost Institute of Chemistry and Molecular Science - DRC Application",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-04-22",
+    "issue": "Development Agreement  to allow sale of alcohol at the Watsco Center",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "All issues related to the university",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-9001": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Gary Tarbe",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-07",
+    "issue": "Frost Institute of Chemistry and Molecular Science - DRC Application",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-04-22",
+    "issue": "Development Agreement  to allow sale of alcohol at the Watsco Center",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "All issues related to the university",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-9084": [
+   {
+    "name": "Jennifer E. Fine",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-07-19",
+    "issue": "Zoning land use & development issues/approvals on property located at 3000 Ponce de Leon Blvd., 216 Catalonia Avenue, 203 University Dr., and vacant parking lot 03-4117-005-7180 in Coral Gables, FL/ ; Zoning, land use and development issues/approvals",
+    "tenure": true
+   }
+  ],
+  "19-9187": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Belmont Village, L.P.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-09-11",
+    "issue": "Obtaining the necessary land use, zoning, and subdivision approvals to redevelop property located at 250 Bird Road in Coral Gables",
+    "tenure": true
+   }
+  ],
+  "19-9240": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-08",
+    "issue": "Obtaining the necessary land use, zoning and design approvals for the construction of a mixed use multifamily building for property located at 250 bird Road in Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "19-9413": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Gary Tarbe",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-07",
+    "issue": "Frost Institute of Chemistry and Molecular Science - DRC Application",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Rene Tercilla",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-29",
+    "issue": "Frist institute of Chemistry and molecular science DC.",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-04-22",
+    "issue": "Development Agreement  to allow sale of alcohol at the Watsco Center",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "Matters related to or affecting UM",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "All issues related to the university",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Juan Endara",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-20",
+    "issue": "Central Energy Plant 1300 Dickison Drive Coral Gables FL 33146",
+    "tenure": true
+   },
+   {
+    "name": "Julio Guillen",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Rolando Llanes",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-03-20",
+    "issue": "University of Miami Counseling and Academic Resource Center",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2018.csv",
+    "date": "2018-02-02",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "19-8720": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "BGR Development, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-05-30",
+    "issue": "Obtaining the necessary zoning and design approvals for proposed development of a new apartment building at the properties which you own at 23,27,31 and 35 Sidonia Ave",
+    "tenure": true
+   }
+  ],
+  "19-9549": [
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-14",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Gary Tarbe",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-07",
+    "issue": "Frost Institute of Chemistry and Molecular Science - DRC Application",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "No issue",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Rene Tercilla",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-29",
+    "issue": "Frist institute of Chemistry and molecular science DC.",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-04-22",
+    "issue": "Development Agreement  to allow sale of alcohol at the Watsco Center",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   }
+  ],
+  "19-9574": [
+   {
+    "name": "Vanessa Madrid",
+    "firm": null,
+    "for": "1350 S Dixie LLC (Registered Agent: Brent M. Reynolds)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-24",
+    "issue": "Entitlements for the property located at 1350 S. Dixie Highway, Coral Gables, FL 33146 related to the mixed use project commonly known as Paseo de la Riviera providing services as an attoney",
+    "tenure": true
+   }
+  ],
+  "20-1202": [
+   {
+    "name": "Vanessa Madrid",
+    "firm": null,
+    "for": "1350 S Dixie LLC (Registered Agent: Brent M. Reynolds)",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-24",
+    "issue": "Entitlements for the property located at 1350 S. Dixie Highway, Coral Gables, FL 33146 related to the mixed use project commonly known as Paseo de la Riviera providing services as an attoney",
+    "tenure": true
+   }
+  ],
+  "20-1211": [
+   {
+    "name": "Gus Cabrera",
+    "firm": null,
+    "for": "Florida Lemark Corporation",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-02-10",
+    "issue": "RFP 2019-035 - Parking Garage No. 7",
+    "tenure": true
+   }
+  ],
+  "20-1325": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Lourdes Valls",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-14",
+    "issue": "1208 Asturia Avenue, Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "20-1345": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "The Weitz  Company, LLC.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "Construction Services for Public Safety Bldg.",
+    "tenure": true
+   }
+  ],
+  "20-1040": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Belmont Village, L.P.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-17",
+    "issue": "Federal ID#:591450702; Obtaining the necessary land use, zoning and subdivision approvals to redevelop property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "20-1041": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Belmont Village, L.P.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-17",
+    "issue": "Federal ID#:591450702; Obtaining the necessary land use, zoning and subdivision approvals to redevelop property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "20-1325-2020-05-26": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Lourdes Valls",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-14",
+    "issue": "1208 Asturia Avenue, Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "20-1352": [
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist registration 2020.",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-22",
+    "issue": "Federal ID#:590624458; Lobbyist Registration",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herrán",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-14",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Christopher Blair",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-02-07",
+    "issue": "Housing Phase II- Centennial Village- Planning & Permitting",
+    "tenure": true
+   },
+   {
+    "name": "Gary Tarbe",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-07",
+    "issue": "Frost Institute of Chemistry and Molecular Science - DRC Application",
+    "tenure": true
+   },
+   {
+    "name": "Jeffrey S. Bass",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": "General representation in matters related to campus development. Providing services as an attorney.",
+    "tenure": true
+   },
+   {
+    "name": "Rene Tercilla",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-08-29",
+    "issue": "Frist institute of Chemistry and molecular science DC.",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-01-23",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2019-04-22",
+    "issue": "Development Agreement  to allow sale of alcohol at the Watsco Center",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-18",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2019.csv",
+    "date": "2018-12-20",
+    "issue": "UM Centenial Village",
+    "tenure": true
+   }
+  ],
+  "19-9348": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-17",
+    "issue": "Federal ID#:591450702; Obtaining the necessary land use, zoning and design approvals for the construction of a mixed use multifamily building for property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "19-9349": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-17",
+    "issue": "Federal ID#:591450702; Obtaining the necessary land use, zoning and design approvals for the construction of a mixed use multifamily building for property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "19-9350": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-17",
+    "issue": "Federal ID#:591450702; Obtaining the necessary land use, zoning and design approvals for the construction of a mixed use multifamily building for property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "20-1899": [
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-05",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-07-13",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist registration 2020.",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-22",
+    "issue": "Federal ID#:590624458; Lobbyist Registration",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herrán",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-10-14",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   }
+  ],
+  "21-2088": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-05",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist registration 2020.",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-22",
+    "issue": "Federal ID#:590624458; Lobbyist Registration",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herrán",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-10-14",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   }
+  ],
+  "21-2150": [
+   {
+    "name": "Gus Cabrera",
+    "firm": null,
+    "for": "SFM Services, Inc.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-07",
+    "issue": "Public procurement",
+    "tenure": true
+   }
+  ],
+  "21-2257": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-05",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Alicia Corral",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist registration 2020.",
+    "tenure": true
+   },
+   {
+    "name": "Janet Gavarrete",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-22",
+    "issue": "Federal ID#:590624458; Lobbyist Registration",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herrán",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   },
+   {
+    "name": "Robert Vale",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-10-14",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Sarah Artecona",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-06",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Veronica Altuve",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-27",
+    "issue": "Federal ID#:590624458; Lobbyist 2020 registration.",
+    "tenure": true
+   }
+  ],
+  "21-2454": [
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "JRFQ Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-19",
+    "issue": "As Organizer of an Etity to be Formed",
+    "tenure": true
+   },
+   {
+    "name": "Jennifer E. Fine",
+    "firm": null,
+    "for": "JRFQ Holdings, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-01-21",
+    "issue": "As Organizer of an Etity to be Formed",
+    "tenure": true
+   }
+  ],
+  "21-2286": [
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "JRFQ Holdings, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=17944",
+    "date": "2021-09-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jennifer E. Fine",
+    "firm": null,
+    "for": "JRFQ Holdings, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=17944",
+    "date": "2021-09-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "20-1529": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Poncecat Miracle Mile, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=17193",
+    "date": "2021-10-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jorge L. Navarro",
+    "firm": null,
+    "for": "Poncecat Miracle Mile, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-08-31",
+    "issue": "Federal ID#:00; Future Land Use Amendment and MXD Site Plan",
+    "tenure": true
+   }
+  ],
+  "21-3230": [
+   {
+    "name": "Leslie Pantin",
+    "firm": null,
+    "for": "Calvin, Giordano & Associates, Inc.; Chen Moore and Associates, Inc.; Kimley-Horn and Associates, Inc.; Miller Legg; Savino & Miller Design Studio",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21873",
+    "date": "2021-10-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Chen Moore & Associates",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2020.csv",
+    "date": "2020-01-14",
+    "issue": "Engineering Services",
+    "tenure": true
+   }
+  ],
+  "21-3284": [
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "Gables Projects, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21927",
+    "date": "2021-11-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Scott Davidson",
+    "firm": null,
+    "for": "Gables Projects, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21927",
+    "date": "2021-11-09",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "21-3109": [
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": null,
+    "for": "Owner of 504 Malaga Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21752",
+    "date": "2021-12-07",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 504 Malaga Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21752",
+    "date": "2021-12-07",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Maria de la Guardia",
+    "firm": null,
+    "for": "Owner of 504 Malaga Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21752",
+    "date": "2021-12-07",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jenny Ducret",
+    "firm": null,
+    "for": "Owner of 504 Malaga Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21752",
+    "date": "2021-12-07",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3597": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Haswell Properties, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-11",
+    "issue": "South Dixie Property - Zoning Approvals",
+    "tenure": true
+   }
+  ],
+  "22-3793": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-09-16",
+    "issue": "Federal ID#:590624458; Theater Arts Building",
+    "tenure": true
+   }
+  ],
+  "22-3622": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 330 Catalonia Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22265",
+    "date": "2022-04-12",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "John McWilliams",
+    "firm": null,
+    "for": "Owner of 330 Catalonia Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22265",
+    "date": "2022-04-12",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3623": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 330 Catalonia Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22266",
+    "date": "2022-04-12",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "John McWilliams",
+    "firm": null,
+    "for": "Owner of 330 Catalonia Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22266",
+    "date": "2022-04-12",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "21-2710": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18367",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18367",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Joseph G. Goldstein",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18367",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "21-2711": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18368",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18368",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Joseph G. Goldstein",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18368",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "21-2713": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18370",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18370",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Joseph G. Goldstein",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18370",
+    "date": "2022-04-26",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4064": [
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "Coral Grand, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-04-05",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "21-2712": [
+   {
+    "name": "Alessandria San Roman",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18369",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18369",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Joseph G. Goldstein",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=18369",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3851": [
+   {
+    "name": "Erin Dowd",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22493",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22493",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Dawn White",
+    "firm": null,
+    "for": "Doctors Hospital Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22493",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4088": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Coral 37 PDL",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22728",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4114": [
+   {
+    "name": "Erin Dowd",
+    "firm": null,
+    "for": "Doctors Hospital, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22754",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alexandra Villoch",
+    "firm": null,
+    "for": "Doctors Hospital, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22754",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Dawn White",
+    "firm": null,
+    "for": "Doctors Hospital, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22754",
+    "date": "2022-05-10",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3620": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22263",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "John McWilliams",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22263",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22263",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Urban 301 Madeira, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-31",
+    "issue": "Obtaining the necessary land use and zoning approvals for proposed development of mixed use project at 301-341 Madeira Avenue in Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "22-3621": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22264",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "John McWilliams",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22264",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr",
+    "firm": null,
+    "for": "Owner of 301 Madeira Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22264",
+    "date": "2022-05-31",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Urban 301 Madeira, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-31",
+    "issue": "Obtaining the necessary land use and zoning approvals for proposed development of mixed use project at 301-341 Madeira Avenue in Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "22-3858": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-05",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Ricardo Herran",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-09-16",
+    "issue": "Federal ID#:590624458; Theater Arts Building",
+    "tenure": true
+   }
+  ],
+  "22-3725": [
+   {
+    "name": "Lily Alvarez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22367",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Armando Codina",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22367",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22367",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3726": [
+   {
+    "name": "Lily Alvarez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22368",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Armando Codina",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22368",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22368",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3727": [
+   {
+    "name": "Lily Alvarez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22369",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Armando Codina",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22369",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22369",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-3729": [
+   {
+    "name": "Lily Alvarez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22371",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Armando Codina",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22371",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22371",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4305": [
+   {
+    "name": "Lily Alvarez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22945",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Armando Codina",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22945",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22945",
+    "date": "2022-06-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4287": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22927",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22927",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22927",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leonard Roberts",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22927",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4288": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22928",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22928",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22928",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leonard Roberts",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22928",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4289": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22929",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22929",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22929",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leonard Roberts",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22929",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4290": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22930",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22930",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22930",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leonard Roberts",
+    "firm": null,
+    "for": "1505 Ponce SPE, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22930",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4431": [
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "Brightview Landscape Services, Inc.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23071",
+    "date": "2022-07-25",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4805": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alliance Starlight I LLC; Sunrise of Coral Gables PropCo, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23436",
+    "date": "2022-10-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jorge L. Navarro",
+    "firm": null,
+    "for": "Alliance Starlight I, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2021.csv",
+    "date": "2021-03-02",
+    "issue": "Federal ID#:00; Rezoning and Land Use Approvals",
+    "tenure": true
+   }
+  ],
+  "19-9346": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=16437",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Alta Developers, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-11-09",
+    "issue": "Federal ID#: 591450702; Obtaining the necessary land use, zoning and design approvals for the construction of a mixed usemultifamily building for property located at 250 Bird Road in Coral Gables, Florida.",
+    "tenure": true
+   }
+  ],
+  "20-1038": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Belmont Village, L.P.",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=16705",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "Belmont Village, L.P.",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-11-09",
+    "issue": "Obtaining the necessary land use, zoning and subdivision approvals to redevelop property located at 250 Bird Road in Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "22-4326": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 4311 Ponce de Leon Boulevard",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22966",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Owner of 4311 Ponce de Leon Boulevard",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=22966",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-4777": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 4311 Ponce de Leon Boulevard",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23408",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Owner of 4311 Ponce de Leon Boulevard",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23408",
+    "date": "2022-11-09",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "22-5005": [
+   {
+    "name": "Maria Garcia-Serra",
+    "firm": null,
+    "for": "Location Acquisitions, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23635",
+    "date": "2022-12-13",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "Location Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-02-16",
+    "issue": "Representing you jointly before the City of Coral Gables with regards to the City’s proposed designation of the building located at 122 Menores Avenue which is presently owned by TWJ 1505, LLC, and is under contract to be purchased by Location Acquisitions, LLC.",
+    "tenure": true
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Location Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-11",
+    "issue": "1505 Ponce de Leon Blvd. and 122 Menores Avenue.; Representing Location Acquisitions, LLC before the City of Coral Gables with regards to the City’s proposed designation of the building located at 122 Menores Avenue",
+    "tenure": true
+   }
+  ],
+  "22-5049": [
+   {
+    "name": "Jorge L. Navarro",
+    "firm": null,
+    "for": "Owner of 363 Granello Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=23679",
+    "date": "2022-12-13",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5399": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating to or affecting University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:5906244458; All matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-06",
+    "issue": "All Matters of Site Zoning, Planning, Construction & Design.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Bernardo Fort Brescia",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-05",
+    "issue": "All Matters of Site zoning, planning, construction & design.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   }
+  ],
+  "23-5403": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Century Crystal Group LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-17",
+    "issue": "110 Phoenetia Avenue - Mixed Uses",
+    "tenure": true
+   }
+  ],
+  "21-3110": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 504 Malaga Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=21753",
+    "date": "2023-03-28",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5482": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating to or affecting University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:5906244458; All matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-06",
+    "issue": "All Matters of Site Zoning, Planning, Construction & Design.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Bernardo Fort Brescia",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-05",
+    "issue": "All Matters of Site zoning, planning, construction & design.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   }
+  ],
+  "23-5485": [
+   {
+    "name": "Jose Jimenez",
+    "firm": null,
+    "for": "",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24106",
+    "date": "2023-05-23",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5835": [
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24451",
+    "date": "2023-06-13",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24451",
+    "date": "2023-06-13",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24451",
+    "date": "2023-06-13",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24451",
+    "date": "2023-06-13",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-06",
+    "issue": "All Matters of Site Zoning, Planning, Construction & Design.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Bernardo Fort Brescia",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-05",
+    "issue": "All Matters of Site zoning, planning, construction & design.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   }
+  ],
+  "23-5812": [
+   {
+    "name": "Willy Bermello",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24428",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Heriberto Delgado",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24428",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24428",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5813": [
+   {
+    "name": "Willy Bermello",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24429",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Heriberto Delgado",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24429",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 351 San Lorenzo Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24429",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5914": [
+   {
+    "name": "Glen Larson",
+    "firm": null,
+    "for": "",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24530",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6038": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "DRI/Maple Coral Gables, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24654",
+    "date": "2023-07-11",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5814": [
+   {
+    "name": "Andre Vazquez",
+    "firm": null,
+    "for": "Owner of 631 Zamora Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24430",
+    "date": "2023-09-13",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6397": [
+   {
+    "name": "Jose M. Jimenez",
+    "firm": null,
+    "for": "C/LeJeune, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25011",
+    "date": "2023-10-10",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6278": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 4241 Aurora Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24894",
+    "date": "2023-10-24",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Owner of 4241 Aurora Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24894",
+    "date": "2023-10-24",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6279": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 4241 Aurora Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24895",
+    "date": "2023-10-24",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "Owner of 4241 Aurora Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24895",
+    "date": "2023-10-24",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6515": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating to or affecting University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:5906244458; All matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-06",
+    "issue": "All Matters of Site Zoning, Planning, Construction & Design.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Bernardo Fort Brescia",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-05",
+    "issue": "All Matters of Site zoning, planning, construction & design.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   }
+  ],
+  "23-6524": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating to or affecting University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; Matters relating to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:590624458; All matters relating or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-01-11",
+    "issue": "Federal ID#:5906244458; All matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Alejandro Gonzalez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-06",
+    "issue": "All Matters of Site Zoning, Planning, Construction & Design.",
+    "tenure": true
+   },
+   {
+    "name": "Bernard Zyscovich",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC Submittal",
+    "tenure": true
+   },
+   {
+    "name": "Bernardo Fort Brescia",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-12-05",
+    "issue": "All Matters of Site zoning, planning, construction & design.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-01-03",
+    "issue": "Federal ID#:590624458",
+    "tenure": true
+   },
+   {
+    "name": "Steven Marin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2021-12-07",
+    "issue": "Federal ID#:651012913; All Issues Related to University",
+    "tenure": true
+   },
+   {
+    "name": "Suria Yaffar",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College - DRC",
+    "tenure": true
+   },
+   {
+    "name": "Trent Baughn",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2022.csv",
+    "date": "2022-05-16",
+    "issue": "5th College- DRC Submittal",
+    "tenure": true
+   }
+  ],
+  "23-6400": [
+   {
+    "name": "Edward Baker",
+    "firm": null,
+    "for": "Owner of 141 Grand Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25014",
+    "date": "2023-11-14",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6893": [
+   {
+    "name": "Adrian Nunez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-04",
+    "issue": "Federal ID#:590624458; Matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Jessica Brumley",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-04",
+    "issue": "Federal ID#:590624458; Matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-03",
+    "issue": "federal ID 590624458; land use matters related to or affecting the University of Miami",
+    "tenure": true
+   },
+   {
+    "name": "Maite Alvarez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-04",
+    "issue": "Federal ID#:590624458; Matters related to or affecting the University of Miami.",
+    "tenure": true
+   },
+   {
+    "name": "Rodolfo Fernandez",
+    "firm": null,
+    "for": "University of Miami",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-04",
+    "issue": "Federal ID#:590624458; Matters related to or affecting the University of Miami.",
+    "tenure": true
+   }
+  ],
+  "24-6993": [
+   {
+    "name": "Claudia Miro",
+    "firm": null,
+    "for": "Freebee",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-18",
+    "issue": "Freebee",
+    "tenure": true
+   }
+  ],
+  "23-6567": [
+   {
+    "name": "Laura Russo",
+    "firm": null,
+    "for": "St. Philip's School",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25180",
+    "date": "2024-02-27",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6565": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25178",
+    "date": "2024-03-12",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6566": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Publix",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25179",
+    "date": "2024-03-12",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-5485-2024-05-07": [
+   {
+    "name": "Jose Jimenez",
+    "firm": null,
+    "for": "",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=24106",
+    "date": "2024-05-07",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "24-7319": [
+   {
+    "name": "Jose Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25924",
+    "date": "2024-05-07",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "24-7427": [
+   {
+    "name": "Jose Jimenez",
+    "firm": null,
+    "for": "Owner of 2701 Salzedo Street",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26032",
+    "date": "2024-05-07",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "23-6704": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25317",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "23-6705": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25318",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "23-6706": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25319",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "23-6707": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25320",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "23-6708": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25321",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "23-6709": [
+   {
+    "name": "Javier Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25322",
+    "date": "2024-05-21",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Derek Cardenas",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Javier E. Fernandez",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-03-05",
+    "issue": "Small Scale Comp Plan Amendment; Vacation Request; MXD Site Plan Approval; and TDR Approval.",
+    "tenure": true
+   },
+   {
+    "name": "W Allen Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use and Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Walter Allen Spencer Morris",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-01-01",
+    "issue": "Project Land Use & Zoning approvals.",
+    "tenure": true
+   },
+   {
+    "name": "Anthony De Yurre",
+    "firm": null,
+    "for": "RC Acquisitions, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Zoning, land use & development issues/approvals.; Zoning, land use & development issues/approvals for property located at approximately 3000 Ponce De Leon Blvd, 224 and 216 Catalonia Avenue, 203 University Drive, and 225 Malaga Avenue",
+    "tenure": true
+   },
+   {
+    "name": "Lauren Kahn",
+    "firm": null,
+    "for": "RC Acquisitions LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2022-12-15",
+    "issue": "Representation in connection with entitlements for the redevelopment of the property located at 224 Catalonia, 216 Catalonia, and 3000 Ponce de Leon Boulevard",
+    "tenure": true
+   }
+  ],
+  "24-7431": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "4241 Aurora, LLC",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26036",
+    "date": "2024-06-11",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Devon Vickers",
+    "firm": null,
+    "for": "4241 Aurora, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2023.csv",
+    "date": "2023-05-19",
+    "issue": "Mixed use entitlement for Property located at 4241 Aurora Street, Coral Gables",
+    "tenure": true
+   }
+  ],
+  "24-7521": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 717 Valencia Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26126",
+    "date": "2024-07-09",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Maria de la Guardia",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-07-08",
+    "issue": "Obtaining the necessary development approvals for the construction of proposed townhomes at 717-741  Valencia Avenue in Coral Gables, Florida",
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "The George Residences LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-06-13",
+    "issue": "Obtaining the necessary development approvals for the construction of proposed townhomes located at 717-741 Valencia Avenue in Coral Gables, Florida",
+    "tenure": true
+   }
+  ],
+  "24-6967": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 103 Sevilla Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25581",
+    "date": "2024-10-08",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "24-6968": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 103 Sevilla Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25582",
+    "date": "2024-10-08",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "24-6969": [
+   {
+    "name": "Jorge Navarro",
+    "firm": null,
+    "for": "Owner of 130 Almeria Avenue",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=25583",
+    "date": "2024-10-08",
+    "issue": null,
+    "tenure": true
+   }
+  ],
+  "24-7859": [
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": null,
+    "for": "Owner of 33 Alhambra Circle",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26462",
+    "date": "2024-10-08",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Robert Behar, Jr.",
+    "firm": null,
+    "for": "33 Alhambra Propco, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-05-07",
+    "issue": "Obtaining the necessary approvals for the proposed development of the Alhambra Parc multifamily residential building at 33 Alhambra Circle.",
+    "tenure": true
+   }
+  ],
+  "24-8243": [
+   {
+    "name": "Leslie E. Pantin",
+    "firm": null,
+    "for": "SFM Landscape Services, Inc.; Sherlock Tree Company",
+    "basis": "record",
+    "src": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=26844",
+    "date": "2024-11-12",
+    "issue": null,
+    "tenure": true
+   },
+   {
+    "name": "Leslie E Pantin",
+    "firm": null,
+    "for": "SFM Landscape Services, LLC",
+    "basis": "registry",
+    "src": "scripts/data/city/coralgables/lobbyists-2024.csv",
+    "date": "2024-07-23",
+    "issue": "Landscape Maintenance",
+    "tenure": true
+   }
   ]
  },
- "notFound": "No registry or record lobbyist found for the other Coral Gables actions. Most are vendor contracts, sewer connection agreements and grants whose Legistar title says \"Lobbyist: N/A\". 85 actions are not in the Legistar \"Lobbyist\" title query (older or differently titled items, e.g. 24-8504, 25-1018, 26-1780, 25-9279, 26-1569, 26-1629, 25-9956); their agenda pages were not re-read because the WebFetch hourly limit was reached, so record links for them may be missing. Registry links use name and address matches against the clerk export; registrations by the property owner or architect as their own principal (Nelson de Leon, David Schopp, Joe Jimenez) are listed with the registered principal named in \"for\". Legistar spells one lobbyist \"David Schoop\"; the registry has \"David Schopp\". otherBody rows (Miami-Dade County registrations) are for review only."
+ "notFound": "No registry or record lobbyist found for the other Coral Gables actions. Most are vendor contracts, sewer connection agreements and grants whose Legistar title says \"Lobbyist: N/A\". 85 actions are not in the Legistar \"Lobbyist\" title query (older or differently titled items, e.g. 24-8504, 25-1018, 26-1780, 25-9279, 26-1569, 26-1629, 25-9956); their agenda pages were not re-read because the WebFetch hourly limit was reached, so record links for them may be missing. Registry links use name and address matches against the clerk export; registrations by the property owner or architect as their own principal (Nelson de Leon, David Schopp, Joe Jimenez) are listed with the registered principal named in \"for\". Legistar spells one lobbyist \"David Schoop\"; the registry has \"David Schopp\". otherBody rows (Miami-Dade County registrations) are for review only.",
+ "tenureNote": "Pre-2025 actions: record lobbyists from the Legistar title; registry matches on principal name (or owner of record) against the 2017-2024 dashboard exports. No registry is online for 2013-2016."
 }

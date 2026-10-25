@@ -1,0 +1,22 @@
+# flhouse tenure slice: progress
+
+Members: Nixon, Gantt, Basabe, Porras, Chambliss (seated Nov 2022), Redondo (Dec 2023), Blanco (Nov 2024, already full).
+Sessions to add: 2023 regular (Mar 7-May 5, 2023), 2023B (Feb 2023), 2023C (Nov 2023), 2024 regular (Jan 9-Mar 8, 2024), 2022D/2022A? (Dec 2022 special 2022D, property insurance).
+Outputs: requests-2023.json, requests-2024.json, bills-2023.json, bills-2024.json, gifts-<acct>.tsv, README.md.
+
+## Log
+- 2026-10-25 start. Endpoint checks from shell: flhouse.gov api/document/apr -> F5 "Request Rejected"; flsenate.gov -> 429 "Too Many Requests"; dos.elections.myflorida.com contrib.exe -> Cloudflare challenge (403). laws.flrules.org -> 200.
+- APR lists work in Claude in Chrome: https://www.flhouse.gov/AppropriationProjectRequests/<year> (all forms on one page), forms are PDFs at /api/document/apr?sessionid=<99|103>&id=<doc>, parsed with pdf.js 4.4.168 in the page. WebFetch is robots-blocked there.
+- Session ids: 2022D=96, 2023B=102, 2023=99, 2023C=104, 2024=103, 2024O=106. APR lists exist only for regular sessions 2023 and 2024.
+- DONE APR 2024 (FY 2024-25): 70 forms for our members (Basabe 24, Chambliss 14, Gantt 15, Porras 12, Nixon 3, Redondo 2: forms 3102/3108 show Redondo as sponsor, filed 11/2023 before he was seated, so transferred to him), raw/apr-2024.txt. Fields: form~doc~member~date~ask~recipient~county~lobbyist~firm~cmte~title.
+- DONE APR 2023 (FY 2023-24): 75 forms, raw/apr-2023.txt. Redondo none (not seated); Nixon 1.
+- DONE budget status: enrolled GAA text via flsenate.gov /Session/Bill/<yr>/<bill>/BillText/er/HTML in the browser (2023 SB 2500 Ch. 2023-239; 2024 HB 5001 Ch. 2024-231); 2023 GAA zero-pads some form numbers ("HF 0434"). Veto lists by curl from flgov.com: press/Final-Veto-List-2023.pdf, press/FY_2024-25_Veto_List.pdf (raw/veto-*.txt). build-requests.py -> requests-2023.json (75 forms, 44 in budget, 12 vetoed), requests-2024.json (70 forms, 18 in, 10 vetoed).
+- No APR forms exist for special sessions 2022D, 2023B, 2023C (the APR system covers regular sessions only).
+- NEXT: enacted-bill universe for 2022D, 2023B, 2023, 2023C, 2024.
+- DONE enacted list: bills/enacted.json, 653 chapter laws (2022D: 2022-268,269; 2023B: 2023-1..7; 2023: 2023-8..348; 2023C: 2023-349..352; 2024: 2024-1..299). flsenate.gov bill lists via shell curl with billLocation=27; GAAs 2023-239 and 2024-231 added by hand (listed as line-item vetoed, not "Became Law").
+- Stage A (bill pages) running: bills/stageA.py, shell curl at ~1 req/6 s with 30 s+ backoff on 429. Resumable.
+- Donors: DOE contrib.exe via Claude in Chrome (in-page POST, queryformat=2) works. Candidate search by last name returns every cycle. Rows found (all dates): Nixon (Angie) 5,286 (2020-2024; 2,398 dated before her Nov 2020 seat-start... see note), Porras 501, Gantt 963, Basabe 375, Chambliss 453 (from 2020), Redondo 520. Kept window: 2020-11-04 .. 2024-12-31 (one cycle before Nov 2022 tenure; Nixon's earlier HD13 tenure began Nov 2020, and 2020 cycle rows before Nov 4 2020 are excluded).
+- Browser to container transfer: page text only, so rows are pasted page by page into donors/pages/<n>.txt with a row-count and cent-total check (donors/assemble.py). Pages done: 9 (Basabe, 250 rows OK).
+- Committee search: search_on=3 with ComNameSrch (name) times out on DOE's SQL server for some names (ODBC query timeout); retrying.
+- Donor pages done and checksum-verified: Basabe (page 9), Porras (100), Gantt (101-102), Chambliss (103), Redondo (104). Remaining: Nixon pages 105-110 (2,888 rows, 2020-11-04..2024-12-31). Browser state: window._pages index 5-10 in tab "CanDetail account=88924"; rebuild with the DOE candidate search if the tab is gone.
+- Committee search: DOE ignores ComName for search_on=2/3 (returned the whole database: 1.3M rows). Political committees for 2022-2024 still to do; try the committee's own report pages (ComDetail -> Campaign Documents) or account-number filters.
