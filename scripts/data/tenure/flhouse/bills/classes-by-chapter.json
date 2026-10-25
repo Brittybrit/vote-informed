@@ -218,5 +218,25 @@
    "realestate-dev"
   ],
   "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
+ },
+ "2023-304": {
+  "tags": [
+   "engineering",
+   "construction"
+  ],
+  "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+ },
+ "2023-349": {
+  "tags": [
+   "agriculture-other",
+   "agriculture-sugar",
+   "agriculture-citrus"
+  ],
+  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES|TIMBER|FOREST"
+ },
+ "2023-352": {
+  "tags": [],
+  "re": "SECURITY|SYNAGOGUE|TEMPLE|JEWISH|CONGREGATION|FEDERATION|CHABAD|SCHOOL",
+  "not": "SOCIAL SECURITY"
  }
 }

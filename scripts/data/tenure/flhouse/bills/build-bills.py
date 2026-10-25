@@ -19,7 +19,10 @@ def is_none(body):
 B, unjudged, nosec = {}, [], []
 for e in E:
     ch = e['chapter']; f = P('ps/' + ch + '.txt')
-    if not os.path.exists(f): continue
+    if not os.path.exists(f):
+        if ch in J and 'title class' in (J[ch].get('note') or ''):
+            B[ch] = {'ch': ch, 'au': None, 'ps': J[ch]['note'], 'b': False, 'cat': None, 'named': [], 'q': None}
+        continue
     t = open(f).read(); u, _, body = t.partition('\n')
     if u == 'NOANALYSIS': B[ch] = {'ch': ch, 'au': None, 'ps': None, 'b': False, 'note': 'no staff analysis posted'}; continue
     ps = re.sub(r'\s+', ' ', body).strip()[:1500]

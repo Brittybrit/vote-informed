@@ -25,7 +25,9 @@ def section(t):
                 r'(Direct Economic Impact on (the )?Private Sector|Private Sector Impact)'):
         ms = list(re.finditer(pat, t, re.I))
         if ms: m = ms[-1] if pat.startswith('[A-D]') else ms[0]; break
-    if not m: return None
+    if not m:
+        m = re.search(r'(FISCAL OR ECONOMIC IMPACT|Fiscal or Economic Impact)\s*:', t)
+        if not m: return None
     s = t[m.start():m.start() + 2500]
     e = re.search(r'\n\s*(3\.\s*Fiscal Comments|C\.\s*Government Sector Impact|D\.\s*FISCAL COMMENTS|FISCAL COMMENTS|III\.\s*COMMENTS|VI\.\s*Technical|VII\.\s*Related)', s[40:], re.I)
     return s[:40 + e.start()] if e else s
