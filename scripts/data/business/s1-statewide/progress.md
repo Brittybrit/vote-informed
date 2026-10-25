@@ -3,3 +3,23 @@
 - ashley-moody: done | interests 12 | ties 2 | Senate eFD CY2025 + FL Form 6F 998452 (repo reads confirmed). FACTS: no hits for family partnerships; Special Olympics FL has 18 state agreements (former board seat). USAspending: SBA PPP for Special Olympics FL (verified:false, amounts not opened); Artzibushev & Co / Moody Investment EIDL hits are differently named entities, not recorded. No votes found (U.S. Senate 2025-): none name these entities.
 - angela-nixon: done | interests 5 | ties 0 (1 negative-search line) | Form 6 1117171 (repo read confirmed). Appropriation requests in scripts/data/state/nixon.json name nonprofits with no record tying them to her interests. No votes found on items naming Florida For All / Building Blocks.
 - neil-j-gillespie: done | interests 0 (null line) | ties 0 | no COE filer; Senate eFD blocked (403); Sunbiz officer search no Neil.
+- charles-burkett: done | interests 29 | ties 0 (1 negative line) | 2025 Form 6 (1066575, as Governor candidate): ~27 real-estate LLCs/partnerships, net worth $38.5M. Surfside agendas 2020-24 + Granicus minutes 2024-26 scanned: no Burkett entity named, no 8B. FACTS/USAspending: no matching entity. Sunbiz detail for each LLC not opened (many are out-of-state: Kenosha/Little Chute WI, Alpharetta/Cumming GA, etc.).
+- ruben-a-coto: done | interests 3 | ties 0 (1 negative line) | 2025 Form 6X (1117004, as LG candidate): Coto Industries LLC (owner, $235,000 income). Sunbiz name+address match. No Surfside items/8B naming it.
+- david-jolly: done (partial) | interests 0 (null) | ties 0 | DOS 'Financial Disclosure' 2026-06-10 exists but unreachable (DOS 403/postback). Needs manual pull.
+- gwen-graham: done (partial) | interests 0 (null) | ties 0 | no 2026 filing reachable; old Tallahassee Ethics Board Form 1s only.
+- scott-eckhard-jewett: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- nicole-skelly: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- frank-j-russo: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- rachel-rodriguez: done | interests 0 (null) | ties 0 | DOS 403; COE same-name filer not matched
+- moliere-dimanche: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- benjiman-rojas: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- dean-ocean-abrams: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- joe-van-vactor: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- jeffrey-peter-datto: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- juan-santana: done | interests 0 (null) | ties 0 | DOS 403; COE same-name filer not matched
+- joey-mendoza-atkins: done | interests 0 (null) | ties 0 | no COE filer; DOS 403
+- jose-javier-rodriguez: done | interests 3 | ties 0 (1 negative) | latest COE Form 6 is 2019 (752581; 6F 2020); 2026 candidate Form 6 at DOS unreachable. JJR P.A. law practice; secondary source Sugarman & Susskind. Senate votes naming Sugarman & Susskind not searched (no bill names it found).
+- annette-taddeo: done | interests 2 | ties 3 | latest COE Form 6 is 2021 (889856, filed 2023-01-05). LanguageSpeak: SBA PPP $37,691 (2021, address match), $26,700 (2020), DoD PO $6,550 (2010). FACTS no hits.
+- james-uthmeier: done | interests 3 | ties 0 (1 negative) | Form 6 1084586 (repo read confirmed). Securities holdings (Lamar, Palantir, Exxon etc.) not treated as business interests. No AG actions naming holdings checked.
+- blaise-ingoglia: done | interests 9 | ties 2 | Form 6 1073971. Hartland Homes Inc PPP $81,430 (2020) + $86,330.77 (2021), address match. FACTS no hits. Legislative votes naming Hartland not found (flsenate keyword search does not filter; no bill names it).
+- wilton-simpson: done | interests 12 | ties 0 (1 negative) | Form 6 1068936. USAspending Simpson Farms hits are out-of-state same-name entities. FACTS no hits. Ag Commissioner/Senate actions naming his entities not found.
