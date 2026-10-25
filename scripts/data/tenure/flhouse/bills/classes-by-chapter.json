@@ -238,5 +238,104 @@
   "tags": [],
   "re": "SECURITY|SYNAGOGUE|TEMPLE|JEWISH|CONGREGATION|FEDERATION|CHABAD|SCHOOL",
   "not": "SOCIAL SECURITY"
+ },
+ "2024-12": {
+  "tags": [
+   "hospitals"
+  ],
+  "re": "HOSPITAL|HEALTH SYSTEM|BEHAVIORAL|PSYCHIATR|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|UF HEALTH|MOUNT SINAI"
+ },
+ "2024-15": {
+  "tags": [
+   "physicians",
+   "health-other"
+  ],
+  "re": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+ },
+ "2024-25": {
+  "tags": [
+   "retail",
+   "grocery"
+  ],
+  "re": "RESTAURANT|RETAIL|GROCERY|PUBLIX|HOSPITALITY|THEME PARK|DISNEY|UNIVERSAL|FAST FOOD|MCDONALD|CHICK-FIL|BURGER"
+ },
+ "2024-28": {
+  "tags": [
+   "ride-hailing"
+  ],
+  "re": "TAXI|CAB |LIMO|LIMOUSINE|CHAUFFEUR|FOR-HIRE|FOR HIRE|TRANSPORTATION SERV"
+ },
+ "2024-29": {
+  "tags": [],
+  "re": "EMERGENCY VEHICLE|LIGHTBAR|UPFIT|FIRE APPARATUS|FIRE TRUCK"
+ },
+ "2024-45": {
+  "tags": [
+   "alcohol-beverage",
+   "retail"
+  ],
+  "re": "WINE|LIQUOR|SPIRITS|BEVERAGE|PUBLIX|ABC FINE|TOTAL WINE"
+ },
+ "2024-62": {
+  "tags": [],
+  "re": "BANK|BANCORP|TRUST COMPANY|CAPITAL BANK|BANKERS"
+ },
+ "2024-63": {
+  "tags": [
+   "physicians",
+   "health-other"
+  ],
+  "re": "DERMATOL|SKIN|PATHOLOG|LABORATOR| LAB|DIAGNOSTIC"
+ },
+ "2024-69": {
+  "tags": [
+   "retail",
+   "grocery"
+  ],
+  "re": "RETAIL|PUBLIX|WALMART|TARGET|HOME DEPOT|LOWE|CVS|WALGREEN|MERCHANT|STORE"
+ },
+ "2024-76": {
+  "tags": [
+   "aerospace"
+  ]
+ },
+ "2024-80": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
+ },
+ "2024-81": {
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "DISTRIBUT|WHOLESAL|SOUTHERN GLAZER|BEVERAGE PAC",
+  "not": "PEPSI|SYSCO|COCA"
+ },
+ "2024-88": {
+  "tags": [
+   "telecom"
+  ],
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+ },
+ "2024-96": {
+  "tags": [
+   "construction",
+   "engineering"
+  ],
+  "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+ },
+ "2024-98": {
+  "tags": [
+   "telecom"
+  ],
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+ },
+ "2024-108": {
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "ROOF|WINDOW|SHUTTER|IMPACT|HURRICANE|MITIGATION|DOOR"
  }
 }
