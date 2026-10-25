@@ -414,5 +414,83 @@
    "construction"
   ],
   "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+ },
+ "2024-206": {
+  "tags": [
+   "construction"
+  ],
+  "re": "HVAC|AIR CONDITION|HEATING|COOLING|MECHANICAL"
+ },
+ "2024-208": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "not": "FTBA|AGGREGATE"
+ },
+ "2024-209": {
+  "tags": [
+   "physicians"
+  ],
+  "re": "PHYSICIAN|MEDICAL|ORTHOPED|ORTHOPAED|CARDIOLOG|ONCOLOG"
+ },
+ "2024-212": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "not": "FTBA|AGGREGATE"
+ },
+ "2024-218": {
+  "tags": [
+   "insurance-other"
+  ],
+  "re": "AUTO INSURANCE|INSURANCE COMPANY|PROGRESSIVE|GEICO|STATE FARM|ALLSTATE|UNITED AUTOMOBILE",
+  "not": "AGENT|ADVISOR"
+ },
+ "2024-240": {
+  "tags": [],
+  "re": "DAY CARE|DAYCARE|CHILD CARE"
+ },
+ "2024-241": {
+  "tags": [
+   "physicians",
+   "hospitals",
+   "health-other"
+  ],
+  "re": "PHYSICIAN|MEDICAL|SURG|ORTHOPED|ORTHOPAED|RADIOLOG|THERAP|HOSPITAL"
+ },
+ "2024-260": {
+  "tags": [],
+  "re": "VETERINAR|ANIMAL HOSPITAL|PET "
+ },
+ "2024-267": {
+  "tags": [
+   "construction"
+  ],
+  "re": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION",
+  "not": "FTBA"
+ },
+ "2024-270": {
+  "tags": [],
+  "re": "AMERICAN EAGLE|UNITED NEGRO COLLEGE|GIVE KIDS THE WORLD|CLEARWATER MARINE|AEROSPACE CENTER|VILLAGES CHARTER|DIABETES RESEARCH|JDRF|UF FOUNDATION|RECYCLE FLORIDA|SANDY YAWN|PROJECT ADDICTION|UNITED SERVICE ORGANIZATIONS|SFC CHARITABLE"
+ },
+ "2024-271": {
+  "tags": [
+   "engineering",
+   "construction"
+  ],
+  "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+ },
+ "2024-276": {
+  "tags": [],
+  "re": "LOAN|LENDING|FINANCE|CREDIT|ONEMAIN|WORLD ACCEPTANCE|REGIONAL MANAGEMENT|AMSCOT"
+ },
+ "2022-272": {
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|ROOF|DREDG|MARINE CONSTRUCT|BEACH"
  }
 }
