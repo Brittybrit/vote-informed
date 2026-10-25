@@ -191,5 +191,32 @@
  "2023-276": {
   "tags": [],
   "re": "OPERATION NEW HOPE"
+ },
+ "2023-288": {
+  "tags": [
+   "construction"
+  ],
+  "re": "HVAC|AIR CONDITION|HEATING|COOLING|MECHANICAL"
+ },
+ "2023-291": {
+  "tags": [],
+  "re": "UTILIT|WATER|WASTEWATER|SEWER",
+  "not": "WATER MANAGEMENT|DISTRICT"
+ },
+ "2023-292": {
+  "tags": [],
+  "re": "CANNABIS|MARIJUANA|MEDICAL CANNABIS|TRULIEVE|CURALEAF|MUV|FLUENT|VIDACANN|PLANET 13|SURTERRA|LIBERTY HEALTH|CULTIVAT"
+ },
+ "2023-294": {
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "BREW|BEER|ALE |CRAFT"
+ },
+ "2023-296": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
  }
 }
