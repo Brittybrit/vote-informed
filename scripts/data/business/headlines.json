@@ -1,0 +1,56 @@
+{
+ "_note": "Hand-written headline per candidate: tax dollars that reached a business the candidate or their spouse owns or runs, or an official act of theirs that sent money to one. Each must rest on rows in the slices' ties.jsonl. Relief programs open to any eligible business (PPP, EIDL, SBA COVID-era) are not counted.",
+ "_skip": [
+  "byron-donalds",
+  "ashley-moody"
+ ],
+ "_skipWhy": {
+  "byron-donalds": "shown in public/data/connections.json (scripts/data/leads/review.json stated)",
+  "ashley-moody": "Special Olympics Florida agreements not yet checked against her board term (2019-2025)"
+ },
+ "mary-estime-irvin": {
+  "headline": {
+   "en": "Up to $172,750 in North Miami grants went to a senior services foundation she is a director of (2024-25 and 2025-26). She voted for the city budget that funds the 2025-26 grant.",
+   "es": "Hasta $172,750 en subvenciones de North Miami fueron a una fundación de servicios para personas mayores de la que es directora (2024-25 y 2025-26). Votó a favor del presupuesto de la ciudad que financia la subvención de 2025-26.",
+   "ht": "Jiska $172,750 nan sibvansyon North Miami te ale nan yon fondasyon sèvis pou granmoun kote li se direktè (2024-25 ak 2025-26). Li te vote pou bidjè vil la ki finanse sibvansyon 2025-26 la."
+  },
+  "note": {
+   "en": "The City Manager signed the grant agreement. The minutes record no conflict declaration from her on the budget vote.",
+   "es": "El administrador de la ciudad firmó el acuerdo de subvención. Las actas no registran ninguna declaración de conflicto de su parte en la votación del presupuesto.",
+   "ht": "Manadjè vil la te siyen akò sibvansyon an. Pwosè vèbal yo pa montre li te deklare okenn konfli sou vòt bidjè a."
+  }
+ },
+ "omar-blanco": {
+  "headline": {
+   "en": "He filed $900,000 in state budget requests for Miami-Dade Fire Rescue, where he works. Both made the 2026-27 budget and both were vetoed.",
+   "es": "Presentó $900,000 en solicitudes de presupuesto estatal para Miami-Dade Fire Rescue, donde trabaja. Ambas entraron al presupuesto 2026-27 y ambas fueron vetadas.",
+   "ht": "Li te depoze $900,000 nan demann bidjè Leta pou Miami-Dade Fire Rescue, kote li travay. Tou de te antre nan bidjè 2026-27 la epi tou de te jwenn veto."
+  }
+ },
+ "fernando-a-vazquez": {
+  "headline": {
+   "en": "His employer, Keith and Associates, was up for selection by the Key Biscayne council he sits on (Aug 25, 2026). His vote is not in posted minutes yet.",
+   "es": "Su empleador, Keith and Associates, estaba en consideración para ser seleccionado por el concejo de Key Biscayne del que es miembro (25 de agosto de 2026). Su voto aún no aparece en actas publicadas.",
+   "ht": "Patwon li, Keith and Associates, te sou lis pou konsèy Key Biscayne kote li chita a te chwazi (25 out 2026). Vòt li poko parèt nan pwosè vèbal ki pibliye."
+  },
+  "note": {
+   "en": "Keith also holds $371,875 in Sunny Isles Beach agreements from 2025 and FDOT contracts listed at $46.7 million. Those are other governments' decisions, not his votes.",
+   "es": "Keith también tiene $371,875 en acuerdos con Sunny Isles Beach de 2025 y contratos del FDOT listados por $46.7 millones. Son decisiones de otros gobiernos, no votos suyos.",
+   "ht": "Keith gen tou $371,875 nan akò ak Sunny Isles Beach an 2025 ak kontra FDOT ki make $46.7 milyon. Se lòt gouvènman ki te deside sa yo, se pa vòt li."
+  }
+ },
+ "ken-fairman": {
+  "headline": {
+   "en": "$65,000 in Miami-Dade County purchase orders went to Treemendous Miami, a tree-planting nonprofit he is president of (2008-09).",
+   "es": "$65,000 en órdenes de compra del Condado Miami-Dade fueron a Treemendous Miami, una organización sin fines de lucro de siembra de árboles que él preside (2008-09).",
+   "ht": "$65,000 nan lòd acha Konte Miami-Dade te ale nan Treemendous Miami, yon òganizasyon san bi likratif ki plante pyebwa li prezide (2008-09)."
+  }
+ },
+ "annette-taddeo": {
+  "headline": {
+   "en": "A $6,550 U.S. Army purchase order went to her translation company (2010).",
+   "es": "Una orden de compra de $6,550 del Ejército de EE. UU. fue a su empresa de traducción (2010).",
+   "ht": "Yon lòd acha $6,550 Lame Ameriken te ale nan konpayi tradiksyon li (2010)."
+  }
+ }
+}

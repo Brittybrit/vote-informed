@@ -134,7 +134,7 @@
   .race-instr.pf-maybe{color:var(--flag-fg); font-weight:700;}
   .dc .act{padding:12px 0 14px; border-bottom:1px dotted #C9C9C1;}
   .dc .when{font-family:var(--mono); font-size:11px; color:var(--ink-soft);}
-  .dc .ttl{font-weight:800; font-size:15px; line-height:1.35; margin-top:3px;}
+  .dc .ttl{font-weight:600; font-size:13px; line-height:1.35; margin-top:3px;}
   .dc .party, .dc .res, .dc .bud{font-size:13.5px; margin-top:4px;}
   .dc .res .split{color:#9B2C1F; font-weight:700;}
   .dc .onb{display:flex; flex-wrap:wrap; gap:6px; margin-top:7px;}
@@ -355,7 +355,11 @@
   .dossier-empty .oval-demo{width:38px; height:22px; border:2.5px solid var(--ink-soft); border-radius:50%; margin:0 auto 16px;}
   .dossier-empty p{font-size:14px; line-height:1.55;}
 
-  .conn-head{font-size:19px; font-weight:700; line-height:1.35; margin:6px 0 4px;}
+  .conn-head{font-size:14px; font-weight:400; line-height:1.5; margin:4px 0 6px;}
+  .donor .dname{font-size:13px; font-weight:600;}
+  .donor .enote{font-size:13px; line-height:1.45; color:var(--ink-soft); margin-top:2px;}
+  .biz-list{margin:6px 0 12px 18px; font-size:13px; line-height:1.5;}
+  .biz-list li{margin-bottom:6px;}
   .conn-srcs{font-size:12px; line-height:1.9; margin-top:6px;}
   .conn-srcs a{margin-right:10px;}
   .mate-dossier{margin-top:28px; border-top:3px solid var(--ink);}
@@ -416,7 +420,7 @@
   .al-com{margin:0 0 16px;}
   .al-head{border-bottom:1px solid #C9C9C1; padding:8px 0 6px; margin:8px 0 4px;}
   .al-head.al-unk{}
-  .al-head .dname{font-weight:800; font-size:15px;}
+  .al-head .dname{font-weight:600; font-size:13px;}
   .al-label{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
   .al-facts, .al-spent{margin:4px 0 0; font-size:13px;}
   .al-sub{font-size:11.5px; color:var(--ink-soft);}
@@ -431,7 +435,7 @@
   .og-more{color:var(--ink-soft); font-style:italic;}
   .og-npfacts{color:var(--ink-soft); margin:2px 0 0 !important;}
   .ties-sub{font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin:-4px 0 10px; line-height:1.5;}
-  .tie-sum{font-size:14.5px; line-height:1.5; margin:0 0 12px;}
+  .tie-sum{font-size:14px; line-height:1.5; margin:0 0 12px;}
   .tie-sum a{font-family:var(--mono); font-size:11px; margin-left:4px;}
   .tie-status{font-size:13.5px; line-height:1.5; margin:0 0 12px; padding:8px 10px; border:1px solid #C9C9C1;}
   .ties-note{font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin:10px 0 0; line-height:1.5;}
@@ -458,7 +462,7 @@
   .fin-side{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:10px 0 4px; margin-bottom:2px;}
   /* Yes/help vs No/defeat: colored heading text with an underline (green vs brick; not party colors). No colored side bars or filled blocks anywhere: they read as bar charts */
   /* "For" and "against" are subsection headings, not filled blocks: filled blocks read as more bars */
-  .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:14px; font-weight:800; letter-spacing:0; text-transform:none;
+  .fin-side.side-yes, .fin-side.side-no{font-family:var(--sans); font-size:12.5px; font-weight:700; letter-spacing:0; text-transform:none;
     background:none; border:0; border-bottom:2px solid currentColor; padding:0 0 5px; margin:22px 0 8px;}
   .fin-side.side-yes{color:var(--ok-fg);}
   .fin-side.side-no{color:var(--no-bg);}
@@ -486,7 +490,7 @@
   /* YES / NO summary boxes: outlined, never filled (filled blocks read as bars); the title carries the color */
   .imp-boxes{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:10px; margin:6px 0 10px;}
   .imp-box{border:1.5px solid #C9C9C1; padding:12px 14px; min-width:0; overflow-wrap:anywhere;}
-  .imp-box-h{font-weight:800; font-size:15px; margin-bottom:6px;}
+  .imp-box-h{font-weight:600; font-size:13px; margin-bottom:6px;}
   .imp-box-h.side-yes{color:var(--ok-fg);} .imp-box-h.side-no{color:var(--no-bg);}
   .imp-box p{font-size:13.5px; line-height:1.5; margin:0 0 6px;}
   .imp-gen p{color:var(--ink-soft);}
@@ -526,7 +530,7 @@
 .you-sec{border:2px solid var(--ink); padding:14px 16px; background:var(--paper);}
   .you-sec h4{margin-top:0;}
   .you-sub{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin:14px 0 6px;}
-  .you-line p{font-size:15px; line-height:1.5; margin:0 0 8px;}
+  .you-line p{font-size:14px; line-height:1.5; margin:0 0 8px;}
   .you-p{font-size:14px; line-height:1.5; margin:0 0 8px;}
   .you-p ul{margin:4px 0 0 18px; padding:0;}
   .you-row{border-top:1px solid var(--rule, rgba(0,0,0,.15)); padding:8px 0;}
@@ -545,7 +549,7 @@
   .donor-row > details.og, .donor-row > .og-np{flex:0 0 100%; min-width:0;}
   .donor-row:last-child{border-bottom:none;}
   .donor-row > div{flex:1 1 0; min-width:0;}
-  .donor-row .dname{font-weight:600; overflow-wrap:anywhere;}
+  .donor-row .dname{font-weight:600; font-size:13px; overflow-wrap:anywhere;}
   .donor-row .damt{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); flex:0 0 auto; max-width:38%; text-align:right; overflow-wrap:anywhere;}
   .donor-row .dtype{font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin-top:4px;}
   .tag{white-space:nowrap;}
@@ -554,7 +558,7 @@
   .endo-grp{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid #C9C9C1; padding:14px 0 4px;}
   .endo-grp:first-of-type{padding-top:2px;}
   .endo:last-child{border-bottom:none;}
-  .endo .eorg{font-weight:600; font-size:14px;}
+  .endo .eorg{font-weight:600; font-size:13px;}
   .endo .enote{font-size:13px; color:var(--ink-soft); margin-top:3px; line-height:1.45;}
   .fil-card{padding:10px 0 14px;}
   .fil-card .eorg{font-weight:600; font-size:14px;}
@@ -627,7 +631,7 @@
   .mrow .mgo{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); white-space:nowrap; min-width:64px; text-align:right;}
   .mny-facts{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px 16px; margin:10px 0 4px;}
   .mny-facts dt{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
-  .mny-facts dd{margin:2px 0 0; font-size:16px; font-weight:700;}
+  .mny-facts dd{margin:2px 0 0; font-size:13px; font-weight:600;}
   @media (max-width:520px){ .mny-facts{grid-template-columns:repeat(2,minmax(0,1fr));} }
   .fil-all{margin-top:8px;font-size:13px}.fil-all summary{cursor:pointer;color:var(--ink-soft);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 0}.fil-pay{padding:6px 0;border-top:1px dotted #C9C9C1}.fil-line{display:grid;grid-template-columns:7.5em 1fr auto;gap:8px;padding:2px 0;color:var(--ink-soft)}.fil-line .amt{color:var(--ink)}
   .mny-cm{margin:10px 0; padding-top:8px; border-top:1px solid #C9C9C1;}
@@ -1187,7 +1191,7 @@ en: {
   'topic.towing': 'Towing',
   'topic.noise': 'Noise',
   'topic.pets': 'Pets',
-  'conn.srcs': 'Sources:', 'sec.conn': 'Business Interests and Connections', 'conn.sub': 'Connections an official record states: the candidate\u2019s own financial disclosure, a state business filing, an ethics filing. Dollar figures from news reports are labeled as reported.', 'sec.offices': 'Offices Held', 'off.sub': 'Public offices in this site\u2019s records (federal, state, Miami-Dade County, School Board, cities, special districts and courts), with the dates each source gives. Most records start in 2023.', 'off.none': 'No public office found in this site\u2019s records.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Since {a}', 'off.until': 'Start date not stated \u2013 left {b}', 'off.now': 'Serving now; start date not stated in the source', 'off.seen': 'Seated in official meeting records from {a} to {b}', 'off.seenFrom': 'Seated in official meeting records since at least {a}', 'off.endBy': '(left by {b})', 'off.elected': 'elected', 'off.appointed': 'appointed',
+  'conn.srcs': 'Sources:', 'biz.ties': 'Government money and votes tied to their businesses', 'biz.interests': 'Business interests, from their own filings', 'biz.role.owner': 'owner', 'biz.role.spouse': 'spouse owns', 'biz.role.officer': 'officer', 'biz.role.director': 'director', 'biz.role.employer': 'employer', 'biz.role.income': 'income source', 'biz.role.client': 'client', 'biz.role.other': 'listed', 'biz.vote.yes': 'voted yes', 'biz.vote.no': 'voted no', 'biz.vote.abstain': 'abstained', 'biz.vote.absent': 'absent', 'sec.conn': 'Business Interests and Connections', 'conn.sub': 'Connections an official record states: the candidate\u2019s own financial disclosure, a state business filing, an ethics filing. Dollar figures from news reports are labeled as reported.', 'sec.offices': 'Offices Held', 'off.sub': 'Public offices in this site\u2019s records (federal, state, Miami-Dade County, School Board, cities, special districts and courts), with the dates each source gives. Most records start in 2023.', 'off.none': 'No public office found in this site\u2019s records.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Since {a}', 'off.until': 'Start date not stated \u2013 left {b}', 'off.now': 'Serving now; start date not stated in the source', 'off.seen': 'Seated in official meeting records from {a} to {b}', 'off.seenFrom': 'Seated in official meeting records since at least {a}', 'off.endBy': '(left by {b})', 'off.elected': 'elected', 'off.appointed': 'appointed',
   'ties.notIn': '{name} does not hold a seat here now, so there are no official actions to show.',
   'ties.current': '{name} serves on the {body} now. Their official actions have not been reviewed for this section yet.',
   'ties.currentNone': '{name} serves on the {body} now. No official actions on items naming one of their donors were found in the meetings reviewed.',
@@ -1785,7 +1789,7 @@ es: {
   'topic.towing': 'Remolque',
   'topic.noise': 'Ruido',
   'topic.pets': 'Mascotas',
-  'conn.srcs': 'Fuentes:', 'sec.conn': 'Intereses comerciales y conexiones', 'conn.sub': 'Conexiones que consta en un registro oficial: la declaraci\u00f3n financiera del propio candidato, un registro estatal de empresas, una presentaci\u00f3n de \u00e9tica. Las cifras tomadas de noticias se marcan como reportadas.', 'sec.offices': 'Cargos ocupados', 'off.sub': 'Cargos p\u00fablicos en los registros de este sitio (federales, estatales, del Condado Miami-Dade, la Junta Escolar, las ciudades, los distritos especiales y los tribunales), con las fechas que da cada fuente. La mayor\u00eda de los registros empieza en 2023.', 'off.none': 'No se encontr\u00f3 ning\u00fan cargo p\u00fablico en los registros de este sitio.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Desde {a}', 'off.until': 'Fecha de inicio no indicada \u2013 dej\u00f3 el cargo el {b}', 'off.now': 'En el cargo; la fuente no indica la fecha de inicio', 'off.seen': 'Aparece en las actas oficiales de {a} a {b}', 'off.seenFrom': 'Aparece en las actas oficiales desde al menos {a}', 'off.endBy': '(dej\u00f3 el cargo antes del {b})', 'off.elected': 'elegido', 'off.appointed': 'nombrado',
+  'conn.srcs': 'Fuentes:', 'biz.ties': 'Dinero público y votos vinculados a sus negocios', 'biz.interests': 'Intereses comerciales, según sus propias declaraciones', 'biz.role.owner': 'dueño', 'biz.role.spouse': 'de su cónyuge', 'biz.role.officer': 'directivo', 'biz.role.director': 'miembro de la junta', 'biz.role.employer': 'empleador', 'biz.role.income': 'fuente de ingresos', 'biz.role.client': 'cliente', 'biz.role.other': 'declarado', 'biz.vote.yes': 'votó a favor', 'biz.vote.no': 'votó en contra', 'biz.vote.abstain': 'se abstuvo', 'biz.vote.absent': 'ausente', 'sec.conn': 'Intereses comerciales y conexiones', 'conn.sub': 'Conexiones que consta en un registro oficial: la declaraci\u00f3n financiera del propio candidato, un registro estatal de empresas, una presentaci\u00f3n de \u00e9tica. Las cifras tomadas de noticias se marcan como reportadas.', 'sec.offices': 'Cargos ocupados', 'off.sub': 'Cargos p\u00fablicos en los registros de este sitio (federales, estatales, del Condado Miami-Dade, la Junta Escolar, las ciudades, los distritos especiales y los tribunales), con las fechas que da cada fuente. La mayor\u00eda de los registros empieza en 2023.', 'off.none': 'No se encontr\u00f3 ning\u00fan cargo p\u00fablico en los registros de este sitio.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Desde {a}', 'off.until': 'Fecha de inicio no indicada \u2013 dej\u00f3 el cargo el {b}', 'off.now': 'En el cargo; la fuente no indica la fecha de inicio', 'off.seen': 'Aparece en las actas oficiales de {a} a {b}', 'off.seenFrom': 'Aparece en las actas oficiales desde al menos {a}', 'off.endBy': '(dej\u00f3 el cargo antes del {b})', 'off.elected': 'elegido', 'off.appointed': 'nombrado',
   'ties.notIn': '{name} no ocupa un cargo aquí ahora, así que no hay acciones oficiales que mostrar.',
   'ties.current': '{name} forma parte de {body} ahora. Sus acciones oficiales aún no se han revisado para esta sección.',
   'ties.currentNone': '{name} forma parte de {body} ahora. No se encontraron acciones oficiales sobre asuntos que nombren a uno de sus donantes en las reuniones revisadas.',
@@ -2383,7 +2387,7 @@ ht: {
   'topic.towing': 'Remòkaj',
   'topic.noise': 'Bri',
   'topic.pets': 'Bèt kay',
-  'conn.srcs': 'Sous:', 'sec.conn': 'Enter\u00e8 biznis ak koneksyon', 'conn.sub': 'Koneksyon yon dosye ofisy\u00e8l di: deklarasyon finansye kandida a menm, yon dosye biznis Leta, yon dosye etik. Chif nou pran nan nouv\u00e8l yo make k\u00f2m rap\u00f2te.', 'sec.offices': 'P\u00f2s li te okipe', 'off.sub': 'P\u00f2s piblik ki nan dosye sit sa a (federal, Leta, Konte Miami-Dade, Konsey Lek\u00f2l, vil yo, distri espesyal ak tribinal), ak dat chak sous bay. Pif\u00f2 dosye k\u00f2manse an 2023.', 'off.none': 'Nou pa jwenn okenn p\u00f2s piblik nan dosye sit sa a.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Depi {a}', 'off.until': 'Dat k\u00f2mansman pa bay \u2013 li kite {b}', 'off.now': 'Nan p\u00f2s la kounye a; sous la pa bay dat k\u00f2mansman', 'off.seen': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo soti {a} rive {b}', 'off.seenFrom': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo depi omwen {a}', 'off.endBy': '(li te kite anvan {b})', 'off.elected': 'eli', 'off.appointed': 'nonmen',
+  'conn.srcs': 'Sous:', 'biz.ties': 'Lajan piblik ak vòt ki konekte ak biznis li yo', 'biz.interests': 'Enterè biznis, dapre pwòp deklarasyon li', 'biz.role.owner': 'pwopriyetè', 'biz.role.spouse': 'konjwen li posede', 'biz.role.officer': 'ofisye', 'biz.role.director': 'manm konsèy', 'biz.role.employer': 'patwon', 'biz.role.income': 'sous revni', 'biz.role.client': 'kliyan', 'biz.role.other': 'deklare', 'biz.vote.yes': 'te vote wi', 'biz.vote.no': 'te vote non', 'biz.vote.abstain': 'te abstni', 'biz.vote.absent': 'absan', 'sec.conn': 'Enter\u00e8 biznis ak koneksyon', 'conn.sub': 'Koneksyon yon dosye ofisy\u00e8l di: deklarasyon finansye kandida a menm, yon dosye biznis Leta, yon dosye etik. Chif nou pran nan nouv\u00e8l yo make k\u00f2m rap\u00f2te.', 'sec.offices': 'P\u00f2s li te okipe', 'off.sub': 'P\u00f2s piblik ki nan dosye sit sa a (federal, Leta, Konte Miami-Dade, Konsey Lek\u00f2l, vil yo, distri espesyal ak tribinal), ak dat chak sous bay. Pif\u00f2 dosye k\u00f2manse an 2023.', 'off.none': 'Nou pa jwenn okenn p\u00f2s piblik nan dosye sit sa a.', 'off.range': '{a} \u2013 {b}', 'off.since': 'Depi {a}', 'off.until': 'Dat k\u00f2mansman pa bay \u2013 li kite {b}', 'off.now': 'Nan p\u00f2s la kounye a; sous la pa bay dat k\u00f2mansman', 'off.seen': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo soti {a} rive {b}', 'off.seenFrom': 'Nan pwos\u00e8 veb\u00e8l ofisy\u00e8l yo depi omwen {a}', 'off.endBy': '(li te kite anvan {b})', 'off.elected': 'eli', 'off.appointed': 'nonmen',
   'ties.notIn': '{name} pa gen okenn pòs isit la kounye a, kidonk pa gen aksyon ofisyèl pou montre.',
   'ties.current': '{name} sèvi nan {body} kounye a. Nou poko revize aksyon ofisyèl li yo pou seksyon sa a.',
   'ties.currentNone': '{name} sèvi nan {body} kounye a. Nou pa jwenn okenn aksyon ofisyèl sou dosye ki nonmen youn nan donatè li yo nan reyinyon nou revize yo.',
@@ -5140,14 +5144,15 @@ function loadOffices(ri, cand){
 }
 // Business interests and connections an official record states (/data/connections.json, built by scripts/leads.mjs).
 // Only confirmed rows are public; each names the record. Reported figures are marked as reported, never as fact.
-var CONN = null, connWait = [];
+var CONN = null, BIZ = null, connWait = [];
 function loadConnections(ri, cand){
-  if(HELD === null || CONN === null){
+  if(HELD === null || CONN === null || BIZ === null){
     connWait.push(function(){ loadConnections(ri, cand); });
     if(connWait.length === 1){
       var heldP = HELD === null ? fetch('/data/offices-held.json').then(function(r){ return r.json(); }).then(function(j){ if(HELD === null) HELD = j; }).catch(function(){ if(HELD === null) HELD = {byBallot: {}, people: {}}; }) : Promise.resolve();
       var connP = fetch('/data/connections.json').then(function(r){ return r.json(); }).then(function(j){ CONN = j; }).catch(function(){ CONN = {confirmed: []}; });
-      Promise.all([heldP, connP]).then(function(){ var w = connWait; connWait = []; w.forEach(function(f){ f(); }); });
+      var bizP = fetch('/data/business.json').then(function(r){ return r.json(); }).then(function(j){ BIZ = j; }).catch(function(){ BIZ = {people: {}}; });
+      Promise.all([heldP, connP, bizP]).then(function(){ var w = connWait; connWait = []; w.forEach(function(f){ f(); }); });
     }
     return;
   }
@@ -5158,20 +5163,42 @@ function loadConnections(ri, cand){
   var pid = HELD.byBallot[race.office + '|' + who];
   if(!pid){ for(var k in HELD.byBallot){ var p = k.split('|'); if(p[0] === race.office && sameCand(who, p[1])){ pid = HELD.byBallot[k]; break; } } }
   var rows = pid ? (CONN.confirmed || []).filter(function(c){ return c.person === pid; }) : [];
-  if(!rows.length){ box.hidden = true; return; }
+  var bz = pid && BIZ.people ? BIZ.people[pid] : null;
+  if(!rows.length && !bz){ box.hidden = true; return; }
   box.hidden = false;
-  // Tax dollars to the candidate's own business interests first, then each connection with its sources
+  // 1. The headline: tax dollars that reached a business they or their spouse own or run, or an official act that sent money to one
   var heads = rows.filter(function(c){ return c.headline; });
-  box.innerHTML = '<h4>' + t('sec.conn') + '</h4>' +
-    heads.map(function(c){ return '<p class="conn-head">' + esc(connL(c.headline)) + '</p>' + (c.headlineNote ? '<p class="sec-sub">' + esc(connL(c.headlineNote)) + '</p>' : ''); }).join('') +
-    rows.map(function(c){
+  if(bz && bz.headline) heads.push(bz);
+  var h = '<h4>' + t('sec.conn') + '</h4>' +
+    heads.map(function(c){ return '<p class="conn-head">' + esc(connL(c.headline)) + '</p>' + (c.headlineNote ? '<p class="sec-sub">' + esc(connL(c.headlineNote)) + '</p>' : ''); }).join('');
+  // 2. Connections with their sources (hand-checked)
+  h += rows.map(function(c){
       var srcs = [c.record].concat(c.evidence || []).filter(function(e){ return e && e.url; });
       return '<div class="donor"><div><div class="dname">' + esc(c.other) + '</div>' +
         '<div class="enote">' + esc(connL(c.relationship)) + '</div>' +
         (srcs.length ? '<p class="conn-srcs">' + t('conn.srcs') + ' ' + srcs.map(function(e){ return srcLink(e.url, e.label ? connL(e.label) : ''); }).join(' ') + '</p>' : '') +
         '</div></div>';
     }).join('');
+  // 3. Government money and votes tied to their businesses, one line each
+  if(bz && bz.ties && bz.ties.length){
+    h += '<div class="fin-side">' + t('biz.ties') + '</div><ul class="biz-list">' + bz.ties.map(function(x){
+      var bits = [];
+      if(x.amount && !/^none$/i.test(x.amount)) bits.push(esc(/^\d+(\.\d+)?$/.test(x.amount) ? fmtAmount(x.amount) : String(x.amount)));
+      if(x.vote) bits.push(t('biz.vote.' + x.vote));
+      return '<li>' + (x.date ? esc(fmtDay(x.date)) + ' · ' : '') + esc(x.body) + ': ' + esc(bizShort(x.title, 110)) +
+        (bits.length ? ' · ' + bits.join(' · ') : '') + ' ' + srcLink(x.url) + '</li>';
+    }).join('') + '</ul>' + (LANG !== 'en' ? '<p class="fine">' + t('you.inEn') + '</p>' : '');
+  }
+  // 4. Their business interests, from their own filings
+  if(bz && bz.interests && bz.interests.length){
+    h += '<div class="fin-side">' + t('biz.interests') + '</div><ul class="biz-list">' + bz.interests.map(function(x){
+      return '<li>' + esc(x.business) + ' · ' + t('biz.role.' + x.role) + ' ' + srcLink(x.url) + '</li>';
+    }).join('') + '</ul>';
+  }
+  box.innerHTML = h;
 }
+// First clause of a record's title or amount, so each line stays short (the record link has the rest)
+function bizShort(x, max){ var s = String(x || '').split(/:\s|;\s|\s\(/)[0].trim(); return s.length > max ? s.slice(0, max - 1).replace(/\s+\S*$/, '') + '\u2026' : s; }
 function connL(x){ return x && typeof x === 'object' ? (x[LANG] || x.en || '') : String(x || ''); }
 // One-line money summary per incumbent (/data/money-summary.json, built from /data/decisions.json)
 var SUMMARY = null, summaryWait = [];
