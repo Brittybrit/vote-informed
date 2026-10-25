@@ -4668,8 +4668,6 @@ function renderDossier(cand, race, r, cached){
   var html = dossierHead(cand, race, cached);
   if(ri >= 0) html += race.isRetention ? retentionVoteBar(ri) : voteBar(ri, ci);
   html += '<div class="dossier-body">';
-  // What this means for you: the bottom line, the decisions that touch the voter's household, what comes next
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec you-sec" id="youSec"></div>';
 
   if(r.summary){
     // Joint tickets ("Byron Donalds and Bryan Avila"): the running mate's part gets its own labeled paragraph
@@ -4706,7 +4704,6 @@ function renderDossier(cand, race, r, cached){
     html += '</div></div>';
   }
 
-  // Who backs them and who rates them, before the money record
   var who = '';
   who += '<div class="dsec"><h4>' + t('sec.endorse') + '</h4>';
   if(r.endorsements && r.endorsements.length){
@@ -4741,20 +4738,12 @@ function renderDossier(cand, race, r, cached){
     who += '</div>';
   }
 
-  html += who;
-  // The full money record, collapsed: it is the evidence behind the bottom line above
-  var isCand = ri >= 0 && !race.isMeasure;
-  // Offices and business connections stay open: the summary above points to them
+  // The money record first: offices, where the money comes from, how local it is, business interests
   if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="officesSec" hidden></div>';
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
-  // The money charts stay open: the summary above simplifies them, it doesn't replace them
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
   html += '<div class="dsec" id="localSec"></div>';
-  // Biggest backers chart
-  if(r.outsideSpending || committeeRows(r).length) html += '<div class="dsec" id="backersSec"></div>';
-  // The full lists behind the charts, collapsed
-  if(isCand) html += '<details class="evid"><summary>' + t('you.evid') + '</summary>';
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
 
   html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
@@ -4856,7 +4845,11 @@ function renderDossier(cand, race, r, cached){
     html += '</div>';
   }
 
-  if(isCand) html += '</details>';
+  // Biggest backers: after the campaign's donors and outside spending
+  if(r.outsideSpending || committeeRows(r).length) html += '<div class="dsec" id="backersSec"></div>';
+
+  // Who backs them and who rates them, after the money record
+  html += who;
   if(r.sources && r.sources.length){
     html += '<div class="dsec"><h4>' + t('sec.sources') + '</h4><p class="srcs">' +
       r.sources.map(linkifySource).join(' · ') + '</p></div>';
@@ -4874,7 +4867,6 @@ function renderDossier(cand, race, r, cached){
   if(ri >= 0 && !race.isMeasure) loadOffices(ri, cand);
   if(ri >= 0 && !race.isMeasure) loadConnections(ri, cand);
   if(ri >= 0 && !race.isMeasure) loadTies(ri, cand);
-  if(ri >= 0 && !race.isMeasure) loadYou(ri, cand);
 }
 
 // Newspaper editorial boards lead the endorsement list; everything else keeps its order.
