@@ -33,7 +33,9 @@ def psi_text(pdf):
         f.write(pdf); f.flush()
         t = subprocess.run(['pdftotext', '-layout', f.name, '-'], capture_output=True, text=True).stdout
     t2 = re.sub(r'[ \t]+', ' ', t)
-    m = re.search(r'(?:B\.|2\.)?\s*PRIVATE SECTOR(?: IMPACT)?:?\s*(.*?)(?=\n\s*(?:C\.|3\.|D\.)\s*(?:GOVERNMENT SECTOR|FISCAL COMMENTS|Government Sector)|\n\s*(?:VI|VII|III)\.\s|\Z)', t2, re.S | re.I)
+    m = re.search(r'DIRECT ECONOMIC IMPACT ON (?:THE )?PRIVATE SECTOR:?\s*(.*?)(?=\n\s*D\.\s*FISCAL COMMENTS|\n\s*[IVX]+\.\s|\Z)', t2, re.S | re.I)
+    if m: return re.sub(r'\s+', ' ', m.group(1)).strip()[:2500]
+    m = re.search(r'\n\s*(?:B\.|2\.)\s*PRIVATE SECTOR(?: IMPACT)?:?\s*(.*?)(?=\n\s*(?:C\.|3\.|D\.)\s*(?:GOVERNMENT SECTOR|FISCAL COMMENTS|Government Sector)|\n\s*(?:VI|VII|III)\.\s|\Z)', t2, re.S | re.I)
     if not m: m = re.search(r'Private Sector Impact:?\s*(.*?)(?=\n\s*C\.\s|\n\s*Government Sector|\Z)', t2, re.S | re.I)
     return re.sub(r'\s+', ' ', m.group(1)).strip()[:2500] if m else None
 for e in E:
