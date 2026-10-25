@@ -70,6 +70,7 @@ for f in glob.glob('ld203_cache/*'):
     m = os.path.basename(f).split('|')[0]
     for rep in json.load(open(f)):
         for it in rep['items']:
+            if it.get('contribution_type') != 'feca': continue   # honorary and meeting expenses left out, as in gm.json
             hon = ((it.get('honoree_name') or '') + ' ' + (it.get('payee_name') or '')).upper()
             if MEMBER_RE[m] not in hon: continue
             if 'VICTORY' in hon or 'JOINT' in hon: continue   # JFCs left out as in gm.json

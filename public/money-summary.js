@@ -61,7 +61,7 @@
       // 4. The actions
       req: function(p, R, fed){
         var s = 'Those ' + (R.n === 1 ? 'request asked' : R.n + ' requests asked') + ' for ' + big(R.ask, 'en') + ' in all.';
-        if(fed) return s + ' Whether they were funded is not checked here yet.';
+        if(fed) return s + (R.fedChecked ? ' Of the ' + R.fedChecked + ' made for FY2022-FY2025, which asked for ' + big(R.fedAsk, 'en') + ', ' + big(R.fedFunded, 'en') + ' was funded in the final laws.' + (R.fedChecked < R.n ? ' Whether the newer ones were funded is not checked here yet.' : '') : ' Whether they were funded is not checked here yet.');
         if(!R.inBudget) return s + ' None of it was in the final budget.';
         var share = pct(R.funded, R.ask);
         if(R.vetoed) return s + ' ' + big(R.inBudget, 'en') + ' was put in the budget. The governor vetoed ' + big(R.vetoed, 'en') + ' of the ' + big(R.inBudget, 'en') + ', leaving ' + big(R.funded, 'en') + ' in the final budget' + (share ? ': about ' + share + ' of the ' + big(R.ask, 'en') + ' requested.' : '.');
@@ -111,7 +111,7 @@
       nogivers: function(p){ return esc(p.name) + '’s reports show no outside donors.'; },
       nodata: function(p){ return 'No itemized donor reports are posted for ' + esc(p.name) + ', so this could not be checked.'; },
       noneCity: 'No donors found with business before the city in 2025 or 2026.',
-      noneF: function(p){ return 'None of ' + esc(p.name) + '’s earmark requests in 2025 or 2026 were for a group whose federal lobbying firm, its PAC or its lobbyists gave to the campaign.'; },
+      noneF: function(p){ return 'None of ' + esc(p.name) + '’s earmark requests were for a group whose federal lobbying firm, its PAC or its lobbyists gave to the campaign.'; },
       norequests: function(p){ return esc(p.name) + ' made no earmark requests in 2025 or 2026.'; },
       how: 'How this is counted'
     },
@@ -137,7 +137,7 @@
       whatReq: 'de la solicitud o el voto', whatBill: 'del voto', whatVote: 'del voto o el acto',
       req: function(p, R, fed){
         var s = (R.n === 1 ? 'Esa solicitud pedía ' : 'Esas ' + R.n + ' solicitudes pedían ') + big(R.ask, 'es') + ' en total.';
-        if(fed) return s + ' Aquí todavía no se revisa si recibieron fondos.';
+        if(fed) return s + (R.fedChecked ? ' De las ' + R.fedChecked + ' presentadas para los años fiscales 2022 a 2025, que pedían ' + big(R.fedAsk, 'es') + ', ' + big(R.fedFunded, 'es') + ' recibieron fondos en las leyes finales.' + (R.fedChecked < R.n ? ' Aquí todavía no se revisa si las más recientes recibieron fondos.' : '') : ' Aquí todavía no se revisa si recibieron fondos.');
         if(!R.inBudget) return s + ' Nada de eso quedó en el presupuesto final.';
         var share = pct(R.funded, R.ask);
         if(R.vetoed) return s + ' ' + big(R.inBudget, 'es') + ' se incluyó en el presupuesto. El gobernador vetó ' + big(R.vetoed, 'es') + ' de esos ' + big(R.inBudget, 'es') + ', y quedaron ' + big(R.funded, 'es') + ' en el presupuesto final' + (share ? ': cerca del ' + share + ' de los ' + big(R.ask, 'es') + ' pedidos.' : '.');
@@ -186,7 +186,7 @@
       nogivers: function(p){ return 'Los informes de ' + esc(p.name) + ' no muestran donantes externos.'; },
       nodata: function(p){ return 'No hay informes detallados de donantes publicados para ' + esc(p.name) + ', así que esto no se pudo revisar.'; },
       noneCity: 'No se encontraron donantes con asuntos ante la ciudad en 2025 ni 2026.',
-      noneF: function(p){ return 'Ninguna de las solicitudes de fondos federales para proyectos de ' + esc(p.name) + ' en 2025 o 2026 fue para un grupo cuya firma de cabildeo federal, su comité político o sus cabilderos donaron a la campaña.'; },
+      noneF: function(p){ return 'Ninguna de las solicitudes de fondos federales para proyectos de ' + esc(p.name) + ' fue para un grupo cuya firma de cabildeo federal, su comité político o sus cabilderos donaron a la campaña.'; },
       norequests: function(p){ return esc(p.name) + ' no hizo solicitudes de fondos federales para proyectos en 2025 ni 2026.'; },
       how: 'Cómo se cuenta'
     },
@@ -212,7 +212,7 @@
       whatReq: 'demann oswa vòt', whatBill: 'vòt', whatVote: 'vòt oswa aksyon',
       req: function(p, R, fed){
         var s = (R.n === 1 ? 'Demann sa a te mande ' : R.n + ' demann sa yo te mande ') + big(R.ask, 'ht') + ' an tout.';
-        if(fed) return s + ' Nou poko tcheke isit la si yo te finanse.';
+        if(fed) return s + (R.fedChecked ? ' Nan ' + R.fedChecked + ' demann pou ane fiskal 2022 rive 2025 yo, ki te mande ' + big(R.fedAsk, 'ht') + ', ' + big(R.fedFunded, 'ht') + ' te finanse nan lwa final yo.' + (R.fedChecked < R.n ? ' Nou poko tcheke isit la si sa ki pi resan yo te finanse.' : '') : ' Nou poko tcheke isit la si yo te finanse.');
         if(!R.inBudget) return s + ' Anyen ladan l pa t nan bidjè final la.';
         var share = pct(R.funded, R.ask);
         if(R.vetoed) return s + ' ' + big(R.inBudget, 'ht') + ' te antre nan bidjè a. Gouvènè a te mete veto sou ' + big(R.vetoed, 'ht') + ' nan ' + big(R.inBudget, 'ht') + ' sa a, sa ki kite ' + big(R.funded, 'ht') + ' nan bidjè final la' + (share ? ': anviwon ' + share + ' nan ' + big(R.ask, 'ht') + ' yo te mande a.' : '.');
@@ -261,7 +261,7 @@
       nogivers: function(p){ return 'Rapò ' + esc(p.name) + ' yo pa montre okenn donatè deyò.'; },
       nodata: function(p){ return 'Pa gen rapò donatè detaye ki afiche pou ' + esc(p.name) + ', kidonk nou pa t ka verifye.'; },
       noneCity: 'Nou pa jwenn okenn donatè ki te gen dosye devan vil la an 2025 oswa 2026.',
-      noneF: function(p){ return 'Okenn nan demann lajan federal ' + esc(p.name) + ' an 2025 oswa 2026 pa t pou yon gwoup kote fèm lobi federal li, komite politik li oswa lobiyis li te bay kanpay la.'; },
+      noneF: function(p){ return 'Okenn nan demann lajan federal  ' + esc(p.name) + ' pa t pou yon gwoup kote fèm lobi federal li, komite politik li oswa lobiyis li te bay kanpay la.'; },
       norequests: function(p){ return esc(p.name) + ' pa t fè okenn demann lajan federal pou pwojè an 2025 oswa 2026.'; },
       how: 'Kijan nou konte'
     }

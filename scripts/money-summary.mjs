@@ -3,7 +3,8 @@
 // tests/money-summary.test.mjs fails if the JSON and this builder disagree.
 //
 // Rules:
-// - Only gifts dated 2025-01-01 or later count (2025-2026 cycle rule).
+// - Only gifts dated 2025-01-01 or later count (2025-2026 cycle rule), except federal members, whose gifts
+//   count from one cycle before their tenure began (giftStart).
 // - A gift is counted once, however many actions it ties to.
 // - "Before": a gift dated before at least one action it ties to.
 // - State legislators: money tied to budget requests and money tied only to bill votes are kept apart.
@@ -11,6 +12,9 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 
 import { fileURLToPath } from 'node:url';
 
 export const CYCLE_START = '2025-01-01';
+// Federal bodies built over each member's full tenure (B.tenure[key] = { start, giftsFrom }) count gifts
+// from one cycle before the member took office (Brit, Oct 25, 2026). Everything else keeps CYCLE_START.
+export const giftStart = (B, key) => (B.level === 'federal' && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {
   let s = String(n || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
@@ -69,6 +73,7 @@ export function build(decisions, officesHeld) {
       const m = B.members.find(x => x.key === key) || {};
       if (!m.person) continue;
       const accts = new Set(ob.accounts);
+      const G0 = giftStart(B, key);
       const tied = [];
       for (const a of B.actions) {
         // On a voting body (city, county), a tie needs a vote the member cast: absent, excused, abstained,
@@ -77,7 +82,9 @@ export function build(decisions, officesHeld) {
         // Once a body's bill cards are a full list, a bill card outside it (picked from donors earlier) no
         // longer adds money or ties: only laws whose analysis names the business count
         if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
-        const gs = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
+        // Congress cards span decades: a law voted before the member was seated has no vote for them
+        if (B.level === 'federal' && a.kind === 'bill' && !(a.roll && a.roll[key] != null)) continue;
+        const gs = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
         if (gs.length) tied.push([a, gs]);
       }
       const gifts = new Map(); // key -> {amount, date, acct, actionDates}
@@ -124,6 +131,11 @@ export function build(decisions, officesHeld) {
           vetoed: sum(req.map(([a]) => ({ amount: (a.budget || {}).status === 'in' ? Math.min(a.budget.amount || 0, a.budget.vetoed || 0) : 0 }))),
           inN: req.filter(([a]) => (a.budget || {}).status === 'in').length,
         };
+        // Congress: funded amounts known for FY2022-FY2025 requests (GAO); FY2026-27 not checked
+        if (B.level === 'federal') {
+          const chk = req.filter(([a]) => a.funded != null);
+          if (chk.length) Object.assign(e.requests, { fedChecked: chk.length, fedAsk: sum(chk.map(([a]) => ({ amount: a.ask || 0 }))), fedFunded: sum(chk.map(([a]) => ({ amount: a.funded }))) });
+        }
         e.bills = {
           bills: new Set(bills.map(([a]) => a.ref)).size, votes: bills.length,
           yes: bills.filter(([a]) => a.roll[key] === 'yes').length,
@@ -137,7 +149,7 @@ export function build(decisions, officesHeld) {
         const uni = B.actions.filter(a => a.kind === 'bill' && a.universe && ['yes', 'no'].includes(a.roll[key]));
         if (uni.length) {
           const laws = new Set(uni.map(a => a.ref));
-          const tiedLaws = new Set(uni.filter(a => (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START)).map(a => a.ref));
+          const tiedLaws = new Set(uni.filter(a => (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= G0)).map(a => a.ref));
           const u0 = uni.map(a => a.date).filter(Boolean).sort()[0];
           e.bills.universe = { n: laws.size, tied: tiedLaws.size, from: u0 ? String(u0).slice(0, 7) : undefined };
         }
@@ -154,6 +166,7 @@ export function build(decisions, officesHeld) {
         if (B.universe && y0 && y0 < '2025') e.since = Number(y0.slice(0, 4));
       }
       e.share = shareOf(B, key, tied);
+      if (G0 !== CYCLE_START) e.giftsFrom = G0;
       add(m.person, e);
     }
   }
@@ -172,11 +185,13 @@ export function build(decisions, officesHeld) {
 // all of decisions.json. Gifts to other members are left out; the full roll call stays.
 export function tiedActions(B, key) {
   const accts = new Set(B.onBallot[key].accounts);
+  const G0 = giftStart(B, key);
   const out = [];
   for (const a of B.actions) {
     if (B.type !== 'requests' && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
     if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
-    const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START);
+    if (B.level === 'federal' && a.kind === 'bill' && !(a.roll && a.roll[key] != null)) continue;
+    const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
     if (!gifts.length) continue;
     const x = { ...a, gifts };
     if (a.giftNotes) { if (a.giftNotes[key]) x.giftNotes = { [key]: a.giftNotes[key] }; else delete x.giftNotes; }

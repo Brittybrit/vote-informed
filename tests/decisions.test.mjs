@@ -49,7 +49,7 @@ test('every body and action is well formed', () => {
         assert.deepEqual([vals.filter(v => v === 'yes').length, vals.filter(v => v === 'no').length], a.tally, id + ' tally');
       }
       if (a.rollComplete && B.key !== 'county' && !a.agency) assert.ok(a.tally, id + ' complete roll needs a tally');
-      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr', 'news', 'property', 'sunbiz', 'packet'].includes(l.t), id + ' link type'); }
+      for (const l of a.links) { assert.match(l.url, /^https:\/\//, id + ' link'); assert.ok(['matter', 'clerk', 'minutes', 'record', 'vote', 'analysis', 'bill', 'cmte', 'cbo', 'crs', 'fr', 'news', 'property', 'sunbiz', 'packet', 'gao'].includes(l.t), id + ' link type'); }
       for (const l of a.lobbied) { assert.ok(l.name, id + ' lobbyist name'); for (const r of (l.regs || (l.reg ? [l.reg] : []))) assert.match(r, /^\d{4}-\d{2}(-\d{2})?$/, id + ' reg date'); }
       for (const g of a.gifts) {
         assert.ok(B.onBallot[g.to], id + ' gift to someone not on the ballot: ' + g.to);
@@ -136,7 +136,9 @@ test('U.S. House earmark requests: one requester, an amount, a source, and gifts
   const B = d.bodies.find(b => b.key === 'ushouse');
   assert.ok(B && B.level === 'federal' && B.type === 'requests');
   const R = B.actions.filter(a => a.kind !== 'bill');
-  assert.equal(R.length, 156);
+  // FY2026-27 (requests.json) plus FY2022-25 over each member's tenure (scripts/data/tenure/congress)
+  const tenureReq = JSON.parse(readFileSync(new URL('../scripts/data/tenure/congress/requests-tenure.json', import.meta.url)));
+  assert.equal(R.length, 156 + tenureReq.filter(r => r.amount > 0).length);
   for (const a of R) {
     const ks = Object.keys(a.roll);
     assert.equal(ks.length, 1, a.id); assert.equal(a.roll[ks[0]], 'requested', a.id);
@@ -150,7 +152,7 @@ test('U.S. House earmark requests: one requester, an amount, a source, and gifts
       assert.ok(a.lobbied.length, a.id + ' gift but no registered lobbyist');
       assert.ok(a.lobbied.some(l => l.firm === g.firmName || l.name === g.firmName || (g.rel === 'ldaOwn' && l.for === g.forParty)), a.id + ' gift firm not among registrants: ' + g.firmName);
       assert.match(g.src, /^https:\/\/lda\.gov\/filings\/public\/contribution\//, a.id + ' LD-203 link');
-      assert.ok(g.date >= '2025-01-01', a.id + ' cycle');
+      assert.ok(g.date >= B.tenure[ks[0]].giftsFrom, a.id + ' cycle');
     }
     for (const l of a.lobbied) assert.match(l.url, /^https:\/\/lda\.gov\/filings\/public\/filing\//, a.id + ' LDA link');
   }
@@ -160,7 +162,9 @@ test('U.S. House earmark requests: one requester, an amount, a source, and gifts
 });
 
 test('Congress floor votes: enacted laws, official roll calls, a quoted source, and PAC gifts from the named kind of business', () => {
-  const fv = JSON.parse(readFileSync(new URL('../scripts/data/federal/floor-votes.json', import.meta.url)));
+  const fv0 = JSON.parse(readFileSync(new URL('../scripts/data/federal/floor-votes.json', import.meta.url)));
+  const fvT = JSON.parse(readFileSync(new URL('../scripts/data/tenure/congress/floor-votes-tenure.json', import.meta.url)));
+  const fv = { bills: [...fv0.bills, ...fvT.bills] };
   const H = d.bodies.find(b => b.key === 'ushouse'), S = d.bodies.find(b => b.key === 'ussenate');
   assert.ok(S && S.level === 'federal' && S.onBallot.Moody, 'senate body for Moody');
   const votes = [...H.actions, ...S.actions].filter(a => a.kind === 'bill');
@@ -170,14 +174,14 @@ test('Congress floor votes: enacted laws, official roll calls, a quoted source, 
     assert.ok(a.links.some(l => l.t === 'vote' && /^https:\/\/(clerk\.house\.gov\/Votes\/|www\.senate\.gov\/legislative\/LIS\/roll_call_votes\/)/.test(l.url)), a.id + ' roll call link');
     assert.ok(a.links.some(l => ['cbo', 'crs', 'fr'].includes(l.t)), a.id + ' source link');
     for (const l of LANGS) assert.match(a.note[l], /\u201c.+\u201d/, a.id + ' quote ' + l);
-    assert.match(a.note.en, /P\.L\. 119-\d+/, a.id + ' public law');
+    assert.match(a.note.en, /P\.L\. 1(0[89]|1\d)-\d+/, a.id + ' public law');
     const B = a.id.includes('-S') ? S : H;
     for (const k of Object.keys(a.roll)) assert.ok(B.onBallot[k], a.id + ' roll member ' + k);
     for (const g of a.gifts) {
       assert.equal(g.kind, 'class'); assert.equal(g.rel, 'clsF');
       assert.ok(g.donor.endsWith(' PAC'), a.id + ' donor ' + g.donor);
       for (const l of LANGS) assert.ok(g.occ[l], a.id + ' occ ' + l);
-      assert.ok(g.date >= '2025-01-01', a.id + ' cycle');
+      assert.ok(g.date >= B.tenure[g.to].giftsFrom, a.id + ' cycle');
       if (g.n) assert.ok(g.n > 1 && g.last >= g.date, a.id + ' range');
       assert.match(g.src, /^https:\/\/www\.fec\.gov\/data\/receipts\//);
     }

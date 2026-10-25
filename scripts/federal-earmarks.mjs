@@ -24,7 +24,21 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const DIR = new URL('./data/federal/', import.meta.url);
+const TDIR = new URL('./data/tenure/congress/', import.meta.url);
 const read = f => JSON.parse(readFileSync(new URL(f, DIR)));
+// Full-tenure extension (scripts/data/tenure/congress/, Oct 25, 2026): earlier requests, laws and gifts, read
+// alongside the 2025-2026 files when present.
+const readT = f => { try { return JSON.parse(readFileSync(new URL(f, TDIR))); } catch (e) { return null; } };
+// First day in the seat held now, and the first gift date counted (one cycle before).
+export const TENURE = {
+  'Diaz-Balart': { start: '2003-01-07', giftsFrom: '2001-01-01' },
+  Salazar: { start: '2021-01-03', giftsFrom: '2019-01-01' },
+  Gimenez: { start: '2021-01-03', giftsFrom: '2019-01-01' },
+  Donalds: { start: '2021-01-03', giftsFrom: '2019-01-01' },
+  Moskowitz: { start: '2023-01-03', giftsFrom: '2021-01-01' },
+  Moody: { start: '2025-01-21', giftsFrom: '2023-01-01' },
+};
+const monthYear = d => ['January','February','March','April','May','June','July','August','September','October','November','December'][+d.slice(5, 7) - 1] + ' ' + d.slice(0, 4);
 
 const SENATOR = { key: 'Moody', name: 'Ashley Moody', person: 'ashley-moody', cmte: 'C00895763', cname: 'Moody for Florida', race: ['U.S. Senate', 'Senado de EE. UU.', 'Sena Etazini'] };
 const MEMBERS = [
@@ -50,6 +64,10 @@ const clientName = k => CLIENT_NAME[k] || titleCase(k);
 const firmName = f => titleCase(f.replace(/\s*\(F\/K\/A[^)]*\)/, '')).replace(/, (LLP|LLC|P\.a\.|INC\.)$/i, m => m.toUpperCase().replace('P.A.', 'P.A.'));
 
 const FY = {
+  FY2022: { date: '2021-04-01', label: { en: 'FY2022 request (spring 2021)', es: 'Solicitud para el año fiscal 2022 (primavera de 2021)', ht: 'Demann pou ane fiskal 2022 (prentan 2021)' } },
+  FY2023: { date: '2022-04-01', label: { en: 'FY2023 request (spring 2022)', es: 'Solicitud para el año fiscal 2023 (primavera de 2022)', ht: 'Demann pou ane fiskal 2023 (prentan 2022)' } },
+  FY2024: { date: '2023-04-01', label: { en: 'FY2024 request (spring 2023)', es: 'Solicitud para el año fiscal 2024 (primavera de 2023)', ht: 'Demann pou ane fiskal 2024 (prentan 2023)' } },
+  FY2025: { date: '2024-04-01', label: { en: 'FY2025 request (spring 2024)', es: 'Solicitud para el año fiscal 2025 (primavera de 2024)', ht: 'Demann pou ane fiskal 2025 (prentan 2024)' } },
   FY2026: { date: '2025-04-01', label: { en: 'FY2026 request (spring 2025)', es: 'Solicitud para el año fiscal 2026 (primavera de 2025)', ht: 'Demann pou ane fiskal 2026 (prentan 2025)' } },
   FY2027: { date: '2026-04-01', label: { en: 'FY2027 request (spring 2026)', es: 'Solicitud para el año fiscal 2027 (primavera de 2026)', ht: 'Demann pou ane fiskal 2027 (prentan 2026)' } },
 };
@@ -62,25 +80,26 @@ const MOTION = {
   concur: { senate: { en: 'Senate vote to accept the House version, sending it to the President', es: 'voto del Senado para aceptar la versión de la Cámara y enviarla al Presidente', ht: 'Sena a vote pou aksepte vèsyon Chanm nan epi voye l bay Prezidan an' } },
 };
 const voteUrl = v => v.chamber === 'house'
-  ? 'https://clerk.house.gov/Votes/' + v.date.slice(0, 4) + String(v.roll).padStart(3, '0')
+  ? 'https://clerk.house.gov/Votes/' + (v.rollYear || v.date.slice(0, 4)) + String(v.roll).padStart(3, '0')
   : (y => 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote119' + y + '/vote_119_' + y + '_' + String(v.roll).padStart(5, '0') + '.htm')(v.date < '2026' ? 1 : 2);
-const receiptsUrl = (cmte, name) => 'https://www.fec.gov/data/receipts/?committee_id=' + cmte + '&contributor_name=' + encodeURIComponent(name) + '&two_year_transaction_period=2026';
+const receiptsUrl = (cmte, name, d) => 'https://www.fec.gov/data/receipts/?committee_id=' + cmte + '&contributor_name=' + encodeURIComponent(name) + '&two_year_transaction_period=' + (d ? (+d.slice(0, 4) + (+d.slice(0, 4) % 2)) : 2026);
 
 // One gift row per company per member: the PAC's total, number of receipts and date range.
 export function classGifts(cls, member, cmte, agg) {
   const by = new Map();
+  const from = (TENURE[member.key] || {}).giftsFrom || '2025-01-01';
   for (const [m, name, , total, n, first, last] of agg) {
-    if (m !== member.key || last < '2025-01-01') continue;
+    if (m !== member.key || last < from) continue;
     const d = cls.donors.find(([re]) => new RegExp(re).test(name));
     if (!d) continue;
     const [, company, occ] = d;
-    const g = by.get(company) || { to: member.key, acct: member.key.toLowerCase(), kind: 'class', rel: 'clsF', donor: company + ' PAC', amount: 0, n: 0, date: first, last, occ, src: receiptsUrl(cmte, company) };
+    const g = by.get(company) || { to: member.key, acct: member.key.toLowerCase(), kind: 'class', rel: 'clsF', donor: company + ' PAC', amount: 0, n: 0, date: first, last, occ, src: receiptsUrl(cmte, company, last) };
     g.amount += total; g.n += n;
     if (first < g.date) g.date = first;
     if (last > g.last) g.last = last;
     by.set(company, g);
   }
-  return [...by.values()].map(g => {
+  return [...by.values()].filter(g => g.amount > 0).map(g => {
     const out = { ...g };
     if (out.n === 1) { delete out.n; delete out.last; }
     return out;
@@ -110,13 +129,46 @@ function voteNote(bill, v, cls) {
   return out;
 }
 
+// pac-agg rows: 2025-2026 file plus the tenure file (rows before 2025 only, so 2025-26 gifts are not doubled)
+export function pacAgg() {
+  const a = read('pac-agg.json').rows, t = readT('pac-agg-tenure.json');
+  if (!t) return a;
+  const pre = [];
+  const R = readT('fec-receipts-tenure.json');
+  if (R) {
+    const c = R.cols, by = new Map();
+    for (const r of R.rows) {
+      const x = Object.fromEntries(c.map((k, i) => [k, r[i]]));
+      if (!['P', 'A'].includes(x.cmteKind) || x.date >= '2025-01-01') continue;
+      const k = x.member + '|' + x.contributor;
+      const g = by.get(k) || [x.member, x.contributor, x.entity, 0, 0, x.date, x.date];
+      g[3] += x.amount; g[4] += 1; if (x.date < g[5]) g[5] = x.date; if (x.date > g[6]) g[6] = x.date;
+      by.set(k, g);
+    }
+    pre.push(...by.values());
+  }
+  return [...a, ...pre];
+}
+// floor-votes bills and classes: 119th Congress file plus the tenure file (classes merged, donor patterns joined)
+export function floorData() {
+  const fv = read('floor-votes.json'), t = readT('floor-votes-tenure.json');
+  if (!t) return fv;
+  const classes = { ...fv.classes };
+  for (const [k, c] of Object.entries(t.classes)) {
+    if (!classes[k]) { classes[k] = c; continue; }
+    const seen = new Set(classes[k].donors.map(d => d[0]));
+    classes[k] = { ...classes[k], donors: [...classes[k].donors, ...c.donors.filter(d => !seen.has(d[0]))] };
+  }
+  return { ...fv, bills: [...fv.bills, ...t.bills], classes };
+}
+
 export function floorVotes(chamber, members) {
-  const fv = read('floor-votes.json'), agg = read('pac-agg.json').rows;
+  const fv = floorData(), agg = pacAgg();
   const actions = [];
   for (const bill of fv.bills) for (const v of bill.votes) {
     if (v.chamber !== chamber) continue;
     const cls = fv.classes[bill.class];
-    const gifts = members.flatMap(m => classGifts(cls, m, m.cmte, agg));
+    const gifts = members.filter(m => v.members[m.key] != null).flatMap(m => classGifts(cls, m, m.cmte, agg));
     const links = [{ t: 'vote', url: voteUrl(v) }, { t: bill.quote.t, url: bill.quote.url }];
     if (bill.quote.url2) links.push({ t: 'crs', url: bill.quote.url2 });
     links.push({ t: 'bill', url: bill.bill });
@@ -133,6 +185,7 @@ export function buildSenate() {
   const m = SENATOR, acct = m.key.toLowerCase();
   return {
     key: 'ussenate', level: 'federal', type: 'requests', since: '2025-01-01', rosterBody: 'us-senate', noRequests: true,
+    tenure: { [m.key]: TENURE[m.key] },
     name: { en: 'U.S. Senate', es: 'Senado de EE. UU.', ht: 'Sena Etazini' },
     members: [{ key: m.key, name: m.name, person: m.person }],
     onBallot: { [m.key]: { race: { en: m.race[0], es: m.race[1], ht: m.race[2] }, accounts: [acct] } },
@@ -156,7 +209,19 @@ export function buildSenate() {
 }
 
 export function buildFederal() {
-  const reqs = read('requests.json'), lda = read('lda-clients.json').clients, gm = read('gm.json'), fec = read('fec-check.json').rows;
+  const T = { req: readT('requests-tenure.json') || [], lda: (readT('lda-clients-tenure.json') || {}).clients || {}, gm: readT('gm-tenure.json') || {}, fec: (readT('fec-check-tenure.json') || {}).rows || [] };
+  const reqs = [...read('requests.json'), ...T.req];
+  const lda = { ...read('lda-clients.json').clients };
+  for (const [k, v] of Object.entries(T.lda)) {
+    const have = new Set((lda[k] || []).map(x => x[0]));
+    lda[k] = [...(lda[k] || []), ...v.filter(x => !have.has(x[0]))];
+  }
+  const gm = { ...read('gm.json') };
+  for (const [k, v] of Object.entries(T.gm)) {
+    const have = new Set((gm[k] || []).map(x => x[7] + '|' + x[6] + '|' + x[5]));
+    gm[k] = [...(gm[k] || []), ...v.filter(x => !have.has(x[7] + '|' + x[6] + '|' + x[5]))];
+  }
+  const fec = [...read('fec-check.json').rows, ...T.fec];
   const fecKey = (m, who, amt, d) => [m, who, Number(amt), d].join('|');
   const fecMap = new Map(fec.map(r => [fecKey(r[0], r[1], r[2], r[3]), r[4]]));
   const members = MEMBERS.map(m => ({ key: m.key, name: m.name, person: m.person }));
@@ -170,6 +235,7 @@ export function buildFederal() {
   for (const r of reqs) {
     const m = MEMBERS.find(x => x.key === r.member);
     if (!m) continue;
+    if (!(r.amount > 0)) continue;   // a request row with no amount (Donalds FY2023 Housing Choice Vouchers, listed at $0) is not a request for money
     const fy = FY[r.fy];
     const n = count[m.key + r.fy] = (count[m.key + r.fy] || 0) + 1;
     const id = 'US' + r.fy.slice(4) + '-' + m.key.replace(/[^A-Za-z]/g, '') + '-' + String(n).padStart(2, '0');
@@ -185,6 +251,7 @@ export function buildFederal() {
     const seen = new Set();
     for (const g of (c && gm[m.key + '|' + c]) || []) {
       const [reg, kind, lob, contrib, , amt, date, doc] = g;
+      if (date < ((TENURE[m.key] || {}).giftsFrom || '2025-01-01')) continue;
       // Lighthouse Strategies reported one $500 gift twice (as the firm on Mar 6 and as its lobbyist on Mar 23);
       // the campaign's FEC report shows a single $500 from Sam Kuebler on Mar 6, 2026.
       if (reg === 'LIGHTHOUSE STRATEGIES LLC' && kind === 'org') continue;
@@ -211,26 +278,38 @@ export function buildFederal() {
       parties: [r.recipient], result: 'requestedF', ask: r.amount, roll: { [m.key]: 'requested' }, rollComplete: false,
       lobbied, gifts, links: [{ t: 'record', url: r.memberUrl || r.source }],
     };
-    if (r.fy === 'FY2026') a.links.push({ t: 'cmte', url: r.source });
+    if (r.memberUrl && r.source && r.source !== r.memberUrl) a.links.push({ t: 'cmte', url: r.source });
     if (r.amountText && /million|thousand/i.test(r.amountText)) a.note = {
       en: 'Amount as the member’s page lists it (' + r.amountText + '); the exact figure may differ slightly.',
       es: 'Monto tal como aparece en la página del miembro (' + r.amountText + '); la cifra exacta puede variar un poco.',
       ht: 'Kantite a jan paj manm nan bay li (' + r.amountText + '); chif egzak la ka diferan yon ti kras.',
     };
+    if (r.funded != null && r.fy !== 'FY2026' && r.fy !== 'FY2027') {
+      a.funded = r.funded;
+      const usd = n => '$' + Math.round(n).toLocaleString('en-US');
+      const fn = r.fy === 'FY2025'
+        ? { en: 'Not funded: FY2025 ran on a full-year continuing resolution with no earmarks.', es: 'No se financió: el año fiscal 2025 se cubrió con una resolución continua de todo el año, sin fondos para proyectos.', ht: 'Pa finanse: ane fiskal 2025 te mache sou yon rezolisyon kontinyèl pou tout ane a, san lajan pou pwojè.' }
+        : r.funded ? { en: 'Funded in the final law: ' + usd(r.funded) + ' (GAO, Tracking the Funds).', es: 'Financiado en la ley final: ' + usd(r.funded) + ' (GAO, Tracking the Funds).', ht: 'Finanse nan lwa final la: ' + usd(r.funded) + ' (GAO, Tracking the Funds).' }
+        : { en: 'Not found among the projects funded in the final law (GAO, Tracking the Funds).', es: 'No aparece entre los proyectos financiados en la ley final (GAO, Tracking the Funds).', ht: 'Li pa parèt pami pwojè yo finanse nan lwa final la (GAO, Tracking the Funds).' };
+      a.note = a.note ? { en: a.note.en + ' ' + fn.en, es: a.note.es + ' ' + fn.es, ht: a.note.ht + ' ' + fn.ht } : fn;
+      if (r.fundedSource) a.links.push({ t: 'gao', url: r.fundedSource });
+    }
     if (!c) a.noLda = true;
     actions.push(a);
   }
+  const nReq = actions.length;
   actions.push(...floorVotes('house', MEMBERS));
   actions.sort((p, q) => q.date.localeCompare(p.date) || p.id.localeCompare(q.id));
   return {
-    key: 'ushouse', level: 'federal', type: 'requests', since: '2025-01-01', rosterBody: 'us-house',
+    key: 'ushouse', level: 'federal', type: 'requests', since: '2003-01-07', rosterBody: 'us-house',
+    tenure: Object.fromEntries(MEMBERS.map(m => [m.key, TENURE[m.key]])),
     name: { en: 'U.S. House', es: 'Cámara de Representantes de EE. UU.', ht: 'Chanm Reprezantan Etazini' },
     members, onBallot, accounts,
     registries: [{ name: { en: 'Lobbying Disclosure Act reports (lda.gov)', es: 'Reportes de la Ley de Divulgación de Cabildeo (lda.gov)', ht: 'Rapò Lwa sou Divilgasyon Lobi (lda.gov)' }, url: 'https://lda.gov/' }],
     coverage: {
-      en: 'Every Community Project Funding request for FY2026 and FY2027 by the five U.S. House members on Miami-Dade’s November 3 ballot (156 requests). FY2026 from the House Appropriations Committee’s consolidated table; FY2027 from each member’s own request page. Whether a request was funded in the final bill was not checked. Gifts come from lobbyists’ and firms’ own contribution reports to Congress (LD-203), each looked up in the campaign’s FEC reports. Floor votes are on 2025 laws where a Congressional Budget Office estimate, a Congressional Research Service report or the rule being overturned names the kind of business affected; donors are those businesses’ PACs, from the campaign’s FEC reports.',
-      es: 'Todas las solicitudes de Community Project Funding para los años fiscales 2026 y 2027 de los cinco miembros de la Cámara de EE. UU. en la boleta del 3 de noviembre en Miami-Dade (156 solicitudes). El año fiscal 2026 viene de la tabla consolidada del Comité de Asignaciones de la Cámara; el 2027, de la página de solicitudes de cada miembro. No se revisó si cada solicitud quedó financiada en la ley final. Las donaciones vienen de los reportes de contribuciones que los propios cabilderos y firmas presentan al Congreso (LD-203), cotejados con los reportes de la campaña ante la FEC. Los votos en el pleno son sobre leyes de 2025 en las que una estimación de la Oficina de Presupuesto del Congreso, un informe del Servicio de Investigación del Congreso o la regla que se anula nombra el tipo de negocio afectado; los donantes son los PAC de esos negocios, según los reportes de la campaña ante la FEC.',
-      ht: 'Tout demann Community Project Funding pou ane fiskal 2026 ak 2027 senk manm Chanm Etazini ki sou bilten 3 novanm Miami-Dade la (156 demann). Ane fiskal 2026 soti nan tablo konsolide Komite Afektasyon Chanm nan; 2027 soti nan paj demann chak manm. Nou pa verifye si chak demann te finanse nan lwa final la. Kado yo soti nan rapò kontribisyon lobiyis ak fèm yo menm bay Kongrè a (LD-203), epi nou chèche chak nan rapò FEC kanpay la. Vòt nan sesyon plenyè yo se sou lwa 2025 kote yon estimasyon Biwo Bidjè Kongrè a, yon rapò Sèvis Rechèch Kongrè a oswa règ y ap anile a nonmen kalite biznis ki konsène; donatè yo se PAC biznis sa yo, selon rapò FEC kanpay la.',
+      en: 'Every Community Project Funding request the five U.S. House members on Miami-Dade’s November 3 ballot filed since earmarks returned in FY2022 (' + nReq + ' requests; none were possible before FY2022): FY2022-FY2024 from the House Appropriations Committee’s request tables, FY2025 and FY2027 from each member’s own request page, FY2026 from the committee’s consolidated table. Moskowitz’s FY2025 requests are not included: his page no longer lists them. Funded amounts for FY2022-FY2024 are from GAO’s Tracking the Funds data; FY2025 had no earmarks. Gifts come from lobbyists’ and firms’ own contribution reports to Congress (LD-203, 2019 on), each looked up in the campaign’s FEC reports. Floor votes are on every law enacted while each member served (from January 2003 for Díaz-Balart, January 2021 for Salazar, Giménez and Donalds, January 2023 for Moskowitz) whose Congressional Research Service summary, Congressional Budget Office estimate or overturned rule names the kind of business it helps; donors are those businesses’ PACs, from FEC records starting one election cycle before each member took office.',
+      es: 'Todas las solicitudes de Community Project Funding que presentaron los cinco miembros de la Cámara de EE. UU. en la boleta del 3 de noviembre en Miami-Dade desde que volvieron estos fondos en el año fiscal 2022 (' + nReq + ' solicitudes; antes de 2022 no se podían pedir): los años fiscales 2022 a 2024 vienen de las tablas de solicitudes del Comité de Asignaciones de la Cámara; 2025 y 2027, de la página de cada miembro; 2026, de la tabla consolidada del comité. No se incluyen las solicitudes de Moskowitz para el año fiscal 2025: su página ya no las muestra. Los montos financiados de 2022 a 2024 vienen de los datos Tracking the Funds de la GAO; en 2025 no hubo fondos para proyectos. Las donaciones vienen de los reportes de contribuciones que los propios cabilderos y firmas presentan al Congreso (LD-203, desde 2019), cotejados con los reportes de la campaña ante la FEC. Los votos en el pleno son sobre todas las leyes aprobadas mientras cada miembro ocupó el cargo (desde enero de 2003 para Díaz-Balart, enero de 2021 para Salazar, Giménez y Donalds, enero de 2023 para Moskowitz) cuyo resumen del Servicio de Investigación del Congreso, estimación de la Oficina de Presupuesto del Congreso o regla anulada nombra el tipo de negocio que beneficia; los donantes son los PAC de esos negocios, según los registros de la FEC desde un ciclo electoral antes de que cada miembro asumiera.',
+      ht: 'Tout demann Community Project Funding senk manm Chanm Etazini ki sou bilten 3 novanm Miami-Dade la te depoze depi lajan sa yo te retounen nan ane fiskal 2022 (' + nReq + ' demann; anvan 2022 yo pa t ka mande): ane fiskal 2022 rive 2024 soti nan tablo demann Komite Afektasyon Chanm nan; 2025 ak 2027 soti nan paj chak manm; 2026 soti nan tablo konsolide komite a. Demann Moskowitz pou ane fiskal 2025 pa ladan: paj li pa montre yo ankò. Kantite yo finanse pou 2022 rive 2024 soti nan done Tracking the Funds GAO; an 2025 pa t gen lajan pou pwojè. Kado yo soti nan rapò kontribisyon lobiyis ak fèm yo bay Kongrè a (LD-203, depi 2019), epi nou chèche chak nan rapò FEC kanpay la. Vòt nan sesyon plenyè yo se sou tout lwa yo adopte pandan chak manm te nan pòs la (depi janvye 2003 pou Díaz-Balart, janvye 2021 pou Salazar, Giménez ak Donalds, janvye 2023 pou Moskowitz) kote rezime Sèvis Rechèch Kongrè a, estimasyon Biwo Bidjè Kongrè a oswa règ yo anile a nonmen kalite biznis li ede; donatè yo se PAC biznis sa yo, dapre dosye FEC depi yon sik eleksyon anvan chak manm te pran pòs.',
     },
     actions,
   };
