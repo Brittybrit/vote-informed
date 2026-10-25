@@ -7175,6 +7175,36 @@
    "name": "Josh Liebman",
    "aliases": [],
    "ids": {}
+  },
+  {
+   "id": "roger-coriat",
+   "name": "Roger Coriat",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "katie-abbott",
+   "name": "Katie Abbott",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "anna-hochkammer",
+   "name": "Anna Hochkammer",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "allison-mccormick",
+   "name": "Allison McCormick",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "brett-g-moss",
+   "name": "Brett G. Moss",
+   "aliases": [],
+   "ids": {}
   }
  ],
  "offices": [
@@ -15213,15 +15243,15 @@
   {
    "person": "richard-ramirez",
    "office": "city-cutler-bay-seat-3",
-   "start": null,
+   "start": "2022-11-28",
    "end": null,
    "via": "elected",
    "sources": [
-    "https://www.cutlerbay-fl.gov/node/98"
+    "https://www.cutlerbay-fl.gov/node/98",
+    "https://cutlerbay-fl.gov/node/10135"
    ],
    "sourceKind": "official",
-   "startKnown": false,
-   "note": "Serving as of 2026-10-18 per the source; start date not stated there."
+   "note": "Sworn in Nov 28, 2022 (town inaugural notice); serving as of 2026-10-18 per the town council page."
   },
   {
    "person": "christi-fraga",
@@ -17007,13 +17037,14 @@
    "via": "elected",
    "sources": [
     "https://pinecrest-fl.gov/Government/Council",
-    "https://legistar1.granicus.com/Pinecrest/attachments/23d9d2ff-62bf-4757-9cb0-5222b91bd7be.pdf"
+    "https://legistar1.granicus.com/Pinecrest/attachments/23d9d2ff-62bf-4757-9cb0-5222b91bd7be.pdf",
+    "https://legistar1.granicus.com/Pinecrest/attachments/0c605793-98c3-4562-ad81-2e3162a51fc2.pdf"
    ],
    "sourceKind": "official",
    "startKnown": false,
    "note": "Serving as of 2026-10-18 per the source; start date not stated there.",
-   "servingFrom": "2025-01-14",
-   "servingFromSource": "earliest recorded vote: the Village Council minutes of Jan 14, 2025 list Councilmember Fairman voting"
+   "servingFrom": "2022-12-13",
+   "servingFromSource": "earliest recorded vote: the Village Council minutes of 2022-12-13 list them voting"
   },
   {
    "person": "steve-calle",
@@ -27135,14 +27166,16 @@
    "via": "elected",
    "sources": [
     "https://legistar1.granicus.com/Pinecrest/attachments/23d9d2ff-62bf-4757-9cb0-5222b91bd7be.pdf",
-    "https://legistar1.granicus.com/Pinecrest/attachments/377d8e3a-9306-4ee8-89fc-5c6858f46502.pdf"
+    "https://legistar1.granicus.com/Pinecrest/attachments/377d8e3a-9306-4ee8-89fc-5c6858f46502.pdf",
+    "https://legistar1.granicus.com/Pinecrest/attachments/0c605793-98c3-4562-ad81-2e3162a51fc2.pdf"
    ],
    "sourceKind": "official",
    "startKnown": false,
    "endKnown": false,
-   "servingFrom": "2025-01-14",
+   "servingFrom": "2022-12-13",
    "lastSeen": "2026-04-14",
-   "note": "Listed voting in the Village Council minutes from Jan 14, 2025 through Apr 14, 2026; seat not stated there."
+   "note": "Listed voting in the Village Council minutes from Jan 14, 2025 through Apr 14, 2026; seat not stated there.",
+   "servingFromSource": "earliest recorded vote: the Village Council minutes of 2022-12-13 list them voting"
   },
   {
    "person": "jean-monestime",
@@ -27516,6 +27549,91 @@
    "sourceKind": "official",
    "role": "Vice Mayor",
    "note": "Earlier term. Dates are the Legistar office record for Vice Mayor."
+  },
+  {
+   "person": "roger-coriat",
+   "office": "city-cutler-bay-seat-3",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2021-01-20",
+   "lastSeen": "2022-10-19",
+   "via": null,
+   "sources": [
+    "https://pub-cutlerbay-fl.escribemeetings.com/Meeting.aspx?Id=5c60e4d3-5166-4abd-8c60-4b9b179dd73c&Agenda=PostMinutes&lang=English",
+    "https://pub-cutlerbay-fl.escribemeetings.com/Meeting.aspx?Id=8d23f893-446a-444f-a21d-28ade4ae2d1c&Agenda=PostMinutes&lang=English"
+   ],
+   "sourceKind": "official",
+   "note": "Former member (Seat 3 until Richard Ramirez was sworn in Nov 28, 2022, per the town's 2022 qualified-candidates notice). Dates are the first and last meetings in this data where the eSCRIBE minutes show him seated, not term dates."
+  },
+  {
+   "person": "katie-abbott",
+   "office": "city-pinecrest-council",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-12-13",
+   "lastSeen": "2024-10-08",
+   "via": null,
+   "sources": [
+    "https://legistar1.granicus.com/Pinecrest/attachments/0c605793-98c3-4562-ad81-2e3162a51fc2.pdf",
+    "https://legistar1.granicus.com/Pinecrest/attachments/f77ef0e8-eb82-4de5-8272-76e237beb185.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the Village Council minutes show them seated, not term dates."
+  },
+  {
+   "person": "anna-hochkammer",
+   "office": "city-pinecrest-council",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-12-13",
+   "lastSeen": "2024-10-08",
+   "via": null,
+   "sources": [
+    "https://legistar1.granicus.com/Pinecrest/attachments/0c605793-98c3-4562-ad81-2e3162a51fc2.pdf",
+    "https://legistar1.granicus.com/Pinecrest/attachments/f77ef0e8-eb82-4de5-8272-76e237beb185.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the Village Council minutes show them seated, not term dates."
+  },
+  {
+   "person": "allison-mccormick",
+   "office": "city-key-biscayne-member",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-11-29",
+   "lastSeen": "2024-10-15",
+   "via": null,
+   "sources": [
+    "https://keybiscayne.granicus.com/MinutesViewer.php?view_id=1&clip_id=923&doc_id=309792a4-a0ba-11ed-8145-0050569183fa",
+    "https://keybiscayne.granicus.com/MinutesViewer.php?view_id=1&clip_id=1098&doc_id=c30a2204-da81-11ef-a9e2-005056a89546"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the Village Council minutes show them seated, not term dates."
+  },
+  {
+   "person": "brett-g-moss",
+   "office": "city-key-biscayne-member",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-11-29",
+   "lastSeen": "2024-10-15",
+   "via": null,
+   "sources": [
+    "https://keybiscayne.granicus.com/MinutesViewer.php?view_id=1&clip_id=923&doc_id=309792a4-a0ba-11ed-8145-0050569183fa",
+    "https://keybiscayne.granicus.com/MinutesViewer.php?view_id=1&clip_id=1098&doc_id=c30a2204-da81-11ef-a9e2-005056a89546"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the Village Council minutes show them seated, not term dates."
   }
  ],
  "ballot": [
