@@ -28,7 +28,7 @@ for e in E:
     ps = re.sub(r'\s+', ' ', body).strip()[:1500]
     if ch in J:
         j = J[ch]; B[ch] = {'ch': ch, 'au': u, 'ps': ps, 'b': j['b'], 'cat': j.get('cat'), 'named': j.get('named', []), 'q': j.get('q'), 'note': j.get('note')}
-    elif body.startswith('NOSECTION'):
+    elif body.startswith('NOSECTION') or body.startswith('LOCALBILL'):
         nosec.append(ch); B[ch] = {'ch': ch, 'au': u, 'ps': None, 'b': None, 'note': 'Private Sector section not found in the converted text'}
     elif is_none(body):
         B[ch] = {'ch': ch, 'au': u, 'ps': 'None.', 'b': False, 'cat': None, 'named': [], 'q': None}

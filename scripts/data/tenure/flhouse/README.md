@@ -10,8 +10,11 @@ Nothing here edits scripts/data/state/ or public/data; the coordinator merges.
 | bills-2023.json | scripts/data/state/bills/universe.json | Sessions 2022A (Dec 2022), 2022D (May 2022, before seating), 2023B, 2023, 2023C. House roll calls only. |
 | bills-2024.json | same | 2024 regular session. |
 | bills/stageA.jsonl, stageB.jsonl, stageC.jsonl, enacted.json | scripts/data/state/bills stage files of the same names | Same line shapes. stageB is generated from bills/ps/*.txt (Private Sector Impact extracts) plus bills/judge.json (manual readings). |
-| bills/classes-by-chapter.json | scripts/data/state/bills/classes-by-chapter.json | One entry per qualifying chapter. Three reuse an existing 2025 class; the rest carry a "todo" with the category to tag. |
+| bills/classes-by-chapter.json | scripts/data/state/bills/classes-by-chapter.json | One entry per qualifying chapter (87), same tags/re/not format; several reuse an existing 2025-26 class. |
+| bills/labels.json | scripts/data/state/bills/labels.json | en/es/ht label per qualifying law, keyed "<bill> · <year>" (2022A laws use 2023), plus its chapter. |
+| bills/judge.json | (screening notes; feeds stageB.jsonl) | Manual reading of every non-"None" Private Sector section; claim and local bills noted by title class or LFS fiscal section, as in the 2025 universe. |
 | donors/<member>-pre2025.tsv | scripts/data/state/donors/<member>.tsv | Same 9 columns. DOE candidate-account contributions 2020-11-04 to 2024-12-31. |
+| donors/pc83579-pre2025.tsv, pc81066-pre2025.tsv, pc84197-pre2025.tsv | scripts/data/state/donors/pcNNNNN.tsv | Political committee contributions through 2024-12-31 (Basabe, Porras, Redondo). |
 
 Rebuild: `python3 bills/build-bills.py` (after adding readings to judge.json), then `python3 bills/stageC.py` for roll calls, then build again.
 Resume fetching: `python3 bills/stageA.py` and `python3 bills/stageB-fetch.py` (both skip work already done; flsenate.gov rate-limits, so they sleep 6-8 s per request and back off on 429).
