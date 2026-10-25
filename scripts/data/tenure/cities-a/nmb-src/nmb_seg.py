@@ -4,7 +4,7 @@ Items listed after 'not heard' / marked DEFERRED / WITHDRAWN get status accordin
 import re,glob,json,os,sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from nmb_parse import load,mdate
-HDR=re.compile(r'^[ \t]*(?:\d{1,2}\.\d{1,2}\.?\s*)?(\((?:DEFERRED|WITHDRAWN|PULLED|MOVED[^)]*)\)\s*)?((?:Resolution|Ordinance|RESOLUTION|ORDINANCE)\s+(?:No\.?\s*)?(R?\s?20\d\d\s*-\s*[\dlOo]{1,3}[A-Za-z]?))([^\n]*(?:\n(?![ \t]*A[N]? (?:RESOLUTION|ORDINANCE))[^\n]*){0,2})',re.M)
+HDR=re.compile(r'^[ \t]*(?:\d{1,2}\.\d{1,2}\.?\s*)?(\((?:DEFERRED|WITHDRAWN|PULLED|MOVED[^)]*)\)\s*)?((?:Resolution|Ordinance|RESOLUTION|ORDINANCE)\s+(?:No\.?\s*)?(R?\s?20\d\d\s*-\s*[\dlOo]{1,3}[A-Za-z]?))([^\n]*(?:\n(?![ \t]*A[N]? (?:RESOLUTION|ORDINANCE))(?![ \t]*(?:\d{1,2}\.\d{1,2}\.?\s*)?(?:\([A-Z]+\)\s*)?(?:Resolution|Ordinance|RESOLUTION|ORDINANCE)\s+(?:No\.?\s*)?R?\s?20\d\d)[^\n]*){0,2})',re.M)
 VOTE=re.compile(r'(?:Voice\s*Vote|Voicer Vote|Roll\s*Call\s*Vote|MO[TI]+ON\s+(?:PASSED|FAILED))[^\n]*(?:\n[^\n]{0,140}){0,2}',re.I)
 MOT=re.compile(r'Motion[^\n]{0,200}?made by[^\n]*(?:\n[^\n]*)?',re.I)
 def norm(n): return re.sub(r'\s','',n).upper().replace('L','1').replace('O','0').replace('R','R')
