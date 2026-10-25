@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import vm from 'node:vm';
-import { build, buildTies, CYCLE_START, giftStart, TENURE_CITIES } from '../scripts/money-summary.mjs';
+import { build, buildTies, CYCLE_START, giftStart, TENURE_CITIES, TENURE_STATE } from '../scripts/money-summary.mjs';
 
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 const decisions = JSON.parse(read('../public/data/decisions.json'));
@@ -36,9 +36,13 @@ test('gifts before the cycle are not counted', () => {
   for (const B of decisions.bodies) for (const a of B.actions) for (const g of a.gifts)
     assert.ok(g.date >= giftStart(B, g.to), B.key + ' ' + a.id + ' gift dated ' + g.date);
   // Full-tenure county members with a tenure entry (Gilbert) and the full-tenure city lists count from one cycle before their start; others from CYCLE_START
-  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), (B.key === 'county' || TENURE_CITIES.has(B.key)) && B.tenure && B.tenure[k] ? B.tenure[k].giftsFrom : CYCLE_START, B.key + ' ' + k);
+  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), (B.key === 'county' || TENURE_CITIES.has(B.key) || TENURE_STATE.has(B.key)) && B.tenure && B.tenure[k] ? B.tenure[k].giftsFrom : CYCLE_START, B.key + ' ' + k);
   const C = decisions.bodies.find(b => b.key === 'county');
   assert.equal(giftStart(C, 'Gilbert'), '2019-01-01'); assert.equal(giftStart(C, 'Lopez'), CYCLE_START);
+  // Florida House from the 2023 session: one cycle before (Nov 4, 2020; Redondo Nov 9, 2022); Blanco, first seated Nov 2024, from CYCLE_START
+  const H = decisions.bodies.find(b => b.key === 'flhouse');
+  assert.equal(giftStart(H, 'Basabe'), '2020-11-04'); assert.equal(giftStart(H, 'Redondo'), '2022-11-09'); assert.equal(giftStart(H, 'Blanco'), CYCLE_START);
+  assert.equal(giftStart(decisions.bodies.find(b => b.key === 'flsenate'), 'Garcia'), CYCLE_START);
   // Ervin (full-tenure Opa-locka) counts from one cycle before her Dec 2022 start: only gifts on or after giftsFrom
   const OL = decisions.bodies.find(b => b.key === 'opalocka');
   assert.equal(saved.people['natasha-l-ervin'].giftsFrom, OL.tenure.Ervin.giftsFrom);
@@ -62,9 +66,9 @@ test('renders in all three languages with no leftovers', () => {
   }
   // the percentages first (Brit, Oct 24, 2026), then the money, then the actions
   const r = render(saved.people['mike-redondo'], 'en');
-  assert.match(r, /^Since \w+ 20\d\d, he filed 41 budget requests \(46%\)/);
-  assert.ok(r.indexOf('89 budget requests') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
-  assert.ok(r.indexOf('took') < r.indexOf('asked for $110.5 million'));
+  assert.match(r, /^Since \w+ 20\d\d, he filed 48 budget requests \(53%\)/);   // 2023-2026 (scripts/state-tenure.mjs); was 41 (46%) for 2025-26
+  assert.ok(r.indexOf('91 budget requests') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
+  assert.ok(r.indexOf('took') < r.indexOf('asked for $175.1 million'));
   // the parts add up to the total when both are shown
   for (const p of Object.values(saved.people)) {
     if ((p.kind === 'state' || p.kind === 'federal') && p.total)

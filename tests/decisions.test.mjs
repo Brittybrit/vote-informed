@@ -100,7 +100,7 @@ test('state budget requests: one filer on the ballot, an amount, and every gift 
 });
 
 test('state budget requests: each one says where it stands in that year’s final budget', () => {
-  const LAW = { '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
+  const LAW = { '23': ['2023-24', 'SB 2500'], '24': ['2024-25', 'HB 5001'], '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
   for (const B of d.bodies.filter(b => b.type === 'requests' && b.level !== 'federal')) {
     for (const a of B.actions.filter(a => a.kind === 'request')) {
       const b = a.budget; assert.ok(b, a.id + ' has no budget status');
@@ -192,11 +192,11 @@ test('Congress floor votes: enacted laws, official roll calls, a quoted source, 
   for (const k of ['gaveN', 'how.s.clsF', 'cboL', 'crsL', 'frL', 'howFedV']) assert.ok(en.has(k), k);
 });
 
-test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab with her six requests and her floor votes', () => {
+test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab with her ten requests (2023-2026) and her floor votes', () => {
   const B = d.bodies.find(b => b.key === 'flhouse');
   assert.equal(B.onBallot.Nixon.race.en, 'U.S. Senate');
   const req = B.actions.filter(a => a.kind === 'request' && a.roll.Nixon);
-  assert.equal(req.length, 6);
+  assert.equal(req.length, 10);   // six for 2025-26, four for 2023-24 and 2024-25 (scripts/state-tenure.mjs)
   for (const a of req) assert.ok(a.budget && a.budget.ref === 'HF ' + a.ref.match(/APR (\d+)/)[1], a.id);
   assert.equal(B.actions.filter(a => a.kind === 'bill' && a.roll.Nixon).length, B.actions.filter(a => a.kind === 'bill').length);
   for (let i = 1; i < B.actions.length; i++) assert.ok(B.actions[i - 1].date >= B.actions[i].date, 'newest first at ' + B.actions[i].id);

@@ -41,7 +41,7 @@
       // 1. The money: total, from how many donors, and which account got how much
       took: function(p, why){
         var s = esc(p.name) + ' took ' + usd(p.total) + ' from ' + this.donors(p.donors) + ' ' + why + '.';
-        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' went to the campaign and ' + usd(p.committeeAmt) + ' to ' + (p.cmteRole === 'solicits' ? 'the political committee (PAC) ' + he(p) + ' reported raising money for.' : (p.body === 'county' ? 'the political committee (PAC) ' : 'the political committee' + (p.accounts > 2 ? 's ' : ' ')) + he(p) + ' chairs.');
+        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' went to the campaign and ' + usd(p.committeeAmt) + ' to ' + (p.cmteRole === 'solicits' ? 'the political committee (PAC) ' + he(p) + ' reported raising money for.' : (p.body === 'county' ? 'the political committee (PAC) ' : 'the political committee' + ((p.committees != null ? p.committees > 1 : p.accounts > 2) ? 's ' : ' ')) + he(p) + ' chairs.');
         else if(p.committeeAmt) s += ' All of it went to the political committee ' + he(p) + ' chairs.';
         return s;
       },
@@ -120,7 +120,7 @@
       before: function(b){ var w = String(b).split(' ')[0]; return (/^(Concejo|Senado)$/.test(w) ? 'el ' : /^(Comisi|Cámara|Junta)/.test(w) ? 'la ' : '') + b; },
       took: function(p, why){
         var s = esc(p.name) + ' recibió ' + usd(p.total) + ' de ' + this.donors(p.donors) + ' ' + why + '.';
-        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' fue a la campaña y ' + usd(p.committeeAmt) + ' ' + (p.cmteRole === 'solicits' ? 'al comité político (PAC) para el que declaró recaudar fondos' : p.accounts > 2 ? 'a los comités políticos que preside' : 'al comité político' + (p.body === 'county' ? ' (PAC)' : '') + ' que preside') + '.';
+        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' fue a la campaña y ' + usd(p.committeeAmt) + ' ' + (p.cmteRole === 'solicits' ? 'al comité político (PAC) para el que declaró recaudar fondos' : (p.committees != null ? p.committees > 1 : p.accounts > 2) ? 'a los comités políticos que preside' : 'al comité político' + (p.body === 'county' ? ' (PAC)' : '') + ' que preside') + '.';
         else if(p.committeeAmt) s += ' Todo fue al comité político que preside.';
         return s;
       },
@@ -195,7 +195,7 @@
       before: function(b){ return b; },
       took: function(p, why){
         var s = esc(p.name) + ' resevwa ' + usd(p.total) + ' nan men ' + this.donors(p.donors) + ' ' + why + '.';
-        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' te ale nan kanpay la epi ' + usd(p.committeeAmt) + ' nan ' + (p.cmteRole === 'solicits' ? 'komite politik (PAC) li te deklare li ranmase lajan pou li a.' : p.accounts > 2 ? 'komite politik li prezide yo.' : 'komite politik' + (p.body === 'county' ? ' (PAC)' : '') + ' li prezide a.');
+        if(p.campaignAmt && p.committeeAmt) s += ' ' + usd(p.campaignAmt) + ' te ale nan kanpay la epi ' + usd(p.committeeAmt) + ' nan ' + (p.cmteRole === 'solicits' ? 'komite politik (PAC) li te deklare li ranmase lajan pou li a.' : (p.committees != null ? p.committees > 1 : p.accounts > 2) ? 'komite politik li prezide yo.' : 'komite politik' + (p.body === 'county' ? ' (PAC)' : '') + ' li prezide a.');
         else if(p.committeeAmt) s += ' Tout te ale nan komite politik li prezide a.';
         return s;
       },

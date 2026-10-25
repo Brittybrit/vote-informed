@@ -80,7 +80,10 @@ test('official actions: every vote is cast by the roster person seated on that d
       for (const [k, v] of Object.entries(a.roll)) {
         if (v == null) continue;   // not yet seated: shown as such
         const ts = termsOf(pid(k), o => o.body === B.rosterBody);
-        assert.ok(ts.some(t => covers(t, a.date)), B.key + ' ' + a.id + ': ' + k + ' was not seated on ' + a.date);
+        // A budget request filed for the seat before its new member was sworn in, listed under that member by the House
+        // record (Redondo's FY 2024-25 forms 3102 and 3108): checked on the day the sponsor took the seat
+        const on = a.kind === 'request' && v === 'requested' && a.filedForSeat && a.filedForSeat > a.date ? a.filedForSeat : a.date;
+        assert.ok(ts.some(t => covers(t, on)), B.key + ' ' + a.id + ': ' + k + ' was not seated on ' + on);
       }
     }
   }

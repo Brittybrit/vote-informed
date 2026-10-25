@@ -5,8 +5,13 @@
 // build in cabinet.mjs. Idempotent: gifts already on a card (same account, donor, amount, date) are skipped.
 // Inputs: public/data/decisions.json, scripts/data/state/donors/*.tsv (DOE contrib.exe exports, 2025+),
 //         scripts/data/state/lobbyfirms/firms.json (floridalobbyist.gov lobfirml_2025/2026 directories).
+// Florida House full tenure (Brit, Oct 25, 2026): when the flhouse body has a tenure block (scripts/state-tenure.mjs),
+// its members' 2020-2024 rows (scripts/data/tenure/flhouse/donors/) are read too and count from each member's
+// giftsFrom; the FY 2023-24 and 2024-25 forms (H23-, H24-) are matched against the firm directories of the years the
+// form was filed and heard (lobfirml_2022..2024, scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json).
+// The Senate and the 2025-26 forms keep the 2025 + 2026 directories and Jan 1, 2025.
 // Run: node scripts/state-firm-gifts.mjs  then  node scripts/money-summary.mjs && node scripts/lobby-ledger.mjs
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -31,25 +36,49 @@ const PREFER = { 'Matthews, Nicholas G.': 'The Southern Group' };
 const SKIP = new Set(['Robert M. Levy & Associates Inc|Diaz, Jose']);
 
 const rows = [];
-for (const f of readdirSync(P('scripts/data/state/donors/'))) {
-  if (!f.endsWith('.tsv')) continue;
-  const acct = f.slice(0, -4);
-  for (const line of readFileSync(P('scripts/data/state/donors/' + f), 'utf8').split('\n')) {
+const readRows = (file, acct, keep) => {
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
     const c = line.split('\t'); if (c.length < 8) continue;
     const [mm, dd, yy] = c[1].split('/');
     const r = { acct, date: `${yy}-${mm}-${dd}`, amount: Math.round(parseFloat(c[2]) * 100) / 100, typ: c[3].trim(), donor: c[4].trim(), addr: c[5].trim(), occ: c[7].trim() };
     r.n = norm(r.donor); r.w = new Set(r.n.split(' '));
-    if (r.date >= '2025-01-01') rows.push(r);
+    if (keep(r)) rows.push(r);
   }
+};
+for (const f of readdirSync(P('scripts/data/state/donors/'))) {
+  if (!f.endsWith('.tsv')) continue;
+  readRows(P('scripts/data/state/donors/' + f), f.slice(0, -4), r => r.date >= '2025-01-01');
 }
+// House full tenure: the 2020-2024 files, for accounts the flhouse body lists (a member's earlier campaign accounts
+// are <name>-pre2025; a committee's earlier rows extend its own account)
+const HT = d.bodies.find(b => b.key === 'flhouse');
+const TD = 'scripts/data/tenure/flhouse/donors/';
+if (HT && HT.tenure) for (const [acct, a] of Object.entries(HT.accounts)) {
+  const from = (HT.tenure[a.owner] || {}).giftsFrom; if (!from) continue;
+  if (!acct.endsWith('-pre2025') && !/^pc\d+$/.test(acct)) continue;
+  const f = acct.endsWith('-pre2025') ? acct : acct + '-pre2025';
+  if (!existsSync(P(TD + f + '.tsv'))) continue;
+  readRows(P(TD + f + '.tsv'), acct, r => r.date >= from && r.date < '2025-01-01');
+}
+const BYYEAR = existsSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json')) ? JSON.parse(readFileSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json'))) : {};
+// The directories for a form: FY 2023-24 forms were filed in late 2022 for the 2023 session, and so on
+const DIRS = { H23: ['2022', '2023'], H24: ['2023', '2024'] };
+const dirOf = id => {
+  const ys = DIRS[String(id).slice(0, 3)]; if (!ys || !HT || !HT.tenure) return FIRMS;
+  const out = {}; for (const y of ys) for (const [f, ps] of Object.entries(BYYEAR[y] || {})) out[f] = [...new Set([...(out[f] || []), ...ps])];
+  return out;
+};
 // A refund (REF, negative) cancels the latest earlier gift of the same amount from the same donor to the same account.
 for (const ref of rows.filter(r => r.amount < 0)) {
   const g = rows.filter(r => r.acct === ref.acct && r.n === ref.n && r.amount === -ref.amount && r.date <= ref.date && !r.refunded).sort((p, q) => q.date.localeCompare(p.date))[0];
   if (g) g.refunded = true;
 }
 for (let i = rows.length - 1; i >= 0; i--) if (rows[i].amount <= 0 || rows[i].refunded) rows.splice(i, 1);
-const firmKey = {}; for (const k of Object.keys(FIRMS)) firmKey[norm(k).replace(SUFFIX, '').replace(/\s+/g, ' ').trim()] = k;
-const findFirm = name => { const n = norm(name).replace(SUFFIX, '').replace(/\s+/g, ' ').trim(); if (firmKey[n]) return firmKey[n]; for (const k in firmKey) if (n.length > 8 && (k.includes(n) || n.includes(k))) return firmKey[k]; return null; };
+const keysOf = new Map();
+const findFirm = (name, DIR = FIRMS) => {
+  if (!keysOf.has(DIR)) { const fk = {}; for (const k of Object.keys(DIR)) fk[norm(k).replace(SUFFIX, '').replace(/\s+/g, ' ').trim()] = k; keysOf.set(DIR, fk); }
+  const firmKey = keysOf.get(DIR);
+  const n = norm(name).replace(SUFFIX, '').replace(/\s+/g, ' ').trim(); if (firmKey[n]) return firmKey[n]; for (const k in firmKey) if (n.length > 8 && (k.includes(n) || n.includes(k))) return firmKey[k]; return null; };
 const personKey = p => { const [last, first] = p.split(',').map(s => s.trim()); return [norm(last.replace(/\s+(Jr|Sr|III|II)\.?$/, '')), norm(first.replace(/\(.*?\)/g, '')).split(' ')[0]]; };
 const nice = p => { const [last, first] = p.split(',').map(s => s.trim()); return first.replace(/\(.*?\)/g, '').trim() + ' ' + last; };
 const gKey = g => [g.acct, norm(g.donor), Number(g.amount), g.date].join('|');
@@ -62,7 +91,9 @@ for (const B of d.bodies) {
     if (a.kind !== 'request') continue;
     const filer = Object.keys(a.roll).find(k => a.roll[k] === 'requested');
     if (!accts[filer]) continue;
-    const mine = rows.filter(r => accts[filer].includes(r.acct));
+    // Earlier rows count only on House cards, where the member's tenure starts the gift window
+    const mine = rows.filter(r => accts[filer].includes(r.acct) && (r.date >= '2025-01-01' || B === HT));
+    const DIR = B === HT ? dirOf(a.id) : FIRMS;
     const have = new Set(a.gifts.map(gKey));
     const push = g => { if (have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${filer} ${a.ref}: ${g.donor} $${g.amount} ${g.date} -> ${g.firmName} (${g.rel}${g.why ? '; ' + g.why.en : ''})`); };
     for (const l of a.lobbied) {
@@ -76,8 +107,12 @@ for (const B of d.bodies) {
         push({ to: filer, acct: r.acct, kind: 'firm', rel: pac ? 'firmpac' : 'firm', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, firmName, lobbyist: l.name, forParty });
       }
       // (b) every lobbyist the directory lists at the firm
-      const key = findFirm(firmName); if (!key) { log.push(`!! no directory match for ${firmName}`); continue; }
-      for (const p of FIRMS[key]) {
+      // A firm the form names but that year's directory does not list (David T. Caserta Government Relations is listed
+      // from 2025; in 2022-24 he is listed at David R. Custin & Associates): use the 2025-26 listing of the firm
+      let D = DIR, key = findFirm(firmName, DIR);
+      if (!key && DIR !== FIRMS && (key = findFirm(firmName, FIRMS))) { D = FIRMS; log.push(`.. ${a.id}: ${firmName} not in that year's directory; 2025-26 listing used`); }
+      if (!key) { log.push(`!! no directory match for ${firmName}${DIR === FIRMS ? '' : ' (' + a.id + ')'}`); continue; }
+      for (const p of D[key]) {
         if (SKIP.has(key + '|' + p)) continue;
         if (PREFER[p] && PREFER[p] !== key) continue;
         const [last, first] = personKey(p);

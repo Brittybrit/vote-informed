@@ -20,7 +20,10 @@ export const CYCLE_START = '2025-01-01';
 // City lists built back to each incumbent's tenure start (Coral Gables, Doral, South Miami) do the same, from
 // scripts/data/city/<slug>/body.json tenure (Lago from 2011, Castro 2021, Porras 2020, South Miami 2020).
 export const TENURE_CITIES = new Set(['coralgables', 'doral', 'southmiami', 'cutlerbay', 'pinecrest', 'keybiscayne', 'sunnyisles', 'medley', 'northmiami', 'aventura', 'nmb', 'opalocka']);
-export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county' || TENURE_CITIES.has(B.key)) && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
+// The Florida House list runs from the 2023 session (scripts/state-tenure.mjs): Basabe, Gantt, Chambliss, Porras and
+// Nixon from Nov 4, 2020, Redondo from Nov 9, 2022; Blanco (seated Nov 2024) has no entry and keeps CYCLE_START.
+export const TENURE_STATE = new Set(['flhouse']);
+export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county' || TENURE_CITIES.has(B.key) || TENURE_STATE.has(B.key)) && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {
   let s = String(n || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
@@ -114,6 +117,8 @@ export function build(decisions, officesHeld) {
       const isCmte = a => /^(pc|pac)/i.test(a) || /political committee|\bPAC\b/i.test(String(((B.accounts || {})[a] || {}).en || (B.accounts || {})[a] || ''));
       e.campaignAmt = Math.round(Object.entries(byAcct).filter(([a]) => !isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
       e.committeeAmt = Math.round(Object.entries(byAcct).filter(([a]) => isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
+      // How many committees got money (a member's earlier campaign accounts are campaigns, not committees)
+      e.committees = Object.keys(byAcct).filter(a => isCmte(a) && byAcct[a] > 0).length;
       // A committee the member reported soliciting for (Miami-Dade form MD-ED 28) but does not chair
       if (Object.keys(byAcct).some(a => isCmte(a) && (B.accounts[a] || {}).role === 'solicits')) e.cmteRole = 'solicits';
       if (state) {
