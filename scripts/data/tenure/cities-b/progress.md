@@ -26,3 +26,5 @@ Resume notes: one line per finished meeting batch / report. Source scripts kept 
 - NEXT: es/ht translations for tenure titles (CG 1114, Doral 317, SM 245) into each translations.json.
 - 2026-10-25: South Miami es/ht translations done (src/tenure/tr/*.txt, merge.py).
 - 2026-10-25: Doral es/ht translations done (src/tenure/tr/*.txt, merge.py).
+- 2026-10-25: Coral Gables es/ht translations done (src/tr/b01-b07.txt, merge.py).
+- 2026-10-25: DONE. Open issue for the merge: former members' roll keys (CG: Cason, Keon, Kerdyk, Quesada, Slesnick, ValdesFauli, Mena, Fors; Doral: PuigCorve; South Miami: Liebman) are not roster people, and Lago's 2013-2021 votes fall before his roster term start (2021-04-30); tests/roster.test.mjs will fail until roster.json gets those terms (or city-actions.mjs FORMER lists them and roster has their terms). Not fixable inside the city folders.
