@@ -4757,9 +4757,9 @@ function renderDossier(cand, race, r, cached){
     who += '</div>';
   }
 
-  // 2. Actions tied to donors, and business interests
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
+  // 2. Business interests, then actions tied to donors
   if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
   // 3. How local the money is (federal races: money in this race first)
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
