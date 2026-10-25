@@ -4,58 +4,11 @@
  "rule": "Every law enacted in sessions 2022A, 2022D, 2023, 2023B, 2023C whose final staff analysis names a kind of business or company that benefits (same test as universe.json). House floor roll calls only (the members are House members); a member is \"not seated\" on dates outside their House tenure.",
  "counts": {
   "enacted": 357,
-  "screened": 68,
-  "qualifying": 5
+  "screened": 125,
+  "qualifying": 7
  },
  "missing": {
   "A": [
-   "2023-220",
-   "2023-221",
-   "2023-222",
-   "2023-223",
-   "2023-224",
-   "2023-225",
-   "2023-226",
-   "2023-227",
-   "2023-228",
-   "2023-229",
-   "2023-230",
-   "2023-231",
-   "2023-232",
-   "2023-233",
-   "2023-234",
-   "2023-235",
-   "2023-236",
-   "2023-237",
-   "2023-238",
-   "2023-239",
-   "2023-240",
-   "2023-241",
-   "2023-242",
-   "2023-243",
-   "2023-244",
-   "2023-245",
-   "2023-246",
-   "2023-247",
-   "2023-248",
-   "2023-249",
-   "2023-250",
-   "2023-251",
-   "2023-252",
-   "2023-253",
-   "2023-254",
-   "2023-255",
-   "2023-256",
-   "2023-257",
-   "2023-258",
-   "2023-259",
-   "2023-260",
-   "2023-261",
-   "2023-262",
-   "2023-263",
-   "2023-264",
-   "2023-265",
-   "2023-266",
    "2023-267",
    "2023-268",
    "2023-269",
@@ -147,63 +100,6 @@
    "2022-270"
   ],
   "B": [
-   "2023-65",
-   "2023-68",
-   "2023-69",
-   "2023-70",
-   "2023-71",
-   "2023-72",
-   "2023-73",
-   "2023-74",
-   "2023-75",
-   "2023-76",
-   "2023-77",
-   "2023-78",
-   "2023-79",
-   "2023-80",
-   "2023-81",
-   "2023-82",
-   "2023-83",
-   "2023-84",
-   "2023-85",
-   "2023-86",
-   "2023-87",
-   "2023-88",
-   "2023-89",
-   "2023-90",
-   "2023-91",
-   "2023-92",
-   "2023-93",
-   "2023-94",
-   "2023-95",
-   "2023-96",
-   "2023-97",
-   "2023-98",
-   "2023-99",
-   "2023-100",
-   "2023-101",
-   "2023-102",
-   "2023-103",
-   "2023-104",
-   "2023-105",
-   "2023-106",
-   "2023-107",
-   "2023-108",
-   "2023-109",
-   "2023-110",
-   "2023-111",
-   "2023-112",
-   "2023-113",
-   "2023-114",
-   "2023-115",
-   "2023-116",
-   "2023-117",
-   "2023-118",
-   "2023-119",
-   "2023-120",
-   "2023-121",
-   "2023-122",
-   "2023-123",
    "2023-124",
    "2023-125",
    "2023-126",
@@ -462,6 +358,16 @@
     "2023-47",
     "H",
     "https://www.flsenate.gov/Session/Bill/2023/724/Vote/HouseVote_s00724c2365.PDF"
+   ],
+   [
+    "2023-65",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/639/Vote/HouseVote_h00639c2346.PDF"
+   ],
+   [
+    "2023-118",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2023/838/Vote/HouseVote_s00838c2425.PDF"
    ]
   ]
  },
@@ -1226,9 +1132,14 @@
    "title": "Issuance of Special Beverage Licenses",
    "url": "https://www.flsenate.gov/Session/Bill/2023/639",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/639/Analyses/h0639z1.RRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "restaurants serving alcohol (special food service licensees)",
+    "named": [],
+    "quote": "The bill may allow more restaurants to obtain an SFS license, which may make it less expensive to own and operate a restaurant that sells alcoholic beverages"
+   },
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 17 R. 61C-1.002, F.A.C.; Florida Department of Business and Professional Regulation, Hotels and Restaurants – Licensing Guides, http://www.myfloridalicense.com/DBPR/hotels-restaurants/licensing/licensing-guides/ (last visited Feb. 24, 2023). STORAGE NAME: h0639z1.DOCX PAGE: 4 DATE: 5/16/2023 The bill may allow more restaurants to obtain an SFS license, which may make it less expensive to own and operate a restaurant that sells alcoholic beverages and could lead to more restaurants opening. It could also increase beverage service options for consumers.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 891",
@@ -1261,7 +1172,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1091/Analyses/h1091z1.RRS.PDF",
    "benefits": null,
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The fee waivers under the bill will save professional licensees money, which may then be used for other business or personal needs. C. FISCAL COMMENTS: The bill appropriates $50 million nonrecurring funds from the General Revenue Fund to be deposited in the Professional Regulation Trust Fund. Any unexpended balance of the $50 million deposited funds shall revert on June 30, 2024 and is appropriated to DBPR for the 2024-2025 fiscal year for the same purpose. This appropriation will offset the loss of revenue in the Professional Regulation Trust Fund to implement the specified temporary licensing fee waivers. STORAGE NAME: h1091z1.DOCX PAGE: 4 DATE: 5/16/2023",
-   "note": "not yet judged"
+   "note": "fee waivers for professional licensees generally (individuals and businesses), no kind of business named"
   },
   {
    "bill": "HB 1259",
@@ -1272,7 +1183,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1259/Analyses/h1259z1.PKA.PDF",
    "benefits": null,
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 14 Section 1002.33(9)(e), F.S., provides a calculation methodology for state funding of capital improvements at developmental research (lab) schools. The calculation is based on the discretionary 1.5 millage of the district in which the lab school is located. The conference report for SB 2500 appropriates $10,038,597 for this discretionary millage “equivalent” for lab schools, including charter lab schools. See Specific Appropriation 16 of the conference report for SB 2500. STORAGE NAME: h1259z1.DOCX PAGE: 5 DATE: 5/17/2023 None.",
-   "note": "not yet judged"
+   "note": "section holds only a footnote; no private-sector statement"
   },
   {
    "bill": "HB 1305",
@@ -1283,7 +1194,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1305/Analyses/h1305z1.TMS.PDF",
    "benefits": null,
    "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate.",
-   "note": "not yet judged"
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 1387",
@@ -1291,10 +1202,10 @@
    "chapter": "2023-71",
    "title": "Department of Health",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1387",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1387/Analyses/h1387z.HRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Persons with mild to moderate hearing impairment will now be able to purchase OTC hearing aids without the supervision, prescription, involvement, or intervention of a licensed professional. This will likely reduce the cost of hearing aids for this specific demographic.",
+   "note": "benefit to consumers (OTC hearing aids)"
   },
   {
    "bill": "HB 1441",
@@ -1302,9 +1213,9 @@
    "chapter": "2023-72",
    "title": "Florida Museum of Black History",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1441",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1441/Analyses/h1441z1.CRG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1313,9 +1224,9 @@
    "chapter": "2023-73",
    "title": "Florida Virtual School",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1597",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1597/Analyses/h1597z.CIS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1324,9 +1235,9 @@
    "chapter": "2023-74",
    "title": "OGSR/Water Management District Surplus Lands",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7003",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7003/Analyses/h7003z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1335,9 +1246,9 @@
    "chapter": "2023-75",
    "title": "OGSR/Security and Firesafety System Plans",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7007",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7007/Analyses/h7007z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1346,9 +1257,9 @@
    "chapter": "2023-76",
    "title": "OGSR/Citizens Property Insurance Corporation/Cybersecurity Data and Information",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7035",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7035/Analyses/h7035z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1357,9 +1268,9 @@
    "chapter": "2023-77",
    "title": "Sheriffs Providing Child Protective Investigative Services",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7061",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7061/Analyses/h7061z.HHS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1368,10 +1279,10 @@
    "chapter": "2023-78",
    "title": "Middle School and High School Start Times",
    "url": "https://www.flsenate.gov/Session/Bill/2023/733",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/733/Analyses/h0733z.CIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 19 OPPAGA Presentation, supra note 17, at 6. 20 OPPAGA e-mail, supra note 18. OPPAGA’s analysis of the distribution of charter school start times includes duplication due to the same charters serving multiple grade levels (i.e. K-8 or K-6). 21 Section 1002.33(15)(b), F.S. A charter school-in-the-workplace is a partnership between a sponsor and a company or business. STORAGE NAME: h0733z.DOCX PAGE: 5 DATE: 5/22/2023 None.",
+   "note": "None"
   },
   {
    "bill": "SB 214",
@@ -1379,10 +1290,10 @@
    "chapter": "2023-79",
    "title": "Sales of Firearms and Ammunition",
    "url": "https://www.flsenate.gov/Session/Bill/2023/214",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/214/Analyses/2023s00214.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: To the extent that any payment settlement entities, merchant acquiring entities, or third party settlement organizations violate the provisions in the bill or contest any administrative fines imposed by the DACS for such violations, the bill may result in an indeterminate fiscal impact on them. Government Sector Impact: To the extent that violators contest any administrative fines through the formal administrative hearing process, the bill may result in an indeterminate fiscal impact on the DACS and the state court system. The DACS is unable to estimate any fiscal impact the proposed bill may have on the agency.105",
+   "note": "penalties on payment settlement entities"
   },
   {
    "bill": "SB 7054",
@@ -1390,10 +1301,10 @@
    "chapter": "2023-80",
    "title": "Central Bank Digital Currency",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7054",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7054/Analyses/2023s07054.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CBDC, as defined in the bill, may not be used as “money” for purposes of the Florida UCC. This could have an indeterminate fiscal impact on financial transactions in Florida. 47 “The Constitution’s Supremacy Clause provides that federal law is ‘the Supreme Law of the Land’ notwithstanding any state law to the contrary. This language is the foundation for the doctrine of federal preemption, according to which federal law supersedes conflicting state laws.” Congressional Research Service, Federal Preemption: A Legal Primer, Jul. 23, 2019, available at: Federal Preemption: A Legal Primer (congress.gov) (last visited Apr. 1, 2023). 48 “In contrast to the doctrine of preemption, which generally applies in areas where Congress has acted, the so-called Dormant Commerce Clause may bar state or local regulations even where there is no relevant congressional legislation. Although the Commerce Clause is framed as a positive grant of power to Congress and not an explicit limit on states’ authority, the Supreme Court has also interpreted the Clause to prohibit state laws that unduly restrict interstate commerce even in the absence of congressional legislation – i.e. where Congress is dormant…[Under the Dormant Commerce Clause,] states may not take actions that are facially neutral but unduly burden interstate commerce.” Constitution Annotation, Art1.S8.C3.7.1 Overview of Dormant Commerce Clause, Overview of Dormant Commerce Clause | Constitution Annotated | Congress",
+   "note": "indeterminate impact on transactions"
   },
   {
    "bill": "SB 240",
@@ -1401,9 +1312,9 @@
    "chapter": "2023-81",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/240",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/240/Analyses/2023s00240.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1412,9 +1323,9 @@
    "chapter": "2023-82",
    "title": "Higher Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/266",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/266/Analyses/2023s00266.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1423,9 +1334,9 @@
    "chapter": "2023-83",
    "title": "Postsecondary Educational Institutions",
    "url": "https://www.flsenate.gov/Session/Bill/2023/931",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/931/Analyses/h0931z.PEW.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1434,9 +1345,9 @@
    "chapter": "2023-84",
    "title": "Public Records/Human Trafficking Victims",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1210",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1210/Analyses/2023s01210.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1445,10 +1356,10 @@
    "chapter": "2023-85",
    "title": "Sexual Exploitation and Human Trafficking",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1690",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1690/Analyses/2023s01690.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill will result in an indeterminate negative fiscal impact for those public lodging establishments that are unable to correct human trafficking awareness training deficiencies within 45 days or that have repeat violations.",
+   "note": "negative impact on lodging establishments"
   },
   {
    "bill": "SB 7064",
@@ -1456,9 +1367,9 @@
    "chapter": "2023-86",
    "title": "Human Trafficking",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7064",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7064/Analyses/2023s07064.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1467,9 +1378,9 @@
    "chapter": "2023-87",
    "title": "Firearm and Destructive Device Offenses",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1465",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1465/Analyses/h1465z.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1478,10 +1389,10 @@
    "chapter": "2023-88",
    "title": "Lactation Spaces",
    "url": "https://www.flsenate.gov/Session/Bill/2023/144",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/144/Analyses/2023s00144.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill authorizes private entities to contribute funds for lactation spaces in county courthouses and in district courts of appeal.",
+   "note": "authorizes private contributions"
   },
   {
    "bill": "SB 196",
@@ -1489,9 +1400,9 @@
    "chapter": "2023-89",
    "title": "Guidance Services on Academic and Career Planning",
    "url": "https://www.flsenate.gov/Session/Bill/2023/196",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/196/Analyses/2023s00196.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1500,10 +1411,10 @@
    "chapter": "2023-90",
    "title": "Treatments for Sex Reassignment",
    "url": "https://www.flsenate.gov/Session/Bill/2023/254",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/254/Analyses/2023s00254.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill will have a fiscal impact on hospitals, ASCs, or physician offices registered for office surgery that fail to provide the attestation required under sections 3, 7, and 8 of the bill. The bill may have an indeterminate fiscal impact on persons seeking sex reassignment treatment and health care practitioners or facilities who provide such treatment.",
+   "note": "costs to facilities"
   },
   {
    "bill": "SB 290",
@@ -1511,9 +1422,9 @@
    "chapter": "2023-91",
    "title": "Public School Student Progression for Students with Disabilities",
    "url": "https://www.flsenate.gov/Session/Bill/2023/290",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/290/Analyses/2023s00290.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1522,9 +1433,9 @@
    "chapter": "2023-92",
    "title": "Higher Educational Facilities Financing",
    "url": "https://www.flsenate.gov/Session/Bill/2023/598",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/598/Analyses/2023s00598.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1533,10 +1444,10 @@
    "chapter": "2023-93",
    "title": "Educational Grants",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1272",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1272/Analyses/2023s01272.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may provide cost savings to eligible students by way of tuition assistance for those students who are enrolled in an eligible postsecondary institution which be eligible to participate in this postsecondary educational grant pursuant to the Effective Access to Student Education (EASE) grant program.",
+   "note": "savings to students"
   },
   {
    "bill": "SB 1438",
@@ -1544,10 +1455,10 @@
    "chapter": "2023-94",
    "title": "Protection of Children",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1438",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1438/Analyses/2023s01438.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Venues hosting adult live performances may have decreased revenues to the extent that the bill will result in lost revenues from children who would otherwise have attended.",
+   "note": "lost revenue to venues"
   },
   {
    "bill": "SB 7026",
@@ -1555,10 +1466,10 @@
    "chapter": "2023-95",
    "title": "Higher Education Finances",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7026",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7026/Analyses/s7026z.EEC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See fiscal comments.",
+   "note": "fiscal comments cover universities only"
   },
   {
    "bill": "HB 19",
@@ -1566,9 +1477,9 @@
    "chapter": "2023-96",
    "title": "Individual Education Plans",
    "url": "https://www.flsenate.gov/Session/Bill/2023/19",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/19/Analyses/h0019z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1577,9 +1488,9 @@
    "chapter": "2023-97",
    "title": "Interscholastic Activities",
    "url": "https://www.flsenate.gov/Session/Bill/2023/225",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/225/Analyses/h0225z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1588,9 +1499,9 @@
    "chapter": "2023-98",
    "title": "High School Equivalency Diplomas",
    "url": "https://www.flsenate.gov/Session/Bill/2023/265",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/265/Analyses/h0265z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1599,9 +1510,9 @@
    "chapter": "2023-99",
    "title": "Emergency Response Mapping Data",
    "url": "https://www.flsenate.gov/Session/Bill/2023/301",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/301/Analyses/h0301z1.CIS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1610,9 +1521,9 @@
    "chapter": "2023-100",
    "title": "Menstrual Hygiene Products in Public Schools",
    "url": "https://www.flsenate.gov/Session/Bill/2023/389",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/389/Analyses/h0389z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1621,9 +1532,9 @@
    "chapter": "2023-101",
    "title": "Residency of Local Elected Officials",
    "url": "https://www.flsenate.gov/Session/Bill/2023/411",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/411/Analyses/h0411z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1632,9 +1543,9 @@
    "chapter": "2023-102",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/443",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/443/Analyses/h0443z1.CIS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1643,9 +1554,9 @@
    "chapter": "2023-103",
    "title": "Required African-American Instruction",
    "url": "https://www.flsenate.gov/Session/Bill/2023/551",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/551/Analyses/h0551z.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1654,9 +1565,9 @@
    "chapter": "2023-104",
    "title": "K-12 Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/633",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/633/Analyses/h0633z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1665,9 +1576,9 @@
    "chapter": "2023-105",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1069",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1069/Analyses/h1069z.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1676,10 +1587,10 @@
    "chapter": "2023-106",
    "title": "Facility Requirements Based on Sex",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1521",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1521/Analyses/h1521z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate.",
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 7031",
@@ -1687,9 +1598,9 @@
    "chapter": "2023-107",
    "title": "OGSR/Address of a Victim of an Incident of Mass Violence",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7031",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7031/Analyses/h7031z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1698,9 +1609,9 @@
    "chapter": "2023-108",
    "title": "Student Outcomes",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7039",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7039/Analyses/h7039z.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1709,9 +1620,9 @@
    "chapter": "2023-109",
    "title": "Deceased Individuals",
    "url": "https://www.flsenate.gov/Session/Bill/2023/233",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/233/Analyses/h0233z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1720,9 +1631,9 @@
    "chapter": "2023-110",
    "title": "Offenses Against Certain Animals",
    "url": "https://www.flsenate.gov/Session/Bill/2023/1047",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/1047/Analyses/h1047z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1731,9 +1642,9 @@
    "chapter": "2023-111",
    "title": "State Board of Administration",
    "url": "https://www.flsenate.gov/Session/Bill/2023/110",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/110/Analyses/2023s00110.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1742,9 +1653,9 @@
    "chapter": "2023-112",
    "title": "Domestic Violence",
    "url": "https://www.flsenate.gov/Session/Bill/2023/130",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/130/Analyses/2023s00130.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1753,9 +1664,9 @@
    "chapter": "2023-113",
    "title": "Interscholastic Extracurricular Activities",
    "url": "https://www.flsenate.gov/Session/Bill/2023/190",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/190/Analyses/2023s00190.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1764,9 +1675,9 @@
    "chapter": "2023-114",
    "title": "Catalytic Converters",
    "url": "https://www.flsenate.gov/Session/Bill/2023/306",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/306/Analyses/2023s00306.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1775,10 +1686,10 @@
    "chapter": "2023-115",
    "title": "Local Government Comprehensive Plans",
    "url": "https://www.flsenate.gov/Session/Bill/2023/540",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/540/Analyses/2023s00540.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may have a positive fiscal impact on private parties to the extent they may recover attorney fees and costs as prevailing parties in certain challenges to comprehensive plans and plan amendments. The bill may also have a negative fiscal impact on such private parties to the extent they are found responsible and must pay such fees and costs.",
+   "note": "private parties generally (attorney fees)"
   },
   {
    "bill": "SB 678",
@@ -1786,9 +1697,9 @@
    "chapter": "2023-116",
    "title": "Disposal of Property",
    "url": "https://www.flsenate.gov/Session/Bill/2023/678",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/678/Analyses/2023s00678.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1797,9 +1708,9 @@
    "chapter": "2023-117",
    "title": "Residential Loan Alternative Agreements",
    "url": "https://www.flsenate.gov/Session/Bill/2023/770",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/770/Analyses/2023s00770.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1808,10 +1719,15 @@
    "chapter": "2023-118",
    "title": "Proceeds Funding Motorcycle Safety Education",
    "url": "https://www.flsenate.gov/Session/Bill/2023/838",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/838/Analyses/2023s00838.ap.PDF",
+   "benefits": {
+    "category": "motorcycle safety education organization (selected nonprofit)",
+    "named": [],
+    "quote": "The bill will have a positive fiscal impact on the selected organization, which will receive the $2.50 collected when a motorcycle is registered in the state."
+   },
+   "screen": "Private Sector Impact: The bill will have a positive fiscal impact on the selected organization, which will receive the $2.50 collected when a motorcycle is registered in the state. Based on the number of motorcycles registered in Florida, the organization will receive approximately $1,626,675 annually.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 7006",
@@ -1819,10 +1735,10 @@
    "chapter": "2023-119",
    "title": "OGSR/Nationwide Public Safety Broadband Network",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7006",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7006/Analyses/2023s07006.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The private sector will continue to be subject to the cost associated with an agency’s review and redactions of exempt records in response to a public records request.",
+   "note": "public-records redaction costs"
   },
   {
    "bill": "SB 7050",
@@ -1830,10 +1746,10 @@
    "chapter": "2023-120",
    "title": "Elections",
    "url": "https://www.flsenate.gov/Session/Bill/2023/7050",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/7050/Analyses/2023s07050.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Increasing the amount of fines that may be assessed against a third-party voter registration organization will financially impact those organizations that fail to comply with statutory requirements. Increasing fines for certain election law violations will financially impact persons who fail to comply with statutory requirements.",
+   "note": "fines on third-party voter registration organizations"
   },
   {
    "bill": "HB 199",
@@ -1841,9 +1757,9 @@
    "chapter": "2023-121",
    "title": "Ethics Requirements for Officers and Employees of Special Tax Districts",
    "url": "https://www.flsenate.gov/Session/Bill/2023/199",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/199/Analyses/h0199z1.EEG.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1852,10 +1768,10 @@
    "chapter": "2023-122",
    "title": "911 Public Safety Telecommunicator Certifications",
    "url": "https://www.flsenate.gov/Session/Bill/2023/341",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/341/Analyses/h0341z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Individuals whose certificates expired from July 2017 to present will be able to reactivate their certifications. The number of individuals affected by this change and the number of individuals that would take advantage of the opportunity are unknown.",
+   "note": "benefit to individuals"
   },
   {
    "bill": "HB 431",
@@ -1863,9 +1779,9 @@
    "chapter": "2023-123",
    "title": "Solicitation of Minors to Commit Lewd or Lascivious Act",
    "url": "https://www.flsenate.gov/Session/Bill/2023/431",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2023/431/Analyses/h0431z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
