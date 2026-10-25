@@ -355,6 +355,7 @@
   .dossier-empty .oval-demo{width:38px; height:22px; border:2.5px solid var(--ink-soft); border-radius:50%; margin:0 auto 16px;}
   .dossier-empty p{font-size:14px; line-height:1.55;}
 
+  .mate-dossier{margin-top:28px; border-top:3px solid var(--ink);}
   .dossier-head{background:var(--ink); color:var(--paper); padding:16px 20px; position:relative;}
   .dossier-head .eyebrow{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; opacity:.75;}
   .dossier-head h2{font-weight:900; font-size:22px; margin-top:4px; line-height:1.15;}
@@ -1154,6 +1155,8 @@ en: {
   'you.stateNext': 'The Florida Legislature meets next on November 17, 2026 (the organization session after the election). The 2027 regular session starts March 2, 2027.',
   'you.fedNext': 'This Congress serves until January 3, 2027, when the next one is sworn in.',
   'you.otherJob': 'On this ballot for {office}. The record below is from the job {name} holds now: {body}.',
+  'ticket.mateH': 'Running mate',
+  'ticket.money': 'The ticket raises money as one campaign. Its donors, committees, outside spending and backers are in {name}&rsquo;s dossier above.',
   'ticket.mate': 'Running mate for lieutenant governor:',
   'you.evid': 'The full lists: every donor, committee, outside spending and every action behind the numbers',
   'topic.housing': 'Housing',
@@ -1750,6 +1753,8 @@ es: {
   'you.stateNext': 'La Legislatura de Florida se reúne de nuevo el 17 de noviembre de 2026 (sesión de organización después de la elección). La sesión ordinaria de 2027 empieza el 2 de marzo de 2027.',
   'you.fedNext': 'Este Congreso sirve hasta el 3 de enero de 2027, cuando se juramenta el siguiente.',
   'you.otherJob': 'En esta boleta para {office}. El historial de abajo es del cargo que {name} ocupa ahora: {body}.',
+  'ticket.mateH': 'Compañero de fórmula',
+  'ticket.money': 'La fórmula recauda dinero como una sola campaña. Sus donantes, comités, gasto externo y patrocinadores están en el expediente de {name}, arriba.',
   'ticket.mate': 'Compañero de fórmula para vicegobernador:',
   'you.evid': 'Las listas completas: cada donante, comité, gasto externo y cada acción detrás de las cifras',
   'topic.housing': 'Vivienda',
@@ -2346,6 +2351,8 @@ ht: {
   'you.stateNext': 'Lejislati Florid la reyini ankò 17 novanm 2026 (sesyon òganizasyon apre eleksyon an). Sesyon regilye 2027 la kòmanse 2 mas 2027.',
   'you.fedNext': 'Kongrè sa a sèvi jiska 3 janvye 2027, lè pwochen an prete sèman.',
   'you.otherJob': 'Sou bilten sa a pou {office}. Dosye anba a se nan travay {name} genyen kounye a: {body}.',
+  'ticket.mateH': 'Kolistye',
+  'ticket.money': 'Tikè a ranmase lajan kòm yon sèl kanpay. Donatè, komite, depans deyò ak sipòtè li yo nan dosye {name} anwo a.',
   'ticket.mate': 'Kolistye pou lyetnan gouvènè:',
   'you.evid': 'Lis konplè yo: chak donatè, komite, depans deyò ak chak aksyon dèyè chif yo',
   'topic.housing': 'Lojman',
@@ -3990,11 +3997,20 @@ function impactBody(ri, r, calc, me, w){
 function openDossier(){ $('dossier').classList.add('open'); $('dossierEmpty').style.display='none'; $('dossier').scrollTop = 0; }
 function closeDossier(){ $('dossier').classList.remove('open'); }
 
+// A joint ticket ("Byron Donalds and Bryan Avila" for "Governor and Lieutenant Governor"): two dossiers,
+// the top of the ticket first, the running mate in their own box underneath
+function ticketParts(cand, race){
+  var names = String(cand.name).split(/\s+and\s+/i);
+  if(names.length < 2) return null;
+  var offs = String(officeOf(ballot.races.indexOf(race)) || '').split(/\s+(?:and|y|ak)\s+/i);
+  return {top: names[0].trim(), mate: names.slice(1).join(' and ').trim(), topOffice: offs.length > 1 ? offs[0] : '', mateOffice: offs.length > 1 ? offs.slice(1).join(' ') : t('ticket.mateH')};
+}
 function dossierHead(cand, race, cached){
+  var tk = race.isMeasure ? null : ticketParts(cand, race);
   return '<div class="dossier-head">' +
     '<div class="eyebrow">' + t('head.cand') + '</div>' +
-    '<h2>' + esc(cand.name) + '</h2>' +
-    '<div class="office">' + esc(officeOf(ballot.races.indexOf(race))) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div>' +
+    '<h2>' + esc(tk ? tk.top : cand.name) + '</h2>' +
+    '<div class="office">' + esc(tk && tk.topOffice ? tk.topOffice : officeOf(ballot.races.indexOf(race))) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div>' +
     (cached === true ? '<span class="cachebadge">' + t('badge.cached') + '</span>' :
      cached === false ? '<span class="cachebadge">' + t('badge.fresh') + '</span>' : '') +
     '<button class="dossier-close" onclick="closeDossier()">' + t('btn.close') + '</button>' +
@@ -4678,9 +4694,12 @@ function renderDossier(cand, race, r, cached){
       if(mm) cut = mm.index + mm[0].length - mm[1].length;
     }
     var p1 = cut > 0 ? sm.slice(0, cut).trim() : sm, p2 = cut > 0 ? sm.slice(cut).trim() : '';
-    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(p1) + '</p>' +
-      (p2 ? '<p style="font-size:14px;line-height:1.55"><strong>' + t('ticket.mate') + '</strong> ' + esc(p2) + '</p>' : '') + summarySourcesHtml(r) + '</div>';
+    var mateBio = p2;
+    html += '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(p1) + '</p>' + summarySourcesHtml(r) + '</div>';
   }
+
+  // 1. Bio with offices held
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="officesSec" hidden></div>';
 
   if(race.isJudicial && r.federalistSociety){
     var fs = r.federalistSociety;
@@ -4738,12 +4757,14 @@ function renderDossier(cand, race, r, cached){
     who += '</div>';
   }
 
-  // The money record first: offices, where the money comes from, how local it is, business interests
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="officesSec" hidden></div>';
+  // 2. Actions tied to donors, and business interests
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
+  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
+  // 3. How local the money is (federal races: money in this race first)
   var fedRace = ri >= 0 && isFederalRace(race);
   if(fedRace) html += '<div class="dsec" id="moneySec"></div>';
   html += '<div class="dsec" id="localSec"></div>';
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="connSec" hidden></div>';
+  // 4. Donors, 5. committees, 6. outside spending, 7. biggest backers, 8. endorsements, opposition, ratings
 
   html += '<div class="dsec"><h4>' + t('sec.donors') + '</h4>';
   if(r.donors && r.donors.length){
@@ -4778,7 +4799,6 @@ function renderDossier(cand, race, r, cached){
   if(/^https:\/\//i.test(listUrl))
     html += '<a class="fulllist" href="' + esc(listUrl) + '" target="_blank" rel="noopener">' + t('donors.full') + ' &#8599;</a>';
   html += '</div>';
-  if(ri >= 0 && !race.isMeasure) html += '<div class="dsec" id="tiesSec" hidden></div>';
 
   // Money given to political committees backing the candidate. Not campaign donations:
   // committees take unlimited amounts, campaigns are capped.
@@ -4857,7 +4877,18 @@ function renderDossier(cand, race, r, cached){
   html += '<p class="disclaimer">' + t('disc.cand') + (r._translated ? ' ' + t('disc.translated') + (r._partialTranslation ? ' ' + t('disc.partial') : '') : '') + (r.researchedAt ? ' ' + t('disc.date', {d: esc(fmtDay(r.researchedAt))}) : '') + '</p>' + reportBox();
 
   html += '</div>';
+  var tk = ri >= 0 && !race.isMeasure ? ticketParts(cand, race) : null, mateCand = null;
+  if(tk){
+    mateCand = {name: tk.mate, party: cand.party, ticket: cand.name, mate: true};
+    html += '<div class="mate-dossier"><div class="dossier-head"><div class="eyebrow">' + t('ticket.mateH') + '</div>' +
+      '<h2>' + esc(tk.mate) + '</h2><div class="office">' + esc(tk.mateOffice) + (cand.party ? ' · ' + esc(cand.party) : '') + '</div></div>' +
+      '<div class="dossier-body">' +
+      (typeof mateBio === 'string' && mateBio ? '<div class="dsec"><p style="font-size:14px;line-height:1.55">' + esc(mateBio) + '</p></div>' : '') +
+      '<div class="dsec" id="mateOfficesSec" hidden></div><div class="dsec" id="mateConnSec" hidden></div>' +
+      '<div class="dsec"><p class="sec-sub">' + t('ticket.money', {name: esc(tk.top)}) + '</p></div></div></div>';
+  }
   $('dossierContent').innerHTML = html;
+  if(mateCand){ loadOffices(ri, mateCand); loadConnections(ri, mateCand); }
   if(r.outsideSpending) loadGroups();
   loadBackers(r, false);
   localResult = r;
@@ -5082,8 +5113,8 @@ function loadOffices(ri, cand){
       .then(function(){ var w = heldWait; heldWait = []; w.forEach(function(f){ f(); }); });
     return;
   }
-  var box = $('officesSec'), race = ballot.races[ri];
-  if(!box || !activeKey || parseInt(activeKey.split(':')[0], 10) !== ri || !race.candidates.some(function(c){ return c.name === cand.name; })) return;
+  var box = $(cand.mate ? 'mateOfficesSec' : 'officesSec'), race = ballot.races[ri];
+  if(!box || !activeKey || parseInt(activeKey.split(':')[0], 10) !== ri || !race.candidates.some(function(c){ return c.name === (cand.ticket || cand.name); })) return;
   var who = String(cand.name).split(/\s+and\s+/i)[0];   // a joint ticket shows the first name's offices
   var pid = HELD.byBallot[race.office + '|' + who];
   if(!pid){ for(var k in HELD.byBallot){ var p = k.split('|'); if(p[0] === race.office && sameCand(who, p[1])){ pid = HELD.byBallot[k]; break; } } }
@@ -5117,8 +5148,8 @@ function loadConnections(ri, cand){
     }
     return;
   }
-  var box = $('connSec'), race = ballot.races[ri];
-  if(!box || !activeKey || parseInt(activeKey.split(':')[0], 10) !== ri || !race.candidates.some(function(c){ return c.name === cand.name; })) return;
+  var box = $(cand.mate ? 'mateConnSec' : 'connSec'), race = ballot.races[ri];
+  if(!box || !activeKey || parseInt(activeKey.split(':')[0], 10) !== ri || !race.candidates.some(function(c){ return c.name === (cand.ticket || cand.name); })) return;
   // a joint ticket ("Byron Donalds and Bryan Avila") is the first name's dossier
   var who = String(cand.name).split(/\s+and\s+/i)[0];
   var pid = HELD.byBallot[race.office + '|' + who];
