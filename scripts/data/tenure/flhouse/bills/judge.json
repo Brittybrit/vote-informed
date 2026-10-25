@@ -1,0 +1,23 @@
+{
+ "note": "Manual readings of bills/ps/<ch>.txt (Private Sector Impact of the final analysis). Only chapters whose section is not 'None' are listed; b true only when the analysis itself names a kind of business or company that benefits. Same test as scripts/data/state/bills/overrides.json.",
+ "2022-268": {"b": false, "note": "benefit stated for homeowners; insurers only get filing duties"},
+ "2022-269": {"b": false, "note": "fewer roof replacements/claims for insurers is implied, not stated as a benefit"},
+ "2023-15": {"b": true, "cat": "property and casualty insurers (bad-faith liability, tort costs)", "q": "The bill may reduce an insurer's liability for bad faith cases, which may indirectly result in lower costs for certain insurance products.", "note": "Private Sector section says 'See Fiscal Comments'; quote is from Fiscal Comments of the final House analysis h0837z"},
+ "2023-17": {"b": true, "cat": "multifamily housing developers", "q": "Developers of multifamily housing should see a reduction in bureaucracy, and an increase in the amount of property available, for residential development"},
+ "2023-18": {"b": false, "note": "benefit to individuals (license fee)"},
+ "2023-20": {"b": false, "note": "names 'private sector business' in trail towns generally"},
+ "2023-22": {"b": true, "cat": "builders and contractors (construction defect liability)", "q": "the bill will benefit builders because they will be subject to construction defect actions for shorter periods of time"},
+ "2023-28": {"b": false, "note": "mainly limits and costs for financial firms and banks"},
+ "2023-29": {"b": true, "cat": "retail pharmacies", "q": "Retail pharmacies may be able to negotiate with PBMs on a more even status under the bill"},
+ "2023-31": {"b": false, "note": "lower construction cost for certain residential developments; no business named as beneficiary"},
+ "2023-33": {"b": false, "note": "restrictions on foreign entities"},
+ "2023-35": {"b": false, "note": "costs to employee organizations"},
+ "2023-40": {"b": false, "note": "penalties on employers"},
+ "2023-43": {"b": false, "note": "costs to businesses and providers"},
+ "2023-47": {"b": true, "cat": "Mote Marine Laboratory (named nonprofit research lab)", "q": "Mote Marine Laboratory may have a positive fiscal impact as a result of receiving funding to serve as the lead entity", "named": ["Mote Marine Laboratory"]},
+ "2023-50": {"b": false, "note": "costs to amusement ride operators"},
+ "2023-52": {"b": false, "note": "public-records redaction costs"},
+ "2023-55": {"b": false, "note": "negative impact on wireless providers"},
+ "2023-60": {"b": false, "note": "public-records redaction costs"},
+ "2023-61": {"b": false, "note": "public-records redaction costs"}
+}
