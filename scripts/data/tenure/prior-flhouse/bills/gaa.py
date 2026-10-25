@@ -8,7 +8,15 @@ H = os.path.dirname(os.path.abspath(__file__)); G = os.path.join(H, '..', 'raw',
 num = lambda s: int(s.replace(',', ''))
 def load(ch):
     text, starts, flags = '', [], []
-    for line in open(os.path.join(G, f'ch{ch}.txt')).read().split('\n'):
+    lines = open(os.path.join(G, f'ch{ch}.txt')).read().split('\n')
+    keep, top = [], True
+    for line in lines:  # drop running heads, page numbers and the CODING footer so a tag split across a page joins up
+        l = line.replace('~~', '').strip()
+        if '\f' in line or not l: top = top or ('\f' in line); continue
+        if re.fullmatch(r'Ch\. \d{4}-\d+ LAWS OF FLORIDA Ch\. \d{4}-\d+', l) or l.startswith('CODING') or re.fullmatch(r'\d{1,4}', l): continue
+        if top and re.fullmatch(r'SECTION \d+[A-Z]? - [A-Z ,&/\-]+', l): top = False; continue
+        top = False; keep.append(line)
+    for line in keep:
         toks = line.split()
         for i, t in enumerate(toks):
             st = t.startswith('~~') and t.endswith('~~') and len(t) > 4

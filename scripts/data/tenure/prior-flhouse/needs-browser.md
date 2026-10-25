@@ -63,3 +63,11 @@ https://www.flhouse.gov/Sections/Appropriations/projectbills.aspx?SessionId=<id>
 The bills to read are listed per year in raw/pb-forms-todo.txt (written by build-requests.py). Without the forms,
 requests-<year>.json still lists each bill with its title, amount requested and budget status, and says the
 lobbyist field was not read.
+
+## ARCHIVE-1516: House member project request forms, 2015 and 2016 sessions
+
+CBS Miami (Apr 1, 2015) reports the House required detailed member request forms that session. flhouse.gov no longer
+shows them. In a browser, open web.archive.org captures of http://www.myfloridahouse.gov/Sections/Appropriations/projects.aspx
+(and any linked list) from Feb-Jun 2015 and Jan-Apr 2016; if a list of requests by member exists, save the rows for
+Moskowitz, Avila and Ingoglia (title, amount, recipient, form link) to raw/apf-2015.txt / raw/apf-2016.txt and note the
+capture URL. If no capture has them, write "not archived" in progress.md.

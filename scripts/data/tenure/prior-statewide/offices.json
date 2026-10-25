@@ -1,0 +1,67 @@
+[
+ {
+  "pid": "ashley-moody",
+  "office": "Attorney General",
+  "body": "fl-attorney-general",
+  "district": null,
+  "start": "2019-01-08",
+  "end": "2025-01-21",
+  "giftsFrom": "2016-11-09",
+  "source": {
+   "label": "Florida Cabinet transcripts list Attorney General Ashley Moody from the Jan 11, 2019 meeting; Board of Trustees certifications show her present from Feb 26, 2019 through Dec 17, 2024. Start and end dates as in careers.jsonl (Miami-Dade official results Nov 6, 2018; sworn in as U.S. Senator Jan 21, 2025).",
+   "url": "https://www.cabinet.myflorida.com/cabinet_meeting_archive/2019_meetings_of_the_governor_and_cabinet"
+  },
+  "files": [
+   "cabinet-bot/actions.json",
+   "cabinet-other/actions.json",
+   "moody-oag/actions.json",
+   "raw/oag-releases.tsv",
+   "raw/oag-grants/",
+   "needs-browser.md (donors 1a-1d; FACTS 3a-3c)"
+  ],
+  "giftsNote": "No donor rows yet: dos.elections.myflorida.com is not reachable from this environment. Requests 1a-1d in needs-browser.md (2018 and 2022 ATG campaign accounts, Friends of Ashley Moody committee, 2016-11-09 to 2025-01-21)."
+ },
+ {
+  "pid": "wilton-simpson",
+  "office": "Commissioner of Agriculture",
+  "body": "fl-agriculture-commissioner",
+  "district": null,
+  "start": "2023-01-03",
+  "end": "2024-12-31",
+  "endNote": "Still in office; this slice covers to Dec 31, 2024 because the site's cabinet list starts Jan 1, 2025.",
+  "giftsFrom": "2020-11-04",
+  "source": {
+   "label": "FDACS news release, Jan 3, 2023: 'Commissioner Wilton Simpson Issues Statement After Being Sworn in as Florida's 13th Commissioner of Agriculture'; Board of Trustees certifications list Commissioner of Agriculture Simpson from the Jan 17, 2023 meeting",
+   "url": "https://www.fdacs.gov/News-Events/Press-Releases/2023-Press-Releases"
+  },
+  "files": [
+   "cabinet-bot/actions.json",
+   "cabinet-other/actions.json",
+   "simpson-fdacs/actions.json",
+   "raw/fdacs-releases-2023-2024.json",
+   "needs-browser.md (donors 2a-2d; FACTS 3d-3f)"
+  ],
+  "giftsNote": "No donor rows for 2020-11-04 to 2024-12-31 yet (repo has 2025-2026 only: scripts/data/cabinet/simpson.tsv, pc79644.tsv). Requests 2a-2d in needs-browser.md."
+ },
+ {
+  "pid": "jared-moskowitz",
+  "office": "Director, Florida Division of Emergency Management (appointed)",
+  "body": "fl-agency-emergency-management",
+  "district": null,
+  "start": "2019-01",
+  "end": "2021-04-30",
+  "startNote": "Only the month is known: appointed by Gov. DeSantis in January 2019 after leaving the Florida House on 2019-01-11 (Florida House roster). No FDEM record of his first day was found.",
+  "endNote": "Approximate: he worked through April 2021; FDEM announced Kevin Guthrie as director on May 3, 2021. careers.jsonl says 2021.",
+  "giftsFrom": null,
+  "source": {
+   "label": "FDEM news release May 3, 2021, 'Florida Division of Emergency Management Announces Kevin Guthrie as Director and Steven Hynes as Deputy Director'; FDEM releases 2019-2021 name Director Jared Moskowitz",
+   "url": "https://www.floridadisaster.org/news-media/news/20210503-florida-division-of-emergency-management-announces-kevin-guthrie-as-director-and-steven-hynes-as-deputy-director/"
+  },
+  "files": [
+   "moskowitz-fdem/actions.json",
+   "raw/fdem-releases-2019-2021.json",
+   "needs-browser.md (FACTS 3g-3i)"
+  ],
+  "giftsNote": "Appointed post: no campaign or committee of its own, so no donors and no ties are computed for this office."
+ }
+]

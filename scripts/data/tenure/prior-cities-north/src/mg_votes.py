@@ -43,6 +43,7 @@ bydoc = {}
 for it in R: bydoc.setdefault(it['doc'], []).append(it)
 for doc, items in bydoc.items():
     consent = [it for it in items if it['consent_motion'] and it['motions']]
+    consent = [it for it in consent if re.search(r'CONSENT', it['section'] or '', re.I)] or consent
     cmot = None
     if consent:
         c = consent[-1]
@@ -51,12 +52,20 @@ for doc, items in bydoc.items():
     if cmot is None:
         for it in items:
             if not re.search(r'CONSENT', it['section'] or '', re.I): continue
-            m = re.search(r'consent\s+agenda[^.]{0,80}?(passed|carried|failed)(.{0,60}?)vote', it['rest'], re.I | re.S)
+            m = re.search(r'consent\s+agenda.{0,140}?(passed|carried|failed)(.{0,60}?)vote', it['rest'], re.I | re.S)
             if m:
                 mv = re.search(r'motion\s+(?:was\s+)?(?:made|offered)\s+by\s+([A-Z][\w\s.,]+?),?\s+seconded\s+by\s+([A-Z][\w\s.,]+?),?\s+(?:to\s+)?(?:approve|adopt)', it['rest'][max(0, m.start()-250):m.end()], re.S)
                 from mg_parse_names import norm
                 cmot = (dict(mover=norm(mv.group(1)) if mv else None, second=norm(mv.group(2)) if mv else None, what='consent agenda', outcome=m.group(1).lower(), tail=m.group(2), dissent=[]), None, it)
                 break
+    # items named as pulled from the consent agenda in the order-of-business section (2008-2018 lettering: K = consent)
+    PULLED = set()
+    for it in items:
+        if re.search(r'ORDER OF BUSINESS', it['section'] or '', re.I) or it['code'] == '__SEC__' or not it.get('title'):
+            for pm in re.finditer(r'(?:pull|remov|withdr)\w*[^.]{0,120}', it['rest'] or '', re.I):
+                PULLED |= {'K-' + x for x in re.findall(r'K\s*-\s*(\d+)', pm.group(0))}
+            for pm in re.finditer(r'K\s*-\s*\d+[^.]{0,80}?(?:pulled|removed|withdrawn)', it['rest'] or '', re.I):
+                PULLED |= {'K-' + x for x in re.findall(r'K\s*-\s*(\d+)', pm.group(0))}
     for it in items:
         if not it.get('title'): continue
         if SKIP_SEC.search(it['section'] or '') or it['code'].startswith('ADD'): continue
@@ -66,7 +75,7 @@ for doc, items in bydoc.items():
         if main:
             mot = main[-1]; src = 'own'
             if it['rolls']: roll = dict(it['rolls'][-1]); src = 'own-roll'
-        elif re.search(r'CONSENT', it['section'] or '', re.I) and not it['pulled']:
+        elif (re.search(r'CONSENT', it['section'] or '', re.I) or (re.match(r'K-\d', it['code']) and it['date'] < '2019' and cmot and it['code'] not in PULLED)) and not it['pulled']:
             if cmot:
                 mot, croll, c = cmot; src = 'consent'
                 if croll and c is it: roll = dict(croll); src = 'consent-roll'
@@ -108,6 +117,6 @@ for doc, items in bydoc.items():
                     if isinstance(tl, tuple) and sum(1 for v in roll.values() if v in ('yes', 'no')) != tl[0] + tl[1]: flags.append('count check failed after absence')
         out.append(dict(doc=doc, date=it['date'], meeting=it['meeting'], code=it['code'], section=it['section'], resno=it['resno'],
                         title=it['title'], result=res, src=src, mover=mot['mover'] if mot else None, second=mot['second'] if mot else None,
-                        tally=tl, roll=roll, flags=flags, consent=src in ('consent', 'consent-roll'), pulled=it['pulled']))
+                        tally=tl, roll=({k: x for k, x in roll.items() if k} if roll else roll), flags=flags, consent=src in ('consent', 'consent-roll'), pulled=it['pulled']))
 json.dump(out, open(os.path.join(W, 'votes.json'), 'w'), indent=0)
 print(len(out), 'titled items;', sum(1 for o in out if o['roll'] is None), 'without vote;', sum(1 for o in out if o['flags']), 'flagged')

@@ -20,3 +20,8 @@ Log
   FY 2018-19 awards were made before Moody took office (not counted). FY 2024-25 report not posted (gap: awards made July 2024-Jan 2025).
 - 2026-10-25 OAG press releases: week-in-review index (298 weeks) not pageable from WebFetch (pager ignored); collecting week and release URLs
   through site-restricted WebSearch (raw/oag-week-urls.txt, raw/oag-release-urls.txt).
+- 2026-10-25 FDACS: works via shell curl: www.fdacs.gov/News-Events/Press-Releases/<yyyy>-Press-Releases (year index, Next.js; release pages
+  carry publishDate). Pulled all 166 releases for 2023 (91) and 2024 (75) into raw/fdacs-releases-2023-2024.json (text, url, publish date).
+- 2026-10-25 Board of Trustees 2019-02-26..2024-12-17: 276 certifications OCR'd (raw/cert-ocr), parsed (src/parse_certs.py), classified (src/classify_bot.py), built cabinet-bot/actions.json (src/build_bot.py): 202 qualifying items, 74 excluded with reasons. Presence checked visually on 2 Notice of Board Action pages per meeting (all present). CFO objected on 4 items (no Moody/Simpson objection anywhere).
+- 2026-10-25 moody-oag/actions.json: 74 release actions (47 settlement-type), 1,538 grant rows FY2019-20..2023-24 (727 to private recipients). simpson-fdacs/actions.json: 24 actions (20 qualifying: 19 department-only RFLPP easements + Feeding Florida).
+- 2026-10-25 FDEM: works via shell curl: floridadisaster.org/news-media/news/?p=<n> (pages 30-84 = 2018-2021). 539 releases 2019-01-08..2021-04-30 saved (raw/fdem-releases-2019-2021.json); moskowitz-fdem/actions.json: 6 partnerships naming private parties, none with a stated contract or payment.

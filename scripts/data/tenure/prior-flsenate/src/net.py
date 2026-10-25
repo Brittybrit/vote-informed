@@ -23,6 +23,7 @@ def get(u, binary=False, tries=8, gap=6.5, minlen=1000):
         b = open(f.name, 'rb').read(); os.unlink(f.name)
         code = r.stdout.strip()
         if code == '200' and len(b) >= minlen and (not binary or b[:4] == b'%PDF'): return b
+        import sys; print(f'net: {code} {len(b)}B try {t} {u}', file=sys.stderr, flush=True)
         if code == '404': return None
         if code == '429':
             # hold every process of this slice for 60 s

@@ -1,4 +1,4 @@
-"""Stage A (resumable): for each chapter law in enacted.json (oldest first, see below), fetch its flsenate.gov bill page
+"""Stage A (resumable): for each chapter law in enacted.json (year order below), fetch its flsenate.gov bill page
 and record the analyses list and floor votes, one JSON line per chapter in stageA.jsonl (same shape as
 ../../flhouse/bills/stageA.jsonl: {ch, an:[[date,url,author]], fv:[{c,d,v,y,n,a,u}]}).
 A chapter already fetched by the prior-flsenate slice (../../prior-flsenate/bills/stageA.jsonl, same bill pages) is
@@ -35,7 +35,10 @@ def parse(h):
                                'u': 'https://www.flsenate.gov' + u.group(1)})
     return an, fv
 # oldest first: the prior-flsenate slice fetches the same bill pages newest first, and rows it has are copied, not refetched
-order = sorted(E, key=lambda e: (int(e['chapter'][:4]), int(e['chapter'][5:])))
+# Year order: 2019, 2018, 2017 (the most members), then 2016 down to 2013, then 2020, which the prior-flsenate slice
+# fetches first (its rows are copied, not refetched).
+YR = {'2019': 0, '2018': 1, '2017': 2, '2016': 3, '2015': 4, '2014': 5, '2013': 6, '2020': 7}
+order = sorted(E, key=lambda e: (YR[e['chapter'][:4]], int(e['chapter'][5:])))
 for e in order:
     ch = e['chapter']
     if ch in done: continue

@@ -1,0 +1,33 @@
+{
+ "note": "Manual readings of bills/ps/<ch>.txt (Private Sector Impact of the final analysis) for the 2013-2020 sessions. b true only when the analysis itself names a kind of business or company that benefits (same test as ../../flhouse/bills/judge.json and scripts/data/state/bills/overrides.json). titleClass: true marks a law judged by its title class (claim bills) without an analysis reading.",
+ "2013-2": {
+  "b": false,
+  "note": "sweepstakes/arcade operators lose sales; burden only"
+ },
+ "2013-21": {
+  "b": false,
+  "note": "liability protection for caregivers of children in care (foster parents); not a kind of business"
+ },
+ "2013-23": {
+  "b": false,
+  "note": "benefit to private property owners, not a business"
+ },
+ "2013-26": {
+  "b": false,
+  "note": "optometrists only bear coursework costs; patients save"
+ },
+ "2013-27": {
+  "b": false,
+  "note": "certification companies given a task; no benefit stated"
+ },
+ "2013-28": {
+  "b": true,
+  "cat": "design professionals (engineers, surveyors and mappers, architects, landscape architects)",
+  "q": "The design professionals affected by the bill may experience lower costs for professional liability insurance",
+  "note": "limits tort claims against design professionals employed by business entities"
+ },
+ "2013-29": {
+  "b": false,
+  "note": "retailers of synthetic drugs burdened"
+ }
+}

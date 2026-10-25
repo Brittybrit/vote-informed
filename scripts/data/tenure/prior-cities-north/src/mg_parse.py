@@ -14,6 +14,8 @@ def norm_name(n):
     n = re.sub(r',?\s*Jr\.?$', '', n.strip()).strip(' ,.:')
     n = n.split()[-1] if n.split() else n
     n = n.strip(' ,.:')
+    if n.lower() in ('was', 'were', 'replied', 'stated', 'said', 'is', 'also', 'arrived', 'left', 'and', 'the'): return ''
+    if n.islower(): n = n.capitalize()
     return ALIAS.get(n, n)
 
 def clean(t):
@@ -34,7 +36,7 @@ def clean(t):
     return out
 
 HDR = re.compile(r'^(?:\(?([A-Z])\s*[-–—]\s*(\d{1,2})\s*[\).]|([A-Z])(\d{1,2})\)|(\d{1,2})\.\s?(\d{1,2})(?:\.\s?\d{1,2})?\.?(?=\s)|ADD[- ]?ON ITEM\s*#?\s*(\d+))\s*(.*)$')
-SEC = re.compile(r'^(?:\(?([A-Z])\)|(\d{1,2})\.)\s+([A-Z][A-Z\s\(\)/&,\-]+.*)$')
+SEC = re.compile(r'^(?:\(?([A-Za-z])[A-Za-z]?\)|(\d{1,2})\.)\s+([A-Z][A-Z\s\(\)/&,\-]+.*)$')
 
 def parse_doc(lines):
     items = []; cur = None; section = ''; secname = ''
@@ -49,7 +51,7 @@ def parse_doc(lines):
             cur = {'code': code, 'section': secname, 'lines': [m.group(8)], 'start': i}
             items.append(cur); continue
         sm = SEC.match(s)
-        if sm and len(s) < 90 and s.upper() == s:
+        if sm and len(s) < 90 and (s.upper() == s or re.search(r'CONSENT|RESOLUTION|ORDINANCE|QUASI|REPORTS|MINUTES|ORDER OF BUSINESS|PRESENTATION|ADJOURN', s)):
             secname = sm.group(3).strip(); cur = None
             items.append({'code': '__SEC__', 'section': secname, 'lines': [], 'start': i}); continue
         if cur is not None: cur['lines'].append(s)
@@ -57,7 +59,10 @@ def parse_doc(lines):
     return items
 
 TITLE_START = re.compile(r'\b(A\s+RESOLUTION|AN\s+ORDINANCE|A\s+JOINT\s+RESOLUTION)\b')
-MOTION = re.compile(r'(?:A\s+)?motion\s+(?:was\s+)?(?:made|offered|by)\s*(?:by\s+)?(.*?)(?:,|\s)\s*seconded\s+by\s+(.*?),?\s+to\s+(.*?)(?:,)?\s+(passed|failed|carried|died|was\s+approved|was\s+denied)(.*?)(?:roll\s*call|voice)?\s*vote', re.I | re.S)
+MOTION = re.compile(r'(?:A\s+)?(?:motion(?:ed)?|moved)\s+(?:was\s+)?(?:made|offered|by)\s*(?:by\s+)?(.*?)(?:,|\s)\s*seconded\s+by\s+(.*?),?\s+to\s+(.*?)(?:,)?\s+(passed|failed|carried|died|was\s+approved|was\s+denied|was\s+adopted)(.*?)(?:roll\s*call|voice)?\s*vote', re.I | re.S)
+
+# 2018 style: "Councilwoman X made a motion, seconded by Y, to approve ... There being no discussion, the motion approved by a 7-0 voice vote"
+MOTION2 = re.compile(r'((?:Council\s*(?:wo)?man|Vice\s+Mayor|Mayor)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*,?){0,2})\s+made\s+a\s+motion,?\s+seconded\s+by\s+(.*?),?\s+to\s+(.*?)\.\s+(?:(?!made\s+a\s+motion).){0,300}?the\s+(?:motion|item)\s+(?:to\s+[^.]{0,80}?)?(approved|passed|failed|carried|died)(.{0,60}?)(?:roll\s*call|voice)?\s*vote', re.I | re.S)
 
 def split_title(text):
     """title = from A RESOLUTION/AN ORDINANCE up to 'EFFECTIVE DATE' (+ sponsor parenthetical)."""
@@ -112,7 +117,7 @@ def present_list(text):
             if re.match(r"^[A-Z][a-zA-Z\.']+(\s+[A-Z][a-zA-Z\.']+){0,3}(,?\s*Jr\.?)?$", part): out.append(norm_name(part))
     seen = []
     for n in out:
-        if n not in seen and n not in ('Mayor', 'Vice', 'Council', 'Councilman', 'Councilwoman'): seen.append(n)
+        if n and n not in seen and n not in ('Mayor', 'Vice', 'Council', 'Councilman', 'Councilwoman'): seen.append(n)
     return seen
 
 def dissent(t):
@@ -135,23 +140,46 @@ def events(lines):
 
 def main():
     meta = {}
-    for ln in open(os.path.join(W, 'list.tsv')):
+    for ln in list(open(os.path.join(W, 'list.tsv'))) + (list(open(os.path.join(W, 'list-extra.tsv'))) if os.path.exists(os.path.join(W, 'list-extra.tsv')) else []):
         y, i, t, p, n = ln.rstrip('\n').split('\t')
         meta[i] = (y, n)
     allrows = []
+    global DONE, DUPS
+    DONE, DUPS = set(), []
+    global SUSPECT
+    SUSPECT = []
+    MON = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
+    MONRX = '(' + '|'.join(MON) + r')\s+(\d{1,2}),\s*(?:1(?=20\d\d))?(\d{4})'
+    docs = []
     for docid, (y, name) in sorted(meta.items(), key=lambda x: x[1]):
         f = os.path.join(W, 'txt', docid + '.txt')
         if not os.path.exists(f): continue
-        m = re.match(r'(\d{2})\.(\d{2})\.(\d{4})', name)
-        if not m: continue
-        date = f'{m.group(3)}-{m.group(1)}-{m.group(2)}'
-        if m.group(3) != y:  # file named with the wrong date: use the date in the minutes header
-            MON = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
-            hd = open(f, encoding='utf8', errors='ignore').read()[:1500].upper()
-            mh = re.search(r'(' + '|'.join(MON) + r')\s+(\d{1,2}),\s*(\d{4})', hd)
-            if mh: date = f'{mh.group(3)}-{MON.index(mh.group(1)) + 1:02d}-{int(mh.group(2)):02d}'
-        kind = 'special' if re.search(r'special|budget', name, re.I) else ('lpa' if 'LPA' in name else 'regular')
+        m = re.match(r'(\d{1,2})\s*[.\-]\s*(\d{1,2})\s*[.\-]\s*(\d{4})', name)
+        mn = re.match(r'([A-Za-z]+)\s+(\d{1,2}),?\s*(\d{4})', name)
+        if m: date = f'{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}'
+        elif mn and mn.group(1).upper() in MON: date = f'{mn.group(3)}-{MON.index(mn.group(1).upper()) + 1:02d}-{int(mn.group(2)):02d}'
+        else: continue
+        if y.isdigit() and date[:4] != y: date = y + date[4:]   # the year folder wins over a mistyped year in the file name
+        kind = 'special' if re.search(r'special|budget|zoning', name, re.I) else ('lpa' if 'LPA' in name else 'regular')
         if kind == 'lpa' or 'Community_Redevelopment' in name: continue
+        hd = re.sub(r'\s+', ' ', open(f, encoding='utf8', errors='ignore').read()[:2500].upper())
+        # header date: the "met in ... session, <weekday>, <date>" sentence, else the title line in the first 300 characters
+        m2 = re.search(r'MET[^.]{0,60}?(?:MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY),?\s*' + MONRX, hd)
+        m1 = re.search(MONRX, hd[:300])
+        dd = lambda mh: f'{mh.group(3)}-{MON.index(mh.group(1)) + 1:02d}-{int(mh.group(2)):02d}'
+        over = False
+        import datetime as _dt
+        wd = re.search(r'(MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY),?\s*' + MONRX, hd)
+        wd_ok = bool(wd) and _dt.date(int(wd.group(4)), MON.index(wd.group(2)) + 1, int(wd.group(3))).strftime('%A').upper() == wd.group(1)
+        if m1 and m2 and dd(m1) == dd(m2) and dd(m1) != date and wd_ok:   # both header dates disagree with the file name and the stated weekday fits
+            date, over = dd(m1), True
+        elif (m1 and dd(m1) != date) or (m2 and dd(m2) != date):
+            SUSPECT.append((docid, name, dd(m1) if m1 else None, dd(m2) if m2 else None))
+        docs.append((docid, y, name, f, date, kind, over))
+    real = {(d[4], d[5]) for d in docs if not d[6]}
+    for docid, y, name, f, date, kind, over in docs:
+        if over and (date, kind) in real:
+            DUPS.append((docid, name, date)); continue
         raw = open(f, encoding='utf8', errors='ignore').read()
         lines = clean(raw)
         full = ' '.join(lines)
@@ -169,7 +197,8 @@ def main():
             mres = re.findall(r'(?:RESOLUTION|ORDINANCE)\s+NO\.?\s*([0-9]{4}\s*[-–]\s*[0-9]{1,4}\s*[-–]\s*[0-9]{2,5}|[0-9]{4}\s*[-–]\s*[0-9]{1,4})', body, re.I)
             if mres: resno = re.sub(r'\s+', '', mres[0])
             motions = [dict(dissent=dissent(rest[mm.end():mm.end()+400]), mover=norm_name(mm.group(1)) if mm.group(1) else None, second=norm_name(mm.group(2)), what=re.sub(r'\s+', ' ', mm.group(3))[:120],
-                            outcome=mm.group(4).lower(), tail=re.sub(r'\s+', ' ', mm.group(5))[:80], pos=mm.start()) for mm in MOTION.finditer(rest)]
+                            outcome=mm.group(4).lower(), tail=re.sub(r'\s+', ' ', mm.group(5))[:80], pos=mm.start()) for mm in list(MOTION.finditer(rest)) + list(MOTION2.finditer(rest))]
+            motions.sort(key=lambda m: m['pos'])
             rolls = find_rolls(it['lines'])
             pulled = bool(re.search(r'pulled\s+from\s+the\s+Consent', rest, re.I))
             consent_motion = bool(re.search(r'(?:approve|adopt)\s+(?:of\s+)?the\s+Consent\s+Agenda', rest, re.I))
@@ -177,6 +206,10 @@ def main():
                                 title=re.sub(r'\s+', ' ', title) if title else None, rest=re.sub(r'\s+', ' ', rest),
                                 motions=motions, rolls=[r for _, r in rolls], pulled=pulled, consent_motion=consent_motion, present=present, ptext=ptext, events=evs))
     json.dump(allrows, open(os.path.join(W, 'items.json'), 'w'), indent=0)
+    json.dump(DUPS, open(os.path.join(W, 'dups.json'), 'w'))
+    print('duplicate/misnamed files skipped:', DUPS)
+    print('header date differs (file name kept):', SUSPECT)
+    json.dump(SUSPECT, open(os.path.join(W, 'suspect.json'), 'w'))
     print(len(allrows), 'items')
 
 main()

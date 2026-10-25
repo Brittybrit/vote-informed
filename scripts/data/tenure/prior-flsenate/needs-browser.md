@@ -67,5 +67,16 @@ Newest first: pull 3a-3d (2016-2022) before 3e-3f.
 | 5b | Campbell, Daphne (DEM)(STS), 2018 account (SD 38; lost the Aug 28, 2018 primary) | same, election = 2018 general/primary | 11/09/2016 to 11/06/2018 | campbell-sts-2018.tsv |
 | 5c | Any political committee chaired by Campbell (officer search "Campbell"; none found in news) | as 1c | 11/05/2014 to 11/06/2018 | pc<acct>.tsv |
 
+## 6. Governor's 2018 line-item veto list (FY 2018-19 GAA, HB 5001, ch. 2018-9)
+
+Not on flgov.com under the paths used for 2020-2026, and the veto message of this House-originated GAA is printed in the
+House Journal (myfloridahouse.gov, bot check), not the Senate Journal. Either source works:
+- flgov.com (Gov. Rick Scott, March 16, 2018 budget signing press release, attached "Veto List" PDF), or
+- the Journal of the House of Representatives that prints the Governor's objections to HB 5001 (2018), e.g. the 2018
+  Organization Session or the 2019 Regular Session journal, Vetoed Bills section.
+Save as scripts/data/tenure/prior-flsenate/raw/gaa/veto2018.pdf (and .txt via pdftotext -layout). Then in build-requests.py
+remove 2018 from VETO_SRC (flgov list layout) or add a journal entry for it, and rerun `python3 -I build-requests.py 2018-19`.
+Until then FY2018-19 forms carry budget.vetoUnknown (Simpson 48, Campbell 86, JJ Rodriguez 12, Taddeo 3).
+
 ## After the pull
 Run nothing else; the donor matching for these accounts is the coordinator's (same as ../flsenate/donors/tag.py).

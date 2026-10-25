@@ -51,6 +51,7 @@ def title(k, ps, amt=None, s='other', x=''):
      'platapp': ('Approved a plat at %s for %s' % (x, P[0]), 'Aprobó un plano de subdivisión en %s para %s' % (x, P[1]), 'Apwouve yon plan lotisman nan %s pou %s' % (x, P[2])),
      'siteplanapp': ('Approved a site plan at %s for %s' % (x, P[0]), 'Aprobó un plano del sitio en %s para %s' % (x, P[1]), 'Apwouve yon plan sit nan %s pou %s' % (x, P[2])),
      'varapp': ('Granted a variance at %s for %s' % (x, P[0]), 'Otorgó una variación en %s para %s' % (x, P[1]), 'Bay yon derogasyon nan %s pou %s' % (x, P[2])),
+     'cupapp': ('Granted conditional use approval at %s for %s' % (x, P[0]), 'Otorgó aprobación de uso condicional en %s para %s' % (x, P[1]), 'Bay apwobasyon pou itilizasyon kondisyonèl nan %s pou %s' % (x, P[2])),
      'specapp': ('Granted a special exception at %s for %s' % (x, P[0]), 'Otorgó una excepción especial en %s para %s' % (x, P[1]), 'Bay yon eksepsyon espesyal nan %s pou %s' % (x, P[2])),
      'franchise': ('Granted a utility franchise to %s' % P[0], 'Otorgó una franquicia de servicio público a %s' % P[1], 'Bay %s yon franchiz sèvis piblik' % P[2]),
      'release': ('Released a recorded restriction for %s%s' % (P[0], (' at %s' % x) if x else ''), 'Liberó una restricción registrada para %s%s' % (P[1], (' en %s' % x) if x else ''), 'Leve yon restriksyon anrejistre pou %s%s' % (P[2], (' nan %s' % x) if x else '')),
@@ -59,7 +60,10 @@ def title(k, ps, amt=None, s='other', x=''):
      'other': ('Approved an item benefiting %s' % P[0], 'Aprobó un asunto que beneficia a %s' % P[1], 'Apwouve yon pwen ki benefisye %s' % P[2]),
      'terminate': ('Ended the contract with %s' % P[0], 'Terminó el contrato con %s' % P[1], 'Mete fen nan kontra ak %s' % P[2]),
     }
-    if k in X: return X[k]
+    if k in X:
+        r = X[k]
+        if not x: r = tuple(re.sub(r'\s+(?:at|en|nan)\s+(?=(?:for|para|pou)\s)', ' ', v) for v in r)
+        return r
     return _t.title(k, ps, amt, s, x)
 
 KIND = {'contract': 'contract', 'renew': 'contract', 'amend': 'contract', 'change': 'contract', 'buy': 'contract', 'piggy': 'contract',
@@ -68,7 +72,7 @@ KIND = {'contract': 'contract', 'renew': 'contract', 'amend': 'contract', 'chang
         'swapno': 'sale', 'buylandno': 'sale', 'abandon': 'sale', 'siteplan': 'zoning', 'siteplanno': 'zoning', 'cup': 'zoning', 'cupno': 'zoning',
         'plat': 'zoning', 'landuse': 'zoning', 'rezone': 'zoning', 'variance': 'zoning', 'devagree': 'zoning', 'specex': 'zoning', 'specexno': 'zoning',
         'variano': 'zoning', 'rezoneno': 'zoning', 'landuseno': 'zoning', 'vacate': 'zoning', 'rezoneapp': 'zoning', 'platapp': 'zoning',
-        'siteplanapp': 'zoning', 'varapp': 'zoning', 'specapp': 'zoning', 'grant': 'grant', 'sponsor': 'grant', 'waive': 'grant',
+        'siteplanapp': 'zoning', 'varapp': 'zoning', 'specapp': 'zoning', 'cupapp': 'zoning', 'grant': 'grant', 'sponsor': 'grant', 'waive': 'grant',
         'easement': 'easement', 'license': 'license', 'permit': 'license', 'permitno': 'license', 'franchise': 'license', 'partner': 'agreement',
         'select': 'contract', 'insure': 'contract', 'pay': 'contract', 'convey': 'easement', 'estoppel': 'other', 'payplan': 'other', 'str': 'license',
         'terminate': 'contract', 'stax': 'other', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}
