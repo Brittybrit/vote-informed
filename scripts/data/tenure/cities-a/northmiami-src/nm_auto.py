@@ -1,0 +1,42 @@
+import json,re,sys
+sys.path.insert(0,'.')
+from nm_party import parties,addresses
+R=json.load(open('nm/items.json')); V=json.load(open('nm/votes.json'))
+K=json.load(open('nm/keep.json'))+[c for c in json.load(open('nm/gone.json')) if c.get('why')=='noparty']
+SKIPT=re.compile(r'INTERLOCAL|MUTUAL AID|MEMORANDUM OF (UNDERSTANDING|AGREEMENT)[^;]{0,80}(SCHOOL BOARD|COUNTY|SHERIFF|DEPARTMENT|POLICE DEPARTMENT|CITY OF|STATE)|FLORIDA DEPARTMENT OF|FLORIDA DIVISION OF|STATE OF FLORIDA|UNITED STATES DEPARTMENT|SCHOOL BOARD OF MIAMI|BOARD OF TRUSTEES OF THE INTERNAL|COMMUNITY REDEVELOPMENT AGENCY|NMCRA|FLORIDA HOUSING FINANCE|SOUTH FLORIDA WORKFORCE|TOWN OF (BAY HARBOR|MEDLEY)|VILLAGE OF BISCAYNE|CITY OF (TALLAHASSEE|SKOPJE|BRIKAMA|PANAMA)|PINELLAS|BROWARD SHERIFF|ALCOHOL, TOBACCO|HOMELAND SECURITY|EMPLOYMENT AGREEMENT|PROGRAM GUIDELINES|ACTION PLAN|STRATEGIC MANAGEMENT PLAN|FEE SCHEDULE|COST RECOVERY|SURPLUS|HALL OF FAME|CONDEMNING|LEARN TO SWIM|FINE-FREE|INVESTMENT POLICY|RESERVE FUND|BUDGET|RATES|DECLARING (A|NO) |FACILITY PLAN|FACILITIES PLAN|NAMING AND DEDICATION|SUBMIT AN APPLICATION|SUBMITTAL OF|GRANT APPLICATION|ACCEPTING THE CORONAVIRUS|AMERICAN RESCUE PLAN|COMPLETE COUNT|AMICI|LEGALADS|PUBLICATION OF CITY NOTICES|TIKTOK|PERFORMANCE EVALUATION|NATIONWIDE SEARCH|VACANCY|REMOVING [A-Z]+ [A-Z]+ FROM|FEMININE|CHARTER|FOLLOWING (EQUIPMENT|VEHICLES)|FROM VARIOUS COMPETITIVELY|OEM|ORIGINAL EQUIPMENT|PUMPS, DRIVES|PIPE AND FITTINGS|RENTAL OF PUMPS|ELECTRICAL AND ELECTRONIC COMPONENTS|TIRES AND (OTHER )?RELATED SERVICES, PIGGYBACKING|POLICE UNIFORM SERVICES, PIGGYBACKING|CLASSIFICATION AND PAY|CIVIL SERVICE RULES|RETIREMENT SYSTEM|STATE OF EMERGENCY|PROPERTY ASSESSED CLEAN|LIBRARY FINES')
+TPL=[('union',r'COLLECTIVE BARGAINING'),('unionmou',r'MEMORANDUM OF UNDERSTANDING[^;]{0,60}(BENEVOLENT|UNION OF POLICE|AFSCME)'),
+ ('settle',r'SETTLE'),('str',r'SHORT TERM RENTAL'),('siteplan',r'SITE PLAN'),('cup',r'CONDITIONAL USE'),('plat',r'\bPLAT\b'),('landuse',r'LAND USE'),('rezone',r'ZONING MAP|REZON'),('variance',r'VARIANCE'),('devagree',r'DEVELOPMENT AGREEMENT|MASTER (CAMPUS )?DEVELOPMENT PLAN'),
+ ('abandon',r'ABANDONMENT'),('easement',r'EASEMENT'),('leasein',r'AS LANDLORD AND THE CITY OF NORTH MIAMI, AS TENANT'),('leaseamend',r'AMENDMENT TO (THE )?(GROUND )?LEASE|LEASE AMENDMENT'),('lease',r'\bLEASE\b(?!-TO-PURCHASE|-PURCHASE| PURCHASE|ING COMPANY)'),
+ ('sale',r'SALE OF|CONVEY'),('buyland',r'VACANT LAND CONTRACT|PURCHASE OF (THE )?(REAL )?PROPERTY|PURCHASE OF LAND'),('emerg',r'EMERGENCY PROCUREMENT|EMERGENCY REPAIR|RATIFYING THE (CITY MANAGER|ISSUANCE)'),('change',r'CHANGE ORDER|ADDITIONAL EXPENDITURE'),
+ ('nobid',r'WAIV(ER|ING) (OF )?COMPETITIVE|SOLE SOURCE'),('piggy',r'PIGGYBACK|COOPERATIVE PURCHASING|UTILIZING (MIAMI-DADE|CITY OF|THE STATE|STATE OF|SOURCEWELL|GSA)'),('renew',r'RENEW'),('amend',r'AMENDMENT|AMENDING|AMEND\b'),('insure',r'INSURANCE'),('license',r'LICENSE AGREEMENT'),('sponsor',r'SPONSORSHIP'),('partner',r'PARTNERSHIP'),('grant',r'GRANT|FUNDING TO|FUNDS TO|ALLOCATION'),('award',r'COMPETITIVE (BID )?(SELECTION|AWARD)|LOWEST|AWARD'),('select',r'SELECTION|SELECTING|RANKING'),('buy',r'PURCHASE ORDER|PURCHASE OF'),('agree',r'AGREEMENT'),('contract',r'.')]
+SUBK=[('sidewalk',r'SIDEWALK'),('consult2',r'MASTER PLAN|GRANT WRITING|ASSESSMENT AND CAPITAL|INSPECTION AND PLAN REVIEW|OUTREACH|CONSULTANCY|STUDY'),('sandbags',r'SANDBAG'),('tutor',r'TUTORING'),('boat',r'BOAT|MARINE'),('lobby',r'LOBBY|GOVERNMENTAL AFFAIRS|GOVERNMENT AFFAIRS'),('tree',r'TREE TRIMMING'),('lawn',r'LAWN|LANDSCAP'),('asphalt',r'ASPHALT'),('drain',r'STORMWATER|STORM WATER|DRAINAGE|CLEANING AND INSPECTION'),('chem',r'HYPOCHLORITE|QUICKLIME|FLOC|CHEMICAL|ANTHRACITE|FLUORIDATION|CARBON'),('meters',r'WATER METER'),('sewer',r'SEWER|WATER MAIN|FORCE MAIN|PUMP STATION|MANHOLE|WASTEWATER|LEAK DETECTION'),('water',r'WATER TREATMENT|WATER PLANT|HYDRANT|WATER STORAGE TANK'),('fuel',r'GASOLINE|DIESEL|FUEL'),
+ ('health',r'HEALTH, DENTAL|HEALTH INSURANCE|HEALTH CARE COVERAGE'),('wcomp',r"WORKER.?S.? COMPENSATION"),('insurance',r'INSURANCE|LIABILITY'),('phones',r'WIRELESS|VERIZON|AT&T|CELLULAR'),('software',r'SOFTWARE|LICENSES|CITYWORKS|ASSET MANAGEMENT SYSTEM|SUBSCRIPTION|DISPATCH|DRIVECAM'),('it',r'COMPUTER|LAPTOP|SERVERS|NETWORK|FIREWALL|IT EQUIPMENT'),('cameras',r'CAMERA|LICENSE PLATE|SURVEILLANCE|BODY.WORN|FLOCK'),('police',r'POLICE (VEHICLE )?EQUIPMENT|TASER|FIREARM|VESTS|BALLISTIC|EQUIPMENT FOR POLICE'),('vlease',r'LEASE-TO- ?PURCHASE|LEASE-PURCHASE|LEASE PURCHASE|BANCORP'),('trolley',r'TROLLEY'),('vehicles',r'VEHICLES?\b(?! FUELING)|TRUCK|LOADER|BACKHOE|TRACTOR|\bBUS\b|SAND AND|TRUCKING'),
+ ('roof',r'ROOF'),('hvac',r'AIR CONDITIONING|HVAC|A/C '),('elevator',r'ELEVATOR'),('turf',r'TURF|TRACK'),('stadium',r'BLEACHER|STADIUM SEATING|SEATING'),('parks',r'PLAYGROUND|PARK EQUIPMENT|PLAY EQUIPMENT|TENNIS COURT'),('eng',r'ENGINEERING|SURVEY|GEOTECHNICAL'),('arch',r'ARCHITECT'),('constr',r'CONSTRUCTION SERVICES|CONSTRUCTION OF|IMPROVEMENTS PROJECT|RENOVATION'),
+ ('audit',r'AUDIT'),('legal',r'LEGAL SERVICES|LEGAL REPRESENTATION|OUTSIDE COUNSEL'),('waste',r'SOLID WASTE|RECYCL|SANITATION|GARBAGE'),('transit',r'TRANSPORTATION SERVICES|TRANSIT|SHUTTLE|FREEBEE|ON-DEMAND'),('fireworks',r'FIREWORK'),('events',r'SPECIAL EVENT|FESTIVAL|BREWFEST|JAZZ|CARNIVAL|STAGING'),('training',r'TRAINING|EDUCATION|TUITION|INTERNSHIP|WORKFORCE'),('housing',r'HOME (REPAIR|REHABILITATION|BEAUTIFICATION)|REHABILITATION AGREEMENT|HOUSING'),('youth',r'YOUTH|SUMMER CAMP|AFTER.SCHOOL|MENTOR'),('marketing',r'MARKETING|BRANDING|PUBLIC RELATIONS|COMMUNICATIONS'),('security',r'SECURITY GUARD|SECURITY SERVICES'),('uniform',r'UNIFORM'),('office',r'OFFICE SUPPL|OFFICE DEPOT'),('debris',r'DEBRIS'),('ads',r'ADVERTIS|BILLBOARD|BUS SHELTER|OUTDOOR MEDIA'),('bikes',r'BICYCLE|SCOOTER|BIKE'),('rail',r'RAILWAY|RAILROAD'),('museum',r'MUSEUM|MOCA'),('food',r'FOOD|MEALS|PANTRY'),('printing',r'COPIER|PRINT'),('utility',r'GAS SERVICE|NATURAL GAS|ELECTRIC'),('art',r'ART IN PUBLIC|ARTIST|MURAL|ARTS'),('retire',r'RETIREMENT|DEFERRED COMPENSATION|457'),('tires',r'TIRES'),('consult',r'CONSULTING SERVICES|CONSULTANT SERVICES|RATE STUDY')]
+KIND={'union':'agreement','unionmou':'agreement','settle':'settlement','str':'license','siteplan':'zoning','siteplanno':'zoning','cup':'zoning','cupno':'zoning','plat':'zoning','landuse':'zoning','rezone':'zoning','variance':'zoning','devagree':'zoning','abandon':'sale','easement':'easement','leasein':'lease','leaseamend':'lease','lease':'lease','sale':'sale','buyland':'sale','grant':'grant','sponsor':'grant','partner':'agreement','license':'license','agree':'agreement'}
+def amt(t):
+  a=[float(x.replace(',','')) for x in re.findall(r'\(\$\s?([\d,]{4,}(?:\.\d\d)?)\)',t)]
+  return max(a) if a else None
+rows=[]
+for c in sorted(K,key=lambda c:c['i']):
+  t=re.sub(r'\s+',' ',c['title'])
+  r=R[c['i']]
+  if SKIPT.search(t) and not re.search(r'COLLECTIVE BARGAINING|BENEVOLENT|UNION OF POLICE',t): continue
+  ps=parties(t); ad=addresses(t)
+  tp=next(k for k,p in TPL if re.search(p,t))
+  if tp=='siteplan' and re.search(r'REJECT|DENY|DENIAL',t[:200]): tp='siteplanno'
+  ts=re.sub(r'AUTHORIZING THE (INTERIM )?CITY MANAGER( AND (THE )?CITY ATTORNEY)?|CITY ATTORNEY|RISK MANAGEMENT ASSOCIATES|RISK MANAGEMENT CASE|PROVIDING FOR AN EFFECTIVE DATE.*','',t)
+  fm=re.search(r'\bFOR (?:THE )?(?:PROVISION OF |PURCHASE (?:AND (?:DELIVERY|INSTALLATION) )?OF |PURCHASE OF |DEVELOPMENT OF (?:AN? )?)?(.{5,160}?)(?:[;,]| IN AN AMOUNT| AT A COST| UTILIZING| PIGGYBACKING| IN ACCORDANCE|$)',ts)
+  sb=None
+  if fm: sb=next((k for k,p in SUBK if re.search(p,fm.group(1))),None)
+  if not sb: sb=next((k for k,p in SUBK if re.search(p,ts)),'other')
+  if not ps and not ad and tp not in ('settle',): 
+    if tp in KIND and KIND[tp]=='zoning': pass
+    else: continue
+  rows.append(dict(i=c['i'],date=c['date'],tab=c['tab'],num=c['num'],status=c['status'],tpl=tp,sub=sb,kind=KIND.get(tp,'contract'),parties=ps,addr=ad[0].title() if ad else '',amount=amt(t),title=t))
+json.dump(rows,open('nm/auto.json','w'),ensure_ascii=False)
+print(len(rows))
+import collections;print(collections.Counter(r['tpl'] for r in rows));print(collections.Counter(r['date'][:4] for r in rows))
+with open('nm/auto.tsv','w') as f:
+  for r in rows:
+    f.write('\t'.join([str(r['i']),r['date'],r['num'] or ('Tab '+r['tab']),r['tpl'],r['sub'],' ; '.join(r['parties']),r['addr'],str(r['amount'] or ''),re.sub(r'^.{0,80}?FLORIDA,? ','',r['title'])[:150]])+'\n')

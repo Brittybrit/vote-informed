@@ -11,3 +11,5 @@ LFIR fiscal years to add: FY2021-22 (2021 session), FY2022-23, FY2023-24, FY2024
 
 ## Log
 - 2026-10-25 start. LFIR lists saved in raw/: FY2021-22, FY2022-23, FY2024-25 (FY2023-24 429, retry).
+- DOE contributions: 14 chunks raw/doe/c00-c13 (5744 rows incl. 10 headers) pulled via Chrome contrib.exe (queryformat=2), each verified by sha256 against browser copy. Split by src/split_doe.py into donors/<acct>.tsv (same 9-col layout as scripts/data/state/donors). Ranges: calatayud 2022-05..2024-11 (575), garcia 2020-06..2024-12 (838), rodriguez 2018-11..2024-11 (1550), ingoglia 2021-07..2025-07 (509), pc83741 66, pc74696 319, pc70258 587, pc80728 338, pc79506 408, pc70076 544. Cutoff 12/31/2024 (2025+ already in state files); Ingoglia cand. to 07/31/2025.
+- LFIR PDFs: 802/814 downloaded+txt (fetch_pdfs.sh still running for last 12, FY2024-25).

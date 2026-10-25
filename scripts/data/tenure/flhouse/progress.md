@@ -20,3 +20,4 @@ Outputs: requests-2023.json, requests-2024.json, bills-2023.json, bills-2024.jso
 - Committee search: search_on=3 with ComNameSrch (name) times out on DOE's SQL server for some names (ODBC query timeout); retrying.
 - Donor pages done and checksum-verified: Basabe (page 9), Porras (100), Gantt (101-102), Chambliss (103), Redondo (104). Remaining: Nixon pages 105-110 (2,888 rows, 2020-11-04..2024-12-31). Browser state: window._pages index 5-10 in tab "CanDetail account=88924"; rebuild with the DOE candidate search if the tab is gone.
 - Committee search: DOE ignores ComName for search_on=2/3 (returned the whole database: 1.3M rows). Political committees for 2022-2024 still to do; try the committee's own report pages (ComDetail -> Campaign Documents) or account-number filters.
+- Nixon pages 105-108 written and verified (2,040 of 2,888 rows). Pages 109-110 (576 + 272 rows) pending; Chrome extension disconnected at this point.

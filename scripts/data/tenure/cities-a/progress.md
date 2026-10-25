@@ -7,7 +7,7 @@
 - Opa-locka: Ervin, Bass 2022-11-08.
 
 ## Method
-- Tenure rows live in scripts/data/city/<slug>/tenure/rows.json (source of truth for pre-2025 actions) and are merged into
+- Tenure actions live in scripts/data/city/<slug>/tenure/actions.json (source of truth for pre-2025 actions) and are merged into
   scripts/data/city/<slug>/actions.json by `python3 scripts/data/tenure/cities-a/merge_tenure.py <slug>` (idempotent:
   replaces actions/meetings whose ids/dates come from the tenure file, keeps everything else). If actions.json is
   rebuilt by the older builders (_small/src/build.py, northmiami/src/build_nm.py), rerun merge_tenure.py.
@@ -16,8 +16,8 @@
 
 ## Log (append one line per meeting / report finished)
 - 2026-10-25 North Miami: indexed CHAMP (playapi.champds.com/northmiamifl/event/1..640, City Council board) and city AgendaCenter
-  (catID=5, 2017-Apr 2018). Read every council summary minutes 2017-01-10 .. 2024-12-10 (169 meetings; scratch parser
-  nm_parse/nm_items/nm_votes/nm_auto/nm_build in the session scratchpad). Wrote northmiami/tenure/actions.json (505 actions:
+  (catID=5, 2017-Apr 2018). Read every council summary minutes 2017-01-10 .. 2024-12-10 (169 meetings; parser copied to
+  tenure/cities-a/northmiami-src/: run from a work dir holding nm/ev/*.json and nm/pdf/*.txt, see champ-index.json). Wrote northmiami/tenure/actions.json (505 actions:
   2017 51, 2018 61, 2019 54, 2020 34, 2021 47, 2022 84, 2023 76, 2024 98) and merged with merge_tenure.py (actions.json now 653).
   Gaps: 2015-2016 minutes not online; Apr 24-Jun 12 2018 not found; 2020-04-07/04-14, 2020-10-27, 2024-10-08 minutes not posted.
 - 2026-10-25 North Miami donors: desulme_2024.csv written from EasyVote (2024 mayoral campaign Q1 2024 .. TRG Feb 2025; 329 rows, $154,705).
