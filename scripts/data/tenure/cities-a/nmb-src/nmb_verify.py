@@ -26,10 +26,24 @@ def verify(mid,no,pres):
     ms=list(re.finditer(rx,t))
     if not ms: return None
     m=ms[-1]
-    after=t[m.end():m.end()+900]
-    v=re.search(r'(?:(?:Voice|Ro\s?l\s?l\s?Call)\s*Vote:?[^\n]*(?:\n[^\n]*){0,2}?)?MO[TI]+ON\s+(?:PASSED|FAILED|CARRIED)[^\n]*(?:\n[^\n]{0,140}){0,2}',after,re.I)
+    after=re.sub(r'\s+',' ',t[m.end():m.end()+900])
+    v=re.search(r'(?:(?:Voice|Ro\s?l\s?l\s?Call)\s*Vote:?.{0,300}?)?MO[TI]+ON\s+(?:PASSED|FAILED|CARRIED).{0,200}',after,re.I)
     if not v: return None
     raw=re.sub(r'\s+',' ',v.group(0))
     roll,res,how=parse_vote(raw,pres)
     mv=who(m.group(1)); sc=who(m.group(2))
     return roll,res,(mv[0] if mv else None),(sc[0] if sc else None),raw,how
+
+def next_consent(mid,no):
+    """For an item printed inside the consent agenda: the consent motion that follows it (mover, second, raw vote)."""
+    t=re.sub(r'\s+',' ',load(mid).replace('\f','\n'))
+    ms=[m.end() for m in re.finditer(r'(?:Resolutio\w?|Ordinance)(?: No\.?)? ?_?'+numpat(no),t)]
+    if not ms: return None
+    s=ms[0]
+    nm=re.search(r'Motion to approve the (?:amended )?Consent Agen[d]?a',t[s:])
+    nx=re.search(r'Motion to (?!approve the (?:amended )?Consent)',t[s:])
+    if not nm or (nx and nx.start()<nm.start()): return None
+    seg=t[s+nm.start():s+nm.start()+500]
+    mm=re.search(r'made by\s+((?:Acting\s+|Vice\s+)?(?:Mayor|Commissioner)\s+[A-Z][A-Za-z\'-]+)\s*,?\s*(?:and\s+)?seconded by\s+((?:Acting\s+|Vice\s+)?(?:Mayor|Commissioner)\s+[A-Z][A-Za-z\'-]+)',seg)
+    v=re.search(r'(?:(?:Voice|Ro\s?l\s?l\s?Call)\s*Vote:?.{0,300}?)?MO[TI]+ON\s+(?:PASSED|FAILED|CARRIED).{0,200}',seg,re.I)
+    return (who(mm.group(1))[0] if mm else None, who(mm.group(2))[0] if mm else None, v.group(0) if v else None)

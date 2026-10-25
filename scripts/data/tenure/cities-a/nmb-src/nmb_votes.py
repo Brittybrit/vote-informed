@@ -23,7 +23,7 @@ def parse_vote(v,pres):
     roll={}
     m=re.search(r'Roll\s*Call\s*Vote:?(.*?)(?:MO[TI]+ON|$)',v,re.I)
     if m:
-        for nm,val in re.findall(r'([A-Z][A-Za-z]+)\s*-\s*(Yes|No|Abstain\w*)',m.group(1)):
+        for nm,val in re.findall(r'([A-Z][A-Za-z]+)\s*[-—–]\s*(Yes|No|Abstain\w*)',m.group(1)):
             k=[n for n in NAMES if n.lower()[:5]==nm.lower()[:5] or (n=='Chernoff' and nm.startswith('Cherno'))]
             if k: roll[k[0]]=val.lower()[:7].replace('abstain','abstain')
     t=re.search(r'MO[TI]+ON\s+(PASSED|FAILED|CARRIED)\s*(?:unanimously)?\s*(\d)\s*-\s*(\d)',v,re.I)

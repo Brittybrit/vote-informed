@@ -1,176 +1,1466 @@
 {
- "R2025-01": {"es": "Orden de cambio para la entrega de arena y grava", "ht": "Lòd chanjman pou livrezon sab ak gravye"},
- "R2025-02": {"es": "Orden de cambio para servicios de pruebas de laboratorio", "ht": "Lòd chanjman pou sèvis tès laboratwa"},
- "R2025-03": {"es": "Orden de cambio para ingeniería de revisión de planes de nivelación y drenaje", "ht": "Lòd chanjman pou jeni revizyon plan nivlman ak drenaj"},
- "R2025-04": {"es": "Orden de compra de productos digitales de precisión", "ht": "Lòd acha pou pwodwi dijital presizyon"},
- "R2025-05": {"es": "Uso de contrato de otra agencia para servicios de investigación y asesoría de TI", "ht": "Itilize kontra yon lòt ajans pou sèvis rechèch ak konsèy enfòmatik"},
- "R2025-06": {"es": "Orden de compra de bombas de lodos, mezcladores y piezas", "ht": "Lòd acha pou ponp labou, malaksè ak pyès"},
- "R2025-07": {"es": "Uso de contrato de otra agencia para iluminación deportiva en el Kevin R. Sims Aquatic Center", "ht": "Itilize kontra yon lòt ajans pou limyè espò nan Kevin R. Sims Aquatic Center"},
- "R2025-08": {"es": "Orden de compra de motores sumergibles y piezas Hitachi", "ht": "Lòd acha pou motè submèsib ak pyès Hitachi"},
- "R2025-10": {"es": "Orden de cambio para servicios de tarjetas de combustible", "ht": "Lòd chanjman pou sèvis kat gaz"},
- "R2025-11": {"es": "Compra a proveedor único de municiones para la policía", "ht": "Acha nan men yon sèl founisè pou minisyon lapolis"},
- "R2025-12": {"es": "Órdenes de compra a proveedor único de bombas y piezas", "ht": "Lòd acha nan men yon sèl founisè pou ponp ak pyès"},
- "R2025-14": {"es": "Orden de cambio para un camión volteo de basura de 22 pies", "ht": "Lòd chanjman pou yon kamyon fatra baskil 22 pye"},
- "R2025-15": {"es": "Se enmendó el acuerdo de desarrollo de Soleste / NMB Village (anexo de servidumbre para letrero)", "ht": "Amande akò devlopman Soleste / NMB Village (anèks sèvitid pou pankat)"},
- "R2025-21": {"es": "Uso de contrato de otra agencia para autopartes de la flota", "ht": "Itilize kontra yon lòt ajans pou pyès machin flòt la"},
- "R2025-22": {"es": "Compra a proveedor único de bombas y motores para la producción de agua", "ht": "Acha nan men yon sèl founisè pou ponp ak motè pou pwodiksyon dlo"},
- "R2025-23": {"es": "Compra de consolas de radio para la policía", "ht": "Acha konsòl radyo pou lapolis"},
- "R2025-24": {"es": "Mantenimiento y suministros industriales para toda la ciudad", "ht": "Antretyen ak founiti endistriyèl pou tout vil la"},
- "R2025-25": {"es": "Productos y servicios de tecnología", "ht": "Pwodwi ak sèvis teknoloji"},
- "R2025-27": {"es": "Instalación y mantenimiento de cercas en toda la ciudad", "ht": "Enstalasyon ak antretyen kloti nan tout vil la"},
- "R2025-28": {"es": "Bombas, motores, piezas y servicios", "ht": "Ponp, motè, pyès ak sèvis"},
- "R2025-31": {"es": "Memorando de entendimiento con Jackson North para programas conjuntos de salud y bienestar", "ht": "Memorandòm antant ak Jackson North pou pwogram sante ak byennèt ansanm"},
- "R2025-32": {"es": "Orden de trabajo #5 de Black & Veatch para la gestión del programa de agua, reducida a $450,000 con un plan de personal de 60 días", "ht": "Lòd travay #5 Black & Veatch pou jesyon pwogram dlo a, redwi a $450,000 ak yon plan pèsonèl 60 jou"},
- "2025-02-18-deans": {"es": "Se renovó el horario extendido de Dean's Gold", "ht": "Renouvle orè pwolonje Dean's Gold"},
- "R2025-34": {"es": "Uso de contrato de otra agencia con C.A.P. Government para revisión de planos, inspección y servicios profesionales", "ht": "Itilize kontra yon lòt ajans ak C.A.P. Government pou revizyon plan, enspeksyon ak sèvis pwofesyonèl"},
- "R2025-35": {"es": "Orden de tarea a The Corradino Group para el plan maestro del área de estaciones del Northeast Corridor", "ht": "Lòd travay bay The Corradino Group pou plan direktè zòn estasyon Northeast Corridor la"},
- "R2025-38": {"es": "Orden de cambio que aumenta el contrato de cal viva con Lhoist North America of Alabama", "ht": "Lòd chanjman ki ogmante kontra lacho vif ak Lhoist North America of Alabama"},
- "R2025-39": {"es": "Se adjudicó la licitación de tuberías principales de transmisión de agua cruda y pozos (ITB-24-039-SG) a Southern Underground Industries", "ht": "Bay Southern Underground Industries apèl dòf pou tiyo prensipal transmisyon dlo brit ak pi yo (ITB-24-039-SG)"},
- "R2025-40": {"es": "Memorando de entendimiento con UMC Free Clinic para programas conjuntos de salud", "ht": "Memorandòm antant ak UMC Free Clinic pou pwogram sante ansanm"},
- "R2025-41": {"es": "Orden de cambio que aumenta el contrato con Rexel USA", "ht": "Lòd chanjman ki ogmante kontra ak Rexel USA"},
- "R2025-49": {"es": "Se renovó el contrato de operación del trolley con Pro Transportation (ProKel Mobility)", "ht": "Renouvle kontra operasyon trolley a ak Pro Transportation (ProKel Mobility)"},
- "R2025-48": {"es": "Compra a proveedor único de servicio y piezas de válvulas a Fluid Control Specialties", "ht": "Acha nan men yon sèl founisè pou sèvis ak pyès vann nan men Fluid Control Specialties"},
- "R2025-64": {"es": "Acuerdo con el Miami-Dade Beacon Council para servicios ampliados de desarrollo económico", "ht": "Akò ak Miami-Dade Beacon Council pou sèvis devlopman ekonomik ranfòse"},
- "R2025-54": {"es": "Compra a proveedor único de piezas de desgasificador a CECO Industrial Solutions", "ht": "Acha nan men yon sèl founisè pou pyès degazifikatè nan men CECO Industrial Solutions"},
- "R2025-60": {"es": "Orden de tarea para servicios de cabildeo estratégico con Rubin Turnbull & Associates", "ht": "Lòd travay pou sèvis lobi estratejik ak Rubin Turnbull & Associates"},
- "R2025-46": {"es": "Se aprobó un plan del sitio y tres variaciones de retiro y espacio abierto para un edificio de 12 unidades en 317 NE 168 St", "ht": "Apwouve yon plan sit ak twa varyans distans ak espas louvri pou yon bilding 12 inite nan 317 NE 168 St"},
- "R2025-61": {"es": "Se abandonó una porción del derecho de vía público colindante con 1800 NE 168 St", "ht": "Abandone yon pòsyon dwa pasaj piblik ki kole ak 1800 NE 168 St"},
- "2025-05-20-bv": {"es": "Se extendió 12 meses el contrato de servicios de agua de Black & Veatch con una transición por etapas", "ht": "Pwolonje kontra sèvis dlo Black & Veatch la 12 mwa ak yon tranzisyon pa etap"},
- "2025-05-20-cm": {"es": "Se aprobó una orden de tarea a Chen Moore para el diseño de ingeniería de siete proyectos de reducción de velocidad del tráfico", "ht": "Apwouve yon lòd travay bay Chen Moore pou konsepsyon jeni sèt pwojè pou ralanti trafik"},
- "R2025-63": {"es": "Se aprobaron bonos de la Capital Projects Finance Authority para las instalaciones chárter de Lanaar Elementary School", "ht": "Apwouve bon Capital Projects Finance Authority pou enstalasyon charter Lanaar Elementary School"},
- "nmb-2025-05-20-7": {"es": "Se aprobó un contrato de 5 años con Pro Transportation, Inc. (Prokel Mobility) para operar el trolley de la ciudad, hasta $1,863,960 al año más dos renovaciones de 1 año, sin licitación competitiva", "ht": "Apwouve yon kontra 5 an ak Pro Transportation, Inc. (Prokel Mobility) pou fè trolley vil la mache, jiska $1,863,960 pa ane plis de renouvèlman 1 an, san apèl dòf konpetitif"},
- "R2025-67": {"es": "Compra mediante contrato de otra agencia de un sistema portátil de CCTV para alcantarillado a CUES", "ht": "Acha atravè kontra yon lòt ajans pou yon sistèm CCTV pòtab pou egou nan men CUES"},
- "R2025-68": {"es": "Compra mediante contrato de otra agencia de dos retroexcavadoras John Deere a Dobbs Equipment", "ht": "Acha atravè kontra yon lòt ajans pou de chajè retwokavatè John Deere nan men Dobbs Equipment"},
- "R2025-70": {"es": "Uso de contrato de otra agencia con J & J, Inc. (Eagle Painting) para pintura y limpieza a presión", "ht": "Itilize kontra yon lòt ajans ak J & J, Inc. (Eagle Painting) pou penti ak netwayaj ak presyon"},
- "R2025-72": {"es": "Orden de cambio con Southern Underground Industries para el reemplazo de la tubería principal de agua de Bunche Park", "ht": "Lòd chanjman ak Southern Underground Industries pou ranplasman tiyo prensipal dlo Bunche Park"},
- "R2025-74": {"es": "Orden de cambio que amplía los contratos de piezas y servicio automotriz OEM con varios proveedores", "ht": "Lòd chanjman ki ajoute nan kontra pyès ak sèvis otomobil OEM ak plizyè founisè"},
- "R2025-75": {"es": "Uso de contrato de otra agencia con R & M Service Solutions para el mantenimiento de hidrantes", "ht": "Itilize kontra yon lòt ajans ak R & M Service Solutions pou antretyen idran"},
- "R2025-76": {"es": "Orden de tarea a The Corradino Group para terminar el plan integral", "ht": "Lòd travay bay The Corradino Group pou fini plan konplè a"},
- "R2025-80": {"es": "Se aprobó el plan del sitio, uso condicional y variaciones para un autoservicio (drive-thru) de Raising Cane's en 14025 Biscayne Blvd", "ht": "Apwouve plan sit, itilizasyon kondisyonèl ak varyans pou yon drive-thru Raising Cane's nan 14025 Biscayne Blvd"},
- "2025-06-17-sorey": {"es": "Se aprobó el acuerdo de conciliación del litigio Arthur Sorey v. City of North Miami Beach", "ht": "Apwouve akò règleman nan pwosè Arthur Sorey v. City of North Miami Beach"},
- "R2025-81": {"es": "Se clasificaron las firmas para el programa de detección de velocidad en zonas escolares (RFP-24-048-SG) y se autorizó negociar con la primera firma", "ht": "Klase konpayi yo pou pwogram deteksyon vitès nan zòn lekòl (RFP-24-048-SG) epi otorize negosyasyon ak premye konpayi an"},
- "R2025-82": {"es": "Orden de cambio con Prolime Corporation para el transporte de lodos de cal líquida", "ht": "Lòd chanjman ak Prolime Corporation pou transpò labou lacho likid"},
- "R2025-88": {"es": "Se aprobó un plan del sitio y siete variaciones para un proyecto de uso mixto de 500 unidades en 17400 W Dixie Hwy", "ht": "Apwouve yon plan sit ak sèt varyans pou yon pwojè itilizasyon mikst 500 inite nan 17400 W Dixie Hwy"},
- "R2025-92": {"es": "Compra a proveedor único de dos sistemas de conmutación de transferencia eléctrica a Eaton", "ht": "Acha nan men yon sèl founisè pou de sistèm komitasyon transfè elektrik nan men Eaton"},
- "R2025-93": {"es": "Servicios de configuración e integración de software SCADA (RFP-2025-018)", "ht": "Sèvis konfigirasyon ak entegrasyon lojisyèl SCADA (RFP-2025-018)"},
- "R2025-94": {"es": "Compra a proveedor único de medidores y registros de agua a Core & Main", "ht": "Acha nan men yon sèl founisè pou kontè ak rejis dlo nan men Core & Main"},
- "R2025-102": {"es": "Orden de cambio a Caballero, Fierman, Llerena & Garcia para ayuda ampliada con informes financieros", "ht": "Lòd chanjman bay Caballero, Fierman, Llerena & Garcia pou plis èd ak rapò finansye"},
- "R2025-103": {"es": "Enmienda presupuestaria que aumenta la orden de compra de Caballero, Fierman, Llerena & Garcia para apoyo de auditoría del año fiscal 2024", "ht": "Amannman bidjè ki ogmante lòd acha Caballero, Fierman, Llerena & Garcia pou sipò odit ane fiskal 2024"},
- "R2025-104": {"es": "Enmienda de contrato con CBIZ CPAs para auditoría externa", "ht": "Amannman kontra ak CBIZ CPAs pou odit ekstèn"},
- "R2025-105": {"es": "Orden de tarea a Kimley-Horn para un plan de capital de agua y aguas residuales a 20 años", "ht": "Lòd travay bay Kimley-Horn pou yon plan kapital dlo ak dlo ize sou 20 an"},
- "R2025-110": {"es": "Se aprobó un plan del sitio y una variación de altura para dos edificios de 10 pisos con hasta 293 viviendas cerca de NE 140 St y Highland Dr", "ht": "Apwouve yon plan sit ak yon varyans wotè pou de bilding 10 etaj ak jiska 293 kay toupre NE 140 St ak Highland Dr"},
- "R2025-109": {"es": "Se abandonó un callejón de 10 pies (0.153 acres) en Arch Creek Highlands para el mismo proyecto", "ht": "Abandone yon ti ri 10 pye (0.153 akr) nan Arch Creek Highlands pou menm pwojè a"},
- "R2025-112": {"es": "Se seleccionó a CTS Engineering para la ingeniería vial de retornos tipo Texas U-turn y se autorizaron negociaciones", "ht": "Chwazi CTS Engineering pou jeni wout Texas U-turn (vire an U) epi otorize negosyasyon"},
- "2025-07-24-anderson": {"es": "Se llegó a un acuerdo de conciliación en Karl J. Anderson v. City of North Miami Beach", "ht": "Fè akò règleman nan Karl J. Anderson v. City of North Miami Beach"},
- "R2025-117": {"es": "Orden de tarea a The Engineering Company para refuerzo de personal e ingeniería", "ht": "Lòd travay bay The Engineering Company pou ranfòse pèsonèl ak jeni"},
- "R2025-118": {"es": "Compra a proveedor único de un analizador multiquímico", "ht": "Acha nan men yon sèl founisè pou yon analizè milti chimik"},
- "R2025-119": {"es": "Compra a proveedor único de una válvula de control Bermad", "ht": "Acha nan men yon sèl founisè pou yon vann kontwòl Bermad"},
- "R2025-120": {"es": "Contrato de servicios de guardias de seguridad para toda la ciudad", "ht": "Kontra sèvis gad sekirite pou tout vil la"},
- "R2025-122": {"es": "Se ratificó la compra mediante contrato de otra agencia de una barredora de calles Scarab Maven", "ht": "Ratifye acha atravè kontra yon lòt ajans pou yon machin bale ri Scarab Maven"},
- "R2025-123": {"es": "Compra y recompra de armas de fuego de la policía", "ht": "Acha ak racha zam afe lapolis"},
- "R2025-134": {"es": "Acuerdo de servicios de recuperación de deudas", "ht": "Akò pou sèvis rekouvreman dèt"},
- "R2025-136": {"es": "Compra e instalación de estaciones de trabajo", "ht": "Acha ak enstalasyon pòs travay"},
- "R2025-137": {"es": "Compra e instalación de mobiliario de laboratorio", "ht": "Acha ak enstalasyon mèb laboratwa"},
- "nmb-2025-09-08-0": {"es": "Se aprobó cómo la ciudad gasta los $110,000 al año que su recolector de basura, Coastal Waste & Recycling, debe aportar según su contrato: ayuda con alquiler y servicios públicos, becas y eventos comunitarios", "ht": "Apwouve fason vil la depanse $110,000 pa ane konpayi ranmasaj fatra li a, Coastal Waste & Recycling, dwe bay dapre kontra li: èd pou lwaye ak sèvis piblik, bous detid ak evènman kominotè"},
- "R2025-127": {"es": "Acuerdo de arrendamiento con opción a compra de cinco años con DDI Capital para sistemas de respaldo en toda la ciudad", "ht": "Akò lokasyon ak opsyon acha senk an ak DDI Capital pou sistèm sovgad nan tout vil la"},
- "R2025-138": {"es": "Uso condicional para un dispensario de marihuana medicinal en 16719 NE 6 Ave", "ht": "Itilizasyon kondisyonèl pou yon dispansè mariwana medikal nan 16719 NE 6 Ave"},
- "R2025-139": {"es": "Compra mediante contrato de otra agencia de un camión de vacío", "ht": "Acha atravè kontra yon lòt ajans pou yon kamyon aspirasyon"},
- "R2025-147": {"es": "Tercera enmienda que extiende la licencia de FIU para operar la estación de transferencia de la ciudad hasta el 30 de noviembre de 2026", "ht": "Twazyèm amannman ki pwolonje lisans FIU pou jere estasyon transfè vil la jiska 30 novanm 2026"},
- "R2025-148": {"es": "Se adjudicó la licitación de la rotonda de NE 168 St / NE 20 Ave (ITB-2025-042) al postor responsivo más bajo", "ht": "Bay pi ba soumisyonè ki konfòm nan apèl dòf pou wonpwen NE 168 St / NE 20 Ave (ITB-2025-042)"},
- "R2025-149": {"es": "Compra a proveedor único de una lancha policial Grady-White Canyon 2025 a MarineMax East", "ht": "Acha nan men yon sèl founisè pou yon bato lapolis Grady-White Canyon 2025 nan men MarineMax East"},
- "R2025-150": {"es": "Órdenes de compra con varios proveedores para accesorios de medidores de agua", "ht": "Lòd acha ak plizyè founisè pou rakò kontè dlo"},
- "R2025-151": {"es": "Compra a proveedor único de inspecciones y limpiezas de tanques a CROM", "ht": "Acha nan men yon sèl founisè pou enspeksyon ak netwayaj rezèvwa nan men CROM"},
- "R2025-152": {"es": "Orden de compra con Preferred Governmental Claim Solutions para servicios de reclamaciones de terceros", "ht": "Lòd acha ak Preferred Governmental Claim Solutions pou sèvis reklamasyon twazyèm pati"},
- "R2025-153": {"es": "Compra e instalación de equipos audiovisuales en el McDonald Center a AVI-SPC", "ht": "Acha ak enstalasyon ekipman odyovizyèl nan McDonald Center nan men AVI-SPC"},
- "R2025-156": {"es": "Memorando de entendimiento con Barry University para oportunidades educativas para residentes", "ht": "Memorandòm antant ak Barry University pou opòtinite edikasyon pou rezidan yo"},
- "R2025-162": {"es": "Se liberaron restricciones (covenants) sobre el antiguo sitio de Nova Southeastern en 1699-1775 NE 167 St (Palm Aire, proyecto de 728 unidades)", "ht": "Leve kondisyon restriksyon (covenants) sou ansyen teren Nova Southeastern nan 1699-1775 NE 167 St (Palm Aire, pwojè 728 inite)"},
- "R2025-163": {"es": "Órdenes de compra con varios proveedores para ácido sulfúrico", "ht": "Lòd acha ak plizyè founisè pou asid silfirik"},
- "nmb-2025-10-21-2": {"es": "Se renovó el permiso de G5ive para servir alcohol de 4 a 6 a.m. en 337 NW 170 St", "ht": "Renouvle pèmi G5ive pou sèvi alkòl soti 4 pou rive 6 a.m. nan 337 NW 170 St"},
- "R2025-170": {"es": "Orden de tarea a Craven Thompson & Associates para un plan maestro de aguas pluviales actualizado", "ht": "Lòd travay bay Craven Thompson & Associates pou yon plan direktè dlo lapli ajou"},
- "R2025-171": {"es": "Orden de tarea a DeCarr Consulting para servicios de subvenciones de la policía", "ht": "Lòd travay bay DeCarr Consulting pou sèvis sibvansyon lapolis"},
- "R2025-172": {"es": "Se ratificó una orden de compra de emergencia con Southern Underground Industries para reparar una línea de alcantarillado", "ht": "Ratifye yon lòd acha ijans ak Southern Underground Industries pou repare yon tiyo egou"},
- "R2025-173": {"es": "Orden de cambio a Raftelis Financial Consultants para el estudio de tarifas de aguas pluviales y residuos sólidos", "ht": "Lòd chanjman bay Raftelis Financial Consultants pou etid tarif dlo lapli ak fatra solid"},
- "R2025-174": {"es": "Orden de tarea a AECOM para un estudio de viabilidad de una nueva planta de tratamiento de aguas residuales", "ht": "Lòd travay bay AECOM pou yon etid fezabilite pou yon nouvo izin tretman dlo ize"},
- "R2025-175": {"es": "Compra a proveedor único de municiones para la policía a Florida Bullet", "ht": "Acha nan men yon sèl founisè pou minisyon lapolis nan men Florida Bullet"},
- "R2025-177": {"es": "Órdenes de compra a proveedor único con varios proveedores para equipos y servicios especializados del departamento de agua", "ht": "Lòd acha yon sèl founisè ak plizyè founisè pou ekipman ak sèvis espesyalize depatman dlo a"},
- "R2025-178": {"es": "Órdenes de compra mediante contrato de otra agencia con A.C. Schultes of Florida para reparación de pozos de agua y bombas", "ht": "Lòd acha atravè kontra yon lòt ajans ak A.C. Schultes of Florida pou reparasyon pi dlo ak ponp"},
- "R2025-179": {"es": "Enmienda de contrato con Plumber Mike's para las conexiones laterales de Corona Del Mar Fase II", "ht": "Amannman kontra ak Plumber Mike's pou koneksyon lateral Corona Del Mar Faz II"},
- "R2025-189": {"es": "Se adjudicó la remodelación del Washington Park Community Center (ITB-2025-05-WP) a Shiff Construction & Development", "ht": "Bay Shiff Construction & Development kontra redevlopman Washington Park Community Center (ITB-2025-05-WP)"},
- "R2025-182": {"es": "Orden de compra a KCI Technologies para la administración de la construcción de Washington Park", "ht": "Lòd acha bay KCI Technologies pou administrasyon konstriksyon Washington Park"},
- "R2025-184": {"es": "Órdenes de compra mediante contrato de otra agencia con Allied Universal y Odyssey Manufacturing para hipoclorito de sodio", "ht": "Lòd acha atravè kontra yon lòt ajans ak Allied Universal ak Odyssey Manufacturing pou ipoklorit sodyòm"},
- "R2025-185": {"es": "Uso de contrato de otra agencia con Shenandoah General Construction para limpieza y reparación de tuberías de drenaje", "ht": "Itilize kontra yon lòt ajans ak Shenandoah General Construction pou netwayaj ak reparasyon tiyo drenaj"},
- "nmb-2025-11-17-16": {"es": "Se patrocinó un arrendamiento de terreno de la ciudad en 16501-16601 NE 15 Ave a Horizon at Oleta LLC", "ht": "Patwone yon lokasyon tè vil la nan 16501-16601 NE 15 Ave bay Horizon at Oleta LLC"},
- "R2025-191": {"es": "Contrato con The Team Contracting para infraestructura de parques y gerencia de construcción", "ht": "Kontra ak The Team Contracting pou enfrastrikti pak ak jesyon konstriksyon"},
- "R2025-197": {"es": "Uso de contratos de otra agencia con Fisher Scientific para equipos y suministros de laboratorio", "ht": "Itilize kontra yon lòt ajans ak Fisher Scientific pou ekipman ak founiti laboratwa"},
- "R2025-199": {"es": "Contrato con Sherwin-Williams para pintura y suministros", "ht": "Kontra ak Sherwin-Williams pou penti ak founiti"},
- "R2025-200": {"es": "Contrato con varios proveedores (Ware Group) para piezas y suministros de aire acondicionado en toda la ciudad", "ht": "Kontra ak plizyè founisè (Ware Group) pou pyès ak founiti klimatizasyon nan tout vil la"},
- "R2025-201": {"es": "Se extendió el contrato de obras viales, de drenaje y civiles con Arrow Asphalt & Engineering", "ht": "Pwolonje kontra travay wout, drenaj ak jeni sivil ak Arrow Asphalt & Engineering"},
- "R2025-190": {"es": "Se mantuvo a Knights Protection Services mes a mes para la seguridad de la caseta de vigilancia de Eastern Shores First Addition", "ht": "Kenbe Knights Protection Services de mwa an mwa pou sekirite kabin gad Eastern Shores First Addition"},
- "R2025-195": {"es": "Orden de tarea a Ramba Consulting Group para cabildeo estatal", "ht": "Lòd travay bay Ramba Consulting Group pou lobi nan nivo eta a"},
- "R2026-01": {"es": "Orden de tarea a The Engineering Company para refuerzo de personal de obras públicas", "ht": "Lòd travay bay The Engineering Company pou ranfòse pèsonèl travay piblik"},
- "R2026-02": {"es": "Aumento de la orden de tarea con Brown and Caldwell para el diseño de la tubería principal de agua de Pinetree Park South", "ht": "Ogmantasyon lòd travay ak Brown and Caldwell pou konsepsyon tiyo prensipal dlo Pinetree Park South"},
- "R2026-03": {"es": "Compra de cargadores de ruedas John Deere a Dobbs Equipment", "ht": "Acha chajè sou wou John Deere nan men Dobbs Equipment"},
- "R2026-04": {"es": "Orden de tarea a CPH Consulting para un programa de portales de entrada y señalización (wayfinding)", "ht": "Lòd travay bay CPH Consulting pou yon pwogram pòtay antre ak siyalizasyon (wayfinding)"},
- "R2026-05": {"es": "Compra de reductores de velocidad y equipos de tráfico a Traffic Logix", "ht": "Acha ralanti (speed humps) ak ekipman trafik nan men Traffic Logix"},
- "R2026-07": {"es": "Transferencia presupuestaria para financiar los servicios de cabildeo de Ramba Consulting Group", "ht": "Transfè bidjè pou finanse sèvis lobi Ramba Consulting Group"},
- "R2026-11": {"es": "Se aceptó una subvención de FDLE contra la violencia comunitaria y se aprobaron subadjudicaciones a NMB Police Athletic League y U-Turn Youth Consulting", "ht": "Aksepte yon sibvansyon FDLE kont vyolans nan kominote a epi apwouve sou-atribisyon bay NMB Police Athletic League ak U-Turn Youth Consulting"},
- "R2026-10": {"es": "Acuerdo de conciliación en Crystal Clark v. City of North Miami Beach", "ht": "Akò règleman nan Crystal Clark v. City of North Miami Beach"},
- "R2026-18": {"es": "Uso de contrato de otra agencia para compras de toda la ciudad a través de Amazon Business", "ht": "Itilize kontra yon lòt ajans pou acha tout vil la atravè Amazon Business"},
- "R2026-19": {"es": "Orden de tarea a Chen Moore & Associates para el diseño de alcantarillado de Corona Del Mar Fase 3", "ht": "Lòd travay bay Chen Moore & Associates pou konsepsyon egou Corona Del Mar Faz 3"},
- "R2026-20": {"es": "Compra mediante contrato de otra agencia de estaciones de trabajo a Your Office, Inc.", "ht": "Acha atravè kontra yon lòt ajans pou pòs travay nan men Your Office, Inc."},
- "R2026-21": {"es": "Orden de compra con Caballero, Fierman, Llerena & Garcia para refuerzo de personal de finanzas", "ht": "Lòd acha ak Caballero, Fierman, Llerena & Garcia pou ranfòse pèsonèl finans"},
- "R2026-31": {"es": "Se ordenó completar la investigación independiente de ALGO Law Firm y se remitieron asuntos a la Fiscalía Estatal (State Attorney) y a la comisión estatal de ética", "ht": "Bay lòd pou fini ankèt endepandan ALGO Law Firm lan epi voye kèk dosye bay Pwokirè Eta a (State Attorney) ak komisyon etik eta a"},
- "R2026-32": {"es": "Memorando de entendimiento con Big Brothers Big Sisters of Miami para mentoría juvenil", "ht": "Memorandòm antant ak Big Brothers Big Sisters of Miami pou mantora jèn"},
- "R2026-35": {"es": "Orden de tarea a Ardurra Group como representante del propietario en el contrato de desempeño de servicios públicos inteligentes", "ht": "Lòd travay bay Ardurra Group kòm reprezantan pwopriyetè a nan kontra pèfòmans sèvis piblik entelijan an"},
- "R2026-36": {"es": "Órdenes de tarea a Chen Moore and Associates para estudios y diseño de reducción de velocidad del tráfico", "ht": "Lòd travay bay Chen Moore and Associates pou etid ak konsepsyon pou ralanti trafik"},
- "R2026-37": {"es": "Orden de compra con PlayCore Wisconsin (GameTime) para la repavimentación de Columbia Park", "ht": "Lòd acha ak PlayCore Wisconsin (GameTime) pou refè sifas Columbia Park"},
- "R2026-38": {"es": "Compra de una caja trituradora (chipper box) a Rechtien International Trucks", "ht": "Acha yon bwat chipè (chipper box) nan men Rechtien International Trucks"},
- "R2026-39": {"es": "Orden de cambio con Southern Underground Industries para la estación de bombeo de Washington Park", "ht": "Lòd chanjman ak Southern Underground Industries pou estasyon ponpaj Washington Park"},
- "R2026-40": {"es": "Compra de una trituradora de tocones a Vermeer Corporation", "ht": "Acha yon machin moulen chouk nan men Vermeer Corporation"},
- "R2026-41": {"es": "Orden de compra mediante contrato de otra agencia con Vortex Services para la rehabilitación de filtros de agua", "ht": "Lòd acha atravè kontra yon lòt ajans ak Vortex Services pou reyabilitasyon filt dlo"},
- "R2026-42": {"es": "Orden de compra con Found Design (Merje) para un programa de portales de entrada y señalización (wayfinding)", "ht": "Lòd acha ak Found Design (Merje) pou yon pwogram pòtay antre ak siyalizasyon (wayfinding)"},
- "R2026-43": {"es": "Orden de compra con Envirowaste Services Group para inspección y limpieza de tuberías de aguas pluviales", "ht": "Lòd acha ak Envirowaste Services Group pou enspeksyon ak netwayaj tiyo dlo lapli"},
- "R2026-45": {"es": "Orden de compra con Anthony Brunson P.A. para refuerzo de personal de finanzas y presupuesto", "ht": "Lòd acha ak Anthony Brunson P.A. pou ranfòse pèsonèl finans ak bidjè"},
- "R2026-46": {"es": "Compra de una barredora de calles a Smith Equipment and Supply Company", "ht": "Acha yon machin bale ri nan men Smith Equipment and Supply Company"},
- "R2026-47": {"es": "Se adjudicó la nueva licitación de la remodelación del Washington Park Community Center (ITB-2026-055-WP) al postor responsivo más bajo", "ht": "Bay pi ba soumisyonè ki konfòm nan nouvo apèl dòf pou redevlopman Washington Park Community Center (ITB-2026-055-WP)"},
- "2026-03-26-ja": {"es": "Se contrató a Johnson Anselmo como abogado externo en un caso policial", "ht": "Anboche Johnson Anselmo kòm avoka ekstèn nan yon ka lapolis"},
- "R2026-51": {"es": "Órdenes de compra mediante contrato de otra agencia con Hach Company para instrumentos analíticos de laboratorio", "ht": "Lòd acha atravè kontra yon lòt ajans ak Hach Company pou enstriman analiz laboratwa"},
- "R2026-52": {"es": "Orden de compra mediante contrato de otra agencia con Johnson Controls Fire Protection para servicios de protección contra incendios", "ht": "Lòd acha atravè kontra yon lòt ajans ak Johnson Controls Fire Protection pou sèvis pwoteksyon kont dife"},
- "R2026-53": {"es": "Orden de compra con OMBS Security System para el mantenimiento de alarmas contra incendios", "ht": "Lòd acha ak OMBS Security System pou antretyen alam dife"},
- "R2026-55": {"es": "Orden de cambio con Trihedral para la configuración del software SCADA", "ht": "Lòd chanjman ak Trihedral pou konfigirasyon lojisyèl SCADA"},
- "R2026-60": {"es": "Acuerdo de uso de instalaciones con Little Haiti FC y fondos para deportes juveniles", "ht": "Akò itilizasyon enstalasyon ak Little Haiti FC ak finansman pou espò jèn"},
- "R2026-63": {"es": "Orden de compra mediante contrato de otra agencia con Insituform Technologies para rehabilitación de alcantarillado sin zanja", "ht": "Lòd acha atravè kontra yon lòt ajans ak Insituform Technologies pou reyabilitasyon egou san fouye tranche"},
- "R2026-65": {"es": "Compra a proveedor único de bombas y motores a Afton Pumps", "ht": "Acha nan men yon sèl founisè pou ponp ak motè nan men Afton Pumps"},
- "R2026-67": {"es": "Orden de compra con PlayCore Wisconsin (GameTime) para la repavimentación de Barry Silverman Park", "ht": "Lòd acha ak PlayCore Wisconsin (GameTime) pou refè sifas Barry Silverman Park"},
- "R2026-68": {"es": "Órdenes de compra mediante contrato de otra agencia con Metro Express para mejoras viales, años fiscales 2026-2028", "ht": "Lòd acha atravè kontra yon lòt ajans ak Metro Express pou amelyorasyon wout, ane fiskal 2026-2028"},
- "R2026-69": {"es": "Se aumentó el refuerzo de personal de finanzas de Caballero, Fierman, Llerena & Garcia", "ht": "Ogmante ranfò pèsonèl finans Caballero, Fierman, Llerena & Garcia"},
- "R2026-66": {"es": "Se adjudicó la producción del evento de celebración del centenario (RFP-2026-072) a What A Blast Events", "ht": "Bay What A Blast Events kontra pwodiksyon evènman selebrasyon santnè a (RFP-2026-072)"},
- "R2026-71": {"es": "Orden de tarea a The Corradino Group para refuerzo de personal de desarrollo comunitario", "ht": "Lòd travay bay The Corradino Group pou ranfòse pèsonèl devlopman kominotè"},
- "R2026-76": {"es": "Orden de compra con Murphy Pipeline Contractors para el reemplazo de la tubería principal de agua de Skylake", "ht": "Lòd acha ak Murphy Pipeline Contractors pou ranplasman tiyo prensipal dlo Skylake"},
- "R2026-78": {"es": "Se adjudicó la licitación de infraestructura vial y drenaje de la ciudad (ITB-2025-059) a Wrangler Construction, con Metro Express como respaldo", "ht": "Bay Wrangler Construction apèl dòf enfrastrikti wout ak drenaj vil la (ITB-2025-059), ak Metro Express kòm altènativ"},
- "R2026-82": {"es": "Se abandonó parte de De Soto Way NE (NE 175 St), un derecho de vía sin mejoras de 0.196 acres", "ht": "Abandone yon pati nan De Soto Way NE (NE 175 St), yon dwa pasaj 0.196 akr ki pa amenaje"},
- "R2026-77": {"es": "Enmienda de contrato con Sprypoint que agrega pagos en línea SpryWallet para la facturación de NMB Water", "ht": "Amannman kontra ak Sprypoint ki ajoute peman sou entènèt SpryWallet pou faktirasyon NMB Water"},
- "nmb-2026-06-16-6": {"es": "Se contrató a Becker & Poliakoff para cabildeo y consultoría sobre anexión, $85,992 aumentado en 10% con un alcance más amplio fijado por el administrador de la ciudad", "ht": "Anboche Becker & Poliakoff pou lobi ak konsiltasyon sou aneksyon, $85,992 ogmante 10% ak yon pi gwo kad travay manadjè vil la fikse"},
- "2026-06-16-sot": {"es": "Se aprobó el uso del anfiteatro y de un camión generador por Stars of Tomorrow, Inc. para un pícnic de exalumnos", "ht": "Apwouve Stars of Tomorrow, Inc. itilize amfiteyat la ak yon kamyon dèlko pou yon piknik ansyen elèv"},
- "nmb-2026-06-22-15": {"es": "Se aprobaron cambios a la torre de 2040 NE 163 St: se eliminó el hotel de 30 habitaciones y se agregaron 30 viviendas, para un total de 374", "ht": "Apwouve chanjman pou tou 2040 NE 163 St la: retire otèl 30 chanm nan epi ajoute 30 kay, pou yon total 374"},
- "R2026-88": {"es": "Compra anticipada del arrendamiento de 27 vehículos a Enterprise Fleet Management", "ht": "Racha kontra lokasyon 27 machin nan men Enterprise Fleet Management"},
- "R2026-89": {"es": "Rehabilitación llave en mano a proveedor único de la sala de bombas de hipoclorito de sodio por Trinova", "ht": "Reyabilitasyon kle an men sal ponp ipoklorit sodyòm nan pa yon sèl founisè, Trinova"},
- "R2026-91": {"es": "Orden de cambio con Rexel USA para equipos de automatización Allen Bradley/Rockwell", "ht": "Lòd chanjman ak Rexel USA pou ekipman otomatizasyon Allen Bradley/Rockwell"},
- "R2026-92": {"es": "Orden de cambio con Protiviti Government Services para personal temporal", "ht": "Lòd chanjman ak Protiviti Government Services pou pèsonèl tanporè"},
- "R2026-93": {"es": "Orden de cambio con Maggolc para la rotonda de NE 168 St / NE 20 Ave", "ht": "Lòd chanjman ak Maggolc pou wonpwen NE 168 St / NE 20 Ave"},
- "R2026-94": {"es": "Orden de cambio con AMI Engineering para servicios profesionales de ingeniería", "ht": "Lòd chanjman ak AMI Engineering pou sèvis jeni pwofesyonèl"},
- "R2026-100": {"es": "Acuerdo de conciliación con Giancarlo y Diana Schwarz en nombre de su hijo menor", "ht": "Akò règleman ak Giancarlo ak Diana Schwarz nan non pitit minè yo"},
- "R2026-101": {"es": "Acuerdo de conciliación con Victor Mora", "ht": "Akò règleman ak Victor Mora"},
- "R2026-96": {"es": "Memorando de entendimiento con Global Empowerment Mission para respuesta ante desastres", "ht": "Memorandòm antant ak Global Empowerment Mission pou repons dezas"},
- "R2026-108": {"es": "Se extendió el contrato de transporte de lodos de cal líquida con Prolime", "ht": "Pwolonje kontra transpò labou lacho likid ak Prolime"},
- "R2026-111": {"es": "Orden de tarea de Hazen and Sawyer para la evaluación de condición del campo de pozos Norwood-Oeffler", "ht": "Lòd travay Hazen and Sawyer pou evalyasyon kondisyon chan pi Norwood-Oeffler"},
- "R2026-113": {"es": "Compra de dos bombas diésel de desagüe y aguas residuales", "ht": "Acha de ponp dizèl pou drenaj dlo ak dlo egou"},
- "R2026-117": {"es": "Uso condicional y plan del sitio para un estacionamiento de 48 espacios de Prestige Motor Imports en 15090 Biscayne Blvd", "ht": "Itilizasyon kondisyonèl ak plan sit pou yon pakin 48 plas Prestige Motor Imports nan 15090 Biscayne Blvd"},
- "R2026-90": {"es": "Orden de cambio con TechGroupOne para la instalación de paradas de autobús techadas", "ht": "Lòd chanjman ak TechGroupOne pou enstalasyon abri estasyon otobis"},
- "R2026-109": {"es": "Se adjudicaron las comunicaciones estratégicas de NMB PURE (RFP-2026-02) a Circle of One Marketing", "ht": "Bay Circle of One Marketing kontra kominikasyon estratejik NMB PURE (RFP-2026-02)"},
- "R2026-110": {"es": "Se aumentó el gasto anual con Invoice Cloud para software de facturación electrónica", "ht": "Ogmante depans anyèl ak Invoice Cloud pou lojisyèl faktirasyon elektwonik"},
- "R2026-112": {"es": "Se aumentó la orden de tarea de Hazen and Sawyer para el estudio de evaluación de alcantarillado Ciclo 3", "ht": "Ogmante lòd travay Hazen and Sawyer pou sondaj evalyasyon egou Sik 3"},
- "R2026-114": {"es": "Se renovó el seguro de salud colectivo de toda la ciudad con Aetna para 2026-2027", "ht": "Renouvle asirans sante kolektif tout vil la ak Aetna pou 2026-2027"},
- "R2026-115": {"es": "Se enmendó R2023-120 para eliminar los límites al uso de la palabra 'Aventura' en el nombre de Aventura Rehab and Nursing Center", "ht": "Amande R2023-120 pou retire limit sou itilizasyon mo 'Aventura' nan non Aventura Rehab and Nursing Center"},
- "R2026-118": {"es": "Se propuso terminar el contrato de anticipo (retainer) con Greenspoon Marder y contratar a Steven W. Zelkowitz, P.A. como abogado interino de la ciudad por $35,000 al mes (fracasó)", "ht": "Pwopoze fini kontra retainer ak Greenspoon Marder epi anboche Steven W. Zelkowitz, P.A. kòm avoka enterimè vil la pou $35,000 pa mwa (pa pase)"}
+ "R2025-01": {
+  "es": "Orden de cambio para la entrega de arena y grava",
+  "ht": "Lòd chanjman pou livrezon sab ak gravye"
+ },
+ "R2025-02": {
+  "es": "Orden de cambio para servicios de pruebas de laboratorio",
+  "ht": "Lòd chanjman pou sèvis tès laboratwa"
+ },
+ "R2025-03": {
+  "es": "Orden de cambio para ingeniería de revisión de planes de nivelación y drenaje",
+  "ht": "Lòd chanjman pou jeni revizyon plan nivlman ak drenaj"
+ },
+ "R2025-04": {
+  "es": "Orden de compra de productos digitales de precisión",
+  "ht": "Lòd acha pou pwodwi dijital presizyon"
+ },
+ "R2025-05": {
+  "es": "Uso de contrato de otra agencia para servicios de investigación y asesoría de TI",
+  "ht": "Itilize kontra yon lòt ajans pou sèvis rechèch ak konsèy enfòmatik"
+ },
+ "R2025-06": {
+  "es": "Orden de compra de bombas de lodos, mezcladores y piezas",
+  "ht": "Lòd acha pou ponp labou, malaksè ak pyès"
+ },
+ "R2025-07": {
+  "es": "Uso de contrato de otra agencia para iluminación deportiva en el Kevin R. Sims Aquatic Center",
+  "ht": "Itilize kontra yon lòt ajans pou limyè espò nan Kevin R. Sims Aquatic Center"
+ },
+ "R2025-08": {
+  "es": "Orden de compra de motores sumergibles y piezas Hitachi",
+  "ht": "Lòd acha pou motè submèsib ak pyès Hitachi"
+ },
+ "R2025-10": {
+  "es": "Orden de cambio para servicios de tarjetas de combustible",
+  "ht": "Lòd chanjman pou sèvis kat gaz"
+ },
+ "R2025-11": {
+  "es": "Compra a proveedor único de municiones para la policía",
+  "ht": "Acha nan men yon sèl founisè pou minisyon lapolis"
+ },
+ "R2025-12": {
+  "es": "Órdenes de compra a proveedor único de bombas y piezas",
+  "ht": "Lòd acha nan men yon sèl founisè pou ponp ak pyès"
+ },
+ "R2025-14": {
+  "es": "Orden de cambio para un camión volteo de basura de 22 pies",
+  "ht": "Lòd chanjman pou yon kamyon fatra baskil 22 pye"
+ },
+ "R2025-15": {
+  "es": "Se enmendó el acuerdo de desarrollo de Soleste / NMB Village (anexo de servidumbre para letrero)",
+  "ht": "Amande akò devlopman Soleste / NMB Village (anèks sèvitid pou pankat)"
+ },
+ "R2025-21": {
+  "es": "Uso de contrato de otra agencia para autopartes de la flota",
+  "ht": "Itilize kontra yon lòt ajans pou pyès machin flòt la"
+ },
+ "R2025-22": {
+  "es": "Compra a proveedor único de bombas y motores para la producción de agua",
+  "ht": "Acha nan men yon sèl founisè pou ponp ak motè pou pwodiksyon dlo"
+ },
+ "R2025-23": {
+  "es": "Compra de consolas de radio para la policía",
+  "ht": "Acha konsòl radyo pou lapolis"
+ },
+ "R2025-24": {
+  "es": "Mantenimiento y suministros industriales para toda la ciudad",
+  "ht": "Antretyen ak founiti endistriyèl pou tout vil la"
+ },
+ "R2025-25": {
+  "es": "Productos y servicios de tecnología",
+  "ht": "Pwodwi ak sèvis teknoloji"
+ },
+ "R2025-27": {
+  "es": "Instalación y mantenimiento de cercas en toda la ciudad",
+  "ht": "Enstalasyon ak antretyen kloti nan tout vil la"
+ },
+ "R2025-28": {
+  "es": "Bombas, motores, piezas y servicios",
+  "ht": "Ponp, motè, pyès ak sèvis"
+ },
+ "R2025-31": {
+  "es": "Memorando de entendimiento con Jackson North para programas conjuntos de salud y bienestar",
+  "ht": "Memorandòm antant ak Jackson North pou pwogram sante ak byennèt ansanm"
+ },
+ "R2025-32": {
+  "es": "Orden de trabajo #5 de Black & Veatch para la gestión del programa de agua, reducida a $450,000 con un plan de personal de 60 días",
+  "ht": "Lòd travay #5 Black & Veatch pou jesyon pwogram dlo a, redwi a $450,000 ak yon plan pèsonèl 60 jou"
+ },
+ "2025-02-18-deans": {
+  "es": "Se renovó el horario extendido de Dean's Gold",
+  "ht": "Renouvle orè pwolonje Dean's Gold"
+ },
+ "R2025-34": {
+  "es": "Uso de contrato de otra agencia con C.A.P. Government para revisión de planos, inspección y servicios profesionales",
+  "ht": "Itilize kontra yon lòt ajans ak C.A.P. Government pou revizyon plan, enspeksyon ak sèvis pwofesyonèl"
+ },
+ "R2025-35": {
+  "es": "Orden de tarea a The Corradino Group para el plan maestro del área de estaciones del Northeast Corridor",
+  "ht": "Lòd travay bay The Corradino Group pou plan direktè zòn estasyon Northeast Corridor la"
+ },
+ "R2025-38": {
+  "es": "Orden de cambio que aumenta el contrato de cal viva con Lhoist North America of Alabama",
+  "ht": "Lòd chanjman ki ogmante kontra lacho vif ak Lhoist North America of Alabama"
+ },
+ "R2025-39": {
+  "es": "Se adjudicó la licitación de tuberías principales de transmisión de agua cruda y pozos (ITB-24-039-SG) a Southern Underground Industries",
+  "ht": "Bay Southern Underground Industries apèl dòf pou tiyo prensipal transmisyon dlo brit ak pi yo (ITB-24-039-SG)"
+ },
+ "R2025-40": {
+  "es": "Memorando de entendimiento con UMC Free Clinic para programas conjuntos de salud",
+  "ht": "Memorandòm antant ak UMC Free Clinic pou pwogram sante ansanm"
+ },
+ "R2025-41": {
+  "es": "Orden de cambio que aumenta el contrato con Rexel USA",
+  "ht": "Lòd chanjman ki ogmante kontra ak Rexel USA"
+ },
+ "R2025-49": {
+  "es": "Se renovó el contrato de operación del trolley con Pro Transportation (ProKel Mobility)",
+  "ht": "Renouvle kontra operasyon trolley a ak Pro Transportation (ProKel Mobility)"
+ },
+ "R2025-48": {
+  "es": "Compra a proveedor único de servicio y piezas de válvulas a Fluid Control Specialties",
+  "ht": "Acha nan men yon sèl founisè pou sèvis ak pyès vann nan men Fluid Control Specialties"
+ },
+ "R2025-64": {
+  "es": "Acuerdo con el Miami-Dade Beacon Council para servicios ampliados de desarrollo económico",
+  "ht": "Akò ak Miami-Dade Beacon Council pou sèvis devlopman ekonomik ranfòse"
+ },
+ "R2025-54": {
+  "es": "Compra a proveedor único de piezas de desgasificador a CECO Industrial Solutions",
+  "ht": "Acha nan men yon sèl founisè pou pyès degazifikatè nan men CECO Industrial Solutions"
+ },
+ "R2025-60": {
+  "es": "Orden de tarea para servicios de cabildeo estratégico con Rubin Turnbull & Associates",
+  "ht": "Lòd travay pou sèvis lobi estratejik ak Rubin Turnbull & Associates"
+ },
+ "R2025-46": {
+  "es": "Se aprobó un plan del sitio y tres variaciones de retiro y espacio abierto para un edificio de 12 unidades en 317 NE 168 St",
+  "ht": "Apwouve yon plan sit ak twa varyans distans ak espas louvri pou yon bilding 12 inite nan 317 NE 168 St"
+ },
+ "R2025-61": {
+  "es": "Se abandonó una porción del derecho de vía público colindante con 1800 NE 168 St",
+  "ht": "Abandone yon pòsyon dwa pasaj piblik ki kole ak 1800 NE 168 St"
+ },
+ "2025-05-20-bv": {
+  "es": "Se extendió 12 meses el contrato de servicios de agua de Black & Veatch con una transición por etapas",
+  "ht": "Pwolonje kontra sèvis dlo Black & Veatch la 12 mwa ak yon tranzisyon pa etap"
+ },
+ "2025-05-20-cm": {
+  "es": "Se aprobó una orden de tarea a Chen Moore para el diseño de ingeniería de siete proyectos de reducción de velocidad del tráfico",
+  "ht": "Apwouve yon lòd travay bay Chen Moore pou konsepsyon jeni sèt pwojè pou ralanti trafik"
+ },
+ "R2025-63": {
+  "es": "Se aprobaron bonos de la Capital Projects Finance Authority para las instalaciones chárter de Lanaar Elementary School",
+  "ht": "Apwouve bon Capital Projects Finance Authority pou enstalasyon charter Lanaar Elementary School"
+ },
+ "nmb-2025-05-20-7": {
+  "es": "Se aprobó un contrato de 5 años con Pro Transportation, Inc. (Prokel Mobility) para operar el trolley de la ciudad, hasta $1,863,960 al año más dos renovaciones de 1 año, sin licitación competitiva",
+  "ht": "Apwouve yon kontra 5 an ak Pro Transportation, Inc. (Prokel Mobility) pou fè trolley vil la mache, jiska $1,863,960 pa ane plis de renouvèlman 1 an, san apèl dòf konpetitif"
+ },
+ "R2025-67": {
+  "es": "Compra mediante contrato de otra agencia de un sistema portátil de CCTV para alcantarillado a CUES",
+  "ht": "Acha atravè kontra yon lòt ajans pou yon sistèm CCTV pòtab pou egou nan men CUES"
+ },
+ "R2025-68": {
+  "es": "Compra mediante contrato de otra agencia de dos retroexcavadoras John Deere a Dobbs Equipment",
+  "ht": "Acha atravè kontra yon lòt ajans pou de chajè retwokavatè John Deere nan men Dobbs Equipment"
+ },
+ "R2025-70": {
+  "es": "Uso de contrato de otra agencia con J & J, Inc. (Eagle Painting) para pintura y limpieza a presión",
+  "ht": "Itilize kontra yon lòt ajans ak J & J, Inc. (Eagle Painting) pou penti ak netwayaj ak presyon"
+ },
+ "R2025-72": {
+  "es": "Orden de cambio con Southern Underground Industries para el reemplazo de la tubería principal de agua de Bunche Park",
+  "ht": "Lòd chanjman ak Southern Underground Industries pou ranplasman tiyo prensipal dlo Bunche Park"
+ },
+ "R2025-74": {
+  "es": "Orden de cambio que amplía los contratos de piezas y servicio automotriz OEM con varios proveedores",
+  "ht": "Lòd chanjman ki ajoute nan kontra pyès ak sèvis otomobil OEM ak plizyè founisè"
+ },
+ "R2025-75": {
+  "es": "Uso de contrato de otra agencia con R & M Service Solutions para el mantenimiento de hidrantes",
+  "ht": "Itilize kontra yon lòt ajans ak R & M Service Solutions pou antretyen idran"
+ },
+ "R2025-76": {
+  "es": "Orden de tarea a The Corradino Group para terminar el plan integral",
+  "ht": "Lòd travay bay The Corradino Group pou fini plan konplè a"
+ },
+ "R2025-80": {
+  "es": "Se aprobó el plan del sitio, uso condicional y variaciones para un autoservicio (drive-thru) de Raising Cane's en 14025 Biscayne Blvd",
+  "ht": "Apwouve plan sit, itilizasyon kondisyonèl ak varyans pou yon drive-thru Raising Cane's nan 14025 Biscayne Blvd"
+ },
+ "2025-06-17-sorey": {
+  "es": "Se aprobó el acuerdo de conciliación del litigio Arthur Sorey v. City of North Miami Beach",
+  "ht": "Apwouve akò règleman nan pwosè Arthur Sorey v. City of North Miami Beach"
+ },
+ "R2025-81": {
+  "es": "Se clasificaron las firmas para el programa de detección de velocidad en zonas escolares (RFP-24-048-SG) y se autorizó negociar con la primera firma",
+  "ht": "Klase konpayi yo pou pwogram deteksyon vitès nan zòn lekòl (RFP-24-048-SG) epi otorize negosyasyon ak premye konpayi an"
+ },
+ "R2025-82": {
+  "es": "Orden de cambio con Prolime Corporation para el transporte de lodos de cal líquida",
+  "ht": "Lòd chanjman ak Prolime Corporation pou transpò labou lacho likid"
+ },
+ "R2025-88": {
+  "es": "Se aprobó un plan del sitio y siete variaciones para un proyecto de uso mixto de 500 unidades en 17400 W Dixie Hwy",
+  "ht": "Apwouve yon plan sit ak sèt varyans pou yon pwojè itilizasyon mikst 500 inite nan 17400 W Dixie Hwy"
+ },
+ "R2025-92": {
+  "es": "Compra a proveedor único de dos sistemas de conmutación de transferencia eléctrica a Eaton",
+  "ht": "Acha nan men yon sèl founisè pou de sistèm komitasyon transfè elektrik nan men Eaton"
+ },
+ "R2025-93": {
+  "es": "Servicios de configuración e integración de software SCADA (RFP-2025-018)",
+  "ht": "Sèvis konfigirasyon ak entegrasyon lojisyèl SCADA (RFP-2025-018)"
+ },
+ "R2025-94": {
+  "es": "Compra a proveedor único de medidores y registros de agua a Core & Main",
+  "ht": "Acha nan men yon sèl founisè pou kontè ak rejis dlo nan men Core & Main"
+ },
+ "R2025-102": {
+  "es": "Orden de cambio a Caballero, Fierman, Llerena & Garcia para ayuda ampliada con informes financieros",
+  "ht": "Lòd chanjman bay Caballero, Fierman, Llerena & Garcia pou plis èd ak rapò finansye"
+ },
+ "R2025-103": {
+  "es": "Enmienda presupuestaria que aumenta la orden de compra de Caballero, Fierman, Llerena & Garcia para apoyo de auditoría del año fiscal 2024",
+  "ht": "Amannman bidjè ki ogmante lòd acha Caballero, Fierman, Llerena & Garcia pou sipò odit ane fiskal 2024"
+ },
+ "R2025-104": {
+  "es": "Enmienda de contrato con CBIZ CPAs para auditoría externa",
+  "ht": "Amannman kontra ak CBIZ CPAs pou odit ekstèn"
+ },
+ "R2025-105": {
+  "es": "Orden de tarea a Kimley-Horn para un plan de capital de agua y aguas residuales a 20 años",
+  "ht": "Lòd travay bay Kimley-Horn pou yon plan kapital dlo ak dlo ize sou 20 an"
+ },
+ "R2025-110": {
+  "es": "Se aprobó un plan del sitio y una variación de altura para dos edificios de 10 pisos con hasta 293 viviendas cerca de NE 140 St y Highland Dr",
+  "ht": "Apwouve yon plan sit ak yon varyans wotè pou de bilding 10 etaj ak jiska 293 kay toupre NE 140 St ak Highland Dr"
+ },
+ "R2025-109": {
+  "es": "Se abandonó un callejón de 10 pies (0.153 acres) en Arch Creek Highlands para el mismo proyecto",
+  "ht": "Abandone yon ti ri 10 pye (0.153 akr) nan Arch Creek Highlands pou menm pwojè a"
+ },
+ "R2025-112": {
+  "es": "Se seleccionó a CTS Engineering para la ingeniería vial de retornos tipo Texas U-turn y se autorizaron negociaciones",
+  "ht": "Chwazi CTS Engineering pou jeni wout Texas U-turn (vire an U) epi otorize negosyasyon"
+ },
+ "2025-07-24-anderson": {
+  "es": "Se llegó a un acuerdo de conciliación en Karl J. Anderson v. City of North Miami Beach",
+  "ht": "Fè akò règleman nan Karl J. Anderson v. City of North Miami Beach"
+ },
+ "R2025-117": {
+  "es": "Orden de tarea a The Engineering Company para refuerzo de personal e ingeniería",
+  "ht": "Lòd travay bay The Engineering Company pou ranfòse pèsonèl ak jeni"
+ },
+ "R2025-118": {
+  "es": "Compra a proveedor único de un analizador multiquímico",
+  "ht": "Acha nan men yon sèl founisè pou yon analizè milti chimik"
+ },
+ "R2025-119": {
+  "es": "Compra a proveedor único de una válvula de control Bermad",
+  "ht": "Acha nan men yon sèl founisè pou yon vann kontwòl Bermad"
+ },
+ "R2025-120": {
+  "es": "Contrato de servicios de guardias de seguridad para toda la ciudad",
+  "ht": "Kontra sèvis gad sekirite pou tout vil la"
+ },
+ "R2025-122": {
+  "es": "Se ratificó la compra mediante contrato de otra agencia de una barredora de calles Scarab Maven",
+  "ht": "Ratifye acha atravè kontra yon lòt ajans pou yon machin bale ri Scarab Maven"
+ },
+ "R2025-123": {
+  "es": "Compra y recompra de armas de fuego de la policía",
+  "ht": "Acha ak racha zam afe lapolis"
+ },
+ "R2025-134": {
+  "es": "Acuerdo de servicios de recuperación de deudas",
+  "ht": "Akò pou sèvis rekouvreman dèt"
+ },
+ "R2025-136": {
+  "es": "Compra e instalación de estaciones de trabajo",
+  "ht": "Acha ak enstalasyon pòs travay"
+ },
+ "R2025-137": {
+  "es": "Compra e instalación de mobiliario de laboratorio",
+  "ht": "Acha ak enstalasyon mèb laboratwa"
+ },
+ "nmb-2025-09-08-0": {
+  "es": "Se aprobó cómo la ciudad gasta los $110,000 al año que su recolector de basura, Coastal Waste & Recycling, debe aportar según su contrato: ayuda con alquiler y servicios públicos, becas y eventos comunitarios",
+  "ht": "Apwouve fason vil la depanse $110,000 pa ane konpayi ranmasaj fatra li a, Coastal Waste & Recycling, dwe bay dapre kontra li: èd pou lwaye ak sèvis piblik, bous detid ak evènman kominotè"
+ },
+ "R2025-127": {
+  "es": "Acuerdo de arrendamiento con opción a compra de cinco años con DDI Capital para sistemas de respaldo en toda la ciudad",
+  "ht": "Akò lokasyon ak opsyon acha senk an ak DDI Capital pou sistèm sovgad nan tout vil la"
+ },
+ "R2025-138": {
+  "es": "Uso condicional para un dispensario de marihuana medicinal en 16719 NE 6 Ave",
+  "ht": "Itilizasyon kondisyonèl pou yon dispansè mariwana medikal nan 16719 NE 6 Ave"
+ },
+ "R2025-139": {
+  "es": "Compra mediante contrato de otra agencia de un camión de vacío",
+  "ht": "Acha atravè kontra yon lòt ajans pou yon kamyon aspirasyon"
+ },
+ "R2025-147": {
+  "es": "Tercera enmienda que extiende la licencia de FIU para operar la estación de transferencia de la ciudad hasta el 30 de noviembre de 2026",
+  "ht": "Twazyèm amannman ki pwolonje lisans FIU pou jere estasyon transfè vil la jiska 30 novanm 2026"
+ },
+ "R2025-148": {
+  "es": "Se adjudicó la licitación de la rotonda de NE 168 St / NE 20 Ave (ITB-2025-042) al postor responsivo más bajo",
+  "ht": "Bay pi ba soumisyonè ki konfòm nan apèl dòf pou wonpwen NE 168 St / NE 20 Ave (ITB-2025-042)"
+ },
+ "R2025-149": {
+  "es": "Compra a proveedor único de una lancha policial Grady-White Canyon 2025 a MarineMax East",
+  "ht": "Acha nan men yon sèl founisè pou yon bato lapolis Grady-White Canyon 2025 nan men MarineMax East"
+ },
+ "R2025-150": {
+  "es": "Órdenes de compra con varios proveedores para accesorios de medidores de agua",
+  "ht": "Lòd acha ak plizyè founisè pou rakò kontè dlo"
+ },
+ "R2025-151": {
+  "es": "Compra a proveedor único de inspecciones y limpiezas de tanques a CROM",
+  "ht": "Acha nan men yon sèl founisè pou enspeksyon ak netwayaj rezèvwa nan men CROM"
+ },
+ "R2025-152": {
+  "es": "Orden de compra con Preferred Governmental Claim Solutions para servicios de reclamaciones de terceros",
+  "ht": "Lòd acha ak Preferred Governmental Claim Solutions pou sèvis reklamasyon twazyèm pati"
+ },
+ "R2025-153": {
+  "es": "Compra e instalación de equipos audiovisuales en el McDonald Center a AVI-SPC",
+  "ht": "Acha ak enstalasyon ekipman odyovizyèl nan McDonald Center nan men AVI-SPC"
+ },
+ "R2025-156": {
+  "es": "Memorando de entendimiento con Barry University para oportunidades educativas para residentes",
+  "ht": "Memorandòm antant ak Barry University pou opòtinite edikasyon pou rezidan yo"
+ },
+ "R2025-162": {
+  "es": "Se liberaron restricciones (covenants) sobre el antiguo sitio de Nova Southeastern en 1699-1775 NE 167 St (Palm Aire, proyecto de 728 unidades)",
+  "ht": "Leve kondisyon restriksyon (covenants) sou ansyen teren Nova Southeastern nan 1699-1775 NE 167 St (Palm Aire, pwojè 728 inite)"
+ },
+ "R2025-163": {
+  "es": "Órdenes de compra con varios proveedores para ácido sulfúrico",
+  "ht": "Lòd acha ak plizyè founisè pou asid silfirik"
+ },
+ "nmb-2025-10-21-2": {
+  "es": "Se renovó el permiso de G5ive para servir alcohol de 4 a 6 a.m. en 337 NW 170 St",
+  "ht": "Renouvle pèmi G5ive pou sèvi alkòl soti 4 pou rive 6 a.m. nan 337 NW 170 St"
+ },
+ "R2025-170": {
+  "es": "Orden de tarea a Craven Thompson & Associates para un plan maestro de aguas pluviales actualizado",
+  "ht": "Lòd travay bay Craven Thompson & Associates pou yon plan direktè dlo lapli ajou"
+ },
+ "R2025-171": {
+  "es": "Orden de tarea a DeCarr Consulting para servicios de subvenciones de la policía",
+  "ht": "Lòd travay bay DeCarr Consulting pou sèvis sibvansyon lapolis"
+ },
+ "R2025-172": {
+  "es": "Se ratificó una orden de compra de emergencia con Southern Underground Industries para reparar una línea de alcantarillado",
+  "ht": "Ratifye yon lòd acha ijans ak Southern Underground Industries pou repare yon tiyo egou"
+ },
+ "R2025-173": {
+  "es": "Orden de cambio a Raftelis Financial Consultants para el estudio de tarifas de aguas pluviales y residuos sólidos",
+  "ht": "Lòd chanjman bay Raftelis Financial Consultants pou etid tarif dlo lapli ak fatra solid"
+ },
+ "R2025-174": {
+  "es": "Orden de tarea a AECOM para un estudio de viabilidad de una nueva planta de tratamiento de aguas residuales",
+  "ht": "Lòd travay bay AECOM pou yon etid fezabilite pou yon nouvo izin tretman dlo ize"
+ },
+ "R2025-175": {
+  "es": "Compra a proveedor único de municiones para la policía a Florida Bullet",
+  "ht": "Acha nan men yon sèl founisè pou minisyon lapolis nan men Florida Bullet"
+ },
+ "R2025-177": {
+  "es": "Órdenes de compra a proveedor único con varios proveedores para equipos y servicios especializados del departamento de agua",
+  "ht": "Lòd acha yon sèl founisè ak plizyè founisè pou ekipman ak sèvis espesyalize depatman dlo a"
+ },
+ "R2025-178": {
+  "es": "Órdenes de compra mediante contrato de otra agencia con A.C. Schultes of Florida para reparación de pozos de agua y bombas",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak A.C. Schultes of Florida pou reparasyon pi dlo ak ponp"
+ },
+ "R2025-179": {
+  "es": "Enmienda de contrato con Plumber Mike's para las conexiones laterales de Corona Del Mar Fase II",
+  "ht": "Amannman kontra ak Plumber Mike's pou koneksyon lateral Corona Del Mar Faz II"
+ },
+ "R2025-189": {
+  "es": "Se adjudicó la remodelación del Washington Park Community Center (ITB-2025-05-WP) a Shiff Construction & Development",
+  "ht": "Bay Shiff Construction & Development kontra redevlopman Washington Park Community Center (ITB-2025-05-WP)"
+ },
+ "R2025-182": {
+  "es": "Orden de compra a KCI Technologies para la administración de la construcción de Washington Park",
+  "ht": "Lòd acha bay KCI Technologies pou administrasyon konstriksyon Washington Park"
+ },
+ "R2025-184": {
+  "es": "Órdenes de compra mediante contrato de otra agencia con Allied Universal y Odyssey Manufacturing para hipoclorito de sodio",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Allied Universal ak Odyssey Manufacturing pou ipoklorit sodyòm"
+ },
+ "R2025-185": {
+  "es": "Uso de contrato de otra agencia con Shenandoah General Construction para limpieza y reparación de tuberías de drenaje",
+  "ht": "Itilize kontra yon lòt ajans ak Shenandoah General Construction pou netwayaj ak reparasyon tiyo drenaj"
+ },
+ "nmb-2025-11-17-16": {
+  "es": "Se patrocinó un arrendamiento de terreno de la ciudad en 16501-16601 NE 15 Ave a Horizon at Oleta LLC",
+  "ht": "Patwone yon lokasyon tè vil la nan 16501-16601 NE 15 Ave bay Horizon at Oleta LLC"
+ },
+ "R2025-191": {
+  "es": "Contrato con The Team Contracting para infraestructura de parques y gerencia de construcción",
+  "ht": "Kontra ak The Team Contracting pou enfrastrikti pak ak jesyon konstriksyon"
+ },
+ "R2025-197": {
+  "es": "Uso de contratos de otra agencia con Fisher Scientific para equipos y suministros de laboratorio",
+  "ht": "Itilize kontra yon lòt ajans ak Fisher Scientific pou ekipman ak founiti laboratwa"
+ },
+ "R2025-199": {
+  "es": "Contrato con Sherwin-Williams para pintura y suministros",
+  "ht": "Kontra ak Sherwin-Williams pou penti ak founiti"
+ },
+ "R2025-200": {
+  "es": "Contrato con varios proveedores (Ware Group) para piezas y suministros de aire acondicionado en toda la ciudad",
+  "ht": "Kontra ak plizyè founisè (Ware Group) pou pyès ak founiti klimatizasyon nan tout vil la"
+ },
+ "R2025-201": {
+  "es": "Se extendió el contrato de obras viales, de drenaje y civiles con Arrow Asphalt & Engineering",
+  "ht": "Pwolonje kontra travay wout, drenaj ak jeni sivil ak Arrow Asphalt & Engineering"
+ },
+ "R2025-190": {
+  "es": "Se mantuvo a Knights Protection Services mes a mes para la seguridad de la caseta de vigilancia de Eastern Shores First Addition",
+  "ht": "Kenbe Knights Protection Services de mwa an mwa pou sekirite kabin gad Eastern Shores First Addition"
+ },
+ "R2025-195": {
+  "es": "Orden de tarea a Ramba Consulting Group para cabildeo estatal",
+  "ht": "Lòd travay bay Ramba Consulting Group pou lobi nan nivo eta a"
+ },
+ "R2026-01": {
+  "es": "Orden de tarea a The Engineering Company para refuerzo de personal de obras públicas",
+  "ht": "Lòd travay bay The Engineering Company pou ranfòse pèsonèl travay piblik"
+ },
+ "R2026-02": {
+  "es": "Aumento de la orden de tarea con Brown and Caldwell para el diseño de la tubería principal de agua de Pinetree Park South",
+  "ht": "Ogmantasyon lòd travay ak Brown and Caldwell pou konsepsyon tiyo prensipal dlo Pinetree Park South"
+ },
+ "R2026-03": {
+  "es": "Compra de cargadores de ruedas John Deere a Dobbs Equipment",
+  "ht": "Acha chajè sou wou John Deere nan men Dobbs Equipment"
+ },
+ "R2026-04": {
+  "es": "Orden de tarea a CPH Consulting para un programa de portales de entrada y señalización (wayfinding)",
+  "ht": "Lòd travay bay CPH Consulting pou yon pwogram pòtay antre ak siyalizasyon (wayfinding)"
+ },
+ "R2026-05": {
+  "es": "Compra de reductores de velocidad y equipos de tráfico a Traffic Logix",
+  "ht": "Acha ralanti (speed humps) ak ekipman trafik nan men Traffic Logix"
+ },
+ "R2026-07": {
+  "es": "Transferencia presupuestaria para financiar los servicios de cabildeo de Ramba Consulting Group",
+  "ht": "Transfè bidjè pou finanse sèvis lobi Ramba Consulting Group"
+ },
+ "R2026-11": {
+  "es": "Se aceptó una subvención de FDLE contra la violencia comunitaria y se aprobaron subadjudicaciones a NMB Police Athletic League y U-Turn Youth Consulting",
+  "ht": "Aksepte yon sibvansyon FDLE kont vyolans nan kominote a epi apwouve sou-atribisyon bay NMB Police Athletic League ak U-Turn Youth Consulting"
+ },
+ "R2026-10": {
+  "es": "Acuerdo de conciliación en Crystal Clark v. City of North Miami Beach",
+  "ht": "Akò règleman nan Crystal Clark v. City of North Miami Beach"
+ },
+ "R2026-18": {
+  "es": "Uso de contrato de otra agencia para compras de toda la ciudad a través de Amazon Business",
+  "ht": "Itilize kontra yon lòt ajans pou acha tout vil la atravè Amazon Business"
+ },
+ "R2026-19": {
+  "es": "Orden de tarea a Chen Moore & Associates para el diseño de alcantarillado de Corona Del Mar Fase 3",
+  "ht": "Lòd travay bay Chen Moore & Associates pou konsepsyon egou Corona Del Mar Faz 3"
+ },
+ "R2026-20": {
+  "es": "Compra mediante contrato de otra agencia de estaciones de trabajo a Your Office, Inc.",
+  "ht": "Acha atravè kontra yon lòt ajans pou pòs travay nan men Your Office, Inc."
+ },
+ "R2026-21": {
+  "es": "Orden de compra con Caballero, Fierman, Llerena & Garcia para refuerzo de personal de finanzas",
+  "ht": "Lòd acha ak Caballero, Fierman, Llerena & Garcia pou ranfòse pèsonèl finans"
+ },
+ "R2026-31": {
+  "es": "Se ordenó completar la investigación independiente de ALGO Law Firm y se remitieron asuntos a la Fiscalía Estatal (State Attorney) y a la comisión estatal de ética",
+  "ht": "Bay lòd pou fini ankèt endepandan ALGO Law Firm lan epi voye kèk dosye bay Pwokirè Eta a (State Attorney) ak komisyon etik eta a"
+ },
+ "R2026-32": {
+  "es": "Memorando de entendimiento con Big Brothers Big Sisters of Miami para mentoría juvenil",
+  "ht": "Memorandòm antant ak Big Brothers Big Sisters of Miami pou mantora jèn"
+ },
+ "R2026-35": {
+  "es": "Orden de tarea a Ardurra Group como representante del propietario en el contrato de desempeño de servicios públicos inteligentes",
+  "ht": "Lòd travay bay Ardurra Group kòm reprezantan pwopriyetè a nan kontra pèfòmans sèvis piblik entelijan an"
+ },
+ "R2026-36": {
+  "es": "Órdenes de tarea a Chen Moore and Associates para estudios y diseño de reducción de velocidad del tráfico",
+  "ht": "Lòd travay bay Chen Moore and Associates pou etid ak konsepsyon pou ralanti trafik"
+ },
+ "R2026-37": {
+  "es": "Orden de compra con PlayCore Wisconsin (GameTime) para la repavimentación de Columbia Park",
+  "ht": "Lòd acha ak PlayCore Wisconsin (GameTime) pou refè sifas Columbia Park"
+ },
+ "R2026-38": {
+  "es": "Compra de una caja trituradora (chipper box) a Rechtien International Trucks",
+  "ht": "Acha yon bwat chipè (chipper box) nan men Rechtien International Trucks"
+ },
+ "R2026-39": {
+  "es": "Orden de cambio con Southern Underground Industries para la estación de bombeo de Washington Park",
+  "ht": "Lòd chanjman ak Southern Underground Industries pou estasyon ponpaj Washington Park"
+ },
+ "R2026-40": {
+  "es": "Compra de una trituradora de tocones a Vermeer Corporation",
+  "ht": "Acha yon machin moulen chouk nan men Vermeer Corporation"
+ },
+ "R2026-41": {
+  "es": "Orden de compra mediante contrato de otra agencia con Vortex Services para la rehabilitación de filtros de agua",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Vortex Services pou reyabilitasyon filt dlo"
+ },
+ "R2026-42": {
+  "es": "Orden de compra con Found Design (Merje) para un programa de portales de entrada y señalización (wayfinding)",
+  "ht": "Lòd acha ak Found Design (Merje) pou yon pwogram pòtay antre ak siyalizasyon (wayfinding)"
+ },
+ "R2026-43": {
+  "es": "Orden de compra con Envirowaste Services Group para inspección y limpieza de tuberías de aguas pluviales",
+  "ht": "Lòd acha ak Envirowaste Services Group pou enspeksyon ak netwayaj tiyo dlo lapli"
+ },
+ "R2026-45": {
+  "es": "Orden de compra con Anthony Brunson P.A. para refuerzo de personal de finanzas y presupuesto",
+  "ht": "Lòd acha ak Anthony Brunson P.A. pou ranfòse pèsonèl finans ak bidjè"
+ },
+ "R2026-46": {
+  "es": "Compra de una barredora de calles a Smith Equipment and Supply Company",
+  "ht": "Acha yon machin bale ri nan men Smith Equipment and Supply Company"
+ },
+ "R2026-47": {
+  "es": "Se adjudicó la nueva licitación de la remodelación del Washington Park Community Center (ITB-2026-055-WP) al postor responsivo más bajo",
+  "ht": "Bay pi ba soumisyonè ki konfòm nan nouvo apèl dòf pou redevlopman Washington Park Community Center (ITB-2026-055-WP)"
+ },
+ "2026-03-26-ja": {
+  "es": "Se contrató a Johnson Anselmo como abogado externo en un caso policial",
+  "ht": "Anboche Johnson Anselmo kòm avoka ekstèn nan yon ka lapolis"
+ },
+ "R2026-51": {
+  "es": "Órdenes de compra mediante contrato de otra agencia con Hach Company para instrumentos analíticos de laboratorio",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Hach Company pou enstriman analiz laboratwa"
+ },
+ "R2026-52": {
+  "es": "Orden de compra mediante contrato de otra agencia con Johnson Controls Fire Protection para servicios de protección contra incendios",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Johnson Controls Fire Protection pou sèvis pwoteksyon kont dife"
+ },
+ "R2026-53": {
+  "es": "Orden de compra con OMBS Security System para el mantenimiento de alarmas contra incendios",
+  "ht": "Lòd acha ak OMBS Security System pou antretyen alam dife"
+ },
+ "R2026-55": {
+  "es": "Orden de cambio con Trihedral para la configuración del software SCADA",
+  "ht": "Lòd chanjman ak Trihedral pou konfigirasyon lojisyèl SCADA"
+ },
+ "R2026-60": {
+  "es": "Acuerdo de uso de instalaciones con Little Haiti FC y fondos para deportes juveniles",
+  "ht": "Akò itilizasyon enstalasyon ak Little Haiti FC ak finansman pou espò jèn"
+ },
+ "R2026-63": {
+  "es": "Orden de compra mediante contrato de otra agencia con Insituform Technologies para rehabilitación de alcantarillado sin zanja",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Insituform Technologies pou reyabilitasyon egou san fouye tranche"
+ },
+ "R2026-65": {
+  "es": "Compra a proveedor único de bombas y motores a Afton Pumps",
+  "ht": "Acha nan men yon sèl founisè pou ponp ak motè nan men Afton Pumps"
+ },
+ "R2026-67": {
+  "es": "Orden de compra con PlayCore Wisconsin (GameTime) para la repavimentación de Barry Silverman Park",
+  "ht": "Lòd acha ak PlayCore Wisconsin (GameTime) pou refè sifas Barry Silverman Park"
+ },
+ "R2026-68": {
+  "es": "Órdenes de compra mediante contrato de otra agencia con Metro Express para mejoras viales, años fiscales 2026-2028",
+  "ht": "Lòd acha atravè kontra yon lòt ajans ak Metro Express pou amelyorasyon wout, ane fiskal 2026-2028"
+ },
+ "R2026-69": {
+  "es": "Se aumentó el refuerzo de personal de finanzas de Caballero, Fierman, Llerena & Garcia",
+  "ht": "Ogmante ranfò pèsonèl finans Caballero, Fierman, Llerena & Garcia"
+ },
+ "R2026-66": {
+  "es": "Se adjudicó la producción del evento de celebración del centenario (RFP-2026-072) a What A Blast Events",
+  "ht": "Bay What A Blast Events kontra pwodiksyon evènman selebrasyon santnè a (RFP-2026-072)"
+ },
+ "R2026-71": {
+  "es": "Orden de tarea a The Corradino Group para refuerzo de personal de desarrollo comunitario",
+  "ht": "Lòd travay bay The Corradino Group pou ranfòse pèsonèl devlopman kominotè"
+ },
+ "R2026-76": {
+  "es": "Orden de compra con Murphy Pipeline Contractors para el reemplazo de la tubería principal de agua de Skylake",
+  "ht": "Lòd acha ak Murphy Pipeline Contractors pou ranplasman tiyo prensipal dlo Skylake"
+ },
+ "R2026-78": {
+  "es": "Se adjudicó la licitación de infraestructura vial y drenaje de la ciudad (ITB-2025-059) a Wrangler Construction, con Metro Express como respaldo",
+  "ht": "Bay Wrangler Construction apèl dòf enfrastrikti wout ak drenaj vil la (ITB-2025-059), ak Metro Express kòm altènativ"
+ },
+ "R2026-82": {
+  "es": "Se abandonó parte de De Soto Way NE (NE 175 St), un derecho de vía sin mejoras de 0.196 acres",
+  "ht": "Abandone yon pati nan De Soto Way NE (NE 175 St), yon dwa pasaj 0.196 akr ki pa amenaje"
+ },
+ "R2026-77": {
+  "es": "Enmienda de contrato con Sprypoint que agrega pagos en línea SpryWallet para la facturación de NMB Water",
+  "ht": "Amannman kontra ak Sprypoint ki ajoute peman sou entènèt SpryWallet pou faktirasyon NMB Water"
+ },
+ "nmb-2026-06-16-6": {
+  "es": "Se contrató a Becker & Poliakoff para cabildeo y consultoría sobre anexión, $85,992 aumentado en 10% con un alcance más amplio fijado por el administrador de la ciudad",
+  "ht": "Anboche Becker & Poliakoff pou lobi ak konsiltasyon sou aneksyon, $85,992 ogmante 10% ak yon pi gwo kad travay manadjè vil la fikse"
+ },
+ "2026-06-16-sot": {
+  "es": "Se aprobó el uso del anfiteatro y de un camión generador por Stars of Tomorrow, Inc. para un pícnic de exalumnos",
+  "ht": "Apwouve Stars of Tomorrow, Inc. itilize amfiteyat la ak yon kamyon dèlko pou yon piknik ansyen elèv"
+ },
+ "nmb-2026-06-22-15": {
+  "es": "Se aprobaron cambios a la torre de 2040 NE 163 St: se eliminó el hotel de 30 habitaciones y se agregaron 30 viviendas, para un total de 374",
+  "ht": "Apwouve chanjman pou tou 2040 NE 163 St la: retire otèl 30 chanm nan epi ajoute 30 kay, pou yon total 374"
+ },
+ "R2026-88": {
+  "es": "Compra anticipada del arrendamiento de 27 vehículos a Enterprise Fleet Management",
+  "ht": "Racha kontra lokasyon 27 machin nan men Enterprise Fleet Management"
+ },
+ "R2026-89": {
+  "es": "Rehabilitación llave en mano a proveedor único de la sala de bombas de hipoclorito de sodio por Trinova",
+  "ht": "Reyabilitasyon kle an men sal ponp ipoklorit sodyòm nan pa yon sèl founisè, Trinova"
+ },
+ "R2026-91": {
+  "es": "Orden de cambio con Rexel USA para equipos de automatización Allen Bradley/Rockwell",
+  "ht": "Lòd chanjman ak Rexel USA pou ekipman otomatizasyon Allen Bradley/Rockwell"
+ },
+ "R2026-92": {
+  "es": "Orden de cambio con Protiviti Government Services para personal temporal",
+  "ht": "Lòd chanjman ak Protiviti Government Services pou pèsonèl tanporè"
+ },
+ "R2026-93": {
+  "es": "Orden de cambio con Maggolc para la rotonda de NE 168 St / NE 20 Ave",
+  "ht": "Lòd chanjman ak Maggolc pou wonpwen NE 168 St / NE 20 Ave"
+ },
+ "R2026-94": {
+  "es": "Orden de cambio con AMI Engineering para servicios profesionales de ingeniería",
+  "ht": "Lòd chanjman ak AMI Engineering pou sèvis jeni pwofesyonèl"
+ },
+ "R2026-100": {
+  "es": "Acuerdo de conciliación con Giancarlo y Diana Schwarz en nombre de su hijo menor",
+  "ht": "Akò règleman ak Giancarlo ak Diana Schwarz nan non pitit minè yo"
+ },
+ "R2026-101": {
+  "es": "Acuerdo de conciliación con Victor Mora",
+  "ht": "Akò règleman ak Victor Mora"
+ },
+ "R2026-96": {
+  "es": "Memorando de entendimiento con Global Empowerment Mission para respuesta ante desastres",
+  "ht": "Memorandòm antant ak Global Empowerment Mission pou repons dezas"
+ },
+ "R2026-108": {
+  "es": "Se extendió el contrato de transporte de lodos de cal líquida con Prolime",
+  "ht": "Pwolonje kontra transpò labou lacho likid ak Prolime"
+ },
+ "R2026-111": {
+  "es": "Orden de tarea de Hazen and Sawyer para la evaluación de condición del campo de pozos Norwood-Oeffler",
+  "ht": "Lòd travay Hazen and Sawyer pou evalyasyon kondisyon chan pi Norwood-Oeffler"
+ },
+ "R2026-113": {
+  "es": "Compra de dos bombas diésel de desagüe y aguas residuales",
+  "ht": "Acha de ponp dizèl pou drenaj dlo ak dlo egou"
+ },
+ "R2026-117": {
+  "es": "Uso condicional y plan del sitio para un estacionamiento de 48 espacios de Prestige Motor Imports en 15090 Biscayne Blvd",
+  "ht": "Itilizasyon kondisyonèl ak plan sit pou yon pakin 48 plas Prestige Motor Imports nan 15090 Biscayne Blvd"
+ },
+ "R2026-90": {
+  "es": "Orden de cambio con TechGroupOne para la instalación de paradas de autobús techadas",
+  "ht": "Lòd chanjman ak TechGroupOne pou enstalasyon abri estasyon otobis"
+ },
+ "R2026-109": {
+  "es": "Se adjudicaron las comunicaciones estratégicas de NMB PURE (RFP-2026-02) a Circle of One Marketing",
+  "ht": "Bay Circle of One Marketing kontra kominikasyon estratejik NMB PURE (RFP-2026-02)"
+ },
+ "R2026-110": {
+  "es": "Se aumentó el gasto anual con Invoice Cloud para software de facturación electrónica",
+  "ht": "Ogmante depans anyèl ak Invoice Cloud pou lojisyèl faktirasyon elektwonik"
+ },
+ "R2026-112": {
+  "es": "Se aumentó la orden de tarea de Hazen and Sawyer para el estudio de evaluación de alcantarillado Ciclo 3",
+  "ht": "Ogmante lòd travay Hazen and Sawyer pou sondaj evalyasyon egou Sik 3"
+ },
+ "R2026-114": {
+  "es": "Se renovó el seguro de salud colectivo de toda la ciudad con Aetna para 2026-2027",
+  "ht": "Renouvle asirans sante kolektif tout vil la ak Aetna pou 2026-2027"
+ },
+ "R2026-115": {
+  "es": "Se enmendó R2023-120 para eliminar los límites al uso de la palabra 'Aventura' en el nombre de Aventura Rehab and Nursing Center",
+  "ht": "Amande R2023-120 pou retire limit sou itilizasyon mo 'Aventura' nan non Aventura Rehab and Nursing Center"
+ },
+ "R2026-118": {
+  "es": "Se propuso terminar el contrato de anticipo (retainer) con Greenspoon Marder y contratar a Steven W. Zelkowitz, P.A. como abogado interino de la ciudad por $35,000 al mes (fracasó)",
+  "ht": "Pwopoze fini kontra retainer ak Greenspoon Marder epi anboche Steven W. Zelkowitz, P.A. kòm avoka enterimè vil la pou $35,000 pa mwa (pa pase)"
+ },
+ "R2022-154": {
+  "es": "Contrató a MKI Services, Inc. para equipo para la planta de agua sin licitación (hasta $71,000)",
+  "ht": "Te angaje MKI Services, Inc. pou ekipman pou izin dlo a san lisitasyon (jiska $71,000)"
+ },
+ "R2022-155": {
+  "es": "Modificó el contrato de cámaras de luz roja con American Traffic Solutions (Verra Mobility)",
+  "ht": "Modifye kontra kamera limyè wouj ak American Traffic Solutions (Verra Mobility)"
+ },
+ "R2022-158": {
+  "es": "Contrató a Condo Electric Corp. para reparación de motores eléctricos y bombas (hasta $120,000)",
+  "ht": "Te angaje Condo Electric Corp. pou reparasyon motè elektrik ak ponp (jiska $120,000)"
+ },
+ "R2022-159": {
+  "es": "Contrató a TriNova, Inc. para equipo para la planta de agua sin licitación (hasta $70,000)",
+  "ht": "Te angaje TriNova, Inc. pou ekipman pou izin dlo a san lisitasyon (jiska $70,000)"
+ },
+ "R2022-160": {
+  "es": "Contrató a RDP Technologies, Inc. para equipo para la planta de agua sin licitación (hasta $95,000)",
+  "ht": "Te angaje RDP Technologies, Inc. pou ekipman pou izin dlo a san lisitasyon (jiska $95,000)"
+ },
+ "R2022-162": {
+  "es": "Contrató a Razorback, LLC para limpieza y reparación de tanques de agua (hasta $130,000)",
+  "ht": "Te angaje Razorback, LLC pou netwayaj ak reparasyon tank dlo (jiska $130,000)"
+ },
+ "R2022-163": {
+  "es": "Compró químicos para tratar el agua a Carus Corporation (hasta $50,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Carus Corporation (jiska $50,000)"
+ },
+ "R2022-171": {
+  "es": "Aprobó una orden de cambio para KCI Technologies, Inc. en servicios de arquitectura y diseño ($369,696)",
+  "ht": "Apwouve yon chanjman lòd pou KCI Technologies, Inc. sou sèvis achitekti ak konsepsyon ($369,696)"
+ },
+ "R2022-172": {
+  "es": "Firmó un acuerdo con Black & Veatch Corporation para gestión de programas y personal de apoyo (hasta $524,617)",
+  "ht": "Siyen yon akò ak Black & Veatch Corporation pou jesyon pwogram ak anplwaye sipò (jiska $524,617)"
+ },
+ "R2023-01": {
+  "es": "Arrendó espacio en una torre de radio a Industrial Tower and Wireless, LLC por 5 años (hasta $384,958.80)",
+  "ht": "Lwe espas sou yon fò radyo nan men Industrial Tower and Wireless, LLC pou 5 an (jiska $384,958.80)"
+ },
+ "R2023-04": {
+  "es": "Aprobó una orden de cambio para Team Contracting, Inc. en obras de construcción ($500,000)",
+  "ht": "Apwouve yon chanjman lòd pou Team Contracting, Inc. sou travay konstriksyon ($500,000)"
+ },
+ "R2023-07": {
+  "es": "Compró obras de alcantarillado y agua a LMK Pipe Renewal, LLC usando el contrato de otro gobierno (hasta $65,000)",
+  "ht": "Achte travay sistèm egou ak dlo nan men LMK Pipe Renewal, LLC ak kontra yon lòt gouvènman (jiska $65,000)"
+ },
+ "R2023-08": {
+  "es": "Aprobó una orden de cambio para N. Harris Computer Corporation en servicios y programas de facturación de servicios públicos ($168,830)",
+  "ht": "Apwouve yon chanjman lòd pou N. Harris Computer Corporation sou sèvis ak lojisyèl faktirasyon sèvis piblik ($168,830)"
+ },
+ "R2023-11": {
+  "es": "Contrató a Afton Pumps, Inc. para bombas de pozo y reparación de pozos sin licitación (hasta $295,000)",
+  "ht": "Te angaje Afton Pumps, Inc. pou ponp pi ak reparasyon pi san lisitasyon (jiska $295,000)"
+ },
+ "R2023-12": {
+  "es": "Compró equipos y programas de computación a IT Partners, LLC (hasta $35,000)",
+  "ht": "Achte materyèl ak lojisyèl òdinatè nan men IT Partners, LLC (jiska $35,000)"
+ },
+ "R2023-13": {
+  "es": "Compró mantenimiento de césped y jardines a Gardening Angel Nursery, Inc. (hasta $31,000)",
+  "ht": "Achte antretyen gazon ak jaden nan men Gardening Angel Nursery, Inc. (jiska $31,000)"
+ },
+ "R2023-14": {
+  "es": "Renovó el contrato de servicio de transporte a pedido con BeeFree, LLC (Freebee)",
+  "ht": "Renouvle kontra sèvis transpò sou demann ak BeeFree, LLC (Freebee)"
+ },
+ "R2023-16": {
+  "es": "Renovó el contrato de reparación y rehabilitación de viviendas con Sustainable Design & Construction Services, Inc. (hasta $49,500)",
+  "ht": "Renouvle kontra reparasyon ak reyabilitasyon kay ak Sustainable Design & Construction Services, Inc. (jiska $49,500)"
+ },
+ "R2023-21": {
+  "es": "Compró repavimentación con asfalto a H&J Asphalt, Inc. usando el contrato de otro gobierno (hasta $144,000)",
+  "ht": "Achte reasfaltaj nan men H&J Asphalt, Inc. ak kontra yon lòt gouvènman (jiska $144,000)"
+ },
+ "R2023-23": {
+  "es": "Compró suministros de laboratorio a Hach Company (hasta $51,000)",
+  "ht": "Achte founiti laboratwa nan men Hach Company (jiska $51,000)"
+ },
+ "R2023-25": {
+  "es": "Aprobó una orden de cambio para Home Depot U.S.A., Inc. en suministros de mantenimiento ($36,300)",
+  "ht": "Apwouve yon chanjman lòd pou Home Depot U.S.A., Inc. sou founiti antretyen ($36,300)"
+ },
+ "R2023-19": {
+  "es": "Adjudicó obras de alcantarillado y agua a Plumber Mikes, Inc. (hasta $927,731)",
+  "ht": "Bay Plumber Mikes, Inc. kontra travay sistèm egou ak dlo (jiska $927,731)"
+ },
+ "R2023-24": {
+  "es": "Aprobó una orden de cambio para Bespoke Construction Management, LLC en obras de construcción ($53,000)",
+  "ht": "Apwouve yon chanjman lòd pou Bespoke Construction Management, LLC sou travay konstriksyon ($53,000)"
+ },
+ "R2023-32": {
+  "es": "Compró reparación de puertas y portones automáticos a AAA Automated Door Repair, Inc. (hasta $30,000)",
+  "ht": "Achte reparasyon pòt ak baryè otomatik nan men AAA Automated Door Repair, Inc. (jiska $30,000)"
+ },
+ "R2023-33": {
+  "es": "Compró reparación de motores eléctricos y bombas a Condo Electric Corp. (hasta $105,000)",
+  "ht": "Achte reparasyon motè elektrik ak ponp nan men Condo Electric Corp. (jiska $105,000)"
+ },
+ "R2022-168": {
+  "es": "Aprobó el plano del sitio BH 164 y 10 variaciones para una torre de 32 pisos y 400 viviendas en 2261 NE 164 St",
+  "ht": "Apwouve plan sit BH 164 ak 10 derogasyon pou yon tou 32 etaj, 400 inite nan 2261 NE 164 St"
+ },
+ "R2022-169": {
+  "es": "Aprobó el plano del sitio de Biscayne Office Complex y un garaje de 248 espacios en 15801-15807 Biscayne Blvd",
+  "ht": "Apwouve plan sit Biscayne Office Complex ak yon garaj 248 plas nan 15801-15807 Biscayne Blvd"
+ },
+ "R2022-68": {
+  "es": "Otorgó una variación para que un toldo existente en 2811 NE 164 St ocupe 17 pies del retiro lateral",
+  "ht": "Bay yon derogasyon pou yon tant ki la deja nan 2811 NE 164 St antre 17 pye nan maj akote a"
+ },
+ "R2023-37": {
+  "es": "Compró equipo de ejercicio al aire libre a Greenfield's Outdoor Fitness, Inc. (hasta $258,300)",
+  "ht": "Achte ekipman egzèsis deyò nan men Greenfield's Outdoor Fitness, Inc. (jiska $258,300)"
+ },
+ "R2023-39": {
+  "es": "Compró guardias de cruce escolar a The Butler Group of South Florida, LLC (NextStaff)",
+  "ht": "Achte gad travèse lekòl nan men The Butler Group of South Florida, LLC (NextStaff)"
+ },
+ "R2023-40": {
+  "es": "Compró vehículos de la flota policial a Bartow Ford",
+  "ht": "Achte machin flòt lapolis nan men Bartow Ford"
+ },
+ "R2023-41": {
+  "es": "Compró suministros de primeros auxilios y servicio de desfibriladores a Cintas Corporation No. 2",
+  "ht": "Achte founiti premye swen ak sèvis defibrilatè nan men Cintas Corporation No. 2"
+ },
+ "R2023-42": {
+  "es": "Compró consultoría sobre anexión a Pantin Gov, LLC (hasta $21,000)",
+  "ht": "Achte konsiltasyon sou aneksyon nan men Pantin Gov, LLC (jiska $21,000)"
+ },
+ "R2023-43": {
+  "es": "Compró servicios de consultoría a C.A.P. Government, Inc.",
+  "ht": "Achte sèvis konsiltasyon nan men C.A.P. Government, Inc."
+ },
+ "R2023-47": {
+  "es": "Modificó el contrato de servicios de consultoría con The Corradino Group, Inc. (hasta $50,000)",
+  "ht": "Modifye kontra sèvis konsiltasyon ak The Corradino Group, Inc. (jiska $50,000)"
+ },
+ "R2023-49": {
+  "es": "Compró administración de reclamos de seguros a Preferred Governmental Claim Solutions, Inc. usando el contrato de otro gobierno (hasta $57,750)",
+  "ht": "Achte administrasyon reklamasyon asirans nan men Preferred Governmental Claim Solutions, Inc. ak kontra yon lòt gouvènman (jiska $57,750)"
+ },
+ "R2023-50": {
+  "es": "Firmó un acuerdo con EAC Consulting, Inc. para servicios de ingeniería (hasta $272,789)",
+  "ht": "Siyen yon akò ak EAC Consulting, Inc. pou sèvis enjenyè (jiska $272,789)"
+ },
+ "R2023-69": {
+  "es": "Otorgó una variación para una piscina en el patio lateral en 853 NE 164 St (residencia Feder)",
+  "ht": "Bay yon derogasyon pou yon pisin nan lakou akote nan 853 NE 164 St (kay Feder)"
+ },
+ "R2023-73": {
+  "es": "Modificó la declaración de restricciones y el acuerdo de áreas comunes de North Miami Beach Village",
+  "ht": "Modifye deklarasyon restriksyon ak akò zòn komen North Miami Beach Village"
+ },
+ "R2023-54": {
+  "es": "Compró programas de gestión de activos a Azteca Systems, LLC",
+  "ht": "Achte lojisyèl jesyon byen nan men Azteca Systems, LLC"
+ },
+ "R2023-55": {
+  "es": "Contrató a ROK Technologies, LLC para alojamiento de mapas digitales (GIS)",
+  "ht": "Te angaje ROK Technologies, LLC pou ebèjman kat dijital (GIS)"
+ },
+ "R2023-56": {
+  "es": "Modificó el contrato de servicios de arquitectura y diseño con Atkins North America, Inc. (hasta $18,300)",
+  "ht": "Modifye kontra sèvis achitekti ak konsepsyon ak Atkins North America, Inc. (jiska $18,300)"
+ },
+ "R2023-57": {
+  "es": "Compró reparación de aceras a WGI, Inc. usando el contrato de otro gobierno (hasta $149,950)",
+  "ht": "Achte reparasyon twotwa nan men WGI, Inc. ak kontra yon lòt gouvènman (jiska $149,950)"
+ },
+ "R2023-60": {
+  "es": "Compró químicos para tratar el agua a Lhoist North America of Alabama, LLC",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Lhoist North America of Alabama, LLC"
+ },
+ "R2023-61": {
+  "es": "Compró bombas de pozo y reparación de pozos a A.C. Schultes of Florida, Inc.",
+  "ht": "Achte ponp pi ak reparasyon pi nan men A.C. Schultes of Florida, Inc."
+ },
+ "R2023-62": {
+  "es": "Compró clases juveniles de ciencia y robótica a Augmented Intelligence Academy, Inc.",
+  "ht": "Achte kou syans ak robotik pou jèn nan men Augmented Intelligence Academy, Inc."
+ },
+ "R2023-63": {
+  "es": "Adjudicó servicios de limpieza a Star Building Services, Inc.",
+  "ht": "Bay Star Building Services, Inc. kontra sèvis netwayaj"
+ },
+ "R2023-65": {
+  "es": "Compró químicos para tratar el agua a Brenntag Mid-South, Inc. usando el contrato de otro gobierno (hasta $271,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Brenntag Mid-South, Inc. ak kontra yon lòt gouvènman (jiska $271,000)"
+ },
+ "R2023-66": {
+  "es": "Firmó un acuerdo con Chen Moore and Associates para servicios de ingeniería (hasta $119,751)",
+  "ht": "Siyen yon akò ak Chen Moore and Associates pou sèvis enjenyè (jiska $119,751)"
+ },
+ "R2023-68": {
+  "es": "Aprobó el plano del sitio de Prestige Boardwalk y el cierre de un callejón en 16651 NE 18 Ave",
+  "ht": "Apwouve plan sit Prestige Boardwalk ak fèmen yon ti ri nan 16651 NE 18 Ave"
+ },
+ "R2023-71": {
+  "es": "Contrató a Carbyne, Inc. para programa de despacho de emergencias",
+  "ht": "Te angaje Carbyne, Inc. pou lojisyèl dispatch ijans"
+ },
+ "R2023-72": {
+  "es": "Aprobó una orden de cambio para FieldTurf USA, Inc. en trabajos de césped sintético y pista",
+  "ht": "Apwouve yon chanjman lòd pou FieldTurf USA, Inc. sou travay gazon sentetik ak pis"
+ },
+ "R2023-78": {
+  "es": "Renovó el contrato de servicios de auditoría con Caballero, Fierman, Llerena & Garcia, LLP",
+  "ht": "Renouvle kontra sèvis odit ak Caballero, Fierman, Llerena & Garcia, LLP"
+ },
+ "R2023-79": {
+  "es": "Compró transporte de lodos de cal a Prolime Corporation (hasta $258,000)",
+  "ht": "Achte transpò labou lacho nan men Prolime Corporation (jiska $258,000)"
+ },
+ "R2023-80": {
+  "es": "Firmó un acuerdo con Hazen and Sawyer para servicios de ingeniería (hasta $179,350)",
+  "ht": "Siyen yon akò ak Hazen and Sawyer pou sèvis enjenyè (jiska $179,350)"
+ },
+ "R2023-81": {
+  "es": "Aprobó una orden de cambio para PCL Construction, Inc. en construcción en la planta de tratamiento de agua ($222,128)",
+  "ht": "Apwouve yon chanjman lòd pou PCL Construction, Inc. sou konstriksyon nan izin tretman dlo ($222,128)"
+ },
+ "R2023-82": {
+  "es": "Firmó un acuerdo con The Avanti Company para equipo para la planta de agua",
+  "ht": "Siyen yon akò ak The Avanti Company pou ekipman pou izin dlo a"
+ },
+ "R2023-83": {
+  "es": "Firmó un acuerdo con Calvin, Giordano and Associates para servicios de ingeniería (hasta $80,720)",
+  "ht": "Siyen yon akò ak Calvin, Giordano and Associates pou sèvis enjenyè (jiska $80,720)"
+ },
+ "R2023-85": {
+  "es": "Aprobó el plano del sitio de The Helios y cinco variaciones para un edificio de uso mixto de 378 viviendas en 1700 NE 164 St",
+  "ht": "Apwouve plan sit The Helios ak senk derogasyon pou yon bilding 378 inite nan 1700 NE 164 St"
+ },
+ "R2023-86": {
+  "es": "Cerró un callejón de 20 pies (8,311 pies cuadrados) al sur de NE 167 St para el proyecto Prestige Boardwalk",
+  "ht": "Fèmen yon ti ri 20 pye (8,311 pye kare) nan sid NE 167 St pou pwojè Prestige Boardwalk"
+ },
+ "R2023-87": {
+  "es": "Firmó un acuerdo con BeeFree, LLC (Freebee) para servicio de transporte a pedido",
+  "ht": "Siyen yon akò ak BeeFree, LLC (Freebee) pou sèvis transpò sou demann"
+ },
+ "R2023-101": {
+  "es": "Firmó un acuerdo con The Corradino Group, Inc. para servicios de consultoría (hasta $324,480)",
+  "ht": "Siyen yon akò ak The Corradino Group, Inc. pou sèvis konsiltasyon (jiska $324,480)"
+ },
+ "R2023-102": {
+  "es": "Modificó el contrato de servicio de trolley con Pro Transportation, Inc. (Prokel Mobility) (hasta $163,800)",
+  "ht": "Modifye kontra sèvis twoli ak Pro Transportation, Inc. (Prokel Mobility) (jiska $163,800)"
+ },
+ "R2023-103": {
+  "es": "Aprobó el plano del sitio de Lanaar Academy y siete variaciones para una escuela privada en 1998-2065 NE 161 St",
+  "ht": "Apwouve plan sit Lanaar Academy ak sèt derogasyon pou yon lekòl prive nan 1998-2065 NE 161 St"
+ },
+ "R2023-104": {
+  "es": "Otorgó un permiso de uso condicional en 17100 NE 19 Ave",
+  "ht": "Bay yon pèmi itilizasyon kondisyonèl nan 17100 NE 19 Ave"
+ },
+ "R2023-105": {
+  "es": "Aprobó el plano del sitio de Palm Aire y 16 variaciones en el antiguo campus de Nova Southeastern, 1699-1755 NE 167 St",
+  "ht": "Apwouve plan sit Palm Aire ak 16 derogasyon sou ansyen kanpis Nova Southeastern, 1699-1755 NE 167 St"
+ },
+ "R2023-107": {
+  "es": "Firmó un acuerdo con Enterprise Fleet Management, Inc. para vehículos de la flota policial (hasta $595,743)",
+  "ht": "Siyen yon akò ak Enterprise Fleet Management, Inc. pou machin flòt lapolis (jiska $595,743)"
+ },
+ "R2023-109": {
+  "es": "Aprobó un acuerdo legal con Jennie Pierre, as parent of a minor",
+  "ht": "Apwouve yon akò regleman ak Jennie Pierre, as parent of a minor"
+ },
+ "R2023-89": {
+  "es": "Firmó un acuerdo con David Mancini & Sons, Inc. para reemplazo de tuberías principales de agua (hasta $1,500,000)",
+  "ht": "Siyen yon akò ak David Mancini & Sons, Inc. pou ranplasman tiyo prensipal dlo (jiska $1,500,000)"
+ },
+ "R2023-91": {
+  "es": "Firmó un acuerdo con Black & Veatch Corporation para gestión de programas y personal de apoyo (hasta $4,222,763)",
+  "ht": "Siyen yon akò ak Black & Veatch Corporation pou jesyon pwogram ak anplwaye sipò (jiska $4,222,763)"
+ },
+ "R2023-96": {
+  "es": "Renovó el contrato de artículos de oficina con ODP Business Solutions, LLC (hasta $150,000)",
+  "ht": "Renouvle kontra founiti biwo ak ODP Business Solutions, LLC (jiska $150,000)"
+ },
+ "R2023-99": {
+  "es": "Aprobó una orden de cambio para Crom Corporation en limpieza y reparación de tanques de agua ($48,700)",
+  "ht": "Apwouve yon chanjman lòd pou Crom Corporation sou netwayaj ak reparasyon tank dlo ($48,700)"
+ },
+ "R2023-106": {
+  "es": "Modificó el contrato de recolección de basura y reciclaje con Coastal Waste & Recycling of Florida, Inc.",
+  "ht": "Modifye kontra ranmasaj fatra ak resiklaj ak Coastal Waste & Recycling of Florida, Inc."
+ },
+ "R2023-111": {
+  "es": "Aprobó un acuerdo legal con Terry Garcia",
+  "ht": "Apwouve yon akò regleman ak Terry Garcia"
+ },
+ "R2023-112": {
+  "es": "Contrató a MCCI, LLC para digitalización e indexación de documentos (hasta $160,000)",
+  "ht": "Te angaje MCCI, LLC pou eskane ak endeks dokiman (jiska $160,000)"
+ },
+ "R2023-114": {
+  "es": "Compró estudios de tarifas de servicios públicos a Raftelis Financial Consultants, Inc. usando el contrato de otro gobierno (hasta $367,400)",
+  "ht": "Achte etid tarif sèvis piblik nan men Raftelis Financial Consultants, Inc. ak kontra yon lòt gouvènman (jiska $367,400)"
+ },
+ "R2023-115": {
+  "es": "Compró vehículos y equipo a Polaris Sales, Inc. usando el contrato de otro gobierno (hasta $63,059)",
+  "ht": "Achte machin ak ekipman nan men Polaris Sales, Inc. ak kontra yon lòt gouvènman (jiska $63,059)"
+ },
+ "R2023-117": {
+  "es": "Compró químicos para tratar el agua a Airgas USA, LLC usando el contrato de otro gobierno (hasta $110,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Airgas USA, LLC ak kontra yon lòt gouvènman (jiska $110,000)"
+ },
+ "R2023-120": {
+  "es": "Aprobó Citadel Care Center: un centro de enfermería de 147 camas con siete variaciones en 1800 NE 168 St",
+  "ht": "Apwouve Citadel Care Center: yon sant swen 147 kabann ak sèt derogasyon nan 1800 NE 168 St"
+ },
+ "R2023-121": {
+  "es": "Otorgó un uso condicional para una licorería (B-side Liquors) en 73 NW 167 St",
+  "ht": "Bay yon itilizasyon kondisyonèl pou yon magazen likè (B-side Liquors) nan 73 NW 167 St"
+ },
+ "R2023-122": {
+  "es": "Otorgó $35,000 a North Miami Beach Eruv Council, Inc.",
+  "ht": "Bay North Miami Beach Eruv Council, Inc. $35,000"
+ },
+ "R2023-123": {
+  "es": "Contrató a Sun-Star Electric, Inc. para bombas de pozo y reparación de pozos sin licitación (hasta $100,120)",
+  "ht": "Te angaje Sun-Star Electric, Inc. pou ponp pi ak reparasyon pi san lisitasyon (jiska $100,120)"
+ },
+ "R2023-124": {
+  "es": "Compró químicos para tratar el agua a Airgas Specialty Products, Inc. usando el contrato de otro gobierno (hasta $100,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Airgas Specialty Products, Inc. ak kontra yon lòt gouvènman (jiska $100,000)"
+ },
+ "R2023-125": {
+  "es": "Firmó un acuerdo con C.A.P. Government, Inc. para servicios de consultoría",
+  "ht": "Siyen yon akò ak C.A.P. Government, Inc. pou sèvis konsiltasyon"
+ },
+ "R2023-126": {
+  "es": "Compró un camión municipal a Rechtien International Trucks, Inc. usando el contrato de otro gobierno (hasta $138,048)",
+  "ht": "Achte yon kamyon vil la nan men Rechtien International Trucks, Inc. ak kontra yon lòt gouvènman (jiska $138,048)"
+ },
+ "R2023-127": {
+  "es": "Compró químicos para tratar el agua a Lhoist North America of Alabama, LLC usando el contrato de otro gobierno (hasta $1,100,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Lhoist North America of Alabama, LLC ak kontra yon lòt gouvènman (jiska $1,100,000)"
+ },
+ "R2023-128": {
+  "es": "Compró químicos para tratar el agua a Allied Universal Corp. usando el contrato de otro gobierno (hasta $882,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Allied Universal Corp. ak kontra yon lòt gouvènman (jiska $882,000)"
+ },
+ "R2023-129": {
+  "es": "Adjudicó reemplazo de tuberías principales de agua a Southern Underground Industries, Inc. (hasta $12,701,471)",
+  "ht": "Bay Southern Underground Industries, Inc. kontra ranplasman tiyo prensipal dlo (jiska $12,701,471)"
+ },
+ "R2023-119": {
+  "es": "Aprobó el plano del sitio de May NMB y 13 variaciones para un proyecto de 34 pisos y 1,217 viviendas en 16385-16445 W Dixie Hwy",
+  "ht": "Apwouve plan sit May NMB ak 13 derogasyon pou yon pwojè 34 etaj, 1,217 inite nan 16385-16445 W Dixie Hwy"
+ },
+ "R2024-01": {
+  "es": "Aprobó una orden de cambio para Home Depot U.S.A., Inc. (Home Depot Pro) en suministros de mantenimiento ($150,000)",
+  "ht": "Apwouve yon chanjman lòd pou Home Depot U.S.A., Inc. (Home Depot Pro) sou founiti antretyen ($150,000)"
+ },
+ "R2024-02": {
+  "es": "Compró químicos para tratar el agua a Amaya Solutions, Inc. (American Water Chemicals) usando el contrato de otro gobierno (hasta $194,000)",
+  "ht": "Achte pwodui chimik pou trete dlo nan men Amaya Solutions, Inc. (American Water Chemicals) ak kontra yon lòt gouvènman (jiska $194,000)"
+ },
+ "R2024-03": {
+  "es": "Compró mantenimiento de césped y jardines a BrightView Landscape Services usando el contrato de otro gobierno (hasta $135,880)",
+  "ht": "Achte antretyen gazon ak jaden nan men BrightView Landscape Services ak kontra yon lòt gouvènman (jiska $135,880)"
+ },
+ "R2024-05": {
+  "es": "Compró un camión municipal a Altec Industries, Inc. usando el contrato de otro gobierno (hasta $240,887)",
+  "ht": "Achte yon kamyon vil la nan men Altec Industries, Inc. ak kontra yon lòt gouvènman (jiska $240,887)"
+ },
+ "R2024-06": {
+  "es": "Contrató a AMCS Group, Inc. para programas informáticos y soporte (hasta $60,000)",
+  "ht": "Te angaje AMCS Group, Inc. pou lojisyèl ak sipò (jiska $60,000)"
+ },
+ "R2024-07": {
+  "es": "Contrató a Core & Main para medidores de agua sin licitación (hasta $80,000)",
+  "ht": "Te angaje Core & Main pou kontè dlo san lisitasyon (jiska $80,000)"
+ },
+ "R2024-08": {
+  "es": "Aprobó una orden de cambio para Crom Corporation en limpieza y reparación de tanques de agua ($20,715)",
+  "ht": "Apwouve yon chanjman lòd pou Crom Corporation sou netwayaj ak reparasyon tank dlo ($20,715)"
+ },
+ "R2024-09": {
+  "es": "Compró financiamiento de arrendamiento con opción a compra de vehículos a Enterprise Fleet Management, Inc. usando el contrato de otro gobierno (hasta $266,000)",
+  "ht": "Achte finansman lokasyon-acha machin nan men Enterprise Fleet Management, Inc. ak kontra yon lòt gouvènman (jiska $266,000)"
+ },
+ "R2024-10": {
+  "es": "Compró vehículos y equipo a Environmental Products Group, Inc. usando el contrato de otro gobierno (hasta $399,600)",
+  "ht": "Achte machin ak ekipman nan men Environmental Products Group, Inc. ak kontra yon lòt gouvènman (jiska $399,600)"
+ },
+ "R2024-11": {
+  "es": "Contrató a Fluid Control Specialties, Inc. para equipo para la planta de agua sin licitación (hasta $320,000)",
+  "ht": "Te angaje Fluid Control Specialties, Inc. pou ekipman pou izin dlo a san lisitasyon (jiska $320,000)"
+ },
+ "R2024-12": {
+  "es": "Contrató a Gilson Engineering Sales of Florida para equipo para la planta de agua sin licitación (hasta $82,000)",
+  "ht": "Te angaje Gilson Engineering Sales of Florida pou ekipman pou izin dlo a san lisitasyon (jiska $82,000)"
+ },
+ "R2024-13": {
+  "es": "Aprobó una orden de cambio para Graybar Electric Company, Inc. en reparaciones eléctricas ($235,000)",
+  "ht": "Apwouve yon chanjman lòd pou Graybar Electric Company, Inc. sou reparasyon elektrik ($235,000)"
+ },
+ "R2024-15": {
+  "es": "Aprobó una orden de cambio para Sherwin-Williams en pintura exterior ($70,000)",
+  "ht": "Apwouve yon chanjman lòd pou Sherwin-Williams sou penti deyò ($70,000)"
+ },
+ "R2024-16": {
+  "es": "Firmó un acuerdo con Stantec Consulting Services, Inc. para servicios de ingeniería (hasta $79,200)",
+  "ht": "Siyen yon akò ak Stantec Consulting Services, Inc. pou sèvis enjenyè (jiska $79,200)"
+ },
+ "R2024-17": {
+  "es": "Aprobó una orden de cambio para Toshiba America Business Solutions en copiadoras e impresión ($125,000)",
+  "ht": "Apwouve yon chanjman lòd pou Toshiba America Business Solutions sou fotokopyèz ak enpresyon ($125,000)"
+ },
+ "R2024-18": {
+  "es": "Contrató a TriNova, Inc. para equipo para la planta de agua sin licitación (hasta $102,000)",
+  "ht": "Te angaje TriNova, Inc. pou ekipman pou izin dlo a san lisitasyon (jiska $102,000)"
+ },
+ "R2024-19": {
+  "es": "Aprobó una orden de cambio para Waco Filters Corporation en equipo para la planta de agua ($80,000)",
+  "ht": "Apwouve yon chanjman lòd pou Waco Filters Corporation sou ekipman pou izin dlo a ($80,000)"
+ },
+ "R2024-21": {
+  "es": "Aprobó un acuerdo legal con Christian Romain-Pierrot",
+  "ht": "Apwouve yon akò regleman ak Christian Romain-Pierrot"
+ },
+ "R2024-22": {
+  "es": "Aprobó la recolección semanal de reciclaje por Coastal Waste & Recycling (tarifa sube $3.50 al mes por vivienda)",
+  "ht": "Apwouve ranmasaj resiklaj chak semèn pa Coastal Waste & Recycling (frè monte $3.50 pa mwa pou chak kay)"
+ },
+ "R2024-24": {
+  "es": "Aprobó una orden de cambio para Shaw Industries, Inc. en materiales para pisos ($350,000)",
+  "ht": "Apwouve yon chanjman lòd pou Shaw Industries, Inc. sou materyèl planche ($350,000)"
+ },
+ "R2024-25": {
+  "es": "Aprobó una orden de cambio para Thyssenkrupp Elevator Corporation en mantenimiento de ascensores ($200,000)",
+  "ht": "Apwouve yon chanjman lòd pou Thyssenkrupp Elevator Corporation sou antretyen asansè ($200,000)"
+ },
+ "R2024-26": {
+  "es": "Aprobó una orden de cambio para World Electric Supply Co. en reparaciones eléctricas ($130,000)",
+  "ht": "Apwouve yon chanjman lòd pou World Electric Supply Co. sou reparasyon elektrik ($130,000)"
+ },
+ "R2024-27": {
+  "es": "Firmó un acuerdo con WSP USA, Inc. para servicios de ingeniería (hasta $492,609)",
+  "ht": "Siyen yon akò ak WSP USA, Inc. pou sèvis enjenyè (jiska $492,609)"
+ },
+ "R2024-28": {
+  "es": "Aprobó una orden de cambio para Xylem Water Solutions, Inc. en bombas, piezas y reparaciones ($357,000)",
+  "ht": "Apwouve yon chanjman lòd pou Xylem Water Solutions, Inc. sou ponp, pyès ak reparasyon ($357,000)"
+ },
+ "R2024-29": {
+  "es": "Compró reparación de puertas y portones automáticos a AAA Automated Door Repair, Inc. usando el contrato de otro gobierno (hasta $110,000)",
+  "ht": "Achte reparasyon pòt ak baryè otomatik nan men AAA Automated Door Repair, Inc. ak kontra yon lòt gouvènman (jiska $110,000)"
+ },
+ "R2024-30": {
+  "es": "Compró un camión aspirador para alcantarillado a Environmental Products Group, Inc. usando el contrato de otro gobierno (hasta $148,000)",
+  "ht": "Achte yon kamyon aspiratè pou egou nan men Environmental Products Group, Inc. ak kontra yon lòt gouvènman (jiska $148,000)"
+ },
+ "R2024-32": {
+  "es": "Otorgó variaciones para una piscina en el patio lateral en 16950 NE 17 Ave (residencia Zolezzi)",
+  "ht": "Bay derogasyon pou yon pisin nan lakou akote nan 16950 NE 17 Ave (kay Zolezzi)"
+ },
+ "R2024-34": {
+  "es": "Renovó el contrato de servicios y programas de facturación de servicios públicos con Invoice Cloud, Inc. (hasta $612,000)",
+  "ht": "Renouvle kontra sèvis ak lojisyèl faktirasyon sèvis piblik ak Invoice Cloud, Inc. (jiska $612,000)"
+ },
+ "R2024-35": {
+  "es": "Compró equipo para la planta de agua a Rexel USA, Inc. usando el contrato de otro gobierno (hasta $595,000)",
+  "ht": "Achte ekipman pou izin dlo a nan men Rexel USA, Inc. ak kontra yon lòt gouvènman (jiska $595,000)"
+ },
+ "R2024-36": {
+  "es": "Compró equipo de calefacción y aire acondicionado a Trane U.S. Inc. usando el contrato de otro gobierno (hasta $625,000)",
+  "ht": "Achte ekipman chofaj ak klimatizasyon nan men Trane U.S. Inc. ak kontra yon lòt gouvènman (jiska $625,000)"
+ },
+ "R2024-37": {
+  "es": "Adjudicó construcción de estación de bombeo a Florida Design Drilling, LLC (hasta $1,150,000)",
+  "ht": "Bay Florida Design Drilling, LLC kontra konstriksyon estasyon ponpaj (jiska $1,150,000)"
+ },
+ "R2024-42": {
+  "es": "Sustituyó a 3rd Day Church como beneficiaria de una servidumbre municipal que tenía Jewish War Veterans Post #682",
+  "ht": "Mete 3rd Day Church kòm benefisyè yon sèvitid vil la ki te pou Jewish War Veterans Post #682"
+ },
+ "R2024-43": {
+  "es": "Otorgó a NMB Place Owner, LLC $500,000 en créditos de permisos de construcción en lugar de un reembolso en efectivo",
+  "ht": "Bay NMB Place Owner, LLC $500,000 an kredi pèmi konstriksyon olye yon ranbousman lajan kach"
+ },
+ "R2024-40": {
+  "es": "Aprobó una orden de cambio para Axon Enterprise, Inc. en pistolas Taser para la policía ($151,229)",
+  "ht": "Apwouve yon chanjman lòd pou Axon Enterprise, Inc. sou Taser pou lapolis ($151,229)"
+ },
+ "R2024-44": {
+  "es": "Renovó el contrato de servicio de trolley con Pro Transportation, Inc. (Prokel Mobility) (hasta $1,925,688)",
+  "ht": "Renouvle kontra sèvis twoli ak Pro Transportation, Inc. (Prokel Mobility) (jiska $1,925,688)"
+ },
+ "R2024-45": {
+  "es": "Aprobó un acuerdo de mercadeo para que Service Line Warranties of America venda garantías de tuberías a los residentes",
+  "ht": "Apwouve yon akò maketing pou Service Line Warranties of America vann garanti tiyo bay rezidan yo"
+ },
+ "R2024-47": {
+  "es": "Compró obras de alcantarillado y agua a GML Coatings, LLC usando el contrato de otro gobierno (hasta $90,000)",
+  "ht": "Achte travay sistèm egou ak dlo nan men GML Coatings, LLC ak kontra yon lòt gouvènman (jiska $90,000)"
+ },
+ "R2024-48": {
+  "es": "Firmó un acuerdo con North Miami Beach Little League, Inc. para programas deportivos juveniles",
+  "ht": "Siyen yon akò ak North Miami Beach Little League, Inc. pou pwogram espò pou jèn"
+ },
+ "R2024-49": {
+  "es": "Firmó un acuerdo con North Miami Beach Youth Athletic Club, Inc. para programas deportivos juveniles",
+  "ht": "Siyen yon akò ak North Miami Beach Youth Athletic Club, Inc. pou pwogram espò pou jèn"
+ },
+ "R2024-50": {
+  "es": "Aprobó una orden de cambio para B&H Foto & Electronics Corp. en equipos audiovisuales ($100,000)",
+  "ht": "Apwouve yon chanjman lòd pou B&H Foto & Electronics Corp. sou ekipman odyovizyèl ($100,000)"
+ },
+ "R2024-54": {
+  "es": "Ratificó el contrato sindical con AFSCME Local 3293",
+  "ht": "Ratifye kontra sendika ak AFSCME Local 3293"
+ },
+ "R2024-56": {
+  "es": "Firmó un acuerdo con Brown and Caldwell para servicios de ingeniería (hasta $534,980)",
+  "ht": "Siyen yon akò ak Brown and Caldwell pou sèvis enjenyè (jiska $534,980)"
+ },
+ "R2024-57": {
+  "es": "Firmó un acuerdo con Brown and Caldwell para servicios de ingeniería (hasta $411,056)",
+  "ht": "Siyen yon akò ak Brown and Caldwell pou sèvis enjenyè (jiska $411,056)"
+ },
+ "R2024-58": {
+  "es": "Contrató a Greenspoon Marder, LLP para servicios legales del abogado de la ciudad",
+  "ht": "Te angaje Greenspoon Marder, LLP pou sèvis legal avoka vil la"
+ },
+ "R2024-60": {
+  "es": "Aprobó una orden de cambio para Shenandoah General Construction, LLC en limpieza de drenajes y alcantarillado ($200,000)",
+  "ht": "Apwouve yon chanjman lòd pou Shenandoah General Construction, LLC sou netwayaj drenaj ak egou ($200,000)"
+ },
+ "R2024-61": {
+  "es": "Renovó el contrato de servicios de cabildeo con Rubin, Turnbull & Associates (hasta $93,750)",
+  "ht": "Renouvle kontra sèvis lobi ak Rubin, Turnbull & Associates (jiska $93,750)"
+ },
+ "R2024-63": {
+  "es": "Aprobó una orden de cambio para KCI Technologies, Inc. en servicios de arquitectura y diseño ($174,910)",
+  "ht": "Apwouve yon chanjman lòd pou KCI Technologies, Inc. sou sèvis achitekti ak konsepsyon ($174,910)"
+ },
+ "R2024-65": {
+  "es": "Aprobó una orden de cambio para DoneRite Pumps, Inc. en equipo y reparaciones de estaciones de bombeo ($25,000)",
+  "ht": "Apwouve yon chanjman lòd pou DoneRite Pumps, Inc. sou ekipman ak reparasyon estasyon ponpaj ($25,000)"
+ },
+ "R2024-66": {
+  "es": "Aprobó una orden de cambio para A.C. Schultes of Florida, Inc. en bombas de pozo y reparación de pozos ($45,000)",
+  "ht": "Apwouve yon chanjman lòd pou A.C. Schultes of Florida, Inc. sou ponp pi ak reparasyon pi ($45,000)"
+ },
+ "R2024-67": {
+  "es": "Compró equipo de red a DOF Creations, LLC usando el contrato de otro gobierno (hasta $140,000)",
+  "ht": "Achte ekipman rezo nan men DOF Creations, LLC ak kontra yon lòt gouvènman (jiska $140,000)"
+ },
+ "R2024-68": {
+  "es": "Compró limpieza y reparación de tanques de agua a Razorback, LLC usando el contrato de otro gobierno (hasta $251,000)",
+  "ht": "Achte netwayaj ak reparasyon tank dlo nan men Razorback, LLC ak kontra yon lòt gouvènman (jiska $251,000)"
+ },
+ "R2024-69": {
+  "es": "Otorgó una variación para un letrero iluminado en la tienda At Home, 14585 Biscayne Blvd",
+  "ht": "Bay yon derogasyon pou yon pankat limen nan magazen At Home, 14585 Biscayne Blvd"
+ },
+ "R2024-72": {
+  "es": "Otorgó un uso condicional para una tienda de mascotas y hotel para perros (Howl Nation) en 16385 Biscayne Blvd",
+  "ht": "Bay yon itilizasyon kondisyonèl pou yon magazen bèt ak otèl chen (Howl Nation) nan 16385 Biscayne Blvd"
+ },
+ "R2024-73": {
+  "es": "Adjudicó reemplazo de tuberías principales de agua a Southern Underground Industries, Inc. (hasta $3,191,524)",
+  "ht": "Bay Southern Underground Industries, Inc. kontra ranplasman tiyo prensipal dlo (jiska $3,191,524)"
+ },
+ "ord-2024-10": {
+  "es": "Modificó el acuerdo de desarrollo de New North para 15530-15780 W Dixie Hwy",
+  "ht": "Modifye akò devlopman New North pou 15530-15780 W Dixie Hwy"
+ },
+ "R2024-70": {
+  "es": "Aprobó el plano del sitio de New North y 18 variaciones para 1,296 viviendas en 15530-15780 W Dixie Hwy",
+  "ht": "Apwouve plan sit New North ak 18 derogasyon pou 1,296 kay nan 15530-15780 W Dixie Hwy"
+ },
+ "R2024-71": {
+  "es": "Cerró un callejón de 20 pies junto a 15530 y 15540 W Dixie Hwy a favor de North Towne Phase I, LLC",
+  "ht": "Fèmen yon ti ri 20 pye bò 15530 ak 15540 W Dixie Hwy an favè North Towne Phase I, LLC"
+ },
+ "R2024-76": {
+  "es": "Compró un estudio de seguridad vial a WGI, Inc. usando el contrato de otro gobierno (hasta $167,470)",
+  "ht": "Achte yon etid sekirite trafik nan men WGI, Inc. ak kontra yon lòt gouvènman (jiska $167,470)"
+ },
+ "R2024-77": {
+  "es": "Aprobó una orden de cambio para MCCI, LLC en digitalización e indexación de documentos ($33,100)",
+  "ht": "Apwouve yon chanjman lòd pou MCCI, LLC sou eskane ak endeks dokiman ($33,100)"
+ },
+ "R2024-81": {
+  "es": "Compró servicios y programas de facturación de servicios públicos a SpryPoint Services, Inc. usando el contrato de otro gobierno (hasta $1,602,345)",
+  "ht": "Achte sèvis ak lojisyèl faktirasyon sèvis piblik nan men SpryPoint Services, Inc. ak kontra yon lòt gouvènman (jiska $1,602,345)"
+ },
+ "R2024-83": {
+  "es": "Adjudicó obras de alcantarillado y agua a Southern Underground Industries, Inc. (hasta $6,686,387)",
+  "ht": "Bay Southern Underground Industries, Inc. kontra travay sistèm egou ak dlo (jiska $6,686,387)"
+ },
+ "R2024-78": {
+  "es": "Aprobó Elevate 163: un edificio de 26 pisos y 351 viviendas con nueve variaciones en 1973-1991 NE 163 St",
+  "ht": "Apwouve Elevate 163: yon bilding 26 etaj, 351 inite ak nèf derogasyon nan 1973-1991 NE 163 St"
+ },
+ "R2024-88": {
+  "es": "Aprobó una orden de cambio para Pantropic Power, Inc. en reparación de generadores ($80,000)",
+  "ht": "Apwouve yon chanjman lòd pou Pantropic Power, Inc. sou reparasyon dèlko ($80,000)"
+ },
+ "R2024-91": {
+  "es": "Aprobó un plano del sitio para ampliar el restaurante La Granja en 105 NE 167 St",
+  "ht": "Apwouve yon plan sit pou agrandi restoran La Granja nan 105 NE 167 St"
+ },
+ "R2024-92": {
+  "es": "Seleccionó a Aetna, Inc. para seguro médico para empleados",
+  "ht": "Chwazi Aetna, Inc. pou asirans sante pou anplwaye yo"
+ },
+ "R2024-102": {
+  "es": "Aprobó un plano del sitio y cuatro variaciones para un edificio de tres unidades en 1400 NE 171 St",
+  "ht": "Apwouve yon plan sit ak kat derogasyon pou yon bilding twa inite nan 1400 NE 171 St"
+ },
+ "R2024-103": {
+  "es": "Otorgó una variación en 3380 NE 170 St",
+  "ht": "Bay yon derogasyon nan 3380 NE 170 St"
+ },
+ "R2024-93": {
+  "es": "Aprobó una orden de cambio para Country Bill's Lawn Maintenance, Inc. en mantenimiento de césped y jardines ($300,000)",
+  "ht": "Apwouve yon chanjman lòd pou Country Bill's Lawn Maintenance, Inc. sou antretyen gazon ak jaden ($300,000)"
+ },
+ "R2024-94": {
+  "es": "Renovó el contrato de reparación de techos con Garland/DBS, Inc. (hasta $8,000,000)",
+  "ht": "Renouvle kontra reparasyon twati ak Garland/DBS, Inc. (jiska $8,000,000)"
+ },
+ "R2024-95": {
+  "es": "Adjudicó un terreno municipal a Palmetto Homes Urban Development Group para construir una vivienda asequible",
+  "ht": "Bay Palmetto Homes Urban Development Group yon tè vil la pou bati yon kay abòdab"
+ },
+ "R2024-96": {
+  "es": "Compró programa de despacho de emergencias a CentralSquare Technologies",
+  "ht": "Achte lojisyèl dispatch ijans nan men CentralSquare Technologies"
+ },
+ "R2024-99": {
+  "es": "Compró revestimiento de tuberías de alcantarillado a Insituform Technologies, LLC usando el contrato de otro gobierno (hasta $227,000)",
+  "ht": "Achte kouvèti tiyo egou nan men Insituform Technologies, LLC ak kontra yon lòt gouvènman (jiska $227,000)"
+ },
+ "ord-2024-12": {
+  "es": "Cambió la zonificación de 17031 y 17051 NE 20 Ave de multifamiliar a comercio limitado, a pedido de The Offices of NMB LLC",
+  "ht": "Chanje zonaj 17031 ak 17051 NE 20 Ave soti nan plizyè fanmi pou biznis limite, jan The Offices of NMB LLC te mande"
+ },
+ "R2024-110": {
+  "es": "Aprobó una orden de cambio para Allied Universal Corp. en químicos para piscinas ($25,000)",
+  "ht": "Apwouve yon chanjman lòd pou Allied Universal Corp. sou pwodui chimik pou pisin ($25,000)"
+ },
+ "R2024-111": {
+  "es": "Compró un sistema telefónico en la nube a RingCentral, Inc. usando el contrato de otro gobierno",
+  "ht": "Achte yon sistèm telefòn nan nwaj nan men RingCentral, Inc. ak kontra yon lòt gouvènman"
+ },
+ "R2024-112": {
+  "es": "Adjudicó control de plagas y roedores a Northwest Exterminating Co., LLC y Tower Pest Control, Inc. (hasta $90,000)",
+  "ht": "Bay Northwest Exterminating Co., LLC ak Tower Pest Control, Inc. kontra kontwòl ensèk ak rat (jiska $90,000)"
+ },
+ "R2024-113": {
+  "es": "Compró neumáticos y piezas de flota a The Goodyear Tire & Rubber Company usando el contrato de otro gobierno (hasta $370,000)",
+  "ht": "Achte kawotchou ak pyès machin nan men The Goodyear Tire & Rubber Company ak kontra yon lòt gouvènman (jiska $370,000)"
+ },
+ "R2024-116": {
+  "es": "Aprobó el plano del sitio de 174 Shoppes y variaciones en 17450 Biscayne Blvd",
+  "ht": "Apwouve plan sit 174 Shoppes ak derogasyon nan 17450 Biscayne Blvd"
+ },
+ "R2024-117": {
+  "es": "Aprobó el plano del sitio del almacén Feldman House y cuatro variaciones en 1981 NE 153 St",
+  "ht": "Apwouve plan sit depo Feldman House ak kat derogasyon nan 1981 NE 153 St"
+ },
+ "R2024-122": {
+  "es": "Aprobó una orden de cambio para All Webb's Enterprise, Inc. en obras de alcantarillado y agua ($260,000)",
+  "ht": "Apwouve yon chanjman lòd pou All Webb's Enterprise, Inc. sou travay sistèm egou ak dlo ($260,000)"
+ },
+ "R2024-125": {
+  "es": "Compró radios para la policía a Motorola Solutions, Inc. usando el contrato de otro gobierno (hasta $1,869,000)",
+  "ht": "Achte radyo pou lapolis nan men Motorola Solutions, Inc. ak kontra yon lòt gouvènman (jiska $1,869,000)"
+ },
+ "R2024-120": {
+  "es": "Definió cómo se usan las donaciones contractuales de Coastal Waste & Recycling (becas, adultos mayores, programas comunitarios)",
+  "ht": "Fikse kijan don kontra Coastal Waste & Recycling yo ap depanse (bous, granmoun, pwogram kominote)"
+ },
+ "R2024-124": {
+  "es": "Rechazó la resolución que aprobaba a Marcum, LLP como auditor externo",
+  "ht": "Rejte rezolisyon ki t ap apwouve Marcum, LLP kòm oditè ekstèn"
+ },
+ "R2024-127": {
+  "es": "Firmó un acuerdo con Carollo Engineers, Inc. para servicios de ingeniería (hasta $358,220)",
+  "ht": "Siyen yon akò ak Carollo Engineers, Inc. pou sèvis enjenyè (jiska $358,220)"
+ },
+ "R2024-129": {
+  "es": "Contrató a ROK Technologies, LLC para alojamiento de mapas digitales (GIS)",
+  "ht": "Te angaje ROK Technologies, LLC pou ebèjman kat dijital (GIS)"
+ },
+ "R2024-131": {
+  "es": "Aprobó el plano final de subdivisión Central Subdivision (Aura) en 16955-17071 W Dixie Hwy",
+  "ht": "Apwouve plan final lotisman Central Subdivision (Aura) nan 16955-17071 W Dixie Hwy"
+ },
+ "R2024-132": {
+  "es": "Ratificó el contrato sindical con International Union of Police Associations, Local 6005",
+  "ht": "Ratifye kontra sendika ak International Union of Police Associations, Local 6005"
+ },
+ "R2024-133": {
+  "es": "Firmó un acuerdo con Black & Veatch Corporation para gestión de programas y personal de apoyo (hasta $280,000)",
+  "ht": "Siyen yon akò ak Black & Veatch Corporation pou jesyon pwogram ak anplwaye sipò (jiska $280,000)"
+ },
+ "R2024-138": {
+  "es": "Compró vehículos y equipo a Alan Jay Automotive Management, Inc. (Alan Jay Fleet Sales) usando el contrato de otro gobierno",
+  "ht": "Achte machin ak ekipman nan men Alan Jay Automotive Management, Inc. (Alan Jay Fleet Sales) ak kontra yon lòt gouvènman"
+ },
+ "2023-03-21-fox": {
+  "es": "Autorizó a Fox Rothschild como abogados sustitutos de la ciudad en el caso de residencia del alcalde",
+  "ht": "Otorize Fox Rothschild kòm avoka ranplasman vil la nan ka rezidans majistra a"
+ },
+ "2023-04-18-pizzi": {
+  "es": "Contrató al abogado Michael Pizzi para investigar el supuesto mal uso de fondos municipales",
+  "ht": "Te angaje avoka Michael Pizzi pou mennen ankèt sou move itilizasyon lajan vil la"
+ },
+ "2023-08-15-brodsky": {
+  "es": "Pagó $26,272.96 en honorarios a Brodsky Fotiu-Wojtowicz por el caso del comisionado Fleurimond",
+  "ht": "Peye $26,272.96 frè avoka bay Brodsky Fotiu-Wojtowicz pou ka komisyonè Fleurimond"
+ },
+ "2023-10-17-deans": {
+  "es": "Aprobó el horario extendido de 4 a 6 a.m. para Dean's Gold",
+  "ht": "Apwouve lè pwolonje 4-6 a.m. pou Dean's Gold"
+ },
+ "2023-10-17-ferraro": {
+  "es": "Contrató a Ferraro Law Firm para representar a la ciudad en el litigio sobre PFAS",
+  "ht": "Te angaje Ferraro Law Firm pou reprezante vil la nan pwosè PFAS"
+ },
+ "2024-01-16-g5ive": {
+  "es": "Renovó el horario de licor de 4 a 6 a.m. para G5ive en 337 NW 170 St",
+  "ht": "Renouvle lè likè 4-6 a.m. pou G5ive nan 337 NW 170 St"
+ },
+ "2024-02-20-donation": {
+  "es": "Donó $10,000 repartidos entre la Humane Society of Greater Miami y el Ancient Spanish Monastery",
+  "ht": "Bay $10,000 separe ant Humane Society of Greater Miami ak Ancient Spanish Monastery"
+ },
+ "2024-03-19-brodsky": {
+  "es": "Pagó $47,593.87 en honorarios a Brodsky Fotiu-Wojtowicz por el caso del comisionado Joseph",
+  "ht": "Peye $47,593.87 frè avoka bay Brodsky Fotiu-Wojtowicz pou ka komisyonè Joseph"
+ },
+ "2024-03-19-nabors": {
+  "es": "Contrató a Nabors, Giblin & Nickerson (Valerie Vicente) para negociar el contrato del próximo abogado municipal",
+  "ht": "Te angaje Nabors, Giblin & Nickerson (Valerie Vicente) pou negosye kontra pwochen avoka vil la"
+ },
+ "2024-05-21-ross": {
+  "es": "Pagó a la firma de relaciones públicas de Evan Ross por mayo y la mantuvo en junio al mismo costo",
+  "ht": "Peye konpayi relasyon piblik Evan Ross pou me epi kenbe l pou jen menm pri"
+ },
+ "2024-08-27-g5ive": {
+  "es": "Aprobó servicio de alcohol de 4 a 6 a.m. para G5ive (Taboo Miami) en 337 NW 170 St",
+  "ht": "Apwouve sèvis alkòl 4-6 a.m. pou G5ive (Taboo Miami) nan 337 NW 170 St"
+ },
+ "2024-09-10-chamber": {
+  "es": "Presupuestó $30,000 para la Cámara de Comercio de North Miami Beach, con una revisión financiera",
+  "ht": "Mete $30,000 nan bidjè pou Chanm Komès North Miami Beach, ak yon revizyon finansye"
+ },
+ "2024-12-17-brunson": {
+  "es": "Rechazó contratar a la firma Anthony Brunson como auditor externo",
+  "ht": "Rejte angaje konpayi Anthony Brunson kòm oditè ekstèn"
+ },
+ "2024-12-17-marcum": {
+  "es": "Contrató a Marcum, LLP como auditor externo",
+  "ht": "Te angaje Marcum, LLP kòm oditè ekstèn"
+ }
 }
