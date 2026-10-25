@@ -1,43 +1,65 @@
 {
  "2023-15": {
-  "tags": [],
-  "todo": "set industry tags/regex for: property and casualty insurers (bad-faith liability, tort costs)"
+  "tags": [
+   "insurance-property",
+   "insurance-other"
+  ],
+  "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
+  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
  },
  "2023-17": {
-  "tags": [],
-  "todo": "set industry tags/regex for: multifamily housing developers"
+  "tags": [
+   "realestate-dev",
+   "homebuilders"
+  ],
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2023-22": {
-  "tags": [],
-  "todo": "set industry tags/regex for: builders and contractors (construction defect liability)"
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD",
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD"
  },
  "2023-29": {
-  "tags": [],
-  "todo": "set industry tags/regex for: retail pharmacies"
+  "tags": [
+   "pharmacies-pbm"
+  ],
+  "re": "PHARMAC|DRUG STORE|WALGREEN|CVS",
+  "not": "CAREMARK|EXPRESS SCRIPTS|OPTUM|PBM|BENEFIT MANAG"
  },
  "2023-47": {
   "tags": [],
-  "todo": "set industry tags/regex for: Mote Marine Laboratory (named nonprofit research lab)"
+  "re": "MOTE MARINE"
  },
  "2023-65": {
-  "tags": [],
-  "todo": "set industry tags/regex for: restaurants serving alcohol (special food service licensees)"
+  "tags": [
+   "alcohol-beverage"
+  ],
+  "re": "RESTAURANT|STEAKHOUSE|TAVERN|BAR & GRILL|BAR AND GRILL|BISTRO|HOSPITALITY"
  },
  "2023-118": {
   "tags": [],
-  "todo": "set industry tags/regex for: motorcycle safety education organization (selected nonprofit)"
+  "re": "MOTORCYCLE|RIDER EDUCATION|RIDER TRAINING"
  },
  "2023-127": {
   "tags": [],
-  "todo": "set industry tags/regex for: secondhand dealers buying precious-metal bullion"
+  "re": "BULLION|COIN|GOLD|PRECIOUS METAL|SECONDHAND|PAWN|JEWEL"
  },
  "2023-134": {
-  "tags": [],
-  "todo": "set industry tags/regex for: building contractors on public works"
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "not": "FTBA|AGGREGATE"
  },
  "2023-139": {
-  "tags": [],
-  "todo": "set industry tags/regex for: commercial spaceflight companies"
+  "tags": [
+   "aerospace"
+  ],
+  "re": "SPACE|ROCKET|BLUE ORIGIN|SPACEX|ORBITAL|LAUNCH"
  },
  "2023-140": {
   "tags": [],
@@ -45,67 +67,81 @@
  },
  "2023-155": {
   "tags": [],
-  "todo": "set industry tags/regex for: LP gas dealers and gas station owners"
+  "re": "PROPANE|LP GAS|LIQUEFIED PETROLEUM|GAS STATION|PETROLEUM|FUEL|SERVICE STATION|CONVENIENCE STORE|RACETRAC|WAWA|CIRCLE K|7-ELEVEN|SUNOCO|SHELL |MOBIL"
  },
  "2023-157": {
   "tags": [],
-  "todo": "set industry tags/regex for: commercial landlords; renewable natural gas producers; agricultural producers; private investigative agencies"
+  "re": "COMMERCIAL REAL ESTATE|SHOPPING CENTER|RETAIL PROPERT|OFFICE PROPERT|COMMERCIAL PROPERT|RENEWABLE NATURAL GAS|BIOGAS|LANDFILL GAS|PRIVATE INVESTIGAT|FENCE CO|FENCING"
  },
  "2023-162": {
   "tags": [],
-  "todo": "set industry tags/regex for: private contractors operating veterans' service programs"
+  "re": "VETERAN.*(SERVICE|CARE|HOME|NURSING)|VETERANS HOME"
  },
  "2023-169": {
-  "tags": [],
-  "todo": "set industry tags/regex for: septic system (OSTDS) replacement contractors"
+  "tags": [
+   "construction"
+  ],
+  "re": "SEPTIC|SEWER|WASTEWATER|PLUMB|UTILIT"
  },
  "2023-171": {
   "tags": [],
-  "todo": "set industry tags/regex for: school bus camera enforcement vendors"
+  "re": "BUSPATROL|BUS PATROL|VERRA MOBILITY|REDFLEX|AMERICAN TRAFFIC SOLUTIONS|SENSYS|TRAFFIC CAMERA|REKOR"
  },
  "2023-174": {
   "tags": [],
-  "todo": "set industry tags/regex for: speed camera vendors"
+  "re": "BUSPATROL|BUS PATROL|VERRA MOBILITY|REDFLEX|AMERICAN TRAFFIC SOLUTIONS|SENSYS|TRAFFIC CAMERA|SPEED CAMERA|REKOR"
  },
  "2023-176": {
-  "tags": [],
-  "todo": "set industry tags/regex for: hurricane mitigation contractors"
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "ROOF|WINDOW|SHUTTER|IMPACT|HURRICANE|MITIGATION|DOOR"
  },
  "2023-180": {
   "tags": [],
-  "todo": "set industry tags/regex for: nonprofit organizations at risk of attacks (security grants)"
+  "re": "SYNAGOGUE|TEMPLE|CHURCH|MOSQUE|JEWISH|CONGREGATION|FEDERATION|CHABAD|ISLAMIC CENTER"
  },
  "2023-186": {
-  "tags": [],
-  "todo": "set industry tags/regex for: motor vehicle dealers; Best Buddies International"
+  "tags": [
+   "autos-dealers"
+  ],
+  "re": "BEST BUDDIES",
+  "not": "JM FAMILY"
  },
  "2023-197": {
-  "tags": [],
-  "todo": "set industry tags/regex for: road and bridge construction industry"
+  "tags": [
+   "construction",
+   "cruise-maritime"
+  ],
+  "re": "FTBA|TRANSPORTATION BUILDER|ROAD|PAVING|ASPHALT|AGGREGATE|HIGHWAY|BRIDGE|SHIPBUILD|SHIPYARD",
+  "not": "CRUISE|PILOT|LONGSHORE"
  },
  "2023-205": {
   "tags": [],
-  "todo": "set industry tags/regex for: small-business securities issuers"
+  "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
  },
  "2023-206": {
   "tags": [],
-  "todo": "set industry tags/regex for: credit counseling (debt management) organizations"
+  "re": "CREDIT COUNSEL|DEBT MANAGEMENT|DEBT RELIEF|CONSUMER CREDIT"
  },
  "2023-211": {
-  "tags": [],
-  "todo": "set industry tags/regex for: electrical contractors"
+  "tags": [
+   "construction"
+  ],
+  "re": "ELECTRIC"
  },
  "2023-219": {
   "tags": [],
-  "todo": "set industry tags/regex for: assignees for the benefit of creditors"
+  "re": "ASSIGNEE|RECEIVER|INSOLVENC|RESTRUCTUR|BANKRUPTC|TURNAROUND"
  },
  "2023-222": {
   "tags": [],
-  "todo": "set industry tags/regex for: minor league baseball team owners"
+  "re": "BASEBALL|MARLINS|RAYS|YANKEES|BLUE JAYS|PHILLIES|BRAVES|ORIOLES|TIGERS|CARDINALS|NATIONALS|ASTROS|METS|PIRATES|RED SOX|TWINS|SPORTS"
  },
  "2023-223": {
   "tags": [],
-  "todo": "set industry tags/regex for: real estate appraisers and appraisal management companies"
+  "re": "APPRAIS"
  },
  "2023-224": {
   "tags": [],
@@ -113,15 +149,20 @@
  },
  "2023-225": {
   "tags": [],
-  "todo": "set industry tags/regex for: electronic monitoring service contractors"
+  "re": "MONITORING|ELECTRONIC MONITOR|BI INC|SUPERCOM|SECURUS|ATTENTI|SENTINEL|BAIL BOND"
  },
  "2023-226": {
-  "tags": [],
-  "todo": "set industry tags/regex for: construction subcontractors and material suppliers"
+  "tags": [
+   "construction"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDING SUPPLY|BUILDING MATERIAL|LUMBER|CONCRETE|SUBCONTRACT"
  },
  "2023-229": {
-  "tags": [],
-  "todo": "set industry tags/regex for: construction companies (permitting)"
+  "tags": [
+   "construction",
+   "homebuilders"
+  ],
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER"
  },
  "2023-233": {
   "tags": [
