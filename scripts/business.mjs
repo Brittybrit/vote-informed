@@ -27,6 +27,8 @@ const SKIP = new Set(headlines._skip || []);
 const RELIEF = /\b(PPP|paycheck protection|EIDL|economic injury|disaster loan|shuttered venue|SVOG|SBA|HEERF)\b|COVID-19 (grant|loan)|Higher Education Emergency Relief/i;
 const norm = s => String(s || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9 ]+/g, ' ')
   .replace(/\b(inc|incorporated|llc|pllc|pa|p a|corp|corporation|co|company|ltd|the|d b a|dba)\b/g, ' ').replace(/\s+/g, ' ').trim();
+// Street addresses are scrubbed from the review files ("[address]"); tidy what is left for the page
+const tidy = v => String(v || '').replace(/\s*\((?:\[address\][;,\s]*)+\)/g, '').replace(/\s*\bat \[address\],?/g, '').replace(/,?\s*\[address\],?/g, ',').replace(/,\s*,/g, ',').replace(/,\s*$/, '').replace(/\s+,/g, ',').trim();
 const ROLE = { owner: 'owner', 'spouse owner': 'spouse', officer: 'officer', director: 'director', manager: 'officer',
   employee: 'employer', employer: 'employer', 'income source': 'income', client: 'client' };
 
@@ -38,7 +40,7 @@ for (const i of interests) {
   const p = people[i.pid] || (people[i.pid] = { interests: [], ties: [] });
   const k = norm(i.business);
   if (p.interests.some(x => norm(x.business) === k)) continue;
-  p.interests.push({ business: i.business, role: ROLE[i.role] || 'other', label: i.record.label || '', url: i.record.url });
+  p.interests.push({ business: tidy(i.business), role: ROLE[i.role] || 'other', label: i.record.label || '', url: i.record.url });
 }
 const known = (pid, biz) => {
   const p = people[pid]; if (!p) return false;
@@ -52,7 +54,7 @@ for (const t of ties) {
   // abstentions are about the candidate, not a named business; everything else needs a published interest
   if (t.kind !== 'abstention' && !(t.business || '').split(/;\s*/).some(b => known(t.pid, b))) continue;
   const p = people[t.pid] || (people[t.pid] = { interests: [], ties: [] });
-  p.ties.push({ kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: t.title || '',
+  p.ties.push({ kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
     amount: t.amount == null || t.amount === 'None' ? null : String(t.amount), vote: t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : null,
     business: t.business || null, label: t.record.label || '', url: t.record.url });
 }

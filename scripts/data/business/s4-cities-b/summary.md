@@ -8,11 +8,11 @@ Run 2026-10-24/25. All 41 candidates are marked done in progress.md.
   - **Mary Estimé-Irvin / North Miami Foundation for Senior Citizens' Services, Inc.** She is a director on Sunbiz 731483, and the officer address matches her consulting firm's address on her Form 1.
     - Grant: City grant renewal (IWO 25-575, signed 2025-11-10 to 11-12), up to $57,750.00 for FY 2024-25 and $115,000.00 for FY 2025-26, funded under Ord. 1536. The City Manager signed it; it was not a council vote.
     - Vote: Ord. 1536, the FY 2025-26 budget, passed 3-2 on 2025-09-25. She seconded it. Her yes is inferred from the tally (only the no votes are named), and the minutes record no conflict declaration.
-  - **Kassandra Timothé, abstention:** she recused on 2025-R-63 (11950 N Bayshore Dr site plan, 2025-02-25). The minutes give no reason, and no Form 8B was found.
+  - **Kassandra Timothé, abstention:** she recused on 2025-R-63 ([address] site plan, 2025-02-25). The minutes give no reason, and no Form 8B was found.
 - No other contract, payment, grant, lease, zoning item or vote names any disclosed or Sunbiz entity. Checked against all actions in the five city action lists (North Miami 148, NMB 174, Opa-locka 134, El Portal 41, Biscayne Park 67), public/data/decisions.json, scripts/data/procurement and payments (county, school board), North Miami's Contracts-Agreements page, NMCRA reports, and two school board pest-control ITBs (for Samaria's pest firm).
 
 ## Leads (not ties)
-- **Randolph Aikens (Opa-locka challenger):** his active security LLC's principal address, 13449 NW 42nd Ave, is the site of Opa-locka items 2025-12-10 15-3 (liquor store special exception, 4-0) and 2026-01-14 15-1 (truck parking, withdrawn). The property owner is RND Headquarters LLC, and no applicant is named.
+- **Randolph Aikens (Opa-locka challenger):** his active security LLC's principal address, [address], is the site of Opa-locka items 2025-12-10 15-3 (liquor store special exception, 4-0) and 2026-01-14 15-1 (truck parking, withdrawn). The property owner is RND Headquarters LLC, and no applicant is named.
 - **Greater North Miami Chamber of Commerce (Timothé, director, name only):** city MOU for up to $37,500 from the FY 2023-24 budget. It is outside the 2025+ window.
 - **Foundation for Senior Citizens:** further North Miami agreements are listed but were not opened (2025-26 Subrecipient Agreement dated 12-29-2025, a second Twelfth Renewal dated 12-18-2025, Smart Biz grant 2024-11-12). The page shows no URLs for them.
 

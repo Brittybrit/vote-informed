@@ -30,7 +30,7 @@ Repo check: public/data/decisions.json bodies flhouse (313 APRs + 56 bills), fls
 - wancito-francius: done | interests 5 | ties 1 | Form 6 from FL DOS; Lion Intelligence & Security PPP/EIDL; other companies none
 - daphne-campbell: done | interests 4 | ties 0 | Form 6 with W-2s from FL DOS; staffing employers only; no award checked beyond FACTS/USAspending names (Trustaff federal contracts unrelated to FL)
 - bruno-a-barreiro: done | interests 5 | ties 1 | Form 6 from FL DOS (five real property rows redacted); Fatima Home Care PPP (same address)
-- gloria-romero-roses: done | interests 5 | ties 1 | Form 6 from FL DOS; 184 ST ME LLC SBA EIDL/7(a)/PPP
+- gloria-romero-roses: done | interests 5 | ties 1 | Form 6 from FL DOS; [address] ME LLC SBA EIDL/7(a)/PPP
 - omar-blanco: done | interests 3 | ties 2 | Repo Form 6; MDFR employee; filed APRs 2129 and 2139 for MDFR equipment (funded, vetoed); APR PDFs blocked (flhouse.gov WAF/robots)
 - marcos-reyes: done | interests 2 | ties 1 | Form 6 from FL DOS; City Colors Digital Printing SBA loans (address differs slightly, unverified)
 - ashley-perez-biliskov: done | interests 3 | ties 1 | Form 6 + return from FL DOS; Clear Initiative Consulting: no award; Foresight Imaging VA contracts (MA company, unverified link)
