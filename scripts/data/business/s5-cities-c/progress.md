@@ -12,3 +12,7 @@ Method for incumbents: every action in scripts/data/city/{cutlerbay,pinecrest,so
 - javier-fernandez: done | interests 5 | ties 3 | Key Biscayne 2026-06-30 easement: grantor's counsel (verified). Coral Gables Ponce Park Residences 2025-05-20 lists 'Lobbyist: Javier Fernandez' (verified:false identity). Recused on South Miami UDB resolution 2026-03-17 (no reason stated). No state/federal/county awards to his firms.
 - ricardo-de-melo-gomes: done | interests 5 | ties 2 | no EFDMS filer; Sunbiz name+address via his campaign reports. One-Up Solar Contractor: SBA EIDL grant $10,000, EIDL loan $140,000. No county PO, FACTS, or Cutler Bay matter/minutes hit for One-Up/De Melo (Brook De Melo Gomes appears as an Education Advisory Committee appointee and public commenter only).
 - clint-rodriguez: done | interests 1 | ties 0 | no EFDMS filer; Clynx Group LLC name only; no awards found (searched below).
+- james-richie-hawkins: done | interests 1 | ties 2 | Barrich LLC: SBA EIDL grant $1,000, EIDL loan $20,700. No county PO/FACTS/Cutler Bay hit.
+- mary-ann-mixon: done | interests 1 | ties 0 | Mixon Inc dissolved 2009; no awards. As a past council member (to 2018) her votes predate the repo window and were not reviewed.
+- ricky-fernandez: done | interests 1 | ties 0 | Advanced Custom Pool Services dissolved 1998; no awards. (Wedobiz Corp got a $45,000 SBA loan 2021 but address does not match him; not recorded.)
+- rene-gomez: done | interests 1 (null) | ties 0 | no filing; Sunbiz name-only matches not tied by address.
