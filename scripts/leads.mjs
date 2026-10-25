@@ -193,7 +193,7 @@ for (const l of leads) if (l.status === 'unconfirmed') underReview[l.person] = (
 fs.writeFileSync(path.join(here, '..', 'public', 'data', 'connections.json'), JSON.stringify({
   updated: today,
   note: 'Connections between officials and the parties, donors, lobbyists and vendors before them, published only when an official record states the relationship: the official\'s own financial disclosure, a Sunbiz officer listing with a matching filed address, a voting-conflict memo, an ethics opinion or complaint. Leads the tool is still checking are counted per official but not named. Rebuild: node scripts/leads.mjs.',
-  confirmed: confirmed.map(l => ({ person: l.person, official: l.official, other: l.other, otherKind: l.otherKind, signal: l.signal, relationship: l.relationship, record: l.record, evidence: l.evidence })),
+  confirmed: confirmed.map(l => ({ person: l.person, official: l.official, other: l.other, otherKind: l.otherKind, signal: l.signal, relationship: l.relationship, headline: l.headline, headlineNote: l.headlineNote, record: l.record, evidence: l.evidence })),
   underReview
 }, null, 1) + '\n');
 console.log('leads:', JSON.stringify(count(leads)), '| confirmed published:', confirmed.length, '| officials with leads under review:', Object.keys(underReview).length);

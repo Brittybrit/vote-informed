@@ -26,3 +26,7 @@ Palmetto Bay: no actions.json in repo. Read all 61 Granicus agenda packets poste
 - carl-crawford: done | interests 1 (null) | ties 0
 - alan-farquharson: done | interests 1 | ties 0 | Alan Air Conditioning: no awards/permits found in records searched.
 - a-j-lara: done | interests 1 (null) | ties 0
+- ramon-gonzalez-diez: done | interests 1 | ties 0 | R10 entities all dissolved; no awards. Appeared before Pinecrest council only as a public speaker (Jan 20, 2026).
+- jill-lerner: done | interests 1 | ties 0 | Jill Lerner LLC: no awards (an SBA EIDL grant to 'JILL LERNER' is in Merrick, NY, not her). Public speaker at Pinecrest meetings only.
+- ralph-sanchez: done | interests 1 | ties 0 | law office name only; no awards searched hit.
+- james-suarez: done | interests 1 (null) | ties 0
