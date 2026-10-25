@@ -28,3 +28,4 @@ Nothing in this slice needs Chrome anymore: DOE donors are done; all remaining f
 - 13:54:02 chunk1: stageA to 2022-50 (325/541), stageB through 2022-50 done, stageC run (109 roll sheets incl. 2024 flhouse-qualified).
 - 15:35:05 chunk2: stageA to 2022-191 (465/541), stageB through 2022-191 done.
 - 16:22:41 stageA DONE 541/541; stageB DONE 541/541. Running stageC.
+- 16:36:12 stageC DONE: 131 qualifying chapters (44 this slice: 2021 25, 2022/2022C/2021A 19; 87 from flhouse stageB 2022A/D, 2023B/2023/2023C, 2024), every one has Senate final-passage rolls (bills/stageC.jsonl; last line per ch = final passage). LAWS COMPLETE. Remaining gap: ch. 2022-150 absent from flsenate list.
