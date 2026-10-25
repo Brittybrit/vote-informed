@@ -19,7 +19,7 @@ export const CYCLE_START = '2025-01-01';
 // member with a B.tenure entry (Gilbert: from 2019); members without one (Lopez) and everything else keep CYCLE_START.
 // City lists built back to each incumbent's tenure start (Coral Gables, Doral, South Miami) do the same, from
 // scripts/data/city/<slug>/body.json tenure (Lago from 2011, Castro 2021, Porras 2020, South Miami 2020).
-export const TENURE_CITIES = new Set(['coralgables', 'doral', 'southmiami', 'cutlerbay', 'pinecrest', 'keybiscayne', 'sunnyisles', 'medley']);
+export const TENURE_CITIES = new Set(['coralgables', 'doral', 'southmiami', 'cutlerbay', 'pinecrest', 'keybiscayne', 'sunnyisles', 'medley', 'northmiami', 'aventura', 'nmb', 'opalocka']);
 export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county' || TENURE_CITIES.has(B.key)) && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {

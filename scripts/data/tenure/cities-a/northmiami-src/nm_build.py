@@ -62,6 +62,7 @@ for r in A:
   if re.search(r'\(SECOND READING\)',vt[:250]) and res=='passed': res='second reading'
   if 'result' in ov: res=ov['result']
   if 'roll' in ov: roll=ov['roll']; tally=None
+  if r['date']=='2024-10-22' and r['num']=='2024-R-158': tally=[2,2]  # minutes say 3-1 but name 2 yes/2 no; see card-notes.json
   num=r['num']
   if num and num.startswith('Ord-'): bid='%s-ord%s'%(r['date'],num[4:])
   elif num: y,n=num.split('-R-'); bid='%s-R-%d'%(y,int(n))

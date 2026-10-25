@@ -7205,6 +7205,54 @@
    "name": "Brett G. Moss",
    "aliases": [],
    "ids": {}
+  },
+  {
+   "id": "smith-joseph",
+   "name": "Smith Joseph",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "philippe-bien-aime",
+   "name": "Philippe Bien-Aime",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "carol-keys",
+   "name": "Carol Keys",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "scott-galvin",
+   "name": "Scott Galvin",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "anthony-f-defillipo",
+   "name": "Anthony F. DeFillipo",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "matthew-a-pigatt",
+   "name": "Matthew A. Pigatt",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "veronica-j-williams",
+   "name": "Veronica J. Williams",
+   "aliases": [],
+   "ids": {}
+  },
+  {
+   "id": "chris-davis",
+   "name": "Chris Davis",
+   "aliases": [],
+   "ids": {}
   }
  ],
  "offices": [
@@ -14844,13 +14892,14 @@
    "via": "elected",
    "sources": [
     "https://www.cityofaventura.com/AgendaCenter/ViewFile/Minutes/_01132026-474",
-    "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=353053&dbid=0&repo=CityHall"
+    "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=353053&dbid=0&repo=CityHall",
+    "https://egov2.cityofaventura.com/Imaging/DocView.aspx?id=352815&dbid=0&repo=CityHall"
    ],
    "sourceKind": "official",
    "startKnown": false,
    "note": "Serving as of 2026-10-18 per the source; start date not stated there.",
-   "servingFrom": "2025-01-14",
-   "servingFromSource": "earliest recorded vote: the vote block of signed Resolution No. 2025-02 (Jan 14, 2025) lists Commissioner Ain"
+   "servingFrom": "2024-11-19",
+   "servingFromSource": "earliest recorded vote: the vote block of signed Resolution No. 2024-74 (Nov 19, 2024) lists Commissioner Ain"
   },
   {
    "person": "seth-e-salver",
@@ -16883,16 +16932,19 @@
   {
    "person": "sherelean-bass",
    "office": "city-opa-locka-member",
-   "start": "2022-11-08",
+   "start": "2021-08-18",
    "end": null,
-   "via": "elected",
+   "via": "appointed",
    "sources": [
     "https://opalockafl.gov/174/City-Commission",
-    "https://www.aol.com/miami-dade-election-night-roundup-030424425.html"
+    "https://www.aol.com/miami-dade-election-night-roundup-030424425.html",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1437,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1439,plainText=false)"
    ],
    "sourceKind": "official",
    "electedOn": "2022-11-08",
-   "startSourceKind": "news"
+   "startSourceKind": "official",
+   "note": "Appointed Aug 18, 2021 to fill the late Commissioner Alvin Burke's seat (sworn in Sept 8, 2021), then elected Nov 8, 2022; continuous service. She also served Nov 2018 - Nov 2020 (separate, earlier term)."
   },
   {
    "person": "joseph-l-kelley",
@@ -16902,14 +16954,15 @@
    "via": "elected",
    "sources": [
     "https://opalockafl.gov/174/City-Commission",
-    "https://opalockafl.portal.civicclerk.com/event/2483/files"
+    "https://opalockafl.portal.civicclerk.com/event/2483/files",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3974,plainText=false)"
    ],
    "sourceKind": "official",
    "startKnown": false,
    "note": "Serving as of 2026-10-18 per the source; start date not stated there.",
    "role": "Vice Mayor",
-   "servingFrom": "2025-01-08",
-   "servingFromSource": "earliest recorded vote in the Opa-locka City Commission records: 16-1 (2025-01-08)"
+   "servingFrom": "2022-12-14",
+   "servingFromSource": "first official meeting record in this data showing them seated: Dec 14, 2022 roll call"
   },
   {
    "person": "patrick-fiore",
@@ -27634,6 +27687,205 @@
    ],
    "sourceKind": "official",
    "note": "Former member. Dates are the first and last meetings where the Village Council minutes show them seated, not term dates."
+  },
+  {
+   "person": "smith-joseph",
+   "office": "city-north-miami-mayor",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2017-01-10",
+   "lastSeen": "2019-04-23",
+   "via": null,
+   "sources": [
+    "https://www.northmiamifl.gov/AgendaCenter/ViewFile/Minutes/_01102017-127",
+    "https://play.champds.com/ATT/northmiamifl/2019-05/9c8f5080bf907989f78ad1645ce74971705109a6.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates."
+  },
+  {
+   "person": "philippe-bien-aime",
+   "office": "city-north-miami-district-3",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2017-01-10",
+   "lastSeen": "2019-04-23",
+   "via": null,
+   "sources": [
+    "https://www.northmiamifl.gov/AgendaCenter/ViewFile/Minutes/_01102017-127",
+    "https://play.champds.com/ATT/northmiamifl/2019-05/9c8f5080bf907989f78ad1645ce74971705109a6.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Seat inferred from succession: Mary Estimé-Irvin took District 3 in June 2019 when Bien-Aime became mayor."
+  },
+  {
+   "person": "philippe-bien-aime",
+   "office": "city-north-miami-mayor",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2019-06-11",
+   "lastSeen": "2022-11-21",
+   "via": null,
+   "sources": [
+    "https://play.champds.com/ATT/northmiamifl/2019-06/3c8108a806f48fdc32e8c900e52607e8824f8c45.pdf",
+    "https://play.champds.com/ATT/northmiamifl/2022-12/4911721c57a2daf3a25eaa73dfd6178e8f178e10.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates."
+  },
+  {
+   "person": "carol-keys",
+   "office": "city-north-miami-district-2",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2017-01-10",
+   "lastSeen": "2021-05-25",
+   "via": null,
+   "sources": [
+    "https://www.northmiamifl.gov/AgendaCenter/ViewFile/Minutes/_01102017-127",
+    "https://play.champds.com/ATT/northmiamifl/2021-06/99b3319e739d7b704d14cb645e3d81c19584d765.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Seat inferred from succession: Kassandra Timothé took District 2 on June 1, 2021."
+  },
+  {
+   "person": "scott-galvin",
+   "office": "city-north-miami-district-1",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2017-01-10",
+   "lastSeen": "2024-11-26",
+   "via": null,
+   "sources": [
+    "https://www.northmiamifl.gov/AgendaCenter/ViewFile/Minutes/_01102017-127",
+    "https://play.champds.com/ATT/northmiamifl/2024-12/994cc6f63654fd54a40b14715d80f9a225b10b09.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Seat inferred from succession: Kevin A. Burns took District 1 on Dec 3, 2024."
+  },
+  {
+   "person": "alix-desulme",
+   "office": "city-north-miami-district-4",
+   "start": "2015-06-02",
+   "end": "2022-12-12",
+   "via": "elected",
+   "sources": [
+    "https://www.biscaynetimes.com/noteworthy/alix-desulme-appointed-north-miami-mayor-with-next-election-/",
+    "https://www.northmiamifl.gov/AgendaCenter/ViewFile/Minutes/_01102017-127",
+    "https://play.champds.com/ATT/northmiamifl/2023-01/6bf304e4fd2f7d4ce3cb1578e319987c3dc6bb63.pdf"
+   ],
+   "sourceKind": "news",
+   "note": "Councilman for District 4 from 2015 until the council appointed him mayor on Dec 13, 2022 (continuous service)."
+  },
+  {
+   "person": "pierre-frantz-charles",
+   "office": "city-north-miami-district-4",
+   "start": null,
+   "startKnown": false,
+   "end": "2024-12-02",
+   "servingFrom": "2023-02-14",
+   "via": "appointed",
+   "sources": [
+    "https://play.champds.com/ATT/northmiamifl/2023-02/c80980d47b6ac123f0cd592396e0f5c2cde99790.pdf"
+   ],
+   "sourceKind": "official",
+   "note": "Filled the District 4 seat Desulme left; dates from the first meeting where the minutes show him seated. Elected to the seat in the Dec 3, 2024 runoff (next term)."
+  },
+  {
+   "person": "anthony-f-defillipo",
+   "office": "city-north-miami-beach-mayor",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-12-20",
+   "lastSeen": "2023-05-16",
+   "via": null,
+   "sources": [
+    "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=363",
+    "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=369"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Earliest date is the first minutes in this data (Dec 20, 2022); he was mayor before then."
+  },
+  {
+   "person": "matthew-a-pigatt",
+   "office": "city-opa-locka-mayor",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2021-08-18",
+   "lastSeen": "2021-11-10",
+   "via": null,
+   "sources": [
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1437,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1447,plainText=false)"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Earliest date is the first minutes in this data; he served before then."
+  },
+  {
+   "person": "veronica-j-williams",
+   "office": "city-opa-locka-member",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2021-08-18",
+   "lastSeen": "2024-11-20",
+   "via": null,
+   "sources": [
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1437,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1451,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=8136,plainText=false)"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Vice mayor, then mayor from Nov 17, 2021 to Nov 2022 (minutes), then commissioner again from Dec 14, 2022. Earliest date is the first minutes in this data."
+  },
+  {
+   "person": "chris-davis",
+   "office": "city-opa-locka-member",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2021-08-18",
+   "lastSeen": "2022-11-16",
+   "via": null,
+   "sources": [
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1437,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3941,plainText=false)"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates. Earliest date is the first minutes in this data."
+  },
+  {
+   "person": "audrey-dominguez",
+   "office": "city-opa-locka-member",
+   "start": null,
+   "startKnown": false,
+   "end": null,
+   "endKnown": false,
+   "servingFrom": "2022-01-12",
+   "lastSeen": "2022-11-16",
+   "via": null,
+   "sources": [
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=1451,plainText=false)",
+    "https://opalockafl.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=3941,plainText=false)"
+   ],
+   "sourceKind": "official",
+   "note": "Former member. Dates are the first and last meetings where the official records show them seated, not term dates."
   }
  ],
  "ballot": [
