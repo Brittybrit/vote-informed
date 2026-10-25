@@ -1,0 +1,794 @@
+{
+ "generated": "scripts/data/tenure/prior-flhouse/bills/build-reuse.py",
+ "extends": "scripts/data/state/bills/universe.json",
+ "rule": "Qualifying laws as screened in scripts/data/tenure/flhouse/bills-2024.json (not re-screened); House floor votes of Lopez read from the same official roll call. A member is \"not seated\" on dates outside their House tenure.",
+ "members": {
+  "Lopez": {
+   "district": "113",
+   "start": "2022-11-09",
+   "end": "2025-11-18"
+  }
+ },
+ "counts": {
+  "qualifying": 42,
+  "withHouseVote": 0
+ },
+ "missing": {
+  "roll": [
+   "2024-12",
+   "2024-15",
+   "2024-25",
+   "2024-28",
+   "2024-29",
+   "2024-45",
+   "2024-62",
+   "2024-63",
+   "2024-69",
+   "2024-76",
+   "2024-80",
+   "2024-81",
+   "2024-88",
+   "2024-96",
+   "2024-98",
+   "2024-108",
+   "2024-134",
+   "2024-144",
+   "2024-147",
+   "2024-158",
+   "2024-168",
+   "2024-172",
+   "2024-178",
+   "2024-180",
+   "2024-190",
+   "2024-195",
+   "2024-196",
+   "2024-199",
+   "2024-201",
+   "2024-204",
+   "2024-206",
+   "2024-208",
+   "2024-209",
+   "2024-212",
+   "2024-218",
+   "2024-240",
+   "2024-241",
+   "2024-260",
+   "2024-267",
+   "2024-270",
+   "2024-271",
+   "2024-276"
+  ],
+  "houseVote": []
+ },
+ "bills": [
+  {
+   "bill": "SB 330",
+   "session": "2024",
+   "chapter": "2024-12",
+   "title": "Behavioral Health Teaching Hospitals",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/330",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/330/Analyses/s0330z.HHS.PDF",
+   "benefits": {
+    "category": "behavioral health teaching hospitals",
+    "named": [],
+    "quote": "each designated hospital will receive financial awards and access grant funding to develop the behavioral health professions in Florida"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: As AHCA designates Florida-based hospitals as behavioral health teaching hospitals, each designated hospital will receive financial awards and access grant funding to develop the behavioral health professions in Florida.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 7016",
+   "session": "2024",
+   "chapter": "2024-15",
+   "title": "Health Care",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/7016",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7016/Analyses/2024s07016.fp.PDF",
+   "benefits": {
+    "category": "health care practitioners and nonprofit health screening providers",
+    "named": [],
+    "quote": "The bill may have an indeterminate positive fiscal impact on health care practitioners who are able to participate in FRAME or the DSLR Program. The bill may have an indeterminate positive fiscal impact for nonprofit entities that take advantage of the Health Care Screening and Services Grant program"
+   },
+   "screen": "Private Sector Impact: The bill may have an indeterminate positive fiscal impact on health care practitioners who are able to participate in FRAME or the DSLR Program. The bill may have an indeterminate positive fiscal impact for nonprofit entities that take advantage of the Health Care Screening and Services Grant program or anyone who is able to find free or reduced cost services through the DOH’s portal. The bill may have an indeterminate positive fiscal impact on facilities that participate in the TEACH program. The bill may have an indeterminate positive fiscal impact on nursing schools that are able to participate in the LINE Fund due to changes made in the bill. The bill could allow physicians who do not match for a residency following graduation from medical school to enter the Florida physician workforce faster and help reduce the health care provider shortage.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 49",
+   "session": "2024",
+   "chapter": "2024-25",
+   "title": "Employment",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/49",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/49/Analyses/h0049z1.RRS.PDF",
+   "benefits": {
+    "category": "employers of 16- and 17-year-old workers",
+    "named": [],
+    "quote": "The bill may allow certain employers to employ 16 and 17-year-old individuals without having to comply with the burdensome requirements in current law."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may increase opportunities for 16 and 17-year-old individuals to work and generate income. The bill may allow certain employers to employ 16 and 17-year-old individuals without having to comply with the burdensome requirements in current law. The bill may increase labor force participation among 16 and 17-year-old individuals, which may result in a reduction of obtaining higher skills, education, and healthcare for these individuals. STORAGE NAME: h0049z1.DOCX PAGE: 14 DATE: 3/25/2024",
+   "note": "judgment call: 'certain employers' (those hiring teens: restaurants, retail, hospitality)",
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 377",
+   "session": "2024",
+   "chapter": "2024-28",
+   "title": "License or Permit to Operate a Vehicle for Hire",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/377",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/377/Analyses/h0377z1.RRS.PDF",
+   "benefits": {
+    "category": "for-hire vehicle (taxi and limo) operators",
+    "named": [],
+    "quote": "There may be a positive economic impact on the vehicles for-hire industry."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: There may be a positive economic impact on the vehicles for-hire industry. There would be a positive economic impact for persons who:  hold a valid, active license or permit to operate a for hire vehicle in the municipality or county where they live and  maintain their license or permit to operate in good standing for the preceding 5 years. Such persons will not be subject to additional licensing or permitting requirements or fees in other municipalities or counties.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 463",
+   "session": "2024",
+   "chapter": "2024-29",
+   "title": "Lights Displayed on Fire Department Vehicles",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/463",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/463/Analyses/h0463z1.TMS.PDF",
+   "benefits": {
+    "category": "emergency vehicle light retrofitters",
+    "named": [],
+    "quote": "The bill may have a positive impact on private entities that retrofit lights on emergency vehicles"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate. The bill may have a positive impact on private entities that retrofit lights on emergency vehicles, to the extent that fire departments voluntarily choose to show or display blue lights on the rear of qualified vehicles.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 583",
+   "session": "2024",
+   "chapter": "2024-45",
+   "title": "Individual Wine Containers",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/583",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/583/Analyses/h0583z1.RRS.PDF",
+   "benefits": {
+    "category": "wine sellers",
+    "named": [],
+    "quote": "This may have a positive fiscal impact on businesses that sell wine."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill relaxes the limitation on the size of individual wine containers. This may have a positive fiscal impact on businesses that sell wine.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 85",
+   "session": "2024",
+   "chapter": "2024-62",
+   "title": "Pub. Rec./New State Banks and New State Trust Companies",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/85",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/85/Analyses/h0085z1.IBS.PDF",
+   "benefits": {
+    "category": "new Florida-chartered banks and trust companies",
+    "named": [],
+    "quote": "The proposed public record exemption may encourage and attract the formation of new banks or trust companies as Florida-chartered institutions"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The proposed public record exemption may encourage and attract the formation of new banks or trust companies as Florida-chartered institutions, in which case the bill would have a positive impact on investment, employment, economic growth, and consumer access to financial services. However, the impact to the private sector is indeterminate.",
+   "note": "judgment call",
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 241",
+   "session": "2024",
+   "chapter": "2024-63",
+   "title": "Coverage for Skin Cancer Screenings",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/241",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/241/Analyses/h0241e.HHS.PDF",
+   "benefits": {
+    "category": "physicians and diagnostic laboratories (dermatology screening)",
+    "named": [],
+    "quote": "may positively impact physicians who likely will see an increased demand for their services, as well as collateral and ancillary medical supports such as laboratories and diagnostic offices"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The inclusion of coverage for skin cancer screenings without cost sharing restrictions may positively impact physicians who likely will see an increased demand for their services, as well as collateral and ancillary medical supports such as laboratories and diagnostic offices which will be called upon to process additional lab slips, biopsies, and scans.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 549",
+   "session": "2024",
+   "chapter": "2024-69",
+   "title": "Theft",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/549",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/549/Analyses/h0549z1.CRJ.PDF",
+   "benefits": {
+    "category": "retail merchants (organized retail theft restitution)",
+    "named": [],
+    "quote": "The bill may have a positive impact on merchants who lose money from organized retail theft"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on merchants who lose money from organized retail theft, to the extent that the requirements of the bill may result in more orders of restitution or orders of restitution in greater amounts. Restitution generally must be ordered in theft cases under current law, and the impact of the bill’s changes on the frequency or value of restitution orders is indeterminate.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 968",
+   "session": "2024",
+   "chapter": "2024-76",
+   "title": "Spaceport Territory",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/968",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/968/Analyses/2024s00968.rc.PDF",
+   "benefits": {
+    "category": "commercial spaceport businesses",
+    "named": [],
+    "quote": "A new or expanding business located within the newly designated spaceport territory which is engaged in commercial spaceport activities may be eligible for a sales tax exemption"
+   },
+   "screen": "Private Sector Impact: A new or expanding business located within the newly designated spaceport territory which is engaged in commercial spaceport activities may be eligible for a sales tax exemption on the purchase of certain machinery and equipment.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 433",
+   "session": "2024",
+   "chapter": "2024-80",
+   "title": "Employment Regulations",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/433",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/433/Analyses/h0433z1.RRS.PDF",
+   "benefits": {
+    "category": "local government contractors (wage and benefit preemption)",
+    "named": [],
+    "quote": "Prevent businesses from losing local government contracts based on wages or employment benefits that they do not currently offer. Allow businesses that contract with local governments to pay their employees as they see fit."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate fiscal impact on the private sector to the extent that the preemptions supersede local ordinances. The bill may:  Prevent businesses from losing local government contracts based on wages or employment benefits that they do not currently offer.  Allow businesses that contract with local governments to pay their employees as they see fit.  Prevent businesses from being required to provide costly terms and conditions of employment.  Prevent businesses from being required to provide costly workplace heat exposure protections.  Prevent workers from earning a wage that allows them to live in the area that they work.  Create a negative fiscal impact for employers who provide workers’ compensation insurance for their employees.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 709",
+   "session": "2024",
+   "chapter": "2024-81",
+   "title": "In-store Servicing of Alcoholic Beverages",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/709",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/709/Analyses/h0709z1.RRS.PDF",
+   "benefits": {
+    "category": "liquor distributors",
+    "named": [],
+    "quote": "The bill will allow liquor distributors to ensure that liquor-based RTDs are well maintained in retail locations."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will allow liquor distributors to ensure that liquor-based RTDs are well maintained in retail locations.",
+   "note": "judgment call: benefit to distributors implied by the new authority stated",
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 478",
+   "session": "2024",
+   "chapter": "2024-88",
+   "title": "Designation of Eligible Telecommunications Carriers",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/478",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/478/Analyses/2024s00478.rc.PDF",
+   "benefits": {
+    "category": "mobile phone Lifeline service providers",
+    "named": [],
+    "quote": "The bill may reduce the amount of time it takes for a mobile phone service provider to obtain ETC status for the Lifeline program."
+   },
+   "screen": "Private Sector Impact: The bill may reduce the amount of time it takes for a mobile phone service provider to obtain ETC status for the Lifeline program. This bill does not alter the pool of eligible consumers, nor will the fees charged to consumers for Lifeline service change.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 781",
+   "session": "2024",
+   "chapter": "2024-96",
+   "title": "Unsolicited Proposals for Public-private Partnerships",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/781",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/781/Analyses/h0781z1.CRG.PDF",
+   "benefits": {
+    "category": "private partners in unsolicited public-private partnership proposals",
+    "named": [],
+    "quote": "private entities may experience less competition when contracting with RPEs through such means resulting in more economically attractive contracts for the private entities"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill authorizes RPEs to proceed with an unsolicited proposal for a qualifying project without engaging in a public bidding process if certain conditions are met. Accordingly, private entities may experience less competition when contracting with RPEs through such means resulting in more economically attractive contracts for the private entities. The financial impact to the private sector is indeterminate at this time.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1147",
+   "session": "2024",
+   "chapter": "2024-98",
+   "title": "Broadband",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1147",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1147/Analyses/h1147z1.ECC.PDF",
+   "benefits": {
+    "category": "broadband internet providers",
+    "named": [],
+    "quote": "Broadband Internet providers will benefit from discounted rates for certain attachments made to municipal electric utility poles over the next four years."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Broadband Internet providers will benefit from discounted rates for certain attachments made to municipal electric utility poles over the next four years. These savings may provide incentives for additional investment in broadband infrastructure to reach unserved areas and unserved customers in this state. This may result in increased economic activity in areas that currently lack access to broadband Internet service. 25 S. 288.9963(3)(e), F.S. STORAGE NAME: h1147z1.DOCX PAGE: 4 DATE: 4/18/2024",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1029",
+   "session": "2024",
+   "chapter": "2024-108",
+   "title": "My Safe Florida Condominium Pilot Program",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1029",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1029/Analyses/h1029z1.IBS.PDF",
+   "benefits": {
+    "category": "hurricane mitigation inspectors and contractors",
+    "named": [],
+    "quote": "Hurricane mitigation inspectors and contractors may also see an increase in activity."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: To the extent that homes that participate in the MSFCP Program receive mitigation credits or premium discounts under their property insurance policies and are less exposed to risk as a result of mitigation retrofitting using grant funds, the MSFCP Program may have a positive direct economic impact on homeowners. Hurricane mitigation inspectors and contractors may also see an increase in activity.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1569",
+   "session": "2024",
+   "chapter": "2024-134",
+   "title": "Exemption from Regulation for Bona Fide Nonprofit Organizations",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1569",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1569/Analyses/h1569z1.IBS.PDF",
+   "benefits": {
+    "category": "nonprofit housing lenders (bona fide nonprofit mortgage exemption)",
+    "named": [],
+    "quote": "Entities and employees of entities that meet the criteria for the proposed exemption will likely benefit financially by not having to pay costs associated with licensure requirements under ch. 494, F.S."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Entities and employees of entities that meet the criteria for the proposed exemption will likely benefit financially by not having to pay costs associated with licensure requirements under ch. 494, F.S. The total number of nonprofit organizations that are eligible for the exemption is unclear.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1532",
+   "session": "2024",
+   "chapter": "2024-144",
+   "title": "Mitigation",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1532",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1532/Analyses/2024s01532.rc.PDF",
+   "benefits": {
+    "category": "mitigation bank operators",
+    "named": [],
+    "quote": "There may be a positive fiscal impact to private entities creating and maintaining mitigation banks on public lands and applicants participating in the expanded water quality enhancement area (WQEA) credit program."
+   },
+   "screen": "Private Sector Impact: There may be a positive fiscal impact to private entities creating and maintaining mitigation banks on public lands and applicants participating in the expanded water quality enhancement area (WQEA) credit program. BILL: CS/CS/CS/SB 1532 Page 11",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 7020",
+   "session": "2024",
+   "chapter": "2024-147",
+   "title": "Delivery of Notices",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/7020",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7020/Analyses/2024s07020.fp.PDF",
+   "benefits": {
+    "category": "private delivery services",
+    "named": [],
+    "quote": "Private delivery services may see increases in revenue associated with greater use of their services"
+   },
+   "screen": "Private Sector Impact: Private delivery services may see increases in revenue associated with greater use of their services by persons seeking to comply with statutory registered mail requirements.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 7073",
+   "session": "2024",
+   "chapter": "2024-158",
+   "title": "Taxation",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/7073",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7073/Analyses/h7073z1.WMC.PDF",
+   "benefits": {
+    "category": "railroads, biogas energy producers and affordable housing owners (tax package)",
+    "named": [],
+    "quote": "updating the railroad expenditure tax credit. The bill expands the ad valorem tax benefits for renewable energy source devices to include facilities used to capture and convert biogas ... and provides for the creation of and updates to affordable housing property tax exemptions"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill provides for a number of temporary sales tax benefits: a 14-day sales tax holidays for back-to- school; two 14-day sales tax holidays for disaster preparation supplies; a one-month holiday for recreational items and activities; and a 7-day sales tax holiday for skilled worker tools. The bill also extends the sales tax filing and remittance deadlines for certain states of emergency. The bill also benefits corporate income taxpayers in Florida by creating a corporate income tax credit for businesses that hire persons with disabilities; extending filing deadlines when a federal disaster has been declared; and updating the railroad expenditure tax credit. The bill expands the ad valorem tax benefits for renewable energy source devices to include facilities used to capture and convert biogas to renewable energy source devices; clarifies how back taxes are charged when certain property assessment limitations are improperly received, and provides for the creation of and updates to affordable housing property tax exemptions. The bill also creates insurance premium deductions on certain residential and flood policy premiums, and creates a temporary tax credit for certain employee childcare expenses.",
+   "note": "tax package; analysis also names corporate income taxpayers generally",
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 532",
+   "session": "2024",
+   "chapter": "2024-168",
+   "title": "Securities",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/532",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/532/Analyses/2024s00532.fp.PDF",
+   "benefits": {
+    "category": "businesses raising capital through exempt securities offerings",
+    "named": [],
+    "quote": "The implementation of the pre-offering “test the waters” provision may reduce costs of conducting an exempt offering by providing businesses the flexibility to determine the optimal avenue for raising capital"
+   },
+   "screen": "Private Sector Impact: The implementation of the pre-offering “test the waters” provision may reduce costs of conducting an exempt offering by providing businesses the flexibility to determine the optimal avenue for raising capital before spending thousands of dollars on legal and administrative fees. In the event an enforcement action is required, the bill increases the civil penalty that may be imposed upon a natural person from $10,000 to $20,000. The bill also provides twice the amount of the civil penalty may be imposed in the event a specified adult, as defined in s. 517.34(1), F.S., is a victim of a violation of this chapter. Further, the Office of Financial Regulation (OFR) may recover any costs and attorney fees related to its investigation or enforcement. Applicants may incur additional expenses for any fingerprint or state or federal background check required under the bill. The cost for a state and national criminal history record check is $37.25 per name. In addition, the Florida Department of Law Enforcement (FDLE) reports Livescan Services may assess additional processing fees, 47 which may require an applicant to pay additional fees.48",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 215",
+   "session": "2024",
+   "chapter": "2024-172",
+   "title": "Risk Retention Groups",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/215",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/215/Analyses/h0215z1.IBS.PDF",
+   "benefits": {
+    "category": "risk retention groups and their member businesses",
+    "named": [],
+    "quote": "The bill will have a positive direct economic impact on private sector businesses that save money by receiving coverage from the RRGs of which they are a member instead of having to pay a fronting company."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will have a positive direct economic impact on private sector businesses that save money by receiving coverage from the RRGs of which they are a member instead of having to pay a fronting company. However, it will have a negative impact on insurers that have acted as fronting companies for the placement of coverage by RRGs.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1335",
+   "session": "2024",
+   "chapter": "2024-178",
+   "title": "Department of Business and Professional Regulation",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1335",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1335/Analyses/h1335z1.RRS.PDF",
+   "benefits": {
+    "category": "asbestos abatement contractors",
+    "named": [],
+    "quote": "Removing the bondability requirement for asbestos abatement professionals will reduce the cost to applicants, estimated to be $100 per applicant."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: By increasing the aggregate cap per licensee and the per claim cap for each contract, the number of claimants who receive compensation from the Florida Homeowner’s Construction Recovery Fund and the amount of compensation will increase. Removing the bondability requirement for asbestos abatement professionals will reduce the cost to applicants, estimated to be $100 per applicant.82",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1557",
+   "session": "2024",
+   "chapter": "2024-180",
+   "title": "Department of Environmental Protection",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1557",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1557/Analyses/h1557z1.WST.PDF",
+   "benefits": {
+    "category": "firms preparing water reuse feasibility studies",
+    "named": [],
+    "quote": "The bill may have an indeterminate positive fiscal impact on businesses which facilitate the preparation of reuse feasibility studies."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate positive fiscal impact on businesses which facilitate the preparation of reuse feasibility studies.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 994",
+   "session": "2024",
+   "chapter": "2024-190",
+   "title": "Student Transportation Safety",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/994",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/994/Analyses/2024s00994.fp.PDF",
+   "benefits": {
+    "category": "school bus camera vendors",
+    "named": [],
+    "quote": "Entities that install and operate school bus infraction detection systems may experience an increase in revenues"
+   },
+   "screen": "Private Sector Impact: Entities that install and operate school bus infraction detection systems may experience an increase in revenues associated with the addition of additional school bus infraction detection systems.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 92",
+   "session": "2024",
+   "chapter": "2024-195",
+   "title": "Yacht and Ship Brokers’ Act",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/92",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/92/Analyses/2024s00092.fp.PDF",
+   "benefits": {
+    "category": "yacht and ship brokers",
+    "named": [],
+    "quote": "An out-of-state sales broker or salesperson may engage in a transaction for purchase of a yacht under the conditions in the bill without applying for a license, including paying the $500 license application fee."
+   },
+   "screen": "Private Sector Impact: An out-of-state sales broker or salesperson may engage in a transaction for purchase of a yacht under the conditions in the bill without applying for a license, including paying the $500 license application fee. Applicants for a broker license who opt to qualify for a license by obtaining at least 20 continuing education credits will incur costs related to completing those education credits.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 892",
+   "session": "2024",
+   "chapter": "2024-196",
+   "title": "Dental Insurance Claims",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/892",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/892/Analyses/2024s00892.fp.PDF",
+   "benefits": {
+    "category": "dentists",
+    "named": [],
+    "quote": "Dentists may experience savings in fees if they opt out of the payment of claims by credit card"
+   },
+   "screen": "Private Sector Impact: Insureds, subscribers, or enrollees that have exhausted their dental policy limits prior to the end of the policy or contract period will be negatively impacted in circumstances where they cannot obtain additional services at the negotiated rate and the dentist chooses to use a higher rate. Dentists may experience savings in fees if they opt out of the payment of claims by credit cards. Further, dentists may realize additional revenues if an insurer, health maintenance organization (HMO) or prepaid limited health service organization (PLHSO) is limited in their ability to subsequently deny claims they previously authorized. The impact on insurers, HMOs or PLHSOs is indeterminate. While the bill establishes specific criteria for claims denial and service coverage, which could improve clarity for providers, compliance may result in costs. These costs include investments in systems and staff training by insurers, PLHSOs, and HMOs to ensure compliance. 43 Searcy, Denney, Scarola, Barnhart & Shipley, Etc. v. State, 209 So. 3d 1181 (Fla. 2017) at 1192 (quoting Pomponio, Pomponio v. Claridge of Pompano Condominium, 378 So. 2d 774 (Fla. 1980)) 44 Id. BILL: CS/CS/CS/SB 892 Page 13 Federal regulations govern the grace period and payment of claims of individuals receiving federally subsidized products on the exchange. This bill would not apply to such claims. The provisions of the bill would not apply to ERISA (Federal Employee Retirement Income Security Act of 19",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1305",
+   "session": "2024",
+   "chapter": "2024-199",
+   "title": "Residential Tenancies",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1305",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1305/Analyses/h1305z1.IBS.PDF",
+   "benefits": {
+    "category": "out-of-state banks (security deposit holders)",
+    "named": [],
+    "quote": "banking institutions that are not chartered or headquartered in Florida may benefit from receiving additional security deposits."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has an indeterminate positive impact on the private sector to the extent the proposed definition of “Florida banking institution” decreases the amount of litigation over the rights to security deposits in Florida. The decrease in litigation will reduce costs to both plaintiffs and defendants in landlord-tenant disputes. Further, banking institutions that are not chartered or headquartered in Florida may benefit from receiving additional security deposits.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 644",
+   "session": "2024",
+   "chapter": "2024-201",
+   "title": "Rural Emergency Hospitals",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/644",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/644/Analyses/2024s00644.fp.PDF",
+   "benefits": {
+    "category": "rural hospitals",
+    "named": [],
+    "quote": "The bill may have an indeterminate positive fiscal impact on rural hospitals that convert to rural emergency hospitals."
+   },
+   "screen": "Private Sector Impact: The bill may have an indeterminate positive fiscal impact on rural hospitals that convert to rural emergency hospitals.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 149",
+   "session": "2024",
+   "chapter": "2024-204",
+   "title": "Continuing Contracts",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/149",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/149/Analyses/h0149z1.CRG.PDF",
+   "benefits": {
+    "category": "CCNA professional services, construction management and project management firms",
+    "named": [],
+    "quote": "The bill may have a positive, yet indeterminate fiscal impact on private sector businesses that provide professional services as defined in the CCNA, or that provide construction management or project management services"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive, yet indeterminate fiscal impact on private sector businesses that provide professional services as defined in the CCNA, or that provide construction management or project management services, by allowing those entities to enter into larger contracts for projects under a continuing contract. Increasing the threshold for entering into continuing contracts would save those entities contractual and workload expenditures associated with having to undergo the CCNA procurement process for projects that exceed the current statutory threshold.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 481",
+   "session": "2024",
+   "chapter": "2024-206",
+   "title": "Building Construction Regulations and System Warranties",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/481",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/481/Analyses/h0481z1.CJS.PDF",
+   "benefits": {
+    "category": "HVAC and mechanical contractors",
+    "named": [],
+    "quote": "Allows a class A air-conditioning, class B air-conditioning, or mechanical contractor to complete the line-side procedures of an HVAC system or system component repair or replacement in a manner that reduces costs for a consumer."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive economic impact on the private sector to the extent that it:  Preserves an HVAC system or system component warranty where the original consumer, or a subsequent purchaser, does not register the product.  Allows a class A air-conditioning, class B air-conditioning, or mechanical contractor to complete the line-side procedures of an HVAC system or system component repair or replacement in a manner that reduces costs for a consumer. Further, the bill may have a negative economic impact on HVAC manufacturers, distributors, and retailers to the extent that such persons must honor warranties they would not have otherwise had to honor.",
+   "note": "judgment call: benefit framed partly to consumers",
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 705",
+   "session": "2024",
+   "chapter": "2024-208",
+   "title": "Public Works Projects",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/705",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/705/Analyses/h0705z1.LFS.PDF",
+   "benefits": {
+    "category": "public works contractors",
+    "named": [],
+    "quote": "The prohibition on certain predetermined wage, benefits, and staffing requirements may result in a positive fiscal impact for contractors."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The prohibition on certain predetermined wage, benefits, and staffing requirements may result in a positive fiscal impact for contractors.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 808",
+   "session": "2024",
+   "chapter": "2024-209",
+   "title": "Treatment by a Medical Specialist",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/808",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/808/Analyses/2024s00808.ap.PDF",
+   "benefits": {
+    "category": "authorized medical specialists (workers' compensation)",
+    "named": [],
+    "quote": "Authorized medical specialist providers may receive increased fees for treatment of presumed conditions as provided in the bill."
+   },
+   "screen": "Private Sector Impact: Providers may have less incentive to offer substantial discounts to carriers, possibly resulting in higher costs to the carriers that may be passed through to local and state governments. Authorized medical specialist providers may receive increased fees for treatment of presumed conditions as provided in the bill. BILL: CS/CS/SB 808 Page 7",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1142",
+   "session": "2024",
+   "chapter": "2024-212",
+   "title": "Occupational Licensing",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1142",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1142/Analyses/2024s01142.fp.PDF",
+   "benefits": {
+    "category": "locally registered contractors",
+    "named": [],
+    "quote": "The method for obtaining a license as a registered contractor authorized in the bill will assist those contractors who chose registration in a local community"
+   },
+   "screen": "Private Sector Impact: The method for obtaining a license as a registered contractor authorized in the bill will assist those contractors who chose registration in a local community rather than qualification as a statewide certified contractor, to remain in the workforce when the local jurisdiction determines not to issue local licenses.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1350",
+   "session": "2024",
+   "chapter": "2024-218",
+   "title": "Salvage",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1350",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1350/Analyses/2024s01350.fp.PDF",
+   "benefits": {
+    "category": "auto insurers (total-loss salvage)",
+    "named": [],
+    "quote": "will have an indeterminate positive impact on insurance companies due to the streamlined process."
+   },
+   "screen": "Private Sector Impact: The Department of Highway Safety and Motor Vehicles’ (DHSMV’s) direct issuance of a certificate of title or certificate of destruction when the owner retains a total loss vehicle or vessel will have an indeterminate positive impact on insurance companies due to the streamlined process.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1267",
+   "session": "2024",
+   "chapter": "2024-240",
+   "title": "Economic Self-sufficiency",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1267",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1267/Analyses/h1267z1.CFS.PDF",
+   "benefits": {
+    "category": "child care providers",
+    "named": [],
+    "quote": "Child care providers may experience increased enrollment from the expanded eligibility criteria"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Families who receive the SR Plus subsidy will have increased household resources. These resources may enable them to increase the hours they work, further benefitting those households economically. Child care providers may experience increased enrollment from the expanded eligibility criteria allowing children to remain eligible for services.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 362",
+   "session": "2024",
+   "chapter": "2024-241",
+   "title": "Medical Treatment Under the Workers’ Compensation Law",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/362",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/362/Analyses/2024s00362.fp.PDF",
+   "benefits": {
+    "category": "physicians and medical providers in workers' compensation",
+    "named": [],
+    "quote": "The bill increases payments to physicians and for surgical procedures (including all scheduled, non-emergency clinical laboratory and radiology services; and outpatient physical, occupational, and speech therapy services)."
+   },
+   "screen": "Private Sector Impact: The bill increases the maximum payments to medical providers who appear as expert medical witnesses in litigated workers’ compensation claims. The bill increases payments to physicians and for surgical procedures (including all scheduled, non‐emergency clinical laboratory and radiology services; and outpatient physical, occupational, and speech therapy services). Implementation of the bill would result in an estimated 6.9 percent increase (or $300 million) in overall workers’ compensation system costs, as described below. The National Council on Compensation Insurance, Inc., Analysis of SB 134420 The National Council on Compensation Insurance, Inc., (NCCI) provided the following analysis of the impact of changing maximum reimbursement allowances (MRAs) in the 2020 edition of the Health Care Provider Reimbursement Manual (HCPRM) to 200 20 NCCI, Analysis of Florida Medical Fee Schedule Changes (2024 Session, HB 161/SB 362) (Feb. 6, 2024). On file with Senate Banking and Insurance Committee. BILL: CS/SB 362 Page 5 percent. The current state multiplier for surgical is 140 percent and the current state multiplier for all others is 110 percent. The NCCI estimates that the changes to medical fees schedule would result in an impact of +6.9 percent (+ 300 million) on overall workers compensation system costs. In addition to physician services, the proposed changes would also impact MRAs for the following hospital outpatient services contained in the Florida Work",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 849",
+   "session": "2024",
+   "chapter": "2024-260",
+   "title": "Veterinary Practices",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/849",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/849/Analyses/h0849z1.RRS.PDF",
+   "benefits": {
+    "category": "veterinarians (telehealth)",
+    "named": [],
+    "quote": "Licensed veterinarians will be permitted to practice veterinary telehealth, including limited prescription authority, thus giving them more flexibility in their practice."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Licensed veterinarians will be permitted to practice veterinary telehealth, including limited prescription authority, thus giving them more flexibility in their practice. This will move them further toward equal footing with licensed health care providers in the state who are already allowed to practice telehealth. Animal owners may have greater access to veterinarians and may feel more comfortable, especially during a state of emergency. Visitors and tourists with pets may be able to obtain veterinarian care while on vacation in Florida without the need for locating and transporting their animal to a veterinarian’s office.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "SB 674",
+   "session": "2024",
+   "chapter": "2024-267",
+   "title": "United States-produced Iron and Steel in Public Works Projects",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/674",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/674/Analyses/2024s00674.fp.PDF",
+   "benefits": {
+    "category": "contractors using US-made iron and steel",
+    "named": [],
+    "quote": "A private contractor that use iron or steel products that are produced in the United States may be able to seek higher payments for its work on a public works project"
+   },
+   "screen": "Private Sector Impact: The requirement to buy American steel could increase the cost of some projects, such as building highway bridges and procuring transit railcars and buses. This may result in fewer projects being undertaken.32 A private contractor that use iron or steel products that are produced in the United States may be able to seek higher payments for its work on a public works project, whether or not the materials cost more than foreign iron or steel. This may open the field to smaller contractors that require a larger margin to cover their costs on potential public works projects.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 403",
+   "session": "2024",
+   "chapter": "2024-270",
+   "title": "Specialty License Plates",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/403",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/403/Analyses/h0403z1.TMS.PDF",
+   "benefits": {
+    "category": "specialty license plate organizations (named nonprofits)",
+    "named": [
+     "American Eagle Foundation",
+     "United Negro College Fund, Inc.",
+     "Give Kids The World, Inc.",
+     "Clearwater Marine Aquarium, Inc.",
+     "Aerospace Center for Excellence",
+     "The Villages Charter School, Inc.",
+     "Diabetes Research Institute Foundation, Inc.",
+     "JDRF International",
+     "UF Foundation, Inc.",
+     "Recycle Florida Today Foundation, Inc.",
+     "Captain Sandy Yawn, Inc.",
+     "Project Addiction: Reversing the Stigma, Inc.",
+     "United Service Organizations, Inc.",
+     "SFC Charitable Foundation, Inc."
+    ],
+    "quote": "organizations authorized for a distribution from the proceeds of the sale of the respective license plate will benefit"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Once a specialty license plate goes into production, organizations authorized for a distribution from the proceeds of the sale of the respective license plate will benefit. Therefore, the following organizations may see an increase in revenues:  Various in-state colleges and universities  Eligible grant entities under the Historic Cemeteries Program  The American Eagle Foundation 86 S. 320.08053(2)(b), F.S. 87 S. 320.08053(3)(b), F.S. 88 DHSMV, Agency Analysis of 2024 House Bill 403, p. 5-6. (Nov. 13, 2023). STORAGE NAME: h0403z1.DOCX PAGE: 13 DATE: 7/9/2024  Nine Member Organizations of the National Pan-Hellenic Council (Divine Nine)  United Negro College Fund, Inc.  Association to Preserve African American Society, History, and Tradition, Inc.  Give Kids The World, Inc.  SFC Charitable Foundation, Inc.  Clearwater Marine Aquarium, Inc.  Aerospace Center for Excellence  The Villages Charter School, Inc.  The Diabetes Research Institute Foundation, Inc.  JDRF International Incorporated  The UF Foundation, Inc.  Recycle Florida Today Foundation, Inc.  Captain Sandy Yawn, Inc.  Project Addiction: Reversing the Stigma, Inc.  United Service Organizations, Inc.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 619",
+   "session": "2024",
+   "chapter": "2024-271",
+   "title": "Sovereign Immunity for Professional Firms",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/619",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/619/Analyses/h0619z1.CJS.PDF",
+   "benefits": {
+    "category": "professional (engineering and design) firms working for government",
+    "named": [],
+    "quote": "The bill may have a positive economic impact on a professional firm shielded by sovereign immunity protections"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive economic impact on a professional firm shielded by sovereign immunity protections due to the bill’s expansion of s. 768.28(10)(e), F.S., as its liability would be capped by the statutory recovery limits in s. 768.28(5)(a), F.S. However, the bill may have a negative economic impact on persons injured by the negligence of such a professional firm or its employees, as their recovery would likewise be limited by the statutory recovery limits placed in s. 768.28, F.S., absent passage of a claim bill.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  },
+  {
+   "bill": "HB 1347",
+   "session": "2024",
+   "chapter": "2024-276",
+   "title": "Consumer Finance Loans",
+   "url": "https://www.flsenate.gov/Session/Bill/2024/1347",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1347/Analyses/h1347z1.IBS.PDF",
+   "benefits": {
+    "category": "consumer finance lenders",
+    "named": [],
+    "quote": "Applicants will no longer be required to pay a $200 background investigation fee for each additional location ... lenders utilize higher interest rates permitted by the bill"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has an indeterminate fiscal impact on the private sector.12 Applicants will no longer be required to pay a $200 background investigation fee for each additional location with the implementation of a branch office license.13 This may save applicants up to $5,000 per fiscal year in reduced fees.14 Consumers may benefit from increased opportunities to receive loans if consumer finance lenders issue more credit under the terms allowed by the bill, but they may also see an increase in interest payable on consumer finance loans, to the extent that lenders utilize higher interest rates permitted by the bill.",
+   "note": null,
+   "screenedBy": "flhouse",
+   "votes": {}
+  }
+ ]
+}
