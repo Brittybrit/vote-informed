@@ -5239,12 +5239,13 @@ function youSameJob(body, office){
 function renderYou(ri, cand, sp, y, loading){
   var box = $('youSec');
   if(!box) return;
-  var me = MI ? MI.load() : null, nm = esc(String(cand.name).split(/\s+and\s+/i)[0]);
-  var h = '<h4>' + t('you.h') + '</h4>';
+  // Candidates get no household personalization: that is for ballot measures only
+  var nm = esc(String(cand.name).split(/\s+and\s+/i)[0]);
+  var h = '<h4>' + t('you.line') + '</h4>';
   var otherJob = y && y.body && !youSameJob(y.body, ballot.races[ri].office);
   if(otherJob) h += '<p class="you-p">' + t('you.otherJob', {office: esc(officeOf(ri)), name: nm, body: esc((y.body.name && (y.body.name[LANG] || y.body.name.en)) || '')}) + '</p>';
   // 1. The bottom line
-  h += '<div class="you-sub">' + t('you.line') + '</div><div class="you-line">';
+  h += '<div class="you-line">';
   if(sp && window.moneySummary){
     // the percentage lines, then the money line
     var nTop = (sp.share && (sp.share.def === 'donorFirst' || sp.share.n) ? 1 : 0) + (sp.bills && sp.bills.universe && sp.bills.universe.n ? 1 : 0);
@@ -5254,58 +5255,16 @@ function renderYou(ri, cand, sp, y, loading){
   var nConn = sp && sp.pid ? (CONN.confirmed || []).filter(function(c){ return c.person === sp.pid; }).length : 0;
   if(nConn) h += '<p>' + t(nConn === 1 ? 'you.conn1' : 'you.connN', {n: nConn}) + '</p>';
   h += '</div>';
-  // 2. Decisions that touch you
-  if(y && y.actions && y.actions.length){
-    h += '<div class="you-sub">' + t('you.touch') + '</div>';
-    if(youEditing){
-      box.innerHTML = h + impactForm(me, MI.words(LANG));
-      wireImpactForm(null, function(){ youEditing = false; renderYou(ri, cand, sp, y, false); });
-      return;
-    }
-    if(!MI || !MI.any(me)){
-      var cnt = {};
-      y.actions.forEach(function(a){ (a.topics || []).forEach(function(k){ cnt[k] = (cnt[k] || 0) + 1; }); });
-      var top = Object.keys(cnt).sort(function(a, b){ return cnt[b] - cnt[a]; }).slice(0, 6);
-      if(top.length) h += '<p class="you-p">' + t('you.counts', {n: y.actions.length, name: nm}) + top.map(function(k){ return esc(youTopicLabel(k)) + ' ' + cnt[k]; }).join(' · ') + '.</p>';
-      h += '<p class="you-p">' + t('you.setup') + '</p><button class="btn2" type="button" id="youStart">' + t('you.setupBtn') + '</button>';
-    } else {
-      // Decisions on the voter's own topics first; services everyone uses are counted and listed apart
-      var mine = function(ts){ return (ts || []).filter(function(k){ return (TOPIC_GROUPS[k] || []).some(function(g){ return MI.has(me, g); }); }); };
-      var hits = y.actions.map(function(a){ return {a: a, m: mine(a.topics)}; }).filter(function(x){ return x.m.length; });
-      var common = y.actions.filter(function(a){ return !mine(a.topics).length && (a.topics || []).some(function(k){ return EVERYONE.indexOf(k) >= 0; }); })
-        .map(function(a){ return {a: a, m: a.topics.filter(function(k){ return EVERYONE.indexOf(k) >= 0; })}; });
-      var said = MI.GROUPS.filter(function(g){ return MI.has(me, g); }).map(function(g){ return MI.words(LANG).g[g]; });
-      h += '<p class="imp-me">' + esc(MI.words(LANG).youSaid + said.join('; ') + '. ') + '<button type="button" id="youEdit">' + t('you.edit') + '</button></p>';
-      var row = function(x){
-          var a = x.a, title = (a.title && (a.title[LANG] || a.title.en)) || '';
-          return '<div class="you-row"><div class="you-when">' + esc(fmtDay(a.date)) + ' · ' + x.m.map(function(k){ return esc(youTopicLabel(k)); }).join(', ') + '</div>' +
-            '<div class="you-title">' + esc(title) + '</div><div class="you-meta"><strong>' + t('you.vote.' + a.vote) + '</strong>' +
-            (a.split ? ' · ' + t('you.split') : '') + (a.tied ? ' · <span class="you-tie">' + t('you.donor') + '</span>' : '') +
-            (a.link ? ' ' + srcLink(a.link) : '') + '</div></div>';
-        };
-      if(!hits.length) h += '<p class="you-p">' + t('you.none', {name: nm}) + '</p>';
-      else {
-        var tied = hits.filter(function(x){ return x.a.tied; }).length;
-        h += '<p class="you-p">' + t('you.of', {k: hits.length, n: y.actions.length, name: nm}) + (tied ? ' ' + t('you.ofTied', {k: tied, name: nm}) : '') + '</p>';
-        var CUT = 6;
-        h += hits.slice(0, CUT).map(row).join('');
-        if(hits.length > CUT) h += '<details class="tie-more"><summary>' + t('you.more', {n: hits.length}) + '</summary>' + hits.slice(CUT).map(row).join('') + '</details>';
-      }
-      if(common.length) h += '<details class="tie-more"><summary>' + t('you.common', {n: common.length}) + '</summary>' + common.map(row).join('') + '</details>';
-      h += '<p class="fine">' + t('you.how') + '</p>';
-    }
-  } else if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
-  // 3. What they decide next
+  if(loading) h += '<p class="mny-note">' + t('ties.loading') + '</p>';
+  // 2. What they decide next
   var nx = y && y.next, lvl = y && y.body && y.body.level;
   var today = new Date().toISOString().slice(0, 10);
   var nb = '';
   if(nx){
     var up = (nx.schedule || []).filter(function(m){ return m.date >= today; }).slice(0, 2);
     if(up.length) nb += '<p class="you-p">' + up.map(function(m){ return t('you.nextMeet', {date: esc(fmtDay(m.date)) + (m.time ? ', ' + esc(clock(m.time)) : '')}) + (m.source ? ' ' + srcLink(m.source) : ''); }).join('<br>') + '</p>';
-    // what the voter said about their household first, then services every household uses
-    var mine = function(it){ return youMatch(it.topics, me).some(function(k){ return EVERYONE.indexOf(k) < 0; }); };
-    var ag = (nx.agenda || []).filter(function(it){ return it.date >= today && (!MI || !MI.any(me) || youMatch(it.topics, me).length); });
-    if(MI && MI.any(me)) ag = ag.filter(mine).concat(ag.filter(function(it){ return !mine(it); }));
+    // every posted item, not filtered by household
+    var ag = (nx.agenda || []).filter(function(it){ return it.date >= today; });
     var li = function(it){ return '<li>' + esc(fmtDay(it.date)) + ': ' + esc(it.title) + (it.link ? ' ' + srcLink(it.link) : '') + '</li>'; };
     if(ag.length) nb += '<div class="you-p"><strong>' + t('you.agenda') + '</strong><ul>' + ag.slice(0, 6).map(li).join('') + '</ul>' +
       (ag.length > 6 ? '<details class="tie-more"><summary>' + t('you.more', {n: ag.length}) + '</summary><ul>' + ag.slice(6).map(li).join('') + '</ul></details>' : '') + '</div>';
@@ -5316,8 +5275,6 @@ function renderYou(ri, cand, sp, y, loading){
   else if(y && y.body && /^us/.test(y.body.key)) nb += '<p class="you-p">' + t('you.fedNext') + '</p>';
   if(nb && sp && !otherJob) h += '<div class="you-sub">' + t('you.next') + '</div>' + nb;
   box.innerHTML = h;
-  if($('youStart')) $('youStart').onclick = function(){ youEditing = true; renderYou(ri, cand, sp, y, false); };
-  if($('youEdit')) $('youEdit').onclick = function(){ youEditing = true; renderYou(ri, cand, sp, y, false); };
 }
 var TIESF = {};   // person id -> tie file, a pending promise, or false
 var DC = window.DecisionCard ? window.DecisionCard(function(){ return LANG; }) : null;
