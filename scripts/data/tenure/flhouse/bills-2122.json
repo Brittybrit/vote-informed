@@ -4,63 +4,25 @@
  "rule": "Laws enacted in the 2021, 2021A, 2021B, 2022 and 2022C sessions whose final staff analysis names a kind of business it helps, as screened by the Senate slice; House floor votes of Nixon and Chambliss.",
  "counts": {
   "enacted": 541,
-  "screened": 495,
-  "qualifying": 40,
-  "withHouseVote": 2
+  "screened": 541,
+  "qualifying": 44,
+  "withHouseVote": 3
  },
  "missing": {
-  "screening": [
+  "screening": [],
+  "class": [
    "2022-192",
-   "2022-194",
    "2022-199",
-   "2022-206",
    "2022-210",
-   "2022-215",
-   "2022-223",
-   "2022-226",
-   "2022-227",
-   "2022-228",
-   "2022-229",
-   "2022-230",
-   "2022-231",
-   "2022-232",
-   "2022-233",
-   "2022-234",
-   "2022-235",
-   "2022-236",
-   "2022-237",
-   "2022-238",
-   "2022-239",
-   "2022-240",
-   "2022-241",
-   "2022-242",
-   "2022-243",
-   "2022-244",
-   "2022-245",
-   "2022-246",
-   "2022-247",
-   "2022-248",
-   "2022-249",
-   "2022-250",
-   "2022-251",
-   "2022-252",
-   "2022-253",
-   "2022-254",
-   "2022-255",
-   "2022-256",
-   "2022-257",
-   "2022-258",
-   "2022-259",
-   "2022-260",
-   "2022-261",
-   "2022-262",
-   "2022-263",
-   "2022-264"
+   "2022-215"
   ],
-  "class": [],
-  "label": [],
+  "label": [
+   "2022-192",
+   "2022-199",
+   "2022-210",
+   "2022-215"
+  ],
   "roll": [
-   "2021-24",
    "2021-31",
    "2021-56",
    "2021-79",
@@ -97,7 +59,11 @@
    "2022-130",
    "2022-138",
    "2022-139",
-   "2022-176"
+   "2022-176",
+   "2022-192",
+   "2022-199",
+   "2022-210",
+   "2022-215"
   ]
  },
  "bills": [
@@ -178,7 +144,21 @@
    "screen": "Broadband Internet providers will benefit from significantly discounted rates for certain attachments made to municipal electric utility poles over the next three years and from the certainty that any non- discounted rates applicable to other attachments on these poles may not be increased for 13 months. These savings, together with the potential award of grants, should provide incentives for additional investment in broadband Internet infrastructure to reach unserved areas and unserved customers in this state. This may result in increased economic activity in areas that currently lack access to broadband Internet service.",
    "note": null,
    "screenedBy": "flsenate",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2021-04-28",
+     "motion": "passage",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2021/1239/Vote/HouseVote_h01239e2405.PDF",
+     "roll": {
+      "Nixon": "yes",
+      "Chambliss": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 7061",
@@ -807,6 +787,74 @@
     "quote": "Developers incorporating affordable housing into development projects may benefit"
    },
    "screen": "Developers incorporating affordable housing into development projects may benefit from bypassing comprehensive plan amendments and other delays in project approval.",
+   "note": null,
+   "screenedBy": "flsenate",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1534",
+   "session": "2022",
+   "chapter": "2022-192",
+   "title": "Retail Theft",
+   "url": "https://www.flsenate.gov/Session/Bill/2022/1534",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2022/1534/Analyses/2022s01534.ap.PDF",
+   "benefits": {
+    "category": "retailers (retail theft losses)",
+    "named": [],
+    "quote": "the bill would reduce loss of inventory with a cost savings to retailers, which may be substantial"
+   },
+   "screen": "To the extent the new retail theft crimes reduces retail theft, especially large retail theft operations, the bill would reduce loss of inventory with a cost savings to retailers, which may be substantial.",
+   "note": null,
+   "screenedBy": "flsenate",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1764",
+   "session": "2022",
+   "chapter": "2022-199",
+   "title": "Municipal Solid Waste-to-Energy Program",
+   "url": "https://www.flsenate.gov/Session/Bill/2022/1764",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2022/1764/Analyses/2022s01764.ap.PDF",
+   "benefits": {
+    "category": "private owners of waste-to-energy facilities",
+    "named": [],
+    "quote": "The bill may result in a positive impact to private companies that own a government affiliated waste-to-energy facility and qualify for a grant."
+   },
+   "screen": "The bill may result in a positive impact to private companies that own a government affiliated waste-to-energy facility and qualify for a grant.",
+   "note": null,
+   "screenedBy": "flsenate",
+   "votes": {}
+  },
+  {
+   "bill": "SB 1190",
+   "session": "2022",
+   "chapter": "2022-210",
+   "title": "Two-way Radio Communication Enhancement Systems",
+   "url": "https://www.flsenate.gov/Session/Bill/2022/1190",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2022/1190/Analyses/2022s01190.rc.PDF",
+   "benefits": {
+    "category": "apartment building owners",
+    "named": [],
+    "quote": "Apartment building owners may see positive impact from being able to utilize less costly improvement options"
+   },
+   "screen": "Apartment building owners may see positive impact from being able to utilize less costly improvement options to meet radio strength standards in certain buildings. BILL: CS/SB 1190 Page 5",
+   "note": null,
+   "screenedBy": "flsenate",
+   "votes": {}
+  },
+  {
+   "bill": "HB 965",
+   "session": "2022",
+   "chapter": "2022-215",
+   "title": "Environmental Management",
+   "url": "https://www.flsenate.gov/Session/Bill/2022/965",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2022/965/Analyses/h0965z1.EAF.PDF",
+   "benefits": {
+    "category": "water quality enhancement credit sellers (WQEA operators)",
+    "named": [],
+    "quote": "The bill may have an indeterminate positive fiscal impact on entities that establish WQEAs and sell water quality enhancement credits."
+   },
+   "screen": "The bill may have an indeterminate positive fiscal impact on entities that establish WQEAs and sell water quality enhancement credits. B. FISCAL COMMENTS: None. STORAGE NAME: h0965z1.EAF.docx PAGE: 11 DATE: 6/28/2022",
    "note": null,
    "screenedBy": "flsenate",
    "votes": {}
