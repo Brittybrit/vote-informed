@@ -52,7 +52,7 @@ test('every action and tie is reachable and normalized', () => {
 
 test('split and tied filters agree with the data', async () => {
   const { body: split } = await get('/api/v1/actions?body=county&split=1&limit=500');
-  assert.ok(split.total >= 10 && split.total < 30, 'county split votes: ' + split.total);
+  assert.ok(split.total >= 10 && split.total < 500, 'county split votes: ' + split.total);
   for (const a of split.items) assert.equal(a.split, true);
   const { body: calusa } = await get('/api/v1/actions?party=kendall%20associates&tied=1');
   assert.ok(calusa.total >= 1);
@@ -76,7 +76,7 @@ test('single action, person, body and 404s', async () => {
   assert.ok(p.summary && p.summary.total > 0);
   const { body: b } = await get('/api/v1/bodies/county');
   assert.equal(b.key, 'county');
-  assert.ok(b.members.length === 13);
+  assert.equal(b.members.filter(m => m.former !== true).length, 13);
   for (const path of ['/api/v1/bodies/nope', '/api/v1/people/nope', '/api/v1/actions/county/nope', '/api/v1/whatever']) {
     const { res } = await get(path);
     assert.equal(res.status, 404, path);

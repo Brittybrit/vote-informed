@@ -4,7 +4,7 @@
 //
 // Rules:
 // - Only gifts dated 2025-01-01 or later count (2025-2026 cycle rule), except federal members, whose gifts
-//   count from one cycle before their tenure began (giftStart).
+//   count from one cycle before their tenure began (giftStart); so do county members with a tenure entry (Gilbert).
 // - A gift is counted once, however many actions it ties to.
 // - "Before": a gift dated before at least one action it ties to.
 // - State legislators: money tied to budget requests and money tied only to bill votes are kept apart.
@@ -13,8 +13,9 @@ import { fileURLToPath } from 'node:url';
 
 export const CYCLE_START = '2025-01-01';
 // Federal bodies built over each member's full tenure (B.tenure[key] = { start, giftsFrom }) count gifts
-// from one cycle before the member took office (Brit, Oct 25, 2026). Everything else keeps CYCLE_START.
-export const giftStart = (B, key) => (B.level === 'federal' && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
+// from one cycle before the member took office (Brit, Oct 25, 2026). The County Commission does the same for each
+// member with a B.tenure entry (Gilbert: from 2019); members without one (Lopez) and everything else keep CYCLE_START.
+export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county') && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {
   let s = String(n || '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ');
@@ -108,6 +109,8 @@ export function build(decisions, officesHeld) {
       const isCmte = a => /^(pc|pac)/i.test(a) || /political committee|\bPAC\b/i.test(String(((B.accounts || {})[a] || {}).en || (B.accounts || {})[a] || ''));
       e.campaignAmt = Math.round(Object.entries(byAcct).filter(([a]) => !isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
       e.committeeAmt = Math.round(Object.entries(byAcct).filter(([a]) => isCmte(a)).reduce((n, [, v]) => n + v, 0) * 100) / 100;
+      // A committee the member reported soliciting for (Miami-Dade form MD-ED 28) but does not chair
+      if (Object.keys(byAcct).some(a => isCmte(a) && (B.accounts[a] || {}).role === 'solicits')) e.cmteRole = 'solicits';
       if (state) {
         const req = tied.filter(([a]) => a.kind === 'request');
         const bills = tied.filter(([a]) => a.kind === 'bill');

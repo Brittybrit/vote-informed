@@ -70,8 +70,11 @@ test('every body and action is well formed', () => {
 test('county roll calls are complete and Lopez is marked not yet seated before Nov 18, 2025 votes', () => {
   const C = d.bodies.find(b => b.key === 'county');
   for (const a of C.actions) {
-    assert.equal(Object.keys(a.roll).length, 13, a.id);
-    if (a.vacant) assert.equal(a.roll.Lopez, null);
+    // 13 seats: everyone seated that day has a vote; a current member not yet seated is null; a seat can be vacant
+    const seated = Object.values(a.roll).filter(v => v != null).length;
+    assert.ok(seated >= 12 && seated <= 13, a.id + ' seated ' + seated);
+    for (const m of C.members.filter(m => !m.former)) assert.ok(m.key in a.roll, a.id + ' ' + m.key);
+    if (a.vacant || a.date < '2025-11-18') assert.equal(a.roll.Lopez, null, a.id);
   }
 });
 

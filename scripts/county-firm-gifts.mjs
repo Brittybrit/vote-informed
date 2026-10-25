@@ -3,9 +3,12 @@
 // against fresh exports of the on-ballot members' accounts. Same rule as the state cards (any lobbyist at
 // the firm counts as the firm). Idempotent: gifts already on a card are skipped.
 // Inputs: public/data/decisions.json, public/data/county-lobbyists.json (county registry, with addresses),
-//   scripts/data/county/donors/lopez-campaign.csv (VoterFocus export), pc80020.tsv (DOE), gilbert-fec.json (FEC API).
+//   scripts/data/county/donors/lopez-campaign.csv (VoterFocus export), pc80020.tsv (DOE), gilbert-fec.json (FEC API),
+//   gilbert-campaign-2020.csv and gilbert-campaign-2024.csv (VoterFocus), pc71293.tsv (DOE, Common Voices).
+// Gifts count from giftStart(B, member): Gilbert from 2019 (one cycle before his Nov 17, 2020 start), Lopez from 2025.
 // Run: node scripts/county-firm-gifts.mjs && node scripts/money-summary.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
+import { giftStart } from './money-summary.mjs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -46,10 +49,16 @@ const [hdr, ...vf] = csv(readFileSync(P('scripts/data/county/donors/lopez-campai
 const H = Object.fromEntries(hdr.map((h, i) => [h, i]));
 for (const r of vf) if (r[H['Cont/Exp']] === 'C') rows.push({ to: 'Lopez', acct: 'campaign', date: r[H['item date']], amount: +r[H.amount], donor: r[H.name].replace(/\s+/g, ' ').trim(), addr: r[H['address 1']], occ: r[H.occupation].replace(/<br>/g, ' ') });
 for (const line of readFileSync(P('scripts/data/county/donors/pc80020.tsv'), 'utf8').split('\n').slice(1)) { const c = line.split('\t'); if (c.length < 8) continue; const [mm, dd, yy] = c[1].split('/'); rows.push({ to: 'Lopez', acct: 'pac', date: `${yy}-${mm}-${dd}`, amount: +c[2], donor: c[4].trim(), addr: c[5], occ: c[7], typ: c[3] }); }
+const vfRows = (f, to, acct) => { const [h, ...rs] = csv(readFileSync(P('scripts/data/county/donors/' + f), 'latin1')); const X = Object.fromEntries(h.map((x, i) => [x, i]));
+  for (const r of rs) if (r[X['Cont/Exp']] === 'C' && r[X['Amend. code']] !== 'D' && r.length > 5) rows.push({ to, acct, date: r[X['item date']], amount: +r[X.amount], donor: r[X.name].replace(/\s+/g, ' ').trim(), addr: r[X['address 1']], occ: (r[X.occupation] || '').replace(/<br>/g, ' ') }); };
+const ACC = new Set(Object.values(B.onBallot).flatMap(o => o.accounts));
+if (ACC.has('gilbert20')) vfRows('gilbert-campaign-2020.csv', 'Gilbert', 'gilbert20');
+if (ACC.has('gilbert24')) vfRows('gilbert-campaign-2024.csv', 'Gilbert', 'gilbert24');
+if (ACC.has('pc71293')) for (const line of readFileSync(P('scripts/data/county/donors/pc71293.tsv'), 'utf8').split('\n').slice(1)) { const c = line.split('\t'); if (c.length < 8) continue; const [mm, dd, yy] = c[1].split('/'); rows.push({ to: 'Gilbert', acct: 'pc71293', date: `${yy}-${mm}-${dd}`, amount: +c[2], donor: c[4].trim(), addr: c[5], occ: c[7], typ: c[3] }); }
 for (const r of JSON.parse(readFileSync(P('scripts/data/county/donors/gilbert-fec.json')))) if (r.entity === 'IND' && !r.memo) rows.push({ to: 'Gilbert', acct: 'fec', date: r.date, amount: r.amount, donor: r.name, addr: r.street || '', occ: [r.occ, r.employer].filter(Boolean).join(' / ') });
 for (const ref of rows.filter(r => r.amount < 0)) { const g = rows.find(r => r.acct === ref.acct && norm(r.donor) === norm(ref.donor) && r.amount === -ref.amount && r.date <= ref.date && !r.refunded); if (g) g.refunded = true; }
 for (const r of rows) { r.n = norm(r.donor); r.w = new Set(r.n.split(' ')); r.ak = r.addr ? akey(r.addr).key : null; }
-const live = rows.filter(r => r.amount > 0 && !r.refunded && r.date >= '2025-01-01' && !SKIP.some(x => x.test(r.n)));
+const live = rows.filter(r => r.amount > 0 && !r.refunded && r.date >= giftStart(B, r.to) && !SKIP.some(x => x.test(r.n)));
 
 const gKey = g => [g.to, g.acct, norm(g.donor), Number(g.amount), g.date].join('|');
 const matches = (p, r) => { const [lasts, first] = nameParts(p); return first && lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n); };
@@ -58,7 +67,8 @@ const findReg = name => { const w = norm(name.replace(SUF, '')).split(' '); retu
 let added = 0, total = 0; const log = [];
 for (const a of B.actions) {
   const have = new Set(a.gifts.map(gKey));
-  const push = g => { if (have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to}/${g.acct} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist}${g.why ? ' (' + g.why.en + ')' : ''}`); };
+  // only members seated for the vote (a null roll entry means not yet on the commission)
+  const push = g => { if (have.has(gKey(g)) || a.roll[g.to] == null) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to}/${g.acct} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist}${g.why ? ' (' + g.why.en + ')' : ''}`); };
   for (const l of a.lobbied || []) {
     const reg = findReg(l.name); if (!reg) continue;
     const k = akey(reg.addr), C = cluster[k.key];

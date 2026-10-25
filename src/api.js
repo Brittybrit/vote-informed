@@ -111,7 +111,7 @@ export function buildIndex(raw) {
       type: b.type || 'votes',
       rosterBody: b.rosterBody || null,
       since: b.since || null,
-      members: (b.members || []).map(m => ({ key: m.key, person: m.person || null, name: m.name, district: m.district == null ? null : m.district })),
+      members: (b.members || []).map(m => ({ key: m.key, person: m.person || null, name: m.name, district: m.district == null ? null : m.district, ...(m.former ? { former: true } : {}) })),
       onBallot: Object.entries(b.onBallot || {}).map(([k, v]) => ({ key: k, person: (memberByKey.get(k) || {}).person || null, race: text(v.race), accounts: v.accounts || [] })),
       accounts,
       coverage: text(b.coverage),

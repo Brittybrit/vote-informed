@@ -35,7 +35,10 @@ test('gifts before the cycle are not counted', () => {
   // Congress members' gifts count from one cycle before their tenure began (giftStart); everyone else from CYCLE_START
   for (const B of decisions.bodies) for (const a of B.actions) for (const g of a.gifts)
     assert.ok(g.date >= giftStart(B, g.to), B.key + ' ' + a.id + ' gift dated ' + g.date);
-  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), CYCLE_START, B.key);
+  // Full-tenure county members with a tenure entry (Gilbert) count from one cycle before their start; others from CYCLE_START
+  for (const B of decisions.bodies) if (B.level !== 'federal') for (const k of Object.keys(B.onBallot)) assert.equal(giftStart(B, k), B.key === 'county' && B.tenure && B.tenure[k] ? B.tenure[k].giftsFrom : CYCLE_START, B.key + ' ' + k);
+  const C = decisions.bodies.find(b => b.key === 'county');
+  assert.equal(giftStart(C, 'Gilbert'), '2019-01-01'); assert.equal(giftStart(C, 'Lopez'), CYCLE_START);
   assert.ok(!saved.people['natasha-l-ervin'].total);
 });
 
