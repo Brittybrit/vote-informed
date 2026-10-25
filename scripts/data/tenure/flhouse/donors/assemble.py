@@ -6,26 +6,34 @@ H = os.path.dirname(os.path.abspath(__file__))
 CAND = {'Basabe': 'Basabe, Fabian  (REP)(STR)', 'Porras': 'Porras, Juan Carlos (REP)(STR)', 'Chambliss': 'Chambliss, Kevin  (DEM)(STR)',
         'Redondo': 'Redondo, Mike  (REP)(STR)', 'Nixon': 'Nixon, Angie  (DEM)(STR)', 'Gantt': 'Gantt, Ashley  (DEM)(STR)'}
 out, ok = {}, True
+def sections(f):
+    L = [l for l in open(f, encoding='utf8').read().split('\n') if l.strip() and not l.startswith('#END')]
+    cur = None
+    for l in L:
+        if l.startswith('#PAGE'):
+            if cur: yield cur
+            cur = [l, []]
+        else: cur[1].append(l)
+    if cur: yield cur
 for f in sorted(glob.glob(os.path.join(H, 'pages', '*.txt')), key=lambda p: int(os.path.basename(p)[:-4])):
-    L = [l for l in open(f, encoding='utf8').read().split('\n') if l.strip()]
-    m = re.match(r'#PAGE (\d+) (\w+) rows (\d+) cents (\d+)', L[0]); k = m.group(2)
-    rows = [l for l in L[1:] if not l.startswith('#END')]
-    nrows = sum(1 for l in rows if not l.startswith('@@'))
-    cand = CAND[k]
-    recs = []
-    sticky = None
-    for r in rows:
-        if r.startswith('@@'): sticky = r[2:].strip(); continue
-        c = [x.strip() for x in r.replace('❦', '&').replace('❧', '=').replace('❨', '?').replace(' ¦ ', '¦').split('¦')]
-        if c[0].startswith('@'): cand_, c = c[0][1:], c[1:]
-        else: cand_ = sticky or cand
-        c += [''] * (8 - len(c))
-        recs.append([cand_] + c[:8])
-    cents = sum(round(float(r[2]) * 100) for r in recs)
-    good = len(recs) == int(m.group(3)) and cents == int(m.group(4))
-    ok &= good
-    print(os.path.basename(f), k, len(recs), m.group(3), cents, m.group(4), 'OK' if good else 'MISMATCH')
-    out.setdefault(k, []).extend(recs)
+  for head, rows in sections(f):
+      m = re.match(r'#PAGE (\S+?)(?: (\w+))? rows (\d+) cents (-?\d+)', head)
+      k = m.group(2) or m.group(1)
+      cand = CAND.get(k)
+      recs = []
+      sticky = None
+      for r in rows:
+          if r.startswith('@@'): sticky = r[2:].strip(); continue
+          c = [x.strip() for x in r.replace('❦', '&').replace('❧', '=').replace('❨', '?').replace(' ¦ ', '¦').split('¦')]
+          if c[0].startswith('@'): cand_, c = c[0][1:], c[1:]
+          else: cand_ = sticky or cand
+          c += [''] * (8 - len(c))
+          recs.append([cand_] + c[:8])
+      cents = sum(round(float(r[2]) * 100) for r in recs)
+      good = len(recs) == int(m.group(3)) and cents == int(m.group(4))
+      ok &= good
+      print(os.path.basename(f), k, len(recs), m.group(3), cents, m.group(4), 'OK' if good else 'MISMATCH')
+      out.setdefault(k, []).extend(recs)
 for k, recs in out.items():
     with open(os.path.join(H, f'{k.lower()}-pre2025.tsv'), 'w', encoding='utf8') as w:
         for r in recs: w.write('\t'.join(r) + '\n')
