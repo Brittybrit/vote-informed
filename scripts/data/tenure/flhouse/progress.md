@@ -30,3 +30,4 @@ Outputs: requests-2023.json, requests-2024.json, bills-2023.json, bills-2024.jso
 - Bills 2023: 239 of 357 chapters screened (2022A-2022D-2023B and 2023 chapters through 2023-238), 32 qualify, all 32 House roll calls fetched (bills/stageC.jsonl). Unscreened: 2023-239..2023-352 (incl. 2023C) and all 299 of 2024.
 - Donors: 6 TSVs written; Nixon stops at 2024-05-10 (pages 109-110 not copied); committees (pc81066, pc83579, pc84197) not pulled. Both need Claude in Chrome (DOE blocks shell).
 - Resume: python3 bills/stageB-fetch.py (skips done), read new ps/*.txt into judge.json, python3 bills/build-bills.py, python3 bills/stageC.py, build again.
+- 2026-10-25 flsenate agent: requested pull of pc81066/pc83579/pc84197 and Nixon 5/10-12/31/2024 NOT done: Claude in Chrome unreachable (tabs_context timed out twice). Still needs the DOE contrib.exe browser route on Brit's Mac.
