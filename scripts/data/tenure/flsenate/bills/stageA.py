@@ -14,7 +14,7 @@ pdone = {json.loads(l)['ch'] for l in open(PSI)} if os.path.exists(PSI) else set
 def get(u, binary=False):
     for t in range(8):
         f = tempfile.NamedTemporaryFile(delete=False); f.close()
-        r = subprocess.run(['curl', '-sS', '-m', '90', '-o', f.name, '-w', '%{http_code}', u], capture_output=True, text=True)
+        r = subprocess.run(['curl', '-sS', '-m', '90', '-o', f.name, '-w', '%{http_code}', u.replace(' ', '%20')], capture_output=True, text=True)
         b = open(f.name, 'rb').read(); os.unlink(f.name)
         if r.stdout == '200' and len(b) > 2000 and (not binary or b[:4] == b'%PDF'): time.sleep(8); return b
         if r.stdout == '404': return None

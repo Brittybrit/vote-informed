@@ -14,7 +14,7 @@ def seg(t):
     nhpos=nh.start() if nh else len(t)
     cons=[m for m in re.finditer(r'(?:^|\n)\s*(?:\d{1,2}\.\s*)?CONSENT AGENDA\s*\n',t)]
     cstart=cons[0].start() if cons else -1
-    cmot=re.search(r'Motion to approve the (?:amended )?consent agenda[^\n]*(?:\n[^\n]*){0,4}',t,re.I)
+    cmot=re.search(r'Motion to approve the (?:amended )?consent agen[d]?a[^\n]*(?:\n[^\n]*){0,4}',t,re.I)
     hs=list(HDR.finditer(t)); out=[]
     for k,m in enumerate(hs):
         end=hs[k+1].start() if k+1<len(hs) else len(t)

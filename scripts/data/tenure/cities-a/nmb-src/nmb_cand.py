@@ -36,7 +36,7 @@ if __name__=='__main__':
             out.append({'mid':k,'date':v['date'],'no':o['no'],'head':o['head'],'title':title[:1500],'consent':o['consent'],
                 'vote':re.sub(r'\s+',' ',vote)[:300],'roll':roll,'result':('first reading' if first and res=='passed' else res),'how':how,
                 'mover':mot.group(1).split()[-1] if mot else None,'second':mot.group(2).split()[-1] if mot else None,
-                'present':pres,'skip':bool(SKIP.search(o['head']+' '+title[:300])),'parties':guess(title),'amount':money(title)})
+                'present':pres,'skip':bool(SKIP.search(o['head'])),'parties':guess(title),'amount':money(title)})
     json.dump(out,open('nmb/cand.json','w'),indent=0)
     import collections
     print(len(out),collections.Counter(c['how'][:20] for c in out))

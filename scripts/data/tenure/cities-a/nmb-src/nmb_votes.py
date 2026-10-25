@@ -8,13 +8,15 @@ NAMES=['DeFillipo','Joseph','Chernoff','Fleurimond','Jean','Smith','Smukler','Pi
 def who(s):
     out=[]
     for n in NAMES:
-        if re.search(r'\b'+n[:5],s,re.I) or (n=='Chernoff' and re.search(r'Cherno',s)): out.append(n)
+        if re.search(r'\b'+(n[:5] if len(n)>2 else n+r'\b'),s) or (n=='Chernoff' and re.search(r'Cherno',s)): out.append(n)
     return out
+FULL={'DeFillipo':r'DeFillipo','Joseph':r'Michael\s+Joseph','Chernoff':r'Chernoff','Fleurimond':r'Fleurimond','Jean':r'Daniela\s+Jean','Smith':r'Phyllis\s+(?:S\.\s+)?Smith','Smukler':r'Smukler','Piper':r'Piper','Su':r'Lynn\s+Su\b'}
 def present(t):
-    m=re.search(r'Present (?:at the meeting )?[^.]*?were (.*?)\.\s',t,re.S)
-    p=who(m.group(1)) if m else []
-    absent=[]
-    for m in re.finditer(r'((?:Mayor|Vice Mayor|Commissioner|Acting Mayor)[^.]{0,80}?)\s(?:was|were) absent',t[:6000]): absent+=who(m.group(1))
+    m=re.search(r'Present (?:at the meeting|in the City Commission Chambers)?[^\n]{0,40}?were\s(.*?)(?:City Manager|Interim City Manager|Acting City Manager|were also|\.\s*\n)',t[:8000],re.S)
+    seg=re.sub(r'\s+',' ',m.group(1)) if m else ''
+    tail=re.sub(r'\s+',' ',t[m.end():m.end()+600]) if m else ''
+    p=[k for k,rx in FULL.items() if re.search(rx,seg)]
+    absent=[k for k,rx in FULL.items() if re.search(rx+r'[^.]{0,40}?\b(?:was|were) (?:absent|excused)',tail+' '+seg)]
     return [x for x in p if x not in absent],absent
 def parse_vote(v,pres):
     v=re.sub(r'\s+',' ',v)
