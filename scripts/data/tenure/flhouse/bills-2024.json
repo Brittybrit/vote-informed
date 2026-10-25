@@ -4,36 +4,14 @@
  "rule": "Every law enacted in sessions 2024 whose final staff analysis names a kind of business or company that benefits (same test as universe.json). House floor roll calls only (the members are House members); a member is \"not seated\" on dates outside their House tenure.",
  "counts": {
   "enacted": 299,
-  "screened": 125,
-  "qualifying": 16
+  "screened": 147,
+  "qualifying": 19
  },
  "missing": {
   "A": [],
   "B": [
    "2024-58",
    "2024-85",
-   "2024-123",
-   "2024-127",
-   "2024-129",
-   "2024-131",
-   "2024-132",
-   "2024-133",
-   "2024-134",
-   "2024-135",
-   "2024-136",
-   "2024-137",
-   "2024-138",
-   "2024-139",
-   "2024-140",
-   "2024-141",
-   "2024-142",
-   "2024-143",
-   "2024-144",
-   "2024-145",
-   "2024-146",
-   "2024-147",
-   "2024-148",
-   "2024-149",
    "2024-150",
    "2024-151",
    "2024-152",
@@ -185,7 +163,23 @@
    "2024-298",
    "2024-299"
   ],
-  "C": []
+  "C": [
+   [
+    "2024-134",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/1569/Vote/HouseVote_h01569c1623.PDF"
+   ],
+   [
+    "2024-144",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/1532/Vote/HouseVote_s01532c3837.PDF"
+   ],
+   [
+    "2024-147",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/7020/Vote/HouseVote_s07020e1849.PDF"
+   ]
+  ]
  },
  "bills": [
   {
@@ -1923,7 +1917,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/613/Analyses/h0613z1.RRS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may allow more mobile home owners to have a live-in aide without an additional charge.",
-   "note": "not yet judged"
+   "note": "benefit to mobile home owners"
   },
   {
    "bill": "HB 707",
@@ -1967,7 +1961,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1007/Analyses/h1007z1.RRS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Businesses that are selling, manufacturing or distributing nicotine products that the AG has deemed attractive to minors may be subject to fines and penalties under certain circumstances.",
-   "note": "not yet judged"
+   "note": "penalties on nicotine sellers"
   },
   {
    "bill": "HB 1031",
@@ -1989,7 +1983,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1171/Analyses/h1171z1.CRJ.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have an indeterminate impact on the private sector as it creates a new civil cause of action, which may allow any person whose image or likeness is used without consent in a scheme to defraud to recover monetary damages from any entity or individual party to the suit.",
-   "note": "not yet judged"
+   "note": "indeterminate"
   },
   {
    "bill": "HB 1181",
@@ -2008,9 +2002,9 @@
    "chapter": "2024-131",
    "title": "Interception and Disclosure of Oral Communications",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1281",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1281/Analyses/h1281z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2019,9 +2013,9 @@
    "chapter": "2024-132",
    "title": "Digital Voyeurism",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1389",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1389/Analyses/h1389z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2030,9 +2024,9 @@
    "chapter": "2024-133",
    "title": "Juvenile Justice",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1425",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1425/Analyses/h1425z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2041,10 +2035,15 @@
    "chapter": "2024-134",
    "title": "Exemption from Regulation for Bona Fide Nonprofit Organizations",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1569",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1569/Analyses/h1569z1.IBS.PDF",
+   "benefits": {
+    "category": "nonprofit housing lenders (bona fide nonprofit mortgage exemption)",
+    "named": [],
+    "quote": "Entities and employees of entities that meet the criteria for the proposed exemption will likely benefit financially by not having to pay costs associated with licensure requirements under ch. 494, F.S."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Entities and employees of entities that meet the criteria for the proposed exemption will likely benefit financially by not having to pay costs associated with licensure requirements under ch. 494, F.S. The total number of nonprofit organizations that are eligible for the exemption is unclear.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1653",
@@ -2052,9 +2051,9 @@
    "chapter": "2024-135",
    "title": "Duties and Prohibited Acts Associated with Death",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1653",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1653/Analyses/h1653z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2063,9 +2062,9 @@
    "chapter": "2024-136",
    "title": "Special Districts",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7013",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7013/Analyses/h7013z1.LFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2074,9 +2073,9 @@
    "chapter": "2024-137",
    "title": "Department of Agriculture and Consumer Services",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1084",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1084/Analyses/2024s01084.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2085,9 +2084,9 @@
    "chapter": "2024-138",
    "title": "Public Records/Department of Agriculture and Consumer Services",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7026",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7026/Analyses/s7026z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2096,10 +2095,10 @@
    "chapter": "2024-139",
    "title": "Consumer Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2024/939",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/939/Analyses/h0939z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate.",
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 989",
@@ -2107,10 +2106,10 @@
    "chapter": "2024-140",
    "title": "Chief Financial Officer",
    "url": "https://www.flsenate.gov/Session/Bill/2024/989",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/989/Analyses/h0989z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill’s provisions relating to unsafe and unsound practices by financial institutions may have an indeterminate positive economic impact on the private sector. The bill may lead to fewer financial institutions suspending, terminating, or taking similar action restricting customers’ or members’ account access without legitimate reason.",
+   "note": "benefit to account holders"
   },
   {
    "bill": "HB 1291",
@@ -2118,10 +2117,10 @@
    "chapter": "2024-141",
    "title": "Educator Preparation Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1291",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1291/Analyses/h1291z1.PEW.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 38 Board of Governors, Board of Governors Assistance for Solving Problems, https://www.flbog.edu/universities/parents - students/board-of-governors-assistance-for-solving-problems/ (last visited Mar. 11, 2024). 39 Board of Governors, File a Complaint, https://www.flbog.edu/about-us/inspector-general/file-a-complaint/ (last visited Mar. 11, 2024). 40 See ss. 1004.04, 1004.85, 1012.56, and 1012.562, F.S. and r. 6A-5.066, F.A.C. 41 See ss. 1004.04, 1004.85, 1012.56, and 1012.562, F.S. and r. 6A-5.066, F.A.C. STORAGE NAME: PAGE: 8 DATE: None.",
+   "note": "footnotes only; no private-sector statement"
   },
   {
    "bill": "SB 902",
@@ -2129,9 +2128,9 @@
    "chapter": "2024-142",
    "title": "Motor Vehicle Retail Financial Agreements",
    "url": "https://www.flsenate.gov/Session/Bill/2024/902",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/902/Analyses/2024s00902.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2140,9 +2139,9 @@
    "chapter": "2024-143",
    "title": "Regulation of Water Resources",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1136",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1136/Analyses/2024s01136.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2151,10 +2150,15 @@
    "chapter": "2024-144",
    "title": "Mitigation",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1532",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1532/Analyses/2024s01532.rc.PDF",
+   "benefits": {
+    "category": "mitigation bank operators",
+    "named": [],
+    "quote": "There may be a positive fiscal impact to private entities creating and maintaining mitigation banks on public lands and applicants participating in the expanded water quality enhancement area (WQEA) credit program."
+   },
+   "screen": "Private Sector Impact: There may be a positive fiscal impact to private entities creating and maintaining mitigation banks on public lands and applicants participating in the expanded water quality enhancement area (WQEA) credit program. BILL: CS/CS/CS/SB 1532 Page 11",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 1628",
@@ -2162,9 +2166,9 @@
    "chapter": "2024-145",
    "title": "Local Government Actions",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1628",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1628/Analyses/2024s01628.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2173,9 +2177,9 @@
    "chapter": "2024-146",
    "title": "Car Racing Penalties",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1764",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1764/Analyses/2024s01764.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2184,10 +2188,15 @@
    "chapter": "2024-147",
    "title": "Delivery of Notices",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7020",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7020/Analyses/2024s07020.fp.PDF",
+   "benefits": {
+    "category": "private delivery services",
+    "named": [],
+    "quote": "Private delivery services may see increases in revenue associated with greater use of their services"
+   },
+   "screen": "Private Sector Impact: Private delivery services may see increases in revenue associated with greater use of their services by persons seeking to comply with statutory registered mail requirements.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 197",
@@ -2195,10 +2204,10 @@
    "chapter": "2024-148",
    "title": "Health Care Practitioners and Massage Therapy",
    "url": "https://www.flsenate.gov/Session/Bill/2024/197",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/197/Analyses/h0197z1.HRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 98 Department of Health, Agency Bill Analysis for House Bill 197 (2024), p. 11. On file with the Health and Human Services Committee. STORAGE NAME: h0197z1.DOCX PAGE: 13 DATE: 5/16/2024 Some massage therapy establishments may experience a negative economic impact as a result of operational costs associated with the advertising, signage, record keeping, and facility requirements of the bill.",
+   "note": "costs to massage establishments"
   },
   {
    "bill": "HB 285",
@@ -2206,10 +2215,10 @@
    "chapter": "2024-149",
    "title": "Pub. Rec./Recording Notification Service",
    "url": "https://www.flsenate.gov/Session/Bill/2024/285",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/285/Analyses/h0285z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive fiscal impact on the private sector to the extent that it prevents a third party from:  Obtaining specified information submitted for the purpose of registering for a recording notification service or a related service and using it for fraudulent purposes, which purposes, or the legal remedies that follow, may have a financial component.  Targeting for a fraudulent property transfer the real property of persons whose property is not being monitored through a recording notification service or a related service.",
+   "note": "fraud prevention for private sector generally"
   },
   {
    "bill": "HB 341",
