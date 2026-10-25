@@ -28,6 +28,7 @@
   main{max-width:760px; margin:0 auto; padding:28px 16px 64px;}
   h1{font-weight:900; text-transform:uppercase; font-size:30px; line-height:1.1; margin-bottom:10px;}
   .lede{color:var(--ink-soft); margin-bottom:14px;}
+  .notice{font-size:12.5px; line-height:1.5; color:var(--ink-soft); border:1px solid #C9C9C1; padding:10px 12px; margin:0 0 16px;}
   .stats{display:flex; flex-wrap:wrap; gap:8px 22px; font-family:var(--mono); font-size:12.5px; margin:16px 0 18px; padding:10px 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);}
   .stats b{font-family:var(--sans); font-size:20px; font-weight:900; display:block; line-height:1.1;}
   .tools{position:sticky; top:0; background:var(--paper); z-index:2; padding:10px 0 8px; border-bottom:2px solid var(--rule);}
@@ -103,6 +104,7 @@
 <main>
   <h1 data-t="title"></h1>
   <p class="lede" data-t="lede"></p>
+  <p class="notice" data-t="notice"></p>
   <div class="stats" id="stats"></div>
   <div class="tools">
     <input id="q" type="search" autocomplete="off">
@@ -118,6 +120,7 @@
   var S = {
     en: {
       title: 'Donors, lobbyists and official actions',
+      notice: "Public Records Correlation Notice: Every entry in this table pairs two separate public records: (1) official campaign finance reports filed with state, county, or municipal election authorities, and (2) official meeting minutes, agendas, or resolutions recorded by municipal clerks. Under Florida law, campaign contributions within statutory limits are legal, and municipal officials routinely vote on matters involving constituents and local businesses. The co-occurrence of a contribution and an official action does not imply coordination, quid pro quo, impropriety, or a conflict of interest. Where a corporate entity is linked to a contributor via shared registered agent or principal address in Florida Division of Corporations (Sunbiz) filings rather than confirmed beneficial ownership, that distinction is explicitly noted in the row.",
       lede: 'What Miami-Dade city incumbents on the November 3, 2026 ballot did on items that name one of their own campaign donors or that a registered lobbyist worked on: votes, motions, items they brought forward, and votes they missed. Every item is checked by hand against the meeting minutes or signed resolution. Gifts before or after an action are listed, not judged. Nothing here claims a vote was bought. For state legislators, it lists state budget requests they filed where the money would go to a donor or the request’s registered lobbyist gave to their campaign or committee, and bills they sponsored that benefit a donor.',
       loading: 'Loading…', loadErr: 'Couldn’t load the list. Try again in a minute.',
       search: 'Search a name, donor or company', noresult: 'Nothing matches that search.',
@@ -140,6 +143,7 @@
     },
     es: {
       title: 'Donantes, cabilderos y acciones oficiales',
+      notice: "Aviso sobre la correlación de registros públicos: Cada entrada de esta tabla une dos registros públicos distintos: (1) los informes oficiales de finanzas de campaña presentados ante las autoridades electorales estatales, del condado o municipales, y (2) las actas, agendas o resoluciones oficiales registradas por los secretarios municipales. Según la ley de Florida, las contribuciones de campaña dentro de los límites legales son legales, y los funcionarios municipales votan habitualmente sobre asuntos que involucran a residentes y negocios locales. Que una contribución y un acto oficial coincidan no implica coordinación, intercambio de favores, conducta impropia ni conflicto de intereses. Cuando una entidad se vincula a un donante por compartir agente registrado o dirección principal en los registros de la División de Corporaciones de Florida (Sunbiz), y no por propiedad confirmada, esa distinción se indica expresamente en la fila.",
       lede: 'Lo que hicieron los titulares de cargos municipales de Miami-Dade que están en la boleta del 3 de noviembre de 2026 en asuntos que nombran a uno de sus propios donantes de campaña o en los que trabajó un cabildero registrado: votos, mociones, asuntos que presentaron y votaciones a las que faltaron. Cada asunto se verificó a mano con el acta de la reunión o la resolución firmada. Los aportes antes o después de una acción se informan, no se juzgan. Nada aquí afirma que un voto fue comprado. Para los legisladores estatales, muestra las solicitudes de fondos del presupuesto estatal que presentaron cuando el dinero iría a un donante o el cabildero registrado en la solicitud dio a su campaña o comité, y los proyectos de ley que patrocinaron que benefician a un donante.',
       loading: 'Cargando…', loadErr: 'No se pudo cargar la lista. Intente de nuevo en un minuto.',
       search: 'Busque un nombre, donante o empresa', noresult: 'Nada coincide con esa búsqueda.',
@@ -162,6 +166,7 @@
     },
     ht: {
       title: 'Donatè, lobiyis ak aksyon ofisyèl',
+      notice: "Avi sou koneksyon dosye piblik: Chak liy nan tablo sa a mete de dosye piblik apa ansanm: (1) rapò ofisyèl finans kanpay ki depoze devan otorite eleksyon Leta, konte oswa vil, ak (2) pwosè-vèbal, ajennda oswa rezolisyon ofisyèl grefye vil yo anrejistre. Dapre lwa Florid, kontribisyon kanpay ki nan limit lalwa yo legal, epi ofisyèl vil yo vote regilyèman sou dosye ki konsène rezidan ak biznis lokal. Lè yon kontribisyon ak yon aksyon ofisyèl rive ansanm, sa pa vle di te gen kowòdinasyon, echanj favè, move konduit oswa konfli enterè. Lè nou konekte yon antite ak yon donatè paske yo pataje menm ajan anrejistre oswa menm adrès prensipal nan dosye Divizyon Konpayi Florid (Sunbiz), olye de pwopriyete ki konfime, liy lan di sa klèman.",
       lede: 'Sa ofisyèl vil Miami-Dade ki sou bilten vòt 3 novanm 2026 la te fè sou dosye ki nonmen youn nan pwòp donatè kanpay yo oswa kote yon lobiyis anrejistre te travay: vòt, mosyon, dosye yo te pote, ak vòt yo te rate. Nou verifye chak dosye ak men nan pwosè-vèbal reyinyon an oswa rezolisyon ki siyen an. Nou mete si yo bay anvan oswa apre yon aksyon, nou pa jije. Anyen isit la pa di yo te achte yon vòt. Pou lejislatè Leta yo, li montre demann lajan nan bidjè Leta yo te depoze lè lajan an ta ale bay yon donatè oswa lobiyis anrejistre sou demann lan te bay kanpay oswa komite yo, ak pwojè lwa yo te parennen ki benefisye yon donatè.',
       loading: 'N ap chaje…', loadErr: 'Nou pa t ka chaje lis la. Eseye ankò nan yon minit.',
       search: 'Chèche yon non, yon donatè oswa yon konpayi', noresult: 'Anyen pa koresponn ak rechèch sa a.',
