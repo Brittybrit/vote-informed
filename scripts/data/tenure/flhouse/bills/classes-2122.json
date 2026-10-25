@@ -255,5 +255,31 @@
   ],
   "re": "AFFORDABLE|HOUSING|DEVELOP|MULTIFAMILY|APARTMENT",
   "not": "AUTHORITY"
+ },
+ "2022-192": {
+  "tags": [
+   "retail",
+   "grocery"
+  ],
+  "re": "RETAIL|STORE|WALMART|PUBLIX|HOME DEPOT|TARGET|WALGREEN|CVS|SUPERMARKET"
+ },
+ "2022-199": {
+  "tags": [
+   "waste-environment"
+  ],
+  "re": "WASTE|ENERGY FROM|RENEWABLE|COVANTA|REWORLD|RECYCL"
+ },
+ "2022-210": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "APARTMENT|MULTIFAMILY|MULTI-FAMILY|PROPERTY MANAGEMENT|RESIDENTIAL MANAGEMENT|LANDLORD|RENTAL"
+ },
+ "2022-215": {
+  "tags": [
+   "waste-environment",
+   "agriculture-other"
+  ],
+  "re": "ENVIRONMENTAL|WATER QUALITY|WETLAND|MITIGATION|RESTORATION|RANCH|CATTLE"
  }
 }
