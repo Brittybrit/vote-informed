@@ -1,4 +1,43 @@
 # s2-legislators progress
-Started 2026-10-24. Shell curl blocked by egress proxy (403 CONNECT) for disclosure.floridaethics.gov, search.sunbiz.org, disclosures-clerk.house.gov, api.usaspending.gov, dos.elections.myflorida.com. Reads via WebFetch.
+Started 2026-10-24, finished 2026-10-25. Shell curl blocked (403 CONNECT) for disclosure.floridaethics.gov and search.sunbiz.org (read via WebFetch). curl works for dos.elections.myflorida.com (campaign-docs postback: candidates' qualifying Form 6), disclosures-clerk.house.gov (2026FD.zip index and PDFs), api.usaspending.gov, facts.fldfs.com, miamidade.gov/govaction, flgov.com veto lists. Blocked: flhouse.gov APR PDFs (WAF + robots), flsenate.gov budget PDFs (429/520), Sunbiz detail pages (WebFetch returns a cached unrelated entity).
 Incumbents' Form 6 / House FD already read in scripts/data/disclosures/state.json and federal.json (2026-10-23); reused here, with the filed form URL as record.
 Repo check: public/data/decisions.json bodies flhouse (313 APRs + 56 bills), flsenate (652 LFIRs + 56 bills), ushouse (156 CPF + 32 bills) scanned for each interest entity and its industry.
+- te-mayonna-brown: done | interests 4 | ties 2 | House candidate report 10083022 (filed as Te Brown, index says FL14, PDF says FL24); SBA PPP/EIDL hits on Scottland Construction and TMB Enterprises are name matches with different IL addresses (unverified); no FACTS hits
+- oliver-g-gilbert-iii: done | interests 5 | ties 6 | House candidate report 10081132 + repo Form 6; employer St. Thomas University: 2025 Senate LFIR funded then vetoed, DOEA contract, 2020 county CARES grant, federal grants; spouse firm AlphaLoans SBA EIDL; no county vote of his on STU found (repo ties file has none)
+- scott-singer: done | interests 12 | ties 4 | House candidate report 10073235; SBA loan records for his law firm, Roko Design, spouse employers; no FACTS hits
+- jared-moskowitz: done | interests 8 | ties 8 | Repo 2025 House FD; AshBritt (401k agreement) state/federal debris contracts; Merit International name match unverified; repo ushouse requests/bills: no item naming his interests
+- peter-jassenoff: done | interests 1 | ties 1 | House candidate report 10081334; employer got SBA EIDL grant
+- mario-diaz-balart: done | interests 4 | ties 0 | Repo 2025 House FD; Ladat LLC (spouse employer) no federal/state award under that exact name (only Ladatco); nothing in repo CPF requests or bills
+- nicole-locklin: done | interests 2 | ties 2 | House candidate report 10081070; spouse employer Miami Dolphins: county Marquee Event grant, Lottery sponsorships; Databricks has no FL state records
+- deborah-ann-meidinger-hosey: done | interests 2 | ties 1 | House candidate report 10082808; spouse employer Daher Aircraft PPP
+- maria-elvira-salazar: done | interests 4 | ties 0 | Repo 2025 House FD; no FACTS/USAspending award under MES Home Distributors, Storm Shield of Miami or Miracle TV; repo ushouse requests/bills: none naming them
+- eliott-rodriguez: done | interests 4 | ties 3 | Paper House Form B 9115846 (also forwarded to FL DOS); Schedule E answered yes but no Schedule E page in copy; wife employers 50 Eggs / Yardbird PPP
+- carlos-a-gimenez: done | interests 1 | ties 0 | Repo 2025 House FD; pensions only, no business interests to check
+- phil-ehr: done | interests 5 | ties 0 | House candidate report 10079716; NeutronX, NovaRed, English Chess Federation: no FL/federal award found
+- eddy-rojas: done | interests 10 | ties 2 | Paper House Form B 9116369; World Valet Parking SBA EIDL; client Aventura Beach Associates PPP; FLVALET/WVPK/Flashwash/World Cargo: no award found
+- elizabeth-jeanty: done | interests 2 | ties 0 | Form 6 from FL DOS qualifying papers; DOS shows multiple fail-to-file and fine letters (campaign reports); Eliza Consulting: no FACTS/USAspending/county record
+- ashley-viola-gantt: done | interests 3 | ties 0 | Repo Form 6 + EFDMS re-read; law firms: no state/federal award; no APR or bill naming them
+- ileana-garcia: done | interests 2 | ties 0 | Repo Form 6; no business on form; Narmar Consulting no award (only unrelated Narmar Clean Solutions)
+- george-lavin: done | interests 3 | ties 1 | Form 6 with tax return from FL DOS; Lawgical Insight (sole client) SBA loans
+- alexis-calatayud: done | interests 2 | ties 6 | Repo Form 6; employer ELC Miami-Dade/Monroe: state DOE grant agreements (hundreds of millions/yr), county grant, federal Head Start; GAA floor roll call not in repo
+- richard-lamondin-jr: done | interests 8 | ties 1 | Form 6 from FL DOS; EcoSystems, LLC SBA loans (address differs, unverified); 9th Street Homestead / 801 Apartments: none
+- jeffrey-solomon: done | interests 1 | ties 1 | Form 6 + return from FL DOS; Mobile Chiropractic Inc SBA loans (address differs, unverified)
+- ana-maria-rodriguez: done | interests 2 | ties 2 | Repo Form 6; employer Miami Association of Realtors: small DBPR POs, 2018 county lot conveyance; repo flsenate requests: none to MAR; real estate bills she voted on are industry-level, not naming MAR
+- jose-antonio-stoute: done | interests 4 | ties 0 | Form 6 from FL DOS; Medical Consultants International: no award; VA employment only
+- ramiro-orta: done | interests 3 | ties 0 | Form 6 from FL DOS; TD Bank employee; unnamed $10,000 business; no award
+- fabian-basabe: done | interests 3 | ties 0 | Repo Form 6; Bluemoon Hemp loan: no matching award (only unrelated Bluemoon Logistics etc.); repo flhouse: no APR or vote naming his interests
+- lucia-baez-geller: done | interests 3 | ties 1 | Form 6 2025 from FL DOS + 2024 EFDMS Form 6; St. Patrick Catholic School security grant (church vs school, unverified)
+- wancito-francius: done | interests 5 | ties 1 | Form 6 from FL DOS; Lion Intelligence & Security PPP/EIDL; other companies none
+- daphne-campbell: done | interests 4 | ties 0 | Form 6 with W-2s from FL DOS; staffing employers only; no award checked beyond FACTS/USAspending names (Trustaff federal contracts unrelated to FL)
+- bruno-a-barreiro: done | interests 5 | ties 1 | Form 6 from FL DOS (five real property rows redacted); Fatima Home Care PPP (same address)
+- gloria-romero-roses: done | interests 5 | ties 1 | Form 6 from FL DOS; 184 ST ME LLC SBA EIDL/7(a)/PPP
+- omar-blanco: done | interests 3 | ties 2 | Repo Form 6; MDFR employee; filed APRs 2129 and 2139 for MDFR equipment (funded, vetoed); APR PDFs blocked (flhouse.gov WAF/robots)
+- marcos-reyes: done | interests 2 | ties 1 | Form 6 from FL DOS; City Colors Digital Printing SBA loans (address differs slightly, unverified)
+- ashley-perez-biliskov: done | interests 3 | ties 1 | Form 6 + return from FL DOS; Clear Initiative Consulting: no award; Foresight Imaging VA contracts (MA company, unverified link)
+- nicolas-ramos: done | interests 1 | ties 0 | Form 6 from FL DOS; Alorica employee only; not searched further
+- miguel-granda: done | interests 1 | ties 0 | Form 6 from FL DOS; State of Florida salary only; no business
+- kevin-d-chambliss: done | interests 2 | ties 2 | Repo Form 6; employer Avant School of Excellence SBA 504 + PPP; repo flhouse: SB 2510 charter-school vote (no) does not name Avant
+- mike-redondo: done | interests 4 | ties 1 | Repo Form 6; Redondo Law PA SBA EIDL/PPP; repo flhouse: no APR to his entities
+- armando-castillo: done | interests 4 | ties 0 | Form 6 from FL DOS; American Airlines/TWU/Enverus income; not searched for awards to these large entities
+- juan-carlos-porras: done | interests 3 | ties 1 | Repo Form 6; Servicargo LLC SBA (name differs, unverified); Global Eagle Food, CurMed none
+- rey-lazaro-sordo: done | interests 2 | ties 0 | Form 6 from FL DOS (net worth $0); income sources CIC Investors 13 Ltd and Gonzalez and Rodriguez PLLC; no award

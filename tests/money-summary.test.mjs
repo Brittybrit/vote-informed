@@ -54,8 +54,8 @@ test('renders in all three languages with no leftovers', () => {
   }
   // the percentages first (Brit, Oct 24, 2026), then the money, then the actions
   const r = render(saved.people['mike-redondo'], 'en');
-  assert.match(r, /^Of the 89 budget requests he filed/);
-  assert.ok(r.indexOf('Of the 89') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
+  assert.match(r, /^41 of his 89 budget requests \(46%\)/);
+  assert.ok(r.indexOf('89 budget requests') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
   assert.ok(r.indexOf('took') < r.indexOf('asked for $110.5 million'));
   // the parts add up to the total when both are shown
   for (const p of Object.values(saved.people)) {
@@ -69,9 +69,12 @@ test('renders in all three languages with no leftovers', () => {
   // the share of actions tied to donors names its denominator and its two halves add up
   for (const p of Object.values(saved.people)) if (p.share && p.share.n) {
     assert.ok(p.share.tied <= p.share.n, p.pid);
-    const m = render(p, 'en').split('<br>')[0].match(/Of the (\d+) .*?, (\d+) \(([<>]?\d+)%\) .*?\. (\d+) \(([<>]?\d+)%\) did not\./);
-    assert.ok(m, p.pid + ' share sentence');
-    assert.equal(+m[2] + +m[4], +m[1], p.pid); if (!/[<>]/.test(m[3])) assert.equal(+m[3] + +m[5], 100, p.pid);
+    const line = render(p, 'en').split('<br>')[0];
+    if (p.share.def === 'donorFirst') continue;
+    if (!p.share.tied) { assert.match(line, /None of /, p.pid + ' share sentence'); continue; }
+    const m = line.match(/\b(\d+) of (?:them|his|her|the) .*?\(([<>]?\d+)%\).*?; (\d+) \(([<>]?\d+)%\) did not\./);
+    assert.ok(m, p.pid + ' share sentence: ' + line);
+    assert.equal(+m[1], p.share.tied, p.pid); assert.equal(+m[1] + +m[3], p.share.n, p.pid); if (!/[<>]/.test(m[2])) assert.equal(+m[2] + +m[4], 100, p.pid);
   }
   // a name is never repeated inside one sentence; pronouns are used instead
   for (const lang of ['en', 'es', 'ht']) for (const p of Object.values(saved.people)) if (p.last)

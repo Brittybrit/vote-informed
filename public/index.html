@@ -5374,7 +5374,7 @@ function renderTies(ri, cand, acts, shared, loading, city, dec){
       : st.reviewed ? t('ties.currentNone', {name: nm, body: body}) : t('ties.current', {name: nm, body: body})) + '</p>';
   }
   if(acts.length || decActs.length){
-    h += '<div class="fin-side">' + t('ties.actions', {name: esc(cand.name)}) + '</div>';
+    h += '<div class="fin-side">' + t('ties.actions', {name: esc(String(cand.name).split(/\s+and\s+/i)[0])}) + '</div>';
     var cards = decActs.map(function(a){ return {date: a.date, html: '<div class="dc">' + DC.actHtml(dec.body, a) + '</div>'}; });
     cards = cards.concat(acts.map(function(a){ return {date: a.date, html: oldCard(a)}; }));
     cards.sort(function(x, y){ return String(y.date).localeCompare(String(x.date)); });

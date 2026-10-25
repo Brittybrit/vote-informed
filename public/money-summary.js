@@ -42,11 +42,11 @@
       fromOther: function(p, Bl, fed){ var how = Bl.no && nv(Bl) ? 'voted against or did not vote on' : Bl.no ? 'voted against' : 'did not vote on'; return usd(Bl.otherMoney) + ' came from ' + (fed ? 'PACs' : 'donors') + ' in industries helped by bills ' + he(p) + ' ' + how + '.'; },
       // 3. Timing, both sides in dollars
       timing: function(p, what){
-        if(!p.beforeAmt) return 'All ' + usd(p.total) + ' came in after the ' + what + ' it is tied to.';
-        if(!p.afterAmt || p.before === p.gifts) return 'All ' + usd(p.total) + ' came in before the ' + what + ' it is tied to.';
+        if(!p.beforeAmt) return 'All of it came in after the ' + what + '.';
+        if(!p.afterAmt || p.before === p.gifts) return 'All of it came in before the ' + what + '.';
         return usd(p.beforeAmt) + ' came in before the ' + what + ' it is tied to. ' + usd(p.afterAmt) + ' came in after.';
       },
-      whatReq: 'request or vote', whatVote: 'vote or action',
+      whatReq: 'request or vote', whatBill: 'vote', whatVote: 'vote or action',
       // 4. The actions
       req: function(p, R, fed){
         var s = 'Those ' + (R.n === 1 ? 'request asked' : R.n + ' requests asked') + ' for ' + big(R.ask, 'en') + ' in all.';
@@ -81,21 +81,27 @@
         return He(p) + ' ' + parts.join(', and ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'It was a split vote (at least one member voted no).' : p.split + ' of the ' + p.items + (p.split === 1 ? ' was a split vote' : ' were split votes') + ' (at least one member voted no).'; },
-      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'Of the ' + U.n + ' laws passed since January 2025 that the official analysis says help a kind of business, and that ' + he(p) + ' voted on, ' + U.tied + ' (' + q[0] + ') drew money from ' + (fed ? 'PACs' : 'donors') + ' in that kind of business. ' + (U.n - U.tied) + ' (' + q[1] + ') did not.'; },
+      billShare: function(p, U, fed){
+        var q = pair(U.tied, U.n), who = fed ? 'PACs' : 'donors';
+        return He(p) + ' voted on ' + U.n + ' new laws since January 2025 that help a specific industry. ' +
+          (U.tied ? 'On ' + U.tied + ' of them (' + q[0] + '), ' + who + ' in that industry gave ' + him(p) + ' money; on ' + (U.n - U.tied) + ' (' + q[1] + '), they did not.' : 'On none of them did ' + who + ' in that industry give ' + him(p) + ' money.');
+      },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'This city’s list was built by starting from ' + his(p) + ' donors, because the city posts no usable lobbyist registry. So there is no fair count of the actions that did not involve a donor.';
-        var q = pair(S.tied, S.n), r = S.n - S.tied;
-        var what = S.def === 'county' ? 'commission actions ' + he(p) + ' voted on that benefited a named company or group'
-          : S.def === 'lobbied' ? 'items before ' + this.before(b) + ' that a registered lobbyist worked on and ' + he(p) + ' voted on'
-          : S.def === 'actions' ? 'actions of ' + this.before(b) + ' since January 2025 that benefited a named company or group and that ' + he(p) + ' voted on'
-          : S.def === 'requests' ? 'budget requests ' + he(p) + ' filed'
-          : S.def === 'earmarks' ? 'earmark requests ' + he(p) + ' filed'
+        var q = pair(S.tied, S.n), k = S.tied ? S.tied + ' of ' : 'None of ', pc = S.tied ? ' (' + q[0] + ')' : '';
+        if(S.def === 'earmarks') return k + his(p) + ' ' + S.n + ' earmark requests' + pc + (S.tied ? ' went to groups' : ' went to a group') + ' whose lobbyists gave to ' + him(p) + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') did not.' : '.');
+        if(S.def === 'requests') return k + his(p) + ' ' + S.n + ' budget requests' + pc + ' had a lobbyist, or a group getting the money, that gave to ' + him(p) + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') did not.' : '.');
+        var what = S.def === 'county' ? 'county commission votes ' + he(p) + ' cast that helped a named company or group'
+          : S.def === 'lobbied' ? 'items ' + he(p) + ' voted on that a registered lobbyist worked on'
+          : S.def === 'actions' ? 'votes ' + he(p) + ' cast since January 2025 that helped a named company or group'
           : 'Cabinet items and actions of ' + his(p) + ' office that were reviewed';
-        var tie = S.def === 'requests' ? 'had a lobbying firm, or a group getting the money, that gave to ' + him(p)
-          : S.def === 'earmarks' ? 'were for groups whose federal lobbying firm, its PAC or its lobbyists gave to ' + him(p)
-          : 'involved one of ' + his(p) + ' donors';
-        return 'Of the ' + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') did not.';
+        var what2 = S.def === 'county' ? He(p) + ' cast ' + S.n + ' county commission votes that helped a named company or group.'
+          : S.def === 'lobbied' ? He(p) + ' voted on ' + S.n + ' items that a registered lobbyist worked on.'
+          : S.def === 'actions' ? He(p) + ' cast ' + S.n + ' votes since January 2025 that helped a named company or group.'
+          : 'This site reviewed ' + S.n + ' Cabinet items and actions of ' + his(p) + ' office.';
+        return what2 + ' ' + (S.tied ? S.tied + ' of them (' + q[0] + ') involved one of ' + his(p) + ' donors; ' + (S.n - S.tied) + ' (' + q[1] + ') did not.' : 'None of them involved one of ' + his(p) + ' donors.');
       },
+      tookBills: function(p, Bl, fed){ var n = p.donors; return He(p) + ' took ' + usd(p.total) + ' from ' + (fed ? (n === 1 ? '1 PAC' : n + ' PACs') : this.donors(n)) + ' in industries helped by ' + (Bl.bills === 1 ? 'a bill' : 'bills') + ' ' + he(p) + ' voted for.'; },
       none: function(p, b){ return 'No donors found with business before ' + this.before(b) + ' in 2025 or 2026.'; },
       nogivers: function(p){ return esc(p.name) + '’s reports show no outside donors.'; },
       nodata: function(p){ return 'No itemized donor reports are posted for ' + esc(p.name) + ', so this could not be checked.'; },
@@ -123,7 +129,7 @@
         if(!p.afterAmt || p.before === p.gifts) return 'Los ' + usd(p.total) + ' llegaron antes ' + what + ' con que se vinculan.';
         return usd(p.beforeAmt) + ' llegó antes ' + what + ' con que se vincula. ' + usd(p.afterAmt) + ' llegó después.';
       },
-      whatReq: 'de la solicitud o el voto', whatVote: 'del voto o el acto',
+      whatReq: 'de la solicitud o el voto', whatBill: 'del voto', whatVote: 'del voto o el acto',
       req: function(p, R, fed){
         var s = (R.n === 1 ? 'Esa solicitud pedía ' : 'Esas ' + R.n + ' solicitudes pedían ') + big(R.ask, 'es') + ' en total.';
         if(fed) return s + ' Aquí todavía no se revisa si recibieron fondos.';
@@ -157,20 +163,22 @@
         var x = parts.join(', y '); return x.charAt(0).toUpperCase() + x.slice(1) + '.';
       },
       split: function(p){ return p.items === 1 ? 'Fue una votación dividida (al menos un miembro votó en contra).' : p.split + ' de los ' + p.items + (p.split === 1 ? ' fue una votación dividida' : ' fueron votaciones divididas') + ' (al menos un miembro votó en contra).'; },
-      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'De las ' + U.n + ' leyes aprobadas desde enero de 2025 que, según el análisis oficial, benefician a un tipo de negocio, y que votó, ' + U.tied + ' (' + q[0] + ') recibieron dinero de ' + (fed ? 'comités políticos' : 'donantes') + ' de ese tipo de negocio. ' + (U.n - U.tied) + ' (' + q[1] + ') no.'; },
+      billShare: function(p, U, fed){
+        var q = pair(U.tied, U.n), who = fed ? 'comités políticos' : 'donantes';
+        return 'Votó en ' + U.n + ' leyes nuevas desde enero de 2025 que benefician a un sector específico. ' +
+          (U.tied ? 'En ' + U.tied + ' de ellas (' + q[0] + '), ' + who + ' de ese sector le dieron dinero; en ' + (U.n - U.tied) + ' (' + q[1] + '), no.' : 'En ninguna de ellas le dieron dinero ' + who + ' de ese sector.');
+      },
+      tookBills: function(p, Bl, fed){ var n = p.donors; return 'Recibió ' + usd(p.total) + ' de ' + (fed ? (n === 1 ? '1 comité político' : n + ' comités políticos') : this.donors(n)) + ' de sectores que se benefician de ' + (Bl.bills === 1 ? 'un proyecto de ley' : 'proyectos de ley') + ' que apoyó con su voto.'; },
       share: function(p, S, b){
-        if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos que sirva. Así que no hay un conteo justo de los actos sin donante.';
-        var q = pair(S.tied, S.n), r = S.n - S.tied;
-        var what = S.def === 'county' ? 'actos de la comisión que votó y que beneficiaron a una empresa o grupo con nombre'
-          : S.def === 'lobbied' ? 'asuntos ante ' + this.before(b) + ' en que trabajó un cabildero registrado y que votó'
-          : S.def === 'actions' ? 'actos ' + (/^el /.test(this.before(b)) ? 'del ' + this.before(b).slice(3) : 'de ' + this.before(b)) + ' desde enero de 2025 que beneficiaron a una empresa o grupo con nombre y que votó'
-          : S.def === 'requests' ? 'solicitudes de presupuesto que presentó'
-          : S.def === 'earmarks' ? 'solicitudes de fondos federales para proyectos que presentó'
-          : 'asuntos del Gabinete y actos de su oficina revisados';
-        var tie = S.def === 'requests' ? 'tenían una firma de cabildeo, o un grupo que recibiría el dinero, que le donó'
-          : S.def === 'earmarks' ? 'eran para grupos cuya firma de cabildeo federal, su comité político o sus cabilderos le donaron'
-          : 'involucraban a uno de sus donantes';
-        return ((S.def === 'requests' || S.def === 'earmarks') ? 'De las ' : 'De los ') + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') no.';
+        if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos utilizable. Así que no hay un conteo justo de los actos sin donantes.';
+        var q = pair(S.tied, S.n);
+        if(S.def === 'earmarks') return (S.tied ? S.tied + ' de sus ' + S.n + ' solicitudes de fondos federales para proyectos (' + q[0] + ') fueron para grupos' : 'Ninguna de sus ' + S.n + ' solicitudes de fondos federales para proyectos fue para un grupo') + ' cuyos cabilderos le donaron' + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') no.' : '.');
+        if(S.def === 'requests') return (S.tied ? S.tied + ' de sus ' + S.n + ' solicitudes de presupuesto (' + q[0] + ') tuvieron' : 'Ninguna de sus ' + S.n + ' solicitudes de presupuesto tuvo') + ' un cabildero, o un grupo que recibiría el dinero, que le donó' + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') no.' : '.');
+        var what = S.def === 'county' ? 'Emitió ' + S.n + ' votos en la Comisión del Condado que beneficiaron a una empresa o grupo con nombre.'
+          : S.def === 'lobbied' ? 'Votó en ' + S.n + ' asuntos en los que trabajó un cabildero registrado.'
+          : S.def === 'actions' ? 'Emitió ' + S.n + ' votos desde enero de 2025 que beneficiaron a una empresa o grupo con nombre.'
+          : 'Este sitio revisó ' + S.n + ' asuntos del Gabinete y actos de su oficina.';
+        return what + ' ' + (S.tied ? S.tied + ' de ellos (' + q[0] + ') involucraron a uno de sus donantes; ' + (S.n - S.tied) + ' (' + q[1] + ') no.' : 'Ninguno involucró a uno de sus donantes.');
       },
       none: function(p, b){ return 'No se encontraron donantes con asuntos ante ' + this.before(b) + ' en 2025 ni 2026.'; },
       nogivers: function(p){ return 'Los informes de ' + esc(p.name) + ' no muestran donantes externos.'; },
@@ -199,7 +207,7 @@
         if(!p.afterAmt || p.before === p.gifts) return 'Tout ' + usd(p.total) + ' yo te rive anvan ' + what + ' yo konekte ak yo.';
         return usd(p.beforeAmt) + ' te rive anvan ' + what + ' li konekte ak li. ' + usd(p.afterAmt) + ' te rive apre.';
       },
-      whatReq: 'demann oswa vòt', whatVote: 'vòt oswa aksyon',
+      whatReq: 'demann oswa vòt', whatBill: 'vòt', whatVote: 'vòt oswa aksyon',
       req: function(p, R, fed){
         var s = (R.n === 1 ? 'Demann sa a te mande ' : R.n + ' demann sa yo te mande ') + big(R.ask, 'ht') + ' an tout.';
         if(fed) return s + ' Nou poko tcheke isit la si yo te finanse.';
@@ -233,20 +241,22 @@
         return 'Li ' + parts.join(', epi ') + '.';
       },
       split: function(p){ return p.items === 1 ? 'Se te yon vòt divize (omwen yon manm te vote non).' : p.split + ' nan ' + p.items + ' yo se te vòt divize (omwen yon manm te vote non).'; },
-      billShare: function(p, U, fed){ var q = pair(U.tied, U.n); return 'Sou ' + U.n + ' lwa yo pase depi janvye 2025 ke analiz ofisyèl la di ede yon kalite biznis, e li te vote sou yo, ' + U.tied + ' (' + q[0] + ') te gen lajan ' + (fed ? 'komite politik' : 'donatè') + ' nan kalite biznis sa a. ' + (U.n - U.tied) + ' (' + q[1] + ') pa t genyen.'; },
+      billShare: function(p, U, fed){
+        var q = pair(U.tied, U.n), who = fed ? 'komite politik' : 'donatè';
+        return 'Li te vote sou ' + U.n + ' nouvo lwa depi janvye 2025 ki ede yon sektè espesifik. ' +
+          (U.tied ? 'Pou ' + U.tied + ' ladan yo (' + q[0] + '), ' + who + ' nan sektè sa a te ba li lajan; pou ' + (U.n - U.tied) + ' (' + q[1] + '), yo pa t ba li.' : 'Pou okenn ladan yo, ' + who + ' nan sektè sa a pa t ba li lajan.');
+      },
+      tookBills: function(p, Bl, fed){ var n = p.donors; return 'Li te resevwa ' + usd(p.total) + ' nan men ' + (fed ? (n === 1 ? '1 komite politik' : n + ' komite politik') : this.donors(n)) + ' nan sektè ' + (Bl.bills === 1 ? 'yon pwojè lwa' : 'pwojè lwa') + ' li te vote pou yo ede.'; },
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'Lis vil sa a kòmanse ak donatè li yo, paske vil la pa pibliye yon rejis lobiyis nou ka itilize. Kidonk pa gen yon fason jis pou konte aksyon ki pa t gen donatè.';
-        var q = pair(S.tied, S.n), r = S.n - S.tied;
-        var what = S.def === 'county' ? 'aksyon komisyon an li te vote sou yo, ki te benefisye yon konpayi oswa yon gwoup ki gen non'
-          : S.def === 'lobbied' ? 'dosye devan ' + this.before(b) + ' yon lobiyis anrejistre te travay sou yo epi li te vote sou yo'
-          : S.def === 'actions' ? 'aksyon ' + this.before(b) + ' depi janvye 2025 ki te benefisye yon konpayi oswa yon gwoup ki gen non, e li te vote sou yo'
-          : S.def === 'requests' ? 'demann bidjè li te depoze'
-          : S.def === 'earmarks' ? 'demann lajan federal pou pwojè li te depoze'
-          : 'dosye Kabinè ak aksyon biwo li nou revize';
-        var tie = S.def === 'requests' ? 'te gen yon fèm lobiyis, oswa yon gwoup ki t ap resevwa lajan an, ki te ba li lajan'
-          : S.def === 'earmarks' ? 'te pou gwoup kote fèm lobi federal la, komite politik li oswa lobiyis li yo te ba li lajan'
-          : 'te gen youn nan donatè li yo ladan';
-        return 'Sou ' + S.n + ' ' + what + ', ' + S.tied + ' (' + q[0] + ') ' + tie + '. ' + r + ' (' + q[1] + ') pa t genyen.';
+        var q = pair(S.tied, S.n);
+        if(S.def === 'earmarks') return (S.tied ? S.tied + ' nan ' + S.n + ' demann lajan federal pou pwojè li yo (' + q[0] + ') te ale bay gwoup' : 'Okenn nan ' + S.n + ' demann lajan federal pou pwojè li yo pa t ale bay yon gwoup') + ' kote lobiyis yo te ba li lajan' + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') pa t ale.' : '.');
+        if(S.def === 'requests') return (S.tied ? S.tied + ' nan ' + S.n + ' demann bidjè li yo (' + q[0] + ') te gen' : 'Okenn nan ' + S.n + ' demann bidjè li yo pa t gen') + ' yon lobiyis, oswa yon gwoup ki t ap resevwa lajan an, ki te ba li lajan' + (S.tied ? '; ' + (S.n - S.tied) + ' (' + q[1] + ') pa t genyen.' : '.');
+        var what = S.def === 'county' ? 'Li te vote ' + S.n + ' fwa nan Komisyon Konte a sou bagay ki te ede yon konpayi oswa yon gwoup ki gen non.'
+          : S.def === 'lobbied' ? 'Li te vote sou ' + S.n + ' dosye yon lobiyis anrejistre te travay sou yo.'
+          : S.def === 'actions' ? 'Li te vote ' + S.n + ' fwa depi janvye 2025 sou bagay ki te ede yon konpayi oswa yon gwoup ki gen non.'
+          : 'Sit sa a revize ' + S.n + ' dosye Kabinè ak aksyon biwo li.';
+        return what + ' ' + (S.tied ? S.tied + ' ladan yo (' + q[0] + ') te gen youn nan donatè li yo; ' + (S.n - S.tied) + ' (' + q[1] + ') pa t genyen.' : 'Okenn pa t gen youn nan donatè li yo.');
       },
       none: function(p, b){ return 'Nou pa jwenn okenn donatè ki te gen dosye devan ' + this.before(b) + ' an 2025 oswa 2026.'; },
       nogivers: function(p){ return 'Rapò ' + esc(p.name) + ' yo pa montre okenn donatè deyò.'; },
@@ -264,6 +274,10 @@
     if(p.kind === 'federal' || p.kind === 'state'){
       var fed = p.kind === 'federal', R = p.requests || {n: 0, money: 0}, Bl = p.bills || {votes: 0, yes: 0, money: 0};
       if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + (fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : w.none(p, b));
+      var onlyBills = Bl.money && !R.money && !Bl.otherMoney && Bl.money === p.total;
+      if(onlyBills){
+        groups.push([w.tookBills(p, Bl, fed), w.timing(p, w.whatBill), Bl.votes ? w.bills(p, Bl) : ''].filter(Boolean));
+      } else {
       groups.push([w.took(p, w.whyAct(p))]);
       var from = [];
       if(R.money) from.push(w.fromReq(p, R, fed, b));
@@ -276,6 +290,7 @@
       if(Bl.votes && (Bl.money || Bl.otherMoney)) acts.push(w.bills(p, Bl));
       if(fed && !R.n && p.body === 'ussenate') acts.push(w.norequests(p));
       groups.push(acts);
+      }
     } else {
       if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + w.none(p, b);
       groups.push([w.took(p, p.kind === 'cabinet' ? w.whyAct(p) : w.whyBody(p, b))]);
