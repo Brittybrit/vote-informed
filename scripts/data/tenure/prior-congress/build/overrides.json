@@ -1,0 +1,15 @@
+{
+ "_note": "Manual fixes after rolls.py/pick2.py/pick3.py (see README).",
+ "cls": {"113-90": "heatingfuel", "113-125": "heatingfuel", "113-97": "coops", "113-109": "dealers", "113-156": "statefin",
+         "113-200": "phone", "114-23": "phone", "113-279": "pcinsurers", "114-1": "pcinsurers", "114-55": "fractional",
+         "114-141": "fractional", "114-190": "fractional", "114-115": "medsupply", "114-125": "trade"},
+ "quote": {"113-233": "add filoviruses, a family of viruses that includes the Ebola virus, to the list of tropical diseases under the priority review voucher program, which awards vouchers to sponsors of human drug applications",
+           "113-98": "Amends the Public Health Service Act to extend and reauthorize appropriations through FY2018 for payments to children's hospitals associated with operating approved graduate medical residency training programs.",
+           "114-146": "add Zika virus disease to the list of tropical diseases under the priority review voucher program, which awards a voucher to the sponsor of a new drug or biological product",
+           "113-291": "Authorizes the Navy to enter into a contract during FY2015 for the procurement of one San Antonio class amphibious ship using incremental funding."},
+ "vote": {
+  "114-255": {"roll": "2016-592", "motion": "passageHouseAmdt", "note": "The House agreed to the Senate amendment with an amendment (the final text) by recorded vote, roll 592 on 2016-11-30; the Senate then agreed. (The House's 2015-01-07 voice vote was on the bill's original text.)"},
+  "114-187": {"roll": "2016-288", "motion": "passage", "rollMeasure": "H R 5278", "note": "The House passed H.R. 5278 (PROMESA) by roll 288 on 2016-06-09; under H.Res. 770 the Senate bill S. 2328 was then considered passed with the House-passed text, without a separate vote."},
+  "114-190": {"roll": null, "method": "rule (H.Res. 818)", "date": "2016-07-11", "note": "The House agreed to the Senate amendments with amendments pursuant to H.Res. 818, which was adopted without a recorded vote. The House's 2015-02-13 roll 82 on H.R. 636 was on the bill's original small-business expensing text, not the FAA extension, so it is not used."}
+ }
+}

@@ -1,0 +1,17 @@
+# Prior offices: Congress (Jolly, Graham) and Moskowitz's local offices
+
+Started 2026-10-25. Append a line after each finished unit. Rerun: skip anything marked done.
+Raw inputs reused from scripts/data/tenure/congress (scratch: raw/billstatus 113-114 zips, raw/clerk 2013-2016 roll XML,
+raw/fec oth/cm/ccl). Own scratch: <scratchpad>/prior-congress (window.json, decide-base.json, picked.json, rollidx.json, fec/).
+
+## Log
+- [x] FEC committees found (cm/ccl masters 2014-2018): Jolly P C00551572 FRIENDS OF DAVID JOLLY (also his 2016 Senate run, then back to House), leadership C00563338 SEAGRASS PAC, JFC C00565028 THE JOLLY VICTORY COMMITTEE (Jolly/NRCC/Seagrass), multi-member JFCs C00561969 PATRIOT DAY III 2014 and C00572131 2015 SXSW GOP COMMITTEE. Graham P C00543249 GRAHAM FOR CONGRESS, JFC C00566273 MURPHY GRAHAM VICTORY FOR FLORIDA. No Graham leadership PAC found. — 2026-10-25
+- [x] FEC committee gifts (itoth 2012-2018): fec-receipts.json (1,609 gifts), pac-agg.json (744 contributor rows, principal committees) — 2026-10-25. Windows: Jolly 2011-01-01..2017-01-03, Graham 2013-01-01..2017-01-03.
+- [x] FEC individual itemized receipts (itcont indiv14/16/18 streamed via curl, full itcont.txt entry): indiv-receipts.json (8,243 rows) — 2026-10-25
+- [x] Roll index 2013-2016 for J000296 / G000575 (scratch rollidx.json; 2,532 rolls; first Jolly vote 2014-03-13 roll 126). — 2026-10-25
+- [x] Laws: 538 public laws enacted 2014-03-11..2017-01-03 read (171 keyword hits read sentence by sentence, the rest by title/summary scan); 59 qualify (20 from the congress slice's rule screen + 39 added by the closer read, build/adds.py); 29 with House roll calls -> floor-votes.json cards. laws/laws-list.json, laws/benefits.jsonl, laws/universe.json. — 2026-10-25
+- [x] Earmarks: none possible (2011-2021 moratorium), requests.json = [], requests-note.json. — 2026-10-25
+- [x] Broward County Commission (Moskowitz, District 8, appointed; first meeting Jan 25, 2022, last Nov 15, 2022): Legistar API (webapi.legistar.com/v1/broward, works via curl) events 2022 body 138; event items with MinutesNote (clerk ACTION/VOTE) for all 18 regular meetings Jan 25 - Nov 29, 2022 read; 1,688 motions split, 1,044 left after hard exclusions read and ruled (broward-src/bw_classify.py, bw_rules.py, bw_overrides.json hand review, bw_votes.py, bw_build.py). broward/actions.json: 321 qualifying actions with named parties and full roll; broward/unnamed.json: 107 left out (beneficiary not named). — 2026-10-25
+- Broward donors: none. Moskowitz was appointed and never filed for a county race (VoterFocus Broward 2022 cycle, County Commission Dist. 8 lists Davis, DuBose, Jules, McKinzie; no Moskowitz). voterfocus.com/CampaignFinance/candidate_pr.php?c=broward&el=148 works via curl.
+- Parkland (2006-2012): documents.cityofparkland.org/WebLink (Laserfiche, the city's minutes archive per cityofparkland.org/cc) returns a Cloudflare block to curl; WebFetch permission not granted. Parkland VoterFocus (c=munparkland) has only the 2026 election. Written to needs-browser.md.
+- [x] offices.json, README.md, needs-browser.md, summary.md written. Build scripts copied to build/ (laws, FEC) and broward-src/ (Broward); build_laws.py reads scratch inputs <scratchpad>/prior-congress/{window.json,decide-base.json,picked.json,rollidx.json} and congress work/{laws108-116.json,screen108-116.json,classes.json}. — 2026-10-25

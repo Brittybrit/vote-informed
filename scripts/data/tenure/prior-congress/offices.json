@@ -1,0 +1,99 @@
+[
+ {
+  "pid": "david-jolly",
+  "office": "U.S. Representative",
+  "body": "us-house",
+  "district": "FL-13",
+  "start": "2014-03-11",
+  "end": "2017-01-03",
+  "giftsFrom": "2011-01-01",
+  "source": {
+   "label": "history.house.gov, Biographical Directory of the U.S. Congress (special election; March 11, 2014 - January 3, 2017). First recorded House vote: roll 126, March 13, 2014 (clerk.house.gov).",
+   "url": "https://history.house.gov/People/Listing/J/JOLLY,-David-W--(J000296)/"
+  },
+  "files": [
+   "laws/universe.json",
+   "laws/benefits.jsonl",
+   "laws/laws-list.json",
+   "floor-votes.json",
+   "requests.json",
+   "requests-note.json",
+   "pac-agg.json",
+   "fec-receipts.json",
+   "indiv-receipts.json"
+  ],
+  "memberKey": "Jolly",
+  "bioguide": "J000296",
+  "fecCommittees": {
+   "C00551572": "principal (FRIENDS OF DAVID JOLLY; also his 2016 Senate run)",
+   "C00563338": "leadership PAC (SEAGRASS PAC)",
+   "C00565028": "JFC (THE JOLLY VICTORY COMMITTEE)",
+   "C00561969": "multi-member JFC (PATRIOT DAY III 2014)",
+   "C00572131": "multi-member JFC (2015 SXSW GOP COMMITTEE)"
+  }
+ },
+ {
+  "pid": "gwen-graham",
+  "office": "U.S. Representative",
+  "body": "us-house",
+  "district": "FL-2",
+  "start": "2015-01-03",
+  "end": "2017-01-03",
+  "giftsFrom": "2013-01-01",
+  "source": {
+   "label": "history.house.gov, Biographical Directory of the U.S. Congress",
+   "url": "https://history.house.gov/People/Detail/15032409716"
+  },
+  "files": [
+   "laws/universe.json",
+   "laws/benefits.jsonl",
+   "laws/laws-list.json",
+   "floor-votes.json",
+   "requests.json",
+   "requests-note.json",
+   "pac-agg.json",
+   "fec-receipts.json",
+   "indiv-receipts.json"
+  ],
+  "memberKey": "Graham",
+  "bioguide": "G000575",
+  "fecCommittees": {
+   "C00543249": "principal (GRAHAM FOR CONGRESS)",
+   "C00566273": "JFC (MURPHY GRAHAM VICTORY FOR FLORIDA)"
+  }
+ },
+ {
+  "pid": "jared-moskowitz",
+  "office": "County Commissioner (District 8, appointed)",
+  "body": "broward-commission",
+  "district": "8",
+  "start": "2022-01-12",
+  "end": "2022-11-29",
+  "giftsFrom": null,
+  "source": {
+   "label": "Appointed by Gov. DeSantis Nov 23, 2021; sworn in Jan 12, 2022 (Parkland Talk, Jan 13, 2022); welcomed by the Board at its Jan 25, 2022 meeting (Legistar minutes); served until the Nov 29, 2022 seating of the elected board (Sun Sentinel, Nov 30, 2022). No official oath record read (see needs-browser.md).",
+   "url": "https://broward.legistar.com/MeetingDetail.aspx?LEGID=1097&GID=728&G=9CC0A88F-9982-4209-A126-7C71741CABC2"
+  },
+  "files": [
+   "broward/actions.json",
+   "broward/body.json",
+   "broward/unnamed.json"
+  ],
+  "donors": "none: appointed, never a county candidate (Broward VoterFocus 2022 cycle has no Moskowitz filing)"
+ },
+ {
+  "pid": "jared-moskowitz",
+  "office": "City Commissioner (Vice Mayor 2006-2008)",
+  "body": "city-parkland",
+  "district": "2",
+  "start": "2006",
+  "end": "2012",
+  "giftsFrom": "2005-01-01",
+  "source": {
+   "label": "Year only. history.house.gov bio (Parkland city commissioner 2006-2012); Florida House bio (Vice Mayor 2006-2008, reelected Nov 2010). Elected March 2006; resigned 2012 to run for the Florida House. Exact dates need the city's records (needs-browser.md).",
+   "url": "https://history.house.gov/People/Detail/25769822980"
+  },
+  "files": [],
+  "status": "not built: Parkland minutes (documents.cityofparkland.org WebLink) and campaign reports are browser-only; see needs-browser.md"
+ }
+]
