@@ -4,42 +4,12 @@
  "rule": "Every law enacted in sessions 2024 whose final staff analysis names a kind of business or company that benefits (same test as universe.json). House floor roll calls only (the members are House members); a member is \"not seated\" on dates outside their House tenure.",
  "counts": {
   "enacted": 299,
-  "screened": 147,
-  "qualifying": 19
+  "screened": 177,
+  "qualifying": 22
  },
  "missing": {
   "A": [],
   "B": [
-   "2024-58",
-   "2024-85",
-   "2024-150",
-   "2024-151",
-   "2024-152",
-   "2024-153",
-   "2024-154",
-   "2024-155",
-   "2024-156",
-   "2024-157",
-   "2024-158",
-   "2024-159",
-   "2024-160",
-   "2024-161",
-   "2024-162",
-   "2024-163",
-   "2024-164",
-   "2024-165",
-   "2024-166",
-   "2024-167",
-   "2024-168",
-   "2024-169",
-   "2024-170",
-   "2024-171",
-   "2024-172",
-   "2024-173",
-   "2024-174",
-   "2024-175",
-   "2024-176",
-   "2024-177",
    "2024-178",
    "2024-179",
    "2024-180",
@@ -178,6 +148,21 @@
     "2024-147",
     "H",
     "https://www.flsenate.gov/Session/Bill/2024/7020/Vote/HouseVote_s07020e1849.PDF"
+   ],
+   [
+    "2024-158",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/7073/Vote/HouseVote_h07073c11004.PDF"
+   ],
+   [
+    "2024-168",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/532/Vote/HouseVote_s00532c2856.PDF"
+   ],
+   [
+    "2024-172",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2024/215/Vote/HouseVote_h00215c1611.PDF"
    ]
   ]
  },
@@ -959,9 +944,9 @@
    "chapter": "2024-58",
    "title": "Funding for Environmental Resource Management",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1638",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1638/Analyses/2024s01638.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -1400,9 +1385,9 @@
    "chapter": "2024-85",
    "title": "Impeding, Threatening, or Harassing First Responders",
    "url": "https://www.flsenate.gov/Session/Bill/2024/184",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/184/Analyses/2024s00184.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2226,9 +2211,9 @@
    "chapter": "2024-150",
    "title": "Designation of a Diagnosis on Motor Vehicle Registrations",
    "url": "https://www.flsenate.gov/Session/Bill/2024/341",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/341/Analyses/h0341z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2237,9 +2222,9 @@
    "chapter": "2024-151",
    "title": "Regulation of Commercial Motor Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2024/405",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/405/Analyses/h0405z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2248,10 +2233,10 @@
    "chapter": "2024-152",
    "title": "Interpersonal Violence Injunction Petitions",
    "url": "https://www.flsenate.gov/Session/Bill/2024/761",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/761/Analyses/h0761z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Removing the requirement for the specified petitions to be notarized may increase access to the courts for victims seeking protection through a civil injunction. Eliminating the notarization requirement may 44 Fla. S. Ct., AOSC23-25: Covid-19 Administrative Orders (April 27, 2023), https://supremecourt.flcourts.gov/content/download/867149/file/AOSC23-25.pdf (last visited Jan. 27, 2024). STORAGE NAME: h0761z1.DOCX PAGE: 6 DATE: 5/7/2024 make it easier for a petitioner to complete and timely file his or her petition and may also save him or her the cost that may be associated with obtaining a notary.",
+   "note": "benefit to petitioners"
   },
   {
    "bill": "HB 1077",
@@ -2259,9 +2244,9 @@
    "chapter": "2024-153",
    "title": "Clerks of Court",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1077",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1077/Analyses/h1077z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2270,10 +2255,10 @@
    "chapter": "2024-154",
    "title": "Court Interpreter Services",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1393",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1393/Analyses/h1393z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The potential expansion of court interpretation services to non-indigent individuals may have a positive economic impact on court participants who are not proficient in the English language.",
+   "note": "benefit to court participants"
   },
   {
    "bill": "HB 1473",
@@ -2281,9 +2266,9 @@
    "chapter": "2024-155",
    "title": "School Safety",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1473",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1473/Analyses/h1473z1.JDC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2292,9 +2277,9 @@
    "chapter": "2024-156",
    "title": "Pub. Rec./School Guardians",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1509",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1509/Analyses/h1509z1.JDC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2303,9 +2288,9 @@
    "chapter": "2024-157",
    "title": "Pretrial Detention Hearings",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7067",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7067/Analyses/h7067z1.JDC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2314,10 +2299,15 @@
    "chapter": "2024-158",
    "title": "Taxation",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7073",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7073/Analyses/h7073z1.WMC.PDF",
+   "benefits": {
+    "category": "railroads, biogas energy producers and affordable housing owners (tax package)",
+    "named": [],
+    "quote": "updating the railroad expenditure tax credit. The bill expands the ad valorem tax benefits for renewable energy source devices to include facilities used to capture and convert biogas ... and provides for the creation of and updates to affordable housing property tax exemptions"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill provides for a number of temporary sales tax benefits: a 14-day sales tax holidays for back-to- school; two 14-day sales tax holidays for disaster preparation supplies; a one-month holiday for recreational items and activities; and a 7-day sales tax holiday for skilled worker tools. The bill also extends the sales tax filing and remittance deadlines for certain states of emergency. The bill also benefits corporate income taxpayers in Florida by creating a corporate income tax credit for businesses that hire persons with disabilities; extending filing deadlines when a federal disaster has been declared; and updating the railroad expenditure tax credit. The bill expands the ad valorem tax benefits for renewable energy source devices to include facilities used to capture and convert biogas to renewable energy source devices; clarifies how back taxes are charged when certain property assessment limitations are improperly received, and provides for the creation of and updates to affordable housing property tax exemptions. The bill also creates insurance premium deductions on certain residential and flood policy premiums, and creates a temporary tax credit for certain employee childcare expenses.",
+   "note": "tax package; analysis also names corporate income taxpayers generally",
+   "votes": {}
   },
   {
    "bill": "SB 7002",
@@ -2325,9 +2315,9 @@
    "chapter": "2024-159",
    "title": "Deregulation of Public Schools",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7002",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7002/Analyses/2024s07002.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2336,9 +2326,9 @@
    "chapter": "2024-160",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7004",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7004/Analyses/2024s07004.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2347,9 +2337,9 @@
    "chapter": "2024-161",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2024/7032",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/7032/Analyses/2024s07032.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2358,9 +2348,9 @@
    "chapter": "2024-162",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1361",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1361/Analyses/h1361z1.EQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2369,9 +2359,9 @@
    "chapter": "2024-163",
    "title": "School Choice",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1403",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1403/Analyses/h1403z1.CIS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2380,10 +2370,10 @@
    "chapter": "2024-164",
    "title": "Congenital Cytomegalovirus Screenings",
    "url": "https://www.flsenate.gov/Session/Bill/2024/168",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/168/Analyses/2024s00168.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may have an indeterminate positive fiscal impact on the families of newborns who are diagnosed with cytomegalovirus (CMV) due to the required screening, are eligible for services, and can manage the condition before any permanent hearing loss occurs. The bill may have an indeterminate negative fiscal impact on hospitals that are required to perform additional CMV tests due to the requirements in the bill.",
+   "note": "benefit to families; cost to hospitals"
   },
   {
    "bill": "SB 186",
@@ -2391,9 +2381,9 @@
    "chapter": "2024-165",
    "title": "Progressive Supranuclear Palsy and Other Neurodegenerative Diseases Policy Committee",
    "url": "https://www.flsenate.gov/Session/Bill/2024/186",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/186/Analyses/2024s00186.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2402,10 +2392,10 @@
    "chapter": "2024-166",
    "title": "Public Service Commission Rules",
    "url": "https://www.flsenate.gov/Session/Bill/2024/364",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/364/Analyses/2024s00364.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: While the bill does not substantially financially impact the private sector, it does revise the process requirements for the PSC to amend RAFs by rule. Specifically, it eliminates the requirement that such rule amendments be ratified by the Legislature. If the PSC were BILL: SB 364 Page 10 to amend the RAF rates paid by utilities, such amended costs would likely impact utility rates.",
+   "note": "no substantial impact"
   },
   {
    "bill": "SB 366",
@@ -2413,10 +2403,10 @@
    "chapter": "2024-167",
    "title": "Civil Penalties Under the Gas Safety Law of 1967",
    "url": "https://www.flsenate.gov/Session/Bill/2024/366",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/366/Analyses/2024s00366.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill will likely increase the fiscal impact on private sector Gas Safety Law violators in Florida if the PSC raises penalties above the current statutory limit.",
+   "note": "penalties on violators"
   },
   {
    "bill": "SB 532",
@@ -2424,10 +2414,15 @@
    "chapter": "2024-168",
    "title": "Securities",
    "url": "https://www.flsenate.gov/Session/Bill/2024/532",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/532/Analyses/2024s00532.fp.PDF",
+   "benefits": {
+    "category": "businesses raising capital through exempt securities offerings",
+    "named": [],
+    "quote": "The implementation of the pre-offering “test the waters” provision may reduce costs of conducting an exempt offering by providing businesses the flexibility to determine the optimal avenue for raising capital"
+   },
+   "screen": "Private Sector Impact: The implementation of the pre-offering “test the waters” provision may reduce costs of conducting an exempt offering by providing businesses the flexibility to determine the optimal avenue for raising capital before spending thousands of dollars on legal and administrative fees. In the event an enforcement action is required, the bill increases the civil penalty that may be imposed upon a natural person from $10,000 to $20,000. The bill also provides twice the amount of the civil penalty may be imposed in the event a specified adult, as defined in s. 517.34(1), F.S., is a victim of a violation of this chapter. Further, the Office of Financial Regulation (OFR) may recover any costs and attorney fees related to its investigation or enforcement. Applicants may incur additional expenses for any fingerprint or state or federal background check required under the bill. The cost for a state and national criminal history record check is $37.25 per name. In addition, the Florida Department of Law Enforcement (FDLE) reports Livescan Services may assess additional processing fees, 47 which may require an applicant to pay additional fees.48",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 764",
@@ -2435,9 +2430,9 @@
    "chapter": "2024-169",
    "title": "Retention of Sexual Offense Evidence",
    "url": "https://www.flsenate.gov/Session/Bill/2024/764",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/764/Analyses/2024s00764.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2446,9 +2441,9 @@
    "chapter": "2024-170",
    "title": "Sale of Liquefied Petroleum Gas",
    "url": "https://www.flsenate.gov/Session/Bill/2024/998",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/998/Analyses/2024s00998.fp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2457,10 +2452,10 @@
    "chapter": "2024-171",
    "title": "Transportation Services for Persons with Disabilities and the Transportation Disadvantaged",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1380",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1380/Analyses/2024s01380.fp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Transportation service providers will incur indeterminate costs to offer pre-booking and on-demand service to paratransit service users and to comply with other provisions of the bill.",
+   "note": "costs to providers"
   },
   {
    "bill": "HB 215",
@@ -2468,10 +2463,15 @@
    "chapter": "2024-172",
    "title": "Risk Retention Groups",
    "url": "https://www.flsenate.gov/Session/Bill/2024/215",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/215/Analyses/h0215z1.IBS.PDF",
+   "benefits": {
+    "category": "risk retention groups and their member businesses",
+    "named": [],
+    "quote": "The bill will have a positive direct economic impact on private sector businesses that save money by receiving coverage from the RRGs of which they are a member instead of having to pay a fronting company."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will have a positive direct economic impact on private sector businesses that save money by receiving coverage from the RRGs of which they are a member instead of having to pay a fronting company. However, it will have a negative impact on insurers that have acted as fronting companies for the placement of coverage by RRGs.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 287",
@@ -2479,10 +2479,10 @@
    "chapter": "2024-173",
    "title": "Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2024/287",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/287/Analyses/h0287z1.TMS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate. See “Fiscal Comments” section below.",
+   "note": "Indeterminate"
   },
   {
    "bill": "HB 437",
@@ -2490,9 +2490,9 @@
    "chapter": "2024-174",
    "title": "Anchoring Limitation Areas",
    "url": "https://www.flsenate.gov/Session/Bill/2024/437",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/437/Analyses/h0437z1.ACR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2501,9 +2501,9 @@
    "chapter": "2024-175",
    "title": "Home Health Care Services",
    "url": "https://www.flsenate.gov/Session/Bill/2024/935",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/935/Analyses/h0935z1.SHI.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2512,9 +2512,9 @@
    "chapter": "2024-176",
    "title": "Substance Abuse Treatment",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1065",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1065/Analyses/h1065z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2523,9 +2523,9 @@
    "chapter": "2024-177",
    "title": "Permanency for Children",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1083",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1083/Analyses/h1083z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "None.",
    "note": null
   },
   {
@@ -2534,10 +2534,10 @@
    "chapter": "2024-178",
    "title": "Department of Business and Professional Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2024/1335",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2024/1335/Analyses/h1335z1.RRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: By increasing the aggregate cap per licensee and the per claim cap for each contract, the number of claimants who receive compensation from the Florida Homeowner’s Construction Recovery Fund and the amount of compensation will increase. Removing the bondability requirement for asbestos abatement professionals will reduce the cost to applicants, estimated to be $100 per applicant.82",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 1503",
