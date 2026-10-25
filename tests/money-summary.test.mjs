@@ -54,7 +54,7 @@ test('renders in all three languages with no leftovers', () => {
   }
   // the percentages first (Brit, Oct 24, 2026), then the money, then the actions
   const r = render(saved.people['mike-redondo'], 'en');
-  assert.match(r, /^41 of his 89 budget requests \(46%\)/);
+  assert.match(r, /^Since \w+ 20\d\d, he filed 41 budget requests \(46%\)/);
   assert.ok(r.indexOf('89 budget requests') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
   assert.ok(r.indexOf('took') < r.indexOf('asked for $110.5 million'));
   // the parts add up to the total when both are shown
@@ -71,8 +71,7 @@ test('renders in all three languages with no leftovers', () => {
     assert.ok(p.share.tied <= p.share.n, p.pid);
     const line = render(p, 'en').split('<br>')[0];
     if (p.share.def === 'donorFirst') continue;
-    if (!p.share.tied) { assert.match(line, /None of /, p.pid + ' share sentence'); continue; }
-    const m = line.match(/\b(\d+) of (?:them|his|her|the) .*?\(([<>]?\d+)%\).*?; (\d+) \(([<>]?\d+)%\) did not\./);
+    const m = line.match(/^Since [A-Z][a-z]+ 20\d\d, \S+ \w+ (?:on )?(\d+) .*?\(([<>]?\d+)%\).*?\. On (\d+) \(([<>]?\d+)%\), they did not\.$/);
     assert.ok(m, p.pid + ' share sentence: ' + line);
     assert.equal(+m[1], p.share.tied, p.pid); assert.equal(+m[1] + +m[3], p.share.n, p.pid); if (!/[<>]/.test(m[2])) assert.equal(+m[2] + +m[4], 100, p.pid);
   }

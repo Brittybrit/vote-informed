@@ -36,7 +36,7 @@ function shareOf(B, key, tied) {
   const sat = a => a.roll && CAST.has(a.roll[key]);
   let pool, def;
   if (B.type === 'requests') { pool = B.actions.filter(a => a.kind === 'request' && a.roll && a.roll[key] === 'requested'); def = B.level === 'federal' ? 'earmarks' : 'requests'; }
-  else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size } : undefined; }
+  else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size, from: '2025-01' } : undefined; }
   else if (B.key === 'county') { pool = B.actions.filter(sat); def = 'county'; }
   else if (B.universe && B.universe.built === 'actions') { pool = B.actions.filter(a => a.universe && sat(a)); def = 'actions'; }
   else if (DONOR_FIRST.has(B.key)) return { def: 'donorFirst' };
@@ -45,7 +45,9 @@ function shareOf(B, key, tied) {
   // A list whose record gives most of the member's votes as unknown (agenda-only meetings) gets no share:
   // the few recorded votes are not a fair count of what the member did.
   if (def === 'actions') { const seated = B.actions.filter(a => a.universe && a.roll && a.roll[key] != null).length; if (pool.length * 2 < seated && B.actions.filter(a => a.universe && a.roll && a.roll[key] === 'unknown').length * 2 > seated) return undefined; }
-  return { def, n: pool.length, tied: pool.filter(a => tiedIds.has(a.id)).length };
+  // from: month of the first counted action, for 'Since <month year>, ...'
+  const d0 = pool.map(a => a.date).filter(Boolean).sort()[0];
+  return { def, n: pool.length, tied: pool.filter(a => tiedIds.has(a.id)).length, from: d0 ? String(d0).slice(0, 7) : undefined };
 }
 
 export function build(decisions, officesHeld) {
@@ -136,7 +138,8 @@ export function build(decisions, officesHeld) {
         if (uni.length) {
           const laws = new Set(uni.map(a => a.ref));
           const tiedLaws = new Set(uni.filter(a => (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE_START)).map(a => a.ref));
-          e.bills.universe = { n: laws.size, tied: tiedLaws.size };
+          const u0 = uni.map(a => a.date).filter(Boolean).sort()[0];
+          e.bills.universe = { n: laws.size, tied: tiedLaws.size, from: u0 ? String(u0).slice(0, 7) : undefined };
         }
       } else {
         const v = { yes: 0, no: 0, away: 0, acted: 0, abst: 0, unk: 0 };
