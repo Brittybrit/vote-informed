@@ -42,7 +42,9 @@ test('gifts before the cycle are not counted', () => {
   // Florida House from the 2023 session: one cycle before (Nov 4, 2020; Redondo Nov 9, 2022); Blanco, first seated Nov 2024, from CYCLE_START
   const H = decisions.bodies.find(b => b.key === 'flhouse');
   assert.equal(giftStart(H, 'Basabe'), '2020-11-04'); assert.equal(giftStart(H, 'Redondo'), '2022-11-09'); assert.equal(giftStart(H, 'Blanco'), CYCLE_START);
-  assert.equal(giftStart(decisions.bodies.find(b => b.key === 'flsenate'), 'Garcia'), CYCLE_START);
+  // Florida Senate from the 2021 session (scripts/state-tenure.mjs): Garcia and Rodriguez from Nov 7, 2018, Calatayud and Ingoglia from Nov 4, 2020; was CYCLE_START
+  const FS = decisions.bodies.find(b => b.key === 'flsenate');
+  assert.equal(giftStart(FS, 'Garcia'), '2018-11-07'); assert.equal(giftStart(FS, 'Ingoglia'), '2020-11-04');
   // Ervin (full-tenure Opa-locka) counts from one cycle before her Dec 2022 start: only gifts on or after giftsFrom
   const OL = decisions.bodies.find(b => b.key === 'opalocka');
   assert.equal(saved.people['natasha-l-ervin'].giftsFrom, OL.tenure.Ervin.giftsFrom);

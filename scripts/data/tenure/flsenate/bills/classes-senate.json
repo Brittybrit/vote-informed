@@ -1,0 +1,28 @@
+{
+ "2022-192": {
+  "tags": [
+   "retail",
+   "grocery"
+  ],
+  "re": "RETAIL|STORE|SUPERMARKET|PUBLIX|WALMART|HOME DEPOT|TARGET|WALGREEN|CVS|MACY|PHARMACY"
+ },
+ "2022-199": {
+  "tags": [
+   "waste-environment"
+  ],
+  "re": "WASTE|ENERGY FROM|REWORLD|COVANTA|WHEELABRATOR"
+ },
+ "2022-210": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "APARTMENT|MULTIFAMILY|MULTI-FAMILY|RESIDENTIAL|PROPERTY MANAGEMENT|CONDOMINIUM"
+ },
+ "2022-215": {
+  "re": "MITIGATION|ENVIRONMENTAL|WATER QUALITY|NUTRIENT|WETLAND|ECOSYSTEM"
+ },
+ "2021-22": {
+  "re": "CHICKEE",
+  "note": "Senate override of flhouse classes-2122.json: the analysis names tribal members who build chickees; the tribes' gaming and corporate gifts are not that business"
+ }
+}

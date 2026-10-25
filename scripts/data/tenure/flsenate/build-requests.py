@@ -42,8 +42,8 @@ def gaa_index(year):
             ds = [num(x) for x in re.findall(r'\$(\d{1,3}(?:,\d{3})+)', s)]
             # the project's own dollars are the nonrecurring ones; recurring base funding in the same sentence is not the request
             amt = (sum(nr) if nr else (ds[-1] if ds else None))
-            idx.setdefault(f, []).append(('p', amt)); continue
-        idx.setdefault(f, []).append(('l', amt))
+            idx.setdefault(f, []).append(('p', amt, sum(ds) if ds else None)); continue
+        idx.setdefault(f, []).append(('l', amt, amt))
     return idx
 
 def veto_index(year):
@@ -97,10 +97,12 @@ for fy, B in BUDGET.items():
         p = parse_form(os.path.join(H, 'raw/txt', f"{fy}_S{r['form']}.txt"))
         if FULL[r['sponsor']].split()[-1].lower() not in p['sponsor'].lower():
             raise SystemExit(f'sponsor mismatch {fy} {f}: list {r["sponsor"]} form {p["sponsor"]}')
-        if r['withdrawn']:
-            b = {'status': 'withdrawn'} | ({'note': r['wnote']} if r.get('wnote') else {})
-        elif f in gi:
-            kinds = [k for k, _ in gi[f]]; am = [a for _, a in gi[f]]; b = {'status': 'in', 'lines': len(am)}
+        if f in gi:
+            kinds = [x[0] for x in gi[f]]; am = [x[1] for x in gi[f]]
+            # the governor's veto list gives the total appropriated for the project: when it is more than the nonrecurring
+            # dollars of a proviso sentence, the project's own line includes the recurring dollars of that sentence too
+            if f in vi and all(a is not None for a in am) and vi[f] > sum(am): am = [x[2] if x[0] == 'p' and x[2] else x[1] for x in gi[f]]
+            b = {'status': 'in', 'lines': len(am)}
             if all(a is not None for a in am): b['amount'] = sum(am)
             else:
                 b['amount'] = sum(a for a in am if a is not None) or None; b['someUnstated'] = True
@@ -110,15 +112,18 @@ for fy, B in BUDGET.items():
             b = {'status': 'notIn'}
             if f in vi: b['vetoedButNotFound'] = vi[f]
         none = lambda s: s in ('', 'None', 'N/A', 'n/a', 'none')
-        lobbied = [] if none(p['lobbyist']) else [{'name': p['lobbyist'], 'firm': None if none(p['firm']) else p['firm'], 'for': p['recipient'], 'src': 'form'}]
+        # a "firm" that is the lobbyist's own government or university employer (in-house lobbyist), not a lobbying firm
+        inhouse = re.search(r'^(Miami-Dade County|University of Miami)$', p['firm'] or '')
+        lobbied = [] if none(p['lobbyist']) else [{'name': p['lobbyist'], 'firm': None if none(p['firm']) or inhouse else p['firm'], **({'employer': p['firm']} if inhouse else {}), 'for': p['recipient'], 'src': 'form'}]
         m, d, y = p['date'].split('/')
+        if r['withdrawn']: b['withdrawn'] = r.get('wnote') or True
         out.append({'fy': fy, 'form': f, 'date': f'{y}-{m.zfill(2)}-{d.zfill(2)}', 'member': r['sponsor'], 'title': r['title'],
                     'recipient': p['recipient'], 'county': p['county'], 'agency': p['agency'], 'ask': r['ask'], 'cmte': r['cmte'],
                     'lobbied': lobbied, 'budget': b, 'record': r['pdf']})
     meta = {k: v for k, v in B.items() if k != 'year'} | {'fy': fy}
     J = {'source': f"Florida Senate Local Funding Initiative Requests, Fiscal Year {fy} (flsenate.gov/Session/Appropriations/FY{fy}/LocalFundingRequests), every form filed by the members in this slice; each form PDF read Oct 25, 2026. Budget status: each form number looked up as '(Senate Form n)' / '(SF n)' in the enrolled GAA ({B['law']}, {B['ch']}) and in the governor's veto list.",
          'budget': meta,
-         'counts': {'forms': len(out), 'withdrawn': sum(1 for x in out if x['budget']['status'] == 'withdrawn'),
+         'counts': {'forms': len(out), 'withdrawn': sum(1 for x in out if x['budget'].get('withdrawn')),
                     'inBudget': sum(1 for x in out if x['budget']['status'] == 'in'),
                     'vetoed': sum(1 for x in out if x['budget'].get('vetoed')),
                     'lobbied': sum(1 for x in out if x['lobbied'])},

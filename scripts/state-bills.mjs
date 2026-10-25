@@ -57,6 +57,43 @@ const TENURE = (() => {
   const tagsF = TDIR + 'donors/industry-pre2025.json';
   return { bills, classes, labels: lab, tags: existsSync(new URL(tagsF, root)) ? J(tagsF).donors : {} };
 })();
+// Florida Senate full tenure (scripts/data/tenure/flsenate/): the same laws (2021 through 2024 sessions, screened by the
+// Senate and House slices: flhouse bills-2122/2023/2024.json plus four 2022 laws only the Senate list needs,
+// flsenate/bills/classes-senate.json and labels-senate.json), each with the senators' final-passage vote from
+// flsenate/bills/stageC.jsonl (the last Senate sheet read for the chapter), and gifts from the senators' 2018-2024 rows
+// (flsenate/donors/<acct>.tsv, dates before 2025 only; 2025+ rows stay as they were).
+const SDIR = 'scripts/data/tenure/flsenate/';
+const TENURE_S = (() => {
+  const SB = d.bodies.find(b => b.key === 'flsenate');
+  if (!SB || !SB.tenure || !existsSync(new URL(SDIR + 'bills/stageC.jsonl', root)) || !existsSync(new URL(TDIR + 'bills-2122.json', root))) return null;
+  const opt = f => existsSync(new URL(f, root)) ? J(f) : {};
+  const lab = { ...J(TDIR + 'bills/labels.json'), ...opt(TDIR + 'bills/labels-2122.json'), ...opt(SDIR + 'bills/labels-senate.json') };
+  const byCh = { ...J(TDIR + 'bills/classes-by-chapter.json'), ...opt(TDIR + 'bills/classes-2122.json'), ...opt(SDIR + 'bills/classes-senate.json') };
+  const refOf = {}; for (const [k, v] of Object.entries(lab)) refOf[v.chapter] = k;
+  const last = {};
+  for (const l of readFileSync(new URL(SDIR + 'bills/stageC.jsonl', root), 'utf8').split('\n').filter(Boolean)) { const c = JSON.parse(l); last[c.ch] = c; }
+  const seen = new Set(), bills = [];
+  const all = ['bills-2122.json', 'bills-2023.json', 'bills-2024.json'].flatMap(f => J(TDIR + f).bills);
+  // laws only the Senate list needs (no House member in the list was seated or the House slice left them out)
+  const S = { bills: [] };
+  if (existsSync(new URL(SDIR + 'bills/stageB.jsonl', root))) {
+    const E = {}; for (const e of J(SDIR + 'bills/enacted.json')) E[e.chapter] = e;
+    for (const l of readFileSync(new URL(SDIR + 'bills/stageB.jsonl', root), 'utf8').split('\n').filter(Boolean)) {
+      const b = JSON.parse(l); if (!b.b || all.some(x => x.chapter === b.ch)) continue;
+      const e = E[b.ch]; S.bills.push({ bill: e.bill, session: e.session, chapter: b.ch, title: e.title, url: e.url, analysisUrl: b.au, benefits: { category: b.cat, named: b.named || [], quote: b.q } });
+    }
+  }
+  for (const b of [...all, ...S.bills]) {
+    if (!b.benefits || seen.has(b.chapter)) continue; seen.add(b.chapter);
+    const c = last[b.chapter]; if (!c) continue;   // no Senate sheet read: left out (none as of Oct 25, 2026)
+    const ref = refOf[b.chapter]; if (!ref) throw new Error('flsenate: no label for ' + b.chapter);
+    const [mm, dd, yy] = c.d.split('/');
+    bills.push({ ...b, ref, votes: { senate: { date: `${yy}-${mm.padStart(2, '0')}-${dd.padStart(2, '0')}`, motion: /third/i.test(c.a) ? 'third reading' : 'final passage', tally: c.t, url: c.u, roll: c.r } } });
+  }
+  const classes = {}; for (const b of bills) if (byCh[b.chapter]) classes[b.ref] = byCh[b.chapter];
+  const tags = { ...opt(TDIR + 'donors/industry-pre2025.json').donors, ...opt(SDIR + 'donors/industry-pre2025.json').donors };
+  return { bills, classes, labels: lab, tags };
+})();
 const isoOf = s => { const m = String(s || '').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/); return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : s; };
 
 let added = 0, kept = 0;
@@ -66,11 +103,11 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
   const members = Object.keys(B.onBallot);
   const acctsOf = k => B.onBallot[k].accounts || [];
   // Full tenure (flhouse only): gifts count from each member's giftsFrom; everyone else from Jan 1, 2025
-  const ten = bodyKey === 'flhouse' && B.tenure && TENURE ? TENURE : null;
+  const ten = B.tenure ? (bodyKey === 'flhouse' ? TENURE : TENURE_S) : null;
   const G0 = k => (ten && B.tenure[k] && B.tenure[k].giftsFrom) || CYCLE;
   const tagOf = name => TAGS[name.toUpperCase()] || (ten && ten.tags[name.toUpperCase()]) || {};
   const donorRows = {};
-  for (const k of members) donorRows[k] = acctsOf(k).flatMap(a => rowsOf(a, !!ten).map(r => ({ ...r, acct: a })));
+  for (const k of members) donorRows[k] = acctsOf(k).flatMap(a => (bodyKey === 'flsenate' ? [...tsv(new URL(`scripts/data/state/donors/${a}.tsv`, root)), ...(ten ? tsv(new URL(SDIR + 'donors/' + a + '.tsv', root)).filter(r => r.date < CYCLE) : [])] : rowsOf(a, !!ten)).map(r => ({ ...r, acct: a })));
   const list = (U.bills || []).map(b => ({ ...b, ref: `${b.bill} · ${String(b.session).slice(0, 4)}` })).concat(ten ? ten.bills : []);
   for (const bill of list) {
     if (!bill.benefits) continue;

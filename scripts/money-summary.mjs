@@ -22,7 +22,9 @@ export const CYCLE_START = '2025-01-01';
 export const TENURE_CITIES = new Set(['coralgables', 'doral', 'southmiami', 'cutlerbay', 'pinecrest', 'keybiscayne', 'sunnyisles', 'medley', 'northmiami', 'aventura', 'nmb', 'opalocka']);
 // The Florida House list runs from the 2023 session (scripts/state-tenure.mjs): Basabe, Gantt, Chambliss, Porras and
 // Nixon from Nov 4, 2020, Redondo from Nov 9, 2022; Blanco (seated Nov 2024) has no entry and keeps CYCLE_START.
-export const TENURE_STATE = new Set(['flhouse']);
+// The Florida Senate list runs from the 2021 session: Garcia and Rodriguez from Nov 7, 2018, Calatayud and Ingoglia from
+// Nov 4, 2020 (scripts/state-tenure.mjs).
+export const TENURE_STATE = new Set(['flhouse', 'flsenate']);
 export const giftStart = (B, key) => ((B.level === 'federal' || B.key === 'county' || TENURE_CITIES.has(B.key) || TENURE_STATE.has(B.key)) && B.tenure && B.tenure[key] && B.tenure[key].giftsFrom) || CYCLE_START;
 
 function giverKey(n) {

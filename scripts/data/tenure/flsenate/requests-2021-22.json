@@ -55,8 +55,8 @@
     }
    ],
    "budget": {
-    "status": "withdrawn",
-    "note": "unwanted"
+    "status": "notIn",
+    "withdrawn": "unwanted"
    },
    "record": "https://www.flsenate.gov/PublishedContent/Session/FiscalYear/FY2021-22/LocalFundingInitiativeRequests/FY2021-22_S1012.PDF"
   },
@@ -1090,7 +1090,8 @@
    "lobbied": [
     {
      "name": "Raena Wright",
-     "firm": "University of Miami",
+     "firm": null,
+     "employer": "University of Miami",
      "for": "Sylvester Comprehensive Cancer Center,",
      "src": "form"
     }
@@ -1490,7 +1491,8 @@
    "lobbied": [
     {
      "name": "Jess McCarty",
-     "firm": "Miami-Dade County",
+     "firm": null,
+     "employer": "Miami-Dade County",
      "for": "Department of Transportation and Public",
      "src": "form"
     }

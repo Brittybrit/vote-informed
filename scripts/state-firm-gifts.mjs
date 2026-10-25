@@ -9,7 +9,8 @@
 // its members' 2020-2024 rows (scripts/data/tenure/flhouse/donors/) are read too and count from each member's
 // giftsFrom; the FY 2021-22 through 2024-25 forms (H21- to H24-) are matched against the firm directories of the years the
 // form was filed and heard (lobfirml_2020..2024, scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json).
-// The Senate and the 2025-26 forms keep the 2025 + 2026 directories and Jan 1, 2025.
+// Florida Senate full tenure: the same for the flsenate body (S21- to S24- forms, the senators' 2018-2024 rows in
+// scripts/data/tenure/flsenate/donors/). The 2025-26 forms keep the 2025 + 2026 directories.
 // Run: node scripts/state-firm-gifts.mjs  then  node scripts/money-summary.mjs && node scripts/lobby-ledger.mjs
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 
@@ -60,11 +61,19 @@ if (HT && HT.tenure) for (const [acct, a] of Object.entries(HT.accounts)) {
   if (!existsSync(P(TD + f + '.tsv'))) continue;
   readRows(P(TD + f + '.tsv'), acct, r => r.date >= from && r.date < '2025-01-01');
 }
+// Senate full tenure: the 2018-2024 rows of the senators' own accounts (scripts/data/tenure/flsenate/donors/<acct>.tsv),
+// from each senator's giftsFrom (the 2025+ rows are already read from scripts/data/state/donors/)
+const ST = d.bodies.find(b => b.key === 'flsenate');
+if (ST && ST.tenure) for (const [acct, a] of Object.entries(ST.accounts)) {
+  const from = (ST.tenure[a.owner] || {}).giftsFrom; if (!from) continue;
+  const f = 'scripts/data/tenure/flsenate/donors/' + acct + '.tsv';
+  if (existsSync(P(f))) readRows(P(f), acct, r => r.date >= from && r.date < '2025-01-01');
+}
 const BYYEAR = existsSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json')) ? JSON.parse(readFileSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json'))) : {};
 // The directories for a form: FY 2023-24 forms were filed in late 2022 for the 2023 session, and so on
-const DIRS = { H21: ['2020', '2021'], H22: ['2021', '2022'], H23: ['2022', '2023'], H24: ['2023', '2024'] };
+const DIRS = { H21: ['2020', '2021'], H22: ['2021', '2022'], H23: ['2022', '2023'], H24: ['2023', '2024'], S21: ['2020', '2021'], S22: ['2021', '2022'], S23: ['2022', '2023'], S24: ['2023', '2024'] };
 const dirOf = id => {
-  const ys = DIRS[String(id).slice(0, 3)]; if (!ys || !HT || !HT.tenure) return FIRMS;
+  const ys = DIRS[String(id).slice(0, 3)]; const TB = String(id)[0] === 'S' ? ST : HT; if (!ys || !TB || !TB.tenure) return FIRMS;
   const out = {}; for (const y of ys) for (const [f, ps] of Object.entries(BYYEAR[y] || {})) out[f] = [...new Set([...(out[f] || []), ...ps])];
   return out;
 };
@@ -92,8 +101,8 @@ for (const B of d.bodies) {
     const filer = Object.keys(a.roll).find(k => a.roll[k] === 'requested');
     if (!accts[filer]) continue;
     // Earlier rows count only on House cards, where the member's tenure starts the gift window
-    const mine = rows.filter(r => accts[filer].includes(r.acct) && (r.date >= '2025-01-01' || B === HT));
-    const DIR = B === HT ? dirOf(a.id) : FIRMS;
+    const mine = rows.filter(r => accts[filer].includes(r.acct) && (r.date >= '2025-01-01' || B === HT || B === ST));
+    const DIR = B === HT || B === ST ? dirOf(a.id) : FIRMS;
     const have = new Set(a.gifts.map(gKey));
     const push = g => { if (have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${filer} ${a.ref}: ${g.donor} $${g.amount} ${g.date} -> ${g.firmName} (${g.rel}${g.why ? '; ' + g.why.en : ''})`); };
     for (const l of a.lobbied) {

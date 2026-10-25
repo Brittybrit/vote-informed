@@ -100,7 +100,7 @@ test('state budget requests: one filer on the ballot, an amount, and every gift 
 });
 
 test('state budget requests: each one says where it stands in that year’s final budget', () => {
-  const LAW = { '23': ['2023-24', 'SB 2500'], '24': ['2024-25', 'HB 5001'], '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
+  const LAW = { '21': ['2021-22', 'SB 2500'], '22': ['2022-23', 'HB 5001'], '23': ['2023-24', 'SB 2500'], '24': ['2024-25', 'HB 5001'], '25': ['2025-26', 'SB 2500'], '26': ['2026-27', 'HB 5001E'] };
   for (const B of d.bodies.filter(b => b.type === 'requests' && b.level !== 'federal')) {
     for (const a of B.actions.filter(a => a.kind === 'request')) {
       const b = a.budget; assert.ok(b, a.id + ' has no budget status');
