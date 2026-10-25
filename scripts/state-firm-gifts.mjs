@@ -7,8 +7,8 @@
 //         scripts/data/state/lobbyfirms/firms.json (floridalobbyist.gov lobfirml_2025/2026 directories).
 // Florida House full tenure (Brit, Oct 25, 2026): when the flhouse body has a tenure block (scripts/state-tenure.mjs),
 // its members' 2020-2024 rows (scripts/data/tenure/flhouse/donors/) are read too and count from each member's
-// giftsFrom; the FY 2023-24 and 2024-25 forms (H23-, H24-) are matched against the firm directories of the years the
-// form was filed and heard (lobfirml_2022..2024, scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json).
+// giftsFrom; the FY 2021-22 through 2024-25 forms (H21- to H24-) are matched against the firm directories of the years the
+// form was filed and heard (lobfirml_2020..2024, scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json).
 // The Senate and the 2025-26 forms keep the 2025 + 2026 directories and Jan 1, 2025.
 // Run: node scripts/state-firm-gifts.mjs  then  node scripts/money-summary.mjs && node scripts/lobby-ledger.mjs
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
@@ -62,7 +62,7 @@ if (HT && HT.tenure) for (const [acct, a] of Object.entries(HT.accounts)) {
 }
 const BYYEAR = existsSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json')) ? JSON.parse(readFileSync(P('scripts/data/tenure/flsenate/lobbyfirms/firms-by-year.json'))) : {};
 // The directories for a form: FY 2023-24 forms were filed in late 2022 for the 2023 session, and so on
-const DIRS = { H23: ['2022', '2023'], H24: ['2023', '2024'] };
+const DIRS = { H21: ['2020', '2021'], H22: ['2021', '2022'], H23: ['2022', '2023'], H24: ['2023', '2024'] };
 const dirOf = id => {
   const ys = DIRS[String(id).slice(0, 3)]; if (!ys || !HT || !HT.tenure) return FIRMS;
   const out = {}; for (const y of ys) for (const [f, ps] of Object.entries(BYYEAR[y] || {})) out[f] = [...new Set([...(out[f] || []), ...ps])];

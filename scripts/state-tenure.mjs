@@ -11,7 +11,7 @@
 // cards by state-firm-gifts.mjs. Idempotent: the H23-/H24- cards are rebuilt on every run.
 // Run: node scripts/state-tenure.mjs && node scripts/state-bills.mjs && node scripts/state-firm-gifts.mjs
 //      && node scripts/leads.mjs && node scripts/money-summary.mjs
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { topicsOf } from './action-topics.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -22,19 +22,27 @@ const d = J(FILE);
 const B = d.bodies.find(b => b.key === 'flhouse');
 
 // ---- tenure -------------------------------------------------------------------------------------------
-// Seated Nov 9, 2022 (Basabe, Gantt, Chambliss, Porras; Nixon was first seated in Nov 2020, but this list starts with
-// the 2023 session, so her start here is the same day); Redondo Dec 5, 2023 (special election). Gifts count from the
-// day after the previous general election. Blanco (seated Nov 2024) has no gifts from before 2025 in the files, so he
-// keeps Jan 1, 2025.
+// Seated Nov 9, 2022 (Basabe, Gantt, Porras); Nixon (then District 14) and Chambliss Nov 4, 2020, so their 2021 and
+// 2022 sessions are in the list too (flhouse.gov representatives.aspx?legislativetermid=89); Redondo Dec 5, 2023
+// (special election). Gifts count from the day after the previous general election. Blanco (seated Nov 2024) has no
+// gifts from before 2025 in the files, so he keeps Jan 1, 2025.
+// The 2021-22 years switch on only when their data is complete: both years' requests, every qualifying law screened
+// and its House roll call read (bills-2122.json "missing" empty), and the 2018-2020 donor rows pulled. Until then the
+// list stays as merged (2023 on). FORCE_2122=1 previews it anyway (do not publish).
+const opt = f => existsSync(new URL(T + f, root)) ? J(T + f) : null;
+const B2122 = opt('bills-2122.json');
+const done2122 = !!(opt('requests-2021.json') && opt('requests-2022.json') && B2122 && !Object.values(B2122.missing).some(x => x.length)
+  && existsSync(new URL(T + 'donors/nixon-2018.tsv', root)) && existsSync(new URL(T + 'donors/chambliss-2018.tsv', root)));
+const ON2122 = done2122 || process.env.FORCE_2122 === '1';
 B.tenure = {
   Basabe: { start: '2022-11-09', giftsFrom: '2020-11-04' },
   Gantt: { start: '2022-11-09', giftsFrom: '2020-11-04' },
-  Chambliss: { start: '2022-11-09', giftsFrom: '2020-11-04' },
+  Chambliss: ON2122 ? { start: '2020-11-04', giftsFrom: '2018-11-07' } : { start: '2022-11-09', giftsFrom: '2020-11-04' },
   Porras: { start: '2022-11-09', giftsFrom: '2020-11-04' },
-  Nixon: { start: '2022-11-09', giftsFrom: '2020-11-04' },
+  Nixon: ON2122 ? { start: '2020-11-04', giftsFrom: '2018-11-07' } : { start: '2022-11-09', giftsFrom: '2020-11-04' },
   Redondo: { start: '2023-12-05', giftsFrom: '2022-11-09' },
 };
-B.since = '2022-11-09';
+B.since = ON2122 ? '2020-11-04' : '2022-11-09';
 
 // ---- earlier campaign accounts ------------------------------------------------------------------------
 const DOE = 'https://dos.elections.myflorida.com/campaign-finance/contributions/';
@@ -47,19 +55,23 @@ for (const [k, [name, acct]] of Object.entries(PRE)) {
   if (!B.onBallot[k].accounts.includes(acct)) B.onBallot[k].accounts.push(acct);
 }
 
-// ---- 2023-24 and 2024-25 budget requests --------------------------------------------------------------
-B.actions = B.actions.filter(a => !(a.kind === 'request' && /^H2[34]-/.test(a.id)));
+// ---- 2021-22 through 2024-25 budget requests ----------------------------------------------------------
+// 2023 and 2024: Appropriations Project Request forms (ref "APR n", budget ref "HF n"). 2021 and 2022: the House filed
+// each request as an Appropriations Project bill with the form attached; the budget names the bill ("(HB n)"), so the
+// card's ref and budget ref are the bill number (requests-2021.json, requests-2022.json, Nixon and Chambliss only).
+B.actions = B.actions.filter(a => !(a.kind === 'request' && /^H2[1-4]-/.test(a.id)));
 let added = 0;
 const per = {};
-for (const y of [2023, 2024]) {
+for (const y of ON2122 ? [2021, 2022, 2023, 2024] : [2023, 2024]) {
+  if (!existsSync(new URL(T + `requests-${y}.json`, root))) continue;
   const R = J(T + `requests-${y}.json`);
   for (const r of R.requests) {
     if (!B.onBallot[r.member]) throw new Error('not on the ballot: ' + r.member);
     const card = {
-      id: 'H' + String(r.fy).slice(2) + '-' + r.form, date: r.date, ref: 'APR ' + r.form + ' · ' + r.fy, kind: 'request',
+      id: 'H' + String(r.fy).slice(2) + '-' + r.form, date: r.date, ref: (r.bill ? r.bill : 'APR ' + r.form) + ' · ' + r.fy, kind: 'request',
       subject: { en: r.title, es: r.title, ht: r.title }, parties: [r.recipient], result: 'requested', ask: r.ask,
       roll: { [r.member]: 'requested' }, rollComplete: false, lobbied: r.lobbied.map(l => ({ ...l })), gifts: [],
-      links: [{ t: 'record', url: r.record }], cmte: r.cmte, budget: { ...R.budget, ref: 'HF ' + r.form, ...r.budget },
+      links: [{ t: 'record', url: r.record }], cmte: r.cmte, budget: { ...R.budget, ref: r.bill || 'HF ' + r.form, ...r.budget },
     };
     // Forms filed for a seat before its new member was sworn in, which the House lists under that member (Redondo,
     // District 118, sworn in Dec 5, 2023): the card keeps the filed date and says when the sponsor took the seat

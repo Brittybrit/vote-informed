@@ -7,7 +7,7 @@
 // scripts/data/state/bills/classes.json ({"<bill> · <session>": ["realestate-dev", ...]}).
 // Cards already on the page for a law (hand-checked) are kept and marked as part of the list.
 // Florida House full tenure (Brit, Oct 25, 2026): when the flhouse body has a tenure block (scripts/state-tenure.mjs),
-// the list also takes the 2023 and 2024 sessions' laws (scripts/data/tenure/flhouse/bills-2023.json, bills-2024.json,
+// the list also takes the 2021 through 2024 sessions' laws (scripts/data/tenure/flhouse/bills-2122.json, bills-2023.json, bills-2024.json;
 // House votes only; donor classes from bills/classes-by-chapter.json, labels from bills/labels.json), reads each
 // member's 2020-2024 gifts (scripts/data/tenure/flhouse/donors/), and counts gifts from the member's giftsFrom date
 // instead of Jan 1, 2025, on every card. The Senate and the 2025-26 rules are unchanged.
@@ -43,9 +43,15 @@ const rowsOf = (acct, tenure) => [
 // The House tenure laws, keyed the way the cards are; the 2022A special session's laws are labeled with 2023
 const TENURE = (() => {
   if (!existsSync(new URL(TDIR + 'bills-2023.json', root))) return null;
-  const lab = J(TDIR + 'bills/labels.json'), byCh = J(TDIR + 'bills/classes-by-chapter.json');
+  // 2021-22 (Nixon and Chambliss only; screened by the Senate slice): bills-2122.json with its own classes and labels
+  const opt = f => existsSync(new URL(TDIR + f, root)) ? J(TDIR + f) : {};
+  const lab = { ...J(TDIR + 'bills/labels.json'), ...opt('bills/labels-2122.json') }, byCh = { ...J(TDIR + 'bills/classes-by-chapter.json'), ...opt('bills/classes-2122.json') };
   const refOf = {}; for (const [k, v] of Object.entries(lab)) refOf[v.chapter] = k;
-  const bills = [2023, 2024].flatMap(y => J(TDIR + `bills-${y}.json`).bills).filter(b => b.benefits).map(b => ({ ...b, ref: refOf[b.chapter], votes: { house: b.votes.house } }));
+  // bills-2122.json only once state-tenure.mjs has switched the 2021-22 years on (Nixon's tenure then starts in 2020)
+  const H = d.bodies.find(b => b.key === 'flhouse'), on2122 = !!(H && H.tenure && H.tenure.Nixon && H.tenure.Nixon.start < '2022');
+  const files = [...(on2122 ? ['bills-2122.json'] : []), 'bills-2023.json', 'bills-2024.json'].filter(f => existsSync(new URL(TDIR + f, root)));
+  // a law without a House roll call yet is left out (counted in bills-2122.json "missing")
+  const bills = files.flatMap(f => J(TDIR + f).bills).filter(b => b.benefits && b.votes && b.votes.house).map(b => ({ ...b, ref: refOf[b.chapter], votes: { house: b.votes.house } }));
   for (const b of bills) if (!b.ref) throw new Error('no label for ' + b.chapter);
   const classes = {}; for (const b of bills) if (byCh[b.chapter]) classes[b.ref] = byCh[b.chapter];
   const tagsF = TDIR + 'donors/industry-pre2025.json';
