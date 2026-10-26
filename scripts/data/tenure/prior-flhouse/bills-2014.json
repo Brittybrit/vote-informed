@@ -11,71 +11,165 @@
  },
  "counts": {
   "enacted": 255,
-  "screened": 199,
-  "qualifying": 1,
+  "screened": 255,
+  "qualifying": 31,
   "withHouseVote": 1
  },
  "missing": {
   "A": [],
-  "B": [
-   "2014-80",
-   "2014-81",
-   "2014-82",
-   "2014-83",
-   "2014-84",
-   "2014-91",
-   "2014-92",
-   "2014-94",
-   "2014-98",
-   "2014-99",
-   "2014-100",
-   "2014-101",
-   "2014-104",
-   "2014-109",
-   "2014-110",
-   "2014-111",
-   "2014-114",
-   "2014-116",
-   "2014-117",
-   "2014-122",
-   "2014-123",
-   "2014-125",
-   "2014-128",
-   "2014-129",
-   "2014-131",
-   "2014-136",
-   "2014-138",
-   "2014-142",
-   "2014-145",
-   "2014-150",
-   "2014-151",
-   "2014-154",
-   "2014-155",
-   "2014-157",
-   "2014-162",
-   "2014-165",
-   "2014-167",
-   "2014-168",
-   "2014-169",
-   "2014-175",
-   "2014-180",
-   "2014-181",
-   "2014-183",
-   "2014-184",
-   "2014-189",
-   "2014-196",
-   "2014-199",
-   "2014-205",
-   "2014-207",
-   "2014-213",
-   "2014-215",
-   "2014-216",
-   "2014-218",
-   "2014-223",
-   "2014-226",
-   "2014-229"
-  ],
-  "C": []
+  "B": [],
+  "C": [
+   [
+    "2014-80",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/542/Vote/HouseVote_s0542e1770.PDF"
+   ],
+   [
+    "2014-91",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1012/Vote/HouseVote_s1012c2876.PDF"
+   ],
+   [
+    "2014-98",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1262/Vote/HouseVote_s1262__771.PDF"
+   ],
+   [
+    "2014-99",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1278/Vote/HouseVote_s1278e1791.PDF"
+   ],
+   [
+    "2014-100",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1300/Vote/HouseVote_s1300e1798.PDF"
+   ],
+   [
+    "2014-101",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1308/Vote/HouseVote_s1308c2835.PDF"
+   ],
+   [
+    "2014-104",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1672/Vote/HouseVote_s1672e1849.PDF"
+   ],
+   [
+    "2014-110",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/287/Vote/HouseVote_h0287c2508.PDF"
+   ],
+   [
+    "2014-111",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/291/Vote/HouseVote_h0291__486.PDF"
+   ],
+   [
+    "2014-114",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/325/Vote/HouseVote_h0325c3774.PDF"
+   ],
+   [
+    "2014-117",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/415/Vote/HouseVote_h0415c2580.PDF"
+   ],
+   [
+    "2014-125",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/713/Vote/HouseVote_h0713e1592.PDF"
+   ],
+   [
+    "2014-128",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/773/Vote/HouseVote_h0773e1674.PDF"
+   ],
+   [
+    "2014-129",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/775/Vote/HouseVote_h0775c3675.PDF"
+   ],
+   [
+    "2014-136",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/955/Vote/HouseVote_h0955c2653.PDF"
+   ],
+   [
+    "2014-138",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1049/Vote/HouseVote_h1049e1596.PDF"
+   ],
+   [
+    "2014-142",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1179/Vote/HouseVote_h1179c2743.PDF"
+   ],
+   [
+    "2014-145",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/7009/Vote/HouseVote_h7009__509.PDF"
+   ],
+   [
+    "2014-150",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/7091/Vote/HouseVote_h7091c1658.PDF"
+   ],
+   [
+    "2014-151",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/7093/Vote/HouseVote_h7093c1897.PDF"
+   ],
+   [
+    "2014-157",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1030/Vote/HouseVote_s1030c2864.PDF"
+   ],
+   [
+    "2014-167",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/7095/Vote/HouseVote_h7095e1872.PDF"
+   ],
+   [
+    "2014-169",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/218/Vote/HouseVote_s0218e2819.PDF"
+   ],
+   [
+    "2014-181",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/754/Vote/HouseVote_s0754e1776.PDF"
+   ],
+   [
+    "2014-183",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/846/Vote/HouseVote_s0846e2867.PDF"
+   ],
+   [
+    "2014-205",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/523/Vote/HouseVote_h0523c2577.PDF"
+   ],
+   [
+    "2014-207",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/627/Vote/HouseVote_h0627__487.PDF"
+   ],
+   [
+    "2014-215",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/1161/Vote/HouseVote_h1161c2812.PDF"
+   ],
+   [
+    "2014-223",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/7175/Vote/HouseVote_h7175__680.PDF"
+   ],
+   [
+    "2014-226",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2014/225/Vote/HouseVote_h0225c1665.PDF"
+   ]
+  ]
  },
  "bills": [
   {
@@ -972,9 +1066,14 @@
    "title": "Flood Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2014/542",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/542/Analyses/2014s0542.bi.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "private flood insurers",
+    "named": [],
+    "quote": "It is anticipated that the implementation of CS/CS/CS/SB 542 will result in additional private insurers offering flood insurance which may increase competition in the marketplace and provide consumers with more coverage options."
+   },
    "screen": "Private Sector Impact: It is anticipated that the implementation of CS/CS/CS/SB 542 will result in additional private insurers offering flood insurance which may increase competition in the marketplace and provide consumers with more coverage options.",
-   "note": "not yet judged"
+   "note": "new market for private flood insurers, as 2019-72 (opportunity to compete)",
+   "votes": {}
   },
   {
    "bill": "SB 590",
@@ -985,7 +1084,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/590/Analyses/2014s0590.cj.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Any deferred presentment transaction conducted by a person who is not authorized by the Office of Financial Regulation pursuant to ch. 560, F.S., to engage in such transactions is 15 Section 560.211, F.S., specifies recordkeeping and document retention requirements applicable to money transmitters and payment instrument issuers. 16 FinCEN is the Financial Crimes Enforcement Network. BILL: CS/CS/SB 590 Page 6 void and such person has no right to collect, receive, or retain any funds relating to such transaction. Consumers who have entered into such agreements would benefit.",
-   "note": "not yet judged"
+   "note": "consumers"
   },
   {
    "bill": "SB 650",
@@ -996,7 +1095,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/650/Analyses/2014s0650.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The continued existence of the public records exemptions reenacted by the bill may protect heirs or beneficiaries of a decedent’s estate from being targeted for fraud or theft.",
-   "note": "not yet judged"
+   "note": "heirs and beneficiaries (individuals)"
   },
   {
    "bill": "SB 670",
@@ -1007,7 +1106,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/670/Analyses/2014s0670.ju.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The bill may facilitate the payment of judgments against nursing homes by requiring the Agency for Health Care Administration to take action against nursing homes that do not timely pay a judgment. The provisions that facilitate access to the records of nursing home residents may facilitate the monitoring of patient care.",
-   "note": "not yet judged"
+   "note": "nursing homes burdened; residents benefit"
   },
   {
    "bill": "SB 674",
@@ -1018,7 +1117,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/674/Analyses/2014s0674.cj.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Employers may see an indeterminate fiscal savings by submitting certain documents under attestation rather than as an affidavit and a reduction in costs associated with hiring new employees due to an increased pool of eligible applicants as a result of removing the 3-year waiting period after payment of all court-ordered monetary amounts before an applicant is eligible for exemption from disqualification for employment. The administrative cost associated with submitting certain identifying information for 26 Supra n. 5 BILL: CS/CS/SB 674 Page 8 employee fingerprinting may facilitate and offset administrative costs of tracking the status of results. More ex-offenders will be disqualified from potential employment under this bill. In addition, potential employees who have committed in their past one of the newly added disqualifying offenses, such as “attempts” under s. 777.04, F.S., will be disqualified from employment. It is unclear from the bill whether current employees who have obtained an exemption from disqualification under the current s. 435.07, F.S., will be terminated from employment or “grandfathered in” and allowed to maintain their employment.",
-   "note": "not yet judged"
+   "note": "employers generally (background screening)"
   },
   {
    "bill": "SB 702",
@@ -1093,9 +1192,14 @@
    "title": "Financial Services",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1012",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1012/Analyses/2014s1012.ap.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "state-chartered credit unions and banks",
+    "named": [],
+    "quote": "The bill codifies current federal credit union regulations relating to branches, and employee benefit plans, which would place state credit unions at parity with federal credit unions."
+   },
    "screen": "Private Sector Impact: The bill codifies current federal credit union regulations relating to branches, and employee benefit plans, which would place state credit unions at parity with federal credit unions. The bill clarifies that institutions may charge customers a fee to cash checks. This will provide consistency with the federal laws permitting national banks and out-of-state BILL: CS/CS/SB 1012 Page 14 state-chartered banks operating in Florida to charge check-cashing fees, and will place Florida-chartered banks at parity with national and other state-chartered banks.",
-   "note": "not yet judged"
+   "note": "also check-cashing fees for Florida-chartered banks",
+   "votes": {}
   },
   {
    "bill": "SB 1036",
@@ -1106,7 +1210,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1036/Analyses/2014s1036.ed.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: There are 21 Bachelor of Science in Nursing (BSN) programs47 and 128 Associate Degree in Nursing (ADN) programs (offered by public and private institutions) that will need to become accredited and will incur associated accreditation costs.48 For fiscal year 2014, the Commission on Collegiate Nursing Education imposes a new applicant fee of $3,500 per baccalaureate program, $5,500 for a baccalaureate and master’s level programs, and $7,500 for a baccalaureate, master’s, and doctoral nursing programs; an evaluation fee of $1,750 per evaluation team member (typically, 3-5 members are on an evaluation team); and an annual fee of $2,468 to maintain accreditation for a baccalaureate program, $2,975 for maintenance of a baccalaureate and master’s level programs, and $3,484 for maintenance of a baccalaureate, masters, and doctor of nursing programs.49 The “2013-2014 Schedule of Accreditation Fees” for the Accreditation Commission for Education in Nursing charges a candidacy fee of $2,500; an accreditation review fee of $1,000 for initial or continuing accreditation (per program); a site visit fee of $835 per evaluator per day; $2,400 annual for maintenance of accreditation; and various service fees for additional services, as required.50",
-   "note": "not yet judged"
+   "note": "accreditation costs for nursing programs; burden only"
   },
   {
    "bill": "SB 1070",
@@ -1128,7 +1232,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1108/Analyses/2014s1108.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The continued existence of the public records exemption may protect the family members of agency employees from identity theft.",
-   "note": "not yet judged"
+   "note": "family members of agency employees"
   },
   {
    "bill": "SB 1142",
@@ -1170,9 +1274,14 @@
    "title": "Public Records and Meetings/Insurance Flood Loss Model",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1262",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1262/Analyses/2014s1262.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "private vendors of flood loss models",
+    "named": [],
+    "quote": "The exemptions will allow private vendors that produce models that project expected losses from flood to participate in the processes of the methodology commission without concern that its model will be replicated."
+   },
    "screen": "Private Sector Impact: The exemptions will allow private vendors that produce models that project expected losses from flood to participate in the processes of the methodology commission without concern that its model will be replicated.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 1278",
@@ -1181,9 +1290,14 @@
    "title": "Public Records/Office of Financial Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1278",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1278/Analyses/2014s1278.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "Florida-chartered financial institutions (records exemption)",
+    "named": [],
+    "quote": "The bill’s protection of trade secrets and informal enforcement actions may benefit Florida-chartered financial institutions, since disclosure of such information could result in a competitive disadvantage in the marketplace and reputational risk."
+   },
    "screen": "Private Sector Impact: The bill’s protection of trade secrets and informal enforcement actions may benefit Florida-chartered financial institutions, since disclosure of such information could result in a competitive disadvantage in the marketplace and reputational risk. BILL: CS/CS/SB 1278 Page 6",
-   "note": "not yet judged"
+   "note": "same reading as 2013-61",
+   "votes": {}
   },
   {
    "bill": "SB 1300",
@@ -1192,9 +1306,14 @@
    "title": "Public Records/Office of Insurance Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1300",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1300/Analyses/2014s1300.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "insurers (records exemption for proprietary information)",
+    "named": [],
+    "quote": "The public records exemption created by the bill may have an indeterminate positive impact on the private sector by protecting insurers’ proprietary business information."
+   },
    "screen": "Private Sector Impact: The public records exemption created by the bill may have an indeterminate positive impact on the private sector by protecting insurers’ proprietary business information.",
-   "note": "not yet judged"
+   "note": "same reading as 2013-61",
+   "votes": {}
   },
   {
    "bill": "SB 1308",
@@ -1203,9 +1322,14 @@
    "title": "Insurer Solvency",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1308",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1308/Analyses/2014s1308.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "life insurers (principle-based reserves)",
+    "named": [],
+    "quote": "Advocates of principle based reserves state that the method will reduce redundant reserves that are required pursuant to the current formulaic approach, thereby leading to lower prices for life insurance products, increasing consumer choices of products, and freeing up capital for insurers."
+   },
    "screen": "Private Sector Impact: Insurers may incur an indeterminate amount of administrative costs associated with complying with the additional reporting requirements and implementing principle based reserves (PBR), and the OIR’s participation in the supervisory colleges. The PBR requirements apply to policies issued on or after the operative date of the valuation manual. Advocates of principle based reserves state that the method will reduce redundant reserves that are required pursuant to the current formulaic approach, thereby leading to lower prices for life insurance products, increasing consumer choices of products, and freeing up capital for insurers. Insurers will have the option to phase in the PBR requirements over 3 years after the valuation manual is effective, which would be no earlier than January 1, 2017, as provided in the bill. 21 The NAIC Executive Committee adopted this change at the 2013 Fall NAIC Meeting. BILL: CS/CS/SB 1308 Page 13",
-   "note": "not yet judged"
+   "note": "also administrative costs for insurers",
+   "votes": {}
   },
   {
    "bill": "SB 1320",
@@ -1236,9 +1360,14 @@
    "title": "Property Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1672",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1672/Analyses/2014s1672.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "private-market and surplus lines property insurers (Citizens commercial residential clearinghouse)",
+    "named": [],
+    "quote": "The inclusion of commercial residential policies within the Citizens clearinghouse would help enforce the 15 percent eligibility requirement for new Citizens applicants, and encourage private-market insurers to offer coverage to existing Citizens policyholders."
+   },
    "screen": "Private Sector Impact: The inclusion of commercial residential policies within the Citizens clearinghouse would help enforce the 15 percent eligibility requirement for new Citizens applicants, and encourage private-market insurers to offer coverage to existing Citizens policyholders. Private market insurers are actively writing commercial residential policies that insure BILL: CS/CS/SB 1672 Page 15 newer buildings with a replacement cost greater than $10 million.58 Citizens estimates that approximately up to 15 percent of its current commercial residential policies would be attractive to the private market, given Citizens’ current rates for such risks and their characteristics such as location, age and building construction type. Commercial residential policies constitute approximately 20 percent of Citizens total risk, with a PML of $4.2 billion.59 Allowing surplus lines insurers to participate in the Citizens clearinghouse may serve to further depopulate Citizens. The bill requires a participating surplus lines insurer to maintain at least $50 million in surplus and demonstrate the ability to cover two 1 in 100 PML events in a single hurricane season. If these financial protections prove insufficient to prevent an insolvency, claims of policyholders who accept an offer of coverage from a surplus lines insurer will not be covered by the Florida Insurance Guaranty Association. Prohibiting Citizens from writing new commercial residential multi-peril policies in the coastal acc",
-   "note": "not yet judged"
+   "note": "judgment call: opens Citizens commercial residential policies to private and surplus lines insurers",
+   "votes": {}
   },
   {
    "bill": "SB 1678",
@@ -1293,7 +1422,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/271/Analyses/h0271z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Requiring employers to whom SWOs have been issued to supply two years of payroll records (rather than three years) for penalty calculation purposes decreases the regulatory burden on such employers. Employers that can more readily provide the required records will have their penalty calculated more quickly by the DFS and can take the steps necessary to be released from the SWO and return to work. With the decreased look-back period, the amount of some fines assessed may decrease, even though the multiplier has been increased. In other cases, the increased penalty multiplier will increase the penalty, even though the look-back period has been shortened. For employers that have not previously been issued an SWO, crediting the initial payment of premium made to secure coverage (or the dollar or percentage amount attributable to the initial workers’ compensation expense for leased employees) against the assessed penalty will decrease the amount of the penalty to be paid by the employer. The DFS indicates that changing the assessment calculation will benefit the private sector by allowing the department to draw down the fund balance of the SDTF to pay approved reimbursement requests 10 Department of Financial Services bill analysis (January 29, 2014) on file with the Insurance & Banking Subcommittee. 11 Email correspondence with the Department of Financial Services (February 13, 2014) on file with the Insurance & Banking Subcommittee. 1",
-   "note": "not yet judged"
+   "note": "employers generally (stop-work order penalties, assessment cap)"
   },
   {
    "bill": "HB 287",
@@ -1302,9 +1431,14 @@
    "title": "Certificates of Need",
    "url": "https://www.flsenate.gov/Session/Bill/2014/287",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/287/Analyses/h0287z2.HIS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "nursing homes and construction industry (CON moratorium repeal)",
+    "named": [],
+    "quote": "The repeal of the moratorium that prohibits AHCA from issuing CONs for new community nursing home beds may have a positive fiscal impact on the construction and nursing home industries in areas where there is a current need for new beds."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The repeal of the moratorium that prohibits AHCA from issuing CONs for new community nursing home beds may have a positive fiscal impact on the construction and nursing home industries in areas where there is a current need for new beds. Additional nursing home beds may result in increased competition for residents within the nursing home industry. Increased competition may result in more choices, lower costs, and higher quality facilities for residents.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 291",
@@ -1313,9 +1447,14 @@
    "title": "Warranty Associations",
    "url": "https://www.flsenate.gov/Session/Bill/2014/291",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/291/Analyses/h0291z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "warranty associations (service warranty companies)",
+    "named": [],
+    "quote": "Warranty associations emailing service warranties will save costs associated with printing and mailing the warranties to warranty holders."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Warranty associations emailing service warranties will save costs associated with printing and mailing the warranties to warranty holders. The exact amount of savings cannot be calculated as it is unknown how many warranty associations will opt to deliver their warranties by email and how many warranty purchasers will choose to obtain their warranty by email rather than by mail. However, any savings realized by warranty associations should be passed through to the warranty purchasers. If warranty associations incur computer reprogramming costs connected with emailing warranties or service agreements, any increased costs may be passed through to the warranty purchasers.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 321",
@@ -1346,9 +1485,14 @@
    "title": "Brownfields",
    "url": "https://www.flsenate.gov/Session/Bill/2014/325",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/325/Analyses/h0325z1.EDTS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "brownfield redevelopers",
+    "named": [],
+    "quote": "Local governments, individuals, corporations, community-based organizations, and not-for-profit corporations proposing to designate brownfield areas should benefit from clearer provisions in the Act"
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: STORAGE NAME: h0325z1.EDTS PAGE: 7 DATE: June 24, 2014 Local governments, individuals, corporations, community-based organizations, and not-for-profit corporations proposing to designate brownfield areas should benefit from clearer provisions in the Act",
-   "note": "not yet judged"
+   "note": "judgment call: corporations proposing brownfield designation read as brownfield redevelopers, as 2017-95",
+   "votes": {}
   },
   {
    "bill": "HB 405",
@@ -1370,7 +1514,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/413/Analyses/h0413z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill requires that control persons of non-exempt collection agencies be fingerprinted and screened, and the average incurred live-scan costs will be $65 per control person,27 which consists of the live- scan vendor’s cost of providing the service and the $40.50 processing fee charged by the FDLE, which is apportioned as:  $24 for a state background check, which is deposited into the FDLE Operating Trust Fund, and  $16.50 for a national background check, which is forwarded to the FBI.28 24 E-mail from the OFR (received January 22, 2014), on file with the Insurance & Banking Subcommittee staff. 25 OFR’s bill analysis of HB 413 (received January 23, 2014), on file with the Insurance & Banking Subcommittee staff. 26 OFR’s bill analysis of HB 413 (received January 23, 2014), on file with the Insurance & Banking Subcommittee staff. 27 According to the OFR, the average cost to process electronic fingerprints through a live-scan vendor is $65, which is inclusive of the $40.50 charge by FDLE and a cost added by the vendor to cover their services. E-mail from the OFR (received February 10, 2014), on file with the Insurance & Banking Subcommittee staff. 28 FDLE’s bill analysis of HB 413 (received February 1, 2014), on file with the Insurance & Banking Subcommittee staff. STORAGE NAME: h0413z1.IBS.DOCX PAGE: 6 DATE: June 26, 2014 Once registered, control persons of CCAs must also submit an annual fee of $6 for the cost of retaining finge",
-   "note": "not yet judged"
+   "note": "fingerprinting costs for collection agencies; burden only"
   },
   {
    "bill": "HB 415",
@@ -1379,9 +1523,14 @@
    "title": "Pub. Rec./Investigations and Examinations by Office of Financial Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/415",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/415/Analyses/h0415z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "consumer collection agencies (records exemption)",
+    "named": [],
+    "quote": "The bill’s protection of trade secrets within information relating to an investigation or examination may benefit collection agencies, since disclosure of such information could result in a competitive disadvantage in the marketplace."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill’s protection of trade secrets within information relating to an investigation or examination may benefit collection agencies, since disclosure of such information could result in a competitive disadvantage in the marketplace. In addition, the bill’s protection of specified personal financial and health information of consumers may reduce the risk of identity theft and protect matters of personal health which are traditionally private and confidential concerns between patients and health care providers.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 511",
@@ -1436,7 +1585,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/629/Analyses/h0629z1.BPRS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Officers, directors, trustees, or owners of a professional solicitor and any employee of a solicitor conducting telephonic solicitations will have to annually apply for a solicitor’s license. As part of the application process, they will also have to pay a fingerprinting fee of $44.50 if through the Department, which includes $15 for the state criminal history record check,35 $16.50 for the national criminal history check and $13 for a federal lifetime retention fee. There is an additional $6 state retention fee added to the annual fee. If the solicitor uses an authorized entity, vendor or an agency other than the Department, the fee will be $53.50, which includes $24 for the state criminal history record check, $16.50 for the national criminal history check and $13 for a federal lifetime retention fee. There is an additional $6 state retention fee added to the annual renewal fee. According to the Department, FDLE will begin participation in the national retention notification program on October 1, 2014. Solicitors who apply between July 1, 2014 and October 1, 2014, will not pay the $13 retention fee with their initial application, but will pay the fee with their renewal. Additionally, solicitors may incur increased administrative and record keeping costs to comply with the updated reporting and disclosure requirements, to comply with updated financial statement requirements, and to comply with the updated notice statement requirem",
-   "note": "not yet judged"
+   "note": "costs for solicitors and charities; burden only"
   },
   {
    "bill": "HB 633",
@@ -1447,7 +1596,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/633/Analyses/h0633z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Members of the United States Armed Forces, their spouses, and veterans who are retired for up to 24 months and apply for specified licenses with DFS will be exempt from paying licensing fees.",
-   "note": "not yet judged"
+   "note": "service members, spouses and veterans (individuals)"
   },
   {
    "bill": "HB 635",
@@ -1467,9 +1616,14 @@
    "title": "Engineers",
    "url": "https://www.flsenate.gov/Session/Bill/2014/713",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/713/Analyses/h0713z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "engineering examination review course providers",
+    "named": [],
+    "quote": "This will increase the business of the private entities providing the examination review courses as well as save the applicants money and time as the review courses are cheaper than most college 12 hour course programs and take less time."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill permits applicants to attend an examination review course rather than returning to a college to obtain the additional education required prior to retaking an examination after three failures. This will increase the business of the private entities providing the examination review courses as well as save the applicants money and time as the review courses are cheaper than most college 12 hour course programs and take less time.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 731",
@@ -1500,9 +1654,14 @@
    "title": "Pugilistic Exhibitions",
    "url": "https://www.flsenate.gov/Session/Bill/2014/773",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/773/Analyses/h0773z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "boxing, kickboxing and MMA event promoters",
+    "named": [],
+    "quote": "The deregulation of concessionaires lowers the costs of holding events in the state of Florida for the private sector."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The deregulation of concessionaires lowers the costs of holding events in the state of Florida for the private sector. The deregulation of concessionaires brings Florida in line with the majority of other states that do not license concessionaires. Additionally, permitting five percent of seats in a house be issued as complimentary tickets without being included in gross receipts or paying post-event taxes on the tickets lowers the costs of holding events in the state of Florida. This provision is similar to other states which hold professional boxing, kickboxing, and mixed martial arts, including Nevada, which holds the largest number of events of any state in the nation.",
-   "note": "not yet judged"
+   "note": "judgment call: those holding professional boxing/MMA events are promoters",
+   "votes": {}
   },
   {
    "bill": "HB 775",
@@ -1511,9 +1670,14 @@
    "title": "Pub. Rec./Florida State Boxing Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2014/775",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/775/Analyses/h0775z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "boxing and MMA promoters (records exemption)",
+    "named": [],
+    "quote": "The exclusion of certain business-related documents from public records will permit promoters to maintain privacy and protect their business from industry competitors."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The exclusion of certain business-related documents from public records will permit promoters to maintain privacy and protect their business from industry competitors.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 783",
@@ -1535,7 +1699,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/785/Analyses/h0785z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: To the extent that the bill allows large employers and insurers to negotiate workers’ compensation insurance premiums beyond the negotiations already allowed in current retrospective rating plans, the premiums paid by large employers under such plans may decrease. However, in certain circumstances, negotiations could lead to a premium that is not sufficient to cover expected losses and expenses.",
-   "note": "not yet judged"
+   "note": "large employers (any industry): employers generally"
   },
   {
    "bill": "HB 805",
@@ -1588,9 +1752,14 @@
    "title": "Fish and Wildlife Conservation Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2014/955",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/955/Analyses/h0955z1.ANRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "commercial fishermen (freshwater gear license fees eliminated)",
+    "named": [],
+    "quote": "Statewide freshwater trawl and haul seine annual gear license fees—Eliminating these fees would result in a $100 annual positive fiscal impact for commercial fishermen."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The FWC offered the following: Boater safety course requirements—There may be a small negative fiscal impact on organizations that offer only classroom, in-person courses, but these entities will have the option of making the course available online. It is anticipated that any fiscal impact to these organizations will be minimal. Students taking courses to meet mandatory education requirements make up a small part of the organizations’ student load. Those individuals who will be subject to MEV requirements may experience a small positive fiscal impact since the cost to the student for an MEV classroom course ranges from $30 to $50 and the cost to a student for online courses ranges from free to $30. For some of these violators, the positive fiscal impact may be even larger since, under current law, they may be required to travel longer distances to find a classroom course to comply with the statute. Statewide freshwater trawl and haul seine annual gear license fees—Eliminating these fees would result in a $100 annual positive fiscal impact for commercial fishermen. Okeechobee haul seine and trawl permit fees—Eliminating these fees would result in a $100 annual positive fiscal impact for commercial fishermen.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1047",
@@ -1610,9 +1779,14 @@
    "title": "Divers",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1049",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1049/Analyses/h1049z1.ANRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "buoy manufacturers",
+    "named": [],
+    "quote": "The bill may provide a financial benefit to private companies that manufacture buoys by expanding the market to divers who must display a symbol when they are diving."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Because the bill only adds an additional method divers may use to comply with the requirement to display a symbol when they are participating in diving activities, the bill does not require divers to purchase additional items to continue diving activities. The bill may provide a financial benefit to private companies that manufacture buoys by expanding the market to divers who must display a symbol when they are diving.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1065",
@@ -1654,9 +1828,14 @@
    "title": "Home Health Care",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1179",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1179/Analyses/h1179z1.HIS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "nurse registries",
+    "named": [],
+    "quote": "As a result, a nurse registry may be able to avoid complying with minimum wage requirements and overtime payments required under the new federal DOL rule that removes the exemption from these requirements under the FLSA for companionship services."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill clarifies that each person referred for contract by a nurse registry is an independent contractor and that a nurse registry is not responsible for certain actions or activities that may be associated with an employer-employee relationship, such as training and management of a referred person. As a result, a nurse registry may be able to avoid complying with minimum wage requirements and overtime payments required under the new federal DOL rule that removes the exemption from these requirements under the FLSA for companionship services.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1363",
@@ -1687,9 +1866,14 @@
    "title": "Security for Public Deposits",
    "url": "https://www.flsenate.gov/Session/Bill/2014/7009",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7009/Analyses/h7009z2.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "small and mid-sized banks (qualified public depositories)",
+    "named": [],
+    "quote": "The bill’s reduction of the two highest collateral pledge levels may have a positive impact on small and moderate sized QPDs."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill’s reduction of the two highest collateral pledge levels may have a positive impact on small and moderate sized QPDs. Additionally, the bill’s clarifications of reporting and other compliance requirements may have an indeterminate positive effect on the private sector. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The DFS reports that the bill will not have any fiscal impact, and programming changes to their Collateral Administration Program computer system should be absorbed with existing information technology resources.49 Public depositors that fail to comply with the reporting requirements for identification of their moneys as public deposits would not lose their protection from loss, if a failed qualified public depository had nonetheless classified, reported, and collateralized the money as public deposits. Local governments and other units of Florida government that participate in the public deposits program would no longer be required to request bank account confirmation data from their QPDs. The estimated administrative cost of such requests is negligible. 49 E-mail from the DFS (received December 16, 2013), on file with the Insurance & Banking Subcommittee staff. STORAGE NAME: h7009z1a.IBS.DOCX PAGE: 8 DATE: June 30, 2014",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 7037",
@@ -1742,9 +1926,14 @@
    "title": "Department of Agriculture and Consumer Services",
    "url": "https://www.flsenate.gov/Session/Bill/2014/7091",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7091/Analyses/h7091z1.ANRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "seed dealers; small poultry farms; fertilizer licensees",
+    "named": [],
+    "quote": "The department estimates that a savings will be recognized by approximately 200 seed dealers."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Sections 379.361, 597.004, and 597.020, F.S., provide for persons applying for or renewing an Apalachicola Bay oyster harvesting license to participate in an educational seminar before the license may be issued. There is no cost to the applicants for the required seminar. Sections 487.046, 487.047, 487.048, and 576.021, F.S., provide the public the opportunity to register for licensure on-line; thus, creating the potential for savings in the form of postage. STORAGE NAME: h7091z1.ANRS.docx PAGE: 31 DATE: June 24, 2014 Section 576.041, F.S., no longer requires licensees for agricultural fertilizers to post with the department a surety bond or sign a certificate of deposit. Section 578.08, F.S., establishes two new lower registration fees for distributors of small amounts of seed ($10/year for annual sales under $500 and $25/year for annual sales under $1,000). This will reduce the fees these small distributors will have to pay, resulting in lower costs. The department estimates that a savings will be recognized by approximately 200 seed dealers. Section 581.091, F.S., simplifies the regulatory process for using Australian pines for windbreaks in commercial citrus groves. Nurseries wanting to obtain a permit to propagate Australian pines will continue the current process of submitting an application accompanied by a fee of $200, adhering to permit requirements, and renewing the application and fee annually. Growers wanting to plant A",
-   "note": "not yet judged"
+   "note": "also more dressed-bird sales for small farms; no surety bond for fertilizer licensees",
+   "votes": {}
   },
   {
    "bill": "HB 7093",
@@ -1753,9 +1942,14 @@
    "title": "Department of Environmental Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2014/7093",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7093/Analyses/h7093z2.ANRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "concessionaires in aquatic preserves (food, boat rentals)",
+    "named": [],
+    "quote": "The bill will have a positive fiscal impact on private parties who wish to provide goods or services, such as providing food or boat rentals, to visitors in aquatic preserves."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will have a positive fiscal impact on private parties who wish to provide goods or services, such as providing food or boat rentals, to visitors in aquatic preserves. The bill has a potentially positive fiscal impact on private parties seeking general or area-wide permits for minor structures that would otherwise require an administrative permit. See Fiscal Comments for discussion of permit fees. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: 115 DEP, Bureau of Operational Services, Concession Operations, http://www.dep.state.fl.us/Parks/bos/vsp/default.htm (last visited Apr. 23, 2014). STORAGE NAME: h7093z2.ANRS PAGE: 17 DATE: June 26, 2014 The bill has a potentially negative fiscal impact on the Permit Fee Trust Fund as a result of the expansion of activities that qualify for Department-issued area-wide and general permits. The Department issues approximately 500 administrative permits per year. According to the Department, the fee for an administrative permit varies from $300 for a dune walkover to $1,000 for a swimming pool. The fee for a general permit varies from $300 for a minor structure to $500 for a major structure. A Department-issued area-wide permit is $500. The Department anticipates a negative fiscal impact of $66,800 to the Permit Fee Trust Fund per year for permits that currently qualify for administrative permits or general permits and that will qualify for general permits or Department-issued area-wide perm",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 7097",
@@ -1788,7 +1982,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7147/Analyses/h7147z1.EUS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Clarification on the order of permit applications for public swimming pools may result in cost savings due to issues and problems being identified prior to construction. Owners of one-family and two-family dwellings who are installing or replacing battery-powered smoke alarms will have an added cost when replacing them with battery-powered smoke alarms that are powered by 10-year non-removable, non-replaceable batteries, as required by the bill. Having access to location and pricing information for alternative fuel and electric vehicle charging stations may facilitate the use of vehicles utilizing these types of energy. STORAGE NAME: h7147z1.EUS PAGE: 21 DATE: June 23, 2014",
-   "note": "not yet judged"
+   "note": "savings not tied to a kind of business; costs to homeowners"
   },
   {
    "bill": "HB 7171",
@@ -1799,7 +1993,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7171/Analyses/h7171z1.SAC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill itself does not have a direct fiscal impact on the private sector; however, the substantive policy of the rule being exempted is expected to have an economic impact on the private sector. Those impacts are analyzed in DEP’s Statement of Estimated Regulatory Costs (SERC) for the rule. According to the SERC , based on the SRWMD’s analysis of likely water use permit renewals in the SRWMD and the SJRWMD (permits expiring in years 2014 through 2018) and assessment of future new water use projections and recent new water use permit applications, the SRWMD estimates the proposed Rule 62-42.300 is likely to affect some future agricultural water users (approximately 68 over a five-year timeframe) in the Santa Fe Basin because potential adverse impacts to the MFL water bodies resulting from new and increased water quantity allocations must be offset for 13.8 MGD. If all of the 13.8 MGD were offset by implementing additional agricultural water conservation measures, the cost of providing these offsets would be approximately $3 million over a five-year timeframe (approximately $600,000 per year) for agricultural water users. The existing SRWMD cost-share program typically covers 80 percent of retrofit costs and is expected to substantially reduce the cost to be borne by the agricultural users. In addition, CUP renewals for existing water use that impact the MFL water body are limited to a five- year permit duration. There could be an ",
-   "note": "not yet judged"
+   "note": "costs to agricultural water users; burden only"
   },
   {
    "bill": "HB 7177",
@@ -1819,9 +2013,14 @@
    "title": "Cannabis",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1030",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1030/Analyses/2014s1030.ap.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "medical cannabis (low-THC) dispensing organizations",
+    "named": [],
+    "quote": "CS/CS/SB 1030 may have a positive fiscal impact on private sector organizations that are approved by the DOH to become dispensing organizations."
+   },
    "screen": "Private Sector Impact: CS/CS/SB 1030 may have a positive fiscal impact on private sector organizations that are approved by the DOH to become dispensing organizations.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 1700",
@@ -1876,7 +2075,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7055/Analyses/h7055z1.CRJS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Families who are currently financially unable to access various services may have increased access to services, such as tutoring and counseling, as a result of the establishment of evening reporting centers. Children who may currently be subject to placement in secure detention for technical violations of probation may not be required to go into secure detention because the bill creates an alternative consequence option to handle noncompliance with the technical conditions of probation. This could assist these children with maintaining any employment they currently possess. STORAGE NAME: h7055z1.CRJS PAGE: 21 DATE: June 27, 2014 Doctors and hospitals that currently provide services to children in the custody of DJJ without a contract may collect less money for the same services they currently provide if their fees are capped at 110 percent of the Medicare allowable rate.",
-   "note": "not yet judged"
+   "note": "families benefit; doctors and hospitals may collect less"
   },
   {
    "bill": "HB 709",
@@ -1909,7 +2108,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/5203/Analyses/h5203z1.HCAS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The possible addition of NCI-designated cancer centers to the state may generate positive fiscal outcomes for the private sector including, but not limited to, an increase of high paying jobs and other economic benefits. However, the specific economic impact is unknown.",
-   "note": "not yet judged"
+   "note": "private sector generally (jobs)"
   },
   {
    "bill": "HB 977",
@@ -1929,9 +2128,14 @@
    "title": "Professional Sports Facilities",
    "url": "https://www.flsenate.gov/Session/Bill/2014/7095",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7095/Analyses/h7095z1.EDTS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "professional sports facility owners; construction sector",
+    "named": [],
+    "quote": "The provisions of the bill may encourage the owners or operators of professional sports facilities to undertake major renovations which could have positive impacts on the construction sector."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The provisions of the bill may encourage the owners or operators of professional sports facilities to undertake major renovations which could have positive impacts on the construction sector. Additionally, such improvements could have a positive impact on sports tourism within the state.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 132",
@@ -1942,7 +2146,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/132/Analyses/2014s0132.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Under CS/SB 132, persons who purchase the Fallen Law Enforcement Officers, Florida Sheriffs Association, St. Johns River, or the Hispanic Achievers specialty license plate will pay the $25 annual use fee. The Police and Kids Foundation, Inc., St. Johns River 10 See supra note 10. BILL: CS/CS/SB 132 Page 7 Alliance, the Florida Sheriffs Association, and the National Hispanic Corporate Achievers, Inc., will receive revenue from each voucher purchase, after retention of funds by the department. It is unknown how many vehicle owners will voluntarily purchase the plates.",
-   "note": "not yet judged"
+   "note": "named nonprofits receiving specialty plate revenue, not businesses (as 2020-178, 2020-181)"
   },
   {
    "bill": "SB 218",
@@ -1951,9 +2155,14 @@
    "title": "Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/218",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/218/Analyses/2014s0218-ref2.tr.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "tourist-oriented businesses and sports facilities (sign permit exemptions)",
+    "named": [],
+    "quote": "The authorization to use signs without a permit to advertise local tourist-oriented businesses; farm products; public school club, team, or event sponsors; and products and services directly related to a sports facility’s activities or offered on the sports facility’s property provides greater opportunity to attract people to such businesses or events."
+   },
    "screen": "Private Sector Impact: The FDOT’s authorization to improve and maintain city or county roads that provide access to state parks may attract more park visitors. Properties owners served by affected roadways may be exposed to takings but may also benefit from additional capacity provided on the roadway. In the event the FDOT bears the cost of utility work for municipally- or county-owned utility removal or relocation, and such action avoids delay of a project on the State Highway System, a positive but indeterminate fiscal impact to businesses and private individuals may be realized under CS/SB 218. BILL: CS/CS/CS/SB 218 Page 11 The authorization to use signs without a permit to advertise local tourist-oriented businesses; farm products; public school club, team, or event sponsors; and products and services directly related to a sports facility’s activities or offered on the sports facility’s property provides greater opportunity to attract people to such businesses or events. Revision of the TOD sign program to eliminate restriction of the program to signs at intersections in a RACEC provides greater opportunity for business participation in the program. Participants may be subject to permit fees established by local governments.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 226",
@@ -2019,7 +2228,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/286/Analyses/2014s0286.go.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Proposed payments by concrete masonry manufacturers to Florida Concrete Masonry Council, Inc., are self-imposed voluntary assessments on concrete masonry units produced and sold in the state. Additionally, the council may accept grants, donations, contributions, or gifts. The fiscal impact cannot be determined because of the voluntary nature of the anticipated revenue. Government Sector Impact: The council may provide governmental bodies with requested information relating to subjects of concern to the industry. The council may act jointly or in cooperation with the state or federal government and their agencies in the development or administration of programs that the council considers to be consistent with this act.",
-   "note": "not yet judged"
+   "note": "voluntary assessments by concrete masonry manufacturers; no benefit stated"
   },
   {
    "bill": "SB 360",
@@ -2074,7 +2283,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/424/Analyses/2014s0424.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: To the extent an applicant or insured who lawfully owns, possesses, or uses a firearm or ammunition and has had coverage previously denied, nonrenewed, or cancelled due to such lawful firearm ownership, possession, or use, CS/CS/SB 424 can provide additional coverage options. Information about lawful gun ownership collected by an insurer cannot be shared with affiliates or third parties without the express consent or “opt-in” by the insured or applicant, or when the necessity arises under the limits of the bill. The bill prohibits insurers from denying, nonrenewing, or cancelling coverage or charging unfairly discriminatory rates based on the lawful ownership, possession, or use of a firearm or ammunition and authorizes the OIR to impose penalties on insurers that engage in this practice. To the extent an insurer collects and shares information regarding lawful gun ownership, an insurer may incur indeterminate administrative costs revising its notice and disclosure process to comply with the “opt-in” and notice requirements required by the bill. Currently, an insurer is required to provide a consumer with an opportunity to opt-out of disclosures with nonaffiliated third parties (with some exceptions); however, no opt-out applies with respect to disclosures to affiliates.",
-   "note": "not yet judged"
+   "note": "gun owners benefit; insurers bear costs"
   },
   {
    "bill": "SB 754",
@@ -2083,9 +2292,14 @@
    "title": "Certificates of Title",
    "url": "https://www.flsenate.gov/Session/Bill/2014/754",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/754/Analyses/2014s0754.tr.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "automobile insurers; automobile auction companies",
+    "named": [],
+    "quote": "Automobile Auctions – Automobile auction companies should benefit from the changes in the bill."
+   },
    "screen": "Private Sector Impact: Automobile Insurers – Under the changes in this bill, insurers could receive more money for some of the total loss cars they sell at auction. Receiving more money for such vehicles would have a positive impact on an insurers lost costs which is a component when formulating rates. Salvage Part Dealers – Salvage dealers will be negatively impacted by the changes in the bill. Currently only licensed salvage dealers can purchase COD vehicles. Potentially, the bill would allow an indeterminate amount of vehicles given a COD under the current threshold to be given a salvage title instead. If auctioned or sold, more groups such as auto dealers would be able to bid on or purchase such vehicles. As a result of more 14 ss. 775.082, 775.083, and 775.084, F.S. BILL: CS/CS/SB 754 Page 6 competition on salvage titled vehicles, salvage dealers could potentially end up paying more for the vehicles they use to sell scrap metal and parts from. An increase in costs in acquiring vehicles could increase costs and prices on used auto parts that are sold to the general public. Automobile Auctions – Automobile auction companies should benefit from the changes in the bill. Generally, the more money an automobile sells for at auction the more money the auction company makes.",
-   "note": "not yet judged"
+   "note": "also insurers get more for total-loss cars; salvage dealers lose",
+   "votes": {}
   },
   {
    "bill": "SB 828",
@@ -2105,9 +2319,14 @@
    "title": "Governmental Ethics",
    "url": "https://www.flsenate.gov/Session/Bill/2014/846",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/846/Analyses/s0846z1.SAC.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "private ethics training providers",
+    "named": [],
+    "quote": "The bill may have a positive fiscal impact on private providers of ethics training if elected municipal officers choose to enroll in private courses to satisfy the annual training requirement."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill permits water management districts to collect up to $40 per principal for lobbyist registrations. Because the number of lobbyists varies depending on the district, and due to the permissive nature of the registration fee provision, the actual impact is indeterminate. The bill may have a positive fiscal impact on private providers of ethics training if elected municipal officers choose to enroll in private courses to satisfy the annual training requirement. According to the League of Cities, there are approximately 2,200 elected municipal officers in the state. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: s0846z1.SAC PAGE: 16 DATE: June 24, 2014",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 850",
@@ -2118,7 +2337,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/850/Analyses/2014s0850.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: A student who completes the one year of college and earns industry certifications before high school graduation, as afforded by the rigorous acceleration options in CS/CS/SB 850, will benefit from a significant savings on the costs associated with college education and earning industry certifications after high school graduation. BILL: CS/CS/SB 850 Page 8",
-   "note": "not yet judged"
+   "note": "students"
   },
   {
    "bill": "SB 858",
@@ -2173,7 +2392,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1524/Analyses/2014s1524.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The fiscal impact on the private sector is expected be minimal. The provisions related to notification of a security breach to affected individuals is similar to the notification required by current law. However, the time frame for the notification has been reduced from 45 days in current law to 30 days in the bill. The notification to the DLA is a new requirement, but the cost is expected to be minimal.35 The bill contains civil penalties for noncompliance with its provisions. The civil penalty amounts remain at the same level as current law. It is unknown how often businesses may be subject to the civil penalties for noncompliance. The bill mandates that businesses properly dispose of customer records containing personal information. The fiscal impact of this requirement is unknown. However, many businesses may already be required to properly dispose of customer records under other laws, such as the HIPAA and the Gramm-Leach-Bliley Act.",
-   "note": "not yet judged"
+   "note": "costs to businesses generally"
   },
   {
    "bill": "SB 1526",
@@ -2250,7 +2469,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/175/Analyses/h0175z1.EUS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill requires retail sellers of prepaid wireless service to collect the E911 fee on such transactions (other than those involving service of 10 minutes or less or $5 or less) and remit the proceeds to DOR. For these sellers, this requirement imposes initial costs for system setup and ongoing costs for collections and remittance. To address these costs, the bill allows sellers to retain 100 percent of their E911 fee collections for the first two months of collections and allows sellers to retain five percent of their E911 fee collections thereafter. Consumers of prepaid wireless service with access to the E911 system will pay an E911 fee on those services. The E911 fee currently paid by consumers of other voice communications services will be reduced from $0.50 to $0.40 per month in most counties.",
-   "note": "not yet judged"
+   "note": "prepaid wireless sellers bear collection costs (retained share offsets them), as 2014-66"
   },
   {
    "bill": "HB 177",
@@ -2283,7 +2502,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/343/Analyses/h0343z2.THSS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Persons using car-sharing services for less than a 24-hour period will see a reduction in the rental car surcharge that they will pay. STORAGE NAME: h0343z2.THSS PAGE: 4 DATE: June 26, 2014",
-   "note": "not yet judged"
+   "note": "car-sharing customers (consumers)"
   },
   {
    "bill": "HB 409",
@@ -2347,9 +2566,14 @@
    "title": "Licensure to Carry a Concealed Weapon or Firearm",
    "url": "https://www.flsenate.gov/Session/Bill/2014/523",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/523/Analyses/h0523z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "firearms safety and training course companies",
+    "named": [],
+    "quote": "If the convenience of applying at tax collectors’ offices increases the number of applications, the private companies may experience an increase in revenue as a result of more individuals taking the classes."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Applicants pay $112 when applying at the Division regional offices for new licenses and $60 for a renewal license; applicants applying at tax collectors’ offices would pay $134 for a new license and $72 for a renewal license, a difference of $22 and $12, respectively. Local private companies provide the firearms safety and training courses required for initial licensure. If the convenience of applying at tax collectors’ offices increases the number of applications, the private companies may experience an increase in revenue as a result of more individuals taking the classes.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 525",
@@ -2369,9 +2593,14 @@
    "title": "Service of Process",
    "url": "https://www.flsenate.gov/Session/Bill/2014/627",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/627/Analyses/h0627z1.CJS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "private process servers",
+    "named": [],
+    "quote": "The bill may positively affect revenues of private process servers and appears to increase costs to users of the civil court system."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may positively affect revenues of private process servers and appears to increase costs to users of the civil court system. See Fiscal Comments. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The fiscal impact of the portion of the bill providing that the sheriff may charge a fee for each process served rather than each address served may have unknown fiscal impacts on governments and the private sector. While fees charged by the sheriff are fixed in statute, private process servers are free to charge any fee that the competitive market will bear. Some process servers match the sheriff's fees, some advertise lower fees to attract business, and others charge more and compete on service rather than price. In general, however, economic theory suggests that an increase in the statutory price for service of process generally leads to an increase in the private cost of such service. Should this occur, revenues to sheriffs and to private process servers will increase as a result of this bill, and the cost to the private sector litigants for prosecuting civil lawsuits will correspondingly increase. There is no statistical reporting of how often sheriffs and private process servers currently serve a single individual in multiple capacities, and thus no means to accurately estimate the fiscal impact of the bill. STORAGE NAME: h0627z1.CJS PAGE: 4 DATE: June 27, 2014",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 641",
@@ -2437,7 +2666,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/865/Analyses/h0865z1.THSS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Prohibiting access to the phone numbers and addresses of crash victims in motor vehicle crash reports may help protect crash victims and their families from illegal PIP solicitations. This may have a negative fiscal impact to the entities soliciting crash victims or engaged in a business that profits from the sale of crash victim information.",
-   "note": "not yet judged"
+   "note": "negative for crash-report solicitors; burden only"
   },
   {
    "bill": "HB 979",
@@ -2457,9 +2686,14 @@
    "title": "Department of Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1161",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1161/Analyses/h1161z1.THSS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "outdoor sign owners; businesses on highway logo signs",
+    "named": [],
+    "quote": "Placing logo signs on additional limited access facilities could potentially increase revenue at those establishments that advertise on the logo signs."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill expands the list of exemptions from permitting requirements for certain signs. To the extent a sign owner had been paying for permits for these signs in the past, this change will have a positive impact on the private sector. Such signs are also required to be removed at the owner’s expense should DOT find the sign must be removed due to federal notification. The net effect of these provisions on a sign owner is indeterminate. Placing logo signs on additional limited access facilities could potentially increase revenue at those establishments that advertise on the logo signs. Any possible impact to the private sector is indeterminate. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: Failure of the state to maintain control of its outdoor advertising could result in a 10 percent reduction in federal highway funds, which correlates to approximately $160 million annually. If FHWA reduces funds which would be apportioned to DOT due to a local government’s failure to comply with land use determination requirements, DOT will reduce the state’s apportioned transportation funding within the jurisdiction of the local government entity in an equivalent amount. To the extent this situation arises, there would be an impact on a local government, but such impact is indeterminate at this time. The bill removes the existing $75 fine against a sign owner who has been assessed the cost of sign removal for a sign found in violation of the law. A",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 7005",
@@ -2470,7 +2704,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7005/Analyses/h7005z2.THSS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: Non-Driving Related Driver License Suspensions On March 14, 2014, the REC adopted an overall negative indeterminate fiscal impact on state and local revenues due to the non-driving related driver license suspension provisions of this bill. The REC projected a positive indeterminate impact to the state associated with reducing the length of revocation for drug convictions from two years to one year; an insignificant impact to the state from allowing the court to order a business purposes only driver license for sales to minors and theft offenders; and a negative indeterminate impact to the state from prohibiting the court from suspending the driver license for a first offense, and authorizing the court to suspend for second or subsequent offenses.296 According to the Office of the State Courts Administrator, the bill is likely to have both positive and negative impacts to judicial workload. To the extent the bill will reduce driving while suspended cases, judicial workload will be reduced. However, the requirement for a judge to determine in every qualifying drug case whether a BPO should be issued, could provide for a cumulatively substantial increase in judicial time.297 According to DHSMV, the bill’s fiscal impact to the department will be minimal indeterminate. A one- time amount of $9,400 will be required for programming costs for implementation.298 296 The Revenu",
-   "note": "not yet judged"
+   "note": "section refers to fiscal comments, which cover government only"
   },
   {
    "bill": "HB 7007",
@@ -2492,7 +2726,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7023/Analyses/h7023z1.EDTS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Rural Areas of Critical Economic Concern The bill may have a slight positive effect on economic development in rural areas.",
-   "note": "not yet judged"
+   "note": "rural areas generally"
   },
   {
    "bill": "HB 7029",
@@ -2545,9 +2779,14 @@
    "title": "Department of Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/7175",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7175/Analyses/h7175z1.EAC.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "trucking industry; businesses on highway logo signs",
+    "named": [],
+    "quote": "The additional weight allowed for auxiliary power units has an indeterminate but positive fiscal impact on the trucking industry due to being able to carry a slightly heavier load."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The additional weight allowed for auxiliary power units has an indeterminate but positive fiscal impact on the trucking industry due to being able to carry a slightly heavier load. The bill expands the list of exemptions from permitting requirements for certain signs. To the extent a sign owner had been paying for permits for these signs in the past, this change will have a positive impact on the private sector. Such signs are also required to be removed at the owner’s expense should DOT find the sign must be removed due to federal notification. The net effect of these provisions on a sign owner is indeterminate. Placing logo signs on additional limited access facilities could potentially increase revenue at those establishments that advertise on the logo signs. Any possible impact to the private sector is indeterminate. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: STORAGE NAME: h7175z1.EAC PAGE: 37 DATE: June 25, 2014 In Fiscal Year 2009-2010, DOT implemented the FSPRC without any additional resources or appropriations. Eliminating the FSPRC enables these resources to be directed back to their original purpose. DOT advised that projects to be funded as part of the strategic airport investment initiative will be included in DOT’s work program budget submitted annually for Legislative approval. While this does not have the effect of an immediate fiscal impact, to the extent such strategic airport investment initiatives become project",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 1666",
@@ -2578,9 +2817,14 @@
    "title": "Child Safety Devices in Motor Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2014/225",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/225/Analyses/h0225z1.THSS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "sellers of child restraint devices (booster seats)",
+    "named": [],
+    "quote": "There may be an increase in overall sales of CRDs, including booster seats, for children aged 4 through 5 due to the bill’s removal of the seat belt authorization for this age group and the inclusion of booster seats as one of the three child restraint devices required for this age group."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Motor vehicle operators will be required to use either a child booster seat, a separate carrier, or an integrated child seat to transport children within the ages of 4 through 5. Seat belts alone will no longer be legal restraints for children ages 4 through 5, unless the child:  Is being transported gratuitously by an operator who is not a member of the child’s immediate family;  Is being transported in a medical emergency situation involving the child; or  Has a medical condition which necessitates an exception as evidenced by appropriate documentation from a health professional.. There may be an increase in overall sales of CRDs, including booster seats, for children aged 4 through 5 due to the bill’s removal of the seat belt authorization for this age group and the inclusion of booster seats as one of the three child restraint devices required for this age group. STORAGE NAME: h0225z1.THSS PAGE: 4 DATE: June 30, 2014 Individuals who fail to use child restraint devices will be subject to a fine of at least $60 and a three point assessment on the operator’s driver license. However, it is unknown how many additional violations will occur. As a result, the fiscal impact is indeterminate. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: While indeterminate, the bill may generate additional fine revenues for state and local governments, the amount of which cannot be quantified as it is unknown how many citations will be issued for viol",
-   "note": "not yet judged"
+   "note": "judgment call: increased sales of a named product, as 2020-11 (fireworks sellers)",
+   "votes": {}
   },
   {
    "bill": "HB 561",
@@ -2612,8 +2856,8 @@
    "url": "https://www.flsenate.gov/Session/Bill/2014/605",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/605/Analyses/h0605z.LFAC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": "Private Sector section not found in the converted text"
+   "screen": "NOSECTION FISCAL ANALYSIS, ECONOMIC IMPACT STATEMENT, & NOTICE/REFERENDUM A. FISCAL IMPACT ON STATE GOVERNMENT: 1. Revenues: None. 2. Expenditures: None. B. FISCAL IMPACT ON LOCAL GOVERNMENTS: 1. Revenues: None. 2. Expenditures: None. C. ECONOMIC IMPACT STATEMENT FILED? Yes [X] No [] D. NOTICE PUBLISHED? Yes [X] No [] IF YES, WHEN? November 7, 2013 WHERE? The Villages Daily Sun, a daily newspaper published in Sumter County, Florida. E. REFERENDUM(S) REQUIRED? Yes [] No [X] 11 Department of Business and Professional Regulation, 2014 Legislative Bill Analysis, HB 605. STORAGE NAME: h0605z.LFAC PAGE: 3 DATE: May 15, 2014",
+   "note": "local bill (Lake and Sumter alcohol licenses); fiscal analysis names no private party"
   },
   {
    "bill": "HB 683",
