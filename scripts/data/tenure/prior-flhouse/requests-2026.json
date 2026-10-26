@@ -1,6 +1,6 @@
 {
- "source": "Florida House Appropriations Project Requests for the 2026 session (flhouse.gov/AppropriationProjectRequests/2026) filed by Vicki Lopez. PARTIAL: only the rows visible in the WebFetch copy of the list (it stops at about the 470th form); the full list and each form's date, recipient and lobbyist need the browser (needs-browser.md APR-LOPEZ). Counts are 'at least'. Budget status: the form number looked up as '(HF n)' in the HB 5001-E General Appropriations Act as printed in the Laws of Florida (ch. 2026-232), where vetoed language is struck through.",
- "listPartial": true,
+ "source": "Florida House Appropriations Project Requests for the 2026 session (flhouse.gov/AppropriationProjectRequests/2026) filed by Vicki Lopez. Every form, read in the browser. Budget status: the form number looked up as '(HF n)' in the HB 5001-E General Appropriations Act as printed in the Laws of Florida (ch. 2026-232), where vetoed language is struck through.",
+ "listPartial": false,
  "budget": {
   "law": "HB 5001-E",
   "ch": "Ch. 2026-232",
@@ -14,28 +14,35 @@
   "withdrawn": 1,
   "inBudget": 0,
   "vetoed": 0,
-  "lobbied": 0
+  "lobbied": 1
  },
  "requests": [
   {
    "fy": 2026,
    "form": 1456,
-   "docId": null,
-   "date": null,
+   "docId": 457,
+   "date": "2025-11-12",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Best Buddies Jobs Project (Withdrawn)",
-   "recipient": null,
-   "county": null,
+   "recipient": "Best Buddies International, Inc.",
+   "county": "Statewide",
    "ask": 400000,
    "cmte": "PreK-12 Budget Subcommittee",
-   "formRead": false,
-   "lobbied": [],
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Best Buddies International, Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": true,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2026"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=&id=457"
   }
  ],
  "note": "Lopez resigned from the House on Nov 18, 2025, before the 2026 session; forms she filed for it are listed as filed."

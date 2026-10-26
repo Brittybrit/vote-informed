@@ -1,6 +1,6 @@
 {
- "source": "Florida House Appropriations Project Requests for the 2024 session (flhouse.gov/AppropriationProjectRequests/2024) filed by Vicki Lopez. PARTIAL: only the rows visible in the WebFetch copy of the list (it stops at about the 470th form); the full list and each form's date, recipient and lobbyist need the browser (needs-browser.md APR-LOPEZ). Counts are 'at least'. Budget status: the form number looked up as '(HF n)' in the HB 5001 General Appropriations Act as printed in the Laws of Florida (ch. 2024-231), where vetoed language is struck through.",
- "listPartial": true,
+ "source": "Florida House Appropriations Project Requests for the 2024 session (flhouse.gov/AppropriationProjectRequests/2024) filed by Vicki Lopez. Every form, read in the browser. Budget status: the form number looked up as '(HF n)' in the HB 5001 General Appropriations Act as printed in the Laws of Florida (ch. 2024-231), where vetoed language is struck through.",
+ "listPartial": false,
  "budget": {
   "law": "HB 5001",
   "ch": "Ch. 2024-231",
@@ -10,26 +10,26 @@
   "vetoUrl": "https://laws.flrules.org/2024/231"
  },
  "counts": {
-  "forms": 31,
+  "forms": 64,
   "withdrawn": 2,
-  "inBudget": 17,
-  "vetoed": 9,
-  "lobbied": 0
+  "inBudget": 36,
+  "vetoed": 17,
+  "lobbied": 58
  },
  "requests": [
   {
    "fy": 2024,
    "form": 1004,
-   "docId": null,
-   "date": null,
+   "docId": 4,
+   "date": "2023-08-18",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Facil Health",
-   "recipient": null,
-   "county": null,
+   "recipient": "FacilHelp Corp",
+   "county": "Miami-Dade",
    "ask": 500000,
-   "cmte": null,
-   "formRead": false,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
    "lobbied": [],
    "withdrawn": false,
    "budget": {
@@ -39,104 +39,132 @@
     "vetoed": 250000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=4"
   },
   {
    "fy": 2024,
    "form": 1006,
-   "docId": null,
-   "date": null,
+   "docId": 6,
+   "date": "2023-09-25",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Scouting - Learning for Life",
-   "recipient": null,
-   "county": null,
+   "recipient": "South Florida Council, Boy Scouts of America",
+   "county": "Miami-Dade",
    "ask": 500000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Christopher L. Carmody",
+     "firm": "GrayRobinson PA",
+     "for": "South Florida Council, Boy Scouts of America",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=6"
   },
   {
    "fy": 2024,
    "form": 1008,
-   "docId": null,
-   "date": null,
+   "docId": 8,
+   "date": "2023-09-29",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "The Rok Shul Culinary Vocational Program (Withdrawn)",
-   "recipient": null,
-   "county": null,
+   "recipient": "The Shul of Downtown, Inc.",
+   "county": "Miami-Dade",
    "ask": 350000,
-   "cmte": null,
-   "formRead": false,
+   "cmte": "Higher Education Appropriations Subcommittee",
+   "formRead": true,
    "lobbied": [],
    "withdrawn": true,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=8"
   },
   {
    "fy": 2024,
    "form": 1022,
-   "docId": null,
-   "date": null,
+   "docId": 22,
+   "date": "2023-10-12",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "New Heights Microloan Fund",
-   "recipient": null,
-   "county": null,
+   "recipient": "Partners for Self-Employment",
+   "county": "Miami-Dade",
    "ask": 300000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Partners for Self-Employment",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=22"
   },
   {
    "fy": 2024,
    "form": 1023,
-   "docId": null,
-   "date": null,
+   "docId": 23,
+   "date": "2023-10-11",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Women in Distress Housing Expansion",
-   "recipient": null,
-   "county": null,
+   "recipient": "Women in Distress of Broward County",
+   "county": "Broward",
    "ask": 2500000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Women in Distress of Broward County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 2500000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=23"
   },
   {
    "fy": 2024,
    "form": 1024,
-   "docId": null,
-   "date": null,
+   "docId": 24,
+   "date": "2023-09-26",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Foster Home Diversion and Mental Health Programs for Better Foster Child & Youth Outcomes",
-   "recipient": null,
-   "county": null,
+   "recipient": "Voices for Children Foundation Inc.",
+   "county": "Miami-Dade",
    "ask": 400000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Monica L. Rodriguez",
+     "firm": "Ballard Partners",
+     "for": "Voices for Children Foundation Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -145,22 +173,29 @@
     "vetoed": 200000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=24"
   },
   {
    "fy": 2024,
    "form": 1035,
-   "docId": null,
-   "date": null,
+   "docId": 35,
+   "date": "2023-10-16",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Triangle Park and Children's Academy Pedestrian Safety Initiative",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade Department of Transportation & Public Works",
+   "county": "Miami-Dade",
    "ask": 1300000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Miami-Dade Department of Transportation & Public Works",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -169,22 +204,29 @@
     "vetoed": 1200000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=35"
   },
   {
    "fy": 2024,
    "form": 1036,
-   "docId": null,
-   "date": null,
+   "docId": 36,
+   "date": "2023-10-17",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Non-Vehicular Traffic Lane Safety Hardening Project",
-   "recipient": null,
-   "county": null,
+   "recipient": "The Miami Downtown Development Authority",
+   "county": "Miami-Dade",
    "ask": 300000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Joseph R. Salzverg",
+     "firm": "GrayRobinson PA",
+     "for": "The Miami Downtown Development Authority",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -193,104 +235,139 @@
     "vetoed": 150000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=36"
   },
   {
    "fy": 2024,
    "form": 1037,
-   "docId": null,
-   "date": null,
+   "docId": 37,
+   "date": "2023-10-12",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Miami-Dade Public Housing and Community Development River Parc Green (Withdrawn)",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade Public Housing and Community Development",
+   "county": "Miami-Dade",
    "ask": 2000000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Miami-Dade Public Housing and Community Development",
+     "src": "form"
+    }
+   ],
    "withdrawn": true,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=37"
   },
   {
    "fy": 2024,
    "form": 1046,
-   "docId": null,
-   "date": null,
+   "docId": 46,
+   "date": "2023-10-16",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Miami-Dade County Biscayne Bay Restoration Support through Data Analytics and Visualization",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 1000000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=46"
   },
   {
    "fy": 2024,
    "form": 1055,
-   "docId": null,
-   "date": null,
+   "docId": 55,
+   "date": "2023-10-18",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Transitional Housing for Justice-Involved Women",
-   "recipient": null,
-   "county": null,
+   "recipient": "Ladies Empowerment & Action Program, Inc.",
+   "county": "Miami-Dade",
    "ask": 400000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Justice Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Ladies Empowerment & Action Program, Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=55"
   },
   {
    "fy": 2024,
    "form": 1063,
-   "docId": null,
-   "date": null,
+   "docId": 63,
+   "date": "2023-10-19",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Habitat Acres - A Habitat Miami Community",
-   "recipient": null,
-   "county": null,
+   "recipient": "Habitat for Humanity of Greater Miami",
+   "county": "Miami-Dade",
    "ask": 1000000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Miguel Abad",
+     "firm": "CCC Miami",
+     "for": "Habitat for Humanity of Greater Miami",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 500000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=63"
   },
   {
    "fy": 2024,
    "form": 1068,
-   "docId": null,
-   "date": null,
+   "docId": 68,
+   "date": "2023-10-20",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "PortMiami Workforce Needs Assessment",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 150000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -299,84 +376,112 @@
     "vetoed": 75000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=68"
   },
   {
    "fy": 2024,
    "form": 1079,
-   "docId": null,
-   "date": null,
+   "docId": 79,
+   "date": "2023-10-16",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Miami-Dade County Biscayne Bay Watershed Plan",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 500000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 500000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=79"
   },
   {
    "fy": 2024,
    "form": 1090,
-   "docId": null,
-   "date": null,
+   "docId": 90,
+   "date": "2023-10-23",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Second Chances for Stronger Communities, An Innovative Violence Reduction and Reentry Strategy",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 375000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Justice Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=90"
   },
   {
    "fy": 2024,
    "form": 1096,
-   "docId": null,
-   "date": null,
+   "docId": 96,
+   "date": "2023-10-20",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Shake A Leg Miami Marine & Hospitality Industry Vocational Program",
-   "recipient": null,
-   "county": null,
+   "recipient": "Shake A Leg Miami",
+   "county": "Miami-Dade",
    "ask": 618820,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Higher Education Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Shake A Leg Miami",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=96"
   },
   {
    "fy": 2024,
    "form": 1137,
-   "docId": null,
-   "date": null,
+   "docId": 137,
+   "date": "2023-10-26",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Vision Zero Pedestrian Safety Improvements - SW 2 Street",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 500000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -385,22 +490,29 @@
     "vetoed": 250000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=137"
   },
   {
    "fy": 2024,
    "form": 1150,
-   "docId": null,
-   "date": null,
+   "docId": 150,
+   "date": "2023-10-27",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Banyan Health System Dade Chase Facility Renovation and Expansion of Mental Health and Substance Abuse Beds",
-   "recipient": null,
-   "county": null,
+   "recipient": "Banyan Health Systems",
+   "county": "Miami-Dade",
    "ask": 1200000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Banyan Health Systems",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -409,22 +521,29 @@
     "vetoed": 250000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=150"
   },
   {
    "fy": 2024,
    "form": 1154,
-   "docId": null,
-   "date": null,
+   "docId": 154,
+   "date": "2023-10-27",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "The Miami Project to Cure Paralysis - Spinal Cord and Traumatic Brain Injury Research",
-   "recipient": null,
-   "county": null,
+   "recipient": "University of Miami Miller School of Medicine",
+   "county": "Miami-Dade",
    "ask": 2000000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "University of Miami Miller School of Medicine",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -432,22 +551,29 @@
     "amount": 1000000,
     "proviso": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=154"
   },
   {
    "fy": 2024,
    "form": 1155,
-   "docId": null,
-   "date": null,
+   "docId": 155,
+   "date": "2023-10-23",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Anti-Violence Initiative: Mental Health in Communities and County Jails",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
    "ask": 990000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -456,124 +582,159 @@
     "vetoed": 990000,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=155"
   },
   {
    "fy": 2024,
    "form": 1156,
-   "docId": null,
-   "date": null,
+   "docId": 156,
+   "date": "2023-10-25",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
-   "title": "Greater Miami Jewish Federation's Holocaust Memorial",
-   "recipient": null,
-   "county": null,
+   "title": "Greater Miami Jewish Federation’s Holocaust Memorial",
+   "recipient": "Holocaust Memorial, Inc",
+   "county": "Miami-Dade",
    "ask": 1500000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Holocaust Memorial, Inc",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 1500000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=156"
   },
   {
    "fy": 2024,
    "form": 1157,
-   "docId": null,
-   "date": null,
+   "docId": 157,
+   "date": "2023-10-27",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Scoring Goals for South Florida",
-   "recipient": null,
-   "county": null,
+   "recipient": "Soccer For Peace Foundation Inc., dba FCC USA",
+   "county": "Miami-Dade",
    "ask": 200000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "None None",
+     "firm": null,
+     "for": "Soccer For Peace Foundation Inc., dba FCC USA",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=157"
   },
   {
    "fy": 2024,
    "form": 1171,
-   "docId": null,
-   "date": null,
+   "docId": 171,
+   "date": "2023-10-27",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Community Reentry Coordination - Unite Us",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County Corrections and Rehabilitation",
+   "county": "Miami-Dade",
    "ask": 241657,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Justice Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jess M. McCarty",
+     "firm": null,
+     "for": "Miami-Dade County Corrections and Rehabilitation",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=171"
   },
   {
    "fy": 2024,
    "form": 1234,
-   "docId": null,
-   "date": null,
+   "docId": 234,
+   "date": "2023-10-31",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Anti-Violence Initiative: Music and Mentorship",
-   "recipient": null,
-   "county": null,
+   "recipient": "Guitars Over Guns Organization, Inc.",
+   "county": "Miami-Dade",
    "ask": 400000,
-   "cmte": null,
-   "formRead": false,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
    "lobbied": [],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=234"
   },
   {
    "fy": 2024,
    "form": 1300,
-   "docId": null,
-   "date": null,
+   "docId": 300,
+   "date": "2023-11-02",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Amigos LEAD (Learning, Enrichment & Academic Development) Program",
-   "recipient": null,
-   "county": null,
+   "recipient": "Amigos Together For Kids, Inc.",
+   "county": "Miami-Dade",
    "ask": 250000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Andreina Figueroa",
+     "firm": "ADF Consulting LLC",
+     "for": "Amigos Together For Kids, Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=300"
   },
   {
    "fy": 2024,
    "form": 1399,
-   "docId": null,
-   "date": null,
+   "docId": 399,
+   "date": "2023-11-07",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "ABC Institute, Inc. - Building Florida's Future",
-   "recipient": null,
-   "county": null,
+   "recipient": "ABC Institute, Inc.",
+   "county": "Statewide",
    "ask": 625000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Carol Bowen",
+     "firm": "Carol Bowen Strategies, LLC",
+     "for": "ABC Institute, Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
@@ -582,113 +743,1074 @@
     "vetoed": 312500,
     "allVetoed": true
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=399"
   },
   {
    "fy": 2024,
    "form": 1444,
-   "docId": null,
-   "date": null,
+   "docId": 443,
+   "date": "2023-11-06",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Best Buddies Jobs Project",
-   "recipient": null,
-   "county": null,
+   "recipient": "Best Buddies International, Inc.",
+   "county": "Statewide",
    "ask": 400000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Rana G. Brown",
+     "firm": "Ronald L. Book PA",
+     "for": "Best Buddies International, Inc.",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 400000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=443"
   },
   {
    "fy": 2024,
    "form": 1470,
-   "docId": null,
-   "date": null,
+   "docId": 469,
+   "date": "2023-11-07",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Project Lazarus Specialized Outreach",
-   "recipient": null,
-   "county": null,
+   "recipient": "Miami-Dade County Homeless Trust",
+   "county": "Miami-Dade",
    "ask": 175000,
-   "cmte": null,
-   "formRead": false,
-   "lobbied": [],
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Miami-Dade County Homeless Trust",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 175000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=469"
+  },
+  {
+   "fy": 2024,
+   "form": 1471,
+   "docId": 470,
+   "date": "2023-11-06",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami-Dade/Monroe Crisis Helpline Equity",
+   "recipient": "Jewish Community Services of Florida",
+   "county": "Miami-Dade",
+   "ask": 180000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Jewish Community Services of Florida",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 180000,
+    "vetoed": 180000,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=470"
   },
   {
    "fy": 2024,
    "form": 1472,
-   "docId": null,
-   "date": null,
+   "docId": 471,
+   "date": "2023-11-07",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
-   "title": "Miami-Dade/Monroe Crisis Helpline Equity",
-   "recipient": null,
-   "county": null,
-   "ask": 180000,
+   "title": "Housing First for Homeless Persons with Special Needs",
+   "recipient": "Miami-Dade County Homeless Trust",
+   "county": "Miami-Dade",
+   "ask": 562000,
    "cmte": "Health Care Appropriations Subcommittee",
-   "formRead": false,
-   "lobbied": [],
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Miami-Dade County Homeless Trust",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "in",
     "lines": 1,
     "amount": 562000
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=471"
   },
   {
    "fy": 2024,
    "form": 1473,
-   "docId": null,
-   "date": null,
-   "member": "Lopez",
-   "pid": "vicki-l-lopez",
-   "title": "Housing First for Homeless Persons with Special Needs",
-   "recipient": null,
-   "county": null,
-   "ask": 562000,
-   "cmte": "Health Care Appropriations Subcommittee",
-   "formRead": false,
-   "lobbied": [],
-   "withdrawn": false,
-   "budget": {
-    "status": "notIn"
-   },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
-  },
-  {
-   "fy": 2024,
-   "form": 1474,
-   "docId": null,
-   "date": null,
+   "docId": 472,
+   "date": "2023-11-07",
    "member": "Lopez",
    "pid": "vicki-l-lopez",
    "title": "Miami SW 32nd Avenue and SW 2nd Street Roadway and Drainage Improvements",
-   "recipient": null,
-   "county": null,
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
    "ask": 1950000,
    "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
-   "formRead": false,
-   "lobbied": [],
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jose K. Fuentes",
+     "firm": "Becker & Poliakoff PA",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
    "withdrawn": false,
    "budget": {
     "status": "notIn"
    },
-   "record": "https://www.flhouse.gov/AppropriationProjectRequests/2024"
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=472"
+  },
+  {
+   "fy": 2024,
+   "form": 1642,
+   "docId": 641,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Village of Key Biscayne Traffic Data Analysis",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 275000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 137500,
+    "vetoed": 137500,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=641"
+  },
+  {
+   "fy": 2024,
+   "form": 1643,
+   "docId": 642,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Acquisition and Renovation of Supportive Housing for Homeless Households",
+   "recipient": "Miami-Dade County",
+   "county": "Miami-Dade",
+   "ask": 5000000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Miami-Dade County",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 1000000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=642"
+  },
+  {
+   "fy": 2024,
+   "form": 1645,
+   "docId": 644,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Village of Key Biscayne - Emergency Management Planning, Training and Exercise",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 250000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Erica Chanti",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 250000,
+    "vetoed": 250000,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=644"
+  },
+  {
+   "fy": 2024,
+   "form": 1646,
+   "docId": 645,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Crandon Boulevard - Multimodal Traffic Flow and Safety Improvements",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 425000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Erica Chanti",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 212500,
+    "vetoed": 212500,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=645"
+  },
+  {
+   "fy": 2024,
+   "form": 1647,
+   "docId": 646,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Caribbean Market Place and Little Haiti Cultural Center Roof Replacement",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 2500000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Mathew Forrest",
+     "firm": "Ballard Partners",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=646"
+  },
+  {
+   "fy": 2024,
+   "form": 1648,
+   "docId": 647,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Village of Key Biscayne - Sargassum Emergency Removal and Disposal",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 450000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Erica Chanti",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=647"
+  },
+  {
+   "fy": 2024,
+   "form": 1789,
+   "docId": 788,
+   "date": "2023-11-08",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Fairview Flood Mitigation - Phase II Pump Station",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 1600000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=788"
+  },
+  {
+   "fy": 2024,
+   "form": 1791,
+   "docId": 790,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Bridging the Digital Divide for Older Adults in Florida – Technology Literacy Training",
+   "recipient": "Older Adults Technology Services, Inc.",
+   "county": "Miami-Dade",
+   "ask": 854461,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Older Adults Technology Services, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 854461
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=790"
+  },
+  {
+   "fy": 2024,
+   "form": 1792,
+   "docId": 791,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Children of Inmates: Family Strengthening and Reunification",
+   "recipient": "Children of Inmates, Inc.",
+   "county": "Statewide",
+   "ask": 750000,
+   "cmte": "Justice Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 350000,
+    "vetoed": 350000,
+    "allVetoed": true,
+    "proviso": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=791"
+  },
+  {
+   "fy": 2024,
+   "form": 1795,
+   "docId": 795,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Beach Intersection and Beach Walk Safety Improvements",
+   "recipient": "City of Miami Beach",
+   "county": "Miami-Dade",
+   "ask": 4850000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "City of Miami Beach",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 2,
+    "amount": 4850000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=795"
+  },
+  {
+   "fy": 2024,
+   "form": 1870,
+   "docId": 870,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Every Dream Begins at Home Program",
+   "recipient": "The Kiwanis of Little Havana Foundation, Inc.",
+   "county": "Miami-Dade",
+   "ask": 350000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Andreina Figueroa",
+     "firm": "ADF Consulting LLC",
+     "for": "The Kiwanis of Little Havana Foundation, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=870"
+  },
+  {
+   "fy": 2024,
+   "form": 1871,
+   "docId": 871,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Pelican Harbor Seabird Station Phase 2",
+   "recipient": "Pelican Harbor Seabird Station, Inc.",
+   "county": "Miami-Dade",
+   "ask": 750000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Melissa Joiner Ramba",
+     "firm": "Floridian Partners LLC",
+     "for": "Pelican Harbor Seabird Station, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=871"
+  },
+  {
+   "fy": 2024,
+   "form": 1872,
+   "docId": 872,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Kristi House - Renovations to Main Building for UM Child Protection Team",
+   "recipient": "Kristi House, Inc.",
+   "county": "Miami-Dade",
+   "ask": 1000000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ashley P. Kalifeh",
+     "firm": "Capital City Consulting LLC",
+     "for": "Kristi House, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 1000000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=872"
+  },
+  {
+   "fy": 2024,
+   "form": 1873,
+   "docId": 873,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Afterschool Literacy and Activities Program",
+   "recipient": "Lil' Abner Foundation",
+   "county": "Miami-Dade",
+   "ask": 454429,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Lil' Abner Foundation",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 454429
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=873"
+  },
+  {
+   "fy": 2024,
+   "form": 1874,
+   "docId": 874,
+   "date": "2023-11-12",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Beach Community Health Center - 710-720 Alton Critical Renovation",
+   "recipient": "Miami Beach Community Health Center, Inc.",
+   "county": "Miami-Dade",
+   "ask": 3000000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "Miami Beach Community Health Center, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 1500000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=874"
+  },
+  {
+   "fy": 2024,
+   "form": 1937,
+   "docId": 937,
+   "date": "2023-11-14",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Educating Youth on the Evils of Communism through the Arts /The Walls Have Ears Play",
+   "recipient": "ALPHA 421 GROUP INC",
+   "county": "Miami-Dade",
+   "ask": 100000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 50000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=937"
+  },
+  {
+   "fy": 2024,
+   "form": 1941,
+   "docId": 941,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Every Child Has a Dream Program",
+   "recipient": "The Kiwanis of Little Havana Foundation, Inc.",
+   "county": "Miami-Dade",
+   "ask": 300000,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Andreina Figueroa",
+     "firm": "ADF Consulting LLC",
+     "for": "The Kiwanis of Little Havana Foundation, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=941"
+  },
+  {
+   "fy": 2024,
+   "form": 1944,
+   "docId": 944,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "K -12 Opioid and Substance Abuse Prevention Red Ribbon Certified Schools (RRCS)",
+   "recipient": "Informed Families/The Florida Family Partnership",
+   "county": "Miami-Dade",
+   "ask": 498950,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ramon Maury",
+     "firm": "Maury Management Group",
+     "for": "Informed Families/The Florida Family Partnership",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=944"
+  },
+  {
+   "fy": 2024,
+   "form": 1945,
+   "docId": 945,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Jewish Pre-School Re-imagined and Young Adults With Disabilities Vocational Program",
+   "recipient": "Chabad of South Dade",
+   "county": "Miami-Dade",
+   "ask": 700000,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 700000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=945"
+  },
+  {
+   "fy": 2024,
+   "form": 2011,
+   "docId": 1011,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Graduate Medical Education-Psychiatry",
+   "recipient": "Citrus Health Network, Inc.",
+   "county": "Martin",
+   "ask": 1344447,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Monica L. Rodriguez",
+     "firm": "Ballard Partners",
+     "for": "Citrus Health Network, Inc.",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "someUnstated": true,
+    "proviso": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1011"
+  },
+  {
+   "fy": 2024,
+   "form": 2045,
+   "docId": 1045,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "NW/NE 71st Street Roadway Improvements",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 1500000,
+   "cmte": "Infrastructure & Tourism Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Mathew Forrest",
+     "firm": "Ballard Partners",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 750000,
+    "vetoed": 750000,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1045"
+  },
+  {
+   "fy": 2024,
+   "form": 2064,
+   "docId": 1064,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Biscayne Bay Waterkeeper - Investigating Water Quality in Biscayne Bay",
+   "recipient": "Biscayne Bay Waterkeeper, Inc. d/b/a Miami Waterkeeper",
+   "county": "Miami-Dade",
+   "ask": 750000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Jose F. Diaz",
+     "firm": "Ballard Partners",
+     "for": "Biscayne Bay Waterkeeper, Inc. d/b/a Miami Waterkeeper",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1064"
+  },
+  {
+   "fy": 2024,
+   "form": 2065,
+   "docId": 1065,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Key Biscayne K-8 Community School Resilient Infrastructure Construction",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 1000000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Erica Chanti",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 500000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1065"
+  },
+  {
+   "fy": 2024,
+   "form": 2164,
+   "docId": 1164,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Goodwill Industries of South Florida",
+   "recipient": "Goodwill Industries of South Florida",
+   "county": "Miami-Dade",
+   "ask": 400000,
+   "cmte": "Higher Education Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Carlos M. Cruz",
+     "firm": "Converge Government Affairs of Florida, Inc.",
+     "for": "Goodwill Industries of South Florida",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1164"
+  },
+  {
+   "fy": 2024,
+   "form": 2269,
+   "docId": 1269,
+   "date": "2023-11-09",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Special Needs Programming",
+   "recipient": "Village of Key Biscayne",
+   "county": "Miami-Dade",
+   "ask": 100000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Erica Chanti",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "Village of Key Biscayne",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 100000
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1269"
+  },
+  {
+   "fy": 2024,
+   "form": 2270,
+   "docId": 1270,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Veterans United for Housing",
+   "recipient": "United Way of Broward County",
+   "county": "Broward",
+   "ask": 1000000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Natalie King",
+     "firm": "RSA Consulting Group LLC",
+     "for": "United Way of Broward County",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 500000,
+    "vetoed": 500000,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1270"
+  },
+  {
+   "fy": 2024,
+   "form": 2330,
+   "docId": 1330,
+   "date": "2023-11-08",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Morningside Park Baywalk/Kayak Launch/Boat Ramp",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 1600000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Heather L. Turnbull",
+     "firm": "Rubin, Turnbull & Associates",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1330"
+  },
+  {
+   "fy": 2024,
+   "form": 2339,
+   "docId": 1339,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Biscayne Bay Seagrass Restoration Project",
+   "recipient": "Fish & Wildlife Foundation of Florida",
+   "county": "Miami-Dade",
+   "ask": 3000000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Edgar G. Fernandez",
+     "firm": "Anfield Consulting",
+     "for": "Fish & Wildlife Foundation of Florida",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1339"
+  },
+  {
+   "fy": 2024,
+   "form": 2355,
+   "docId": 1355,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Simon Bolivar Park Improvements/Drainage/Seawall Replacement",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 2000000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1355"
+  },
+  {
+   "fy": 2024,
+   "form": 2432,
+   "docId": 1432,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Riverside Park Renovations",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 900000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 450000,
+    "vetoed": 450000,
+    "allVetoed": true
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1432"
+  },
+  {
+   "fy": 2024,
+   "form": 2433,
+   "docId": 1433,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Woodside Park",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 2000000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1433"
+  },
+  {
+   "fy": 2024,
+   "form": 2434,
+   "docId": 1434,
+   "date": "2023-11-13",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "Miami Ruben Dario Park Improvements",
+   "recipient": "City of Miami",
+   "county": "Miami-Dade",
+   "ask": 4000000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Ronald L. Book",
+     "firm": "Ronald L. Book PA",
+     "for": "City of Miami",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1434"
+  },
+  {
+   "fy": 2024,
+   "form": 2728,
+   "docId": 1727,
+   "date": "2023-11-14",
+   "member": "Lopez",
+   "pid": "vicki-l-lopez",
+   "title": "STEM Teacher Pilot Program",
+   "recipient": "Teach Florida",
+   "county": "Statewide",
+   "ask": 1000000,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "formRead": true,
+   "lobbied": [
+    {
+     "name": "Brady J. Benford",
+     "firm": "Ballard Partners",
+     "for": "Teach Florida",
+     "src": "form"
+    }
+   ],
+   "withdrawn": false,
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/api/document/apr?sessionid=103&id=1727"
   }
  ]
 }
