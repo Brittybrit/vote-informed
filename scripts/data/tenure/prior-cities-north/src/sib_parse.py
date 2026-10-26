@@ -10,8 +10,9 @@ import json, re, sys, collections
 RES, MIN, OUT = sys.argv[1:4]
 R = json.load(open(RES)); M = json.load(open(MIN))
 TIT = r'(?:Commissioner|Vice\s*Mayor|Mayor)'
-NAMEFIX = {'Goldmann': 'Goldman', 'Svechen': 'Svechin', 'Aelian': 'Aelion', 'Edelcap': 'Edelcup', 'Scholi': 'Scholl', 'Viscara': 'Viscarra'}
+NAMEFIX = {'Goldmann': 'Goldman', 'Svechen': 'Svechin', 'Aelian': 'Aelion', 'Edelcap': 'Edelcup', 'Scholi': 'Scholl', 'Viscara': 'Viscarra', 'Action': 'Aelion'}
 def nm(s): s = s.strip(" .,*'\"`"); return NAMEFIX.get(s, s)
+ROSTER = ['Scholl', 'Gatto', 'Aelion', 'Goldman', 'Levin', 'Svechin', 'Lama', 'Viscarra']
 WB = 'http://docucenter.sibfl.net/WebLink/DocView.aspx?id={}&dbid=0&repo=SIBFL'
 def mdate(name):
     m = re.match(r'(\d{4})-(\d{2})(\d{2})', name.strip()); return m and f'{m.group(1)}-{m.group(2)}-{m.group(3)}'
@@ -21,10 +22,10 @@ for v in M.values():
     if not d or 'Historic' in v['name'] or 'LPA' in v['name']: continue
     t = v['text']
     head = t[:t.find('2. PLEDGE')] if '2. PLEDGE' in t[:4000] else t[:2500]
-    present = []
-    for m in re.finditer(r'\b(Mayor|Vice\s*Mayor|Commissioner)\s+(?:[A-Z][\w."]*\s+){0,3}?([A-Z][a-z]+)\*?(?=\s|$)', head):
-        n = nm(m.group(2))
-        if n not in present and n not in ('George', 'Bud', 'Dana', 'Larisa', 'Alex', 'Jeniffer', 'Isaac', 'Jeanette', 'Lewis', 'Norman', 'Gerry', 'Mayor', 'City'): present.append(n)
+    i0 = head.find('ROLL CALL'); rc = head[i0:] if i0 >= 0 else head
+    present = [s for s in ROSTER if re.search(r'\b' + s + r'\b', rc)]
+    gone = [nm(x) for x in re.findall(r'([A-Z][a-z]+)\s+(?:was|were)\s+(?:absent|excused)', rc)]
+    present = [p for p in present if p not in gone]
     meetings.setdefault(d, []).append(dict(name=v['name'], id=v['id'], text=t, present=present))
 votes = {}
 VR = re.compile(r'Resolution\s+Nos?\.?\s*((?:(?:\d{2,4}\s*-\s*Z?\s*-?\s*\d{2,4}|and|,|\s)+?))\s+(?:was|were)\s+adopted\s+(?:by\s+a\s+)?(voice|roll\s*call)?\s*(?:vote\s+)?(?:of\s+)?(\d)\s*-\s*\n?\s*(\d)(?:\s*-\s*(\d))?(.{0,400})', re.S | re.I)

@@ -13,7 +13,7 @@
   "enacted": 272,
   "screened": 72,
   "qualifying": 6,
-  "withSenateVote": 0
+  "withSenateVote": 6
  },
  "missing": {
   "A": [],
@@ -219,38 +219,7 @@
    "2013-271",
    "2013-272"
   ],
-  "C": [
-   [
-    "2013-28",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/286/Vote/SenateVote_s0286c1005.PDF"
-   ],
-   [
-    "2013-39",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/7007/Vote/SenateVote_h7007e2018.PDF"
-   ],
-   [
-    "2013-50",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/1660/Vote/SenateVote_s1660e1010.PDF"
-   ],
-   [
-    "2013-61",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/1850/Vote/SenateVote_s1850e1032.PDF"
-   ],
-   [
-    "2013-66",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/468/Vote/SenateVote_s0468e1011.PDF"
-   ],
-   [
-    "2013-73",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2013/21/Vote/SenateVote_h0021__012.PDF"
-   ]
-  ]
+  "C": []
  },
  "bills": [
   {
@@ -590,7 +559,25 @@
    },
    "screen": "Private Sector Impact: The bill limits the tort claims against a business entity’s employees and agents, including licensed engineers, surveyors and mappers, architects, and landscape architects (design professionals). The design professionals affected by the bill may experience lower costs for professional liability insurance and may charge lower prices to their customers for their professional services as a consequence of the liability limitations that may be provided in a contract. Parties to a contract who experience an economic loss that may be attributable to the professional negligence or professional malpractice of a design professional or by an employee or agent of a business entity may be limited to the remedies available under contract law, e.g., they may be barred from claims for negligence that resulted solely in economic harm to the extent that the contract does not authorize such claims.",
    "note": "limits tort claims against design professionals employed by business entities",
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-03-27",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/286/Vote/SenateVote_s0286c1005.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 294",
@@ -726,7 +713,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Machinery & Equipment Sales Tax Exemption By reducing the tax burden of existing manufacturers, the bill may encourage capital investment and new job opportunities in Florida’s manufacturing sector. The bill may also encourage prospective manufacturers to relocate to the state. Gulf Coast Restoration Subject to the amount of damages awarded to Florida and the period of time necessary to collect such damages, the restoration provisions of this bill should have a positive impact on the private sector. If Triumph Gulf Coast, Inc., can identify and allocate awards to projects and programs with a verifiable benefit to the region’s communities and businesses, the bill may encourage long-term economic grow in northwest Florida. Small Business Development Center Network To the extent that small businesses receive improved assistance through a more effective network and regional centers, the private sector will benefit. Brownfield Redevelopment Act To the extent that the definitions of “housing project” and “mixed-use project” are narrowed, the number of businesses that qualify for the sales tax exemption under s. 212.08(5)(o), F.S., will decrease. To the extent that the eligibility requirements for the brownfield redevelopment bonus refunds are narrowed, there will be a decrease in the number of businesses eligible to receive such refunds. Enterprise Zones The bill has the potential to positively impact the economy of select designated ent",
    "note": "also small businesses via SBDC network",
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-05-01",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      3
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/7007/Vote/SenateVote_h7007e2018.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1500",
@@ -862,7 +867,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Although application for the Award is voluntary, providers in the state who wish to be designated as such will incur indeterminable costs to align their programs with the standards contemplated by this bill. Providers receiving the award may be able to secure additional patient revenues as a result of the distinction of their care. Additionally, providers that receive appropriations for biomedical and/or cancer research or related activities are required to submit annual fiscal-year progress reports that describe the use of funds to the President of the Senate and the Speaker of the House of Representatives. These recipients may incur costs related to the annual progress reporting but these costs are not expected to be significant.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-05-03",
+     "motion": "final passage",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1660/Vote/SenateVote_s1660e1010.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1720",
@@ -998,7 +1021,25 @@
    },
    "screen": "Private Sector Impact: Underwriting guidelines, manuals, rating information and other underwriting criteria belonging to insurers participating in the Citizens clearinghouse program will be protected, thereby preventing release of information that could put such insurers at a competitive disadvantage. BILL: SB 1850 Page 5",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-04-25",
+     "motion": "Third Reading",
+     "tally": [
+      36,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1850/Vote/SenateVote_s1850e1032.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 56",
@@ -1062,7 +1103,25 @@
    },
    "screen": "Private Sector Impact: Proponents for exempting certain lines of medical malpractice insurance from specified rate filing requirements assert that a competitive market exists for those types of insurance. Although the bill exempts the specified lines from the filing and review requirements, these types of insurance coverage continue to be subject to the requirement that rates shall not be excessive, inadequate, or unfairly discriminatory. Allowing certain insurers to self-certify their own forms will be more convenient for the industry but potentially hazardous for customers. Since these forms will no longer require pre-approval from the OIR before they may be used, some might not be in compliance with Florida law.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-04-25",
+     "motion": "Third Reading",
+     "tally": [
+      31,
+      5
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/468/Vote/SenateVote_s0468e1011.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 628",
@@ -1150,7 +1209,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Noninstructional contractors will be charged a fee for the identification badge, as set by DOE. Currently school districts that issue identification badges set their own fee. There is no way to know at this time whether DOE’s set fee will be higher or lower than that currently charged by the districts. However, noninstructional contractors who work in multiple school districts would only be required to obtain and pay for one identification badge, rather than obtaining a badge and paying a fee in each individual district. This may result in reduced costs for noninstructional contractors.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2013.json)"
+   "screenedBy": "prior-flhouse (bills-2013.json)",
+   "votes": {
+    "senate": {
+     "date": "2013-04-25",
+     "motion": "Third Reading",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/21/Vote/SenateVote_h0021__012.PDF",
+     "roll": {
+      "Taddeo": "not seated",
+      "Simpson": "yes",
+      "JJRodriguez": "not seated",
+      "Campbell": "not seated",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 93",

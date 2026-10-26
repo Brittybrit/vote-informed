@@ -28,108 +28,12 @@
   "enacted": 193,
   "screened": 193,
   "qualifying": 19,
-  "withSenateVote": 0
+  "withSenateVote": 19
  },
  "missing": {
   "A": [],
   "B": [],
-  "C": [
-   [
-    "2018-17",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/386/Vote/SenateVote_s00386c1004.PDF"
-   ],
-   [
-    "2018-24",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/622/Vote/SenateVote_s00622e1004.PDF"
-   ],
-   [
-    "2018-34",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/405/Vote/SenateVote_h00405__007.PDF"
-   ],
-   [
-    "2018-44",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/193/Vote/SenateVote_h00193__003.PDF"
-   ],
-   [
-    "2018-48",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/455/Vote/SenateVote_h00455c2006.PDF"
-   ],
-   [
-    "2018-62",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/953/Vote/SenateVote_h00953__017.PDF"
-   ],
-   [
-    "2018-82",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/168/Vote/SenateVote_s00168e1022.PDF"
-   ],
-   [
-    "2018-84",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/740/Vote/SenateVote_s00740e1008.PDF"
-   ],
-   [
-    "2018-85",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/872/Vote/SenateVote_s00872c1011.PDF"
-   ],
-   [
-    "2018-88",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/7043/Vote/SenateVote_h07043__027.PDF"
-   ],
-   [
-    "2018-89",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/37/Vote/SenateVote_h00037__025.PDF"
-   ],
-   [
-    "2018-107",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/1373/Vote/SenateVote_h01373c2019.PDF"
-   ],
-   [
-    "2018-118",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/7087/Vote/SenateVote_h07087e1002.PDF"
-   ],
-   [
-    "2018-130",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/215/Vote/SenateVote_h00215__039.PDF"
-   ],
-   [
-    "2018-131",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/465/Vote/SenateVote_h00465e2047.PDF"
-   ],
-   [
-    "2018-135",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/961/Vote/SenateVote_h00961c1034.PDF"
-   ],
-   [
-    "2018-139",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/1285/Vote/SenateVote_h01285__015.PDF"
-   ],
-   [
-    "2018-149",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/483/Vote/SenateVote_h00483e1017.PDF"
-   ],
-   [
-    "2018-159",
-    "S",
-    "https://www.flsenate.gov/Session/Bill/2018/1173/Vote/SenateVote_h01173e1024.PDF"
-   ]
-  ]
+  "C": []
  },
  "bills": [
   {
@@ -338,7 +242,25 @@
    },
    "screen": "Private Sector Impact: Although the impact on the private sector is indeterminate, the bill may have a positive effect on the default rate of loans made pursuant to the Act. A member of the industry that operates in multiple states, but not Florida, conducted a study to determine the effect of a monthly repayment schedule compared to a biweekly or semimonthly repayment schedule.22 In the study, return customers with a low-risk profile and high ability to repay were offered a single monthly payment option instead of a payment schedule every 2 weeks.23 Customers on a monthly payment schedule had a default rate 25 percent higher than customers on biweekly and semimonthly payment schedules.24 If fewer defaults occur among borrowers who are placed on a payment schedule every 2 weeks or semimonthly, then the impact of the bill will be financially positive for both consumers and lenders.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-02-27",
+     "motion": "Third Reading",
+     "tally": [
+      35,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/386/Vote/SenateVote_s00386c1004.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 394",
@@ -426,7 +348,25 @@
    },
    "screen": "Private Sector Impact: Repealing the licensure requirement for health care risk managers will save each risk manager the cost of the licensure fee, which is $104.54 for initial applicants and $52.78 for renewal applicants.67 Repealing clinical laboratory licensure will save each clinical laboratory that was required to be licensed and is accredited $100 biennially. If not accredited the fee is 67 See the Application checklist available at: http://ahca.myflorida.com/MCHQ/Health_Facility_Regulation/Hospital_Outpatient/risk_manager.shtml (last visited Nov. 29, 2017). BILL: CS/CS/SB 622 Page 22 between $400 - $3,919 biennially, depending upon the annual volume of non-waived tests performed.68 Allowing cancer centers seeking NCI designation to participate in the Florida Consortium of National Cancer Institute Centers Program as a Tier 3 cancer center for an additional year may have an indeterminate positive fiscal impact on such cancer centers.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-03",
+     "motion": "Third Reading",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/622/Vote/SenateVote_s00622e1004.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 660",
@@ -550,7 +490,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill clarifies the application of local land use laws to transmission line corridors in siting cases under the PPSA and the TLSA. This may reduce expenses of siting and legal proceedings by providing certainty.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-02-21",
+     "motion": "Third Reading",
+     "tally": [
+      34,
+      4
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/405/Vote/SenateVote_h00405__007.PDF",
+     "roll": {
+      "Taddeo": "no",
+      "Simpson": "yes",
+      "JJRodriguez": "no",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 413",
@@ -674,7 +632,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments. 51 Id. at 4. 52 Id. 53 Id. 54 Id. at 8. STORAGE NAME: h0193z1.IBS PAGE: 8 DATE: March 22, 2018 ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The bill provides an exemption from the loan originator and mortgage broker license requirements for certain individuals and businesses in the securities industry. This exemption would result in those individuals and businesses no longer needing to maintain a license as a mortgage loan originator or mortgage broker, which would decrease licensing costs for the affected individuals and businesses. Correspondingly, the OFR would not collect such licensing fees or incur costs of regulatory oversight for those individuals and businesses. It is unknown how many individuals and businesses will forego the currently required dual licensure. Therefore, the impact to the private sector and the state is indeterminate. However, the OFR believes that any loss of licensure revenues will be insignificant. 55 55 Office of Financial Regulation, Agency Analysis of 2018 House Bill 193 (Oct. 9, 2017). STORAGE NAME: h0193z1.IBS PAGE: 9 DATE: March 22, 2018",
    "note": "Private Sector section says See Fiscal Comments",
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-02-21",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/193/Vote/SenateVote_h00193__003.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 281",
@@ -726,7 +702,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Expanding the pool of individuals who are qualified to serve as a director, president, or chief executive officer of a new state-chartered bank or trust company may have a positive impact on efforts to form new banks and trust companies chartered by the state of Florida. However, the fiscal impact of the bill is indeterminate at this time, as it is unknown how many state-chartered banks or trust companies may form as a result of these changes. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: In the event of the formation of a new state-chartered bank or trust company, the OFR would receive $15,000 as a nonrefundable application fee. Additionally, each state-chartered bank and trust company must pay the OFR a semi-annual assessment of $2,500 and a semi-annual assessment that is set by rule and varies depending on the bank’s or trust company’s assets. However, the fiscal impact of the bill is indeterminate at this time, as it is unknown how many state-chartered banks or trust companies may form as a result of changes made by the bill. location of the association during their continuance in office, except that the Comptroller may, in the discretion of the Comptroller, waive the requirement of residency, and waive the requirement of citizenship in the case of not more than a minority of the total number of directors.” 12 U.S.C. § 72 (emphasis added). STORAGE NAME: h0455z1.IBS PAGE: 6 DATE: March 22, 2018",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-01",
+     "motion": "Third Reading",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/455/Vote/SenateVote_h00455c2006.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 491",
@@ -898,7 +892,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The elimination of fees for placing, temporarily lifting, or removing a security freeze will decrease revenues for consumer reporting agencies. The elimination of fees will decrease costs for consumers and may increase the occurrence and frequency of these activities by consumers. The use of security freezes may reduce the prevalence of identity theft, which would have a positive impact on consumers as well as creditors and other businesses. It is unknown how much revenue consumer reporting agencies currently earn from Florida residents or how the elimination of fees may affect consumer behavior and the prevalence of identity theft. Therefore, the impact to the private sector is indeterminate. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: h0953z1.IBS PAGE: 5 DATE: March 22, 2018",
    "note": "consumer reporting agencies lose fee revenue",
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-07",
+     "motion": "Third Reading",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/953/Vote/SenateVote_h00953__017.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1011",
@@ -1142,7 +1154,25 @@
    },
    "screen": "Private Sector Impact: The bill authorizes the FWC to contract with private entities or individuals to capture or destroy nonnative animals found on lands or waters of the state. This will have a positive indeterminate fiscal impact on the entities or individuals who are awarded such contracts. The bill requires pet dealers to implant a passive integrated transponder (PIT) tag before animals that threaten the state’s wildlife habitat are sold, resold, or offered for sale. This will have a negative indeterminate fiscal impact on pet dealers that offer such animals.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-02",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/168/Vote/SenateVote_s00168e1022.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 566",
@@ -1170,7 +1200,25 @@
    },
    "screen": "Private Sector Impact: Some owners of agricultural land will experience lower ad valorem tax assessments. The bill requires the City of Apalachicola to take over administrative responsibilities of the Apalachicola Bay oyster harvesting license fees. This will allow the city to control the allocation of funds for oyster shell restoration activities.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-02",
+     "motion": "Third Reading",
+     "tally": [
+      34,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/740/Vote/SenateVote_s00740e1008.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 872",
@@ -1186,7 +1234,25 @@
    },
    "screen": "Private Sector Impact: Florida’s young farmers, ranchers and veterans with new farming and ranch operations may benefit from the grant program.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-09",
+     "motion": "final passage",
+     "tally": [
+      36,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/872/Vote/SenateVote_s00872c1011.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1552",
@@ -1226,7 +1292,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Applicants seeking both an ERP and a state administered section 404 permit may experience some positive fiscal impacts from increased efficiency, consistency, and streamlined procedures from seeking the two permits from one agency, instead of two agencies.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-08",
+     "motion": "Third Reading",
+     "tally": [
+      35,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/7043/Vote/SenateVote_h07043__027.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "no",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 37",
@@ -1242,7 +1326,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill removes any regulatory uncertainty as to the status of a direct primary care agreement as insurance. Primary care providers may choose to invest in establishing direct primary care practices throughout the state to provide primary care services, which would increase access to such services, without concern of facing regulatory action by OIR.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-08",
+     "motion": "Third Reading",
+     "tally": [
+      38,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/37/Vote/SenateVote_h00037__025.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 283",
@@ -1462,7 +1564,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will have an indeterminate impact on providers at residential facilities who allow unlicensed personnel to administer medication. Competency validations require the provider to pay a nurse or physician to assess the facility’s unlicensed personnel.35 The bill reduces the number of nurse or physician validations required and allows a licensed practical nurse to train and validate unlicensed personnel. To the extent that providers pay for fewer or less expensive validations, they will see a positive impact. The bill additionally increases the number of hours required for the initial training course and adds an annual 2-hour inservice training requirement for trained unlicensed personnel; however, this 2-hour inservice training can count towards existing inservice training requirements. To the extent that providers pay increased costs for initial training and continuing inservice training for their unlicensed personnel, they will see a negative impact. It is unknown what the net effect of these two changes will be on providers. specialized knowledge, judgment, and nursing skill based upon applied principles of psychological, biological, physical, and social sciences. S. 464.003(16),(19),(20),(22), F.S. 33 Id. 34 Supra note 16, at 5. 35 Id. STORAGE NAME: h1373z2.CFS PAGE: 6 DATE: March 28, 2018 ----FISCAL COMMENTS---- D. FISCAL COMMENTS: Compliance with clients’ prescribed medication regimens may avoid the need for medical car",
    "note": "net effect unknown per the analysis",
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-08",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/1373/Vote/SenateVote_h01373c2019.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1435",
@@ -1598,7 +1718,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will reduce the sales tax on the rental of commercial real estate. The bill provides for a three- day back-to-school sales tax holiday and a seven-day disaster preparedness sales tax holiday. The bill also contains several provisions designed to provide tax relief to citizens adversely affected by Hurricane Irma. The bill provides a discount for certain noncriminal traffic infractions when the driver attends a driver improvement course. The bill is expected to reduce the corporate income tax liability for certain taxpayers that utilize the tax credit programs affected by the bill.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-11",
+     "motion": "Third Reading",
+     "tally": [
+      33,
+      3
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/7087/Vote/SenateVote_h07087e1002.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "no",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 7093",
@@ -1746,7 +1884,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Autocycle operators will not be required to obtain a motorcycle license or endorsement and will not need to complete a motorcycle knowledge and skills test currently required to obtain such a license or endorsement. 27 As defined in s. 316.003(28), F.S., a hazardous material is any substance or material determined by U.S. Department of Transportation Secretary to be capable of imposing an unreasonable risk to health, safety, and property. This includes hazardous waste as defined in s. 403.703, F.S. STORAGE NAME: h0215z1.TIS PAGE: 5 DATE: April 4, 2018 Manufacturers of mobile carriers may experience an increase in revenues because the mobile carriers will be authorized to be operated on sidewalks and crosswalks in the state.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-09",
+     "motion": "Third Reading",
+     "tally": [
+      33,
+      3
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/215/Vote/SenateVote_h00215__039.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "no",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 465",
@@ -1762,7 +1918,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Reducing the number of coverage rejections required prior to exportation of a residential dwelling valued between $700,000 and $1,000,000 to the surplus lines market may remove some of these risks from the admitted market in the state. Owners in this home value range may find it easier to obtain coverage at a price acceptable to them. Revising the surplus lines tax to provide for a uniform surplus lines tax of 4.936 percent of gross premiums, regardless of where the risk is located, rather than the tax rate of each state where the risk is located, will cause a net decrease in tax burden on average to payors with Florida based risks and a net increase on average to payors with multi-state risks, but the net increase and net decrease is expected to offset and result in no change in tax revenue solely attributable to the tax rate change. Incorporating the recent amendment to the Gramm-Leach-Bliley Act will reduce costs to insurers, because they will be relieved from issuing certain required notices of change, if the underlying document was not changed. Changes to the proof of mailing requirements may create savings for insurers. Exempting certain monies from a reciprocal insurer’s reserve requirements will reduce the amount of funds that must be retained in reserves and allow it to be utilized by the reciprocal insurer for other purposes. Allowing motor vehicle service agreement companies and HMOs to post general agreement and contrac",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-09",
+     "motion": "Third Reading",
+     "tally": [
+      38,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/465/Vote/SenateVote_h00465e2047.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 565",
@@ -1814,7 +1988,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Vendors who receive free glassware may save money and manufacturers who offer vendors free glassware may increase sales from the advertising on the glassware.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-08",
+     "motion": "Third Reading",
+     "tally": [
+      38,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/961/Vote/SenateVote_h00961c1034.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1091",
@@ -1866,7 +2058,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will allow state banks and trust companies to form as social purpose or benefit corporations, which could allow for more innovation in the way banks function and may increase interest in investing by certain investors. The bill will allow a wider-range of companies to receive commercialization investments from the Institute. 35 Florida Auditor General, supra note 27. STORAGE NAME: h1285z1.CCS PAGE: 10 DATE: April 2, 2018",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-06",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/1285/Vote/SenateVote_h01285__015.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 6003",
@@ -1990,7 +2200,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate. While insurers and agents may see increased opportunities for solicitation and sales through use of higher value and new types of advertising and promotional gifts, the impact is not known. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: h0483z1.IBS PAGE: 3 DATE: April 9, 2018",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-09",
+     "motion": "Third Reading",
+     "tally": [
+      38,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/483/Vote/SenateVote_h00483e1017.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 495",
@@ -2114,7 +2342,25 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive fiscal impact on landowners who intend to sell their land to the Board of Trustees by requiring the Board of Trustees to disclose the appraisal of lands to the seller if federal partnership funds are available. The seller will be aware of the Board of Trustee’s appraisal and estimated land value without purchasing its own appraisal. This may create a negotiation advantage for the seller. The bill may have a positive fiscal impact on private entities that conduct agricultural and silvicultural activities because the bill authorizes the Board of Trustees to lease acquired military buffer land to private entities at rates determined by competitive bid, which may be less than appraised or market value, to conduct agricultural or silvicultural operations.",
    "note": null,
-   "screenedBy": "prior-flhouse (bills-2018.json)"
+   "screenedBy": "prior-flhouse (bills-2018.json)",
+   "votes": {
+    "senate": {
+     "date": "2018-03-07",
+     "motion": "Third Reading",
+     "tally": [
+      37,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2018/1173/Vote/SenateVote_h01173e1024.PDF",
+     "roll": {
+      "Taddeo": "yes",
+      "Simpson": "yes",
+      "JJRodriguez": "yes",
+      "Campbell": "yes",
+      "Avila": "not seated"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1383",
