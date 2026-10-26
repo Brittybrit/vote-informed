@@ -12,7 +12,7 @@ H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 import rolls
 T = os.path.join(H, '..', '..')
 SRC = {'2122': ('flhouse/bills-2122.json', ['Avila', 'Ingoglia'], 'flsenate'),
-       '2023': ('flhouse/bills-2023.json', ['Lopez', 'Avila', 'Ingoglia'], 'flhouse'),
+       '2023': ('flhouse/bills-2023.json', ['Lopez'], 'flhouse'),  # 2022D (May 2022, Avila and Ingoglia seated): neither of its 2 laws qualifies
        '2024': ('flhouse/bills-2024.json', ['Lopez'], 'flhouse'),
        '2025': ('../state/bills/universe.json', ['Lopez'], 'state')}
 for key, (f, mem, by) in SRC.items():

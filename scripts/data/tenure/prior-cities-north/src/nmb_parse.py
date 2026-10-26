@@ -35,6 +35,7 @@ for i in range(A, B + 1):
         tail2 = re.match(r'[^\n]*(?:\n[^\n]+){0,3}', t[rc.end():])
         if tail2: pres_txt += ' ' + tail2.group(0)
     pres_txt = re.sub(r'City (?:Attorney|Manager|Clerk)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,3}', '', pres_txt)
+    pres_txt = re.sub(r'(?:Commissioner|Councilm[ae]n|Mayor)[- ]Elect\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,2}', '', pres_txt)
     absent = []
     for am in re.finditer(r'((?:Mayor|Vice Mayor|Council(?:wo)?man|Council Members?|Commissioners?)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,3})\s+(?:was|were)\s+(?:absent|not present(?!,? but)|excused)', pres_txt):
         absent += names(am.group(1))

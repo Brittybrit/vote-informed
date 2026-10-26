@@ -49,7 +49,7 @@ def gaa_index(year):
         cl = re.match(r'(?:\s*\((?:HB|HF|SB|Senate\s*Form|SF)[^)]*\))*', t[j:]); j += cl.end()
         # itemized line: optional dot leader (2+ dots) then a comma-grouped amount ("... 375,000", "(SF n) 100,000");
         # a single period followed by a number is a sentence end + Specific Appropriation number, not an amount.
-        a = re.match(r'\s*(?:(?:\.\s*){2,})?\s*(\d{1,3}(?:,\d{3})+)(?![\d,A-Za-z])', t[j:j + 200])
+        a = re.match(r'\s*(?:(?:\.\s*){1,})?\s*(\d{1,3}(?:,\d{3})+)(?![\d,A-Za-z])', t[j:j + 200])  # one period is allowed: '(Senate Form 2164).   3,500,000' (2022 GAA) is an itemized line; Specific Appropriation numbers have no commas
         amt = num(a.group(1)) if a else None
         if amt is None:
             # proviso sentence: "... $X in nonrecurring funds ... is provided for <title> (SF n)"
@@ -93,18 +93,25 @@ def field(t, label, nxt):
 def parse_form(path):
     t = open(path).read()
     g = lambda pat: (re.search(pat, t, re.M) or [None, ''])[1].strip()
-    date = g(r'^\s*3\.\s*Date of Request\s+(\S+)')
-    sponsor = g(r'^\s*2\.\s*Senate Sponsor\s+(.+)$')
-    rec_blk = re.search(r'Recipient Contact Information(.*?)(?:Lobbyist Contact Information|$)', t, re.S)
+    date = g(r'^\s*3\.\s*Date of (?:Request|Submission):?\s+(\S+)')
+    sponsor = g(r'^\s*2\.\s*Senate Sponsor:?\s+(.+)$')
+    rec_blk = re.search(r'Recipient Contact Information(.*?)(?:Lobbyist Contact Information|If there is a registered lobbyist|$)', t, re.S)
     rb = rec_blk.group(1) if rec_blk else ''
-    recipient = (re.search(r'a\.\s*Organization\s+(.+)', rb) or [None, ''])[1].strip()
-    county = (re.search(r'b\.\s*Municipality and County\s+(.+)', rb) or [None, ''])[1].strip()
-    lb = re.search(r'Lobbyist Contact Information(.*)', t, re.S)
+    recipient = (re.search(r'a\.\s*Organization:?\s+(.+)', rb) or [None, ''])[1].strip()
+    county = (re.search(r'b\.\s*(?:Municipality and County|County):?\s+(.+)', rb) or [None, ''])[1].strip()
+    lb = re.search(r'(?:Lobbyist Contact Information|If there is a registered lobbyist)(.*)', t, re.S)  # FY2018-19 forms use the second wording
     lb = lb.group(1) if lb else ''
-    lob = (re.search(r'a\.\s*Name\s+(.*)', lb) or [None, ''])[1].strip()
-    firm = (re.search(r'b\.\s*Firm Name\s*(.*)', lb) or [None, ''])[1].strip()
+    lob = (re.search(r'a\.\s*Name:?\s*(.*)', lb) or [None, ''])[1].strip()
+    firm = (re.search(r'b\.\s*Firm(?: Name)?:?[ \t]*(.*)', lb) or [None, ''])[1].strip()
     lob = re.split(r'\s{3,}', lob)[0]; firm = re.split(r'\s{3,}', firm)[0]
-    agency = g(r'^\s*5\.\s*State Agency to receive requested funds\s+(.+)$')
+    agency = g(r'^\s*5\.\s*State Agency to receive requested funds\s*:?\s+(.+)$')
+    if not agency:  # FY2017-18/2018-19 forms: '5. State Agency Contacted?' then 'a. If yes, which state agency?' / 'b. If no, ...'
+        m5 = re.search(r'5\.\s*State Agency Contacted\?(.*?)\n\s*6\.', t, re.S)
+        if m5:
+            blk = m5.group(1)
+            a1 = re.search(r'If yes, which state agency\?[ \t]*(\S[^\n]*)', blk)
+            a2 = re.search(r'requested\?[ \t]*\n?\s*(\S[^\n]*)', blk)
+            agency = (a1 or a2).group(1).strip() if (a1 or a2) else ''
     agency = re.split(r'\s{3,}', agency)[0]
     return {'date': date, 'sponsor': sponsor, 'recipient': recipient, 'county': county, 'lobbyist': lob, 'firm': firm, 'agency': agency}
 
@@ -141,7 +148,7 @@ for fy in FYS:
             b = {'status': 'notIn'}
             if vi and f in vi: b['vetoedButNotFound'] = vi[f] if vi[f] is not None else True
         if vi is None: b['vetoUnknown'] = True
-        none = lambda s: s in ('', 'None', 'N/A', 'n/a', 'none', 'NA', 'N/a')
+        none = lambda s: bool(re.fullmatch(r'(?i)\s*((none|n/?a|not applicable|-+)\s*)*', s or ''))
         inhouse = re.search(r'^(Miami-Dade County|University of Miami)$', p['firm'] or '')
         lobbied = [] if none(p['lobbyist']) else [{'name': p['lobbyist'], 'firm': None if none(p['firm']) or inhouse else p['firm'], **({'employer': p['firm']} if inhouse else {}), 'for': p['recipient'], 'src': 'form'}]
         try:

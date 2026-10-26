@@ -11,48 +11,11 @@
  },
  "counts": {
   "qualifying": 35,
-  "withHouseVote": 0
+  "withHouseVote": 35
  },
  "missing": {
-  "roll": [
-   "2025-11",
-   "2025-16",
-   "2025-33",
-   "2025-35",
-   "2025-38",
-   "2025-40",
-   "2025-41",
-   "2025-45",
-   "2025-66",
-   "2025-103",
-   "2025-112",
-   "2025-115",
-   "2025-116",
-   "2025-122",
-   "2025-130",
-   "2025-137",
-   "2025-140",
-   "2025-141",
-   "2025-150",
-   "2025-154",
-   "2025-155",
-   "2025-160",
-   "2025-164",
-   "2025-179",
-   "2025-181",
-   "2025-182",
-   "2025-190",
-   "2025-199",
-   "2025-203",
-   "2025-208",
-   "2025-233",
-   "2025-243",
-   "2025-248"
-  ],
-  "houseVote": [
-   "2025-81",
-   "2025-204"
-  ]
+  "roll": [],
+  "houseVote": []
  },
  "bills": [
   {
@@ -70,7 +33,20 @@
    "screen": "The bill may positively impact the private sector if the regulatory efficiency it establishes results in lower production costs for pet insurance providers.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-03",
+     "motion": "3rd rdg passed",
+     "tally": [
+      110,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/655/Vote/HouseVote_h00655__037.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 615",
@@ -87,7 +63,20 @@
    "screen": "The bill may have an indeterminate positive fiscal impact on landlords and tenants (savings if email notices replace mail or certified mail).",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-03",
+     "motion": "3rd rdg passed",
+     "tally": [
+      108,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/615/Vote/HouseVote_h00615c3036.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 678",
@@ -104,7 +93,20 @@
    "screen": "The bill may have a positive fiscal impact on pawnbrokers by allowing them to use digital pawnbroker transaction forms.",
    "note": "read AEG analysis 3/26/2025; final RC (4/1/2025) failed to fetch 3x",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "House third reading, CS/SB 678",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/678/Vote/HouseVote_s00678c1305.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1388",
@@ -121,7 +123,20 @@
    "screen": "There will be indeterminate cost savings to a Clean Marine Manufacturer under the Clean Marina Program (reduced sovereignty submerged land lease costs and waiver of extended-term lease surcharge).",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "motion": "3rd rdg passed (1st Eng.)",
+     "tally": [
+      104,
+      7
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/1388/Vote/HouseVote_s01388e1389.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 429",
@@ -138,7 +153,20 @@
    "screen": "The bill may have a positive economic impact on franchised motor vehicle dealers in the state.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-23",
+     "motion": "3rd rdg passed",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/429/Vote/HouseVote_h00429c2170.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 715",
@@ -155,7 +183,20 @@
    "screen": "The bill may have a positive economic impact on the private sector by increasing the number of licensed contractors who may evaluate and enhance certain roof-to-wall connections.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-23",
+     "motion": "3rd rdg passed",
+     "tally": [
+      112,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/715/Vote/HouseVote_h00715c2168.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 735",
@@ -172,7 +213,20 @@
    "screen": "The bill may have an indeterminate insignificant positive fiscal impact on marine manufacturers that participate in the Clean Marina Program (submerged land lease fee discount).",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-03-26",
+     "motion": "3rd rdg passed",
+     "tally": [
+      112,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/735/Vote/HouseVote_h00735__021.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 944",
@@ -189,7 +243,20 @@
    "screen": "This may result in a positive fiscal impact for licensed psychologists or less fiscal uncertainty beyond the 12-month period [insurer overpayment claim look-back limited].",
    "note": "read HP analysis 3/19/2025; final RC (3/26/2025) failed to fetch",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "Passage",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/944/Vote/HouseVote_s00944c1288.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1525",
@@ -206,7 +273,20 @@
    "screen": "The bill may have an indeterminate positive impact on the private sector by exempting TNCs from specified requirements (bus transit safety inspections, driver training) and enabling alternative paratransit providers to receive specified funds.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-16",
+     "motion": "CS passed 3rd reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/1525/Vote/HouseVote_h01525c2118.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 903",
@@ -223,7 +303,20 @@
    "screen": "PRIVATE SECTOR: The bill may have an indeterminate positive fiscal impact on contractor-operated correctional facilities (DOC retains control over and pays for certain dental, medical, psychological and dietary services at those facilities).",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-16",
+     "motion": "third reading",
+     "tally": [
+      83,
+      33
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/903/Vote/HouseVote_h00903c2129.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 6025",
@@ -240,7 +333,20 @@
    "screen": "PRIVATE SECTOR: The bill repeals a prohibition against selling firearms or ammunition during a local state of emergency arising from a threat of violence or public disorder. To the extent... private businesses are able to sell firearms and ammunition..., the bill may have an indeterminate positive impact on such businesses.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-16",
+     "motion": "passed on third reading",
+     "tally": [
+      86,
+      28
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/6025/Vote/HouseVote_h06025__119.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 322",
@@ -257,7 +363,20 @@
    "screen": "The bill may reduce costs that the private sector would otherwise incur to remove squatters from commercial properties.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "CS passed",
+     "tally": [
+      111,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/322/Vote/HouseVote_s00322c2282.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 551",
@@ -274,7 +393,20 @@
    "screen": "The bill may have a positive fiscal impact on contractors who use the simplified permitting process by allowing them to begin work on fire alarm and fire sprinkler projects immediately upon submitting a completed application.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-23",
+     "motion": "CS passed",
+     "tally": [
+      112,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/551/Vote/HouseVote_h00551c2172.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 733",
@@ -291,7 +423,20 @@
    "screen": "PRIVATE SECTOR: The bill may have an indeterminate positive fiscal impact on the private sector associated with the expanded eligibility of the VCTC (Voluntary Cleanup Tax Credit).",
    "note": "business type inferred: tax credit goes to parties cleaning up contaminated sites; analysis says only 'private sector'",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-16",
+     "motion": "3rd rdg passed",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/733/Vote/HouseVote_h00733c1103.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 703",
@@ -314,7 +459,20 @@
    "screen": "Private sector: the bill reduces or eliminates utility relocation costs for communications services providers (e.g., broadband Internet, cable, video, and voice service providers); costs shift to FDOT, expressway authorities, counties, municipalities.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-25",
+     "motion": "3rd rdg passed",
+     "tally": [
+      106,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/703/Vote/HouseVote_h00703c1254.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1103",
@@ -333,7 +491,20 @@
    "screen": "No private sector subsection; state government section funds IDD Pilot capitation payments to the pilot managed care plan (~$69.6M plus ~$31.2M for waitlist enrollees), an evaluation contract, and an iBudget algorithm study.",
    "note": "final z analysis (h1103z.HSS) failed to fetch twice; used HHS (latest fetched)",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-05-01",
+     "motion": "Concur; passage CS/CS/HB 1103",
+     "tally": [
+      110,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/1103/Vote/HouseVote_h01103c2391.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 633",
@@ -350,7 +521,20 @@
    "screen": "MEs may experience an indeterminate fiscal impact to upgrade systems and processes to collect and report required data and information. These costs would be covered by the funds DCF pays them under their contracts.",
    "note": "bill also has $1M grants for ME system modernization and DCF audit/vendor contracts; MEs are mostly nonprofits, borderline",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-24",
+     "motion": "Third reading passage CS/CS/HB 633",
+     "tally": [
+      113,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/633/Vote/HouseVote_h00633c2211.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 683",
@@ -367,7 +551,20 @@
    "screen": "The bill's requirement that local governments process change orders within 30 days may lead to a decrease in construction time. The prohibition on local governments from requiring contracts as a condition to apply for a building permit may have a positive impact by protecting certain proprietary information.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-23",
+     "motion": "Third reading passage CS/CS/CS/HB 683",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/683/Vote/HouseVote_h00683c3171.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 847",
@@ -384,7 +581,20 @@
    "screen": "The bill may have an indeterminate positive impact on the private sector to the extent that the bill authorizes recipients of grant funds to cover expenses related to using certain DNA testing, which may require outsourcing to a private entity. Subject to appropriation.",
    "note": "z1 fetch failed; used JDC (bill passed unamended after JDC)",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-16",
+     "motion": "Third reading passage CS/HB 847",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/847/Vote/HouseVote_h00847c1131.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 910",
@@ -401,7 +611,20 @@
    "screen": "May have an indeterminate negative fiscal impact on a person seeking compensation for advising veterans on benefits who must submit to background screening ($36.71). There may be an indeterminate positive fiscal impact on any Livescan Service Provider due to additional fees.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "Third reading passage CS/CS/SB 910",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/910/Vote/HouseVote_s00910c2324.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1516",
@@ -418,7 +641,20 @@
    "screen": "Funding for the IAIF may be derived from private sector investments and international contributions, as secured by Space Florida. Indeterminate. However, the bill may have a positive impact on funding for Florida aerospace companies or organizations, since a project must involve at least one Florida-based aerospace company.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "Third reading passage SB 1516",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/1516/Vote/HouseVote_s01516__279.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1662",
@@ -435,7 +671,20 @@
    "screen": "Motor vehicle owners who currently have an HOV decal would be subject to the payment of tolls (section 5). FDOT's contractors may experience a reduction in surety bond costs due to the authorization of the Secretary of Transportation to waive certain surety bond requirements (section 26).",
    "note": "also repeals FDOT DBE program",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "Third reading passage CS/CS/CS/SB 1662 as amended",
+     "tally": [
+      103,
+      7
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/1662/Vote/HouseVote_s01662e1276.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 282",
@@ -452,7 +701,20 @@
    "screen": "The bill provides an option for a non-publicly traded service warranty association to forego securing contractual liability insurance, establishing unearned premium reserves, and complying with premium writing ratios if it or its parent has a net worth of at least $100 million and provides audited statements.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "House third reading, CS/CS/SB 282",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/282/Vote/HouseVote_s00282c2303.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 784",
@@ -469,7 +731,20 @@
    "screen": "The bill may reduce carrying costs for those relying on a local government to process applications relating to real property development before a parcel can be sold.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-29",
+     "motion": "Third reading passage CS/CS/CS/SB 784",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/784/Vote/HouseVote_s00784c3283.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 68",
@@ -486,7 +761,20 @@
    "screen": "Expands the options health facilities authorities have to help private entities acquire, build, finance and refinance projects that provide health care services.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "motion": "House third reading / final passage",
+     "tally": [
+      113,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/68/Vote/HouseVote_s00068e1350.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 738",
@@ -503,7 +791,20 @@
    "screen": "Indeterminate, likely significant recurring negative impact on local government, because the bill limits local special assessments on preschools (licensed child care facilities). The REC estimates a $5.9M local revenue reduction in FY 2025-26.",
    "note": "Borderline: the private-sector section names preschools as the businesses no longer assessed but frames it as a local-government cost and gives no savings figure. Review.",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "motion": "House third reading / final passage",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/738/Vote/HouseVote_s00738c1355.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 954",
@@ -520,7 +821,20 @@
    "screen": "May make recovery residences simpler to establish and maintain, an indeterminate positive impact.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-30",
+     "motion": "House third reading / final passage",
+     "tally": [
+      97,
+      10
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/954/Vote/HouseVote_s00954c3349.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 180",
@@ -537,7 +851,20 @@
    "screen": "Agricultural producers with agricultural equipment unable to be used due to hurricanes will experience property tax relief. Residents and businesses affected by disasters may experience quicker post-storm permit processing times and reduced or waived permit and inspection fees.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-05-02",
+     "motion": "House concurrence / final passage",
+     "tally": [
+      106,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/180/Vote/HouseVote_s00180e1411.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 2502",
@@ -554,7 +881,20 @@
    "screen": "Conference report has no private-sector section (Senate AP analysis: None). Body: sets lottery retailer commission at 6% (s.68); Rebuild Florida loans to Hurricane Michael-hit businesses (s.97); AHCA to procure drug-price negotiation vendor paid from savings (s.39).",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-06-16",
+     "motion": "Passed as amended by Conference Committee Report",
+     "tally": [
+      87,
+      18
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/2502/Vote/HouseVote_s02502__435.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 2510",
@@ -579,7 +919,20 @@
    "screen": "House final analysis has no private-sector section (state government only). Body: Schools of Hope expanded - universities/colleges may sponsor, hope schools may co-locate with any public school facility, performance funds usable for any operations; names 7 hope operators.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-06-16",
+     "motion": "Passed as amended by Conference Committee Report",
+     "tally": [
+      80,
+      24
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/2510/Vote/HouseVote_s02510__440.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 2514",
@@ -596,7 +949,20 @@
    "screen": "Conference report has no private-sector section. Body: lets a PACE provider operate in a service area with an existing provider if need found; authorizes Casey DeSantis program funding for accredited cancer centers; Medicaid premium assistance for employer coverage.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-06-16",
+     "motion": "passage",
+     "tally": [
+      105,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/2514/Vote/HouseVote_s02514__438.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 7031",
@@ -617,7 +983,20 @@
    "screen": "No private-sector section (state/local revenue only). Tax package: repeals 2% business rent tax; data center exemption; aviation fuel tax repeal; cardroom tax 10%->8%; $1M Tampa Bay Downs, $4M Gulfstream Park; NASCAR championship admissions exemption; citrus packinghouse assessment relief.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-06-16",
+     "motion": "Passed as amended by Conference Committee Report",
+     "tally": [
+      93,
+      7
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/7031/Vote/HouseVote_h07031__432.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 4031",
@@ -634,7 +1013,20 @@
    "screen": "No private-sector section. Local govt: may have an indeterminant positive fiscal impact on local revenues (sales tax, licensing). Bill requires DABT to issue special licenses so licensees in Oviedo entertainment district can sell drinks for carry-out within the district.",
    "note": null,
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-03",
+     "motion": "3rd rdg passed",
+     "tally": [
+      108,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/4031/Vote/HouseVote_h04031__051.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 4053",
@@ -653,7 +1045,20 @@
    "screen": "no private sector section; analysis text: special alcoholic beverage license for event centers (1,100-1,400 occupancy, ticketed) in Jacksonville Urban Transition Area; local revenue positive",
    "note": "b:true from analysis text (no private-sector section)",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-03",
+     "motion": "3rd rdg passed",
+     "tally": [
+      107,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/4053/Vote/HouseVote_h04053c1049.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 4067",
@@ -672,7 +1077,20 @@
    "screen": "no private sector section; analysis text: special alcoholic beverage license for Marion County equestrian sport facilities (>=500 acres, 2+ lodging, 3+ food service); +$15M/$30M state & local revenue",
    "note": "b:true from analysis text (no private-sector section)",
    "screenedBy": "state",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2025-04-24",
+     "motion": "CS passed",
+     "tally": [
+      92,
+      16
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2025/4067/Vote/HouseVote_h04067c1230.PDF",
+     "roll": {
+      "Lopez": "yes"
+     }
+    }
+   }
   }
  ]
 }

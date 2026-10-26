@@ -17,9 +17,16 @@ byk = {vkey(v): v for v in V}
 # hand-read roll calls where the parser could not (decisions/rolls-mg.txt: key|Name=yes,Name=no,...|mover|second)
 for ln in open(os.path.join(HERE, 'decisions', 'rolls-mg.txt'), encoding='utf8') if os.path.exists(os.path.join(HERE, 'decisions', 'rolls-mg.txt')) else []:
     if not ln.strip() or ln.startswith('#'): continue
-    p = [x.strip() for x in (ln.rstrip('\n').split('|') + ['', '', ''])[:4]]
+    p = [x.strip() for x in (ln.rstrip('\n').split('|') + ['', '', '', '', ''])[:6]]
+    if p[0] in byk and not p[1]:  # date-only or note-only override (key||||date|note)
+        v = dict(byk[p[0]])
+        if p[4]: v['date'] = p[4]
+        if p[5]: v['handnote'] = p[5]
+        byk[p[0]] = v; continue
     if p[0] in byk:
         v = dict(byk[p[0]]); v['roll'] = dict(x.split('=') for x in p[1].split(',')); v['src'] = 'hand'; v['flags'] = []
+        if p[4]: v['date'] = p[4]
+        if p[5]: v['handnote'] = p[5]
         if p[2]: v['mover'] = p[2]
         if p[3]: v['second'] = p[3]
         rv = list(v['roll'].values())
@@ -30,6 +37,7 @@ DV = 'https://edocs.miamigardens-fl.gov/WebLink/DocView.aspx?id=%s&dbid=0&repo=L
 def mkey(n, date):
     if n == 'Ighodaro' and date >= '2020-11-01': return 'SIghodaro'
     if n == 'Campbell' and date < '2016-01-01': return 'ACampbell'
+    if n == 'Williams' and date < '2011-03-09': return 'AWilliams'  # only Andre Williams sat before David Williams Jr. was seated Mar 9, 2011
     return n
 
 roster = {}
@@ -72,6 +80,7 @@ for k, d in dec.items():
     note = []
     if v['resno']: note.append('Resolution/Ordinance No. ' + v['resno'] + '.')
     if d[7]: note.append(d[7])
+    if v.get('handnote'): note.append(v['handnote'])
     if pa_note: note.append(pa_note)
     if v['src'] in ('own-roll', 'consent-roll'): note.append('Roll call recorded in the minutes.')
     elif v['src'] == 'hand': note.append('Votes as stated in the minutes text (read by hand; a member marked unknown was not individually recorded).')
@@ -92,7 +101,7 @@ for k, d in dec.items():
 actions.sort(key=lambda a: (a['date'], a['id']))
 meetings = sorted({(v['date'], v['meeting'], v['doc']) for v in V})
 reviewed_years = sorted({k[3:7] for k in dec})
-out = dict(city='Miami Gardens', body='Miami Gardens City Council', window={'from': '2008-01-01', 'to': max(a['date'] for a in actions) if actions else None},
+out = dict(city='Miami Gardens', body='Miami Gardens City Council', window={'from': '2008-03-26', 'to': max(a['date'] for a in actions) if actions else None},
            sources=['https://edocs.miamigardens-fl.gov/WebLink/Browse.aspx?id=86952&dbid=0&repo=Laserfiche (City Clerk > Minutes, 2003-2026)'],
            members=sorted(roster), meetings=[dict(date=d, name=n, url=DV % i.rstrip('b'), read=True) for d, n, i in meetings if d[:4] in reviewed_years],
            actions=actions,

@@ -17,3 +17,4 @@ Resume notes: one line per finished batch. Work files (downloads, OCR) in the se
 - 2026-10-26T00:46Z Hialeah Group V: 2008-2012 added (parsed.json re-parsed after OCR; seats per clerk lines: Bovo to R2008-154/O2008-75, Cue-Fuente after; Yedra to R2011-122/O2011-78, Lozano after). Ordinance rolls read by hand at 300 dpi (roll-overrides.txt). 2007 waiting on OCR.
 - 2026-10-26T00:47Z Doral 2010-11..2015-12: decisions-2010-2015.txt (hand, to Jan 2012) + decisions-2010-2015-auto.txt (pattern-extracted from minutes captions, junk removed); owners from PA. 990 actions total 2010-2018.
 - 2026-10-26T00:52Z Key Biscayne (de la Cruz): 105 Granicus minutes PDFs (scans) OCR'd; 277 titled items parsed with named rolls; 98 qualifying actions (src/keybiscayne). Donors not online.
+- 2026-10-26T01:05Z Hialeah: 2007 added; ~140 missing vote lines recovered by 300 dpi OCR (roll-overrides.txt); 1028 actions, 2007-01..2017-11.

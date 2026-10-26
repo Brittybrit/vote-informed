@@ -20,8 +20,8 @@ for ln in (open(RF, encoding='utf8') if os.path.exists(RF) else []):
     if p[0] in byk:
         v = byk[p[0]]
         if p[1]: v['roll'] = dict(x.split('=') for x in p[1].split(','))
-        if p[2]: v['mover'] = p[2]
-        if p[3]: v['second'] = p[3]
+        if p[2]: v['mover'] = None if p[2] == '~' else p[2]
+        if p[3]: v['second'] = None if p[3] == '~' else p[3]
         if p[4]: v['date'] = p[4]
         y = sum(1 for x in (v['roll'] or {}).values() if x == 'yes'); n = sum(1 for x in (v['roll'] or {}).values() if x == 'no')
         if p[1] and v['roll']: v['result'] = 'passed' if y > n else 'failed'; v['note'] = p[5] or 'Vote read by hand from the scan of the signed record (the text layer did not carry it).'
@@ -54,7 +54,13 @@ for k, d in dec.items():
     if v['roll'] is None: note.append('Vote not given in the minutes.')
     roll = v['roll']
     yes = sum(1 for x in (roll or {}).values() if x == 'yes'); no = sum(1 for x in (roll or {}).values() if x == 'no')
-    a = dict(id=k, date=v['date'], ref=v.get('ref') or k, title=en, kind=KIND.get(T, 'contract'), parties=parties, amount=amt,
+    ref = v.get('ref') if v.get('ref') not in (None, 'None', '') else None
+    w = v.get('what') or ''
+    if prefix == 'nmb' and w and str(v.get('consent')) != 'True':
+        m = re.search(r'(Resolution|Ordinance)\s*(?:No\.?\s*)?(R?\d{4}-\d+|DA\d{4}-\d+)', w)
+        if m: ref = m.group(1) + ' ' + m.group(2)
+        elif ref and ref.split()[-1].lstrip('R') not in w: ref = None  # stale number carried from an earlier item
+    a = dict(id=k, date=v['date'], ref=ref or k, title=en, kind=KIND.get(T, 'contract'), parties=parties, amount=amt,
              url=v.get('url'), roll=roll, tally=[yes, no] if roll and all(x in ('yes', 'no', 'absent', 'recused', 'abstain') for x in roll.values()) else None,
              mover=v.get('mover'), second=v.get('second'), consent=bool(v.get('consent')), result=v.get('result') or 'passed',
              notes=' '.join(note), tenure=True, minutes=v.get('minutes') or v.get('url'))
