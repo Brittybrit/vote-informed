@@ -1,0 +1,100 @@
+"""Extends scripts/data/tenure/cities-a/lib/titles.py (read-only import) with subject keys and templates used in this slice."""
+import os, sys, re
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'cities-a', 'lib'))
+import titles as _t
+from titles import SUBJ, J, money
+
+SUBJ.update({
+ 'trafficenf': ('police traffic enforcement on private roads', 'control policial del tráfico en calles privadas', 'kontwòl trafik polis sou wout prive'),
+ 'policesvc': ('police services', 'servicios policiales', 'sèvis polis'),
+ 'emploans': ('loans for city employees', 'préstamos para empleados municipales', 'prè pou anplwaye vil la'),
+ 'shelving': ('office shelving', 'estanterías de oficina', 'etajè biwo'),
+ 'cityland': ('use of city property', 'uso de propiedad municipal', 'itilizasyon pwopriyete vil la'),
+ 'brokerage': ('real estate brokerage', 'servicios de corretaje inmobiliario', 'sèvis koutye imobilye'),
+ 'schooldonation': ('a donation to the city charter high school', 'una donación a la escuela secundaria chárter de la ciudad', 'yon don pou lekòl segondè charter vil la'),
+ 'testing': ('construction materials testing and inspection', 'pruebas e inspección de materiales de construcción', 'tès ak enspeksyon materyèl konstriksyon'),
+ 'fitnessmgmt': ('fitness center management', 'administración del gimnasio', 'jesyon sant fitnès'),
+ 'telecom': ('telephone and cable services', 'servicios de teléfono y cable', 'sèvis telefòn ak kab'),
+ 'alarmbill': ('false alarm billing', 'facturación de falsas alarmas', 'faktirasyon fo alam'),
+ 'underwrite': ('bond underwriting', 'suscripción de bonos', 'souskripsyon obligasyon'),
+ 'vending': ('vending machines', 'máquinas expendedoras', 'machin distribitè'),
+ 'foodsvc': ('school food services', 'servicios de comida escolar', 'sèvis manje lekòl'),
+ 'transpcontrib': ('transportation improvement contributions', 'contribuciones para mejoras de transporte', 'kontribisyon pou amelyorasyon transpò'),
+ 'decolight': ('decorative lighting', 'iluminación decorativa', 'limyè dekoratif'),
+ 'tennis': ('tennis programs and court maintenance', 'programas de tenis y mantenimiento de canchas', 'pwogram tenis ak antretyen teren'),
+ 'trafficeng': ('traffic engineering services', 'servicios de ingeniería de tráfico', 'sèvis jeni trafik'),
+ 'gissurvey': ('GIS and survey services', 'servicios de SIG y agrimensura', 'sèvis GIS ak apantaj'),
+ 'stormplan': ('stormwater planning and engineering', 'planificación e ingeniería de aguas pluviales', 'planifikasyon ak jeni dlo lapli'),
+ 'seawall': ('living seawall tiles', 'losetas de muro marino vivo', 'mozayik miray lanmè vivan'),
+ 'pool': ('pool improvements', 'mejoras de piscina', 'amelyorasyon pisin'),
+ 'auction': ('auction services', 'servicios de subasta', 'sèvis vann aleanchè'),
+ 'solar': ('rooftop solar panels', 'paneles solares en techos', 'panno solè sou twati'),
+ 'fleetrep': ('vehicle maintenance and repairs', 'mantenimiento y reparación de vehículos', 'antretyen ak reparasyon machin'),
+ 'concrete': ('ready-mix concrete', 'concreto premezclado', 'beton pare'),
+ 'seniorhousing': ('senior housing', 'viviendas para personas mayores', 'lojman pou granmoun aje'),
+ 'redlight': ('red-light camera services', 'servicios de cámaras de semáforo en rojo', 'sèvis kamera limyè wouj'),
+ 'lighting': ('sports and security lighting maintenance', 'mantenimiento de iluminación deportiva y de seguridad', 'antretyen limyè espò ak sekirite'),
+ 'gym': ('gym improvements', 'mejoras del gimnasio', 'amelyorasyon jimnaz'),
+ 'banking2': ('purchasing card services', 'servicios de tarjetas de compra', 'sèvis kat acha'),
+ 'community': ('community programs', 'programas comunitarios', 'pwogram kominotè'),
+ 'festival': ('a city festival', 'un festival de la ciudad', 'yon festival vil la'),
+ 'recsoft': ('recreation management software', 'programa de gestión de recreación', 'lojisyèl jesyon rekreyasyon'),
+ 'bodycam': ('police body cameras', 'cámaras corporales para la policía', 'kamera kò pou lapolis'),
+ 'school': ('school programs', 'programas escolares', 'pwogram lekòl'),
+ 'parking': ('parking services', 'servicios de estacionamiento', 'sèvis pakin'),
+ 'beach': ('beach services', 'servicios de playa', 'sèvis plaj'),
+ 'tech': ('technology services', 'servicios de tecnología', 'sèvis teknoloji'),
+ 'building': ('building inspection and permitting services', 'servicios de inspección y permisos de construcción', 'sèvis enspeksyon ak pèmi konstriksyon'),
+ 'streets': ('street improvements', 'mejoras de calles', 'amelyorasyon lari'),
+ 'drainage': ('drainage improvements', 'mejoras de drenaje', 'amelyorasyon drenaj'),
+ 'design': ('design services', 'servicios de diseño', 'sèvis konsepsyon'),
+ 'medical': ('medical services', 'servicios médicos', 'sèvis medikal'),
+ 'loan': ('a bank loan', 'un préstamo bancario', 'yon prè labank'),
+ 'cleanup': ('cleanup services', 'servicios de limpieza', 'sèvis netwayaj'),
+ 'mowing': ('lot mowing and clearing', 'corte de césped y limpieza de lotes', 'koupe zèb ak netwaye teren'),
+ 'housing2': ('affordable housing', 'viviendas asequibles', 'lojman abòdab'),
+ 'shelter': ('bus shelter maintenance', 'mantenimiento de paradas de autobús', 'antretyen abri bis'),
+ 'storage': ('data storage equipment', 'equipo de almacenamiento de datos', 'ekipman estokaj done'),
+ 'firealarm': ('fire alarm repairs', 'reparación del sistema de alarma contra incendios', 'reparasyon sistèm alam dife'),
+ 'thermal': ('thermal temperature scanners', 'escáneres térmicos de temperatura', 'eskanè tanperati tèmik'),
+ 'grounds': ('grounds maintenance', 'mantenimiento de áreas verdes', 'antretyen teren'),
+ 'datasoft': ('police data software', 'programa de datos policiales', 'lojisyèl done lapolis'),
+ 'wayfinding': ('wayfinding signs', 'señalización vial', 'pankat oryantasyon'),
+ 'simulator': ('a police training simulator', 'un simulador de entrenamiento policial', 'yon similatè fòmasyon lapolis'),
+})
+
+def title(k, ps, amt=None, s='other', x=''):
+    P = J(ps); m = money(amt)
+    fe = (' (%s)' % m) if m else ''
+    X = {
+     'waive': ('Waived city facility fees for %s%s' % (P[0], fe), 'Eximió de tarifas de instalaciones municipales a %s%s' % (P[1], fe), 'Egzante %s de frè lokal vil la%s' % (P[2], fe)),
+     'rezoneapp': ('Rezoned property at %s for %s' % (x, P[0]), 'Cambió la zonificación de una propiedad en %s para %s' % (x, P[1]), 'Chanje zonaj yon pwopriyete nan %s pou %s' % (x, P[2])),
+     'platapp': ('Approved a plat at %s for %s' % (x, P[0]), 'Aprobó un plano de subdivisión en %s para %s' % (x, P[1]), 'Apwouve yon plan lotisman nan %s pou %s' % (x, P[2])),
+     'siteplanapp': ('Approved a site plan at %s for %s' % (x, P[0]), 'Aprobó un plano del sitio en %s para %s' % (x, P[1]), 'Apwouve yon plan sit nan %s pou %s' % (x, P[2])),
+     'varapp': ('Granted a variance at %s for %s' % (x, P[0]), 'Otorgó una variación en %s para %s' % (x, P[1]), 'Bay yon derogasyon nan %s pou %s' % (x, P[2])),
+     'textamend': ('Amended the zoning rules at the request of %s' % P[0], 'Enmendó las normas de zonificación a pedido de %s' % P[1], 'Amande règ zonaj yo sou demann %s' % P[2]),
+     'cupapp': ('Granted conditional use approval at %s for %s' % (x, P[0]), 'Otorgó aprobación de uso condicional en %s para %s' % (x, P[1]), 'Bay apwobasyon pou itilizasyon kondisyonèl nan %s pou %s' % (x, P[2])),
+     'specapp': ('Granted a special exception at %s for %s' % (x, P[0]), 'Otorgó una excepción especial en %s para %s' % (x, P[1]), 'Bay yon eksepsyon espesyal nan %s pou %s' % (x, P[2])),
+     'franchise': ('Granted a utility franchise to %s' % P[0], 'Otorgó una franquicia de servicio público a %s' % P[1], 'Bay %s yon franchiz sèvis piblik' % P[2]),
+     'release': ('Released a recorded restriction for %s%s' % (P[0], (' at %s' % x) if x else ''), 'Liberó una restricción registrada para %s%s' % (P[1], (' en %s' % x) if x else ''), 'Leve yon restriksyon anrejistre pou %s%s' % (P[2], (' nan %s' % x) if x else '')),
+     'acceptland': ('Accepted land conveyed by %s%s' % (P[0], (' at %s' % x) if x else ''), 'Aceptó un terreno cedido por %s%s' % (P[1], (' en %s' % x) if x else ''), 'Aksepte tè %s bay vil la%s' % (P[2], (' nan %s' % x) if x else '')),
+     'stax': ('Approved the application of %s for a special taxing district for %s' % (P[0], x), 'Aprobó la solicitud de %s para un distrito especial de impuestos para %s' % (P[1], x), 'Apwouve demann %s pou yon distri taks espesyal pou %s' % (P[2], x)),
+     'other': ('Approved an item benefiting %s' % P[0], 'Aprobó un asunto que beneficia a %s' % P[1], 'Apwouve yon pwen ki benefisye %s' % P[2]),
+     'terminate': ('Ended the contract with %s' % P[0], 'Terminó el contrato con %s' % P[1], 'Mete fen nan kontra ak %s' % P[2]),
+    }
+    if k in X:
+        r = X[k]
+        if not x: r = tuple(re.sub(r'\s+(?:at|en|nan)\s+(?=(?:for|para|pou)\s)', ' ', v) for v in r)
+        return r
+    return _t.title(k, ps, amt, s, x)
+
+KIND = {'contract': 'contract', 'renew': 'contract', 'amend': 'contract', 'change': 'contract', 'buy': 'contract', 'piggy': 'contract',
+        'nobid': 'contract', 'emerg': 'contract', 'award': 'contract', 'agree': 'agreement', 'union': 'agreement', 'unionmou': 'agreement',
+        'settle': 'settlement', 'lease': 'lease', 'leasein': 'lease', 'leaseamend': 'lease', 'sale': 'sale', 'buyland': 'sale', 'swap': 'sale',
+        'swapno': 'sale', 'buylandno': 'sale', 'abandon': 'sale', 'siteplan': 'zoning', 'siteplanno': 'zoning', 'cup': 'zoning', 'cupno': 'zoning',
+        'plat': 'zoning', 'landuse': 'zoning', 'rezone': 'zoning', 'variance': 'zoning', 'devagree': 'zoning', 'specex': 'zoning', 'specexno': 'zoning',
+        'variano': 'zoning', 'rezoneno': 'zoning', 'landuseno': 'zoning', 'vacate': 'zoning', 'rezoneapp': 'zoning', 'platapp': 'zoning',
+        'siteplanapp': 'zoning', 'varapp': 'zoning', 'specapp': 'zoning', 'cupapp': 'zoning', 'textamend': 'zoning', 'grant': 'grant', 'sponsor': 'grant', 'waive': 'grant',
+        'easement': 'easement', 'license': 'license', 'permit': 'license', 'permitno': 'license', 'franchise': 'license', 'partner': 'agreement',
+        'select': 'contract', 'insure': 'contract', 'pay': 'contract', 'convey': 'easement', 'estoppel': 'other', 'payplan': 'other', 'str': 'license',
+        'terminate': 'contract', 'stax': 'other', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}

@@ -73,9 +73,9 @@ const OFFICES = [
   { pid: 'sherelean-bass', start: '2018-11-06', role: 'member', acts: [N + 'opalocka/actions.json'], key: 'Bass', donors: 'notOnline',
     actsNote: ['Opa-locka posts no minutes for November 2018 to October 2019, so actions from those months are not listed.', 'Opa-locka no publica actas de noviembre de 2018 a octubre de 2019, así que las acciones de esos meses no aparecen.', 'Opa-locka pa pibliye pwosè vèbal novanm 2018 rive oktòb 2019, kidonk aksyon mwa sa yo pa parèt.'] },
   { pid: 'rose-tydus', start: '2004-11-02', role: 'member', acts: [], key: 'Tydus', donors: 'notOnline', noActions: 'notOnline' },
-  { pid: 'dana-goldman', start: '2015-02-17', role: 'member', acts: [], key: 'Goldman', donors: 'notCollected', noActions: 'notCollected' },
-  { pid: 'dana-goldman', start: '2021-11-16', role: 'mayor', acts: [], key: 'Goldman', donors: 'notCollected', noActions: 'notCollected' },
-  { pid: 'larisa-svechin', start: '2016-11-08', role: 'member', acts: [], key: 'Svechin', donors: 'notCollected', noActions: 'notCollected' },
+  { pid: 'dana-goldman', start: '2014-12-02', role: 'member', acts: [N + 'sunnyisles/actions.json'], key: 'Goldman', donors: 'notOnline', actsNote: ['Sunny Isles Beach posts minutes for every meeting from December 2014 to January 2020 except four, but only five meetings from February 2020 to December 2022, so most actions from those years show no vote.', 'Sunny Isles Beach publica actas de todas las reuniones de diciembre de 2014 a enero de 2020 salvo cuatro, pero solo cinco reuniones de febrero de 2020 a diciembre de 2022, así que la mayoría de las acciones de esos años aparecen sin voto.', 'Sunny Isles Beach pibliye pwosè vèbal tout reyinyon soti desanm 2014 rive janvye 2020 sof kat, men sèlman senk reyinyon soti fevriye 2020 rive desanm 2022, kidonk pifò aksyon ane sa yo parèt san vòt.'] },
+  { pid: 'dana-goldman', start: '2021-11-16', role: 'mayor', acts: [N + 'sunnyisles/actions.json'], key: 'Goldman', donors: 'notOnline', actsNote: ['Sunny Isles Beach posts minutes for every meeting from December 2014 to January 2020 except four, but only five meetings from February 2020 to December 2022, so most actions from those years show no vote.', 'Sunny Isles Beach publica actas de todas las reuniones de diciembre de 2014 a enero de 2020 salvo cuatro, pero solo cinco reuniones de febrero de 2020 a diciembre de 2022, así que la mayoría de las acciones de esos años aparecen sin voto.', 'Sunny Isles Beach pibliye pwosè vèbal tout reyinyon soti desanm 2014 rive janvye 2020 sof kat, men sèlman senk reyinyon soti fevriye 2020 rive desanm 2022, kidonk pifò aksyon ane sa yo parèt san vòt.'] },
+  { pid: 'larisa-svechin', start: '2016-11-08', role: 'member', acts: [N + 'sunnyisles/actions.json'], key: 'Svechin', donors: 'notOnline', actsNote: ['Sunny Isles Beach posts minutes for every meeting from December 2014 to January 2020 except four, but only five meetings from February 2020 to December 2022, so most actions from those years show no vote.', 'Sunny Isles Beach publica actas de todas las reuniones de diciembre de 2014 a enero de 2020 salvo cuatro, pero solo cinco reuniones de febrero de 2020 a diciembre de 2022, así que la mayoría de las acciones de esos años aparecen sin voto.', 'Sunny Isles Beach pibliye pwosè vèbal tout reyinyon soti desanm 2014 rive janvye 2020 sof kat, men sèlman senk reyinyon soti fevriye 2020 rive desanm 2022, kidonk pifò aksyon ane sa yo parèt san vòt.'] },
   { pid: 'luis-gonzalez', start: '2005-11-15', role: 'member', acts: [S + 'hialeah-groupv/actions.json'], key: 'Gonzalez', donors: 'notOnline',
     actsNote: ['Hialeah posts no council records before 2007, so actions from the first year of the term are not listed.', 'Hialeah no publica registros del concejo antes de 2007, así que las acciones del primer año del período no aparecen.', 'Hialeah pa pibliye dosye konsèy la anvan 2007, kidonk aksyon premye ane manda a pa parèt.'] },
   { pid: 'ivan-pacheco', start: '2016-11-08', role: 'member', acts: [S + 'medley-pacheco/actions.json'], key: 'IPacheco', donors: 'notOnline' },
@@ -90,7 +90,7 @@ const OFFICES = [
   { pid: 'scott-singer', start: '2014-03', role: 'member', acts: [], key: 'Singer', donors: 'notOnline', noActions: 'notCollected' },
   { pid: 'scott-singer', start: '2018-04-27', role: 'mayor', acts: [], key: 'Singer', donors: 'notOnline', noActions: 'notCollected', current: true },
   { pid: 'jared-moskowitz', start: '2022-01-12', role: 'member', acts: [T + 'prior-congress/broward/actions.json'], key: 'Moskowitz', donors: 'appointed' },
-  { pid: 'jared-moskowitz', start: '2006', role: 'member', acts: [], key: 'Moskowitz', donors: 'notCollected', noActions: 'notCollected' },
+  { pid: 'jared-moskowitz', start: '2006-03-22', role: 'member', acts: [], key: 'Moskowitz', donors: 'notOnline', noActions: 'notCollected' },
   { pid: 'bruno-a-barreiro', start: '1998-06-02', role: 'member', acts: [C + 'actions.json'], key: 'Barreiro', donors: 'files',
     files: [2004, 2008, 2012, 2016].map(y => C + 'donors/barreiro-campaign-' + y + '.csv'), missing: ['1998 and 2000', '1998 y 2000', '1998 ak 2000'],
     actsNote: ['County Commission zoning hearings before July 2017 are not in the Clerk’s online minutes, so most zoning votes from these years are not listed.', 'Las audiencias de zonificación de la Comisión antes de julio de 2017 no están en las actas en línea de la Secretaría, así que la mayoría de los votos de zonificación de estos años no aparecen.', 'Odyans zonaj Komisyon an anvan jiyè 2017 pa nan pwosè vèbal Grefye a sou entènèt, kidonk pifò vòt zonaj ane sa yo pa parèt.'] },
@@ -167,7 +167,9 @@ for (const C0 of OFFICES) {
   for (const f of C0.acts) for (const a of load(f).actions || []) {
     if (!a.date || !inTerm(a.date) || seen.has(a.id)) continue;
     const roll = a.roll || {};
-    if (!C0.mayorRule && !(C0.key in roll)) continue;
+    // roll null = the minutes for that meeting are not online: a member seated that day gets "vote not given"
+    const noMinutes = a.roll === null;
+    if (!C0.mayorRule && !noMinutes && !(C0.key in roll)) continue;
     if (C0.mayorRule && !a.mayor) continue;
     if (a.universe === false) continue;
     seen.add(a.id);
@@ -178,6 +180,7 @@ for (const C0 of OFFICES) {
     // own recommendation and did not veto counts as his yes, a veto as his no, anything else shows no vote
     if (C0.mayorRule) { const m = a.mayor; v = m.vetoed ? 'no' : (m.mayorMemo || /gim[eé']?nez/i.test(m.recommendedBy || '')) ? 'yes' : 'unknown'; }
     if (C0.noVotes) v = 'unknown';
+    if (noMinutes && !C0.mayorRule) v = 'unknown';
     // a voice vote gives this member a yes only when the tally accounts for every yes
     if (v === 'yes' && /voice vote/i.test(a.notes || '')) {
       const t = tallyOf(a.tally), ys = Object.values(roll).filter(x => x === 'yes').length;

@@ -3,7 +3,7 @@
 Curl gets a Cloudflare block ("Sorry, you have been blocked") and WebFetch permission was not granted. Run these in one
 browser pass and save the outputs where named (folder: scripts/data/tenure/prior-congress/parkland/ unless noted).
 
-## 1. Parkland City Commission minutes, March 2006 - Nov 2012 (Moskowitz's seat)
+## 1. [DONE Oct 26, 2026: text saved, dates set; actions not built] Parkland City Commission minutes, March 2006 - Nov 2012 (Moskowitz's seat)
 - Portal: https://documents.cityofparkland.org/WebLink/Browse.aspx?id=4 (the city's Laserfiche archive; linked from
   https://www.cityofparkland.org/cc "Agendas & Minutes").
 - Open the City Commission > Minutes folders for 2006, 2007, 2008, 2009, 2010, 2011, 2012 (regular, special and workshop
