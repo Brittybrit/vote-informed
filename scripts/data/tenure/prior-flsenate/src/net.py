@@ -1,11 +1,11 @@
-"""Shared fetch helper for every script in this slice: curl through the proxy. Request STARTS are spaced at least 6.5 s apart
+"""Shared fetch helper for every script in this slice: curl through the proxy. Request STARTS are spaced at least 10 s apart (coordinator, Oct 26)
 across all of this slice's processes (file lock + timestamp; another agent shares flsenate.gov); the download itself runs
 outside the lock. 60 s backoff on 429 (for /Session/ pages: shared by all processes)."""
 import subprocess, time, os, tempfile, fcntl
 LOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.lock')
 HOLD = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.hold')  # 429 back-off for flsenate.gov /Session/ pages only
 def _dynamic(u): return 'flsenate.gov/Session/' in u
-DGAP = float(os.environ.get('PFS_DGAP', '15'))  # /Session/ pages: at least this many seconds apart (fewer 429s than 6.5 s)
+DGAP = float(os.environ.get('PFS_DGAP', '10'))  # /Session/ pages: at least this many seconds apart (fewer 429s than 6.5 s)
 DLOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.dlock')
 def _wait_hold(u):
     if not _dynamic(u): return
@@ -30,7 +30,7 @@ def _slot(gap):
         lk.seek(0); lk.truncate(); lk.write(str(time.time())); lk.flush()
         fcntl.flock(lk, fcntl.LOCK_UN)
 
-def get(u, binary=False, tries=8, gap=6.5, minlen=1000):
+def get(u, binary=False, tries=8, gap=10, minlen=1000):
     for t in range(tries):
         f = tempfile.NamedTemporaryFile(delete=False); f.close()
         _wait_hold(u); _slot(gap)

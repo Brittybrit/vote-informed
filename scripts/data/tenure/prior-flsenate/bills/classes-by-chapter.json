@@ -1,0 +1,147 @@
+{
+ "2020-9": {
+  "tags": [
+   "health-other"
+  ],
+  "re": "NURSE PRACTITIONER|APRN|ARNP|ADVANCED PRACTICE|NURSE ANESTH"
+ },
+ "2020-11": {
+  "tags": [
+   "retail"
+  ],
+  "re": "FIREWORK|PYROTECHNIC|PHANTOM|TNT FIREWORKS"
+ },
+ "2020-21": {
+  "tags": [
+   "construction",
+   "engineering"
+  ],
+  "re": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR",
+  "not": "REAL ESTATE|REALTOR"
+ },
+ "2020-38": {
+  "tags": [
+   "health-other"
+  ],
+  "re": "RECOVERY|SUBSTANCE|ADDICTION|BEHAVIORAL|TREATMENT CENTER|DETOX|SOBER"
+ },
+ "2020-41": {
+  "tags": [
+   "waste-environment"
+  ],
+  "re": "WASTE|RECYCL|SANITATION|DISPOSAL|REPUBLIC SERVICES|WASTE MANAGEMENT"
+ },
+ "2020-56": {
+  "tags": [
+   "oil-gas",
+   "retail"
+  ],
+  "re": "PETROLEUM|OIL|GAS STATION|FUEL|CONVENIENCE|WAWA|RACETRAC|MURPHY|SUNOCO|CIRCLE K",
+  "not": "OIL PAINT|OLIVE"
+ },
+ "2020-60": {
+  "tags": [
+   "health-other",
+   "nursing-homes"
+  ],
+  "re": "INTERMEDIATE CARE|DEVELOPMENTAL|DISABILIT|GROUP HOME|ARC "
+ },
+ "2020-70": {
+  "tags": [
+   "banks",
+   "securities-investment"
+  ],
+  "re": "TRUST COMPANY|TRUST CO|WEALTH|BANK|FIDUCIARY|NORTHERN TRUST"
+ },
+ "2020-78": {
+  "tags": [
+   "physicians"
+  ],
+  "re": "PHYSICIAN|M\\.?D\\.?$|MEDICAL|DOCTOR|ORTHOPED"
+ },
+ "2020-87": {
+  "tags": [
+   "ride-hailing"
+  ],
+  "re": "UBER|LYFT|LIMO|TRANSPORTATION NETWORK|CHAUFFEUR|TAXI|ALTAN"
+ },
+ "2020-103": {
+  "tags": [
+   "nursing-homes"
+  ],
+  "re": "NURSING|HEALTH CARE ASSOC|REHAB|SENIOR LIVING|ASSISTED LIVING|LONG.TERM CARE"
+ },
+ "2020-105": {
+  "tags": [
+   "aerospace"
+  ],
+  "re": "AEROSPACE|SPACE|ROCKET|BOEING|LOCKHEED|BLUE ORIGIN|NORTHROP|AIRBUS|L3HARRIS",
+  "not": "SPACE COAST REALT"
+ },
+ "2020-108": {
+  "tags": [
+   "autos-dealers"
+  ],
+  "re": "MOTOR|AUTO|DEALER|CHEVROLET|FORD|TOYOTA|HONDA|NISSAN|LEXUS|HYUNDAI|KIA|BMW|MERCEDES|CADILLAC|JEEP|DODGE|CHRYSLER|AUTONATION|LITHIA",
+  "not": "MOTORCYCLE INS"
+ },
+ "2020-109": {
+  "tags": [
+   "tech-software"
+  ],
+  "re": "ELECTION SYSTEMS|DOMINION|HART INTERCIVIC|CLEAR BALLOT|VOTING|TABULAT"
+ },
+ "2020-119": {
+  "tags": [
+   "engineering"
+  ],
+  "re": "ENGINEER|CONSULTING|COASTAL|SURVEY|ENVIRONMENTAL|AECOM|JACOBS|KIMLEY|STANTEC|HDR"
+ },
+ "2020-124": {
+  "tags": [
+   "pharmacies-pbm"
+  ],
+  "re": "PHARMAC|DRUG|WALGREEN|CVS|PUBLIX|RX"
+ },
+ "2020-126": {
+  "tags": [
+   "retail",
+   "hotels-tourism"
+  ],
+  "re": "RV |R\\.V\\.|RECREATIONAL VEHICLE|CAMPGROUND|CAMPING|MOTORHOME|LAZYDAYS|RV PARK"
+ },
+ "2020-127": {
+  "tags": [
+   "engineering",
+   "construction"
+  ],
+  "re": "ENGINEER|ARCHITECT|CONSTRUCTION MANAGEMENT|PROJECT MANAGEMENT|SURVEY|DESIGN|AECOM|JACOBS|KIMLEY|STANTEC|HDR|CONSTRUCT"
+ },
+ "2020-145": {
+  "tags": [
+   "tech-software"
+  ],
+  "re": "ALERT|SECURITY|SAFETY|ALERTUS|RAVE MOBILE|CENTEGIX|AWARE"
+ },
+ "2020-156": {
+  "tags": [
+   "health-other"
+  ],
+  "re": "CLINIC|IMAGING|X-RAY|RADIOLOG|DIAGNOSTIC|LAB|BEHAVIOR ANALY|MENTAL HEALTH",
+  "not": "LABOR|LABORER"
+ },
+ "2020-174": {
+  "tags": [
+   "towing"
+  ],
+  "re": "TOWING|WRECKER|RECOVERY|TOW ",
+  "not": "SUBSTANCE|ADDICTION"
+ },
+ "2020-177": {
+  "tags": [
+   "insurance-health"
+  ],
+  "re": "HEALTH PLAN|HMO|BLUE CROSS|FLORIDA BLUE|AETNA|CIGNA|HUMANA|UNITED ?HEALTH|AVMED|MOLINA|CENTENE|SUNSHINE HEALTH|INSURANCE",
+  "not": "AUTO INS|PROPERTY|TITLE"
+ }
+}
