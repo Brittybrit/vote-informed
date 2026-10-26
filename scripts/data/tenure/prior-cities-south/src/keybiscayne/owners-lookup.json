@@ -1,0 +1,28 @@
+{
+ "401 Hampton Lane": {
+  "address": "401 Hampton Lane",
+  "query": "401 HAMPTON LN",
+  "folio": null,
+  "owner": null,
+  "note": "Address not found in the Property Appraiser search",
+  "asof": "2016-02-23"
+ },
+ "570 Fernwood Road": {
+  "address": "570 Fernwood Road",
+  "query": "570 FERNWOOD RD",
+  "folio": "24-5205-002-0010",
+  "owner": "",
+  "note": "Grantee of the last sale before the vote (1/1/1991); current owner 570 FERNWOOD ROAD LLC",
+  "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=2452050020010",
+  "asof": "2016-06-28"
+ },
+ "571 Glenridge Road": {
+  "address": "571 Glenridge Road",
+  "query": "571 GLENRIDGE RD",
+  "folio": "24-5205-002-0060",
+  "owner": "NANCY F GAMWELL",
+  "note": "Grantee of the last sale before the vote (5/10/2016); current owner HABITAT GROVE LLC",
+  "ownerSrc": "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=2452050020060",
+  "asof": "2016-06-28"
+ }
+}

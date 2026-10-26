@@ -11,8 +11,8 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 56,
-  "qualifying": 1,
+  "screened": 73,
+  "qualifying": 6,
   "withHouseVote": 0
  },
  "missing": {
@@ -218,23 +218,6 @@
    "2013-272"
   ],
   "B": [
-   "2013-31",
-   "2013-32",
-   "2013-39",
-   "2013-46",
-   "2013-50",
-   "2013-51",
-   "2013-60",
-   "2013-61",
-   "2013-62",
-   "2013-64",
-   "2013-66",
-   "2013-68",
-   "2013-69",
-   "2013-70",
-   "2013-71",
-   "2013-72",
-   "2013-73",
    "2013-74",
    "2013-75",
    "2013-76",
@@ -440,6 +423,31 @@
     "2013-28",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/286/Vote/HouseVote_s0286c1143.PDF"
+   ],
+   [
+    "2013-39",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/7007/Vote/HouseVote_h7007e2413.PDF"
+   ],
+   [
+    "2013-50",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/1660/Vote/HouseVote_s1660e1451.PDF"
+   ],
+   [
+    "2013-61",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/1850/Vote/HouseVote_s1850e1326.PDF"
+   ],
+   [
+    "2013-66",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/468/Vote/HouseVote_s0468e1329.PDF"
+   ],
+   [
+    "2013-73",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/21/Vote/HouseVote_h0021__056.PDF"
    ]
   ]
  },
@@ -788,7 +796,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/444/Analyses/2013s0444.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Water utility customers will benefit from the cost saving provisions in this bill for wastewater utilities. While the savings are indeterminate, they will likely be insignificant on an individual basis when spread over time for customers served by their utilities.",
-   "note": "not yet judged"
+   "note": "cost savings for ocean-outfall wastewater utilities (local governments) passed to customers; no business named"
   },
   {
    "bill": "SB 674",
@@ -799,7 +807,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/674/Analyses/2013s0674.ca.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The Revenue Estimating Conference has not reviewed CS/SB 674. Private animal control facilities and shelters may have an increase in costs to comply with the reporting requirements of the bill if they are not already collecting that information.",
-   "note": "not yet judged"
+   "note": "costs for private shelters"
   },
   {
    "bill": "SB 92",
@@ -874,9 +882,14 @@
    "title": "Economic Development",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7007",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7007/Analyses/h7007z1.EDTS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "manufacturers (machinery and equipment sales tax exemption)",
+    "named": [],
+    "quote": "By reducing the tax burden of existing manufacturers, the bill may encourage capital investment and new job opportunities in Florida’s manufacturing sector."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Machinery & Equipment Sales Tax Exemption By reducing the tax burden of existing manufacturers, the bill may encourage capital investment and new job opportunities in Florida’s manufacturing sector. The bill may also encourage prospective manufacturers to relocate to the state. Gulf Coast Restoration Subject to the amount of damages awarded to Florida and the period of time necessary to collect such damages, the restoration provisions of this bill should have a positive impact on the private sector. If Triumph Gulf Coast, Inc., can identify and allocate awards to projects and programs with a verifiable benefit to the region’s communities and businesses, the bill may encourage long-term economic grow in northwest Florida. Small Business Development Center Network To the extent that small businesses receive improved assistance through a more effective network and regional centers, the private sector will benefit. Brownfield Redevelopment Act To the extent that the definitions of “housing project” and “mixed-use project” are narrowed, the number of businesses that qualify for the sales tax exemption under s. 212.08(5)(o), F.S., will decrease. To the extent that the eligibility requirements for the brownfield redevelopment bonus refunds are narrowed, there will be a decrease in the number of businesses eligible to receive such refunds. Enterprise Zones The bill has the potential to positively impact the economy of select designated ent",
-   "note": "not yet judged"
+   "note": "also small businesses via SBDC network",
+   "votes": {}
   },
   {
    "bill": "SB 1500",
@@ -953,7 +966,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1516/Analyses/s1516z1.FTSC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Florida businesses that pay Florida corporate income tax will not be able to take full advantage, in the near-term, of the bonus depreciation and expensing provisions of the American Taxpayer Relief Act of 2012 for Florida income tax purposes. Instead, the bill allows taxpayers to take advantage of the federal depreciation and expensing provisions over a 7- year period rather than in one year.",
-   "note": "not yet judged"
+   "note": "corporate taxpayers lose near-term bonus depreciation"
   },
   {
    "bill": "SB 1518",
@@ -995,9 +1008,14 @@
    "title": "Quality Cancer Care and Research",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1660",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1660/Analyses/s1660z.HCAS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "cancer care providers receiving the Quality Cancer Care award",
+    "named": [],
+    "quote": "Providers receiving the award may be able to secure additional patient revenues as a result of the distinction of their care."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Although application for the Award is voluntary, providers in the state who wish to be designated as such will incur indeterminable costs to align their programs with the standards contemplated by this bill. Providers receiving the award may be able to secure additional patient revenues as a result of the distinction of their care. Additionally, providers that receive appropriations for biomedical and/or cancer research or related activities are required to submit annual fiscal-year progress reports that describe the use of funds to the President of the Senate and the Speaker of the House of Representatives. These recipients may incur costs related to the annual progress reporting but these costs are not expected to be significant.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 1720",
@@ -1008,7 +1026,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1720/Analyses/2013s1720.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The options provided to students in this bill—more flexibility in achieving necessary academic skills while earning college credit, increased options for on-line education, and degree recovery options for student returning to a university - will benefit students and better prepare them for employment.",
-   "note": "not yet judged"
+   "note": "students benefit"
   },
   {
    "bill": "SB 1802",
@@ -1107,7 +1125,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1770/Analyses/2013s1770.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Subjecting Citizens Property Insurance Corporation to bad faith may allow claimants to obtain judgments in excess of contract limits in certain instances. To the extent that this impacts overall claims, it may be added to post-catastrophe assessments in the years for which an assessment is levied. The bill allows insurance companies to use the property insurance inflation factor published annually by OIR, in lieu of a full rate examination. The use of the published inflation factor could have the effect of inducing some insurance companies to seek an increase that is within the factor in order to avoid a full rate examination. The bill allows insurance companies to include in their rate filings the cost of private reinsurance purchased to cover potential shortfalls in the amount of reimbursement obtained from the FHCF. To the extent that primary insurers avail themselves of this provision, it could increase the direct written rates, but it could also increase the assurance that the direct writer will be able to meet its obligations to policyholders. The bill limits eligibility for obtaining coverage from Citizens to those properties with a replacement cost of $1 million or more on January 1, 2014; $900,000 or more on January 1, 2015; $800,000 or more on January 1, 2016; $700,000 or more on January 1, 2017; $600,000 or more on January 1, 2018; $500,000 or more on January 1, 2019. The policy limit remains $1 million in counties where the OIR determines th",
-   "note": "not yet judged"
+   "note": "insurer provisions are rate-filing options and Citizens eligibility limits; benefits stated for policyholders"
   },
   {
    "bill": "SB 1850",
@@ -1116,9 +1134,14 @@
    "title": "Public Records/Citizens Property Insurance Corporation Clearinghouse",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1850",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1850/Analyses/2013s1850.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "property insurers in the Citizens clearinghouse (underwriting records exempt from disclosure)",
+    "named": [],
+    "quote": "Underwriting guidelines, manuals, rating information and other underwriting criteria belonging to insurers participating in the Citizens clearinghouse program will be protected, thereby preventing release of information that could put such insurers at a competitive disadvantage."
+   },
    "screen": "Private Sector Impact: Underwriting guidelines, manuals, rating information and other underwriting criteria belonging to insurers participating in the Citizens clearinghouse program will be protected, thereby preventing release of information that could put such insurers at a competitive disadvantage. BILL: SB 1850 Page 5",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 56",
@@ -1129,7 +1152,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/56/Analyses/2013s0056.cf.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The Department of Health is no longer required specifically to include the local SIDS alliances in certain coordination and promotion activities. This may result in reduced participation by the community-based alliances.",
-   "note": "not yet judged"
+   "note": "no business"
   },
   {
    "bill": "SB 284",
@@ -1151,7 +1174,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/342/Analyses/s0342z1.FTSC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Property owners who have a homestead exemption will be able to rent their dwellings for up to 30 days a year and retain the homestead status of their property and any applicable Save our Homes assessment limitation. As a result, an indeterminate number of additional short-term rental opportunities may become available to homestead owners who decide to rent their properties up to 30 days. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: s0342z1.FTSC PAGE: 2 DATE: July 30, 2013",
-   "note": "not yet judged"
+   "note": "homestead owners (individuals)"
   },
   {
    "bill": "SB 452",
@@ -1171,9 +1194,14 @@
    "title": "Property and Casualty Insurance Rates, Fees, and Forms",
    "url": "https://www.flsenate.gov/Session/Bill/2013/468",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/468/Analyses/2013s0468.hp.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "property and casualty and medical malpractice insurers (rate and form filing exemptions)",
+    "named": [],
+    "quote": "Allowing certain insurers to self-certify their own forms will be more convenient for the industry"
+   },
    "screen": "Private Sector Impact: Proponents for exempting certain lines of medical malpractice insurance from specified rate filing requirements assert that a competitive market exists for those types of insurance. Although the bill exempts the specified lines from the filing and review requirements, these types of insurance coverage continue to be subject to the requirement that rates shall not be excessive, inadequate, or unfairly discriminatory. Allowing certain insurers to self-certify their own forms will be more convenient for the industry but potentially hazardous for customers. Since these forms will no longer require pre-approval from the OIR before they may be used, some might not be in compliance with Florida law.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 628",
@@ -1192,10 +1220,10 @@
    "chapter": "2013-68",
    "title": "Fossil Fuel Combustion Products",
    "url": "https://www.flsenate.gov/Session/Bill/2013/682",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/682/Analyses/2013s0682.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: An EPA decision to classify FFCPs as a hazardous waste would prohibit the beneficial use of FFCPs, as well as their in-state disposal; therefore, all of the FFCPs produced in Florida would have to be transported to an out-of-state hazardous waste disposal facility.17 The DEP estimates the cost to transport FFCPs as a hazardous waste to an out- of-state facility would be approximately $2.5 billion per year. The increase in disposal costs would increase the retail cost approximately $0.46 per kilowatt hour, or 44 percent.18 The DEP estimates that the beneficial use of FFCPs in the production of concrete provides a cost savings of approximately $36 million a year.19 The construction industry would realize an indeterminate cost increase in construction materials if the beneficial use of FFCPs was prohibited as a result of the hazardous waste designation.20",
+   "note": "describes costs of a possible EPA hazardous-waste designation, not a benefit from the bill"
   },
   {
    "bill": "SB 1768",
@@ -1203,9 +1231,9 @@
    "chapter": "2013-69",
    "title": "OGSR/Paratransit Services/Personal Information",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1768",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1768/Analyses/2013s1768.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1214,10 +1242,10 @@
    "chapter": "2013-70",
    "title": "Total Maximum Daily Loads",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1806",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1806/Analyses/2013s1806.go.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Allowing the DEP to continue administering the TMDL program under the delegation of authority from the EPA might provide the private sector continuity and certainty in working within the existing DEP framework.",
+   "note": "general continuity for the private sector; no kind of business named as benefiting"
   },
   {
    "bill": "SB 1808",
@@ -1225,10 +1253,10 @@
    "chapter": "2013-71",
    "title": "Numeric Nutrient Criteria",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1808",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1808/Analyses/2013s1808.ca.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The regulated community anticipates that the DEP NNC rules, while still requiring significant investment, will be less expensive to implement than the EPA’s NNC. The difference in the cost of compliance is attributable to the implementation of the DEP’s NNC rules that account for site-specific criteria and allow for biological variations for Florida’s waterbodies that the EPA’s rules do not.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1830",
@@ -1236,9 +1264,9 @@
    "chapter": "2013-72",
    "title": "Ad Valorem Taxation",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1830",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1830/Analyses/s1830z1.FTSC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Unknown.",
    "note": null
   },
   {
@@ -1247,10 +1275,15 @@
    "chapter": "2013-73",
    "title": "Background Screening for Noninstructional Contractors on School Grounds",
    "url": "https://www.flsenate.gov/Session/Bill/2013/21",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/21/Analyses/h0021z1.KTS.PDF",
+   "benefits": {
+    "category": "noninstructional school contractors (one statewide ID badge)",
+    "named": [],
+    "quote": "This may result in reduced costs for noninstructional contractors."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Noninstructional contractors will be charged a fee for the identification badge, as set by DOE. Currently school districts that issue identification badges set their own fee. There is no way to know at this time whether DOE’s set fee will be higher or lower than that currently charged by the districts. However, noninstructional contractors who work in multiple school districts would only be required to obtain and pay for one identification badge, rather than obtaining a badge and paying a fee in each individual district. This may result in reduced costs for noninstructional contractors.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 93",

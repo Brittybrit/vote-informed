@@ -12,11 +12,11 @@ items, prefix, outdir, city, body, wfrom, srclabel = sys.argv[1:8]
 owners = json.load(open(sys.argv[8])) if len(sys.argv) > 8 and os.path.exists(sys.argv[8]) else {}
 os.makedirs(outdir, exist_ok=True)
 V = json.load(open(items)); byk = {v['key']: v for v in V}
-# hand-read votes (decisions/rolls-<prefix>.txt: key|Name=yes,Name=no,...|mover|second|date) for scans the OCR could not read
+# hand-read votes (decisions/rolls-<prefix>.txt: key|Name=yes,Name=no,...|mover|second|date|note) for scans the OCR could not read
 RF = os.path.join(HERE, 'decisions', 'rolls-' + prefix + '.txt')
 for ln in (open(RF, encoding='utf8') if os.path.exists(RF) else []):
     if not ln.strip() or ln.startswith('#'): continue
-    p = [x.strip() for x in (ln.rstrip('\n').split('|') + [''] * 5)[:5]]
+    p = [x.strip() for x in (ln.rstrip('\n').split('|') + [''] * 6)[:6]]
     if p[0] in byk:
         v = byk[p[0]]
         if p[1]: v['roll'] = dict(x.split('=') for x in p[1].split(','))
@@ -24,7 +24,8 @@ for ln in (open(RF, encoding='utf8') if os.path.exists(RF) else []):
         if p[3]: v['second'] = p[3]
         if p[4]: v['date'] = p[4]
         y = sum(1 for x in (v['roll'] or {}).values() if x == 'yes'); n = sum(1 for x in (v['roll'] or {}).values() if x == 'no')
-        if v['roll']: v['result'] = 'passed' if y > n else 'failed'; v['note'] = 'Vote read by hand from the scan of the signed record (the text layer did not carry it).'
+        if p[1] and v['roll']: v['result'] = 'passed' if y > n else 'failed'; v['note'] = p[5] or 'Vote read by hand from the scan of the signed record (the text layer did not carry it).'
+        elif p[5]: v['note'] = ((v.get('note') or '') + ' ' + p[5]).strip()
 dec = {}
 for f in sorted(glob.glob(os.path.join(HERE, 'decisions', prefix + '-*.txt'))):
     for ln in open(f, encoding='utf8'):
@@ -54,7 +55,7 @@ for k, d in dec.items():
     roll = v['roll']
     yes = sum(1 for x in (roll or {}).values() if x == 'yes'); no = sum(1 for x in (roll or {}).values() if x == 'no')
     a = dict(id=k, date=v['date'], ref=v.get('ref') or k, title=en, kind=KIND.get(T, 'contract'), parties=parties, amount=amt,
-             url=v.get('url'), roll=roll, tally=[yes, no] if roll and all(x in ('yes', 'no', 'absent') for x in roll.values()) else None,
+             url=v.get('url'), roll=roll, tally=[yes, no] if roll and all(x in ('yes', 'no', 'absent', 'recused', 'abstain') for x in roll.values()) else None,
              mover=v.get('mover'), second=v.get('second'), consent=bool(v.get('consent')), result=v.get('result') or 'passed',
              notes=' '.join(note), tenure=True, minutes=v.get('minutes') or v.get('url'))
     if d[6]: a['reps'] = [x.strip() for x in d[6].split(';') if x.strip()]

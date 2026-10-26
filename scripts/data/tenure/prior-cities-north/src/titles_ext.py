@@ -25,6 +25,7 @@ SUBJ.update({
  'trafficeng': ('traffic engineering services', 'servicios de ingeniería de tráfico', 'sèvis jeni trafik'),
  'gissurvey': ('GIS and survey services', 'servicios de SIG y agrimensura', 'sèvis GIS ak apantaj'),
  'stormplan': ('stormwater planning and engineering', 'planificación e ingeniería de aguas pluviales', 'planifikasyon ak jeni dlo lapli'),
+ 'seawall': ('living seawall tiles', 'losetas de muro marino vivo', 'mozayik miray lanmè vivan'),
  'pool': ('pool improvements', 'mejoras de piscina', 'amelyorasyon pisin'),
  'auction': ('auction services', 'servicios de subasta', 'sèvis vann aleanchè'),
  'solar': ('rooftop solar panels', 'paneles solares en techos', 'panno solè sou twati'),

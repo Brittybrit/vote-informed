@@ -6,6 +6,7 @@ import json, os, sys, re
 SP = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(SP, '..', '..', 'doral')
 sys.path.insert(0, os.path.join(SP, '..', '..', 'lib')); from common import *
 I = json.load(open(SP + '/cache/items.json'))
+SPK = json.load(open(SP + '/cache/speakers.json')) if os.path.exists(SP + '/cache/speakers.json') else {}  # people the minutes name as representing a party on the item
 OWN = json.load(open(SP + '/owners-lookup.json')) if os.path.exists(SP + '/owners-lookup.json') else {}
 START, END = '2010-11-10', '2018-11-01'
 MEMBERS = {'Rodriguez': ('Ana Maria Rodriguez', 'ana-maria-rodriguez'), 'Bermudez': ('Juan Carlos Bermudez', None),
@@ -44,7 +45,8 @@ for f in sorted(glob.glob(SP + '/decisions-*.txt')):
                      'title': d['title'], 'kind': KIND[d['kind']], 'parties': pl, 'amount': amount_of(it['title'] + ' ' + (it.get('caption') or '')),
                      'roll': roll, 'tally': tally(roll), 'mover': it.get('mover'), 'second': it.get('second'),
                      'result': it.get('result') or ('unknown' if not it['roll'] else None), 'consent': it['how'].startswith('consent'),
-                     'notes': '; '.join(notes), 'url': None, 'clip': it['clip'], 'prior': True})
+                     'notes': '; '.join(notes), 'url': None, 'clip': it['clip'], 'prior': True,
+                     **({'representatives': SPK[str(i)]} if str(i) in SPK else {})})
         meets[(it['date'], it['clip'])] = it.get('meeting')
 acts.sort(key=lambda a: (a['date'], a['item']))
 # meeting urls from the Granicus ViewPublisher index saved with the cache

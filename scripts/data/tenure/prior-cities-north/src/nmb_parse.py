@@ -8,7 +8,7 @@ Usage: python3 nmb_parse.py <nmb dir> <first id> <last id> <out.json>"""
 import json, re, sys, os, datetime
 D, A, B, OUT = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
 MEM = ['Vallejo', 'Pierre', 'DeFillipo', 'Kramer', 'Martell', 'Smith', 'Spiegel', 'Derose', 'DeRose', 'Rosner', 'Joseph', 'Fleurimond',
-       'Villard', 'Smukler', 'Jean', 'Bencomo', 'Ferrer', 'Lee', 'Wolfe', 'Paul']
+       'Villard', 'Smukler', 'Jean', 'Bencomo', 'Ferrer', 'Lee', 'Wolfe', 'Paul', 'Forbes', 'Piper']
 FIX = {'DefFillipo': 'DeFillipo', 'DeFilippo': 'DeFillipo', 'Defilippo': 'DeFillipo', 'DeRose': 'Derose', 'Defillipo': 'DeFillipo', 'DeFilipo': 'DeFillipo', 'Spiege': 'Spiegel', 'Kramar': 'Kramer', 'Marte': 'Martell'}
 MON = {m: i for i, m in enumerate('january february march april may june july august september october november december'.split(), 1)}
 URL = 'https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=%d'
@@ -31,9 +31,12 @@ for i in range(A, B + 1):
     if kind == 'workshop': continue
     rc = re.search(r'ROLL CALL OF THE CITY OFFICIALS(.{0,900}?)(?:were also present|INVOCATION|PLEDGE)', t, re.S)
     pres_txt = rc.group(1) if rc else ''
+    if rc:  # a sentence after 'were also present' can name an absent or phone-in member
+        tail2 = re.match(r'[^\n]*(?:\n[^\n]+){0,3}', t[rc.end():])
+        if tail2: pres_txt += ' ' + tail2.group(0)
     pres_txt = re.sub(r'City (?:Attorney|Manager|Clerk)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,3}', '', pres_txt)
     absent = []
-    for am in re.finditer(r'((?:Mayor|Vice Mayor|Council(?:wo)?man|Council Members?)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,3})\s+(?:was|were)\s+(?:absent|not present|excused)', pres_txt):
+    for am in re.finditer(r'((?:Mayor|Vice Mayor|Council(?:wo)?man|Council Members?|Commissioners?)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,3})\s+(?:was|were)\s+(?:absent|not present(?!,? but)|excused)', pres_txt):
         absent += names(am.group(1))
     present = [n for n in names(pres_txt) if n not in absent]
     mm = list(re.finditer(r'Motion\s+to\s+(?P<what>.{3,400}?)\s*,?\s+(?:was\s+)?made\s+by\s+(?P<mover>[^,.(]{3,60}?),?\s+(?:and\s+)?seconded\s+by\s+(?P<second>[^.(]{3,60}?)\s*(?:\.|(?=\())', t, re.S | re.I))
@@ -41,12 +44,30 @@ for i in range(A, B + 1):
     for k, m in enumerate(mm):
         nxt = mm[k + 1].start() if k + 1 < len(mm) else len(t)
         after = t[m.end():nxt]
-        rm = re.search(r'(?:MOTION\s+)?(PASSED|FAILED|CARRIED|DIED|PASSES|FAILS|ADOPTED|APPROVED)(?:\s+as\s+amended)?\s*(\d+)\s*[-–—]\s*(\d+)?([^\n]*(?:\n[^\n]+){0,3})', after[:6000], re.I)
+        OUTC = r'(?:MOTION\s+)?(PASSED|FAILED|CARRIED|DIED|PASSES|FAILS|ADOPTED|APPROVED)(?:\s+as\s+amended)?\s*(\d+)\s*[-–—]\s*(\d+)?([^\n]*(?:\n[^\n]+){0,3})'
+        rm = re.search(OUTC, after[:14000], re.I); chained = False; subs = []
+        if rm and re.match(r'(?:approve|adopt|pass)\b', m.group('what'), re.I):
+            # an amendment or tabling motion the motion regex missed sits between this motion and the first vote
+            subs = list(re.finditer(r'Motion\s+to\s+(?:amend|table|defer|rescind|reconsider|withdraw)', after[:rm.start()], re.I))
+            if subs: rm = None
+        if not rm and re.match(r'(?:approve|adopt|pass)\b', m.group('what'), re.I):
+            # main motion whose vote comes after amendment motions: take the last vote before the next unrelated motion
+            j = k + 1
+            while j < len(mm) and re.match(r'(?:amend|rescind|reconsider|table|defer|withdraw)', re.sub(r'\s+', ' ', mm[j].group('what')), re.I): j += 1
+            if j > k + 1:
+                end = mm[j].start() if j < len(mm) else min(len(t), mm[j - 1].end() + 6000)
+                seg_all = list(re.finditer(OUTC, t[mm[j - 1].end():end], re.I))
+                if seg_all:
+                    after = t[mm[j - 1].end():end]; rm = seg_all[1] if len(seg_all) > 1 else seg_all[0]; chained = True
+            elif subs:
+                seg_all = list(re.finditer(OUTC, after[subs[-1].end():], re.I))
+                if seg_all:
+                    after = after[subs[-1].end():]; rm = seg_all[1] if len(seg_all) > 1 else seg_all[0]; chained = True
         ctx = t[prev_end:m.start()]; prev_end = m.end()
         what = re.sub(r'\s+', ' ', m.group('what'))
         if re.match(r'(?:defer|table|amend|adjourn|approve the agenda|approve the minutes|excuse|reconsider|extend the meeting|continue|appeal|appoint|recess|go into|open|close|approve (?:the )?(?:conditional )?use of the city (?:seal|logo)|approve the request for use of the city)', what, re.I) and not re.search(r'Resolution|Ordinance|agreement|contract|license', what, re.I): continue
         hdr = None
-        for h in re.finditer(r'(?:Resolution\s+(?:No\.\s*)?R?\s*(\d{4})\s*[-–]\s*(\d+)|Ordinance\s+(?:No\.\s*)?(\d{4})\s*[-–]\s*(\d+))', ctx + ' ' + what):
+        for h in re.finditer(r'(?:Resolution\s+(?:No\.\s*)?_?R?\s*(\d{4})\s*[-–]\s*(\d+)|Ordinance\s+(?:No\.\s*)?(\d{4})\s*[-–]\s*(\d+))', ctx + ' ' + what):
             hdr = h
         ref = None
         if hdr: ref = ('Resolution R%s-%s' % (hdr.group(1), hdr.group(2))) if hdr.group(1) else ('Ordinance %s-%s' % (hdr.group(3), hdr.group(4)))
@@ -58,7 +79,7 @@ for i in range(A, B + 1):
             res = 'failed' if rm.group(1).upper() in ('FAILED', 'DIED', 'FAILS') else 'passed'
             y = int(rm.group(2)); nn = int(rm.group(3)) if rm.group(3) else 0; tally = [y, nn]
             tail = re.sub(r'\s+', ' ', rm.group(4))
-            rcv = re.search(r'ROLL\s+CALL\s+VOTE:?(.{0,400})', after[max(0, rm.start() - 500):rm.start() + 600], re.S)
+            rcv = re.search(r'ROLL\s+CALL\s+VOTE:?(.{0,400})', after[max(0, rm.start() - 500):rm.start() + 600], re.S | re.I)
             if rcv:
                 r = {}
                 for v in re.finditer(r'([A-Z][A-Za-z]+)\s*[-–—:]\s*(Yes|No(?![a-z])|Not\s+Present|Absent|Abstain(?:ed)?|Recused)', rcv.group(1)):
@@ -68,8 +89,9 @@ for i in range(A, B + 1):
             if roll is None:
                 om = re.search(r'(?:with|\()\s*([^()]*?)\s+(?:opposed|dissenting|voting no)', tail); opp = names(om.group(1)) if om else []
                 fm = re.search(r'(?:with|\()\s*([^()]*?)\s+(?:off the dais|absent|not present|out of the room|recused|abstaining|away from the dais)', tail); off = names(fm.group(1)) if fm else []
-                for xm in re.finditer(r'((?:Mayor|Vice Mayor|Council(?:wo)?man)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,2})\s+(?:was\s+|were\s+)?(?:not present|absent|off the dais|away from the dais|out of the room|recused|stepped out|left)', tail):
+                for xm in re.finditer(r'((?:Mayor|Vice Mayor|Council(?:wo)?man|Commissioner)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*){0,2})\s+(?:was\s+|were\s+)?(?:not present|absent|off the dais|away from the dais|out of the room|recused|stepped out|left)', tail):
                     off += [n for n in names(xm.group(1)) if n not in off]
+                off = [n for n in off if n not in opp]
                 yes = [p for p in present if p not in opp and p not in off]
                 if len(yes) == y and len(opp) == nn:
                     roll = {p: 'yes' for p in yes}; roll.update({p: 'no' for p in opp}); roll.update({p: 'absent' for p in off})
@@ -78,7 +100,8 @@ for i in range(A, B + 1):
                 else:
                     roll = {p: 'unknown' for p in set(present) | set(opp) | set(off)}
                     note = 'Voice vote %d-%d; the minutes do not show how each member voted.' % (y, nn)
-        hdrs = list(re.finditer(r'(?:Resolution\s+(?:No\.\s*)?R?\s*(\d{4})\s*[-–]\s*(\d+)|Ordinance\s+(?:No\.\s*)?(\d{4})\s*[-–]\s*(\d+))', ctx))
+        if chained and note: note += ' Final vote on the item, taken after the amendment motions.'
+        hdrs = list(re.finditer(r'(?:Resolution\s+(?:No\.\s*)?_?R?\s*(\d{4})\s*[-–]\s*(\d+)|Ordinance\s+(?:No\.\s*)?(\d{4})\s*[-–]\s*(\d+))', ctx))
         if 'consent' in what.lower() and len(hdrs) > 1:
             for j, h in enumerate(hdrs):
                 seg = ctx[h.start(): hdrs[j + 1].start() if j + 1 < len(hdrs) else len(ctx)]

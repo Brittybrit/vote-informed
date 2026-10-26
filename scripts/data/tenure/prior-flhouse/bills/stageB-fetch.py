@@ -51,10 +51,17 @@ while True:
             open(out, 'w').write(o['au'] + '\n' + 'FROM prior-flsenate psi.jsonl\n' + o['ps']); print(r['ch'], 'copied', flush=True); continue
         u = pick(r['an'])
         if not u: open(out, 'w').write('NOANALYSIS\n'); print(r['ch'], 'none', flush=True); continue
-        f = tempfile.mktemp(suffix='.pdf')
-        if not fl.pdf(u, f): print('FAIL', r['ch'], u, flush=True); continue
-        t = subprocess.run(['pdftotext', '-layout', f, '-'], capture_output=True, text=True).stdout
-        os.remove(f)
+        # if the chosen analysis is posted as "DOCUMENT UNAVAILABLE", fall back to the next latest analysis
+        cands = [u] + [a[1] for a in sorted(r['an'], key=lambda a: a[0][-4:] + a[0][:5], reverse=True)
+                       if a[1] != u and '.pre.' not in a[1] and 'Conference Report' not in a[1] and '.hms.' not in a[1].lower()]
+        t = None
+        for u in cands:
+            f = tempfile.mktemp(suffix='.pdf')
+            if not fl.pdf(u, f): t = None; break
+            t = subprocess.run(['pdftotext', '-layout', f, '-'], capture_output=True, text=True).stdout
+            os.remove(f)
+            if 'DOCUMENT UNAVAILABLE' not in t[:3000]: break
+        if t is None: print('FAIL', r['ch'], u, flush=True); continue
         s = section(t)
         body = (s if s else 'NOSECTION\n' + t[-3000:])
         fc = fiscal_comments(t) if s and re.search(r'see fiscal comments|indeterminate', s, re.I) else ''

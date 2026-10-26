@@ -18,8 +18,8 @@ if os.path.exists(SP + '/roll-overrides.txt'):
         OV[n.strip()] = {k: v for k, v in (x.split('=') for x in r.split(',') if '=' in x)}
 LAST = {'R': '2017-087', 'O': '2017-070'}   # last items with Gonzalez in the vote line before Zogby took Group V
 MEM = {'Gonzalez': ('Luis Gonzalez', 'luis-gonzalez'), 'Caragol': ('Jose F. Caragol', None), 'CasalsMunoz': ('Vivian Casals-Munoz', None),
-       'CueFuente': ('Katharine Cue-Fuente', None), 'GarciaMartinez': ('Isis Garcia-Martinez', None), 'Hernandez': ('Paul B. Hernandez', None),
-       'Lozano': ('Lourdes Lozano', None)}
+       'CueFuente': ('Katharine Cue-Fuente', None), 'GarciaMartinez': ('Isis Garcia-Martinez', None), 'Hernandez': ('Hernandez (surname in the clerk\'s line)', None),
+       'Lozano': ('Lourdes Lozano', None), 'Yedra': ('Jose Yedra', None), 'Bovo': ('Esteban L. Bovo Jr.', None), 'Miel': ('Cindy Miel', None)}
 dec = {}
 for f in sorted(glob.glob(SP + '/decisions-*.txt')):
     for d in read_decisions(f): dec[d['key']] = d
@@ -48,7 +48,7 @@ for key, x in sorted(D.items()):
     notes = ['Vote from the City Clerk\'s vote line on the signed %s' % ('resolution' if k == 'R' else 'ordinance')]
     if key in OV: notes.append('Vote line read by hand from the scan')
     if not roll:
-        roll = {m: 'unknown' for m in MEM if m in ('Gonzalez', 'Caragol', 'CasalsMunoz', 'CueFuente', 'GarciaMartinez', 'Hernandez', 'Lozano')}
+        roll = {m: 'unknown' for m in (x.get('seated') or ['Gonzalez', 'Caragol', 'CasalsMunoz', 'CueFuente', 'GarciaMartinez', 'Hernandez', 'Lozano'])}
         notes = ['Vote not given on the document (vote line missing or unreadable)']
     if x.get('dateHow') and x['dateHow'] != 'read':
         notes.append('Adoption date: %s (read from the signature block where legible, otherwise the regular meeting between neighbouring numbers)' % x['dateHow'])
@@ -63,6 +63,7 @@ for key, x in sorted(D.items()):
                 pl.append(o['owner']); notes.append('Owner of %s per the Property Appraiser (folio %s): %s' % (p[1:], o.get('folio'), o.get('note') or ''))
             else:
                 pl.append('Owner of ' + p[1:])
+                if o: notes.append('Owner of %s not resolved from the Property Appraiser: %s' % (p[1:], o.get('note') or ''))
         else: pl.append(p)
     acts.append({'id': 'hialeah-%s-%s' % ('res' if k == 'R' else 'ord', num), 'date': x.get('date'), 'ref': ('Resolution ' if k == 'R' else 'Ordinance ') + num,
                  'title': title, 'kind': KIND.get(kind, kind), 'parties': pl, 'amount': amount_of(x['title']), 'roll': roll, 'tally': tally(roll),
@@ -70,7 +71,8 @@ for key, x in sorted(D.items()):
 acts.sort(key=lambda a: (a['date'] or '', a['ref']))
 doc = {'city': 'Hialeah', 'body': 'Hialeah City Council', 'person': 'luis-gonzalez', 'office': 'Council Member, Group V',
        'window': {'from': '2005-11-15', 'to': '2017-11-14', 'covered': 'documents from 2007-01 (resolutions) and 2008-01 (ordinances)'},
-       'members': {k: v[0] for k, v in MEM.items()}, 'actions': acts, 'unnamed': unnamed,
+       'members': {k: v[0] for k, v in MEM.items()},
+       'memberNote': 'The clerk\'s vote lines give surnames only. "Hernandez" is the Hernandez seated on the council at the time (Carlos Hernandez until he became mayor in 2011, Paul B. Hernandez after); the record does not distinguish them.', 'actions': acts, 'unnamed': unnamed,
        'sources': [{'name': 'City of Hialeah Document Center, City Clerk: Resolutions 2007-2017, Ordinances 2007-2017', 'url': 'https://www.hialeahfl.gov/DocumentCenter'}]}
 write_json(OUT + '/actions.json', doc)
 print(len(acts), 'actions;', len(unnamed), 'unnamed;', sum(1 for a in acts if a['roll'].get('Gonzalez') in ('yes', 'no')), 'with Gonzalez yes/no')

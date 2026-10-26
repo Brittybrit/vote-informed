@@ -22,9 +22,12 @@ for f in sorted(glob.glob(os.path.join(SF, 'rtxt', '*.txt'))):
     resno = f'{m.group(1)}-{m.group(2)}' if m else b
     tm = re.search(r'(A\s+RESOLUTION\s+OF\s+THE\s+TOWN\s+COMMISSION.*?EFFECTIVE\s+DATE\.?)', t, re.S | re.I)
     title = re.sub(r'\s+', ' ', tm.group(1)) if tm and len(tm.group(1)) < 2500 else label
-    dm = re.search(r'PASSED\s+AND\s+ADOPTED\s+(?:on\s+)?(?:this\s+)?(\d{1,2})\s*\S{0,4}\s*(?:day\s*)?of\s*([A-Za-z]+)\s*,?\s*(\d{4})', t, re.I)
+    dm = re.search(r'PASSED\s+AND\s+ADOPTED\s+(?:on\s+)?(?:this\s+)?_*(\d{1,2})\s*\S{0,4}\s*_*\s*(?:day\s*)?of\s*_*([A-Za-z]+)_*\s*[,.]?\s*(\d{4})', t, re.I)
     date = None
-    if dm and dm.group(2).lower() in MON: date = f'{dm.group(3)}-{MON[dm.group(2).lower()]:02d}-{int(dm.group(1)):02d}'
+    if dm:
+        import difflib
+        mo = dm.group(2).lower(); mo = mo if mo in MON else (difflib.get_close_matches(mo, list(MON), 1, 0.75) or [None])[0]
+        if mo and 0 < int(dm.group(1)) < 32: date = f'{dm.group(3)}-{MON[mo]:02d}-{int(dm.group(1)):02d}'
     vb = re.search(r'FINAL\s+VOTE\s+ON\s+ADOPTION|VOTE\s+ON\s+ADOPTION|SUMMARY\s+OF\s+VOTE|FINAL\s+VOTE', t, re.I)
     roll, mover, second = None, None, None
     if vb:

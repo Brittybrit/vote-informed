@@ -1,0 +1,217 @@
+[
+ {
+  "pid": "luis-gonzalez",
+  "office": "Council Member, Group V",
+  "body": "city-hialeah",
+  "district": "Group V",
+  "start": "2005-11-15",
+  "end": "2017-11-07",
+  "rollKey": "Gonzalez",
+  "startNote": "Elected Nov 15, 2005 (Miami-Dade Elections). No council records online before 2007; earliest signed resolution with his vote is R2007-001.",
+  "endNote": "Carl Zogby won Group V Nov 7, 2017; the last signed items with Gonzalez in the Group V vote line are R2017-087 and O2017-070. He later returned on Group II (covered separately).",
+  "votesFrom": "2007-01-09",
+  "votesTo": "2017-11-14",
+  "giftsFrom": "2003-11-01",
+  "giftsNote": "No Hialeah campaign reports online for 2005, 2009 or 2013 (the city VoterFocus portal starts in 2026). Gap; see needs-browser.md.",
+  "source": {
+   "label": "Miami-Dade Elections results Nov 15, 2005, Nov 3, 2009, Nov 5, 2013; City Clerk signed resolutions/ordinances (vote lines)",
+   "url": "https://www.hialeahfl.gov/DocumentCenter"
+  },
+  "files": [
+   "hialeah-groupv/actions.json"
+  ],
+  "counts": {
+   "actions": 1028,
+   "yesNo": 752
+  }
+ },
+ {
+  "pid": "ivan-pacheco",
+  "office": "Council Member",
+  "body": "city-medley",
+  "district": null,
+  "start": "2016-11-08",
+  "end": "2024-11-05",
+  "rollKey": "IPacheco",
+  "startNote": "Elected Nov 8, 2016; first minutes listing him present: Dec 5, 2016 regular meeting.",
+  "endNote": "Lost Nov 5, 2024; new council sworn in Nov 7, 2024 (swearing-in minutes).",
+  "giftsFrom": "2014-11-05",
+  "giftsNote": "Medley campaign reports are not online (no VoterFocus portal). Gap.",
+  "source": {
+   "label": "Miami-Dade Elections results Nov 8, 2016, Nov 3, 2020, Nov 5, 2024; Medley Town Clerk minutes (Laserfiche)",
+   "url": "https://www.medleydocs.com/WebLink/Welcome.aspx?dbid=0&repo=LFMedley"
+  },
+  "files": [
+   "medley-pacheco/actions.json"
+  ],
+  "counts": {
+   "actions": 242,
+   "yesNo": 57
+  }
+ },
+ {
+  "pid": "lucia-baez-geller",
+  "office": "School Board Member",
+  "body": "mdcps-school-board",
+  "district": "3",
+  "start": "2020-11-17",
+  "end": "2024-11-19",
+  "rollKey": "BaezGeller",
+  "startNote": "Took office at the Nov 17, 2020 organization meeting (excerpts of that meeting).",
+  "endNote": "Did not seek re-election (ran for Congress); successor seated at the Nov 19, 2024 organization meeting.",
+  "giftsFrom": "2018-11-07",
+  "giftsNote": "2020 School Board campaign (VoterFocus Miami-Dade, cand 2275): 358 contributions, $92,324.08 incl. $19,500 candidate loans, 2019-08-01..2020-10-29. She ran no School Board campaign in 2024.",
+  "source": {
+   "label": "Miami-Dade Elections results Nov 3, 2020; M-DCPS Excerpts from Unofficial Minutes",
+   "url": "https://pdfs.dadeschools.net/Bdarch/"
+  },
+  "files": [
+   "schoolboard/actions.json",
+   "schoolboard/body.json",
+   "schoolboard/baez-geller_2020_contributions.csv"
+  ],
+  "counts": {
+   "actions": 383,
+   "yesNo": 0
+  }
+ },
+ {
+  "pid": "david-m-singer",
+  "office": "Council Member, Seat 2",
+  "body": "city-palmetto-bay",
+  "district": "Seat 2",
+  "start": "2016-11-08",
+  "end": "2020-11-03",
+  "rollKey": "Singer",
+  "startNote": "Elected Nov 8, 2016; first vote in the clerk index Dec 5, 2016.",
+  "endNote": "Lost Nov 3, 2020; last recorded vote Oct 26, 2020.",
+  "votesFrom": "2016-12-05",
+  "votesTo": "2020-10-26",
+  "giftsFrom": "2014-11-05",
+  "giftsNote": "Palmetto Bay campaign reports are not online. Gap.",
+  "source": {
+   "label": "Miami-Dade Elections Nov 8, 2016; Village Clerk Index of Resolutions (member votes)",
+   "url": "https://www.palmettobay-fl.gov/DocumentCenter"
+  },
+  "files": [
+   "palmettobay/actions.json",
+   "palmettobay/body.json"
+  ],
+  "counts": {
+   "actions": 204,
+   "yesNo": 198
+  }
+ },
+ {
+  "pid": "ana-maria-rodriguez",
+  "office": "Council Member (Vice Mayor 2017-2018)",
+  "body": "city-doral",
+  "district": null,
+  "start": "2010-11-10",
+  "end": "2018-11-01",
+  "rollKey": "Rodriguez",
+  "startNote": "Year only in careers.jsonl (2010); first Doral council minutes with her seated: Nov 10, 2010.",
+  "endNote": "Last Doral meeting with her seated in the minutes before she took the House seat (Nov 7, 2018).",
+  "giftsFrom": "2008-11-01",
+  "giftsNote": "Doral VoterFocus starts 2012: her 2014 campaign is saved (doral/rodriguez_2014.csv, 139 contributions, $65,068.33). 2010 campaign not online, so gifts are at least that.",
+  "source": {
+   "label": "City of Doral Granicus final minutes, Nov 2010 - Nov 2018",
+   "url": "https://cityofdoral.granicus.com/ViewPublisher.php?view_id=2"
+  },
+  "files": [
+   "doral/actions.json",
+   "doral/body.json",
+   "doral/rodriguez_2014.csv"
+  ],
+  "counts": {
+   "actions": 990,
+   "yesNo": 761
+  }
+ },
+ {
+  "pid": "mary-ann-mixon",
+  "office": "Residential Area Council Member, Seat 1",
+  "body": "city-cutler-bay",
+  "district": "Seat 1",
+  "start": "2010-11-17",
+  "end": "2018-11-05",
+  "rollKey": "Mixon",
+  "startNote": "Elected Nov 2, 2010; first register entry with a MIXON vote column: R10-67, Nov 17, 2010.",
+  "endNote": "Term-limited Nov 2018; last register entry with her: R18-83, Nov 5, 2018 (Duncan from Dec 12, 2018).",
+  "giftsFrom": "2008-11-05",
+  "giftsNote": "Cutler Bay VoterFocus starts 2018; her 2010 and 2014 campaigns are not online. Gap.",
+  "source": {
+   "label": "Town Clerk Resolutions and Ordinances Registers (each member vote)",
+   "url": "https://www.cutlerbay-fl.gov/townclerk/page/ordinances-resolutions"
+  },
+  "files": [
+   "cutlerbay-mixon/actions.json"
+  ],
+  "counts": {
+   "actions": 239,
+   "yesNo": 228
+  }
+ },
+ {
+  "pid": "luis-f-de-la-cruz",
+  "office": "Village Council Member",
+  "body": "city-key-biscayne",
+  "district": null,
+  "start": "2014-11-18",
+  "end": "2018-10-30",
+  "rollKey": "DeLaCruz",
+  "startNote": "Elected Nov 4, 2014; first minutes listing him present: Nov 18, 2014.",
+  "endNote": "Ran for mayor Nov 6, 2018 and lost; last meeting of his term in the minutes Oct 30, 2018.",
+  "giftsFrom": "2012-11-07",
+  "giftsNote": "Key Biscayne campaign reports were not readable online. Gap.",
+  "source": {
+   "label": "Key Biscayne Village Clerk minutes (Granicus)",
+   "url": "https://keybiscayne.granicus.com/ViewPublisher.php?view_id=1"
+  },
+  "files": [
+   "keybiscayne-delacruz/actions.json"
+  ],
+  "counts": {
+   "actions": 98,
+   "yesNo": 91
+  }
+ },
+ {
+  "pid": "scott-singer",
+  "office": "City Council Member (Deputy Mayor from 2017)",
+  "body": "city-boca-raton",
+  "district": null,
+  "start": "2014-03",
+  "end": "2018-04-27",
+  "rollKey": "Singer",
+  "startNote": "Only month/year known (elected March 2014); Boca Raton minutes not reachable.",
+  "endNote": "Became mayor April 27, 2018.",
+  "giftsFrom": "2012-03-01",
+  "giftsNote": "Boca Raton candidates file with the City Clerk; not online. Gap.",
+  "source": {
+   "label": "Florida League of Mayors profile",
+   "url": "https://www.floridamayors.org/"
+  },
+  "files": []
+ },
+ {
+  "pid": "scott-singer",
+  "office": "Mayor",
+  "body": "city-boca-raton",
+  "district": null,
+  "start": "2018-04-27",
+  "end": null,
+  "rollKey": "Singer",
+  "startNote": "Took over after the Governor suspended Mayor Haynie (Apr 27, 2018).",
+  "endNote": "Still in office (not confirmed).",
+  "giftsFrom": "2016-03-15",
+  "giftsNote": "Only his political committee Friends of Scott Singer is online (VoterFocus Palm Beach): 64 contributions, $48,827, 2022-05-12..2023-08-14. Campaign accounts are filed with the City Clerk, not online.",
+  "source": {
+   "label": "Florida League of Mayors profile",
+   "url": "https://www.floridamayors.org/"
+  },
+  "files": [
+   "bocaraton/friends-of-scott-singer_committee_contributions.csv"
+  ]
+ }
+]

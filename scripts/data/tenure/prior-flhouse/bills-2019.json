@@ -31,80 +31,12 @@
  },
  "counts": {
   "enacted": 189,
-  "screened": 0,
-  "qualifying": 0,
+  "screened": 48,
+  "qualifying": 2,
   "withHouseVote": 0
  },
  "missing": {
   "A": [
-   "2019-30",
-   "2019-31",
-   "2019-32",
-   "2019-33",
-   "2019-34",
-   "2019-35",
-   "2019-36",
-   "2019-37",
-   "2019-38",
-   "2019-39",
-   "2019-40",
-   "2019-41",
-   "2019-42",
-   "2019-43",
-   "2019-44",
-   "2019-45",
-   "2019-46",
-   "2019-47",
-   "2019-48",
-   "2019-49",
-   "2019-50",
-   "2019-51",
-   "2019-52",
-   "2019-53",
-   "2019-54",
-   "2019-55",
-   "2019-56",
-   "2019-57",
-   "2019-58",
-   "2019-59",
-   "2019-60",
-   "2019-61",
-   "2019-62",
-   "2019-63",
-   "2019-64",
-   "2019-65",
-   "2019-66",
-   "2019-67",
-   "2019-68",
-   "2019-69",
-   "2019-70",
-   "2019-71",
-   "2019-72",
-   "2019-73",
-   "2019-74",
-   "2019-75",
-   "2019-76",
-   "2019-77",
-   "2019-78",
-   "2019-79",
-   "2019-80",
-   "2019-81",
-   "2019-82",
-   "2019-83",
-   "2019-84",
-   "2019-85",
-   "2019-86",
-   "2019-87",
-   "2019-88",
-   "2019-89",
-   "2019-90",
-   "2019-91",
-   "2019-92",
-   "2019-93",
-   "2019-94",
-   "2019-95",
-   "2019-96",
-   "2019-97",
    "2019-98",
    "2019-99",
    "2019-100",
@@ -199,58 +131,10 @@
    "2019-189"
   ],
   "B": [
-   "2019-1",
-   "2019-2",
-   "2019-3",
-   "2019-4",
-   "2019-5",
-   "2019-6",
-   "2019-7",
-   "2019-8",
-   "2019-9",
-   "2019-10",
-   "2019-11",
-   "2019-12",
-   "2019-13",
-   "2019-14",
-   "2019-15",
-   "2019-16",
-   "2019-17",
-   "2019-18",
-   "2019-19",
-   "2019-20",
-   "2019-21",
-   "2019-22",
-   "2019-23",
-   "2019-24",
-   "2019-25",
-   "2019-26",
-   "2019-27",
-   "2019-28",
-   "2019-29",
-   "2019-30",
-   "2019-31",
-   "2019-32",
-   "2019-33",
-   "2019-34",
-   "2019-35",
-   "2019-36",
-   "2019-37",
-   "2019-38",
    "2019-39",
-   "2019-40",
-   "2019-41",
    "2019-42",
    "2019-43",
-   "2019-44",
-   "2019-45",
    "2019-46",
-   "2019-47",
-   "2019-48",
-   "2019-49",
-   "2019-50",
-   "2019-51",
-   "2019-52",
    "2019-53",
    "2019-54",
    "2019-55",
@@ -389,7 +273,18 @@
    "2019-188",
    "2019-189"
   ],
-  "C": []
+  "C": [
+   [
+    "2019-19",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2019/310/Vote/HouseVote_s00310__143.PDF"
+   ],
+   [
+    "2019-23",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2019/7070/Vote/HouseVote_s07070e1304.PDF"
+   ]
+  ]
  },
  "bills": [
   {
@@ -398,9 +293,9 @@
    "chapter": "2019-1",
    "title": "Medical Use of Marijuana",
    "url": "https://www.flsenate.gov/Session/Bill/2019/182",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/182/Analyses/2019s00182.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -409,9 +304,9 @@
    "chapter": "2019-2",
    "title": "Florida Statutes",
    "url": "https://www.flsenate.gov/Session/Bill/2019/2",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/2/Analyses/2019s00002.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -420,9 +315,9 @@
    "chapter": "2019-3",
    "title": "Florida Statutes",
    "url": "https://www.flsenate.gov/Session/Bill/2019/4",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/4/Analyses/2019s00004.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. BILL: SB 4 Page 3",
    "note": null
   },
   {
@@ -431,9 +326,9 @@
    "chapter": "2019-4",
    "title": "Florida Statutes",
    "url": "https://www.flsenate.gov/Session/Bill/2019/6",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/6/Analyses/2019s00006.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -442,9 +337,9 @@
    "chapter": "2019-5",
    "title": "Florida Statutes",
    "url": "https://www.flsenate.gov/Session/Bill/2019/8",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/8/Analyses/2019s00008.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -453,9 +348,9 @@
    "chapter": "2019-6",
    "title": "Lost or Abandoned Personal Property",
    "url": "https://www.flsenate.gov/Session/Bill/2019/180",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/180/Analyses/2019s00180.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -464,9 +359,9 @@
    "chapter": "2019-7",
    "title": "Interstate Compact on Educational Opportunity for Military Children",
    "url": "https://www.flsenate.gov/Session/Bill/2019/212",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/212/Analyses/2019s00212.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -475,9 +370,9 @@
    "chapter": "2019-8",
    "title": "State-administered Retirement Systems",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7016",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7016/Analyses/2019s07016.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -486,9 +381,9 @@
    "chapter": "2019-9",
    "title": "Police, Fire, and Search and Rescue Dogs and Police Horses",
    "url": "https://www.flsenate.gov/Session/Bill/2019/96",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/96/Analyses/2019s00096.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -497,9 +392,9 @@
    "chapter": "2019-10",
    "title": "Dependent Children",
    "url": "https://www.flsenate.gov/Session/Bill/2019/124",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/124/Analyses/2019s00124.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -508,9 +403,9 @@
    "chapter": "2019-11",
    "title": "Aging Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2019/184",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/184/Analyses/2019s00184.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. BILL: CS/SB 184 Page 7",
    "note": null
   },
   {
@@ -519,10 +414,10 @@
    "chapter": "2019-12",
    "title": "Public Records/Civilian Personnel Employed by a Law Enforcement Agency",
    "url": "https://www.flsenate.gov/Session/Bill/2019/248",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/248/Analyses/2019s00248.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Any individual or business that currently obtains location information that is covered by the definition of “home addresses” in the bill will not be able to obtain that information from the records custodian if the employee or the employee’s agency requests that the home address information be exempted.",
+   "note": "records users lose access"
   },
   {
    "bill": "SB 7006",
@@ -530,10 +425,10 @@
    "chapter": "2019-13",
    "title": "Uniform Interstate Depositions and Discovery Act",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7006",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7006/Analyses/2019s07006.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: For private legal practitioners, the more streamlined process may translate into saving time and money for their clients. On the other hand, more Florida residents may be subject to domesticated foreign subpoenas given the simplified procedures. The simplicity of the UIDDA procedures also gives rise to the potential for abuse of Florida residents by out-of-state parties. However, given that subpoenas issued under the UIDDA are challengeable in Florida and the out-of-state party will be required then to obtain and pay Florida counsel to address any such challenge, abusive discovery practices may be cost prohibitive.",
+   "note": "savings for clients of lawyers; individuals"
   },
   {
    "bill": "SB 7012",
@@ -541,9 +436,9 @@
    "chapter": "2019-14",
    "title": "Vaping",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7012",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7012/Analyses/2019s07012.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -552,10 +447,10 @@
    "chapter": "2019-15",
    "title": "Government Accountability",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7014",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7014/Analyses/2019s07014.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill does not appear to impact state or local revenues.",
+   "note": "no private-sector content"
   },
   {
    "bill": "SB 7034",
@@ -563,9 +458,9 @@
    "chapter": "2019-16",
    "title": "OGSR/Automated License Plate Recognition System",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7034",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7034/Analyses/2019s07034.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -574,10 +469,10 @@
    "chapter": "2019-17",
    "title": "OGSR/Payment of Toll on Toll Facilities/Identifying Information",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7036",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7036/Analyses/2019s07036.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The private sector will continue to be subject to the cost associated with an agency making redactions in response to a public records request.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 7060",
@@ -585,9 +480,9 @@
    "chapter": "2019-18",
    "title": "Termination of the Working Capital Trust Fund within the Department of Highway Safety and Motor Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7060",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7060/Analyses/2019s07060.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -596,10 +491,15 @@
    "chapter": "2019-19",
    "title": "Off-highway Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2019/310",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/310/Analyses/2019s00310.rc.PDF",
+   "benefits": {
+    "category": "off-highway vehicle manufacturers",
+    "named": [],
+    "quote": "The changes provided by the bill will allow manufacturers to build safer, more comfortable and better performing vehicles."
+   },
+   "screen": "Private Sector Impact: The changes provided by the bill will allow manufacturers to build safer, more comfortable and better performing vehicles.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 320",
@@ -607,9 +507,9 @@
    "chapter": "2019-20",
    "title": "Residential Conservation Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2019/320",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/320/Analyses/2019s00320.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -618,9 +518,9 @@
    "chapter": "2019-21",
    "title": "Firefighters",
    "url": "https://www.flsenate.gov/Session/Bill/2019/426",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/426/Analyses/2019s00426.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -629,9 +529,9 @@
    "chapter": "2019-22",
    "title": "Implementation of Legislative Recommendations of the Marjory Stoneman Douglas High School Public Safety Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7030",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7030/Analyses/2019s07030.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -640,10 +540,15 @@
    "chapter": "2019-23",
    "title": "K-12 Education",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7070",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7070/Analyses/2019s07070.ap.PDF",
+   "benefits": {
+    "category": "construction industry (school construction); private schools (scholarships)",
+    "named": [],
+    "quote": "The bill provides school districts with additional flexibility for constructing educational facilities, which may lead to additional school construction, benefitting the construction industry."
+   },
+   "screen": "Private Sector Impact: The Family Empowerment Scholarships may allow low-income families to send their children to private schools, which may not have been an affordable option previously. The FTC Scholarship will be able to access up to 50 percent of the prior year balance of unspent revenue from the tax credit for motor vehicle purchases for the Hope Scholarship program, if the tax credit funding from other sources is insufficient to fund eligible students for the FTC Scholarship. This may increase the number of FTC Scholarship available for low-income families to send their children to private schools. The bill reduces the costs of teacher certification exam retake fees, which may save prospective teachers money as they attempt to become certified. The bill provides school districts with additional flexibility for constructing educational facilities, which may lead to additional school construction, benefitting the construction industry.",
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 7098",
@@ -651,9 +556,9 @@
    "chapter": "2019-24",
    "title": "Death Benefits",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7098",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7098/Analyses/2019s07098.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -662,10 +567,10 @@
    "chapter": "2019-25",
    "title": "OGSR/Public Research Facility/Animal Research",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7018",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7018/Analyses/2019s07018.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The private sector will continue to be subject to the cost, to the extent imposed, associated with the public research facility making redactions in response to the public records request.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 7001",
@@ -673,9 +578,9 @@
    "chapter": "2019-26",
    "title": "OGSR/State University DSO Research Funding",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7001",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7001/Analyses/h7001z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. 13 Section 2, ch. 2014-27, L.O.F. 14 Section 1004.28(5)(c), F.S. STORAGE NAME: h7001z.OTM.DOCX PAGE: 4 DATE: 5/15/2019",
    "note": null
   },
   {
@@ -684,9 +589,9 @@
    "chapter": "2019-27",
    "title": "OGSR/Alzheimer's Disease Research Grant Advisory Board",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7003",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7003/Analyses/h7003z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -695,9 +600,9 @@
    "chapter": "2019-28",
    "title": "OGSR/Identification and Location Information/Department of Health",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7009",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7009/Analyses/h7009z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -706,9 +611,9 @@
    "chapter": "2019-29",
    "title": "OGSR/Division of Emergency Management",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7011",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7011/Analyses/h7011z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -717,9 +622,9 @@
    "chapter": "2019-30",
    "title": "OGSR/Treatment-based Drug Court Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7025",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7025/Analyses/h7025z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -728,9 +633,9 @@
    "chapter": "2019-31",
    "title": "OGSR/Family Trust Companies",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7033",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7033/Analyses/h7033z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -739,9 +644,9 @@
    "chapter": "2019-32",
    "title": "OGSR/Security Breach Information",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7047",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7047/Analyses/h7047z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -750,9 +655,9 @@
    "chapter": "2019-33",
    "title": "OGSR/Florida Consumer Collection Practices Act",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7049",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7049/Analyses/h7049z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -761,9 +666,9 @@
    "chapter": "2019-34",
    "title": "OGSR/Concealed Carry License/DACS",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7059",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7059/Analyses/h7059z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -772,9 +677,9 @@
    "chapter": "2019-35",
    "title": "OGSR/Hurricane and Flood Loss Model Trade Secrets",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7091",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7091/Analyses/h7091z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -783,9 +688,9 @@
    "chapter": "2019-36",
    "title": "OGSR/Informal Enforcement Actions and Trade Secrets/OFR",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7097",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7097/Analyses/h7097z.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -794,9 +699,9 @@
    "chapter": "2019-37",
    "title": "Pub. Meetings/Pub. Records/Local Government Utilities",
    "url": "https://www.flsenate.gov/Session/Bill/2019/327",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/327/Analyses/h0327z1.EUS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -805,9 +710,9 @@
    "chapter": "2019-38",
    "title": "Pub. Rec./Public Utility Held Customer Information and Data",
    "url": "https://www.flsenate.gov/Session/Bill/2019/591",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/591/Analyses/h0591z1.EUS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -816,10 +721,10 @@
    "chapter": "2019-39",
    "title": "Pub. Rec./ Petition for Certain Protective Injunctions",
    "url": "https://www.flsenate.gov/Session/Bill/2019/845",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/845/Analyses/h0845z.CRJ.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "Private Sector section not found in the converted text"
   },
   {
    "bill": "HB 7023",
@@ -827,9 +732,9 @@
    "chapter": "2019-40",
    "title": "Pub. Rec./Financial Disclosure",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7023",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7023/Analyses/h7023z.PIE.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -838,9 +743,9 @@
    "chapter": "2019-41",
    "title": "Pub. Rec./Lottery",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7121",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7121/Analyses/h7121z.SAC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -849,10 +754,10 @@
    "chapter": "2019-42",
    "title": "Taxation",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7123",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7123/Analyses/h7123z1.WMC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will reduce the sales tax on the rental of commercial real estate. The bill provides for a threeday back-to-school sales tax holiday and a seven-day disaster preparedness sales tax holiday.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 7068",
@@ -860,10 +765,10 @@
    "chapter": "2019-43",
    "title": "Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7068",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7068/Analyses/2019s07068.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The traveling public, including individuals residing in rural areas, may benefit from increased transportation options resulting from construction of projects in the identified corridors, as well as other traditional transportation functions such as improved hurricane evacuation, congestion mitigation, and energy distribution; and from opportunities for other transportation modes, such as passenger rail and shared-use trails. Preparation for emerging technologies such as autonomous, connected, shared, and electric vehicle technology, including the option to obtain transportation mobility services on-demand and online, may also benefit users of the new facilities as more such vehicles are deployed in the state. Transportation disadvantaged persons may benefit from increased 83 Id. BILL: CS/SB 7068 Page 22 opportunities for mobility services provided under the Transportation Disadvantaged Program. Businesses may benefit from improved trade and logistics options, such as freight rail and potential connections to facilities such as intermodal logistic centers, as well as improved possibilities for business site selection due to availability of broadband access in the corridors. Construction businesses may experience improved employee recruitment as a result of the workforce development program. To the extent that the bill enables businesses to grow, this could increase economic activity in in both urban and rural areas of the state. Individuals residing in ",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 107",
@@ -871,10 +776,10 @@
    "chapter": "2019-44",
    "title": "Wireless Communications While Driving",
    "url": "https://www.flsenate.gov/Session/Bill/2019/107",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/107/Analyses/h0107z.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The changes in the laws regarding the use of wireless communications devices while driving may result in more motorists being assessed traffic fines.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 160",
@@ -882,9 +787,9 @@
    "chapter": "2019-45",
    "title": "Prohibited Acts in Connection with Obscene or Lewd Materials",
    "url": "https://www.flsenate.gov/Session/Bill/2019/160",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/160/Analyses/2019s00160.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. BILL: CS/SB 160 Page 9",
    "note": null
   },
   {
@@ -893,10 +798,10 @@
    "chapter": "2019-46",
    "title": "Public Records/Victim of Mass Violence",
    "url": "https://www.flsenate.gov/Session/Bill/2019/186",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/186/Analyses/2019s00186.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill expands an existing public records exemption to make confidential and exempt photographs or video or audio recordings that depict or record the killing of a victim of mass violence. The private sector will continue to be subject to the cost associated with an agency making redactions in response to a public records request.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 252",
@@ -904,9 +809,9 @@
    "chapter": "2019-47",
    "title": "Driver License, Identification Card, and Motor Vehicle Registration Applications",
    "url": "https://www.flsenate.gov/Session/Bill/2019/252",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/252/Analyses/2019s00252.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. BILL: CS/CS/SB 252 Page 6",
    "note": null
   },
   {
@@ -915,9 +820,9 @@
    "chapter": "2019-48",
    "title": "Education",
    "url": "https://www.flsenate.gov/Session/Bill/2019/292",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/292/Analyses/2019s00292.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -926,9 +831,9 @@
    "chapter": "2019-49",
    "title": "Public Records/Child Abuse, Abandonment, or Neglect",
    "url": "https://www.flsenate.gov/Session/Bill/2019/318",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/318/Analyses/2019s00318.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -937,9 +842,9 @@
    "chapter": "2019-50",
    "title": "Lewd or Lascivious Exhibition",
    "url": "https://www.flsenate.gov/Session/Bill/2019/828",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/828/Analyses/2019s00828.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -948,10 +853,10 @@
    "chapter": "2019-51",
    "title": "Public Records/Mental Health Treatment and Services",
    "url": "https://www.flsenate.gov/Session/Bill/2019/838",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/838/Analyses/2019s00838.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The private sector will be subject to the cost associated with an agency making redactions in response to public records requests.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1024",
@@ -959,9 +864,9 @@
    "chapter": "2019-52",
    "title": "Blockchain Technology",
    "url": "https://www.flsenate.gov/Session/Bill/2019/1024",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/1024/Analyses/2019s01024.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
