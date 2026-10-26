@@ -103,9 +103,10 @@ const OFFICES = [
   // donors: the state elections office's records (scripts/data/tenure/doe-browser): her Attorney General campaigns (no committee
   // registered to her; Friends of Ashley Moody names another chair)
   { pid: 'ashley-moody', start: '2019-01-08', role: 'ag', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Moody', donors: 'files',
-    doe: [[DOE + 'moody-cand.tsv', '(ATG)']] },
+    doe: [[DOE + 'moody-cand.tsv', '(ATG)']], office: [[W + 'moody-oag/actions.json', 'grants']] },
   // his 2022 Agriculture campaign and the committees registered with him as chair
   { pid: 'wilton-simpson', start: '2023-01-03', role: 'agriculture', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Simpson', donors: 'files',
+    office: [[W + 'simpson-fdacs/actions.json']],
     doe: [[DOE + 'simpson-cand.tsv', '(AGR)'], ...['pc60614-simpson', 'pc74435-simpson', 'pc74437-simpson', 'pc79644-simpson-pre2025', 'pc88885-simpson'].map(f => [DOE + f + '.tsv', ''])],
     endShown: '2024-12-31' },
 ];
@@ -147,7 +148,7 @@ const doeRows = (f, acct) => {
     .filter(g => g.amount > 0 && !/^(LOA|INT|REF)$/.test(g.type));
 };
 const tallyOf = t => Array.isArray(t) ? t : typeof t === 'string' && /^\d+\s*-\s*\d+/.test(t) ? t.split('-').map(Number) : null;
-const VOTE = v => v === 'yes' || v === 'no' ? v : v === 'absent' || v === 'excused' ? 'absent' : v === 'abstain' || v === 'recused' ? 'abstain' : 'unknown';
+const VOTE = v => v === 'acted' ? v : v === 'yes' || v === 'no' ? v : v === 'absent' || v === 'excused' ? 'absent' : v === 'abstain' || v === 'recused' ? 'abstain' : 'unknown';
 
 if (existsSync(P(OUT))) rmSync(P(OUT), { recursive: true });
 mkdirSync(P(OUT), { recursive: true });
@@ -190,6 +191,17 @@ for (const C0 of OFFICES) {
     actions.push({ id: a.id, d: a.date, t: String(a.title || a.summary || '').replace(/\s+/g, ' ').trim(), r: a.ref || '', k: a.kind || '',
       p: (a.parties || []).slice(0, 4), a: a.amount == null ? null : a.amount, v, res: a.result || '', u: url, l: lob, g: [] });
   }
+  // The officer's own office (Cabinet officers): actions taken without a board vote, counted as the officer's act.
+  // Attorney General: settlements, consent judgments and assurances with named companies, and grants to private
+  // recipients (Brit, Oct 26, 2026: grants count as official acts because her office picks who is funded).
+  // Agriculture: easements the department bought on its own and named funding.
+  for (const [f, sel] of C0.office || []) {
+    const F = load(f);
+    for (const a of (F.actions || []).filter(x => x.qualifies && x.date && inTerm(x.date) && (x.parties || []).length))
+      actions.push({ id: f + '#' + a.date + a.title, d: a.date, t: a.title, r: '', k: a.kind, p: a.parties.slice(0, 4), a: null, v: 'acted', res: '', u: a.url || '', l: [], g: [], amt: a.amountText || null });
+    if (sel === 'grants') for (const gr of (F.grants || []).filter(x => x.government === false && x.date && inTerm(x.date)))
+      actions.push({ id: 'grant#' + gr.fy + gr.program + gr.recipient, d: gr.date, t: 'Grant: ' + gr.program + ' (' + gr.fy + ')', r: '', k: 'grant', p: [gr.recipient], a: gr.amount, v: 'acted', res: '', u: gr.url || '', l: [], g: [] });
+  }
   // donors for this office and the gifts tied to each action
   const gFrom = o.giftsFrom || null;
   const donors = C0.donors === 'files' ? [...(C0.files || []).flatMap(donorRows), ...(C0.doe || []).flatMap(([f, a]) => doeRows(f, a))]
@@ -206,9 +218,9 @@ for (const C0 of OFFICES) {
       else if (a.l.some(l => l.firm && pkey(l.firm) && (dk === pkey(l.firm) || dk.startsWith(pkey(l.firm) + ' ')))) a.g.push({ n: g.donor, amt: g.amount, dt: g.date, k: 'firm' });
     }
   }
-  const cnt = { actions: actions.length, yes: 0, no: 0, absent: 0, abstain: 0, unknown: 0 };
+  const cnt = { actions: actions.length, yes: 0, no: 0, absent: 0, abstain: 0, unknown: 0, acted: 0 };
   for (const a of actions) cnt[a.v]++;
-  const cast = actions.filter(a => a.v === 'yes' || a.v === 'no');
+  const cast = actions.filter(a => a.v === 'yes' || a.v === 'no' || a.v === 'acted');
   const tied = cast.filter(a => a.g.length);
   const tiedGifts = new Map(); for (const a of tied) for (const g of a.g) tiedGifts.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
   const share = C0.donors === 'files' && cast.length && gifts.length ? { n: cast.length, tied: tied.length, from: cast.map(a => a.d).sort()[0], to: cast.map(a => a.d).sort().pop(),

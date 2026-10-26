@@ -21,7 +21,7 @@ test('a donor share only where that office’s reports were read; otherwise a re
 test('the share counts only yes or no votes, and ties need a gift', () => {
   for (const p of all) for (const o of p.offices) {
     if (!o.share || o.kind === 'leg') continue;
-    const cast = o.actions.filter(a => a.v === 'yes' || a.v === 'no');
+    const cast = o.actions.filter(a => a.v === 'yes' || a.v === 'no' || a.v === 'acted');
     assert.equal(o.share.n, cast.length, p.pid);
     assert.equal(o.share.tied, cast.filter(a => a.g.length).length, p.pid);
   }
