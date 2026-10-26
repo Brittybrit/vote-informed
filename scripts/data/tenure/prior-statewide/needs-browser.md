@@ -49,10 +49,18 @@ scripts/data/tenure/prior-statewide/facts/<file>.
 
 ## 4. Other blocked pages (read as text, save under raw/)
 
-- www.floridacabinet.gov meeting archive: the full Governor and Cabinet agenda and transcript for every meeting
-  2019-02-26 to 2024-12-17 (not just the Board of Trustees). Needed for the State Board of Administration, Division of
-  Bond Finance, Administration Commission, Siting Board and FLWAC items. Save each agenda as raw/cabinet/a_<yyyy_mm_dd>.txt
-  and each transcript PDF link in raw/cabinet/transcripts.json.
-- www.myfloridalegal.com/newsreleases (403 from shell): Attorney General press releases 2019-01-08 to 2025-01-21 (list
-  pages with title, date, URL), saved as raw/oag-press-index.json. Also the OAG "Settlements" / "Opioid settlement"
-  pages listing named defendants and amounts.
+- Cabinet agendas and transcripts are now in raw/cabinet (from www.cabinet.myflorida.com archive, which works from shell).
+  Still needed: the agency backup that names private parties the agendas and transcripts do not name (class private_unnamed in
+  cabinet-other/actions.json, 93 items), plus the State Board of Administration minutes (or meeting video) for 2019-07-25,
+  2019-09-24 and 2019-10-22, where the archive has only a Cabinet Aides transcript, so the 12 named items in cabinet-other with
+  roll null get a recorded vote: State Board of Administration Florida Housing fiscal determinations (development and
+  owner entity), Division of Bond Finance reports of award (winning bidder per sale), FDLE and DHSMV "Contracts, Agreements and
+  Purchases over $100,000" lists, FLWAC community development district petitions (petitioner/landowner), Bond Finance municipal
+  advisor selection (Sept 18, 2023) and the DFS equipment-financing line of credit (June 15, 2021). Source: the agency backup
+  packets for each meeting date in cabinet-other/actions.json items (sbafla.com, myfloridacfo.com Bond Finance, fdle.state.fl.us,
+  flhsmv.gov; floridajobs.org / Governor's Office for FLWAC). Save per meeting as raw/cabinet/backup/<date>_<agency>.pdf.
+- www.myfloridalegal.com/newsreleases (403 from shell; WebFetch shows page 1 only): the full Attorney General release index
+  2019-01-08 to 2025-01-21 (title, date, URL), saved as raw/oag-press-index.json. The site has 1,699 releases in all; this slice read
+  78 found by search. Also the "Week in Review" index (298 weeks, all Moody's).
+- myfloridalegal.com Department of Legal Affairs annual report for FY 2024-25 (grant awards made July 2024 to Jan 2025), if posted.
+- Releases that WebFetch refused (raw/oag-blocked.txt): read each and add a line to raw/oag-releases.tsv.

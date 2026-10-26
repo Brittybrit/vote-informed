@@ -10,7 +10,7 @@ for ln in open(os.path.join(SF, 'res.tsv'), encoding='utf8'):
     if len(p) >= 3: url[p[0] + '-' + p[1].split('/')[-1].split('?')[0][:-4]] = (p[1], p[2])
 VAL = {'yes': 'yes', 'aye': 'yes', 'no': 'no', 'nay': 'no', 'absent': 'absent', 'excused': 'absent', 'abstain': 'abstain', 'abstained': 'abstain', 'recused': 'recused'}
 ROLE = r'(?:Commissioner|Vice\s*-?\s*Mayor|Mayor|Councilmember|Councilman|Councilwoman)'
-ROLL = re.compile(r'^\s*' + ROLE + r'\s+((?:[A-Z][\w.\'-]*\s+){0,3}?)([A-Z][\w\'-]+)\s*[:.,_\-]*\s+(Yes|No|Absent|Excused|Abstain(?:ed)?|Recused|Aye|Nay)\b', re.M | re.I)
+ROLL = re.compile(r'^\s*' + ROLE + r'\s+((?:[A-Z][\w.\'-]*\s+){0,3}?)([A-Z][\w\'-]+)\s*[:.,_\-]*\s+(Yes|No|Absent|Excused|Abstain(?:ed)?|Recused|Aye|Nay)(?![a-z])', re.M | re.I)
 NAMEFIX = {'Gielchinksy': 'Gielchinsky', 'Karukln': 'Karukin', 'Burket': 'Burkett', 'Burkelt': 'Burkett', 'KesI': 'Kesl', 'Kesi': 'Kesl', 'Kes': 'Kesl',
            'Goto': 'Coto', 'Viidostegui': 'Vildostegui', 'Velazquez': 'Velasquez', 'Weingto': 'Weingot', 'Trevani': 'Travani'}
 rows = []
@@ -42,5 +42,9 @@ for f in sorted(glob.glob(os.path.join(SF, 'rtxt', '*.txt'))):
     rows.append(dict(key='sf-' + resno, date=date or (b[:4] + '-??-??'), title=title, label=label, roll=roll, mover=mover, second=second,
                      result=('passed' if yes > no else 'failed') if roll else 'passed', consent=False, url=u, minutes=u, ref='Resolution No. ' + resno,
                      src='signed resolution', note=('Vote from the signed resolution.' + (' Not every member\'s vote was legible in the scan.' if len(roll) < 5 else '')) if roll else None, file=b))
+seenk = {}
+for r in rows:
+    k = r['key']; seenk[k] = seenk.get(k, 0) + 1
+    if seenk[k] > 1: r['key'] = k + '.' + 'abcdefgh'[seenk[k] - 1]
 json.dump(rows, open(OUT, 'w'), indent=0, ensure_ascii=False)
 print(len(rows), 'resolutions;', sum(1 for r in rows if r['roll']), 'with roll;', sum(1 for r in rows if '?' in r['date']), 'no date')

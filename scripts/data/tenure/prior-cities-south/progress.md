@@ -12,3 +12,4 @@ Resume notes: one line per finished batch. Work files (downloads, OCR) in the se
 
 ## Log
 - 2026-10-25: Gonzalez current Group II seat (appointed Jan 27, 2026) already fully covered by scripts/data/city/hialeah (cities-c). Nothing to add.
+- 2026-10-26T00:12Z Hialeah Group V: resolutions 2013-2017 built (decisions-2013/2014/2015/2016-2017.txt, land-use rows auto from P&Z resolutions; vote parser tools/hlvote2.py + roll-overrides). Ordinances 2013-2017 waiting on date OCR. School Board: schoolboard/actions.json 383 actions, all rolls unknown (excerpts only); donors 2020 CSV saved.

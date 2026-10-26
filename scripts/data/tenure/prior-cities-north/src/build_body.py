@@ -24,7 +24,7 @@ for ln in (open(RF, encoding='utf8') if os.path.exists(RF) else []):
         if p[3]: v['second'] = p[3]
         if p[4]: v['date'] = p[4]
         y = sum(1 for x in (v['roll'] or {}).values() if x == 'yes'); n = sum(1 for x in (v['roll'] or {}).values() if x == 'no')
-        if v['roll']: v['result'] = 'passed' if y > n else 'failed'; v['note'] = 'Vote read from the signed record (handwritten marks).'
+        if v['roll']: v['result'] = 'passed' if y > n else 'failed'; v['note'] = 'Vote read by hand from the scan of the signed record (the text layer did not carry it).'
 dec = {}
 for f in sorted(glob.glob(os.path.join(HERE, 'decisions', prefix + '-*.txt'))):
     for ln in open(f, encoding='utf8'):

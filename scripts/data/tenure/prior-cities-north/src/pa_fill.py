@@ -24,7 +24,8 @@ for f in glob.glob(os.path.join(HERE, 'decisions', pre + '-*.txt')):
         print(p[0], p[5], r)
         if r and r.get('owner'):
             from cand import nice
+            import re
             import re as _re
-            nm = _re.sub(r'\s*&\s*(?=&|LLC\b|INC\b|$)', ' ', r['owner']); nm = _re.sub(r'\s+', ' ', nm).strip()
-            own[p[0]] = {'folio': r.get('folio'), 'owner': nice(nm), 'note': f"Owner of record on {d} per the Miami-Dade Property Appraiser (folio {r.get('folio')}): {r.get('note')}."}
+            nm = _re.sub(r'\s*&?\s*C/O\b.*$', '', r['owner']); nm = _re.sub(r'\s*&\s*(?=&|LLC\b|INC\b|$)', ' ', nm); nm = _re.sub(r'\s+', ' ', nm).strip()
+            own[p[0]] = {'folio': r.get('folio'), 'owner': ' '.join(w.upper() if (w.upper() in ('USA', 'FL', 'SF', 'VP', 'MG', 'SC', 'JAG', 'FD', 'NE', 'NW', 'II', 'III') or not re.search(r'[AEIOUY]', w.upper())) and w.isalpha() else w for w in nice(nm).split()), 'note': f"Owner of record on {d} per the Miami-Dade Property Appraiser (folio {r.get('folio')}): {r.get('note')}."}
 json.dump(own, open(oj, 'w'), indent=1, ensure_ascii=False)

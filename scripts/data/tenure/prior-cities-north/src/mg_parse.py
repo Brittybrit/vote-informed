@@ -10,13 +10,23 @@ ALIAS = {'Giblert': 'Gilbert', 'Gilbcrt': 'Gilbert', 'Willims': 'Williams', 'Igh
          'Odum': 'Odom', 'Bratten': 'Bratton', 'Pritchet': 'Pritchett', 'Stephen': 'Stephens', 'Julian': 'Julien', 'Odon': 'Odom', 'Odorn': 'Odom', 'Harri': 'Harris'}
 NAMEWORD = r"(?!Council|Vice|Mayor|Also)[A-Z][a-zA-Z'\-]+(?:,?\s*Jr\.?)?"
 
+# council members 2008-2026 (last names) and first-name/OCR forms seen in present lists
+MEMBERS = {'Gibson', 'Gilbert', 'Campbell', 'Watson', 'Bratton', 'AWilliams', 'Williams', 'Pritchett', 'Davis', 'Robinson', 'Harris',
+           'Odom', 'Ighodaro', 'Braynon', 'Wilson', 'Leon', 'Stephens', 'Julien', 'Powell', 'Baskin', 'Harvard'}
+FIRST = {'Oliver': 'Gilbert', 'Melvin': 'Bratton', 'Lisa': 'Davis', 'Felicia': 'Robinson', 'Shirley': 'Gibson', 'Aaron': 'Campbell',
+         'Barbara': 'Watson', 'Sharon': 'Pritchett', 'Andre': 'AWilliams', 'Andr6': 'AWilliams', 'Andrd': 'AWilliams', 'André': 'AWilliams',
+         'David': 'Williams', 'Willia': 'Williams', 'Rodney': 'Harris', 'Lillie': 'Odom', 'Erhabor': 'Ighodaro'}
 def norm_name(n):
+    if re.search(r'Andr\S{0,2}\s+Williams', n or ''): return 'AWilliams'
     n = re.sub(r',?\s*Jr\.?$', '', n.strip()).strip(' ,.:')
     n = n.split()[-1] if n.split() else n
     n = n.strip(' ,.:')
     if n.lower() in ('was', 'were', 'replied', 'stated', 'said', 'is', 'also', 'arrived', 'left', 'and', 'the'): return ''
     if n.islower(): n = n.capitalize()
-    return ALIAS.get(n, n)
+    n = n.strip("'`")
+    n = ALIAS.get(n, n)
+    n = FIRST.get(n, n)
+    return n if n in MEMBERS else ''
 
 def clean(t):
     out = []
@@ -63,6 +73,9 @@ MOTION = re.compile(r'(?:A\s+)?(?:motion(?:ed)?|moved)\s+(?:was\s+)?(?:made|offe
 
 # 2018 style: "Councilwoman X made a motion, seconded by Y, to approve ... There being no discussion, the motion approved by a 7-0 voice vote"
 MOTION2 = re.compile(r'((?:Council\s*(?:wo)?man|Vice\s+Mayor|Mayor)\s+[A-Z][\w.]*(?:\s+[A-Z][\w.]*,?){0,2})\s+made\s+a\s+motion,?\s+seconded\s+by\s+(.*?),?\s+to\s+(.*?)\.\s+(?:(?!made\s+a\s+motion).){0,300}?the\s+(?:motion|item)\s+(?:to\s+[^.]{0,80}?)?(approved|passed|failed|carried|died)(.{0,60}?)(?:roll\s*call|voice)?\s*vote', re.I | re.S)
+
+# 2012 style: "Motion to approve was made by Councilman X and properly second by Councilwoman Y. ... the motion to adopt passed and carried by a 6-0 voice vote"
+MOTION3 = re.compile(r'Motion\s+to\s+(?P<what>[^.]{1,80}?)\s+(?:was\s+)?made\s+by\s+(?P<mover>.*?)\s+and\s+(?:properly\s+)?second(?:ed)?\s+by\s+(?P<second>.*?)\.\s+(?:(?!Motion\s+to\s+[^.]{1,80}?\s+(?:was\s+)?made\s+by).){0,300}?(?P<outcome>passed|failed|carried|died)(?P<tail>.{0,60}?)(?:roll\s*call|voice)?\s*vote', re.I | re.S)
 
 def split_title(text):
     """title = from A RESOLUTION/AN ORDINANCE up to 'EFFECTIVE DATE' (+ sponsor parenthetical)."""
@@ -113,7 +126,8 @@ def present_list(text):
     m2 = re.search(r'Council\s*(?:wo)?(?:men|members|Members)\s*:?\s*(.*)', seg, re.S)
     if m2:
         for part in re.split(r',|\band\b', m2.group(1)):
-            part = re.sub(TITLES, '', part).strip(' .\n')
+            part = re.split(r'(?:(?<=[a-z]{2})|(?<=III)|(?<=Jr))\.\s+(?=[A-Z][a-z])', re.sub(TITLES, '', part).strip(' .\n'))[0].strip(' .\n')
+            part = re.sub(r'\s+(?:III|II|IV)$', '', part)
             if re.match(r"^[A-Z][a-zA-Z\.']+(\s+[A-Z][a-zA-Z\.']+){0,3}(,?\s*Jr\.?)?$", part): out.append(norm_name(part))
     seen = []
     for n in out:
@@ -176,6 +190,21 @@ def main():
         elif (m1 and dd(m1) != date) or (m2 and dd(m2) != date):
             SUSPECT.append((docid, name, dd(m1) if m1 else None, dd(m2) if m2 else None))
         docs.append((docid, y, name, f, date, kind, over))
+    # two minutes files for the same meeting (2012 has two parallel series): keep the larger text, list the other as a duplicate
+    def _toks(f):
+        return set(re.findall(r'[A-Z]{4,}', open(f, errors='ignore').read().upper()[:20000]))
+    grp = {}
+    for d in docs: grp.setdefault((d[4], d[5], d[6]), []).append(d)
+    keep = set()
+    for g in grp.values():
+        g = sorted(g, key=lambda d: -os.path.getsize(d[3])); kept = []
+        for d in g:
+            t = _toks(d[3])
+            if any(len(t & kt) / max(1, len(t | kt)) > 0.5 for kt in kept): continue
+            kept.append(t); keep.add(d[0])
+    for d in docs:
+        if d[0] not in keep: DUPS.append((d[0], d[2], d[4]))
+    docs = [d for d in docs if d[0] in keep]
     real = {(d[4], d[5]) for d in docs if not d[6]}
     for docid, y, name, f, date, kind, over in docs:
         if over and (date, kind) in real:
@@ -198,6 +227,8 @@ def main():
             if mres: resno = re.sub(r'\s+', '', mres[0])
             motions = [dict(dissent=dissent(rest[mm.end():mm.end()+400]), mover=norm_name(mm.group(1)) if mm.group(1) else None, second=norm_name(mm.group(2)), what=re.sub(r'\s+', ' ', mm.group(3))[:120],
                             outcome=mm.group(4).lower(), tail=re.sub(r'\s+', ' ', mm.group(5))[:80], pos=mm.start()) for mm in list(MOTION.finditer(rest)) + list(MOTION2.finditer(rest))]
+            motions += [dict(dissent=dissent(rest[mm.end():mm.end()+400]), mover=norm_name(mm.group('mover')), second=norm_name(mm.group('second')), what=re.sub(r'\s+', ' ', mm.group('what'))[:120],
+                             outcome=mm.group('outcome').lower(), tail=re.sub(r'\s+', ' ', mm.group('tail'))[:80], pos=mm.start()) for mm in MOTION3.finditer(rest)]
             motions.sort(key=lambda m: m['pos'])
             rolls = find_rolls(it['lines'])
             pulled = bool(re.search(r'pulled\s+from\s+the\s+Consent', rest, re.I))

@@ -24,6 +24,11 @@ def cls(a):
 # private parties named in the record: (date, agency-substring, item) -> details
 SEC = {'SBA': ['DeSantis', 'Moody', 'Patronis'], 'ALL': None}
 NAMED = {
+ ('2019-06-04', 'STATE BOARD', '3'): ('Mary Bethune-Cookman High Rise', 'multifamily housing refunding bonds; Tampa. Motion DeSantis; second Moody; no objection.', 'SBA'),
+ ('2019-06-04', 'STATE BOARD', '4'): ('Parrish Oaks', 'not to exceed $14 million multifamily mortgage revenue bonds; acquisition and construction, 120 units, Manatee County. Motion DeSantis; second Moody; no objection.', 'SBA'),
+ ('2019-06-04', 'STATE BOARD', '5'): ('Pembroke Tower Apartments', 'not to exceed $11 million; acquisition and rehab, Broward County. Motion DeSantis; second Patronis; no objection.', 'SBA'),
+ ('2019-02-26', 'STATE BOARD', '3'): ('Suncrest Court', 'not more than $16 million multifamily mortgage bonds; acquisition, construction and equipment, 116 units, Broward County. Motion Moody; second Patronis.', 'SBA'),
+ ('2019-02-26', 'STATE BOARD', '4'): ('The Palms at Town Center', 'not exceeding $9 million multifamily mortgage revenue bonds; new construction, 88 workforce units, Flagler County. Motion Moody; second Patronis; no objection.', 'SBA'),
  ('2020-02-04', 'STATE BOARD', '4'): ('Hibiscus Apartments', 'not to exceed $11 million multifamily mortgage revenue notes; new construction, 96 units, Lee County', 'SBA'),
  ('2020-02-04', 'STATE BOARD', '5'): ('Meridian Apartments', 'not to exceed $15,300,000 multifamily housing revenue bonds; acquisition and rehab, 160 senior units, Hollywood', 'SBA'),
  ('2020-02-04', 'STATE BOARD', '6'): ('Northside Transit Village II', 'not to exceed $20,800,000 multifamily mortgage revenue bonds; new construction, 180 units, Miami-Dade', 'SBA'),
@@ -48,7 +53,23 @@ NAMED = {
  ('2022-06-22', 'STATE BOARD', '2'): ('Cadenza at Hacienda Lakes', 'not to exceed $24,500,000 multifamily mortgage revenue notes; 160 units, Collier County', 'SBA'),
  ('2022-06-22', 'STATE BOARD', '3'): ('Northside Transit Village III', 'not to exceed $26,180,000 multifamily mortgage revenue bonds; 200 units, Miami-Dade', 'SBA'),
  ('2022-08-23', 'ADMINISTRATION COMMISSION', '2'): ('Southern Comfort Storage, LLC', 'Semmer v. Lee County and Southern Comfort Storage, LLC (intervenor): the Commission overruled the ALJ and voted to find the Lee County plan amendment for 7.5 acres on San Carlos Island (up to 113 units) in compliance, and directed a final order. Motion DeSantis; seconds Patronis and Moody; Fried spoke in favor.', 'ALL'),
+ ('2023-12-19', 'FLORIDA LAND AND WATER', '1'): ('Premier Citrus, LLC', 'Petition to amend the boundary of the Capron Trail Community Development District (St. Lucie County): add 2 acres and another 456 acres. The transcript names the petitioner, Premier Citrus, LLC, as owner of most of the land in the district. Motion DeSantis; second Patronis; no objection.', 'ALL'),
  ('2023-01-17', 'ADMINISTRATION COMMISSION', '2'): ('Southern Comfort Storage, LLC', 'Final order adopted in Semmer v. Lee County and Southern Comfort Storage, LLC finding the amendment in compliance. Motion DeSantis; second Patronis; no objection.', 'ALL'),
+}
+# named only in a Cabinet Aides transcript (the archive has no meeting transcript): party known, vote not read
+AIDES = {
+ ('2019-07-25', 'STATE BOARD', '3'): ('Daytona Gardens Apartments', 'not exceeding $20 million multifamily mortgage revenue bonds; Volusia County'),
+ ('2019-07-25', 'STATE BOARD', '4'): ('Osprey Point', 'not exceeding $11,050,000 multifamily mortgage revenue notes; 110 units, Pasco County'),
+ ('2019-07-25', 'POWER PLANT SITING', '2'): ('Tampa Electric Company', 'Final order certifying Big Bend generating station Units 1-3 and its modernization project (Hillsborough County) under the Power Plant Siting Act, adopting the ALJ recommended order'),
+ ('2019-09-24', 'STATE BOARD', '3'): ('Azura Estates', 'not exceeding $40,030,000 multifamily housing revenue bonds; 216 units, Palm Beach County'),
+ ('2019-09-24', 'STATE BOARD', '4'): ('Brisas del Rio Apartments', 'not exceeding $19,500,000 multifamily mortgage revenue notes; 168 units, Miami-Dade County'),
+ ('2019-09-24', 'STATE BOARD', '5'): ('Jordan Park', 'not exceeding $27,400,000 multifamily mortgage revenue notes; 266 units, Pinellas County'),
+ ('2019-09-24', 'STATE BOARD', '6'): ('Providence Reserve Seniors', 'not exceeding $12 million multifamily mortgage revenue notes; 139 units, Polk County'),
+ ('2019-09-24', 'STATE BOARD', '7'): ('Suncrest Court', 'not exceeding $16,000,000 multifamily mortgage revenue notes; 116 units, Broward County'),
+ ('2019-09-24', 'STATE BOARD', '8'): ('Twin Lakes Estates Phase 2', 'not exceeding $12,100,000 multifamily mortgage revenue bonds; 132 units, Polk County'),
+ ('2019-09-24', 'STATE BOARD', '9'): ('Waters Edge Apartments', 'not exceeding $14,250,000 multifamily mortgage revenue bonds; 128 units, Miami-Dade County'),
+ ('2019-09-24', 'STATE BOARD', '11'): ('Federation Gardens 1 and 2', 'not exceeding $39,050,000 multifamily mortgage revenue notes; 161 units, Miami-Dade County'),
+ ('2019-09-24', 'STATE BOARD', '12'): ('Federation Towers', 'not exceeding $28,245,000 multifamily mortgage revenue notes; 114 units, Miami-Dade County'),
 }
 SEATED = {'DeSantis': ('2019-01-08', None), 'Moody': ('2019-01-08', '2025-01-21'), 'Patronis': ('2017-06-30', '2025-03-31'), 'Fried': ('2019-01-08', '2023-01-03'), 'Simpson': ('2023-01-03', None)}
 def roll(date, who):
@@ -60,25 +81,32 @@ for a in A:
     c = cls(a)
     if c == 'bot': continue
     key = next((k for k in NAMED if k[0] == a['date'] and k[1] in a['agency'] and k[2] == a['item']), None)
-    if key: c = 'private_named'
+    akey = next((k for k in AIDES if k[0] == a['date'] and k[1] in a['agency'] and k[2] == a['item']), None)
+    if key or akey: c = 'private_named'
     rec = {'date': a['date'], 'agency': a['agency'], 'item': a['item'], 'title': a['title'], 'class': c,
            'agenda': AG.get(a['date'], {}).get('url'), 'transcript': IDX.get(a['date'], {}).get('url')}
     items.append(rec)
     if key:
         party, what, who = NAMED[key]
         actions.append({'id': 'cab-%s-%s-%s' % (a['date'], 'sba' if who == 'SBA' else 'ac', a['item']), 'date': a['date'],
-            'ref': a['agency'].title() + ' item ' + a['item'], 'title': a['title'] + ' (' + party + ')', 'kind': 'housing_bond_determination' if who == 'SBA' else 'land_use_order',
+            'ref': a['agency'].title() + ' item ' + a['item'], 'title': a['title'] + ' (' + party + ')', 'kind': 'housing_bond_determination' if who == 'SBA' else ('cdd_petition' if 'District' in a['title'] else 'land_use_order'),
             'parties': [party], 'summary': what, 'result': 'approved', 'roll': roll(a['date'], who), 'url': rec['transcript'], 'record': {'agenda': rec['agenda'], 'transcript': rec['transcript']},
             'notes': ('Florida Housing Finance Corporation multifamily bonds; the State Board of Administration fiscal determination lets the bonds be issued for this private development. The transcript names the development, not the owner entity. ' if who == 'SBA' else '') + 'Vote by motion; no objection recorded.'})
+    if akey and not key:
+        party, what = AIDES[akey]
+        actions.append({'id': 'cab-%s-%s-%s' % (a['date'], 'sba' if 'STATE BOARD' in a['agency'] else 'ppsb', a['item']), 'date': a['date'], 'ref': a['agency'].title() + ' item ' + a['item'],
+            'title': a['title'] + ' (' + party + ')', 'kind': 'housing_bond_determination' if 'STATE BOARD' in a['agency'] else 'siting_certification', 'parties': [party], 'summary': what,
+            'result': None, 'roll': None, 'url': rec['transcript'], 'record': {'agenda': rec['agenda'], 'transcript': rec['transcript']},
+            'notes': 'Named in the Cabinet Aides meeting transcript, the only transcript the archive posts for this date. The vote at the Cabinet meeting is not in any record read here, so no result or roll call is given.'})
 import collections
 out = {'body': 'Governor and Cabinet: State Board of Administration, Division of Bond Finance, Administration Commission, Florida Land and Water Adjudicatory Commission, Power Plant Siting Board, Office of Insurance Regulation, Office of Financial Regulation, Department of Revenue, FDLE, DHSMV, Department of Veterans\' Affairs',
  'window': {'from': '2019-01-11', 'to': '2024-12-17'},
  'sources': [{'name': 'Governor and Cabinet meeting archive (agendas and transcripts)', 'url': 'https://www.cabinet.myflorida.com/cabinet_meeting_archive/2022_meetings_of_the_governor_and_cabinet'}],
  'counts': dict(collections.Counter(i['class'] for i in items)), 'actions': sorted(actions, key=lambda x: x['date'], reverse=True), 'items': items,
  'excludedNamed': [
-   {'date': '2021-06-15', 'ref': 'Administration Commission item 2', 'parties': ['Limonar Development, LLC', 'Wonderly Holdings, LLC', 'Mills Family, LLC', 'Tropical Audubon Society'], 'why': 'Named petitioners lost: the Commission directed a final order upholding the Miami-Dade County plan amendment for the Kendall Parkway (one objection, Fried, recorded on the preceding item; see transcript). Beneficiary is a government plan amendment, not the named parties.'},
+   {'date': '2021-06-15', 'ref': 'Administration Commission item 2', 'parties': ['Limonar Development, LLC', 'Wonderly Holdings, LLC', 'Mills Family, LLC', 'Tropical Audubon Society'], 'why': 'Named petitioners lost: the Commission sided with Miami-Dade County (Kendall Parkway plan amendment fairly debatable) and directed a final order. Roll call at the end of the transcript: DeSantis yes, Patronis yes, Moody concurred with the Governor, Fried no (would adopt the ALJ order). Beneficiary is a government plan amendment, not the named parties.'},
    {'date': '2021-09-21', 'ref': 'Administration Commission item 1', 'parties': ['Limonar Development, LLC', 'Wonderly Holdings, LLC', 'Mills Family, LLC', 'Tropical Audubon Society', 'Michelle Garcia'], 'why': 'Final order granting Miami-Dade County\'s exceptions and finding the Kendall Parkway plan amendment in compliance; the named petitioners lost. Motion DeSantis, second Patronis; Fried opposed in remarks.'}],
- 'gaps': ['2019 transcripts are scans; OCR text in raw/cabinet/2019-*_transcript.ocr.txt. Florida Housing project names for 2019 items are added only where the OCR text reads them.',
+ 'gaps': ['2019 transcripts are scans; OCR text in raw/cabinet/2019-*_transcript.ocr.txt. Florida Housing project names for 2019 items are added only where the OCR text reads them.', 'For 2019-05-29, 2019-07-25, 2019-09-24, 2019-10-08 and 2019-10-22 the archive posts no meeting transcript (only a Cabinet Aides transcript or none). Parties named in an aides transcript are listed with result and roll null; no vote is given for those dates.',
           'Items in class private_unnamed name no beneficiary in the agenda or transcript (the backup that names bond award winners, FDLE and DHSMV vendors, CDD landowners and some Florida Housing developments is on agency sites not reachable here); they are counted, not listed, per the standard.',
           'Movers and seconders are recorded in the transcripts but were not copied item by item except where noted.']}
 os.makedirs(os.path.join(HERE, 'cabinet-other'), exist_ok=True)

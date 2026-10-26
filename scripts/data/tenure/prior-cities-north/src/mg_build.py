@@ -22,13 +22,14 @@ for ln in open(os.path.join(HERE, 'decisions', 'rolls-mg.txt'), encoding='utf8')
         v = dict(byk[p[0]]); v['roll'] = dict(x.split('=') for x in p[1].split(',')); v['src'] = 'hand'; v['flags'] = []
         if p[2]: v['mover'] = p[2]
         if p[3]: v['second'] = p[3]
+        rv = list(v['roll'].values())
+        if 'unknown' not in rv: v['result'] = 'passed' if rv.count('yes') > rv.count('no') else 'failed'
         byk[p[0]] = v
 DV = 'https://edocs.miamigardens-fl.gov/WebLink/DocView.aspx?id=%s&dbid=0&repo=Laserfiche'
 
 def mkey(n, date):
     if n == 'Ighodaro' and date >= '2020-11-01': return 'SIghodaro'
     if n == 'Campbell' and date < '2016-01-01': return 'ACampbell'
-    if n == 'Williams' and date < '2012-11-01': return 'AWilliams'
     return n
 
 roster = {}

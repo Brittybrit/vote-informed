@@ -9,7 +9,7 @@ AV, OUT = sys.argv[1:3]
 MON = {m: i for i, m in enumerate('january february march april may june july august september october november december'.split(), 1)}
 VAL = {'yes': 'yes', 'aye': 'yes', 'no': 'no', 'nay': 'no', 'absent': 'absent', 'excused': 'absent', 'abstain': 'abstain', 'abstained': 'abstain', 'recused': 'recused', 'recusal': 'recused'}
 ROLE = r'(?:Commissioner|Vice\s+Mayor|Mayor)'
-LINE = re.compile(r'^\s*' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,3}?)\s{2,}(yes|no|absent|abstain(?:ed)?|recused|excused|aye|nay)\b', re.M | re.I)
+LINE = re.compile(r'^\s*' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,3}?)\s+(yes|no|absent|abstain(?:ed)?|recused|excused|aye|nay)\b', re.M | re.I)
 FIX = {'Luz Urbaez-Weinberg': 'Luz Urbaez Weinberg', 'Luz Urbaez- Weinberg': 'Luz Urbaez Weinberg', 'Urbaez Weinberg': 'Luz Urbaez Weinberg', 'Robert Shelly': 'Robert Shelley', 'Mayor Teri Holzberg': 'Teri Holzberg', 'Enbar Cohen': 'Enbar Cohen', 'Dr. Linda Marks': 'Linda Marks', 'Robert Shelley': 'Robert Shelley'}
 def nm(s):
     s = re.sub(r'\s+', ' ', s.strip()); return FIX.get(s, s)
@@ -26,7 +26,7 @@ for f in sorted(glob.glob(os.path.join(AV, 'res', '*.json'))):
     blocks = []; fuzzy = False
     am = re.search(r'(?:the\s+)?(?:applicant|owner)s?,?\s+([A-Z0-9][\w&.,\'\- ]{2,90}?),?\s+(?:through|has\s+applied|is\s+requesting|by\s+and\s+through|submitted|requests)', re.sub(r'\s+', ' ', t))
     applicant = am.group(1).strip(' ,') if am else None
-    for bm in re.finditer(r'offered\s+by\s+' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,2}?),?\s+who\s+mov\w*\s+its\s+adoption(.{0,40}?)\.\s*(?:The|This)\s+motion\s+was\s+seconded\s+by\s+' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,2}?)\s*(?:,|and\b|who\b)', t, re.S):
+    for bm in re.finditer(r'offered\s+by\s+' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,2}?),?\s+who\s+mov\w*\s+its\s+(?:\S{1,3}\s+)?adoption(.{0,40}?)\.\s*(?:The|This)\s+motion\s+was\s+seconded\s+by\s+' + ROLE + r'\s+([A-Z][\w.\'-]*(?:\s+[A-Z][\w.\'-]*){0,2}?)\s*(?:,|and\b|who\b)', t, re.S):
         seg = t[bm.end():bm.end() + 900]
         seg = re.split(r'offered\s+by|PASSED', seg)[0]
         r = {}
@@ -50,12 +50,16 @@ for f in sorted(glob.glob(os.path.join(AV, 'res', '*.json'))):
         except ValueError: date = None
     lm = re.search(r'(' + '|'.join(m.title() for m in MON) + r')\s+(\d{1,2}),?\s+(\d{4})\s*$', d['name'])
     if not date and lm: date = f'{lm.group(3)}-{MON[lm.group(1).lower()]:02d}-{int(lm.group(2)):02d}'
+    def _ok(ds):
+        try:
+            import datetime as _d; _d.date(int(ds[:4]), int(ds[5:7]), int(ds[8:10])); return True
+        except Exception: return False
     if not date:   # OCR-damaged date line: day and a fuzzy month; the year is the record's own number year
         import difflib
         fm = list(re.finditer(r'(?:ADOPTED|reading)[^\n]{0,40}?(\d{1,2})\s*\w{0,3}\s+day\s+of\s*([A-Za-z \-]{2,14})', t, re.I))
         if fm:
             fm = fm[-1]; mon = difflib.get_close_matches(re.sub(r'[^a-z]', '', fm.group(2).lower()), list(MON), n=1, cutoff=0.6)
-            if mon and 1 <= int(fm.group(1)) <= 31: date = f'{no[:4]}-{MON[mon[0]]:02d}-{int(fm.group(1)):02d}'; fuzzy = True
+            if mon and _ok(f'{no[:4]}-{MON[mon[0]]:02d}-{int(fm.group(1)):02d}'): date = f'{no[:4]}-{MON[mon[0]]:02d}-{int(fm.group(1)):02d}'; fuzzy = True
     roll = b['roll'] if b else None
     yes = sum(1 for v in (roll or {}).values() if v == 'yes'); no_ = sum(1 for v in (roll or {}).values() if v == 'no')
     rows.append(dict(key=f'av-{"r" if kind == "R" else "o"}{no}', date=date or (no[:4] + '-??-??'), title=title, label=d['name'], roll=roll,
