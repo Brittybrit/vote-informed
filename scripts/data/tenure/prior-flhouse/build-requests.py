@@ -85,6 +85,26 @@ for y in (2017, 2018, 2019, 2020, 2021, 2022):
                'record': b['url'], 'textUrl': b['url'] + '/BillText/Filed/PDF',
                'formList': f'https://www.flhouse.gov/Sections/Appropriations/projectbills.aspx?SessionId={SESSION[y]}'}
         if not t: rec['textRead'] = False
+        li = re.search(r'line item (\w+)', rec['lastAction'])
+        if rec['budget'].get('status') == 'notIn' and li and idx is not None:
+            # the House history says the project went into a budget line, but the GAA prints it without the "(HB n)" tag
+            # (e.g. only the Senate form number): find the project title in that year's GAA and read its line
+            txt, starts, flags = gaa.load(ch); flat = re.sub(r'\s+', ' ', txt)
+            m = re.search(re.escape(re.sub(r'\s+', ' ', rec['title'])) + r'[^.]{0,80}?(?:\.\s*){2,}\s*(\d{1,3}(?:,\d{3})+)', flat)
+            if m:
+                amt_pos = m.start(1)  # position in the flattened text; map back through the token flags
+                k = len(re.sub(r'\s+', ' ', txt[:0]))
+                flat_starts, pos = [], 0
+                vetoed = False
+                # the token holding the amount: find it by counting tokens in the flattened text
+                ntok = len(flat[:amt_pos].split())
+                vetoed = flags[ntok] if ntok < len(flags) else False
+                rec['budget'] = {'status': 'in', 'lines': 1, 'amount': int(m.group(1).replace(',', '')), 'matchedBy': 'title',
+                                 'note': f"The GAA prints this project without the bill number; the House bill history says it is in line item {li.group(1)}, and the GAA line with this title is used."}
+                if vetoed: rec['budget']['vetoed'] = rec['budget']['amount']
+            else:
+                rec['budget']['historyNote'] = f"House bill history: '{rec['lastAction']}', but no GAA line names this bill or its title."
+
         if c:
             bill, member, funds, billId, apr, date, sponsor, tot, recp, county, lob, firm, agency, title = c
             m, d, yy = date.split('/')

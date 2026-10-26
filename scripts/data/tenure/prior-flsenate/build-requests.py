@@ -9,7 +9,7 @@ import json, os, re, collections
 H = os.path.dirname(os.path.abspath(__file__))
 FS = os.path.join(H, '../flsenate')
 FULL = {'Avila': 'Bryan Avila', 'Taddeo': 'Annette Taddeo', 'Simpson': 'Wilton Simpson', 'JJRodriguez': 'Jose Javier Rodriguez', 'Campbell': 'Daphne Campbell'}
-SURN = {'Avila': r'avila', 'Taddeo': r'taddeo', 'Simpson': r'simpson', 'JJRodriguez': r'rodr[ií]guez', 'Campbell': r'campbell'}
+SURN = {'Avila': r'avila', 'Taddeo': r'taddeo', 'Simpson': r'simpso', 'JJRodriguez': r'rodr[ií]g', 'Campbell': r'campbe'}  # stems, so OCR'd lines still match
 LF = 'https://laws.flrules.org/'
 BUDGET = {
  '2017-18': {'year': 2017, 'law': 'SB 2500', 'ch': 'Ch. 2017-70', 'url': LF + '2017/70', 'vetoUrl': 'https://www.flsenate.gov/usercontent/session/archive/journals/2018/2018-sj-bound-vI.pdf', 'vetoNote': 'Line-item veto message of the Governor, Journal of the Senate, January 9, 2018'},
@@ -93,8 +93,8 @@ def field(t, label, nxt):
 def parse_form(path):
     t = open(path).read()
     g = lambda pat: (re.search(pat, t, re.M) or [None, ''])[1].strip()
-    date = g(r'^\s*3\.\s*Date of (?:Request|Submission):?\s+(\S+)')
-    sponsor = g(r'^\s*2\.\s*Senate Sponsor:?\s+(.+)$')
+    date = g(r'^\s*[23]\.\s*Date of (?:Request|Submission):?\s+(\S+)')  # item 2 on FY2017-18 forms
+    sponsor = g(r'^\s*[12]\.\s*Senate Sponsor:?\s+(.+)$') or g(r'Senate Sponsor[\s:|,‘]*(\S.*)$')  # second form for OCR text
     rec_blk = re.search(r'Recipient Contact Information(.*?)(?:Lobbyist Contact Information|If there is a registered lobbyist|$)', t, re.S)
     rb = rec_blk.group(1) if rec_blk else ''
     recipient = (re.search(r'a\.\s*Organization:?\s+(.+)', rb) or [None, ''])[1].strip()
@@ -130,8 +130,12 @@ for fy in FYS:
     for r in rows:
         f = int(r['form'])
         p = parse_form(txt_path(fy, r['form']))
-        if not re.search(SURN[r['sponsor']], p['sponsor'].lower()):
-            raise SystemExit(f'sponsor mismatch {fy} {f}: list {r["sponsor"]} form {p["sponsor"]!r}')
+        # the Senate's own list names the sponsor; the form's sponsor line is checked too (OCR text may garble or drop it)
+        spcheck = bool(re.search(SURN[r['sponsor']], p['sponsor'].lower()))
+        if not spcheck:
+            if not os.path.exists(txt_path(fy, r['form'])[:-4] + '.ocr'):
+                raise SystemExit(f'sponsor mismatch {fy} {f}: list {r["sponsor"]} form {p["sponsor"]!r}')
+            print('  note: OCR sponsor line unreadable', fy, f, repr(p['sponsor'][:60]))
         if f in gi:
             kinds = [x[0] for x in gi[f]]; am = [x[1] for x in gi[f]]
             if vi and vi.get(f) and all(a is not None for a in am) and vi[f] > sum(am): am = [x[2] if x[0] == 'p' and x[2] else x[1] for x in gi[f]]
@@ -156,9 +160,13 @@ for fy in FYS:
         except ValueError:
             date = None
         if r['withdrawn']: b['withdrawn'] = r.get('wnote') or True
+        if os.path.exists(txt_path(fy, r['form'])[:-4] + '.ocr'):
+            cl = lambda v: re.sub(r'^[\s|:;,._\-—]+|[\s|:;,._\-—]+$', '', v or '')
+            p = {k: cl(v) for k, v in p.items()}; ocr = True
+        else: ocr = False
         out.append({'fy': fy, 'form': f, 'date': date, 'member': r['sponsor'], 'pid': PID[r['sponsor']], 'title': r['title'],
                     'recipient': p['recipient'], 'county': p['county'], 'agency': p['agency'], 'ask': r['ask'], 'cmte': r['cmte'],
-                    'lobbied': lobbied, 'budget': b, 'record': r['pdf'].replace('\\', '/')})
+                    'lobbied': lobbied, 'budget': b, 'record': r['pdf'].replace('\\', '/'), **({'textFrom': 'OCR of the scanned form (recipient and county may carry OCR noise)'} if ocr else {})})
     meta = {k: v for k, v in B.items() if k != 'year'} | {'fy': fy}
     J = {'source': f"Florida Senate Local Funding Initiative Requests, Fiscal Year {fy} (flsenate.gov/Session/Appropriations/FY{fy}/LocalFundingRequests), every form filed by the members in this slice; each form PDF read Oct 25-26, 2026. Budget status: each form number looked up as '(Senate Form n)' / '(SF n)' in the enacted GAA ({B['law']}, {B['ch']}) and in the governor's veto list.",
          'budget': meta,
@@ -167,6 +175,10 @@ for fy in FYS:
                     'vetoed': sum(1 for x in out if x['budget'].get('vetoed')),
                     'lobbied': sum(1 for x in out if x['lobbied'])},
          'requests': out}
+    if fy == '2017-18':
+        J['formNote'] = 'FY2017-18 forms (the first year of the Senate system) have no lobbyist item and no state-agency item, so lobbied is empty because the form does not ask, not because no lobbyist worked on the request.'
+    if B['year'] == 2017:
+        J['budgetNote'] = 'The 2017 GAA tags only some projects with a Senate form number (125 tags); a form not found may still have been funded under an untagged line, so notIn means only that the form number is not in the act.'
     json.dump(J, open(os.path.join(H, f"requests-{fy}.json"), 'w'), indent=1, ensure_ascii=False)
     per = {}
     for x in out:

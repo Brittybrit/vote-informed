@@ -33,3 +33,19 @@ Senate terms begin upon election (Fla. Const. art. III, s. 15(d)); start/end = g
 - DONE requests-2021-22.json (Taddeo 5, Simpson 8), requests-2022-23.json (Simpson 7; Taddeo filed none for FY2022-23).
 - DONE rolls for 2021-2022 qualifying laws (44 sheets): Taddeo yes 17 / no 2 ... (see summary), Simpson (President) yes 18 / not voting 1 on 2021 so far.
 - bills/enacted.jsonl DONE: 1844 laws, sessions 2013 (272), 2014 (254 + 2014A 1), 2015 (220 + 2015A 11), 2016 (269), 2017 (229 + 2017A 4 + GAA), 2018 (193), 2019 (189), 2020 (201). 2015B, 2015C: no laws. bills/gaps.py added the chapter numbers the list omits (GAAs and HB 7129 2013) from laws.flrules.org; chapter sequences now have no gaps.
+- LFIR PDFs DONE 703/703. FY2017-18: 79 of 88 forms are scanned images -> src/ocr_forms.sh (pdftoppm 300 dpi + tesseract); records carry textFrom: 'OCR ...'; 14 OCR'd sponsor lines unreadable (the Senate list's sponsor is used; noted in build output). FY2017-18 forms have no lobbyist or agency item (formNote in the file).
+- DONE requests for every FY: 2017-18 (88: Simpson 17, Campbell 60, JJR 11), 2018-19 (149: Simpson 48, Campbell 86, JJR 12, Taddeo 3; vetoUnknown), 2019-20 (79: Simpson 47, JJR 21, Taddeo 11), 2020-21 (81: Simpson 50, JJR 23, Taddeo 8), 2021-22 (13), 2022-23 (7), 2023-24..2026-27 (Avila). REQUESTS COMPLETE.
+- Bills stage A running at ~1 law/min: flsenate.gov /Session/ pages return 429 on about half of requests (static /PublishedContent/ files never do). net.py now holds only /Session/ requests for 60 s after a 429.
+- Found: some House final analyses (h####z1) on flsenate.gov are 1-page "DOCUMENT UNAVAILABLE" placeholders (e.g. 2020 HB 989, HB 787), which gave no Private Sector text. pfs_stageA.py now tries the next analyses (other House finals, then Senate post-meeting analyses newest first, up to 3) and records 'tried'; chapters already read with no text (2020-47, 2020-89, 2020-138, and ~20 pending local bills) are refetched. Readings for 2020 so far in bills/decisions.json.
+- 2020 regular session SCREENED: 201 laws (incl. GAA HB 5001 ch. 2020-111, b:false: conference report has no private-sector section), 22 qualify (bills/stageB.jsonl, readings in bills/decisions.json). Local bills (House LAS analyses) have no Private Sector Impact section: stageB auto b:false with note and the 'tried' list.
+- src/pfs_votes_loop.sh: every 10 min rebuilds vote-jobs and reads new Senate sheets (2020 rolls coming in; parser works on 2020 sheets).
+- Rate now ~0.5-1 law/min (dynamic flsenate pages 429 about half the time even at 15 s spacing). Working 2019 next, then 2018, 2017A, 2017, then 2016-2013 (Simpson only).
+- 2019 partly screened: chapters through 2019-61 (61 of 189), 2 qualify (2019-19 off-highway vehicle makers, 2019-57 insurers/AOB); rolls read.
+- STOPPED 2026-10-26 ~01:20 ET: stage A background job reached the 2-hour limit; not restarted. All rolls for every qualifying law screened so far are in bills/rolls.jsonl (211 sheets). summary.md written by src/summary.py.
+
+## RESUME (newest first)
+1. cd scripts/data/tenure/prior-flsenate && python3 -I bills/pfs_stageA.py >> bills/stageA.log 2>&1   (skips done chapters; continues 2019-62.., then 2018, 2017A, 2017, 2016 .. 2013; ~1,580 laws; about 1 law/min while the House agent shares flsenate.gov). Run in the background and relaunch on the 2-hour cut.
+2. python3 -I bills/pfs_stageB.py -> prints pending Private Sector readings; add them with bills/adddec.py '{"<ch>": {"b": ..., "cat": ..., "q": ..., "note": ...}}'; rerun until pending 0.
+3. python3 -I src/vote_jobs.py && python3 -I src/votes.py   (Senate final-passage sheets for every new qualifying law; parsed for all five members).
+4. python3 -I src/summary.py && python3 -I src/offices.py
+5. After the browser pass (needs-browser.md): donors/*.tsv, then the 2018 veto list -> python3 -I build-requests.py 2018-19.

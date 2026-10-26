@@ -5,11 +5,20 @@ import subprocess, time, os, tempfile, fcntl
 LOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.lock')
 HOLD = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.hold')  # 429 back-off for flsenate.gov /Session/ pages only
 def _dynamic(u): return 'flsenate.gov/Session/' in u
+DGAP = float(os.environ.get('PFS_DGAP', '15'))  # /Session/ pages: at least this many seconds apart (fewer 429s than 6.5 s)
+DLOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.net.dlock')
 def _wait_hold(u):
     if not _dynamic(u): return
     try: until = float(open(HOLD).read().strip() or 0)
     except (OSError, ValueError): until = 0
     if until > time.time(): time.sleep(until - time.time())
+    with open(DLOCK, 'a+') as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        lk.seek(0); s = lk.read().strip(); last = float(s) if s else 0.0
+        w = DGAP - (time.time() - last)
+        if w > 0: time.sleep(w)
+        lk.seek(0); lk.truncate(); lk.write(str(time.time())); lk.flush()
+        fcntl.flock(lk, fcntl.LOCK_UN)
 
 def _slot(gap):
     with open(LOCK, 'a+') as lk:

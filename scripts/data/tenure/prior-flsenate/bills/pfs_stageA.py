@@ -14,7 +14,13 @@ E = [e for e in E if e['chapter']]
 E.sort(key=lambda e: (-int(e['chapter'][:4]), int(e['chapter'][5:])))
 OUT, PSI = os.path.join(H, 'stageA.jsonl'), os.path.join(H, 'psi.jsonl')
 done = {json.loads(l)['ch'] for l in open(OUT)} if os.path.exists(OUT) else set()
-pdone = {json.loads(l)['ch'] for l in open(PSI)} if os.path.exists(PSI) else set()
+_P = {}
+for l in (open(PSI) if os.path.exists(PSI) else []):
+    if l.strip(): r = json.loads(l); _P[r['ch']] = r
+# a chapter whose last psi row has no private-sector text (placeholder 'DOCUMENT UNAVAILABLE' final analysis, fetch failure) and no
+# 'tried' list yet is fetched again with the fallback order; decided chapters (stageB.jsonl) are left alone
+_SB = {json.loads(l)['ch'] for l in open(os.path.join(H, 'stageB.jsonl')) if l.strip()} if os.path.exists(os.path.join(H, 'stageB.jsonl')) else set()
+pdone = {c for c, r in _P.items() if r.get('ps') not in (None, 'FETCH_FAILED') or r.get('tried') or c in _SB}
 def get(u, binary=False):
     return net.get(u, binary=binary, minlen=2000)
 clean = lambda s: html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', s))).strip()
@@ -25,6 +31,17 @@ def pick(an):
     if not s: s = an
     key = lambda a: tuple(int(x) for x in (a[0].split('/')[2], a[0].split('/')[0], a[0].split('/')[1])) if a[0].count('/') == 2 else (0, 0, 0)
     return sorted(s, key=key)[-1][1] if s else None
+def order(an):
+    """Candidates after pick(): when the chosen final analysis is a 'DOCUMENT UNAVAILABLE' placeholder or has no
+    private-sector section, the next ones are tried (other House final analyses, then Senate post-meeting analyses newest first)."""
+    first = pick(an); key = lambda a: tuple(int(x) for x in (a[0].split('/')[2], a[0].split('/')[0], a[0].split('/')[1])) if a[0].count('/') == 2 else (0, 0, 0)
+    rest = [a[1] for a in sorted(an, key=key, reverse=True) if a[1] != first and '.hms.' not in a[1].lower() and '.pre.' not in a[1].lower()]
+    return ([first] if first else []) + rest
+def unavailable(pdf):
+    with tempfile.NamedTemporaryFile(suffix='.pdf') as f:
+        f.write(pdf); f.flush()
+        t = subprocess.run(['pdftotext', '-layout', f.name, '-'], capture_output=True, text=True).stdout
+    return 'DOCUMENT UNAVAILABLE' in t[:300]
 def psi_text(pdf):
     with tempfile.NamedTemporaryFile(suffix='.pdf') as f:
         f.write(pdf); f.flush()
@@ -62,11 +79,18 @@ for e in E:
     else:
         rec = next(json.loads(l) for l in open(OUT) if json.loads(l)['ch'] == ch)
     if ch in pdone: continue
-    au = pick(rec['an'])
-    ps = None
-    if au:
-        pdf = get(au, binary=True)
-        ps = psi_text(pdf) if pdf else 'FETCH_FAILED'
-    with open(PSI, 'a') as f: f.write(json.dumps({'ch': ch, 'bill': e['bill'], 'title': e['title'], 'au': au, 'ps': ps}) + '\n')
+    au, ps, tried = None, None, []
+    for cand in order(rec['an'])[:3]:
+        pdf = get(cand, binary=True)
+        if not pdf: tried.append(cand + ' (fetch failed)'); continue
+        if unavailable(pdf): tried.append(cand + ' (DOCUMENT UNAVAILABLE)'); continue
+        au, ps = cand, psi_text(pdf)
+        if ps: break
+        tried.append(cand + ' (no private-sector section)')
+    if not order(rec['an']): tried = ['no analysis listed on the bill page']
+    if au is None and tried and order(rec['an']): ps = 'FETCH_FAILED'
+    row = {'ch': ch, 'bill': e['bill'], 'title': e['title'], 'au': au, 'ps': ps}
+    if tried: row['tried'] = tried
+    with open(PSI, 'a') as f: f.write(json.dumps(row) + '\n')
     pdone.add(ch); print(ch, len(rec['an']), 'ok' if ps and ps != 'FETCH_FAILED' else ps, flush=True)
 print('DONE')

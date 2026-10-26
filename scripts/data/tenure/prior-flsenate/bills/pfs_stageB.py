@@ -7,7 +7,7 @@ Run: python3 stageB.py            (writes auto + decided, lists pending)"""
 import json, os, re
 H = os.path.dirname(os.path.abspath(__file__))
 jl = lambda f: [json.loads(l) for l in open(f) if l.strip()] if os.path.exists(f) else []
-P = jl(os.path.join(H, 'psi.jsonl'))
+P = list({p['ch']: p for p in jl(os.path.join(H, 'psi.jsonl'))}.values())  # a later row for a chapter (fallback analysis) wins
 OUT = os.path.join(H, 'stageB.jsonl')
 done = {x['ch'] for x in jl(OUT)}
 DEC = json.load(open(os.path.join(H, 'decisions.json'))) if os.path.exists(os.path.join(H, 'decisions.json')) else {}
@@ -21,7 +21,12 @@ with open(OUT, 'a') as f:
         if ch in DEC:
             d = DEC[ch]
             rec = {'ch': ch, 'au': p['au'], 'ps': ps, 'b': d['b'], 'cat': d.get('cat'), 'named': d.get('named', []), 'q': d.get('q')}
+            if p.get('tried'): rec['tried'] = p['tried']
             if d.get('note'): rec['note'] = d['note']
+        elif ps is None and p.get('tried') and all(t.endswith(('(no private-sector section)', '(DOCUMENT UNAVAILABLE)')) or t.startswith('no analysis') for t in p['tried']):
+            # every analysis tried has no private-sector section (House local-bill analyses, claim bills) or is a placeholder
+            rec = {'ch': ch, 'au': p['au'], 'ps': None, 'b': False, 'cat': None, 'named': [], 'q': None, 'tried': p['tried'],
+                   'note': 'auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business'}
         elif ps in (None, 'FETCH_FAILED'):
             pend.append(p); continue
         elif re.fullmatch(r'\W*(none|n/?a|not applicable|indeterminate|unknown|no impact|the bill has no (fiscal )?impact on the private sector)\W*(\d+)?\W*', ps.strip(), re.I) or not POS.search(ps):

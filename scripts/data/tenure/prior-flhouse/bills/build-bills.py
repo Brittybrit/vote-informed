@@ -43,11 +43,20 @@ for e in E:
     if ch in J and J[ch].get('titleClass'):
         B[ch] = {'ch': ch, 'au': u if u not in (None, 'NOANALYSIS') else None, 'ps': J[ch].get('note'), 'b': False, 'cat': None, 'named': [], 'q': None, 'note': J[ch]['note']}; continue
     if u is None: continue
+    if e.get('listedAs') and e['title'] in ('General Appropriations Act', 'Appropriations') and ch not in J:
+        B[ch] = {'ch': ch, 'au': None, 'ps': 'title class', 'b': False, 'cat': None, 'named': [], 'q': None, 'note': 'General Appropriations Act: conference report only, no private-sector section (as in the other slices)'}; continue
+    if re.match(r'Relief( of|\/)', e['title']) and ch not in J:
+        # claim bill: relief for a named injured person paid by a government body; judged by title class as in the other slices
+        B[ch] = {'ch': ch, 'au': u if u != 'NOANALYSIS' else None, 'ps': 'title class', 'b': False, 'cat': None, 'named': [], 'q': None, 'note': 'claim bill (title class): relief for an individual paid by a public body'}; continue
     if u == 'NOANALYSIS':
         noanalysis.append(ch); B[ch] = {'ch': ch, 'au': None, 'ps': None, 'b': J.get(ch, {}).get('b', False), 'cat': None, 'named': [], 'q': None, 'note': J.get(ch, {}).get('note', 'no staff analysis posted on the bill page')}; continue
     ps = re.sub(r'\s+', ' ', body).strip()[:1500]
     if ch in J:
         j = J[ch]; B[ch] = {'ch': ch, 'au': u, 'ps': ps, 'b': j['b'], 'cat': j.get('cat'), 'named': j.get('named', []), 'q': j.get('q'), 'note': j.get('note')}
+    elif body.startswith('NOSECTION') and 'FISCAL ANALYSIS & ECONOMIC IMPACT STATEMENT' in body and not re.search(
+            r'business|compan|industr|private sector|developer|contractor|operator|employer|benefit', body.split('FISCAL ANALYSIS & ECONOMIC IMPACT STATEMENT', 1)[1].split('REFERENDUM', 1)[0], re.I):
+        # House local-bill analysis: no private-sector section; its fiscal section names no private party
+        B[ch] = {'ch': ch, 'au': u, 'ps': None, 'b': False, 'cat': None, 'named': [], 'q': None, 'note': 'auto: local bill; its fiscal analysis names no private party'}
     elif body.startswith('NOSECTION'):
         nosec.append(ch); B[ch] = {'ch': ch, 'au': u, 'ps': None, 'b': None, 'note': 'Private Sector section not found in the converted text'}
     else:
