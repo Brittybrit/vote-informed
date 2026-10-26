@@ -107,7 +107,9 @@ test('state budget requests: each one says where it stands in that year’s fina
       const [fy, law] = LAW[a.id.slice(1, 3)];
       assert.equal(b.fy, fy, a.id); assert.equal(b.law, law, a.id);
       assert.ok(/^https:\/\/www\.flsenate\.gov\//.test(b.url), a.id + ' act link');
-      assert.equal(b.ref, (B.key === 'flhouse' ? 'HF ' : 'SF ') + a.id.split('-')[1], a.id + ' form number');
+      // 2021-22 House requests were project bills, so their budget reference is the bill number (scripts/state-tenure.mjs)
+      const pre = B.key === 'flhouse' ? (['21', '22'].includes(a.id.slice(1, 3)) ? 'HB ' : 'HF ') : 'SF ';
+      assert.equal(b.ref, pre + a.id.split('-')[1], a.id + ' form number');
       assert.ok(['in', 'notIn'].includes(b.status), a.id + ' status');
       if (b.status === 'notIn') assert.ok(!b.amount && !b.vetoed, a.id + ' amount or veto on a request not in the budget');
       if (b.amount != null) assert.ok(b.amount > 0 && b.amount < 1e9, a.id + ' budget amount ' + b.amount);
@@ -192,12 +194,12 @@ test('Congress floor votes: enacted laws, official roll calls, a quoted source, 
   for (const k of ['gaveN', 'how.s.clsF', 'cboL', 'crsL', 'frL', 'howFedV']) assert.ok(en.has(k), k);
 });
 
-test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab with her ten requests (2023-2026) and her floor votes', () => {
+test('Angie Nixon (on the ballot for U.S. Senate) is on the Florida House tab with her 25 requests (2021-2026) and her floor votes', () => {
   const B = d.bodies.find(b => b.key === 'flhouse');
   assert.equal(B.onBallot.Nixon.race.en, 'U.S. Senate');
   const req = B.actions.filter(a => a.kind === 'request' && a.roll.Nixon);
-  assert.equal(req.length, 10);   // six for 2025-26, four for 2023-24 and 2024-25 (scripts/state-tenure.mjs)
-  for (const a of req) assert.ok(a.budget && a.budget.ref === 'HF ' + a.ref.match(/APR (\d+)/)[1], a.id);
+  assert.equal(req.length, 25);   // six for 2025-26, four for 2023-24 and 2024-25, ten for 2022, five for 2021 (scripts/state-tenure.mjs)
+  for (const a of req) assert.ok(a.budget && a.budget.ref === (/^HB /.test(a.ref) ? 'HB ' + a.ref.match(/HB (\d+)/)[1] : 'HF ' + a.ref.match(/APR (\d+)/)[1]), a.id);
   assert.equal(B.actions.filter(a => a.kind === 'bill' && a.roll.Nixon).length, B.actions.filter(a => a.kind === 'bill').length);
   for (let i = 1; i < B.actions.length; i++) assert.ok(B.actions[i - 1].date >= B.actions[i].date, 'newest first at ' + B.actions[i].id);
 });

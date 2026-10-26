@@ -41,8 +41,13 @@ for y, B in BUDGET.items():
         if member not in NAME or NAME[member].split()[-1] not in sponsor: raise SystemExit(f'sponsor mismatch {bill}: {member} / {sponsor}')
         n = int(bill.split()[-1])
         if n in gi:
-            am = [a for _, a in gi[n]]; b = {'status': 'in', 'lines': len(am)}
+            # same reading as ../flsenate/build-requests.py: (kind, amount, proviso total) per budget line
+            kinds = [x[0] for x in gi[n]]; am = [x[1] for x in gi[n]]
+            if n in vi and all(a is not None for a in am) and vi[n] > sum(am): am = [x[2] if x[0] == 'p' and x[2] else x[1] for x in gi[n]]
+            b = {'status': 'in', 'lines': len(am)}
             if all(a is not None for a in am): b['amount'] = sum(am)
+            else: b['amount'] = sum(a for a in am if a is not None) or None; b['someUnstated'] = True
+            if 'p' in kinds: b['proviso'] = True
             if n in vi: b['vetoed'] = vi[n]
         else:
             b = {'status': 'notIn'}
@@ -51,7 +56,7 @@ for y, B in BUDGET.items():
                     'recipient': rec, 'county': county or None, 'agency': agency, 'ask': num(funds), 'cmte': CMTE.get(agency, agency),
                     'lobbied': [] if none(lob) else [{'name': lob, 'firm': None if none(firm) else firm, 'for': rec, 'src': 'form'}],
                     'budget': b, 'record': f'https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId={billId}'})
-    J = {'source': f"Florida House Appropriations Projects {y} (flhouse.gov/Sections/Appropriations/projectbills.aspx?SessionId={SESSION[y]}): every project bill filed by Nixon and Chambliss, with the attached Appropriations Project Request form read Oct 25, 2026 (lobbyist, recipient, date). Budget status: the bill number looked up as '(HB n)' in the enrolled GAA ({B['law']}, {B['ch']}) and in the governor's veto list.",
+    J = {'source': f"Florida House Appropriations Projects {y} (flhouse.gov/Sections/Appropriations/projectbills.aspx?SessionId={SESSION[y]}): every project bill filed by Nixon and Chambliss, with the attached Appropriations Project Request form read Oct 25-26, 2026 (lobbyist, recipient, date). Budget status: the bill number looked up as '(HB n)' in the enrolled GAA ({B['law']}, {B['ch']}) and in the governor's veto list.",
          'budget': B, 'counts': {'forms': len(out), 'inBudget': sum(1 for x in out if x['budget']['status'] == 'in'), 'vetoed': sum(1 for x in out if x['budget'].get('vetoed')), 'lobbied': sum(1 for x in out if x['lobbied'])},
          'requests': out}
     json.dump(J, open(os.path.join(H, f'requests-{y}.json'), 'w'), indent=1, ensure_ascii=False)

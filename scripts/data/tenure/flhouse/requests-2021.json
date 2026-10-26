@@ -1,0 +1,257 @@
+{
+ "source": "Florida House Appropriations Projects 2021 (flhouse.gov/Sections/Appropriations/projectbills.aspx?SessionId=90): every project bill filed by Nixon and Chambliss, with the attached Appropriations Project Request form read Oct 25-26, 2026 (lobbyist, recipient, date). Budget status: the bill number looked up as '(HB n)' in the enrolled GAA (SB 2500, Ch. 2021-36) and in the governor's veto list.",
+ "budget": {
+  "law": "SB 2500",
+  "ch": "Ch. 2021-36",
+  "fy": "2021-22",
+  "url": "https://www.flsenate.gov/Session/Bill/2021/2500/BillText/er/PDF",
+  "vetoUrl": "https://www.flgov.com/eog/sites/default/files/press/2021-Veto-List-Final.pdf"
+ },
+ "counts": {
+  "forms": 9,
+  "inBudget": 6,
+  "vetoed": 4,
+  "lobbied": 6
+ },
+ "requests": [
+  {
+   "fy": 2021,
+   "form": 2983,
+   "bill": "HB 2983",
+   "billId": 71300,
+   "apr": "0739",
+   "date": "2021-02-01",
+   "member": "Chambliss",
+   "title": "City of Homestead: Breast Cancer Screening",
+   "recipient": "City of Homestead",
+   "county": "Miami-Dade",
+   "agency": "Department of Health",
+   "ask": 500000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Jose Diaz",
+     "firm": "Robert M. Levy & Associates Inc",
+     "for": "City of Homestead",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71300"
+  },
+  {
+   "fy": 2021,
+   "form": 3119,
+   "bill": "HB 3119",
+   "billId": 71386,
+   "apr": "0923",
+   "date": "2021-02-02",
+   "member": "Chambliss",
+   "title": "Laurel Wilt Disease Mitigation Program",
+   "recipient": "Florida Avocado Committee",
+   "county": "Miami-Dade",
+   "agency": "Department of Agriculture and Consumer Services",
+   "ask": 150000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Diana M. Ferguson",
+     "firm": "Rutledge Ecenia PA",
+     "for": "Florida Avocado Committee",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 150000,
+    "proviso": true,
+    "vetoed": 150000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71386"
+  },
+  {
+   "fy": 2021,
+   "form": 3121,
+   "bill": "HB 3121",
+   "billId": 71387,
+   "apr": "0745",
+   "date": "2021-02-01",
+   "member": "Chambliss",
+   "title": "Homestead Automatic Flushing System",
+   "recipient": "City of Homestead",
+   "county": "Miami-Dade",
+   "agency": "Department of Environmental Protection",
+   "ask": 100000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Jose K. Fuentes",
+     "firm": "Becker & Poliakoff PA",
+     "for": "City of Homestead",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 100000,
+    "vetoed": 100000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71387"
+  },
+  {
+   "fy": 2021,
+   "form": 3123,
+   "bill": "HB 3123",
+   "billId": 71388,
+   "apr": "0742",
+   "date": "2021-02-01",
+   "member": "Chambliss",
+   "title": "Homestead Water Tower Pump Station",
+   "recipient": "City of Homestead",
+   "county": "Miami-Dade",
+   "agency": "Department of Environmental Protection",
+   "ask": 300000,
+   "cmte": "Agriculture & Natural Resources Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Jose K. Fuentes",
+     "firm": "Becker & Poliakoff PA",
+     "for": "City of Homestead",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 300000,
+    "vetoed": 300000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71388"
+  },
+  {
+   "fy": 2021,
+   "form": 3169,
+   "bill": "HB 3169",
+   "billId": 71429,
+   "apr": "0809",
+   "date": "2021-02-01",
+   "member": "Nixon",
+   "title": "Coding in Color",
+   "recipient": "100 Black Men",
+   "county": "Duval",
+   "agency": "Department of Education",
+   "ask": 1000000,
+   "cmte": "PreK-12 Appropriations Subcommittee",
+   "lobbied": [],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 1000000,
+    "vetoed": 1000000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71429"
+  },
+  {
+   "fy": 2021,
+   "form": 3183,
+   "bill": "HB 3183",
+   "billId": 71437,
+   "apr": "0425",
+   "date": "2021-01-28",
+   "member": "Nixon",
+   "title": "Treating Trauma Now",
+   "recipient": "Lutheran Services",
+   "county": "Duval",
+   "agency": "Department of Children and Families",
+   "ask": 100000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "lobbied": [],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 100000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71437"
+  },
+  {
+   "fy": 2021,
+   "form": 3185,
+   "bill": "HB 3185",
+   "billId": 71438,
+   "apr": "0404",
+   "date": "2021-01-28",
+   "member": "Nixon",
+   "title": "Wayman Community Development At-Risk Youth Program",
+   "recipient": "Wayman Community Development Corporation",
+   "county": "Duval",
+   "agency": "Department of Juvenile Justice",
+   "ask": 150000,
+   "cmte": "Justice Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Phillip A Singleton",
+     "firm": "Singleton Consulting, LLC",
+     "for": "Wayman Community Development Corporation",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "in",
+    "lines": 1,
+    "amount": 150000
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71438"
+  },
+  {
+   "fy": 2021,
+   "form": 3187,
+   "bill": "HB 3187",
+   "billId": 71439,
+   "apr": "0749",
+   "date": "2021-02-01",
+   "member": "Nixon",
+   "title": "Krumpin' 4 Success - Reincarnation: Youth Anti-Violence Prevention and Intervention Program",
+   "recipient": "Krumpin' 4 Success, Inc.",
+   "county": "Duval",
+   "agency": "Department of Juvenile Justice",
+   "ask": 504300,
+   "cmte": "Justice Appropriations Subcommittee",
+   "lobbied": [],
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71439"
+  },
+  {
+   "fy": 2021,
+   "form": 3389,
+   "bill": "HB 3389",
+   "billId": 71608,
+   "apr": "0802",
+   "date": "2021-02-01",
+   "member": "Nixon",
+   "title": "AGAPE Behavioral Health Response following COVID",
+   "recipient": "AGAPE Community Health Center, Inc.",
+   "county": "Duval",
+   "agency": "Department of Children and Families",
+   "ask": 750000,
+   "cmte": "Health Care Appropriations Subcommittee",
+   "lobbied": [
+    {
+     "name": "Yolanda Cash Jackson",
+     "firm": "Becker & Poliakoff PA",
+     "for": "AGAPE Community Health Center, Inc.",
+     "src": "form"
+    }
+   ],
+   "budget": {
+    "status": "notIn"
+   },
+   "record": "https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=71608"
+  }
+ ]
+}
