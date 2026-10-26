@@ -50,7 +50,7 @@ for (const r of rows) {
   const k = core(r.business); if (!k) continue;
   const b = P0.biz[k] = P0.biz[k] || { name: r.business, years: new Set(), rows: [], industry: new Set(), sunbiz: [] };
   b.years.add(Number(r.year)); b.rows.push(r); for (const t of r.industry || []) b.industry.add(t);
-  if (/owner|officer|director|employee|partner|income|client/i.test(r.role || '') && !/stock|bond|fund|loan|mortgage|credit card/i.test((r.nature || '') + ' ' + r.business)) b.active = true;
+  if (/owner|officer|director|employee|partner|income|client/i.test(r.role || '') && !/stock|bond|fund|loan|mortgage|credit card|securit|trust|shares/i.test((r.nature || '') + ' ' + r.business)) b.active = true;
   if ((r.industry || []).includes('government')) b.gov = true;
 }
 // rule check for an action in year y on date d

@@ -56,7 +56,9 @@ for (const t of ties) {
   const p = people[t.pid] || (people[t.pid] = { interests: [], ties: [] });
   p.ties.push({ kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
     amount: t.amount == null || t.amount === 'None' ? null : String(t.amount), vote: t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : null,
-    business: t.business || null, label: t.record.label || '', url: t.record.url });
+    business: t.business || null, label: t.record.label || '', url: t.record.url,
+    ...(t.class ? { helps: t.class } : {}), ...(t.analysis && t.analysis.url ? { analysis: t.analysis.url } : {}),
+    ...(t.basis === 'lastDisclosed' || t.basis === 'bridged' ? { basis: t.basis, formYear: t.formYear || null } : {}) });
 }
 for (const [pid, h] of Object.entries(headlines)) {
   if (pid.startsWith('_')) continue;
