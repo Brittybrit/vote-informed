@@ -411,6 +411,7 @@ C = {
   ("impaired practitioner program consultants", "consultores de programas para profesionales con impedimentos", "konsiltan pwogram tretman pou pwofesyonèl sante")),
 "2013-169": ({"tags": [], "re": "WATER (UTILIT|SERVICE|COMPANY|SUPPLY|WORKS)|DESAL|AQUA UTILIT|UTILITIES,? INC"},
   ("water supply companies", "empresas de suministro de agua", "konpayi ki bay dlo")),
+"2013-174": (HEALTHINS, ("health insurers", "aseguradoras de salud", "konpayi asirans sante")),
 }
 
 SKIP = {

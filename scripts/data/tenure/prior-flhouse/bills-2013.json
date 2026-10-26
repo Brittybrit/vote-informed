@@ -11,19 +11,15 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 171,
-  "qualifying": 21,
+  "screened": 175,
+  "qualifying": 22,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-169",
-   "2013-172",
    "2013-174",
    "2013-175",
-   "2013-176",
-   "2013-177",
    "2013-178",
    "2013-179",
    "2013-180",
@@ -135,6 +131,11 @@
     "2013-166",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/248/Vote/HouseVote_s0248c1347.PDF"
+   ],
+   [
+    "2013-169",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/364/Vote/HouseVote_s0364c1257.PDF"
    ]
   ]
  },
@@ -2333,9 +2334,14 @@
    "title": "Consumptive Use Permits for Development of Alternative Water Supplies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/364",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/364/Analyses/2013s0364.ap.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "alternative water supply developers (longer consumptive use permits)",
+    "named": [],
+    "quote": "Also, by allowing an up to seven-year extension under certain circumstances, AWS developers will be able to operate the AWS project without having to reapply for a CUP at the end of the initial 30-year duration."
+   },
    "screen": "Private Sector Impact: Most bonds issued to fund the capital construction costs of an AWS project are 30-year bonds; however, most AWS CUPs are only issued for 20 years. This discrepancy may affect the interest rate the AWS developer has to pay to issue the bonds. The impact of this is indeterminate but may be significant if the uncertainty in renewing a 20-year CUP for a 30-year bond has significant weight in the rating agencies’ models. For example, an A-rated $100 million bond may cost $7-10 million more over the life of the bond as compared to an AAA-rated bond. Also, by allowing an up to seven-year extension under certain circumstances, AWS developers will be able to operate the AWS project without having to reapply for a CUP at the end of the initial 30-year duration. This will ensure operation of the AWS project for a full 30-year term.",
-   "note": "not yet judged"
+   "note": "judgment call: AWS developers include private water suppliers as well as public authorities",
+   "votes": {}
   },
   {
    "bill": "SB 372",
@@ -2368,7 +2374,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/492/Analyses/2013s0492.bi.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The bill will prevent financial benefits from passing to a lawyer in favor of other beneficiaries.",
-   "note": "not yet judged"
+   "note": "lawyers lose benefits; other beneficiaries (individuals) gain"
   },
   {
    "bill": "SB 606",
@@ -2387,10 +2393,10 @@
    "chapter": "2013-174",
    "title": "Health Insurance Marketing Materials",
    "url": "https://www.flsenate.gov/Session/Bill/2013/648",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/648/Analyses/2013s0648.hp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/SB 648 would reduce costs of insurers associated with filing marketing materials for small employer health plans.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 810",
@@ -2398,10 +2404,10 @@
    "chapter": "2013-175",
    "title": "Wrap-up Insurance Policies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/810",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/810/Analyses/2013s0810.cm.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The Office of Insurance Regulation anticipates the bill will greatly expand the use of large deductibles for wrap-ups. Currently, workers’ compensation wrap-up construction project policies require that the general contractor and all sub-contractors on the project receive individual policies because the workers’ compensation law prohibits any employer from being added as an “additional insured” on any other employer’s policy. 7 The bill safeguards the payment of workers’ compensation benefits to injured workers by requiring the insurer to pay the first dollar of a workers’ compensation claim without applying the deductible and specifying that the failure of a policyholder to reimburse an insurer for the deductible does not affect the insurer’s obligation to pay claims.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 934",
@@ -2409,9 +2415,9 @@
    "chapter": "2013-176",
    "title": "Stormwater Management Permits",
    "url": "https://www.flsenate.gov/Session/Bill/2013/934",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/934/Analyses/2013s0934.ca.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2420,9 +2426,9 @@
    "chapter": "2013-177",
    "title": "Water Supply",
    "url": "https://www.flsenate.gov/Session/Bill/2013/948",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/948/Analyses/s0948z1.ANRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2431,10 +2437,10 @@
    "chapter": "2013-178",
    "title": "Independent Living",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1036",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1036/Analyses/2013s1036.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill will require termination or non-renewal of most, if not all, of the contracts between CBC lead agencies and providers for IL services for children from age 13 through age 17. BILL: CS/SB 1036 Page 20 The bill also has the potential to reduce the workload of caseworkers and IL case managers which could either result in those staff having more time to spend on other duties or a reduction in the number of those positions. The bill may result in an increased cost of staff training for providers that operate group homes, particularly those using a shift care model.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1106",

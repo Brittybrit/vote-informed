@@ -4,3 +4,5 @@ Recording rule: employers, income sources, owned businesses, business creditors 
 - ana-maria-rodriguez: done | years 2010-2025 | found 2017-2025 | missing 2010-2016 (Doral Form 1s, paper at Miami-Dade SOE, no image) | illegible none | Form 8B none found
 - blaise-ingoglia: done | years 2014-2025 | found 2015-2025 | missing 2014 (filed 2015, not online) | illegible none | Form 8B none (state officer; see summary)
 - bryan-avila: done | years 2014-2026 | found 2015-2026 (2026 = Form 6F) | missing 2014 (filed 2015, not online) | illegible none (some handwritten amounts on 2016-2020 scans noted as approximate) | Form 8B none found
+- daphne-campbell: done | years 2016-2025 | found 2016, 2017, 2025 (DOS candidate form via s2) | missing 2018 (6F not online), 2019-2024 (no office, no filing) | illegible none | Form 8B none found. Note: House service 2010-2016 not in prior file; 2015 Form 6 online (576315), 2010-2014 not online
+- jose-javier-rodriguez: done | years 2016-2025 | found 2016-2019 | missing 2020 (6F not online), 2021-2025 (no office; 2025 candidate form at DOS not reachable) | illegible none | Form 8B none found
