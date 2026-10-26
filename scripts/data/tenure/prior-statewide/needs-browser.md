@@ -6,7 +6,7 @@ fetch('/cgi-bin/contrib.exe', POST, queryformat=2), same method as tenure/flsena
 name, address, city-state, occupation, in-kind), one file per account, into
 scripts/data/tenure/prior-statewide/donors/<file>. Verify each file by row count and amount sum against the page.
 
-## 1. Ashley Moody, Attorney General (term 2019-01-08 to 2025-01-21; gifts from 2016-11-09)
+## 1. [DONE Oct 26, 2026: pulled to ../doe-browser/] Ashley Moody, Attorney General (term 2019-01-08 to 2025-01-21; gifts from 2016-11-09)
 
 | # | Account | contrib.exe fields | Date range | Output file |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ scripts/data/tenure/prior-statewide/donors/<file>. Verify each file by row count
 
 Moody's U.S. Senate (FEC) money is not part of this office.
 
-## 2. Wilton Simpson, Commissioner of Agriculture (term 2023-01-03 on; this slice covers to 2024-12-31; gifts from 2020-11-04)
+## 2. [DONE Oct 26, 2026: pulled to ../doe-browser/] Wilton Simpson, Commissioner of Agriculture (term 2023-01-03 on; this slice covers to 2024-12-31; gifts from 2020-11-04)
 
 The repo already has his 2025-2026 rows (scripts/data/cabinet/simpson.tsv: 2026 only; pc79644.tsv: 2025-2026). Missing:
 
@@ -28,7 +28,7 @@ The repo already has his 2025-2026 rows (scripts/data/cabinet/simpson.tsv: 2026 
 | 2c | Friends of Wilton Simpson (pc79644) | ComName="Friends of Wilton Simpson", ComNameSrch=2 | 11/04/2020 to 12/31/2024 | pc79644-pre2025.tsv |
 | 2d | Any other committee Simpson chaired 2020-2024 (DOE committee list, chair search "Simpson"); keep only if the list names him as chair | as 2c | 11/04/2020 to 12/31/2024 | pc<acct>.tsv |
 
-## 3. FACTS (facts.fldfs.com) contracts, grants and purchase orders
+## 3. [Checked Oct 26, 2026: agency-wide lists not available, see progress.md] FACTS (facts.fldfs.com) contracts, grants and purchase orders
 
 The search page loads from shell, but the search postback returns "No results" outside a browser. In a browser, on
 https://facts.fldfs.com/Search/ContractSearch.aspx run each search below and use the results page's export (or copy the
@@ -47,7 +47,7 @@ scripts/data/tenure/prior-statewide/facts/<file>.
 | 3h | EXECUTIVE OFFICE OF THE GOVERNOR (310000) | Purchase Orders; 01/01/2019 to 01/31/2021; Emergency Management rows | fdem-pos.csv |
 | 3i | EXECUTIVE OFFICE OF THE GOVERNOR (310000) | Grant Awards; 01/01/2019 to 01/31/2021; Emergency Management rows | fdem-grants.csv |
 
-## 4. Other blocked pages (read as text, save under raw/)
+## 4. [PARTIAL Oct 26, 2026: OAG index and blocked releases done] Other blocked pages (read as text, save under raw/)
 
 - Cabinet agendas and transcripts are now in raw/cabinet (from www.cabinet.myflorida.com archive, which works from shell).
   Still needed: the agency backup that names private parties the agendas and transcripts do not name (class private_unnamed in

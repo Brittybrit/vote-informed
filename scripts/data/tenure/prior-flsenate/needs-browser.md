@@ -14,7 +14,7 @@ list (https://dos.elections.myflorida.com/committees/, search by name, then chec
 account number in the file name. Also run the committee list's officer search for the member's last name and pull any
 other committee that names them as chair during the window.
 
-## 1. Bryan Avila, State Senator SD 39 (2022-11-08 to 2026-08-25; gifts from 2020-11-04)
+## 1. [DONE Oct 26, 2026: pulled to ../doe-browser/] Bryan Avila, State Senator SD 39 (2022-11-08 to 2026-08-25; gifts from 2020-11-04)
 
 | # | Account | contrib.exe fields | Date range | Output file |
 |---|---|---|---|---|
@@ -25,7 +25,7 @@ other committee that names them as chair during the window.
 
 His House-era (STR) rows are not part of this office. After 08/25/2026 his money is Lt. Governor ticket money, not this office.
 
-## 2. Annette Taddeo, State Senator SD 40 (2017-09-26 to 2022-11-08; gifts from 2016-11-09)
+## 2. [DONE Oct 26, 2026: pulled to ../doe-browser/] Annette Taddeo, State Senator SD 40 (2017-09-26 to 2022-11-08; gifts from 2016-11-09)
 
 | # | Account | contrib.exe fields | Date range | Output file |
 |---|---|---|---|---|
@@ -37,7 +37,7 @@ His House-era (STR) rows are not part of this office. After 08/25/2026 his money
 
 Her 2021-22 governor (GOV) account and her 2022 U.S. House (FEC) money are not part of this office.
 
-## 3. Wilton Simpson, State Senator SD 18 then SD 10 (2012-11-06 to 2022-11-08; gifts from 2010-11-03)
+## 3. [DONE Oct 26, 2026: pulled to ../doe-browser/] Wilton Simpson, State Senator SD 18 then SD 10 (2012-11-06 to 2022-11-08; gifts from 2010-11-03)
 
 Newest first: pull 3a-3d (2016-2022) before 3e-3f.
 
@@ -50,7 +50,7 @@ Newest first: pull 3a-3d (2016-2022) before 3e-3f.
 | 3e | Simpson, Wilton (REP)(STS), 2012 general election account (SD 18) | same, election = 2012 general | 11/03/2010 to 12/31/2012 | simpson-sts-2012.tsv |
 | 3f | Any other committee chaired by Simpson 2010-2022 (officer search "Simpson") | as 3d | 11/03/2010 to 11/08/2022 | pc<acct>.tsv |
 
-## 4. Jose Javier Rodriguez, State Senator SD 37 (2016-11-08 to 2020-11-03; gifts from 2014-11-05)
+## 4. [DONE Oct 26, 2026: pulled to ../doe-browser/] Jose Javier Rodriguez, State Senator SD 37 (2016-11-08 to 2020-11-03; gifts from 2014-11-05)
 
 | # | Account | contrib.exe fields | Date range | Output file |
 |---|---|---|---|---|
@@ -59,7 +59,7 @@ Newest first: pull 3a-3d (2016-2022) before 3e-3f.
 | 4c | Initiative for Florida's Future (political committee; news: floridapolitics.com/archives/364001-rodriguez-670k-sd-37) | ComName="Initiative for Florida's Future", ComNameSrch=2 | 11/05/2014 to 11/03/2020 | pc<acct>-jjrodriguez.tsv |
 | 4d | Any other committee chaired by him (officer search "Rodriguez"; check first name) | as 4c | 11/05/2014 to 11/03/2020 | pc<acct>.tsv |
 
-## 5. Daphne Campbell, State Senator SD 38 (2016-11-08 to 2018-11-06; gifts from 2014-11-05)
+## 5. [DONE Oct 26, 2026: pulled to ../doe-browser/] Daphne Campbell, State Senator SD 38 (2016-11-08 to 2018-11-06; gifts from 2014-11-05)
 
 | # | Account | contrib.exe fields | Date range | Output file |
 |---|---|---|---|---|

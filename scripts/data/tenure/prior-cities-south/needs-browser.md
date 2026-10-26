@@ -2,7 +2,7 @@
 
 Each request: what to open, what to save, and where the result goes. Nothing here has been fetched.
 
-## 1. Miami-Dade School Board official minutes (Lucia Baez-Geller, District 3, Nov 17, 2020 - Nov 19, 2024)
+## 1. [DONE Oct 26, 2026, see progress.md] Miami-Dade School Board official minutes (Lucia Baez-Geller, District 3, Nov 17, 2020 - Nov 19, 2024)
 - Why: the Board posts only "Excerpts from Unofficial Minutes" (pdfs.dadeschools.net/Bdarch/<yyyy>/Bd<mmddyy>/lastbda.pdf),
   which record each action but no member votes. Every item in schoolboard/actions.json therefore has
   "Vote not given in the minutes". The official (approved) minutes, which record dissents and abstentions, are in ImageSilo.
