@@ -16,7 +16,7 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Alternative source with the same content: the meeting video (eduvision.tv, "School Board Meetings") - not needed if the
   ImageSilo minutes open.
 
-## 2. Cutler Bay Town Council minutes and agenda packets (Mary Ann Mixon, Seat 1, Nov 2010 - Nov 2018)
+## 2. [PARTIAL Oct 26, 2026: 41 of 68 eSCRIBE minutes; see progress.md] Cutler Bay Town Council minutes and agenda packets (Mary Ann Mixon, Seat 1, Nov 2010 - Nov 2018)
 - Why: votes come from the Town Clerk's Resolutions and Ordinances Registers (already used, cutlerbay-mixon/actions.json).
   Movers, seconders, the applicant's representatives (lobbyists named in the record) and any item not titled with the
   vendor's name are only in the minutes and packets, which sit in eSCRIBE behind a Cloudflare browser check.
@@ -25,7 +25,7 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Save: each "Minutes (PDF)" (FileStream.ashx?DocumentId=<id>) for Town Council meetings 2010-11-17 .. 2018-11-05 as
   scripts/data/tenure/prior-cities-south/cutlerbay-mixon/minutes/<yyyy-mm-dd>.pdf.
 
-## 3. Boca Raton City Council minutes (Scott Singer: council 2014 - Apr 2018, mayor Apr 27, 2018 - present)
+## 3. [DONE Oct 26, 2026 for 2016-2026; 2014-2015 not online] Boca Raton City Council minutes (Scott Singer: council 2014 - Apr 2018, mayor Apr 27, 2018 - present)
 - Why: the council's Granicus archive (https://bocaraton.granicus.com/ViewPublisher.php?view_id=2) returns
   "Permission denied" to scripts; the city's AgendaCenter and DocumentCenter list no council minutes. No actions could
   be built for Boca Raton.
@@ -36,7 +36,7 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Also needed: confirm Singer's oath dates (council seat, March 2014; mayor, April 27, 2018 after the Governor suspended
   Mayor Haynie; elected mayor March 2020 and re-elected 2023/2026) from the City Clerk's election certifications.
 
-## 4. Boca Raton campaign finance (Scott Singer)
+## 4. [Checked Oct 26, 2026: not online] Boca Raton campaign finance (Scott Singer)
 - Why: Boca Raton municipal candidates file with the City Clerk, not the Palm Beach County SOE. Only his political
   committee "Friends of Scott Singer" is on VoterFocus (saved: bocaraton/friends-of-scott-singer_committee_contributions.csv,
   64 contributions, $48,827, May 2022 - Aug 2023).

@@ -23,7 +23,7 @@ BUDGET = {
  '2025-26': {'year': 2025, 'law': 'SB 2500', 'ch': 'Ch. 2025-198', 'url': 'https://www.flsenate.gov/Session/Bill/2025/2500/BillText/er/PDF', 'vetoUrl': 'https://www.flgov.com/eog/sites/default/files/shared/2025/06/2025%20Final%20Veto%20List.pdf'},
  '2026-27': {'year': 2026, 'law': 'HB 5001E', 'ch': 'Ch. 2026-232', 'url': 'https://www.flsenate.gov/Session/Bill/2026E/5001E/BillText/er/PDF', 'vetoUrl': 'https://www.flgov.com/eog/sites/default/files/shared/2026/06/2026%20Veto%20List.pdf'},
 }
-VETO_SRC = {2017: 'journal', 2018: 'unknown', 2019: 'journal'}
+VETO_SRC = {2017: 'journal', 2019: 'journal'}  # 2018: flgov list (raw/gaa/veto2018.pdf, archived copy)
 def gaa_path(year, kind='gaa'):
     for d in (os.path.join(H, 'raw/gaa'), os.path.join(FS, 'raw/gaa')):
         p = os.path.join(d, f'{kind}{year}.txt')

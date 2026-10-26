@@ -67,7 +67,7 @@ Newest first: pull 3a-3d (2016-2022) before 3e-3f.
 | 5b | Campbell, Daphne (DEM)(STS), 2018 account (SD 38; lost the Aug 28, 2018 primary) | same, election = 2018 general/primary | 11/09/2016 to 11/06/2018 | campbell-sts-2018.tsv |
 | 5c | Any political committee chaired by Campbell (officer search "Campbell"; none found in news) | as 1c | 11/05/2014 to 11/06/2018 | pc<acct>.tsv |
 
-## 6. Governor's 2018 line-item veto list (FY 2018-19 GAA, HB 5001, ch. 2018-9)
+## 6. [DONE Oct 26, 2026] Governor's 2018 line-item veto list (FY 2018-19 GAA, HB 5001, ch. 2018-9)
 
 Not on flgov.com under the paths used for 2020-2026, and the veto message of this House-originated GAA is printed in the
 House Journal (myfloridahouse.gov, bot check), not the Senate Journal. Either source works:

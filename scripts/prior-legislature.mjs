@@ -172,7 +172,15 @@ export function buildLegislative(nameOf = x => x) {
     laws.sort((a, b) => String(b.d || b.ch).localeCompare(String(a.d || a.ch)));
     reqs.sort((a, b) => String(b.d || b.fy).localeCompare(String(a.d || a.fy)));
     const castL = laws.filter(x => x.v === 'yes' || x.v === 'no'), noCls = castL.filter(x => !x.cls).length;
-    const lawShare = castL.length && !noCls && gifts.length ? { n: castL.length, tied: castL.filter(x => x.g.length).length, from: (castL.map(x => x.d).filter(Boolean).sort()[0] || String(castL.map(x => x.ch).sort()[0]).slice(0, 4)) } : null;
+    // Years of this term whose laws are not all screened yet (prior-flhouse/bills-<year>.json counts): no share until done
+    const pendYears = [];
+    // a year counts only if the term covers that year's regular session (Jan-May); done if either slice screened every law
+    const y0 = Number(start.slice(0, 4)) + (Number(start.slice(5, 7)) > 5 ? 1 : 0), y1 = end ? Number(end.slice(0, 4)) - (Number(end.slice(5, 7)) < 3 ? 1 : 0) : 2026;
+    for (let y = y0; y <= y1; y++) {
+      const cs = ['prior-flhouse', 'prior-flsenate', 'flhouse'].map(d => T + d + '/bills-' + y + '.json').filter(has).map(f => J(f).counts || {}).filter(c => c.enacted);
+      if (cs.length && !cs.some(c => c.screened >= c.enacted)) pendYears.push(y);
+    }
+    const lawShare = castL.length && !noCls && !pendYears.length && gifts.length ? { n: castL.length, tied: castL.filter(x => x.g.length).length, from: (castL.map(x => x.d).filter(Boolean).sort()[0] || String(castL.map(x => x.ch).sort()[0]).slice(0, 4)) } : null;
     const reqShare = reqs.length && !unread && gifts.length ? { n: reqs.length, tied: reqs.filter(x => x.g.length).length, from: reqs.map(x => x.d).filter(Boolean).sort()[0] || String(reqs.map(x => x.fy).sort()[0]) } : null;
     const tiedGifts = new Map();
     for (const x of [...reqs, ...castL]) for (const g of x.g) tiedGifts.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
@@ -181,7 +189,7 @@ export function buildLegislative(nameOf = x => x) {
       donors: gifts.length ? 'files' : 'notCollected', gifts: gifts.length, giftTotal: Math.round(gifts.reduce((s, r) => s + r.amount, 0) * 100) / 100,
       money: Math.round([...tiedGifts.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set([...[...reqs, ...castL].flatMap(x => x.g.map(g => dkey(g.n)))]).size,
       requests: { n: reqs.length, unread, share: reqShare, list: reqs, none: o.noRequestSystem || null },
-      laws: { n: laws.length, cast: castL.length, noClass: noCls, share: lawShare, list: laws, pending: o.lawsPending || null },
+      laws: { n: laws.length, cast: castL.length, noClass: noCls, share: lawShare, list: laws, pending: pendYears.length ? pendYears : (o.lawsPending || null) },
       counts: { actions: reqs.length + laws.length },
     } });
   }
