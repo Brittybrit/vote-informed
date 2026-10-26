@@ -44,6 +44,7 @@ const tri = a => ({ en: a[0], es: a[1], ht: a[2] });
 //   donors: 'files' (matched), 'notOnline', 'notCollected' (online, not pulled yet), 'appointed', 'selfFunded'
 //   missing: campaign years whose reports are not online (said under the share line)
 //   noActions: why no action is listed ('notOnline' or 'notCollected')
+const DOE = T + 'doe-browser/';
 const N = T + 'prior-cities-north/', S = T + 'prior-cities-south/', C = T + 'prior-county/', W = T + 'prior-statewide/';
 const OFFICES = [
   { pid: 'oliver-g-gilbert-iii', start: '2008-03-26', role: 'member', acts: [N + 'miamigardens/actions.json'], key: 'Gilbert', donors: 'notCollected' },
@@ -90,8 +91,13 @@ const OFFICES = [
   { pid: 'carlos-a-gimenez', start: '2004-11-17', role: 'member', acts: [C + 'actions.json'], key: 'Gimenez', donors: 'files',
     files: [2004, 2008].map(y => C + 'donors/gimenez-campaign-' + y + '.csv'),
     actsNote: ['County Commission zoning hearings before July 2017 are not in the Clerk’s online minutes, so zoning votes from these years are not listed.', 'Las audiencias de zonificación de la Comisión antes de julio de 2017 no están en las actas en línea de la Secretaría, así que los votos de zonificación de estos años no aparecen.', 'Odyans zonaj Komisyon an anvan jiyè 2017 pa nan pwosè vèbal Grefye a sou entènèt, kidonk vòt zonaj ane sa yo pa parèt.'] },
-  { pid: 'ashley-moody', start: '2019-01-08', role: 'ag', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Moody', donors: 'notCollected' },
-  { pid: 'wilton-simpson', start: '2023-01-03', role: 'agriculture', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Simpson', donors: 'notCollected',
+  // donors: the state elections office's records (scripts/data/tenure/doe-browser): her Attorney General campaigns (no committee
+  // registered to her; Friends of Ashley Moody names another chair)
+  { pid: 'ashley-moody', start: '2019-01-08', role: 'ag', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Moody', donors: 'files',
+    doe: [[DOE + 'moody-cand.tsv', '(ATG)']] },
+  // his 2022 Agriculture campaign and the committees registered with him as chair
+  { pid: 'wilton-simpson', start: '2023-01-03', role: 'agriculture', body: 'cabinet', acts: [W + 'cabinet-bot/actions.json', W + 'cabinet-other/actions.json'], key: 'Simpson', donors: 'files',
+    doe: [[DOE + 'simpson-cand.tsv', '(AGR)'], ...['pc60614-simpson', 'pc74435-simpson', 'pc74437-simpson', 'pc79644-simpson-pre2025', 'pc88885-simpson'].map(f => [DOE + f + '.tsv', ''])],
     endShown: '2024-12-31' },
 ];
 
@@ -121,6 +127,15 @@ const donorRows = f => {
   const ix = n => h.indexOf(n);
   return rows.filter(r => r[ix('Cont/Exp')] === 'C' && r[ix('Amend. code')] !== 'D' && Number(r[ix('amount')]) > 0)
     .map(r => ({ donor: r[ix('name')].replace(/\s+/g, ' ').trim(), amount: Number(r[ix('amount')]), date: r[ix('item date')], occ: ix('occupation') >= 0 ? r[ix('occupation')] : '', file: f.split('/').pop() }));
+};
+// Florida Division of Elections export (tab-delimited, scripts/data/tenure/doe-browser): keep the accounts whose
+// first column matches `acct` (an office tag like '(ATG)' or a committee name)
+const doeRows = (f, acct) => {
+  if (!existsSync(P(f))) return [];
+  return readFileSync(P(f), 'utf8').split(/\r?\n/).slice(1).filter(l => l.trim()).map(l => l.split('\t'))
+    .filter(c => !acct || c[0].includes(acct))
+    .map(c => { const [m, d, y] = c[1].split('/'); return { donor: c[4].replace(/\s+/g, ' ').trim(), amount: Number(c[2]), date: `${y}-${m}-${d}`, occ: c[7] || '', file: f.split('/').pop(), type: c[3] }; })
+    .filter(g => g.amount > 0 && !/^(LOA|INT|REF)$/.test(g.type));
 };
 const tallyOf = t => Array.isArray(t) ? t : typeof t === 'string' && /^\d+\s*-\s*\d+/.test(t) ? t.split('-').map(Number) : null;
 const VOTE = v => v === 'yes' || v === 'no' ? v : v === 'absent' || v === 'excused' ? 'absent' : v === 'abstain' || v === 'recused' ? 'abstain' : 'unknown';
@@ -164,7 +179,8 @@ for (const C0 of OFFICES) {
   }
   // donors for this office and the gifts tied to each action
   const gFrom = o.giftsFrom || null;
-  const donors = C0.donors === 'files' ? (C0.files || []).flatMap(donorRows).filter(g => (!gFrom || g.date >= gFrom) && (!end || g.date <= end)) : [];
+  const donors = C0.donors === 'files' ? [...(C0.files || []).flatMap(donorRows), ...(C0.doe || []).flatMap(([f, a]) => doeRows(f, a))]
+    .filter(g => (!gFrom || g.date >= gFrom) && (!end || g.date <= end)) : [];
   const self = dkey(nameOf(C0.pid));
   const gifts = donors.filter(g => dkey(g.donor) !== self);
   if (gifts.length && !C0.noVotes) for (const a of actions) {
