@@ -5,7 +5,7 @@ rows go into a donor CSV in the same shape as northmiamibeach/donors/*.csv (head
 `report,document id,item date,Cont/Exp,name,address 1,occupation,amount,Amend. code`; candidate loans and the
 candidate's own money left out; in-kind kept with Amend. code INK).
 
-## 1. Miami Gardens campaign reports: Oliver Gilbert (2008, 2010, 2012, 2016) and Katrina Wilson (2018, 2022)
+## 1. [Checked Oct 26, 2026: not online, see progress.md] Miami Gardens campaign reports: Oliver Gilbert (2008, 2010, 2012, 2016) and Katrina Wilson (2018, 2022)
 - Why: the archived candidate reports sit in the city's Laserfiche WebLink, folder 696635, which answers
   "Access denied" to scripts even though the minutes folders (86952) work. Newer filings are on EasyVote.
 - Open: https://edocs.miamigardens-fl.gov/WebLink/Browse.aspx?id=696635&dbid=0&repo=Laserfiche
