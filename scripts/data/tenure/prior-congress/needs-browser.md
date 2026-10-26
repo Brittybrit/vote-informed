@@ -17,7 +17,7 @@ browser pass and save the outputs where named (folder: scripts/data/tenure/prior
   Florida House District 97; Florida House record starts his House term 2012-11-07). These give the exact
   start and end dates for offices.json.
 
-## 2. Parkland candidate campaign treasurer's reports, Moskowitz, 2005-2006 and 2009-2010 campaigns
+## 2. [Checked Oct 26, 2026: not online] Parkland candidate campaign treasurer's reports, Moskowitz, 2005-2006 and 2009-2010 campaigns
 - Municipal candidates filed with the Parkland City Clerk (Parkland's VoterFocus portal,
   https://www.voterfocus.com/CampaignFinance/candidate_pr.php?c=munparkland, has only the 2026 election).
 - Look in the same WebLink archive for "Campaign Treasurer Reports" / "Elections" folders for the March 2006 and
@@ -27,7 +27,7 @@ browser pass and save the outputs where named (folder: scripts/data/tenure/prior
   them, the request is a public records request to the Parkland City Clerk (cityclerk@cityofparkland.org,
   954-753-5040): "all campaign treasurer's reports filed by Jared Moskowitz for the 2006 and 2010 municipal elections".
 
-## 3. Broward County Commission meetings not in Legistar (Jan 12 - Nov 29, 2022)
+## 3. [Checked Oct 26, 2026, see progress.md] Broward County Commission meetings not in Legistar (Jan 12 - Nov 29, 2022)
 - Legistar (webapi.legistar.com/v1/broward, works via curl) has only the regular meetings. Needed: minutes of any
   special meetings, the September 2022 budget public hearings, and any Jan 2022 meeting before Jan 25.
 - Portal: https://www.broward.org/Commission/ (agendas and minutes pages; curl returns 403). Save PDFs to

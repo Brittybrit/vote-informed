@@ -34,7 +34,7 @@ candidate's own money left out; in-kind kept with Amend. code INK).
   and 2021 mayoral campaigns. Contribution dates from 2013-02-17 (Goldman) and 2014-11-08 (Svechin) to 2022-12-06.
 - Save: each report PDF as sunnyisles/donors/raw/<goldman|svechin>_<year>_<report>.pdf.
 
-## 3. Opa-locka: Sherelean Bass (first term Nov 6, 2018 - Nov 2020) and Rose Tydus (Nov 2, 2004 - Nov 6, 2012)
+## 3. [PARTIAL Oct 26, 2026: minutes May 2010 - Dec 2012 and Oct 2018 - May 2019 saved, see progress.md] Opa-locka: Sherelean Bass (first term Nov 6, 2018 - Nov 2020) and Rose Tydus (Nov 2, 2004 - Nov 6, 2012)
 - Why: CivicClerk has commission minutes only from Nov 26, 2019. Earlier minutes and all campaign reports before
   2022 are not online.
 - Open: https://opalockafl.portal.civicclerk.com/ (filter: City Commission, Nov 2018 - Oct 2019; check for

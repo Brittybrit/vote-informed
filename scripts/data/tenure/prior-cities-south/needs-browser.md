@@ -16,7 +16,7 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Alternative source with the same content: the meeting video (eduvision.tv, "School Board Meetings") - not needed if the
   ImageSilo minutes open.
 
-## 2. [PARTIAL Oct 26, 2026: 41 of 68 eSCRIBE minutes; see progress.md] Cutler Bay Town Council minutes and agenda packets (Mary Ann Mixon, Seat 1, Nov 2010 - Nov 2018)
+## 2. [DONE Oct 26, 2026: all 109 eSCRIBE minutes Nov 2013 - Nov 2018; Nov 2010 - Oct 2013 not online] Cutler Bay Town Council minutes and agenda packets (Mary Ann Mixon, Seat 1, Nov 2010 - Nov 2018)
 - Why: votes come from the Town Clerk's Resolutions and Ordinances Registers (already used, cutlerbay-mixon/actions.json).
   Movers, seconders, the applicant's representatives (lobbyists named in the record) and any item not titled with the
   vendor's name are only in the minutes and packets, which sit in eSCRIBE behind a Cloudflare browser check.
