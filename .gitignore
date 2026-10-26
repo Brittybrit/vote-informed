@@ -9,3 +9,9 @@ node_modules/
 scripts/data/leads/auto.json
 __pycache__/
 scripts/data/tenure/**/raw/pdf/
+
+# fetch throttle lock files (change every request)
+scripts/data/tenure/**/.fl.lock
+scripts/data/tenure/**/.net.lock
+scripts/data/tenure/**/.net.dlock
+scripts/data/tenure/**/.net.hold
