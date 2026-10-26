@@ -13,93 +13,12 @@
   "enacted": 272,
   "screened": 272,
   "qualifying": 34,
-  "withHouseVote": 18
+  "withHouseVote": 34
  },
  "missing": {
   "A": [],
   "B": [],
-  "C": [
-   [
-    "2013-155",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/7135/Vote/HouseVote_h7135c1239.PDF"
-   ],
-   [
-    "2013-157",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/347/Vote/HouseVote_h0347e1228.PDF"
-   ],
-   [
-    "2013-166",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/248/Vote/HouseVote_s0248c1347.PDF"
-   ],
-   [
-    "2013-169",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/364/Vote/HouseVote_s0364c1257.PDF"
-   ],
-   [
-    "2013-174",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/648/Vote/HouseVote_s0648c1369.PDF"
-   ],
-   [
-    "2013-188",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/73/Vote/HouseVote_h0073c3168.PDF"
-   ],
-   [
-    "2013-190",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/157/Vote/HouseVote_h0157c1227.PDF"
-   ],
-   [
-    "2013-191",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/223/Vote/HouseVote_h0223c1024.PDF"
-   ],
-   [
-    "2013-193",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/269/Vote/HouseVote_h0269c2425.PDF"
-   ],
-   [
-    "2013-198",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/579/Vote/HouseVote_h0579c2426.PDF"
-   ],
-   [
-    "2013-199",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/623/Vote/HouseVote_h0623c1045.PDF"
-   ],
-   [
-    "2013-202",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/783/Vote/HouseVote_h0783c1212.PDF"
-   ],
-   [
-    "2013-205",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/1083/Vote/HouseVote_h1083c3215.PDF"
-   ],
-   [
-    "2013-223",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/85/Vote/HouseVote_h0085e2441.PDF"
-   ],
-   [
-    "2013-226",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/7087/Vote/HouseVote_h7087e1243.PDF"
-   ],
-   [
-    "2013-234",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/736/Vote/HouseVote_s0736__343.PDF"
-   ]
-  ]
+  "C": []
  },
  "bills": [
   {
@@ -2134,7 +2053,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may benefit the private sector. By making the identities of payees and customers confidential, personal financial information will be protected. Similarly, by making the identities of payors and licensees confidential, business information will be protected.",
    "note": "licensees are money services businesses (check cashers); same reading as 2013-61",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      113,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/7135/Vote/HouseVote_h7135c1239.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 7157",
@@ -2161,7 +2093,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The DBPR notes that there would be a benefit to the distilleries being able to sell directly to the consumer, which would provide another source of revenue.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      111,
+      4
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/347/Vote/HouseVote_h0347e1228.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 573",
@@ -2265,7 +2210,20 @@
    },
    "screen": "Private Sector Impact: Consultants may see an increase in revenue from the expanded pool of students, veterinary students, and health practitioner licensure applicants. These students and applicants will bear the costs of their own referral and treatment.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-30",
+     "motion": "third reading",
+     "tally": [
+      118,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/248/Vote/HouseVote_s0248c1347.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 328",
@@ -2303,7 +2261,20 @@
    },
    "screen": "Private Sector Impact: Most bonds issued to fund the capital construction costs of an AWS project are 30-year bonds; however, most AWS CUPs are only issued for 20 years. This discrepancy may affect the interest rate the AWS developer has to pay to issue the bonds. The impact of this is indeterminate but may be significant if the uncertainty in renewing a 20-year CUP for a 30-year bond has significant weight in the rating agencies’ models. For example, an A-rated $100 million bond may cost $7-10 million more over the life of the bond as compared to an AAA-rated bond. Also, by allowing an up to seven-year extension under certain circumstances, AWS developers will be able to operate the AWS project without having to reapply for a CUP at the end of the initial 30-year duration. This will ensure operation of the AWS project for a full 30-year term.",
    "note": "judgment call: AWS developers include private water suppliers as well as public authorities",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-25",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/364/Vote/HouseVote_s0364c1257.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 372",
@@ -2363,7 +2334,20 @@
    },
    "screen": "Private Sector Impact: CS/SB 648 would reduce costs of insurers associated with filing marketing materials for small employer health plans.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-01",
+     "motion": "third reading",
+     "tally": [
+      103,
+      11
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/648/Vote/HouseVote_s0648c1369.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 810",
@@ -2522,7 +2506,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Section 1 of this bill, regarding elevator codes, will have a positive fiscal impact on associations and the owners of multi-family structures, and a corresponding negative fiscal impact on companies that provide such services.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-17",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/73/Vote/HouseVote_h0073c3168.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 95",
@@ -2549,7 +2546,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers emailing policies to policyholders instead of mailing them will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to email rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with emailing policies, any increased costs will be passed through to policyholders.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/157/Vote/HouseVote_h0157c1227.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 223",
@@ -2565,7 +2575,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers posting policies online will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to post policies online and how many policyholders will choose to obtain their policies online rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with posting policies online, any increased costs will be passed through to policyholders.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-03-22",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/223/Vote/HouseVote_h0223c1024.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 247",
@@ -2592,7 +2615,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Florida-based lumber and timber companies could see an increase in sales. Certain DFS-approved collection vendors currently utilized by DBPR may experience indeterminate revenue losses related to the collection retention percentage changes in the bill. Residential property owners may see a savings when having HVAC inspections. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: According to DBPR, as locally licensed contractors transfer to the state certified contractor’s license, the local licensing authority would likely see a reduction in their licensing fees. The amount and extent of the effect is indeterminate because each jurisdiction has different fees and number of licensees.36 33 Email correspondence with DBPR staff on May 16, 2013. 34 Email correspondence with DPBR staff on May 17, 2013. 35 Per DOH, through May 16, 2013, email correspondence, “Only in those occasions that the department needs to go to a site for verification will the fee not cover the cost. We anticipate this happening rarely. Therefore the fiscal impact will probably be negligible.” 36 Email correspondence with DPBR staff on May 16, 2013. STORAGE NAME: h0269z1.EUS PAGE: 12 DATE: June 26, 2013 The bill may have an initial insignificant negative fiscal impact on DBPR related to the collection of fines from local governments. DBPR does not have any record of local governments remitting to the department unpaid fines and costs ordered by the Construction Industry Li",
    "note": "collection vendors lose; homeowners save",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-02",
+     "motion": "passage",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/269/Vote/HouseVote_h0269c2425.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 333",
@@ -2652,7 +2688,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may result in increased savings for drivers utilizing vehicles powered by natural gas fuel, an increase in conversions of vehicle fleets from being powered by traditional fuels to natural gas fuel, and an increase in natural gas refueling infrastructure across the state.",
    "note": "same reading as 2016-183",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-02",
+     "motion": "passage",
+     "tally": [
+      116,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/579/Vote/HouseVote_h0579c2426.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 623",
@@ -2668,7 +2717,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill is expected to have most of its impact in the hospitality industry, as bars and restaurants will be able to reduce cost and waste associated with spoiled wine. Moreover, there may be a benefit to the private sector in being able to purchase larger size containers of wine, especially if a bulk rate is available.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-03-22",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/623/Vote/HouseVote_h0623c1045.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 655",
@@ -2706,7 +2768,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on the private sector by eliminating the lapse in branch operations while awaiting registration approval.",
    "note": "judgment call: the branches are those of securities dealers and investment advisers registered with OFR",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/783/Vote/HouseVote_h0783c1212.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 973",
@@ -2744,7 +2819,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The amount of the fee for the permit developed by the department would be dependent upon the number of applicants and the costs associated with the regulation of natural gas storage as outlined in the bill. The number of applicants is unknown, but expected to be low and costs associated with regulation are likely to be significant. The low number of applicants coupled with the potentially high cost of regulation could result in a substantial fee for the permit developed by the department. There should be a net positive fiscal impact on pipeline companies and private utility customers by providing more gas at peak times. The bill may also result in additional jobs where a natural gas storage facility is located.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      102,
+      13
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1083/Vote/HouseVote_h1083c3215.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1085",
@@ -2947,7 +3035,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may provide for more opportunities for the private sector to enter into contracts for construction services with local governments.",
    "note": "same reading as other P3 laws",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-03",
+     "motion": "passage",
+     "tally": [
+      111,
+      4
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/85/Vote/HouseVote_h0085e2441.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 357",
@@ -2985,7 +3086,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: By repealing s. 570.97, F.S., a one-time lump sum is provided to Florida Animal Friend, Inc., a nonprofit organization. By amending s. 534.083, F.S., persons engaged in the hauling of livestock will save time and money through the elimination of the livestock haulers permit. By amending s. 590.02, F.S., persons seeking an authorization for land-clearing may be charged a fee by the local government. By repealing s. 590.50, F.S., persons selling cypress products will no longer be required to obtain a permit from the department.",
    "note": "also: cypress sellers no longer need a permit",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/7087/Vote/HouseVote_h7087e1243.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 50",
@@ -3078,7 +3192,20 @@
    },
    "screen": "Private Sector Impact: Because the bill cures defects in the execution of instruments other than deeds or wills, individuals engaged in commercial real estate transactions may save legal fees and other associated costs to cure technical defects of missing witnesses and defective acknowledgements in instruments conveying real property.12",
    "note": "",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-30",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/736/Vote/HouseVote_s0736__343.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 954",
