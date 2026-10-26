@@ -45,7 +45,7 @@ candidate's own money left out; in-kind kept with Amend. code INK).
   them as opalocka/donors/raw/<bass|tydus>_<year>_<report>.pdf. Otherwise this needs a public records request to
   the City Clerk (Joanna Flores), for the same years.
 
-## 4. Biscayne Park: Daniel Samaria (Nov 6, 2018 - Nov 8, 2022)
+## 4. [Checked Oct 26, 2026: not online] Biscayne Park: Daniel Samaria (Nov 6, 2018 - Nov 8, 2022)
 - Why: the village posts no candidate reports, and no minutes for Nov and Dec 2018.
 - Open: https://www.biscayneparkfl.gov/ (Village Clerk > Elections; Agendas and Minutes, 2018).
 - Save: the Nov 2018 and Dec 2018 commission minutes as biscaynepark/minutes/<yyyy-mm-dd>.pdf; and Samaria's
@@ -60,7 +60,7 @@ candidate's own money left out; in-kind kept with Amend. code INK).
 - Also confirm whether he served before Nov 2012 (careers.jsonl says first elected 2010; the signed 2010-2012
   resolutions do not list him).
 
-## 6. North Miami Beach: minutes before May 28, 2013; Chernoff's 2001 and 2003 reports
+## 6. [Checked Oct 26, 2026: not online] North Miami Beach: minutes before May 28, 2013; Chernoff's 2001 and 2003 reports
 - Why: NovusAgenda minutes start at MinutesMeetingID 39 (May 28, 2013). Phyllis Smith (from May 2007) and
   Jay Chernoff (May 2001 - May 2009) have no actions before that. The DocumentCenter election folders start with 2005.
 - Open: https://www.citynmb.com/ (City Clerk > Minutes archive / Laserfiche, if any) for council minutes
