@@ -1,0 +1,198 @@
+{
+ "_note": "Public records requests drafted Oct 26, 2026 (Claude Doc 'Ballot305 public records requests'). Edit by hand when one is sent or answered: sent = YYYY-MM-DD, status = draft | sent | received | denied | partial. people = [pid, body] pairs the request covers (body as in public/data/prior/<pid>.json, or 'current' for the seat they hold now). covers = which gaps the request asks records for (donors = campaign reports, actions = minutes). Rebuild: node scripts/gaps.mjs",
+ "requests": [
+  {
+   "n": 1,
+   "office": "City of Miami Gardens",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["oliver-g-gilbert-iii", "city-miami-gardens"],
+    ["katrina-wilson", "city-miami-gardens"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 2,
+   "office": "City of Sunny Isles Beach",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["dana-goldman", "city-sunny-isles-beach"],
+    ["larisa-svechin", "city-sunny-isles-beach"],
+    ["larisa-svechin", "current"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 3,
+   "office": "City of Opa-locka",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["sherelean-bass", "city-opa-locka"],
+    ["sherelean-bass", "current"],
+    ["rose-tydus", "city-opa-locka"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 4,
+   "office": "Village of Biscayne Park",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["daniel-samaria", "city-biscayne-park"],
+    ["daniel-samaria", "current"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 5,
+   "office": "City of Aventura",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["howard-s-weinberg", "city-aventura"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 6,
+   "office": "City of Hialeah",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["luis-gonzalez", "city-hialeah"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 7,
+   "office": "Town of Medley",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["edgar-ayala", "current"],
+    ["lizelh-rodriguez", "current"],
+    ["ivan-pacheco", "city-medley"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 8,
+   "office": "Town of Cutler Bay",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["mary-ann-mixon", "city-cutler-bay"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 9,
+   "office": "Village of Palmetto Bay",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["david-m-singer", "city-palmetto-bay"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 10,
+   "office": "Village of Key Biscayne",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["luis-f-de-la-cruz", "city-key-biscayne"],
+    ["oscar-sardinas", "current"],
+    ["fernando-a-vazquez", "current"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 11,
+   "office": "City of Boca Raton",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["scott-singer", "city-boca-raton"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 12,
+   "office": "City of Parkland",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["jared-moskowitz", "city-parkland"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 13,
+   "office": "Town of Surfside",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["charles-burkett", "city-surfside"],
+    ["ruben-a-coto", "city-surfside"],
+    ["howard-s-weinberg", "city-surfside"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 14,
+   "office": "City of North Miami Beach",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["jay-r-chernoff", "city-north-miami-beach"],
+    ["phyllis-smith", "city-north-miami-beach"]
+   ],
+   "covers": ["donors", "actions"]
+  },
+  {
+   "n": 15,
+   "office": "City of Coral Gables",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["vince-c-lago", "current"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 16,
+   "office": "City of North Miami",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["alix-desulme", "current"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 17,
+   "office": "Miami-Dade Elections Department",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["bruno-a-barreiro", "mdc-commission"]
+   ],
+   "covers": ["donors"]
+  },
+  {
+   "n": 18,
+   "office": "Miami-Dade County Public Schools",
+   "sent": null,
+   "status": "draft",
+   "people": [
+    ["lucia-baez-geller", "mdcps-school-board"]
+   ],
+   "covers": ["actions"]
+  }
+ ]
+}
