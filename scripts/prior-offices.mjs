@@ -20,6 +20,7 @@ const OUT = 'public/data/prior/';
 
 const BODY = {
   'mdc-commission': ['Miami-Dade County Commission', 'Comisión del Condado Miami-Dade', 'Komisyon Konte Miami-Dade'],
+  'mdc-mayor': ['Miami-Dade County', 'Condado Miami-Dade', 'Konte Miami-Dade'],
   'mdcps-school-board': ['Miami-Dade County School Board', 'Junta Escolar del Condado Miami-Dade', 'Konsèy Lekòl Konte Miami-Dade'],
   'broward-commission': ['Broward County Commission', 'Comisión del Condado Broward', 'Komisyon Konte Broward'],
   'city-miami-gardens': ['Miami Gardens City Council', 'Concejo de la Ciudad de Miami Gardens', 'Konsèy Vil Miami Gardens'],
@@ -92,6 +93,9 @@ const OFFICES = [
   { pid: 'bruno-a-barreiro', start: '1998-06-02', role: 'member', acts: [C + 'actions.json'], key: 'Barreiro', donors: 'files',
     files: [2004, 2008, 2012, 2016].map(y => C + 'donors/barreiro-campaign-' + y + '.csv'), missing: ['1998 and 2000', '1998 y 2000', '1998 ak 2000'],
     actsNote: ['County Commission zoning hearings before July 2017 are not in the Clerk’s online minutes, so most zoning votes from these years are not listed.', 'Las audiencias de zonificación de la Comisión antes de julio de 2017 no están en las actas en línea de la Secretaría, así que la mayoría de los votos de zonificación de estos años no aparecen.', 'Odyans zonaj Komisyon an anvan jiyè 2017 pa nan pwosè vèbal Grefye a sou entènèt, kidonk pifò vòt zonaj ane sa yo pa parèt.'] },
+  { pid: 'carlos-a-gimenez', start: '2011-06-28', role: 'mayor', body: 'mdc-mayor', acts: [C + 'actions.json'], key: 'Gimenez', mayorRule: true, donors: 'files',
+    files: [2011, 2012, 2016].map(y => C + 'donors/gimenez-mayor-' + y + '.csv'),
+    actsNote: ['The mayor does not vote on the County Commission. Here an item counts as his yes when it went to the Commission with his recommendation and he did not veto it, and as his no when he vetoed it. Items he did not recommend show no vote. Zoning hearings before July 2017 are not in the Clerk\u2019s online minutes.', 'El alcalde no vota en la Comisión del Condado. Aquí un asunto cuenta como su voto a favor cuando llegó a la Comisión con su recomendación y no lo vetó, y como su voto en contra cuando lo vetó. Los asuntos que no recomendó aparecen sin voto. Las audiencias de zonificación antes de julio de 2017 no están en las actas en línea de la Secretaría.', 'Majistra a pa vote nan Komisyon Konte a. Isit la yon dosye konte kòm wi li lè li te rive nan Komisyon an ak rekòmandasyon l epi li pa t mete veto, e kòm non li lè li te mete veto. Dosye li pa t rekòmande yo parèt san vòt. Odyans zonaj anvan jiyè 2017 pa nan pwosè vèbal Grefye a sou entènèt.'] },
   { pid: 'carlos-a-gimenez', start: '2004-11-17', role: 'member', acts: [C + 'actions.json'], key: 'Gimenez', donors: 'files',
     files: [2004, 2008].map(y => C + 'donors/gimenez-campaign-' + y + '.csv'),
     actsNote: ['County Commission zoning hearings before July 2017 are not in the Clerk’s online minutes, so zoning votes from these years are not listed.', 'Las audiencias de zonificación de la Comisión antes de julio de 2017 no están en las actas en línea de la Secretaría, así que los votos de zonificación de estos años no aparecen.', 'Odyans zonaj Komisyon an anvan jiyè 2017 pa nan pwosè vèbal Grefye a sou entènèt, kidonk vòt zonaj ane sa yo pa parèt.'] },
@@ -161,12 +165,16 @@ for (const C0 of OFFICES) {
   for (const f of C0.acts) for (const a of load(f).actions || []) {
     if (!a.date || !inTerm(a.date) || seen.has(a.id)) continue;
     const roll = a.roll || {};
-    if (!(C0.key in roll)) continue;
+    if (!C0.mayorRule && !(C0.key in roll)) continue;
+    if (C0.mayorRule && !a.mayor) continue;
     if (a.universe === false) continue;
     seen.add(a.id);
     // the standard leaves out an action whose record names no beneficiary, and counts it
     if (!(a.parties || []).some(x => String(x || '').trim())) { unnamed++; continue; }
     let v = VOTE(roll[C0.key]);
+    // County mayor (Brit, Oct 26, 2026, option a): the mayor does not vote on the Commission; an item he sent with his
+    // own recommendation and did not veto counts as his yes, a veto as his no, anything else shows no vote
+    if (C0.mayorRule) { const m = a.mayor; v = m.vetoed ? 'no' : (m.mayorMemo || /gim[eé']?nez/i.test(m.recommendedBy || '')) ? 'yes' : 'unknown'; }
     if (C0.noVotes) v = 'unknown';
     // a voice vote gives this member a yes only when the tally accounts for every yes
     if (v === 'yes' && /voice vote/i.test(a.notes || '')) {
@@ -213,7 +221,7 @@ for (const C0 of OFFICES) {
     start, end: o.end || null, current: !!C0.current, endShown: C0.endShown || null,
     donors: C0.donors, gifts: gifts.length, giftTotal: Math.round(gifts.reduce((s, g) => s + g.amount, 0) * 100) / 100,
     missing: C0.missing ? tri(C0.missing) : null, noActions: C0.noActions || null, noVotes: !!C0.noVotes,
-    actsNote: C0.actsNote ? tri(C0.actsNote) : null, source: o.source || null,
+    actsNote: C0.actsNote ? tri(C0.actsNote) : null, source: o.source || null, mayor: !!C0.mayorRule,
     counts: cnt, unnamed, share, actions,
   });
   report.push(`${C0.pid} ${bodyKey} ${start}: ${cnt.actions} actions (yes ${cnt.yes}, no ${cnt.no}, unknown ${cnt.unknown}) | gifts ${gifts.length} | tied ${tied.length}${share ? ' (' + Math.round(tied.length / cast.length * 100) + '%)' : ''}`);
