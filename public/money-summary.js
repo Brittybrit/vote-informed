@@ -113,6 +113,8 @@
       noneCity: 'No donors found with business before the city in 2025 or 2026.',
       noneF: function(p){ return 'None of ' + esc(p.name) + '’s earmark requests were for a group whose federal lobbying firm, its PAC or its lobbyists gave to the campaign.'; },
       norequests: function(p){ return esc(p.name) + ' made no earmark requests in 2025 or 2026.'; },
+      gap: function(p, g){ var y = g.years[0] === g.years[1] ? 'for ' + g.years[0] : 'from ' + g.years[0] + ' through ' + g.years[1];
+        return 'Campaign reports for ' + esc(p.name) + ' ' + y + (g.why === 'cantRead' ? ' could not be read' : ' are not online') + ', so donations from ' + (g.years[0] === g.years[1] ? 'that year' : 'those years') + ' are not counted. Ties between donors and ' + his(p) + ' votes may be missing.'; },
       how: 'How this is counted'
     },
     es: {
@@ -188,6 +190,8 @@
       noneCity: 'No se encontraron donantes con asuntos ante la ciudad en 2025 ni 2026.',
       noneF: function(p){ return 'Ninguna de las solicitudes de fondos federales para proyectos de ' + esc(p.name) + ' fue para un grupo cuya firma de cabildeo federal, su comité político o sus cabilderos donaron a la campaña.'; },
       norequests: function(p){ return esc(p.name) + ' no hizo solicitudes de fondos federales para proyectos en 2025 ni 2026.'; },
+      gap: function(p, g){ var y = g.years[0] === g.years[1] ? 'de ' + g.years[0] : 'de ' + g.years[0] + ' a ' + g.years[1];
+        return 'Los informes de campaña de ' + esc(p.name) + ' ' + y + (g.why === 'cantRead' ? ' no se pudieron leer' : ' no están en internet') + ', así que las donaciones de ' + (g.years[0] === g.years[1] ? 'ese año' : 'esos años') + ' no se cuentan. Pueden faltar vínculos entre donantes y sus votos.'; },
       how: 'Cómo se cuenta'
     },
     ht: {
@@ -263,11 +267,17 @@
       noneCity: 'Nou pa jwenn okenn donatè ki te gen dosye devan vil la an 2025 oswa 2026.',
       noneF: function(p){ return 'Okenn nan demann lajan federal  ' + esc(p.name) + ' pa t pou yon gwoup kote fèm lobi federal li, komite politik li oswa lobiyis li te bay kanpay la.'; },
       norequests: function(p){ return esc(p.name) + ' pa t fè okenn demann lajan federal pou pwojè an 2025 oswa 2026.'; },
+      gap: function(p, g){ var y = g.years[0] === g.years[1] ? 'pou ' + g.years[0] : 'soti ' + g.years[0] + ' rive ' + g.years[1];
+        return 'Rapò kanpay ' + esc(p.name) + ' ' + y + (g.why === 'cantRead' ? ' nou pa t ka li yo' : ' pa sou entènèt') + ', kidonk nou pa konte don ' + (g.years[0] === g.years[1] ? 'ane sa a' : 'ane sa yo') + '. Gen lyen ant donatè ak vòt li yo ki ka manke.'; },
       how: 'Kijan nou konte'
     }
   };
   // Groups of sentences, shown as short paragraphs: the money, where it came from, timing, the actions.
   function moneySummary(p, lang){
+    var out = summaryBody(p, lang), g = p.donorGap;
+    return g && g.years ? out + '<br><em>' + (W[lang] || W.en).gap(p, g) + '</em>' : out;
+  }
+  function summaryBody(p, lang){
     var w = W[lang] || W.en, b = esc(L(p.bodyName, lang)), groups = [];
     if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
     if(p.kind === 'federal' || p.kind === 'state'){

@@ -192,6 +192,9 @@ export function build(decisions, officesHeld) {
     if (!pid || people[pid]) continue;
     add(pid, { body: null, bodyName: o.body, name: p.name, kind: 'none', status: p.status });
   }
+  // Years whose campaign reports are missing (scripts/data/donor-gaps.json): shown under the summary
+  const gaps = JSON.parse(readFileSync(new URL('./data/donor-gaps.json', import.meta.url)));
+  for (const [pid, g] of Object.entries(gaps)) if (!pid.startsWith('_') && people[pid]) people[pid].donorGap = g;
   return { updated: decisions.updated, cycleStart: CYCLE_START, people, byBallot };
 }
 

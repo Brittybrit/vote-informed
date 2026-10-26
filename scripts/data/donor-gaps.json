@@ -1,0 +1,11 @@
+{
+ "_note": "Campaign reports missing for part of an official's gift window, so donor ties on their votes are undercounted. why: notOnline (the filing office has not posted them) or cantRead (posted, but the site or the scans could not be read). Shown under the money summary. Edit by hand; rebuild with node scripts/money-summary.mjs.",
+ "vince-c-lago": {"years": [2013, 2019], "why": "notOnline"},
+ "alix-desulme": {"years": [2015, 2015], "why": "cantRead"},
+ "edgar-ayala": {"years": [2010, 2025], "why": "notOnline"},
+ "lizelh-rodriguez": {"years": [2018, 2025], "why": "notOnline"},
+ "sherelean-bass": {"years": [2020, 2021], "why": "notOnline"},
+ "oscar-sardinas": {"years": [2022, 2022], "why": "cantRead"},
+ "fernando-a-vazquez": {"years": [2022, 2022], "why": "cantRead"},
+ "larisa-svechin": {"years": [2021, 2024], "why": "cantRead"}
+}
