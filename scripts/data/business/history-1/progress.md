@@ -11,3 +11,5 @@ Resume: one line per official when done. Officials not listed here are not done.
 
 ## Priority change (coordinator, mid-run): electronic filings first for all remaining officials; scanned pre-2019 years after. Officials below marked 'electronic pass' still need older scanned years where noted.
 - vicki-l-lopez: done | years 2022-2025 | found 2022-2025 (all electronic Form 6) | missing none | illegible none | Form 8B none searched beyond repo data (none in repo)
+- lucia-baez-geller: electronic pass done | found 2022-2025 (Form 6 2022-2024 electronic; House candidate report covering 2022-2023; 2025 DOS Form 6 per repo) | STILL NEEDS scanned 2020-2021 (filings 811862, 866130)
+- maria-elvira-salazar: done | years 2019-2025 (plus 2017-2018 from candidate reports) | found 2017-2025 (all electronic House reports: candidate 2018, 2019, 2020; new filer 2020; annual 2021-2025) | missing none | illegible none | Form 8B n/a (federal)

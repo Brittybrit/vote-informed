@@ -11,20 +11,14 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 175,
-  "qualifying": 22,
+  "screened": 181,
+  "qualifying": 23,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-174",
-   "2013-175",
-   "2013-178",
-   "2013-179",
-   "2013-180",
    "2013-181",
-   "2013-182",
    "2013-183",
    "2013-184",
    "2013-185",
@@ -136,6 +130,11 @@
     "2013-169",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/364/Vote/HouseVote_s0364c1257.PDF"
+   ],
+   [
+    "2013-174",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/648/Vote/HouseVote_s0648c1369.PDF"
    ]
   ]
  },
@@ -2394,9 +2393,14 @@
    "title": "Health Insurance Marketing Materials",
    "url": "https://www.flsenate.gov/Session/Bill/2013/648",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/648/Analyses/2013s0648.hp.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "health insurers (small employer plan marketing filings)",
+    "named": [],
+    "quote": "CS/SB 648 would reduce costs of insurers associated with filing marketing materials for small employer health plans."
+   },
    "screen": "Private Sector Impact: CS/SB 648 would reduce costs of insurers associated with filing marketing materials for small employer health plans.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 810",
@@ -2407,7 +2411,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/810/Analyses/2013s0810.cm.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The Office of Insurance Regulation anticipates the bill will greatly expand the use of large deductibles for wrap-ups. Currently, workers’ compensation wrap-up construction project policies require that the general contractor and all sub-contractors on the project receive individual policies because the workers’ compensation law prohibits any employer from being added as an “additional insured” on any other employer’s policy. 7 The bill safeguards the payment of workers’ compensation benefits to injured workers by requiring the insurer to pay the first dollar of a workers’ compensation claim without applying the deductible and specifying that the failure of a policyholder to reimburse an insurer for the deductible does not affect the insurer’s obligation to pay claims.",
-   "note": "not yet judged"
+   "note": "expected wider use of large-deductible wrap-up policies; no benefit to a kind of business stated"
   },
   {
    "bill": "SB 934",
@@ -2440,7 +2444,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1036/Analyses/2013s1036.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The bill will require termination or non-renewal of most, if not all, of the contracts between CBC lead agencies and providers for IL services for children from age 13 through age 17. BILL: CS/SB 1036 Page 20 The bill also has the potential to reduce the workload of caseworkers and IL case managers which could either result in those staff having more time to spend on other duties or a reduction in the number of those positions. The bill may result in an increased cost of staff training for providers that operate group homes, particularly those using a shift care model.",
-   "note": "not yet judged"
+   "note": "independent living providers lose contracts and bear training costs; burden only"
   },
   {
    "bill": "SB 1106",
@@ -2448,10 +2452,10 @@
    "chapter": "2013-179",
    "title": "Agritourism",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1106",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1106/Analyses/2013s1106.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/CS/SB 1106 should encourage the creation of new agritourism businesses and create a caveat emptor situation for the participant at an agritourism activity.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1300",
@@ -2459,10 +2463,10 @@
    "chapter": "2013-180",
    "title": "Limited Liability Companies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1300",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1300/Analyses/2013s1300.cm.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: This bill is a substantial rewrite of the laws governing LLCs in Florida. Existing LLCs will need to ensure that they are in compliance with the new laws by January 1, 2015.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1302",
@@ -2470,10 +2474,10 @@
    "chapter": "2013-181",
    "title": "Temporary Certificates for Visiting Physicians",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1302",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1302/Analyses/2013s1302.bi.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Expanding temporary certificates to other medical and surgical training programs may result in additional educational symposiums, choosing Florida as a conference location.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1398",
@@ -2481,9 +2485,9 @@
    "chapter": "2013-182",
    "title": "Real Estate Appraisers",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1398",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1398/Analyses/2013s1398.ju.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2492,10 +2496,10 @@
    "chapter": "2013-183",
    "title": "Fire Safety and Prevention",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1410",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1410/Analyses/2013s1410.cj.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The Revenue Estimating Conference has not reviewed the bill. The following provisions of the bill could potentially generate varying indeterminate private sector fiscal impacts: BILL: CS/CS/SB 1410 Page 30 Under changes in the bill a person could be charged with a felony for impersonating a volunteer firefighter. The bill creates requirements for becoming a certified volunteer firefighter and fire service instructor. The bill requires a license, permit, or certificate holder to notify the division in writing of any changes to her or his current mailing address or e-mail address. Delivery by regular mail or e-mail using the last known mailing address or e-mail address on record constitutes adequate and sufficient notice on any official communication by the division. The bill increases from 3 years to 4 the number of years a fire safety inspector certificate is valid, increases the continuing educations requirements for a fire safety inspector from 40 hours to 54 hours, and requires repeat training for fire safety inspectors whose certification has lapsed for 8 years or more. The bill allows fire equipment dealer applicants with facilities outside of the state, instead of paying for an inspection completed by the division, to provide a notarized statement from a professional engineer licensed by the applicant’s state verifying the applicant possesses the equipment required for the class of license sought and that all such equipment is operable. The bill r",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1472",
