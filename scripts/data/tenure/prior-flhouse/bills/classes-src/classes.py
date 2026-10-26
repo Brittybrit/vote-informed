@@ -412,6 +412,8 @@ C = {
 "2013-169": ({"tags": [], "re": "WATER (UTILIT|SERVICE|COMPANY|SUPPLY|WORKS)|DESAL|AQUA UTILIT|UTILITIES,? INC"},
   ("water supply companies", "empresas de suministro de agua", "konpayi ki bay dlo")),
 "2013-174": (HEALTHINS, ("health insurers", "aseguradoras de salud", "konpayi asirans sante")),
+"2013-188": ({"tags": ["realestate-dev"], "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD|CONDOMINIUM|CONDO ASSOC|COMMUNITY ASSOCIATION"},
+  ("apartment owners and condo associations", "dueños de edificios de apartamentos y asociaciones de condominios", "pwopriyetè bilding apatman ak asosyasyon kondo")),
 }
 
 SKIP = {
