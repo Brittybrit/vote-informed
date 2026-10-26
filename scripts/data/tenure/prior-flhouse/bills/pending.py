@@ -9,6 +9,6 @@ for l in open(os.path.join(H, 'stageB.jsonl')):
     r = json.loads(l)
     if r.get('b') is not None: continue
     e = E[r['ch']]; t = open(os.path.join(H, 'ps', r['ch'] + '.txt')).read().split('\n', 1)[1]
-    t = re.sub(r'\s+', ' ', t)[:1400]
+    t = re.sub(r'\s+', ' ', t)[:900]
     print(f"## {r['ch']} {e['bill']} | {e['title'][:80]}\n{t}\n"); k += 1
     if k >= n: break

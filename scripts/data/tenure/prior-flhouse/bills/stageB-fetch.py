@@ -29,7 +29,7 @@ def section(t):
     if not m:
         m = re.search(r'(FISCAL OR ECONOMIC IMPACT|Fiscal or Economic Impact)\s*:', t)
         if not m: return None
-    s = t[m.start():m.start() + 2500]
+    s = t[m.start():m.start() + 5000]
     e = re.search(r'\n\s*(3\.\s*Fiscal Comments|C\.\s*Government Sector Impact|D\.\s*FISCAL COMMENTS|FISCAL COMMENTS|III\.\s*COMMENTS|VI\.\s*Technical|VII\.\s*Related)', s[40:], re.I)
     return s[:40 + e.start()] if e else s
 def fiscal_comments(t):
@@ -63,7 +63,10 @@ while True:
             if 'DOCUMENT UNAVAILABLE' not in t[:3000]: break
         if t is None: print('FAIL', r['ch'], u, flush=True); continue
         s = section(t)
-        body = (s if s else 'NOSECTION\n' + t[-3000:])
+        if s: body = s
+        else:  # no private-sector section (House local bills): keep the fiscal analysis section, else the end of the text
+            k = t.find('FISCAL ANALYSIS')
+            body = 'NOSECTION\n' + (t[k:k + 6000] if k >= 0 else t[-3000:])
         fc = fiscal_comments(t) if s and re.search(r'see fiscal comments|indeterminate', s, re.I) else ''
         open(out, 'w').write(u + '\n' + body + (('\n----FISCAL COMMENTS----\n' + fc) if fc else ''))
         print(r['ch'], 'ok' if s else 'nosection', flush=True)

@@ -53,8 +53,9 @@ for e in E:
     ps = re.sub(r'\s+', ' ', body).strip()[:1500]
     if ch in J:
         j = J[ch]; B[ch] = {'ch': ch, 'au': u, 'ps': ps, 'b': j['b'], 'cat': j.get('cat'), 'named': j.get('named', []), 'q': j.get('q'), 'note': j.get('note')}
-    elif body.startswith('NOSECTION') and 'FISCAL ANALYSIS & ECONOMIC IMPACT STATEMENT' in body and not re.search(
-            r'business|compan|industr|private sector|developer|contractor|operator|employer|benefit', body.split('FISCAL ANALYSIS & ECONOMIC IMPACT STATEMENT', 1)[1].split('REFERENDUM', 1)[0], re.I):
+    elif body.startswith('NOSECTION') and re.search(r'FISCAL ANALYSIS[ ,&]+ECONOMIC IMPACT STATEMENT', body) and not re.search(
+            r'business|compan|industr|private sector|developer|contractor|operator|employer|benefit|vendor|retailer|licensee',
+            re.split(r'III\.\s*COMMENTS', re.split(r'FISCAL ANALYSIS[ ,&]+ECONOMIC IMPACT STATEMENT', body, 1)[1], 1)[0], re.I):
         # House local-bill analysis: no private-sector section; its fiscal section names no private party
         B[ch] = {'ch': ch, 'au': u, 'ps': None, 'b': False, 'cat': None, 'named': [], 'q': None, 'note': 'auto: local bill; its fiscal analysis names no private party'}
     elif body.startswith('NOSECTION'):

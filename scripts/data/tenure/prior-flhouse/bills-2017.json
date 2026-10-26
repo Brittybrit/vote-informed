@@ -26,240 +26,14 @@
  },
  "counts": {
   "enacted": 234,
-  "screened": 116,
-  "qualifying": 13,
-  "withHouseVote": 8
+  "screened": 234,
+  "qualifying": 31,
+  "withHouseVote": 31
  },
  "missing": {
-  "A": [
-   "2017-155",
-   "2017-156",
-   "2017-157",
-   "2017-158",
-   "2017-159",
-   "2017-160",
-   "2017-161",
-   "2017-162",
-   "2017-163",
-   "2017-164",
-   "2017-165",
-   "2017-166",
-   "2017-167",
-   "2017-168",
-   "2017-169",
-   "2017-170",
-   "2017-171",
-   "2017-172",
-   "2017-173",
-   "2017-174",
-   "2017-175",
-   "2017-176",
-   "2017-177",
-   "2017-178",
-   "2017-179",
-   "2017-180",
-   "2017-181",
-   "2017-182",
-   "2017-183",
-   "2017-184",
-   "2017-185",
-   "2017-186",
-   "2017-187",
-   "2017-188",
-   "2017-189",
-   "2017-190",
-   "2017-191",
-   "2017-192",
-   "2017-193",
-   "2017-194",
-   "2017-195",
-   "2017-196",
-   "2017-197",
-   "2017-198",
-   "2017-199",
-   "2017-200",
-   "2017-201",
-   "2017-202",
-   "2017-203",
-   "2017-204",
-   "2017-205",
-   "2017-206",
-   "2017-207",
-   "2017-208",
-   "2017-209",
-   "2017-210",
-   "2017-211",
-   "2017-212",
-   "2017-213",
-   "2017-214",
-   "2017-215",
-   "2017-216",
-   "2017-217",
-   "2017-218",
-   "2017-219",
-   "2017-220",
-   "2017-221",
-   "2017-222",
-   "2017-223",
-   "2017-224",
-   "2017-225",
-   "2017-226",
-   "2017-227",
-   "2017-228",
-   "2017-229",
-   "2017-230",
-   "2017-231",
-   "2017-232",
-   "2017-233",
-   "2017-234"
-  ],
-  "B": [
-   "2017-116",
-   "2017-118",
-   "2017-119",
-   "2017-120",
-   "2017-121",
-   "2017-122",
-   "2017-123",
-   "2017-124",
-   "2017-125",
-   "2017-126",
-   "2017-127",
-   "2017-128",
-   "2017-129",
-   "2017-130",
-   "2017-131",
-   "2017-132",
-   "2017-133",
-   "2017-134",
-   "2017-135",
-   "2017-136",
-   "2017-137",
-   "2017-138",
-   "2017-139",
-   "2017-140",
-   "2017-141",
-   "2017-142",
-   "2017-143",
-   "2017-144",
-   "2017-145",
-   "2017-146",
-   "2017-147",
-   "2017-148",
-   "2017-149",
-   "2017-150",
-   "2017-151",
-   "2017-152",
-   "2017-153",
-   "2017-154",
-   "2017-155",
-   "2017-156",
-   "2017-157",
-   "2017-158",
-   "2017-159",
-   "2017-160",
-   "2017-161",
-   "2017-162",
-   "2017-163",
-   "2017-164",
-   "2017-165",
-   "2017-166",
-   "2017-167",
-   "2017-168",
-   "2017-169",
-   "2017-170",
-   "2017-171",
-   "2017-172",
-   "2017-173",
-   "2017-174",
-   "2017-175",
-   "2017-176",
-   "2017-177",
-   "2017-178",
-   "2017-179",
-   "2017-180",
-   "2017-181",
-   "2017-182",
-   "2017-183",
-   "2017-184",
-   "2017-185",
-   "2017-186",
-   "2017-187",
-   "2017-188",
-   "2017-189",
-   "2017-190",
-   "2017-191",
-   "2017-192",
-   "2017-193",
-   "2017-194",
-   "2017-195",
-   "2017-196",
-   "2017-197",
-   "2017-198",
-   "2017-199",
-   "2017-200",
-   "2017-201",
-   "2017-202",
-   "2017-203",
-   "2017-204",
-   "2017-205",
-   "2017-206",
-   "2017-207",
-   "2017-208",
-   "2017-209",
-   "2017-210",
-   "2017-211",
-   "2017-212",
-   "2017-213",
-   "2017-214",
-   "2017-215",
-   "2017-216",
-   "2017-217",
-   "2017-218",
-   "2017-219",
-   "2017-220",
-   "2017-221",
-   "2017-222",
-   "2017-223",
-   "2017-224",
-   "2017-225",
-   "2017-226",
-   "2017-227",
-   "2017-228",
-   "2017-229",
-   "2017-230",
-   "2017-231",
-   "2017-232",
-   "2017-233",
-   "2017-234"
-  ],
-  "C": [
-   [
-    "2017-51",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2017/211/Vote/HouseVote_h00211c1261.PDF"
-   ],
-   [
-    "2017-82",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2017/357/Vote/HouseVote_h00357c2080.PDF"
-   ],
-   [
-    "2017-85",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2017/467/Vote/HouseVote_h00467c2094.PDF"
-   ],
-   [
-    "2017-95",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2017/1018/Vote/HouseVote_s01018e1407.PDF"
-   ],
-   [
-    "2017-99",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2017/339/Vote/HouseVote_h00339c1180.PDF"
-   ]
-  ]
+  "A": [],
+  "B": [],
+  "C": []
  },
  "bills": [
   {
@@ -994,7 +768,23 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has a positive fiscal impact for cosmetic manufacturers associated with no further payment of the $30 per product registration fee, $15 per identical product registration fee, and $30 and $15 biennial renewal fees to the Division. The bill may have a negative fiscal impact on cosmetic manufacturers if the Division needs to raise the cosmetic manufacturer permit fee to offset a deficit that may be caused by repealing the cosmetic product registration requirement. However, the Division projects that cosmetic manufacturer permit program will experience a surplus rather than a deficit for FY 2017-2018. Therefore, a fee increase is unlikely to be necessary.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2017-04-26",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/211/Vote/HouseVote_h00211c1261.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 241",
@@ -1340,7 +1130,23 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 8 Muns v. Shurgard Income Properties Fund 16-Limited Partnership, 682 So.2d 166 (Fla. 4th DCA 1996). 9 s. 713.78, F.S., relates to liens for recovering, towing, or storing vehicles and vessels. The statute requires owners to pay towing fees and provides responsibilities to obtain possession of the vehicle or vessel. STORAGE NAME: h0357z1.CCS PAGE: 3 DATE: May 3, 2017 The bill could increase the use of Internet-based sales by storage facilities, and these sales would likely benefit the website hosting the sales. Additionally, the use of Internet-based sales may increase the number of bidders on items from a delinquent tenant’s storage unit and result in higher prices for items sold. As a result, there may be additional funds to pay the storage facility’s lien and perhaps additional surplus fund for the tenant.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2017-04-05",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/357/Vote/HouseVote_h00357c2080.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 435",
@@ -1378,7 +1184,23 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill eliminates the requirement that managers have separate licenses to manage multiple branch offices of private investigative agencies. Each license fee is $450. The bill provides that partners and corporate officers who do not possess licenses subject to renewal under s. 493.6113, F.S., are exempt from the fingerprint retention requirements of the statewide automated biometric identification system established in s. 943.05(2)(b), F.S., and the ongoing costs associated with enrolling and retaining their fingerprints in the national retained print arrest notification program required under s. 493.6108, F.S. The bill removes the $5 cattle marks and brands renewal fee. The bill exempts dealers in agricultural products who pay at the time of purchase with a credit card from certain dealer regulations of the Department and associated fees. The bill reduces concealed weapon licensure and renewal fees by $5.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2017-04-05",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/467/Vote/HouseVote_h00467c2094.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 589",
@@ -1493,7 +1315,23 @@
    },
    "screen": "Private Sector Impact: Owners and operators of installations that use, produce, or contain substances listed by the Department of Environmental Protection (DEP) will likely incur some costs for gathering and reporting information regarding reportable pollution releases within 24 hours of discovery when such an event occurs. The property redevelopment sections of this bill should have a positive fiscal impact on the private sector. Redevelopment of property will be encouraged by an additional $5 million available annually for petroleum contamination site rehabilitation for sites proposed for redevelopment. Also, an additional $5 million in funds will be available for voluntary cleanup through corporate income tax credits for the rehabilitation of dry- cleaning solvent contaminated sites or brownfield sites.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2017-05-03",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1018/Vote/HouseVote_s01018e1407.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1108",
@@ -1542,7 +1380,23 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Motor vehicle service agreement companies, and their consumers, may benefit from the expanded options for securing required reserves and the increased financial strength required of the entities that may reinsure the service agreement companies.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2017-04-20",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/339/Vote/HouseVote_h00339c1180.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 371",
@@ -1729,7 +1583,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/7069/Analyses/h7069z1.EDC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may result in cost savings to teachers who participate in a professional development certification program because they would not be required to enroll in additional college coursework or take the Professional Education Test to earn their professional certificate.",
-   "note": "not yet judged"
+   "note": "teachers"
   },
   {
    "bill": "SB 590",
@@ -1748,10 +1602,31 @@
    "chapter": "2017-118",
    "title": "Renewable Energy Source Devices",
    "url": "https://www.flsenate.gov/Session/Bill/2017/90",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/90/Analyses/2017s00090.ap.PDF",
+   "benefits": {
+    "category": "electric utilities and renewable energy device sellers and leasing businesses (property tax exemption)",
+    "named": [],
+    "quote": "The exemptions from the ad valorem tax on real property and tangible personal property tax will reduce taxes for electric utilities ... The exemptions may stimulate sales and leases of renewable energy source devices and encourage the development of renewable energy device leasing businesses."
+   },
+   "screen": "Private Sector Impact: The exemptions from the ad valorem tax on real property and tangible personal property tax will reduce taxes for electric utilities and other property owners that install renewable energy devices to produce electricity. The exemptions may stimulate sales and leases of renewable energy source devices and encourage the development of renewable energy device leasing businesses. 15 FLA. CONST. art. VII, s. 18(d). 16 An insignificant fiscal impact is the amount not greater than the average statewide population for the applicable fiscal year times $0.10. See Florida Senate Committee on Community Affairs, Interim Report 2012-115: Insignificant Impact, (Sept. 2011), available at http://www.flsenate.gov/PublishedContent/Session/2012/InterimReports/2012-115ca.pdf (last visited Feb. 13, 2017). 17 Based on the Demographic Estimating Conference’s population adopted on November 1, 2016. The conference packet is available at http://edr.state.fl.us/Content/conferences/population/ConferenceResults.pdf (last visited Feb. 13, 2017). 18 Office of Economic and Demographic Research, Revenue Estimating Impact Conference Results for CS/SB 90, (March 3, 2017), available at http://edr.state.fl.us/Content/conferences/revenueimpact/archives/2017/_pdf/Impact0303.pdf (last visited March 9, 2017). BILL: CS/SB 90 Page 6",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-03",
+     "motion": "third reading",
+     "tally": [
+      118,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/90/Vote/HouseVote_s00090e1405.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 474",
@@ -1759,10 +1634,10 @@
    "chapter": "2017-119",
    "title": "Hospice Care",
    "url": "https://www.flsenate.gov/Session/Bill/2017/474",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/474/Analyses/2017s00474.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/SB 474 may have a positive fiscal impact on persons who would be authorized under the bill to receive a hospice patient’s records without the need to obtain a court order.",
+   "note": "record recipients"
   },
   {
    "bill": "SB 494",
@@ -1770,9 +1645,9 @@
    "chapter": "2017-120",
    "title": "Compensation of Victims of Wrongful Incarceration",
    "url": "https://www.flsenate.gov/Session/Bill/2017/494",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/494/Analyses/2017s00494.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1781,9 +1656,9 @@
    "chapter": "2017-121",
    "title": "Estates",
    "url": "https://www.flsenate.gov/Session/Bill/2017/724",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/724/Analyses/2017s00724.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1792,10 +1667,10 @@
    "chapter": "2017-122",
    "title": "Termination of a Condominium Association",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1520",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1520/Analyses/2017s01520.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may require investors seeking to convert a condominium unit to apartments or to some other use to provide unit owners greater compensation. The bill also ensures that all persons whose condominium is their homestead will receive at least the price they paid for the condominium units upon the condominiums’ termination.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1694",
@@ -1803,9 +1678,9 @@
    "chapter": "2017-123",
    "title": "Support for Parental Victims of Child Domestic Violence",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1694",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1694/Analyses/2017s01694.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1814,10 +1689,10 @@
    "chapter": "2017-124",
    "title": "Industrial Hemp Pilot Projects",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1726",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1726/Analyses/2017s01726.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: A producer would be required to obtain a non-native/invasive permit for a fee not to exceed $50 and to pay quarterly $50 inspection fees. The producer must also obtain a surety bond issued by a surety company admitted to do business in this state or a certificate of deposit, or other type of security, which provides a financial assurance of cost recovery for the removal of a planting.8",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 2504",
@@ -1825,9 +1700,9 @@
    "chapter": "2017-125",
    "title": "Collective Bargaining",
    "url": "https://www.flsenate.gov/Session/Bill/2017/2504",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/2504/Analyses/2017s02504.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1836,9 +1711,9 @@
    "chapter": "2017-126",
    "title": "Clerks of the Court",
    "url": "https://www.flsenate.gov/Session/Bill/2017/2506",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/2506/Analyses/2017s02506.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1847,9 +1722,9 @@
    "chapter": "2017-127",
    "title": "Division of State Group Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2017/2508",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/2508/Analyses/s2508z1.APC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1858,9 +1733,9 @@
    "chapter": "2017-128",
    "title": "Public Records/Dependent Eligibility Verification Services",
    "url": "https://www.flsenate.gov/Session/Bill/2017/2510",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/2510/Analyses/s2510z1.APC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1869,10 +1744,10 @@
    "chapter": "2017-129",
    "title": "Health Care",
    "url": "https://www.flsenate.gov/Session/Bill/2017/2514",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/2514/Analyses/2017s02514.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Sole community hospitals that meet the definition of “rural hospital” under SB 2514 may receive increased Medicaid reimbursements.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 118",
@@ -1880,10 +1755,10 @@
    "chapter": "2017-130",
    "title": "Criminal History Records",
    "url": "https://www.flsenate.gov/Session/Bill/2017/118",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/118/Analyses/2017s00118.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/CS/CS/SB 118 may reduce costs for people who have their booking photographs published and want the photographs removed because the bill prohibits publishers of the photographs from charging removal fees. The bill also authorizes a civil cause of action, with an entitlement to reasonable attorney fees and costs, against those who, after a written request, fail to remove the photographs.",
+   "note": "individuals; mugshot publishers burdened"
   },
   {
    "bill": "HB 307",
@@ -1891,10 +1766,10 @@
    "chapter": "2017-131",
    "title": "Florida Life and Health Insurance Guaranty Association",
    "url": "https://www.flsenate.gov/Session/Bill/2017/307",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/307/Analyses/h0307z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private insurers may be assessed more often or in higher amounts as a result of the broader coverage for annuities and the increase in the reimbursement limit for specified hospital and medical insurance. These assessments would still be subject to the current one percent cap, which is not changed by the bill. However, this cap is an annual cap, not an aggregate cap, so it is possible that both the expanded annuity coverage and the higher reimbursement limit could result in assessments over a longer period of time than would occur under current law. The risk, with respect to the expanded annuity coverage, is not known. The risk, with respect to the higher reimbursement limit for specified hospital and medical insurance, may be very low, since it is probably unlikely that any single health insurer would have a large number of insureds who are likely to use $500,000 in coverage during the period when the FLAHIGA is liable for the policy. The $500,000 coverage limit also defines a maximum, and could be less depending on the specific terms of any covered policy, since the FLAHIGA does not reimburse more than policy limits.",
+   "note": "insurers face more assessments"
   },
   {
    "bill": "HB 359",
@@ -1902,10 +1777,31 @@
    "chapter": "2017-132",
    "title": "Regulation of Insurance Companies",
    "url": "https://www.flsenate.gov/Session/Bill/2017/359",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/359/Analyses/h0359z1.IBS.PDF",
+   "benefits": {
+    "category": "medical malpractice and other insurers (rate certification, premium payment options)",
+    "named": [],
+    "quote": "Medical malpractice insurers will be positively impacted by avoiding the burden of making annual base rate filings ... Insurers will be positively impacted by new options for payment of premium"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Exempting medical malpractice insurance from the FHCF assessment base will cause policyholders of the other types of property and casualty insurance included in the assessment base to pay higher assessments if revenue bonds are issued by the FHCF after June 1, 2019. Medical malpractice insurers will be positively impacted by avoiding the burden of making annual base rate filings when they choose to certify their rates instead. Insurers will be positively impacted by new options for payment of premium and collection of insufficient funds fees, but consumers will be negatively impacted by these fees. Insurers and consumers will be positively impacted by increased opportunities for electronic delivery of documents.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/359/Vote/HouseVote_h00359e1455.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 441",
@@ -1913,9 +1809,9 @@
    "chapter": "2017-133",
    "title": "Court Records",
    "url": "https://www.flsenate.gov/Session/Bill/2017/441",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/441/Analyses/h0441z1.CJC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1924,10 +1820,34 @@
    "chapter": "2017-134",
    "title": "Regulation of Health Care Practitioners",
    "url": "https://www.flsenate.gov/Session/Bill/2017/543",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/543/Analyses/h0543z1.HIS.PDF",
+   "benefits": {
+    "category": "physician associations offering pharmacist CE (Florida Medical Association, Florida Osteopathic Medical Association)",
+    "named": [
+     "Florida Medical Association",
+     "Florida Osteopathic Medical Association"
+    ],
+    "quote": "Professional associations that meet the qualifications to offer the 8-hour course will experience an increase in revenue for offering such courses."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Nursing students that do not take the licensure exam within six months of graduation may realize cost savings by no longer being subject to a mandatory licensure examination preparatory course. A nursing education program that is terminated or closed may incur costs or experience economic losses due to the 3-year waiting period imposed by the bill before it may reapply for approval. Pharmacists who wish to qualify to perform injections of antipsychotic medications will have to pay for an 8-hour continuing education course. Professional associations that meet the qualifications to offer the 8-hour course will experience an increase in revenue for offering such courses. The Florida Medical Association and the Florida Osteopathic Medical Association appear to be the only statewide physician associations meeting the criteria to offer the course. The Florida Medical Association generally charges between $50 and $200 per credit hour; 65 therefore, the cost of an 8-hour course will likely range from $400 to $1,600. The reduction from a 2-hour to a 1-hour continuing education course on medical errors for individuals licensed under the Board of Orthotics and Prosthetics may result in a cost savings for affected individuals.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      116,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/543/Vote/HouseVote_h00543e1440.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 615",
@@ -1935,10 +1855,10 @@
    "chapter": "2017-135",
    "title": "Professional Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2017/615",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/615/Analyses/h0615z1.CCS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: There may be an increase in the number of people in the workforce practicing their chosen professions.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 687",
@@ -1946,10 +1866,10 @@
    "chapter": "2017-136",
    "title": "Utilities",
    "url": "https://www.flsenate.gov/Session/Bill/2017/687",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/687/Analyses/h0687z1.EUS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill establishes more favorable collocation rates and terms for wireless providers who wish to deploy small wireless facilities in the public rights-of-way. To the extent that the rates and terms specified in the bill are more favorable to wireless providers than the rates and terms applicable to use of the public rights-of-way in other states, Florida may see a swifter influx of capital investment in small wireless facilities. It is unclear if Florida’s wireless service customers will see lower collocation costs reflected in retail service rate",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 689",
@@ -1957,10 +1877,31 @@
    "chapter": "2017-137",
    "title": "Division of Alcoholic Beverages and Tobacco",
    "url": "https://www.flsenate.gov/Session/Bill/2017/689",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/689/Analyses/h0689z1.CCS.PDF",
+   "benefits": {
+    "category": "alcoholic beverage licensees; craft distilleries (fee cuts)",
+    "named": [],
+    "quote": "Craft distilleries that qualify for the craft distillery designation will see a 75% reduction in the annual license fee for a distillery license"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Fee Elimination for Temporary Licenses17 Licensees will save at least $100 or more on each temporary license in these license transactions. Furthermore, licensees may see increased sales revenue due to the continued operation of businesses throughout their modification of licenses. Craft Distilleries18 Craft distilleries that qualify for the craft distillery designation will see a 75% reduction in the annual license fee for a distillery license, or a savings of $3,000 per license each year.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-26",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/689/Vote/HouseVote_h00689c3224.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 695",
@@ -1968,10 +1909,10 @@
    "chapter": "2017-138",
    "title": "South Florida Regional Transportation Authority",
    "url": "https://www.flsenate.gov/Session/Bill/2017/695",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/695/Analyses/h0695z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill addresses liability issues regarding the use of a rail corridor by multiple parties.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 727",
@@ -1979,10 +1920,10 @@
    "chapter": "2017-139",
    "title": "Accessibility of Places of Public Accommodation",
    "url": "https://www.flsenate.gov/Session/Bill/2017/727",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/727/Analyses/h0727z1.CCS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Public places may proactively come into compliance with Title III of the ADA in order to prevent having to pay attorney’s fees if they are sued in the future for violating Title III of the ADA. Since certificates of conformity are only valid for three years, owners of public places may have to pay for inspections every three years in order to prove they are compliant with Title III of the ADA.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 749",
@@ -1990,10 +1931,10 @@
    "chapter": "2017-140",
    "title": "Adoption Benefits",
    "url": "https://www.flsenate.gov/Session/Bill/2017/749",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/749/Analyses/h0749z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will provide cash benefits to employees of charter schools or the Florida Virtual School who adopt a qualifying child from the child welfare system provided they meet all requirements and funding is available.",
+   "note": "employees"
   },
   {
    "bill": "HB 775",
@@ -2001,10 +1942,31 @@
    "chapter": "2017-141",
    "title": "Motor Vehicle Warranty Repairs and Recall Repairs",
    "url": "https://www.flsenate.gov/Session/Bill/2017/775",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/775/Analyses/h0775z1.CCS.PDF",
+   "benefits": {
+    "category": "motor vehicle dealers (recalled inventory)",
+    "named": [],
+    "quote": "Dealers with vehicles in their inventory impacted by a recall that cannot be repaired will likely experience a positive fiscal impact."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The fiscal impact to the private sector is indeterminate. To the extent that agreements between dealers and manufacturers change, the parties could be impacted positively or negatively. Dealers with vehicles in their inventory impacted by a recall that cannot be repaired will likely experience a positive fiscal impact. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: h0775z1.CCS PAGE: 6 DATE: May 8, 2017",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-28",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/775/Vote/HouseVote_h00775e1344.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 813",
@@ -2012,10 +1974,10 @@
    "chapter": "2017-142",
    "title": "Flood Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2017/813",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/813/Analyses/h0813z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: To the extent that the bill encourages more private insurers to provide coverage for flood loss, consumers may ultimately benefit from increased competition. The availability of placing flood insurance coverage in the surplus lines market may increase access to coverage for property owners, but could negatively affect the development of the Florida flood insurance market by creating an uneven competition. STORAGE NAME: h0813z1.IBS PAGE: 5 DATE: June 27, 2017",
+   "note": "consumers benefit; insurers only encouraged"
   },
   {
    "bill": "HB 837",
@@ -2023,10 +1985,31 @@
    "chapter": "2017-143",
    "title": "Insurer Insolvency",
    "url": "https://www.flsenate.gov/Session/Bill/2017/837",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/837/Analyses/h0837z1.IBS.PDF",
+   "benefits": {
+    "category": "health care providers and facilities owed by insolvent HMOs",
+    "named": [],
+    "quote": "Health care providers and health care facilities that have treated subscribers of an HMO that becomes insolvent will benefit"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Many provisions of the bill are intended to improve the efficiency and efficacy of solvency proceedings. Thus, the bill may increase the amount of assets that are available for distribution from an estate because more assets are collected and with less expense. By prohibiting certain claims for postjudgment interest, the bill may also increase the overall amount of assets that are available for distribution, or available for distribution to policyholders and other creditors above Class 6. Health care providers and health care facilities that have treated subscribers of an HMO that becomes insolvent will benefit from the provision of the bill that raises their claims from Class 6 (claims of a general creditor) to Class 2 (claims of a policyholder).",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-26",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/837/Vote/HouseVote_h00837c2249.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 863",
@@ -2034,10 +2017,31 @@
    "chapter": "2017-144",
    "title": "Hospice Services",
    "url": "https://www.flsenate.gov/Session/Bill/2017/863",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/863/Analyses/h0863z1.HIS.PDF",
+   "benefits": {
+    "category": "not-for-profit retirement communities (hospice CON exemption)",
+    "named": [],
+    "quote": "will realize financial savings from not having to pay the CON application fees or incur the costs associated with obtaining a CON"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Each not-for-profit retirement community that meet the statutory requirements with respect to its’ relationship with a teaching nursing home will now be eligible to file a request with AHCA for an exemption from the CON program, and will realize financial savings from not having to pay the CON application fees or incur the costs associated with obtaining a CON to establish new hospice services. The residents and patients of each not-for-profit retirement community will have access to hospice services in the same setting where they reside or are receiving treatment.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-20",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/863/Vote/HouseVote_h00863e1174.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 879",
@@ -2045,10 +2049,31 @@
    "chapter": "2017-145",
    "title": "Unlawful Acquisition of Utility Services",
    "url": "https://www.flsenate.gov/Session/Bill/2017/879",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/879/Analyses/h0879z1.EUS.PDF",
+   "benefits": {
+    "category": "public and private electric utilities (theft restitution)",
+    "named": [],
+    "quote": "The bill may have a positive fiscal impact on public and private utilities to the extent that additional restitution is made to those utilities"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive fiscal impact on public and private utilities to the extent that additional restitution is made to those utilities relating to the theft of electricity.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-28",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/879/Vote/HouseVote_h00879c1325.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 883",
@@ -2056,10 +2081,10 @@
    "chapter": "2017-146",
    "title": "Memory Disorder Clinics",
    "url": "https://www.flsenate.gov/Session/Bill/2017/883",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/883/Analyses/h0883z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The MDC at Orlando Health Center for Aging has a six-county service area which contains 62,684 probable persons living with Alzheimer’s disease. The Orlando Health Center for Aging MDC may see reduced numbers of clients served if patients begin visiting the new Florida Hospital MDC instead.54",
+   "note": "only a loss for one clinic is stated"
   },
   {
    "bill": "HB 911",
@@ -2067,9 +2092,9 @@
    "chapter": "2017-147",
    "title": "Insurance Adjusters",
    "url": "https://www.flsenate.gov/Session/Bill/2017/911",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/911/Analyses/h0911z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2078,10 +2103,31 @@
    "chapter": "2017-148",
    "title": "Public Accountancy",
    "url": "https://www.flsenate.gov/Session/Bill/2017/987",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/987/Analyses/h0987z1.CCS.PDF",
+   "benefits": {
+    "category": "out-of-state accounting firms",
+    "named": [],
+    "quote": "The bill may allow more interstate business entities to practice in Florida"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may allow more interstate business entities to practice in Florida and for Florida residents to have more choice in which firms to hire.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-26",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/987/Vote/HouseVote_h00987c1257.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1021",
@@ -2089,10 +2135,31 @@
    "chapter": "2017-149",
    "title": "Construction",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1021",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1021/Analyses/h1021z1.CCS.PDF",
+   "benefits": {
+    "category": "electrical and alarm system contractors; contractors paying permit fees",
+    "named": [],
+    "quote": "The bill specifically allows electrical contractors and alarm system contractors to accept and bid on additional contracts, which may increase their work and income."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may reduce certain permitting fees contractors and owners pay to pull permits, and obtain building inspection services. Homeowners may pay less for water meters, and there may be an increase in the purchase of fire sprinkler systems for residential dwellings. The fiscal impact on the private sector is indeterminate. The bill may result in more people being able to obtain a certification as a plans examiner and building inspector. The bill specifically allows electrical contractors and alarm system contractors to accept and bid on additional contracts, which may increase their work and income. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. 76 Department of Business and Professional Regulation Bill Analysis, dated March 28, 2017. STORAGE NAME: h1021z1.CCS PAGE: 19 DATE: May 8, 2017",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1021/Vote/HouseVote_h01021c2454.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1027",
@@ -2100,10 +2167,31 @@
    "chapter": "2017-150",
    "title": "Unmanned Devices",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1027",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1027/Analyses/h1027z1.TIS.PDF",
+   "benefits": {
+    "category": "businesses using personal delivery devices; communications service providers using drones",
+    "named": [],
+    "quote": "Private businesses may see a reduction in delivery costs associated with the use of personal delivery devices."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private businesses may see a reduction in delivery costs associated with the use of personal delivery devices. Vesting the regulation of unmanned aircraft in the state will alleviate any patchwork regulation of unmanned aircraft that currently exists and may promote the use of unmanned aircraft. Violating the provision regarding operating unmanned aircraft around critical infrastructure facilities subjects one to possible criminal penalties. STORAGE NAME: h1027z1.TIS PAGE: 7 DATE: June 27, 2017 The bill also authorizes communications service providers or their contractors to use unmanned aircraft for routing, siting, installing, maintaining, or inspecting certain facilities.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1027/Vote/HouseVote_h01027e1452.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1121",
@@ -2111,10 +2199,10 @@
    "chapter": "2017-151",
    "title": "Child Welfare",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1121",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1121/Analyses/h1121z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Involuntary Mental Health Examination Task Force The bill requires receiving facilities to initiate involuntary examinations of minors within 12 hours. Depending on an individual facility’s staffing levels and the number of minors that require an involuntary examination, a receiving facility may incur increased costs to meet the bill’s requirements.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1253",
@@ -2122,9 +2210,9 @@
    "chapter": "2017-152",
    "title": "Rights and Responsibilities of Patients",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1253",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1253/Analyses/h1253z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2133,9 +2221,9 @@
    "chapter": "2017-153",
    "title": "Child Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1269",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1269/Analyses/h1269z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2144,9 +2232,9 @@
    "chapter": "2017-154",
    "title": "Physician Assistant Workforce Surveys",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1307",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1307/Analyses/h1307z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2155,10 +2243,10 @@
    "chapter": "2017-155",
    "title": "Department of Legal Affairs",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1379",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1379/Analyses/h1379z1.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Surviving family members of an emergency responder who dies in the line of duty while answering a call for service may be entitled to claims under the Crimes Compensation Act.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1385",
@@ -2166,9 +2254,9 @@
    "chapter": "2017-156",
    "title": "Domestic Violence",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1385",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1385/Analyses/h1385z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2177,10 +2265,10 @@
    "chapter": "2017-157",
    "title": "Department of Veterans' Affairs",
    "url": "https://www.flsenate.gov/Session/Bill/2017/5205",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/5205/Analyses/h5205z2.HCA.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Residents in a nursing home will retain $105 per month as a personal needs allowance.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 5401",
@@ -2188,10 +2276,31 @@
    "chapter": "2017-158",
    "title": "Pesticide Registration",
    "url": "https://www.flsenate.gov/Session/Bill/2017/5401",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/5401/Analyses/h5401z1.ANR.PDF",
+   "benefits": {
+    "category": "pesticide distributors and sellers",
+    "named": [],
+    "quote": "The bill will have a positive fiscal impact on individuals who distribute, sell, or offer to sell pesticides by eliminating the supplemental fee"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will have a positive fiscal impact on individuals who distribute, sell, or offer to sell pesticides by eliminating the supplemental fee for each registered brand of pesticide that contains an active ingredient for which the EPA has established a food tolerance limit in 40 C.F.R. part 180.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-08",
+     "motion": "passage",
+     "tally": [
+      109,
+      3
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/5401/Vote/HouseVote_h05401__466.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 5403",
@@ -2199,9 +2308,9 @@
    "chapter": "2017-159",
    "title": "Trust Funds/Termination/Environmental Laboratory Trust Fund/DEP",
    "url": "https://www.flsenate.gov/Session/Bill/2017/5403",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/5403/Analyses/h5403z1.ANR.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. 1 FLA. STAT. § 20.25501(3)(a) (2016). 2 FLA. STAT. § 20.25501 (2016). STORAGE NAME: h5403z.ANR.docx PAGE: 2 DATE: July 5, 2017",
    "note": null
   },
   {
@@ -2210,10 +2319,31 @@
    "chapter": "2017-160",
    "title": "Home Health Agency Licensure",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6021",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6021/Analyses/h6021z1.HIS.PDF",
+   "benefits": {
+    "category": "home health agencies",
+    "named": [],
+    "quote": "there may be business growth, additional job opportunities for home health service providers"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill permits HHAs to establish additional locations in smaller areas, such as cities and counties. As a result, there may be business growth, additional job opportunities for home health service providers, and greater access to home health services.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-20",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/6021/Vote/HouseVote_h06021__173.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 6027",
@@ -2221,10 +2351,10 @@
    "chapter": "2017-161",
    "title": "Financial Reporting",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6027",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6027/Analyses/h6027z1.CCS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Associations operating fewer than 50 units may have increased costs if they are required to do financial statements other than cash receipts and expenditures as these associations may choose to hire accountants or CAMs to prepare the financial statements. Condominiums or cooperatives that consistently vote to waive financial reporting may have decreased costs by being able to waive perpetually instead of having to prepare a financial report once every four years.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 6037",
@@ -2232,9 +2362,9 @@
    "chapter": "2017-162",
    "title": "Blind Services Direct-support Organization",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6037",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6037/Analyses/h6037z1.PSE.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "B. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. C. FISCAL COMMENTS: None. STORAGE NAME: h6037z1.PSE PAGE: 6 DATE: June 27, 2017",
    "note": null
   },
   {
@@ -2243,10 +2373,10 @@
    "chapter": "2017-163",
    "title": "Vessels",
    "url": "https://www.flsenate.gov/Session/Bill/2017/7043",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/7043/Analyses/h7043z1.NRPL.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill creates tiered noncriminal boating infractions for operation of a vessel with an expired registration and for anchoring or mooring where prohibited. As such, a violator would be charged with a noncriminal infraction, cited, and ordered to appear in county court. A person who fails to appear or otherwise properly respond to the citation would, in addition to the civil penalty, be charged with failing to respond to the citation and upon conviction would be guilty of a misdemeanor of the second degree, punishable by a term of imprisonment not ",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 7059",
@@ -2254,9 +2384,9 @@
    "chapter": "2017-164",
    "title": "Juvenile Justice",
    "url": "https://www.flsenate.gov/Session/Bill/2017/7059",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/7059/Analyses/h7059z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2265,10 +2395,10 @@
    "chapter": "2017-165",
    "title": "Ratification of a Department of Elder Affairs Rule and a Department of Health Rule",
    "url": "https://www.flsenate.gov/Session/Bill/2017/7073",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/7073/Analyses/h7073z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See, section I.A., infra.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 15",
@@ -2276,9 +2406,9 @@
    "chapter": "2017-166",
    "title": "Educational Options",
    "url": "https://www.flsenate.gov/Session/Bill/2017/15",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/15/Analyses/h0015z1.PKI.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2287,10 +2417,31 @@
    "chapter": "2017-167",
    "title": "Resource Recovery and Management",
    "url": "https://www.flsenate.gov/Session/Bill/2017/335",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/335/Analyses/h0335z1.NRPL.PDF",
+   "benefits": {
+    "category": "gasification and pyrolysis plastics-recycling facilities",
+    "named": [],
+    "quote": "The bill may have a positive fiscal impact on individuals or companies who operate facilities that use gasification and pyrolysis on post-use polymers"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive fiscal impact on individuals or companies who operate facilities that use gasification and pyrolysis on post-use polymers by exempting them from solid waste regulations.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/335/Vote/HouseVote_h00335c1444.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 361",
@@ -2298,10 +2449,31 @@
    "chapter": "2017-168",
    "title": "Bail Bonds",
    "url": "https://www.flsenate.gov/Session/Bill/2017/361",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/361/Analyses/h0361z1.CRJ.PDF",
+   "benefits": {
+    "category": "bail bond agents",
+    "named": [],
+    "quote": "This may reduce losses to bail bond agents related to the forfeiture of bonds."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill creates flexibility for judges and bail bond agents to remedy and resolve breaches of a bond. This may reduce losses to bail bond agents related to the forfeiture of bonds.",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-02",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/361/Vote/HouseVote_h00361c2382.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 557",
@@ -2309,10 +2481,10 @@
    "chapter": "2017-169",
    "title": "Controlled Substance Prescribing",
    "url": "https://www.flsenate.gov/Session/Bill/2017/557",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/557/Analyses/h0557z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: A pharmacy or dispenser may incur additional costs associated with meeting the new requirement to report the dispensing of a controlled substance by the end of the next business day.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 699",
@@ -2320,9 +2492,9 @@
    "chapter": "2017-170",
    "title": "Internet Identifiers",
    "url": "https://www.flsenate.gov/Session/Bill/2017/699",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/699/Analyses/h0699z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2331,9 +2503,9 @@
    "chapter": "2017-171",
    "title": "Designation of School Grades",
    "url": "https://www.flsenate.gov/Session/Bill/2017/781",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/781/Analyses/h0781z1.PKI.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2342,10 +2514,10 @@
    "chapter": "2017-172",
    "title": "Stroke Centers",
    "url": "https://www.flsenate.gov/Session/Bill/2017/785",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/785/Analyses/h0785z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private hospitals, emergency medical service providers, and medical examiner offices that would be required to submit data to DOH may be required to purchase software and incur labor costs to collect, maintain, and send required data to DOH.61 The estimated cost of this is unknown at this time.62",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 807",
@@ -2353,10 +2525,10 @@
    "chapter": "2017-173",
    "title": "Practices of Substance Abuse Service Providers",
    "url": "https://www.flsenate.gov/Session/Bill/2017/807",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/807/Analyses/h0807z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: If the changes to patient brokering statutes deter treatment providers and recovery residence operators from giving persons in recovery from substance abuse inducements such as gym memberships, scooters, cigarettes, clothes, and gift cards, these individuals will receive fewer such inducements. Substance abuse treatment providers and recovery residence operators who are engaging in practices made illegal under the bill will be subject to monetary fines and criminal penalties unless they adapt their business practices. Licensed service providers will need to pay for background screenings for clinical supervisors, unless these individuals are exempt, such as due to having already been screened within five years. The background check will cost $60 per individual.139 Licensed service providers of clinical services who are not already accredited will need to obtain accreditation by the second renewal. The cost of accreditation ranges from $7,500 to $15,000 and is valid for a three-year period. Licensed service providers who commit certain violations will be subject to fines and other licensure actions such as moratoria, license suspension, revocation, and denial, which could have an economic impact on such providers.",
+   "note": "providers burdened"
   },
   {
    "bill": "HB 899",
@@ -2364,9 +2536,9 @@
    "chapter": "2017-174",
    "title": "Comprehensive Transitional Education Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2017/899",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/899/Analyses/h0899z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2375,10 +2547,10 @@
    "chapter": "2017-175",
    "title": "Department of Financial Services",
    "url": "https://www.flsenate.gov/Session/Bill/2017/925",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/925/Analyses/h0925z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The impact on the private sector from changes to the Boiler Safety Act is not known.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 981",
@@ -2386,9 +2558,9 @@
    "chapter": "2017-176",
    "title": "Pub. Rec./Department of Elderly Affairs",
    "url": "https://www.flsenate.gov/Session/Bill/2017/981",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/981/Analyses/h0981z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "B. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. C. FISCAL COMMENTS: The bill may create an insignificant negative fiscal impact on the Department because staff responsible for complying with public record requests could require training to implement the bill’s exemption. In addition, the Department could incur costs associated with redacting the exempt information prior to releasing the record. Such costs should be absorbed as they are part of the day-to-day operation of the agency. STORAGE NAME: h0981z1.CFS PAGE: 5 DATE: June 27, 2017",
    "note": null
   },
   {
@@ -2397,9 +2569,9 @@
    "chapter": "2017-177",
    "title": "Instructional Materials",
    "url": "https://www.flsenate.gov/Session/Bill/2017/989",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/989/Analyses/h0989z1.PKQ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2408,10 +2580,31 @@
    "chapter": "2017-178",
    "title": "Prohibited Insurance Acts",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1007",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1007/Analyses/h1007z1.IBS.PDF",
+   "benefits": {
+    "category": "insurers (optional preinsurance inspections)",
+    "named": [],
+    "quote": "Policyholders and insurers may experience reduced costs if the insurers elect not to require preinsurance inspections"
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurance companies may incur additional costs in implementing the new requirements for their fraud- prevention programs and the required data reporting. However, these costs may be more than offset if compliance results in more effective fraud prevention and enforcement. Policyholders and insurers may experience reduced costs if the insurers elect not to require preinsurance inspections while maintaining control over claim fraud through currently available or lower cost alternative methods. Preinsurance inspection providers may see a decrease in referrals if insurers choose to opt out of required inspections.68",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-05-05",
+     "motion": "passage",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1007/Vote/HouseVote_h01007e1458.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1009",
@@ -2419,9 +2612,9 @@
    "chapter": "2017-179",
    "title": "Pub. Rec./Insurance Fraud Information/DFS",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1009",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1009/Analyses/h1009z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2430,9 +2623,9 @@
    "chapter": "2017-180",
    "title": "Marine Turtle Protection",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1031",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1031/Analyses/h1031z1.NRPL.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2441,9 +2634,9 @@
    "chapter": "2017-181",
    "title": "Laboratory Screening",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1041",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1041/Analyses/h1041z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2452,10 +2645,10 @@
    "chapter": "2017-182",
    "title": "Limited Access and Toll Facilities",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1049",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1049/Analyses/h1049z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Users of MDX’s facilities may see a reduction in the frequency and amount of toll increases. Eligible SunPass users of MDX’s toll facilities would benefit from a reduction in toll charges of at least 5 percent, but not more than 10 percent. The amount of this reduction is dependent on the number of eligible trips on MDX toll facilities, and is therefore unknown. Users of transportation facilities in Miami-Dade County may benefit from municipal or county transportation- or transit-related expenses funded by a portion of MDX’s surplus revenues. MDX may benefit from the same funded expenses. The amount, however, is indeterminate, as the funds available for such expenses are indeterminate. 30 See the MDX email to House Transportation & Infrastructure Committee Staff, March 10, 2017. (On file with the House Transportation & Infrastructure Subcommittee). STORAGE NAME: h1049z1.TIS PAGE: 8 DATE: June 28, 2017 Users of DOT’s and FTE’s express lanes may experience reduced tolls. The amount of this reduction with respect to the DOT’s express lanes is dependent on the number of trips and the number of times a customer’s average travel speed falls below 40 miles per hour, and is therefore unknown. The amount of this reduction with respect to express lanes on the turnpike system is dependent on the number of trips, the frequency of the existence of level of service A or B in the express lanes, and the number of times a customer’s average travel ",
+   "note": "toll users; MDX is public"
   },
   {
    "bill": "HB 1051",
@@ -2463,9 +2656,9 @@
    "chapter": "2017-183",
    "title": "Forensic Hospital Diversion Pilot Program",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1051",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1051/Analyses/h1051z1.CFS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2474,9 +2667,9 @@
    "chapter": "2017-184",
    "title": "Pub. Rec. and Meetings/Campus Emergency Response for Public Postsecondary Educational Institutions",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1079",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1079/Analyses/h1079z1.PSE.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2485,10 +2678,10 @@
    "chapter": "2017-185",
    "title": "Public Records/Workers' Compensation",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1107",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1107/Analyses/h1107z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Indeterminate. The bill may reduce attorney involvement in workers’ compensation litigation, which could lead to more efficient claims processing and lower workers’ compensation premiums. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. STORAGE NAME: h1107z1.IBS PAGE: 5 DATE: June 28, 2017",
+   "note": "premiums generally"
   },
   {
    "bill": "HB 1109",
@@ -2496,10 +2689,10 @@
    "chapter": "2017-186",
    "title": "Private School Student Participation in Extracurricular Activities",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1109",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1109/Analyses/h1109z1.PKI.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 8 Section 1006.15(3)(a), F.S. 9 Section 1006.15(8), F.S. A private school that has a student who wishes to participate in a public school athletic program must make all student records, including, but not limited to, academic, financial, disciplinary, and attendance records, available upon request by the FHSAA; section 1006.15(3)(c), (d), and (e), F.S.; bylaw 9.2.2.4, FHSAA. 10 Section 1006.15(8), F.S. STORAGE NAME: h1109z1.PKI PAGE: 3 DATE: June 28, 2017 None",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1175",
@@ -2507,10 +2700,31 @@
    "chapter": "2017-187",
    "title": "Motor Vehicle Manufacturers and Dealers",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1175",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1175/Analyses/h1175z1.CCS.PDF",
+   "benefits": {
+    "category": "motor vehicle dealers (manufacturer incentive rules)",
+    "named": [],
+    "quote": "Dealers may experience increased revenue from new limitations and procedures governing the incentives, bonuses, and other benefit programs."
+   },
+   "screen": "B. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: To the extent the agreements between dealers and motor vehicle manufacturers, distributors, and importers change due to compliance with existing laws, the parties may be positively or negatively impacted. Dealers may experience increased revenue from new limitations and procedures governing the incentives, bonuses, and other benefit programs. C. FISCAL COMMENTS: None. STORAGE NAME: h1175z1.CCS PAGE: 5 DATE: May 8, 2017",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-26",
+     "motion": "third reading",
+     "tally": [
+      104,
+      12
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1175/Vote/HouseVote_h01175c2214.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1237",
@@ -2518,10 +2732,10 @@
    "chapter": "2017-188",
    "title": "Condominiums",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1237",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1237/Analyses/h1237z2.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill requires that a condominium association of 150 or more units must create a website. The cost is unknown. The remainder of the bill does not appear to have any direct economic impact on the private sector.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1239",
@@ -2529,10 +2743,10 @@
    "chapter": "2017-189",
    "title": "School Bus Safety",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1239",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1239/Analyses/h1239z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill increases penalties for persons failing to stop for a school bus and causing the serious bodily injury or death of a person.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1347",
@@ -2540,10 +2754,31 @@
    "chapter": "2017-190",
    "title": "Application of the Florida Deceptive and Unfair Trade Practices Act to Credit Unions",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1347",
-   "analysisUrl": null,
-   "benefits": null,
-   "screen": null,
-   "note": null
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1347/Analyses/h1347z2.IBS.PDF",
+   "benefits": {
+    "category": "credit unions (FDUTPA exemption)",
+    "named": [],
+    "quote": "The bill relieves credit unions of the potential for investigation and enforcement by authorities over and above the regulatory authorities to which they are otherwise subject."
+   },
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill relieves credit unions of the potential for investigation and enforcement by authorities over and above the regulatory authorities to which they are otherwise subject. The bill precludes a private citizen from suing a credit union to recover the cost of actual damages, plus attorney’s fees and court costs, for violations of FDUTPA. However, the fiscal impact of the bill is indeterminate, as the potential for future actions under FDUTPA is unknown. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: None. 45 ss. 501.2075, 501.2077, and 501.2101, F.S. STORAGE NAME: h1347z2.IBS PAGE: 6 DATE: June 29, 2017",
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2017-04-05",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2017/1347/Vote/HouseVote_h01347c1095.PDF",
+     "roll": {
+      "Moskowitz": "yes",
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 5203",
@@ -2551,9 +2786,9 @@
    "chapter": "2017-191",
    "title": "Prescription Drug Monitoring Program",
    "url": "https://www.flsenate.gov/Session/Bill/2017/5203",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/5203/Analyses/h5203z2.HCA.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2562,9 +2797,9 @@
    "chapter": "2017-192",
    "title": "Direct Support Organization of the Prescription Drug Monitoring Program",
    "url": "https://www.flsenate.gov/Session/Bill/2017/7097",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/7097/Analyses/h7097z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2573,9 +2808,9 @@
    "chapter": "2017-193",
    "title": "Transportation Facility Designations",
    "url": "https://www.flsenate.gov/Session/Bill/2017/368",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/368/Analyses/2017s00368.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2584,9 +2819,9 @@
    "chapter": "2017-194",
    "title": "Transportation Facility Designations",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1169",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1169/Analyses/h1169z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2595,10 +2830,10 @@
    "chapter": "2017-195",
    "title": "Martin County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/259",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/259/Analyses/h0259z1.LFV.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "NOSECTION BJM Consulting, Inc. Memorandum: Indiantown Economic Impact Local, Federal and Veterans 1/25/2017 Statement Affairs Subcommittee Re: Indiantown Responses to the Jan 25, 2017 Joseph Mazurkuewicz, Jr. 2/1/2017 Memo from Tracy Banner BJM Consulting, Inc. Village of Indiantown Incorporation Revised Joseph Mazurkuewicz, Jr. 2/13/2017 Feasibility Study BJM Consulting, Inc. Joseph Mazurkuewicz, Jr. Revised Economic Impact Statement 2/13/2017 BJM Consulting, Inc. Re: HB 259 – Proposed Municipal Incorporation of Local, Federal and Veterans Indiantown; HB 261 – Proposed Municipal 2/15/2017 Affairs Subcommittee Incorporation of Hobe Sound Re: Indiantown/Hobe Sound Responses to the Joseph Mazurkuewicz, Jr. 3/6/2017 February 15, 2017 Memo BJM Consulting, Inc. Re: HB 259 – Proposed Municipal Incorporation of Local, Federal and Veterans Indiantown; HB 261 – Proposed Municipal 3/10/2017 Affairs Subcommittee Incorporation of Hobe Sound RE: Hobe Sound Responses to the March 10, 2017 Local, Federal and Veterans 3/14/2017 Memo from Eric Miller Affairs Subcommittee STORAGE NAME: h0259z1.LFV PAGE: 22 DATE: June 30, 2017 APPENDIX B MAP OF PROPOSED AREA OF INCORPORATION STORAGE NAME: h0259z1.LFV PAGE: 23 DATE: June 30, 2017 APPENDIX C DEPARTMENT OF REVENUE INCORPORATION OF INDIANTOWN REVENUE SHARING ESTIMATES STORAGE NAME: h0259z1.LFV PAGE: 24 DATE: June 30, 2017",
+   "note": "local bill (Indiantown incorporation)"
   },
   {
    "bill": "HB 531",
@@ -2606,10 +2841,10 @@
    "chapter": "2017-196",
    "title": "Solid Waste Authority of Palm Beach County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/531",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/531/Analyses/h0531z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 533",
@@ -2617,10 +2852,10 @@
    "chapter": "2017-197",
    "title": "City of Tampa, Hillsborough County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/533",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/533/Analyses/h0533z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 647",
@@ -2628,10 +2863,10 @@
    "chapter": "2017-198",
    "title": "Hillsborough County Public Transportation Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2017/647",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/647/Analyses/h0647z1.LFV.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "NOSECTION ssets of the special district to the local general purpose government, which also becomes responsible for all district debts.14 Effect of the Bill The bill dissolves the PTC, an independent special district, located in Hillsborough County. The bill provides an exemption from the requirements of s. 189.076(2), F.S., in that the assets and liabilities of the PTC remain with the Commission until December 31, 2017, for the purpose of winding up the 1 Section 189.012(6), F.S. 2 See s. 388.021, F.S. 3 See s. 125.901, F.S. 4 See ch. 191, F.S. 5 See ch. 298, F.S. 6 Section 189.012(3), F.S. 7 Ch. 2001-299, Laws of Fla., codifying ch. 83-423, Laws of Fla. and subsequent special acts. 8 Hillsborough County, Public Transportation Commission, http://www.hillsboroughcountyptc.com (last visited February 26, 2017). 9 Ch. 2001-299, s. 5(1)-(2), Laws of Fla. 10 Ch. 2001-299, s. 4, Laws of Fla. 11 Id. 12 Id. 13 Section 189.072(2)(a), F.S. 14 Section 189.076(2), F.S. STORAGE NAME: h0647z1.LFV PAGE: 2 DATE: June 30, 2017 affairs of the PTC. The bill also provides an exemption from the referendum requirements of s. 189.072(2), F.S. Effective upon the bill becoming law, the district is prohibited from incurring any additional obligations or indebtedness. The bill also requires all obligations and indebtedness be satisfied and all assets transferred to the county, per operation of s. 189.076, F.S., no later than December 31, 2017. The Economic Impact Statement identifies a projected cost o",
+   "note": "local bill (dissolves Hillsborough PTC); the analysis names no business that benefits"
   },
   {
    "bill": "HB 737",
@@ -2639,10 +2874,10 @@
    "chapter": "2017-199",
    "title": "Port of Palm Beach District, Palm Beach County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/737",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/737/Analyses/h0737z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 759",
@@ -2650,10 +2885,10 @@
    "chapter": "2017-200",
    "title": "City of Gainesville, Alachua County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/759",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/759/Analyses/h0759z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 891",
@@ -2661,10 +2896,10 @@
    "chapter": "2017-201",
    "title": "Carrabelle Port and Airport Authority, Franklin County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/891",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/891/Analyses/h0891z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 905",
@@ -2672,10 +2907,10 @@
    "chapter": "2017-202",
    "title": "Barefoot Bay Recreation District, Brevard County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/905",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/905/Analyses/h0905z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 921",
@@ -2683,10 +2918,10 @@
    "chapter": "2017-203",
    "title": "Fellsmere Drainage District, Indian River County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/921",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/921/Analyses/h0921z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 951",
@@ -2694,10 +2929,10 @@
    "chapter": "2017-204",
    "title": "City of Key West, Monroe County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/951",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/951/Analyses/h0951z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1025",
@@ -2705,10 +2940,10 @@
    "chapter": "2017-205",
    "title": "Firefighters’ Relief and Pension Fund of the City of Pensacola, Escambia County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1025",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1025/Analyses/h1025z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1075",
@@ -2716,10 +2951,10 @@
    "chapter": "2017-206",
    "title": "Nassau County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1075",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1075/Analyses/h1075z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1135",
@@ -2727,10 +2962,10 @@
    "chapter": "2017-207",
    "title": "West Palm Beach Police Pension Fund of the City of West Palm Beach, Palm Beach County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1135",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1135/Analyses/h1135z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1147",
@@ -2738,10 +2973,10 @@
    "chapter": "2017-208",
    "title": "Central Broward Water Control District, Broward County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1147",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1147/Analyses/h1147z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1149",
@@ -2749,10 +2984,10 @@
    "chapter": "2017-209",
    "title": "North Springs Improvement District, Broward County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1149",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1149/Analyses/h1149z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1151",
@@ -2760,10 +2995,10 @@
    "chapter": "2017-210",
    "title": "Lehigh Acres Fire Control and Rescue District and Alva Fire Protection and Rescue Service District, Lee County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1151",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1151/Analyses/h1151z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1153",
@@ -2771,10 +3006,10 @@
    "chapter": "2017-211",
    "title": "Broward County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1153",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1153/Analyses/h1153z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1291",
@@ -2782,10 +3017,10 @@
    "chapter": "2017-212",
    "title": "City of Jacksonville, Duval County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1291",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1291/Analyses/h1291z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1293",
@@ -2793,10 +3028,10 @@
    "chapter": "2017-213",
    "title": "City of Jacksonville, Duval County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1293",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1293/Analyses/h1293z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1295",
@@ -2804,10 +3039,10 @@
    "chapter": "2017-214",
    "title": "Monroe County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1295",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1295/Analyses/h1295z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1297",
@@ -2815,10 +3050,10 @@
    "chapter": "2017-215",
    "title": "Palm Beach County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1297",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1297/Analyses/h1297z.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1311",
@@ -2826,10 +3061,10 @@
    "chapter": "2017-216",
    "title": "Lehigh Acres Municipal Services Improvement District, Lee and Hendry Counties",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1311",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1311/Analyses/h1311z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1313",
@@ -2837,10 +3072,10 @@
    "chapter": "2017-217",
    "title": "Cold Springs Improvement District, Marion County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1313",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1313/Analyses/h1313z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1315",
@@ -2848,10 +3083,10 @@
    "chapter": "2017-218",
    "title": "Lake County Water Authority, Lake County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1315",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1315/Analyses/h1315z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1317",
@@ -2859,10 +3094,10 @@
    "chapter": "2017-219",
    "title": "North Lake County Hospital District, Lake County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1317",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1317/Analyses/h1317z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1333",
@@ -2870,10 +3105,10 @@
    "chapter": "2017-220",
    "title": "Sunbridge Stewardship District, Osceola County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1333",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1333/Analyses/h1333z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1363",
@@ -2881,10 +3116,10 @@
    "chapter": "2017-221",
    "title": "Santa Rosa County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1363",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1363/Analyses/h1363z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1437",
@@ -2892,10 +3127,10 @@
    "chapter": "2017-222",
    "title": "Alachua County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1437",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1437/Analyses/h1437z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 1439",
@@ -2903,10 +3138,10 @@
    "chapter": "2017-223",
    "title": "Charlotte County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/1439",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/1439/Analyses/h1439z1.LFV.PDF",
    "benefits": null,
    "screen": null,
-   "note": null
+   "note": "auto: local bill; its fiscal analysis names no private party"
   },
   {
    "bill": "HB 6503",
@@ -2914,10 +3149,10 @@
    "chapter": "2017-224",
    "title": "Relief/Sean McNamee, Todd & Jody McNamee/School Board of Hillsborough County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6503",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6503/Analyses/h6503.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6507",
@@ -2925,10 +3160,10 @@
    "chapter": "2017-225",
    "title": "Relief/Angela Sanford/Leon County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6507",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6507/Analyses/h6507.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6521",
@@ -2936,10 +3171,10 @@
    "chapter": "2017-226",
    "title": "Relief/Mary Mifflin-Gee/City of Miami",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6521",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6521/Analyses/h6521.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6529",
@@ -2947,10 +3182,10 @@
    "chapter": "2017-227",
    "title": "Relief/Lillian Beauchamp/St. Lucie County School District",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6529",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6529/Analyses/h6529.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6533",
@@ -2958,10 +3193,10 @@
    "chapter": "2017-228",
    "title": "Relief/Jennifer Wohlgemuth/Pasco County Sheriff's Office",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6533",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6533/Analyses/h6533.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6545",
@@ -2969,10 +3204,10 @@
    "chapter": "2017-229",
    "title": "Relief/Jerry Cunningham/Broward County",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6545",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6545/Analyses/h6545.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "HB 6549",
@@ -2980,10 +3215,10 @@
    "chapter": "2017-230",
    "title": "Relief/Altavious Carter and Dustin Reinhardt/Palm Beach County School Board",
    "url": "https://www.flsenate.gov/Session/Bill/2017/6549",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017/6549/Analyses/h6549.CJC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body"
   },
   {
    "bill": "SB 6A",
@@ -2991,9 +3226,9 @@
    "chapter": "2017-231",
    "title": "Public Records/Medical Marijuana Use Registry/Physician Certification for Marijuana and Dispensing/Department of Health",
    "url": "https://www.flsenate.gov/Session/Bill/2017A/6A",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017A/6A/Analyses/2017s00006A.hp.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -3002,10 +3237,10 @@
    "chapter": "2017-232",
    "title": "Medical Use of Marijuana",
    "url": "https://www.flsenate.gov/Session/Bill/2017A/8A",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017A/8A/Analyses/2017s00008A.hp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: MMTCs will likely incur costs associated with licensure and meeting the regulatory standards required by the bill. Marijuana testing laboratories may incur additional costs to become certified by DOH. MMTCs and marijuana testing laboratories will incur costs associated with the required background screenings. The total cost for a state and national criminal history record check with fingerprint retention for 5 years by FDLE is $60.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1A",
@@ -3013,10 +3248,10 @@
    "chapter": "2017-233",
    "title": "Economic Development",
    "url": "https://www.flsenate.gov/Session/Bill/2017A/1A",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017A/1A/Analyses/h0001Aa.APC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Entities currently contracting with DEO to provide services through the Displaced Homemaker Program will no longer receive funding from the state under the program. These same services may be obtained through existing local CareerSource Centers. The cost for the issuance of a marriage license will be reduced from $59.50 to $52.00. Although the Florida Job Growth Grant Fund is prohibited from being used for the exclusive benefit of any single company, corporation, or business entity, broad benefits to Florida individuals, communities and businesses related to needed public infrastructure projects and workforce training are likely to be seen to enhance economic recovery in specific regions of the state, enhance economic diversification, and enhance targeted industries.",
+   "note": "broad benefits to businesses generally; displaced homemaker contractors lose funding"
   },
   {
    "bill": "HB 3A",
@@ -3024,9 +3259,9 @@
    "chapter": "2017-234",
    "title": "Florida Education Finance Program",
    "url": "https://www.flsenate.gov/Session/Bill/2017A/3A",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2017A/3A/Analyses/h0003Aa.APC.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   }
  ]
