@@ -33,48 +33,12 @@
   "enacted": 201,
   "screened": 201,
   "qualifying": 22,
-  "withHouseVote": 15
+  "withHouseVote": 22
  },
  "missing": {
   "A": [],
   "B": [],
-  "C": [
-   [
-    "2020-124",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/59/Vote/HouseVote_h00059e1734.PDF"
-   ],
-   [
-    "2020-126",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/343/Vote/HouseVote_h00343c2485.PDF"
-   ],
-   [
-    "2020-127",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/441/Vote/HouseVote_h00441c2439.PDF"
-   ],
-   [
-    "2020-145",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/70/Vote/HouseVote_s00070e2640.PDF"
-   ],
-   [
-    "2020-156",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/731/Vote/HouseVote_h00731e2746.PDF"
-   ],
-   [
-    "2020-174",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/133/Vote/HouseVote_h00133e1760.PDF"
-   ],
-   [
-    "2020-177",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/747/Vote/HouseVote_h00747e1464.PDF"
-   ]
-  ]
+  "C": []
  },
  "bills": [
   {
@@ -1774,7 +1738,24 @@
    },
    "screen": "Pharmacies that choose to employ automated pharmacy systems will incur costs associated with obtaining and maintaining those systems, but may increase revenue.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      115,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/59/Vote/HouseVote_h00059e1734.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 115",
@@ -1801,7 +1782,24 @@
    },
    "screen": "The bill allows RV parks to more easily eject unwanted guests, which may result in a positive fiscal impact to park owners who can rent spaces to other guests and allow current guests to have a more enjoyable stay. Authorizing a separate and distinct category I RV dealer/installer licensure test and allowing applicants to use experience or professional certification to be eligible to apply for certification as a master qualifier may remove unnecessary barriers to professional licensure and employment in the category I RV dealer/installer industry, which may allow more workers to practice their chosen profession.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-02-26",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/343/Vote/HouseVote_h00343c2485.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 441",
@@ -1817,7 +1815,24 @@
    },
    "screen": "The bill may have a positive, yet indeterminate fiscal impact on private sector businesses that provide professional services as defined in the CCNA, or that provide construction management or project management services, by allowing those entities to enter into larger contracts for projects and studies under a continuing contract. Specifically, increasing the threshold for entering into continuing contracts would save those entities contractual and workload expenditures associated with having to undergo the CCNA procurement process for projects or studies that exceed the current statutory threshold.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-02-13",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/441/Vote/HouseVote_h00441c2439.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 467",
@@ -2020,7 +2035,24 @@
    },
    "screen": "Panic alert systems for a public school would be sold by private sector vendors, and would therefore have a positive impact on vendors selling a panic alert system.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-09",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/70/Vote/HouseVote_s00070e2640.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 124",
@@ -2146,7 +2178,24 @@
    },
    "screen": "The bill repeals licensure for multiphasic health testing center. Currently there are 187 licensed multiphasic health testing centers. As a result, multiphasic health testing centers will no longer be required to pay the biennial license renewal fee of $952.64. The bill exempts from health care clinic licensure, community mental health partial-hospitalization programs, and portable x-ray providers, and rural health care clinics. These providers will no longer be required to pay the $2,000 biennial license renewal fee. AHCA estimates that approximately 200 providers would qualify for the exemption.119 The bill also exempts Medicaid providers, including behavior analysis providers, from health care clinic licensure. These providers are not currently required to be licensed, but licensure will be required effective July 1, 2020.120 According to AHCA, an estimated 20,000 providers have been identified as possibly being required to be licensed as a health care clinic or obtain an exemption from licensure as a health care clinic.121 Providers who qualify for the exemption would not have to pay the $2,000 initial licensure fee.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-12",
+     "motion": "passage",
+     "tally": [
+      100,
+      14
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/731/Vote/HouseVote_h00731e2746.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "not voting",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 813",
@@ -2349,7 +2398,24 @@
    },
    "screen": "The bill will reduce expenses for towing companies that are located in counties or municipalities currently charging a fee.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-13",
+     "motion": "passage",
+     "tally": [
+      81,
+      31
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/133/Vote/HouseVote_h00133e1760.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 371",
@@ -2387,7 +2453,24 @@
    },
    "screen": "By preventing the use of balance billing practices by air ambulance service providers, the bill will likely have a negative, indeterminate fiscal impact on those providers. Oppositely, the bill may have a positive fiscal impact on insurers, HMOs, and insureds by limiting payments to air ambulance service providers to “reasonable reimbursement” for services.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-02-20",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/747/Vote/HouseVote_h00747e1464.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "not voting",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 787",
