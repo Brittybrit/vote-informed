@@ -409,6 +409,8 @@ C = {
 "2013-157": (DISTILL, ("craft distilleries", "destilerías artesanales", "ti distilri atizanal")),
 "2013-166": ({"tags": [], "re": "PROFESSIONALS RESOURCE NETWORK|INTERVENTION PROJECT FOR NURSES|IMPAIRED PRACTITIONER|\\bPRN\\b|\\bIPN\\b"},
   ("impaired practitioner program consultants", "consultores de programas para profesionales con impedimentos", "konsiltan pwogram tretman pou pwofesyonèl sante")),
+"2013-169": ({"tags": [], "re": "WATER (UTILIT|SERVICE|COMPANY|SUPPLY|WORKS)|DESAL|AQUA UTILIT|UTILITIES,? INC"},
+  ("water supply companies", "empresas de suministro de agua", "konpayi ki bay dlo")),
 }
 
 SKIP = {
