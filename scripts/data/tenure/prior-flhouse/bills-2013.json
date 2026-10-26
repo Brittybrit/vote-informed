@@ -11,20 +11,14 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 163,
-  "qualifying": 20,
+  "screened": 169,
+  "qualifying": 21,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-158",
-   "2013-160",
-   "2013-163",
-   "2013-166",
-   "2013-168",
    "2013-169",
-   "2013-170",
    "2013-171",
    "2013-172",
    "2013-173",
@@ -138,6 +132,11 @@
     "2013-157",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/347/Vote/HouseVote_h0347e1228.PDF"
+   ],
+   [
+    "2013-166",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/248/Vote/HouseVote_s0248c1347.PDF"
    ]
   ]
  },
@@ -2212,7 +2211,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/573/Analyses/h0573z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: More owners of mobile or manufactured homes will be eligible for insurance in Citizens under the bill’s reduction of the minimum insured value on these homes from $6,000 to $3,000. Mobile or manufactured home owners will be eligible for increased insurance coverage from Citizens as the bill requires Citizens to insure certain attached structures to the mobile or manufactured home.",
-   "note": "not yet judged"
+   "note": "mobile home owners (individuals) gain Citizens coverage"
   },
   {
    "bill": "HB 7025",
@@ -2234,7 +2233,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7125/Analyses/h7125z1.THSS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: Section 1 reclassifies FHP Captains positions from Career Service to the Selected Exempt Service. The proposed change reclassifying the 47 FHP Captain positions will result in an $88,000 recurring reduction to the Highway Safety Operating Trust Fund due to the increased costs of benefits, which can be absorbed within existing trust fund revenues. Sections 4 – 10 prohibit a notice of violation and a traffic citation from being issued via a red light camera for a right-on-red violation if the driver came to a complete stop before turning right (where a right turn is permissible) – even if the driver has stopped beyond the stop line or other point at which a stop is required. This provision may lead to a decrease in the number of notices of violation and traffic citations being issued, which may have a corresponding decrease in revenue for the state and local governments. However, the exact fiscal impact is indeterminate. These sections also allow the registered owner or driver to request a hearing within 60 days of receiving a red light camera notice of violation, rather than be forced to wait until the notice of violation becomes a uniform traffic citation. The local government that has issued the notice of violation may use its currently appointed code enforcement board or special magistrate to serve as the local hearing officer for purposes of conducting the hearing.",
-   "note": "not yet judged"
+   "note": "section refers to fiscal comments, which cover government revenue and red-light hearings only"
   },
   {
    "bill": "SB 62",
@@ -2267,7 +2266,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/166/Analyses/2013s0166.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The consumer protections of s. 627.4554, F.S., will generally apply to all consumers purchasing annuities. To the extent that the protections provide greater transparency and protection against fraud and misrepresentation, consumers who purchase annuities should realize cost savings. BILL: CS/CS/SB 166 Page 11",
-   "note": "not yet judged"
+   "note": "annuity consumers"
   },
   {
    "bill": "SB 186",
@@ -2298,9 +2297,14 @@
    "title": "Treatment Programs for Impaired Licensees and Applicants",
    "url": "https://www.flsenate.gov/Session/Bill/2013/248",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/248/Analyses/2013s0248.ri.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "impaired practitioner program consultants",
+    "named": [],
+    "quote": "Consultants may see an increase in revenue from the expanded pool of students, veterinary students, and health practitioner licensure applicants."
+   },
    "screen": "Private Sector Impact: Consultants may see an increase in revenue from the expanded pool of students, veterinary students, and health practitioner licensure applicants. These students and applicants will bear the costs of their own referral and treatment.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "SB 328",
@@ -2319,9 +2323,9 @@
    "chapter": "2013-168",
    "title": "Tourist Development Tax",
    "url": "https://www.flsenate.gov/Session/Bill/2013/336",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/336/Analyses/2013s0336.ca.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2330,10 +2334,10 @@
    "chapter": "2013-169",
    "title": "Consumptive Use Permits for Development of Alternative Water Supplies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/364",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/364/Analyses/2013s0364.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Most bonds issued to fund the capital construction costs of an AWS project are 30-year bonds; however, most AWS CUPs are only issued for 20 years. This discrepancy may affect the interest rate the AWS developer has to pay to issue the bonds. The impact of this is indeterminate but may be significant if the uncertainty in renewing a 20-year CUP for a 30-year bond has significant weight in the rating agencies’ models. For example, an A-rated $100 million bond may cost $7-10 million more over the life of the bond as compared to an AAA-rated bond. Also, by allowing an up to seven-year extension under certain circumstances, AWS developers will be able to operate the AWS project without having to reapply for a CUP at the end of the initial 30-year duration. This will ensure operation of the AWS project for a full 30-year term.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 372",
@@ -2341,9 +2345,9 @@
    "chapter": "2013-170",
    "title": "Vehicle Permits for the Transportation of Alcoholic Beverages",
    "url": "https://www.flsenate.gov/Session/Bill/2013/372",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/372/Analyses/2013s0372.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
