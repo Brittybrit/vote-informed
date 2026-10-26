@@ -3,3 +3,4 @@ Started 2026-10-26. EFDMS search API (api/PublicFiling/SearchPublicFilings?filte
 Recording rule: employers, income sources, owned businesses, business creditors (lenders) and individually named company holdings. Not recorded: residences, vehicles, deposit accounts, mutual/retirement funds.
 - ana-maria-rodriguez: done | years 2010-2025 | found 2017-2025 | missing 2010-2016 (Doral Form 1s, paper at Miami-Dade SOE, no image) | illegible none | Form 8B none found
 - blaise-ingoglia: done | years 2014-2025 | found 2015-2025 | missing 2014 (filed 2015, not online) | illegible none | Form 8B none (state officer; see summary)
+- bryan-avila: done | years 2014-2026 | found 2015-2026 (2026 = Form 6F) | missing 2014 (filed 2015, not online) | illegible none (some handwritten amounts on 2016-2020 scans noted as approximate) | Form 8B none found
