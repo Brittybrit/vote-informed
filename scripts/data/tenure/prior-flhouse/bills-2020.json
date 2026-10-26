@@ -33,47 +33,12 @@
   "enacted": 201,
   "screened": 201,
   "qualifying": 22,
-  "withHouseVote": 0
+  "withHouseVote": 7
  },
  "missing": {
   "A": [],
   "B": [],
   "C": [
-   [
-    "2020-9",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/607/Vote/HouseVote_h00607e1691.PDF"
-   ],
-   [
-    "2020-11",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/140/Vote/HouseVote_s00140e1677.PDF"
-   ],
-   [
-    "2020-21",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/7018/Vote/HouseVote_s07018e1720.PDF"
-   ],
-   [
-    "2020-38",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1120/Vote/HouseVote_s01120c2708.PDF"
-   ],
-   [
-    "2020-41",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/73/Vote/HouseVote_h00073c1400.PDF"
-   ],
-   [
-    "2020-56",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/702/Vote/HouseVote_s00702e1689.PDF"
-   ],
-   [
-    "2020-60",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1344/Vote/HouseVote_s01344e1710.PDF"
-   ],
    [
     "2020-70",
     "H",
@@ -254,7 +219,24 @@
    },
    "screen": "Home health agencies and nursing facilities may incur costs associated with providing medication administration training to CNAs and HHAs. APRNs who pay physicians for supervision will achieve cost-savings if they qualify for and register to practice autonomously since supervision will no longer be needed. APRNs who register to practice autonomously must pay for the additional continuing education hours required by the bill.",
    "note": "practitioners counted as a kind of business, as in ../flhouse/bills/judge.json (dentists, physicians); same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "passage",
+     "tally": [
+      107,
+      8
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/607/Vote/HouseVote_h00607e1691.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "no"
+     }
+    }
+   }
   },
   {
    "bill": "HB 7097",
@@ -281,7 +263,24 @@
    },
    "screen": "Sellers of fireworks may experience increased sales.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      82,
+      34
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/140/Vote/HouseVote_s00140e1677.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 348",
@@ -396,7 +395,24 @@
    },
    "screen": "Increased availability of staging areas on the turnpike system may provide the general public with earlier provision of essential emergency supplies during emergencies and may provide additional benefits, such as increased availability of parking on the turnpike system, during non-emergency periods. The business community may experience a positive impact in that more efficient emergency response may allow for a faster return to normal market activity. The Florida Department of Transportation’s (FDOT) maintenance and construction contractors may benefit from increased availability of staging areas during non-emergency periods. To the extent that development of the required plan increases the number of electric vehicle (EV) charging stations in the state, residents, businesses, and tourists are expected to benefit from increased availability of EV charging stations, facilitating mobility and commerce and reducing costs related to EV travel. The ability to construct linear facilities through a conservation easement instead of bypassing the easement, may provide a cost savings to private companies. Landowners will be required to compensate governmental entities based on the reduction in value of conservation easements, however, this cost may be offset by the amount received from private entities for the construction of linear facilities through the easements.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      97,
+      19
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/7018/Vote/HouseVote_s07018e1720.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 61",
@@ -588,7 +604,24 @@
    },
    "screen": "According to the DCF, substance use treatment providers and recovery residences may realize savings by being able to fill positions faster with the changes identified in the bill.42 Additionally, CS/CS/SB 1120 alleviates confusion on which payment arrangements are permissible under the state patient brokering law. This may result in increased revenues for the private sector resulting from more allowable payment agreement options between health care providers.43 42 Id. 43 Department of Children and Families Agency Analysis of HB 649. On file with the Senate Committee on Children, Families, and Elder Affairs. BILL: CS/CS/SB 1120 Page 11",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1120/Vote/HouseVote_s01120c2708.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 7012",
@@ -626,7 +659,24 @@
    },
    "screen": "The bill may have a positive fiscal impact on the private sector because residential recycling collectors are not required to collect or transport contaminated recyclable materials and recovered materials processing facilities are not required to process contaminated recyclable materials except pursuant to contract terms provided by the bill. This could decrease machinery issues and thereby save on costs of repair. 40 Section 403.813(1)(d), F.S. 41 Section 403.813(1)(h), F.S. 42 Section 403.813(1)(l), F.S. 43 Section 403.813(1)(p), F.S. 44 Section 403.813(1)(e), F.S. STORAGE NAME: h0073z1.ANRS.DOCX PAGE: 6 DATE: 6/19/2020 The bill may have a positive fiscal impact on the private sector by prohibiting a local government from requiring verification from DEP of an ERP exception. The bill may also have a positive fiscal impact on the private sector by expanding the permit exception for the replacement or repair of existing docks and piers if it results in more docks being built or repaired.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-01-22",
+     "motion": "third reading",
+     "tally": [
+      119,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/73/Vote/HouseVote_h00073c1400.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 89",
@@ -796,7 +846,24 @@
    },
    "screen": "The bill may provide cost savings under the Petroleum Cleanup Participation Program (PCPP) for owners, operators, or persons otherwise responsible for conducting site rehabilitation by allowing them to demonstrate cost savings in lieu of or in addition to the copayment requirement. The bill, however, removes the provision that allowed such applicants to reduce or eliminate costs associated with the limited contamination assessment report and the copayment costs if the applicant demonstrated that he or she could not financially comply. The bill will have a positive fiscal impact on participants in the Advanced Cleanup Program, as the bill requires the Department of Environmental Protection (DEP) to pay for the limited contamination assessment.",
    "note": "judgment call: program participants are owners/operators of petroleum storage sites; same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/702/Vote/HouseVote_s00702e1689.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 738",
@@ -845,7 +912,24 @@
    },
    "screen": "CS/SB 1344 may have a positive but indeterminate fiscal impact on ICFDD applicants that obtain the newly created CON exemption.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      79,
+      36
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1344/Vote/HouseVote_s01344e1710.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1392",

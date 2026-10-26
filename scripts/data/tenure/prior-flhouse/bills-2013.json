@@ -11,27 +11,17 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 193,
-  "qualifying": 24,
+  "screened": 203,
+  "qualifying": 29,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-190",
-   "2013-191",
-   "2013-193",
-   "2013-194",
-   "2013-198",
-   "2013-199",
    "2013-200",
-   "2013-201",
    "2013-202",
    "2013-203",
-   "2013-204",
    "2013-205",
-   "2013-206",
-   "2013-207",
    "2013-208",
    "2013-209",
    "2013-210",
@@ -128,6 +118,31 @@
     "2013-188",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/73/Vote/HouseVote_h0073c3168.PDF"
+   ],
+   [
+    "2013-190",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/157/Vote/HouseVote_h0157c1227.PDF"
+   ],
+   [
+    "2013-191",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/223/Vote/HouseVote_h0223c1024.PDF"
+   ],
+   [
+    "2013-193",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/269/Vote/HouseVote_h0269c2425.PDF"
+   ],
+   [
+    "2013-198",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/579/Vote/HouseVote_h0579c2426.PDF"
+   ],
+   [
+    "2013-199",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/623/Vote/HouseVote_h0623c1045.PDF"
    ]
   ]
  },
@@ -2572,9 +2587,14 @@
    "title": "Delivery of Insurance Policies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/157",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/157/Analyses/h0157z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "insurers (emailed policies)",
+    "named": [],
+    "quote": "Insurers emailing policies to policyholders instead of mailing them will save costs associated with printing and mailing insurance policies to policyholders."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers emailing policies to policyholders instead of mailing them will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to email rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with emailing policies, any increased costs will be passed through to policyholders.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 223",
@@ -2583,9 +2603,14 @@
    "title": "Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2013/223",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/223/Analyses/h0223z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "insurers (policies posted online)",
+    "named": [],
+    "quote": "Insurers posting policies online will save costs associated with printing and mailing insurance policies to policyholders."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers posting policies online will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to post policies online and how many policyholders will choose to obtain their policies online rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with posting policies online, any increased costs will be passed through to policyholders.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 247",
@@ -2605,9 +2630,14 @@
    "title": "Building Construction",
    "url": "https://www.flsenate.gov/Session/Bill/2013/269",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/269/Analyses/h0269z1.EUS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "Florida lumber and timber companies",
+    "named": [],
+    "quote": "Florida-based lumber and timber companies could see an increase in sales."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Florida-based lumber and timber companies could see an increase in sales. Certain DFS-approved collection vendors currently utilized by DBPR may experience indeterminate revenue losses related to the collection retention percentage changes in the bill. Residential property owners may see a savings when having HVAC inspections. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: According to DBPR, as locally licensed contractors transfer to the state certified contractor’s license, the local licensing authority would likely see a reduction in their licensing fees. The amount and extent of the effect is indeterminate because each jurisdiction has different fees and number of licensees.36 33 Email correspondence with DBPR staff on May 16, 2013. 34 Email correspondence with DPBR staff on May 17, 2013. 35 Per DOH, through May 16, 2013, email correspondence, “Only in those occasions that the department needs to go to a site for verification will the fee not cover the cost. We anticipate this happening rarely. Therefore the fiscal impact will probably be negligible.” 36 Email correspondence with DPBR staff on May 16, 2013. STORAGE NAME: h0269z1.EUS PAGE: 12 DATE: June 26, 2013 The bill may have an initial insignificant negative fiscal impact on DBPR related to the collection of fines from local governments. DBPR does not have any record of local governments remitting to the department unpaid fines and costs ordered by the Construction Industry Li",
-   "note": "not yet judged"
+   "note": "collection vendors lose; homeowners save",
+   "votes": {}
   },
   {
    "bill": "HB 333",
@@ -2618,7 +2648,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/333/Analyses/h0333h.SAC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Section 3: According to the FWC’s analysis, those wishing to purchase a resident recreational fishing or hunting license, but who are not eligible because they have not established their Florida residency for six months or more, will see a positive fiscal impact of the difference between the cost of a resident license and a nonresident license. Section 4: According to the FWC’s analysis, active duty military personnel, reservists, Florida National Guard, U.S. Coast Guard, and disabled veterans participating in FWC-permitted hunting and fishing events that promote outdoor recreation, together with all individuals assisting the disabled veterans in the event, will be exempted from having to purchase a license for that specified event. Section 5: According to the FWC’s analysis, both residents and non-residents can enjoy additional free saltwater and freshwater fishing days without having to purchase a license. Section 6: According to the FWC’s analysis, there could be a positive fiscal impact, in the form of income, on veterans who enter the commercial fishing industry; however, there is a potential for a negative fiscal impact to income on current commercial fishermen holding a restricted species endorsement as a result of increased competition this section may create.",
-   "note": "not yet judged"
+   "note": "license savings for individuals; veterans entering commercial fishing (individuals); current commercial fishermen may lose"
   },
   {
    "bill": "HB 341",
@@ -2660,9 +2690,14 @@
    "title": "Natural Gas Motor Fuel",
    "url": "https://www.flsenate.gov/Session/Bill/2013/579",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/579/Analyses/h0579z1.EUS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "natural gas vehicle fleets and fueling stations",
+    "named": [],
+    "quote": "The bill may result in increased savings for drivers utilizing vehicles powered by natural gas fuel, an increase in conversions of vehicle fleets from being powered by traditional fuels to natural gas fuel, and an increase in natural gas refueling infrastructure across the state."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may result in increased savings for drivers utilizing vehicles powered by natural gas fuel, an increase in conversions of vehicle fleets from being powered by traditional fuels to natural gas fuel, and an increase in natural gas refueling infrastructure across the state.",
-   "note": "not yet judged"
+   "note": "same reading as 2016-183",
+   "votes": {}
   },
   {
    "bill": "HB 623",
@@ -2671,9 +2706,14 @@
    "title": "Wine",
    "url": "https://www.flsenate.gov/Session/Bill/2013/623",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/623/Analyses/h0623z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "bars and restaurants (wine container sizes)",
+    "named": [],
+    "quote": "The bill is expected to have most of its impact in the hospitality industry, as bars and restaurants will be able to reduce cost and waste associated with spoiled wine."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill is expected to have most of its impact in the hospitality industry, as bars and restaurants will be able to reduce cost and waste associated with spoiled wine. Moreover, there may be a benefit to the private sector in being able to purchase larger size containers of wine, especially if a bulk rate is available.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 655",
@@ -2681,10 +2721,10 @@
    "chapter": "2013-200",
    "title": "Employment Benefits",
    "url": "https://www.flsenate.gov/Session/Bill/2013/655",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/655/Analyses/h0655z1.LFAC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private employers will not be required by political subdivisions to provide employment benefits not required by state or federal law, except in limited situations, and will have the expectancy of uniformity throughout the state with regard to mandated non-wage compensation.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 665",
@@ -2692,10 +2732,10 @@
    "chapter": "2013-201",
    "title": "Licensure by Office of Financial Regulation",
    "url": "https://www.flsenate.gov/Session/Bill/2013/665",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/665/Analyses/h0665z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Securities and MSB applicants currently pay $40.50 to have a physical fingerprint card processed for state and federal criminal background checks. Live-scan fingerprint processing costs generally range from between $50 to $65, depending on the vendor, and average $57.75. Easing the restriction on out-of-state mortgage lender and mortgage broker license revocations may result in more mortgage company licenses issued in Florida.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 783",
@@ -2703,10 +2743,10 @@
    "chapter": "2013-202",
    "title": "Branch Offices Conducting Securities Transactions",
    "url": "https://www.flsenate.gov/Session/Bill/2013/783",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/783/Analyses/h0783z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on the private sector by eliminating the lapse in branch operations while awaiting registration approval.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 973",
@@ -2714,10 +2754,10 @@
    "chapter": "2013-203",
    "title": "Low-Voltage Systems",
    "url": "https://www.flsenate.gov/Session/Bill/2013/973",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/973/Analyses/h0973z1.BPRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments, D., below. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The bill requires local enforcement agencies to issue each permit label to a contractor for a fee of up to $55 with a limited exemption. It is anticipated the bill would lower fees currently imposed by certain local jurisdictions and may encourage other local jurisdictions to raise fees resulting in an indeterminate fiscal impact. STORAGE NAME: h0973z1.BPRS PAGE: 6 DATE: June 25, 2013",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 975",
@@ -2725,9 +2765,9 @@
    "chapter": "2013-204",
    "title": "Archeological Sites and Specimens",
    "url": "https://www.flsenate.gov/Session/Bill/2013/975",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/975/Analyses/h0975z1.EDTS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2736,10 +2776,10 @@
    "chapter": "2013-205",
    "title": "Underground Natural Gas Storage",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1083",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1083/Analyses/h1083z1.ANRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The amount of the fee for the permit developed by the department would be dependent upon the number of applicants and the costs associated with the regulation of natural gas storage as outlined in the bill. The number of applicants is unknown, but expected to be low and costs associated with regulation are likely to be significant. The low number of applicants coupled with the potentially high cost of regulation could result in a substantial fee for the permit developed by the department. There should be a net positive fiscal impact on pipeline companies and private utility customers by providing more gas at peak times. The bill may also result in additional jobs where a natural gas storage facility is located.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 1085",
@@ -2747,9 +2787,9 @@
    "chapter": "2013-206",
    "title": "Public Records/Natural Gas Storage Facility Permit",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1085",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1085/Analyses/h1085z2.ANRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2758,10 +2798,10 @@
    "chapter": "2013-207",
    "title": "Office of Attorney General",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1147",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1147/Analyses/h1147z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill does not appear to have any direct economic impact on the private sector.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1173",

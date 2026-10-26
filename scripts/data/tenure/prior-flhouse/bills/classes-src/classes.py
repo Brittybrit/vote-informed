@@ -421,6 +421,9 @@ C = {
 "2013-198": (NGV, ("natural gas vehicle fleets", "flotas de vehículos a gas natural", "flòt machin ki mache ak gaz natirèl")),
 "2013-199": ({"tags": ["restaurants-hospitality", "alcohol-beverage"], "re": "\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|NIGHTCLUB|SALOON|GRILL|WINE", "not": "BAR ASSOC|DISTRIBUT|WHOLESAL"},
   ("bars and restaurants", "bares y restaurantes", "ba ak restoran")),
+"2013-202": (SECUR, ("securities firms", "firmas de valores", "konpayi sekirite finansye")),
+"2013-205": ({"tags": ["gas-utility", "oil-gas"], "re": "NATURAL GAS|PIPELINE|GAS TRANSMISSION|PEOPLES GAS|TECO|\\bAGL\\b|SABAL|SPECTRA|KINDER MORGAN|FLORIDA CITY GAS|CHESAPEAKE UTIL", "not": "GASOLINE|GAS STATION"},
+  ("natural gas pipeline companies", "empresas de gasoductos", "konpayi tiyo gaz natirèl")),
 }
 
 SKIP = {

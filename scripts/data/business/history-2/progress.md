@@ -20,3 +20,5 @@ Recording rule: employers, income sources, owned businesses, business creditors 
 - kevin-d-chambliss: 2020-2021 (scans online)
 - annette-taddeo: done | years 2017-2022 | found 2017-2021, 2022 partial (House candidate report to 2022-07-06) | missing 2022 Form 6F (none filed/online); 2023-2025 no office (2025 candidate Form 6 at DOS not reachable, not recorded) | illegible none | Form 8B none found
 - javier-fernandez: done | years 2018-2025 | found 2018, 2019, 2023-2025 | missing 2020 (6F/1F not online), 2021 (no office), 2022 (paper Form 1, not online) | illegible none | Form 8B: none found; recusal for conflict of interest 2024-10-15 (Sunshine Gasoline Distributors fuel purchase) recorded with form8b null
+- ileana-garcia: done | years 2020-2025 | found 2020-2025 | missing none | illegible none | Form 8B none found
+- angela-nixon: done | years 2020-2025 | found 2020-2025 | missing none | illegible none | Form 8B none found
