@@ -18,7 +18,7 @@ candidate's own money left out; in-kind kept with Amend. code INK).
   scripts/data/tenure/prior-cities-north/miamigardens/donors/raw/<gilbert|wilson>_<year>_<report>.pdf.
 - Then: transcribe to miamigardens/donors/gilbert_<year>.csv and wilson_<year>.csv.
 
-## 2. Sunny Isles Beach: Dana Goldman (Seat 3 Feb 17, 2015 - Nov 16, 2021; mayor to Dec 6, 2022) and
+## 2. [DONE Oct 26, 2026 for minutes/resolutions; donors not online, see progress.md] Sunny Isles Beach: Dana Goldman (Seat 3 Feb 17, 2015 - Nov 16, 2021; mayor to Dec 6, 2022) and
 ##    Larisa Svechin (Seat 1 Nov 8, 2016 - Dec 6, 2022)
 - Why: no actions and no donors could be built. The minutes and signed resolutions are in the city's Laserfiche
   (docucenter.sibfl.net), which the shell cannot reach; a WebFetch permission request for

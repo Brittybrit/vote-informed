@@ -50,3 +50,4 @@ meeting (1998-06-16) to Gimenez's last day as mayor (2020-11-17). Same rules as 
 - Remaining: needs-browser.md (DOE committees for both men, pre-2017 zoning results PDFs, two minutes pages); coordinator
   to decide how mayoral facts count and to run the official gift match.
 - Build scripts copied to tools/ in this folder (they read raw downloads from the session scratchpad path set in BASE; rerun order: parse.py, build1.py, fetchmatter.sh + lobbypull2.py + lobregs.py, build2.py, build3.py, summary.py).
+- 2026-10-26 needs-browser #3 (built-in browser): https://www.miamidade.gov/govaction/commminute.asp?cmbmeetdate=4342&file=false (2019-10-30 CDMP) and ...cmbmeetdate=1317&file=false (2003-05-20 second entry) return HTTP 500 (county 'Web Error' page) in a real browser too, also with file=true and without the file parameter; 1316 loads normally. Not online; the gap stands (ask the Clerk of the Board for those two minutes).

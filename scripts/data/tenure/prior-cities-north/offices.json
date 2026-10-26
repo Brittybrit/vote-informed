@@ -391,21 +391,23 @@
   "office": "Residential Area Commissioner, Seat 3",
   "body": "city-sunny-isles-beach",
   "district": "Seat 3",
-  "start": "2015-02-17",
+  "start": "2014-12-02",
   "end": "2021-11-16",
   "rollKey": "Goldman",
-  "startNote": "Elected Feb 17, 2015; re-elected 2016 and 2020.",
+  "startNote": "Appointed to the vacant Seat 3 on Dec 2, 2014 (Resolution 2014-2344, after George Scholl left the seat to become mayor); first seated at the Dec 18, 2014 meeting; elected Feb 17, 2015 (special election), re-elected 2016 and 2020.",
   "endNote": "Left the seat on winning the Nov 16, 2021 mayoral runoff.",
-  "giftsFrom": "2013-02-17",
-  "giftsNote": "Not fetched: Sunny Isles reports are on EasyVote (browser only). Minutes are on docucenter.sibfl.net, which the shell cannot reach.",
+  "giftsFrom": "2012-12-02",
+  "giftsNote": "No campaign reports for these races are online: the city's EasyVote portal (cityofsunnyislesbeachfl.easyvotecampaignfinance.com, contributions search by recipient) has electronic filings only from 2025, and the city's public Laserfiche holds only resolutions, ordinances, minutes and bids. Needs a records request to the City Clerk (cityclerk@sibfl.net).",
   "source": {
-   "label": "Miami-Dade Elections results Feb 17, 2015, Nov 8, 2016, Nov 3, 2020",
-   "url": "https://www.miamidade.gov/elections/results/"
+   "label": "City of Sunny Isles Beach signed resolutions and summary minutes (Laserfiche WebLink, City Clerk > Resolutions and City Commission Minutes)",
+   "url": "http://docucenter.sibfl.net/WebLink/Browse.aspx?id=7&dbid=0&repo=SIBFL"
   },
-  "files": [],
+  "files": [
+   "sunnyisles/actions.json"
+  ],
   "counts": {
-   "actions": 0,
-   "yesNo": 0
+   "actions": 604,
+   "yesNo": 479
   }
  },
  {
@@ -419,14 +421,16 @@
   "startNote": "Won the Nov 16, 2021 runoff.",
   "endNote": "Lost the Dec 6, 2022 runoff.",
   "giftsFrom": "2019-11-16",
-  "giftsNote": "Not fetched (EasyVote; browser only).",
+  "giftsNote": "No campaign reports for these races are online: the city's EasyVote portal (cityofsunnyislesbeachfl.easyvotecampaignfinance.com, contributions search by recipient) has electronic filings only from 2025, and the city's public Laserfiche holds only resolutions, ordinances, minutes and bids. Needs a records request to the City Clerk (cityclerk@sibfl.net).",
   "source": {
-   "label": "Miami-Dade Elections results Nov 16, 2021 and Dec 6, 2022",
-   "url": "https://enr.electionsfl.org/DAD/3116/Summary/"
+   "label": "City of Sunny Isles Beach signed resolutions and summary minutes (Laserfiche WebLink, City Clerk > Resolutions and City Commission Minutes)",
+   "url": "http://docucenter.sibfl.net/WebLink/Browse.aspx?id=7&dbid=0&repo=SIBFL"
   },
-  "files": [],
+  "files": [
+   "sunnyisles/actions.json"
+  ],
   "counts": {
-   "actions": 0,
+   "actions": 131,
    "yesNo": 0
   }
  },
@@ -439,17 +443,19 @@
   "end": "2022-12-06",
   "rollKey": "Svechin",
   "startNote": "Elected Nov 8, 2016; re-elected Nov 3, 2020.",
-  "endNote": "Left Seat 1 on winning the Dec 6, 2022 mayoral runoff.",
+  "endNote": "Left Seat 1 on winning the Dec 6, 2022 mayoral runoff. From about Aug 2021 to Nov 16, 2021 she presided as mayor while vice mayor after Mayor Scholl left (she signs Resolution 2021-3227 of Sep 14, 2021 as Mayor).",
   "giftsFrom": "2014-11-08",
-  "giftsNote": "Not fetched (EasyVote; browser only). Minutes not reachable from the shell.",
+  "giftsNote": "No campaign reports for these races are online: the city's EasyVote portal (cityofsunnyislesbeachfl.easyvotecampaignfinance.com, contributions search by recipient) has electronic filings only from 2025, and the city's public Laserfiche holds only resolutions, ordinances, minutes and bids. Needs a records request to the City Clerk (cityclerk@sibfl.net).",
   "source": {
-   "label": "Miami-Dade Elections results Nov 8, 2016 and Nov 3, 2020",
-   "url": "https://enr.electionsfl.org/DAD/3024/Summary/"
+   "label": "City of Sunny Isles Beach signed resolutions and summary minutes (Laserfiche WebLink, City Clerk > Resolutions and City Commission Minutes)",
+   "url": "http://docucenter.sibfl.net/WebLink/Browse.aspx?id=7&dbid=0&repo=SIBFL"
   },
-  "files": [],
+  "files": [
+   "sunnyisles/actions.json"
+  ],
   "counts": {
-   "actions": 0,
-   "yesNo": 0
+   "actions": 550,
+   "yesNo": 294
   }
  }
 ]

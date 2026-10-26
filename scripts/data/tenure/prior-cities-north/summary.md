@@ -20,8 +20,8 @@ say the vote was unanimous or list the roll; a bare "motion passed" must become 
 | Samaria, Biscayne Park | 2018-11-06..2022-11-08 | 58 (53) | none online | no minutes Nov-Dec 2018 |
 | Bass, Opa-locka | 2018-11-06..Nov 2020 | 34 (34) | none online | minutes Nov 2018-Oct 2019 not online |
 | Tydus, Opa-locka | 2004-11-02..2012-11-06 | 0 | none online | nothing online |
-| Goldman, Sunny Isles Seat 3 then Mayor | 2015-02-17..2022-12-06 | 0 | not collected | docucenter.sibfl.net unreachable |
-| Svechin, Sunny Isles Seat 1 | 2016-11-08..2022-12-06 | 0 | not collected | same |
+| Goldman, Sunny Isles Seat 3 then Mayor | 2014-12-02..2022-12-06 | 735 (Seat 3: 604, 479 with her yes/no; mayor: 131, none with a recorded vote) | not online (records request) | minutes not online for most of Feb 2020 - Dec 2022 (roll null), Apr 21 2016, May 16 / Oct 2 / Dec 19 2019 |
+| Svechin, Sunny Isles Seat 1 | 2016-11-08..2022-12-06 | 550 (294 with her yes/no) | not online (records request) | same minutes gaps |
 
 Notes: Smith seated through 2020-11-30 per minutes (careers.jsonl said 2019). Weinberg not in signed 2010-12 Aventura
 records though careers.jsonl says first elected 2010. Coto first term ended 2006-03-21 (2006 results: Imberman won Seat 2).

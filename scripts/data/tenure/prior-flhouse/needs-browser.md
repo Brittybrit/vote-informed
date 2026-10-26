@@ -40,7 +40,7 @@ Note for DOE-2b/3b/4c/6b/7b: the officer search form is the "Search Committees b
 https://dos.elections.myflorida.com/committees/ (Last Name, Officer Type = Chairperson). Record every committee it
 returns for that person (name, account, chair, dates) in donors/committees.md even if it has no rows in the window.
 
-## APR-LOPEZ: Vicki Lopez's Appropriations Project Requests, 2023-2026 sessions
+## APR-LOPEZ: Vicki Lopez's Appropriations Project Requests, 2023-2026 sessions [DONE Oct 26, 2026: raw/apr-2023..2026.txt]
 
 flhouse.gov/AppropriationProjectRequests/<year> lists every form on one page (the WebFetch copy stops at about form
 470 of 2,300-2,850; partial rows in raw/apr-visible-lopez.txt). For each year 2023, 2024, 2025, 2026: every row
@@ -52,7 +52,7 @@ Write raw/apr-<year>.txt, one line per form, layout of ../flhouse/raw/apr-2023.t
 `form~doc~Lopez~MM/DD/YYYY~ask~recipient~county~lobbyist~firm~committee~title` (withdrawn forms too, with
 " (Withdrawn)" kept in the title). Then run `python3 build-requests.py` in this folder.
 
-## PB-FORMS: request forms attached to the House project bills, 2017-2022 sessions
+## PB-FORMS: request forms attached to the House project bills, 2017-2022 sessions [DONE Oct 26, 2026: raw/apb-2017..2022.txt, 324 forms]
 
 Each member's project bills (HB 2000-4999) are already listed from flsenate.gov in raw/pb-<year>.json (bill, title,
 sponsor, last action). The attached "Appropriations Project Request" form is only on flhouse.gov: open
@@ -64,7 +64,7 @@ The bills to read are listed per year in raw/pb-forms-todo.txt (written by build
 requests-<year>.json still lists each bill with its title, amount requested and budget status, and says the
 lobbyist field was not read.
 
-## ARCHIVE-1516: House member project request forms, 2015 and 2016 sessions
+## ARCHIVE-1516: House member project request forms, 2015 and 2016 sessions [DONE Oct 26, 2026: not archived, see progress.md]
 
 CBS Miami (Apr 1, 2015) reports the House required detailed member request forms that session. flhouse.gov no longer
 shows them. In a browser, open web.archive.org captures of http://www.myfloridahouse.gov/Sections/Appropriations/projects.aspx
