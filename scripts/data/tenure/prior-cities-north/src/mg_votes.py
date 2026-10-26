@@ -24,11 +24,16 @@ for it in R:
         for n in r:
             a = ROSTER.setdefault(n, [it['date'], it['date']]); a[0] = min(a[0], it['date']); a[1] = max(a[1], it['date'])
 def members(date):
-    return [n for n, (a, b) in ROSTER.items() if a <= date <= b]
+    return [n for n, (a, b) in ROSTER.items() if n and a <= date <= b]
 def present_at(it):
     pt = it.get('ptext') or ''
-    pres = [n for n in members(it['date']) if re.search(r'\b' + n + r'\b', pt)]
-    for mm in re.finditer(r'(\w+)\s+(?:was|were)\s+(?:absent|excused)', pt):
+    def here(n):
+        if n == 'AWilliams': return re.search(r'Andr\S{0,2}\s+Williams', pt)
+        if n == 'Williams' and it['date'] >= '2011-03-09':  # two members named Williams from Mar 9, 2011
+            return re.search(r'David\s+Williams', pt) or len(re.findall(r'\bWilliams\b', pt)) > len(re.findall(r'Andr\S{0,2}\s+Williams', pt))
+        return re.search(r'\b' + n + r'\b', pt)
+    pres = [n for n in members(it['date']) if here(n)]
+    for mm in re.finditer(r'(\w+),?\s+(?:was|were)\s+(?:absent|excused|out of town|not present)', pt):
         if mm.group(1) in pres: pres.remove(mm.group(1))
     for (i, n, what) in it['events']:
         if i > it['start']: continue

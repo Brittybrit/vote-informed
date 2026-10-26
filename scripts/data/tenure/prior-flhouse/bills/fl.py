@@ -1,9 +1,9 @@
 """Shared flsenate.gov fetcher for this slice: one request at a time across all of this slice's scripts
-(flock on .fl.lock), at least 7 s apart, 60 s+ backoff on 429 / errors (flsenate.gov rate-limits; other slices share it)."""
+(flock on .fl.lock), at least 10 s apart, 60 s+ backoff on 429 / errors (flsenate.gov rate-limits; other slices share it)."""
 import fcntl, os, subprocess, time
 H = os.path.dirname(os.path.abspath(__file__))
 LOCK = os.path.join(H, '.fl.lock')
-GAP = 7.0
+GAP = 10.0
 def _req(args):
     with open(LOCK, 'a+') as lk:
         fcntl.flock(lk, fcntl.LOCK_EX)

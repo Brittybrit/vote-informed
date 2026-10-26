@@ -31,36 +31,12 @@
  },
  "counts": {
   "enacted": 189,
-  "screened": 48,
-  "qualifying": 2,
+  "screened": 67,
+  "qualifying": 4,
   "withHouseVote": 0
  },
  "missing": {
   "A": [
-   "2019-98",
-   "2019-99",
-   "2019-100",
-   "2019-101",
-   "2019-102",
-   "2019-103",
-   "2019-104",
-   "2019-105",
-   "2019-106",
-   "2019-107",
-   "2019-108",
-   "2019-109",
-   "2019-110",
-   "2019-111",
-   "2019-112",
-   "2019-113",
-   "2019-114",
-   "2019-115",
-   "2019-116",
-   "2019-117",
-   "2019-118",
-   "2019-119",
-   "2019-120",
-   "2019-121",
    "2019-122",
    "2019-123",
    "2019-124",
@@ -131,28 +107,9 @@
    "2019-189"
   ],
   "B": [
-   "2019-39",
-   "2019-42",
-   "2019-43",
-   "2019-46",
-   "2019-53",
-   "2019-54",
-   "2019-55",
-   "2019-56",
    "2019-57",
-   "2019-58",
-   "2019-59",
-   "2019-60",
    "2019-61",
-   "2019-62",
-   "2019-63",
-   "2019-64",
-   "2019-65",
-   "2019-66",
-   "2019-67",
-   "2019-68",
    "2019-69",
-   "2019-70",
    "2019-71",
    "2019-72",
    "2019-73",
@@ -283,6 +240,16 @@
     "2019-23",
     "H",
     "https://www.flsenate.gov/Session/Bill/2019/7070/Vote/HouseVote_s07070e1304.PDF"
+   ],
+   [
+    "2019-42",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2019/7123/Vote/HouseVote_h07123e1383.PDF"
+   ],
+   [
+    "2019-43",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2019/7068/Vote/HouseVote_s07068e2322.PDF"
    ]
   ]
  },
@@ -721,10 +688,10 @@
    "chapter": "2019-39",
    "title": "Pub. Rec./ Petition for Certain Protective Injunctions",
    "url": "https://www.flsenate.gov/Session/Bill/2019/845",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/845/Analyses/h0845z.CRJ.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/845/Analyses/h0845e.JDC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": "Private Sector section not found in the converted text"
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
+   "note": null
   },
   {
    "bill": "HB 7023",
@@ -755,9 +722,14 @@
    "title": "Taxation",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7123",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7123/Analyses/h7123z1.WMC.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "commercial tenants and landlords (lower sales tax on commercial rent)",
+    "named": [],
+    "quote": "The bill will reduce the sales tax on the rental of commercial real estate."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will reduce the sales tax on the rental of commercial real estate. The bill provides for a threeday back-to-school sales tax holiday and a seven-day disaster preparedness sales tax holiday.",
-   "note": "not yet judged"
+   "note": "same reading as 2023-157 and 2025-208 in the other slices",
+   "votes": {}
   },
   {
    "bill": "SB 7068",
@@ -766,9 +738,14 @@
    "title": "Transportation",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7068",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7068/Analyses/2019s07068.ap.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "construction businesses; freight and logistics businesses (M-CORES corridors)",
+    "named": [],
+    "quote": "Construction businesses may experience improved employee recruitment as a result of the workforce development program."
+   },
    "screen": "Private Sector Impact: The traveling public, including individuals residing in rural areas, may benefit from increased transportation options resulting from construction of projects in the identified corridors, as well as other traditional transportation functions such as improved hurricane evacuation, congestion mitigation, and energy distribution; and from opportunities for other transportation modes, such as passenger rail and shared-use trails. Preparation for emerging technologies such as autonomous, connected, shared, and electric vehicle technology, including the option to obtain transportation mobility services on-demand and online, may also benefit users of the new facilities as more such vehicles are deployed in the state. Transportation disadvantaged persons may benefit from increased 83 Id. BILL: CS/SB 7068 Page 22 opportunities for mobility services provided under the Transportation Disadvantaged Program. Businesses may benefit from improved trade and logistics options, such as freight rail and potential connections to facilities such as intermodal logistic centers, as well as improved possibilities for business site selection due to availability of broadband access in the corridors. Construction businesses may experience improved employee recruitment as a result of the workforce development program. To the extent that the bill enables businesses to grow, this could increase economic activity in in both urban and rural areas of the state. Individuals residing in ",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 107",
@@ -801,7 +778,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/186/Analyses/2019s00186.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The bill expands an existing public records exemption to make confidential and exempt photographs or video or audio recordings that depict or record the killing of a victim of mass violence. The private sector will continue to be subject to the cost associated with an agency making redactions in response to a public records request.",
-   "note": "not yet judged"
+   "note": "records requesters keep redaction costs"
   },
   {
    "bill": "SB 252",
@@ -875,9 +852,9 @@
    "chapter": "2019-53",
    "title": "Cyberharassment",
    "url": "https://www.flsenate.gov/Session/Bill/2019/1136",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/1136/Analyses/2019s01136.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -886,10 +863,10 @@
    "chapter": "2019-54",
    "title": "Vessels",
    "url": "https://www.flsenate.gov/Session/Bill/2019/1666",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/1666/Analyses/2019s01666.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Persons of any age who rent and operate ceratin vessels will have to obtain boater safety identification cards or temporary certificates. Costs for current safety training courses range from free up to $30.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 281",
@@ -897,9 +874,9 @@
    "chapter": "2019-55",
    "title": "Pub. Rec./Voters and Voter Registration",
    "url": "https://www.flsenate.gov/Session/Bill/2019/281",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/281/Analyses/h0281z1.OTM.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -908,9 +885,9 @@
    "chapter": "2019-56",
    "title": "Local Government Financial Reporting",
    "url": "https://www.flsenate.gov/Session/Bill/2019/861",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/861/Analyses/h0861z1.LFV.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. 21 The Office of Economic and Demographic Research is an entity established by Joint Rule 3.1 of the Legislature to provide research support services, principally regarding forecasting economic and social trends that affect policymaking, revenues, and appropriations. EDR maintains a compilation of annual reports and data regarding local governments, which can be found at http://edr.state.fl.us/Content/local-government/index.cfm#reporting (last visited Mar. 8, 2019). STORAGE NAME: h0861z1.LFV.DOCX PAGE: 4 DATE: 5/24/2019",
    "note": null
   },
   {
@@ -919,10 +896,10 @@
    "chapter": "2019-57",
    "title": "Insurance Assignment Agreements",
    "url": "https://www.flsenate.gov/Session/Bill/2019/7065",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/7065/Analyses/h7065z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive direct economic impact on the private sector by reducing litigation costs for insurers and lowering insurance rates for consumers.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 337",
@@ -930,9 +907,9 @@
    "chapter": "2019-58",
    "title": "Courts",
    "url": "https://www.flsenate.gov/Session/Bill/2019/337",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/337/Analyses/h0337z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -941,9 +918,9 @@
    "chapter": "2019-59",
    "title": "Anti-Semitism",
    "url": "https://www.flsenate.gov/Session/Bill/2019/741",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/741/Analyses/h0741z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -952,9 +929,9 @@
    "chapter": "2019-60",
    "title": "Qualified Blind Trusts",
    "url": "https://www.flsenate.gov/Session/Bill/2019/702",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/702/Analyses/2019s00702.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -963,10 +940,10 @@
    "chapter": "2019-61",
    "title": "Court-ordered Treatment Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2019/910",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/910/Analyses/2019s00910.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Adults who participate in specialty court programs such as Veterans’ Court may have to pay a fee, depending on the guidelines established by each individual judicial circuit. The participant may also have to pay restitution as part of the program. Additionally, the goal is to divert individuals away from costly incarceration and into more appropriate settings for treatment. This often allows individuals to remain employed which can have far- reaching positive economic and societal impacts.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1306",
@@ -974,9 +951,9 @@
    "chapter": "2019-62",
    "title": "Women’s Suffrage Centennial Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2019/1306",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/1306/Analyses/2019s01306.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. BILL: CS/SB 1306 Page 5",
    "note": null
   },
   {
@@ -985,9 +962,9 @@
    "chapter": "2019-63",
    "title": "Criminal Statutes",
    "url": "https://www.flsenate.gov/Session/Bill/2019/1656",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/1656/Analyses/2019s01656.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -996,9 +973,9 @@
    "chapter": "2019-64",
    "title": "Ballot Measures",
    "url": "https://www.flsenate.gov/Session/Bill/2019/5",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/5/Analyses/h0005z1.LFV.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1007,9 +984,9 @@
    "chapter": "2019-65",
    "title": "Incarcerated Women",
    "url": "https://www.flsenate.gov/Session/Bill/2019/49",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/49/Analyses/h0049z1.CRJ.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1018,10 +995,10 @@
    "chapter": "2019-66",
    "title": "Registration and Titling of Vehicles and Vessels",
    "url": "https://www.flsenate.gov/Session/Bill/2019/87",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/87/Analyses/h0087z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: In December 2020, heavy truck registrants whose dates of birth occur in the months of January through June may choose to renew their vehicle registration for one to 18 months, and customers whose dates of birth occur in the months of July through December may choose to renew their registration for seven to 24 months.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 91",
@@ -1029,9 +1006,9 @@
    "chapter": "2019-67",
    "title": "Judicial Process",
    "url": "https://www.flsenate.gov/Session/Bill/2019/91",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/91/Analyses/h0091z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1040,9 +1017,9 @@
    "chapter": "2019-68",
    "title": "C-51 Reservoir Project",
    "url": "https://www.flsenate.gov/Session/Bill/2019/95",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/95/Analyses/h0095z1.ANRS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1051,10 +1028,10 @@
    "chapter": "2019-69",
    "title": "Motor Vehicles and Railroad Trains",
    "url": "https://www.flsenate.gov/Session/Bill/2019/341",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/341/Analyses/h0341z1.TIS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: In the event of certain crashes, railroad companies may benefit due to reduced delays. To the extent that the bill expedites the ability for railroad train passengers to disembark the train and motorists to avoid railroad crossings being closed for an extended period, there may be a reduction in lost time and pay.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 375",
@@ -1062,9 +1039,9 @@
    "chapter": "2019-70",
    "title": "Prescription Drug Monitoring Program",
    "url": "https://www.flsenate.gov/Session/Bill/2019/375",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/375/Analyses/h0375z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -1073,10 +1050,10 @@
    "chapter": "2019-71",
    "title": "Electronic Legal Documents",
    "url": "https://www.flsenate.gov/Session/Bill/2019/409",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2019/409/Analyses/h0409z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill allows remote notarization, as opposed to in person. In some instances, this new method will allow businesses and professions that must use notaries public in their day-to-day work to do so without all of the parties coming together in one location. As such, these businesses and professions may see a reduction in expenditures as a result of allowing this alternative, more convenient method of notarization. Additionally, the bill provides that an online notary public may charge a fee, not to exceed $25, for performing an online notarization.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 411",
