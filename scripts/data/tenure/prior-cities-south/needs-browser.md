@@ -44,7 +44,7 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Save: every report for Singer's 2014 and 2017 council campaigns and 2020, 2023 and 2026 mayoral campaigns as CSV or PDF
   in scripts/data/tenure/prior-cities-south/bocaraton/donors/.
 
-## 5. Municipal campaign reports not on VoterFocus
+## 5. [Checked Oct 26, 2026: not online] Municipal campaign reports not on VoterFocus
 - Cutler Bay, Mary Ann Mixon 2010 and 2014 (Seat 1): the town's VoterFocus portal starts in 2018.
   Open the Town Clerk's elections page (https://www.cutlerbay-fl.gov/townclerk) or request copies; save to cutlerbay-mixon/donors/.
 - Palmetto Bay, David M. Singer 2016 (Seat 2): no online portal. Village Clerk (palmettobay-fl.gov -> Village Clerk ->

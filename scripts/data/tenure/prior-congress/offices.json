@@ -86,14 +86,27 @@
   "office": "City Commissioner (Vice Mayor 2006-2008)",
   "body": "city-parkland",
   "district": "2",
-  "start": "2006",
-  "end": "2012",
+  "start": "2006-03-22",
+  "end": "2012-11-06",
   "giftsFrom": "2005-01-01",
   "source": {
-   "label": "Year only. history.house.gov bio (Parkland city commissioner 2006-2012); Florida House bio (Vice Mayor 2006-2008, reelected Nov 2010). Elected March 2006; resigned 2012 to run for the Florida House. Exact dates need the city's records (needs-browser.md).",
-   "url": "https://history.house.gov/People/Detail/25769822980"
+   "label": "City of Parkland Laserfiche WebLink, City Clerk: minutes Mar 22, 2006, Nov 17, 2006, Nov 5, 2008, Oct 17, 2012 (OCR) and Nov 7, 2012 (OCR); Resolutions 2006-27 and 2012-110 (OCR)",
+   "url": "https://documents.cityofparkland.org/WebLink/Browse.aspx?id=4&dbid=0&repo=Parkland"
   },
-  "files": [],
-  "status": "not built: Parkland minutes (documents.cityofparkland.org WebLink) and campaign reports are browser-only; see needs-browser.md"
+  "files": [
+   "parkland/minutes-index.tsv",
+   "parkland/resolutions-index.tsv",
+   "parkland/ordinances-index.tsv"
+  ],
+  "status": "records saved, actions not built: 225 minutes, 842 resolutions and 265 ordinances (2006-2012) saved as text under parkland/; documents without a text layer are flagged in the indexes (OCR added for the 2010-2012 minutes where done). Campaign reports not online (needs-browser #2).",
+  "startNote": "Elected District 2 commissioner at the March 14, 2006 municipal election (Resolution 2006-27, adopted Mar 22, 2006, declares him elected). His first meeting is Mar 22, 2006 (roll call; not on the Mar 1, 2006 roll). No oath record is in the online archive.",
+  "endNote": "Last meeting Oct 17, 2012 (the minutes call it his final meeting as a commissioner; proclamation honoring his service). He is not on the Nov 7, 2012 roll, and Resolution 2012-110 (Dec 5, 2012) calls a special election for District II \"by virtue of the resignations of Commissioner Jared Moskowitz and Commissioner John Willis\". The effective date of his resign-to-run letter is not in the online records; 2012-11-06 is the start of his Florida House term (Florida House record), so the city records confirm only that he left between Oct 17 and Nov 7, 2012.",
+  "viceMayor": {
+   "start": "2006-11-17",
+   "end": "2008-11-05",
+   "note": "Nominated and elected Vice Mayor 4-1 at the Nov 17, 2006 special meeting (McGilvray no); at the Nov 5, 2008 meeting he moved that Weissman serve as the next Vice Mayor (passed unanimously)."
+  },
+  "votesFrom": "2006-03-22",
+  "votesTo": "2012-10-17"
  }
 ]
