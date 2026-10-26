@@ -11,28 +11,12 @@
  },
  "counts": {
   "enacted": 255,
-  "screened": 71,
-  "qualifying": 0,
-  "withHouseVote": 0
+  "screened": 89,
+  "qualifying": 1,
+  "withHouseVote": 1
  },
  "missing": {
   "A": [
-   "2014-84",
-   "2014-85",
-   "2014-86",
-   "2014-87",
-   "2014-88",
-   "2014-89",
-   "2014-90",
-   "2014-91",
-   "2014-92",
-   "2014-93",
-   "2014-94",
-   "2014-95",
-   "2014-96",
-   "2014-97",
-   "2014-98",
-   "2014-99",
    "2014-100",
    "2014-101",
    "2014-102",
@@ -191,32 +175,14 @@
    "2014-255"
   ],
   "B": [
-   "2014-9",
-   "2014-25",
-   "2014-40",
-   "2014-50",
-   "2014-62",
-   "2014-64",
-   "2014-66",
-   "2014-68",
    "2014-80",
    "2014-81",
    "2014-82",
    "2014-83",
    "2014-84",
-   "2014-85",
-   "2014-86",
-   "2014-87",
-   "2014-88",
-   "2014-89",
-   "2014-90",
    "2014-91",
    "2014-92",
-   "2014-93",
    "2014-94",
-   "2014-95",
-   "2014-96",
-   "2014-97",
    "2014-98",
    "2014-99",
    "2014-100",
@@ -476,7 +442,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/358/Analyses/2014s0358.rc.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The sex offender registry screening requirements of the bill are expected to have a nominal effect on the authorities. The state and national registries are public websites that can be accessed by persons with minimal computer skills, and searches can be conducted relatively quickly. Those authorities electing to perform searches via a commercial consumer reporting agency may incur moderate expenses for the screening. The authorities may pass these screening costs on to volunteer applicants and incur no costs from this screening requirement. The Level 1 screenings cost $40.50 each. This cost will likely be passed on to the athletic coach applicant and may have a negative impact on recruitment and retention of these volunteers.",
-   "note": "not yet judged"
+   "note": "cost to volunteer coaches; no business benefits"
   },
   {
    "bill": "SB 386",
@@ -652,7 +618,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1676/Analyses/2014s1676.cm.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: By adopting recent changes to the Internal Revenue Code, Florida provides ease of administration for Florida corporate taxpayers.",
-   "note": "not yet judged"
+   "note": "corporate taxpayers generally (ease of administration)"
   },
   {
    "bill": "HB 23",
@@ -817,7 +783,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/7081/Analyses/h7081z.FTSC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill will reduce the interest paid by some taxpayers who remit their reemployment tax payments late.",
-   "note": "not yet judged"
+   "note": "late-paying reemployment taxpayers generally (employers of every kind); no kind of business named"
   },
   {
    "bill": "SB 188",
@@ -927,7 +893,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/2514/Analyses/s2514z1.TEDAS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private sector jobs will be created during trail construction. Private businesses may realize increased business opportunities as trail gaps are closed and communities and cities are connected.",
-   "note": "not yet judged"
+   "note": "construction jobs and business opportunities in general; no kind of business named"
   },
   {
    "bill": "HB 5001",
@@ -1059,7 +1025,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/851/Analyses/h0851z1.HEWS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Florida Residency for Tuition Purposes The bill would allow specified Florida high school graduates, who would otherwise be unable to establish Florida residency for tuition purposes, to pay lower, in-state tuition rates at state universities Florida College System institutions, career centers, and charter technical career centers. This would potentially save students an annual average of $15,278 at state universities, $6,438 at Florida colleges, and $4,194 at career centers. Students enrolled in adult general education programs that could not provide residency documentation would save up to $270 per year by not having to pay the nonresident block tuition fee for adult general education coursework. Stanley G. Tate Florida Prepaid College Program Changes made to the methodology for which the Prepaid College Board pays state universities on behalf of beneficiaries of Prepaid tuition contracts lowers future contract prices, and provides savings to parents who recently purchased contracts. The board estimates prices for future Prepaid tuition contracts will be reduced from $53,729 to less than $43,000. Current contract holders will see a reduction in monthly payments, and more than 26,000 Florida families who purchased plans at higher prices in recent years will receive refunds of approximately $50 million. Higher Education Automatic Rate of Inflation Increase Eliminating the automatic annual rate of inflation increases maintains tuiti",
-   "note": "not yet judged"
+   "note": "students benefit, not a business"
   },
   {
    "bill": "HB 559",
@@ -1079,9 +1045,27 @@
    "title": "Dentists",
    "url": "https://www.flsenate.gov/Session/Bill/2014/86",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/86/Analyses/2014s0086.rc.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "dentists",
+    "named": [],
+    "quote": "The bill may have a positive fiscal impact on dentists who may be able to benefit from increased payments from insurers, HMOs, and PLHSOs due to the contract restrictions in this bill."
+   },
    "screen": "Private Sector Impact: The fiscal impact to the private sector is indeterminate. The bill may have a negative fiscal impact on health insurer, HMO, and PLHSO policyholders and subscribers who may pay higher fees for dental care if the Legislature prohibits these entities from contracting with dentists to provide services that are not covered at a negotiated fee. The bill may have a positive fiscal impact on dentists who may be able to benefit from increased payments from insurers, HMOs, and PLHSOs due to the contract restrictions in this bill. BILL: CS/SB 86 Page 5",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {
+    "house": {
+     "date": "2014-04-28",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2014/86/Vote/HouseVote_s0086c1792.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 224",
@@ -1103,7 +1087,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/242/Analyses/2014s0242.go.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Credit reporting agencies may incur additional costs to establish security freezes for minors and other individuals covered under the bill. However, the credit reporting agencies are permitted to charge up to a $10 fee in most cases to create a security freeze. Receipt of the fee will help minimize costs to the credit reporting agencies. With the increasing incidence of child identity theft, the creation of security freezes for consumer reports and records of minors under age 16 and other persons represented by a guardian or advocate may provide additional safeguards against identity theft.35",
-   "note": "not yet judged"
+   "note": "credit reporting agencies bear costs (fee offsets them)"
   },
   {
    "bill": "SB 256",
@@ -1125,7 +1109,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/272/Analyses/2014s0272.ap.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: Under CS/CS/CS/SB 272, private water utilities that do not satisfactorily address customer complaints regarding secondary water standards might lose their certificate of authority to provide service. Customers may realize an increase in the cost of water services if certain services are improved; however, the customer will be fully informed of the costs and benefits and may participate in the decision to incur those costs before increases are incurred.",
-   "note": "not yet judged"
+   "note": "private water utilities face new obligations"
   },
   {
    "bill": "SB 308",
@@ -1254,10 +1238,10 @@
    "chapter": "2014-80",
    "title": "Flood Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2014/542",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/542/Analyses/2014s0542.bi.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: It is anticipated that the implementation of CS/CS/CS/SB 542 will result in additional private insurers offering flood insurance which may increase competition in the marketplace and provide consumers with more coverage options.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 590",
@@ -1265,10 +1249,10 @@
    "chapter": "2014-81",
    "title": "Money Services Businesses",
    "url": "https://www.flsenate.gov/Session/Bill/2014/590",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/590/Analyses/2014s0590.cj.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Any deferred presentment transaction conducted by a person who is not authorized by the Office of Financial Regulation pursuant to ch. 560, F.S., to engage in such transactions is 15 Section 560.211, F.S., specifies recordkeeping and document retention requirements applicable to money transmitters and payment instrument issuers. 16 FinCEN is the Financial Crimes Enforcement Network. BILL: CS/CS/SB 590 Page 6 void and such person has no right to collect, receive, or retain any funds relating to such transaction. Consumers who have entered into such agreements would benefit.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 650",
@@ -1276,10 +1260,10 @@
    "chapter": "2014-82",
    "title": "OGSR/Inventories of an Estate or Elective Estate",
    "url": "https://www.flsenate.gov/Session/Bill/2014/650",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/650/Analyses/2014s0650.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The continued existence of the public records exemptions reenacted by the bill may protect heirs or beneficiaries of a decedent’s estate from being targeted for fraud or theft.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 670",
@@ -1287,10 +1271,10 @@
    "chapter": "2014-83",
    "title": "Nursing Home Litigation",
    "url": "https://www.flsenate.gov/Session/Bill/2014/670",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/670/Analyses/2014s0670.ju.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill may facilitate the payment of judgments against nursing homes by requiring the Agency for Health Care Administration to take action against nursing homes that do not timely pay a judgment. The provisions that facilitate access to the records of nursing home residents may facilitate the monitoring of patient care.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 674",
@@ -1298,10 +1282,10 @@
    "chapter": "2014-84",
    "title": "Background Screening",
    "url": "https://www.flsenate.gov/Session/Bill/2014/674",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/674/Analyses/2014s0674.cj.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Employers may see an indeterminate fiscal savings by submitting certain documents under attestation rather than as an affidavit and a reduction in costs associated with hiring new employees due to an increased pool of eligible applicants as a result of removing the 3-year waiting period after payment of all court-ordered monetary amounts before an applicant is eligible for exemption from disqualification for employment. The administrative cost associated with submitting certain identifying information for 26 Supra n. 5 BILL: CS/CS/SB 674 Page 8 employee fingerprinting may facilitate and offset administrative costs of tracking the status of results. More ex-offenders will be disqualified from potential employment under this bill. In addition, potential employees who have committed in their past one of the newly added disqualifying offenses, such as “attempts” under s. 777.04, F.S., will be disqualified from employment. It is unclear from the bill whether current employees who have obtained an exemption from disqualification under the current s. 435.07, F.S., will be terminated from employment or “grandfathered in” and allowed to maintain their employment.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 702",
@@ -1309,10 +1293,10 @@
    "chapter": "2014-85",
    "title": "Pharmacy Audits",
    "url": "https://www.flsenate.gov/Session/Bill/2014/702",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/702/Analyses/2014s0702.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/CS/SB 702 will have an indeterminate fiscal impact on the private health sponsors through potential modifications in pharmacy auditing methodologies and limitations on recoupment of claims. 20 Extrapolation is a process whereby statistical sampling is used to calculate and project the amount of overpayment made on claims. See e.g., “Extrapolate” means to estimate (a value or values of a function) for values of the argument not used in the process of estimation; infer (a value or values) from known values. THE AMERICAN HERITAGE DICTIONARY (2nd ed. 1985) BILL: CS/CS/CS/",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 708",
@@ -1320,9 +1304,9 @@
    "chapter": "2014-86",
    "title": "Insurance Claims",
    "url": "https://www.flsenate.gov/Session/Bill/2014/708",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/708/Analyses/2014s0708.ap.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -1331,9 +1315,9 @@
    "chapter": "2014-87",
    "title": "Family Care Councils",
    "url": "https://www.flsenate.gov/Session/Bill/2014/762",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/762/Analyses/2014s0762.go.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None",
    "note": null
   },
   {
@@ -1342,10 +1326,10 @@
    "chapter": "2014-88",
    "title": "Public Accountancy",
    "url": "https://www.flsenate.gov/Session/Bill/2014/796",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/796/Analyses/2014s0796.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Persons who apply to reactivate an inactive or delinquent license would be required payment of a $250.00 application fee.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 836",
@@ -1353,10 +1337,10 @@
    "chapter": "2014-89",
    "title": "Medical Gas",
    "url": "https://www.flsenate.gov/Session/Bill/2014/836",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/836/Analyses/2014s0836.hp.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: CS/CS SB 836 may have an indeterminate fiscal impact on private sector entities that are affected by the regulations implemented by the bill. BILL: CS/CS/SB 836 Page 10",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1010",
@@ -1364,9 +1348,9 @@
    "chapter": "2014-90",
    "title": "Cable and Video Services",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1010",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1010/Analyses/2014s1010.cm.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None. 2 Id. 3 Department of Agriculture and Consumer Services, Senate Bill 1010 Agency Analysis (Feb. 21, 2014). BILL: SB 1010 Page 3",
    "note": null
   },
   {
@@ -1375,10 +1359,10 @@
    "chapter": "2014-91",
    "title": "Financial Services",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1012",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1012/Analyses/2014s1012.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The bill codifies current federal credit union regulations relating to branches, and employee benefit plans, which would place state credit unions at parity with federal credit unions. The bill clarifies that institutions may charge customers a fee to cash checks. This will provide consistency with the federal laws permitting national banks and out-of-state BILL: CS/CS/SB 1012 Page 14 state-chartered banks operating in Florida to charge check-cashing fees, and will place Florida-chartered banks at parity with national and other state-chartered banks.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1036",
@@ -1386,10 +1370,10 @@
    "chapter": "2014-92",
    "title": "Nursing Education Programs",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1036",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1036/Analyses/2014s1036.ed.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: There are 21 Bachelor of Science in Nursing (BSN) programs47 and 128 Associate Degree in Nursing (ADN) programs (offered by public and private institutions) that will need to become accredited and will incur associated accreditation costs.48 For fiscal year 2014, the Commission on Collegiate Nursing Education imposes a new applicant fee of $3,500 per baccalaureate program, $5,500 for a baccalaureate and master’s level programs, and $7,500 for a baccalaureate, master’s, and doctoral nursing programs; an evaluation fee of $1,750 per evaluation team member (typically, 3-5 members are on an evaluation team); and an annual fee of $2,468 to maintain accreditation for a baccalaureate program, $2,975 for maintenance of a baccalaureate and master’s level programs, and $3,484 for maintenance of a baccalaureate, masters, and doctor of nursing programs.49 The “2013-2014 Schedule of Accreditation Fees” for the Accreditation Commission for Education in Nursing charges a candidacy fee of $2,500; an accreditation review fee of $1,000 for initial or continuing accreditation (per program); a site visit fee of $835 per evaluator per day; $2,400 annual for maintenance of accreditation; and various service fees for additional services, as required.50",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1070",
@@ -1397,10 +1381,10 @@
    "chapter": "2014-93",
    "title": "Fuel Terminals",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1070",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1070/Analyses/2014s1070.tr.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Existing fuel terminals will be a permitted and allowable land use under any comprehensive plan, land use map, zoning district or land development regulation.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1108",
@@ -1408,10 +1392,10 @@
    "chapter": "2014-94",
    "title": "OGSR/Children of Agency Officers and Employees/Identifying Information",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1108",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1108/Analyses/2014s1108.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The continued existence of the public records exemption may protect the family members of agency employees from identity theft.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 1142",
@@ -1419,10 +1403,10 @@
    "chapter": "2014-95",
    "title": "Ticket Sales",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1142",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1142/Analyses/2014s1142.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Individuals who counterfeit tickets or sell or transfer used multiuse tickets or associated cards or wristbands will be subject to increased criminal penalties. However, individuals will no longer be subject to criminal penalties for the resale or transfer of multiday or multievent tickets to entertainment venues other than theme parks.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1194",
@@ -1430,10 +1414,10 @@
    "chapter": "2014-96",
    "title": "Citizen Support and Direct-support Organizations",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1194",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1194/Analyses/2014s1194.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The impact of CS/SB 1194 on the private sector is indeterminate. Staff time might be required in order to comply with the new reporting requirements for CSOs and DSOs.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1238",
@@ -1441,10 +1425,10 @@
    "chapter": "2014-97",
    "title": "Family Trust Companies",
    "url": "https://www.flsenate.gov/Session/Bill/2014/1238",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2014/1238/Analyses/2014s1238.ju.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: This bill could make Florida a more attractive jurisdiction for the establishment of family trust companies.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 1262",
