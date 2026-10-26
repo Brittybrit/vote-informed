@@ -13,8 +13,8 @@ ALIAS = {'Domingues': 'Dominguez', 'Dominquez': 'Dominguez', 'Kelly': 'Kelley', 
 # Oct 2018 - May 2019: Taylor, Kelley, Holmes, Riley, Pigatt (to Nov 14, 2018); Pigatt, Davis, Kelley, Burke, Bass (from Nov 29, 2018)
 MEM = {'Bass', 'Kelley', 'Taylor', 'Williams', 'Davis', 'Dominguez', 'Pigatt', 'Santiago', 'Burke', 'Holmes', 'Riley', 'Ervin',
        'Tydus', 'Johnson', 'Miller'}
-VOTE = re.compile(r'^\s*(?:Commissioner|Commission|Vice\s*Mayor|Mayor|Conunissioner|Commisioner|Comm\.)\s*(?:Dr\.\s*)?([A-Z][A-Za-z]+)\s*(?:Jr\.?,?)?\s{1,}(?::\s*)?(Yes|No|Not\s+Present|Absent|Abstain(?:ed)?|Recused|Excused|Nay|Aye)\b', re.M)
-VAL = {'yes': 'yes', 'aye': 'yes', 'no': 'no', 'nay': 'no', 'not present': 'absent', 'absent': 'absent', 'excused': 'absent', 'abstain': 'abstain', 'abstained': 'abstain', 'recused': 'recused'}
+VOTE = re.compile(r"^\s*(?:Commissioner|Commission|Vice\s*Mayor|Mayor|Conunissioner|Commisioner|Comm\.)\s*(?:Dr\.\s*)?([A-Z][A-Za-z]+)\s*(?:Jr\.?,?)?(?:\s*:\s*|\s+)[\u2018'|.]?\s*((?i:yes|no|not\s+present|out\s+of\s+(?:the\s+)?room|absent|abstain(?:ed)?|recused|excused|nay|aye))\b", re.M)
+VAL = {'out of room': 'absent', 'out of the room': 'absent', 'yes': 'yes', 'aye': 'yes', 'no': 'no', 'nay': 'no', 'not present': 'absent', 'absent': 'absent', 'excused': 'absent', 'abstain': 'abstain', 'abstained': 'abstain', 'recused': 'recused'}
 ITEM = re.compile(r'^\s{0,12}(\d{1,2}\s*-\s*\d{1,2}|\d{1,2}|[a-z])\s*[.:,)]\s+(?=AN?\s+(?:RESOLUTION|ORDINANCE))', re.M)
 SECT = re.compile(r'^\s{0,9}(\d{1,2})\.\s+(?!AN?\s)([A-Z][A-Z&’\'/ ,()\-]{4,})', re.M)
 MOVED = re.compile(r'(?:It\s+was\s+)?moved\s+by\s+(?:Commissioner|Vice\s*Mayor|Mayor)\s+(?:Dr\.\s*)?([A-Z]\w+),?\s+(?:and\s+)?seconded\s+by\s+(?:Commissioner|Vice\s*Mayor|Mayor)\s+(?:Dr\.\s*)?([A-Z]\w+)\s*,?\s*(?:to\s+)?(.{0,160})', re.S)

@@ -150,7 +150,7 @@ R16-68|contract|R.J. Behar, Inc.|Design of the Saga Bay 1.2 sub-basin water qual
 R16-71|zoning|Burlington;@19191 South Dixie Highway|Sign variance for Burlington, 19191 South Dixie Highway
 R16-72|zoning|Burlington;@19191 South Dixie Highway|Second sign variance for Burlington
 R17-08|contract|R.J. Behar & Company, Inc.|CEI services, Safe Routes to School (Cutler Bay Middle)
-R17-09|contract|R.J. Behar & Company, Inc.|CEI services, Safe Routes to School (Cutler Bay Middle), second order
+R17-09|skip||Intergovernmental agreement with Miami-Dade County for traffic engineering (government only)|Was listed as a second R.J. Behar order: register.json had carried the Behar title from row 17-08; the register's own text for 17-09 and the Feb 15, 2017 minutes (consent item D) show the county agreement.
 R17-25|contract|Visualscape, Inc.|Tree planting program (RFP 17-01)
 R17-26|contract|Visualscape, Inc.|Tree trimming maintenance (RFP 17-02)
 R17-33|contract|Tetra Tech Inc.|Disaster debris monitoring, bidding waived
@@ -192,7 +192,7 @@ R18-40|zoning|Dade County Federal Credit Union;@20295 S. Dixie Highway|Sign vari
 R18-41|zoning|1622 Investment Corp|Building frontage variance for 1622 Investment Corp
 R18-42|zoning|1622 Investment Corp|Front setback variance for 1622 Investment Corp
 R18-43|zoning|1622 Investment Corp|Rear setback variance for 1622 Investment Corp
-R18-44|zoning|1622 Investment Corp|Architecture and form standards variance for 1622 Investment Corp
+R18-44|zoning|1622 Investment Corp|Parking spaces variance (Sec. 3-144) for 1622 Investment Corp|The register repeats the title of the architecture and form standards variance (item E), which the Jun 20, 2018 minutes show was withdrawn; the 3-2 vote the register records is item F, the parking-spaces variance.
 R18-45|zoning|1622 Investment Corp|Off-street loading variance for 1622 Investment Corp
 R18-46|zoning|1622 Investment Corp|Landscaping variance for 1622 Investment Corp
 R18-55|contract|Mailfinance Inc.;Neopost USA, Inc.|Mail processing equipment and online services
@@ -239,3 +239,7 @@ R17-89|contract|Envirowaste Services Group, Inc.|Townwide sidewalk repairs purch
 R17-95|contract|DRC Emergency Services, Inc.|Ratifying Hurricane Irma debris cut-and-push purchase order
 R17-97|contract|Envirowaste Services Group, Inc.|Hurricane Irma emergency sidewalk repairs
 R18-48|contract|Envirowaste Services Group, Inc.|Roadway resurfacing Phase V Part II purchase order
+# Added Oct 26, 2026 from the Town Council minutes (Nov 2013 - Nov 2018)
+R14-08|lease|CR Soccer;Palmetto Raiders;PBSA|Park use agreements with youth sports organizations|Organizations named in the Feb 19, 2014 minutes (exhibits A-C).
+R16-33|contract|Stantec Consulting Services, Inc.|Design of new bus shelters, purchase order|register.json had carried the 16-32 title on this row; the register's own text and the Jun 15, 2016 minutes (consent item A) give the Stantec purchase order.
+R17-50|contract|Marshall Steingold|Town maps, bid waiver ratified|The Jun 21, 2017 minutes record Marshall Steingold thanking the Town for the sole-source work.

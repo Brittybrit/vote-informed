@@ -10,8 +10,8 @@ END = '2026-03-31'   # Scott Singer's last meeting (Organizational Meeting; Andy
 
 MEM = {  # key -> OCR-tolerant pattern
     'Haynie': r'Hayn[i1l]e', 'Weinroth': r'Weinr[o0]th', 'Mullaugh': r'Mu[l/I1|]{2}augh', 'Rodgers': r'R[o0]dgers',
-    'Singer': r'Sing[e]r', "O'Rourke": r"O\W{0,2}\s?R[o0]urke", 'Mayotte': r'Mayott?e', 'Thomson': r'Th[o0]ms[o0]n',
-    'Nachlas': r'Nach[l/I1|]as', 'Drucker': r'Drucker', 'Wigder': r'Wigder', 'Grau': r'\bGrau\b', 'Pearlman': r'Pearlman',
+    'Singer': r'[Ss][i;1l]ng[e]r', "O'Rourke": r"O\W{0,2}\s?R[o0p]urke", 'Mayotte': r'Mayott?e', 'Thomson': r'(?:Th|"fh|fh)[o0]ms[o0]n',
+    'Nachlas': r'Nach[l/I1|]as', 'Drucker': r'Drucker', 'Wigder': r'(?:W|t4|V\\/)[i1r]g?der', 'Grau': r'\bGrau\b', 'Pearlman': r'Pearlman',
     'Sipple': r'Sipple'}
 MRE = {k: re.compile(v, re.I) for k, v in MEM.items()}
 TITLE = r'(?:Mayor|Deputy Mayor|Council\s*Member|Councilmember|Council Woman|Councilwoman|Councilman)'
@@ -28,13 +28,16 @@ def is_section(line):
     t = line.strip()
     if not t or len(t) > 95: return None
     m = re.match(r'^(\d{1,2})?\s*[.,:;]*\s*([A-Z][A-Z0-9 /&,\'().\-]+?)\s*:?\s*$', t)
-    if not m: return None
+    if not m:
+        m = re.match(r'^()(?:[^A-Za-z\s]{1,3}|[a-z]{1,2}[^A-Za-z\s]{0,2}|\d[^\s]{1,3})\s+([A-Z][A-Z0-9 /&,\'().\-]+?)\s*:?\s*$', t)
+        if not m: return None
+        if not any(k in m.group(2) for k in ('CITY MANAGER', 'CITY ATTORNEY', 'MAYOR AND COUNCIL', 'ADJOURNMENT', 'PUBLIC REQUEST', 'INTRODUCTION', 'RESOLUTIONS AND', 'REGULAR PUBLIC', 'QUASI', 'CONSENT')): return None
     name = re.sub(r'\s+', ' ', m.group(2)).strip()
     letters = re.sub(r'[^A-Za-z]', '', name)
     if len(letters) < 6 or letters.upper() != letters: return None
     if name.startswith('MINUTES OF') or name.startswith('CITY OF') or name == 'CITY COUNCIL': return None
     if not any(k in name for k in SECKW): return None
-    return (m.group(1) or '?', name)
+    return ((m.group(1) or '?') if m.group(1) is not None else '?', name)
 
 FOOT = re.compile(r'^\s*(Regu\s*l\s*ar|Special|Organizational|Budget|Tentative|Final|Joint|Minutes|Organization|City Council)[A-Za-z /&,\-]*Minutes?.*\d{4}\s*$|^\s*[A-Z][A-Za-z ]*Minutes\s+\d+\s+[A-Z][a-z]+\s*\d', re.I)
 
@@ -47,8 +50,9 @@ def clean(text):
     return out
 
 ITEM = re.compile(r'^(\s{0,30})([A-Z8])(?:[.,]|\.,)?\s{2,}(\S.*)$')
-ITEM2 = re.compile(r'^(\s{0,30})([A-Z8])\.\s+(\S.*)$')
-SUB = re.compile(r'^\s{2,40}(\d{1,2})\)\s+(\S.*)$')
+ITEM2 = re.compile(r'^(\s{0,30})([A-Z8])\.\s+((?:Resolution|Ordinance|Sealed|Intergovernmental|Interqovernmental|Sole|Single|Emergency|Change|Board|Minutes|Piggyback|Request|Bids?\b|Contract|Agreement|Purchase|Approval|Appointment|Cooperative|Settlement|Proposals?|RFP|Ratification|Renewal)\S*.*)$')
+BARE = re.compile(r'^(\s{2,40})(\S{1,4}\s+)?((?:Resolution|Ordinance)\s+No\s*\.?\s*[\dOo][\w\s\-]{0,12})\s*$')
+SUB = re.compile(r'^\s{2,40}(\d{1,2})[).]\s+(\S.*)$')
 
 def norm(s):
     s = re.sub(r'\s+', ' ', s)
@@ -63,7 +67,14 @@ def roll_call(lines):
     for i, ln in enumerate(lines):
         if re.search(r'ROLL\s+CALL', ln):
             start = i; break
-    if start is None: return None, None
+    if start is None:
+        for i, ln in enumerate(lines[:30]):
+            if ln.strip().startswith('Participants'):
+                for l2 in lines[i + 1:i + 14]:
+                    l2 = re.split(r'\s{4,}', l2.strip())[0]
+                    if re.match(r'(Mayor|Deputy Mayor|Council Member)', l2): present += members_in(l2)
+                return (present or None), []
+        return None, None
     for ln in lines[start + 1:start + 16]:
         if is_section(ln) and 'ROLL' not in ln: break
         ms = members_in(ln)
@@ -71,9 +82,10 @@ def roll_call(lines):
         for k in ms:
             if re.search(r'absent|excused', ln, re.I): absent.append(k)
             else: present.append(k)
-    return present, absent
+    present = list(dict.fromkeys(k for k in present if k not in absent))
+    return present, list(dict.fromkeys(absent))
 
-RESULT = re.compile(r'(Motion|motion|The motion|Resolution|Ordinance)[^.;]{0,40}?\b(carried|passed|failed|was approved|was adopted|died|was denied|was withdrawn)\b', re.I)
+RESULT = re.compile(r'(Motion|motion|The motion|Items|Resolution|Ordinance)(?:[^;.]|\.(?!\s[A-Z])){0,90}?\b(carried|passed|failed|was approved|were approved|was adopted|died|was denied|was withdrawn)\b', re.I)
 MADE = re.compile(r'(?:Motion|A motion) was (?:made|moved) by\s+(?:' + TITLE + r')?\s*([A-Z][\w.\' ]{1,40}?)\s*,\s*(?:and\s+)?seconded by\s+(?:' + TITLE + r')?\s*([A-Z][\w.\' ]{1,40}?)\s*,?\s+(?:to|that)\b', re.I)
 
 def who(name):
@@ -85,6 +97,8 @@ def parse_votes(s, present):
     s2 = re.sub(r'\b([A-Z])\.\s', r'\1 ', s)   # Robert S. Weinroth -> Robert S Weinroth
     m = RESULT.match(s2) or RESULT.search(s2[:80])
     res = (m.group(2) if m else 'carried').lower()
+    if re.match(r'.{0,60}(lack of (a )?second|was withdrawn)', s2, re.I):
+        return dict(result='failed' if 'second' in s2[:80] else 'withdrawn', roll={}, status='novote', tally=None, text=s2[:200])
     result = 'failed' if res in ('failed', 'died', 'was denied') else ('withdrawn' if res == 'was withdrawn' else 'passed')
     # cut window: up to next 'Motion was made' / 'Motion ' new sentence, max 700 chars
     w = s2[:700]
@@ -92,7 +106,7 @@ def parse_votes(s, present):
     if nm: w = w[:nm.start() + 10]
     # find end: last vote marker
     marks = list(re.finditer(r'voting\s+(yes|no|in favor|against|in opposition)|abstain(?:ed|ing)?|recus\w*|absent|not present|dissenting|opposed', w, re.I))
-    tl = re.search(r'(\d)\s*(?:to|votes to|-)\s*(\d)', w[:120])
+    tl = re.search(r'(?<![\d-])(\d)\s*(?:to|votes to|-)\s*(\d)(?![\d-])', w[:160])
     tally = [int(tl.group(1)), int(tl.group(2))] if tl else None
     roll, status = {}, None
     if marks:
@@ -103,9 +117,9 @@ def parse_votes(s, present):
         for mk in marks:
             seg = seg_text[prev:mk.start()]
             # segment begins after last ';' or ':' or 'unanimously' within seg
-            cut = max(seg.rfind(';'), seg.rfind(':'), seg.lower().rfind('unanimously'), seg.rfind(' vote.'), seg.rfind('. '))
+            cut = max(seg.rfind('; '), seg.rfind(': '), seg.lower().rfind('unanimously'), seg.rfind(' vote.'), seg.rfind('. '))
             if mk is marks[0]:
-                c2 = max(seg.rfind(';'), seg.rfind(':'), seg.lower().rfind('unanimously'), seg.find(' vote '), seg.find(' vote.'))
+                c2 = max(seg.rfind('; '), seg.rfind(': '), seg.lower().rfind('unanimously'), seg.find(' vote '), seg.find(' vote.'))
                 cut = c2
             names = members_in(seg[cut + 1:] if cut >= 0 else seg)
             word = mk.group(0).lower()
@@ -135,13 +149,13 @@ def segment(path, url):
     def new_unit(kind, letter, num, header):
         units.append(dict(date=date, section=sec[1], secno=sec[0], letter=letter, num=num, kind=kind, header=header.strip(), lines=[]))
         return len(units) - 1
-    for ln in lines:
+    for li, ln in enumerate(lines):
         s = is_section(ln)
         if s:
             sec = s; cur = new_unit('section', None, None, s[1]); sub = None
             continue
         m = ITEM.match(ln) or ITEM2.match(ln)
-        if m and len(m.group(1)) >= 0 and not re.match(r'^(Motion|The|A |An |Mr|Ms|It |In |On |At |As |If |He |She )', m.group(3)) and sec[1] != 'PREAMBLE' and len(m.group(3)) < 140:
+        if m and len(m.group(1)) >= 0 and not re.match(r'^(Motion|The|A |An |Mr|Ms|It |In |On |At |As |If |He |She )', m.group(3)) and sec[1] != 'PREAMBLE' and len(m.group(3)) < 140 and 'voting' not in m.group(3) and not members_in(m.group(3)[:25]):
             letter = 'B' if m.group(2) == '8' else m.group(2)
             if not (m.group(3)[:1].isupper() or m.group(3)[:1].isdigit()): pass
             else:
@@ -152,6 +166,14 @@ def segment(path, url):
             parent = cur if units[cur]['kind'] == 'item' else units[cur]['parent']
             u = new_unit('sub', units[parent]['letter'], int(m.group(1)), m.group(2)); units[u]['parent'] = parent
             cur = u; stream.append((cur, ln)); continue
+        m = BARE.match(ln)
+        if m and sec[1] != 'PREAMBLE' and not (m.group(2) or '').strip().startswith('('):
+            nxt = next((x for x in lines[li + 1:li + 4] if x.strip()), '')
+            if re.match(r'\s*(?:\([^)]{0,60}\)\s*)?(A|An)\s+(resolution|ordinance|emergency ordinance)\b', nxt, re.I):
+                tok = (m.group(2) or '').strip()
+                letter = tok[0] if re.fullmatch(r'[A-Z][.,_]?', tok) else 'x' + re.sub(r'\W', '', m.group(3).split('No')[-1])
+                cur = new_unit('item', letter, None, m.group(3)); sub = None
+                stream.append((cur, ln)); continue
         if cur is None: cur = new_unit('section', None, None, 'PREAMBLE')
         units[cur]['lines'].append(ln); stream.append((cur, ln))
     for u in units:
@@ -179,8 +201,10 @@ def segment(path, url):
         rec = set()
         for mm in re.finditer(r'([A-Z][\w\'. ]{2,60}?)\s+(?:announced|stated|declared|noted|advised|indicated|disclosed)?[^.]{0,80}?(recus|conflict|abstain)', t):
             pass
-        for mm in re.finditer(r'(?:' + TITLE + r')\s+([A-Z][\w\'.]+(?: [A-Z][\w\'.]+){0,3})[^.]{0,160}?\b(recuse|recusing|recused|abstain|conflict)', t):
+        for mm in re.finditer(r'((?:' + TITLE + r'|Ms\.|Mr\.)?\s*[A-Z][\w\'.]+(?: [A-Z][\w\'.]+){0,3})\s+(?:had\s+|has\s+|then\s+)?(?:recused|recusing|abstained|abstaining)\b', t):
             rec.update(members_in(mm.group(1)))
+        for mm in re.finditer(r'(?:' + TITLE + r')\s+([A-Z][\w\'.]+(?: [A-Z][\w\'.]+){0,3})\s+(?:noted|stated|announced|advised|declared|disclosed|indicated|explained)\b([^.]{0,140}?)\b(?:would|will|must|to) (?:recuse|abstain)', t):
+            if not re.search(r'\b(not|no|neither|nor)\b', mm.group(2)): rec.update(members_in(mm.group(1)))
         u['recused'] = sorted(rec)
         pos = 0
         made = list(MADE.finditer(t))
@@ -196,10 +220,31 @@ def segment(path, url):
                     if k in v['roll']: v['roll'][k] = 'recused'
                 for k in dais:
                     v['roll'][k] = 'recused' if k in rec else 'absent'
+            if v['status'] == 'unparsed' and mv and re.search(r'voting (yes|no)', t[mv.end():r.start()]):
+                v2 = parse_votes('Motion carried; ' + t[mv.end():r.start()].split('. ', 1)[-1] if False else 'Motion carried; ' + re.split(r'\.\s', t[mv.end():r.start()], maxsplit=1)[-1], pres)
+                if v2['roll']: v2['result'] = v['result']; v2['tally'] = v['tally']; v = v2
             v['mover'] = who(mv.group(1)) if mv else None
             v['second'] = who(mv.group(2)) if mv else None
             v['to'] = norm(t[mv.end():mv.end() + 220]) if mv else ''
+            mt_ = re.match(r'(?:The )?[Mm]otion to (.{0,120}?)\s+(?:carried|passed|failed|was approved|were approved|was adopted)', t[r.start():r.start() + 200])
+            if mt_: v['to'] = mt_.group(1)
+            v['pos'] = r.start()
             u['motions'].append(v)
+        # motions whose roll follows directly, with no 'Motion carried' sentence
+        rs = [r.start() for r in RESULT.finditer(t)]
+        for j, mv in enumerate(made):
+            nxt = made[j + 1].start() if j + 1 < len(made) else len(t)
+            if any(mv.end() <= x < nxt for x in rs): continue
+            seg = t[mv.end():nxt]
+            if not re.search(r'voting (yes|no)', seg[:700]): continue
+            parts = re.split(r'\.\s(?=[A-Z])', seg, maxsplit=1)
+            body = parts[1] if len(parts) > 1 else seg
+            pres = [k for k in pres_now if k not in dais]
+            v = parse_votes('Motion carried; ' + body, pres)
+            v['mover'] = who(mv.group(1)); v['second'] = who(mv.group(2)); v['to'] = norm(seg[:220])
+            v['noresult'] = True; v['pos'] = mv.start()
+            u['motions'].append(v)
+        u['motions'].sort(key=lambda x: x.get('pos', 0))
         u['present'] = list(pres_now); u['absent_rc'] = list(absent or []) + sorted(left - set(absent or []))
     return dict(date=date, file=os.path.basename(path), url=url, present=present, absent=absent, units=units)
 
@@ -220,10 +265,10 @@ if __name__ == '__main__':
         ix = idx.get(b, {})
         mt = segment(f, ix.get('url'))
         mt['meeting'] = ix.get('meeting', '')
-        for u in mt['units']: u.pop('lines', None)
+        for u in mt['units']: u.pop('lines', None); u.pop('text', None)
         out.append(mt)
     os.makedirs(SP + '/cache', exist_ok=True)
-    json.dump(out, open(SP + '/cache/meetings.json', 'w'), indent=0)
+    json.dump(out, open(SP + '/cache/meetings.json', 'w'), separators=(',', ':'))
     nu = sum(len(m['units']) for m in out); nm = sum(len(u['motions']) for m in out for u in m['units'])
     st = {}
     for m in out:

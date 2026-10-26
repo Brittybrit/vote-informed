@@ -5,6 +5,34 @@ import titles as _t
 from titles import SUBJ, J, money
 
 SUBJ.update({
+ # Parkland (2006-2012) additions
+ 'fiber': ('fiber optic cable in the public right-of-way', 'cable de fibra óptica en la vía pública', 'kab fib optik nan wout piblik la'),
+ 'concession': ('park food and refreshment concessions', 'concesiones de comida y refrescos en parques', 'konsesyon manje ak rafrechisman nan pak yo'),
+ 'treeplant': ('tree replacement planting', 'reemplazo y siembra de árboles', 'ranplase ak plante pyebwa'),
+ 'fieldlights': ('athletic field light parts', 'piezas de iluminación de campos deportivos', 'pyès limyè teren espò'),
+ 'survey': ('surveying services', 'servicios de agrimensura', 'sèvis apantaj'),
+ 'celltower': ('a cell tower site', 'un sitio para torre celular', 'yon sit pou gwo fò selilè'),
+ 'bus': ('community bus service', 'servicio de autobús comunitario', 'sèvis bis kominotè'),
+ 'debris2': ('hurricane tree and debris cleanup', 'limpieza de árboles y escombros del huracán', 'netwayaj pyebwa ak debri apre siklòn'),
+ 'commcenter': ('community center construction funding', 'financiamiento de la construcción del centro comunitario', 'finansman konstriksyon sant kominotè'),
+ 'mower': ('a reel mower', 'una cortadora de césped', 'yon machin koupe zèb'),
+ 'trucks': ('pickup trucks', 'camionetas', 'kamyonèt'),
+ 'planning': ('planning consulting services', 'servicios de consultoría de planificación', 'sèvis konsiltasyon planifikasyon'),
+ 'parkdesign': ('park design and construction administration', 'diseño y administración de construcción del parque', 'konsepsyon ak administrasyon konstriksyon pak'),
+ 'library': ('library services', 'servicios de biblioteca', 'sèvis bibliyotèk'),
+ 'firerescue': ('fire rescue services', 'servicios de bomberos y rescate', 'sèvis ponpye ak sekou'),
+ 'ems': ('emergency medical services', 'servicios médicos de emergencia', 'sèvis medikal ijans'),
+ 'cable': ('cable television service', 'servicio de televisión por cable', 'sèvis televizyon kab'),
+ 'windows': ('window replacement', 'reemplazo de ventanas', 'ranplasman fenèt'),
+ 'environmental': ('environmental cleanup', 'limpieza ambiental', 'netwayaj anviwònman'),
+ 'ballfield': ('ball field maintenance', 'mantenimiento de campos deportivos', 'antretyen teren espò'),
+ 'recprog': ('recreation programs', 'programas recreativos', 'pwogram rekreyasyon'),
+ 'equestrian': ('equestrian center management', 'administración del centro ecuestre', 'jesyon sant ekestr'),
+ 'ymca': ('a YMCA facility at a city park', 'una instalación de la YMCA en un parque municipal', 'yon enstalasyon YMCA nan yon pak vil la'),
+ 'signals': ('traffic signal work', 'trabajos de semáforos', 'travay limyè trafik'),
+ 'irrigation': ('irrigation work', 'trabajos de riego', 'travay irigasyon'),
+ 'amphitheater': ('amphitheater construction', 'construcción del anfiteatro', 'konstriksyon anfiteyat'),
+
  'trafficenf': ('police traffic enforcement on private roads', 'control policial del tráfico en calles privadas', 'kontwòl trafik polis sou wout prive'),
  'policesvc': ('police services', 'servicios policiales', 'sèvis polis'),
  'emploans': ('loans for city employees', 'préstamos para empleados municipales', 'prè pou anplwaye vil la'),
@@ -80,6 +108,12 @@ def title(k, ps, amt=None, s='other', x=''):
      'acceptland': ('Accepted land conveyed by %s%s' % (P[0], (' at %s' % x) if x else ''), 'Aceptó un terreno cedido por %s%s' % (P[1], (' en %s' % x) if x else ''), 'Aksepte tè %s bay vil la%s' % (P[2], (' nan %s' % x) if x else '')),
      'stax': ('Approved the application of %s for a special taxing district for %s' % (P[0], x), 'Aprobó la solicitud de %s para un distrito especial de impuestos para %s' % (P[1], x), 'Apwouve demann %s pou yon distri taks espesyal pou %s' % (P[2], x)),
      'other': ('Approved an item benefiting %s' % P[0], 'Aprobó un asunto que beneficia a %s' % P[1], 'Apwouve yon pwen ki benefisye %s' % P[2]),
+     'vacateease': ('Released part of the recorded plat easements%s for %s' % ((' at %s' % x) if x else '', P[0]), 'Liberó parte de las servidumbres del plano%s para %s' % ((' en %s' % x) if x else '', P[1]), 'Leve yon pati nan sèvitid plan an%s pou %s' % ((' nan %s' % x) if x else '', P[2])),
+     'annexapp': ('Annexed property%s owned by %s into the city' % ((' (%s)' % x) if x else '', P[0]), 'Anexó a la ciudad una propiedad%s de %s' % ((' (%s)' % x) if x else '', P[1]), 'Anekse yon pwopriyete%s %s posede nan vil la' % ((' (%s)' % x) if x else '', P[2])),
+     'eventpermit': ('Approved special event permits for %s' % P[0], 'Aprobó permisos de eventos especiales para %s' % P[1], 'Apwouve pèmi evènman espesyal pou %s' % P[2]),
+     'ldpermit': ('Approved a land disturbance permit for %s%s' % (P[0], (' at %s' % x) if x else ''), 'Aprobó un permiso de movimiento de tierras para %s%s' % (P[1], (' en %s' % x) if x else ''), 'Apwouve yon pèmi pou travay tè pou %s%s' % (P[2], (' nan %s' % x) if x else '')),
+     'masterplan': ('Approved a master plan amendment%s for %s' % ((' for %s' % x) if x else '', P[0]), 'Aprobó una enmienda al plan maestro%s para %s' % ((' de %s' % x) if x else '', P[1]), 'Apwouve yon amannman plan mèt%s pou %s' % ((' pou %s' % x) if x else '', P[2])),
+     'landuseapp': ('Changed the land use designation%s for %s' % ((' at %s' % x) if x else '', P[0]), 'Cambió la clasificación de uso del suelo%s para %s' % ((' en %s' % x) if x else '', P[1]), 'Chanje deziyasyon itilizasyon tè%s pou %s' % ((' nan %s' % x) if x else '', P[2])),
      'terminate': ('Ended the contract with %s' % P[0], 'Terminó el contrato con %s' % P[1], 'Mete fen nan kontra ak %s' % P[2]),
     }
     if k in X:
@@ -97,4 +131,4 @@ KIND = {'contract': 'contract', 'renew': 'contract', 'amend': 'contract', 'chang
         'siteplanapp': 'zoning', 'varapp': 'zoning', 'specapp': 'zoning', 'cupapp': 'zoning', 'textamend': 'zoning', 'grant': 'grant', 'sponsor': 'grant', 'waive': 'grant',
         'easement': 'easement', 'license': 'license', 'permit': 'license', 'permitno': 'license', 'franchise': 'license', 'partner': 'agreement',
         'select': 'contract', 'insure': 'contract', 'pay': 'contract', 'convey': 'easement', 'estoppel': 'other', 'payplan': 'other', 'str': 'license',
-        'terminate': 'contract', 'stax': 'other', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}
+        'terminate': 'contract', 'masterplan': 'zoning', 'ldpermit': 'license', 'annexapp': 'zoning', 'eventpermit': 'license', 'vacateease': 'zoning', 'landuseapp': 'zoning', 'stax': 'other', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}

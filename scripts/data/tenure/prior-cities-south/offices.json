@@ -144,12 +144,17 @@
    "label": "Town Clerk Resolutions and Ordinances Registers (each member vote)",
    "url": "https://www.cutlerbay-fl.gov/townclerk/page/ordinances-resolutions"
   },
+  "minutesSource": {
+   "label": "Town Council minutes, Nov 2013 - Nov 2018 (eSCRIBE)",
+   "url": "https://pub-cutlerbay-fl.escribemeetings.com/"
+  },
+  "minutesNote": "Register votes checked against all 109 posted minutes, Nov 2013 - Nov 2018 (none posted for Nov 12 and Nov 20, 2013, Dec 2, 2015, Oct 24, 2018); minutes not online for Nov 2010 - Oct 2013, so those votes are register only. 7 failed or denied votes on named parties' requests come from the minutes alone.",
   "files": [
    "cutlerbay-mixon/actions.json"
   ],
   "counts": {
-   "actions": 239,
-   "yesNo": 228
+   "actions": 248,
+   "yesNo": 237
   }
  },
  {
@@ -192,7 +197,14 @@
    "label": "Florida League of Mayors profile",
    "url": "https://www.floridamayors.org/"
   },
-  "files": []
+  "files": [
+   "bocaraton/actions.json",
+   "bocaraton/titles-en.json",
+   "bocaraton/minutes/index.tsv",
+   "src/bocaraton/build.py",
+   "bocaraton/friends-of-scott-singer_committee_contributions.csv"
+  ],
+  "coverageNote": "Actions from the City Clerk minutes Jan 11, 2016 - Apr 26, 2018 for this seat (minutes for Mar 2014 - Dec 2015 not online); the same actions.json continues through his mayoralty to Mar 31, 2026."
  },
  {
   "pid": "scott-singer",
@@ -200,18 +212,23 @@
   "body": "city-boca-raton",
   "district": null,
   "start": "2018-04-27",
-  "end": null,
+  "end": "2026-03-31",
   "rollKey": "Singer",
   "startNote": "Took over after the Governor suspended Mayor Haynie (Apr 27, 2018).",
-  "endNote": "Still in office (not confirmed).",
+  "endNote": "Last meeting as mayor: the Organizational Meeting of Mar 31, 2026, where Andy Thomson was sworn in as mayor (city council minutes).",
   "giftsFrom": "2016-03-15",
   "giftsNote": "Only his political committee Friends of Scott Singer is online (VoterFocus Palm Beach): 64 contributions, $48,827, 2022-05-12..2023-08-14. Campaign accounts are filed with the City Clerk, not online.",
   "source": {
    "label": "Florida League of Mayors profile",
-   "url": "https://www.floridamayors.org/"
+   "url": "https://bocaraton.granicus.com/MinutesViewer.php?view_id=9&clip_id=3045&doc_id=ca530c1d-38e6-11f1-bb28-005056a89546"
   },
   "files": [
+   "bocaraton/actions.json",
+   "bocaraton/titles-en.json",
+   "bocaraton/minutes/index.tsv",
+   "src/bocaraton/build.py",
    "bocaraton/friends-of-scott-singer_committee_contributions.csv"
-  ]
+  ],
+  "coverageNote": "Actions from the City Clerk minutes Jan 11, 2016 - Apr 26, 2018 for this seat (minutes for Mar 2014 - Dec 2015 not online); the same actions.json continues through his mayoralty to Mar 31, 2026."
  }
 ]

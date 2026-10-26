@@ -2,20 +2,518 @@
  "city": "Opa-locka",
  "body": "Opa-locka City Commission",
  "window": {
-  "from": "2019-11-26",
+  "from": "2010-05-12",
   "to": "2020-10-14"
  },
  "sources": [
+  "https://www.opalockafl.gov/Archive.aspx?AMID=36 (City Commission Minutes, Archive Center PDFs; May 2010 - Dec 2012 scanned and OCRed, Oct 2018 - May 2019 text layer)",
   "https://opalockafl.portal.civicclerk.com (minutes PDFs, CivicClerk GetMeetingFileStream)"
  ],
  "members": [
   "Bass",
   "Burke",
   "Davis",
+  "Holmes",
+  "Johnson",
   "Kelley",
-  "Pigatt"
+  "Miller",
+  "Pigatt",
+  "Taylor",
+  "Tydus"
  ],
  "meetings": [
+  {
+   "date": "2010-05-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=51",
+   "read": true
+  },
+  {
+   "date": "2010-05-26",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=53",
+   "read": true
+  },
+  {
+   "date": "2010-06-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=57",
+   "read": true
+  },
+  {
+   "date": "2010-06-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=59",
+   "read": true
+  },
+  {
+   "date": "2010-07-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "read": true
+  },
+  {
+   "date": "2010-07-28",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "read": true
+  },
+  {
+   "date": "2010-08-11",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=66",
+   "read": true
+  },
+  {
+   "date": "2010-09-08",
+   "name": "Budget1 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=67",
+   "read": true
+  },
+  {
+   "date": "2010-09-15",
+   "name": "Budget2 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=70",
+   "read": true
+  },
+  {
+   "date": "2010-09-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=73",
+   "read": true
+  },
+  {
+   "date": "2010-09-30",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=71",
+   "read": true
+  },
+  {
+   "date": "2010-10-04",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=72",
+   "read": true
+  },
+  {
+   "date": "2010-10-13",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=76",
+   "read": true
+  },
+  {
+   "date": "2010-10-27",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=77",
+   "read": true
+  },
+  {
+   "date": "2010-11-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=79",
+   "read": true
+  },
+  {
+   "date": "2010-12-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "read": true
+  },
+  {
+   "date": "2011-01-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=84",
+   "read": true
+  },
+  {
+   "date": "2011-01-26",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=90",
+   "read": true
+  },
+  {
+   "date": "2011-02-03",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=88",
+   "read": true
+  },
+  {
+   "date": "2011-02-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=89",
+   "read": true
+  },
+  {
+   "date": "2011-02-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "read": true
+  },
+  {
+   "date": "2011-03-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=94",
+   "read": true
+  },
+  {
+   "date": "2011-04-13",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=108",
+   "read": true
+  },
+  {
+   "date": "2011-04-27",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=99",
+   "read": true
+  },
+  {
+   "date": "2011-05-09",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=100",
+   "read": true
+  },
+  {
+   "date": "2011-05-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=101",
+   "read": true
+  },
+  {
+   "date": "2011-05-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=107",
+   "read": true
+  },
+  {
+   "date": "2011-05-27",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=105",
+   "read": true
+  },
+  {
+   "date": "2011-06-08",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=106",
+   "read": true
+  },
+  {
+   "date": "2011-07-27",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=117",
+   "read": true
+  },
+  {
+   "date": "2011-08-02",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=118",
+   "read": true
+  },
+  {
+   "date": "2011-09-01",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=126",
+   "read": true
+  },
+  {
+   "date": "2011-09-06",
+   "name": "Budget1 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=120",
+   "read": true
+  },
+  {
+   "date": "2011-09-13",
+   "name": "Budget1 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=125",
+   "read": true
+  },
+  {
+   "date": "2011-09-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "read": true
+  },
+  {
+   "date": "2011-09-27",
+   "name": "Budget2 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=124",
+   "read": true
+  },
+  {
+   "date": "2011-09-28",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=127",
+   "read": true
+  },
+  {
+   "date": "2011-10-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "read": true
+  },
+  {
+   "date": "2011-10-26",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=132",
+   "read": true
+  },
+  {
+   "date": "2011-11-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=133",
+   "read": true
+  },
+  {
+   "date": "2011-12-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=134",
+   "read": true
+  },
+  {
+   "date": "2012-01-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=143",
+   "read": true
+  },
+  {
+   "date": "2012-01-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=144",
+   "read": true
+  },
+  {
+   "date": "2012-02-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "read": true
+  },
+  {
+   "date": "2012-02-22",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=147",
+   "read": true
+  },
+  {
+   "date": "2012-02-22",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=148",
+   "read": true
+  },
+  {
+   "date": "2012-03-01",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=149",
+   "read": true
+  },
+  {
+   "date": "2012-03-14",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "read": true
+  },
+  {
+   "date": "2012-03-20",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=150",
+   "read": true
+  },
+  {
+   "date": "2012-03-28",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=152",
+   "read": true
+  },
+  {
+   "date": "2012-04-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "read": true
+  },
+  {
+   "date": "2012-04-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=154",
+   "read": true
+  },
+  {
+   "date": "2012-05-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=162",
+   "read": true
+  },
+  {
+   "date": "2012-07-03",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=163",
+   "read": true
+  },
+  {
+   "date": "2012-07-11",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=182",
+   "read": true
+  },
+  {
+   "date": "2012-07-16",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=185",
+   "read": true
+  },
+  {
+   "date": "2012-07-18",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=183",
+   "read": true
+  },
+  {
+   "date": "2012-07-25",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=184",
+   "read": true
+  },
+  {
+   "date": "2012-07-25",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=186",
+   "read": true
+  },
+  {
+   "date": "2012-09-12",
+   "name": "Budget1 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=189",
+   "read": true
+  },
+  {
+   "date": "2012-09-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "read": true
+  },
+  {
+   "date": "2012-09-19",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=191",
+   "read": true
+  },
+  {
+   "date": "2012-09-26",
+   "name": "Budget2 Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=187",
+   "read": true
+  },
+  {
+   "date": "2012-09-26",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=188",
+   "read": true
+  },
+  {
+   "date": "2012-10-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "read": true
+  },
+  {
+   "date": "2012-10-24",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=193",
+   "read": true
+  },
+  {
+   "date": "2018-11-29",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=634",
+   "read": true
+  },
+  {
+   "date": "2018-12-12",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=635",
+   "read": true
+  },
+  {
+   "date": "2019-01-09",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=601",
+   "read": true
+  },
+  {
+   "date": "2019-01-16",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=603",
+   "read": true
+  },
+  {
+   "date": "2019-01-23",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "read": true
+  },
+  {
+   "date": "2019-02-13",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=645",
+   "read": true
+  },
+  {
+   "date": "2019-02-27",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=643",
+   "read": true
+  },
+  {
+   "date": "2019-02-27",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "read": true
+  },
+  {
+   "date": "2019-03-04",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=641",
+   "read": true
+  },
+  {
+   "date": "2019-03-27",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=642",
+   "read": true
+  },
+  {
+   "date": "2019-04-10",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=655",
+   "read": true
+  },
+  {
+   "date": "2019-04-10",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=656",
+   "read": true
+  },
+  {
+   "date": "2019-04-24",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "read": true
+  },
+  {
+   "date": "2019-05-06",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=658",
+   "read": true
+  },
+  {
+   "date": "2019-05-08",
+   "name": "Regular Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "read": true
+  },
+  {
+   "date": "2019-05-15",
+   "name": "Special Commission Meeting",
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=660",
+   "read": true
+  },
   {
    "date": "2019-12-11",
    "name": "Regular Commission Meeting",
@@ -132,6 +630,4816 @@
   }
  ],
  "actions": [
+  {
+   "id": "ol-2010-05-12-16-5",
+   "date": "2010-05-12",
+   "ref": "Item 16-5, 2010-05-12 regular meeting",
+   "title": "Approved paying Milagros Farm Nursery for lawn and landscape maintenance ($15,509)",
+   "kind": "contract",
+   "parties": [
+    "Milagros Farm Nursery"
+   ],
+   "amount": 15509,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=51",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "Community garden landscaping, tree removal and planting. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=51"
+  },
+  {
+   "id": "ol-2010-05-26-12",
+   "date": "2010-05-26",
+   "ref": "Item 12, 2010-05-26 regular meeting",
+   "title": "Awarded street improvements to Horizon Builders (up to $227,529)",
+   "kind": "contract",
+   "parties": [
+    "Horizon Builders"
+   ],
+   "amount": 227529,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=53",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "no",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Taylor",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Design and construction of Ali-Baba Avenue roadway improvements. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=53"
+  },
+  {
+   "id": "ol-2010-05-26-6",
+   "date": "2010-05-26",
+   "ref": "Item 6, 2010-05-26 regular meeting",
+   "title": "Closed city streets for an event of Jazz Cafe and Grille",
+   "kind": "license",
+   "parties": [
+    "Jazz Cafe and Grille"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=53",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Street closure for a Father's Day celebration (date amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=53"
+  },
+  {
+   "id": "ol-2010-05-26-7",
+   "date": "2010-05-26",
+   "ref": "Item 7, 2010-05-26 regular meeting",
+   "title": "Approved a partnership with Creative Sustainable Solutions, LLC for services",
+   "kind": "agreement",
+   "parties": [
+    "Creative Sustainable Solutions, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=53",
+   "roll": {
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Johnson": "abstain",
+    "Holmes": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "Memorandum of understanding for the \"Down to Earth\" sustainability initiative. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=53"
+  },
+  {
+   "id": "ol-2010-05-26-9",
+   "date": "2010-05-26",
+   "ref": "Item 9, 2010-05-26 regular meeting",
+   "title": "Amended the pump station construction contract with Atlas Packaging (up to $10,000)",
+   "kind": "contract",
+   "parties": [
+    "Atlas Packaging"
+   ],
+   "amount": 10000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=53",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Kelley": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": true,
+   "result": "passed",
+   "notes": "Pump Station 14 design-build: 90-day extension and $10,000 increase. Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Taylor is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=53"
+  },
+  {
+   "id": "ol-2010-06-09-7",
+   "date": "2010-06-09",
+   "ref": "Item 7, 2010-06-09 regular meeting",
+   "title": "Waived code enforcement liens for Intercredit Bank, N.A. at 2060 Lincoln Ave ($42,158.06)",
+   "kind": "settlement",
+   "parties": [
+    "Intercredit Bank, N.A."
+   ],
+   "amount": 42158.06,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=57",
+   "roll": {
+    "Taylor": "yes",
+    "Tydus": "absent",
+    "Holmes": "absent",
+    "Johnson": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Taylor",
+   "consent": true,
+   "result": "passed",
+   "notes": "Liens and citations on 2060 and 2070 Lincoln Ave and 15050 Duval St. Owner of record on 2010-06-09 per the Miami-Dade Property Appraiser (folio 08-2122-003-0610): Grantee of the last sale before the vote (6/17/2009); current owner MAGNOLIA NORTH APARTMENTS LLC. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=57",
+   "address": "2060 Lincoln Ave"
+  },
+  {
+   "id": "ol-2010-06-09-9",
+   "date": "2010-06-09",
+   "ref": "Item 9, 2010-06-09 regular meeting",
+   "title": "Approved paying Fidelity Financial Services, L.C. for consulting services ($10,915)",
+   "kind": "contract",
+   "parties": [
+    "Fidelity Financial Services, L.C."
+   ],
+   "amount": 10915,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=57",
+   "roll": {
+    "Taylor": "yes",
+    "Tydus": "absent",
+    "Holmes": "absent",
+    "Johnson": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=57"
+  },
+  {
+   "id": "ol-2010-06-23-16-5",
+   "date": "2010-06-23",
+   "ref": "Item 16-5, 2010-06-23 regular meeting",
+   "title": "Approved a change order for CBHC, LLC on construction work",
+   "kind": "contract",
+   "parties": [
+    "CBHC, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=59",
+   "roll": {
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Sherbondy Village Community Center construction-phase design services. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=59"
+  },
+  {
+   "id": "ol-2010-06-23-3",
+   "date": "2010-06-23",
+   "ref": "Item 3, 2010-06-23 regular meeting",
+   "title": "Hired Carras Community Investment, Inc. for consulting services",
+   "kind": "contract",
+   "parties": [
+    "Carras Community Investment, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=59",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Taylor",
+   "consent": true,
+   "result": "passed",
+   "notes": "Redevelopment plan and master plan consulting. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=59"
+  },
+  {
+   "id": "ol-2010-07-14-1",
+   "date": "2010-07-14",
+   "ref": "Item 1, 2010-07-14 regular meeting",
+   "title": "Granted a special exception for Florida International Academy and MG3 Developers Group, LLC",
+   "kind": "zoning",
+   "parties": [
+    "Florida International Academy",
+    "MG3 Developers Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60"
+  },
+  {
+   "id": "ol-2010-07-14-13-1",
+   "date": "2010-07-14",
+   "ref": "Item 13-1, 2010-07-14 regular meeting",
+   "title": "Hired Horizon Builders for street improvements",
+   "kind": "contract",
+   "parties": [
+    "Horizon Builders"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ali Baba roadway design and construction contract. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60"
+  },
+  {
+   "id": "ol-2010-07-14-13-2",
+   "date": "2010-07-14",
+   "ref": "Item 13-2, 2010-07-14 regular meeting",
+   "title": "Waived code enforcement liens for Alexandria Drive LLC at 13300 Alexandria Dr ($50,406.58)",
+   "kind": "settlement",
+   "parties": [
+    "Alexandria Drive LLC"
+   ],
+   "amount": 50406.58,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "no",
+    "Kelley": "no"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Holmes",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "Owner of record on 2010-07-14 per the Miami-Dade Property Appraiser (folio 08-2128-007-0230): Grantor of the first sale after the vote (2/25/2011); current owner ST PROVIDENCE LLC. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "address": "13300 Alexandria Dr"
+  },
+  {
+   "id": "ol-2010-07-14-16-5",
+   "date": "2010-07-14",
+   "ref": "Item 16-5, 2010-07-14 regular meeting",
+   "title": "Rejected waiving code enforcement liens for Fritz Raymond & A Charles at 1316 Dunad Ave",
+   "kind": "settlement",
+   "parties": [
+    "Fritz Raymond & A Charles"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Johnson": "no",
+    "Tydus": "no",
+    "Taylor": "no",
+    "Holmes": "yes",
+    "Kelley": "no"
+   },
+   "tally": [
+    1,
+    4
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "failed",
+   "notes": "Motion to waive the lien balance failed. Owner of record on 2010-07-14 per the Miami-Dade Property Appraiser (folio 08-2121-002-0960): Grantor of the first sale after the vote (11/10/2014); current owner FRITZ RAYMOND & ANTONINE CHARLES & JAMES RAYMOND. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "address": "1316 Dunad Ave"
+  },
+  {
+   "id": "ol-2010-07-14-2",
+   "date": "2010-07-14",
+   "ref": "Item 2, 2010-07-14 regular meeting",
+   "title": "Approved a site plan at Port Said Rd (folios 08-2128-007-0120 and others) for Georgia Ayers Apartments, LLC",
+   "kind": "zoning",
+   "parties": [
+    "Georgia Ayers Apartments, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "72-unit residential development; Gonzalo De Ramon. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "address": "Port Said Rd (folios 08-2128-007-0120 and others)"
+  },
+  {
+   "id": "ol-2010-07-14-2.c",
+   "date": "2010-07-14",
+   "ref": "Item 2, 2010-07-14 regular meeting",
+   "title": "Approved buying land from Emma Collins at vacant lot, folio 08-2122-003-2401",
+   "kind": "sale",
+   "parties": [
+    "Emma Collins"
+   ],
+   "amount": 20000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Offer amended to $20,000. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=60",
+   "address": "vacant lot, folio 08-2122-003-2401"
+  },
+  {
+   "id": "ol-2010-07-28-13-1",
+   "date": "2010-07-28",
+   "ref": "Item 13-1, 2010-07-28 regular meeting",
+   "title": "Selected Lawrence Wright & Partners, LLC for construction management",
+   "kind": "contract",
+   "parties": [
+    "Lawrence Wright & Partners, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "absent",
+    "Tydus": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Taylor",
+   "consent": false,
+   "result": "passed",
+   "notes": "Construction management, Sherbondy Village Community Center. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-07-28-16-3",
+   "date": "2010-07-28",
+   "ref": "Item 16-3, 2010-07-28 regular meeting",
+   "title": "Bought vehicles and equipment from Florida Sheriffs Association",
+   "kind": "contract",
+   "parties": [
+    "Florida Sheriffs Association"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Taylor",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Seven police vehicles at $30,000 each. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-07-28-16-8",
+   "date": "2010-07-28",
+   "ref": "Item 16-8, 2010-07-28 regular meeting",
+   "title": "Signed an agreement with Paul T. Sweeney for consulting services (up to $62,500)",
+   "kind": "agreement",
+   "parties": [
+    "Paul T. Sweeney"
+   ],
+   "amount": 62500,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Taylor",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-07-28-16-9",
+   "date": "2010-07-28",
+   "ref": "Item 16-9, 2010-07-28 regular meeting",
+   "title": "Amended the red-light camera services contract with American Traffic Solutions",
+   "kind": "contract",
+   "parties": [
+    "American Traffic Solutions"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Taylor",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Amendment No. 1, traffic safety camera program. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-07-28-4",
+   "date": "2010-07-28",
+   "ref": "Item 4, 2010-07-28 regular meeting",
+   "title": "Approved paying Burton and Associates for consulting services ($13,600)",
+   "kind": "contract",
+   "parties": [
+    "Burton and Associates"
+   ],
+   "amount": 13600,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Tydus": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Tydus is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-07-28-5",
+   "date": "2010-07-28",
+   "ref": "Item 5, 2010-07-28 regular meeting",
+   "title": "Bought office supplies from Office Express Supply (up to $17,189.78)",
+   "kind": "contract",
+   "parties": [
+    "Office Express Supply"
+   ],
+   "amount": 17189.78,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=65",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes",
+    "Tydus": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "Filing cabinets; ratified the City Manager's purchase. Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Tydus is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=65"
+  },
+  {
+   "id": "ol-2010-09-22-16-8",
+   "date": "2010-09-22",
+   "ref": "Item 16-8, 2010-09-22 regular meeting",
+   "title": "Awarded bond counsel services to Squire Sanders",
+   "kind": "contract",
+   "parties": [
+    "Squire Sanders"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=73",
+   "roll": {
+    "Taylor": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Kelley": "yes",
+    "Holmes": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Bond counsel services. Roll call recorded in the minutes; the vote of Holmes is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=73"
+  },
+  {
+   "id": "ol-2010-09-22-2",
+   "date": "2010-09-22",
+   "ref": "Item 2, 2010-09-22 regular meeting",
+   "title": "Selected Harvey, Covington & Thomas, LLC for auditing services",
+   "kind": "contract",
+   "parties": [
+    "Harvey, Covington & Thomas, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=73",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Taylor",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Official auditing firm for FY 2010-2011 (named in the motion). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=73"
+  },
+  {
+   "id": "ol-2010-10-13-1.c",
+   "date": "2010-10-13",
+   "ref": "Item 1, 2010-10-13 regular meeting",
+   "title": "Signed an agreement with Citrin Financial and Insurance, Inc. for insurance coverage",
+   "kind": "agreement",
+   "parties": [
+    "Citrin Financial and Insurance, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=76",
+   "roll": {
+    "Tydus": "yes",
+    "Johnson": "yes",
+    "Taylor": "absent",
+    "Kelley": "yes",
+    "Holmes": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Agent of record (second reading). Roll call recorded in the minutes; the vote of Holmes is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=76"
+  },
+  {
+   "id": "ol-2010-10-13-13-2",
+   "date": "2010-10-13",
+   "ref": "Item 13-2, 2010-10-13 regular meeting",
+   "title": "Signed an agreement with Lawrence Wright & Partners, LLC for construction inspection",
+   "kind": "agreement",
+   "parties": [
+    "Lawrence Wright & Partners, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=76",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "absent",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Construction inspection services, Sherbondy Park Community Center. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=76"
+  },
+  {
+   "id": "ol-2010-10-13-13-3.b",
+   "date": "2010-10-13",
+   "ref": "Item 13-3, 2010-10-13 regular meeting",
+   "title": "Awarded park lighting renovation to R & D Electric, Inc. (up to $78,135)",
+   "kind": "contract",
+   "parties": [
+    "R & D Electric, Inc."
+   ],
+   "amount": 78135,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=76",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "absent",
+    "Kelley": "yes",
+    "Tydus": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Sherbondy Park lighting renovations (ratified). Roll call recorded in the minutes; the vote of Tydus is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=76"
+  },
+  {
+   "id": "ol-2010-10-13-16-5",
+   "date": "2010-10-13",
+   "ref": "Item 16-5, 2010-10-13 regular meeting",
+   "title": "Awarded park construction to Green Source Landscape & Sports Turf, Inc. (up to $110,647.10)",
+   "kind": "contract",
+   "parties": [
+    "Green Source Landscape & Sports Turf, Inc."
+   ],
+   "amount": 110647.1,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=76",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Taylor": "absent",
+    "Kelley": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Sherbondy Park field renovations. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=76"
+  },
+  {
+   "id": "ol-2010-10-27-2",
+   "date": "2010-10-27",
+   "ref": "Item 2, 2010-10-27 regular meeting",
+   "title": "Signed an agreement with First Southwest Company for consulting services",
+   "kind": "agreement",
+   "parties": [
+    "First Southwest Company"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=77",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Financial advisor (second reading). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=77"
+  },
+  {
+   "id": "ol-2010-10-27-3",
+   "date": "2010-10-27",
+   "ref": "Item 3, 2010-10-27 regular meeting",
+   "title": "Signed an agreement with Squire Sanders & Dempsey, LLP for bond counsel services",
+   "kind": "agreement",
+   "parties": [
+    "Squire Sanders & Dempsey, LLP"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=77",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Kelley": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Bond counsel engagement. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=77"
+  },
+  {
+   "id": "ol-2010-12-08-13-1",
+   "date": "2010-12-08",
+   "ref": "Item 13-1, 2010-12-08 regular meeting",
+   "title": "Approved paying Software House International for software and support ($17,677.82)",
+   "kind": "contract",
+   "parties": [
+    "Software House International"
+   ],
+   "amount": 17677.82,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "One year of Microsoft enterprise licensing. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-13-2",
+   "date": "2010-12-08",
+   "ref": "Item 13-2, 2010-12-08 regular meeting",
+   "title": "Amended the street improvements contract with Horizon Contractors, Inc. (up to $115,353)",
+   "kind": "contract",
+   "parties": [
+    "Horizon Contractors, Inc."
+   ],
+   "amount": 115353,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Additional design-build work, Ali-Baba Avenue. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-16-13",
+   "date": "2010-12-08",
+   "ref": "Item 16-13, 2010-12-08 regular meeting",
+   "title": "Ratified an emergency purchase from Advanced Petroleum Systems Inc. for fuel ($11,361)",
+   "kind": "contract",
+   "parties": [
+    "Advanced Petroleum Systems Inc."
+   ],
+   "amount": 11361,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Miller": "yes",
+    "Johnson": "no",
+    "Tydus": "yes",
+    "Holmes": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Emergency fuel station repairs. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-16-14",
+   "date": "2010-12-08",
+   "ref": "Item 16-14, 2010-12-08 regular meeting",
+   "title": "Hired Greensource Landscape & Sports Turf Inc. for lawn and landscape maintenance (up to $11,700)",
+   "kind": "contract",
+   "parties": [
+    "Greensource Landscape & Sports Turf Inc."
+   ],
+   "amount": 11700,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Tydus",
+   "consent": false,
+   "result": "passed",
+   "notes": "Sod and irrigation, Sherbondy Park; ratified the City Manager's action. Roll call recorded in the minutes; the vote of Taylor is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-16-2",
+   "date": "2010-12-08",
+   "ref": "Item 16-2, 2010-12-08 regular meeting",
+   "title": "Gave $2,000 to Black Global Bikers Association, Inc.",
+   "kind": "grant",
+   "parties": [
+    "Black Global Bikers Association, Inc."
+   ],
+   "amount": 2000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Tydus": "no",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "2010 Special Needs Toy Run. Roll call recorded in the minutes; the vote of Johnson is not legible in the scan and is taken from the minutes' count (4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-5",
+   "date": "2010-12-08",
+   "ref": "Item 5, 2010-12-08 regular meeting",
+   "title": "Renewed the emergency notification calls contract with Emergency Communications Network, Inc. (up to $13,500)",
+   "kind": "contract",
+   "parties": [
+    "Emergency Communications Network, Inc."
+   ],
+   "amount": 13500,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Tydus",
+   "consent": true,
+   "result": "passed",
+   "notes": "CodeRED community notification, second year. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-7",
+   "date": "2010-12-08",
+   "ref": "Item 7, 2010-12-08 regular meeting",
+   "title": "Signed an agreement with Harvey, Covington & Thomas of South Florida, LLC for auditing services",
+   "kind": "agreement",
+   "parties": [
+    "Harvey, Covington & Thomas of South Florida, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Tydus",
+   "consent": true,
+   "result": "passed",
+   "notes": "Auditors. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2010-12-08-9",
+   "date": "2010-12-08",
+   "ref": "Item 9, 2010-12-08 regular meeting",
+   "title": "Bought public transportation service from Limousines of South Florida, Inc. using another government's contract",
+   "kind": "contract",
+   "parties": [
+    "Limousines of South Florida, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=81",
+   "roll": {
+    "Holmes": "yes",
+    "Miller": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "City of North Miami contract; community transit service. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=81"
+  },
+  {
+   "id": "ol-2011-01-26-16-4",
+   "date": "2011-01-26",
+   "ref": "Item 16-4, 2011-01-26 regular meeting",
+   "title": "Signed an agreement with Paul T. Sweeney for consulting services (up to $62,500)",
+   "kind": "agreement",
+   "parties": [
+    "Paul T. Sweeney"
+   ],
+   "amount": 62500,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=90",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "no",
+    "Tydus": "yes",
+    "Taylor": "no"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=90"
+  },
+  {
+   "id": "ol-2011-01-26-2",
+   "date": "2011-01-26",
+   "ref": "Item 2, 2011-01-26 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($27,568)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 27568,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=90",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "no",
+    "Tydus": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Miller",
+   "second": "Tydus",
+   "consent": true,
+   "result": "passed",
+   "notes": "OSSI police software maintenance. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=90"
+  },
+  {
+   "id": "ol-2011-01-26-3",
+   "date": "2011-01-26",
+   "ref": "Item 3, 2011-01-26 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($38,987.64)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 38987.64,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=90",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "no",
+    "Tydus": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Miller",
+   "second": "Tydus",
+   "consent": false,
+   "result": "passed",
+   "notes": "Plus Series software maintenance. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=90"
+  },
+  {
+   "id": "ol-2011-02-23-11",
+   "date": "2011-02-23",
+   "ref": "Item 11, 2011-02-23 regular meeting",
+   "title": "Amended the street improvements contract with Horizon Contractors, Inc.",
+   "kind": "contract",
+   "parties": [
+    "Horizon Contractors, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "absent",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "90-day extension, Ali-Baba Avenue design-build. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-02-23-12",
+   "date": "2011-02-23",
+   "ref": "Item 12, 2011-02-23 regular meeting",
+   "title": "Donated city land to Opa-locka Community Development Corporation",
+   "kind": "sale",
+   "parties": [
+    "Opa-locka Community Development Corporation"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Miller": "absent",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "reps": [
+    "2171 Lincoln Ave"
+   ]
+  },
+  {
+   "id": "ol-2011-02-23-16-2",
+   "date": "2011-02-23",
+   "ref": "Item 16-2, 2011-02-23 regular meeting",
+   "title": "Approved buying land from Kym Penn LLC at vacant lot near Segal Park, folio 08-2122-000-0021",
+   "kind": "sale",
+   "parties": [
+    "Kym Penn LLC"
+   ],
+   "amount": 220000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Holmes": "no",
+    "Miller": "absent",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Tydus",
+   "consent": false,
+   "result": "passed",
+   "notes": "Motion to offer to buy the lot. Owner of record on 2011-02-23 per the Miami-Dade Property Appraiser (folio 08-2122-000-0021): Grantor of the first sale after the vote (8/26/2011); current owner CITY OF OPA LOCKA. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "address": "vacant lot near Segal Park, folio 08-2122-000-0021"
+  },
+  {
+   "id": "ol-2011-02-23-16-5",
+   "date": "2011-02-23",
+   "ref": "Item 16-5, 2011-02-23 regular meeting",
+   "title": "Gave funding to Youth Co-Op, Inc.",
+   "kind": "grant",
+   "parties": [
+    "Youth Co-Op, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Holmes": "no",
+    "Miller": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Tydus",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-02-23-16-6",
+   "date": "2011-02-23",
+   "ref": "Item 16-6, 2011-02-23 regular meeting",
+   "title": "Signed an agreement with Williams Paving Co. Inc. for park fencing and gates (up to $17,900)",
+   "kind": "agreement",
+   "parties": [
+    "Williams Paving Co. Inc."
+   ],
+   "amount": 17900,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Holmes": "yes",
+    "Miller": "absent",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park lakefront fencing and pile railing. Roll call read from the scan of the minutes (Commissioner Tydus out of the room; Commissioner Miller not present).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-02-23-16-7",
+   "date": "2011-02-23",
+   "ref": "Item 16-7, 2011-02-23 regular meeting",
+   "title": "Signed an agreement with Williams Paving Co. Inc. for park construction (up to $17,800)",
+   "kind": "agreement",
+   "parties": [
+    "Williams Paving Co. Inc."
+   ],
+   "amount": 17800,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Miller": "absent",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park pavilion renovation. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-02-23-8",
+   "date": "2011-02-23",
+   "ref": "Item 8, 2011-02-23 regular meeting",
+   "title": "Signed an agreement with JVA Engineering Contractor, Inc. for road paving and drainage work (up to $14,817.78)",
+   "kind": "agreement",
+   "parties": [
+    "JVA Engineering Contractor, Inc."
+   ],
+   "amount": 14817.78,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park lakefront parking lot. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-02-23-9",
+   "date": "2011-02-23",
+   "ref": "Item 9, 2011-02-23 regular meeting",
+   "title": "Signed an agreement with Hurricane Irrigation Systems, Inc. for lawn and landscape maintenance (up to $32,384.60)",
+   "kind": "agreement",
+   "parties": [
+    "Hurricane Irrigation Systems, Inc."
+   ],
+   "amount": 32384.6,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=92",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "absent",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park landscaping and irrigation. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=92"
+  },
+  {
+   "id": "ol-2011-03-23-1.c",
+   "date": "2011-03-23",
+   "ref": "Item 1, 2011-03-23 regular meeting",
+   "title": "Approved a partnership with Citizens for a Better South Florida for tree planting",
+   "kind": "agreement",
+   "parties": [
+    "Citizens for a Better South Florida"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=94",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "absent",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Replanting program. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=94"
+  },
+  {
+   "id": "ol-2011-03-23-?",
+   "date": "2011-03-23",
+   "ref": "Item ?, 2011-03-23 regular meeting",
+   "title": "Hired Graphic Images Inc. for bus branding graphics (up to $9,576.50)",
+   "kind": "contract",
+   "parties": [
+    "Graphic Images Inc."
+   ],
+   "amount": 9576.5,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=94",
+   "roll": {
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Circulator bus branding; ratified the City Manager's action. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=94"
+  },
+  {
+   "id": "ol-2011-04-13-5",
+   "date": "2011-04-13",
+   "ref": "Item 5, 2011-04-13 regular meeting",
+   "title": "Bought medical services from Physicians Health Center using another government's contract",
+   "kind": "contract",
+   "parties": [
+    "Physicians Health Center"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=108",
+   "roll": {
+    "Miller": "absent",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "City of Coral Gables contract; occupational medical services. Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Holmes and Johnson is not legible in the scan and is taken from the minutes' count (3-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=108"
+  },
+  {
+   "id": "ol-2011-04-13-6",
+   "date": "2011-04-13",
+   "ref": "Item 6, 2011-04-13 regular meeting",
+   "title": "Bought police equipment from C.W. Bicycle Shop Inc. (up to $9,368)",
+   "kind": "contract",
+   "parties": [
+    "C.W. Bicycle Shop Inc."
+   ],
+   "amount": 9368,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=108",
+   "roll": {
+    "Miller": "absent",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "Eight police bicycles (Law Enforcement Trust Fund). Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Holmes and Johnson is not legible in the scan and is taken from the minutes' count (3-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=108"
+  },
+  {
+   "id": "ol-2011-04-13-8",
+   "date": "2011-04-13",
+   "ref": "Item 8, 2011-04-13 regular meeting",
+   "title": "Approved an item benefiting Swisher Hygiene, Inc. and Choice Environmental Services, Inc.",
+   "kind": "other",
+   "parties": [
+    "Swisher Hygiene, Inc.",
+    "Choice Environmental Services, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=108",
+   "roll": {
+    "Miller": "absent",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Consent to Swisher Hygiene's acquisition of the city's waste hauler Choice Environmental Services. Roll call recorded in the minutes; the vote of Holmes and Johnson is not legible in the scan and is taken from the minutes' count (3-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=108"
+  },
+  {
+   "id": "ol-2011-05-11-7",
+   "date": "2011-05-11",
+   "ref": "Item 7, 2011-05-11 regular meeting",
+   "title": "Hired Florida Industrial Properties Two, LLC for debris hauling (up to $12,000)",
+   "kind": "contract",
+   "parties": [
+    "Florida Industrial Properties Two, LLC"
+   ],
+   "amount": 12000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=101",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "Debris hauling from Segal Park construction; ratified the City Manager's action. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=101"
+  },
+  {
+   "id": "ol-2011-05-11-8",
+   "date": "2011-05-11",
+   "ref": "Item 8, 2011-05-11 regular meeting",
+   "title": "Amended the street improvements contract with Horizon Contractors, Inc. (up to $21,580)",
+   "kind": "contract",
+   "parties": [
+    "Horizon Contractors, Inc."
+   ],
+   "amount": 21580,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=101",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Additional work and extension, Ali-Baba Avenue. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=101"
+  },
+  {
+   "id": "ol-2011-05-25-1",
+   "date": "2011-05-25",
+   "ref": "Item 1, 2011-05-25 regular meeting",
+   "title": "Ratified the union contract with Dade County Police Benevolent Association, Inc.",
+   "kind": "agreement",
+   "parties": [
+    "Dade County Police Benevolent Association, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=107",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes; the vote of Johnson is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=107"
+  },
+  {
+   "id": "ol-2011-05-25-4.b",
+   "date": "2011-05-25",
+   "ref": "Item 4, 2011-05-25 regular meeting",
+   "title": "Approved a settlement with Alonzo Williams ($125,000)",
+   "kind": "settlement",
+   "parties": [
+    "Alonzo Williams"
+   ],
+   "amount": 125000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=107",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Indemnity portion of a workers' compensation claim. Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Taylor and Miller is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=107"
+  },
+  {
+   "id": "ol-2011-05-27-a",
+   "date": "2011-05-27",
+   "ref": "Item a, 2011-05-27 special meeting",
+   "title": "Hired C & I Construction and Design, Inc. for pump station construction (up to $652,143.08)",
+   "kind": "contract",
+   "parties": [
+    "C & I Construction and Design, Inc."
+   ],
+   "amount": 652143.08,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=105",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "no",
+    "Tydus": "absent",
+    "Miller": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    2,
+    1
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Rehabilitation of Pump Stations 1 and 2. Roll call recorded in the minutes; the vote of Taylor is not legible in the scan and is taken from the minutes' count (2-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=105"
+  },
+  {
+   "id": "ol-2011-05-27-b",
+   "date": "2011-05-27",
+   "ref": "Item b, 2011-05-27 special meeting",
+   "title": "Amended the consulting services contract with Lawrence Wright & Partners, LLC (up to $50,000)",
+   "kind": "contract",
+   "parties": [
+    "Lawrence Wright & Partners, LLC"
+   ],
+   "amount": 50000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=105",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "absent",
+    "Miller": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Addendum for additional consulting on Sherbondy Park construction. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=105"
+  },
+  {
+   "id": "ol-2011-06-08-19-2",
+   "date": "2011-06-08",
+   "ref": "Item 19-2, 2011-06-08 special meeting",
+   "title": "Hired Gomez & Son Fence Company for park fencing and gates (up to $19,722.22)",
+   "kind": "contract",
+   "parties": [
+    "Gomez & Son Fence Company"
+   ],
+   "amount": 19722.22,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=106",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park lakefront fencing; ratified the City Manager's action. Roll call recorded in the minutes; the vote of Miller is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=106"
+  },
+  {
+   "id": "ol-2011-06-08-19-3",
+   "date": "2011-06-08",
+   "ref": "Item 19-3, 2011-06-08 special meeting",
+   "title": "Hired Burcorp LLC for park construction (up to $10,740.97)",
+   "kind": "contract",
+   "parties": [
+    "Burcorp LLC"
+   ],
+   "amount": 10740.97,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=106",
+   "roll": {
+    "Johnson": "absent",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park pavilion repairs; ratified the City Manager's action. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=106"
+  },
+  {
+   "id": "ol-2011-06-08-19-4",
+   "date": "2011-06-08",
+   "ref": "Item 19-4, 2011-06-08 special meeting",
+   "title": "Hired Korkat, Inc. for park construction (up to $21,634.49)",
+   "kind": "contract",
+   "parties": [
+    "Korkat, Inc."
+   ],
+   "amount": 21634.49,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=106",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "New pavilion and park amenities, Ingram Park lakefront; ratified the City Manager's action. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=106"
+  },
+  {
+   "id": "ol-2011-06-08-4",
+   "date": "2011-06-08",
+   "ref": "Item 4, 2011-06-08 special meeting",
+   "title": "Bought vehicles and equipment from Ford Motor Company",
+   "kind": "contract",
+   "parties": [
+    "Ford Motor Company"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=106",
+   "roll": {
+    "Miller": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Eleven 2011 Ford Explorers for police command staff. Roll call recorded in the minutes; the vote of Tydus and Holmes is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=106"
+  },
+  {
+   "id": "ol-2011-09-01-a",
+   "date": "2011-09-01",
+   "ref": "Item a, 2011-09-01 special meeting",
+   "title": "Selected United Neighborhood Health Plan and Solstice Benefits, Inc. for employee health insurance",
+   "kind": "contract",
+   "parties": [
+    "United Neighborhood Health Plan",
+    "Solstice Benefits, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=126",
+   "roll": {
+    "Tydus": "no",
+    "Miller": "yes",
+    "Johnson": "yes",
+    "Holmes": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Health and vision plans (United Neighborhood Health Plan) and dental plans (Solstice Benefits), benefit year from Oct 1, 2011. Roll call read from the scan of the minutes (Commissioner Holmes not present); passed 3-1.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=126"
+  },
+  {
+   "id": "ol-2011-09-14-1.d",
+   "date": "2011-09-14",
+   "ref": "Item 1, 2011-09-14 regular meeting",
+   "title": "Approved a site plan at Veteran's Way and NW 22 Ave (folio 08-2122-025-0270) for Snapper's Fish and Chicken",
+   "kind": "zoning",
+   "parties": [
+    "Snapper's Fish and Chicken"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "roll": {
+    "Holmes": "yes",
+    "Tydus": "absent",
+    "Johnson": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Final site plan for a restaurant. Roll call read from the scan of the minutes (Commissioner Tydus not present).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "address": "Veteran's Way and NW 22 Ave (folio 08-2122-025-0270)"
+  },
+  {
+   "id": "ol-2011-09-14-11",
+   "date": "2011-09-14",
+   "ref": "Item 11, 2011-09-14 regular meeting",
+   "title": "Selected Wells Fargo for banking services",
+   "kind": "contract",
+   "parties": [
+    "Wells Fargo"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "roll": {
+    "Holmes": "yes",
+    "Tydus": "absent",
+    "Johnson": "yes",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Professional banking services. Roll call recorded in the minutes; the vote of Miller is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=121"
+  },
+  {
+   "id": "ol-2011-09-14-3",
+   "date": "2011-09-14",
+   "ref": "Item 3, 2011-09-14 regular meeting",
+   "title": "Bought vehicles and equipment from T3 Motion, Inc. (up to $26,837.98)",
+   "kind": "contract",
+   "parties": [
+    "T3 Motion, Inc."
+   ],
+   "amount": 26837.98,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Tydus": "absent",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Two personal electric mobility vehicles, sole source. Roll call read from the scan of the minutes (Commissioner Tydus not present).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=121"
+  },
+  {
+   "id": "ol-2011-09-14-8",
+   "date": "2011-09-14",
+   "ref": "Item 8, 2011-09-14 regular meeting",
+   "title": "Approved paying Rangeline Tapping Services, Inc. for water and sewer tapping work ($21,500)",
+   "kind": "contract",
+   "parties": [
+    "Rangeline Tapping Services, Inc."
+   ],
+   "amount": 21500,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "roll": {
+    "Johnson": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Outstanding subcontractor invoice. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=121"
+  },
+  {
+   "id": "ol-2011-09-14-?.b",
+   "date": "2011-09-14",
+   "ref": "Item ?, 2011-09-14 regular meeting",
+   "title": "Approved a settlement with Sheila Robinson ($15,000)",
+   "kind": "settlement",
+   "parties": [
+    "Sheila Robinson"
+   ],
+   "amount": 15000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=121",
+   "roll": {
+    "Johnson": "yes",
+    "Miller": "yes",
+    "Tydus": "absent",
+    "Taylor": "yes",
+    "Holmes": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes; the vote of Holmes is not legible in the scan and is taken from the minutes' count (4-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=121"
+  },
+  {
+   "id": "ol-2011-09-28-1.b",
+   "date": "2011-09-28",
+   "ref": "Item 1, 2011-09-28 regular meeting",
+   "title": "Approved a plat at 12805 NW 42 Ave (folio 08-2129-000-0061) for American Fruits & Produce FL Inc",
+   "kind": "zoning",
+   "parties": [
+    "American Fruits & Produce FL Inc"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=127",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Waiver of plat dividing 30 acres into two tracts. Owner of record on 2011-09-28 per the Miami-Dade Property Appraiser (folio 08-2129-000-0061): Grantor of the first sale after the vote (6/30/2017); current owner PROLOGIS 2 LP & C/O PROLOGIS INC. Roll call recorded in the minutes; the vote of Taylor is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=127",
+   "address": "12805 NW 42 Ave (folio 08-2129-000-0061)"
+  },
+  {
+   "id": "ol-2011-09-28-6",
+   "date": "2011-09-28",
+   "ref": "Item 6, 2011-09-28 regular meeting",
+   "title": "Renewed the emergency notification calls contract with Emergency Communications Network Inc. (up to $10,222.60)",
+   "kind": "contract",
+   "parties": [
+    "Emergency Communications Network Inc."
+   ],
+   "amount": 10222.6,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=127",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "CodeRED community notification. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=127"
+  },
+  {
+   "id": "ol-2011-09-28-?",
+   "date": "2011-09-28",
+   "ref": "Item ?, 2011-09-28 regular meeting",
+   "title": "Hired Green Source Landscape & Field Turf Inc. for park construction (up to $25,087)",
+   "kind": "contract",
+   "parties": [
+    "Green Source Landscape & Field Turf Inc."
+   ],
+   "amount": 25087,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=127",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ingram Park remediation, sod and irrigation. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=127"
+  },
+  {
+   "id": "ol-2011-10-12-1.b",
+   "date": "2011-10-12",
+   "ref": "Item 1, 2011-10-12 regular meeting",
+   "title": "Rejected rezoning the property at 3325 NW 135 St (folio 08-2121-007-2700)",
+   "kind": "zoning",
+   "parties": [
+    "Zepol Holdings LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "roll": {
+    "Holmes": "yes",
+    "Tydus": "no",
+    "Miller": "no",
+    "Taylor": "yes",
+    "Johnson": "no"
+   },
+   "tally": [
+    2,
+    3
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "failed",
+   "notes": "B-3 to I-3 rezoning failed on second reading. Owner of record on 2011-10-12 per the Miami-Dade Property Appraiser (folio 08-2121-007-2700): Grantee of the last sale before the vote (6/23/2010); current owner FLORIDA INDUSTRIAL PROPER SIX LLC. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "address": "3325 NW 135 St (folio 08-2121-007-2700)"
+  },
+  {
+   "id": "ol-2011-10-12-2",
+   "date": "2011-10-12",
+   "ref": "Item 2, 2011-10-12 regular meeting",
+   "title": "Hired My Lawn Service for tree planting (up to $14,400)",
+   "kind": "contract",
+   "parties": [
+    "My Lawn Service"
+   ],
+   "amount": 14400,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "roll": {
+    "Johnson": "no",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "no",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Tree purchase, installation and remediation; ratified the previous City Manager's action. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=131"
+  },
+  {
+   "id": "ol-2011-10-12-2.b",
+   "date": "2011-10-12",
+   "ref": "Item 2, 2011-10-12 regular meeting",
+   "title": "Rejected changing the land use designation at 3325 NW 135 St (folio 08-2121-007-2700)",
+   "kind": "zoning",
+   "parties": [
+    "Zepol Holdings LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "roll": {
+    "Tydus": "no",
+    "Miller": "no",
+    "Holmes": "yes",
+    "Taylor": "yes",
+    "Johnson": "no"
+   },
+   "tally": [
+    2,
+    3
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "failed",
+   "notes": "Land use change from commercial failed. Owner of record on 2011-10-12 per the Miami-Dade Property Appraiser (folio 08-2121-007-2700): Grantee of the last sale before the vote (6/23/2010); current owner FLORIDA INDUSTRIAL PROPER SIX LLC. Roll call read from the scan of the minutes; failed 2-3.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "address": "3325 NW 135 St (folio 08-2121-007-2700)"
+  },
+  {
+   "id": "ol-2011-10-12-2.c",
+   "date": "2011-10-12",
+   "ref": "Item 2, 2011-10-12 regular meeting",
+   "title": "Renewed the software and support contract with Software House International (up to $18,320)",
+   "kind": "contract",
+   "parties": [
+    "Software House International"
+   ],
+   "amount": 18320,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=131",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Three-year Microsoft enterprise licensing (second reading). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=131"
+  },
+  {
+   "id": "ol-2011-11-09-8",
+   "date": "2011-11-09",
+   "ref": "Item 8, 2011-11-09 regular meeting",
+   "title": "Gave $2,000 to Black Global Bikers Association, Inc.",
+   "kind": "grant",
+   "parties": [
+    "Black Global Bikers Association, Inc."
+   ],
+   "amount": 2000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=133",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": true,
+   "result": "passed",
+   "notes": "2011 Special Needs Toy Run. Consent agenda; roll call on the consent agenda recorded in the minutes; the vote of Taylor is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=133"
+  },
+  {
+   "id": "ol-2011-12-14-4",
+   "date": "2011-12-14",
+   "ref": "Item 4, 2011-12-14 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($14,441.23)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 14441.23,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=134",
+   "roll": {
+    "Tydus": "absent",
+    "Holmes": "absent",
+    "Miller": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    3,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Plus Series software maintenance. Consent agenda; roll call read from the scan of the minutes (Commissioners Tydus and Holmes not present).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=134"
+  },
+  {
+   "id": "ol-2012-01-25-2.b",
+   "date": "2012-01-25",
+   "ref": "Item 2, 2012-01-25 regular meeting",
+   "title": "Signed an agreement with Becker & Poliakoff, PA for lobbying services",
+   "kind": "agreement",
+   "parties": [
+    "Becker & Poliakoff, PA"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=144",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "no",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "State lobbying services. Roll call recorded in the minutes; the vote of Johnson is not legible in the scan and is taken from the minutes' count (4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=144"
+  },
+  {
+   "id": "ol-2012-02-08-19-1",
+   "date": "2012-02-08",
+   "ref": "Item 19-1, 2012-02-08 regular meeting",
+   "title": "Signed an agreement with United States Association of CDC Inc. for pump station construction (up to $450,000)",
+   "kind": "agreement",
+   "parties": [
+    "United States Association of CDC Inc."
+   ],
+   "amount": 450000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Complete reconstruction of Pump Station 5 (amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=145"
+  },
+  {
+   "id": "ol-2012-02-08-19-2",
+   "date": "2012-02-08",
+   "ref": "Item 19-2, 2012-02-08 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($27,241.41)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 27241.41,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Plus Series software maintenance. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=145"
+  },
+  {
+   "id": "ol-2012-02-08-19-3",
+   "date": "2012-02-08",
+   "ref": "Item 19-3, 2012-02-08 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($37,822)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 37822,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "roll": {
+    "Tydus": "yes",
+    "Johnson": "yes",
+    "Holmes": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "OSSI police software maintenance. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=145"
+  },
+  {
+   "id": "ol-2012-02-08-19-5",
+   "date": "2012-02-08",
+   "ref": "Item 19-5, 2012-02-08 regular meeting",
+   "title": "Approved a settlement with Robert Bells and Dade County Police Benevolent Association",
+   "kind": "settlement",
+   "parties": [
+    "Robert Bells",
+    "Dade County Police Benevolent Association"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Arbitration settlement. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=145"
+  },
+  {
+   "id": "ol-2012-02-08-19-6",
+   "date": "2012-02-08",
+   "ref": "Item 19-6, 2012-02-08 regular meeting",
+   "title": "Approved a settlement with Dion McGloun ($52,000)",
+   "kind": "settlement",
+   "parties": [
+    "Dion McGloun"
+   ],
+   "amount": 52000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=145",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "McGloun v. City of Opa-locka, Case No. 11-21855 CA 04. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=145"
+  },
+  {
+   "id": "ol-2012-02-22-19-2",
+   "date": "2012-02-22",
+   "ref": "Item 19-2, 2012-02-22 regular meeting",
+   "title": "Hired C & I Construction and Design, Inc. for pump station construction (up to $844,000)",
+   "kind": "contract",
+   "parties": [
+    "C & I Construction and Design, Inc."
+   ],
+   "amount": 844000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=148",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Tydus": "yes"
+   },
+   "tally": [
+    3,
+    1
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Rehabilitation of Pump Station 11A. Roll call read from the scan of the minutes; Mayor Taylor's line is blank in the minutes (passed 4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=148"
+  },
+  {
+   "id": "ol-2012-02-22-19-3",
+   "date": "2012-02-22",
+   "ref": "Item 19-3, 2012-02-22 regular meeting",
+   "title": "Hired JVA Engineering Contractor, Inc. for drainage improvements (up to $468,644.80)",
+   "kind": "contract",
+   "parties": [
+    "JVA Engineering Contractor, Inc."
+   ],
+   "amount": 468644.8,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=148",
+   "roll": {
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "143 Street drainage and roadway. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=148"
+  },
+  {
+   "id": "ol-2012-02-22-4",
+   "date": "2012-02-22",
+   "ref": "Item 4, 2012-02-22 regular meeting",
+   "title": "Hired A & A Fronte, Inc. for asphalt resurfacing (up to $6,662)",
+   "kind": "contract",
+   "parties": [
+    "A & A Fronte, Inc."
+   ],
+   "amount": 6662,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=148",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "no",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Asphalt and curb repair at Sharazad Blvd and Kalander St. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=148"
+  },
+  {
+   "id": "ol-2012-03-01-B",
+   "date": "2012-03-01",
+   "ref": "Item B, 2012-03-01 special meeting",
+   "title": "Hired S.S.N. Engineering, LLC for engineering services (up to $23,900)",
+   "kind": "contract",
+   "parties": [
+    "S.S.N. Engineering, LLC"
+   ],
+   "amount": 23900,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=149",
+   "roll": {
+    "Holmes": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Johnson": "yes",
+    "Taylor": "absent"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Engineering for a TIGER grant application. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=149"
+  },
+  {
+   "id": "ol-2012-03-14-19-1",
+   "date": "2012-03-14",
+   "ref": "Item 19-1, 2012-03-14 regular meeting",
+   "title": "Approved a settlement with Willie Smalls ($57,000)",
+   "kind": "settlement",
+   "parties": [
+    "Willie Smalls"
+   ],
+   "amount": 57000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "roll": {
+    "Miller": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Smalls v. City of Opa-locka, Case No. 11-23062 CA 09. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=151"
+  },
+  {
+   "id": "ol-2012-03-14-19-3",
+   "date": "2012-03-14",
+   "ref": "Item 19-3, 2012-03-14 regular meeting",
+   "title": "Signed an agreement with Armando Perera Auction for auction services",
+   "kind": "agreement",
+   "parties": [
+    "Armando Perera Auction"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "roll": {
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Public auction of surplus city property. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=151"
+  },
+  {
+   "id": "ol-2012-03-14-19-5",
+   "date": "2012-03-14",
+   "ref": "Item 19-5, 2012-03-14 regular meeting",
+   "title": "Waived code enforcement liens for Alternate Program, Inc. at 13280-13340 Port Said Rd ($5,620.41)",
+   "kind": "settlement",
+   "parties": [
+    "Alternate Program, Inc."
+   ],
+   "amount": 5620.41,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "roll": {
+    "Miller": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "address": "13280-13340 Port Said Rd"
+  },
+  {
+   "id": "ol-2012-03-14-19-6",
+   "date": "2012-03-14",
+   "ref": "Item 19-6, 2012-03-14 regular meeting",
+   "title": "Approved paying GL Distributors for police equipment ($7,865)",
+   "kind": "contract",
+   "parties": [
+    "GL Distributors"
+   ],
+   "amount": 7865,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=151",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Body armor vests bought by the previous administration. Roll call recorded in the minutes; the vote of Miller is not legible in the scan and is taken from the minutes' count (5-0).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=151"
+  },
+  {
+   "id": "ol-2012-03-20-12",
+   "date": "2012-03-20",
+   "ref": "Item 12, 2012-03-20 special meeting",
+   "title": "Donated city land to Opa-locka Community Development Corporation at folio 08-2128-007-0270",
+   "kind": "sale",
+   "parties": [
+    "Opa-locka Community Development Corporation"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=150",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "no",
+    "Tydus": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Donation of city land valued at $200,640, subject to final approval. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=150",
+   "address": "folio 08-2128-007-0270"
+  },
+  {
+   "id": "ol-2012-03-28-19-7",
+   "date": "2012-03-28",
+   "ref": "Item 19-7, 2012-03-28 regular meeting",
+   "title": "Signed an agreement with Opa-locka Community Development Corporation for services",
+   "kind": "agreement",
+   "parties": [
+    "Opa-locka Community Development Corporation"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=152",
+   "roll": {
+    "Johnson": "yes",
+    "Holmes": "no",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Three-year agreement. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=152"
+  },
+  {
+   "id": "ol-2012-04-11-1",
+   "date": "2012-04-11",
+   "ref": "Item 1, 2012-04-11 regular meeting",
+   "title": "Rezoned property at folio 08-2122-003-0040 for Magnolia Apartment, LLC",
+   "kind": "zoning",
+   "parties": [
+    "Magnolia Apartment, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "no",
+    "Taylor": "yes",
+    "Johnson": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "R-2 to Magnolia North Redevelopment Overlay (second reading). Roll call recorded in the minutes; the vote of Johnson is not legible in the scan and is taken from the minutes' count (4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "address": "folio 08-2122-003-0040"
+  },
+  {
+   "id": "ol-2012-04-11-19-10",
+   "date": "2012-04-11",
+   "ref": "Item 19-10, 2012-04-11 regular meeting",
+   "title": "Hired Lulu's Carwash, LLC for car washing for city vehicles",
+   "kind": "contract",
+   "parties": [
+    "Lulu's Carwash, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "roll": {
+    "Tydus": "yes",
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Citywide car wash services. Roll call recorded in the minutes; the vote of Miller is not legible in the scan and is taken from the minutes' count (4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=153"
+  },
+  {
+   "id": "ol-2012-04-11-19-15",
+   "date": "2012-04-11",
+   "ref": "Item 19-15, 2012-04-11 regular meeting",
+   "title": "Amended the construction management contract with Lawrence Wright & Partners, LLC",
+   "kind": "contract",
+   "parties": [
+    "Lawrence Wright & Partners, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "roll": {
+    "Miller": "no",
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Taylor": "no",
+    "Tydus": "yes"
+   },
+   "tally": [
+    2,
+    3
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "failed",
+   "notes": "Seven-month retroactive extension of project management; motion failed. Roll call recorded in the minutes; the vote of Tydus is not legible in the scan and is taken from the minutes' count (2-3).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=153"
+  },
+  {
+   "id": "ol-2012-04-11-19-16",
+   "date": "2012-04-11",
+   "ref": "Item 19-16, 2012-04-11 regular meeting",
+   "title": "Signed an agreement with C.A.P. Government, Inc. for building inspection and permitting services",
+   "kind": "agreement",
+   "parties": [
+    "C.A.P. Government, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "roll": {
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "no"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Building examiner and inspection consulting, one year. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=153"
+  },
+  {
+   "id": "ol-2012-04-11-2.b",
+   "date": "2012-04-11",
+   "ref": "Item 2, 2012-04-11 regular meeting",
+   "title": "Rezoned property at folio 08-2122-003-0610 for Magnolia Apartment, LLC",
+   "kind": "zoning",
+   "parties": [
+    "Magnolia Apartment, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes",
+    "Holmes": "no"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "R-2 to Magnolia North Redevelopment Overlay (second reading, as amended). Roll call recorded in the minutes; the vote of Holmes is not legible in the scan and is taken from the minutes' count (4-1).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=153",
+   "address": "folio 08-2122-003-0610"
+  },
+  {
+   "id": "ol-2012-04-25-16-2.b",
+   "date": "2012-04-25",
+   "ref": "Item 16-2, 2012-04-25 regular meeting",
+   "title": "Ended the contract with Lulu's Carwash, LLC",
+   "kind": "contract",
+   "parties": [
+    "Lulu's Carwash, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=154",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Tydus": "no",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Miller",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Rescinded Resolution 12-8386 awarding the car wash contract. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=154"
+  },
+  {
+   "id": "ol-2012-04-25-19-2",
+   "date": "2012-04-25",
+   "ref": "Item 19-2, 2012-04-25 regular meeting",
+   "title": "Amended the construction management contract with Lawrence Wright & Partners, LLC",
+   "kind": "contract",
+   "parties": [
+    "Lawrence Wright & Partners, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=154",
+   "roll": {
+    "Miller": "no",
+    "Tydus": "no",
+    "Holmes": "no",
+    "Johnson": "yes",
+    "Taylor": "no"
+   },
+   "tally": [
+    1,
+    4
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "failed",
+   "notes": "Retroactive seven-month extension agreement; motion failed 1-4. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=154"
+  },
+  {
+   "id": "ol-2012-05-09-19-3",
+   "date": "2012-05-09",
+   "ref": "Item 19-3, 2012-05-09 regular meeting",
+   "title": "Hired C&I Construction and Design, Inc. for pump station construction (up to $1,475,118)",
+   "kind": "contract",
+   "parties": [
+    "C&I Construction and Design, Inc."
+   ],
+   "amount": 1475118,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=162",
+   "roll": {
+    "Miller": "yes",
+    "Johnson": "no",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Holmes": "no"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Rehabilitation of Master Pump Station 11C. Roll call recorded in the minutes; the vote of Holmes is not legible in the scan and is taken from the minutes' count (3-2).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=162"
+  },
+  {
+   "id": "ol-2012-07-11-3",
+   "date": "2012-07-11",
+   "ref": "Item 3, 2012-07-11 regular meeting",
+   "title": "Approved a settlement with Edward Blackman ($65,000)",
+   "kind": "settlement",
+   "parties": [
+    "Edward Blackman"
+   ],
+   "amount": 65000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=182",
+   "roll": {
+    "Tydus": "yes",
+    "Johnson": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Blackman v. City of Opa-locka. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=182"
+  },
+  {
+   "id": "ol-2012-07-25-c",
+   "date": "2012-07-25",
+   "ref": "Item c, 2012-07-25 special meeting",
+   "title": "Signed an agreement with C & I Construction and Design, Inc. for pump station construction",
+   "kind": "agreement",
+   "parties": [
+    "C & I Construction and Design, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=186",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Rehabilitation of Pump Station 8 (amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=186"
+  },
+  {
+   "id": "ol-2012-07-25-d",
+   "date": "2012-07-25",
+   "ref": "Item d, 2012-07-25 special meeting",
+   "title": "Signed an agreement with Comtech Engineering, Inc. for pump station construction (up to $676,543.30)",
+   "kind": "agreement",
+   "parties": [
+    "Comtech Engineering, Inc."
+   ],
+   "amount": 676543.3,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=186",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Rehabilitation of Pump Station 10 (amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=186"
+  },
+  {
+   "id": "ol-2012-09-12-19-4",
+   "date": "2012-09-12",
+   "ref": "Item 19-4, 2012-09-12 regular meeting",
+   "title": "Hired JVA Engineering Contractor, Inc. for drainage improvements",
+   "kind": "contract",
+   "parties": [
+    "JVA Engineering Contractor, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Miller": "absent",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Rutland Street drainage and roadway. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-12-19-8",
+   "date": "2012-09-12",
+   "ref": "Item 19-8, 2012-09-12 regular meeting",
+   "title": "Renewed the emergency notification calls contract with Emergency Communications Network, Inc. (up to $9,750)",
+   "kind": "contract",
+   "parties": [
+    "Emergency Communications Network, Inc."
+   ],
+   "amount": 9750,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "absent",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "CodeRED community notification. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-12-2.b",
+   "date": "2012-09-12",
+   "ref": "Item 2, 2012-09-12 regular meeting",
+   "title": "Rezoned property at 2070 Lincoln Ave (folio 08-2122-003-0570) for Magnolia North Apartment, LLC",
+   "kind": "zoning",
+   "parties": [
+    "Magnolia North Apartment, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "R-2 to Magnolia North Redevelopment Overlay (second reading). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "address": "2070 Lincoln Ave (folio 08-2122-003-0570)"
+  },
+  {
+   "id": "ol-2012-09-12-2.c",
+   "date": "2012-09-12",
+   "ref": "Item 2, 2012-09-12 regular meeting",
+   "title": "Approved a development agreement with MV Real Estate Holdings, LLC and RUDG-Town Center, LLC",
+   "kind": "zoning",
+   "parties": [
+    "MV Real Estate Holdings, LLC",
+    "RUDG-Town Center, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "no",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "127-unit senior housing development (as amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-12-2.d",
+   "date": "2012-09-12",
+   "ref": "Item 2, 2012-09-12 regular meeting",
+   "title": "Signed an agreement with Corzo Castella Thompson Salman for a transportation master plan",
+   "kind": "agreement",
+   "parties": [
+    "Corzo Castella Thompson Salman"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Negotiate cost for a transportation master plan and enhancement study. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-12-3.b",
+   "date": "2012-09-12",
+   "ref": "Item 3, 2012-09-12 regular meeting",
+   "title": "Hired F. R. Aleman for water and sewer system maps",
+   "kind": "contract",
+   "parties": [
+    "F. R. Aleman"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Water and sewer system atlases. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-12-5",
+   "date": "2012-09-12",
+   "ref": "Item 5, 2012-09-12 regular meeting",
+   "title": "Approved paying SunGard Public Sector for software and support ($13,492.90)",
+   "kind": "contract",
+   "parties": [
+    "SunGard Public Sector"
+   ],
+   "amount": 13492.9,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=190",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Plus Series software maintenance. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=190"
+  },
+  {
+   "id": "ol-2012-09-19-b",
+   "date": "2012-09-19",
+   "ref": "Item b, 2012-09-19 regular meeting",
+   "title": "Selected United Neighborhood Health Plan and Solstice Benefits, Inc. for employee health insurance",
+   "kind": "contract",
+   "parties": [
+    "United Neighborhood Health Plan",
+    "Solstice Benefits, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=191",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Tydus": "yes",
+    "Johnson": "absent",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Tydus",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Health plan (United Neighborhood Health Plan) and dental and vision plans (Solstice Benefits), benefit year from Oct 1, 2012. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=191"
+  },
+  {
+   "id": "ol-2012-09-26-1",
+   "date": "2012-09-26",
+   "ref": "Item 1, 2012-09-26 regular meeting",
+   "title": "Selected M. C. Harry & Associates, Inc. for architecture and design services",
+   "kind": "contract",
+   "parties": [
+    "M. C. Harry & Associates, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=188",
+   "roll": {
+    "Holmes": "no",
+    "Johnson": "no",
+    "Tydus": "yes",
+    "Taylor": "yes",
+    "Miller": "yes"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Miller",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Negotiate with the top-ranked firm for architectural and engineering services (RFP 12-1405100). Roll call recorded in the minutes; the vote of Miller is not legible in the scan and is taken from the minutes' count (3-2).",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=188"
+  },
+  {
+   "id": "ol-2012-09-26-16-2",
+   "date": "2012-09-26",
+   "ref": "Item 16-2, 2012-09-26 regular meeting",
+   "title": "Approved a settlement with Raymond Walls",
+   "kind": "settlement",
+   "parties": [
+    "Raymond Walls"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=188",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Amended settlement agreement (separation date). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=188"
+  },
+  {
+   "id": "ol-2012-09-26-3.b",
+   "date": "2012-09-26",
+   "ref": "Item 3, 2012-09-26 regular meeting",
+   "title": "Signed an agreement with Ruiz Trans Development, Inc. for sewer and water system work (up to $142,255)",
+   "kind": "agreement",
+   "parties": [
+    "Ruiz Trans Development, Inc."
+   ],
+   "amount": 142255,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=188",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Port Said Road gravity sewer main replacement. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=188"
+  },
+  {
+   "id": "ol-2012-09-26-4.b",
+   "date": "2012-09-26",
+   "ref": "Item 4, 2012-09-26 regular meeting",
+   "title": "Signed an agreement with General Asphalt Co., Inc. for road paving and drainage work (up to $140,200)",
+   "kind": "agreement",
+   "parties": [
+    "General Asphalt Co., Inc."
+   ],
+   "amount": 140200,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=188",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": true,
+   "result": "passed",
+   "notes": "Milling and resurfacing of Burlington Street. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=188"
+  },
+  {
+   "id": "ol-2012-10-10-1",
+   "date": "2012-10-10",
+   "ref": "Item 1, 2012-10-10 regular meeting",
+   "title": "Approved closing part of a city street for RUDG Town Center, LLC next to Aladdin and Fisherman Streets",
+   "kind": "zoning",
+   "parties": [
+    "RUDG Town Center, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Second reading; alley of about 0.14 acre closed at the company's request. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "address": "Aladdin and Fisherman Streets"
+  },
+  {
+   "id": "ol-2012-10-10-1.b",
+   "date": "2012-10-10",
+   "ref": "Item 1, 2012-10-10 regular meeting",
+   "title": "Approved a site plan at 2121 NW 135 St for Antonio Acosta, Gustavo Ramos and Pedro O. Rodriguez",
+   "kind": "zoning",
+   "parties": [
+    "Antonio Acosta",
+    "Gustavo Ramos",
+    "Pedro O. Rodriguez"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Tydus",
+   "consent": false,
+   "result": "passed",
+   "notes": "Final site plan for a supermarket (applicants and property owner). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "address": "2121 NW 135 St"
+  },
+  {
+   "id": "ol-2012-10-10-19-10",
+   "date": "2012-10-10",
+   "ref": "Item 19-10, 2012-10-10 regular meeting",
+   "title": "Approved paying North American Risk Services for insurance claims administration ($13,139.26)",
+   "kind": "contract",
+   "parties": [
+    "North American Risk Services"
+   ],
+   "amount": 13139.26,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Miller",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Replenished loss funds for court-ordered attorney's fees (Alonzo Williams matter); ratified. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192"
+  },
+  {
+   "id": "ol-2012-10-10-19-6",
+   "date": "2012-10-10",
+   "ref": "Item 19-6, 2012-10-10 regular meeting",
+   "title": "Renewed the the city newspaper contract with Community Newspapers (up to $24,000)",
+   "kind": "contract",
+   "parties": [
+    "Community Newspapers"
+   ],
+   "amount": 24000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Miller": "yes",
+    "Tydus": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Tydus",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Opa-locka Review newspaper publication. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192"
+  },
+  {
+   "id": "ol-2012-10-10-19-7",
+   "date": "2012-10-10",
+   "ref": "Item 19-7, 2012-10-10 regular meeting",
+   "title": "Hired Miami Pool Tech for pool cleaning",
+   "kind": "contract",
+   "parties": [
+    "Miami Pool Tech"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Pool cleaning services. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192"
+  },
+  {
+   "id": "ol-2012-10-10-2.b",
+   "date": "2012-10-10",
+   "ref": "Item 2, 2012-10-10 regular meeting",
+   "title": "Approved a development agreement with El Presidente #28 Supermarket for 2121 NW 135 St",
+   "kind": "zoning",
+   "parties": [
+    "El Presidente #28 Supermarket"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Miller": "yes",
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Miller",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "address": "2121 NW 135 St"
+  },
+  {
+   "id": "ol-2012-10-10-9",
+   "date": "2012-10-10",
+   "ref": "Item 9, 2012-10-10 regular meeting",
+   "title": "Approved paying Peterson's Harley Davidson of Miami for vehicle maintenance and repairs ($7,464.69)",
+   "kind": "contract",
+   "parties": [
+    "Peterson's Harley Davidson of Miami"
+   ],
+   "amount": 7464.69,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=192",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Tydus": "yes",
+    "Miller": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Holmes",
+   "second": "Johnson",
+   "consent": false,
+   "result": "passed",
+   "notes": "Damage to a police motorcycle. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=192"
+  },
+  {
+   "id": "ol-2012-10-24-4.c",
+   "date": "2012-10-24",
+   "ref": "Item 4, 2012-10-24 regular meeting",
+   "title": "Signed an agreement with James Anaston-Karas Planning and Facilitation Services d/b/a Synaethesis, LLC for consulting services (up to $9,783)",
+   "kind": "agreement",
+   "parties": [
+    "James Anaston-Karas Planning and Facilitation Services d/b/a Synaethesis, LLC"
+   ],
+   "amount": 9783,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=193",
+   "roll": {
+    "Holmes": "yes",
+    "Johnson": "yes",
+    "Miller": "absent",
+    "Tydus": "yes",
+    "Taylor": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Johnson",
+   "second": "Holmes",
+   "consent": false,
+   "result": "passed",
+   "notes": "Strategic planning services. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=193"
+  },
+  {
+   "id": "ol-2018-12-12-14-1",
+   "date": "2018-12-12",
+   "ref": "Item 14-1, 2018-12-12 regular meeting",
+   "title": "Approved a settlement with William J. Green",
+   "kind": "settlement",
+   "parties": [
+    "William J. Green"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=635",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Pigatt",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "Green v. City of Opa-locka, Case No. 201813143SP05. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=635"
+  },
+  {
+   "id": "ol-2019-01-09-13-3",
+   "date": "2019-01-09",
+   "ref": "Item 13-3, 2019-01-09 regular meeting",
+   "title": "Hired The Brown Law Group, LLC for legal services",
+   "kind": "contract",
+   "parties": [
+    "The Brown Law Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=601",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Bass",
+   "consent": false,
+   "result": "passed",
+   "notes": "Representation in Kravich v. City of Opa-locka, Case No. 2018-039141 CA-27 (amended). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=601"
+  },
+  {
+   "id": "ol-2019-01-16-b",
+   "date": "2019-01-16",
+   "ref": "Item b, 2019-01-16 special meeting",
+   "title": "Amended the legal services contract with The Brown Law Group, LLC",
+   "kind": "contract",
+   "parties": [
+    "The Brown Law Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=603",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "no"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Burke",
+   "second": "Kelley",
+   "consent": false,
+   "result": "passed",
+   "notes": "Extended the first amended city attorney agreement to Apr 5, 2019. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=603"
+  },
+  {
+   "id": "ol-2019-01-16-g",
+   "date": "2019-01-16",
+   "ref": "Item g, 2019-01-16 special meeting",
+   "title": "Approved a change order for Diamanti Construction and Development, Inc. on sewer and water system work ($46,956.28)",
+   "kind": "contract",
+   "parties": [
+    "Diamanti Construction and Development, Inc."
+   ],
+   "amount": 46956.28,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=603",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Kelley",
+   "consent": false,
+   "result": "passed",
+   "notes": "Change orders 1 and 2, Bahman Avenue Phase I sanitary sewer. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=603"
+  },
+  {
+   "id": "ol-2019-01-16-h",
+   "date": "2019-01-16",
+   "ref": "Item h, 2019-01-16 special meeting",
+   "title": "Approved a change order for Diamanti Construction and Development, Inc. on sewer and water system work ($26,423.82)",
+   "kind": "contract",
+   "parties": [
+    "Diamanti Construction and Development, Inc."
+   ],
+   "amount": 26423.82,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=603",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Change orders 1 and 2, Bahman Avenue Phase II sanitary sewer. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=603"
+  },
+  {
+   "id": "ol-2019-01-23-13-1",
+   "date": "2019-01-23",
+   "ref": "Item 13-1, 2019-01-23 regular meeting",
+   "title": "Selected American Traffic Solutions d/b/a Verra Mobility for red-light camera services",
+   "kind": "contract",
+   "parties": [
+    "American Traffic Solutions d/b/a Verra Mobility"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Negotiate a professional services contract. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=604"
+  },
+  {
+   "id": "ol-2019-01-23-13-2",
+   "date": "2019-01-23",
+   "ref": "Item 13-2, 2019-01-23 regular meeting",
+   "title": "Waived code enforcement liens for Andres Betancourt at 2081 York St ($16,793.06)",
+   "kind": "settlement",
+   "parties": [
+    "Andres Betancourt"
+   ],
+   "amount": 16793.06,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": true,
+   "result": "passed",
+   "notes": "Lien releases in mitigation of code enforcement liens. Owner of record on 2019-01-23 per the Miami-Dade Property Appraiser (folio 08-2122-005-2060): Grantor of the first sale after the vote (2/15/2019); current owner YOEL LAZARO GONZALEZ FIORENZANO & MAYDA TACORONTE. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "address": "2081 York St"
+  },
+  {
+   "id": "ol-2019-01-23-13-3",
+   "date": "2019-01-23",
+   "ref": "Item 13-3, 2019-01-23 regular meeting",
+   "title": "Bought a city work truck from Rechtien International Trucks, Inc. using another government's contract (up to $188,100)",
+   "kind": "contract",
+   "parties": [
+    "Rechtien International Trucks, Inc."
+   ],
+   "amount": 188100,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": true,
+   "result": "passed",
+   "notes": "Florida Sheriffs Association contract FSA18-VEH16.0; three-year lease purchase of a pothole patcher. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=604"
+  },
+  {
+   "id": "ol-2019-01-23-13-6",
+   "date": "2019-01-23",
+   "ref": "Item 13-6, 2019-01-23 regular meeting",
+   "title": "Hired The Brown Law Group, LLC for legal services",
+   "kind": "contract",
+   "parties": [
+    "The Brown Law Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=604",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Representation in Holmes v. City of Opa-locka, Case No. 2018-42660 CA 01 (retroactive). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=604"
+  },
+  {
+   "id": "ol-2019-02-13-13-1",
+   "date": "2019-02-13",
+   "ref": "Item 13-1, 2019-02-13 regular meeting",
+   "title": "Bought asphalt resurfacing from Pioneer Construction Management Services, Inc. using another government's contract (up to $70,000)",
+   "kind": "contract",
+   "parties": [
+    "Pioneer Construction Management Services, Inc."
+   ],
+   "amount": 70000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=645",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": true,
+   "result": "passed",
+   "notes": "City of Lauderhill contract. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=645"
+  },
+  {
+   "id": "ol-2019-02-27-1",
+   "date": "2019-02-27",
+   "ref": "Item 1, 2019-02-27 regular meeting",
+   "title": "Granted a variance at 12900 NW 131 Ave (folio 08-2128-004-0471) for Miami Bobcat Services Inc",
+   "kind": "zoning",
+   "parties": [
+    "Miami Bobcat Services Inc"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "no"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Davis",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "Minimum lot coverage variance. Owner of record on 2019-02-27 per the Miami-Dade Property Appraiser (folio 08-2128-004-0471): No sale after the vote; current owner was owner at the vote (bought 5/24/2017). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "12900 NW 131 Ave (folio 08-2128-004-0471)"
+  },
+  {
+   "id": "ol-2019-02-27-13-1",
+   "date": "2019-02-27",
+   "ref": "Item 13-1, 2019-02-27 regular meeting",
+   "title": "Bought sewer pipe lining from Insituform Technologies, LLC using another government's contract",
+   "kind": "contract",
+   "parties": [
+    "Insituform Technologies, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "City of Daytona Beach contract; LS14 service basin cured-in-place lining. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644"
+  },
+  {
+   "id": "ol-2019-02-27-13-2",
+   "date": "2019-02-27",
+   "ref": "Item 13-2, 2019-02-27 regular meeting",
+   "title": "Amended the auditing services contract with Anthony Brunson, P.A.",
+   "kind": "contract",
+   "parties": [
+    "Anthony Brunson, P.A."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Kelley",
+   "consent": false,
+   "result": "passed",
+   "notes": "Third amendment, certified public accountant services. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644"
+  },
+  {
+   "id": "ol-2019-02-27-13-3",
+   "date": "2019-02-27",
+   "ref": "Item 13-3, 2019-02-27 regular meeting",
+   "title": "Approved a settlement with Dennis Horn and German Bosque",
+   "kind": "settlement",
+   "parties": [
+    "Dennis Horn",
+    "German Bosque"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Bass",
+   "consent": false,
+   "result": "passed",
+   "notes": "Payment under binding arbitration orders. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644"
+  },
+  {
+   "id": "ol-2019-02-27-2",
+   "date": "2019-02-27",
+   "ref": "Item 2, 2019-02-27 regular meeting",
+   "title": "Approved a site plan at 12900 NW 131 Ave (folio 08-2128-004-0471) for Miami Bobcat Services Inc",
+   "kind": "zoning",
+   "parties": [
+    "Miami Bobcat Services Inc"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "no",
+    "Pigatt": "no"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Burke",
+   "second": "Kelley",
+   "consent": false,
+   "result": "passed",
+   "notes": "Final site plan for a construction company. Owner of record on 2019-02-27 per the Miami-Dade Property Appraiser (folio 08-2128-004-0471): No sale after the vote; current owner was owner at the vote (bought 5/24/2017). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "12900 NW 131 Ave (folio 08-2128-004-0471)"
+  },
+  {
+   "id": "ol-2019-02-27-3",
+   "date": "2019-02-27",
+   "ref": "Item 3, 2019-02-27 regular meeting",
+   "title": "Granted a special exception at SW corner of NW 135 St and the LeJeune Douglas Connector (folios 08-2129-019-0010, 08-2129-019-0020) for Nob Hill Enterprises Inc",
+   "kind": "zoning",
+   "parties": [
+    "Nob Hill Enterprises Inc"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "no",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Kelley",
+   "second": "Bass",
+   "consent": false,
+   "result": "passed",
+   "notes": "Final plan, as a special exception, for an auto service station. Owner of record on 2019-02-27 per the Miami-Dade Property Appraiser (folio 08-2129-019-0010): Grantor of the first sale after the vote (12/10/2021); current owner TROPIC OIL COMPANY LLC & C/O PARKLAND CORPORATION. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "SW corner of NW 135 St and the LeJeune Douglas Connector (folios 08-2129-019-0010, 08-2129-019-0020)"
+  },
+  {
+   "id": "ol-2019-02-27-4",
+   "date": "2019-02-27",
+   "ref": "Item 4, 2019-02-27 regular meeting",
+   "title": "Approved a development agreement with Nob Hill Enterprises, Inc. for SW corner of NW 135 St and the LeJeune Douglas Connector",
+   "kind": "zoning",
+   "parties": [
+    "Nob Hill Enterprises, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "no",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    4,
+    1
+   ],
+   "mover": "Davis",
+   "second": "Bass",
+   "consent": false,
+   "result": "passed",
+   "notes": "Auto service station. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "SW corner of NW 135 St and the LeJeune Douglas Connector"
+  },
+  {
+   "id": "ol-2019-02-27-5",
+   "date": "2019-02-27",
+   "ref": "Item 5, 2019-02-27 regular meeting",
+   "title": "Approved a site plan at 14985 NW 27 Ave (folios 08-2122-025-0620, 08-2122-025-0550) for High Seas Trading Company",
+   "kind": "zoning",
+   "parties": [
+    "High Seas Trading Company"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Warehouse storage building. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "14985 NW 27 Ave (folios 08-2122-025-0620, 08-2122-025-0550)"
+  },
+  {
+   "id": "ol-2019-02-27-6",
+   "date": "2019-02-27",
+   "ref": "Item 6, 2019-02-27 regular meeting",
+   "title": "Approved a development agreement with High Seas Trading Company for 14985 NW 27 Ave",
+   "kind": "zoning",
+   "parties": [
+    "High Seas Trading Company"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Warehouse storage building. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=644",
+   "address": "14985 NW 27 Ave"
+  },
+  {
+   "id": "ol-2019-03-04-b",
+   "date": "2019-03-04",
+   "ref": "Item b, 2019-03-04 special meeting",
+   "title": "Amended the legal services contract with The Brown Law Group, LLC",
+   "kind": "contract",
+   "parties": [
+    "The Brown Law Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=641",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "Seven-month extension of the city attorney agreement. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=641"
+  },
+  {
+   "id": "ol-2019-03-27-13-2",
+   "date": "2019-03-27",
+   "ref": "Item 13-2, 2019-03-27 regular meeting",
+   "title": "Bought wireless phone and data service from AT&T Mobile National Accounts, LLC using another government's contract (up to $40,000)",
+   "kind": "contract",
+   "parties": [
+    "AT&T Mobile National Accounts, LLC"
+   ],
+   "amount": 40000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=642",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "State of Florida Department of Management Services contract. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=642"
+  },
+  {
+   "id": "ol-2019-03-27-13-3",
+   "date": "2019-03-27",
+   "ref": "Item 13-3, 2019-03-27 regular meeting",
+   "title": "Hired The Brown Law Group, LLC for legal services",
+   "kind": "contract",
+   "parties": [
+    "The Brown Law Group, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=642",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "Defense in Mukamal (trustee of the Shiver estate) v. City of Opa-locka, Case No. 2018-028275. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=642"
+  },
+  {
+   "id": "ol-2019-04-10-13-2",
+   "date": "2019-04-10",
+   "ref": "Item 13-2, 2019-04-10 regular meeting",
+   "title": "Bought road paving and drainage work from Arrow Asphalt & Engineering using another government's contract (up to $70,000)",
+   "kind": "contract",
+   "parties": [
+    "Arrow Asphalt & Engineering"
+   ],
+   "amount": 70000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=656",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Bass",
+   "consent": true,
+   "result": "passed",
+   "notes": "City of North Miami Beach ITB 2016-074; temporary restoration of NW 38 Ave. Consent agenda; roll call on the consent agenda recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=656"
+  },
+  {
+   "id": "ol-2019-04-10-13-3",
+   "date": "2019-04-10",
+   "ref": "Item 13-3, 2019-04-10 regular meeting",
+   "title": "Ratified an emergency purchase from Diamanti Construction Development, Inc. for roof repairs ($32,000)",
+   "kind": "contract",
+   "parties": [
+    "Diamanti Construction Development, Inc."
+   ],
+   "amount": 32000,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=656",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Bass",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roof repair and termite treatment, Historic City Hall. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=656"
+  },
+  {
+   "id": "ol-2019-04-10-14-1",
+   "date": "2019-04-10",
+   "ref": "Item 14-1, 2019-04-10 regular meeting",
+   "title": "Ratified an emergency purchase from Hernandez Underground for sewer and water system work ($27,500)",
+   "kind": "contract",
+   "parties": [
+    "Hernandez Underground"
+   ],
+   "amount": 27500,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=656",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "absent",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    4,
+    0
+   ],
+   "mover": "Bass",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "12-inch sewer gravity main near 1226 Sharar Ave. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=656"
+  },
+  {
+   "id": "ol-2019-04-24-13-3",
+   "date": "2019-04-24",
+   "ref": "Item 13-3, 2019-04-24 regular meeting",
+   "title": "Hired Supreme Roofing and Construction, Inc. for roof repairs (up to $285,725)",
+   "kind": "contract",
+   "parties": [
+    "Supreme Roofing and Construction, Inc."
+   ],
+   "amount": 285725,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "New roof at the municipal complex. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=657"
+  },
+  {
+   "id": "ol-2019-04-24-13-5",
+   "date": "2019-04-24",
+   "ref": "Item 13-5, 2019-04-24 regular meeting",
+   "title": "Bought executive recruitment from Colin Baenziger & Associates using another government's contract",
+   "kind": "contract",
+   "parties": [
+    "Colin Baenziger & Associates"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "no",
+    "Bass": "no",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    3,
+    2
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "City of Weston agreement; recruitment of a permanent City Manager. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=657"
+  },
+  {
+   "id": "ol-2019-04-24-13-8",
+   "date": "2019-04-24",
+   "ref": "Item 13-8, 2019-04-24 regular meeting",
+   "title": "Approved a settlement with Barry E. Mukamal",
+   "kind": "settlement",
+   "parties": [
+    "Barry E. Mukamal"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": null,
+   "second": null,
+   "consent": false,
+   "result": "passed",
+   "notes": "Settlement in Mukamal, as Chapter 7 trustee of the bankruptcy estate of Roy Stephen Shiver, v. City of Opa-locka, Case 2018-028275 CA-01. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=657"
+  },
+  {
+   "id": "ol-2019-04-24-?",
+   "date": "2019-04-24",
+   "ref": "Item ?, 2019-04-24 regular meeting",
+   "title": "Rejected waiving code enforcement liens for Mr Tax 1111 LLC at 1300 Sesame St",
+   "kind": "settlement",
+   "parties": [
+    "Mr Tax 1111 LLC"
+   ],
+   "amount": 137989.13,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "roll": {
+    "Burke": "no",
+    "Davis": "no",
+    "Kelley": "no",
+    "Bass": "no",
+    "Pigatt": "no"
+   },
+   "tally": [
+    0,
+    5
+   ],
+   "mover": "Kelley",
+   "second": "Burke",
+   "consent": false,
+   "result": "failed",
+   "notes": "Motion to settle and release code enforcement liens failed. Owner of record on 2019-04-24 per the Miami-Dade Property Appraiser (folio 08-2121-002-1110): Grantee of the last sale before the vote (2/6/2012); current owner SCARBOUGH INVESTMENT & ENTERPRISES LLC. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=657",
+   "address": "1300 Sesame St"
+  },
+  {
+   "id": "ol-2019-05-08-1",
+   "date": "2019-05-08",
+   "ref": "Item 1, 2019-05-08 regular meeting",
+   "title": "Approved a site plan at NW 43 Ave and NW 133 St (folio 08-2129-000-0111) for STRK Properties, LLC",
+   "kind": "zoning",
+   "parties": [
+    "STRK Properties, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "102,500 sq ft warehouse and office building (Tejas Choksi and Rachana Arora). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "address": "NW 43 Ave and NW 133 St (folio 08-2129-000-0111)"
+  },
+  {
+   "id": "ol-2019-05-08-13-2",
+   "date": "2019-05-08",
+   "ref": "Item 13-2, 2019-05-08 regular meeting",
+   "title": "Ratified an emergency purchase from Hernandez Underground, Inc. for sewer and water system work",
+   "kind": "contract",
+   "parties": [
+    "Hernandez Underground, Inc."
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Ratified the emergency repair restoring sewer connectivity to county Meter Station 52. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=659"
+  },
+  {
+   "id": "ol-2019-05-08-2",
+   "date": "2019-05-08",
+   "ref": "Item 2, 2019-05-08 regular meeting",
+   "title": "Approved a development agreement with STRK Properties, LLC for NW 43 Ave and NW 133 St (folio 08-2129-000-0111)",
+   "kind": "zoning",
+   "parties": [
+    "STRK Properties, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Burke",
+   "consent": false,
+   "result": "passed",
+   "notes": "Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "address": "NW 43 Ave and NW 133 St (folio 08-2129-000-0111)"
+  },
+  {
+   "id": "ol-2019-05-08-3",
+   "date": "2019-05-08",
+   "ref": "Item 3, 2019-05-08 regular meeting",
+   "title": "Changed the land use designation at NW 43 Ave and NW 133 St (folio 08-2129-000-0111)",
+   "kind": "zoning",
+   "parties": [
+    "STRK Properties, LLC"
+   ],
+   "amount": null,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Burke",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Small-scale amendment, Government to Industrial (second reading). Owner of record on 2019-05-08 per the Miami-Dade Property Appraiser (folio 08-2129-000-0111): No sale after the vote; current owner was owner at the vote (bought 6/6/2018). The record lists STRK PROPERTIES LLC & LABORATORY CORP; the site plan and development agreement for the parcel name STRK Properties, LLC. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "address": "NW 43 Ave and NW 133 St (folio 08-2129-000-0111)"
+  },
+  {
+   "id": "ol-2019-05-08-?.b",
+   "date": "2019-05-08",
+   "ref": "Item ?, 2019-05-08 regular meeting",
+   "title": "Ratified an emergency purchase from World Petroleum Corporation for cleanup services ($120,424)",
+   "kind": "contract",
+   "parties": [
+    "World Petroleum Corporation"
+   ],
+   "amount": 120424,
+   "url": "https://www.opalockafl.gov/Archive.aspx?ADID=659",
+   "roll": {
+    "Burke": "yes",
+    "Davis": "yes",
+    "Kelley": "yes",
+    "Bass": "yes",
+    "Pigatt": "yes"
+   },
+   "tally": [
+    5,
+    0
+   ],
+   "mover": "Kelley",
+   "second": "Davis",
+   "consent": false,
+   "result": "passed",
+   "notes": "Emergency environmental cleanup; procurement waived. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://www.opalockafl.gov/Archive.aspx?ADID=659"
+  },
   {
    "id": "ol-2019-12-11-13-1.b",
    "date": "2019-12-11",
@@ -1168,6 +6476,14 @@
   }
  ],
  "gaps": [
-  "2020: 1 qualifying-kind items name no beneficiary (left out)"
+  "2010: 1 qualifying-kind items name no beneficiary (left out)",
+  "2011: 5 qualifying-kind items name no beneficiary (left out)",
+  "2012: 3 qualifying-kind items name no beneficiary (left out)",
+  "2019: 2 qualifying-kind items name no beneficiary (left out)",
+  "2020: 1 qualifying-kind items name no beneficiary (left out)",
+  "Nov 2, 2004 - May 11, 2010: no minutes online (Tydus); no actions listed for these years",
+  "Nov 6, 2012 - Nov 28, 2018: between the terms covered here (Tydus left Nov 6, 2012; Bass first sat Nov 29, 2018); not read",
+  "May 16 - Nov 25, 2019: no minutes online (Archive Center ends May 15, 2019; CivicClerk starts Nov 26, 2019); no actions listed",
+  "2019: the Apr 24, 2019 lien settlement at 2345 Service Rd names no party and the address is not in the Property Appraiser search (counted above)"
  ]
 }

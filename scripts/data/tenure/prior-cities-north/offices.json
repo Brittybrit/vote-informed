@@ -347,23 +347,23 @@
   "rollKey": "Bass",
   "startNote": "Elected Nov 6, 2018 (oath date not found). Her first meeting in the minutes is Nov 29, 2018 (special meeting roll call); the Nov 14, 2018 meeting still seated Holmes.",
   "endNote": "First term ended with the Nov 2020 election; last minutes read Oct 28, 2020. She returned by appointment in Aug 2021 (current seat, covered elsewhere).",
-  "votesFrom": "2019-11-26",
+  "votesFrom": "2018-11-29",
   "votesTo": "2020-10-28",
   "giftsFrom": "2016-11-06",
   "giftsNote": "Her 2018 and 2020 campaign reports are not online (the city EasyVote portal starts with 2022).",
   "source": {
-   "label": "City of Opa-locka commission minutes (CivicClerk)",
-   "url": "https://opalockafl.portal.civicclerk.com/"
+   "label": "City of Opa-locka commission minutes (Archive Center, Nov 2018 - May 2019; CivicClerk, Nov 2019 - Oct 2020)",
+   "url": "https://www.opalockafl.gov/Archive.aspx?AMID=36"
   },
   "files": [
    "opalocka/actions.json",
    "opalocka/owners.json"
   ],
   "counts": {
-   "actions": 34,
-   "yesNo": 34
+   "actions": 68,
+   "yesNo": 68
   },
-  "minutesNote": "Minutes Nov 29, 2018 - May 15, 2019 are now saved (opalocka/minutes/, City Archive Center) but not yet built into actions; Jun - Oct 2019 minutes are not online in either the Archive Center or CivicClerk."
+  "minutesNote": "Minutes read Nov 29, 2018 - May 15, 2019 (17 meetings, City Archive Center; 34 actions) and Nov 26, 2019 - Oct 28, 2020 (CivicClerk; 34 actions). Not online: May 16 - Nov 25, 2019 (neither the Archive Center nor CivicClerk has those minutes)."
  },
  {
   "pid": "rose-tydus",
@@ -381,12 +381,21 @@
    "label": "Miami-Dade Elections results Nov 2, 2004, Nov 4, 2008, Nov 6, 2012",
    "url": "https://www.miamidade.gov/elections/results/ele110204/canvas110204.pdf"
   },
-  "files": [],
+  "files": [
+   "opalocka/actions.json",
+   "opalocka/owners.json"
+  ],
   "counts": {
-   "actions": 0,
-   "yesNo": 0
+   "actions": 125,
+   "yesNo": 105
   },
-  "minutesNote": "Commission minutes May 12, 2010 - Oct 24, 2012 (69 meetings, her last on the roll Oct 24, 2012) are now saved (opalocka/minutes/, City Archive Center; 2010-2012 scans OCRed) but not yet built into actions. Nov 2004 - Apr 2010 minutes are not online."
+  "minutesNote": "Minutes read May 12, 2010 - Oct 24, 2012 (67 meetings; her last on the roll Oct 24, 2012): 125 actions with her vote recorded (97 yes, 8 no, 20 absent or out of the room). Not online: Nov 2, 2004 - May 11, 2010.",
+  "votesFrom": "2010-05-12",
+  "votesTo": "2012-10-24",
+  "minutesSource": {
+   "label": "City of Opa-locka commission minutes, Archive Center (May 2010 - Oct 2012, scanned; OCRed)",
+   "url": "https://www.opalockafl.gov/Archive.aspx?AMID=36"
+  }
  },
  {
   "pid": "dana-goldman",

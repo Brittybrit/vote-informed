@@ -60,6 +60,20 @@ SUBJ.update({
  'grounds': ('grounds maintenance', 'mantenimiento de áreas verdes', 'antretyen teren'),
  'datasoft': ('police data software', 'programa de datos policiales', 'lojisyèl done lapolis'),
  'wayfinding': ('wayfinding signs', 'señalización vial', 'pankat oryantasyon'),
+ 'alert': ('emergency notification calls', 'llamadas de notificación de emergencia', 'apèl notifikasyon ijans'),
+ 'recruit': ('executive recruitment', 'reclutamiento de ejecutivos', 'rekritman egzekitif'),
+ 'parklights': ('park lighting renovation', 'renovación del alumbrado de parques', 'renovasyon limyè nan pak'),
+ 'hauling': ('debris hauling', 'acarreo de escombros', 'transpò debri'),
+ 'branding': ('bus branding graphics', 'gráficos para autobuses', 'grafik pou bis'),
+ 'atlas': ('water and sewer system maps', 'mapas del sistema de agua y alcantarillado', 'kat sistèm dlo ak egou'),
+ 'newspaper': ('the city newspaper', 'el periódico de la ciudad', 'jounal vil la'),
+ 'transplan': ('a transportation master plan', 'un plan maestro de transporte', 'yon plan direktè transpò'),
+ 'treeplant': ('tree planting', 'siembra de árboles', 'plante pyebwa'),
+ 'cm': ('construction management', 'gestión de obras', 'jesyon konstriksyon'),
+ 'constrinsp': ('construction inspection', 'inspección de obras', 'enspeksyon konstriksyon'),
+ 'watertap': ('water and sewer tapping work', 'trabajos de conexión de agua y alcantarillado', 'travay koneksyon dlo ak egou'),
+ 'carwash': ('car washing for city vehicles', 'lavado de vehículos municipales', 'lave machin vil la'),
+ 'poolclean': ('pool cleaning', 'limpieza de piscinas', 'netwayaj pisin'),
  'simulator': ('a police training simulator', 'un simulador de entrenamiento policial', 'yon similatè fòmasyon lapolis'),
 })
 
@@ -79,6 +93,10 @@ def title(k, ps, amt=None, s='other', x=''):
      'release': ('Released a recorded restriction for %s%s' % (P[0], (' at %s' % x) if x else ''), 'Liberó una restricción registrada para %s%s' % (P[1], (' en %s' % x) if x else ''), 'Leve yon restriksyon anrejistre pou %s%s' % (P[2], (' nan %s' % x) if x else '')),
      'acceptland': ('Accepted land conveyed by %s%s' % (P[0], (' at %s' % x) if x else ''), 'Aceptó un terreno cedido por %s%s' % (P[1], (' en %s' % x) if x else ''), 'Aksepte tè %s bay vil la%s' % (P[2], (' nan %s' % x) if x else '')),
      'stax': ('Approved the application of %s for a special taxing district for %s' % (P[0], x), 'Aprobó la solicitud de %s para un distrito especial de impuestos para %s' % (P[1], x), 'Apwouve demann %s pou yon distri taks espesyal pou %s' % (P[2], x)),
+     'lienwaive': ('Waived code enforcement liens for %s%s%s' % (P[0], (' at %s' % x) if x else '', fe), 'Condonó multas de cumplimiento de códigos a %s%s%s' % (P[1], (' en %s' % x) if x else '', fe), 'Anile privilèj pou vyolasyon kòd pou %s%s%s' % (P[2], (' nan %s' % x) if x else '', fe)),
+     'lienwaiveno': ('Rejected waiving code enforcement liens for %s%s' % (P[0], (' at %s' % x) if x else ''), 'Rechazó condonar multas de cumplimiento de códigos a %s%s' % (P[1], (' en %s' % x) if x else ''), 'Rejte anile privilèj pou vyolasyon kòd pou %s%s' % (P[2], (' nan %s' % x) if x else '')),
+     'roadclose': ('Closed city streets for an event of %s' % P[0], 'Cerró calles de la ciudad para un evento de %s' % P[1], 'Fèmen lari vil la pou yon evènman %s' % P[2]),
+     'donateland': ('Donated city land to %s%s' % (P[0], (' at %s' % x) if x else ''), 'Donó terreno municipal a %s%s' % (P[1], (' en %s' % x) if x else ''), 'Bay %s tè vil la kòm don%s' % (P[2], (' nan %s' % x) if x else '')),
      'other': ('Approved an item benefiting %s' % P[0], 'Aprobó un asunto que beneficia a %s' % P[1], 'Apwouve yon pwen ki benefisye %s' % P[2]),
      'terminate': ('Ended the contract with %s' % P[0], 'Terminó el contrato con %s' % P[1], 'Mete fen nan kontra ak %s' % P[2]),
     }
@@ -97,4 +115,4 @@ KIND = {'contract': 'contract', 'renew': 'contract', 'amend': 'contract', 'chang
         'siteplanapp': 'zoning', 'varapp': 'zoning', 'specapp': 'zoning', 'cupapp': 'zoning', 'textamend': 'zoning', 'grant': 'grant', 'sponsor': 'grant', 'waive': 'grant',
         'easement': 'easement', 'license': 'license', 'permit': 'license', 'permitno': 'license', 'franchise': 'license', 'partner': 'agreement',
         'select': 'contract', 'insure': 'contract', 'pay': 'contract', 'convey': 'easement', 'estoppel': 'other', 'payplan': 'other', 'str': 'license',
-        'terminate': 'contract', 'stax': 'other', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}
+        'terminate': 'contract', 'stax': 'other', 'lienwaive': 'settlement', 'lienwaiveno': 'settlement', 'roadclose': 'license', 'donateland': 'sale', 'other': 'other', 'release': 'zoning', 'acceptland': 'sale'}

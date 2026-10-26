@@ -18,8 +18,8 @@ say the vote was unanimous or list the roll; a bare "motion passed" must become 
 | Weinberg, Surfside Seat 1 | 2006-03-21..2010-03-16 | 4 (4) | none online | records Jan-Mar 2010 only |
 | Weinberg, Aventura Seat 3 | 2012-11-13..2018-11-13 | 208 (208) | none online | archive starts 2020; Res. 2015-47 undated |
 | Samaria, Biscayne Park | 2018-11-06..2022-11-08 | 58 (53) | none online | no minutes Nov-Dec 2018 |
-| Bass, Opa-locka | 2018-11-06..Nov 2020 | 34 (34) | none online | minutes Nov 2018-Oct 2019 not online |
-| Tydus, Opa-locka | 2004-11-02..2012-11-06 | 0 | none online | nothing online |
+| Bass, Opa-locka | 2018-11-06..Nov 2020 | 68 (68: 64 yes, 4 no) | none online | minutes May 16 - Nov 25, 2019 not online |
+| Tydus, Opa-locka | 2004-11-02..2012-11-06 | 125 (105: 97 yes, 8 no; 20 absent) | none online | minutes Nov 2004 - May 11, 2010 not online |
 | Goldman, Sunny Isles Seat 3 then Mayor | 2014-12-02..2022-12-06 | 735 (Seat 3: 604, 479 with her yes/no; mayor: 131, none with a recorded vote) | not online (records request) | minutes not online for most of Feb 2020 - Dec 2022 (roll null), Apr 21 2016, May 16 / Oct 2 / Dec 19 2019 |
 | Svechin, Sunny Isles Seat 1 | 2016-11-08..2022-12-06 | 550 (294 with her yes/no) | not online (records request) | same minutes gaps |
 

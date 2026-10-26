@@ -40,3 +40,15 @@ browser pass and save the outputs where named (folder: scripts/data/tenure/prior
 ## 4. Broward plat and easement owners (optional, for the 107 unnamed actions in broward/unnamed.json)
 - Each plat item's Legistar matter (url in unnamed.json) has backup PDFs naming the applicant/owner. The Broward County
   Property Appraiser (bcpa.net) gives the owner of record as of the vote date. Not attempted; listed for completeness.
+
+## 5. Parkland roll calls the saved text could not carry (optional; improves parkland/actions.json)
+Laserfiche (documents.cityofparkland.org, repo Parkland) still returns Cloudflare 403 to curl, so nothing could be OCRed locally.
+- Re-OCR at higher resolution, roll call blocks only, for the 2010-2012 minutes where the OCR dropped the names under
+  "ROLL CALL VOTE" and the clerk wrote "MOTION passed by those present" (27 actions; parkland/actions.json notes say
+  "the opening roll call shows every member present"): doc ids 32315, 32322, 32323, 32354, 32356, 32359, 32362, 32368,
+  32369, 32370, 35129, 35151 (DocView.aspx?id=<id>&dbid=0&repo=Parkland). Save the names/votes per motion.
+- Minutes pages with no text layer and not OCRed (only the attachments carry text): 2010-06-16 (id 32324), 2011-10-19
+  (35150), 2011-12-07 (35131), 2012-01-18 (32365), 2012-02-15 (32364). OCR the minutes pages; they hold the votes for
+  Resolutions 2011-88 to 2011-96 (Standard Pacific, PGCC, M & M Asphalt), 2012-06 (Barry Strock) and 2012-11 (Beaty land).
+- Optional: OCR the 420 resolutions / 62 ordinances flagged "no" in resolutions-index.tsv / ordinances-index.tsv to name
+  the beneficiary of the 78 items left out as unnamed (decisions lines marked "?" in parkland/src/decisions/pk-YYYY.txt).
