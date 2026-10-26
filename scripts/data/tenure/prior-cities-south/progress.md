@@ -18,3 +18,4 @@ Resume notes: one line per finished batch. Work files (downloads, OCR) in the se
 - 2026-10-26T00:47Z Doral 2010-11..2015-12: decisions-2010-2015.txt (hand, to Jan 2012) + decisions-2010-2015-auto.txt (pattern-extracted from minutes captions, junk removed); owners from PA. 990 actions total 2010-2018.
 - 2026-10-26T00:52Z Key Biscayne (de la Cruz): 105 Granicus minutes PDFs (scans) OCR'd; 277 titled items parsed with named rolls; 98 qualifying actions (src/keybiscayne). Donors not online.
 - 2026-10-26T01:05Z Hialeah: 2007 added; ~140 missing vote lines recovered by 300 dpi OCR (roll-overrides.txt); 1028 actions, 2007-01..2017-11.
+- 2026-10-26T01:40Z Medley (Pacheco): all 282 minutes read (text layer or OCR) except Jul 6, 2021; 239 actions (3 tabled skipped), 189 with a Pacheco yes/no.

@@ -54,3 +54,8 @@ Each request: what to open, what to save, and where the result goes. Nothing her
 - Medley, Ivan Pacheco 2016 and 2020: no online portal. Town Clerk. Save to medley-pacheco/donors/.
 - Doral, Ana Maria Rodriguez 2010 (the city's VoterFocus portal starts in 2012; her 2014 race is saved as doral/rodriguez_2014.csv).
 - Hialeah, Luis Gonzalez 2005, 2009, 2013 (Group V): the city's VoterFocus portal has 2026 only. City Clerk.
+
+## 6. Medley minutes of July 6, 2021 (Regular Council Meeting)
+- Laserfiche document 167289 (Town Clerk > Minutes > 2021) has no text layer and its PDF export fails for scripts.
+- Open https://www.medleydocs.com/WebLink/DocView.aspx?id=167289&dbid=0&repo=LFMedley, save as
+  medley-pacheco/minutes/2021-07-06.pdf. Seven agenda items of that date (medley-pacheco/actions.json, "unmatched") need its votes.

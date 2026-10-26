@@ -11,7 +11,7 @@ CITY = json.load(open(os.path.join(SP, '..', '..', '..', '..', 'city', 'medley',
 SEG = json.load(open(SP + '/cache/segments.json'))
 START, END = '2016-11-08', '2024-11-05'
 NAMES = {'IPacheco': 'Ivan Pacheco', 'Martell': 'Roberto Martell', 'EAyala': 'Edgar Ayala', 'LRodriguez': 'Lizelh Rodriguez (Ayala)',
-         'KPacheco': 'Karina Pacheco', 'Digiacomo': 'Griselia Digiacomo', 'Morrow': 'Jack Morrow', 'Guasch': 'Susana Guasch'}
+         'KPacheco': 'Karina Pacheco', 'Digiacomo': 'Griselia Digiacomo', 'Morrow': 'Jack Morrow', 'Guasch': 'Susana Guasch', 'Stefano': 'Stefano (Councilwoman, first name not in the minutes header)'}
 OV = {}
 if os.path.exists(SP + '/match-overrides.txt'):
     for l in open(SP + '/match-overrides.txt'):
@@ -27,8 +27,14 @@ def score(agenda, parties, seg):
     return s
 FULL = {'Martell': r'roberto\s+martell|mayor\s+martell', 'IPacheco': r'ivan\s+pacheco', 'KPacheco': r'karina\s+pacheco', 'EAyala': r'edgar\s+ayala',
         'LRodriguez': r'lizelh\s+(?:ayala|rodriguez)', 'Digiacomo': r'griselia\s+digiacomo|council\w*\s+digiacomo', 'Morrow': r'jack\s+morrow|(?:vice[- ]?mayor|council\w*)\s+morrow',
-        'Guasch': r'susana\s+guasch|council\w*\s+guasch'}
-def rollcall(text):
+        'Guasch': r'susana\s+guasch|council\w*\s+guasch', 'Stefano': r'(?:dolly\s+|council\w*\s+)stefano'}
+def rollcall(text, year='2099'):
+    if year < '2020':
+        pairs = re.findall(r'(?i)(mayor|vice[- ]?mayor|council\s?(?:person|woman|man|member))\s+([A-Z][\w\-]+)\s*:\s*(yes|no|absent|abstain\w*)', text)
+        if len(pairs) >= 3:
+            SN = {'martell': 'Martell', 'pacheco': 'IPacheco', 'ayala': 'EAyala', 'digiacomo': 'Digiacomo', 'morrow': 'Morrow', 'guasch': 'Guasch', 'stefano': 'Stefano'}
+            r = {SN[p[1].lower()]: p[2].lower()[:7] for p in pairs if p[1].lower() in SN}
+            if r: return r
     m = re.search(r'(?i)(?:votes? (?:were|was) cast\w*\s*(?:as\s*)?follows|roll call(?: vote)?(?: was taken)?[,:]?(?: as follows)?)[,:]?(.{0,420})', text)
     if not m: return None
     r = {}
@@ -37,6 +43,7 @@ def rollcall(text):
         if mm: r[k] = mm.group(1).lower()[:7].replace('abstain', 'abstain')
     return r or None
 def vote_of(seg, present, follow=(), doc=None):
+    if doc: seg['_date'] = doc['date']; [f.__setitem__('_date', doc['date']) for f in follow]
     num = re.search(r'\b([CO])\s?-\s?(\d{3,4})\b', seg['head'])
     if doc and num:
         n = num.group(2)
@@ -44,7 +51,7 @@ def vote_of(seg, present, follow=(), doc=None):
             for v in s2['votes']:
                 if re.search(r'C\s?-\s?' + n + r'\b', v):
                     vi = s2['text'].find(v[:60])
-                    rc = rollcall(s2['text'][vi:] if vi >= 0 else v)
+                    rc = rollcall(s2['text'][vi:] if vi >= 0 else v, doc['date'])
                     if rc: return rc, None
                     if re.search(r'(?i)\btable|defer|continu', v[:200]): return None, 'tabled: ' + v[:200]
                     if re.search(r'unanim', v.lower()): return {k.rstrip('*'): 'yes' for k in present}, None
@@ -52,7 +59,7 @@ def vote_of(seg, present, follow=(), doc=None):
         return None, 'tabled or deferred at this meeting; no vote on the item'
     region = [seg] + list(follow)
     for s in region:
-        rc = rollcall(s['text'])
+        rc = rollcall(s['text'], seg.get('_date', '2099'))
         if rc: return rc, None
         if s['votes']:
             v = s['votes'][-1]; low = v.lower()
@@ -60,7 +67,7 @@ def vote_of(seg, present, follow=(), doc=None):
                 return {k.rstrip('*'): 'yes' for k in present}, None
             return None, 'motion not resolved automatically: ' + v[:300]
     return None, 'no motion recorded in this part of the minutes'
-acts, unmatched = [], []
+acts, unmatched, skipped = [], [], []
 docs_by_date = {}
 for d in SEG:
     if not d.get('empty'): docs_by_date.setdefault(d['date'], []).append(d)
@@ -97,6 +104,8 @@ for x in CITY['actions']:
         d, s = src
         notes.append('Vote from the Town Clerk\'s minutes (%s, Laserfiche doc %s%s)' % (d['name'], d['eid'], ', OCR of the scan' if d['src'] == 'ocr' else ''))
         if roll: notes.append('Roll call as recorded in the minutes' if len(set(roll.values())) > 1 or 'votes were cast' in s['text'] else 'Minutes say the motion carried unanimously; members present per the minutes header')
+    if not roll and why and why.startswith('tabled'):
+        skipped.append({'id': x['id'], 'date': x['date'], 'parties': x['parties'], 'why': why[:200]}); continue
     if not roll:
         seated = (src[0]['present'] if src else []) or []
         roll = {k.rstrip('*'): 'unknown' for k in seated} or {'IPacheco': 'unknown'}
@@ -109,7 +118,7 @@ for x in CITY['actions']:
     acts.append(a)
 acts.sort(key=lambda a: (a['date'], a['ref']))
 doc = {'city': 'Medley', 'body': 'Medley Town Council', 'person': 'ivan-pacheco', 'office': 'Council Member (Vice Mayor part of term)',
-       'window': {'from': START, 'to': END}, 'members': NAMES, 'actions': acts, 'unmatched': unmatched,
+       'window': {'from': START, 'to': END}, 'members': NAMES, 'actions': acts, 'unmatched': unmatched, 'skipped': skipped,
        'sources': [{'name': 'Town of Medley agendas (universe, from scripts/data/city/medley)', 'url': 'https://www.townofmedley.com/council-meetings'},
                    {'name': 'Medley Laserfiche WebLink, Town Clerk minutes', 'url': 'https://www.medleydocs.com/WebLink/Welcome.aspx?dbid=0&repo=LFMedley'}]}
 write_json(OUT + '/actions.json', doc)

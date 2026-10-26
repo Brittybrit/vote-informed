@@ -2,7 +2,7 @@
  "city": "North Miami Beach",
  "body": "City Council",
  "window": {
-  "from": "2013-12-17",
+  "from": "2013-05-28",
   "to": "2020-11-10"
  },
  "sources": [
@@ -24,6 +24,60 @@
   "Villard"
  ],
  "meetings": [
+  {
+   "date": "2013-05-28",
+   "name": "special",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=42",
+   "read": true
+  },
+  {
+   "date": "2013-08-06",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=43",
+   "read": true
+  },
+  {
+   "date": "2013-08-20",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=44",
+   "read": true
+  },
+  {
+   "date": "2013-09-24",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "read": true
+  },
+  {
+   "date": "2013-10-01",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=40",
+   "read": true
+  },
+  {
+   "date": "2013-10-15",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=41",
+   "read": true
+  },
+  {
+   "date": "2013-11-05",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=39",
+   "read": true
+  },
+  {
+   "date": "2013-11-19",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=46",
+   "read": true
+  },
+  {
+   "date": "2013-12-03",
+   "name": "regular",
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=47",
+   "read": true
+  },
   {
    "date": "2013-12-17",
    "name": "regular",
@@ -1208,6 +1262,310 @@
   }
  ],
  "actions": [
+  {
+   "id": "nmb-2013-08-20-44-2-R2013-48",
+   "date": "2013-08-20",
+   "ref": "Resolution R2013-48",
+   "title": "Ratified the union contract with American Federation of State, County and Municipal Employees (AFSCME)",
+   "kind": "agreement",
+   "parties": [
+    "American Federation of State, County and Municipal Employees (AFSCME)"
+   ],
+   "amount": null,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=44",
+   "roll": {
+    "Vallejo": "unknown",
+    "DeFillipo": "unknown",
+    "Kramer": "unknown",
+    "Martell": "unknown",
+    "Pierre": "unknown",
+    "Smith": "unknown",
+    "Spiegel": "no"
+   },
+   "tally": null,
+   "mover": "Pierre",
+   "second": "Martell",
+   "consent": true,
+   "result": "passed",
+   "notes": "Collective bargaining agreement, Aug 6, 2013 to Sep 30, 2015. Vote total from the minutes; the minutes do not show how each member voted.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=44"
+  },
+  {
+   "id": "nmb-2013-08-20-44-4",
+   "date": "2013-08-20",
+   "ref": "nmb-2013-08-20-44-4",
+   "title": "Approved a site plan at 17400 W Dixie Hwy for Braha Dixie LLC",
+   "kind": "zoning",
+   "parties": [
+    "Braha Dixie LLC"
+   ],
+   "amount": null,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=44",
+   "roll": {
+    "Vallejo": "yes",
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "yes",
+    "Smith": "yes",
+    "Spiegel": "yes"
+   },
+   "tally": [
+    7,
+    0
+   ],
+   "mover": "Pierre",
+   "second": "Martell",
+   "consent": false,
+   "result": "passed",
+   "notes": "10-story, 658,483-square-foot mixed-use building with a 275-room hotel (Hyatt) and a bar or lounge, conditional uses (passed as amended 7-0). Owner of record on 2013-08-20 per the Miami-Dade Property Appraiser (folio 07-2209-015-0010): Grantor of the first sale after the vote (11/1/2018); current owner DIXIE INVESTMENTS AND REALTY LLC & ROE DIXIE LLC. Voice vote; members present per the roll call, dissenters as named in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=44",
+   "reps": [
+    "Rod Feiner",
+    "Peter Gallo",
+    "Paul Slattery",
+    "Alan Tinter",
+    "Brett Lasher"
+   ],
+   "address": "17400 W Dixie Hwy"
+  },
+  {
+   "id": "nmb-2013-09-24-45-6-R2013-64",
+   "date": "2013-09-24",
+   "ref": "Resolution R2013-64",
+   "title": "Approved a change order for DAC Air Conditioning Corp. on air conditioning repairs ($51,808)",
+   "kind": "contract",
+   "parties": [
+    "DAC Air Conditioning Corp."
+   ],
+   "amount": 51808,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "roll": {
+    "Vallejo": "yes",
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "yes",
+    "Smith": "yes",
+    "Spiegel": "yes"
+   },
+   "tally": [
+    7,
+    0
+   ],
+   "mover": "Smith",
+   "second": "Martell",
+   "consent": true,
+   "result": "passed",
+   "notes": "Change order 1, rooftop HVAC units. Voice vote; members present per the roll call, dissenters as named in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "address": "Allen Park"
+  },
+  {
+   "id": "nmb-2013-09-24-45-6-R2013-65",
+   "date": "2013-09-24",
+   "ref": "Resolution R2013-65",
+   "title": "Approved a change order for Southeastern Engineering Contractors, Inc. on drainage improvements ($99,595)",
+   "kind": "contract",
+   "parties": [
+    "Southeastern Engineering Contractors, Inc."
+   ],
+   "amount": 99595,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "roll": {
+    "Vallejo": "yes",
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "yes",
+    "Smith": "yes",
+    "Spiegel": "yes"
+   },
+   "tally": [
+    7,
+    0
+   ],
+   "mover": "Smith",
+   "second": "Martell",
+   "consent": true,
+   "result": "passed",
+   "notes": "Change order, pump station and drainage, phase II. Voice vote; members present per the roll call, dissenters as named in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "address": "NE 170 St and NE 172 St"
+  },
+  {
+   "id": "nmb-2013-09-24-45-7",
+   "date": "2013-09-24",
+   "ref": "nmb-2013-09-24-45-7",
+   "title": "Granted a license agreement to Platinum South, Inc. d/b/a Dean's Gold for services",
+   "kind": "license",
+   "parties": [
+    "Platinum South, Inc. d/b/a Dean's Gold"
+   ],
+   "amount": null,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "roll": {
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "no",
+    "Smith": "no",
+    "Spiegel": "yes",
+    "DeFillipo": "no",
+    "Vallejo": "yes"
+   },
+   "tally": [
+    4,
+    3
+   ],
+   "mover": "Martell",
+   "second": "Spiegel",
+   "consent": false,
+   "result": "passed",
+   "notes": "4 a.m. to 6 a.m. business tax receipt (4-3; Smith, Pierre and DeFillipo voted no). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "reps": [
+    "Alan Rosenthal"
+   ],
+   "address": "2355 NE 163 St"
+  },
+  {
+   "id": "nmb-2013-09-24-45-8",
+   "date": "2013-09-24",
+   "ref": "nmb-2013-09-24-45-8",
+   "title": "Granted a license agreement to GSive, LLC d/b/a GSive for services",
+   "kind": "license",
+   "parties": [
+    "GSive, LLC d/b/a GSive"
+   ],
+   "amount": null,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "roll": {
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "no",
+    "Smith": "no",
+    "Spiegel": "yes",
+    "DeFillipo": "no",
+    "Vallejo": "yes"
+   },
+   "tally": [
+    4,
+    3
+   ],
+   "mover": "Spiegel",
+   "second": "Vallejo",
+   "consent": false,
+   "result": "passed",
+   "notes": "4 a.m. to 6 a.m. business tax receipt (4-3; Smith, Pierre and DeFillipo voted no). Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=45",
+   "reps": [
+    "Stephen Johnson"
+   ],
+   "address": "337-349 NW 170 St"
+  },
+  {
+   "id": "nmb-2013-10-15-41-6",
+   "date": "2013-10-15",
+   "ref": "Resolution R2013-69",
+   "title": "Hired Clark Contracting Solutions, LLC d/b/a ForAir for air conditioning repairs (up to $121,194)",
+   "kind": "contract",
+   "parties": [
+    "Clark Contracting Solutions, LLC d/b/a ForAir"
+   ],
+   "amount": 121194,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=41",
+   "roll": {
+    "Vallejo": "yes",
+    "Smith": "yes",
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Spiegel": "yes"
+   },
+   "tally": [
+    6,
+    0
+   ],
+   "mover": "Spiegel",
+   "second": "Martell",
+   "consent": false,
+   "result": "passed",
+   "notes": "Air handler replacement. Voice vote; members present per the roll call, dissenters as named in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=41",
+   "address": "Public library"
+  },
+  {
+   "id": "nmb-2013-11-19-46-1-R2013-71",
+   "date": "2013-11-19",
+   "ref": "Resolution R2013-71",
+   "title": "Approved a change order for Superior Landscaping & Lawn Service, Inc. on lawn and landscape maintenance ($19,980)",
+   "kind": "contract",
+   "parties": [
+    "Superior Landscaping & Lawn Service, Inc."
+   ],
+   "amount": 19980,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=46",
+   "roll": {
+    "Vallejo": "yes",
+    "Smith": "yes",
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "yes",
+    "Spiegel": "yes"
+   },
+   "tally": [
+    7,
+    0
+   ],
+   "mover": "Pierre",
+   "second": "Martell",
+   "consent": true,
+   "result": "passed",
+   "notes": "Change order 4, landscape maintenance. Voice vote; members present per the roll call, dissenters as named in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=46",
+   "address": "Mishcon Park"
+  },
+  {
+   "id": "nmb-2013-11-19-46-2",
+   "date": "2013-11-19",
+   "ref": "nmb-2013-11-19-46-2",
+   "title": "Approved a settlement with Maryla Madura",
+   "kind": "settlement",
+   "parties": [
+    "Maryla Madura"
+   ],
+   "amount": null,
+   "url": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=46",
+   "roll": {
+    "DeFillipo": "yes",
+    "Kramer": "yes",
+    "Martell": "yes",
+    "Pierre": "yes",
+    "Spiegel": "yes",
+    "Smith": "yes",
+    "Vallejo": "yes"
+   },
+   "tally": [
+    7,
+    0
+   ],
+   "mover": "Smith",
+   "second": "Kramer",
+   "consent": false,
+   "result": "passed",
+   "notes": "Settled Madura v. City of North Miami Beach et al. (Case 04-20701-CV); amount not stated in the minutes. Roll call recorded in the minutes.",
+   "tenure": true,
+   "minutes": "https://nmb.novusagenda.com/agendapublic/DisplayAgendaPDF.ashx?MinutesMeetingID=46"
+  },
   {
    "id": "nmb-2013-12-17-48-1",
    "date": "2013-12-17",
@@ -13789,6 +14147,7 @@
   }
  ],
  "gaps": [
+  "2013: 1 qualifying-kind items name no beneficiary (left out)",
   "2014: 12 qualifying-kind items name no beneficiary (left out)",
   "2015: 7 qualifying-kind items name no beneficiary (left out)",
   "2016: 4 qualifying-kind items name no beneficiary (left out)",
