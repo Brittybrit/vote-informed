@@ -190,6 +190,26 @@
   "re": "NATURAL GAS|PIPELINE|GAS TRANSMISSION|PEOPLES GAS|TECO|\\bAGL\\b|SABAL|SPECTRA|KINDER MORGAN|FLORIDA CITY GAS|CHESAPEAKE UTIL",
   "not": "GASOLINE|GAS STATION"
  },
+ "2013-223": {
+  "tags": [
+   "construction"
+  ],
+  "re": "CONSTRUCT|CONTRACTOR|BUILDERS|PAVING|ENGINEERING"
+ },
+ "2013-226": {
+  "tags": [
+   "agriculture-other",
+   "trucking-logistics"
+  ],
+  "re": "LIVESTOCK|CATTLE|HAUL|CYPRESS|LUMBER|RANCH"
+ },
+ "2013-234": {
+  "tags": [
+   "realestate-dev"
+  ],
+  "re": "COMMERCIAL REAL|REAL ESTATE|PROPERT|DEVELOP|REALTY",
+  "not": "DEALER|AUTO"
+ },
  "2014-64": {
   "tags": [
    "health-other"
