@@ -13,17 +13,12 @@
   "enacted": 255,
   "screened": 255,
   "qualifying": 31,
-  "withHouseVote": 1
+  "withHouseVote": 2
  },
  "missing": {
   "A": [],
   "B": [],
   "C": [
-   [
-    "2014-80",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2014/542/Vote/HouseVote_s0542e1770.PDF"
-   ],
    [
     "2014-91",
     "H",
@@ -1073,7 +1068,20 @@
    },
    "screen": "Private Sector Impact: It is anticipated that the implementation of CS/CS/CS/SB 542 will result in additional private insurers offering flood insurance which may increase competition in the marketplace and provide consumers with more coverage options.",
    "note": "new market for private flood insurers, as 2019-72 (opportunity to compete)",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2014-04-28",
+     "motion": "third reading",
+     "tally": [
+      98,
+      11
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2014/542/Vote/HouseVote_s0542e1770.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 590",

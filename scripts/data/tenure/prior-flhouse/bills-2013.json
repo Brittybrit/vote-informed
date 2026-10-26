@@ -11,27 +11,17 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 153,
-  "qualifying": 18,
-  "withHouseVote": 6
+  "screened": 163,
+  "qualifying": 20,
+  "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-150",
-   "2013-151",
-   "2013-155",
-   "2013-157",
    "2013-158",
-   "2013-159",
    "2013-160",
-   "2013-161",
-   "2013-162",
    "2013-163",
-   "2013-164",
-   "2013-165",
    "2013-166",
-   "2013-167",
    "2013-168",
    "2013-169",
    "2013-170",
@@ -140,64 +130,14 @@
   ],
   "C": [
    [
-    "2013-78",
+    "2013-155",
     "H",
-    "https://www.flsenate.gov/Session/Bill/2013/319/Vote/HouseVote_h0319c3250.PDF"
+    "https://www.flsenate.gov/Session/Bill/2013/7135/Vote/HouseVote_h7135c1239.PDF"
    ],
    [
-    "2013-82",
+    "2013-157",
     "H",
-    "https://www.flsenate.gov/Session/Bill/2013/423/Vote/HouseVote_h0423c1089.PDF"
-   ],
-   [
-    "2013-92",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/999/Vote/HouseVote_h0999e1460.PDF"
-   ],
-   [
-    "2013-101",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/1842/Vote/HouseVote_s1842e1282.PDF"
-   ],
-   [
-    "2013-110",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/1844/Vote/HouseVote_s1844e1397.PDF"
-   ],
-   [
-    "2013-125",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/356/Vote/HouseVote_s0356e1313.PDF"
-   ],
-   [
-    "2013-129",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/558/Vote/HouseVote_s0558__328.PDF"
-   ],
-   [
-    "2013-133",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/1094/Vote/HouseVote_s1094c2375.PDF"
-   ],
-   [
-    "2013-139",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/217/Vote/HouseVote_h0217c2238.PDF"
-   ],
-   [
-    "2013-140",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/383/Vote/HouseVote_h0383c2415.PDF"
-   ],
-   [
-    "2013-146",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/713/Vote/HouseVote_h0713c2237.PDF"
-   ],
-   [
-    "2013-147",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2013/795/Vote/HouseVote_h0795c1222.PDF"
+    "https://www.flsenate.gov/Session/Bill/2013/347/Vote/HouseVote_h0347e1228.PDF"
    ]
   ]
  },
@@ -1171,7 +1111,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: CS/HB 319 may reduce required contributions from developers for new developments in certain local government jurisdictions and could reduce delays for developer projects.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      108,
+      5
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/319/Vote/HouseVote_h0319c3250.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 375",
@@ -1220,7 +1173,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Commercial fishermen and aquaculturists will benefit from the sales tax exemption on dyed diesel fuel used to operate their commercial fishing vessels.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-12",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/423/Vote/HouseVote_h0423c1089.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 437",
@@ -1335,7 +1301,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Relating to special events on sovereign submerged lands – Special events promoters would benefit from the elimination of the special event fee; however, the public would not benefit from this reduction because the promoter charges the vendor to participate in the event. STORAGE NAME: h0999z1.ANRS PAGE: 21 DATE: June 11, 2013 Relating to water well permitting – The bill could have a potentially positive fiscal impact on the private sector by eliminating the requirement to obtain a separate local government water well construction permit, including any required fee. Relating to licenses for water well contractors issued by WMDs – The bill could have a potentially positive fiscal impact on the private sector by eliminating the requirement to obtain any local government water well contractor license. Relating to annual operation license fees for operation permits for major sources of air Pollution – According to DEP, the bill could have a potentially positive fiscal impact of $2 million per year on those in the manufacturing and industrial businesses. Approximately $1.4 million could be saved in permit fees because the permittees would be paying fees based on actual emissions instead of adjusted allowable emissions, which is in current law. Tying the permit fees and annual operating report requirements could save $600,000 by eliminating the need to compute and submit different emission calculations. Relating to the lease of sovereignty",
    "note": "also: Special events promoters would benefit from the elimination of the special event fee",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-03",
+     "motion": "passage",
+     "tally": [
+      106,
+      10
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/999/Vote/HouseVote_h0999e1460.PDF",
+     "roll": {
+      "Moskowitz": "not voting"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1071",
@@ -1439,7 +1418,20 @@
    },
    "screen": "Private Sector Impact: It is unknown to what extent health insurance premiums for individual and small group nongrandfathered health plans will be any greater, or possibly even lower, due to deleting the requirement for insurers to obtain approval of rate changes by the OIR for such policies. Representatives of the OIR have expressed concerns that due to lack of BILL: CS/SB 1842 Page 33 historical claims data, the OIR will not be able to effectively challenge an insurer’s determination of the effect of the PPACA’s requirements for guaranteed issue of coverage to all individuals and employers, to add coverage for essential health benefits, and increase benefits to required actuarial levels. But, it is unclear to what extent the OIR has the ability or resources to engage expert consultants or otherwise rely on actuarial studies to challenge the reasonableness of an insurer’s assumptions or the quality of their data. The impact of not requiring OIR approval of a rate change may be mitigated by the requirement of the PPACA that insurers file rate increases with the HHS, subject to an HHS determination as to whether a rate increase over 10 percent is unreasonable. The HHS does not have authority to disapprove the rate, but the HHS posts that determination on its website and requires the insurer to post that determination on its website for 3 years. Also, the authority for the Exchange to take unreasonable rate increases into consideration when determining whether to make the healt",
    "note": "rest of the section is costs and policyholder effects",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-26",
+     "motion": "third reading",
+     "tally": [
+      78,
+      36
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1842/Vote/HouseVote_s1842e1282.PDF",
+     "roll": {
+      "Moskowitz": "no"
+     }
+    }
+   }
   },
   {
    "bill": "HB 365",
@@ -1543,7 +1535,20 @@
    },
    "screen": "Private Sector Impact: The bill contemplates the FHCC contracting with private providers of health care services and products to deliver health care benefits to an additional population of currently uninsured individuals who may or may not be seeking health care services now. Physicians, hospitals, and other health care providers may be impacted by additional individuals seeking health care coverage and there may be a higher demand for such services once implemented. Additionally, those safety net and other providers who serve this same population and are not receiving compensation or are receiving reduced compensation for those services may have an additional avenue for revenue.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-01",
+     "motion": "third reading",
+     "tally": [
+      73,
+      41
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1844/Vote/HouseVote_s1844e1397.PDF",
+     "roll": {
+      "Moskowitz": "not voting"
+     }
+    }
+   }
   },
   {
    "bill": "HB 49",
@@ -1713,7 +1718,20 @@
    },
    "screen": "Private Sector Impact: To the extent that mutual insurers become licensed to transact financial guaranty insurance business in this state, there will be a positive impact.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-29",
+     "motion": "third reading",
+     "tally": [
+      112,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/356/Vote/HouseVote_s0356e1313.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 390",
@@ -1762,7 +1780,20 @@
    },
    "screen": "Private Sector Impact: The bill will assure that QPDs will continue to be able to use FHLBank letters of credit as eligible collateral. This change in letters of credit as eligible collateral would eliminate any potential disruption to banks and savings associations that use FHLBank letters of credit as collateral should the long-term sovereign credit rating of the United States drop below triple-A.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-30",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/558/Vote/HouseVote_s0558__328.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 604",
@@ -1811,7 +1842,20 @@
    },
    "screen": "Private Sector Impact: CS/SB 1094 reduces the fine amount for failing to submit the quarterly report which may have a positive fiscal impact on HHAs due to reduced administrative costs and avoidance of the $5,000 fine for failing to file the required report.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-01",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/1094/Vote/HouseVote_s1094c2375.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 1122",
@@ -1882,7 +1926,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: As a regulatory and law enforcement tool, the check-cashing database may indirectly benefit the law- abiding businesses that have been negatively impacted by workers’ compensation insurance fraud. The bill will also facilitate recordkeeping requirements for licensed check cashers.",
    "note": "same reading as 2013-66 (more convenient for the industry)",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/217/Vote/HouseVote_h0217c2238.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 383",
@@ -1898,7 +1955,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill potentially reduces the cost to insurers of filing and obtaining approval of products and advertising materials, since the Commission provides a clearinghouse that allows insurers to make one filing rather than separate filings in each state in which they do business.",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-05-02",
+     "motion": "passage",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/383/Vote/HouseVote_h0383c2415.PDF",
+     "roll": {
+      "Moskowitz": "not voting"
+     }
+    }
+   }
   },
   {
    "bill": "HB 553",
@@ -1969,7 +2039,20 @@
    },
    "screen": "B. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill has a potentially positive fiscal impact on utilities if the cost of meeting WQSs is reduced due to water quality credit trading. The private sector may also benefit from the development and implementation of pollution reduction control technologies that could result due to the incentives that a water quality credit trading can provide. Some agricultural operations in particular may be able to acquire and sell credits for establishing BMPs that reduce agricultural runoff and thus the amount of nutrients that enter a particular waterbody. C. FISCAL COMMENTS: None. STORAGE NAME: h0713z1.ANRS.docx PAGE: 7 DATE: June 11, 2013",
    "note": null,
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      114,
+      1
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/713/Vote/HouseVote_h0713c2237.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 795",
@@ -1985,7 +2068,20 @@
    },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The division states that this bill would streamline regulation by reducing the inspection burden on the type of establishments that present low risk to the public’s health, safety and welfare, while focusing inspection resources on the type of establishments that present higher risk.",
    "note": "judgment call: establishments inspected by the DBPR division (hotels and restaurants)",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2013-04-24",
+     "motion": "third reading",
+     "tally": [
+      114,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2013/795/Vote/HouseVote_h0795c1222.PDF",
+     "roll": {
+      "Moskowitz": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 837",
@@ -2018,7 +2114,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/939/Analyses/h0939z1.HIS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Entities and individual health care providers under Medicaid currently exempt from background checks will be required to meet the same requirements as other Medicaid providers. Health care providers who do not participate in the Medicaid program on a fee-for-service basis but become a member of a Medicaid managed care provider network will be required to undergo background screening. The total fee for a Level 2 background screening is $64.50 ($24.00 for the state portion, $16.50 for the national portion, and $24.00 for retention). There is an additional fee of $11-$16 for electronic screening, depending on the provider. The cost of the screening is borne by the individual provider.14",
-   "note": "not yet judged"
+   "note": "background screening costs for Medicaid providers; burden only"
   },
   {
    "bill": "HB 1093",
@@ -2029,7 +2125,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1093/Analyses/h1093z1.HQS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill eliminates the exclusive control for eligibility determinations and patient care previously held by the governmental contractors. The bill specifies that the patient selection and initial referral must be made by either the governmental contractor or the provider. Removing the exclusivity of the governmental contractor’s authority to make these determinations may result in a court determining that there was not sufficient government control to create an agency relationship. Although the state still retains some review and oversight authority over the providers, there may be an increase in the number and duration of lawsuits filed against the health care providers who deliver services under the Act.",
-   "note": "not yet judged"
+   "note": "more lawsuits against volunteer health care providers; burden only"
   },
   {
    "bill": "HB 1145",
@@ -2071,9 +2167,14 @@
    "title": "Pub. Rec./Money Services Businesses",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7135",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7135/Analyses/h7135z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "money services businesses (check-cashing licensees; records exemption)",
+    "named": [],
+    "quote": "Similarly, by making the identities of payors and licensees confidential, business information will be protected."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may benefit the private sector. By making the identities of payees and customers confidential, personal financial information will be protected. Similarly, by making the identities of payors and licensees confidential, business information will be protected.",
-   "note": "not yet judged"
+   "note": "licensees are money services businesses (check cashers); same reading as 2013-61",
+   "votes": {}
   },
   {
    "bill": "HB 7157",
@@ -2093,9 +2194,14 @@
    "title": "Alcoholic Beverages",
    "url": "https://www.flsenate.gov/Session/Bill/2013/347",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/347/Analyses/h0347z1.BPRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "craft distilleries",
+    "named": [],
+    "quote": "The DBPR notes that there would be a benefit to the distilleries being able to sell directly to the consumer, which would provide another source of revenue."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The DBPR notes that there would be a benefit to the distilleries being able to sell directly to the consumer, which would provide another source of revenue.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 573",
@@ -2103,10 +2209,10 @@
    "chapter": "2013-158",
    "title": "Manufactured & Mobile Homes",
    "url": "https://www.flsenate.gov/Session/Bill/2013/573",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/573/Analyses/h0573z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: More owners of mobile or manufactured homes will be eligible for insurance in Citizens under the bill’s reduction of the minimum insured value on these homes from $6,000 to $3,000. Mobile or manufactured home owners will be eligible for increased insurance coverage from Citizens as the bill requires Citizens to insure certain attached structures to the mobile or manufactured home.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 7025",
@@ -2114,10 +2220,10 @@
    "chapter": "2013-159",
    "title": "Timeshares",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7025",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7025/Analyses/h7025z1.BPRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill does not appear to have any direct economic impact on the private sector.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 7125",
@@ -2125,10 +2231,10 @@
    "chapter": "2013-160",
    "title": "Department of Highway Safety & Motor Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7125",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7125/Analyses/h7125z1.THSS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: Section 1 reclassifies FHP Captains positions from Career Service to the Selected Exempt Service. The proposed change reclassifying the 47 FHP Captain positions will result in an $88,000 recurring reduction to the Highway Safety Operating Trust Fund due to the increased costs of benefits, which can be absorbed within existing trust fund revenues. Sections 4 – 10 prohibit a notice of violation and a traffic citation from being issued via a red light camera for a right-on-red violation if the driver came to a complete stop before turning right (where a right turn is permissible) – even if the driver has stopped beyond the stop line or other point at which a stop is required. This provision may lead to a decrease in the number of notices of violation and traffic citations being issued, which may have a corresponding decrease in revenue for the state and local governments. However, the exact fiscal impact is indeterminate. These sections also allow the registered owner or driver to request a hearing within 60 days of receiving a red light camera notice of violation, rather than be forced to wait until the notice of violation becomes a uniform traffic citation. The local government that has issued the notice of violation may use its currently appointed code enforcement board or special magistrate to serve as the local hearing officer for purposes of conducting the hearing.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 62",
@@ -2136,10 +2242,10 @@
    "chapter": "2013-161",
    "title": "Low-speed Vehicles",
    "url": "https://www.flsenate.gov/Session/Bill/2013/62",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/62/Analyses/2013s0062.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Vehicle owners choosing to convert an LSV to a golf cart must pay the $40 registration fee. The practical effect of a conversion is to eliminate the need to register and insure the vehicle. If conversion is desired due to loss of ability to obtain a driver license required for operation of an LSV, and if authorized operation of the converted golf cart meets the owner’s mobility needs, the owner’s mobility is preserved. Vehicle owners will incur expenses associated with modification of the vehicle to ensure it is incapable of exceeding speeds of 20 miles per hour.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 142",
@@ -2147,9 +2253,9 @@
    "chapter": "2013-162",
    "title": "Intellectual Disabilities",
    "url": "https://www.flsenate.gov/Session/Bill/2013/142",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/142/Analyses/2013s0142.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2158,10 +2264,10 @@
    "chapter": "2013-163",
    "title": "Annuities",
    "url": "https://www.flsenate.gov/Session/Bill/2013/166",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/166/Analyses/2013s0166.rc.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: The consumer protections of s. 627.4554, F.S., will generally apply to all consumers purchasing annuities. To the extent that the protections provide greater transparency and protection against fraud and misrepresentation, consumers who purchase annuities should realize cost savings. BILL: CS/CS/SB 166 Page 11",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 186",
@@ -2169,9 +2275,9 @@
    "chapter": "2013-164",
    "title": "Jurisdiction of the Courts",
    "url": "https://www.flsenate.gov/Session/Bill/2013/186",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/186/Analyses/2013s0186.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2180,9 +2286,9 @@
    "chapter": "2013-165",
    "title": "Flag Etiquette",
    "url": "https://www.flsenate.gov/Session/Bill/2013/230",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/230/Analyses/2013s0230.rc.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "Private Sector Impact: None.",
    "note": null
   },
   {
@@ -2191,10 +2297,10 @@
    "chapter": "2013-166",
    "title": "Treatment Programs for Impaired Licensees and Applicants",
    "url": "https://www.flsenate.gov/Session/Bill/2013/248",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/248/Analyses/2013s0248.ri.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact: Consultants may see an increase in revenue from the expanded pool of students, veterinary students, and health practitioner licensure applicants. These students and applicants will bear the costs of their own referral and treatment.",
+   "note": "not yet judged"
   },
   {
    "bill": "SB 328",
@@ -2202,10 +2308,10 @@
    "chapter": "2013-167",
    "title": "Public Accountancy",
    "url": "https://www.flsenate.gov/Session/Bill/2013/328",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/328/Analyses/2013s0328.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "Private Sector Impact Effective January 1, 2015, all CPA firms engaged in the practice of public accounting pursuant to s. 473.302(8)(a), F.S., except those who provide only compilation or review services, will be required to be enrolled in a peer review program, which will require payment of peer reviewer fees. The FICPA has indicated that the cost of peer review is not fixed, but depends upon the nature, complexity and size of a firm’s accounting and auditing practice. The cost of peer review every three years is estimated by the FICPA to range from $1,790 to $2,315, depending upon the numbe",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "SB 336",

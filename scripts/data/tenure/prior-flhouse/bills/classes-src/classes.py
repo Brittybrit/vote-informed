@@ -407,6 +407,8 @@ C = {
 "2013-155": ({"tags": [], "re": "CHECK CASH|CHEQUE CASH|MONEY SERVICE|AMSCOT|ACE CASH|CASH EXPRESS|MONEY TRANSFER|REMITTANCE|WESTERN UNION|MONEYGRAM"},
   ("check cashers and money transmitters", "casas de cambio de cheques y remesadoras", "biznis ki chanje chèk ak voye lajan")),
 "2013-157": (DISTILL, ("craft distilleries", "destilerías artesanales", "ti distilri atizanal")),
+"2013-166": ({"tags": [], "re": "PROFESSIONALS RESOURCE NETWORK|INTERVENTION PROJECT FOR NURSES|IMPAIRED PRACTITIONER|\\bPRN\\b|\\bIPN\\b"},
+  ("impaired practitioner program consultants", "consultores de programas para profesionales con impedimentos", "konsiltan pwogram tretman pou pwofesyonèl sante")),
 }
 
 SKIP = {
