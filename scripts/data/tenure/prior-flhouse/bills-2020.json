@@ -33,52 +33,12 @@
   "enacted": 201,
   "screened": 201,
   "qualifying": 22,
-  "withHouseVote": 7
+  "withHouseVote": 15
  },
  "missing": {
   "A": [],
   "B": [],
   "C": [
-   [
-    "2020-70",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1089/Vote/HouseVote_h01089c1631.PDF"
-   ],
-   [
-    "2020-78",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1742/Vote/HouseVote_s01742c1716.PDF"
-   ],
-   [
-    "2020-87",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1039/Vote/HouseVote_h01039e1615.PDF"
-   ],
-   [
-    "2020-103",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/559/Vote/HouseVote_h00559c1603.PDF"
-   ],
-   [
-    "2020-105",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/717/Vote/HouseVote_h00717c1490.PDF"
-   ],
-   [
-    "2020-108",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/977/Vote/HouseVote_h00977c2762.PDF"
-   ],
-   [
-    "2020-109",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/1005/Vote/HouseVote_h01005c1604.PDF"
-   ],
-   [
-    "2020-119",
-    "H",
-    "https://www.flsenate.gov/Session/Bill/2020/178/Vote/HouseVote_s00178c2679.PDF"
-   ],
    [
     "2020-124",
     "H",
@@ -1044,7 +1004,24 @@
    },
    "screen": "The bill allows a trustee to reimburse or directly pay a grantor’s trust-related income tax burden under specified circumstances without converting the trust and losing certain grantor-trust benefits. This may attract trust business to Florida and prevent existing grantor trusts from fleeing to states perceived to be more trust-friendly.",
    "note": "judgment call: \"trust business\" read as the trust industry; same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-09",
+     "motion": "third reading",
+     "tally": [
+      118,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1089/Vote/HouseVote_h01089c1631.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 82",
@@ -1137,7 +1114,24 @@
    },
    "screen": "Physicians exempted under CS/SB 1742 may see a positive fiscal impact due to no longer having to pay licensure and inspection fees or meet the licensure requirements of part VII of ch. 400, F.S.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      116,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1742/Vote/HouseVote_s01742c1716.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "not voting",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 81",
@@ -1241,7 +1235,24 @@
    },
    "screen": "The bill authorizes the use of TNC digital advertising devices, thus enabling TNC drivers to install the devices and earn additional monthly revenue. The bill also authorizes certain limousine and for-hire vehicle owners and drivers to begin operating as or with a luxury ground TNC, thus increasing competition within the TNC market and allowing them access to TNC customers.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-09",
+     "motion": "third reading",
+     "tally": [
+      117,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1039/Vote/HouseVote_h01039e1615.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1213",
@@ -1422,7 +1433,24 @@
    },
    "screen": "Patients and nursing homes who receive a bundled payment for Medicare Part A patients may experience cost savings if a less expensive drug is therapeutically substituted for a prescribed drug, in instances where patients and nursing homes incur drug costs. It is unclear whether private insurers using their own formularies would experience an economic impact.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-09",
+     "motion": "third reading",
+     "tally": [
+      116,
+      2
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/559/Vote/HouseVote_h00559c1603.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 573",
@@ -1449,7 +1477,24 @@
    },
    "screen": "The bill may result in a positive direct economic impact for businesses that are involved in activities financed by Space Florida.",
    "note": "judgment call; same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-02-26",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/717/Vote/HouseVote_h00717c1490.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 783",
@@ -1487,7 +1532,24 @@
    },
    "screen": "Motor vehicle dealers may experience a reduction in insurance premiums and the cost of litigation. These savings may be passed onto consumers.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-13",
+     "motion": "passage",
+     "tally": [
+      111,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/977/Vote/HouseVote_h00977c2762.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1005",
@@ -1503,7 +1565,24 @@
    },
    "screen": "36 Section 101.591(5), F.S. 37 Section 101.591(6), F.S. STORAGE NAME: h1005z1.OTM.DOCX PAGE: 5 DATE: 6/29/2020 The bill may result in a positive fiscal impact to private sector companies that manufacture or sell automatic tabulating machines. As these machines become available for use as recount machines, counties would likely be incentivized to procure the machines to expedite the recount process. Currently, only one machine has been authorized to conduct independent automated audits in the state;38 however, under the bill, the machine would need to be certified as a recount machine by DOS before being used for that purpose.",
    "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-09",
+     "motion": "third reading",
+     "tally": [
+      118,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/1005/Vote/HouseVote_h01005c1604.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "HB 1439",
@@ -1618,7 +1697,24 @@
    },
    "screen": "The bill requires procedures that identify long-term risks to coastal structures, and potentially avoid some of the large costs of mitigating and dealing with future damage to, or even loss of, coastal structures. To the extent that costs of damage or destruction are avoided, residents and businesses may benefit. The bill may also have a positive, indeterminate impact on private service providers who may be engaged to perform the studies required by the bill. Therefore, the bill may have a positive, indeterminate impact on the private sector.",
    "note": "judgment call: private service providers performing the required coastal studies; same reading as ../../prior-flsenate/bills/stageB.jsonl",
-   "votes": {}
+   "votes": {
+    "house": {
+     "date": "2020-03-11",
+     "motion": "third reading",
+     "tally": [
+      115,
+      0
+     ],
+     "url": "https://www.flsenate.gov/Session/Bill/2020/178/Vote/HouseVote_s00178c2679.PDF",
+     "roll": {
+      "Avila": "yes",
+      "Ingoglia": "yes",
+      "Donalds": "yes",
+      "Rodriguez": "yes",
+      "Fernandez": "yes"
+     }
+    }
+   }
   },
   {
    "bill": "SB 952",

@@ -11,26 +11,15 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 203,
-  "qualifying": 29,
+  "screened": 214,
+  "qualifying": 31,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-200",
-   "2013-202",
-   "2013-203",
-   "2013-205",
-   "2013-208",
-   "2013-209",
-   "2013-210",
    "2013-211",
    "2013-212",
-   "2013-213",
-   "2013-214",
-   "2013-215",
-   "2013-216",
    "2013-217",
    "2013-218",
    "2013-219",
@@ -143,6 +132,16 @@
     "2013-199",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/623/Vote/HouseVote_h0623c1045.PDF"
+   ],
+   [
+    "2013-202",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/783/Vote/HouseVote_h0783c1212.PDF"
+   ],
+   [
+    "2013-205",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/1083/Vote/HouseVote_h1083c3215.PDF"
    ]
   ]
  },
@@ -2724,7 +2723,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/655/Analyses/h0655z1.LFAC.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Private employers will not be required by political subdivisions to provide employment benefits not required by state or federal law, except in limited situations, and will have the expectancy of uniformity throughout the state with regard to mandated non-wage compensation.",
-   "note": "not yet judged"
+   "note": "private employers generally (preemption of local benefit mandates)"
   },
   {
    "bill": "HB 665",
@@ -2744,9 +2743,14 @@
    "title": "Branch Offices Conducting Securities Transactions",
    "url": "https://www.flsenate.gov/Session/Bill/2013/783",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/783/Analyses/h0783z1.IBS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "securities dealers (branch office registration)",
+    "named": [],
+    "quote": "The bill may have a positive impact on the private sector by eliminating the lapse in branch operations while awaiting registration approval."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may have a positive impact on the private sector by eliminating the lapse in branch operations while awaiting registration approval.",
-   "note": "not yet judged"
+   "note": "judgment call: the branches are those of securities dealers and investment advisers registered with OFR",
+   "votes": {}
   },
   {
    "bill": "HB 973",
@@ -2757,7 +2761,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/973/Analyses/h0973z1.BPRS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: See Fiscal Comments, D., below. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The bill requires local enforcement agencies to issue each permit label to a contractor for a fee of up to $55 with a limited exemption. It is anticipated the bill would lower fees currently imposed by certain local jurisdictions and may encourage other local jurisdictions to raise fees resulting in an indeterminate fiscal impact. STORAGE NAME: h0973z1.BPRS PAGE: 6 DATE: June 25, 2013",
-   "note": "not yet judged"
+   "note": "permit label fee cap may lower some local fees and raise others; indeterminate"
   },
   {
    "bill": "HB 975",
@@ -2777,9 +2781,14 @@
    "title": "Underground Natural Gas Storage",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1083",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1083/Analyses/h1083z1.ANRS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "natural gas pipeline companies (underground gas storage)",
+    "named": [],
+    "quote": "There should be a net positive fiscal impact on pipeline companies and private utility customers by providing more gas at peak times."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The amount of the fee for the permit developed by the department would be dependent upon the number of applicants and the costs associated with the regulation of natural gas storage as outlined in the bill. The number of applicants is unknown, but expected to be low and costs associated with regulation are likely to be significant. The low number of applicants coupled with the potentially high cost of regulation could result in a substantial fee for the permit developed by the department. There should be a net positive fiscal impact on pipeline companies and private utility customers by providing more gas at peak times. The bill may also result in additional jobs where a natural gas storage facility is located.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 1085",
@@ -2809,9 +2818,9 @@
    "chapter": "2013-208",
    "title": "Florida Communications Fraud Act",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1173",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1173/Analyses/h1173z1.CRJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2820,10 +2829,10 @@
    "chapter": "2013-209",
    "title": "Captive Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1191",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1191/Analyses/h1191z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "B. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: 16 Definition in s. 928.901(12), F.S. STORAGE NAME: h1191z1.IBS.DOCX PAGE: 4 DATE: July 16, 2013 None. C. FISCAL COMMENTS: None. STORAGE NAME: h1191z1.IBS.DOCX PAGE: 5 DATE: July 16, 2013",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1223",
@@ -2831,10 +2840,10 @@
    "chapter": "2013-210",
    "title": "Deceptive and Unfair Trade Practices",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1223",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1223/Analyses/h1223z1.CJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill does not appear to have any direct economic impact on the private sector.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 1393",
@@ -2842,10 +2851,10 @@
    "chapter": "2013-211",
    "title": "Agricultural Storage and Shipping Containers",
    "url": "https://www.flsenate.gov/Session/Bill/2013/1393",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1393/Analyses/h1393z1.ANRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Owners of plastic bulk containers that wish to be protected by the provisions of this legislation will incur charges of an indeterminate amount to comply with the registration and record-keeping requirements. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: The Department of Agriculture and Consumer Services anticipates an insignificant increase in revenues from an increase in the filing of marks and brands for identifying containers used for the storage and transportation of agricultural or other commodities. The filing of marks or brands is usually a one-time occurrence. The filing fee is $2.00 and the certificate fee is $1.00 for a total of $3.00 per application. STORAGE NAME: h1393z1.ANRS.docx PAGE: 4 DATE: June 24, 2013",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 7005",
@@ -2853,10 +2862,10 @@
    "chapter": "2013-212",
    "title": "Massage Establishments",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7005",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7005/Analyses/h7005z1.CRJS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Massage establishments will no longer be permitted to operate between the hours of midnight and 5:00 a.m., which may result in a loss of revenue to the business; nor will such establishments be able to be used as a principle domicile unless zoned as such by local ordinance.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 7019",
@@ -2864,10 +2873,10 @@
    "chapter": "2013-213",
    "title": "Development Permits",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7019",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7019/Analyses/h7019z1.EDTS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: With regard to the provisions of the bill that relate to local government initiatives and referendum processes, the bill removes potential impediments to developers seeking land use permit changes.",
+   "note": "auto: no benefit wording in Private Sector Impact"
   },
   {
    "bill": "HB 7035",
@@ -2875,9 +2884,9 @@
    "chapter": "2013-214",
    "title": "Pretrial Detention",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7035",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7035/Analyses/h7035z1.CRJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2886,9 +2895,9 @@
    "chapter": "2013-215",
    "title": "Review Under Open Government Sunset Review Act",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7079",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7079/Analyses/h7079z1.GVOPS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2897,9 +2906,9 @@
    "chapter": "2013-216",
    "title": "Death Penalty",
    "url": "https://www.flsenate.gov/Session/Bill/2013/7083",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/7083/Analyses/h7083z1.CRJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. STORAGE NAME: h7083z1.CRJS PAGE: 9 DATE: June 24, 2013",
    "note": null
   },
   {
