@@ -414,6 +414,13 @@ C = {
 "2013-174": (HEALTHINS, ("health insurers", "aseguradoras de salud", "konpayi asirans sante")),
 "2013-188": ({"tags": ["realestate-dev"], "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD|CONDOMINIUM|CONDO ASSOC|COMMUNITY ASSOCIATION"},
   ("apartment owners and condo associations", "dueños de edificios de apartamentos y asociaciones de condominios", "pwopriyetè bilding apatman ak asosyasyon kondo")),
+"2013-190": (INS, ("insurance companies", "compañías de seguros", "konpayi asirans")),
+"2013-191": (INS, ("insurance companies", "compañías de seguros", "konpayi asirans")),
+"2013-193": ({"tags": [], "re": "\\bLUMBER|\\bTIMBER|SAWMILL|FOREST PRODUCTS|WOOD PRODUCTS|RAYONIER|WEYERHAEUSER|PLUM CREEK", "not": "TIMBERLANE|TIMBER CREEK|TIMBER RIDGE"},
+  ("lumber and timber companies", "empresas madereras", "konpayi bwa")),
+"2013-198": (NGV, ("natural gas vehicle fleets", "flotas de vehículos a gas natural", "flòt machin ki mache ak gaz natirèl")),
+"2013-199": ({"tags": ["restaurants-hospitality", "alcohol-beverage"], "re": "\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|NIGHTCLUB|SALOON|GRILL|WINE", "not": "BAR ASSOC|DISTRIBUT|WHOLESAL"},
+  ("bars and restaurants", "bares y restaurantes", "ba ak restoran")),
 }
 
 SKIP = {

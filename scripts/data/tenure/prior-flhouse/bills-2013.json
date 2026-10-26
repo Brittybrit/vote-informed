@@ -11,24 +11,17 @@
  },
  "counts": {
   "enacted": 272,
-  "screened": 186,
-  "qualifying": 23,
+  "screened": 193,
+  "qualifying": 24,
   "withHouseVote": 18
  },
  "missing": {
   "A": [],
   "B": [
-   "2013-184",
-   "2013-188",
-   "2013-189",
    "2013-190",
    "2013-191",
-   "2013-192",
    "2013-193",
    "2013-194",
-   "2013-195",
-   "2013-196",
-   "2013-197",
    "2013-198",
    "2013-199",
    "2013-200",
@@ -130,6 +123,11 @@
     "2013-174",
     "H",
     "https://www.flsenate.gov/Session/Bill/2013/648/Vote/HouseVote_s0648c1369.PDF"
+   ],
+   [
+    "2013-188",
+    "H",
+    "https://www.flsenate.gov/Session/Bill/2013/73/Vote/HouseVote_h0073c3168.PDF"
    ]
   ]
  },
@@ -2505,7 +2503,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/1472/Analyses/2013s1472.ca.PDF",
    "benefits": null,
    "screen": "Private Sector Impact: The bill will have the following economic impacts on the utilities recovering costs under this statute and their ratepayers.  The bill applies an AFUDC rate that is based upon the circumstances at the time the cost is incurred. This will always allow each utility to recover all interest costs and a rate of return that is fair and reasonable at the time the cost is incurred. With current AFUDC rates lower than those in effect on June 19, 2006, when the original cost recovery bill became law, the applicable rate --- and the total costs to the utility’s customers --- would decrease as a result of CS/SB 1472. However, if the total amount of the AFUDC components increase beyond those of the 2006 rates, both the applicable rate and the costs to ratepayers would increase beyond the amounts currently established in the statute.  The PSC review and approval process will provide protection for ratepayers throughout the development of a power plant for which early cost recovery is being obtained, while not providing significant delay or burden on a utility. The timing on recovery of some costs may be different under the current statute and the bill. In the event that a utility elects not to complete construction of a nuclear power plant, customers will receive specified refunds. BILL: CS/CS/SB 1472 Page 9",
-   "note": "not yet judged"
+   "note": "ratepayer protections on nuclear cost recovery; utilities keep fair recovery, no benefit to them stated"
   },
   {
    "bill": "SB 1664",
@@ -2547,9 +2545,14 @@
    "title": "Residential Properties",
    "url": "https://www.flsenate.gov/Session/Bill/2013/73",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/73/Analyses/h0073z1.CJS.PDF",
-   "benefits": null,
+   "benefits": {
+    "category": "owners of multifamily buildings and condominium associations (elevator code changes)",
+    "named": [],
+    "quote": "Section 1 of this bill, regarding elevator codes, will have a positive fiscal impact on associations and the owners of multi-family structures, and a corresponding negative fiscal impact on companies that provide such services."
+   },
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Section 1 of this bill, regarding elevator codes, will have a positive fiscal impact on associations and the owners of multi-family structures, and a corresponding negative fiscal impact on companies that provide such services.",
-   "note": "not yet judged"
+   "note": null,
+   "votes": {}
   },
   {
    "bill": "HB 95",
@@ -2560,7 +2563,7 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/95/Analyses/h0095z1.IBS.PDF",
    "benefits": null,
    "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Under the bill, creditors cannot void a natural person’s charitable contributions received on, or within 2 years before, the commencement of a FUFTA, bankruptcy, or insolvency proceeding, if the transfer was received in good faith and was less than 15% of the debtor’s gross annual income for the year in which the transfer was made, or was consistent with the debtor’s practices in making charitable contributions.",
-   "note": "not yet judged"
+   "note": "protects charitable gifts from creditors; no business named as benefiting"
   },
   {
    "bill": "HB 157",
@@ -2568,10 +2571,10 @@
    "chapter": "2013-190",
    "title": "Delivery of Insurance Policies",
    "url": "https://www.flsenate.gov/Session/Bill/2013/157",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/157/Analyses/h0157z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers emailing policies to policyholders instead of mailing them will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to email rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with emailing policies, any increased costs will be passed through to policyholders.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 223",
@@ -2579,10 +2582,10 @@
    "chapter": "2013-191",
    "title": "Insurance",
    "url": "https://www.flsenate.gov/Session/Bill/2013/223",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/223/Analyses/h0223z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Insurers posting policies online will save costs associated with printing and mailing insurance policies to policyholders. The exact amount of savings cannot be calculated as it is unknown how many insurers will opt to post policies online and how many policyholders will choose to obtain their policies online rather than by mail. However, any savings realized by insurers should be passed through to policyholders. If insurers incur computer reprogramming costs associated with posting policies online, any increased costs will be passed through to policyholders.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 247",
@@ -2590,9 +2593,9 @@
    "chapter": "2013-192",
    "title": "Paper Reduction",
    "url": "https://www.flsenate.gov/Session/Bill/2013/247",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/247/Analyses/h0247z2.GVOPS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2601,10 +2604,10 @@
    "chapter": "2013-193",
    "title": "Building Construction",
    "url": "https://www.flsenate.gov/Session/Bill/2013/269",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/269/Analyses/h0269z1.EUS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Florida-based lumber and timber companies could see an increase in sales. Certain DFS-approved collection vendors currently utilized by DBPR may experience indeterminate revenue losses related to the collection retention percentage changes in the bill. Residential property owners may see a savings when having HVAC inspections. ----FISCAL COMMENTS---- D. FISCAL COMMENTS: According to DBPR, as locally licensed contractors transfer to the state certified contractor’s license, the local licensing authority would likely see a reduction in their licensing fees. The amount and extent of the effect is indeterminate because each jurisdiction has different fees and number of licensees.36 33 Email correspondence with DBPR staff on May 16, 2013. 34 Email correspondence with DPBR staff on May 17, 2013. 35 Per DOH, through May 16, 2013, email correspondence, “Only in those occasions that the department needs to go to a site for verification will the fee not cover the cost. We anticipate this happening rarely. Therefore the fiscal impact will probably be negligible.” 36 Email correspondence with DPBR staff on May 16, 2013. STORAGE NAME: h0269z1.EUS PAGE: 12 DATE: June 26, 2013 The bill may have an initial insignificant negative fiscal impact on DBPR related to the collection of fines from local governments. DBPR does not have any record of local governments remitting to the department unpaid fines and costs ordered by the Construction Industry Li",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 333",
@@ -2612,10 +2615,10 @@
    "chapter": "2013-194",
    "title": "Fish and Wildlife Conservation Commission",
    "url": "https://www.flsenate.gov/Session/Bill/2013/333",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/333/Analyses/h0333h.SAC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: Section 3: According to the FWC’s analysis, those wishing to purchase a resident recreational fishing or hunting license, but who are not eligible because they have not established their Florida residency for six months or more, will see a positive fiscal impact of the difference between the cost of a resident license and a nonresident license. Section 4: According to the FWC’s analysis, active duty military personnel, reservists, Florida National Guard, U.S. Coast Guard, and disabled veterans participating in FWC-permitted hunting and fishing events that promote outdoor recreation, together with all individuals assisting the disabled veterans in the event, will be exempted from having to purchase a license for that specified event. Section 5: According to the FWC’s analysis, both residents and non-residents can enjoy additional free saltwater and freshwater fishing days without having to purchase a license. Section 6: According to the FWC’s analysis, there could be a positive fiscal impact, in the form of income, on veterans who enter the commercial fishing industry; however, there is a potential for a negative fiscal impact to income on current commercial fishermen holding a restricted species endorsement as a result of increased competition this section may create.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 341",
@@ -2623,9 +2626,9 @@
    "chapter": "2013-195",
    "title": "Uninsured Motorist Insurance Coverage",
    "url": "https://www.flsenate.gov/Session/Bill/2013/341",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/341/Analyses/h0341z1.IBS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None. STORAGE NAME: h0341z.IBS.DOCX PAGE: 4 DATE: July 16, 2013",
    "note": null
   },
   {
@@ -2634,9 +2637,9 @@
    "chapter": "2013-196",
    "title": "Public Meetings/Criminal Justice Commissions",
    "url": "https://www.flsenate.gov/Session/Bill/2013/361",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/361/Analyses/h0361z1.CRJS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2645,9 +2648,9 @@
    "chapter": "2013-197",
    "title": "Physical Therapy",
    "url": "https://www.flsenate.gov/Session/Bill/2013/413",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/413/Analyses/h0413z1.HQS.PDF",
    "benefits": null,
-   "screen": null,
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: None.",
    "note": null
   },
   {
@@ -2656,10 +2659,10 @@
    "chapter": "2013-198",
    "title": "Natural Gas Motor Fuel",
    "url": "https://www.flsenate.gov/Session/Bill/2013/579",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/579/Analyses/h0579z1.EUS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill may result in increased savings for drivers utilizing vehicles powered by natural gas fuel, an increase in conversions of vehicle fleets from being powered by traditional fuels to natural gas fuel, and an increase in natural gas refueling infrastructure across the state.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 623",
@@ -2667,10 +2670,10 @@
    "chapter": "2013-199",
    "title": "Wine",
    "url": "https://www.flsenate.gov/Session/Bill/2013/623",
-   "analysisUrl": null,
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2013/623/Analyses/h0623z1.BPRS.PDF",
    "benefits": null,
-   "screen": null,
-   "note": null
+   "screen": "C. DIRECT ECONOMIC IMPACT ON PRIVATE SECTOR: The bill is expected to have most of its impact in the hospitality industry, as bars and restaurants will be able to reduce cost and waste associated with spoiled wine. Moreover, there may be a benefit to the private sector in being able to purchase larger size containers of wine, especially if a bulk rate is available.",
+   "note": "not yet judged"
   },
   {
    "bill": "HB 655",

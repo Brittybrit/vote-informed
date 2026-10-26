@@ -9,3 +9,12 @@ Recording rule: employers, income sources, owned businesses, business creditors 
 - alexis-calatayud: done | years 2022-2025 | found 2022-2025 | missing none | illegible none | Form 8B none found (2023-2024 Form 10s are gift reports, not 8B)
 - ashley-viola-gantt: done | years 2022-2025 | found 2022-2025 | missing none | illegible none | Form 8B none found
 - fabian-basabe: done | years 2022-2025 | found 2022-2025 | missing none | illegible none | Form 8B none found
+- mike-redondo: done | years 2023-2025 | found 2023-2025 | missing none | illegible none | Form 8B none found
+- omar-blanco: done | years 2024-2025 | found 2024-2025 | missing none | illegible none | Form 8B none found
+- juan-carlos-porras: done | years 2022-2025 | found 2022-2025 | missing none | illegible none | Form 8B none found
+## Pass 1 (e-filed 2022+) complete for all officials (2026-10-26). Still need earlier scanned years:
+- annette-taddeo: 2017-2021 (scans online), 2022 (6F)
+- javier-fernandez: 2018-2019 (scans online), 2020 (6F/1F), 2021 (no office), 2022 (Form 1 paper)
+- ileana-garcia: 2020-2021 (scans online)
+- angela-nixon: 2020-2021 (scans online)
+- kevin-d-chambliss: 2020-2021 (scans online)
