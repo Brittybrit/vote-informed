@@ -72,9 +72,10 @@
   function geocode(address){
     var a = cleanAddress(address);
     if(!a) return Promise.reject(new Error('empty'));
-    var direct = CENSUS + '?benchmark=Public_AR_Current&format=json&address=' + encodeURIComponent(a);
+    // The Census geocoder refuses calls from other sites' pages, so the address goes through this site's
+    // /api/geocode (rooftop match first, then the Census); a second try if the first times out
     var viaSite = '/api/geocode?q=' + encodeURIComponent(a);
-    return fetchJson(direct).catch(function(){ return fetchJson(viaSite); }).then(function(j){
+    return fetchJson(viaSite, 20000).catch(function(){ return fetchJson(viaSite, 20000); }).then(function(j){
       var g = parseGeocode(j);
       if(!g) throw new Error('nomatch');
       return g;
@@ -97,7 +98,7 @@
     return new Promise(function(res, rej){
       if(!navigator.geolocation) return rej(new Error('unsupported'));
       navigator.geolocation.getCurrentPosition(function(p){
-        res({ lat: p.coords.latitude, lng: p.coords.longitude, matched: '' });
+        res({ lat: p.coords.latitude, lng: p.coords.longitude, matched: '', accuracy: p.coords.accuracy });
       }, function(e){ rej(e); }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 300000 });
     });
   }

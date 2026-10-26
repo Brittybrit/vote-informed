@@ -55,10 +55,11 @@ test('the county map and the county list name the same precincts', () => {
 import { loadWorker } from './load-worker.mjs';
 
 test('worker fallbacks: bad input is refused, good input passes through unchanged', async () => {
-  const w = await loadWorker(['handleGeocode', 'handlePrecinctAt']);
+  const w = await loadWorker(['handleGeocode', 'handlePrecinctAt', 'esriGeocode']);
   const calls = [];
   const realFetch = globalThis.fetch;
-  globalThis.fetch = async (url) => { calls.push(String(url)); return new Response('{"ok":1}', { status: 200 }); };
+  // Esri finds nothing usable here, so the Census answer passes through unchanged
+  globalThis.fetch = async (url) => { calls.push(String(url)); return new Response(/geocode\.arcgis/.test(String(url)) ? '{"candidates":[]}' : '{"ok":1}', { status: 200 }); };
   try {
     assert.equal((await w.handleGeocode('')).status, 400);
     assert.equal((await w.handlePrecinctAt('40.7', '-74')).status, 400);     // New York: not Miami-Dade
@@ -68,9 +69,21 @@ test('worker fallbacks: bad input is refused, good input passes through unchange
     assert.equal(g.status, 200);
     assert.equal(g.headers.get('Cache-Control'), 'no-store');
     assert.equal(await g.text(), '{"ok":1}');
-    assert.match(calls[0], /^https:\/\/geocoding\.geo\.census\.gov\/geocoder\/locations\/onelineaddress\?benchmark=Public_AR_Current&format=json&address=1700%20Convention/);
+    assert.match(calls[0], /^https:\/\/geocode\.arcgis\.com\/arcgis\/rest\/services\/World\/GeocodeServer\/findAddressCandidates\?.*SingleLine=1700%20Convention/);
+    assert.match(calls[1], /^https:\/\/geocoding\.geo\.census\.gov\/geocoder\/locations\/onelineaddress\?benchmark=Public_AR_Current&format=json&address=1700%20Convention/);
     const p = await w.handlePrecinctAt('25.7943', '-80.1333');
     assert.equal(p.status, 200);
-    assert.match(calls[1], /Precinct_gdb\/FeatureServer\/0\/query\?f=json&geometryType=esriGeometryPoint&inSR=4326.*geometry=-80\.1333%2C25\.7943$/);
+    assert.match(calls[2], /Precinct_gdb\/FeatureServer\/0\/query\?f=json&geometryType=esriGeometryPoint&inSR=4326.*geometry=-80\.1333%2C25\.7943$/);
+  } finally { globalThis.fetch = realFetch; }
+});
+
+test('worker geocode: a rooftop match comes back in the Census shape', async () => {
+  const w = await loadWorker(['handleGeocode', 'esriGeocode']);
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({ candidates: [{ address: '1504 Bay Rd, Miami Beach, Florida, 33139', location: { x: -80.144, y: 25.7878 }, score: 100, attributes: { Addr_type: 'PointAddress', Region: 'Florida' } }] }), { status: 200 });
+  try {
+    const j = JSON.parse(await (await w.handleGeocode('1504 bay rd, miami beach, fl')).text());
+    const m = j.result.addressMatches[0];
+    assert.equal(m.coordinates.y, 25.7878); assert.equal(m.addressComponents.state, 'FL'); assert.equal(j.source, 'esri');
   } finally { globalThis.fetch = realFetch; }
 });

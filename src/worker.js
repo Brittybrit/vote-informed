@@ -4813,9 +4813,9 @@ function handlePollingPlace(p) {
 }
 
 /* ---------------- find my precinct: fallbacks for /find-precinct.js ---------------- */
-// The browser calls the Census geocoder and the county's precinct layer itself. These two routes
-// exist only for browsers where that direct call fails. They pass the request along and return the
-// answer; nothing is logged or stored, and the response is not cached.
+// The browser sends the address here (the Census geocoder refuses calls from other sites' pages) and calls the
+// county's precinct layer itself, with /api/precinct as its fallback. These routes pass the request along and return
+// the answer; nothing is logged or stored, and the response is not cached.
 const GEOCODER = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress';
 const PRECINCT_LAYER = 'https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/Precinct_gdb/FeatureServer/0/query';
 async function passThrough(url) {
@@ -4825,9 +4825,25 @@ async function passThrough(url) {
     headers: { 'Content-Type': 'application/json', 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store' }
   });
 }
+// Esri's World Geocoder places a matched house on its own rooftop; the Census geocoder estimates the spot along the
+// street's address range, which can land across a precinct line. So Esri first (a rooftop or street-address match,
+// score 90+, in Florida), then the Census. The answer comes back in the Census shape /find-precinct.js reads.
+const ESRI_GEOCODER = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates';
+async function esriGeocode(a) {
+  try {
+    const r = await fetch(ESRI_GEOCODER + '?f=json&maxLocations=1&forStorage=false&sourceCountry=USA&outFields=Region,Addr_type&SingleLine=' + encodeURIComponent(a),
+      { signal: AbortSignal.timeout(8000), headers: { 'Accept': 'application/json' } });
+    if (!r.ok) return null;
+    const c = ((await r.json()).candidates || [])[0];
+    if (!c || c.score < 90 || !c.location || !/^(PointAddress|Subaddress|StreetAddress)$/.test((c.attributes || {}).Addr_type || '') || (c.attributes || {}).Region !== 'Florida') return null;
+    return { source: 'esri', result: { addressMatches: [{ coordinates: { x: c.location.x, y: c.location.y }, matchedAddress: c.address, addressComponents: { state: 'FL' } }] } };
+  } catch (e) { return null; }
+}
 async function handleGeocode(q) {
   const a = String(q || '').replace(/\s+/g, ' ').trim().slice(0, 200);
   if (!a) return json({ error: 'Missing q' }, 400);
+  const e = await esriGeocode(a);
+  if (e) return new Response(JSON.stringify(e), { headers: { 'Content-Type': 'application/json', 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store' } });
   return passThrough(GEOCODER + '?benchmark=Public_AR_Current&format=json&address=' + encodeURIComponent(a));
 }
 async function handlePrecinctAt(lat, lng) {

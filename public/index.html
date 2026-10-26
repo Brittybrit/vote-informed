@@ -880,7 +880,7 @@ en: {
   'gb.master.t': 'Load the countywide master ballot &rarr;',
   'gb.master.d': 'Every race in Miami-Dade for the November 3 General Election. Loads right here, no download needed.',
   'fp.t': 'Load the races on my ballot using my address &rarr;',
-  'fp.d': 'Type your home address, or use your location. We find your precinct and show only your races. The address goes to the U.S. Census geocoder and the county&rsquo;s precinct map, not to this site, and is not saved.',
+  'fp.d': 'Type your home address, or use your location. We find your precinct and show only your races. The address is passed to a map service (Esri, or the U.S. Census) and the county&rsquo;s precinct map to find your precinct. This site does not save it.', 'fp.loose': 'Your device can only place you within about {m} meters, and that can put you in the wrong precinct. Type your address instead.', 'fp.foundLoc': 'Precinct {p}, from your device&rsquo;s location. If that isn&rsquo;t the precinct on your voter card, type your address instead; your own sample ballot is the final word.',
   'fp.ph': 'Street address, city',
   'fp.go': 'Find',
   'fp.loc': 'Use my location',
@@ -1483,7 +1483,7 @@ es: {
   'gb.master.t': 'Cargar la boleta maestra de todo el condado &rarr;',
   'gb.master.d': 'Todas las contiendas de Miami-Dade para las Elecciones Generales del 3 de noviembre. Se carga aquí mismo, sin descargar nada.',
   'fp.t': 'Cargar las contiendas de mi boleta usando mi dirección &rarr;',
-  'fp.d': 'Escriba la dirección de su casa o use su ubicación. Encontramos su precinto y mostramos solo sus contiendas. La dirección va al geocodificador del Censo de EE. UU. y al mapa de precintos del condado, no a este sitio, y no se guarda.',
+  'fp.d': 'Escriba la dirección de su casa o use su ubicación. Encontramos su precinto y mostramos solo sus contiendas. La dirección se envía a un servicio de mapas (Esri o el Censo de EE. UU.) y al mapa de precintos del condado para encontrar su precinto. Este sitio no la guarda.', 'fp.loose': 'Su dispositivo solo puede ubicarle con un margen de unos {m} metros, y eso puede ponerle en el precinto equivocado. Escriba su dirección.', 'fp.foundLoc': 'Precinto {p}, según la ubicación de su dispositivo. Si no es el precinto de su tarjeta de votante, escriba su dirección; su propia boleta de muestra es la palabra final.',
   'fp.ph': 'Dirección, ciudad',
   'fp.go': 'Buscar',
   'fp.loc': 'Usar mi ubicación',
@@ -2086,7 +2086,7 @@ ht: {
   'gb.master.t': 'Chaje bilten vòt prensipal tout konte a &rarr;',
   'gb.master.d': 'Tout eleksyon nan Miami-Dade pou Eleksyon Jeneral 3 novanm nan. Li chaje isit la, ou pa bezwen telechaje anyen.',
   'fp.t': 'Chaje eleksyon ki sou bilten vòt mwen ak adrès mwen &rarr;',
-  'fp.d': 'Tape adrès kay ou, oswa itilize kote w ye a. Nou jwenn pwesen w epi nou montre sèlman eleksyon pa w yo. Adrès la ale nan jeokodè Resansman Etazini an ak kat pwesen konte a, pa nan sit sa a, epi li pa sove.',
+  'fp.d': 'Tape adrès kay ou, oswa itilize kote w ye a. Nou jwenn pwesen w epi nou montre sèlman eleksyon pa w yo. Nou voye adrès la bay yon sèvis kat (Esri oswa Resansman Etazini) ak kat pwesen konte a pou jwenn pwesen w. Sit sa a pa sove l.', 'fp.loose': 'Aparèy ou ka mete w sèlman nan anviwon {m} mèt, e sa ka mete w nan move pwesen. Tape adrès ou pito.', 'fp.foundLoc': 'Pwesen {p}, dapre kote aparèy ou di w ye. Si se pa pwesen ki sou kat votè w la, tape adrès ou pito; echantiyon bilten vòt ou se dènye mo a.',
   'fp.ph': 'Adrès, vil',
   'fp.go': 'Chèche',
   'fp.loc': 'Itilize kote m ye a',
@@ -3249,14 +3249,14 @@ function wireFindPrecinct(ids){
   function fail(key, extra){ busy(false); say(t(key, extra || {})); }
   function finish(p){
     busy(false);
-    say(t('fp.found', {p: esc(p)}));
+    say(t(viaLocation ? 'fp.foundLoc' : 'fp.found', {p: esc(p)}));
     return loadFeaturedBallot().then(function(){
       if(!ballot || ballot.precinct) return;
       ballot.filterPct = p; delete ballot.pfSeen; saveState();
       loadPrecincts().then(function(){ renderBallot(); setStatus(t('status.fromPct', {p: esc(p)}), false); }).catch(function(){ renderBallot(); });
     });
   }
-  var typed = '';
+  var typed = '', viaLocation = false;
   function resolve(point){
     return fp.precinctAt(point.lat, point.lng).then(function(whole){
       if(whole) voterAt = { lat: point.lat, lon: point.lng, addr: typed };
@@ -3278,7 +3278,7 @@ function wireFindPrecinct(ids){
     ev.preventDefault();
     var a = fp.cleanAddress($(ids.input).value);
     if(!a || !/\d/.test(a)) return fail('fp.empty');
-    typed = String($(ids.input).value || '').trim();
+    typed = String($(ids.input).value || '').trim(); viaLocation = false;
     busy(true); say(t('fp.working') + '<span class="dots"></span>');
     fp.geocode(a).then(resolve).catch(function(e){
       fail(e && e.message === 'nomatch' ? 'fp.nomatch' : 'fp.fail');
@@ -3287,7 +3287,13 @@ function wireFindPrecinct(ids){
   loc.addEventListener('click', function(){
     typed = '';
     busy(true); say(t('fp.working') + '<span class="dots"></span>');
-    fp.locate().then(resolve).catch(function(e){
+    fp.locate().then(function(pt){
+      // A computer's location comes from nearby Wi-Fi and can be off by a block or more, enough to land in the
+      // next precinct (Brit, Oct 26, 2026): use it only when the device says it is within 30 meters
+      if(!(pt.accuracy <= 30)){ busy(false); say(t('fp.loose', {m: Math.round(pt.accuracy || 0)})); return; }
+      viaLocation = true;
+      return resolve(pt);
+    }).catch(function(e){
       fail(e && (e.code === 1 || e.message === 'unsupported') ? 'fp.denied' : 'fp.fail');
     });
   });
