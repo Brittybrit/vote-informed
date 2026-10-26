@@ -22,3 +22,5 @@ Recording rule: employers, income sources, owned businesses, business creditors 
 - javier-fernandez: done | years 2018-2025 | found 2018, 2019, 2023-2025 | missing 2020 (6F/1F not online), 2021 (no office), 2022 (paper Form 1, not online) | illegible none | Form 8B: none found; recusal for conflict of interest 2024-10-15 (Sunshine Gasoline Distributors fuel purchase) recorded with form8b null
 - ileana-garcia: done | years 2020-2025 | found 2020-2025 | missing none | illegible none | Form 8B none found
 - angela-nixon: done | years 2020-2025 | found 2020-2025 | missing none | illegible none | Form 8B none found
+- kevin-d-chambliss: done | years 2020-2025 | found 2020-2025 | missing none | illegible none (2021 handwritten, read from image) | Form 8B none found
+## Pass 2 (scanned 2016-2021 forms) complete 2026-10-26. No official still needs an online year; remaining gaps are forms not online (see summary.md).
