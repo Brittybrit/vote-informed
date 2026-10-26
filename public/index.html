@@ -224,7 +224,8 @@
     margin-top:12px; background:var(--ink); color:var(--paper); border:none;
     font-weight:800; text-transform:uppercase; letter-spacing:.05em; font-size:12.5px; padding:10px 20px;
   }
-  .getballot{margin-top:22px; text-align:left;}
+  .getballot{margin-top:0; text-align:left;}
+  .dz-drop{margin-top:26px; padding-top:22px; border-top:1px dotted var(--rule);}
   .gb-head{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); text-align:center; margin-bottom:10px;}
   .gb-opt{
     display:block; width:100%; text-align:left; font-family:inherit; cursor:pointer;
@@ -770,11 +771,6 @@
     <div class="resume-box" id="resumeBox"></div>
     <div id="uploadFlow">
     <div class="dropzone" id="dropzone">
-      <div class="oval-demo"></div>
-      <h2 data-i18n="dz.h2"></h2>
-      <p data-i18n="dz.p"></p>
-      <button class="btn" id="pickBtn" data-i18n="dz.pick"></button>
-      <input type="file" id="fileInput" accept="application/pdf" hidden>
       <div class="getballot">
         <p class="gb-head" data-i18n="gb.head"></p>
         <form class="gb-opt gb-find" id="findForm" novalidate>
@@ -795,6 +791,13 @@
           <span class="gb-title" data-i18n="gb.master.t"></span>
           <span class="gb-desc" data-i18n="gb.master.d"></span>
         </button>
+      </div>
+      <div class="dz-drop">
+      <div class="oval-demo"></div>
+      <h2 data-i18n="dz.h2"></h2>
+      <p data-i18n="dz.p"></p>
+      <button class="btn" id="pickBtn" data-i18n="dz.pick"></button>
+      <input type="file" id="fileInput" accept="application/pdf" hidden>
       </div>
     </div>
     <p class="finehint" data-i18n="finehint"></p>
@@ -876,7 +879,7 @@ en: {
   'gb.exact.d': 'Look yourself up on the county&rsquo;s voter portal for your precinct-specific sample ballot, with only the races you&rsquo;ll actually vote on. Save it as a PDF and upload it here.',
   'gb.master.t': 'Load the countywide master ballot &rarr;',
   'gb.master.d': 'Every race in Miami-Dade for the November 3 General Election. Loads right here, no download needed.',
-  'fp.t': 'Find my ballot by address &rarr;',
+  'fp.t': 'Load the races on my ballot using my address &rarr;',
   'fp.d': 'Type your home address, or use your location. We find your precinct and show only your races. The address goes to the U.S. Census geocoder and the county&rsquo;s precinct map, not to this site, and is not saved.',
   'fp.ph': 'Street address, city',
   'fp.go': 'Find',
@@ -1479,7 +1482,7 @@ es: {
   'gb.exact.d': 'Búsquese en el portal de votantes del condado para obtener la boleta de muestra de su precinto, solo con las contiendas en las que realmente votará. Guárdela como PDF y súbala aquí.',
   'gb.master.t': 'Cargar la boleta maestra de todo el condado &rarr;',
   'gb.master.d': 'Todas las contiendas de Miami-Dade para las Elecciones Generales del 3 de noviembre. Se carga aquí mismo, sin descargar nada.',
-  'fp.t': 'Buscar mi boleta por dirección &rarr;',
+  'fp.t': 'Cargar las contiendas de mi boleta usando mi dirección &rarr;',
   'fp.d': 'Escriba la dirección de su casa o use su ubicación. Encontramos su precinto y mostramos solo sus contiendas. La dirección va al geocodificador del Censo de EE. UU. y al mapa de precintos del condado, no a este sitio, y no se guarda.',
   'fp.ph': 'Dirección, ciudad',
   'fp.go': 'Buscar',
@@ -2082,7 +2085,7 @@ ht: {
   'gb.exact.d': 'Chèche non w sou pòtay votè konte a pou jwenn echantiyon bilten vòt pou pwesen w lan, ak sèlman eleksyon ou pral vote yo. Sove l kòm PDF epi voye l isit la.',
   'gb.master.t': 'Chaje bilten vòt prensipal tout konte a &rarr;',
   'gb.master.d': 'Tout eleksyon nan Miami-Dade pou Eleksyon Jeneral 3 novanm nan. Li chaje isit la, ou pa bezwen telechaje anyen.',
-  'fp.t': 'Jwenn bilten vòt mwen ak adrès mwen &rarr;',
+  'fp.t': 'Chaje eleksyon ki sou bilten vòt mwen ak adrès mwen &rarr;',
   'fp.d': 'Tape adrès kay ou, oswa itilize kote w ye a. Nou jwenn pwesen w epi nou montre sèlman eleksyon pa w yo. Adrès la ale nan jeokodè Resansman Etazini an ak kat pwesen konte a, pa nan sit sa a, epi li pa sove.',
   'fp.ph': 'Adrès, vil',
   'fp.go': 'Chèche',
