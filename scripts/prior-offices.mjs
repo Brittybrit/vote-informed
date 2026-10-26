@@ -13,6 +13,7 @@
 // the county mayor's recommendations and vetoes (how they count is Brit's call), and agency actions without votes.
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { P, J, csv, pkey, dkey } from './lib/city.mjs';
+import { buildLegislative } from './prior-legislature.mjs';
 
 const T = 'scripts/data/tenure/';
 const OUT = 'public/data/prior/';
@@ -37,6 +38,9 @@ const BODY = {
   'city-boca-raton': ['Boca Raton City Council', 'Concejo de la Ciudad de Boca Raton', 'Konsèy Vil Boca Raton'],
   'city-parkland': ['Parkland City Commission', 'Comisión de la Ciudad de Parkland', 'Komisyon Vil Parkland'],
   'cabinet': ['Governor and Cabinet', 'Gobernador y Gabinete', 'Gouvènè ak Kabinè'],
+  'fl-house': ['Florida House', 'Cámara de Representantes de Florida', 'Chanm Reprezantan Florid'],
+  'fl-senate': ['Florida Senate', 'Senado de Florida', 'Sena Florid'],
+  'us-house': ['U.S. House', 'Cámara de Representantes de EE. UU.', 'Chanm Reprezantan Etazini'],
 };
 const tri = a => ({ en: a[0], es: a[1], ht: a[2] });
 
@@ -213,6 +217,15 @@ for (const C0 of OFFICES) {
     counts: cnt, unnamed, share, actions,
   });
   report.push(`${C0.pid} ${bodyKey} ${start}: ${cnt.actions} actions (yes ${cnt.yes}, no ${cnt.no}, unknown ${cnt.unknown}) | gifts ${gifts.length} | tied ${tied.length}${share ? ' (' + Math.round(tied.length / cast.length * 100) + '%)' : ''}`);
+}
+// Earlier legislative seats (scripts/prior-legislature.mjs): requests and laws instead of council votes
+const DIST = { 'fl-house': ['State Representative, District ', 'Representante estatal, Distrito ', 'Reprezantan Leta, Distri '], 'fl-senate': ['State Senator, District ', 'Senador estatal, Distrito ', 'Senatè Leta, Distri '], 'us-house': ['U.S. Representative, ', 'Representante federal, ', 'Reprezantan federal, '] };
+for (const { pid, office } of buildLegislative(nameOf)) {
+  const P0 = people[pid] || (people[pid] = { pid, name: nameOf(pid), pron: pron(pid), offices: [] });
+  const dd = String(office.district || '').split(/\s*\/\s*/).pop();
+  P0.offices.push({ ...office, bodyName: tri(BODY[office.body]), role: tri(DIST[office.body].map(x => x + dd)) });
+  const L = office.laws, Q = office.requests;
+  report.push(`${pid} ${office.body} ${office.start}: requests ${Q.n} (unread ${Q.unread}${Q.share ? ', tied ' + Q.share.tied : ''}) | laws ${L.n} (cast ${L.cast}, no class ${L.noClass}${L.share ? ', tied ' + L.share.tied : ''}) | gifts ${office.gifts}, tied money ${office.money}`);
 }
 for (const p of Object.values(people)) {
   p.offices.sort((a, b) => String(b.start).localeCompare(String(a.start)));
