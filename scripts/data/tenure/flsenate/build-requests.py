@@ -32,7 +32,7 @@ def gaa_index(year):
         cl = re.match(r'(?:\s*\((?:HB|HF|SB|Senate\s*Form|SF)[^)]*\))*', t[j:]); j += cl.end()
         # itemized line: optional dot leader (2+ dots) then a comma-grouped amount ("... 375,000", "(SF n) 100,000");
         # a single period followed by a number is a sentence end + Specific Appropriation number, not an amount.
-        a = re.match(r'\s*(?:(?:\.\s*){2,})?\s*(\d{1,3}(?:,\d{3})+)(?![\d,A-Za-z])', t[j:j + 200])
+        a = re.match(r'\s*(?:(?:\.\s*){1,})?\s*(\d{1,3}(?:,\d{3})+)(?![\d,A-Za-z])', t[j:j + 200])
         amt = num(a.group(1)) if a else None
         if amt is None:
             # proviso sentence: "... $X in nonrecurring funds ... is provided for <title> (SF n)"
@@ -81,7 +81,7 @@ def parse_form(path):
     lb = re.search(r'Lobbyist Contact Information(.*)', t, re.S)
     lb = lb.group(1) if lb else ''
     lob = (re.search(r'a\.\s*Name\s+(.*)', lb) or [None, ''])[1].strip()
-    firm = (re.search(r'b\.\s*Firm Name\s*(.*)', lb) or [None, ''])[1].strip()
+    firm = (re.search(r'b\.\s*Firm Name[ \t]*(.*)', lb) or [None, ''])[1].strip()
     lob = re.split(r'\s{3,}', lob)[0]; firm = re.split(r'\s{3,}', firm)[0]
     agency = g(r'^\s*5\.\s*State Agency to receive requested funds\s+(.+)$')
     agency = re.split(r'\s{3,}', agency)[0]
