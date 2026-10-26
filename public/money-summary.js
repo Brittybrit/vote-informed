@@ -308,11 +308,12 @@
       if(p.split) a2.push(w.split(p));
       groups.push(a2);
     }
-    // The percentages lead (Brit, Oct 24, 2026): share of actions tied to donors, then the share of laws
+    // What ties leads, then the percentages (Brit, Oct 26, 2026): the money tied to official actions, then the
+    // share of actions tied to donors, then the share of laws, then the rest
     var top = [];
     if(p.share && (p.share.def === 'donorFirst' || p.share.n)) top.push([w.share(p, p.share, b)]);
     if(p.bills && p.bills.universe && p.bills.universe.n) top.push([w.billShare(p, p.bills.universe, p.kind === 'federal')]);
-    groups = top.concat(groups);
+    groups = groups.slice(0, 1).concat(top, groups.slice(1));
     return groups.filter(function(g){ return g.length; }).map(function(g){ return g.join(' '); }).join('<br>');
   }
   moneySummary.howLabel = function(lang){ return (W[lang] || W.en).how; };

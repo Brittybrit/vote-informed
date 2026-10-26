@@ -66,10 +66,11 @@ test('renders in all three languages with no leftovers', () => {
     assert.ok(s.length > 20, pid + ' ' + lang);
     assert.doesNotMatch(s, /undefined|NaN|null|\{\w+\}/, pid + ' ' + lang + ': ' + s);
   }
-  // the percentages first (Brit, Oct 24, 2026), then the money, then the actions
+  // what ties first (Brit, Oct 26, 2026), then the percentages, then where the money came from and the actions
   const r = render(saved.people['mike-redondo'], 'en');
-  assert.match(r, /^Since \w+ 20\d\d, he filed 48 budget requests \(53%\)/);   // 2023-2026 (scripts/state-tenure.mjs); was 41 (46%) for 2025-26
-  assert.ok(r.indexOf('91 budget requests') < r.search(/Mike Redondo took \$[\d,.]+ from \d+ donors/));
+  assert.match(r, /^Mike Redondo took \$[\d,.]+ from \d+ donors tied to his official actions/);
+  assert.match(r.split('<br>')[1], /^Since \w+ 20\d\d, he filed 48 budget requests \(53%\)/);   // 2023-2026 (scripts/state-tenure.mjs); was 41 (46%) for 2025-26
+  assert.ok(r.indexOf('48 budget requests (53%)') < r.indexOf('came from the lobbying firms'));
   assert.ok(r.indexOf('took') < r.indexOf('asked for $175.1 million'));
   // the parts add up to the total when both are shown
   for (const p of Object.values(saved.people)) {
@@ -83,7 +84,7 @@ test('renders in all three languages with no leftovers', () => {
   // the share of actions tied to donors names its denominator and its two halves add up
   for (const p of Object.values(saved.people)) if (p.share && p.share.n) {
     assert.ok(p.share.tied <= p.share.n, p.pid);
-    const line = render(p, 'en').split('<br>')[0];
+    const line = render(p, 'en').split('<br>').find(x => /^Since |^This city/.test(x)) || '';
     if (p.share.def === 'donorFirst') continue;
     const m = line.match(/^Since [A-Z][a-z]+ 20\d\d, \S+ \w+ (?:on )?(\d+) .*?\(([<>]?\d+)%\).*?\. On (\d+) \(([<>]?\d+)%\), they did not\.$/);
     assert.ok(m, p.pid + ' share sentence: ' + line);
