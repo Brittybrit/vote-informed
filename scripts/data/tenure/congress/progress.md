@@ -25,3 +25,4 @@ Started 2026-10-25. Append a line after each finished unit. Rerun: skip anything
 - [x] LD-203 complete for all five, 2019-2024 (ld203_cache 30 files); gm-tenure.json / fec-check-tenure.json rebuilt — 2026-10-25
 - GAP (final): Moskowitz FY2025 requests — web.archive.org fetch blocked again (permission not granted). Named gap.
 - [x] Merged (coordinator, Oct 25): federal-earmarks.mjs reads *-tenure files; money-summary.mjs counts federal gifts from B.tenure[key].giftsFrom; roster.json gained Diaz-Balart's 2003-2021 House terms; builds + npm test (140/140) pass. Uncommitted.
+- [x] Merged the prior-congress full read of Mar 11, 2014 - Jan 3, 2017 (build/merge_prior_window.py): 39 more qualifying laws for Diaz-Balart (189 total), 18 new roll-call cards with his vote from clerk.house.gov; P.L. 114-255 (21st Century Cures) now uses the final House vote, roll 592 of 2016-11-30, not the 2015 voice vote on the original text. — 2026-10-26
