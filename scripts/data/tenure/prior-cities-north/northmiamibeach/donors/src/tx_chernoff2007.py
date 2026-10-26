@@ -1,0 +1,37 @@
+# Jay R. Chernoff, 2007 Group 4 campaign (NMB DocumentCenter folder 164, document 1613; duplicate 14088), read from the
+# page images. Report 1/19-6/22/2007 (TR): cash $10,468 and loan $1,000; the itemized rows match. Left out: the
+# candidate's own $18 and a $200 sign-bond refund from the City (not gifts).
+B = '200 S Biscayne Blvd Suite 2500, Miami FL 33131'
+R = [
+ ('TR', 1613, '2007-01-19', 'Jay R. Chernoff', '19001 NE 20 Ct, North Miami Beach FL 33179', 'Realtor', 'LOA', 1000),
+ ('TR', 1613, '2007-01-19', 'Jay R. Chernoff', '19001 NE 20 Ct, North Miami Beach FL 33179', 'Realtor', 'SELF', 18),
+ ('TR', 1613, '2007-01-23', 'Alan S. Rosenthal', '2875 NE 191 St, Aventura FL 33180', 'Attorney', 'CHE', 500),
+ ('TR', 1613, '2007-02-09', 'Office Ltd 163rd', '1986 NE 149 St, North Miami Beach FL 33181', 'Builder', 'CHE', 500),
+ ('TR', 1613, '2007-02-17', 'Mindy A. Mora, P.A.', B, 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'Howard E. Nelson, P.A.', B, 'Attorney', 'CHE', 200),
+ ('TR', 1613, '2007-02-17', 'John M. Kuhn, P.A.', B, 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'John C. Sumberg', '7407 SW 53 Ave, Miami FL 33143', 'Business Associate', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'Stanley B. Price', '19440 Ambassador Ct, North Miami Beach FL 33179', 'Attorney', 'CHE', 500),
+ ('TR', 1613, '2007-02-17', 'Brian L. Bilzin', '2500 First Union Financial Center, Miami FL 33131', 'Business Associate', 'CHE', 250),
+ ('TR', 1613, '2007-02-17', 'Jane Axelrod', '20900 NE 21 Ct, North Miami Beach FL 33179', 'Business Associate', 'CHE', 250),
+ ('TR', 1613, '2007-02-17', 'Michael Kreitzer, P.A.', B, 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'Vicky Garcia-Toledo, P.A.', B, 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'Jerry B. Proctor, P.A.', B, 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-17', 'Carter McDowell, P.A.', B, 'Attorney', 'CHE', 200),
+ ('TR', 1613, '2007-02-27', 'Blue Palms Development, LLC', '12900 SW 128 St, Miami FL 33186', 'Builder', 'CHE', 500),
+ ('TR', 1613, '2007-02-27', 'Biscayne Cove LLC', '10 NW 42 Ave #700, Miami FL 33126', 'Builder', 'CHE', 500),
+ ('TR', 1613, '2007-02-27', 'Judith A. Burke', '21150 Point Pl #2406, Aventura FL 33180', 'Attorney', 'CHE', 100),
+ ('TR', 1613, '2007-02-28', 'Sky Plaza Ltd', '1986 NE 149 St, North Miami FL 33181', 'Builder', 'CHE', 500),
+ ('TR', 1613, '2007-03-21', 'Martin Outdoor Media Inc', '151 NE 166 St, North Miami Beach FL 33162', 'Advertiser', 'CHE', 500),
+ ('TR', 1613, '2007-03-21', 'Ronald Book PA', '2999 NE 191 St PH6, Aventura FL 33180', 'Attorney', 'CHE', 500),
+ ('TR', 1613, '2007-03-21', 'Michael J. Snyder P.A.', '4000 Hollywood Blvd Suite 455S, Hollywood FL 33021', 'Attorney', 'CHE', 150),
+ ('TR', 1613, '2007-03-23', 'Bercow & Radell PA', '200 S Biscayne Blvd #850, Miami FL 33131', 'Law Firm', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Downrite Engineering Corp.', '14241 SW 143 Ct, Miami FL 33186', 'Engineer', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Hurricane Waste Services', '14241 SW 143 Ct, Miami FL 33186', 'Business Owner', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'PDM Office Inc', '3200 Military Trail, Boca Raton FL 33431', 'Management Company', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Retail Centers LLC', '3200 Military Trail, Boca Raton FL 33431', 'Business Owner', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Las Palmas Equestrian LLC', '3200 Military Trail, Boca Raton FL 33431', 'Equestrian Trainers', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Gold Oceanic Investor LLC', '3200 Military Trail, Boca Raton FL 33431', 'Investment Group', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Master Development Inc.', '900 N Federal Hwy, Hallandale FL 33009', 'Developer', 'CHE', 500),
+ ('TR', 1613, '2007-03-23', 'Robert Shapiro', '900 N Federal Hwy, Hallandale FL 33009', 'Business Owner', 'CHE', 500),
+]

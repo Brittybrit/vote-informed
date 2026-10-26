@@ -70,7 +70,7 @@ for k, d in dec.items():
 acts.sort(key=lambda a: (a['date'], a['id']))
 yrs = sorted({k.split('-')[1] for k in dec if len(k.split('-')) > 1})
 mem = sorted({m for a in acts for m in (a['roll'] or {})})
-meet = sorted({(v['date'], v.get('meeting') or '', v.get('minutes') or v.get('url') or '') for v in V})
+meet = sorted({(v['date'], v.get('meeting') or '', v.get('minutes') or v.get('url') or '') for v in V if '?' not in (v.get('date') or '?')})
 out = dict(city=city, body=body, window={'from': wfrom, 'to': max([a['date'] for a in acts] or [wfrom])}, sources=[srclabel], members=mem,
            meetings=[dict(date=d, name=n, url=u, read=True) for d, n, u in meet], actions=acts,
            gaps=[f'{y}: {unnamed[y]} qualifying-kind items name no beneficiary (left out)' for y in sorted(unnamed)])
