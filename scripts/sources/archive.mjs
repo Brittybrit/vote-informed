@@ -40,7 +40,9 @@ const entries = [...cat.values()].filter(e => (!ONLY_HOST || e.host === ONLY_HOS
 const repoText = e => e.text && !e.text.startsWith(ARCHIVE_PREFIX) && existsSync(P(e.text)) ? P(e.text) : null;
 const tarText = e => e.text && e.text.startsWith(ARCHIVE_PREFIX) && ARCHIVE_DIR ? (p => existsSync(p) ? p : null)(ARCHIVE_DIR + '/' + e.text.slice(ARCHIVE_PREFIX.length)) : null;
 const anyText = e => (e.textExcerpt ? null : repoText(e)) || tarText(e);
-const prio = e => (e.people && e.people.length ? 0 : 2) + (e.kind === 'pdf' ? 0 : 1);
+// Documents cited on the public site go first (Brit may be asked about them now), then those cited for a person.
+const onSite = e => (e.citedBy || []).some(c => c.startsWith('public/'));
+const prio = e => (onSite(e) ? 0 : 4) + (e.people && e.people.length ? 0 : 2) + (e.kind === 'pdf' ? 0 : 1);
 const plan = [];
 for (const e of entries) {
   if (e.inbox) { plan.push({ e, act: 'inbox' }); continue; }

@@ -10,9 +10,9 @@ on:
       limit:
         description: Most documents to archive in this run
         required: false
-        default: '2000'
+        default: '25000'
   schedule:
-    - cron: '23 8 * * *'   # nightly, 4:23 am Miami (EDT)
+    - cron: '23 2,8,14,20 * * *'   # every 6 hours until the backlog is done; each run stops at its time limit
 permissions:
   contents: write
 concurrency:
@@ -26,7 +26,7 @@ jobs:
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN_R2_WETHEPEOPLE305_SOURCES }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      LIMIT: ${{ github.event.inputs.limit || '2000' }}
+      LIMIT: ${{ github.event.inputs.limit || '25000' }}
     steps:
       - name: Check secrets
         id: secrets
