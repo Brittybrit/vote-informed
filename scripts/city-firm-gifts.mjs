@@ -3,11 +3,13 @@
 // the county registry (suite-level office, labeled firms), Coral Gables' dashboard (addresses) and the
 // Legislature's firm directory. Donors: VoterFocus exports for Coral Gables and Doral (with occupations);
 // hand-transcribed treasurer's reports (public/data/city-reports.json) for Aventura and North Miami Beach,
-// which carry no occupation, so those are name matches and say so. Idempotent.
+// which carry no occupation. A person's gift counts as a lobbyist's (their own, or another lobbyist's at the firm)
+// only when the report's occupation confirms it; a name-only match counts by neither route. Idempotent.
 // Run: node scripts/city-firm-gifts.mjs && node scripts/money-summary.mjs
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { donorRows } from './lib/city.mjs';
 import { cancelRefunds } from './lib/refunds.mjs';
+import { occupationConfirmsLobbyist } from './lib/lobby-links.mjs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -16,7 +18,6 @@ const d = J('public/data/decisions.json');
 const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/&/g, ' AND ').replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim().replace(/\bPOLLAKOFF\b/g, 'POLIAKOFF'); // a report's misspelling of the firm
 const SUF = /\b(JR|SR|II|III|ESQ)\b\.?/gi;
 const ORG = /\b(INC|LLC|PAC|COMMITTEE|CORP|GROUP|TRUST|ASSOCIATES|P A|PA|PLLC|LLP)\b/;
-const LOB = /LOBBY|GOVERNMENT|GOVT|GOV\b|CONSULT|ATTORNEY|LAWYER|LAW\b|PUBLIC AFFAIRS|ADVOCA/i;
 const FSTOP = new Set(['LLC', 'INC', 'PA', 'P', 'A', 'PLLC', 'LLP', 'THE', 'AND', 'OF', 'LAW', 'PARTNERS']);
 const fkey = f => { const t = norm(f).split(' ').filter(x => x && !FSTOP.has(x)); if (!t.length) return ''; if (t[0] === 'LSN') return 'LSN'; return t[0].length >= 7 ? t[0] : t.slice(0, 2).join(''); };
 // Judgment calls: donors whose name matches lobbyists at two different firms (Alfredo J. Gonzalez at Greenberg Traurig, an Alfredo Gonzalez at Gunster) are left out.
@@ -97,14 +98,18 @@ for (const B of d.bodies) {
     refundedOff += n0 - a.gifts.length;
   }
 }
-// A lobbyist's own gift counts only when the report's occupation (or address) confirms it is the lobbyist; a
-// name-only match from a hand-typed report is listed in scripts/data/city/lobbyist-name-only.txt for review.
+// A lobbyist's own gift, or a firm lobbyist's, counts only when the report's occupation confirms it is the lobbyist
+// (occupationConfirmsLobbyist); a name-only match from a hand-typed report is listed in
+// scripts/data/city/lobbyist-name-only.txt for review, and a name-only person gift already on a card comes off.
+const nameOnlyPerson = g => (g.kind === 'lobbyist' && g.basis === 'name') || (g.kind === 'firm' && g.rel === 'firmlob' && /name match only/.test((g.why && g.why.en) || ''));
+let nameOnlyOff = 0;
 for (const B of d.bodies) {
   const rows = DON[B.key]; if (!rows) continue;
   for (const a of B.actions) {
     // a lobbyist or firm gift whose lobbyist is no longer on the card (a link taken off on review) goes too
     const onCard = new Set((a.lobbied || []).map(l => norm(l.name)));
     const before = a.gifts.length; a.gifts = a.gifts.filter(g => !['lobbyist', 'firm'].includes(g.kind) || !g.lobbyist || onCard.has(norm(g.lobbyist))); removed += before - a.gifts.length;
+    const b2 = a.gifts.length; a.gifts = a.gifts.filter(g => { if (!nameOnlyPerson(g)) return true; log.push(`${B.key} ${a.id}: name match only, taken off: ${g.donor} $${g.amount} ${g.date} ${g.to} (${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist})`); return false; }); nameOnlyOff += b2 - a.gifts.length;
     const have = new Set(a.gifts.map(gKey)); const n0 = a.gifts.length;
     const push = g => { if (!(g.to in (a.roll || {})) || have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${B.key} ${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist} ${g.why ? '(' + g.why.en + ')' : ''}`); };
     for (const l of a.lobbied || []) {
@@ -112,7 +117,7 @@ for (const B of d.bodies) {
       // the named lobbyist
       const [lasts, first] = parts(l.name);
       for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && r.hand) nameOnly.push(`${B.key} ${a.id}: ${r.donor} $${r.amount} ${r.date} to ${r.to} matches lobbyist ${l.name} by name only`);
-      for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && LOB.test(r.occ)) push({ to: r.to, acct: r.acct, kind: 'lobbyist', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, basis: r.hand ? 'name' : 'occ', ...(r.hand ? { why: { en: 'name match only; the report gives no occupation or address', es: 'coincidencia solo por nombre; el reporte no indica ocupación ni dirección', ht: 'koresponn sou non sèlman; rapò a pa bay okipasyon ni adrès' } } : {}) });
+      for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && occupationConfirmsLobbyist(r)) push({ to: r.to, acct: r.acct, kind: 'lobbyist', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, basis: r.hand ? 'name' : 'occ', ...(r.hand ? { why: { en: 'name match only; the report gives no occupation or address', es: 'coincidencia solo por nombre; el reporte no indica ocupación ni dirección', ht: 'koresponn sou non sèlman; rapò a pa bay okipasyon ni adrès' } } : {}) });
       if (!fk || !roster[fk]) continue;
       // the firm itself
       const ph = ' ' + norm(firm).split(' ').filter(x => !FSTOP.has(x)).slice(0, 2).join(' ') + ' ';
@@ -120,7 +125,7 @@ for (const B of d.bodies) {
       // its other lobbyists
       for (const p of roster[fk].values()) {
         if (p.lasts.join(' ') === lasts.join(' ') && p.first === first) continue;
-        for (const r of rows) if (p.lasts.every(x => r.w.has(x)) && r.w.has(p.first) && !ORG.test(r.n) && (r.hand || LOB.test(r.occ)))
+        for (const r of rows) if (p.lasts.every(x => r.w.has(x)) && r.w.has(p.first) && !ORG.test(r.n) && occupationConfirmsLobbyist(r))
           push({ to: r.to, acct: r.acct, kind: 'firm', rel: 'firmlob', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, firmName: firm, why: NOTE(p.name, p.src, p.firm, r.hand, r.occ) });
       }
     }
@@ -129,4 +134,4 @@ for (const B of d.bodies) {
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyist-name-only.txt'), [...new Set(nameOnly)].join('\n') + '\n');
-console.log(log.join('\n')); console.log(`removed ${removed} gifts no longer backed by a lobbyist on the card`); console.log(`removed ${refundedOff} card gifts a refund cancelled, $${refundedAmt.toLocaleString()}`); console.log(`added ${added} gifts, $${total.toLocaleString()}`);
+console.log(log.join('\n')); console.log(`removed ${removed} gifts no longer backed by a lobbyist on the card`); console.log(`removed ${nameOnlyOff} person gifts matched by name only`); console.log(`removed ${refundedOff} card gifts a refund cancelled, $${refundedAmt.toLocaleString()}`); console.log(`added ${added} gifts, $${total.toLocaleString()}`);

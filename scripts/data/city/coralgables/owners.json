@@ -40,7 +40,17 @@
    "applicant": "City of Coral Gables Public Works Department",
    "agent": null,
    "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=13686984&GUID=67A844C9-5B0E-4374-AD47-389E19907437",
-   "note": "Abutting owners not named in cover memo; lobbyists Tucker Gibbs, Wayne Pathman registered. Abutting parcels not traced."
+   "note": "Abutting owners not named in cover memo; lobbyists Tucker Gibbs, Wayne Pathman registered. Abutting parcels not traced.",
+   "parties": [
+    {
+     "name": "Hillary and Javier Rodriguez",
+     "role": "abutting owner",
+     "src": [
+      "https://coralgables.legistar1.com/coralgables/attachments/ba848c8d-96e9-414c-bf92-2709a5a47097.pdf"
+     ],
+     "quote": "Staff report: \"An owner of one of the abutting lots submitted a vacation application for this portion of Kenmare.\" Applicant submittal package: \"Owner JAVIER L RODRIGUEZ &W HILLARY\"; Registry 2025: \"Hillary and Javier Rodriguez ... Vacation of 148 foot long right of way stub (Kenmare Street)\""
+    }
+   ]
   },
   "25-8782": {
    "address": "950 University Dr",
@@ -363,7 +373,18 @@
    "applicant": "City of Coral Gables (per PZB staff report)",
    "agent": null,
    "applicantSrc": "https://coralgables.legistar.com/View.ashx?M=F&ID=15125019&GUID=5F5A9CF3-B25F-4031-B3E8-9225078653A9",
-   "note": "Owners for 1190 and 1350 are current PA records (sales history not checked). PS EP 25 LLC and University Shopping Center LLP not found on Sunbiz name search."
+   "note": "Owners for 1190 and 1350 are current PA records (sales history not checked). PS EP 25 LLC and University Shopping Center LLP not found on Sunbiz name search.",
+   "parties": [
+    {
+     "name": "University Shopping Center LLP",
+     "role": "property owner",
+     "src": [
+      "https://coralgables.legistar.com/View.ashx?M=F&ID=15125019&GUID=5F5A9CF3-B25F-4031-B3E8-9225078653A9",
+      "https://apps.miamidadepa.gov/PApublicServiceProxy/PaServicesProxy.ashx?Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=0341300040010"
+     ],
+     "quote": "\"one privately owned parcel - located at 1250 South Dixie Highway - is also proposed to be added ... The property owner has requested inclusion in the subzone and to be placed under the County's exclusive regulatory jurisdiction.\""
+    }
+   ]
   },
   "26-1130": {
    "address": "1231 Dickinson Dr",

@@ -1,6 +1,7 @@
 // Adds what the action lists' own build could not: for the cities named on the command line, reads
 //   scripts/data/city/<slug>/votes.json     roll calls found later (Medley: minutes attached to a later agenda)
-//   scripts/data/city/<slug>/owners.json    owner of record / applicant for actions that named only an address
+//   scripts/data/city/<slug>/owners.json    owner of record / applicant for actions that named only an address, and
+//                                           parties the item's own record names (parties: [{name, role, src}])
 //   scripts/data/city/<slug>/lobbyists.json lobbyists for each action's parties
 // and writes them onto that body's actions in public/data/decisions.json, then re-runs the party-gift match
 // on every action of the list (so a newly named owner, or newer donor data, is checked too). Idempotent.
@@ -8,11 +9,13 @@
 // Matches from another body's registry ("otherBody") are written to scripts/data/city/lobbyists-review.json
 // for review and never published. A registry link counts only when the registration names one of the action's
 // parties as its principal and was in force on the action's date (scripts/lib/lobby-links.mjs); links that fail
-// are listed in scripts/data/city/lobbyists-dropped.json.
+// are listed in scripts/data/city/lobbyists-dropped.json. Lobbyist lines a hand-built card carries without a basis
+// pass the same checks (handLinkProblem) or come off, logged there with hand: true. Two lines for one person
+// (names differing only by a middle initial, same firm or registration) become one.
 // Run after city-actions.mjs:  node scripts/city-enrich.mjs <slug> [...] && node scripts/city-firm-gifts.mjs
 import { writeFileSync, existsSync } from 'node:fs';
 import { P, J, norm, donorsFor, partyGifts } from './lib/city.mjs';
-import { registryLinkProblem, principalAliases } from './lib/lobby-links.mjs';
+import { registryLinkProblem, handLinkProblem, sameLobbyist, principalAliases } from './lib/lobby-links.mjs';
 const PIX = principalAliases(existsSync(P('scripts/data/city/principal-aliases.json')) ? J('scripts/data/city/principal-aliases.json') : {});
 
 const FILE = 'public/data/decisions.json';
@@ -62,21 +65,32 @@ for (const slug of ONLY) {
       const add = [];
       if (o.owner) add.push(`${o.owner} (property owner)`);
       if (o.applicant && norm(o.applicant) !== norm(o.owner)) add.push(`${o.applicant} (applicant)`);
+      for (const p of o.parties || []) if (p && p.name) add.push(p.role ? `${p.name} (${p.role})` : p.name);
       const have = new Set((a.parties || []).map(p => norm(String(p).replace(/\(.*?\)/g, ''))));
       let changed = false;
       for (const p of add) if (!have.has(norm(p.replace(/\(.*?\)/g, '')))) { (a.parties = a.parties || []).push(p); changed = true; }
-      for (const [t, url] of [['property', o.ownerSrc], ['sunbiz', o.sunbizSrc], ['packet', o.applicantSrc]]) if (url && !(a.links || []).some(l => l.url === url)) (a.links = a.links || []).push({ t, url });
+      const partySrc = (o.parties || []).flatMap(p => [].concat(p.src || [])).map(u => ['packet', u]);
+      for (const [t, url] of [['property', o.ownerSrc], ['sunbiz', o.sunbizSrc], ['packet', o.applicantSrc], ...partySrc]) if (url && !(a.links || []).some(l => l.url === url)) (a.links = a.links || []).push({ t, url });
       if (changed) n.owners++;
     }
   }
 
   // 3. Lobbyists for the action's parties
+  // Lines a hand-built card carries without a basis: kept only when the item's record names the lobbyist or a
+  // registration on the line passes the party and in-force checks. A line dropped on an earlier run stays logged.
+  const dr = dropped.cities[slug] = (dropped.cities[slug] || []).filter(x => x.hand);
+  for (const a of B.actions) if (a.lobbied && a.lobbied.length) {
+    a.lobbied = a.lobbied.filter(x => {
+      const why = handLinkProblem(x, a, PIX, slug); if (!why) return true;
+      if (!dr.some(y => y.hand && y.action === a.id && y.name === x.name && y.for === x.for)) dr.push({ action: a.id, date: a.date, name: x.name, for: x.for, regDate: (x.regs || [])[0] || x.reg || null, why, hand: true });
+      n.handDropped = (n.handDropped || 0) + 1; return false;
+    });
+  }
   if (existsSync(P(`scripts/data/city/${slug}/lobbyists.json`))) {
     const L = J(`scripts/data/city/${slug}/lobbyists.json`);
     const rv = review.cities[slug] = {};
-    const dr = dropped.cities[slug] = [];
     // A registry link that fails the principal or in-force check is not used
-    const usable = (l, a) => { const why = registryLinkProblem(l, a, PIX); if (why) dr.push({ action: a.id, date: a.date, name: l.name, for: l.for, regDate: l.date || l.regYear || null, why }); return !why; };
+    const usable = (l, a) => { const why = registryLinkProblem(l, a, PIX, slug); if (why) dr.push({ action: a.id, date: a.date, name: l.name, for: l.for, regDate: l.date || l.regYear || null, why }); return !why; };
     // Links this step added earlier (they carry a basis) that the file no longer supports are taken off
     const keep = new Map();
     for (const [id, list] of Object.entries(L.byAction || {})) { const a = find(id); if (a) for (const l of list || []) if (l && ['registry', 'record'].includes(l.basis) && usable(l, a)) (keep.get(a.id) || keep.set(a.id, new Map()).get(a.id)).set(norm(l.name) + '|' + l.basis, true); }
@@ -86,12 +100,14 @@ for (const slug of ONLY) {
       for (const l of list || []) {
         if (!l || !l.name) continue;
         if (!['registry', 'record'].includes(l.basis)) { (rv[a.id] = rv[a.id] || []).push(l); n.review++; continue; }
-        if (registryLinkProblem(l, a, PIX)) continue;
+        if (registryLinkProblem(l, a, PIX, slug)) continue;
         a.lobbied = a.lobbied || [];
         const nk = norm(l.name);
-        const ex = a.lobbied.find(x => norm(x.name) === nk);
+        const line = { name: l.name, for: l.for || '', ...(l.firm ? { firm: l.firm } : {}), ...(l.date ? { regs: [l.date] } : {}), basis: l.basis, ...(l.src ? { src: l.src } : {}) };
+        // a line with a basis for this person is already there; a hand-built line for them gives way below
+        const ex = a.lobbied.find(x => x.basis && (norm(x.name) === nk || sameLobbyist(x, line)));
         if (ex) { if (!ex.firm && l.firm) ex.firm = l.firm; continue; }
-        a.lobbied.push({ name: l.name, for: l.for || '', ...(l.firm ? { firm: l.firm } : {}), ...(l.date ? { regs: [l.date] } : {}), basis: l.basis, ...(l.src ? { src: l.src } : {}) });
+        a.lobbied.push(line);
         n.lob++;
       }
     }
@@ -99,11 +115,29 @@ for (const slug of ONLY) {
     for (const [id, list] of Object.entries(L.byAction || {})) {
       const a = find(id); if (!a || !a.lobbied) continue;
       for (const x of a.lobbied) if (x.basis === 'registry') {
-        const ds = (list || []).filter(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && l.date && !registryLinkProblem(l, a, PIX)).map(l => l.date);
+        const ds = (list || []).filter(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && l.date && !registryLinkProblem(l, a, PIX, slug)).map(l => l.date);
         if (!x.regs || x.regs.every(r => ds.includes(r))) continue;
-        if (ds.length) x.regs = [...new Set(ds)].sort(); else if (x.regs && !(list || []).some(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && !registryLinkProblem(l, a, PIX))) delete x.regs;
+        if (ds.length) x.regs = [...new Set(ds)].sort(); else if (x.regs && !(list || []).some(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && !registryLinkProblem(l, a, PIX, slug))) delete x.regs;
       }
     }
+  }
+  // One line per person: a line with a basis is kept over one without (record over registry), then the fuller
+  // name; the other's
+  // registrations and principal are merged in, and gifts filed under the other name follow
+  const rank = x => ({ record: 0, registry: 1 }[x.basis] ?? 2);
+  for (const a of B.actions) if (a.lobbied && a.lobbied.length > 1) {
+    const out = [];
+    for (const x of [...a.lobbied].sort((p, q) => rank(p) - rank(q) || q.name.length - p.name.length || p.name.localeCompare(q.name))) {
+      const k = out.find(y => sameLobbyist(y, x));
+      if (!k) { out.push(x); continue; }
+      const rs = [...new Set([...(k.regs || []), ...(x.regs || []), ...(x.reg ? [x.reg] : [])])].sort();
+      if (rs.length && !k.basis) k.regs = rs;
+      if (!k.firm && x.firm) k.firm = x.firm;
+      if (x.for && k.for && !k.basis && !k.for.split(' / ').includes(x.for)) k.for = `${k.for} / ${x.for}`;
+      for (const g of a.gifts || []) if (g.lobbyist === x.name) g.lobbyist = k.name;
+      n.merged = (n.merged || 0) + 1;
+    }
+    if (out.length !== a.lobbied.length) a.lobbied = a.lobbied.filter(x => out.includes(x));
   }
 
   // 4. Party gifts on every action of the list (newly named owners, newer donor data)
@@ -117,7 +151,7 @@ for (const slug of ONLY) {
     for (const g of partyGifts(a, donors)) if (!have.has(same(g))) { a.gifts.push(g); have.add(same(g)); n.party++; added = true; }
     if (added) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
-  report.push(`${slug}: dropped ${n.dropped || 0}, votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
+  report.push(`${slug}: dropped ${n.dropped || 0}, hand lines dropped ${n.handDropped || 0}, merged ${n.merged || 0}, votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
 }
 writeFileSync(P(FILE), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyists-review.json'), JSON.stringify(review, null, 1) + '\n');
