@@ -197,6 +197,24 @@
       if(ls.length > 6) return '<div class="lobs">' + head + '<details><summary>' + t('lobMore', {n: ls.length}) + '</summary>' + rows + '</details></div>';
       return '<div class="lobs">' + head + rows + '</div>';
     }
+    // One line per donor per account on a card: total, number of gifts, first and last date, every occupation as
+    // reported (Brit, Oct 27, 2026). Gifts are merged only when they are tied the same way (same kind, relation,
+    // lobbyist, record and threshold status), so the explanation line stays true for every gift in the total.
+    function mergeGifts(list){
+      var m = {}, order = [];
+      list.forEach(function(g){
+        var k = [String(g.donor || '').toUpperCase().replace(/[^A-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim(), g.acct, g.kind || '', g.rel || '', g.lobbyist || '', g.forParty || '', (g.record && g.record.url) || '', g.belowThreshold ? 1 : 0, g.fec === false ? 1 : 0].join('|');
+        var first = g.date, last = g.last || g.date, n = g.n || 1, occ = L(g.occ);
+        if(!m[k]){ m[k] = Object.assign({}, g, { amount: Number(g.amount) || 0, n: n, date: first, last: last, occs: occ ? [occ] : [], srcs: g.src ? [g.src] : [] }); order.push(k); return; }
+        var x = m[k];
+        x.amount += Number(g.amount) || 0; x.n += n;
+        if(first && (!x.date || first < x.date)) x.date = first;
+        if(last && (!x.last || last > x.last)) x.last = last;
+        if(occ && x.occs.indexOf(occ) < 0) x.occs.push(occ);
+        if(g.src && x.srcs.indexOf(g.src) < 0) x.srcs.push(g.src);
+      });
+      return order.map(function(k){ var x = m[k]; x.occ = x.occs.join('; '); x.src = x.srcs.length === 1 ? x.srcs[0] : x.srcs[0]; return x; });
+    }
     function giftHtml(B, a){
       var on = Object.keys(B.onBallot), out = '', gs = a.gifts || [];
       if(gs.length){
@@ -204,7 +222,7 @@
         gs.forEach(function(g){ if(!by[g.to]){ by[g.to] = []; order.push(g.to); } by[g.to].push(g); });
         out += '<div class="gifts"><details><summary>' + t('gifts2') + '</summary>' + order.map(function(k){
           var note = a.giftNotes && a.giftNotes[k] ? '<div class="how2">' + esc(L(a.giftNotes[k])) + '</div>' : '';
-          return by[k].map(function(g){
+          return mergeGifts(by[k]).map(function(g){
             var acc = B.accounts[g.acct] ? L(B.accounts[g.acct].name) : mem(B, g.to);
             var how = '';
             if(g.rel) how = t('how.s.' + g.rel, {lob: esc(g.lobbyist), firm: esc(g.firmName), occ: esc(L(g.occ)), p: esc(g.forParty)}) + (g.why ? ' (' + esc(L(g.why)) + ')' : '') + (g.ld203 ? t('how.s.ld203') : '');
