@@ -252,10 +252,10 @@ Still needed for the chain, each an official record:
 ## DOE search results (Oct 27, 2026)
 
 The browser pass searched all 5,262 names in `doe-search.tsv` (45 searches failed and still need a retry). After
-dropping interest and refunds, 5,562 rows had a contributor name equal to a recipient's name and fell within 24 months
-after one of that recipient's qualifying actions (488 recipients, $43.6M). Most of that is companies paid for work
+dropping interest and refunds, 5,473 rows had a contributor name equal to a recipient's name and fell within 24 months
+after one of that recipient's qualifying actions ($43.1M). Most of that is companies paid for work
 (Florida Power & Light, Humana, Florida Blue, paving and engineering firms).
 
-`doe-hits-grant-funding.tsv`: the 356 of those rows (48 recipients, $2.1M) where the action in the window is a grant,
+`doe-hits-grant-funding.tsv`: the 267 of those rows (47 recipients, $1.6M) where the action in the window is a grant,
 funding item, budget or earmark request, or settlement, not a payment for work. Name match only: every row still needs
 the address check above before it can be `confirmed`. Nothing here is shown to voters.
