@@ -18,7 +18,8 @@
  },
  "SB 1388 · 2025": {
   "tags": [],
-  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR",
+  "conditional": "a Clean Marine Manufacturer under the Clean Marina Program"
  },
  "HB 429 · 2025": {
   "tags": [
@@ -62,7 +63,8 @@
  },
  "HB 551 · 2025": {
   "tags": [],
-  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM"
+  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM",
+  "conditional": "contractors who use the simplified permitting process"
  },
  "HB 733 · 2025": {
   "tags": [],
@@ -114,7 +116,8 @@
  },
  "SB 282 · 2025": {
   "tags": [],
-  "re": "WARRANT"
+  "re": "WARRANT",
+  "conditional": "non-publicly traded service warranty association"
  },
  "SB 784 · 2025": {
   "tags": [
@@ -168,7 +171,8 @@
    "health-other",
    "hospitals"
   ],
-  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER"
+  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER",
+  "conditional": "PACE provider to operate in a geographic service area which has an existing provider"
  },
  "HB 7031 · 2025": {
   "tags": [
@@ -190,7 +194,8 @@
  },
  "HB 4067 · 2025": {
   "tags": [],
-  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN"
+  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN",
+  "conditional": "equestrian sport facilities in Marion County that meet certain conditions"
  },
  "HB 697 · 2026": {
   "tags": [
@@ -238,7 +243,8 @@
  },
  "SB 578 · 2026": {
   "tags": [],
-  "re": "ALZHEIMER"
+  "re": "ALZHEIMER",
+  "conditional": "The selected nonprofit"
  },
  "SB 1434 · 2026": {
   "tags": [
@@ -246,7 +252,8 @@
    "homebuilders"
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
-  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
+  "conditional": "certain qualifying infill parcels"
  },
  "HB 1175 · 2026": {
   "tags": [
@@ -255,7 +262,8 @@
  },
  "HB 167 · 2026": {
   "tags": [],
-  "re": "PHOSPHATE|MOSAIC"
+  "re": "PHOSPHATE|MOSAIC",
+  "conditional": "landowners of former phosphate mines who may have a defense"
  },
  "SB 1030 · 2026": {
   "tags": [],
@@ -265,7 +273,8 @@
   "tags": [
    "realestate-dev"
   ],
-  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD"
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD",
+  "conditional": "landlords who participate in the pilot program"
  },
  "HB 7031 · 2026": {
   "tags": [
@@ -277,7 +286,8 @@
  },
  "SB 394 · 2026": {
   "tags": [],
-  "re": "REINSURANCE|REINSURER|INTERMEDIARY"
+  "re": "REINSURANCE|REINSURER|INTERMEDIARY",
+  "conditional": "certain firms"
  },
  "SB 1028 · 2026": {
   "tags": [

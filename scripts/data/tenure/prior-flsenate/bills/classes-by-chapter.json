@@ -3,7 +3,8 @@
   "tags": [
    "health-other"
   ],
-  "re": "NURSE PRACTITIONER|APRN|ARNP|ADVANCED PRACTICE|NURSE ANESTH"
+  "re": "NURSE PRACTITIONER|APRN|ARNP|ADVANCED PRACTICE|NURSE ANESTH",
+  "conditional": "if they qualify for and register to practice autonomously"
  },
  "2020-11": {
   "tags": [
@@ -37,14 +38,16 @@
    "retail"
   ],
   "re": "PETROLEUM|OIL|GAS STATION|FUEL|CONVENIENCE|WAWA|RACETRAC|MURPHY|SUNOCO|CIRCLE K",
-  "not": "OIL PAINT|OLIVE"
+  "not": "OIL PAINT|OLIVE",
+  "conditional": "participants in the Advanced Cleanup Program"
  },
  "2020-60": {
   "tags": [
    "health-other",
    "nursing-homes"
   ],
-  "re": "INTERMEDIATE CARE|DEVELOPMENTAL|DISABILIT|GROUP HOME|ARC "
+  "re": "INTERMEDIATE CARE|DEVELOPMENTAL|DISABILIT|GROUP HOME|ARC ",
+  "conditional": "ICFDD applicants that obtain the newly created CON exemption"
  },
  "2020-70": {
   "tags": [
@@ -63,20 +66,23 @@
   "tags": [
    "ride-hailing"
   ],
-  "re": "UBER|LYFT|LIMO|TRANSPORTATION NETWORK|CHAUFFEUR|TAXI|ALTAN"
+  "re": "UBER|LYFT|LIMO|TRANSPORTATION NETWORK|CHAUFFEUR|TAXI|ALTAN",
+  "conditional": "certain limousine and for-hire vehicle owners and drivers"
  },
  "2020-103": {
   "tags": [
    "nursing-homes"
   ],
-  "re": "NURSING|HEALTH CARE ASSOC|REHAB|SENIOR LIVING|ASSISTED LIVING|LONG.TERM CARE"
+  "re": "NURSING|HEALTH CARE ASSOC|REHAB|SENIOR LIVING|ASSISTED LIVING|LONG.TERM CARE",
+  "conditional": "nursing homes who receive a bundled payment"
  },
  "2020-105": {
   "tags": [
    "aerospace"
   ],
   "re": "AEROSPACE|SPACE|ROCKET|BOEING|LOCKHEED|BLUE ORIGIN|NORTHROP|AIRBUS|L3HARRIS",
-  "not": "SPACE COAST REALT"
+  "not": "SPACE COAST REALT",
+  "conditional": "businesses that are involved in activities financed by Space Florida"
  },
  "2020-108": {
   "tags": [
@@ -95,13 +101,15 @@
   "tags": [
    "engineering"
   ],
-  "re": "ENGINEER|CONSULTING|COASTAL|SURVEY|ENVIRONMENTAL|AECOM|JACOBS|KIMLEY|STANTEC|HDR"
+  "re": "ENGINEER|CONSULTING|COASTAL|SURVEY|ENVIRONMENTAL|AECOM|JACOBS|KIMLEY|STANTEC|HDR",
+  "conditional": "private service providers who may be engaged to perform the studies"
  },
  "2020-124": {
   "tags": [
    "pharmacies-pbm"
   ],
-  "re": "PHARMAC|DRUG|WALGREEN|CVS|PUBLIX|RX"
+  "re": "PHARMAC|DRUG|WALGREEN|CVS|PUBLIX|RX",
+  "conditional": "Pharmacies that choose to employ automated pharmacy systems"
  },
  "2020-126": {
   "tags": [
@@ -135,7 +143,8 @@
    "towing"
   ],
   "re": "TOWING|WRECKER|RECOVERY|TOW ",
-  "not": "SUBSTANCE|ADDICTION"
+  "not": "SUBSTANCE|ADDICTION",
+  "conditional": "towing companies that are located in counties or municipalities currently charging a fee"
  },
  "2020-177": {
   "tags": [

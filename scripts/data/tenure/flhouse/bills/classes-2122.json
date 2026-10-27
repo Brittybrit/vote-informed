@@ -22,7 +22,8 @@
    "realestate-dev"
   ],
   "re": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING",
-  "not": "AUTHORITY"
+  "not": "AUTHORITY",
+  "conditional": "Owners of multifamily projects that provide housing to extremely-low-income, very-low-income, or low- income families"
  },
  "2021-56": {
   "re": "OUTDOOR RECREATION|CAMPGROUND|HUNTING|RANCH|PLANTATION|EQUESTRIAN"
@@ -49,7 +50,8 @@
    "banks",
    "credit-unions"
   ],
-  "re": "BANK|CREDIT UNION|FINANCIAL INSTITUTION"
+  "re": "BANK|CREDIT UNION|FINANCIAL INSTITUTION",
+  "conditional": "Financial institutions that participate in the Federally Assisted State Transmitted (FAST) Levy program"
  },
  "2021-110": {
   "tags": [
@@ -74,7 +76,8 @@
   "tags": [
    "waste-environment"
   ],
-  "re": "WASTE|RECYCL|HAULER|SANITATION|DISPOSAL|REPUBLIC SERVICES|WASTE MANAGEMENT|WASTE PRO"
+  "re": "WASTE|RECYCL|HAULER|SANITATION|DISPOSAL|REPUBLIC SERVICES|WASTE MANAGEMENT|WASTE PRO",
+  "conditional": "the displaced companies are assured three years"
  },
  "2021-135": {
   "tags": [
@@ -116,7 +119,8 @@
    "construction",
    "engineering"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD",
+  "conditional": "would no longer be required to meet certain pre-bid requirements"
  },
  "2021-197": {
   "tags": [
@@ -188,7 +192,8 @@
    "electric-utility"
   ],
   "re": "UTILIT|ELECTRIC|POWER|ENERGY|CHESAPEAKE",
-  "not": "COOPERATIVE|MUNICIPAL"
+  "not": "COOPERATIVE|MUNICIPAL",
+  "conditional": "public electric utilities that become eligible"
  },
  "2022-90": {
   "tags": [
@@ -267,7 +272,8 @@
   "tags": [
    "waste-environment"
   ],
-  "re": "WASTE|ENERGY FROM|RENEWABLE|COVANTA|REWORLD|RECYCL"
+  "re": "WASTE|ENERGY FROM|RENEWABLE|COVANTA|REWORLD|RECYCL",
+  "conditional": "private companies that own a government affiliated waste-to-energy facility and qualify for a grant"
  },
  "2022-210": {
   "tags": [

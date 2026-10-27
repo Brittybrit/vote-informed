@@ -43,6 +43,15 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
    `exec-records.json`; worklist and method: `EXEC-RECORDS.md`. A gift that counts through a record carries it on the
    card (`record: {company, role, url}`).
 
+7. **Conditional benefits tie only the subset, by record** (Brit, Oct 27, 2026). When the analysis limits the benefit
+   to a subset of the business (those who participate, qualify, apply, are eligible, are selected or awarded, take
+   advantage of or use a program, choose or opt to do something, are located in a place, "certain" or "some" of them),
+   the class carries `conditional`: the analysis's own words that set the limit (SB 7016, 2024: "health care
+   practitioners who are able to participate in FRAME or the DSLR Program"). A donor counts only when a record shows the
+   donor is in that subset: `subset: {donor key: {recordUrl, quote}}` on the class. No record, the law ties no one.
+   Federal laws: `conditional` on the bill in the floor-votes files; such a law ties no PAC. A qualifier that only
+   describes the whole business ("companies that manufacture buoys", "craft brewers, who may pay less") is not one.
+
 Federal law ties use company and trade-association PACs listed by name per class (`scripts/data/federal/floor-votes.json`
 and the tenure files); no individuals and no unions. The NRA was removed from the firearms class (it is not a
 trade association of firearm businesses).

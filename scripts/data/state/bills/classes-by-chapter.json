@@ -18,7 +18,8 @@
  },
  "2025-35": {
   "tags": [],
-  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR",
+  "conditional": "a Clean Marine Manufacturer under the Clean Marina Program"
  },
  "2025-41": {
   "tags": [],
@@ -62,7 +63,8 @@
  },
  "2025-115": {
   "tags": [],
-  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM"
+  "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM",
+  "conditional": "contractors who use the simplified permitting process"
  },
  "2025-116": {
   "tags": [],
@@ -108,7 +110,8 @@
  },
  "2025-160": {
   "tags": [],
-  "re": "WARRANT"
+  "re": "WARRANT",
+  "conditional": "non-publicly traded service warranty association"
  },
  "2025-164": {
   "tags": [
@@ -143,7 +146,8 @@
    "health-other",
    "hospitals"
   ],
-  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER"
+  "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER",
+  "conditional": "PACE provider to operate in a geographic service area which has an existing provider"
  },
  "2025-208": {
   "tags": [
@@ -186,7 +190,8 @@
    "homebuilders"
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
-  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
+  "conditional": "certain qualifying infill parcels"
  },
  "2026-179": {
   "tags": [
@@ -251,7 +256,8 @@
  },
  "2026-103": {
   "tags": [],
-  "re": "PHOSPHATE|MOSAIC"
+  "re": "PHOSPHATE|MOSAIC",
+  "conditional": "landowners of former phosphate mines who may have a defense"
  },
  "2026-50": {
   "tags": [],
@@ -259,7 +265,8 @@
  },
  "2026-83": {
   "tags": [],
-  "re": "ALZHEIMER"
+  "re": "ALZHEIMER",
+  "conditional": "The selected nonprofit"
  },
  "2026-198": {
   "tags": [],
@@ -296,7 +303,8 @@
  },
  "2025-248": {
   "tags": [],
-  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN"
+  "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN",
+  "conditional": "equestrian sport facilities in Marion County that meet certain conditions"
  },
  "2026-63": {
   "tags": [
@@ -310,11 +318,13 @@
   "tags": [
    "realestate-dev"
   ],
-  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD"
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD",
+  "conditional": "landlords who participate in the pilot program"
  },
  "2026-146": {
   "tags": [],
-  "re": "REINSURANCE|REINSURER|INTERMEDIARY"
+  "re": "REINSURANCE|REINSURER|INTERMEDIARY",
+  "conditional": "certain firms"
  },
  "2026-157": {
   "tags": [],

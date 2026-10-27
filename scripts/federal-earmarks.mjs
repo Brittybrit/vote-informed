@@ -168,7 +168,9 @@ export function floorVotes(chamber, members) {
   for (const bill of fv.bills) for (const v of bill.votes) {
     if (v.chamber !== chamber) continue;
     const cls = fv.classes[bill.class];
-    const gifts = members.filter(m => v.members[m.key] != null).flatMap(m => classGifts(cls, m, m.cmte, agg));
+    // a conditional benefit (bill.conditional: the analysis's words limiting it to a subset, such as "certain small rural
+    // hospitals") ties no PAC: no record here shows a PAC's company is in that subset (scripts/data/industry/INSTRUCTIONS.md, rule 7)
+    const gifts = bill.conditional ? [] : members.filter(m => v.members[m.key] != null).flatMap(m => classGifts(cls, m, m.cmte, agg));
     const links = [{ t: 'vote', url: voteUrl(v) }, { t: bill.quote.t, url: bill.quote.url }];
     if (bill.quote.url2) links.push({ t: 'crs', url: bill.quote.url2 });
     links.push({ t: 'bill', url: bill.bill });

@@ -38,15 +38,18 @@
   "tags": [
    "alcohol-beverage"
   ],
-  "re": "RESTAURANT|STEAKHOUSE|TAVERN|BAR & GRILL|BAR AND GRILL|BISTRO|HOSPITALITY"
+  "re": "RESTAURANT|STEAKHOUSE|TAVERN|BAR & GRILL|BAR AND GRILL|BISTRO|HOSPITALITY",
+  "conditional": "may allow more restaurants to obtain an SFS license"
  },
  "2023-118": {
   "tags": [],
-  "re": "MOTORCYCLE|RIDER EDUCATION|RIDER TRAINING"
+  "re": "MOTORCYCLE|RIDER EDUCATION|RIDER TRAINING",
+  "conditional": "the selected organization"
  },
  "2023-127": {
   "tags": [],
-  "re": "BULLION|COIN|GOLD|PRECIOUS METAL|SECONDHAND|PAWN|JEWEL"
+  "re": "BULLION|COIN|GOLD|PRECIOUS METAL|SECONDHAND|PAWN|JEWEL",
+  "conditional": "Secondhand dealers who purchase bullion"
  },
  "2023-134": {
   "tags": [
@@ -68,7 +71,8 @@
  "2023-155": {
   "tags": [],
   "re": "PROPANE|LP GAS|LIQUEFIED PETROLEUM|GAS STATION|PETROLEUM|FUEL|SERVICE STATION|CONVENIENCE STORE|RACETRAC|WAWA|CIRCLE K|7-ELEVEN|SUNOCO|SHELL |MOBIL",
-  "not": "SHELL CONTRACT"
+  "not": "SHELL CONTRACT",
+  "conditional": "certain LP gas licensees"
  },
  "2023-157": {
   "tags": [],
@@ -76,7 +80,8 @@
  },
  "2023-162": {
   "tags": [],
-  "re": "VETERAN.*(SERVICE|CARE|HOME|NURSING)|VETERANS HOME"
+  "re": "VETERAN.*(SERVICE|CARE|HOME|NURSING)|VETERANS HOME",
+  "conditional": "Qualifying private contractors"
  },
  "2023-169": {
   "tags": [
@@ -101,7 +106,8 @@
  },
  "2023-180": {
   "tags": [],
-  "re": "SYNAGOGUE|TEMPLE|CHURCH|MOSQUE|JEWISH|CONGREGATION|FEDERATION|CHABAD|ISLAMIC CENTER"
+  "re": "SYNAGOGUE|TEMPLE|CHURCH|MOSQUE|JEWISH|CONGREGATION|FEDERATION|CHABAD|ISLAMIC CENTER",
+  "conditional": "which meet the application criteria may be eligible to receive a grant"
  },
  "2023-186": {
   "tags": [
@@ -130,7 +136,8 @@
   "tags": [
    "construction"
   ],
-  "re": "ELECTRIC"
+  "re": "ELECTRIC",
+  "conditional": "those registered electrical contractors"
  },
  "2023-219": {
   "tags": [],
@@ -173,13 +180,15 @@
  },
  "2023-249": {
   "tags": [],
-  "re": "DAY CARE|DAYCARE|CHILD CARE"
+  "re": "DAY CARE|DAYCARE|CHILD CARE",
+  "conditional": "select applicants"
  },
  "2023-250": {
   "tags": [
    "nursing-homes"
   ],
-  "re": "NURSING|SKILLED|REHAB|HEALTH CARE ASSOC|SENIOR LIVING|LONG-TERM CARE|LONG TERM CARE"
+  "re": "NURSING|SKILLED|REHAB|HEALTH CARE ASSOC|SENIOR LIVING|LONG-TERM CARE|LONG TERM CARE",
+  "conditional": "nursing homes that are able to utilize QMAs"
  },
  "2023-269": {
   "tags": [
@@ -187,11 +196,13 @@
    "pari-mutuel"
   ],
   "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
-  "not": "SEMINOLE|MICCOSUKEE|VGW"
+  "not": "SEMINOLE|MICCOSUKEE|VGW",
+  "conditional": "permitholders authorized to conduct pari-mutuel wagering who wish to sell, transfer, or assign"
  },
  "2023-276": {
   "tags": [],
-  "re": "OPERATION NEW HOPE"
+  "re": "OPERATION NEW HOPE",
+  "conditional": "To the extent the bill allows Operation New Hope to be eligible for additional funding"
  },
  "2023-288": {
   "tags": [
@@ -202,11 +213,13 @@
  "2023-291": {
   "tags": [],
   "re": "UTILIT|WATER|WASTEWATER|SEWER",
-  "not": "WATER MANAGEMENT|DISTRICT"
+  "not": "WATER MANAGEMENT|DISTRICT",
+  "conditional": "eligible utility systems"
  },
  "2023-292": {
   "tags": [],
-  "re": "CANNABIS|MARIJUANA|MEDICAL CANNABIS|TRULIEVE|CURALEAF|MUV|FLUENT|VIDACANN|PLANET 13|SURTERRA|LIBERTY HEALTH|CULTIVAT"
+  "re": "CANNABIS|MARIJUANA|MEDICAL CANNABIS|TRULIEVE|CURALEAF|MUV|FLUENT|VIDACANN|PLANET 13|SURTERRA|LIBERTY HEALTH|CULTIVAT",
+  "conditional": "applicants who obtain a license"
  },
  "2023-294": {
   "tags": [
@@ -218,7 +231,8 @@
   "tags": [
    "realestate-dev"
   ],
-  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
+  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD",
+  "conditional": "If it is determined that certain apartment buildings are exempt"
  },
  "2023-304": {
   "tags": [
@@ -233,32 +247,37 @@
    "agriculture-sugar",
    "agriculture-citrus"
   ],
-  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES|TIMBER|FOREST"
+  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES|TIMBER|FOREST",
+  "conditional": "agricultural producers affected by Hurricane Idalia"
  },
  "2023-352": {
   "tags": [],
   "re": "SECURITY|SYNAGOGUE|TEMPLE|JEWISH|CONGREGATION|FEDERATION|CHABAD|SCHOOL",
-  "not": "SOCIAL SECURITY"
+  "not": "SOCIAL SECURITY",
+  "conditional": "Certain eligible facilities and their contractors"
  },
  "2024-12": {
   "tags": [
    "hospitals"
   ],
-  "re": "HOSPITAL|HEALTH SYSTEM|BEHAVIORAL|PSYCHIATR|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|UF HEALTH|MOUNT SINAI"
+  "re": "HOSPITAL|HEALTH SYSTEM|BEHAVIORAL|PSYCHIATR|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|UF HEALTH|MOUNT SINAI",
+  "conditional": "each designated hospital"
  },
  "2024-15": {
   "tags": [
    "physicians",
    "health-other"
   ],
-  "re": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+  "re": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE",
+  "conditional": "health care practitioners who are able to participate in FRAME or the DSLR Program"
  },
  "2024-25": {
   "tags": [
    "retail",
    "grocery"
   ],
-  "re": "RESTAURANT|RETAIL|GROCERY|PUBLIX|HOSPITALITY|THEME PARK|DISNEY|UNIVERSAL|FAST FOOD|MCDONALD|CHICK-FIL|BURGER"
+  "re": "RESTAURANT|RETAIL|GROCERY|PUBLIX|HOSPITALITY|THEME PARK|DISNEY|UNIVERSAL|FAST FOOD|MCDONALD|CHICK-FIL|BURGER",
+  "conditional": "certain employers"
  },
  "2024-28": {
   "tags": [
@@ -293,18 +312,21 @@
    "retail",
    "grocery"
   ],
-  "re": "RETAIL|PUBLIX|WALMART|TARGET|HOME DEPOT|LOWE|CVS|WALGREEN|MERCHANT|STORE"
+  "re": "RETAIL|PUBLIX|WALMART|TARGET|HOME DEPOT|LOWE|CVS|WALGREEN|MERCHANT|STORE",
+  "conditional": "merchants who lose money from organized retail theft"
  },
  "2024-76": {
   "tags": [
    "aerospace"
-  ]
+  ],
+  "conditional": "located within the newly designated spaceport territory"
  },
  "2024-80": {
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
+  "re": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING",
+  "conditional": "businesses that contract with local governments"
  },
  "2024-81": {
   "tags": [
@@ -317,7 +339,8 @@
   "tags": [
    "telecom"
   ],
-  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS",
+  "conditional": "for a mobile phone service provider to obtain ETC status for the Lifeline program"
  },
  "2024-96": {
   "tags": [
@@ -343,13 +366,15 @@
   "tags": [
    "affordable-housing"
   ],
-  "re": "HABITAT|HOUSING|NEIGHBORHOOD|COMMUNITY DEVELOP|LOAN FUND"
+  "re": "HABITAT|HOUSING|NEIGHBORHOOD|COMMUNITY DEVELOP|LOAN FUND",
+  "conditional": "Entities and employees of entities that meet the criteria for the proposed exemption"
  },
  "2024-144": {
   "tags": [
    "realestate-dev"
   ],
-  "re": "MITIGATION|WETLAND|ENVIRONMENTAL|ECOSYSTEM|CONSERVATION BANK"
+  "re": "MITIGATION|WETLAND|ENVIRONMENTAL|ECOSYSTEM|CONSERVATION BANK",
+  "conditional": "applicants participating in the expanded water quality enhancement area (WQEA) credit program"
  },
  "2024-147": {
   "tags": [],
@@ -369,13 +394,15 @@
   "tags": [
    "insurance-other"
   ],
-  "re": "RISK RETENTION|CAPTIVE|RRG"
+  "re": "RISK RETENTION|CAPTIVE|RRG",
+  "conditional": "businesses that save money by receiving coverage from the RRGs of which they are a member"
  },
  "2024-178": {
   "tags": [
    "construction"
   ],
-  "re": "ASBESTOS|ABATEMENT|ENVIRONMENTAL"
+  "re": "ASBESTOS|ABATEMENT|ENVIRONMENTAL",
+  "conditional": "reduce the cost to applicants"
  },
  "2024-180": {
   "tags": [
@@ -397,11 +424,13 @@
   "tags": [
    "health-other"
   ],
-  "re": "DENTAL|DENTIST|ORTHODONT"
+  "re": "DENTAL|DENTIST|ORTHODONT",
+  "conditional": "if they opt out of the payment of claims by credit card"
  },
  "2024-199": {
   "tags": [],
-  "re": "BANK|BANCORP|SAVINGS"
+  "re": "BANK|BANCORP|SAVINGS",
+  "conditional": "banking institutions that are not chartered or headquartered in Florida"
  },
  "2024-201": {
   "tags": [
@@ -440,7 +469,8 @@
    "construction"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
-  "not": "FTBA|AGGREGATE"
+  "not": "FTBA|AGGREGATE",
+  "conditional": "those contractors who chose registration in a local community"
  },
  "2024-218": {
   "tags": [
@@ -470,7 +500,8 @@
    "construction"
   ],
   "re": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION",
-  "not": "FTBA"
+  "not": "FTBA",
+  "conditional": "A private contractor that use iron or steel products that are produced in the United States"
  },
  "2024-270": {
   "tags": [],
@@ -485,7 +516,8 @@
  },
  "2024-276": {
   "tags": [],
-  "re": "CONSUMER FINANCE|CONSUMER LOAN|INSTALLMENT LOAN|PERSONAL LOAN|CONSUMER LEND|TITLE LOAN|PAYDAY|ONEMAIN|WORLD ACCEPTANCE|REGIONAL MANAGEMENT|AMSCOT"
+  "re": "CONSUMER FINANCE|CONSUMER LOAN|INSTALLMENT LOAN|PERSONAL LOAN|CONSUMER LEND|TITLE LOAN|PAYDAY|ONEMAIN|WORLD ACCEPTANCE|REGIONAL MANAGEMENT|AMSCOT",
+  "conditional": "Applicants will no longer be required to pay a $200 background investigation fee for each additional location"
  },
  "2022-272": {
   "tags": [

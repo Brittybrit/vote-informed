@@ -242,7 +242,8 @@ export function buildLegislative(nameOf = x => x, pending = null) {
         if (v.chamber !== 'house' || !v.members || v.members[key] == null) continue;
         const vv = vote(v.members[key]); if (!vv) continue;
         const cls = classes[b.class];
-        const g = cls ? mine.filter(x => cls.donors.some(([re]) => new RegExp(re).test(x.contributor))).map(x => ({ n: x.contributor, amt: x.amount, dt: x.date, k: 'pac' })) : [];
+        // a conditional benefit ties no PAC (scripts/data/industry/INSTRUCTIONS.md, rule 7)
+        const g = cls && !b.conditional ? mine.filter(x => cls.donors.some(([re]) => new RegExp(re).test(x.contributor))).map(x => ({ n: x.contributor, amt: x.amount, dt: x.date, k: 'pac' })) : [];
         laws.push({ d: v.date, ch: b.law, t: (b.subject && b.subject.en) || '', r: b.ref + ' · ' + b.law, cat: (cls && cls.label && cls.label.en) || '', v: vv, vs: voteStatus(v.tally, v.members, false), u: b.bill, cls: !!cls, g });
       }
       laws.sort((a, b) => b.d.localeCompare(a.d));

@@ -2,9 +2,9 @@
  "about": "Individual gifts that count for a law only with an official record of the executive donor's stake (scripts/lib/donor-class.mjs rule 5): occupation names the business with an executive title and no owner title; card is a contested floor vote the candidate voted yes on. Built by scripts/exec-candidates.mjs. resolved: the donor has a record in exec-records.json.",
  "built": "2026-10-27",
  "totals": {
-  "gifts": 85,
-  "donors": 52,
-  "dollars": 310925,
+  "gifts": 61,
+  "donors": 45,
+  "dollars": 299750,
   "resolved": {
    "gifts": 6,
    "donors": 2,
@@ -64,29 +64,6 @@
      "card": "SV21-88-1006",
      "ref": "SB 88 · 2021",
      "cls": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "ALONSO MARIA",
-   "donor": "ALONSO MARIA",
-   "occ": "COO OF HEALTH NETWORK",
-   "occs": [
-    "COO OF HEALTH NETWORK"
-   ],
-   "addr": "711 CATALONIA AVENUE",
-   "city": "CORAL GABLES, FL 33134",
-   "amount": 1000,
-   "date": "2024-10-12",
-   "acct": "lopez-house",
-   "candidate": "vicki-l-lopez",
-   "body": "fl-house",
-   "cards": [
-    {
-     "card": "SB 7016 · Ch. 2024-15",
-     "ref": "SB 7016 · Ch. 2024-15",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
     }
    ],
    "resolved": false
@@ -212,29 +189,6 @@
    "resolved": false
   },
   {
-   "key": "BAUER CLIFF",
-   "donor": "BAUER CLIFF",
-   "occ": "MIAMI JEWISH HEALTH ADMIN EXEC",
-   "occs": [
-    "MIAMI JEWISH HEALTH ADMIN EXEC"
-   ],
-   "addr": "401 NW 127TH AVE, UNIT 5",
-   "city": "PLANTATION, FL 33325",
-   "amount": 1000,
-   "date": "2022-04-08",
-   "acct": "lopez-house",
-   "candidate": "vicki-l-lopez",
-   "body": "fl-house",
-   "cards": [
-    {
-     "card": "SB 7016 · Ch. 2024-15",
-     "ref": "SB 7016 · Ch. 2024-15",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
-    }
-   ],
-   "resolved": false
-  },
-  {
    "key": "BAUER CLIFFORD J",
    "donor": "BAUER CLIFFORD J.",
    "occ": "HEALTHCARE MGMT EXEC",
@@ -281,29 +235,6 @@
    "resolved": false
   },
   {
-   "key": "BLISKO MICHAEL",
-   "donor": "BLISKO MICHAEL",
-   "occ": "HEALTH CARE EXECUTIVE",
-   "occs": [
-    "HEALTH CARE EXECUTIVE"
-   ],
-   "addr": "9390 BAY DRIVE",
-   "city": "SURFSIDE, FL 33154",
-   "amount": 500,
-   "date": "2023-12-17",
-   "acct": "basabe-pre2025",
-   "candidate": "Basabe",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV24-7016-1641",
-     "ref": "SB 7016 · 2024",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
-    }
-   ],
-   "resolved": false
-  },
-  {
    "key": "BODIE DONALD",
    "donor": "BODIE DONALD",
    "occ": "SENIOR VP FOR ENGINEERING FIRM",
@@ -318,11 +249,6 @@
    "candidate": "wilton-simpson",
    "body": "fl-senate",
    "cards": [
-    {
-     "card": "HB 53 · Ch. 2021-194",
-     "ref": "HB 53 · Ch. 2021-194",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
-    },
     {
      "card": "SB 286 · Ch. 2013-28",
      "ref": "SB 286 · Ch. 2013-28",
@@ -392,11 +318,6 @@
    "candidate": "Ingoglia",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV24-433-2011",
-     "ref": "HB 433 · 2024",
-     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
-    },
     {
      "card": "SV24-619-2037",
      "ref": "HB 619 · 2024",
@@ -570,11 +491,6 @@
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
-     "card": "SV24-674-013",
-     "ref": "SB 674 · 2024",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
-    },
-    {
      "card": "SV23-360-1007",
      "ref": "SB 360 · 2023",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
@@ -583,11 +499,6 @@
      "card": "SV21-401-2005",
      "ref": "HB 401 · 2021",
      "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
-    },
-    {
-     "card": "SV21-53-1003",
-     "ref": "HB 53 · 2021",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
     }
    ],
    "resolved": false
@@ -624,11 +535,6 @@
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
-     "card": "SV24-674-013",
-     "ref": "SB 674 · 2024",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
-    },
-    {
      "card": "SV23-360-1007",
      "ref": "SB 360 · 2023",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
@@ -656,29 +562,6 @@
      "card": "SV22-7014-007",
      "ref": "SB 7014 · 2022",
      "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "ELIAS NATHAN",
-   "donor": "ELIAS NATHAN",
-   "occ": "HEALTHCARE EXECUTIVE",
-   "occs": [
-    "HEALTHCARE EXECUTIVE"
-   ],
-   "addr": "405 EL CAMINO REAL STE 248",
-   "city": "MENTO PARK, CA 94025",
-   "amount": 5000,
-   "date": "2026-05-11",
-   "acct": "pc84197",
-   "candidate": "Redondo",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV24-7016-1641",
-     "ref": "SB 7016 · 2024",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
     }
    ],
    "resolved": false
@@ -860,29 +743,6 @@
    "resolved": false
   },
   {
-   "key": "FERNANDEZ MANUEL",
-   "donor": "FERNANDEZ MANUEL",
-   "occ": "EXECUTIVE - BANYAN HEALTH",
-   "occs": [
-    "EXECUTIVE - BANYAN HEALTH"
-   ],
-   "addr": "2160 DENNY COURT",
-   "city": "BOCA RATON, FL 33486",
-   "amount": 1000,
-   "date": "2024-01-06",
-   "acct": "lopez-house",
-   "candidate": "vicki-l-lopez",
-   "body": "fl-house",
-   "cards": [
-    {
-     "card": "SB 7016 · Ch. 2024-15",
-     "ref": "SB 7016 · Ch. 2024-15",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
-    }
-   ],
-   "resolved": false
-  },
-  {
    "key": "FERNANDEZ MIGUEL B",
    "donor": "FERNANDEZ MIGUEL B.",
    "occ": "HEALTHCARE EXECUTIVE",
@@ -944,11 +804,6 @@
    "body": "fl-senate",
    "cards": [
     {
-     "card": "HB 53 · Ch. 2021-194",
-     "ref": "HB 53 · Ch. 2021-194",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
-    },
-    {
      "card": "HB 401 · Ch. 2021-201",
      "ref": "HB 401 · Ch. 2021-201",
      "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
@@ -982,11 +837,6 @@
    "body": "fl-house",
    "cards": [
     {
-     "card": "HB 5101 · Ch. 2016-65",
-     "ref": "HB 5101 · Ch. 2016-65",
-     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
-    },
-    {
      "card": "HB 21 · Ch. 2019-136",
      "ref": "HB 21 · Ch. 2019-136",
      "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
@@ -1016,11 +866,6 @@
    "body": "fl-house",
    "cards": [
     {
-     "card": "HB 5101 · Ch. 2016-65",
-     "ref": "HB 5101 · Ch. 2016-65",
-     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
-    },
-    {
      "card": "HB 21 · Ch. 2019-136",
      "ref": "HB 21 · Ch. 2019-136",
      "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
@@ -1049,11 +894,6 @@
    "candidate": "blaise-ingoglia",
    "body": "fl-house",
    "cards": [
-    {
-     "card": "HB 5101 · Ch. 2016-65",
-     "ref": "HB 5101 · Ch. 2016-65",
-     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
-    },
     {
      "card": "HB 21 · Ch. 2019-136",
      "ref": "HB 21 · Ch. 2019-136",
@@ -1106,11 +946,6 @@
    "body": "fl-senate",
    "cards": [
     {
-     "card": "HB 53 · Ch. 2021-194",
-     "ref": "HB 53 · Ch. 2021-194",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
-    },
-    {
      "card": "HB 401 · Ch. 2021-201",
      "ref": "HB 401 · Ch. 2021-201",
      "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
@@ -1124,546 +959,6 @@
      "card": "SB 7068 · Ch. 2019-43",
      "ref": "SB 7068 · Ch. 2019-43",
      "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN/COLORECTAL CANC",
-   "occs": [
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 35,
-   "date": "2021-10-25",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN/COLORECTAL CANC",
-   "occs": [
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 35,
-   "date": "2021-11-25",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 25,
-   "date": "2022-01-04",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 25,
-   "date": "2022-01-10",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMINCOLORECTAL CANCE",
-   "occs": [
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 25,
-   "date": "2022-03-29",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN COLORECTAL CANC",
-   "occs": [
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 40,
-   "date": "2022-04-13",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PROGRAM DIR COLORECTAL CANCER",
-   "occs": [
-    "PROGRAM DIR COLORECTAL CANCER",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 75,
-   "date": "2022-04-28",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 250,
-   "date": "2022-06-01",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 50,
-   "date": "2022-06-23",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 175,
-   "date": "2022-07-08",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "RETIRED",
-   "occs": [
-    "RETIRED",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 440,
-   "date": "2022-07-14",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 100,
-   "date": "2022-08-26",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "INDIVIDUAL",
-   "occs": [
-    "INDIVIDUAL",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 50,
-   "date": "2022-09-13",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 125,
-   "date": "2022-10-04",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 25,
-   "date": "2022-10-18",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 50,
-   "date": "2022-10-29",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "PLATFORM ADMIN",
-   "occs": [
-    "PLATFORM ADMIN",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL",
-    "AFFORDABLE HOUSING DIRECTOR"
-   ],
-   "addr": "13885 IBIS POINT BLVD",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 25,
-   "date": "2022-11-03",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "HICKS JOSHUA",
-   "donor": "HICKS JOSHUA",
-   "occ": "AFFORDABLE HOUSING DIRECTOR",
-   "occs": [
-    "AFFORDABLE HOUSING DIRECTOR",
-    "PLATFORM ADMIN/COLORECTAL CANC",
-    "PLATFORM ADMIN",
-    "PLATFORM ADMINCOLORECTAL CANCE",
-    "PLATFORM ADMIN COLORECTAL CANC",
-    "PROGRAM DIR COLORECTAL CANCER",
-    "RETIRED",
-    "INDIVIDUAL"
-   ],
-   "addr": "13885 IBIS POINT BLVD.",
-   "city": "JACKSONVILLE, FL 32224",
-   "amount": 125,
-   "date": "2024-04-21",
-   "acct": "nixon-pre2025",
-   "candidate": "Nixon",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV21-7061-458",
-     "ref": "HB 7061 · 2021",
-     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
     }
    ],
    "resolved": false
@@ -1683,11 +978,6 @@
    "candidate": "Ingoglia",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV24-433-2011",
-     "ref": "HB 433 · 2024",
-     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
-    },
     {
      "card": "SV24-619-2037",
      "ref": "HB 619 · 2024",
@@ -1854,11 +1144,6 @@
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
-     "card": "SV24-674-013",
-     "ref": "SB 674 · 2024",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
-    },
-    {
      "card": "SV23-360-1007",
      "ref": "SB 360 · 2023",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
@@ -1882,11 +1167,6 @@
    "candidate": "Ingoglia",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV24-433-2011",
-     "ref": "HB 433 · 2024",
-     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
-    },
     {
      "card": "SV24-619-2037",
      "ref": "HB 619 · 2024",
@@ -1935,11 +1215,6 @@
      "card": "SV24-781-1048",
      "ref": "HB 781 · 2024",
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
-    },
-    {
-     "card": "SV24-674-013",
-     "ref": "SB 674 · 2024",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
     },
     {
      "card": "SV23-360-1007",
@@ -2023,11 +1298,6 @@
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
     },
     {
-     "card": "SB 674 · Ch. 2024-267",
-     "ref": "SB 674 · Ch. 2024-267",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
-    },
-    {
      "card": "HB 619 · Ch. 2024-271",
      "ref": "HB 619 · Ch. 2024-271",
      "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
@@ -2059,11 +1329,6 @@
      "card": "SV24-781-1048",
      "ref": "HB 781 · 2024",
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
-    },
-    {
-     "card": "SV21-53-1003",
-     "ref": "HB 53 · 2021",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
     }
    ],
    "resolved": false
@@ -2087,29 +1352,6 @@
      "card": "SV22-7014-007",
      "ref": "SB 7014 · 2022",
      "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "RABINOWITZ MATTHEW",
-   "donor": "RABINOWITZ MATTHEW",
-   "occ": "HEALTH CARE EXECUTIVE CHAIRMAN",
-   "occs": [
-    "HEALTH CARE EXECUTIVE CHAIRMAN"
-   ],
-   "addr": "17749 COLLINS AVENUE - APARTMENT 3802",
-   "city": "SUNNY ISLES BEACH, FL 33160",
-   "amount": 1000,
-   "date": "2026-10-14",
-   "acct": "basabe",
-   "candidate": "Basabe",
-   "body": "flhouse",
-   "cards": [
-    {
-     "card": "HV24-7016-1641",
-     "ref": "SB 7016 · 2024",
-     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
     }
    ],
    "resolved": false
@@ -2150,13 +1392,8 @@
    "date": "2021-03-01",
    "acct": "pc64489-avila",
    "candidate": "bryan-avila",
-   "body": "fl-house",
+   "body": "fl-senate",
    "cards": [
-    {
-     "card": "HB 961 · Ch. 2018-135",
-     "ref": "HB 961 · Ch. 2018-135",
-     "cls": "BREW|BEER|WINE|SPIRITS|DISTILL|LIQUOR|BEVERAGE|ANHEUSER|BACARDI|DIAGEO|MOLSON|CONSTELLATION|\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|NIGHTCLUB|SALOON|GRILL"
-    },
     {
      "card": "HB 1459 · Ch. 2023-294",
      "ref": "HB 1459 · Ch. 2023-294",
@@ -2194,11 +1431,6 @@
      "card": "HB 705 · Ch. 2024-208",
      "ref": "HB 705 · Ch. 2024-208",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SB 674 · Ch. 2024-267",
-     "ref": "SB 674 · Ch. 2024-267",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
     },
     {
      "card": "HB 619 · Ch. 2024-271",
@@ -2258,11 +1490,6 @@
    "body": "fl-senate",
    "cards": [
     {
-     "card": "SB 778 · Ch. 2015-63",
-     "ref": "SB 778 · Ch. 2015-63",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
      "card": "HB 7095 · Ch. 2014-167",
      "ref": "HB 7095 · Ch. 2014-167",
      "cls": "STADIUM|ARENA|SPORTS|DOLPHINS|MARLINS|\\bHEAT\\b|LIGHTNING|PANTHERS|JAGUARS|BUCCANEERS|ORLANDO MAGIC|TAMPA BAY RAYS|SPEEDWAY|CONTRACTOR|CONSTRUCTION|BUILDER"
@@ -2286,11 +1513,6 @@
    "candidate": "wilton-simpson",
    "body": "fl-senate",
    "cards": [
-    {
-     "card": "SB 778 · Ch. 2015-63",
-     "ref": "SB 778 · Ch. 2015-63",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
     {
      "card": "HB 7095 · Ch. 2014-167",
      "ref": "HB 7095 · Ch. 2014-167",
@@ -2450,11 +1672,6 @@
      "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
-     "card": "SV24-674-013",
-     "ref": "SB 674 · 2024",
-     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
-    },
-    {
      "card": "SV23-360-1007",
      "ref": "SB 360 · 2023",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
@@ -2463,11 +1680,6 @@
      "card": "SV21-401-2005",
      "ref": "HB 401 · 2021",
      "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
-    },
-    {
-     "card": "SV21-53-1003",
-     "ref": "HB 53 · 2021",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
     }
    ],
    "resolved": false

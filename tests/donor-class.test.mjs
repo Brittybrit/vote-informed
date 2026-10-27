@@ -77,7 +77,7 @@ test('analysis sentences that state no benefit leave the law out (HB 633 and HB 
 });
 
 test('practitioners and the businesses themselves still tie (Nixon cases)', () => {
-  for (const ref of ['SB 362 · 2024', 'SB 808 · 2024', 'HB 1175 · 2026', 'SB 7016 · 2024']) {
+  for (const ref of ['SB 362 · 2024', 'SB 808 · 2024', 'HB 1175 · 2026']) {
     assert.ok(fits(ref, 'COWART JENNIFER', 'PHYSICIAN'), ref);
     assert.ok(nixon(ref).has('COWART JENNIFER') && nixon(ref).has('KHATIB YAZAN'), ref);
   }
@@ -201,4 +201,36 @@ test('SEC records on file: Stuart A. Miller (Lennar) and George Feldenkreis (Per
   for (const B of d.bodies.filter(b => ['flhouse', 'flsenate'].includes(b.key))) for (const a of B.actions.filter(a => a.kind === 'bill'))
     for (const x of a.gifts) if (x.kind === 'class' && open.has(x.donor)) assert.ok(!execPending(K(a.ref) || {}, x.donor, x.occ, (TAGS[x.donor] || {}).tags || []), a.id + ' ' + x.donor);
   assert.equal(C.totals.gifts, C.gifts.length);
+});
+
+// Rule 7 (Brit, Oct 27, 2026): a benefit the analysis limits to a subset ties a donor only with a record that the donor is in it
+test('conditional benefit: SB 7016 (2024) physicians do not tie without a record of FRAME or DSLR participation', () => {
+  const k = K('SB 7016 · 2024');
+  assert.match(k.conditional, /who are able to participate in FRAME or the DSLR Program/);
+  for (const [n, o] of [['COWART JENNIFER', 'PHYSICIAN MAYO CLINIC FLORIDA'], ['KHATIB YAZAN', 'PHYSICIAN'], ['SARWAR ZAHIR', 'PHYSICIAN']]) {
+    assert.ok(!fits('SB 7016 · 2024', n, o), n);
+    assert.ok(!nixon('SB 7016 · 2024').has(n), n);
+  }
+  // a record showing the donor is in the subset makes the gift count
+  const withRec = { ...k, subset: { [donorKey('KHATIB YAZAN')]: { recordUrl: 'https://example.org/frame-awards.pdf', quote: 'Yazan Khatib, MD: FRAME award' } } };
+  const tg = n => (TAGS[n] || {}).tags || [];
+  assert.ok(fitsLaw(withRec, 'KHATIB YAZAN', 'PHYSICIAN', tg('KHATIB YAZAN')));
+  assert.ok(!fitsLaw(withRec, 'SARWAR ZAHIR', 'PHYSICIAN', tg('SARWAR ZAHIR')));
+  // a record entry without its source and quote is not a record
+  assert.ok(!fitsLaw({ ...k, subset: { [donorKey('KHATIB YAZAN')]: { recordUrl: '' } } }, 'KHATIB YAZAN', 'PHYSICIAN', tg('KHATIB YAZAN')));
+});
+
+test('conditional benefits: every marked class quotes words from its own analysis; federal conditional laws tie no PAC', () => {
+  const law = {};
+  for (const dir of [T + 'flhouse/', T + 'prior-flhouse/', T + 'prior-flsenate/']) for (const y of ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2122', '2023', '2024', '2025'])
+    for (const b of (opt(dir + 'bills-' + y + '.json').bills || [])) if (b.benefits && b.benefits.quote) law[b.chapter] = b.benefits.quote;
+  for (const b of J('scripts/data/state/bills/universe.json').bills) if (b.benefits && b.benefits.quote) law[b.chapter] = b.benefits.quote;
+  let n = 0;
+  for (const f of ['scripts/data/state/bills/classes-by-chapter.json', T + 'flhouse/bills/classes-by-chapter.json', T + 'prior-flhouse/bills/classes-by-chapter.json', T + 'prior-flsenate/bills/classes-by-chapter.json'])
+    for (const [ch, c] of Object.entries(opt(f))) if (c.conditional && law[ch]) { n++; assert.ok(law[ch].includes(c.conditional), f + ' ' + ch); }
+  assert.ok(n >= 100, 'conditional classes: ' + n);
+  const us = d.bodies.filter(b => b.level === 'federal');
+  const cond = new Set([...J('scripts/data/federal/floor-votes.json').bills, ...(opt(T + 'congress/floor-votes-tenure.json').bills || [])].filter(b => b.conditional).map(b => b.ref));
+  assert.ok(cond.size > 5);
+  for (const B of us) for (const a of B.actions) if (a.kind === 'bill' && cond.has(a.ref)) assert.equal(a.gifts.filter(g => g.kind === 'class').length, 0, a.id);
 });

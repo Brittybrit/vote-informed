@@ -107,7 +107,7 @@ Then rebuild (below). The candidates file marks resolved donors; the cards pick 
 
 ```
 node scripts/exec-candidates.mjs && node scripts/exec-sunbiz-list.mjs
-node scripts/state-bills.mjs && node scripts/state-firm-gifts.mjs && node scripts/leads.mjs && node scripts/money-summary.mjs
+node scripts/federal-earmarks.mjs && node scripts/state-bills.mjs && node scripts/state-firm-gifts.mjs && node scripts/leads.mjs && node scripts/money-summary.mjs
 node scripts/business.mjs && node scripts/prior-offices.mjs && node scripts/gaps.mjs && node scripts/research-index.mjs && node scripts/you-files.mjs
 npm test
 ```
