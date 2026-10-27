@@ -37,6 +37,10 @@ scripts/data/sources/inbox/<id>.json    {"url": ..., "title": ..., "people": [pi
   downloads every fetchable document not yet stored (politely: 2 s or more between requests to a host, robots.txt
   honored), extracts text (pdftotext, OCR with ocrmypdf when a PDF has no text layer, first 60 pages) and stores
   `raw/<id>.<ext>` and `text/<id>.txt`.
+- The inbox folder is gitignored on main (it holds hundreds of MB). To hand a batch to the Action, pack it onto branch
+  `sources-archive`: `cd scripts/data/sources && tar -czf - inbox | split -b 90m -d -a 2 - <worktree>/inbox/<YYYY-MM-DD>.tar.gz.part-`,
+  commit and push that branch (never force-push), and commit the rebuilt catalog on main. The Action unpacks every
+  batch and skips ids already stored, so a batch can stay on the branch after it is uploaded.
 - `node scripts/research-index.mjs` lists catalog entries as records of type `source` in Brit's research index.
 
 ## Catalog fields

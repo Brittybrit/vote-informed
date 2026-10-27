@@ -56,6 +56,20 @@ jobs:
           mkdir -p "$RUNNER_TEMP/scratch"
           git rev-parse -q --verify origin/sources-archive > /dev/null || git fetch -q origin sources-archive:refs/remotes/origin/sources-archive || true
           git show origin/sources-archive:scratch-text.tar.xz | tar -xJ -C "$RUNNER_TEMP/scratch" || echo "::warning::could not unpack scratch-text.tar.xz"
+      - name: Unpack inbox batches (branch sources-archive, inbox/)
+        if: steps.secrets.outputs.ok == 'true'
+        run: |
+          # The inbox is gitignored on main; saved documents travel as split tarballs on the archive branch.
+          for b in $(git ls-tree --name-only origin/sources-archive inbox/ 2>/dev/null | grep '\.part-' | sed 's/\.part-[0-9]*$//' | sort -u); do
+            for p in $(git ls-tree --name-only origin/sources-archive inbox/ | grep -F "$b.part-" | sort); do git show "origin/sources-archive:$p"; done \
+              | tar -xz -C scripts/data/sources || echo "::warning::could not unpack $b"
+          done
+          # Skip documents already stored in R2 so they are not uploaded again.
+          node -e '
+            const fs=require("fs"),d="scripts/data/sources/inbox/";if(!fs.existsSync(d))process.exit(0);
+            const done=new Set(fs.readFileSync("scripts/data/sources/catalog.jsonl","utf8").split("\n").filter(Boolean).map(l=>JSON.parse(l)).filter(e=>e.archived).map(e=>e.id));
+            let n=0;for(const f of fs.readdirSync(d)){const id=f.split(".")[0];if(done.has(id)){fs.rmSync(d+f);n++;}}
+            console.log("inbox files already archived, skipped:",n,"| left to upload:",fs.readdirSync(d).length);'
       - name: Rebuild catalog
         if: steps.secrets.outputs.ok == 'true'
         run: node scripts/sources/catalog.mjs

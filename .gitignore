@@ -15,3 +15,6 @@ scripts/data/tenure/**/.fl.lock
 scripts/data/tenure/**/.net.lock
 scripts/data/tenure/**/.net.dlock
 scripts/data/tenure/**/.net.hold
+
+# Source inbox: raw files travel on branch sources-archive (inbox/*.tar.gz parts), never on main
+scripts/data/sources/inbox/
