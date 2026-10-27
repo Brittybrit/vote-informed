@@ -11,9 +11,13 @@
 // House votes only; donor classes from bills/classes-by-chapter.json, labels from bills/labels.json), reads each
 // member's 2020-2024 gifts (scripts/data/tenure/flhouse/donors/), and counts gifts from the member's giftsFrom date
 // instead of Jan 1, 2025, on every card. The Senate and the 2025-26 rules are unchanged.
+// Which donors count for a law, and which analysis sentences count as a benefit, follow scripts/data/industry/INSTRUCTIONS.md
+// (scripts/lib/donor-class.mjs; laws left out: scripts/data/industry/not-a-benefit.json). Every run re-checks the class
+// gifts already on the cards against that rule and drops the ones that fail it (Brit, Oct 27, 2026).
 // Run: node scripts/state-tenure.mjs && node scripts/state-bills.mjs && node scripts/money-summary.mjs
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { topicsOf } from './action-topics.mjs';
+import { fitsLaw } from './lib/donor-class.mjs';
 
 const root = new URL('../', import.meta.url);
 const J = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -23,6 +27,7 @@ const U = J('scripts/data/state/bills/universe.json');
 const CLASSES = existsSync(new URL('scripts/data/state/bills/classes.json', root)) ? J('scripts/data/state/bills/classes.json') : {};
 const TAGS = J('scripts/data/industry/state-donors.json').donors;
 const LABEL = existsSync(new URL('scripts/data/state/bills/labels.json', root)) ? J('scripts/data/state/bills/labels.json') : {};
+const NOT_A_BENEFIT = J('scripts/data/industry/not-a-benefit.json').laws;
 const CYCLE = '2025-01-01';
 const NOT_INDUSTRY = new Set(['political-committee', 'party', 'self', 'individual-noindustry', 'other', 'trade-association', 'lobbying', 'law-firm', 'labor-union']);
 
@@ -96,7 +101,8 @@ const TENURE_S = (() => {
 })();
 const isoOf = s => { const m = String(s || '').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/); return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : s; };
 
-let added = 0, kept = 0;
+let added = 0, kept = 0, dropped = 0;
+const removed = [];
 const report = [];
 for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 'senate', 'SV']]) {
   const B = d.bodies.find(b => b.key === bodyKey);
@@ -108,21 +114,28 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
   const tagOf = name => TAGS[name.toUpperCase()] || (ten && ten.tags[name.toUpperCase()]) || {};
   const donorRows = {};
   for (const k of members) donorRows[k] = acctsOf(k).flatMap(a => (bodyKey === 'flsenate' ? [...tsv(new URL(`scripts/data/state/donors/${a}.tsv`, root)), ...(ten ? tsv(new URL(SDIR + 'donors/' + a + '.tsv', root)).filter(r => r.date < CYCLE) : [])] : rowsOf(a, !!ten)).map(r => ({ ...r, acct: a })));
+  const OCCS = new Map();
+  for (const rs of Object.values(donorRows)) for (const r of rs) if (r.occ) { const n = r.donor.toUpperCase(); if (!OCCS.has(n)) OCCS.set(n, new Set()); OCCS.get(n).add(r.occ); }
   const list = (U.bills || []).map(b => ({ ...b, ref: `${b.bill} · ${String(b.session).slice(0, 4)}` })).concat(ten ? ten.bills : []);
+  // laws whose analysis states no benefit: no card, no tie
+  const noBen = new Set(list.filter(b => NOT_A_BENEFIT[b.chapter]).map(b => b.ref));
+  B.actions = B.actions.filter(a => !(a.kind === 'bill' && noBen.has(a.ref) && (removed.push(bodyKey + ' ' + a.id), true)));
   for (const bill of list) {
-    if (!bill.benefits) continue;
+    if (!bill.benefits || NOT_A_BENEFIT[bill.chapter]) continue;
     const ref = bill.ref;
     // Which donors count for this law: industry tags and/or a pattern on the donor's name and reported
     // occupation, set per law in classes.json after reviewing who gave (broad tags alone overmatch)
     const K = CLASSES[ref] || (ten && ten.classes[ref]) || {};
-    const tags = new Set(Array.isArray(K) ? K : (K.tags || []));
-    const re = K.re ? new RegExp(K.re, 'i') : null, nre = K.not ? new RegExp(K.not, 'i') : null;
-    const fits = (name, occ) => { const t = tagOf(name).tags || []; const s = name + ' | ' + occ;
-      if (tags.size && !t.some(x => tags.has(x))) return false; if (re && !re.test(s)) return false; if (nre && nre.test(s)) return false; return !!(tags.size || re); };
+    // a donor is in the business when any occupation they reported (on any gift in these reports) shows it
+    const fits = (name, occ) => [...new Set([occ, ...(OCCS.get(name.toUpperCase()) || [])])].some(o => fitsLaw(K, name, o, tagOf(name).tags || []));
     const have = B.actions.filter(a => a.kind === 'bill' && a.ref === ref);
     if (have.length) {
       for (const a of have) {
         a.universe = true;
+        // class gifts already on the card are held to the current rule (a hand-checked card with no class keeps its own)
+        const before = a.gifts.length;
+        if (CLASSES[ref] || (ten && ten.classes[ref])) a.gifts = a.gifts.filter(g => g.kind !== 'class' || fits(g.donor, g.occ || ''));
+        dropped += before - a.gifts.length;
         // Cards already on the page keep their gifts; with a full tenure, add the earlier gifts (giftsFrom to
         // Dec 31, 2024) from donors in the same class, to members who were seated for the vote
         if (ten) {
@@ -178,4 +191,4 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
   report.push(`${bodyKey}: ${B.actions.filter(a => a.kind === 'bill' && a.universe).length} bill cards in the list`);
 }
 writeFileSync(new URL(FILE, root), JSON.stringify(d, null, 1) + '\n');
-console.log(report.join('\n') + `\nadded ${added}, kept ${kept} hand-checked`);
+console.log(report.join('\n') + `\nadded ${added}, kept ${kept} hand-checked; ${dropped} class gifts dropped by the donor rule; cards removed (no stated benefit): ${removed.join(', ') || 'none'}`);

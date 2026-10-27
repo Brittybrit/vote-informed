@@ -1,6 +1,7 @@
 // Rules for publishing a business tie (scripts/business.mjs). Pure functions, so tests/business.test.mjs can
 // check each rule on its own.
 import { IN_FAVOR } from '../money-summary.mjs';
+import { voteStatus } from './contested.mjs';
 
 // An entity's name for matching: lower case, punctuation gone, "&" read as "and", anything in parentheses and any
 // d/b/a tail dropped, corporate suffixes (Inc, LLC, Corp, Co, Ltd, PA, PLLC ...) and "the" dropped.
@@ -44,13 +45,18 @@ export function isCustomerOf(interest) {
 // Brit, Oct 27, 2026). A no vote, absent, abstained, recused, excused, or a vote the record does not give (no vote,
 // "n/a") does not count. Abstention records (kind 'abstention') are about the abstention itself and stay.
 // Ties to other governments' payments, contracts and grants carry no vote of theirs and are not affected.
+// A vote also has to be contested (Brit, Oct 27, 2026): the record shows at least one no (t.tally [yes, no], or a
+// "73-36" tally at the end of the record label). Unanimous, or a tally the record read does not give: not counted.
+const LABEL_TALLY = /(?:^|[\s;(,])(\d{1,3})\s*-\s*(\d{1,3})\)?\s*$/;
+export const tieTally = t => t.tally || ((m => m ? [Number(m[1]), Number(m[2])] : null)(String((t.record || {}).label || '').match(LABEL_TALLY)));
+export const tieContested = t => voteStatus(tieTally(t), null, false) === 'contested';
 export function voteCounts(t) {
   if (!t) return false;
   if (t.kind === 'abstention') return true;
   const v = t.candidateVote == null ? 'n/a' : String(t.candidateVote).toLowerCase();
-  if (t.kind === 'vote') return IN_FAVOR.has(v);
+  if (t.kind === 'vote') return IN_FAVOR.has(v) && (v !== 'yes' || tieContested(t));
   if (v === 'n/a' || v === '') return true;
-  return IN_FAVOR.has(v);
+  return IN_FAVOR.has(v) && (v !== 'yes' || tieContested(t));
 }
 
 // Disclosure window: on the date, the person held an office whose disclosure law required a form.

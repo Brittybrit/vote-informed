@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import vm from 'node:vm';
 import { build, buildTies, CYCLE_START, giftStart, TENURE_CITIES, TENURE_STATE, IN_FAVOR } from '../scripts/money-summary.mjs';
+import { contested, voteStatus } from '../scripts/lib/contested.mjs';
 
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 const decisions = JSON.parse(read('../public/data/decisions.json'));
@@ -86,7 +87,9 @@ test('renders in all three languages with no leftovers', () => {
     assert.ok(p.share.tied <= p.share.n, p.pid);
     const line = render(p, 'en').split('<br>').find(x => /^Since |^This city/.test(x)) || '';
     if (p.share.def === 'donorFirst') continue;
-    const m = line.match(/^Since [A-Z][a-z]+ 20\d\d, \S+ \w+ (?:yes on )?(\d+) .*?\(([<>]?\d+)%\).*?\. On (?:the other )?(\d+) \(([<>]?\d+)%\), (?:they did not|\S+ voted no or no donor was involved|no donor was involved)\.$/);
+    // votes: "of the N votes she cast that were not unanimous, X (p%) ..." (Brit, Oct 27, 2026)
+    if (['county', 'actions', 'lobbied'].includes(p.share.def)) assert.match(line, new RegExp('of the ' + p.share.n + ' votes? \\S+ cast that (?:was|were) not unanimous'), p.pid);
+    const m = line.match(/^Since [A-Z][a-z]+ 20\d\d, (?:of the \d+ [^,]+, )?(?:\S+ \w+ (?:yes on )?)?(\d+) .*?\(([<>]?\d+)%\).*?\. On (?:the other )?(\d+) \(([<>]?\d+)%\), (?:they did not|\S+ voted no or no donor was involved|no donor was involved)\.(?: Cabinet votes are not counted[^.]*\.)?$/);
     assert.ok(m, p.pid + ' share sentence: ' + line);
     assert.equal(+m[1], p.share.tied, p.pid); assert.equal(+m[1] + +m[3], p.share.n, p.pid); if (!/[<>]/.test(m[2])) assert.equal(+m[2] + +m[4], 100, p.pid);
   }
@@ -131,7 +134,8 @@ test('per-person tie files match the builder and add up to the summary', () => {
 const gift = (donor, amount, date = '2025-03-01') => ({ to: 'Nixon', acct: 'c1', donor, amount, date });
 function fixture(type) {
   const state = type === 'state';
-  const act = (id, roll, gifts, extra = {}) => ({ id, date: '2025-04-01', kind: state ? 'bill' : 'award', ref: id, roll: { Nixon: roll }, gifts, ...extra });
+  // every vote here was contested (one no on the record) unless a test says otherwise
+  const act = (id, roll, gifts, extra = {}) => ({ id, date: '2025-04-01', kind: state ? 'bill' : 'award', ref: id, roll: { Nixon: roll }, ...(roll === 'requested' ? {} : { tally: [3, 1] }), gifts, ...extra });
   const actions = state ? [
     { ...act('req1', 'requested', [gift('Lobby Firm', 1500)]), kind: 'request', ask: 750000 },
     act('HB1', 'yes', [gift('Helped Inc', 100)]),
@@ -187,7 +191,7 @@ test('voting body: only yes votes count toward money, donors, items and the shar
   assert.deepEqual(p.against, { votes: 1, money: 50, donors: 1 });
   const en = render(JSON.parse(JSON.stringify(p)), 'en');
   assert.match(en, /took \$100 from 1 donor whose business before the Test Body got her yes vote/);
-  assert.match(en, /voted yes on 1 action \(33%\) that helped one of her donors\. On the other 2 \(67%\), she voted no or no donor was involved\./);
+  assert.match(en, /of the 3 votes she cast that were not unanimous, 1 \(33%\) helped one of her donors\. On the other 2 \(67%\), she voted no or no donor was involved\./);
   assert.match(en, /She voted no on 1 item that helped donors who gave \$50\. That money is not counted above\./);
 });
 
@@ -204,6 +208,8 @@ test('no headline number includes money tied only to no, absent, abstained, recu
     // the gifts behind the summary are all from in-favor actions
     const t = buildTies(decisions)[m.person];
     for (const a of t.actions) assert.ok(IN_FAVOR.has(a.roll[key]), m.person + ' ' + a.id + ' ' + a.roll[key]);
+    // a yes vote behind the summary was contested: the record shows at least one no (Brit, Oct 27, 2026)
+    for (const a of t.actions) if (a.roll[key] === 'yes') assert.ok(contested(a), m.person + ' ' + a.id + ' unanimous or unknown tally');
     // a gift tied only to actions not in the donor's favor never reaches the total
     const onlyOther = [...other].filter(([g]) => !favor.has(g)).reduce((n, [, x]) => n + x, 0);
     const favorSum = [...favor].reduce((n, g) => n + Number(g.split('|')[2]), 0);
@@ -212,4 +218,28 @@ test('no headline number includes money tied only to no, absent, abstained, recu
     if (p.kind === 'votes') assert.equal(p.items, p.yes, m.person);
     if (p.bills) { assert.equal(p.bills.yes, p.bills.votes, m.person); assert.equal(p.bills.otherMoney, undefined, m.person); }
   }
+});
+
+test('unanimous votes and votes of unknown tally are not ties and leave the share pool (Brit, Oct 27, 2026)', () => {
+  assert.equal(voteStatus([5, 0], { A: 'yes' }, true), 'unanimous');
+  assert.equal(voteStatus([5, 1], { A: 'yes' }, false), 'contested');
+  assert.equal(voteStatus(null, { A: 'yes', B: 'no' }, false), 'contested');
+  assert.equal(voteStatus(null, { A: 'yes', B: 'yes' }, true), 'unanimous');
+  assert.equal(voteStatus(null, { A: 'yes' }, false), 'unknown');
+  assert.equal(voteStatus('7-0', null, false), 'unanimous');
+  const city = fixture('city');
+  const acts = city.bodies[0].actions;
+  acts.push({ id: 'a-unan', date: '2025-05-01', kind: 'award', ref: 'a-unan', roll: { Nixon: 'yes' }, tally: [5, 0], rollComplete: true, lobbied: [{}], gifts: [gift('Unanimous Co', 70)] });
+  acts.push({ id: 'a-notally', date: '2025-05-02', kind: 'award', ref: 'a-notally', roll: { Nixon: 'yes' }, lobbied: [{}], gifts: [gift('No Tally Co', 80)] });
+  const p = build(city, fxHeld).people['angela-nixon'];
+  assert.equal(p.total, 100);
+  assert.deepEqual([p.share.n, p.share.tied], [3, 1]);
+  assert.deepEqual(buildTies(city)['angela-nixon'].actions.map(a => a.id), ['a-yes']);
+  // requests are not votes: a request with no tally still ties
+  const st = fixture('state');
+  st.bodies[0].actions.find(a => a.id === 'HB1').tally = [100, 0];
+  const q = build(st, fxHeld).people['angela-nixon'];
+  assert.equal(q.requests.money, 1500);
+  assert.equal(q.bills.money, 0);
+  assert.equal(q.total, 1500);
 });

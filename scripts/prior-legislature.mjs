@@ -15,6 +15,8 @@
 // what is still being read.
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { pkey, dkey } from './lib/city.mjs';
+import { fitsLaw } from './lib/donor-class.mjs';
+import { voteStatus } from './lib/contested.mjs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -53,18 +55,17 @@ const tagOf = n => (TAGS[n.toUpperCase()] || {}).tags || [];
 // ---- laws ---------------------------------------------------------------------------------------------------------
 const CLS = { ...opt(T + 'prior-flsenate/bills/classes-by-chapter.json'), ...opt(T + 'prior-flhouse/bills/classes-by-chapter.json'), ...opt(T + 'flsenate/bills/classes-senate.json'),
   ...opt(T + 'flhouse/bills/classes-2122.json'), ...opt(T + 'flhouse/bills/classes-by-chapter.json'), ...opt('scripts/data/state/bills/classes-by-chapter.json') };
-const fits = (K, name, occ) => {
-  const tags = new Set(Array.isArray(K) ? K : (K.tags || [])), re = K.re ? new RegExp(K.re, 'i') : null, nre = K.not ? new RegExp(K.not, 'i') : null;
-  const t = tagOf(name), s = name + ' | ' + occ;
-  if (tags.size && !t.some(x => tags.has(x))) return false; if (re && !re.test(s)) return false; if (nre && nre.test(s)) return false; return !!(tags.size || re);
-};
+// Which donors count for a law: scripts/data/industry/INSTRUCTIONS.md (scripts/lib/donor-class.mjs)
+const fits = (K, name, occ) => fitsLaw(K, name, occ, tagOf(name));
+// Laws whose analysis states no benefit to the business it names are left out (scripts/data/industry/not-a-benefit.json)
+const NOT_A_BENEFIT = J('scripts/data/industry/not-a-benefit.json').laws;
 // Every qualifying law by chapter, from every screened file (one reading per chapter)
 const LAWS = {};
-const addLaw = b => { if (b && b.benefits && b.chapter && !LAWS[b.chapter]) LAWS[b.chapter] = b; };
+const addLaw = b => { if (b && b.benefits && b.chapter && !LAWS[b.chapter] && !NOT_A_BENEFIT[b.chapter]) LAWS[b.chapter] = b; };
 for (const dir of [T + 'prior-flhouse/', T + 'flhouse/']) if (has(dir)) for (const f of readdirSync(P(dir)).filter(f => /^bills-\d+\.json$/.test(f))) for (const b of J(dir + f).bills || []) addLaw(b);
 for (const b of (opt('scripts/data/state/bills/universe.json').bills || [])) addLaw(b);
 for (const f of [T + 'flsenate/bills/stageB.jsonl', T + 'prior-flsenate/bills/stageB.jsonl']) if (has(f)) for (const l of readFileSync(P(f), 'utf8').split('\n').filter(Boolean)) {
-  const b = JSON.parse(l); if (b.b && b.ch && !LAWS[b.ch]) LAWS[b.ch] = { chapter: b.ch, bill: b.bill || '', title: b.title || '', analysisUrl: b.au, benefits: { category: b.cat, quote: b.q } };
+  const b = JSON.parse(l); if (b.b && b.ch && !LAWS[b.ch] && !NOT_A_BENEFIT[b.ch]) LAWS[b.ch] = { chapter: b.ch, bill: b.bill || '', title: b.title || '', analysisUrl: b.au, benefits: { category: b.cat, quote: b.q } };
 }
 // House votes: the House slices' bills files (roll keyed by member)
 const houseVotes = key => {
@@ -160,6 +161,9 @@ export function buildLegislative(nameOf = x => x) {
     const rows = SRC[id].flatMap(([f, a]) => doe(f, a)).filter(r => (!from || r.date >= from) && (!end || r.date <= end));
     const self = dkey(nameOf(o.pid) || "");
     const gifts = rows.filter(r => !self || dkey(r.donor) !== self);
+    // a donor is in the business when any occupation they reported to this seat's accounts shows it
+    const occsOf = new Map(); for (const r of gifts) if (r.occ) { const n = r.donor.toUpperCase(); if (!occsOf.has(n)) occsOf.set(n, new Set()); occsOf.get(n).add(r.occ); }
+    for (const [n, v] of occsOf) occsOf.set(n, [...v]);
     // requests
     const RQ = (o.body === 'fl-house' ? houseRequests(o.pid, key) : senateRequests(o.pid === 'jose-javier-rodriguez' ? 'JJRodriguez' : key))
       .filter(q => { const y = Number(String(q.fy).slice(0, 4)); return y >= Number(start.slice(0, 4)) && y <= Number((end || '2099').slice(0, 4)) + (o.body === 'fl-senate' ? 0 : 0); });
@@ -180,12 +184,14 @@ export function buildLegislative(nameOf = x => x) {
       const yr = Number(ch.slice(0, 4)), d = x.date || null;
       if (d ? !inTerm(d) : (yr < Number(start.slice(0, 4)) || (end && yr > Number(end.slice(0, 4))))) continue;
       const K = CLS[ch];
-      const g = K ? gifts.filter(r => r.occ && fits(K, r.donor, r.occ)).map(r => ({ n: r.donor, amt: r.amount, dt: r.date, k: 'class', occ: r.occ })) : [];
-      laws.push({ d, ch, t: b.title || '', r: (b.bill || '') + ' · Ch. ' + ch, cat: (b.benefits || {}).category || '', v, u: x.url || b.url || null, cls: !!K, g });
+      const g = K ? gifts.filter(r => r.occ && (occsOf.get(r.donor.toUpperCase()) || [r.occ]).some(o => fits(K, r.donor, o))).map(r => ({ n: r.donor, amt: r.amount, dt: r.date, k: 'class', occ: r.occ })) : [];
+      // vs: contested (a recorded no), unanimous or unknown tally; only a contested yes ties (Brit, Oct 27, 2026)
+      laws.push({ d, ch, t: b.title || '', r: (b.bill || '') + ' · Ch. ' + ch, cat: (b.benefits || {}).category || '', v, vs: voteStatus(x.tally, null, false), u: x.url || b.url || null, cls: !!K, g });
     }
     laws.sort((a, b) => String(b.d || b.ch).localeCompare(String(a.d || a.ch)));
     reqs.sort((a, b) => String(b.d || b.fy).localeCompare(String(a.d || a.fy)));
-    const castL = laws.filter(x => x.v === 'yes' || x.v === 'no'), noCls = castL.filter(x => !x.cls).length;
+    // the pool: contested votes cast (unanimous laws and laws whose tally is not known are left out)
+    const castAll = laws.filter(x => x.v === 'yes' || x.v === 'no'), castL = castAll.filter(x => x.vs === 'contested'), noCls = castL.filter(x => !x.cls).length;
     // Years of this term whose laws are not all screened yet (prior-flhouse/bills-<year>.json counts): no share until done
     const pendYears = [];
     // a year counts only if the term covers that year's regular session (Jan-May); done if either slice screened every law
@@ -206,7 +212,7 @@ export function buildLegislative(nameOf = x => x) {
       money: Math.round([...tiedGifts.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set([...[...reqs, ...yesL].flatMap(x => x.g.map(g => dkey(g.n)))]).size,
       ...(against ? { against } : {}),
       requests: { n: reqs.length, unread, share: reqShare, list: reqs, none: o.noRequestSystem || null },
-      laws: { n: laws.length, cast: castL.length, noClass: noCls, share: lawShare, list: laws, pending: pendYears.length ? pendYears : (o.lawsPending || null) },
+      laws: { n: laws.length, cast: castAll.length, contested: castL.length, noClass: noCls, share: lawShare, list: laws, pending: pendYears.length ? pendYears : (o.lawsPending || null) },
       counts: { actions: reqs.length + laws.length },
     } });
   }
@@ -226,10 +232,11 @@ export function buildLegislative(nameOf = x => x) {
         const vv = vote(v.members[key]); if (!vv) continue;
         const cls = classes[b.class];
         const g = cls ? mine.filter(x => cls.donors.some(([re]) => new RegExp(re).test(x.contributor))).map(x => ({ n: x.contributor, amt: x.amount, dt: x.date, k: 'pac' })) : [];
-        laws.push({ d: v.date, ch: b.law, t: (b.subject && b.subject.en) || '', r: b.ref + ' · ' + b.law, cat: (cls && cls.label && cls.label.en) || '', v: vv, u: b.bill, cls: !!cls, g });
+        laws.push({ d: v.date, ch: b.law, t: (b.subject && b.subject.en) || '', r: b.ref + ' · ' + b.law, cat: (cls && cls.label && cls.label.en) || '', v: vv, vs: voteStatus(v.tally, v.members, false), u: b.bill, cls: !!cls, g });
       }
       laws.sort((a, b) => b.d.localeCompare(a.d));
-      const castL = laws.filter(x => x.v === 'yes' || x.v === 'no'), noCls = castL.filter(x => !x.cls).length;
+      // the pool: contested votes cast (unanimous laws and laws whose tally is not known are left out)
+    const castAll = laws.filter(x => x.v === 'yes' || x.v === 'no'), castL = castAll.filter(x => x.vs === 'contested'), noCls = castL.filter(x => !x.cls).length;
       const tied = new Map(), gk = g => g.n + '|' + g.amt + '|' + g.dt, yesL = castL.filter(x => x.v === 'yes');
       for (const x of yesL) for (const g of x.g) tied.set(gk(g), g.amt);
       const against = againstOf(castL.filter(x => x.v === 'no'), tied, gk);
@@ -239,7 +246,7 @@ export function buildLegislative(nameOf = x => x) {
         money: Math.round([...tied.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set(yesL.flatMap(x => x.g.map(g => g.n))).size,
         ...(against ? { against } : {}),
         requests: { n: 0, unread: 0, share: null, list: [], none: 'earmarks' },
-        laws: { n: laws.length, cast: castL.length, noClass: noCls, share: castL.length && !noCls ? { n: castL.length, tied: yesL.filter(x => x.g.length).length, from: castL.map(x => x.d).sort()[0] } : null, list: laws, fed: true },
+        laws: { n: laws.length, cast: castAll.length, contested: castL.length, noClass: noCls, share: castL.length && !noCls ? { n: castL.length, tied: yesL.filter(x => x.g.length).length, from: castL.map(x => x.d).sort()[0] } : null, list: laws, fed: true },
         counts: { actions: laws.length },
       } });
     }

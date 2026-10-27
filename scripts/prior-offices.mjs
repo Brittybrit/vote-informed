@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { P, J, csv, pkey, dkey } from './lib/city.mjs';
 import { buildLegislative, againstOf } from './prior-legislature.mjs';
+import { voteStatus } from './lib/contested.mjs';
 
 const T = 'scripts/data/tenure/';
 const OUT = 'public/data/prior/';
@@ -192,8 +193,11 @@ for (const C0 of OFFICES) {
     for (const n of a.reps || []) if (n) lob.push({ name: typeof n === 'string' ? n : n.name, firm: null, for: null, record: true });
     for (const l of a.representatives || []) if (l && l.name) lob.push({ name: l.name, firm: l.firm || null, for: l.for || null, record: true });
     const url = a.url || (a.links || []).map(x => x.url)[0] || (a.record && (a.record.certification || a.record.url)) || '';
+    // vs: was the vote contested (a recorded no), unanimous, or of unknown tally; only a contested yes ties (Brit, Oct 27,
+    // 2026). The mayor's recommendation is his own office action, not a vote.
+    const vs = C0.mayorRule ? null : voteStatus(a.tally, roll, a.rollComplete);
     actions.push({ id: a.id, d: a.date, t: String(a.title || a.summary || '').replace(/\s+/g, ' ').trim(), r: a.ref || '', k: a.kind || '',
-      p: (a.parties || []).slice(0, 4), a: a.amount == null ? null : a.amount, v, res: a.result || '', u: url, l: lob, g: [] });
+      p: (a.parties || []).slice(0, 4), a: a.amount == null ? null : a.amount, v, ...(vs && (v === 'yes' || v === 'no') ? { vs } : {}), res: a.result || '', u: url, l: lob, g: [] });
   }
   // The officer's own office (Cabinet officers): actions taken without a board vote, counted as the officer's act.
   // Attorney General: settlements, consent judgments and assurances with named companies, and grants to private
@@ -224,8 +228,10 @@ for (const C0 of OFFICES) {
   }
   const cnt = { actions: actions.length, yes: 0, no: 0, absent: 0, abstain: 0, unknown: 0, acted: 0 };
   for (const a of actions) cnt[a.v]++;
-  const cast = actions.filter(a => a.v === 'yes' || a.v === 'no' || a.v === 'acted');
-  const favor = a => a.v === 'yes' || a.v === 'acted';
+  // the pool: contested votes cast and office actions taken; unanimous votes and votes of unknown tally are left out
+  const vote = a => (a.v === 'yes' || a.v === 'no') && (!a.vs || a.vs === 'contested');
+  const cast = actions.filter(a => vote(a) || a.v === 'acted');
+  const favor = a => (a.v === 'yes' && vote(a)) || a.v === 'acted';
   const tied = cast.filter(a => a.g.length && favor(a));
   const gk = g => g.n + '|' + g.amt + '|' + g.dt;
   const tiedGifts = new Map(); for (const a of tied) for (const g of a.g) tiedGifts.set(gk(g), g.amt);

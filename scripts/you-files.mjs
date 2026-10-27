@@ -8,7 +8,7 @@
 // Run after action-topics.mjs and money-summary.mjs:  node scripts/you-files.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { topicsOf } from './action-topics.mjs';
-import { IN_FAVOR } from './money-summary.mjs';
+import { inFavor } from './money-summary.mjs';
 
 const root = new URL('../', import.meta.url);
 const J = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -42,7 +42,7 @@ for (const B of d.bodies) {
       // a city list built from the actions: only the actions in it, the same list the share line counts
       if (B.universe && B.universe.built === 'actions' && !a.universe) continue;
       const donor = (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE);
-      const tied = donor && IN_FAVOR.has(v), against = donor && v === 'no';
+      const tied = donor && inFavor(a, key), against = donor && v === 'no';
       acts.push({
         id: a.id, date: a.date, kind: a.kind, title: L3(a.subject || a.title), topics: a.topics || [], vote: v,
         ...(tied ? { tied: true } : {}), ...(against ? { against: true } : {}), ...(a.tally && a.tally[1] > 0 ? { split: true } : {}),

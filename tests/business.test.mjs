@@ -35,8 +35,12 @@ test('curated aliases join names that differ by more than suffixes', () => {
 });
 
 test('a tie to an official action counts only when it went the business\'s way (yes, requested or acted)', () => {
-  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'yes' }));
-  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'Yes' }));
+  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'yes', tally: [70, 40] }));
+  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'Yes', record: { label: 'Florida House roll call (Donalds-80: Y); passed 73-36' } }));
+  // unanimous, or no tally in the record read: not a tie (Brit, Oct 27, 2026)
+  assert.ok(!voteCounts({ kind: 'vote', candidateVote: 'yes', tally: [117, 0] }));
+  assert.ok(!voteCounts({ kind: 'vote', candidateVote: 'yes' }));
+  assert.ok(!voteCounts({ kind: 'vote', candidateVote: 'yes', record: { label: 'Florida House roll call, HB 401, 2021-04-29' } }));
   assert.ok(voteCounts({ kind: 'vote', candidateVote: 'requested' }));
   assert.ok(voteCounts({ kind: 'vote', candidateVote: 'acted' }));
   // a no vote went against the business: not a tie (Brit, Oct 27, 2026)
@@ -48,7 +52,8 @@ test('a tie to an official action counts only when it went the business\'s way (
   assert.ok(voteCounts({ kind: 'payment' }));
   // a vote given on a contract or zoning item must be a yes
   assert.ok(!voteCounts({ kind: 'contract', candidateVote: 'absent' }));
-  assert.ok(voteCounts({ kind: 'zoning', candidateVote: 'yes' }));
+  assert.ok(voteCounts({ kind: 'zoning', candidateVote: 'yes', tally: [4, 1] }));
+  assert.ok(!voteCounts({ kind: 'zoning', candidateVote: 'yes', tally: [5, 0] }));
   // an abstention record is about the abstention
   assert.ok(voteCounts({ kind: 'abstention', candidateVote: 'abstain' }));
 });

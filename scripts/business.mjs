@@ -16,12 +16,15 @@
 //   the private list
 // - a business the disclosure lists as a customer, client, tenant or source of income OF the person's company
 //   (not the company itself) is held back to the private list
+// - a tie to a vote counts only when the vote was contested: the record shows at least one no (Brit, Oct 27, 2026).
+//   The tally comes from the tie (tally, or the record label's "73-36"), or for a Florida law from the roll call the
+//   repo already read for that chapter (scripts/data/tenure). Unanimous, or no tally: the private list.
 // Rules live in scripts/lib/business-rules.mjs (tests/business.test.mjs).
 // The headline (tax dollars to a business the candidate or their spouse owns or runs, or an official act
 // of theirs that sent money to one) is written by hand in headlines.json, each with its sources.
 import fs from 'node:fs';
 import path from 'node:path';
-import { normEntity as norm, entityNames, aliasIndex, anySame, isCustomerOf, voteCounts, inWindow as inSpans, yearsFor as yearsIn, evidence as evidenceFor, endedBefore as endedIn } from './lib/business-rules.mjs';
+import { normEntity as norm, entityNames, aliasIndex, anySame, isCustomerOf, voteCounts, tieTally, inWindow as inSpans, yearsFor as yearsIn, evidence as evidenceFor, endedBefore as endedIn } from './lib/business-rules.mjs';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const dir = path.join(here, 'data', 'business');
@@ -92,6 +95,26 @@ const endedBefore = (t, d) => endedIn(SB, t, d, ALIAS);
 // (their own vote sent public money to their company's customer: Brit, Oct 27, 2026).
 // The disclosed interest a tie's business is, by exact name or curated alias
 const interestOf = t => interests.find(i => i.pid === t.pid && i.business && anySame(i.business, t.business, ALIAS));
+// Florida floor tallies by chapter law and chamber, from the roll calls already read (scripts/data/tenure)
+const LAWTALLY = { house: {}, senate: {} };
+{
+  const T = path.join(here, 'data', 'tenure');
+  for (const sub of ['prior-flhouse', 'flhouse', 'prior-flsenate', 'flsenate']) {
+    const dd = path.join(T, sub); if (!fs.existsSync(dd)) continue;
+    for (const f of fs.readdirSync(dd).filter(f => /^bills-[\d-]+\.json$/.test(f))) for (const b of JSON.parse(fs.readFileSync(path.join(dd, f), 'utf8')).bills || []) {
+      const v = b.votes || {};
+      if (v.house && v.house.tally && !LAWTALLY.house[b.chapter]) LAWTALLY.house[b.chapter] = v.house.tally;
+      if (v.senate && v.senate.tally && !LAWTALLY.senate[b.chapter]) LAWTALLY.senate[b.chapter] = v.senate.tally;
+    }
+  }
+  for (const f of [path.join(T, 'prior-flsenate', 'bills', 'rolls.jsonl'), path.join(T, 'flsenate', 'bills', 'stageC.jsonl')]) for (const c of readLines(f)) if (c.ch && c.t) LAWTALLY.senate[c.ch] = c.t;
+}
+for (const t of ties) {
+  if (t.kind === 'vote' && !tieTally(t)) {
+    const ch = (String(t.title || '').match(/Ch\.\s*(\d{4}-\d+)/) || [])[1], cham = /senate/i.test(t.body || '') ? 'senate' : /house/i.test(t.body || '') ? 'house' : null;
+    if (ch && cham && LAWTALLY[cham][ch]) t.tally = LAWTALLY[cham][ch];
+  }
+}
 for (const t of ties) {
   if (t.verified !== true || !t.pid || SKIP.has(t.pid)) continue;
   if (RELIEF.test([t.title, t.body, t.kind, t.amount].join(' '))) continue;
@@ -101,7 +124,7 @@ for (const t of ties) {
       : t.kind !== 'abstention' && !entityNames(t.business).some(b => known(t.pid, b)) ? 'no published interest has this exact name'
       : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business'
       : endedBefore(t, d) ? 'Sunbiz shows the business dissolved on ' + endedBefore(t, d).dissolved + ', before this date'
-      : !voteCounts(t) ? 'not a yes vote: the record shows ' + (t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : 'no vote by them') + ' on this action'
+      : !voteCounts(t) ? (String(t.candidateVote || '').toLowerCase() === 'yes' ? (tieTally(t) ? 'unanimous vote (' + tieTally(t).join('-') + '): unanimous votes are not ties' : 'the record read gives no tally, so the vote is not shown to be contested') : 'not a yes vote: the record shows ' + (t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : 'no vote by them') + ' on this action')
       : t.kind !== 'abstention' && isCustomerOf(interestOf(t)) && !(t.party && anySame(t.party, t.business, ALIAS)) ? 'the disclosure lists the business as a customer or source of income of a company they own, not as their own business' : null;
     if (why) { privateTies.push({ pid: t.pid, date: d, business: t.business, title: tidy(t.title), body: t.body, why, record: t.record }); continue; }
     if (!t.basis) { const e = evidence(t, Number(d.slice(0, 4))); if (e === 'lastDisclosed' || e === 'bridged') { t.basis = e; t.formYear = t.formYear || Math.max(...[...yearsFor(t.pid, t.business || '')].filter(y => y < Number(d.slice(0, 4)))); } }

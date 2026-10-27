@@ -74,14 +74,20 @@ const body = {
     'Se revisan dos tipos de actos oficiales. Votos del Gabinete: cada asunto que el Gobernador y el Gabinete decidieron como Junta de Fideicomisarios del Internal Improvement Trust Fund en las siete reuniones de marzo de 2025 a septiembre de 2026 (88 asuntos: compras de terrenos, servidumbres de conservación, servidumbres Rural and Family Lands presentadas por el Departamento de Agricultura, arrendamientos, intercambios), según las agendas del Departamento de Protección Ambiental y las transcripciones del propio Gabinete; cada parte privada se cotejó por nombre y dirección con los donantes de los tres funcionarios. Los votos del Gabinete son por moción sin objeción, así que un miembro que no objetó aparece como sí. Actos de agencia: demandas, acuerdos, citaciones y acciones de cumplimiento anunciadas por el Fiscal General (60 actos, de febrero de 2025 a octubre de 2026, según sus comunicados), cotejados igual; para el CFO y el Comisionado de Agricultura no se encontró ningún acto de agencia que nombre a un donante (las auditorías DOGE apuntan a gobiernos; las multas a aseguradoras son del Comisionado de Seguros). Los donantes son la cuenta de campaña de cada funcionario y los comités políticos que preside, de enero de 2025 a octubre de 2026, según la División de Elecciones de Florida. No revisado: las solicitudes de presupuesto de Ingoglia en el Senado en 2025, y los asuntos del Gabinete fuera de la Junta de Fideicomisarios (ventas de bonos, State Board of Administration, reglas de seguros, clemencia).',
     'Nou tcheke de kalite aksyon ofisyèl. Vòt Kabinè: chak dosye Gouvènè a ak Kabinè a te deside kòm Konsèy Administratè Internal Improvement Trust Fund lan nan sèt reyinyon depi mas 2025 rive septanm 2026 (88 dosye: acha tè, sèvitid konsèvasyon, sèvitid Rural and Family Lands Depatman Agrikilti a prezante, lokasyon, echanj), dapre ajennda Depatman Pwoteksyon Anviwònman an ak transkripsyon Kabinè a menm; nou konpare chak pati prive pa non ak adrès ak donatè twa ofisye yo. Vòt Kabinè yo fèt pa mosyon san objeksyon, kidonk yon manm ki pa t objekte parèt kòm wi. Aksyon ajans: pwosè, akò, sitasyon ak aksyon aplikasyon Pwokirè Jeneral la te anonse (60 aksyon, fevriye 2025 rive oktòb 2026, dapre kominike li yo), konpare menm jan; pou CFO a ak Komisyonè Agrikilti a nou pa jwenn okenn aksyon ajans ki nonmen yon donatè (odit DOGE yo vize gouvènman; amann asirè yo se Komisyonè Asirans lan). Donatè yo se kont kanpay chak ofisye ak komite politik li prezide, janvye 2025 rive oktòb 2026, jan yo depoze nan Divizyon Eleksyon Florid. Pa tcheke: demann bidjè Ingoglia nan Sena a an 2025, ak dosye Kabinè andeyò Konsèy Administratè a (vant obligasyon, State Board of Administration, règ asirans, klemans).'),
   actions,
-  // Everything reviewed for each officer on the ballot (cards are the reviewed items that tie to a donor):
-  // Board of Trustees items at meetings while seated, plus the agency actions of the officer's own office.
+  // Everything reviewed for each officer on the ballot that can tie (cards are the reviewed items that tie to a donor):
+  // the agency actions of the officer's own office. Board of Trustees items are votes by motion without objection, so
+  // no record shows a no vote: unanimous votes are not ties and leave the share's pool (Brit, Oct 27, 2026). They
+  // are counted apart in reviewedVotes.
   reviewed: (() => {
     const bot = JSON.parse(readFileSync(new URL('bot-agendas.json', DIR)));
     const ag = JSON.parse(readFileSync(new URL('uthmeier-actions.json', DIR)));
     const agency = JSON.parse(readFileSync(new URL('agency-actions.json', DIR)));
     const onBot = k => bot.filter(i => seated(k, i.date)).length;
-    return { Uthmeier: onBot('Uthmeier') + ag.length, Simpson: onBot('Simpson') + agency.fdacs.length, Ingoglia: onBot('Ingoglia') + agency.cfo.length };
+    return { Uthmeier: ag.length, Simpson: agency.fdacs.length, Ingoglia: agency.cfo.length };
+  })(),
+  reviewedVotes: (() => {
+    const bot = JSON.parse(readFileSync(new URL('bot-agendas.json', DIR)));
+    return Object.fromEntries(['Uthmeier', 'Simpson', 'Ingoglia'].map(k => [k, bot.filter(i => seated(k, i.date)).length]));
   })(),
 };
 

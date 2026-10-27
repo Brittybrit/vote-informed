@@ -1,0 +1,7 @@
+{
+ "note": "Laws whose staff-analysis sentence names a kind of business but does not state a benefit to it (payments, fees, revenue, tax relief, reduced costs, less competition). They are left out of every law tie and every law list (scripts/state-bills.mjs, scripts/prior-legislature.mjs). Rule: scripts/data/industry/INSTRUCTIONS.md, rule 4 (Brit, Oct 27, 2026). Keyed by Florida chapter law.",
+ "laws": {
+  "2025-137": { "bill": "HB 633", "session": 2025, "quote": "These costs would be covered by the funds DCF pays them under their contracts.", "why": "Says Behavioral Health Managing Entities' new costs are covered by their DCF contract funds; that is not a benefit to them." },
+  "2025-141": { "bill": "HB 847", "session": 2025, "quote": "may require outsourcing to a private entity", "why": "Says the Expedited DNA Testing Grant Program may require outsourcing; it states no payment, revenue or other benefit to private labs." }
+ }
+}

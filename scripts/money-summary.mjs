@@ -15,7 +15,11 @@
 //   law that helps the donor, a budget or earmark request the member filed for them, or an action the member
 //   took as head of the office (IN_FAVOR). A no vote, an absence, an abstention, a recusal or a vote the record
 //   does not give never counts. Donors tied only to items the member voted no on are kept apart in `against`.
+// - Unanimous votes are not ties (Brit, Oct 27, 2026): a yes vote counts only when the record shows at least one no
+//   (scripts/lib/contested.mjs). Unanimous votes, and votes whose tally is not known, also leave the share line's pool,
+//   so the share is of the contested votes the member cast. Requests and office actions are not votes: unaffected.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
+import { contested } from './lib/contested.mjs';
 import { fileURLToPath } from 'node:url';
 
 export const CYCLE_START = '2025-01-01';
@@ -53,7 +57,7 @@ const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? '
 // IN_FAVOR: actions that went the donor's way; the only ones whose donors count toward any headline number.
 export const CAST = new Set(['yes', 'no']);
 export const IN_FAVOR = new Set(['yes', 'requested', 'acted']);
-export const inFavor = (a, key) => IN_FAVOR.has((a.roll || {})[key]);
+export const inFavor = (a, key) => { const v = (a.roll || {})[key]; return v === 'yes' ? contested(a) : IN_FAVOR.has(v); };
 // Which actions a member's summary looks at, before the vote: a body's full bill list replaces bill cards picked
 // from donors earlier; a law voted before a member of Congress was seated has no vote for them.
 function considered(B, a, key) {
@@ -65,7 +69,8 @@ const giftsOf = (B, a, key, accts, G0) => (a.gifts || []).filter(g => g.to === k
 const DONOR_FIRST = new Set(['southmiami', 'pinecrest', 'medley']);
 function shareOf(B, key, tied) {
   const tiedIds = new Set(tied.map(([a]) => a.id));
-  const sat = a => a.roll && CAST.has(a.roll[key]);
+  // the pool: contested votes the member cast (a unanimous vote, or one whose tally is not known, is left out)
+  const sat = a => a.roll && CAST.has(a.roll[key]) && contested(a);
   let pool, def;
   if (B.type === 'requests') { pool = B.actions.filter(a => a.kind === 'request' && a.roll && a.roll[key] === 'requested'); def = B.level === 'federal' ? 'earmarks' : 'requests'; }
   else if (B.cabinet) { const n = (B.reviewed || {})[key]; return n ? { def: 'cabinet', n, tied: tiedIds.size, from: '2025-01' } : undefined; }
@@ -184,7 +189,7 @@ export function build(decisions, officesHeld) {
         // When the body's bill cards are a full list (every enacted law whose analysis names a kind of business
         // it helps, built without looking at donors), count the laws the member voted on and how many drew
         // money from donors in that kind of business. One law can have a vote in each chamber: counted once.
-        const uni = B.actions.filter(a => a.kind === 'bill' && a.universe && ['yes', 'no'].includes(a.roll[key]));
+        const uni = B.actions.filter(a => a.kind === 'bill' && a.universe && ['yes', 'no'].includes(a.roll[key]) && contested(a));
         if (uni.length) {
           const laws = new Set(uni.map(a => a.ref));
           // tied: laws the member voted yes on that help an industry whose donors gave
