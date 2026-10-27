@@ -2,9 +2,9 @@
  "about": "Individual gifts that count for a law only with an official record of the executive donor's stake (scripts/lib/donor-class.mjs rule 5): occupation names the business with an executive title and no owner title; card is a contested floor vote the candidate voted yes on. Built by scripts/exec-candidates.mjs. resolved: the donor has a record in exec-records.json.",
  "built": "2026-10-27",
  "totals": {
-  "gifts": 61,
-  "donors": 45,
-  "dollars": 299750,
+  "gifts": 54,
+  "donors": 41,
+  "dollars": 293200,
   "resolved": {
    "gifts": 6,
    "donors": 2,
@@ -28,11 +28,6 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV25-180-1008",
-     "ref": "SB 180 · 2025",
-     "cls": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
-    },
-    {
      "card": "SV21-88-1006",
      "ref": "SB 88 · 2021",
      "cls": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH"
@@ -55,11 +50,6 @@
    "candidate": "Rodriguez",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV25-180-1008",
-     "ref": "SB 180 · 2025",
-     "cls": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
-    },
     {
      "card": "SV21-88-1006",
      "ref": "SB 88 · 2021",
@@ -258,29 +248,6 @@
    "resolved": false
   },
   {
-   "key": "BONWITT GIL",
-   "donor": "BONWITT GIL",
-   "occ": "PRIVATE EQUITY FIRM PRINCIPAL",
-   "occs": [
-    "PRIVATE EQUITY FIRM PRINCIPAL"
-   ],
-   "addr": "1472 PRESIDENTIAL WAY",
-   "city": "MIAMI, FL 33179",
-   "amount": 250,
-   "date": "2026-09-06",
-   "acct": "calatayud",
-   "candidate": "Calatayud",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-532-2016",
-     "ref": "SB 532 · 2024",
-     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
-    }
-   ],
-   "resolved": false
-  },
-  {
    "key": "BROCHARD LEILANI M",
    "donor": "BROCHARD LEILANI M",
    "occ": "TOWING EXECUTIVE",
@@ -319,11 +286,6 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
@@ -354,107 +316,7 @@
     {
      "card": "SV26-399-1009",
      "ref": "HB 399 · 2026",
-     "cls": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "DANIAL ETHAN",
-   "donor": "DANIAL ETHAN",
-   "occ": "EXECUTIVE",
-   "occs": [
-    "EXECUTIVE",
-    "PRIVATE EQUITY ANALYST EXEC.",
-    "EXECUTIVE EQUITY ANALYST"
-   ],
-   "addr": "202 CALLE TETUAN",
-   "city": "SAN JUAN, PUERTO RICO, XC 00901",
-   "amount": 1000,
-   "date": "2023-02-19",
-   "acct": "pc80728",
-   "candidate": "Calatayud",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-532-2016",
-     "ref": "SB 532 · 2024",
-     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "DANIAL ETHAN",
-   "donor": "DANIAL ETHAN",
-   "occ": "EXECUTIVE EQUITY ANALYST",
-   "occs": [
-    "EXECUTIVE EQUITY ANALYST",
-    "PRIVATE EQUITY ANALYST EXEC.",
-    "EXECUTIVE"
-   ],
-   "addr": "202 CALLE TETUAN",
-   "city": "SAN JUAN, XC 00901",
-   "amount": 1000,
-   "date": "2023-02-19",
-   "acct": "pc70258",
-   "candidate": "Rodriguez",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-532-2016",
-     "ref": "SB 532 · 2024",
-     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "DANIAL ETHAN",
-   "donor": "DANIAL ETHAN",
-   "occ": "PRIVATE EQUITY ANALYST EXEC.",
-   "occs": [
-    "PRIVATE EQUITY ANALYST EXEC.",
-    "EXECUTIVE",
-    "EXECUTIVE EQUITY ANALYST"
-   ],
-   "addr": "5151 COLLINS AVE. APT. 1023",
-   "city": "MIAMI, FL 33140",
-   "amount": 650,
-   "date": "2026-04-30",
-   "acct": "calatayud",
-   "candidate": "Calatayud",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-532-2016",
-     "ref": "SB 532 · 2024",
-     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "DANIAL ETHAN",
-   "donor": "DANIAL ETHAN",
-   "occ": "PRIVATE EQUITY ANALYST EXEC.",
-   "occs": [
-    "PRIVATE EQUITY ANALYST EXEC.",
-    "EXECUTIVE",
-    "EXECUTIVE EQUITY ANALYST"
-   ],
-   "addr": "5151 COLLINS AVE",
-   "city": "MIAMI, FL 33140",
-   "amount": 650,
-   "date": "2026-04-30",
-   "acct": "pc80728",
-   "candidate": "Calatayud",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-532-2016",
-     "ref": "SB 532 · 2024",
-     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+     "cls": "DEVELOP"
     }
    ],
    "resolved": false
@@ -476,19 +338,9 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
      "card": "SV23-360-1007",
@@ -520,19 +372,9 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
      "card": "SV23-360-1007",
@@ -811,7 +653,7 @@
     {
      "card": "SB 7070 · Ch. 2019-23",
      "ref": "SB 7070 · Ch. 2019-23",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+     "cls": "CONTRACTOR|CONSTRUCTION|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
     },
     {
      "card": "SB 7068 · Ch. 2019-43",
@@ -953,7 +795,7 @@
     {
      "card": "SB 7070 · Ch. 2019-23",
      "ref": "SB 7070 · Ch. 2019-23",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+     "cls": "CONTRACTOR|CONSTRUCTION|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
     },
     {
      "card": "SB 7068 · Ch. 2019-43",
@@ -978,11 +820,6 @@
    "candidate": "Ingoglia",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
     {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
@@ -1129,19 +966,9 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
      "card": "SV23-360-1007",
@@ -1167,11 +994,6 @@
    "candidate": "Ingoglia",
    "body": "flsenate",
    "cards": [
-    {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
     {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
@@ -1202,19 +1024,9 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
      "card": "SV23-360-1007",
@@ -1242,27 +1054,12 @@
     {
      "card": "SB 7070 · Ch. 2019-23",
      "ref": "SB 7070 · Ch. 2019-23",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+     "cls": "CONTRACTOR|CONSTRUCTION|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
     },
     {
      "card": "SB 7068 · Ch. 2019-43",
      "ref": "SB 7068 · Ch. 2019-43",
      "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
-    },
-    {
-     "card": "HB 1247 · Ch. 2019-94",
-     "ref": "HB 1247 · Ch. 2019-94",
-     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "HB 905 · Ch. 2019-153",
-     "ref": "HB 905 · Ch. 2019-153",
-     "cls": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR"
-    },
-    {
-     "card": "SB 7018 · Ch. 2020-21",
-     "ref": "SB 7018 · Ch. 2020-21",
-     "cls": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR"
     }
    ],
    "resolved": false
@@ -1288,47 +1085,9 @@
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
     },
     {
-     "card": "SB 250 · Ch. 2023-304",
-     "ref": "SB 250 · Ch. 2023-304",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "HB 705 · Ch. 2024-208",
      "ref": "HB 705 · Ch. 2024-208",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "HB 619 · Ch. 2024-271",
-     "ref": "HB 619 · Ch. 2024-271",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    }
-   ],
-   "resolved": false
-  },
-  {
-   "key": "PAULUS DAN",
-   "donor": "PAULUS DAN",
-   "occ": "ENGINEERING EXEC.",
-   "occs": [
-    "ENGINEERING EXEC."
-   ],
-   "addr": "1215 WALLACE DR",
-   "city": "DELRAY BEACH, FL 33444",
-   "amount": 500,
-   "date": "2020-06-23",
-   "acct": "rodriguez",
-   "candidate": "Rodriguez",
-   "body": "flsenate",
-   "cards": [
-    {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     }
    ],
    "resolved": false
@@ -1380,29 +1139,6 @@
    "resolved": false
   },
   {
-   "key": "REYES M JUDE",
-   "donor": "REYES M. JUDE",
-   "occ": "EXECUTIVE-BEER & FOOD DISTRIBU",
-   "occs": [
-    "EXECUTIVE-BEER & FOOD DISTRIBU"
-   ],
-   "addr": "777 SOUTH FLAGLER DRIVE, SUITE 1500",
-   "city": "WEST PALM BEACH, FL 33401",
-   "amount": 2500,
-   "date": "2021-03-01",
-   "acct": "pc64489-avila",
-   "candidate": "bryan-avila",
-   "body": "fl-senate",
-   "cards": [
-    {
-     "card": "HB 1459 · Ch. 2023-294",
-     "ref": "HB 1459 · Ch. 2023-294",
-     "cls": "BREW|BEER|ALE |CRAFT"
-    }
-   ],
-   "resolved": false
-  },
-  {
    "key": "SCHAFER ROBERT",
    "donor": "SCHAFER ROBERT",
    "occ": "RANGER CONSTRUCTION EXECUTIVE",
@@ -1423,19 +1159,9 @@
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
     },
     {
-     "card": "SB 250 · Ch. 2023-304",
-     "ref": "SB 250 · Ch. 2023-304",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "HB 705 · Ch. 2024-208",
      "ref": "HB 705 · Ch. 2024-208",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "HB 619 · Ch. 2024-271",
-     "ref": "HB 619 · Ch. 2024-271",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
     }
    ],
    "resolved": false
@@ -1458,7 +1184,7 @@
     {
      "card": "HB 7099 · Ch. 2016-220",
      "ref": "HB 7099 · Ch. 2016-220",
-     "cls": "MANUFACTUR|FABRICAT|PACKING|SCRAP|METAL RECYCL|CRUISE|CARNIVAL|ROYAL CARIBBEAN|NORWEGIAN"
+     "cls": "MANUFACTUR|FABRICAT|PACKING|SCRAP|METAL RECYCL|CRUISE|ROYAL CARIBBEAN|NORWEGIAN|CARNIVAL CORP|CARNIVAL CRUISE"
     },
     {
      "card": "HB 7007 · Ch. 2013-39",
@@ -1657,19 +1383,9 @@
    "body": "flsenate",
    "cards": [
     {
-     "card": "SV24-619-2037",
-     "ref": "HB 619 · 2024",
-     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
-    },
-    {
      "card": "SV24-705-1041",
      "ref": "HB 705 · 2024",
      "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
-    },
-    {
-     "card": "SV24-781-1048",
-     "ref": "HB 781 · 2024",
-     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
     },
     {
      "card": "SV23-360-1007",

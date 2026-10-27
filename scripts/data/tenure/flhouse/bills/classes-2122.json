@@ -14,7 +14,7 @@
   "tags": [
    "telecom"
   ],
-  "re": "BROADBAND|TELECOM|COMCAST|CHARTER|AT&T|CABLE|INTERNET|WIRELESS"
+  "re": "BROADBAND|COMCAST|CHARTER|AT&T|CABLE|INTERNET"
  },
  "2021-31": {
   "tags": [
@@ -26,7 +26,8 @@
   "conditional": "Owners of multifamily projects that provide housing to extremely-low-income, very-low-income, or low- income families"
  },
  "2021-56": {
-  "re": "OUTDOOR RECREATION|CAMPGROUND|HUNTING|RANCH|PLANTATION|EQUESTRIAN"
+  "re": "OUTDOOR RECREATION|CAMPGROUND|HUNTING|RANCH|PLANTATION|EQUESTRIAN",
+  "conditional": "private property owners that derive such revenue and retain the liability protection"
  },
  "2021-79": {
   "re": "AQUACULTURE|FISH FARM|HATCHERY|BASS"
@@ -69,7 +70,7 @@
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|SUBCONTRACT|CONSTRUCTION|BUILDER|CONCRETE|ROOFING|PLUMBING|DRYWALL|ELECTRICAL",
+  "re": "SUBCONTRACT",
   "not": "FTBA|TRANSPORTATION BUILDERS|ROAD"
  },
  "2021-125": {
@@ -106,13 +107,13 @@
    "education-other"
   ],
   "re": "PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL",
-  "not": "CHARTER|UNIVERSITY|COLLEGE|PUBLIC SCHOOL"
+  "not": "CHARTER|UNIVERSITY|COLLEGE|PUBLIC SCHOOL|HAIR|BEAUTY|COSMETOLOG|BARBER"
  },
  "2021-166": {
   "tags": [
    "alcohol-beverage"
   ],
-  "re": "DISTILL|SPIRITS"
+  "re": "DISTILL"
  },
  "2021-194": {
   "tags": [
@@ -134,17 +135,17 @@
    "homebuilders"
   ],
   "re": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR",
-  "not": "FTBA|TRANSPORTATION|ROAD"
+  "not": "FTBA|TRANSPORTATION|ROAD|STAIRS"
  },
  "2021-202": {
-  "re": "HOME BASED|HOME-BASED|SELF-EMPLOYED|SELF EMPLOYED|SMALL BUSINESS OWNER|NFIB"
+  "re": "HOME BASED|HOME-BASED"
  },
  "2021-206": {
   "tags": [
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|LAND|REAL ESTATE|HOMEBUILD|HOME BUILD|BUILDER",
+  "re": "DEVELOP|LAND",
   "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
  },
  "2021-218": {
@@ -156,7 +157,7 @@
    "gambling-casinos"
   ],
   "re": "PARI|RACING|RACETRACK|JAI|KENNEL|GREYHOUND|CASINO|GAMING|POKER|GULFSTREAM|MAGIC CITY|HIALEAH PARK",
-  "not": "SEMINOLE TRIBE"
+  "not": "SEMINOLE TRIBE|CAR RACING"
  },
  "2022-10": {
   "tags": [
@@ -185,7 +186,7 @@
   "tags": [
    "nursing-homes"
   ],
-  "re": "NURSING|REHAB|ASSISTED LIVING|HEALTH CARE ASSOCIATION|SKILLED"
+  "re": "NURSING|REHAB|HEALTH CARE ASSOCIATION|SKILLED"
  },
  "2022-74": {
   "tags": [
@@ -222,7 +223,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|REAL ESTATE|HOMEBUILD|HOME BUILD|BUILDER|LAND",
+  "re": "DEVELOP|LAND",
   "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
  },
  "2022-124": {
@@ -236,7 +237,8 @@
    "payday-consumer-finance"
   ],
   "re": "CONSUMER FINANCE|LOAN|LENDING|FINANCE COMPANY|AMSCOT|CREDIT",
-  "not": "CREDIT UNION|BANK"
+  "not": "CREDIT UNION|BANK",
+  "conditional": "companies with less liquid assets to become licensed"
  },
  "2022-138": {
   "tags": [
@@ -259,7 +261,8 @@
    "realestate-dev"
   ],
   "re": "AFFORDABLE|HOUSING|DEVELOP|MULTIFAMILY|APARTMENT",
-  "not": "AUTHORITY"
+  "not": "AUTHORITY",
+  "conditional": "Developers incorporating affordable housing into development projects"
  },
  "2022-192": {
   "tags": [
@@ -279,13 +282,14 @@
   "tags": [
    "realestate-dev"
   ],
-  "re": "APARTMENT|MULTIFAMILY|MULTI-FAMILY|PROPERTY MANAGEMENT|RESIDENTIAL MANAGEMENT|LANDLORD|RENTAL"
+  "re": "APARTMENT|MULTIFAMILY|MULTI-FAMILY|LANDLORD|RENTAL"
  },
  "2022-215": {
   "tags": [
    "waste-environment",
    "agriculture-other"
   ],
-  "re": "ENVIRONMENTAL|WATER QUALITY|WETLAND|MITIGATION|RESTORATION|RANCH|CATTLE"
+  "re": "ENVIRONMENTAL|WATER QUALITY|WETLAND|MITIGATION|RESTORATION|RANCH|CATTLE",
+  "conditional": "entities that establish WQEAs"
  }
 }

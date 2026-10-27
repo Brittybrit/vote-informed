@@ -5,14 +5,14 @@
    "insurance-other"
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
-  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
+  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK|AVMED"
  },
  "2023-17": {
   "tags": [
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "re": "DEVELOP|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2023-22": {
@@ -21,7 +21,7 @@
    "homebuilders"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD",
-  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD"
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD|STAIRS"
  },
  "2023-29": {
   "tags": [
@@ -87,7 +87,7 @@
   "tags": [
    "construction"
   ],
-  "re": "SEPTIC|SEWER|WASTEWATER|PLUMB|UTILIT"
+  "re": "SEPTIC"
  },
  "2023-171": {
   "tags": [],
@@ -126,11 +126,12 @@
  },
  "2023-205": {
   "tags": [],
-  "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+  "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND",
+  "conditional": "each offering that does not exceed the amount provided in s. 3(b)"
  },
  "2023-206": {
   "tags": [],
-  "re": "CREDIT COUNSEL|DEBT MANAGEMENT|DEBT RELIEF|CONSUMER CREDIT"
+  "re": "CREDIT COUNSEL|DEBT MANAGEMENT|CONSUMER CREDIT"
  },
  "2023-211": {
   "tags": [
@@ -145,7 +146,7 @@
  },
  "2023-222": {
   "tags": [],
-  "re": "BASEBALL|MARLINS|RAYS|YANKEES|BLUE JAYS|PHILLIES|BRAVES|ORIOLES|TIGERS|CARDINALS|NATIONALS|ASTROS|METS|PIRATES|RED SOX|TWINS|SPORTS"
+  "re": "BASEBALL|MARLINS|RAYS|YANKEES|BLUE JAYS|PHILLIES|BRAVES|ORIOLES|TIGERS|CARDINALS|NATIONALS|ASTROS|METS|PIRATES|RED SOX|TWINS"
  },
  "2023-223": {
   "tags": [],
@@ -157,13 +158,14 @@
  },
  "2023-225": {
   "tags": [],
-  "re": "MONITORING|ELECTRONIC MONITOR|BI INC|SUPERCOM|SECURUS|ATTENTI|SENTINEL|BAIL BOND"
+  "re": "MONITORING|ELECTRONIC MONITOR|BI INC|SUPERCOM|SECURUS|ATTENTI|SENTINEL|BAIL BOND",
+  "conditional": "any contracted company providing such services"
  },
  "2023-226": {
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDING SUPPLY|BUILDING MATERIAL|LUMBER|CONCRETE|SUBCONTRACT"
+  "re": "SUBCONTRACT|BUILDING SUPPLY|BUILDING MATERIAL|LUMBER|CONCRETE"
  },
  "2023-229": {
   "tags": [
@@ -225,7 +227,7 @@
   "tags": [
    "alcohol-beverage"
   ],
-  "re": "BREW|BEER|ALE |CRAFT"
+  "re": "BREW|CRAFT"
  },
  "2023-296": {
   "tags": [
@@ -236,10 +238,9 @@
  },
  "2023-304": {
   "tags": [
-   "engineering",
-   "construction"
+   "engineering"
   ],
-  "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+  "re": "ENGINEER|ARCHITECT|SURVEY"
  },
  "2023-349": {
   "tags": [
@@ -294,7 +295,7 @@
    "alcohol-beverage",
    "retail"
   ],
-  "re": "WINE|LIQUOR|SPIRITS|BEVERAGE|PUBLIX|ABC FINE|TOTAL WINE"
+  "re": "WINE|ABC FINE|TOTAL WINE"
  },
  "2024-62": {
   "tags": [],
@@ -332,8 +333,8 @@
   "tags": [
    "alcohol-beverage"
   ],
-  "re": "DISTRIBUT|WHOLESAL|SOUTHERN GLAZER|BEVERAGE PAC",
-  "not": "PEPSI|SYSCO|COCA"
+  "re": "DISTRIBUT|SOUTHERN GLAZER",
+  "not": "PEPSI|SYSCO|COCA|BEER"
  },
  "2024-88": {
   "tags": [
@@ -347,13 +348,14 @@
    "construction",
    "engineering"
   ],
-  "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+  "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP",
+  "conditional": "contracting with RPEs through such means"
  },
  "2024-98": {
   "tags": [
    "telecom"
   ],
-  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS"
+  "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|INTERNET"
  },
  "2024-108": {
   "tags": [
@@ -388,7 +390,8 @@
  },
  "2024-168": {
   "tags": [],
-  "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+  "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND",
+  "conditional": "reduce costs of conducting an exempt offering"
  },
  "2024-172": {
   "tags": [
@@ -408,7 +411,8 @@
   "tags": [
    "engineering"
   ],
-  "re": "ENGINEER|WATER|WASTEWATER|UTILIT|ENVIRONMENTAL CONSULT"
+  "re": "ENGINEER|WATER|WASTEWATER|UTILIT|ENVIRONMENTAL CONSULT",
+  "conditional": "businesses which facilitate the preparation of reuse feasibility studies"
  },
  "2024-190": {
   "tags": [],
@@ -436,14 +440,15 @@
   "tags": [
    "hospitals"
   ],
-  "re": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER"
+  "re": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER",
+  "conditional": "rural hospitals that convert to rural emergency hospitals"
  },
  "2024-204": {
   "tags": [
    "engineering",
    "construction"
   ],
-  "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+  "re": "ENGINEER|ARCHITECT|SURVEY|CONSTRUCTION MANAGEMENT|PROJECT MANAGEMENT"
  },
  "2024-206": {
   "tags": [
@@ -456,13 +461,14 @@
    "construction"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
-  "not": "FTBA|AGGREGATE"
+  "not": "FTBA|AGGREGATE|MATERIAL|SUPPL"
  },
  "2024-209": {
   "tags": [
    "physicians"
   ],
-  "re": "PHYSICIAN|MEDICAL|ORTHOPED|ORTHOPAED|CARDIOLOG|ONCOLOG"
+  "re": "PHYSICIAN|MEDICAL|ORTHOPED|ORTHOPAED|CARDIOLOG|ONCOLOG",
+  "conditional": "Authorized medical specialist providers"
  },
  "2024-212": {
   "tags": [
@@ -489,7 +495,8 @@
    "hospitals",
    "health-other"
   ],
-  "re": "PHYSICIAN|MEDICAL|SURG|ORTHOPED|ORTHOPAED|RADIOLOG|THERAP|HOSPITAL"
+  "re": "PHYSICIAN|MEDICAL|SURG|ORTHOPED|ORTHOPAED|RADIOLOG|THERAP|HOSPITAL",
+  "not": "RISK PURCHASING"
  },
  "2024-260": {
   "tags": [],
@@ -509,10 +516,10 @@
  },
  "2024-271": {
   "tags": [
-   "engineering",
-   "construction"
+   "engineering"
   ],
-  "re": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+  "re": "ENGINEER|INSPECT",
+  "conditional": "a professional firm shielded by sovereign immunity protections"
  },
  "2024-276": {
   "tags": [],

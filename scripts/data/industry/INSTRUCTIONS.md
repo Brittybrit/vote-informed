@@ -52,6 +52,14 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
    Federal laws: `conditional` on the bill in the floor-votes files; such a law ties no PAC. A qualifier that only
    describes the whole business ("companies that manufacture buoys", "craft brewers, who may pay less") is not one.
 
+8. **The class names only what the analysis names** (Brit, Oct 27, 2026). Every term in `re` must be a kind of business
+   the quoted analysis names, or a company that is one. A neighbouring trade does not count: HB 619 (2024) helps a
+   "professional firm" doing FDOT monitoring and inspection, so contractors are out; a law for developers does not
+   take home builders or realtors; one for craft brewers does not take beer distributors; one for landlords does not
+   take property managers; one for subcontractors does not take general contractors; one for contractors does not
+   take materials suppliers (`not`). CCNA "professional services" are the statute's own list (s. 287.055: architecture,
+   engineering, landscape architecture, surveying and mapping).
+
 Federal law ties use company and trade-association PACs listed by name per class (`scripts/data/federal/floor-votes.json`
 and the tenure files); no individuals and no unions. The NRA was removed from the firearms class (it is not a
 trade association of firearm businesses).

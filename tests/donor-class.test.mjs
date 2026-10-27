@@ -54,7 +54,7 @@ test('employees of a business in the industry are not the business (Nixon cases)
 });
 
 test('realtors are not developers', () => {
-  for (const ref of ['HB 927 · 2026', 'SB 784 · 2025']) {
+  for (const ref of ['HB 927 · 2026', 'HB 399 · 2026']) {
     assert.ok(!fits(ref, 'DAVIDSON ELSIE', 'REALTOR'), ref);
     assert.ok(!fits(ref, 'REALTORS POLITICAL ADVOCACY COMMITTEE', 'POLITICAL COMMITTEE (PC)'), ref);
     assert.ok(fits(ref, 'WOHL MICHAEL D.', 'REAL ESTATE DEVELOPER'), ref);
@@ -77,11 +77,11 @@ test('analysis sentences that state no benefit leave the law out (HB 633 and HB 
 });
 
 test('practitioners and the businesses themselves still tie (Nixon cases)', () => {
-  for (const ref of ['SB 362 · 2024', 'SB 808 · 2024', 'HB 1175 · 2026']) {
+  for (const ref of ['SB 362 · 2024', 'HB 1175 · 2026']) {
     assert.ok(fits(ref, 'COWART JENNIFER', 'PHYSICIAN'), ref);
     assert.ok(nixon(ref).has('COWART JENNIFER') && nixon(ref).has('KHATIB YAZAN'), ref);
   }
-  for (const ref of ['HB 1137 · 2026', 'HB 709 · 2024']) {
+  for (const ref of ['HB 1137 · 2026']) {
     assert.ok(fits(ref, 'NORTH FLORIDA SALES', 'BEER DISTRIBUTOR'), ref);
     assert.ok(fits(ref, 'FLORIDA BEER WHOLESALERS GOOD GOVERNMENT COMMITTEE', 'PAC'), ref);
     assert.ok(nixon(ref).has('NORTH FLORIDA SALES') && nixon(ref).has('FLORIDA BEER WHOLESALERS GOOD GOVERNMENT COMMITTEE'), ref);
@@ -183,14 +183,14 @@ test('SEC records on file: Stuart A. Miller (Lennar) and George Feldenkreis (Per
     assert.match(r.recordUrl, /^https:\/\/(www\.sec\.gov|search\.sunbiz\.org)\//, k);
     assert.ok(r.quote && r.company && r.role && r.source, k);
   }
-  for (const ref of ['SB 360 · 2023', 'HB 619 · 2024', 'HB 705 · 2024']) {
+  for (const ref of ['SB 360 · 2023', 'HB 705 · 2024']) {
     assert.ok(fits(ref, 'MILLER STUART A.', 'CONSTRUCTION COMPANY EXECUTIVE'), ref);
     assert.ok(!fits(ref, 'MILLER STUART', 'CONSTRUCTION COMPANY EXECUTIVE'), ref + ' (a different report spelling needs its own record)');
   }
   assert.ok(fitsLaw(RETAIL, 'FELDENKREIS GEORGE', 'RETAIL CO. DIRECTOR', []));
   // on the cards, with the record attached, for members seated for the vote
   const S = d.bodies.find(b => b.key === 'flsenate');
-  const card = S.actions.find(a => a.id === 'SV24-619-2037');
+  const card = S.actions.find(a => a.id === 'SV24-705-1041');
   const g = card.gifts.filter(g => donorKey(g.donor) === 'MILLER STUART A');
   assert.ok(g.some(x => x.to === 'Calatayud' && x.amount === 50000), 'Calatayud');
   assert.ok(g.some(x => x.to === 'Ingoglia' && x.amount === 25000), 'Ingoglia');
@@ -233,4 +233,36 @@ test('conditional benefits: every marked class quotes words from its own analysi
   const cond = new Set([...J('scripts/data/federal/floor-votes.json').bills, ...(opt(T + 'congress/floor-votes-tenure.json').bills || [])].filter(b => b.conditional).map(b => b.ref));
   assert.ok(cond.size > 5);
   for (const B of us) for (const a of B.actions) if (a.kind === 'bill' && cond.has(a.ref)) assert.equal(a.gifts.filter(g => g.kind === 'class').length, 0, a.id);
+});
+
+// Over-breadth (Brit, Oct 27, 2026): a class names only the kinds of business its own analysis names
+test('HB 619 (2024) helps professional firms doing FDOT monitoring and inspection: contractors do not tie', () => {
+  const k = K('HB 619 · 2024');
+  assert.ok(!/CONTRACTOR|CONSTRUCTION|DEBRIS/.test(k.re), k.re);
+  for (const [n, o] of [['MINION JAMES', 'CONTRACTOR'], ['MINION JAMES', 'SIGN CONTRACTOR/SELF'], ['ALVAREZ JOSE', 'CONTRACTOR'], ['RED APPLE DEVELOPMENT, LLC', 'CONSTRUCTION']]) assert.ok(!fits('HB 619 · 2024', n, o), n + ' ' + o);
+  assert.ok(!nixon('HB 619 · 2024').has('MINION JAMES'));
+  // and it is conditional: only a firm shielded by the FDOT contract immunity, which no record here shows
+  assert.match(k.conditional, /professional firm shielded by sovereign immunity/);
+  for (const B of d.bodies.filter(b => b.key === 'flhouse' || b.key === 'flsenate')) for (const a of B.actions) if (a.ref === 'HB 619 · 2024') assert.equal(a.gifts.filter(g => g.kind === 'class').length, 0, a.id);
+});
+
+test('other classes cut to what the analysis names', () => {
+  // HB 149 (2024): CCNA professional services, construction management, project management; not builders
+  assert.ok(!fits('HB 149 · 2024', 'MILLER STUART A.', 'CONSTRUCTION COMPANY EXECUTIVE'));
+  assert.ok(!fits('HB 149 · 2024', 'MINION JAMES', 'CONTRACTOR'));
+  // HB 1459 (2023): craft brewers and brewpubs, not beer distributors
+  assert.ok(!fits('HB 1459 · 2023', 'NORTH FLORIDA SALES', 'BEER DISTRIBUTOR'));
+  // HB 709 (2024): liquor distributors, not beer wholesalers
+  assert.ok(!fits('HB 709 · 2024', 'FLORIDA BEER WHOLESALERS GOOD GOVERNMENT COMMITTEE', 'PAC'));
+  // HB 583 (2024): businesses that sell wine, not beer wholesalers
+  assert.ok(!fits('HB 583 · 2024', 'GOLD COAST BEVERAGE, LLC', 'BEVERAGE WHOLESALER'));
+  // HB 615 (2025): landlords, not property managers
+  assert.ok(!fits('HB 615 · 2025', '7501 PARKLAND LLC', 'PROPERTY MANAGEMENT'));
+  // HB 705 (2024): contractors, not a construction materials supplier
+  assert.ok(!fits('HB 705 · 2024', 'CEMEX MATERIALS LLC', 'CONSTRUCTION MATERIALS'));
+  // developers are not home builders (HB 927, 2026); SB 808 (2024) pays only authorized medical specialists, SB 784 (2025) helps
+  // only those whose plats are in process: both conditional, so no record, no tie
+  assert.ok(!fits('HB 927 · 2026', 'FLORIDA HOME BUILDERS PAC', 'PAC'));
+  assert.ok(!fits('SB 808 · 2024', 'COWART JENNIFER', 'PHYSICIAN'));
+  assert.ok(!fits('SB 784 · 2025', 'WOHL MICHAEL D.', 'REAL ESTATE DEVELOPER'));
 });

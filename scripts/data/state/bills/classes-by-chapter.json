@@ -10,7 +10,7 @@
   "tags": [
    "realestate-dev"
   ],
-  "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
+  "re": "APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD"
  },
  "2025-33": {
   "tags": [],
@@ -23,7 +23,7 @@
  },
  "2025-41": {
   "tags": [],
-  "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR"
+  "re": "MARINA|BOAT|MARINE MANUFACT|MARINE INDUSTR"
  },
  "2025-38": {
   "tags": [
@@ -84,7 +84,7 @@
    "construction",
    "engineering"
   ],
-  "re": "CONSTRUCTION|CONTRACTOR|BUILDER|INSPECT|PLAN REVIEW|ENGINEER",
+  "re": "CONSTRUCTION|CONTRACTOR|BUILDER|INSPECT|PLAN REVIEW",
   "not": "FTBA|TRANSPORTATION|AGGREGATE|CONCRETE|ELECTRICAL|ROAD"
  },
  "2025-141": {
@@ -106,7 +106,8 @@
    "cruise-maritime"
   ],
   "re": "FTBA|TRANSPORTATION BUILDER|ROAD|PAVING|ASPHALT|AGGREGATE|HIGHWAY|BRIDGE|SHIPBUILD|SHIPYARD",
-  "not": "CRUISE|PILOT|LONGSHORE"
+  "not": "CRUISE|PILOT|LONGSHORE",
+  "conditional": "FDOT's contractors"
  },
  "2025-160": {
   "tags": [],
@@ -119,7 +120,8 @@
    "homebuilders"
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
-  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
+  "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
+  "conditional": "those relying on a local government to process applications"
  },
  "2025-190": {
   "tags": [
@@ -127,14 +129,16 @@
    "agriculture-sugar",
    "agriculture-citrus"
   ],
-  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
+  "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
+  "conditional": "with agricultural equipment unable to be used due to hurricanes"
  },
  "2025-199": {
   "tags": [
    "grocery",
    "retail"
   ],
-  "re": "PUBLIX|WALMART|7-ELEVEN|7 ELEVEN|CIRCLE K|WAWA|RACETRAC|SPEEDWAY|WINN-DIXIE|CONVENIENCE STORE"
+  "re": "PUBLIX|WALMART|7-ELEVEN|7 ELEVEN|CIRCLE K|WAWA|RACETRAC|SPEEDWAY|WINN-DIXIE|CONVENIENCE STORE",
+  "conditional": "the commission for lottery ticket sales"
  },
  "2025-203": {
   "tags": [
@@ -173,7 +177,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "re": "DEVELOP",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2026-64": {
@@ -181,7 +185,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "re": "DEVELOP",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2026-84": {
@@ -199,7 +203,7 @@
    "homebuilders",
    "affordable-housing"
   ],
-  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2026-37": {
@@ -227,7 +231,7 @@
    "gambling-casinos",
    "pari-mutuel"
   ],
-  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|JAI|CAESARS|DOWNS|TRACK|CARDROOM",
   "not": "SEMINOLE|MICCOSUKEE|VGW"
  },
  "2026-239": {
@@ -236,7 +240,7 @@
    "pari-mutuel",
    "agriculture-citrus"
   ],
-  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM|PACKING",
+  "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|JAI|CAESARS|DOWNS|TRACK|CARDROOM|PACKING",
   "not": "SEMINOLE|MICCOSUKEE|VGW"
  },
  "2026-150": {
@@ -245,14 +249,16 @@
    "insurance-other"
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
-  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK"
+  "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
+  "conditional": "diversion of commercial residential and commercial nonresidential risks from Citizens"
  },
  "2026-236": {
   "tags": [
    "hospitals",
    "nursing-homes"
   ],
-  "re": "HOSPITAL|NURSING|REHAB|HEALTH SYSTEM|TENET|MOUNT SINAI|TAMPA GENERAL|HSA |SAFETY NET|HEALTH RESORT|HCA"
+  "re": "HOSPITAL|NURSING|REHAB|HEALTH SYSTEM|TENET|MOUNT SINAI|TAMPA GENERAL|HSA |SAFETY NET|HEALTH RESORT|HCA",
+  "conditional": "increasing the QIP pool percentage"
  },
  "2026-103": {
   "tags": [],
@@ -270,7 +276,8 @@
  },
  "2026-198": {
   "tags": [],
-  "re": "DAY CARE|DAYCARE|CHILD CARE"
+  "re": "DAY CARE|DAYCARE",
+  "conditional": "existing family day care homes"
  },
  "2025-122": {
   "tags": [
@@ -284,7 +291,8 @@
    "nursing-homes",
    "health-other"
   ],
-  "re": "HOSPITAL|HEALTH SYSTEM|NURSING|SENIOR LIVING|CONTINUING CARE|TENET|HCA|BAPTIST|ADVENTHEALTH|ORLANDO HEALTH|MOUNT SINAI"
+  "re": "HOSPITAL|HEALTH SYSTEM|NURSING|SENIOR LIVING|CONTINUING CARE|TENET|HCA|BAPTIST|ADVENTHEALTH|ORLANDO HEALTH|MOUNT SINAI",
+  "conditional": "assist private entities in acquiring, constructing, financing, and refinancing projects"
  },
  "2025-181": {
   "tags": [
@@ -312,7 +320,7 @@
    "homebuilders"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER|ROOF|PLUMB|ELECTRIC",
-  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD"
+  "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD|MATERIAL|SUPPL"
  },
  "2026-125": {
   "tags": [
