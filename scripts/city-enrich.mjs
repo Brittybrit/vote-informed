@@ -6,10 +6,14 @@
 // on every action of the list (so a newly named owner, or newer donor data, is checked too). Idempotent.
 // Lobbyists count only when registered with this body or named in its own record ("registry", "record").
 // Matches from another body's registry ("otherBody") are written to scripts/data/city/lobbyists-review.json
-// for review and never published.
+// for review and never published. A registry link counts only when the registration names one of the action's
+// parties as its principal and was in force on the action's date (scripts/lib/lobby-links.mjs); links that fail
+// are listed in scripts/data/city/lobbyists-dropped.json.
 // Run after city-actions.mjs:  node scripts/city-enrich.mjs <slug> [...] && node scripts/city-firm-gifts.mjs
 import { writeFileSync, existsSync } from 'node:fs';
 import { P, J, norm, donorsFor, partyGifts } from './lib/city.mjs';
+import { registryLinkProblem, principalAliases } from './lib/lobby-links.mjs';
+const PIX = principalAliases(existsSync(P('scripts/data/city/principal-aliases.json')) ? J('scripts/data/city/principal-aliases.json') : {});
 
 const FILE = 'public/data/decisions.json';
 const d = J(FILE);
@@ -18,6 +22,8 @@ if (!ONLY.length) { console.log('usage: node scripts/city-enrich.mjs <slug> [...
 const KEY = { coralgables: 'cg-' };
 const giftKey = g => [g.to, g.acct, norm(g.donor), Number(g.amount), g.date, g.kind].join('|');
 const report = [];
+const droppedFile = 'scripts/data/city/lobbyists-dropped.json';
+const dropped = existsSync(P(droppedFile)) ? J(droppedFile) : { note: 'Lobbyist registrations not used as ties: the registered principal is not a party named on the item, or the registration was not in force on the action date (scripts/lib/lobby-links.mjs).', cities: {} };
 const review = existsSync(P('scripts/data/city/lobbyists-review.json')) ? J('scripts/data/city/lobbyists-review.json') : { note: 'Lobbyists for an action\'s party found only in another body\'s registry. Not published (a lobbyist counts only when registered with, or named in the record of, the body that acted). For review.', cities: {} };
 
 for (const slug of ONLY) {
@@ -68,21 +74,34 @@ for (const slug of ONLY) {
   if (existsSync(P(`scripts/data/city/${slug}/lobbyists.json`))) {
     const L = J(`scripts/data/city/${slug}/lobbyists.json`);
     const rv = review.cities[slug] = {};
+    const dr = dropped.cities[slug] = [];
+    // A registry link that fails the principal or in-force check is not used
+    const usable = (l, a) => { const why = registryLinkProblem(l, a, PIX); if (why) dr.push({ action: a.id, date: a.date, name: l.name, for: l.for, regDate: l.date || l.regYear || null, why }); return !why; };
     // Links this step added earlier (they carry a basis) that the file no longer supports are taken off
     const keep = new Map();
-    for (const [id, list] of Object.entries(L.byAction || {})) { const a = find(id); if (a) for (const l of list || []) if (l && ['registry', 'record'].includes(l.basis)) (keep.get(a.id) || keep.set(a.id, new Set()).get(a.id)).add(norm(l.name)); }
-    for (const a of B.actions) if (a.lobbied) { const k = keep.get(a.id) || new Set(); const n0 = a.lobbied.length; a.lobbied = a.lobbied.filter(l => !l.basis || k.has(norm(l.name))); n.dropped = (n.dropped || 0) + n0 - a.lobbied.length; }
+    for (const [id, list] of Object.entries(L.byAction || {})) { const a = find(id); if (a) for (const l of list || []) if (l && ['registry', 'record'].includes(l.basis) && usable(l, a)) (keep.get(a.id) || keep.set(a.id, new Map()).get(a.id)).set(norm(l.name) + '|' + l.basis, true); }
+    for (const a of B.actions) if (a.lobbied) { const k = keep.get(a.id) || new Map(); const n0 = a.lobbied.length; a.lobbied = a.lobbied.filter(l => !l.basis || k.has(norm(l.name) + '|' + l.basis)); n.dropped = (n.dropped || 0) + n0 - a.lobbied.length; }
     for (const [id, list] of Object.entries(L.byAction || {})) {
       const a = find(id); if (!a) { n.missing++; continue; }
       for (const l of list || []) {
         if (!l || !l.name) continue;
         if (!['registry', 'record'].includes(l.basis)) { (rv[a.id] = rv[a.id] || []).push(l); n.review++; continue; }
+        if (registryLinkProblem(l, a, PIX)) continue;
         a.lobbied = a.lobbied || [];
         const nk = norm(l.name);
         const ex = a.lobbied.find(x => norm(x.name) === nk);
         if (ex) { if (!ex.firm && l.firm) ex.firm = l.firm; continue; }
         a.lobbied.push({ name: l.name, for: l.for || '', ...(l.firm ? { firm: l.firm } : {}), ...(l.date ? { regs: [l.date] } : {}), basis: l.basis, ...(l.src ? { src: l.src } : {}) });
         n.lob++;
+      }
+    }
+    // A registry link's registration dates are the dates of the registrations that passed the check
+    for (const [id, list] of Object.entries(L.byAction || {})) {
+      const a = find(id); if (!a || !a.lobbied) continue;
+      for (const x of a.lobbied) if (x.basis === 'registry') {
+        const ds = (list || []).filter(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && l.date && !registryLinkProblem(l, a, PIX)).map(l => l.date);
+        if (!x.regs || x.regs.every(r => ds.includes(r))) continue;
+        if (ds.length) x.regs = [...new Set(ds)].sort(); else if (x.regs && !(list || []).some(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && !registryLinkProblem(l, a, PIX))) delete x.regs;
       }
     }
   }
@@ -102,4 +121,6 @@ for (const slug of ONLY) {
 }
 writeFileSync(P(FILE), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyists-review.json'), JSON.stringify(review, null, 1) + '\n');
+for (const k of Object.keys(dropped.cities)) if (!dropped.cities[k].length) delete dropped.cities[k];
+writeFileSync(P(droppedFile), JSON.stringify(dropped, null, 1) + '\n');
 console.log(report.join('\n'));
