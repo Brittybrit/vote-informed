@@ -40,8 +40,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/594/Analyses/2020s00594.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 596",
@@ -52,8 +52,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/596/Analyses/2020s00596.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 598",
@@ -64,8 +64,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/598/Analyses/2020s00598.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 600",
@@ -76,8 +76,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/600/Analyses/2020s00600.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 476",
@@ -88,8 +88,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/476/Analyses/2020s00476.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1087",
@@ -101,7 +101,7 @@
    "benefits": null,
    "screen": "If DCF and FCADV do not contract for the provision of domestic violence services in the future, the FCADV will lose the state funding it is provided through the contract for these services but will also no longer have the responsibilities that the contract funded.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 389",
@@ -111,9 +111,9 @@
    "url": "https://www.flsenate.gov/Session/Bill/2020/389",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/389/Analyses/h0389z.HQS.PDF",
    "benefits": null,
-   "screen": "70 Department of Health, 2020 Agency Legislative Bill Analysis for House Bill 389, (Oct. 22, 2019), on file with the Health Quality Subcommittee. STORAGE NAME: h0389z.DOCX PAGE: 12 DATE: 3/19/2020 Pharmacists who engage in collaborative pharmacy practice of chronic conditions or testing and screening for and treatment of minor, non-chronic health conditions as authorized by the bill will incur costs associated with obtaining the required continuing education, maintaining liability insurance, and entering into a CPPA or supervisory protocol. Individuals with limited access to health care practi",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "70 Department of Health, 2020 Agency Legislative Bill Analysis for House Bill 389, (Oct. 22, 2019), on file with the Health Quality Subcommittee. STORAGE NAME: h0389z.DOCX PAGE: 12 DATE: 3/19/2020 Pharmacists who engage in collaborative pharmacy practice of chronic conditions or testing and screening for and treatment of minor, non-chronic health conditions as authorized by the bill will incur costs associated with obtaining the required continuing education, maintaining liability insurance, and entering into a CPPA or supervisory protocol. Individuals with limited access to health care practitioner services may be able to more easily access testing for and treatment of minor, non-chronic health conditions.",
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 599",
@@ -124,8 +124,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/599/Analyses/h0599z.HQS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 607",
@@ -140,8 +140,8 @@
     "quote": "APRNs who pay physicians for supervision will achieve cost-savings if they qualify for and register to practice autonomously since supervision will no longer be needed."
    },
    "screen": "Home health agencies and nursing facilities may incur costs associated with providing medication administration training to CNAs and HHAs. APRNs who pay physicians for supervision will achieve cost-savings if they qualify for and register to practice autonomously since supervision will no longer be needed. APRNs who register to practice autonomously must pay for the additional continuing education hours required by the bill.",
-   "note": "practitioners counted as a kind of business, as in ../flhouse/bills/judge.json (dentists, physicians)",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "practitioners counted as a kind of business, as in ../flhouse/bills/judge.json (dentists, physicians); same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -171,7 +171,7 @@
    "benefits": null,
    "screen": "The bill provides for a three day back-to-school sales tax holiday and a seven day disaster preparedness sales tax holiday.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 140",
@@ -186,8 +186,8 @@
     "quote": "Sellers of fireworks may experience increased sales."
    },
    "screen": "Sellers of fireworks may experience increased sales.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-09",
@@ -216,8 +216,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/348/Analyses/2020s00348.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1060",
@@ -229,7 +229,7 @@
    "benefits": null,
    "screen": "The private sector will be subject to the cost, to the extent one is imposed, associated with an agency making redactions in response to a public records requests.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 828",
@@ -240,8 +240,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/828/Analyses/2020s00828.rc.PDF",
    "benefits": null,
    "screen": "By extending the repeal date of the direct-support organization and the ABLE program, the bill will provide a source of tax exempt savings for individuals with a disability, without jeopardizing eligibility for certain benefits, such as Medicaid and Supplemental Security Income (SSI).",
-   "note": "benefit to individuals with a disability, not a business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to individuals with a disability, not a business; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1794",
@@ -252,8 +252,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1794/Analyses/2020s01794.rc.PDF",
    "benefits": null,
    "screen": "Initiative Petition Sponsors/Paid-Petition Gatherers Allowing a supervisor to provide petition forms to initiative sponsors in PDF format instead of providing printed forms will likely increase a sponsor’s printing costs. The costs are indeterminate at this time, and will vary from election-to-election and by county, based on the county’s size and the number of initiatives/petitions involved. Further, requiring initiative sponsors to remit to supervisors the actual cost of signature verification (in lieu of the current rule: the lesser of the actual cost or 10 cents per signature) may result in additional costs or additional savings to sponsors, depending on how efficient each county is at performing this task and the approach of the Department of State rule determining the actual costs.",
-   "note": "costs or savings to initiative sponsors depending on county; no business named as benefiting",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "costs or savings to initiative sponsors depending on county; no business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 362",
@@ -264,8 +264,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/362/Analyses/2020s00362.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 400",
@@ -276,8 +276,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/400/Analyses/2020s00400.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 716",
@@ -288,8 +288,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/716/Analyses/2020s00716.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 936",
@@ -300,8 +300,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/936/Analyses/2020s00936.rc.PDF",
    "benefits": null,
    "screen": "A veteran who is an FRS member seeking a proof of disability would not have to seek out and submit the certification of disability from two licensed physicians in-state if he or she is receiving treatment from a federal Veterans Health Administration (VHA) facility outside the state. Alternatively, the member may receive certification from physicians treating the member at the VHA facility. Therefore, this bill would potentially save the veteran time and money, and the veteran may receive a disability retirement benefit sooner.",
-   "note": "benefit to veterans (individuals)",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to veterans (individuals); same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1714",
@@ -312,8 +312,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1714/Analyses/2020s01714.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 7018",
@@ -328,8 +328,8 @@
     "quote": "The Florida Department of Transportation’s (FDOT) maintenance and construction contractors may benefit from increased availability of staging areas during non-emergency periods."
    },
    "screen": "Increased availability of staging areas on the turnpike system may provide the general public with earlier provision of essential emergency supplies during emergencies and may provide additional benefits, such as increased availability of parking on the turnpike system, during non-emergency periods. The business community may experience a positive impact in that more efficient emergency response may allow for a faster return to normal market activity. The Florida Department of Transportation’s (FDOT) maintenance and construction contractors may benefit from increased availability of staging areas during non-emergency periods. To the extent that development of the required plan increases the number of electric vehicle (EV) charging stations in the state, residents, businesses, and tourists are expected to benefit from increased availability of EV charging stations, facilitating mobility and commerce and reducing costs related to EV travel. The ability to construct linear facilities through a conservation easement instead of bypassing the easement, may provide a cost savings to private companies. Landowners will be required to compensate governmental entities based on the reduction in value of conservation easements, however, this cost may be offset by the amount received from private entities for the construction of linear facilities through the easements.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-06",
@@ -358,8 +358,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/61/Analyses/h0061z3.CFS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 177",
@@ -370,8 +370,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/177/Analyses/h0177z1.HQS.PDF",
    "benefits": null,
    "screen": "Participation in the program is voluntary. Entities that participate as repositories in the program will incur costs associated with processing, storage, dispensing, and disposal of donated prescription drugs and supplies. Entities that donate prescription drugs or supplies that would otherwise go unused will save the costs of destroying or disposing of them. Program patients will experience a reduction in drug costs.",
-   "note": "\"entities\" that donate drugs, no kind of business named",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "\"entities\" that donate drugs, no kind of business named; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 743",
@@ -383,7 +383,7 @@
    "benefits": null,
    "screen": "Health care practitioners and health care facilities may incur costs associated with purchasing or printing the DOH-developed pamphlet on non-opioid alternatives. surgery by a physician necessary to relive or eliminate the emergency medical condition, within the service capability of the facility (s. 395.002, F.S.). 46“Hospice services are provided to individuals who have been admitted to a hospice program after or upon a diagnosis and prognosis of terminal illness by a licensed physician. Hospice services may include physician care, nursing services, social work services, pastoral or counseli",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 821",
@@ -394,8 +394,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/821/Analyses/h0821z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 969",
@@ -406,8 +406,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/969/Analyses/h0969z1.EUS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1339",
@@ -418,8 +418,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1339/Analyses/h1339z1.COM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 646",
@@ -429,9 +429,9 @@
    "url": "https://www.flsenate.gov/Session/Bill/2020/646",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/646/Analyses/2020s00646.rc.PDF",
    "benefits": null,
-   "screen": "Violations of National Collegiate Athletic Association (NCAA) bylaws may impact the eligibility of student athletes in the state to participate in intercollegiate athletics, and different laws in effect in different states may make it difficult to adopt a uniform 47 U.S. Const., Art. 1, s. 8, cl. 3. 48 Dep’t of Revenue of Ky. v. Davis, 553 U.S. 328, 338–39 (2008). 49 Art. 1, s. 10, Fla. Const. 50 U.S. Const., Art. 1, s. 10. 51 Nat’l Collegiate Athletic Ass’n v. Roberts, TCA 94-40413-WS, 1994 WL 750585 (N.D. Fla. Nov. 8, 1994) (citing Nat’l Collegiate Athletic Ass’n v. Miller, 795 F. Supp. 1476",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "Violations of National Collegiate Athletic Association (NCAA) bylaws may impact the eligibility of student athletes in the state to participate in intercollegiate athletics, and different laws in effect in different states may make it difficult to adopt a uniform 47 U.S. Const., Art. 1, s. 8, cl. 3. 48 Dep’t of Revenue of Ky. v. Davis, 553 U.S. 328, 338–39 (2008). 49 Art. 1, s. 10, Fla. Const. 50 U.S. Const., Art. 1, s. 10. 51 Nat’l Collegiate Athletic Ass’n v. Roberts, TCA 94-40413-WS, 1994 WL 750585 (N.D. Fla. Nov. 8, 1994) (citing Nat’l Collegiate Athletic Ass’n v. Miller, 795 F. Supp. 1476, 1486 (D. Nev. 1992). BILL: CS/CS/SB 646 Page 11 approach to supporting student athletes.52 The anticipated update to the NCAA’s bylaws and policies in January 2021 may place additional pressures on student athletes to attend only institutions in compliance with NCAA rules and bylaws in order to participate in intercollegiate athletics for the 2020-2021 academic year.",
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 226",
@@ -442,8 +442,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/226/Analyses/2020s00226.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 426",
@@ -454,8 +454,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/426/Analyses/2020s00426.ap.PDF",
    "benefits": null,
    "screen": "The percentage of funds disbursed through the grants program that must be matched with non-state funds is reduced from 100 percent (a one to one match) to 25 percent of the state’s contribution.",
-   "note": "grant match requirement lowered; no kind of business named as benefiting",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "grant match requirement lowered; no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 698",
@@ -466,8 +466,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/698/Analyses/2020s00698.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 838",
@@ -478,8 +478,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/838/Analyses/2020s00838.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 886",
@@ -491,7 +491,7 @@
    "benefits": null,
    "screen": "By filing a curative notice, a property owner may be able to sufficiently clear title to property without the expenses associated with a claim for reformation of deed or a quiet title action. BILL: SB 886 Page 5",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 966",
@@ -503,7 +503,7 @@
    "benefits": null,
    "screen": "The private sector will be subject to the cost, to the extent one is imposed, associated with an agency making redactions in response to a public records requests. BILL: CS/SB 966 Page 9",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 994",
@@ -514,8 +514,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/994/Analyses/2020s00994.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1050",
@@ -526,8 +526,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1050/Analyses/2020s01050.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1082",
@@ -538,8 +538,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1082/Analyses/2020s01082.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1120",
@@ -554,8 +554,8 @@
     "quote": "According to the DCF, substance use treatment providers and recovery residences may realize savings by being able to fill positions faster with the changes identified in the bill."
    },
    "screen": "According to the DCF, substance use treatment providers and recovery residences may realize savings by being able to fill positions faster with the changes identified in the bill.42 Additionally, CS/CS/SB 1120 alleviates confusion on which payment arrangements are permissible under the state patient brokering law. This may result in increased revenues for the private sector resulting from more allowable payment agreement options between health care providers.43 42 Id. 43 Department of Children and Families Agency Analysis of HB 649. On file with the Senate Committee on Children, Families, and Elder Affairs. BILL: CS/CS/SB 1120 Page 11",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-13",
@@ -584,8 +584,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7012/Analyses/2020s07012.ap.PDF",
    "benefits": null,
    "screen": "None. BILL: CS/SB 7012 Page 17",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 43",
@@ -596,8 +596,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/43/Analyses/h0043z1.CFS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 73",
@@ -612,8 +612,8 @@
     "quote": "The bill may have a positive fiscal impact on the private sector because residential recycling collectors are not required to collect or transport contaminated recyclable materials and recovered materials processing facilities are not required to process contaminated recyclable materials"
    },
    "screen": "The bill may have a positive fiscal impact on the private sector because residential recycling collectors are not required to collect or transport contaminated recyclable materials and recovered materials processing facilities are not required to process contaminated recyclable materials except pursuant to contract terms provided by the bill. This could decrease machinery issues and thereby save on costs of repair. 40 Section 403.813(1)(d), F.S. 41 Section 403.813(1)(h), F.S. 42 Section 403.813(1)(l), F.S. 43 Section 403.813(1)(p), F.S. 44 Section 403.813(1)(e), F.S. STORAGE NAME: h0073z1.ANRS.DOCX PAGE: 6 DATE: 6/19/2020 The bill may have a positive fiscal impact on the private sector by prohibiting a local government from requiring verification from DEP of an ERP exception. The bill may also have a positive fiscal impact on the private sector by expanding the permit exception for the replacement or repair of existing docks and piers if it results in more docks being built or repaired.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-02-26",
@@ -642,8 +642,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/89/Analyses/h0089z1.HQS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 103",
@@ -655,7 +655,7 @@
    "benefits": null,
    "screen": "The bill may have a fiscal impact on Florida businesses and OOSC’s that fail to comply with subpoenas issued under s. 92.605, F.S.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 163",
@@ -667,7 +667,7 @@
    "benefits": null,
    "screen": "See fiscal comments.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 835",
@@ -678,8 +678,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/835/Analyses/h0835z1.CFS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1373",
@@ -690,8 +690,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1373/Analyses/h1373z2.HMR.PDF",
    "benefits": null,
    "screen": "None. C. FISCAL COMMENTS: None. STORAGE NAME: h1373z2.HMR.DOCX PAGE: 6 DATE: 6/19/2020",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1461",
@@ -702,8 +702,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1461/Analyses/h1461d.HHS.PDF",
    "benefits": null,
    "screen": "Individuals who have limited access to dental services may be able to receive dental care from those holding a health access dental license.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7001",
@@ -714,8 +714,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7001/Analyses/h7001z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7013",
@@ -726,8 +726,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7013/Analyses/h7013z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 218",
@@ -738,8 +738,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/218/Analyses/2020s00218.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 292",
@@ -751,7 +751,7 @@
    "benefits": null,
    "screen": "The bill may help consumers with favorable claim histories to obtain insurance at a lower premium.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 384",
@@ -762,8 +762,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/384/Analyses/2020s00384.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 538",
@@ -774,8 +774,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/538/Analyses/2020s00538.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 540",
@@ -786,8 +786,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/540/Analyses/2020s00540.ap.PDF",
    "benefits": null,
    "screen": "The fiscal impact of this bill to the private sector is indeterminate. While changing the method by which the FWCIGA calculates assessments necessarily changes the base used to determine the assessment, the ultimate changes may be revenue-neutral, as the amount the FWCIGA needs to assess would remain unchanged.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 580",
@@ -798,8 +798,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/580/Analyses/2020s00580.rc.PDF",
    "benefits": null,
    "screen": "The bill requires a court to determine the market value of heirs property before commencing partition proceedings and requires partition by sale to be conducted on the open market by a licensed real estate broker, rather than at auction (unless a court determines that auction or sealed bids would be more economically advantageous). This change in the procedure may affect the sale price of heirs property partitioned by sale.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 702",
@@ -814,8 +814,8 @@
     "quote": "The bill will have a positive fiscal impact on participants in the Advanced Cleanup Program, as the bill requires the Department of Environmental Protection (DEP) to pay for the limited contamination assessment."
    },
    "screen": "The bill may provide cost savings under the Petroleum Cleanup Participation Program (PCPP) for owners, operators, or persons otherwise responsible for conducting site rehabilitation by allowing them to demonstrate cost savings in lieu of or in addition to the copayment requirement. The bill, however, removes the provision that allowed such applicants to reduce or eliminate costs associated with the limited contamination assessment report and the copayment costs if the applicant demonstrated that he or she could not financially comply. The bill will have a positive fiscal impact on participants in the Advanced Cleanup Program, as the bill requires the Department of Environmental Protection (DEP) to pay for the limited contamination assessment.",
-   "note": "judgment call: program participants are owners/operators of petroleum storage sites",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "judgment call: program participants are owners/operators of petroleum storage sites; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-05",
@@ -844,8 +844,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/738/Analyses/2020s00738.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1066",
@@ -856,8 +856,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1066/Analyses/2020s01066.ap.PDF",
    "benefits": null,
    "screen": "The bill’s provisions related to assignable and transferable impact fee credits may have an indeterminate impact on holders of such credits or contributions.",
-   "note": "indeterminate impact on credit holders",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "indeterminate impact on credit holders; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1286",
@@ -868,8 +868,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1286/Analyses/2020s01286.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1344",
@@ -884,8 +884,8 @@
     "quote": "CS/SB 1344 may have a positive but indeterminate fiscal impact on ICFDD applicants that obtain the newly created CON exemption."
    },
    "screen": "CS/SB 1344 may have a positive but indeterminate fiscal impact on ICFDD applicants that obtain the newly created CON exemption.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-09",
@@ -914,8 +914,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1392/Analyses/2020s01392.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1508",
@@ -927,7 +927,7 @@
    "benefits": null,
    "screen": "The CS may have a negative fiscal impact on sellers and auction houses that do not currently practice the removal of police markings before selling decommissioned police vehicles",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1606",
@@ -938,8 +938,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1606/Analyses/2020s01606.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 37",
@@ -951,7 +951,7 @@
    "benefits": null,
    "screen": "The bill increases penalties for persons failing to stop for a school bus.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 197",
@@ -962,8 +962,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/197/Analyses/h0197z1.CFS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 327",
@@ -974,8 +974,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/327/Analyses/h0327z1.ANRS.PDF",
    "benefits": null,
    "screen": "The bill may have an indeterminate but likely insignificant negative fiscal impact on revenues to retailers who sell FWC licenses or permits from violators being ineligible for future licenses.",
-   "note": "negative for license retailers",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "negative for license retailers; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 505",
@@ -986,8 +986,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/505/Analyses/h0505z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 767",
@@ -998,8 +998,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/767/Analyses/h0767z1.HMR.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 971",
@@ -1011,7 +1011,7 @@
    "benefits": null,
    "screen": "The bill defines e-bikes and creates a three-tiered classification, specifically authorizing the use of class 2 and class 3 e-bikes. The bill also regulates the use of such e-bikes. As such, the bill may increase the sale of e-bikes in this state.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1089",
@@ -1026,8 +1026,8 @@
     "quote": "This may attract trust business to Florida and prevent existing grantor trusts from fleeing to states perceived to be more trust-friendly."
    },
    "screen": "The bill allows a trustee to reimburse or directly pay a grantor’s trust-related income tax burden under specified circumstances without converting the trust and losing certain grantor-trust benefits. This may attract trust business to Florida and prevent existing grantor trusts from fleeing to states perceived to be more trust-friendly.",
-   "note": "judgment call: \"trust business\" read as the trust industry",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "judgment call: \"trust business\" read as the trust industry; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -1056,8 +1056,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/82/Analyses/s0082z1.CFS.PDF",
    "benefits": null,
    "screen": "Service providers contracted with APD may incur new information technology-related expenses in order to seek reimbursement for services through the iConnect platform. While APD is working to make the platform interoperable with existing data management systems, providers may still be required to invest in compatible software or hardware. Changes to waiver support coordination services will impact the employment status of support coordinators. Solo waiver support coordinators would need to join an existing support coordination agency or join with other support coordinators to create a new qualified organization to continue providing services, which may reduce their income.",
-   "note": "costs to providers",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "costs to providers; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 156",
@@ -1068,8 +1068,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/156/Analyses/2020s00156.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 344",
@@ -1080,8 +1080,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/344/Analyses/2020s00344.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 434",
@@ -1092,8 +1092,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/434/Analyses/2020s00434.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 662",
@@ -1104,8 +1104,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/662/Analyses/2020s00662.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1084",
@@ -1116,8 +1116,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1084/Analyses/2020s01084.rc.PDF",
    "benefits": null,
    "screen": "If requested by a landlord, a renter of a dwelling who has a disability or a disability- related need who has one or more ESAs may be required pay for written documentation that uses the specified DOH form, prepared by a health care practitioner that has cared for or treated the renter for such disability or need. This may create a barrier to renters who do not have the means to access and be cared for or treated by such a health care practitioner, or to obtain the documentation in the specified DOH format.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1466",
@@ -1129,7 +1129,7 @@
    "benefits": null,
    "screen": "The bill’s removal of certain required website reports and documents may have a negative impact on private companies that provide specific ADA compliant website development and maintenance for special districts.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1742",
@@ -1144,8 +1144,8 @@
     "quote": "Physicians exempted under CS/SB 1742 may see a positive fiscal impact due to no longer having to pay licensure and inspection fees"
    },
    "screen": "Physicians exempted under CS/SB 1742 may see a positive fiscal impact due to no longer having to pay licensure and inspection fees or meet the licensure requirements of part VII of ch. 400, F.S.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-05",
@@ -1174,8 +1174,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/81/Analyses/h0081z1.HMR.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 171",
@@ -1186,8 +1186,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/171/Analyses/h0171z1.HEC.PDF",
    "benefits": null,
    "screen": "Postsecondary credit or career education clock hours awarded for military experience and credentials could reduce the educational costs to students in tuition costs. Additionally, active duty members and honorably discharged veterans of the United States Armed Forces, their spouses and dependents, will no longer be assessed a transcript fee from a state university, FCS institution, career center operated by a school district, or a charter career center.",
-   "note": "benefit to students and veterans",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to students and veterans; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 199",
@@ -1198,8 +1198,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/199/Analyses/h0199z1.CRJ.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 205",
@@ -1210,8 +1210,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/205/Analyses/h0205z1.LFV.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 333",
@@ -1222,8 +1222,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/333/Analyses/h0333z1.CRJ.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 675",
@@ -1234,8 +1234,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/675/Analyses/h0675z1.CRJ.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 901",
@@ -1246,8 +1246,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/901/Analyses/h0901z1.HEC.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1009",
@@ -1258,8 +1258,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1009/Analyses/h1009z1.LFV.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1039",
@@ -1274,8 +1274,8 @@
     "quote": "The bill authorizes the use of TNC digital advertising devices, thus enabling TNC drivers to install the devices and earn additional monthly revenue. The bill also authorizes certain limousine and for-hire vehicle owners and drivers to begin operating as or with a luxury ground TNC"
    },
    "screen": "The bill authorizes the use of TNC digital advertising devices, thus enabling TNC drivers to install the devices and earn additional monthly revenue. The bill also authorizes certain limousine and for-hire vehicle owners and drivers to begin operating as or with a luxury ground TNC, thus increasing competition within the TNC market and allowing them access to TNC customers.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -1304,8 +1304,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1213/Analyses/h1213z1.PKI.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1259",
@@ -1316,8 +1316,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1259/Analyses/h1259e.JDC.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7005",
@@ -1328,8 +1328,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7005/Analyses/h7005z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7011",
@@ -1340,8 +1340,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7011/Analyses/h7011z1.PKI.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7023",
@@ -1352,8 +1352,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7023/Analyses/h7023z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7049",
@@ -1364,8 +1364,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7049/Analyses/h7049z1.TTA.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 641",
@@ -1376,8 +1376,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/641/Analyses/h0641z1.PKA.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7067",
@@ -1388,8 +1388,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7067/Analyses/h7067z1.EDC.PDF",
    "benefits": null,
    "screen": "The FES may allow low-income families to send their children to private schools, which may not have been an affordable option previously.",
-   "note": "analysis names families, not private schools, as beneficiaries",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "analysis names families, not private schools, as beneficiaries; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1092",
@@ -1400,8 +1400,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1092/Analyses/2020s01092.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1116",
@@ -1412,8 +1412,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1116/Analyses/2020s01116.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1118",
@@ -1424,8 +1424,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1118/Analyses/2020s01118.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1362",
@@ -1436,8 +1436,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1362/Analyses/2020s01362.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 131",
@@ -1448,8 +1448,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/131/Analyses/h0131z1.CRJ.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 437",
@@ -1460,8 +1460,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/437/Analyses/h0437z2.IBS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 469",
@@ -1472,8 +1472,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/469/Analyses/h0469z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 559",
@@ -1488,8 +1488,8 @@
     "quote": "Patients and nursing homes who receive a bundled payment for Medicare Part A patients may experience cost savings if a less expensive drug is therapeutically substituted"
    },
    "screen": "Patients and nursing homes who receive a bundled payment for Medicare Part A patients may experience cost savings if a less expensive drug is therapeutically substituted for a prescribed drug, in instances where patients and nursing homes incur drug costs. It is unclear whether private insurers using their own formularies would experience an economic impact.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -1518,8 +1518,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/573/Analyses/h0573z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 717",
@@ -1534,8 +1534,8 @@
     "quote": "The bill may result in a positive direct economic impact for businesses that are involved in activities financed by Space Florida."
    },
    "screen": "The bill may result in a positive direct economic impact for businesses that are involved in activities financed by Space Florida.",
-   "note": "judgment call",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "judgment call; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-12",
@@ -1564,8 +1564,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/783/Analyses/h0783z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 945",
@@ -1577,7 +1577,7 @@
    "benefits": null,
    "screen": "Managing entities may experience an increase in workload within the scope of their current responsibilities associated with the proposed changes in the bill, the extent of which cannot be determined, but is likely insignificant.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 977",
@@ -1592,8 +1592,8 @@
     "quote": "Motor vehicle dealers may experience a reduction in insurance premiums and the cost of litigation."
    },
    "screen": "Motor vehicle dealers may experience a reduction in insurance premiums and the cost of litigation. These savings may be passed onto consumers.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-13",
@@ -1626,8 +1626,8 @@
     "quote": "The bill may result in a positive fiscal impact to private sector companies that manufacture or sell automatic tabulating machines."
    },
    "screen": "36 Section 101.591(5), F.S. 37 Section 101.591(6), F.S. STORAGE NAME: h1005z1.OTM.DOCX PAGE: 5 DATE: 6/29/2020 The bill may result in a positive fiscal impact to private sector companies that manufacture or sell automatic tabulating machines. As these machines become available for use as recount machines, counties would likely be incentivized to procure the machines to expedite the recount process. Currently, only one machine has been authorized to conduct independent automated audits in the state;38 however, under the bill, the machine would need to be certified as a recount machine by DOS before being used for that purpose.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -1657,7 +1657,7 @@
    "benefits": null,
    "screen": "The impact on the private sector is indeterminate. The portion of the bill providing a process for receiving up to $1,000 in qualified accounts from a financial institution may prevent families from incurring court costs and attorney fees to probate the decedent’s estate in order to obtain the funds prior to the funds being given to the state as unclaimed property after five years. However, the authorized family member who withdraws the funds is personally liable to any person rightfully entitled to the funds under the Florida Probate Code, to the extent the amount paid exceeds the amount prop",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 5001",
@@ -1665,11 +1665,11 @@
    "chapter": "2020-111",
    "title": "General Appropriations Act",
    "url": "https://www.flsenate.gov/Session/Bill/2020/5001",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/5001/Analyses/H5001_ConferenceReport.PDF",
+   "analysisUrl": null,
    "benefits": null,
-   "screen": null,
-   "note": "conference report, no Private Sector Impact section (same as the other slices for GAAs)",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "title class",
+   "note": "General Appropriations Act: conference report only, no private-sector section (as in the other slices)",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 5301",
@@ -1680,8 +1680,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/5301/Analyses/h5301z1.JUA.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 2506",
@@ -1692,8 +1692,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/2506/Analyses/2020s02506.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 5003",
@@ -1704,8 +1704,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/5003/Analyses/h5003z1.APC.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 5005",
@@ -1716,8 +1716,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/5005/Analyses/h5005z1.APC.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 5007",
@@ -1728,8 +1728,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/5007/Analyses/h5007z1.APC.PDF",
    "benefits": null,
    "screen": "None. C. FISCAL COMMENTS: The application of the rates recommended in the 2019 Actuarial Valuation of the FRS will have a significant fiscal impact on funds to be paid into the Florida Retirement System Trust Fund. The total combined employer contributions estimated to be paid into the Florida Retirement System Trust Fund in Fiscal Year 2020-2021 will increase by approximately $404.6 million above the contributions payed in Fiscal Year 2019-2020. The estimated increase in contributions by employer contribution group for Fiscal Year 2020-2021 are as follows: Employer Contribution Group Estimate",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 72",
@@ -1740,8 +1740,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/72/Analyses/2020s00072.ap.PDF",
    "benefits": null,
    "screen": "Providing for Florida Student Assistance Grant (FSAG) Program summer awards may provide additional financial assistance to students who attend during the summer term. Establishing a deadline for the return of undisbursed funds to the Department of Education may provide opportunities for additional students to receive an FSAG program scholarship. Returned funds may then be repurposed to fund other eligible students at the same or another institution.100",
-   "note": "benefit to students",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to students; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 172",
@@ -1753,7 +1753,7 @@
    "benefits": null,
    "screen": "Manufacturers and distributors of over-the-counter proprietary drugs and cosmetics will only be subject to statewide regulations of their products.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 178",
@@ -1768,8 +1768,8 @@
     "quote": "The bill may also have a positive, indeterminate impact on private service providers who may be engaged to perform the studies required by the bill."
    },
    "screen": "The bill requires procedures that identify long-term risks to coastal structures, and potentially avoid some of the large costs of mitigating and dealing with future damage to, or even loss of, coastal structures. To the extent that costs of damage or destruction are avoided, residents and businesses may benefit. The bill may also have a positive, indeterminate impact on private service providers who may be engaged to perform the studies required by the bill. Therefore, the bill may have a positive, indeterminate impact on the private sector.",
-   "note": "judgment call: private service providers performing the required coastal studies",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "judgment call: private service providers performing the required coastal studies; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-06",
@@ -1798,8 +1798,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/952/Analyses/2020s00952.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1056",
@@ -1810,8 +1810,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1056/Analyses/2020s01056.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1398",
@@ -1822,8 +1822,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1398/Analyses/2020s01398.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1414",
@@ -1835,7 +1835,7 @@
    "benefits": null,
    "screen": "There may be a negative fiscal impact to commercial owners of tegus and iguana who are no longer able to sell their remaining inventory of species within the state under the bill.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 59",
@@ -1850,8 +1850,8 @@
     "quote": "Pharmacies that choose to employ automated pharmacy systems will incur costs associated with obtaining and maintaining those systems, but may increase revenue."
    },
    "screen": "Pharmacies that choose to employ automated pharmacy systems will incur costs associated with obtaining and maintaining those systems, but may increase revenue.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-13",
@@ -1880,8 +1880,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/115/Analyses/h0115z1.BPS.PDF",
    "benefits": null,
    "screen": "Health care practitioners will no longer be subject to suspension, revocation, or emergency suspension orders solely for defaulting on their student loans, which may allow them to obtain or maintain gainful employment. C. FISCAL COMMENTS: According to DOH, they will experience a recurring decrease in revenue due to the loss of the mandated 10% fine imposed on student loan default cases. However, DOH will experience a recurring reduction in workload and related costs due to fewer investigations and prosecutions. Additionally, the Compliance Management Unit will no longer have to track licensees on probation due to discipline imposed by a board.32 32 Department of Health, Agency Analysis of 2020 House Bill 115, p. 4 (Oct. 11, 2019). STORAGE NAME: h0115z1.DOCX PAGE: 8 DATE: 7/1/2020",
-   "note": "benefit to individual health care practitioners in default (employment), not a business benefit",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to individual health care practitioners in default (employment), not a business benefit; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 343",
@@ -1896,8 +1896,8 @@
     "quote": "The bill allows RV parks to more easily eject unwanted guests, which may result in a positive fiscal impact to park owners who can rent spaces to other guests"
    },
    "screen": "The bill allows RV parks to more easily eject unwanted guests, which may result in a positive fiscal impact to park owners who can rent spaces to other guests and allow current guests to have a more enjoyable stay. Authorizing a separate and distinct category I RV dealer/installer licensure test and allowing applicants to use experience or professional certification to be eligible to apply for certification as a master qualifier may remove unnecessary barriers to professional licensure and employment in the category I RV dealer/installer industry, which may allow more workers to practice their chosen profession.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-12",
@@ -1930,8 +1930,8 @@
     "quote": "The bill may have a positive, yet indeterminate fiscal impact on private sector businesses that provide professional services as defined in the CCNA, or that provide construction management or project management services"
    },
    "screen": "The bill may have a positive, yet indeterminate fiscal impact on private sector businesses that provide professional services as defined in the CCNA, or that provide construction management or project management services, by allowing those entities to enter into larger contracts for projects and studies under a continuing contract. Specifically, increasing the threshold for entering into continuing contracts would save those entities contractual and workload expenditures associated with having to undergo the CCNA procurement process for projects or studies that exceed the current statutory threshold.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -1960,8 +1960,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/467/Analyses/h0467z1.HQS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 549",
@@ -1972,8 +1972,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/549/Analyses/h0549z1.ANRS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 625",
@@ -1984,8 +1984,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/625/Analyses/h0625z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 659",
@@ -1996,8 +1996,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/659/Analyses/h0659z1.ANRS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 705",
@@ -2008,8 +2008,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/705/Analyses/h0705z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 713",
@@ -2020,8 +2020,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/713/Analyses/h0713z1.HQS.PDF",
    "benefits": null,
    "screen": "Individuals who voluntarily registered as chiropractic assistants will no longer have to pay fees associated with such registration due to the bill’s repeal of the registration program. Individuals who wish to obtain a single prosthetist-orthotist registration may save money because they will no longer have to obtain separate prosthetic and orthotic registrations.",
-   "note": "savings to individual registrants (chiropractic assistants, prosthetists-orthotists)",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "savings to individual registrants (chiropractic assistants, prosthetists-orthotists); same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 763",
@@ -2032,8 +2032,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/763/Analyses/h0763z1.HMR.PDF",
    "benefits": null,
    "screen": "Health care consumers will have access to patient safety culture survey results from hospitals and ASCs. Consumers may use the information to make informed decisions about where they receive health care services. Hospitals and ASCs with poor survey results may realize a reduction in patient volume, while hospitals and ASCs with positive survey results may realize an increase in patient volume.",
-   "note": "mixed: hospitals with good or poor survey results; no business named as benefiting overall",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "mixed: hospitals with good or poor survey results; no business named as benefiting overall; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 921",
@@ -2045,7 +2045,7 @@
    "benefits": null,
    "screen": "The bill clarifies the definition of “hemp extract” to provide that it does not include synthetic CBD or seeds or seed-derived ingredients generally recognized as safe by the United States Food and Drug Administration and must contain more than trace amounts of cannabinoids. As such, the required labeling provisions will not apply to certain food products currently sold and consumed that do not contain more than trace amounts of cannabinoids, such as hemp seeds.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1061",
@@ -2057,7 +2057,7 @@
    "benefits": null,
    "screen": "The bill may have an indeterminate negative fiscal impact on the private sector because sovereign submerged lands leases within the area identified for the Nature Coast Aquatic Preserve may become more expensive.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1095",
@@ -2069,7 +2069,7 @@
    "benefits": null,
    "screen": "The bill may encourage increased enforcement of ch. 556, F.S. Increased enforcement will result in additional fines imposed on persons who violate certain provisions of ch. 556, F.S. As a result, increased enforcement may deter behaviors that cause damages to property, utility service outages, and serious bodily injury.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1105",
@@ -2080,8 +2080,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1105/Analyses/h1105e.HHS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1179",
@@ -2092,8 +2092,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1179/Analyses/h1179z1.HMR.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1249",
@@ -2104,8 +2104,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1249/Analyses/h1249z1.LFV.PDF",
    "benefits": null,
    "screen": "24 S. 196.011(1)(a), F.S. 25 S. 196.011(5) and (9)(a), F.S. STORAGE NAME: h1249z1.LFV.docx PAGE: 4 DATE: 7/1/2020 The bill may reduce ad valorem tax liability for those who qualify for the exemption for certain permanently and totally disabled veterans, to the extent those veterans would not currently receive the benefit of the exemption in the year a new homestead property was purchased.",
-   "note": "benefit to veterans",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to veterans; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1275",
@@ -2116,8 +2116,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1275/Analyses/h1275z1.BPS.PDF",
    "benefits": null,
    "screen": "There may be a negative fiscal impact on the businesses that will no longer be exempt from the regulations.",
-   "note": "negative for businesses",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "negative for businesses; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1409",
@@ -2128,8 +2128,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1409/Analyses/h1409z1.IBS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 6055",
@@ -2140,8 +2140,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/6055/Analyses/h6055z1.EUS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7039",
@@ -2152,8 +2152,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7039/Analyses/h7039z1.SAC.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 70",
@@ -2168,8 +2168,8 @@
     "quote": "Panic alert systems for a public school would be sold by private sector vendors, and would therefore have a positive impact on vendors selling a panic alert system."
    },
    "screen": "Panic alert systems for a public school would be sold by private sector vendors, and would therefore have a positive impact on vendors selling a panic alert system.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-10",
@@ -2198,8 +2198,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/124/Analyses/2020s00124.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 404",
@@ -2210,8 +2210,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/404/Analyses/2020s00404.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 406",
@@ -2223,7 +2223,7 @@
    "benefits": null,
    "screen": "The private sector will be subject to the any cost associated with the custodian of records making redactions necessary in response to a public records request.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 664",
@@ -2235,7 +2235,7 @@
    "benefits": null,
    "screen": "To the extent that an employer does not currently use an employment verification system, the bill could increase costs to employers. Though the federal government does not charge a fee for the use of E-Verify, using E-Verify or another employment verification system could increase the labor involved in onboarding an employee, especially if the initial response for that employee is not “Employment Authorized.”",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 712",
@@ -2245,9 +2245,9 @@
    "url": "https://www.flsenate.gov/Session/Bill/2020/712",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/712/Analyses/2020s00712.ap.PDF",
    "benefits": null,
-   "screen": "The following discussion identifies aspects of the bill that may cause a negative fiscal impact because they implement more stringent environmental requirements. However, it is worth noting that there are costs associated with failing to address pollution issues. Cleanup costs, human health impacts, ecosystem deterioration, loss of tourism, and decreased real estate values are some key examples of possible costs associated with pollution. Updating stormwater rules and adopting new onsite sewage treatment disposal systems (OSTDS) and wastewater rules would likely cause a negative fiscal impact to the private sector. However, if that impact exceeds $1 million over five years, the rules will require legislative ratification, which means they will not go into effect without additional legislation. The additional requirements of OSTDS remediation plans and wastewater treatment plans may cause a negative fiscal impact to the private sector entities within basin management action plans (BMAPs) that must address OSTDS or wastewater pollution to meet the total maximum daily load. Private wastewater utilities that discharge into Indian River Lagoon may have costs associated to conversion to advanced waste treatment. Utilities that fail to survey an adequate portion of the wastewater collection system and take steps to reduce sanitary sewer overflows, pipe leaks, and inflow and infiltration will be subject to a $4,000 fine for each violation. All wastewater administrative penalties are doubled under this bill. The cap on the Department of Environmental Protection’s administrative penalties is increased to $50,000 from $10,000.",
-   "note": "negative impacts from stricter environmental rules",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "The following discussion identifies aspects of the bill that may cause a negative fiscal impact because they implement more stringent environmental requirements. However, it is worth noting that there are costs associated with failing to address pollution issues. Cleanup costs, human health impacts, ecosystem deterioration, loss of tourism, and decreased real estate values are some key examples of possible costs associated with pollution. Updating stormwater rules and adopting new onsite sewage treatment disposal systems (OSTDS) and wastewater rules would likely cause a negative fiscal impact to the private sector. However, if that impact exceeds $1 million over five years, the rules will require legislative ratification, which means they will not go into effect without additional legislation. The additional requirements of OSTDS remediation plans and wastewater treatment plans may cause a negative fiscal impact to the private sector entities within basin management action plans (BMAPs) that must address OSTDS or wastewater pollution to meet the total maximum daily load. Private wastewater utilities that discharge into Indian River Lagoon may have costs associated to conversion to advanced waste treatment. Utilities that fail to survey an adequate portion of the wastewater collection system and take steps to reduce sanitary sewer overflows, pipe leaks, and inflow and infiltration will be subject to a $4,000 fine for each violation. All wastewater administrative penalties are ",
+   "note": "negative impacts from stricter environmental rules; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1276",
@@ -2259,7 +2259,7 @@
    "benefits": null,
    "screen": "While the fiscal impact to the private sector is indeterminate, activities under the new program may aid in stabilizing market conditions for citrus producers.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 1326",
@@ -2271,7 +2271,7 @@
    "benefits": null,
    "screen": "The CBCs will need to assign an employee to serve as a liaison to local community alliances and community-based and faith-based organizations to encourage involvement in the community system of care. The requirement is expected to have a minimal fiscal impact on the CBC expenditures.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 255",
@@ -2282,8 +2282,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/255/Analyses/h0255z1.CJS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 279",
@@ -2295,7 +2295,7 @@
    "benefits": null,
    "screen": "See Fiscal Comments.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 529",
@@ -2306,8 +2306,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/529/Analyses/h0529z1.IBS.PDF",
    "benefits": null,
    "screen": "This bill has a positive effect on the private sector by providing additional coverage for condominium unit owners when FIGA must pay claims under condominium association policies. It also has the potential to have a negative impact on the private sector if FIGA deems it necessary to exercise its increased emergency assessment authority. However, the potential for FIGA to exercise its emergency assessment authority is more remote than the potential exercise of the initial assessment authority.",
-   "note": "benefit to condominium unit owners",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to condominium unit owners; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 731",
@@ -2322,8 +2322,8 @@
     "quote": "multiphasic health testing centers will no longer be required to pay the biennial license renewal fee of $952.64. The bill exempts from health care clinic licensure, community mental health partial-hospitalization programs, and portable x-ray providers, and rural health care clinics. These providers will no longer be required to pay the $2,000 biennial license renewal fee."
    },
    "screen": "The bill repeals licensure for multiphasic health testing center. Currently there are 187 licensed multiphasic health testing centers. As a result, multiphasic health testing centers will no longer be required to pay the biennial license renewal fee of $952.64. The bill exempts from health care clinic licensure, community mental health partial-hospitalization programs, and portable x-ray providers, and rural health care clinics. These providers will no longer be required to pay the $2,000 biennial license renewal fee. AHCA estimates that approximately 200 providers would qualify for the exemption.119 The bill also exempts Medicaid providers, including behavior analysis providers, from health care clinic licensure. These providers are not currently required to be licensed, but licensure will be required effective July 1, 2020.120 According to AHCA, an estimated 20,000 providers have been identified as possibly being required to be licensed as a health care clinic or obtain an exemption from licensure as a health care clinic.121 Providers who qualify for the exemption would not have to pay the $2,000 initial licensure fee.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-11",
@@ -2353,7 +2353,7 @@
    "benefits": null,
    "screen": "As permitted by the bill, the placement of a delay on a disbursement or transaction may decrease losses to investors who are financially preyed upon because such a delay may prevent the money from ever getting into the hands of a bad actor. Once the bad actor receives the money, it is difficult, or in some cases impossible, to ever recover the money. Given the inability to quantify avoidance of future losses to investors, the impact on the private sector is indeterminate.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1091",
@@ -2365,7 +2365,7 @@
    "benefits": null,
    "screen": "The bill may have an indeterminate negative fiscal impact on the private sector because it increases a number of penalties associated with the violation of environmental laws and, for unauthorized discharges of domestic wastewater, may increase the period during which each day constitutes a separate offense.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1189",
@@ -2377,7 +2377,7 @@
    "benefits": null,
    "screen": "It is unclear whether or how, issuers of life insurance and long-term care insurance are currently using personal genetic information, so the economic impact of the bill’s prohibition on its use is unknown.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1193",
@@ -2387,9 +2387,9 @@
    "url": "https://www.flsenate.gov/Session/Bill/2020/1193",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1193/Analyses/h1193z1.BPS.PDF",
    "benefits": null,
-   "screen": "The bill has an indeterminate positive fiscal impact for the private sector. The bill provides for the portability of Florida licensure by requiring reciprocity with states with similar requirements. The impact will vary, depending on how many licensees are provided licensure through reciprocity. In addition, current licensees should see the following fee reductions:222  Professions: An estimated expenditure reduction of approximately $1,311,345 in FY 2020-21, $417,578 in FY 2021-22, and $1,440,270 in FY 2022-23.  Regulation: An estimated expenditure reduction of approximately $830 in FY 2020-21, $830 in FY 2021-22, and $830 in FY 2022-23.  Boxing Commission: An estimated expenditure reduction of approximately $1,450 in FY 2020- 21, $1,450 in FY 2021-22, and $1,450 in FY 2022-23.  Condominiums: (Yacht and Ship Brokers) An estimated expenditure reduction of approximately $5,900 in FY 2020-21, $7,500 in FY 2021-22, and $9,100 in FY 2022-23. Interior designers, labor organizations, pugilistic announcers, pugilistic timekeepers, hair braiders, hair wrappers, body wrappers, nail painters, and makeup artists will no longer need to pay costs associated with professional licensure. Certain unlicensed individuals will be able to offer dietetic and nutrition services without paying costs associated with professional licensure. Nail specialists, facial specialists, full specialists, barbers, and restricted barber applicants will require less training to obtain licensure, which may lead to a reduced training cost. Landscape architects, geologists, interior designers, and architects will no longer need to pay costs associated with retaining certificates of authorization for business organizations. Barbers, building code professionals, construction and electrical contractors, cosmetologists, engineers, geologists, home inspectors, veterinarians, landscape architects, and certified public accountants will have an additional pathway for a license by endorsement or examination to be able to practice in Florida. Cosmetologists and electrical and alarm system contractors will be required to complete less continuing education for license renewal, which will lead to a reduction is costs to maintain a license. There may be an increase in the number of people in the workforce practicing their chosen professions.",
-   "note": "fee reductions for licensees across many professions; no kind of business named as benefiting (same rule as ../flhouse judge 2023-68)",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "The bill has an indeterminate positive fiscal impact for the private sector. The bill provides for the portability of Florida licensure by requiring reciprocity with states with similar requirements. The impact will vary, depending on how many licensees are provided licensure through reciprocity. In addition, current licensees should see the following fee reductions:222  Professions: An estimated expenditure reduction of approximately $1,311,345 in FY 2020-21, $417,578 in FY 2021-22, and $1,440,270 in FY 2022-23.  Regulation: An estimated expenditure reduction of approximately $830 in FY 2020-21, $830 in FY 2021-22, and $830 in FY 2022-23.  Boxing Commission: An estimated expenditure reduction of approximately $1,450 in FY 2020- 21, $1,450 in FY 2021-22, and $1,450 in FY 2022-23.  Condominiums: (Yacht and Ship Brokers) An estimated expenditure reduction of approximately $5,900 in FY 2020-21, $7,500 in FY 2021-22, and $9,100 in FY 2022-23. Interior designers, labor organizations, pugilistic announcers, pugilistic timekeepers, hair braiders, hair wrappers, body wrappers, nail painters, and makeup artists will no longer need to pay costs associated with professional licensure. Certain unlicensed individuals will be able to offer dietetic and nutrition services without paying costs associated with professional licensure. Nail specialists, facial specialists, full specialists, barbers, and restricted barber applicants will require less training to obtain licensure, which may l",
+   "note": "fee reductions for licensees across many professions; no kind of business named as benefiting (same rule as ../flhouse judge 2023-68); same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1391",
@@ -2401,7 +2401,7 @@
    "benefits": null,
    "screen": "The impact of the sandbox on the private sector is indeterminate, as it is unknown how many businesses may participate, what types of products or services such businesses would offer, and how many consumers in total would be offered the products or services.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1393",
@@ -2411,9 +2411,9 @@
    "url": "https://www.flsenate.gov/Session/Bill/2020/1393",
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1393/Analyses/h1393z1.IBS.PDF",
    "benefits": null,
-   "screen": "None. 6 There is a difference between records the Legislature designates exempt from public record requirements and those the Legislature deems confidential and exempt. A record classified as exempt from public disclosure may be disclosed under certain circumstances. See WFTV, Inc. v. Sch. Bd. of Seminole, 874 So. 2d 48, 53 (Fla. 5th DCA 2004), review denied 892 So.2d 1015 (Fla. 2004); City of Riviera Beach v. Barfield, 642 So.2d 1135 (Fla. 4th DCA 1994); Williams v. City of Minneola, 575 So.2d 683, 687 (Fla. 5th DCA 1991). If the Legislature designates a record as confidential and exempt from public disclosure, such record may not be released, by the custodian of public records, to anyone other than the persons or entities specifically designated in statute. See Op. Att’y Gen. Fla. 85- 62 (1985). STORAGE NAME: h1393z1.DOCX PAGE: 3 DATE: 7/2/2020",
+   "screen": "None. 6 There is a difference between records the Legislature designates exempt from public record requirements and those the Legislature deems confidential and exempt. A record classified as exempt from public disclosure may be disclosed under certain circumstances. See WFTV, Inc. v. Sch. Bd. of Seminole, 874 So. 2d 48, 53 (Fla. 5th DCA 2004), review denied 892 So.2d 1015 (Fla. 2004); City of Riviera Beach v. Barfield, 642 So.2d 1135 (Fla. 4th DCA 1994); Williams v. City of Minneola, 575 So.2d 683, 687 (Fla. 5th DCA 1991). If the Legislature designates a record as confidential and exempt from",
    "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 294",
@@ -2425,7 +2425,7 @@
    "benefits": null,
    "screen": "To the extent that this bill acts as a deterrent, fewer veterans may experience financial loss as a result of fraud and related offenses.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 374",
@@ -2436,8 +2436,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/374/Analyses/2020s00374.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 830",
@@ -2449,7 +2449,7 @@
    "benefits": null,
    "screen": "The private sector will continue to be subject to the cost associated with an agency making redactions in response to a public records request.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 7004",
@@ -2461,7 +2461,7 @@
    "benefits": null,
    "screen": "The private sector will continue to be subject to the cost associated with an agency making redactions in response to a public records request.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 915",
@@ -2472,8 +2472,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/915/Analyses/h0915z1.TIS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 6027",
@@ -2484,8 +2484,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/6027/Analyses/h6027z1.ANRS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7003",
@@ -2496,8 +2496,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7003/Analyses/h7003z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7019",
@@ -2508,8 +2508,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7019/Analyses/h7019z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7075",
@@ -2520,8 +2520,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7075/Analyses/h7075z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 680",
@@ -2532,8 +2532,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/680/Analyses/2020s00680.rc.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 101",
@@ -2545,7 +2545,7 @@
    "benefits": null,
    "screen": "See Fiscal Comments.",
    "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 133",
@@ -2560,8 +2560,8 @@
     "quote": "The bill will reduce expenses for towing companies that are located in counties or municipalities currently charging a fee."
    },
    "screen": "The bill will reduce expenses for towing companies that are located in counties or municipalities currently charging a fee.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-13",
@@ -2590,8 +2590,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/371/Analyses/h0371z1.LFV.PDF",
    "benefits": null,
    "screen": "If the voters approve HJR 369 and this bill passes, an increased number of homestead property owners will be able to transfer a previous SOH benefit to a new homestead.",
-   "note": "benefit to homestead owners",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to homestead owners; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 387",
@@ -2602,8 +2602,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/387/Analyses/h0387z1.TIS.PDF",
    "benefits": null,
    "screen": "Recipient organizations may see an increase in revenues associated with the sale of specialty license plates.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 747",
@@ -2618,8 +2618,8 @@
     "quote": "the bill may have a positive fiscal impact on insurers, HMOs, and insureds by limiting payments to air ambulance service providers to “reasonable reimbursement” for services."
    },
    "screen": "By preventing the use of balance billing practices by air ambulance service providers, the bill will likely have a negative, indeterminate fiscal impact on those providers. Oppositely, the bill may have a positive fiscal impact on insurers, HMOs, and insureds by limiting payments to air ambulance service providers to “reasonable reimbursement” for services.",
-   "note": null,
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)",
+   "note": "same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)",
    "votes": {
     "senate": {
      "date": "2020-03-12",
@@ -2648,8 +2648,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/787/Analyses/h0787e.SAC.PDF",
    "benefits": null,
    "screen": "The Live Like Bella Childhood Cancer Foundation may benefit from voluntary contributions on the application form for an original, renewal, or replacement driver license or identification card.",
-   "note": "benefit to a named charity (Live Like Bella Childhood Cancer Foundation), not a business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to a named charity (Live Like Bella Childhood Cancer Foundation), not a business; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 879",
@@ -2660,8 +2660,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/879/Analyses/h0879z1.LFV.PDF",
    "benefits": null,
    "screen": "If HJR 877 is approved by the voters and this bill passes, surviving spouses of certain veterans could receive property tax relief.",
-   "note": "benefit to surviving spouses",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "benefit to surviving spouses; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1047",
@@ -2672,8 +2672,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1047/Analyses/h1047z1.ANRS.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1135",
@@ -2684,8 +2684,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1135/Analyses/h1135z1.TIS.PDF",
    "benefits": null,
    "screen": "Organizations receiving specialty license plate revenue may experience additional revenues associated with the sale of the organization’s specialty license plates.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7009",
@@ -2696,8 +2696,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7009/Analyses/h7009z1.PIE.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7015",
@@ -2708,8 +2708,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7015/Analyses/h7015z1.OTM.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 7095",
@@ -2720,8 +2720,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/7095/Analyses/h7095z1.WMC.PDF",
    "benefits": null,
    "screen": "By adopting recent changes to the Internal Revenue Code, Florida maintains the linkage between the federal and Florida tax codes which simplifies compliance for Florida corporate income taxpayers.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "no kind of business named as benefiting; same reading as ../../prior-flsenate/bills/stageB.jsonl",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 78",
@@ -2732,8 +2732,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/78/Analyses/2020s00078.ap.PDF",
    "benefits": null,
    "screen": "None.",
-   "note": "auto: no benefit wording in Private Sector Impact",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": null,
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "SB 28",
@@ -2741,11 +2741,11 @@
    "chapter": "2020-186",
    "title": "Relief of Clifford Williams by the State of Florida",
    "url": "https://www.flsenate.gov/Session/Bill/2020/28",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/28/Analyses/2020s00028.ju.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/28/Analyses/2020s00028.ap.PDF",
    "benefits": null,
-   "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 355",
@@ -2753,11 +2753,11 @@
    "chapter": "2020-187",
    "title": "Pasco County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/355",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/355/Analyses/h0355d.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/355/Analyses/h0355z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 423",
@@ -2765,11 +2765,11 @@
    "chapter": "2020-188",
    "title": "Town of Ocean Breeze, Martin County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/423",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/423/Analyses/h0423c.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/423/Analyses/h0423z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 597",
@@ -2780,8 +2780,8 @@
    "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/597/Analyses/h0597z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 617",
@@ -2789,11 +2789,11 @@
    "chapter": "2020-190",
    "title": "Holiday Park Park and Recreation District, Sarasota County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/617",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/617/Analyses/h0617c.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/617/Analyses/h0617z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 925",
@@ -2801,11 +2801,11 @@
    "chapter": "2020-191",
    "title": "Manatee County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/925",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/925/Analyses/h0925b.WMC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/925/Analyses/h0925z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 927",
@@ -2813,11 +2813,11 @@
    "chapter": "2020-192",
    "title": "Lake County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/927",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/927/Analyses/h0927c.CJS.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/927/Analyses/h0927z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 947",
@@ -2825,11 +2825,11 @@
    "chapter": "2020-193",
    "title": "Volusia County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/947",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/947/Analyses/h0947c.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/947/Analyses/h0947z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 989",
@@ -2837,11 +2837,11 @@
    "chapter": "2020-194",
    "title": "Broward County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/989",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/989/Analyses/h0989c.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/989/Analyses/h0989z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1041",
@@ -2849,11 +2849,11 @@
    "chapter": "2020-195",
    "title": "Florida Keys Mosquito Control District, Monroe County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1041",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1041/Analyses/h1041d.WMC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1041/Analyses/h1041z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1215",
@@ -2861,11 +2861,11 @@
    "chapter": "2020-196",
    "title": "City of Weeki Wachee, Hernando County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1215",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1215/Analyses/h1215c.WMC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1215/Analyses/h1215z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1303",
@@ -2873,11 +2873,11 @@
    "chapter": "2020-197",
    "title": "Brevard and Volusia Counties",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1303",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1303/Analyses/h1303c.WMC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1303/Analyses/h1303z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1375",
@@ -2885,11 +2885,11 @@
    "chapter": "2020-198",
    "title": "Holmes, Jackson, and Washington Counties",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1375",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1375/Analyses/h1375c.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1375/Analyses/h1375z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1463",
@@ -2897,11 +2897,11 @@
    "chapter": "2020-199",
    "title": "Dunnellon Airport Authority, Marion County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1463",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1463/Analyses/h1463e.SAC.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1463/Analyses/h1463z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 1465",
@@ -2909,11 +2909,11 @@
    "chapter": "2020-200",
    "title": "Hardee County Economic Development Authority, Hardee County",
    "url": "https://www.flsenate.gov/Session/Bill/2020/1465",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1465/Analyses/h1465c.TTA.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/1465/Analyses/h1465z1.LAS.PDF",
    "benefits": null,
    "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "note": "auto: local bill; its fiscal analysis names no private party",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   },
   {
    "bill": "HB 6501",
@@ -2921,11 +2921,11 @@
    "chapter": "2020-201",
    "title": "Relief/Dontrell Stephens/Palm Beach County Sheriff's Office",
    "url": "https://www.flsenate.gov/Session/Bill/2020/6501",
-   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/6501/Analyses/h6501a.CJS.PDF",
+   "analysisUrl": "https://www.flsenate.gov/Session/Bill/2020/6501/Analyses/h6501c.JDC.PDF",
    "benefits": null,
-   "screen": null,
-   "note": "auto: no analysis of this law has a Private Sector Impact section, so none names a benefiting business",
-   "screenedBy": "prior-flsenate (bills/stageB.jsonl)"
+   "screen": "title class",
+   "note": "claim bill (title class): relief for an individual paid by a public body",
+   "screenedBy": "prior-flhouse (bills-2020.json)"
   }
  ]
 }
