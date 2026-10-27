@@ -4,9 +4,9 @@
 Never run `wrangler deploy` or trigger the Deploy workflow. Push to main; Brit deploys ballot305.org herself.
 
 ## Commit authorship (Brit, Oct 27, 2026)
-Commits are authored as Brit (`git -c user.name=Brittybrit -c user.email=181224488+Brittybrit@users.noreply.github.com commit`)
-and every commit Claude writes ends with the line `Co-Authored-By: Claude <noreply@anthropic.com>`, so the history
-shows both. Never rewrite or force-push history to change authorship.
+Commits Claude writes are authored by Claude: `git -c user.name=Claude -c user.email=noreply@anthropic.com commit`.
+Brit's own commits are hers. Earlier commits authored as Brittybrit stay as they are: never rewrite or force-push
+history to change authorship.
 
 ## Names say what they are (Brit, Oct 27, 2026)
 Architect everything so nobody needs memory, Brit's or Claude's, to translate a name. Every secret, token,
