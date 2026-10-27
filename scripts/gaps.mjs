@@ -150,9 +150,12 @@ const WD = {
   gap: (form, ys) => L3(`The ${FORMNAME[form].en} for ${ys} is required by law but is not online, so business interests in those years could not be checked against their official actions.`,
     `El ${FORMNAME[form].es} de ${ys} es obligatorio por ley pero no está en línea, así que los intereses comerciales de esos años no se pudieron comparar con sus acciones oficiales.`,
     `${FORMNAME[form].ht} pou ${ys} obligatwa dapre lalwa men li pa sou entènèt, kidonk nou pa t ka konpare enterè biznis ane sa yo ak aksyon ofisyèl li.`),
-  form1: L3('Form 1 has to list only income sources over $2,500, companies they own more than 5% of (and that company’s major customers), Florida property, investments and debts over $10,000, and roles in banks, insurers, utilities and similar regulated businesses. Smaller interests and a law firm’s or consultant’s clients do not have to appear, so a tie to those cannot be checked.',
-    'El Formulario 1 solo exige fuentes de ingresos de más de $2,500, empresas de las que posee más del 5% (y los clientes principales de esas empresas), propiedades en Florida, inversiones y deudas de más de $10,000, y cargos en bancos, aseguradoras, servicios públicos y negocios regulados similares. Los intereses menores y los clientes de un bufete o consultor no tienen que aparecer, así que un vínculo con ellos no se puede comprobar.',
-    'Fòm 1 mande sèlman sous revni plis pase $2,500, konpayi li posede plis pase 5% (ak gwo kliyan konpayi sa yo), pwopriyete nan Florid, envestisman ak dèt plis pase $10,000, ak wòl nan bank, asirans, sèvis piblik ak lòt biznis ki reglemante. Pi piti enterè ak kliyan yon kabinè avoka oswa yon konsiltan pa oblije parèt, kidonk nou pa ka verifye yon lyen ak yo.'),
+  form1: L3('Form 1 has to list only income sources over $2,500, companies they own more than 5% of (and that company’s major customers), Florida property, investments and debts over $10,000, and roles in banks, insurers, utilities and similar regulated businesses. Smaller interests and a law firm’s or consultant’s clients do not have to appear, so a tie to those cannot be checked. It never covers a spouse’s or relative’s own business.',
+    'El Formulario 1 solo exige fuentes de ingresos de más de $2,500, empresas de las que posee más del 5% (y los clientes principales de esas empresas), propiedades en Florida, inversiones y deudas de más de $10,000, y cargos en bancos, aseguradoras, servicios públicos y negocios regulados similares. Los intereses menores y los clientes de un bufete o consultor no tienen que aparecer, así que un vínculo con ellos no se puede comprobar. Nunca incluye los negocios propios de su cónyuge o familiares.',
+    'Fòm 1 mande sèlman sous revni plis pase $2,500, konpayi li posede plis pase 5% (ak gwo kliyan konpayi sa yo), pwopriyete nan Florid, envestisman ak dèt plis pase $10,000, ak wòl nan bank, asirans, sèvis piblik ak lòt biznis ki reglemante. Pi piti enterè ak kliyan yon kabinè avoka oswa yon konsiltan pa oblije parèt, kidonk nou pa ka verifye yon lyen ak yo. Li pa janm kouvri biznis pwòp konjwen li oswa fanmi li.'),
+  form6: L3('Form 6 does not have to list what a spouse owns or earns on their own (only what they hold jointly), and never covers other relatives, so a tie to a family member’s business cannot be checked from it.',
+    'El Formulario 6 no tiene que incluir lo que el cónyuge posee o gana por su cuenta (solo lo que tienen en común), y nunca cubre a otros familiares, así que un vínculo con el negocio de un familiar no se puede comprobar con él.',
+    'Fòm 6 pa oblije mete sa konjwen an posede oswa touche pou kont li (sèlman sa yo genyen ansanm), epi li pa janm kouvri lòt fanmi, kidonk nou pa ka verifye yon lyen ak biznis yon fanmi avè l.'),
 };
 const reqForm = (pid, form) => REQ.find(q => (q.covers || []).includes('disclosure') && q.people.some(([p, f]) => p === pid && f === form)) || null;
 for (const [pid, forms] of Object.entries(actionYears)) {
@@ -167,6 +170,7 @@ for (const [pid, forms] of Object.entries(actionYears)) {
     }
     // what the law did not require: a limit, not a gap (only for people whose actions fall in Form 1 years)
     if (form === 'form1' && ys.size) add(pid, name, { area: 'disclosure', kind: 'limit', office, text: WD.form1, status: 'notRequired' });
+    if (form === 'form6' && ys.size) add(pid, name, { area: 'disclosure', kind: 'limit', office, text: WD.form6, status: 'notRequired' });
   }
 }
 
