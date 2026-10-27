@@ -1,0 +1,5662 @@
+{
+ "built": "2026-10-27",
+ "class": {
+  "tags": [
+   "agriculture-other",
+   "agriculture-sugar",
+   "agriculture-citrus"
+  ],
+  "re": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH",
+  "not": "STATE FARM|FARMERS INSURANCE|FARM BUREAU INSURANCE|FARM BUREAU MUTUAL|FARM CREDIT|FARMERS? (?:BANK|NATIONAL)|CITRUS HEALTH|CITRUS COUNTY|CITRUS PARK|CITRUS HILLS|CITRUS SPRINGS|CITRUS HOTEL|RESEARCH|SUGARLOAF|SUGAR ?LAND|DAY NURSERY|FARMACIA|PHARM"
+ },
+ "officials": [
+  {
+   "key": "alvarez",
+   "name": "Danny Alvarez",
+   "role": "State Representative, District 69; filed HJR 1215 on Feb. 26, 2025 and voted yes on Apr. 25, 2025",
+   "onBallot": false,
+   "acted": "2025-02-26",
+   "accounts": [
+    "campaign (State House)",
+    "Friends of Danny Alvarez (political committee he chairs)"
+   ],
+   "records": {
+    "from": "2022-02-18",
+    "to": "2026-10-23",
+    "gifts": 1321,
+    "dollars": 1971834.37
+   },
+   "total": 29000,
+   "donors": 14,
+   "gifts": 23,
+   "sinceFiling": 15500,
+   "sinceFilingDonors": 9,
+   "unclear": [
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 5000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "accounts": [
+      "Friends of Danny Alvarez (political committee he chairs)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS AND RANCHERS UNITED",
+     "why": "a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money",
+     "total": 1000,
+     "n": 1,
+     "first": "2022-05-12",
+     "last": "2022-05-12",
+     "accounts": [
+      "campaign (State House)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 11500,
+     "n": 5,
+     "first": "2023-02-22",
+     "last": "2026-06-30",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign (State House)",
+      "Friends of Danny Alvarez (political committee he chairs)"
+     ],
+     "since": 7500
+    },
+    {
+     "donor": "LYKES BROS INC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2022-07-25",
+     "last": "2026-10-05",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "DADE FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2024-05-23",
+     "last": "2026-09-10",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "HOMESTEAD, FL 33033",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2024-08-23",
+     "last": "2026-07-27",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2024-08-23",
+     "last": "2026-07-27",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL PC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2025-02-24",
+     "last": "2025-02-24",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "Friends of Danny Alvarez (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL POLITICAL COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-02-23",
+     "last": "2023-02-23",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A DUDA & SONS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-08-14",
+     "last": "2024-08-14",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION PAC INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-07-27",
+     "last": "2026-07-27",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-07-27",
+     "last": "2026-07-27",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-07-27",
+     "last": "2026-07-27",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-31",
+     "last": "2026-08-31",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "HILLSBOROUGH COUNTY AGRICULTURAL PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-10-25",
+     "last": "2022-10-25",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "VALRICO, FL 33594",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "UNITED DAIRY FARMERS OF FLORIDA PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2024-10-31",
+     "last": "2024-10-31",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "TALLAHASSEE, FL 32301",
+     "accounts": [
+      "Friends of Danny Alvarez (political committee he chairs)"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "truenow",
+   "name": "Keith Truenow",
+   "role": "State Senator, District 13; filed the Senate companion, SJR 318, and voted yes on HJR 1215 on May 2, 2025",
+   "onBallot": false,
+   "acted": "2025-02-26",
+   "accounts": [
+    "campaign (State House, then State Senate)",
+    "Growing Florida's Leadership (political committee he chairs)"
+   ],
+   "records": {
+    "from": "2020-04-06",
+    "to": "2026-10-22",
+    "gifts": 1868,
+    "dollars": 2931419.34
+   },
+   "total": 70850,
+   "donors": 21,
+   "gifts": 46,
+   "sinceFiling": 21000,
+   "sinceFilingDonors": 4,
+   "unclear": [
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 35000,
+     "n": 2,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "accounts": [
+      "Growing Florida's Leadership (political committee he chairs)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS AND RANCHERS UNITED",
+     "why": "a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money",
+     "total": 1000,
+     "n": 1,
+     "first": "2024-04-13",
+     "last": "2024-04-13",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 22500,
+     "n": 9,
+     "first": "2020-04-30",
+     "last": "2026-10-01",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign (State House, then State Senate)",
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 7500
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 14000,
+     "n": 5,
+     "first": "2021-12-01",
+     "last": "2026-01-12",
+     "occ": "AGRI-BUSINESS; AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House, then State Senate)",
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "LYKES BROS. INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 4,
+     "first": "2020-10-13",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign (State House, then State Senate)",
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "UNITED DAIRY FARMERS OF FLORIDA PAC",
+     "org": true,
+     "counts": true,
+     "total": 4500,
+     "n": 3,
+     "first": "2023-12-04",
+     "last": "2024-10-29",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "TALLAHASSEE, FL 32301",
+     "accounts": [
+      "campaign (State House, then State Senate)",
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL POLTICAL COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2023-02-23",
+     "last": "2024-05-21",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "BARTOW, FL 33830",
+     "accounts": [
+      "campaign (State House, then State Senate)",
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2021-12-01",
+     "last": "2024-10-11",
+     "occ": "AGRI-BUSINESS; AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2022-09-15",
+     "last": "2024-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HELENA AGRI-ENTERPRISES LLC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2026-10-01",
+     "last": "2026-10-01",
+     "occ": "AGRICULTURE",
+     "csz": "COLLIERVILLE, TN 38017",
+     "accounts": [
+      "Growing Florida's Leadership (political committee he chairs)"
+     ],
+     "since": 2500
+    },
+    {
+     "donor": "CLOSTER FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-06-22",
+     "last": "2023-12-12",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2024-05-21",
+     "last": "2024-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ROTH FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-05-30",
+     "last": "2020-05-30",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION-PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 2,
+     "first": "2020-07-18",
+     "last": "2020-10-05",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOFIN CO INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-12-12",
+     "last": "2023-12-12",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "VANDERGRIFT - WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-12-12",
+     "last": "2023-12-12",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STAR FARMS CORP.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-06-19",
+     "last": "2024-06-19",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "NEW HOPE SUGAR COMPANY",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-06-19",
+     "last": "2024-06-19",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ST LUCIE RIVER COMPANY LTD",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-06-19",
+     "last": "2024-06-19",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OSCEOLA FARMS CO",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-06-19",
+     "last": "2024-06-19",
+     "occ": "AGRICULTURE",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A. DUDA & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2020-07-24",
+     "last": "2020-07-24",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HACKNEY NURSERY INC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2023-08-23",
+     "last": "2023-08-23",
+     "occ": "WHOLESALE PLANT NURSERY",
+     "csz": "GREENSBORO, FL 32330",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ORANGE COUNTY FARM BUREAU POLITICAL ACTION COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2024-07-01",
+     "last": "2024-07-01",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "CHRISTMAS, FL 32709",
+     "accounts": [
+      "campaign (State House, then State Senate)"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "simpson",
+   "name": "Wilton Simpson",
+   "role": "Commissioner of Agriculture (on the Nov. 3, 2026 ballot); his department supports the amendment",
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+    "campaign (Agriculture Commissioner 2026)",
+    "Jobs for Florida (political committee he chaired)",
+    "Florida Green PAC (political committee he chairs)",
+    "Future Florida (political committee he chairs)",
+    "Friends of Wilton Simpson (political committee he chairs)",
+    "Home Grown PAC (political committee he chairs)"
+   ],
+   "records": {
+    "from": "2011-03-17",
+    "to": "2026-10-26",
+    "gifts": 9405,
+    "dollars": 72222790.61
+   },
+   "total": 3254058.44,
+   "donors": 304,
+   "gifts": 513,
+   "sinceFiling": 604985,
+   "sinceFilingDonors": 39,
+   "unclear": [
+    {
+     "donor": "FLORIDIANS FOR SUSTAINABLE AGRICULTURE, INC.",
+     "why": "a Florida not-for-profit corporation (Sunbiz N08000010899), not a registered political committee; who funds it is not public",
+     "total": 1498000,
+     "n": 6,
+     "first": "2024-02-15",
+     "last": "2024-10-31",
+     "accounts": [
+      "Florida Green PAC (political committee he chairs)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 45000,
+     "n": 1,
+     "first": "2026-01-22",
+     "last": "2026-01-22",
+     "accounts": [
+      "Florida Green PAC (political committee he chairs)"
+     ]
+    },
+    {
+     "donor": "ADVANCING FLORIDA AGRICULTURE",
+     "why": "a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money",
+     "total": 117000,
+     "n": 5,
+     "first": "2018-09-12",
+     "last": "2026-09-18",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Florida Green PAC (political committee he chairs)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS AND RANCHERS UNITED",
+     "why": "a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money",
+     "total": 3000,
+     "n": 1,
+     "first": "2021-09-03",
+     "last": "2021-09-03",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 20,
+    "dollars": 10000
+   },
+   "list": [
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1159803.93,
+     "n": 35,
+     "first": "2011-12-13",
+     "last": "2026-05-27",
+     "occ": "AGRICULTURE; MANUFACTURING; SUGAR CORPORATION; SUGAR INDUSTRY; AGRICULUTRE",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Jobs for Florida (political committee he chaired)",
+      "Florida Green PAC (political committee he chairs)",
+      "Future Florida (political committee he chairs)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 155500
+    },
+    {
+     "donor": "FLORIDA CRYSTALS CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 816365,
+     "n": 12,
+     "first": "2012-06-27",
+     "last": "2026-03-31",
+     "occ": "AGRICULTURE; SUGAR INDUSTRY",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)",
+      "Florida Green PAC (political committee he chairs)",
+      "Future Florida (political committee he chairs)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 250000
+    },
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 81800,
+     "n": 8,
+     "first": "2014-02-13",
+     "last": "2026-06-18",
+     "occ": "PAC; PC; POLITICAL COMMITTEE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 28800
+    },
+    {
+     "donor": "LYKES BROS. INC.",
+     "org": true,
+     "counts": true,
+     "total": 73250,
+     "n": 17,
+     "first": "2012-08-09",
+     "last": "2024-06-20",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A. DUDA & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 61800,
+     "n": 8,
+     "first": "2012-04-12",
+     "last": "2026-07-13",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 25000
+    },
+    {
+     "donor": "COSTA NURSERY FARMS LLC DBA MODERN HEALTH CONCEPTS",
+     "org": true,
+     "counts": true,
+     "total": 50000,
+     "n": 3,
+     "first": "2016-06-16",
+     "last": "2017-06-14",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33170",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HARVEST ENTERPRISES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 50000,
+     "n": 1,
+     "first": "2019-06-13",
+     "last": "2019-06-13",
+     "occ": "AGRICULTURE",
+     "csz": "TEMPE, AZ 85281",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL POLITICAL COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 41000,
+     "n": 5,
+     "first": "2017-05-15",
+     "last": "2025-06-27",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "GARCIA FAMILY FARM LLC",
+     "org": true,
+     "counts": true,
+     "total": 40000,
+     "n": 3,
+     "first": "2020-10-30",
+     "last": "2022-04-14",
+     "occ": "AGRICULTURE",
+     "csz": "VIRGINIA BEACH, VA 23452",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORP.",
+     "org": true,
+     "counts": true,
+     "total": 36500,
+     "n": 8,
+     "first": "2011-12-13",
+     "last": "2026-05-27",
+     "occ": "CITRUS; AGRICULTURE; CITRUS FARM",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "SUGAR CANE GROWERS COOPERATIVE",
+     "org": true,
+     "counts": true,
+     "total": 35500,
+     "n": 5,
+     "first": "2014-03-03",
+     "last": "2026-05-27",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION-PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 31085,
+     "n": 4,
+     "first": "2022-06-24",
+     "last": "2026-10-01",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 25085
+    },
+    {
+     "donor": "GEORGE HACKNEY, INC.",
+     "org": true,
+     "counts": true,
+     "total": 30000,
+     "n": 2,
+     "first": "2017-06-14",
+     "last": "2018-06-22",
+     "occ": "AGRICULTURE",
+     "csz": "QUINCY, FL 32351",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WEDGWORTH'S, INC",
+     "org": true,
+     "counts": true,
+     "total": 27000,
+     "n": 4,
+     "first": "2018-09-11",
+     "last": "2022-10-12",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "COSTA NURSERY FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 25000,
+     "n": 1,
+     "first": "2016-08-26",
+     "last": "2016-08-26",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33187",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OCALA BREEDERS' SALES CO., INC.",
+     "org": true,
+     "counts": true,
+     "total": 25000,
+     "n": 1,
+     "first": "2025-03-03",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "OCALA, FL 34478",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 25000
+    },
+    {
+     "donor": "BEN HILL GRIFFIN, INC.",
+     "org": true,
+     "counts": true,
+     "total": 21250,
+     "n": 7,
+     "first": "2012-05-02",
+     "last": "2025-06-27",
+     "occ": "CITRUS; AGRICULTURE",
+     "csz": "FROSTPROOF, FL 33843",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "PEACE RIVER CITRUS PRODUCTS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 20000,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2026-07-01",
+     "occ": "AGRICULTURE",
+     "csz": "ARCADIA, FL 34265",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 16500,
+     "n": 8,
+     "first": "2011-12-13",
+     "last": "2026-05-27",
+     "occ": "CITRUS; AGRICULTURE; NURSERY",
+     "csz": "CLEWISTON, FL",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "MABRY CARLTON RANCH INC.",
+     "org": true,
+     "counts": true,
+     "total": 15000,
+     "n": 4,
+     "first": "2023-06-26",
+     "last": "2026-06-16",
+     "occ": "AGRICULTURE",
+     "csz": "SIDELL, FL 34266",
+     "accounts": [
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "SIMPSON NURSERIES OF TENNESSEE LLC",
+     "org": true,
+     "counts": true,
+     "total": 15000,
+     "n": 1,
+     "first": "2021-10-11",
+     "last": "2021-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "SMITHVILLE, TN 37166",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DAIRY FARM CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 13500,
+     "n": 4,
+     "first": "2011-03-28",
+     "last": "2026-06-23",
+     "occ": "DAIRY FARM; AGRICULTURE",
+     "csz": "TAMPA, FL 33686",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1500
+    },
+    {
+     "donor": "LARSON JR. LOUIS E",
+     "org": false,
+     "counts": true,
+     "total": 13500,
+     "n": 3,
+     "first": "2022-04-21",
+     "last": "2026-07-17",
+     "occ": "DAIRY FARMER",
+     "csz": "OKEECHOBEE, FL 34972",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING, CORP.",
+     "org": true,
+     "counts": true,
+     "total": 10500,
+     "n": 6,
+     "first": "2011-12-13",
+     "last": "2026-05-27",
+     "occ": "CITRUS; AGRICULTURE; CITRUS GROVES",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "CRACKER LAND & CATTLE CO.",
+     "org": true,
+     "counts": true,
+     "total": 10500,
+     "n": 3,
+     "first": "2021-07-15",
+     "last": "2026-07-23",
+     "occ": "AGRICULTURE; CATTLE RANCHING",
+     "csz": "LAKE CITY, FL 32024",
+     "accounts": [
+      "campaign (Agriculture Commissioner 2026)",
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2015-08-31",
+     "last": "2015-08-31",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "COSTA FARMS",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2016-01-11",
+     "last": "2016-01-11",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33170",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WIREGRASS RANCH, INC.",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2017-02-20",
+     "last": "2017-02-20",
+     "occ": "AGRICULTURE",
+     "csz": "WESLEY CHAPEL, FL 33544",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PERCOLATE LLC",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2019-02-13",
+     "last": "2019-02-13",
+     "occ": "NURSERY",
+     "csz": "MIAMI, FL 33156",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KSGNF, LLC",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2019-02-13",
+     "last": "2019-02-13",
+     "occ": "NURSERY",
+     "csz": "CHICAGO, IL 60654",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WEST COAST TOMATO LLC",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2022-04-28",
+     "last": "2022-04-28",
+     "occ": "AGRICULTURE",
+     "csz": "PALMETTO, FL 34220",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PREMIER CITRUS MANAGEMENT, LLC",
+     "org": true,
+     "counts": true,
+     "total": 9500,
+     "n": 3,
+     "first": "2021-12-07",
+     "last": "2026-07-01",
+     "occ": "CITRUS",
+     "csz": "VERO BEACH, FL 32969",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 6000
+    },
+    {
+     "donor": "WOOLFOLK & MYERS GROVE CARETAKING, INC.",
+     "org": true,
+     "counts": true,
+     "total": 9000,
+     "n": 3,
+     "first": "2021-12-07",
+     "last": "2025-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "LAKE WALES, FL 33859",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS PROCESSING, CORP.",
+     "org": true,
+     "counts": true,
+     "total": 8500,
+     "n": 6,
+     "first": "2012-06-05",
+     "last": "2018-09-11",
+     "occ": "CITRUS; CITRUS PROCESSING; AGRICULTURE",
+     "csz": "CLEWISTON, FL 34400",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MAZAK RANCH, LLC",
+     "org": true,
+     "counts": true,
+     "total": 8000,
+     "n": 3,
+     "first": "2023-06-26",
+     "last": "2026-06-12",
+     "occ": "AGRICULTURE",
+     "csz": "WEBSTER, FL 33597",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "UNITED DAIRY FARMERS OF FLORIDA PAC",
+     "org": true,
+     "counts": true,
+     "total": 6500,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "TALLAHASSEE, FL 32301",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PEARCE CATTLE COMPANY",
+     "org": true,
+     "counts": true,
+     "total": 6500,
+     "n": 4,
+     "first": "2022-04-21",
+     "last": "2026-06-19",
+     "occ": "CATTLE RANCH; FARMING; AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34972",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "THELMA C. RALEY, INC.",
+     "org": true,
+     "counts": true,
+     "total": 6250,
+     "n": 3,
+     "first": "2012-05-02",
+     "last": "2022-09-22",
+     "occ": "CITRUS; AGRICULTURE",
+     "csz": "WINTER HAVEN, FL 33882",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSEY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 6000,
+     "n": 2,
+     "first": "2022-08-11",
+     "last": "2022-10-11",
+     "occ": "CITRUS NURSERY",
+     "csz": "CLEWSITON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RUCKS HEATHER W",
+     "org": false,
+     "counts": true,
+     "total": 5500,
+     "n": 3,
+     "first": "2022-04-21",
+     "last": "2024-06-20",
+     "occ": "CATTLE FARMER; RANCHER",
+     "csz": "OKEECHOBEE, FL 34972",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "R.C. HATTON, INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 3,
+     "first": "2021-11-11",
+     "last": "2026-05-19",
+     "occ": "AGRICULTURE",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 2000
+    },
+    {
+     "donor": "BEDNER GROWERS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 3,
+     "first": "2021-12-07",
+     "last": "2026-10-07",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33473",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "MCCLELLAN MARY",
+     "org": false,
+     "counts": true,
+     "total": 5000,
+     "n": 2,
+     "first": "2022-05-06",
+     "last": "2026-06-22",
+     "occ": "DAIRY FARMER",
+     "csz": "THONOTOSASSA, FL 33592",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "SOUTH FLORIDA INDUSTRIES,INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 1,
+     "first": "2015-08-06",
+     "last": "2015-08-06",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KNOX SERVICING, LLC",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 1,
+     "first": "2017-02-10",
+     "last": "2017-02-10",
+     "occ": "AGRICULTURE",
+     "csz": "WINTER GARDEN, FL 34787",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "3 BOYS FARM, LLC",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 1,
+     "first": "2019-03-04",
+     "last": "2019-03-04",
+     "occ": "AGRICULTURE",
+     "csz": "RUSKIN, FL 33570",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SANCHEZ FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 1,
+     "first": "2021-07-15",
+     "last": "2021-07-15",
+     "occ": "AGRICULTURE",
+     "csz": "OLD TOWN, FL 32680",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PREMIER CITRUS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 4500,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "CITRUS FARM; CITRUS",
+     "csz": "VERO BEACH, FL 32969",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RECORD BUCK FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 4500,
+     "n": 2,
+     "first": "2019-07-08",
+     "last": "2022-06-24",
+     "occ": "PLANT NURSERY; NURSERY OWNER / GROWER",
+     "csz": "HOWEY-IN-THE-HILLS, FL 34737",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STAR FARMS CORP",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2018-09-11",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE BUSINESS; AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLIARD BROTHERS OF FLORIDA, LLLP",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2021-07-16",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "K & L AG LLC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2022-06-08",
+     "last": "2026-06-16",
+     "occ": "AGRICULTURE",
+     "csz": "SEBRING, FL 33875",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CATTLE RANCH HOLDINGS LLC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2022-09-15",
+     "last": "2026-06-18",
+     "occ": "AGRICULTURE",
+     "csz": "NEW SMYRNA BEACH, FL 32168",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AVOCADO LONGAN GROVE LLC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2022-09-15",
+     "last": "2026-06-18",
+     "occ": "AGRICULTURE",
+     "csz": "NEW SMYRNA BEACH, FL 32168",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "BLUEBERRY FARM HOLDINGS LLC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2022-09-15",
+     "last": "2026-06-18",
+     "occ": "AGRICULTURE",
+     "csz": "NEW SMYRNA BEACH, FL 32168",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CITRUS GROVE HOLDINGS LLC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2022-09-15",
+     "last": "2026-06-18",
+     "occ": "AGRICULTURE",
+     "csz": "POLK CITY, FL 33868",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "HANCOCK FARM & SEED CO., INC.",
+     "org": true,
+     "counts": true,
+     "total": 3939.3,
+     "n": 2,
+     "first": "2021-10-29",
+     "last": "2022-09-09",
+     "occ": "FARM SUPPLY",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FREEDOM HILL FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 3600,
+     "n": 3,
+     "first": "2016-04-21",
+     "last": "2026-06-22",
+     "occ": "FARMING; AGRICULTURE",
+     "csz": "INVERNESS, FL 34452",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "MPB FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2011-06-30",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33563",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ASTIN FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2011-06-30",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33563",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ASTIN RANCH, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2011-06-30",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33563",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI-SUPPLIERS",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2014-01-31",
+     "last": "2022-09-24",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LONGINO RANCH, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2023-06-26",
+     "occ": "RANCH; AGRICULTURE",
+     "csz": "MYAKKA CITY, FL 34251",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "C&B CATTLE OF HARDEE, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2022-06-28",
+     "last": "2026-06-15",
+     "occ": "AGRICULTURE; FARMING",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "BIG RED CATTLE CO, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2022-10-11",
+     "last": "2023-06-26",
+     "occ": "AGRICULTURE",
+     "csz": "ST. PETERSBURG, FL 33716",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BAD BITCH CATTLE COMPANY LLC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2023-06-26",
+     "last": "2026-08-10",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34974",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "HINTON FARMS PRODUCE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3100,
+     "n": 2,
+     "first": "2021-12-13",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "DOVER, FL 33527",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS PACKERS, CCE",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 2,
+     "first": "2012-05-02",
+     "last": "2012-10-15",
+     "occ": "CITRUS; CCE",
+     "csz": "LAKELAND, FL 33802",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MCCLELLAN DALE",
+     "org": false,
+     "counts": true,
+     "total": 3000,
+     "n": 2,
+     "first": "2016-05-24",
+     "last": "2022-05-06",
+     "occ": "DAIRY FARMER",
+     "csz": "THONOTOSASSA, FL 33592",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "QUINCEY CATTLE CO.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-10-15",
+     "last": "2021-10-15",
+     "occ": "AGRICULTURE",
+     "csz": "CHIEFLAND, FL 32626",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOFIN CO., INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GRIMMING LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "WINTER PARK, FL 32790",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STAR RANCH ENTERPRISES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GROWERS LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BRIGHTON FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34974",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DUNDEE CITRUS GROWERS ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "ASSOCIATION",
+     "csz": "DUNDEE, FL 33838",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DIMARE-RUSKIN",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-08",
+     "last": "2021-12-08",
+     "occ": "AGRICULTURE",
+     "csz": "RUSKIN, FL 33575",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CLEAR SPRINGS FARMING, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-08",
+     "last": "2021-12-08",
+     "occ": "AGRICULTURE",
+     "csz": "BARTOW, FL 33831",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THE WISHING WELL BARN",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-13",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33567",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ASTIN FAMILY FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-13",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33563",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SIZEMORE FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-13",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "MULBERRY, FL 33860",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BARCO FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-16",
+     "last": "2021-12-16",
+     "occ": "AGRICULTURE",
+     "csz": "FLORAL CITY, FL 34436",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "NOBLE WORLDWIDE",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-17",
+     "last": "2021-12-17",
+     "occ": "AGRICULTURE",
+     "csz": "WINTER HAVEN, FL 33882",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TROYER BROTHERS FLORIDA, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2021-12-31",
+     "last": "2021-12-31",
+     "occ": "AGRICULTURE",
+     "csz": "FORT MYERS, FL 33913",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLIARD FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLIARD PRODUCE, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TRADEMARK TURF, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "J3 CATTLE CO",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLIARD CATTLE COMPANY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TKM  BENGARD FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "M & B OF TAMPA, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-28",
+     "last": "2022-04-28",
+     "occ": "DAIRY FARM",
+     "csz": "LECANTO, FL 34461",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "R. B. FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-08",
+     "last": "2022-06-08",
+     "occ": "AGRIBUSINESS",
+     "csz": "PALM CITY, FL 34990",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA BEST FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-08",
+     "last": "2022-06-08",
+     "occ": "AGRICULTURE",
+     "csz": "HAINES CITY, FL 33844",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "COUNTY LINE ORNAMENTAL & TREE",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-16",
+     "last": "2022-06-16",
+     "occ": "AGRICULTURE",
+     "csz": "PLYMOUTH, FL 32768",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MASSEY SCOTT W",
+     "org": false,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-21",
+     "last": "2022-06-21",
+     "occ": "CITRUS FARMER",
+     "csz": "INDIANTOWN, FL 34956",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HACKNEY NURSERY INC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY",
+     "csz": "GREENSBORO, FL 32330",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DEWAR NURSERIES INC OF FLORIDA",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY",
+     "csz": "APOPKA, FL 32703",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MARSHALL TREE FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY OWNER",
+     "csz": "MORRISTON, FL 32668",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BRAVO EDUARDO J",
+     "org": false,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY OWNER",
+     "csz": "GAINESVILLE, FL 32607",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MAY NURSERY",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY OWNER",
+     "csz": "HAVANA, FL 32333",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GROUNDWORKS OF PALM BEACH COUNTY, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY OWNER",
+     "csz": "BOYNTON BEACH, FL 33472",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FINEST FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-08-18",
+     "last": "2022-08-18",
+     "occ": "AGRICULTURE",
+     "csz": "BROOKSVILLE, FL 34604",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CHERRY LAKE, INC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-06",
+     "last": "2022-09-06",
+     "occ": "AGRICULTURE",
+     "csz": "GROVELAND, FL 34736",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EVER AFTER FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-15",
+     "last": "2022-09-15",
+     "occ": "AGRICULTURE",
+     "csz": "MIMS, FL 32754",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLPESCO FARM, LLC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-19",
+     "last": "2022-09-19",
+     "occ": "AGRICUTLURE",
+     "csz": "GAINESVILLE, FL 32601",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GROWERS MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-20",
+     "last": "2022-09-20",
+     "occ": "AGRI-BUSINESS",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRICULTURAL SERVICES INTERNATIONAL INCORPORATED",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-22",
+     "last": "2022-09-22",
+     "occ": "CONSTRUCTION",
+     "csz": "FT. PIERCE, FL 34945",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI-FEED, INC. DBA FEED DEPOT",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-09-24",
+     "last": "2022-09-24",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JONES POTATO FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 2,
+     "first": "2022-09-14",
+     "last": "2026-06-16",
+     "occ": "FARM; FARMING",
+     "csz": "PARRISH, FL 34219",
+     "accounts": [
+      "campaign (Agriculture Commissioner 2026)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 2500
+    },
+    {
+     "donor": "TROYER BROS. FL., INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "FORT MYERS, FL 33913",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CENTRAL FLORIDA FERNS AND FOLIAGE",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY OWNER",
+     "csz": "ZELLWOOD, FL 32798",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EIP CITRUS MANAGEMENT LLC",
+     "org": true,
+     "counts": true,
+     "total": 2619.42,
+     "n": 1,
+     "first": "2022-09-22",
+     "last": "2022-09-22",
+     "occ": "AGRICULTURE",
+     "csz": "VERO BEACH, FL 32963",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OAKLEY GROVES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 2,
+     "first": "2011-03-23",
+     "last": "2017-02-20",
+     "occ": "CITRUS GROVES; AGRICULTURE",
+     "csz": "LAKE WALES, FL 33859",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THE HIDDEN FALLS RANCH, LTD.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 3,
+     "first": "2011-03-31",
+     "last": "2017-02-11",
+     "occ": "FARM/RANCH; RANCHER; AGRICULTURE",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHEASTERN HAY & NURSERY",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 3,
+     "first": "2013-09-18",
+     "last": "2017-07-11",
+     "occ": "AGRICULTURE",
+     "csz": "DAYTONA BEACH, FL 32120",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ROTH FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 2,
+     "first": "2021-11-11",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN HILL FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2022-09-06",
+     "occ": "AGRICULTURE",
+     "csz": "APOPKA, FL 32703",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FENCO FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2024-06-20",
+     "last": "2024-06-20",
+     "occ": "CATTLE FARM",
+     "csz": "FLORAL CITY, FL 34436",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WALPOLE FEED & SUPPLY CO.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2024-06-20",
+     "last": "2024-06-20",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34973",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TCF BRANGUS LLC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2024-06-20",
+     "last": "2024-06-20",
+     "occ": "FARMING",
+     "csz": "WEST POINT, MS 39773",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TARPON BLUE AGRICULTURE BRP, LLC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2024-06-20",
+     "last": "2024-06-20",
+     "occ": "AGRICULTURE",
+     "csz": "FORT MYERS, FL 33908",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PEDONE LEE K.",
+     "org": false,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2011-03-18",
+     "last": "2021-11-04",
+     "occ": "FARMER; CATTLE FARMER",
+     "csz": "BROOKSVILLE, FL 34602",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS PACKERS PAC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2014-03-03",
+     "last": "2021-12-07",
+     "occ": "PAC; POLITICAL COMMITTEE",
+     "csz": "MAITLAND, FL 32794",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDINGS CORP",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2018-08-13",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WEDGWORTH FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HUNDLEY FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "POLK COUNTY FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2026-06-18",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "BARTOW, FL 33830",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FISH BRANCH TREE FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY",
+     "csz": "ZOLFO SPRINGS, FL 33890",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AMERISCAPES LANDSCAPE MANAGEMENT SERVICE LLC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "LANDSCAPE / NURSERY",
+     "csz": "ORLANDO, FL 32856",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FARR WALTER S",
+     "org": false,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2022-06-28",
+     "last": "2022-06-28",
+     "occ": "CITRUS GROWER",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GRAY JOHN",
+     "org": false,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2022-07-21",
+     "last": "2022-07-21",
+     "occ": "PEANUT FARMER",
+     "csz": "WILLISTON, FL 32696",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SMITH FARMS OF BELL, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-07-15",
+     "last": "2022-07-21",
+     "occ": "AGRICULTURE",
+     "csz": "TRENTON, FL 32693",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FULL CIRCLE DAIRY LLC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 1,
+     "first": "2022-08-24",
+     "last": "2022-08-24",
+     "occ": "DAIRY FARM",
+     "csz": "LEE, FL 32059",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DADE FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2020-07-14",
+     "last": "2022-09-20",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "HOMESTEAD, FL 33033",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HATO POTRERO FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1676.6,
+     "n": 2,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "H&A FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "MOUNT DORAL, FL 32757",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ALGER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 2,
+     "first": "2021-12-10",
+     "last": "2022-09-22",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33090",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RFM FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-03-17",
+     "last": "2022-03-17",
+     "occ": "AGRICULTURE",
+     "csz": "MCALPIN, FL 32062",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BELFLOWER CONSULTING INC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-06-08",
+     "last": "2022-06-08",
+     "occ": "AGRICULTURE CONSULTING",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LAKE PLACID CARETAKERS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-06-08",
+     "last": "2022-06-08",
+     "occ": "AGRICULTURE",
+     "csz": "LAKE PLACID, FL 33852",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TREE SAP FARMS, LLC DBA EVERDE GROWERS",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY",
+     "csz": "HOUSTON, TX 77092",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PMCITRUS LLC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-09-22",
+     "last": "2022-09-22",
+     "occ": "CITRUS FARM",
+     "csz": "PALM BEACH GARDENS, FL 33418",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CALLAHAM STEVEN B",
+     "org": false,
+     "counts": true,
+     "total": 1500,
+     "n": 1,
+     "first": "2022-09-22",
+     "last": "2022-09-22",
+     "occ": "CITRUS GROWER",
+     "csz": "WINTER HAVEN, FL 33884",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WHEELER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1350,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2025-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "LAKE PLACID, FL 33862",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "MATHIS NEIL",
+     "org": false,
+     "counts": true,
+     "total": 1150,
+     "n": 3,
+     "first": "2011-03-22",
+     "last": "2017-02-11",
+     "occ": "FARMER/RANCHER; RANCHER",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLSBOROUGH COUNTY AGRICULTURAL PAC",
+     "org": true,
+     "counts": true,
+     "total": 1100,
+     "n": 2,
+     "first": "2021-12-13",
+     "last": "2022-04-28",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "VALRICO, FL 33594",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLSBOROUGH COUNTY AGRICULTURAL POLITICAL ACTION COMMITTEE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 2,
+     "first": "2011-06-23",
+     "last": "2012-09-20",
+     "occ": "AG. POLICITIAL ACTION COM.; GOVERNMENT RELATIONS",
+     "csz": "VALRICO, FL 33594",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EVANS PROPERTIES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 2,
+     "first": "2012-04-12",
+     "last": "2013-06-28",
+     "occ": "AGRICULTURE",
+     "csz": "VERO BEACH, FL 32963",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "NEW FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 2,
+     "first": "2012-06-27",
+     "last": "2013-06-28",
+     "occ": "AGRICULTURE",
+     "csz": "LAXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ALCAT TAMPA, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2014-01-29",
+     "last": "2014-01-29",
+     "occ": "AGRICULTURE",
+     "csz": "JUPITER, FL 33477",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TOM ED OAKLEY FAMILY LIMITED PARTNERSHIP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2014-02-27",
+     "last": "2014-02-27",
+     "occ": "FARMER",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JIM BROWNE CITRUS JEEP DODGE",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2014-02-27",
+     "last": "2014-02-27",
+     "occ": "AUTO SALES",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PORTER WILLIAM",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2014-02-27",
+     "last": "2014-02-27",
+     "occ": "RANCHER",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA COW PAC, FLORIDA CATTLEMEN'S ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2014-03-03",
+     "last": "2014-03-03",
+     "occ": "PAC",
+     "csz": "KISSIMMEE, FL 34742",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THE GREEN SOLUTION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2017-02-11",
+     "last": "2017-02-11",
+     "occ": "AGRICULTURE",
+     "csz": "GAINESVILLE, FL 32604",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SCHRADER THEODORE",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2017-02-11",
+     "last": "2017-02-11",
+     "occ": "CITRUS GROWER",
+     "csz": "SAINT LEO, FL 33574",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JIM BROWNE CITRUS CHRYSLER JEEP DODGE RAM",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2017-02-11",
+     "last": "2017-02-11",
+     "occ": "AUTOMOTIVE",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GEORGE HACKNEY, INC DBA TRULIEVE OPS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2017-02-23",
+     "last": "2017-02-23",
+     "occ": "AGRICULTURE",
+     "csz": "QUINCY, FL 32351",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY GROWERS AND LANDSCAPE ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-08-10",
+     "last": "2018-08-10",
+     "occ": "PC",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVE CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-08-13",
+     "last": "2018-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "R & R PARTNERS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33407",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLIARD BROTHERS OF FLRIDA LLLP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE BUSINESS",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EFE, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "WELLINGTON, FL 33414",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RIO-BAK CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "WELLINGTON, FL 33414",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "QUEEN B RANCH, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-09-18",
+     "last": "2018-09-18",
+     "occ": "CONSTRUCTION",
+     "csz": "INGLIS, FL 34449",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HELENA AGRI-ENTERPRISES LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-10-01",
+     "last": "2018-10-01",
+     "occ": "AGRICULTURE BUSINESS",
+     "csz": "COLLIERVILLE, TN 38017",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CHESHIRE CATTLE COMPANY LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-10-15",
+     "last": "2021-10-15",
+     "occ": "AGRICULTURE",
+     "csz": "WELLBORN, FL 32094",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HART HONEY FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-10-15",
+     "last": "2021-10-15",
+     "occ": "AGRICULTURE",
+     "csz": "FARGO, FL 31631",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WILLIAM KENNEDY FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "W.E. SCHLECHTER & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CONSOLIDATED CITRUS LIMITED PARTNERSHIP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-06",
+     "last": "2021-12-06",
+     "occ": "REAL ESTATE",
+     "csz": "FORT MYERS, FL 33913",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RUNNING W, LTD",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-06",
+     "last": "2021-12-06",
+     "occ": "AGRICULTURE",
+     "csz": "HOUSTON, TX 77056",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SYNGENTA CROP PROTECTION, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "GREENSBORO, NC 27409",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SUNNILAND FAMILY, LP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "IMMOKALEE, FL 34143",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DURDEN RED ANGUS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "QUINCY, FL 32351",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LEXINGTON GROVES, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "DETROIT, MI 48238",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SPUR LAND & CATTLE, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "FORT PIERCE, FL 34945",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI-GATORS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 2,
+     "first": "2021-12-13",
+     "last": "2022-09-22",
+     "occ": "AGRICULTURE",
+     "csz": "PALM CITY, FL 34990",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OCALA MAUFACTURING COMPANY, LTD.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-03-17",
+     "last": "2022-03-17",
+     "occ": "AGRICULTURE",
+     "csz": "OXFORD, FL 34484",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MOBLEY PLANT WORLD LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-04-11",
+     "last": "2022-04-11",
+     "occ": "NURSERY",
+     "csz": "MOULTRIE, GA 31768",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LAKE JEM FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-06-16",
+     "last": "2022-06-16",
+     "occ": "AGRICULTURE",
+     "csz": "TAVARES, FL 32778",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENHAM WILLIAM J",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-06-16",
+     "last": "2022-06-16",
+     "occ": "FARMER",
+     "csz": "ASTATULA, FL 34706",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SUN-FIRE NURSERIES, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-06-24",
+     "last": "2022-06-24",
+     "occ": "NURSERY",
+     "csz": "SARASOTA, FL 34241",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PHILLIPS HARRELL H",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-07-21",
+     "last": "2022-07-21",
+     "occ": "FARMER",
+     "csz": "MORRISTON, FL 32668",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TILLIS FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-07-21",
+     "last": "2022-07-21",
+     "occ": "AGRICULTURE",
+     "csz": "CHIEFLAND, FL 32644",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JACK MELTON FAMILY INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-08-05",
+     "last": "2022-08-05",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LINER SOURCE, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-09-06",
+     "last": "2022-09-06",
+     "occ": "AGRICULTURE",
+     "csz": "EUSTIS, FL 32736",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "S & L BEANS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-09-20",
+     "last": "2022-09-20",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33034",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SIFUENTES FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-09-20",
+     "last": "2022-09-20",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33034",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RAILROAD NURSERY, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-09-20",
+     "last": "2022-09-20",
+     "occ": "NURSERY",
+     "csz": "HOMESTEAD, FL 33031",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GARY REEDER FARMS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-10",
+     "last": "2022-10-10",
+     "occ": "FARMING",
+     "csz": "DUETTE, FL 34219",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EVANS III JAMES E",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-12",
+     "last": "2022-10-12",
+     "occ": "CITRUS GROWER",
+     "csz": "VERO BEACH, FL 32963",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FROGMORE RANCH, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-11-03",
+     "last": "2022-11-03",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33629",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SMOAK JOHN",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-06-19",
+     "last": "2026-06-19",
+     "occ": "CITRUS GROWER",
+     "csz": "LAKE PLACID, FL 33862",
+     "accounts": [
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "DIMARE ANTHONY J",
+     "org": false,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-09-14",
+     "last": "2022-09-14",
+     "occ": "FARMER",
+     "csz": "BRADENTON, FL 34202",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENDER BROTHERS FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-11",
+     "last": "2022-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33473",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "R&A FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-11",
+     "last": "2022-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33437",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENDER FAMILY ENTERPRISES, LTD.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-11",
+     "last": "2022-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33473",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENDER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-11",
+     "last": "2022-10-11",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33473",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STORY GROVE SERVICE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-06-27",
+     "last": "2025-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "LAKE WALES, FL 33859",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "BUCKINGHAM FARMS",
+     "org": true,
+     "counts": true,
+     "total": 947,
+     "n": 1,
+     "first": "2022-06-15",
+     "last": "2022-06-15",
+     "occ": "RESTAURANT",
+     "csz": "FORT MYERS, FL 33905",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOREY-LUNDY CANE INC",
+     "org": true,
+     "counts": true,
+     "total": 750,
+     "n": 2,
+     "first": "2018-09-11",
+     "last": "2026-05-27",
+     "occ": "AGRICULTURE",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 500
+    },
+    {
+     "donor": "LONG HAMMOCK GROVE INC",
+     "org": true,
+     "counts": true,
+     "total": 750,
+     "n": 2,
+     "first": "2018-09-11",
+     "last": "2022-05-19",
+     "occ": "AGRICULTURE",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FRIERSON FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 750,
+     "n": 2,
+     "first": "2018-09-11",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE BUSINESS; AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "UNITED DAIRY FARMERS OF FLORIDA, INC.",
+     "org": true,
+     "counts": true,
+     "total": 750,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "ASSOCIATION",
+     "csz": "MCALPIN, FL 32862",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OAKLEY RONALD E.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-23",
+     "last": "2011-03-23",
+     "occ": "CITRUS GROWER",
+     "csz": "ZEPHYRHILLS, FL 33541",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FOTEO, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-23",
+     "last": "2011-03-23",
+     "occ": "CITRUS GROVES",
+     "csz": "ZEPHYRHILLS, FL 33541",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RONNIE OAKLEY INVESTMENTS LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-23",
+     "last": "2011-03-23",
+     "occ": "CITRUS GROVES",
+     "csz": "ZEPHYRHILLS, FL 33541",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OAKLEY TAMARA NEUKOM",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-23",
+     "last": "2011-03-23",
+     "occ": "CITRUS GROWER",
+     "csz": "ZEPHYRHILLS, FL 33541",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SPRING LAKE FRUIT COMPANY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-25",
+     "last": "2011-03-25",
+     "occ": "CITRUS GROVES",
+     "csz": "BROOKSVILLE, FL 34602",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GROWERS FERTILIZER CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-28",
+     "last": "2011-03-28",
+     "occ": "FERTILIZER SALES",
+     "csz": "LAKE ALFRED, FL 33850",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FARM BUREAU POLITICAL ACTION COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-28",
+     "last": "2011-03-28",
+     "occ": "PAC",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ROWLAND, JR. WALTER",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-30",
+     "last": "2011-03-30",
+     "occ": "RETIRED FARMER",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "W.R. JORDAN HARVESTING, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-30",
+     "last": "2011-03-30",
+     "occ": "CITRUS HARVESTING",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JORDAN AND JORDAN, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-30",
+     "last": "2011-03-30",
+     "occ": "CITRUS & CATTLE",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JORDAN C. CLAY",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-30",
+     "last": "2011-03-30",
+     "occ": "CITRUS GROWER",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "JIM BROWN CITRUS JEEP",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-30",
+     "last": "2011-03-30",
+     "occ": "CAR DEALERSHIP",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI-FEED, INC. D/B/A FARMERS FEED DEPOT",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-31",
+     "last": "2011-03-31",
+     "occ": "FEED STORE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BERRY DANIEL N.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-31",
+     "last": "2011-03-31",
+     "occ": "FARMER",
+     "csz": "PLANT CITY, FL 33566",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ELKINS LANCE R.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-31",
+     "last": "2011-03-31",
+     "occ": "FARMER",
+     "csz": "ZEPHYRHILLS, FL 33541",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FORD TOMMY J.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-03-31",
+     "last": "2011-03-31",
+     "occ": "FARMER",
+     "csz": "EAGLE LAKE, FL 33839",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PHILMON CITRUS NURSERY",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-05-31",
+     "last": "2011-05-31",
+     "occ": "CITRUS",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SCHREIBER GROVES INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-06-09",
+     "last": "2011-06-09",
+     "occ": "CITRUS",
+     "csz": "WINTER HAVEN, FL 33883",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HAZEN, JR. JACK E.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-06-28",
+     "last": "2011-06-28",
+     "occ": "FARMER",
+     "csz": "WELLBORN, FL 32094",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PRITCHETT M. H.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2011-06-30",
+     "last": "2011-06-30",
+     "occ": "FARMER",
+     "csz": "LAKE BUTLER, FL 32054",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TAS CITRUS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-07-12",
+     "last": "2011-07-12",
+     "occ": "CITRUS",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OLD FLORIDA PALMS",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 2,
+     "first": "2011-12-13",
+     "last": "2013-12-16",
+     "occ": "NURSERY; AGRICULTURE",
+     "csz": "LUTZ, FL 33549",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA POULTRY FEDERATION, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2011-12-13",
+     "last": "2011-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "TALLAHASSEE, FL 32317",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STUBBS FARM & GROVE SERVICE",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-02-07",
+     "last": "2012-02-07",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THOMAS & THOMAS SERIVCES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-02-16",
+     "last": "2012-02-16",
+     "occ": "AGRICULTURE",
+     "csz": "SEBRING, FL 33872",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SID LARKIN AND SON, INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-03-14",
+     "last": "2012-03-14",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33526",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BLACK NORMAN LARRY JR.",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2012-05-02",
+     "last": "2012-05-02",
+     "occ": "CITRUS GROWER",
+     "csz": "LAKELAND, FL 33813",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL STATE COMMITTEE OF CONTINUOUS EXISTENCE",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-05-02",
+     "last": "2012-05-02",
+     "occ": "CITRUS",
+     "csz": "LAKELAND, FL 33802",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HUNT BROTHERS SERVICES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-05-02",
+     "last": "2012-05-02",
+     "occ": "CITRUS",
+     "csz": "LAKE WALES, FL 33859",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "INDIAN RIVER CITRUS P.A.C.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-05-02",
+     "last": "2012-05-02",
+     "occ": "CITRUS",
+     "csz": "VERO BEACH, FL 32969",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OKEELANTA CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-06-27",
+     "last": "2012-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "G.L.C. FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-06-27",
+     "last": "2012-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CATTLEMEN PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-07-06",
+     "last": "2012-07-06",
+     "occ": "AGRICULTURE",
+     "csz": "KISSIMMEE, FL 34742",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MOSAIC FERTILIZER, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-08-01",
+     "last": "2012-08-01",
+     "occ": "AGRICULTURE",
+     "csz": "PLYMOUTH, ME 55441",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TRIPLE J RANCH, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2012-08-24",
+     "last": "2012-08-24",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BECKER WILLIAM",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2013-02-04",
+     "last": "2013-02-04",
+     "occ": "CITRUS FARMER",
+     "csz": "VERO BEACH, FL 32963",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OSCEOLA FARMS CO",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-02-07",
+     "last": "2013-02-07",
+     "occ": "AGRICULTURE",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THE SCOTTS COMPANY & SUBSIDIARIES",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-02-21",
+     "last": "2013-02-21",
+     "occ": "AGRICULTURE",
+     "csz": "MARYSVILLE, OH 43041",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FNGLA- PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-02-26",
+     "last": "2013-02-26",
+     "occ": "AGRICULTURE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TWO RIVERS RANCH, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-06-27",
+     "last": "2013-06-27",
+     "occ": "AGRICULTURE",
+     "csz": "THONOTOSASSA, FL 33592",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SHEIK ISLAND FARM, INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-06-27",
+     "last": "2013-06-27",
+     "occ": "EQUESTRIAN",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GLC FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-06-28",
+     "last": "2013-06-28",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GREENFIRE FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-09-18",
+     "last": "2013-09-18",
+     "occ": "FARM",
+     "csz": "HAVANA, FL 32333",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENNY ALBRITTON GROVE SERVICE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-10-31",
+     "last": "2013-10-31",
+     "occ": "CITRUS",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LAKE JOVITA FARM AND GROVE SERVICES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2013-10-31",
+     "last": "2013-10-31",
+     "occ": "CITRUS",
+     "csz": "SAINT LEO, FL 33574",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI-FEED, INC DBA FARMERS FEED DEPOT",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2014-01-31",
+     "last": "2014-01-31",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL PC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2014-02-13",
+     "last": "2014-02-13",
+     "occ": "PC",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA TOMATO EXCHANGE",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2014-03-03",
+     "last": "2014-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "MAITLAND, FL 32751",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILL LISA L",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2014-03-03",
+     "last": "2014-03-03",
+     "occ": "FARMER",
+     "csz": "APOPKA, FL 32703",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HILLSBOROUGH COUNTY AGRICULTURE  PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2015-12-18",
+     "last": "2015-12-18",
+     "occ": "PC",
+     "csz": "VALRICO, FL 33594",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THOMAS JOHN",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2016-04-21",
+     "last": "2016-04-21",
+     "occ": "FARMER",
+     "csz": "INVERNESS, FL 34452",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HOLLINSWOOD RANCH CITRUS MINING & TIMBER, INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2016-04-21",
+     "last": "2016-04-21",
+     "occ": "AGRICULTURE",
+     "csz": "CRYSTAL RIVER, FL 34423",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SILVER PALM CONSULTING, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2016-05-03",
+     "last": "2016-05-03",
+     "occ": "FARMER",
+     "csz": "LAKE WALES, FL 33898",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "J-MAC CATTLE, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2016-05-07",
+     "last": "2016-05-07",
+     "occ": "AGRICULTURE",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SYNGENTA CROP PRODUCTION, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2016-06-24",
+     "last": "2016-06-24",
+     "occ": "AGRICULTURE",
+     "csz": "GREENSBORO, NC 27409",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KELLY TRACTOR CO.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33166",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LAND DAIRY, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-10-15",
+     "last": "2021-10-15",
+     "occ": "AGRICULTURE",
+     "csz": "MAYO, FL 32066",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MUCK TURF, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LAKE HARDWARE & FARM SUPPLY INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "HARDWARE AND FARM SUPPLY",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "INTEGRITY FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-12-06",
+     "last": "2021-12-06",
+     "occ": "AGRICULTURE",
+     "csz": "CAMILLA, GA 31730",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PEACE VALLEY PRODUCTS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "BARTOW, FL 33831",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FRAISER FAMILY FARM, LLC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 2,
+     "first": "2021-12-07",
+     "last": "2021-12-27",
+     "occ": "AGRICULTURE",
+     "csz": "POLK CITY, FL 33868",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "COW CREEK FARM, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-12-14",
+     "last": "2021-12-14",
+     "occ": "AGRICULTURE",
+     "csz": "PLANT CITY, FL 33565",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ADAMS ROCKY CREEK RANCH, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2021-12-23",
+     "last": "2021-12-23",
+     "occ": "AGRICULTURE",
+     "csz": "FLORAL CITY, FL 34436",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ADAMS MD FARM INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-03-17",
+     "last": "2022-03-17",
+     "occ": "AGRITOURISM",
+     "csz": "JENNINGS, FL 32053",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LUNDY FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BUTLER BENJAMIN L",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "DAIRY FARMER",
+     "csz": "LORIDA, FL 33857",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BUTLER PAMELA H",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "DAIRY FARMER",
+     "csz": "LORIDA, FL 33857",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WEDGWORTH KEITH D",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "FARMER",
+     "csz": "WELLINGTON, FL 33414",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WILLIAMSON JOHN W",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "CATTLE FARMER",
+     "csz": "OKEECHOBEE, FL 34972",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RUSSAKIS CITRUS MANAGEMENT, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "CITRUS",
+     "csz": "FORT PIERCE, FL 34951",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OKEECHOBEE FEED INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34972",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ROBINSON ANDY",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-08-08",
+     "last": "2022-08-08",
+     "occ": "FARMER",
+     "csz": "WILLISTON, FL 32696",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SPRING LAKE RANCH INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-08-18",
+     "last": "2022-08-18",
+     "occ": "FARMING",
+     "csz": "BROOKSVILLE, FL 34603",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WILLIAMS GRAVES",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-08-25",
+     "last": "2022-08-25",
+     "occ": "FARMER",
+     "csz": "QUINCY, FL 32353",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DEESE RONNIE L",
+     "org": false,
+     "counts": false,
+     "total": 500,
+     "n": 1,
+     "first": "2022-08-29",
+     "last": "2022-08-29",
+     "occ": "FARMER/RANCHER",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KERN CARPENTER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-09-20",
+     "last": "2022-09-20",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33031",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MCCAULEY AGRIBUSINESS SERVICES LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-10-06",
+     "last": "2022-10-06",
+     "occ": "AGRICULTURE",
+     "csz": "LAKELAND, FL 33811",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA BLUE FARMS",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-10-21",
+     "last": "2022-10-21",
+     "occ": "AGRICULTURE",
+     "csz": "GAINESVILLE, FL 32635",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HERRING RANCH, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2020-09-24",
+     "last": "2020-09-24",
+     "occ": "AGRICULTURE",
+     "csz": "OLD TOWN, FL 32680",
+     "accounts": [
+      "Jobs for Florida (political committee he chaired)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OKEECHOBEE LIVESTOCK MARKET, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-04-21",
+     "last": "2022-04-21",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34973",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LONG LAND CO. INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-09-22",
+     "last": "2022-09-22",
+     "occ": "AGRICULTURE",
+     "csz": "PALM CITY, FL 34990",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ESTES CITRUS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 450,
+     "n": 2,
+     "first": "2012-05-02",
+     "last": "2021-12-13",
+     "occ": "CITRUS; AGRICULTURE",
+     "csz": "VERO BEACH, FL 32960",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WORTHY FLAVORS LLC",
+     "org": true,
+     "counts": true,
+     "total": 440,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SYLVITE LLC",
+     "org": true,
+     "counts": true,
+     "total": 400,
+     "n": 1,
+     "first": "2022-09-23",
+     "last": "2022-09-23",
+     "occ": "AGRICULTURE",
+     "csz": "BOWLING GREEN, FL 33834",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FRUIT & VEGETABLE ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 300.19,
+     "n": 1,
+     "first": "2014-02-13",
+     "last": "2014-02-13",
+     "occ": "AGRICULTURE",
+     "csz": "MAITLAND, FL 32794",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "APRILE FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 300,
+     "n": 1,
+     "first": "2012-03-27",
+     "last": "2012-03-27",
+     "occ": "AGRICULTURE",
+     "csz": "TEMPLE TERRACE, FL 33617",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "THREE R'S INC",
+     "org": true,
+     "counts": true,
+     "total": 300,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ORANGE COUNTY FARM BUREAU POLITICAL ACTION COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 300,
+     "n": 2,
+     "first": "2022-10-08",
+     "last": "2026-09-14",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "CHRISTMAS, FL 32709",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)",
+      "campaign (Agriculture Commissioner 2026)"
+     ],
+     "since": 100
+    },
+    {
+     "donor": "GROCO AGRICULTURE SERVICE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2011-09-14",
+     "last": "2011-09-14",
+     "occ": "AGRICULTURE",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RIVERFRONT PACKING COMPANY, LLLC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2012-05-02",
+     "last": "2012-05-02",
+     "occ": "CITRUS",
+     "csz": "VERO BEACHQ, FL 32961",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MITCHELL RANCH PARTNERSHIP, LTD.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2012-06-14",
+     "last": "2012-06-14",
+     "occ": "AGRICULTURE",
+     "csz": "NEW PORT RICHEY, FL 34655",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FNGLA",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2012-07-06",
+     "last": "2012-07-06",
+     "occ": "NURSERY GROWERS",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "M & B OF PRODUCTS, INC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2016-05-24",
+     "last": "2016-05-24",
+     "occ": "DAIRY/CITRUS PRODUCER",
+     "csz": "TAMPA, FL 33637",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BIG A RACERS LLC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SHAWNEE HARVESTING LLC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SP3 HOLDINGS LLC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PERRY FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2018-09-11",
+     "last": "2018-09-11",
+     "occ": "AGRICULTURE BUSINESS",
+     "csz": "MOORE HAVEN, FL 33471",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SUGAR AND SPICE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "T-HOLT FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "WELLINGTON, FL 33414",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STEWART STEIN FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STITT RANCH INC",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2022-04-11",
+     "last": "2022-04-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SUGAR GROVE, INC.",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34973",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DEEP SOUTH SUGAR CORP",
+     "org": true,
+     "counts": true,
+     "total": 250,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "AGRICULTURE",
+     "csz": "OKEECHOBEE, FL 34973",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "RC HATTON FARMS",
+     "org": true,
+     "counts": true,
+     "total": 234,
+     "n": 1,
+     "first": "2022-04-12",
+     "last": "2022-04-12",
+     "occ": "FARM",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "Friends of Wilton Simpson (political committee he chairs)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GRANDVIEW BOTANICALS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2011-06-28",
+     "last": "2011-06-28",
+     "occ": "NURSERY",
+     "csz": "DADE CITY, FL 33525",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KENNEDY GROVES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2012-05-09",
+     "last": "2012-05-09",
+     "occ": "CITRUS",
+     "csz": "VERO BEACH, FL 32967",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SWARTSEL GROVES, INC.",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2012-09-20",
+     "last": "2012-09-20",
+     "occ": "AGRICULTURE",
+     "csz": "NEW PORT RICHEY, FL 34652",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DUVAL FAMILY FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2021-11-04",
+     "last": "2021-11-04",
+     "occ": "CATTLE FARM",
+     "csz": "BROOKSVILLE, FL 34603",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "M & B DAIRY PRODUCTS",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2022-04-26",
+     "last": "2022-04-26",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33637",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "IMG ENTERPRISES INC.",
+     "org": true,
+     "counts": true,
+     "total": 173,
+     "n": 1,
+     "first": "2022-09-06",
+     "last": "2022-09-06",
+     "occ": "NURSERY/CITRUS FARM",
+     "csz": "GROVELAND, FL 34736",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "KAHN CITRUS MANAGEMENT, LLC",
+     "org": true,
+     "counts": true,
+     "total": 125,
+     "n": 1,
+     "first": "2021-12-07",
+     "last": "2021-12-07",
+     "occ": "AGRICULTURE",
+     "csz": "SEBRING, FL 33871",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CLAY JAR FARM, LLC",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2011-06-28",
+     "last": "2011-06-28",
+     "occ": "AGRICULTURE",
+     "csz": "SAN ANTONIO, FL 33576",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CIGAR CITY CATTLE COMPANY LLC",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2018-09-13",
+     "last": "2018-09-13",
+     "occ": "CATTLE FARM",
+     "csz": "TAMPA, FL 33624",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PIONEER RANCH & SUGAR FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TEE PEE FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2021-11-11",
+     "last": "2021-11-11",
+     "occ": "AGRICULTURE",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FULL MOON FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2021-12-13",
+     "last": "2021-12-13",
+     "occ": "AGRICULTURE",
+     "csz": "MONTICELLO, FL 32344",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MARVEL FARMS SANDRA",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2022-01-06",
+     "last": "2022-01-06",
+     "occ": "AGRICULTURE",
+     "csz": "HIGH SPRINGS, FL 32643",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "COUNCIL BAY FARMS",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2022-10-30",
+     "last": "2022-10-30",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33609",
+     "accounts": [
+      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    }
+   ]
+  }
+ ]
+}

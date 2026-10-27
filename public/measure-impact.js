@@ -572,8 +572,107 @@
       }
     };
   }
+  // Amendment 2, the farm equipment tax break (HJR 1215, 2025). Explained the same way for everyone. The money part
+  // comes from public/measure-money.js (built by scripts/measure-money-amendment2.mjs from Division of Elections reports):
+  // gifts from farm businesses, farm trade groups and farmers to the House sponsor, the Senate sponsor and the
+  // Commissioner of Agriculture. The tax cut is the state Revenue Estimating Conference's (House staff analysis).
+  function isAmend2(title){ return /tangible personal property/i.test(title) && /agricultur/i.test(title); }
+  var A2SRC = [
+    { name: 'Florida House, HJR 1215 (2025) staff analysis: Revenue Estimating Conference estimate', url: 'https://www.flsenate.gov/Session/Bill/2025/1215/Analyses/h1215e.SAC.PDF' },
+    { name: 'Florida Senate, HJR 1215 (2025) bill page and floor votes', url: 'https://flsenate.gov/Session/Bill/2025/1215/ByCategory' },
+    { name: 'Florida Senate, SJR 318 (2025)', url: 'https://flsenate.gov/Session/Bill/2025/318/BillText/Filed/HTML' },
+    { name: 'Florida Division of Elections, campaign contributions', url: 'https://dos.elections.myflorida.com/campaign-finance/contributions/' },
+    { name: 'WLRN, Florida Amendment 2 explained (Oct. 21, 2026)', url: 'https://www.wlrn.org/government-politics/2026-10-21/florida-amendment-2-explained-tax-break-farmers-rural' }
+  ];
+  function amend2(lang){
+    var L = lang === 'es' ? 'es' : lang === 'ht' ? 'ht' : 'en';
+    var D = (typeof window !== 'undefined' && window.MEASURE_MONEY && window.MEASURE_MONEY.amend2) || null;
+    var yr = function(s){ return String(s || '').slice(0, 4); };
+    var T = {
+      en: {
+        gYes: 'Farm equipment, machinery and other movable property kept on farmland and used to farm (or for agritourism) would no longer be taxed by counties, cities, school districts or other local governments, starting in 2027. It applies to property owned by whoever owns or leases the farmland.',
+        gNo: 'That property stays taxed as it is today (every business already gets the first $25,000 of its equipment value tax-free).',
+        you: 'If you own or lease farmland, the equipment you keep there would stop being taxed. Everyone else: no direct change to your tax bill.',
+        allYes: 'Local governments would collect at least $28.7 million a year less, statewide (state Revenue Estimating Conference). The state has not studied what that does to local governments’ budgets (WLRN).',
+        allNo: 'Local governments keep collecting that money.',
+        what: 'Who gets the tax cut', whatTxt: 'Farms: the owners and leaseholders of farmland, for the equipment and machinery they keep and use there. No official estimate breaks the total down by farm.',
+        numbers: 'The numbers',
+        n: [['Tax cut, statewide', 'at least $28.7 million a year (Revenue Estimating Conference, April 18, 2025)'], ['Who stops collecting it', 'counties, cities, school districts and special districts'], ['What the Florida Farm Bureau itself gets', 'nothing directly that any record shows: it is a membership group, and the cut goes to its member farms']],
+        nNote: 'Votes: 110 to 1 in the House (Apr. 25, 2025) and 37 to 0 in the Senate (May 2, 2025). It needs 60% of the vote.',
+        moneyHead: 'Money from farm businesses to the officials behind it',
+        off: { simpson: 'Wilton Simpson, Commissioner of Agriculture, on your ballot; his department backs the amendment', truenow: 'Sen. Keith Truenow, who filed the Senate version (SJR 318); not on Miami-Dade ballots', alvarez: 'Rep. Danny Alvarez, who filed the amendment (HJR 1215); not on Miami-Dade ballots' },
+        line: function(o, offName){ return offName + ': ' + big(o.total, 'en') + ' from ' + o.donors + ' farm companies, farm groups and farmers, ' + yr(o.from) + ' to ' + yr(o.to) + ', to his campaigns and the political committees he chairs. ' + big(o.since, 'en') + ' of it came after the amendment was filed on Feb. 26, 2025. Largest: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'en'); }).join(', ') + '.'; },
+        fb: function(n){ return 'The Florida Farm Bureau’s political committees (state and county) gave these three officials ' + big(n, 'en') + ' in all.'; },
+        unclear: function(u){ return 'Not counted: ' + u.map(function(x){ return x.name + ' (' + big(x.total, 'en') + ')'; }).join(', ') + '. These are named for farming, but Floridians for Sustainable Agriculture is a nonprofit whose funders are not public, and the others’ own reports show their money came mostly from outside farming.'; },
+        how: 'How we counted: companies and farm trade groups in farming, ranching, citrus, sugar, nurseries or dairy, plus people who reported being farmers, ranchers or growers and gave $1,000 or more in total. From Florida Division of Elections reports, read Oct. 27, 2026.',
+        needs: 'Where it came from: lawmakers, not a petition. Rep. Danny Alvarez (R) filed it as HJR 1215 on Feb. 26, 2025; Sen. Keith Truenow (R) filed a Senate version, SJR 318. It passed 110 to 1 in the House on Apr. 25, 2025 and 37 to 0 in the Senate on May 2, 2025. The Legislature can put amendments straight on the ballot; the Governor has no say. It needs 60% of the vote.',
+        whyReason: 'Supporters, including the Florida Farm Bureau Federation, the Florida Fruit & Vegetable Association and the state Department of Agriculture (WLRN), say taxes on farm equipment weigh on a struggling industry. Exempting a kind of property from local property taxes takes a change to the state constitution, and only voters can approve that.'
+      },
+      es: {
+        gYes: 'El equipo, la maquinaria y otros bienes muebles que se guardan en tierras agrícolas y se usan para producir (o para agroturismo) dejarían de pagar impuestos a condados, ciudades, distritos escolares y otros gobiernos locales, desde 2027. Aplica a los bienes del dueño o arrendatario de la tierra agrícola.',
+        gNo: 'Esos bienes siguen pagando impuestos como hoy (todo negocio ya tiene exentos los primeros $25,000 del valor de su equipo).',
+        you: 'Si es dueño o arrendatario de tierra agrícola, el equipo que guarda allí dejaría de pagar impuestos. Para los demás: ningún cambio directo en su factura de impuestos.',
+        allYes: 'Los gobiernos locales recaudarían al menos $28.7 millones menos al año en todo el estado (Conferencia Estatal de Estimación de Ingresos). El estado no ha estudiado cómo afecta eso los presupuestos locales (WLRN).',
+        allNo: 'Los gobiernos locales siguen recaudando ese dinero.',
+        what: 'Quién recibe la rebaja', whatTxt: 'Las fincas: los dueños y arrendatarios de tierras agrícolas, por el equipo y la maquinaria que guardan y usan allí. Ningún cálculo oficial lo desglosa por finca.',
+        numbers: 'Las cifras',
+        n: [['Rebaja de impuestos, en todo el estado', 'al menos $28.7 millones al año (Conferencia de Estimación de Ingresos, 18 de abril de 2025)'], ['Quién deja de recaudarlo', 'condados, ciudades, distritos escolares y distritos especiales'], ['Lo que recibe el Florida Farm Bureau como tal', 'nada directo según ningún registro: es una asociación de miembros, y la rebaja va a sus fincas socias']],
+        nNote: 'Votos: 110 a 1 en la Cámara (25 de abril de 2025) y 37 a 0 en el Senado (2 de mayo de 2025). Necesita el 60% de los votos.',
+        moneyHead: 'Dinero de negocios agrícolas a los funcionarios que la impulsaron',
+        off: { simpson: 'Wilton Simpson, Comisionado de Agricultura, en su boleta; su departamento apoya la enmienda', truenow: 'Senador Keith Truenow, que presentó la versión del Senado (SJR 318); no está en boletas de Miami-Dade', alvarez: 'Representante Danny Alvarez, que presentó la enmienda (HJR 1215); no está en boletas de Miami-Dade' },
+        line: function(o, offName){ return offName + ': ' + big(o.total, 'es') + ' de ' + o.donors + ' empresas agrícolas, grupos agrícolas y agricultores, de ' + yr(o.from) + ' a ' + yr(o.to) + ', a sus campañas y a los comités políticos que preside. ' + big(o.since, 'es') + ' llegó después de que se presentó la enmienda el 26 de febrero de 2025. Los mayores: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'es'); }).join(', ') + '.'; },
+        fb: function(n){ return 'Los comités políticos del Florida Farm Bureau (estatal y de condados) dieron a estos tres funcionarios ' + big(n, 'es') + ' en total.'; },
+        unclear: function(u){ return 'No contados: ' + u.map(function(x){ return x.name + ' (' + big(x.total, 'es') + ')'; }).join(', ') + '. Llevan nombres agrícolas, pero Floridians for Sustainable Agriculture es una organización sin fines de lucro cuyos donantes no son públicos, y los informes de los demás muestran que su dinero vino mayormente de fuera de la agricultura.'; },
+        how: 'Cómo contamos: empresas y grupos gremiales de agricultura, ganadería, cítricos, azúcar, viveros o lechería, más personas que declararon ser agricultores, ganaderos o productores y dieron $1,000 o más en total. De los informes de la División de Elecciones de Florida, leídos el 27 de octubre de 2026.',
+        needs: 'De dónde salió: de los legisladores, no de una petición. El representante Danny Alvarez (R) la presentó como HJR 1215 el 26 de febrero de 2025; el senador Keith Truenow (R) presentó una versión en el Senado, SJR 318. Se aprobó 110 a 1 en la Cámara el 25 de abril de 2025 y 37 a 0 en el Senado el 2 de mayo de 2025. La Legislatura puede poner enmiendas directamente en la boleta; el Gobernador no participa. Necesita el 60% de los votos.',
+        whyReason: 'Sus partidarios, entre ellos el Florida Farm Bureau Federation, la Florida Fruit & Vegetable Association y el Departamento de Agricultura del estado (WLRN), dicen que los impuestos al equipo agrícola pesan sobre una industria en dificultades. Eximir un tipo de bien de los impuestos locales a la propiedad requiere cambiar la constitución estatal, y solo los votantes pueden aprobarlo.'
+      },
+      ht: {
+        gYes: 'Ekipman, machin ak lòt byen mobil yo kenbe sou tè agrikòl epi sèvi pou pwodiksyon (oswa pou agwotouris) pa ta peye taks bay konte, vil, distri lekòl oswa lòt gouvènman lokal ankò, apati 2027. Sa aplike pou byen pwopriyetè oswa lokatè tè agrikòl la.',
+        gNo: 'Byen sa yo kontinye peye taks jan yo fè jodi a (chak biznis deja pa peye taks sou premye $25,000 valè ekipman li).',
+        you: 'Si ou posede oswa lwe tè agrikòl, ekipman ou kenbe la pa ta peye taks ankò. Pou tout lòt moun: pa gen chanjman dirèk nan bòdwo taks ou.',
+        allYes: 'Gouvènman lokal yo ta ranmase omwen $28.7 milyon mwens chak ane nan tout Leta a (Konferans Estimasyon Revni Leta a). Leta a pa etidye kijan sa afekte bidjè gouvènman lokal yo (WLRN).',
+        allNo: 'Gouvènman lokal yo kontinye ranmase lajan sa a.',
+        what: 'Kiyès ki jwenn diminisyon taks la', whatTxt: 'Fèm yo: pwopriyetè ak lokatè tè agrikòl, pou ekipman ak machin yo kenbe epi sèvi la. Pa gen okenn estimasyon ofisyèl ki separe total la pa fèm.',
+        numbers: 'Chif yo',
+        n: [['Diminisyon taks, nan tout Leta a', 'omwen $28.7 milyon pa ane (Konferans Estimasyon Revni, 18 avril 2025)'], ['Kiyès ki sispann ranmase l', 'konte, vil, distri lekòl ak distri espesyal'], ['Sa Florida Farm Bureau li menm jwenn', 'anyen dirèk okenn dosye pa montre: se yon gwoup manm, e diminisyon an ale bay fèm manm yo']],
+        nNote: 'Vòt: 110 kont 1 nan Chanm nan (25 avril 2025) ak 37 kont 0 nan Sena a (2 me 2025). Li bezwen 60% vòt.',
+        moneyHead: 'Lajan biznis agrikòl bay ofisyèl ki pote l yo',
+        off: { simpson: 'Wilton Simpson, Komisè Agrikilti, sou bilten vòt ou; depatman li sipòte amannman an', truenow: 'Senatè Keith Truenow, ki te depoze vèsyon Sena a (SJR 318); li pa sou bilten Miami-Dade', alvarez: 'Reprezantan Danny Alvarez, ki te depoze amannman an (HJR 1215); li pa sou bilten Miami-Dade' },
+        line: function(o, offName){ return offName + ': ' + big(o.total, 'ht') + ' nan men ' + o.donors + ' konpayi agrikòl, gwoup agrikòl ak agrikiltè, soti ' + yr(o.from) + ' rive ' + yr(o.to) + ', bay kanpay li ak komite politik li prezide. ' + big(o.since, 'ht') + ' ladan l te vini apre yo te depoze amannman an 26 fevriye 2025. Pi gwo yo: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'ht'); }).join(', ') + '.'; },
+        fb: function(n){ return 'Komite politik Florida Farm Bureau yo (Leta ak konte) te bay twa ofisyèl sa yo ' + big(n, 'ht') + ' antou.'; },
+        unclear: function(u){ return 'Nou pa konte: ' + u.map(function(x){ return x.name + ' (' + big(x.total, 'ht') + ')'; }).join(', ') + '. Yo pote non agrikòl, men Floridians for Sustainable Agriculture se yon òganizasyon san bi likratif ki pa fè konnen kiyès ki finanse l, e rapò lòt yo montre lajan yo te soti sitou andeyò agrikilti.'; },
+        how: 'Kijan nou konte: konpayi ak gwoup komès nan agrikilti, elvaj, sitwon, sik, pepinyè oswa letye, plis moun ki te deklare yo se agrikiltè, elvè oswa pwodiktè e ki te bay $1,000 oswa plis antou. Soti nan rapò Divizyon Eleksyon Florid, li 27 oktòb 2026.',
+        needs: 'Kote li soti: nan men lejislatè yo, pa yon petisyon. Reprezantan Danny Alvarez (R) te depoze l kòm HJR 1215 26 fevriye 2025; Senatè Keith Truenow (R) te depoze yon vèsyon nan Sena a, SJR 318. Li pase 110 kont 1 nan Chanm nan 25 avril 2025 ak 37 kont 0 nan Sena a 2 me 2025. Lejislati a ka mete amannman dirèkteman sou bilten an; Gouvènè a pa gen mo pou l di. Li bezwen 60% vòt.',
+        whyReason: 'Moun ki sipòte l yo, tankou Florida Farm Bureau Federation, Florida Fruit & Vegetable Association ak Depatman Agrikilti Leta a (WLRN), di taks sou ekipman agrikòl peze sou yon endistri k ap soufri. Pou egzante yon kalite byen de taks lokal sou pwopriyete, fòk yo chanje konstitisyon Leta a, e se sèlman votè yo ki ka apwouve sa.'
+      }
+    }[L];
+    var money = [];
+    if(D){
+      var order = ['simpson', 'truenow', 'alvarez'];
+      order.forEach(function(k){ var o = D.officials.filter(function(x){ return x.key === k; })[0]; if(o) money.push(T.line(o, T.off[k])); });
+      money.push(T.fb(D.officials.reduce(function(s, o){ return s + (o.farmBureau || 0); }, 0)));
+      var un = {}; D.officials.forEach(function(o){ (o.unclear || []).forEach(function(u){ un[u.name] = (un[u.name] || 0) + u.total; }); });
+      var ul = Object.keys(un).map(function(n){ return { name: n, total: un[n] }; }).sort(function(a, b){ return b.total - a.total; });
+      if(ul.length) money.push(T.unclear(ul));
+      money.push(T.how);
+    }
+    return {
+      yes: [], no: [], approx: false, explainer: true, sources: A2SRC, why: [T.needs, T.whyReason],
+      general: { yes: T.gYes, no: T.gNo },
+      summary: { yes: [T.you], no: [], allYes: [T.allYes], allNo: [T.allNo] },
+      reconcile: {
+        head: T.what, explainer: true,
+        splitHead: T.numbers, split: T.n.map(function(x){ return { label: x[0], text: x[1] }; }),
+        loss: T.whatTxt, fundsHead: '', funds: [], fundNote: T.nNote,
+        respond: '', share: '',
+        extra: money.length ? [{ head: T.moneyHead, items: money }] : []
+      }
+    };
+  }
   function calc(title, me, lang){
     if(isAmend1(title)) return amend1(lang);   // same for everyone, no answers needed
+    if(isAmend2(title)) return amend2(lang);
     me = me || normalize({ groups: {} });      // no answers yet: the for-everyone part still applies
     if(isAmend3(title)) return amend3(me, lang);
     if(isSchoolLevy(title)) return schoolLevy(me, lang);
@@ -583,6 +682,6 @@
   window.measureImpact = {
     GROUPS: GROUPS, SRC: SRC, load: load, save: save, clear: clear, normalize: normalize, has: has, any: any,
     words: words, sumWords: sumWords, calc: calc, usd: usd, placeKey: placeKey, places: function(){ var M = rates(); return M ? Object.keys(M.places) : []; },
-    _test: { homeTaxes: homeTaxes, currentNonSchoolExempt: currentNonSchoolExempt, isAmend3: isAmend3, isSchoolLevy: isSchoolLevy }
+    _test: { isAmend2: isAmend2, amend2: amend2, homeTaxes: homeTaxes, currentNonSchoolExempt: currentNonSchoolExempt, isAmend3: isAmend3, isSchoolLevy: isSchoolLevy }
   };
 })();
