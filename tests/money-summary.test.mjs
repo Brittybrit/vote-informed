@@ -69,9 +69,9 @@ test('renders in all three languages with no leftovers', () => {
   }
   // what ties first (Brit, Oct 26, 2026), then the percentages, then where the money came from and the actions
   const r = render(saved.people['mike-redondo'], 'en');
-  assert.match(r, /^Mike Redondo took \$[\d,.]+ from \d+ donors who benefited from his official actions/);
+  assert.match(r, /^Mike Redondo took \$[\d,.]+ from \d+ donors tied to official actions he took in their favor: a budget request he filed, or a yes vote on a contested law that helps their industry\./);
   assert.match(r.split('<br>')[1], /^Since \w+ 20\d\d, he filed 48 budget requests \(53%\)/);   // 2023-2026 (scripts/state-tenure.mjs); was 41 (46%) for 2025-26
-  assert.ok(r.indexOf('48 budget requests (53%)') < r.indexOf('came from the lobbying firms'));
+  assert.ok(r.indexOf('48 budget requests (53%)') < r.indexOf('came from the lobbying firm for the group that would get the money'));
   assert.ok(r.indexOf('took') < r.indexOf('asked for $175.1 million'));
   // the parts add up to the total when both are shown
   for (const p of Object.values(saved.people)) {
@@ -174,7 +174,8 @@ test('state legislator (Nixon-style): money from bills voted no or not voted on 
   const ties = buildTies(fixture('state'))['angela-nixon'].actions.map(a => a.id).sort();
   assert.deepEqual(ties, ['HB1', 'req1']);
   const en = render(JSON.parse(JSON.stringify(p)), 'en');
-  assert.match(en, /took \$1,600 from 2 donors who benefited from her official actions/);
+  assert.match(en, /took \$1,600 from 2 donors tied to official actions she took in their favor: a budget request she filed, or a yes vote on a contested law that helps their industry\./);
+  assert.match(en, /\$100 came from donors in an industry that a contested law she voted yes on may help, by its official analysis\./);
   assert.match(en, /She voted no on a bill that helps industries whose donors gave \$50\. That money is not counted above\./);
   for (const lang of ['es', 'ht']) assert.match(render(JSON.parse(JSON.stringify(p)), lang), /\$50\b/);
 });
@@ -242,4 +243,20 @@ test('unanimous votes and votes of unknown tally are not ties and leave the shar
   assert.equal(q.requests.money, 1500);
   assert.equal(q.bills.money, 0);
   assert.equal(q.total, 1500);
+});
+
+// The headline says what the record shows (Brit, Oct 27, 2026): an action taken in the donor's favor, not that the donor
+// benefited. A request may not have been funded, a lobbying firm is paid to lobby for its client, and a law "may" help.
+test('no summary says a donor benefited; lobbying firms are named for their client, not as the one getting the money', () => {
+  for (const [pid, p] of Object.entries(saved.people)) {
+    assert.doesNotMatch(render(p, 'en'), /benefit/i, pid);
+    assert.doesNotMatch(render(p, 'es'), /beneficiaron|beneficiaran|se benefician/i, pid);
+    assert.doesNotMatch(render(p, 'ht'), /benefisye/i, pid);
+    const en = render(p, 'en');
+    if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /came from the lobbying firm for the group that would get the money, or from that group, on \d+ budget requests?/, pid);
+    // the request line still says whether the request was funded
+    if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /final budget|vetoed/, pid);
+  }
+  const m = read('../public/methodology.html');
+  assert.doesNotMatch(m, /donors who benefited from/);
 });
