@@ -86,9 +86,10 @@ test('practitioners and the businesses themselves still tie (Nixon cases)', () =
     assert.ok(fits(ref, 'FLORIDA BEER WHOLESALERS GOOD GOVERNMENT COMMITTEE', 'PAC'), ref);
     assert.ok(nixon(ref).has('NORTH FLORIDA SALES') && nixon(ref).has('FLORIDA BEER WHOLESALERS GOOD GOVERNMENT COMMITTEE'), ref);
   }
+  // "CONTRACTOR" alone is an umbrella word (Brit, Oct 27, 2026): it no longer ties James Minion to contractor laws
   for (const ref of ['HB 803 · 2026', 'HB 683 · 2025']) {
-    assert.ok(fits(ref, 'MINION JAMES', 'CONTRACTOR'), ref);
-    assert.ok(nixon(ref).has('MINION JAMES'), ref);
+    assert.ok(!fits(ref, 'MINION JAMES', 'CONTRACTOR'), ref);
+    assert.ok(!nixon(ref).has('MINION JAMES'), ref);
   }
   for (const occ of ['PSYCHOLOGIST', 'CLINICAL PSYCHOLOGIST', 'NEUROPSYCHOLOGIST UTHSC', 'PSYCHOLOGISTTOTAL SPECTRUM COU']) assert.ok(fits('SB 944 · 2025', 'PROIA FELIX', occ), occ);
   assert.ok(nixon('SB 944 · 2025').has('PROIA FELIX'));
@@ -338,4 +339,40 @@ test('SB 7016 (2024) FRAME/DSLR stays narrow, and so do the other program, place
   const fed = FEDFILES.flatMap(f => J(f).bills);
   for (const t of ['certain small rural hospitals', 'disproportionate-share hospital'])
     for (const b of fed.filter(b => b.conditional === t)) assert.equal(b.conditionBreadth, 'narrow', b.ref);
+});
+
+// Rule 2, umbrella words (Brit, Oct 27, 2026): "contractor can't be something we are applying as a check, it is way too broad"
+test('umbrella occupation words never qualify a person by themselves; the specific kind does', () => {
+  const C = ['construction'];
+  // HB 89 (2023): "construction industry professionals and companies"
+  for (const occ of ['CONTRACTOR', 'SIGN CONTRACTOR/SELF', 'SIGN CONTRACTOR', 'SUBCONTRACTOR', 'SELF-EMPLOYED', 'BUSINESS OWNER', 'CONSULTANT', 'MANAGER', 'SALES', 'ENGINEER'])
+    assert.ok(!fitsLaw(K('HB 89 · 2023'), 'MINION JAMES', occ, C), occ);
+  for (const occ of ['GENERAL CONTRACTOR', 'BUILDING CONTRACTOR', 'CERTIFIED GENERAL CONTRACTOR', 'RESIDENTIAL CONTRACTOR', 'OWNER, CONSTRUCTION COMPANY'])
+    assert.ok(fitsLaw(K('HB 89 · 2023'), 'SMITH JOHN', occ, C), occ);
+  // SB 346 (2023) helps building contractors on public projects
+  assert.ok(fitsLaw(K('SB 346 · 2023'), 'SMITH JOHN', 'GENERAL CONTRACTOR', C));
+  assert.ok(!fitsLaw(K('SB 346 · 2023'), 'SMITH JOHN', 'CONTRACTOR', C));
+  // a roofing law: ROOFING CONTRACTOR ties, CONTRACTOR alone does not
+  assert.ok(fitsLaw(K('HB 803 · 2026'), 'SMITH JOHN', 'ROOFING CONTRACTOR', ['construction']));
+  assert.ok(!fitsLaw(K('HB 803 · 2026'), 'SMITH JOHN', 'CONTRACTOR', ['construction']));
+  // companies still qualify by their own name or business
+  assert.ok(fitsLaw(K('HB 89 · 2023'), 'ABC CONTRACTORS INC', 'CONTRACTOR', C));
+  // developer laws: "DEVELOPER" alone (software or real estate?) does not tie; REAL ESTATE DEVELOPER does
+  const D = ['realestate-dev'];
+  assert.ok(!fitsLaw(K('HB 927 · 2026'), 'SMITH JOHN', 'DEVELOPER', D));
+  assert.ok(!fitsLaw(K('HB 927 · 2026'), 'SMITH JOHN', 'SELF EMPLOYED DEVELOPER', D));
+  assert.ok(fitsLaw(K('HB 927 · 2026'), 'SMITH JOHN', 'REAL ESTATE DEVELOPER', D));
+  assert.ok(fitsLaw(K('HB 927 · 2026'), 'SMITH JOHN', 'LAND DEVELOPER', D));
+  // engineering (CCNA) laws: "ENGINEER" alone does not tie; PROFESSIONAL ENGINEER does
+  const E = ['engineering'];
+  assert.ok(!fitsLaw(K('HB 149 · 2024'), 'SMITH JOHN', 'ENGINEER', E));
+  assert.ok(fitsLaw(K('HB 149 · 2024'), 'SMITH JOHN', 'PROFESSIONAL ENGINEER', E));
+  // subcontractor laws name no specific trade: a person reporting SUBCONTRACTOR does not tie
+  assert.ok(!fitsLaw(K('SB 378 · 2021'), 'SMITH JOHN', 'SUBCONTRACTOR', C));
+  // no class keeps an umbrella word as its only way to tie a person when the analysis names a specific kind
+  for (const ref of ['HB 89 · 2023', 'SB 346 · 2023', 'HB 803 · 2026', 'HB 683 · 2025']) assert.match(K(ref).re, /GENERAL CONTRACTOR/, ref);
+  for (const ref of ['HB 399 · 2026', 'HB 927 · 2026', 'SB 102 · 2023', 'HB 487 · 2021', 'SB 706 · 2022']) assert.match(K(ref).re, /REAL ESTATE DEVELOP/, ref);
+  // and none of the cards ties MINION JAMES as a bare CONTRACTOR
+  for (const B of d.bodies.filter(b => b.key === 'flhouse' || b.key === 'flsenate')) for (const a of B.actions)
+    for (const g of a.gifts.filter(g => g.kind === 'class' && donorKey(g.donor) === 'MINION JAMES')) assert.fail(a.id + ' ties MINION JAMES');
 });

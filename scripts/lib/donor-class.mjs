@@ -18,6 +18,10 @@ import { readFileSync, existsSync } from 'node:fs';
 //    owner role (OWNER, PRESIDENT, CEO, FOUNDER, PARTNER, MANAGING MEMBER, SELF-EMPLOYED) next to the business itself.
 //    Employees of a company in the industry (banker, teller, driver, staff, counselor, software engineer) do not
 //    count; executives only under rule 5. A person's name is never matched (MARINA, WATERS, TEMPLE, BARBER are surnames).
+// 2a. An umbrella word that spans unrelated trades (CONTRACTOR, SUBCONTRACTOR, CONSULTANT, ENGINEER, SALES, MANAGER,
+//    DEVELOPER, INVESTOR, BUSINESS OWNER, SELF-EMPLOYED, ENTREPRENEUR) never qualifies a person by itself: the reported
+//    occupation must name the specific kind the analysis names (GENERAL CONTRACTOR for a law helping general
+//    contractors; SIGN CONTRACTOR does not count for it). Brit, Oct 27, 2026.
 // 3. Committees, PACs and companies count when their own name or reported business is that business or its trade
 //    group. A labor union counts only for a law with `unions: true`.
 // 4. Realtors, real estate brokers and sales associates count only for a law with `realtors: true`; a law that helps
@@ -163,12 +167,16 @@ function decide(K, name, occ, tags, mode) {
     // a class with tags only: the company's industry tag (from its name and reported business) is the business
     return !(K.re) && tags.some(x => want.has(x) && !NOT_INDUSTRY.has(x));
   }
-  // a person: only the reported occupation, never the name (rule 2)
-  if (!re && !K.who) return false;
+  // a person: only the reported occupation, never the name (rule 2), and never through an umbrella word alone (rule 2a)
+  const pre = phrasesForPerson(reOf(K));
+  if (!pre && !K.who) return false;
   const o = bare(clean(O, K));
   const who = K.who ? new RegExp('(?<![A-Z])(?:' + K.who + ')', 'i') : null;
   if (who && who.test(o)) return true;
-  if (!re) return false;
+  if (!pre) return false;
+  return person(K, name, o, pre, mode);
+}
+function person(K, name, o, re, mode) {
   // a practitioner or business noun that the law's phrases name (the phrase match covers the noun)
   if (!globalRe.has(re)) globalRe.set(re, new RegExp(re.source, 'gi'));
   const hits = [...o.matchAll(globalRe.get(re))].map(m => [m.index, m.index + m[0].length]);
@@ -187,6 +195,19 @@ function decide(K, name, occ, tags, mode) {
   // an executive: only with an official record of their stake in that company
   return mode === 'assume' ? 'exec' : !!execRecord(K, name, o);
 }
+
+// rule 2a (Brit, Oct 27, 2026): an umbrella occupation word that spans unrelated trades never qualifies a person by
+// itself. For a person, these alternatives are dropped from the class's phrases; the class names the specific kinds
+// instead (GENERAL CONTRACTOR, BUILDING CONTRACTOR, REAL ESTATE DEVELOP, PROFESSIONAL ENGINEER). Companies still match
+// on the full phrases (their own name or reported business).
+export const UMBRELLA = /^(?:(?:SUB)?CONTRACT(?:OR|ORS|ING)?|CONSULT(?:ANT|ANTS|ING)?|ENGINEER(?:S|ING)?|SALES|MANAGE(?:R|RS|MENT)?|DEVELOP(?:ER|ERS)?|INVEST(?:OR|ORS|MENT|MENTS)?|BUSINESS(?:ES| OWNER)?|ENTREPRENEURS?|SELF(?:[- ]EMPLOYED)?)$/;
+// split a phrase pattern on its top-level alternatives (not inside parentheses)
+const topAlternatives = src => { const out = []; let depth = 0, cur = ''; for (let i = 0; i < src.length; i++) { const ch = src[i];
+  if (ch === '\\') { cur += ch + (src[i + 1] || ''); i++; continue; } if (ch === '(') depth++; if (ch === ')') depth--;
+  if (ch === '|' && depth === 0) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out; };
+export const personPattern = src => src ? (topAlternatives(src).filter(a => !UMBRELLA.test(a)).join('|') || null) : null;
+const personCache = new Map();
+const phrasesForPerson = src => { if (!personCache.has(src)) { const p = personPattern(src); personCache.set(src, p ? phrases(p) : null); } return personCache.get(src); };
 
 // rule 6: a narrow condition needs a subset record; a broad one (met in normal operations) does not. A conditional class
 // without a breadth is treated as narrow.

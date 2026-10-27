@@ -12,7 +12,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|HOUSING",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|HOUSING|REAL ESTATE DEVELOP|LAND DEVELOP|PROPERTY DEVELOP|RESIDENTIAL DEVELOP|COMMERCIAL DEVELOP|HOUSING DEVELOP",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2023-22": {
@@ -20,7 +20,7 @@
    "construction",
    "homebuilders"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD",
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR",
   "not": "FTBA|TRANSPORTATION|AGGREGATE|ROAD|STAIRS"
  },
  "2023-29": {
@@ -61,7 +61,7 @@
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR",
   "not": "FTBA|AGGREGATE"
  },
  "2023-139": {
@@ -190,7 +190,7 @@
    "construction",
    "homebuilders"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER"
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR"
  },
  "2023-233": {
   "tags": [
@@ -272,7 +272,7 @@
   "tags": [
    "engineering"
   ],
-  "re": "ENGINEER|ARCHITECT|SURVEY"
+  "re": "ENGINEER|ARCHITECT|SURVEY|PROFESSIONAL ENGINEER|P\\.E\\.|CONSULTING ENGINEER|ENGINEERING FIRM"
  },
  "2023-349": {
   "tags": [
@@ -398,7 +398,7 @@
    "construction",
    "engineering"
   ],
-  "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP",
+  "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP|PROFESSIONAL ENGINEER|P\\.E\\.|CONSULTING ENGINEER|ENGINEERING FIRM",
   "conditional": "contracting with RPEs through such means",
   "conditionBreadth": "narrow",
   "conditionBreadthReason": "only businesses holding or winning a specific government contract"
@@ -473,7 +473,7 @@
   "tags": [
    "engineering"
   ],
-  "re": "ENGINEER|WATER|WASTEWATER|UTILIT|ENVIRONMENTAL CONSULT",
+  "re": "ENGINEER|WATER|WASTEWATER|UTILIT|ENVIRONMENTAL CONSULT|PROFESSIONAL ENGINEER|P\\.E\\.|CONSULTING ENGINEER|ENGINEERING FIRM",
   "conditional": "businesses which facilitate the preparation of reuse feasibility studies",
   "conditionBreadth": "narrow",
   "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
@@ -518,7 +518,7 @@
    "engineering",
    "construction"
   ],
-  "re": "ENGINEER|ARCHITECT|SURVEY|CONSTRUCTION MANAGEMENT|PROJECT MANAGEMENT"
+  "re": "ENGINEER|ARCHITECT|SURVEY|CONSTRUCTION MANAGEMENT|PROJECT MANAGEMENT|PROFESSIONAL ENGINEER|P\\.E\\.|CONSULTING ENGINEER|ENGINEERING FIRM"
  },
  "2024-206": {
   "tags": [
@@ -530,7 +530,7 @@
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR",
   "not": "FTBA|AGGREGATE|MATERIAL|SUPPL"
  },
  "2024-209": {
@@ -546,7 +546,7 @@
   "tags": [
    "construction"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR",
   "not": "FTBA|AGGREGATE",
   "conditional": "those contractors who chose registration in a local community",
   "conditionBreadth": "narrow",
@@ -594,7 +594,7 @@
   "tags": [
    "engineering"
   ],
-  "re": "ENGINEER|INSPECT",
+  "re": "ENGINEER|INSPECT|PROFESSIONAL ENGINEER|P\\.E\\.|CONSULTING ENGINEER|ENGINEERING FIRM",
   "conditional": "a professional firm shielded by sovereign immunity protections",
   "conditionBreadth": "narrow",
   "conditionBreadthReason": "only businesses holding or winning a specific government contract"
@@ -611,6 +611,6 @@
    "construction",
    "homebuilders"
   ],
-  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|ROOF|DREDG|MARINE CONSTRUCT|BEACH"
+  "re": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|ROOF|DREDG|MARINE CONSTRUCT|BEACH|GENERAL CONTRACTOR|BUILDING CONTRACTOR|RESIDENTIAL CONTRACTOR|CONSTRUCTION CONTRACTOR"
  }
 }

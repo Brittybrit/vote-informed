@@ -18,13 +18,30 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
    Phrases that only look like a business are removed first: FOOD BANK, BLOOD BANK, SOCIAL SECURITY, ECONOMIC
    DEVELOPMENT, BUSINESS DEVELOPMENT, ADULT DAY CARE (for child care laws).
 2. **A person counts only when their own reported occupation shows they ARE the business**: a licensed practitioner
-   or business noun the class names (PHYSICIAN for laws paying physicians, CONTRACTOR for laws helping contractors,
+   or business noun the class names (PHYSICIAN for laws paying physicians, GENERAL CONTRACTOR for laws helping building contractors,
    PSYCHOLOGIST, FUNERAL DIRECTOR, DISTRIBUTOR, DEALER, FARMER), or an owner or principal role (OWNER, PRESIDENT, CEO,
    FOUNDER, PARTNER, MANAGING MEMBER, PROPRIETOR, SELF-EMPLOYED) next to the business itself. Employees do not count:
    banker, teller, driver, staff, counselor employed by a provider, software or analytics engineer, "engineer" alone,
    administrator. An executive title (rule 6) does not count on its own. Bare sector words ("CONSTRUCTION", "HEALTHCARE", "AGRICULTURE") do not say the person
    is the business. A person's name is never matched (MARINA, WATERS, TEMPLE, BARBER are names). A donor is the business
    when any occupation they reported on a gift in the same reports shows it.
+   **Umbrella words never qualify a person by themselves** (Brit, Oct 27, 2026: "contractor can't be something we are
+   applying as a check, it is way too broad"). CONTRACTOR, SUBCONTRACTOR, CONSULTANT, ENGINEER, SALES, MANAGER, DEVELOPER
+   (software or real estate?), INVESTOR, BUSINESS OWNER, SELF-EMPLOYED and ENTREPRENEUR span unrelated trades. For a
+   person, these words are dropped from the class's `re` (`UMBRELLA` and `personPattern` in `scripts/lib/donor-class.mjs`);
+   the class names the specific kinds the analysis names instead, and only those tie a person (or an official license
+   or registration record showing that kind). Companies still match on the full `re`. The specific phrases used:
+   - Construction laws whose analysis names contractors, builders or the construction industry (HB 89 2023
+     "construction industry professionals and companies", building contractors, contractors on public works):
+     GENERAL CONTRACTOR, BUILDING CONTRACTOR, RESIDENTIAL CONTRACTOR, CONSTRUCTION CONTRACTOR (the s. 489.105
+     construction contractors), plus any trade the analysis names (ROOFING, PLUMBING, ELECTRICAL CONTRACTOR). "CONTRACTOR"
+     alone, "SIGN CONTRACTOR" and "SIGN CONTRACTOR/SELF" do not tie.
+   - Developer laws: REAL ESTATE, LAND, PROPERTY, RESIDENTIAL, COMMERCIAL or HOUSING DEVELOPER (and home builders, rule
+     8). "DEVELOPER" alone does not tie.
+   - Engineering and CCNA professional-services laws: PROFESSIONAL ENGINEER, P.E., CONSULTING ENGINEER, ENGINEERING
+     FIRM. "ENGINEER" alone does not tie.
+   - Subcontractor laws (SB 378 2021, HB 331 2023): the analysis names no specific trade, so a
+     person reporting "SUBCONTRACTOR" does not tie; subcontracting companies still do.
 3. **Committees, PACs and companies** count when their own name or reported business is that business or its trade
    association (Florida Beer Wholesalers' committee: yes for a beer distributor law; the Realtors' committee: only for a
    realtor law). A labor union counts only for a law with `unions: true`.
