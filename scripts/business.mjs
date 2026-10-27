@@ -89,13 +89,18 @@ const evidence = (t, y) => {
   return null;
 };
 const privateTies = [];
+// Sunbiz end dates for businesses shown only as "last disclosed" (s9-history/sunbiz.jsonl): a tie dated after the
+// business was dissolved is not published (Brit's rule 3, Oct 26, 2026)
+const SB = readLines(path.join(dir, 's9-history', 'sunbiz.jsonl'));
+const endedBefore = (t, d) => SB.find(s => s.pid === t.pid && s.dissolved && d > s.dissolved && norm(s.business).slice(0, 12) === norm(t.business).slice(0, 12));
 for (const t of ties) {
   if (t.verified !== true || !t.pid || SKIP.has(t.pid)) continue;
   if (RELIEF.test([t.title, t.body, t.kind, t.amount].join(' '))) continue;
   {
     const d = /^\d{4}-\d\d-\d\d/.test(t.date || '') ? String(t.date).slice(0, 10) : null;
     const why = !d ? 'no date on the record' : !inWindow(t.pid, d) ? 'not in an office that required disclosure on that date'
-      : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business' : null;
+      : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business'
+      : endedBefore(t, d) ? 'Sunbiz shows the business dissolved on ' + endedBefore(t, d).dissolved + ', before this date' : null;
     if (why) { privateTies.push({ pid: t.pid, date: d, business: t.business, title: tidy(t.title), body: t.body, why, record: t.record }); continue; }
     if (!t.basis) { const e = evidence(t, Number(d.slice(0, 4))); if (e === 'lastDisclosed' || e === 'bridged') { t.basis = e; t.formYear = t.formYear || Math.max(...[...String(t.business || '').split(/;\s*/).flatMap(b => [...yearsFor(t.pid, b)])].filter(y => y < Number(d.slice(0, 4)))); } }
   }
