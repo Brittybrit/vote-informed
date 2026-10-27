@@ -13,6 +13,7 @@
 //   (scripts/data/tenure/doe-browser/README.md), from one cycle before the term to its end.
 // A share is given only when every item in it could be checked; otherwise the items are listed and the page says
 // what is still being read.
+import { materiality } from './lib/materiality.mjs';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { pkey, dkey } from './lib/city.mjs';
 import { fitsLaw, execPending, recordFor } from './lib/donor-class.mjs';
@@ -199,6 +200,11 @@ export function buildLegislative(nameOf = x => x, pending = null) {
         pending.push({ donor: r.donor, occ: r.occ, occs, addr: r.addr, city: r.city, amount: r.amount, date: r.date, acct: r.acct, pid: o.pid, office: o.body, card: (b.bill || '') + ' · Ch. ' + ch, ch, vote: x.url || null, cls: K });
       }
     }
+    // $1,000 threshold (scripts/lib/materiality.mjs): persons whose total giving to this seat in the window is under
+    // $1,000, and who are not registered lobbyists tied here, are listed (gb) but not counted
+    const M = materiality([...reqs.flatMap(x => x.g), ...gifts.map(r => ({ n: r.donor, amt: r.amount, dt: r.date, occ: r.occ }))],
+      { donorOf: g => dkey(g.n), amountOf: g => g.amt, giftId: g => dkey(g.n) + '|' + g.amt + '|' + g.dt });
+    for (const x of [...reqs, ...laws]) { const below = x.g.filter(g => !M.counts(g)); if (below.length) { x.g = x.g.filter(M.counts); x.gb = below; } }
     laws.sort((a, b) => String(b.d || b.ch).localeCompare(String(a.d || a.ch)));
     reqs.sort((a, b) => String(b.d || b.fy).localeCompare(String(a.d || a.fy)));
     // the pool: contested votes cast (unanimous laws and laws whose tally is not known are left out)

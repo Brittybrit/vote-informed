@@ -18,8 +18,13 @@
 // - Unanimous votes are not ties (Brit, Oct 27, 2026): a yes vote counts only when the record shows at least one no
 //   (scripts/lib/contested.mjs). Unanimous votes, and votes whose tally is not known, also leave the share line's pool,
 //   so the share is of the contested votes the member cast. Requests and office actions are not votes: unaffected.
+// - $1,000 materiality threshold (Brit, Oct 27, 2026, "Option A"; scripts/lib/materiality.mjs): a donor counts in any
+//   headline number only when it is an organization, a registered lobbyist tied through a lobbying registration, or a
+//   person whose total giving to the official (every gift on the body's cards to the official's accounts in the
+//   window, grouped by giverKey) is $1,000 or more. Persons below stay on the cards, marked belowThreshold.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { contested } from './lib/contested.mjs';
+import { materiality, INDIVIDUAL_MIN_TOTAL } from './lib/materiality.mjs';
 import { fileURLToPath } from 'node:url';
 
 export const CYCLE_START = '2025-01-01';
@@ -66,6 +71,28 @@ function considered(B, a, key) {
   return true;
 }
 const giftsOf = (B, a, key, accts, G0) => (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
+// Which of this official's donors count (scripts/lib/materiality.mjs). Totals are over every gift on the body's cards
+// to the official's accounts in the window, whatever the vote, each gift once.
+export function materialityOf(B, key) {
+  const accts = new Set(B.onBallot[key].accounts), G0 = giftStart(B, key);
+  const all = B.actions.flatMap(a => considered(B, a, key) ? giftsOf(B, a, key, accts, G0) : []);
+  return materiality(all, { donorOf: g => giverKey(g.donor), amountOf: g => g.amount, giftId: giftKey });
+}
+// Marks every gift to an official on the ballot whose donor is a person below the threshold (belowThreshold: true),
+// so the cards can list it as not counted. Recomputed on every build; returns how many gifts changed.
+export function markBelowThreshold(decisions) {
+  let changed = 0;
+  for (const B of decisions.bodies) {
+    const M = {};
+    for (const key of Object.keys(B.onBallot || {})) if (B.onBallot[key].accounts) M[key] = materialityOf(B, key);
+    for (const a of B.actions) for (const g of a.gifts || []) {
+      const below = !!(M[g.to] && !M[g.to].counts(g));
+      if (below && !g.belowThreshold) { g.belowThreshold = true; changed++; }
+      else if (!below && 'belowThreshold' in g) { delete g.belowThreshold; changed++; }
+    }
+  }
+  return changed;
+}
 const DONOR_FIRST = new Set(['southmiami', 'pinecrest', 'medley']);
 function shareOf(B, key, tied) {
   const tiedIds = new Set(tied.map(([a]) => a.id));
@@ -107,10 +134,13 @@ export function build(decisions, officesHeld) {
       if (!m.person) continue;
       const accts = new Set(ob.accounts);
       const G0 = giftStart(B, key);
-      const tied = [], noVotes = [];
+      const tied = [], noVotes = [], M = materialityOf(B, key), below = new Map();
       for (const a of B.actions) {
         if (!considered(B, a, key)) continue;
-        const gs = giftsOf(B, a, key, accts, G0);
+        const gs0 = giftsOf(B, a, key, accts, G0);
+        // persons below the $1,000 threshold are listed on the card but counted nowhere
+        const gs = gs0.filter(M.counts);
+        if (inFavor(a, key)) for (const g of gs0) if (!M.counts(g)) below.set(giftKey(g), g);
         if (!gs.length) continue;
         // A tie needs an action in the donor's favor (Brit, Oct 27, 2026): a yes vote, a request the member
         // filed, or an action the member took. No, absent, excused, abstained, recused or unknown: not counted.
@@ -193,7 +223,7 @@ export function build(decisions, officesHeld) {
         if (uni.length) {
           const laws = new Set(uni.map(a => a.ref));
           // tied: laws the member voted yes on that help an industry whose donors gave
-          const tiedLaws = new Set(uni.filter(a => a.roll[key] === 'yes' && giftsOf(B, a, key, accts, G0).length).map(a => a.ref));
+          const tiedLaws = new Set(uni.filter(a => a.roll[key] === 'yes' && giftsOf(B, a, key, accts, G0).some(M.counts)).map(a => a.ref));
           const u0 = uni.map(a => a.date).filter(Boolean).sort()[0];
           e.bills.universe = { n: laws.size, tied: tiedLaws.size, from: u0 ? String(u0).slice(0, 7) : undefined };
         }
@@ -208,6 +238,8 @@ export function build(decisions, officesHeld) {
         if (B.universe && y0 && y0 < '2025') e.since = Number(y0.slice(0, 4));
       }
       e.share = shareOf(B, key, tied);
+      // Context, never in a headline: persons under the threshold on cards in the donor's favor
+      if (below.size) { const bl = [...below.values()]; e.belowThreshold = { min: INDIVIDUAL_MIN_TOTAL, donors: new Set(bl.map(g => giverKey(g.donor))).size, gifts: bl.length, money: sum(bl.map(g => ({ amount: Number(g.amount) }))) }; }
       if (G0 !== CYCLE_START) e.giftsFrom = G0;
       add(m.person, e);
     }
@@ -231,11 +263,13 @@ export function build(decisions, officesHeld) {
 export function tiedActions(B, key) {
   const accts = new Set(B.onBallot[key].accounts);
   const G0 = giftStart(B, key);
+  const M = materialityOf(B, key);
   const out = [];
   for (const a of B.actions) {
     if (!considered(B, a, key) || !inFavor(a, key)) continue;
-    const gifts = giftsOf(B, a, key, accts, G0);
-    if (!gifts.length) continue;
+    // a card is behind the summary only when a counted donor is on it; persons below the threshold stay listed, marked
+    const gifts = giftsOf(B, a, key, accts, G0).map(g => { const { belowThreshold, ...rest } = g; return M.counts(g) ? rest : { ...rest, belowThreshold: true }; });
+    if (!gifts.some(g => !g.belowThreshold)) continue;
     const x = { ...a, gifts };
     if (a.giftNotes) { if (a.giftNotes[key]) x.giftNotes = { [key]: a.giftNotes[key] }; else delete x.giftNotes; }
     out.push(x);
@@ -252,7 +286,7 @@ export function buildTies(decisions) {
     const accounts = {};
     for (const k of ob.accounts) if (B.accounts[k]) accounts[k] = B.accounts[k];
     const acts = tiedActions(B, key);
-    const money = f => (f ? f.actions : []).reduce((n, a) => n + a.gifts.reduce((x, g) => x + Number(g.amount), 0), 0);
+    const money = f => (f ? f.actions : []).reduce((n, a) => n + a.gifts.reduce((x, g) => x + (g.belowThreshold ? 0 : Number(g.amount)), 0), 0);
     if (files[m.person] && money(files[m.person]) > money({ actions: acts })) continue;   // same choice as build()
     files[m.person] = {
       updated: decisions.updated, cycleStart: CYCLE_START,
@@ -267,6 +301,10 @@ export function buildTies(decisions) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = new URL('../public/data/', import.meta.url);
   const d = JSON.parse(readFileSync(new URL('decisions.json', root)));
+  // mark persons under the $1,000 threshold on the cards (decisions.json and its served split)
+  const marked = markBelowThreshold(d);
+  if (marked) writeFileSync(new URL('decisions.json', root), JSON.stringify(d, null, 1) + '\n');
+  console.log('belowThreshold marks changed: ' + marked);
   const h = JSON.parse(readFileSync(new URL('offices-held.json', root)));
   const out = build(d, h);
   writeFileSync(new URL('money-summary.json', root), JSON.stringify(out, null, 1) + '\n');

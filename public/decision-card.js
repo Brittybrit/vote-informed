@@ -21,7 +21,7 @@
       votedBy: '{name}: {v}', allVotes: 'How all 13 members voted', grayNote: 'Gray: not on the November 3 ballot, donors not checked.',
       moved: 'Motion by {m}, seconded by {s}.',
       lobbied: 'Registered with the county to lobby for the company', lobFor: 'for {p}', lobReg: 'registered {date}', lobMore: 'Show all {n} lobbyists',
-      gifts: 'Gifts to commissioners on the ballot', gave: '<b>{donor}</b> gave {amt} on {date} to {acct}',
+      gifts: 'Gifts to commissioners on the ballot', gave: '<b>{donor}</b> gave {amt} on {date} to {acct}', belowGift: 'Not counted: this person gave this official less than $1,000 in total.', belowNote: 'Individuals who gave this official less than $1,000 in total are listed but not counted.',
       'how.party': 'The giver is the company named in the item.',
       'how.lobbyist': 'Same name as {lob}, registered to lobby for {p}{basis}.',
       'how.firm': 'A lobbying firm that lists the same office address as {lob}, registered to lobby for {p}.',
@@ -34,7 +34,7 @@
       lede2: 'This page starts from the vote. For each action by the Miami-Dade County Commission and the city councils that benefits a named company or group, it shows how each member voted, who was registered to lobby for that company, and whether the company, those lobbyists or their lobbying firms gave to an official who is on the November 3, 2026 ballot. Gifts are listed with the dates the reports show, before or after the vote. Nothing here claims a vote was bought.',
       'body.state2': 'Florida Legislature (next)', sActs2: 'actions listed', sGift2: 'with a gift to someone on the ballot',
       offBallot2: 'The other members are not on the November 3 ballot. Their votes are shown, but their donors were not checked.',
-      allVotes2: 'How each member voted', gifts2: 'Gifts to members on the ballot', lobbied2: 'Registered lobbyists for the company',
+      allVotes2: 'How each member voted', gifts2: 'Gifts to candidates on the ballot', lobbied2: 'Registered lobbyists for the company',
       'res.passed': 'Passed', 'res.failed': 'Failed', 'res.withdrawn': 'Withdrawn before a vote', 'kind.permit': 'Permit',
       rollPartial: 'The record says the vote was unanimous but does not name every member; names shown are the ones it lists.', consentNote: 'Passed on the consent agenda.',
       'role.moved': 'made the motion', 'role.seconded': 'seconded', 'role.presented': 'presented the item', 'role.sponsoredItem': 'sponsored the item',
@@ -75,7 +75,7 @@
       votedBy: '{name}: {v}', allVotes: 'Cómo votaron los 13 miembros', grayNote: 'En gris: no están en la boleta del 3 de noviembre, donantes no revisados.',
       moved: 'Moción de {m}, secundada por {s}.',
       lobbied: 'Registrados ante el condado como cabilderos de la empresa', lobFor: 'por {p}', lobReg: 'registrado {date}', lobMore: 'Ver los {n} cabilderos',
-      gifts: 'Donaciones a comisionados en la boleta', gave: '<b>{donor}</b> donó {amt} el {date} a {acct}',
+      gifts: 'Donaciones a comisionados en la boleta', gave: '<b>{donor}</b> donó {amt} el {date} a {acct}', belowGift: 'No se cuenta: esta persona donó a este funcionario menos de $1,000 en total.', belowNote: 'Las personas que donaron a este funcionario menos de $1,000 en total aparecen, pero no se cuentan.',
       'how.party': 'El donante es la empresa nombrada en el asunto.',
       'how.lobbyist': 'Mismo nombre que {lob}, registrado como cabildero de {p}{basis}.',
       'how.firm': 'Una firma de cabildeo con la misma dirección de oficina que {lob}, registrado como cabildero de {p}.',
@@ -88,7 +88,7 @@
       lede2: 'Esta página empieza por el voto. Para cada acción de la Comisión del Condado Miami-Dade y de los concejos municipales que beneficia a una empresa o grupo con nombre, muestra cómo votó cada miembro, quién estaba registrado como cabildero de esa empresa y si la empresa, esos cabilderos o sus firmas de cabildeo donaron a un funcionario que está en la boleta del 3 de noviembre de 2026. Las donaciones aparecen con las fechas que muestran los reportes, antes o después del voto. Nada aquí afirma que un voto fue comprado.',
       'body.state2': 'Legislatura de Florida (siguiente)', sActs2: 'acciones en la lista', sGift2: 'con una donación a alguien en la boleta',
       offBallot2: 'Los demás miembros no están en la boleta del 3 de noviembre. Se muestran sus votos, pero no se revisaron sus donantes.',
-      allVotes2: 'Cómo votó cada miembro', gifts2: 'Donaciones a miembros en la boleta', lobbied2: 'Cabilderos registrados de la empresa',
+      allVotes2: 'Cómo votó cada miembro', gifts2: 'Donaciones a candidatos en la boleta', lobbied2: 'Cabilderos registrados de la empresa',
       'res.passed': 'Aprobado', 'res.failed': 'Rechazado', 'res.withdrawn': 'Retirado antes de votar', 'kind.permit': 'Permiso',
       rollPartial: 'El acta dice que la votación fue unánime pero no nombra a cada miembro; se muestran los nombres que aparecen.', consentNote: 'Aprobado en la agenda de consentimiento.',
       'role.moved': 'presentó la moción', 'role.seconded': 'secundó', 'role.presented': 'presentó el asunto', 'role.sponsoredItem': 'patrocinó el asunto',
@@ -129,7 +129,7 @@
       votedBy: '{name}: {v}', allVotes: 'Kijan 13 manm yo te vote', grayNote: 'An gri: pa sou bilten vòt 3 novanm lan, nou pa verifye donatè yo.',
       moved: 'Mosyon {m}, apiye pa {s}.',
       lobbied: 'Anrejistre nan konte a kòm lobiyis pou konpayi a', lobFor: 'pou {p}', lobReg: 'anrejistre {date}', lobMore: 'Montre tout {n} lobiyis yo',
-      gifts: 'Kado bay komisè ki sou bilten an', gave: '<b>{donor}</b> bay {amt} {date} pou {acct}',
+      gifts: 'Kado bay komisè ki sou bilten an', gave: '<b>{donor}</b> bay {amt} {date} pou {acct}', belowGift: 'Nou pa konte l: moun sa a bay ofisyèl sa a mwens pase $1,000 an total.', belowNote: 'Moun ki bay ofisyèl sa a mwens pase $1,000 an total nan lis la, men nou pa konte yo.',
       'how.party': 'Moun ki bay la se konpayi ki nonmen nan dosye a.',
       'how.lobbyist': 'Menm non ak {lob}, anrejistre kòm lobiyis pou {p}{basis}.',
       'how.firm': 'Yon konpayi lobi ki gen menm adrès biwo ak {lob}, anrejistre kòm lobiyis pou {p}.',
@@ -142,7 +142,7 @@
       lede2: 'Paj sa a kòmanse ak vòt la. Pou chak aksyon Komisyon Konte Miami-Dade ak konsèy vil yo ki benefisye yon konpayi oswa yon gwoup ki gen non, li montre kijan chak manm te vote, ki moun ki te anrejistre kòm lobiyis pou konpayi sa a, epi si konpayi a, lobiyis sa yo oswa konpayi lobi yo te bay yon ofisyèl ki sou bilten vòt 3 novanm 2026 la. Nou mete kado yo ak dat rapò yo montre, anvan oswa apre vòt la. Anyen isit la pa di yo te achte yon vòt.',
       'body.state2': 'Lejislati Florid (apre)', sActs2: 'aksyon nan lis la', sGift2: 'ak yon kado bay yon moun ki sou bilten an',
       offBallot2: 'Lòt manm yo pa sou bilten vòt 3 novanm lan. Nou montre vòt yo, men nou pa verifye donatè yo.',
-      allVotes2: 'Kijan chak manm te vote', gifts2: 'Kado bay manm ki sou bilten an', lobbied2: 'Lobiyis anrejistre pou konpayi a',
+      allVotes2: 'Kijan chak manm te vote', gifts2: 'Kado bay kandida ki sou bilten an', lobbied2: 'Lobiyis anrejistre pou konpayi a',
       'res.passed': 'Pase', 'res.failed': 'Pa pase', 'res.withdrawn': 'Retire anvan vòt', 'kind.permit': 'Pèmi',
       rollPartial: 'Dosye a di vòt la te alinanimite men li pa nonmen chak manm; non nou montre yo se sa li bay.', consentNote: 'Pase nan ajanda konsantman an.',
       'role.moved': 'te pwopoze mosyon an', 'role.seconded': 'te apiye', 'role.presented': 'te prezante dosye a', 'role.sponsoredItem': 'te parennen dosye a',
@@ -202,7 +202,7 @@
       if(gs.length){
         var by = {}, order = [];
         gs.forEach(function(g){ if(!by[g.to]){ by[g.to] = []; order.push(g.to); } by[g.to].push(g); });
-        out += '<div class="gifts"><div class="h">' + t('gifts2') + '</div>' + order.map(function(k){
+        out += '<div class="gifts"><details><summary>' + t('gifts2') + '</summary>' + order.map(function(k){
           var note = a.giftNotes && a.giftNotes[k] ? '<div class="how2">' + esc(L(a.giftNotes[k])) + '</div>' : '';
           return by[k].map(function(g){
             var acc = B.accounts[g.acct] ? L(B.accounts[g.acct].name) : mem(B, g.to);
@@ -214,9 +214,11 @@
             // an executive who counts through an official record of their stake (Sunbiz or SEC)
             if(g.record && g.record.url) how += t('how.s.rec', {role: esc(g.record.role), co: esc(g.record.company)}) + ' ' + link(g.record.url, t('recL'));
             if(g.fec === false) how += t('how.s.noFec');
+            // a person under the $1,000 threshold: listed, counted nowhere (Brit, Oct 27, 2026)
+            if(g.belowThreshold) how += (how ? ' ' : '') + t('belowGift');
             return '<div class="gift">' + (g.n > 1 ? t('gaveN', {donor: esc(g.donor), amt: usd(g.amount), n: g.n, date: esc(day(g.date)), last: esc(day(g.last)), acct: esc(acc)}) : t('gave', {donor: esc(g.donor), amt: usd(g.amount), date: esc(day(g.date)), acct: esc(acc)})) + (g.src ? ' ' + link(g.src, t('srcL')) : '') + (how ? '<div class="how2">' + how + '</div>' : '') + '</div>';
           }).join('') + note;
-        }).join('') + '</div>';
+        }).join('') + (gs.some(function(g){ return g.belowThreshold; }) ? '<div class="how2">' + t('belowNote') + '</div>' : '') + '</details></div>';
       }
       on.forEach(function(k){
         if(a.vacant === k || !(k in a.roll) || a.roll[k] == null) return;

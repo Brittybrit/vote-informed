@@ -359011,7 +359011,8 @@
        "date": "2022-05-25",
        "addr": "8101 Biscayne Blvd",
        "occ": "Museum<br>Consultant",
-       "kind": "party"
+       "kind": "party",
+       "belowThreshold": true
       }
      ],
      "amount": 25000,
@@ -364064,7 +364065,8 @@
        "kind": "listed",
        "donor": "Brian Adler",
        "amount": 500,
-       "date": "2026-03-20"
+       "date": "2026-03-20",
+       "belowThreshold": true
       },
       {
        "to": "Weinberg",
@@ -364749,7 +364751,8 @@
        "kind": "listed",
        "donor": "Brian Adler",
        "amount": 500,
-       "date": "2026-03-20"
+       "date": "2026-03-20",
+       "belowThreshold": true
       },
       {
        "to": "Weinberg",
@@ -364855,7 +364858,8 @@
        "kind": "listed",
        "donor": "Brian Adler",
        "amount": 500,
-       "date": "2026-03-20"
+       "date": "2026-03-20",
+       "belowThreshold": true
       },
       {
        "to": "Weinberg",
@@ -369952,7 +369956,8 @@
        "kind": "listed",
        "donor": "Brian Adler",
        "amount": 500,
-       "date": "2026-03-20"
+       "date": "2026-03-20",
+       "belowThreshold": true
       }
      ],
      "giftNotes": {
@@ -373844,7 +373849,8 @@
        "kind": "listed",
        "donor": "Wrenly Mesidor",
        "amount": 150,
-       "date": "2025-03-20"
+       "date": "2025-03-20",
+       "belowThreshold": true
       },
       {
        "to": "Chernoff",
@@ -373852,7 +373858,8 @@
        "kind": "listed",
        "donor": "Wrenly Mesidor",
        "amount": 300,
-       "date": "2026-03-28"
+       "date": "2026-03-28",
+       "belowThreshold": true
       },
       {
        "to": "Smith",
@@ -373860,7 +373867,8 @@
        "kind": "listed",
        "donor": "Wrendly Mesidor",
        "amount": 100,
-       "date": "2026-09-08"
+       "date": "2026-09-08",
+       "belowThreshold": true
       }
      ],
      "giftNotes": {
@@ -374847,7 +374855,8 @@
        "kind": "listed",
        "donor": "Bruce Kusens",
        "amount": 5,
-       "date": "2026-08-28"
+       "date": "2026-08-28",
+       "belowThreshold": true
       },
       {
        "to": "Smith",
@@ -374855,7 +374864,8 @@
        "kind": "listed",
        "donor": "Bruce Kusens",
        "amount": 500,
-       "date": "2026-09-04"
+       "date": "2026-09-04",
+       "belowThreshold": true
       },
       {
        "to": "Chernoff",
@@ -374863,7 +374873,8 @@
        "kind": "listed",
        "donor": "Bruce Kusens",
        "amount": 250,
-       "date": "2026-09-04"
+       "date": "2026-09-04",
+       "belowThreshold": true
       },
       {
        "to": "Smith",
@@ -374871,7 +374882,8 @@
        "kind": "listed",
        "donor": "Bruce Kusens",
        "amount": 15,
-       "date": "2026-09-11"
+       "date": "2026-09-11",
+       "belowThreshold": true
       }
      ],
      "giftNotes": {
@@ -390814,7 +390826,8 @@
        "kind": "listed",
        "donor": "Lazaro Remond",
        "amount": 500,
-       "date": "2026-09-22"
+       "date": "2026-09-22",
+       "belowThreshold": true
       }
      ],
      "giftNotes": {
@@ -457518,7 +457531,8 @@
        "date": "2026-10-13",
        "addr": "8401 SW 99ST",
        "occ": "SRS ENGINEER",
-       "rel": "cls"
+       "rel": "cls",
+       "belowThreshold": true
       }
      ],
      "links": [
@@ -459814,7 +459828,8 @@
        "date": "2026-10-13",
        "addr": "8401 SW 99ST",
        "occ": "SRS ENGINEER",
-       "rel": "cls"
+       "rel": "cls",
+       "belowThreshold": true
       }
      ],
      "links": [
@@ -460506,7 +460521,8 @@
        "date": "2026-10-13",
        "addr": "8401 SW 99ST",
        "occ": "SRS ENGINEER",
-       "rel": "cls"
+       "rel": "cls",
+       "belowThreshold": true
       }
      ],
      "links": [
@@ -546901,7 +546917,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -546921,7 +546938,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -546951,7 +546969,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -547041,7 +547060,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -547081,7 +547101,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -549392,7 +549413,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-11-12",
-       "occ": "SELF EMPLOYED"
+       "occ": "SELF EMPLOYED",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -549442,7 +549464,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-12-12",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Basabe",
@@ -549522,7 +549545,8 @@
        "donor": "JARROD CAROL",
        "amount": 500,
        "date": "2024-06-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -564094,7 +564118,8 @@
        "donor": "AVELLAN AMARIS",
        "amount": 50,
        "date": "2022-03-29",
-       "occ": "PSYCHOLOGISTTOTAL SPECTRUM COU"
+       "occ": "PSYCHOLOGISTTOTAL SPECTRUM COU",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564104,7 +564129,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-04-12",
-       "occ": "NEUROPSYCHOLOGIST UTHSC"
+       "occ": "NEUROPSYCHOLOGIST UTHSC",
+       "belowThreshold": true
       },
       {
        "to": "Gantt",
@@ -564114,7 +564140,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 30,
        "date": "2022-04-14",
-       "occ": "PEDS NEURO"
+       "occ": "PEDS NEURO",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564124,7 +564151,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-05-12",
-       "occ": "NEUROPSYCHOLOGIST UTHSC"
+       "occ": "NEUROPSYCHOLOGIST UTHSC",
+       "belowThreshold": true
       },
       {
        "to": "Gantt",
@@ -564134,7 +564162,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 27,
        "date": "2022-05-31",
-       "occ": "PEDS NEURO"
+       "occ": "PEDS NEURO",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564144,7 +564173,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-06-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564154,7 +564184,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-07-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564164,7 +564195,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-08-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564174,7 +564206,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-09-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564184,7 +564217,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-10-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564194,7 +564228,8 @@
        "donor": "PROIA FELIX",
        "amount": 100,
        "date": "2023-11-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564204,7 +564239,8 @@
        "donor": "PROIA FELIX",
        "amount": 25,
        "date": "2023-11-30",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564214,7 +564250,8 @@
        "donor": "SUTTON CAROLYN",
        "amount": 15,
        "date": "2023-12-06",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564224,7 +564261,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2023-12-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564234,7 +564272,8 @@
        "donor": "PROIA FELIX",
        "amount": 25,
        "date": "2024-01-05",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564244,7 +564283,8 @@
        "donor": "HAUCK MOLLY",
        "amount": 4.29,
        "date": "2024-03-12",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564254,7 +564294,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-03-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564264,7 +564305,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-03-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564274,7 +564316,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-04-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564284,7 +564327,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-04-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564294,7 +564338,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 3.75,
        "date": "2024-08-11",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564304,7 +564349,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-08-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564314,7 +564360,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-08-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564324,7 +564371,8 @@
        "donor": "HALL BENJAMIN COOLEY",
        "amount": 5,
        "date": "2024-08-15",
-       "occ": "CLINICAL PSYCHOLOGIST"
+       "occ": "CLINICAL PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564334,7 +564382,8 @@
        "donor": "MCCABE JUSTINE",
        "amount": 50,
        "date": "2024-08-15",
-       "occ": "CLINICAL PSYCHOLOGIST"
+       "occ": "CLINICAL PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -564344,7 +564393,8 @@
        "donor": "MCGARRAHAN ANDY",
        "amount": 4,
        "date": "2024-08-15",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       }
      ],
      "note": {
@@ -565463,7 +565513,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -565483,7 +565534,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -565513,7 +565565,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -565623,7 +565676,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -565673,7 +565727,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -577987,7 +578042,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-11-12",
-       "occ": "SELF EMPLOYED"
+       "occ": "SELF EMPLOYED",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -578037,7 +578093,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-12-12",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Basabe",
@@ -578117,7 +578174,8 @@
        "donor": "JARROD CAROL",
        "amount": 500,
        "date": "2024-06-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -578632,7 +578690,8 @@
        "donor": "WATERS MARTINA",
        "amount": 100,
        "date": "2021-10-29",
-       "occ": "VETERINARIAN/SOUTHERN VETERINE"
+       "occ": "VETERINARIAN/SOUTHERN VETERINE",
+       "belowThreshold": true
       },
       {
        "to": "Gantt",
@@ -578642,7 +578701,8 @@
        "donor": "BARNES SADE",
        "amount": 50,
        "date": "2022-06-23",
-       "occ": "VETERINARIAN"
+       "occ": "VETERINARIAN",
+       "belowThreshold": true
       },
       {
        "to": "Basabe",
@@ -578662,7 +578722,8 @@
        "donor": "BARNES SADE",
        "amount": 50,
        "date": "2024-08-02",
-       "occ": "VETERINARIAN/ PETCO"
+       "occ": "VETERINARIAN/ PETCO",
+       "belowThreshold": true
       }
      ],
      "note": {
@@ -580088,7 +580149,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -580108,7 +580170,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -580138,7 +580201,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -580228,7 +580292,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -580268,7 +580333,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -580669,7 +580735,8 @@
        "donor": "CASANOVA BARBARA",
        "amount": 50,
        "date": "2024-08-23",
-       "occ": "BANKING PRESIDENT"
+       "occ": "BANKING PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Basabe",
@@ -580679,7 +580746,8 @@
        "donor": "CASANOVA BARBARA",
        "amount": 50,
        "date": "2024-08-23",
-       "occ": "BANKING PRESIDENT"
+       "occ": "BANKING PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Redondo",
@@ -587016,7 +587084,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587036,7 +587105,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587066,7 +587136,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587136,7 +587207,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587176,7 +587248,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587626,7 +587699,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587646,7 +587720,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587676,7 +587751,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587746,7 +587822,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -587786,7 +587863,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -589728,7 +589806,8 @@
        "donor": "AVELLAN AMARIS",
        "amount": 50,
        "date": "2022-03-29",
-       "occ": "PSYCHOLOGISTTOTAL SPECTRUM COU"
+       "occ": "PSYCHOLOGISTTOTAL SPECTRUM COU",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589738,7 +589817,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-04-12",
-       "occ": "NEUROPSYCHOLOGIST UTHSC"
+       "occ": "NEUROPSYCHOLOGIST UTHSC",
+       "belowThreshold": true
       },
       {
        "to": "Gantt",
@@ -589748,7 +589828,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 30,
        "date": "2022-04-14",
-       "occ": "PEDS NEURO"
+       "occ": "PEDS NEURO",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589758,7 +589839,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-05-12",
-       "occ": "NEUROPSYCHOLOGIST UTHSC"
+       "occ": "NEUROPSYCHOLOGIST UTHSC",
+       "belowThreshold": true
       },
       {
        "to": "Gantt",
@@ -589768,7 +589850,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 27,
        "date": "2022-05-31",
-       "occ": "PEDS NEURO"
+       "occ": "PEDS NEURO",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589778,7 +589861,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-06-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589788,7 +589872,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-07-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589798,7 +589883,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-08-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589808,7 +589894,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-09-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589818,7 +589905,8 @@
        "donor": "HOLCOMBE BILLY",
        "amount": 25,
        "date": "2022-10-12",
-       "occ": "NEUROPSYCHOLOGIST"
+       "occ": "NEUROPSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589828,7 +589916,8 @@
        "donor": "PROIA FELIX",
        "amount": 100,
        "date": "2023-11-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589838,7 +589927,8 @@
        "donor": "PROIA FELIX",
        "amount": 25,
        "date": "2023-11-30",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589848,7 +589938,8 @@
        "donor": "SUTTON CAROLYN",
        "amount": 15,
        "date": "2023-12-06",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589858,7 +589949,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2023-12-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589868,7 +589960,8 @@
        "donor": "PROIA FELIX",
        "amount": 25,
        "date": "2024-01-05",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589878,7 +589971,8 @@
        "donor": "HAUCK MOLLY",
        "amount": 4.29,
        "date": "2024-03-12",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589888,7 +589982,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-03-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589898,7 +589993,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-03-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589908,7 +590004,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-04-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589918,7 +590015,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-04-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589928,7 +590026,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 3.75,
        "date": "2024-08-11",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589938,7 +590037,8 @@
        "donor": "CARRIGAN SHAHIN",
        "amount": 2.14,
        "date": "2024-08-13",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589948,7 +590048,8 @@
        "donor": "PROIA FELIX",
        "amount": 5,
        "date": "2024-08-14",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589958,7 +590059,8 @@
        "donor": "HALL BENJAMIN COOLEY",
        "amount": 5,
        "date": "2024-08-15",
-       "occ": "CLINICAL PSYCHOLOGIST"
+       "occ": "CLINICAL PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589968,7 +590070,8 @@
        "donor": "MCCABE JUSTINE",
        "amount": 50,
        "date": "2024-08-15",
-       "occ": "CLINICAL PSYCHOLOGIST"
+       "occ": "CLINICAL PSYCHOLOGIST",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -589978,7 +590081,8 @@
        "donor": "MCGARRAHAN ANDY",
        "amount": 4,
        "date": "2024-08-15",
-       "occ": "PSYCHOLOGIST"
+       "occ": "PSYCHOLOGIST",
+       "belowThreshold": true
       }
      ],
      "note": {
@@ -590489,7 +590593,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -590509,7 +590614,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -590539,7 +590645,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -590609,7 +590716,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -590649,7 +590757,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -596692,7 +596801,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -596712,7 +596822,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -596742,7 +596853,8 @@
        "donor": "ALVAREZ JOSE",
        "amount": 500,
        "date": "2022-08-04",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -596812,7 +596924,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -596852,7 +596965,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Porras",
@@ -598023,7 +598137,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -598033,7 +598148,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -598043,7 +598159,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -598053,7 +598170,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Chambliss",
@@ -598522,7 +598640,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-11-12",
-       "occ": "SELF EMPLOYED"
+       "occ": "SELF EMPLOYED",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -598572,7 +598691,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-12-12",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -598632,7 +598752,8 @@
        "donor": "JARROD CAROL",
        "amount": 500,
        "date": "2024-06-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -599751,7 +599872,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -599761,7 +599883,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -599771,7 +599894,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -599781,7 +599905,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Chambliss",
@@ -600114,7 +600239,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2022-01-10",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -600124,7 +600250,8 @@
        "donor": "MINION JAMES",
        "amount": 200,
        "date": "2022-04-28",
-       "occ": "SIGN CONTRACTOR/SELF"
+       "occ": "SIGN CONTRACTOR/SELF",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -600134,7 +600261,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2023-11-15",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -600144,7 +600272,8 @@
        "donor": "MINION JAMES",
        "amount": 100,
        "date": "2024-05-28",
-       "occ": "CONTRACTOR"
+       "occ": "CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Chambliss",
@@ -601026,7 +601155,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-11-12",
-       "occ": "SELF EMPLOYED"
+       "occ": "SELF EMPLOYED",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -601076,7 +601206,8 @@
        "donor": "HAMOUI NABEEL",
        "amount": 300,
        "date": "2023-12-12",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -601136,7 +601267,8 @@
        "donor": "JARROD CAROL",
        "amount": 500,
        "date": "2024-06-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Nixon",
@@ -602982,7 +603114,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -603833,7 +603966,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -604563,7 +604697,8 @@
        "donor": "KLEINMAN MARK",
        "amount": 500,
        "date": "2026-06-07",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -605043,7 +605178,8 @@
        "donor": "SERVIANSKY DAVID",
        "amount": 500,
        "date": "2026-09-24",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -605410,7 +605546,8 @@
        "donor": "MAYORAL FLOR",
        "amount": 500,
        "date": "2019-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -605480,7 +605617,8 @@
        "donor": "PAPP DEREK",
        "amount": 500,
        "date": "2020-08-31",
-       "occ": "SURGEON"
+       "occ": "SURGEON",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -605590,7 +605728,8 @@
        "donor": "LEBEN BOBBI",
        "amount": 500,
        "date": "2020-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -606642,7 +606781,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -608119,7 +608259,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -609184,7 +609325,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -609642,7 +609784,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -610372,7 +610515,8 @@
        "donor": "KLEINMAN MARK",
        "amount": 500,
        "date": "2026-06-07",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -610852,7 +610996,8 @@
        "donor": "SERVIANSKY DAVID",
        "amount": 500,
        "date": "2026-09-24",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -648982,7 +649127,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -651122,7 +651268,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -688535,7 +688682,8 @@
        "donor": "MAYORAL FLOR",
        "amount": 500,
        "date": "2019-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -688625,7 +688773,8 @@
        "donor": "PAPP DEREK",
        "amount": 500,
        "date": "2020-08-31",
-       "occ": "SURGEON"
+       "occ": "SURGEON",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -688735,7 +688884,8 @@
        "donor": "LEBEN BOBBI",
        "amount": 500,
        "date": "2020-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -690005,7 +690155,8 @@
        "donor": "ARAN ALBERTO J.",
        "amount": 500,
        "date": "2026-06-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -692929,7 +693080,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -695019,7 +695171,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -695684,7 +695837,8 @@
        "donor": "ANDREA LAURIE",
        "amount": 200,
        "date": "2019-10-31",
-       "occ": "ARCHITECTURAL FIRM MGR."
+       "occ": "ARCHITECTURAL FIRM MGR.",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -728342,7 +728496,8 @@
        "donor": "EMERSON JOHN C.",
        "amount": 500,
        "date": "2021-02-17",
-       "occ": "PROPERTY APPRAISER"
+       "occ": "PROPERTY APPRAISER",
+       "belowThreshold": true
       },
       {
        "to": "Ingoglia",
@@ -728352,7 +728507,8 @@
        "donor": "HUFFMAN DENNIS JEFFREY",
        "amount": 500,
        "date": "2023-09-14",
-       "occ": "REAL ESTATE APPRAISER"
+       "occ": "REAL ESTATE APPRAISER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -728362,7 +728518,8 @@
        "donor": "BONET ANTHONY",
        "amount": 500,
        "date": "2026-09-16",
-       "occ": "REAL ESTATE APPRAISER"
+       "occ": "REAL ESTATE APPRAISER",
+       "belowThreshold": true
       }
      ],
      "note": {
@@ -730489,7 +730646,8 @@
        "donor": "ANDREA LAURIE",
        "amount": 200,
        "date": "2019-10-31",
-       "occ": "ARCHITECTURAL FIRM MGR."
+       "occ": "ARCHITECTURAL FIRM MGR.",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -732593,7 +732751,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -734763,7 +734922,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -735400,7 +735560,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -737550,7 +737711,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -740259,7 +740421,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -742449,7 +742612,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -745111,7 +745275,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -746101,7 +746266,8 @@
        "donor": "KLEINMAN MARK",
        "amount": 500,
        "date": "2026-06-07",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -746601,7 +746767,8 @@
        "donor": "SERVIANSKY DAVID",
        "amount": 500,
        "date": "2026-09-24",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -765956,7 +766123,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -768216,7 +768384,8 @@
        "donor": "MUNOZ JOSE",
        "amount": 500,
        "date": "2026-07-09",
-       "occ": "CONSTRUCTION COMPANY PRESIDENT"
+       "occ": "CONSTRUCTION COMPANY PRESIDENT",
+       "belowThreshold": true
       },
       {
        "to": "Calatayud",
@@ -769362,7 +769531,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -771825,7 +771995,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -773720,7 +773891,8 @@
        "donor": "MAYORAL FLOR",
        "amount": 500,
        "date": "2019-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -774160,7 +774332,8 @@
        "donor": "LEBEN BOBBI",
        "amount": 500,
        "date": "2020-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -789856,7 +790029,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -791264,7 +791438,8 @@
        "donor": "TATE JAMES",
        "amount": 500,
        "date": "2020-08-12",
-       "occ": "REAL ESTATE DEVELOPER"
+       "occ": "REAL ESTATE DEVELOPER",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -791969,7 +792144,8 @@
        "donor": "BARROSO LEVA",
        "amount": 500,
        "date": "2020-07-28",
-       "occ": "PLUMBING CONTRACTOR"
+       "occ": "PLUMBING CONTRACTOR",
+       "belowThreshold": true
       },
       {
        "to": "Garcia",
@@ -792689,7 +792865,8 @@
        "donor": "MAYORAL FLOR",
        "amount": 500,
        "date": "2019-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -792779,7 +792956,8 @@
        "donor": "LEBEN BOBBI",
        "amount": 500,
        "date": "2020-10-29",
-       "occ": "PHYSICIAN"
+       "occ": "PHYSICIAN",
+       "belowThreshold": true
       },
       {
        "to": "Rodriguez",
@@ -793201,7 +793379,8 @@
        "donor": "GOYANES JOSE",
        "amount": 500,
        "date": "2018-12-06",
-       "occ": "BARBER SHOP OWNER"
+       "occ": "BARBER SHOP OWNER",
+       "belowThreshold": true
       }
      ],
      "note": {

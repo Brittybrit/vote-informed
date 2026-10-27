@@ -41,7 +41,7 @@ for (const B of d.bodies) {
       if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
       // a city list built from the actions: only the actions in it, the same list the share line counts
       if (B.universe && B.universe.built === 'actions' && !a.universe) continue;
-      const donor = (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE);
+      const donor = (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE && !g.belowThreshold);
       const tied = donor && inFavor(a, key), against = donor && v === 'no';
       acts.push({
         id: a.id, date: a.date, kind: a.kind, title: L3(a.subject || a.title), topics: a.topics || [], vote: v,

@@ -16,6 +16,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync
 import { P, J, csv, pkey, dkey } from './lib/city.mjs';
 import { buildLegislative, againstOf } from './prior-legislature.mjs';
 import { voteStatus } from './lib/contested.mjs';
+import { materiality } from './lib/materiality.mjs';
 
 const T = 'scripts/data/tenure/';
 const OUT = 'public/data/prior/';
@@ -226,6 +227,11 @@ for (const C0 of OFFICES) {
       else if (a.l.some(l => l.firm && pkey(l.firm) && (dk === pkey(l.firm) || dk.startsWith(pkey(l.firm) + ' ')))) a.g.push({ n: g.donor, amt: g.amount, dt: g.date, k: 'firm' });
     }
   }
+  // $1,000 threshold (scripts/lib/materiality.mjs): a person whose total giving to this office (every gift in its
+  // reports in the window) is under $1,000, and who is not a registered lobbyist here, is listed (gb) but not counted
+  const M = materiality([...actions.flatMap(a => a.g), ...gifts.map(g => ({ n: g.donor, amt: g.amount, dt: g.date, occ: g.occ }))],
+    { donorOf: g => dkey(g.n), amountOf: g => g.amt, giftId: g => dkey(g.n) + '|' + g.amt + '|' + g.dt });
+  for (const a of actions) { const below = a.g.filter(g => !M.counts(g)); if (below.length) { a.g = a.g.filter(M.counts); a.gb = below; } }
   const cnt = { actions: actions.length, yes: 0, no: 0, absent: 0, abstain: 0, unknown: 0, acted: 0 };
   for (const a of actions) cnt[a.v]++;
   // the pool: contested votes cast and office actions taken; unanimous votes and votes of unknown tally are left out
