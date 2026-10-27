@@ -1,5 +1,5 @@
 {
- "_note": "Public records requests drafted Oct 26, 2026 (Claude Doc 'Ballot305 public records requests'). Edit by hand when one is sent or answered: sent = YYYY-MM-DD, status = draft | sent | received | denied | partial. people = [pid, body] pairs the request covers (body as in public/data/prior/<pid>.json, or 'current' for the seat they hold now). covers = which gaps the request asks records for (donors = campaign reports, actions = minutes). Rebuild: node scripts/gaps.mjs",
+ "_note": "Public records requests drafted Oct 26, 2026 (Claude Doc 'Ballot305 public records requests'). Edit by hand when one is sent or answered: sent = YYYY-MM-DD, status = draft | sent | received | denied | partial. people = [pid, body] pairs the request covers (body as in public/data/prior/<pid>.json, or 'current' for the seat they hold now). covers = which gaps the request asks records for (donors = campaign reports, actions = minutes). Rebuild: node scripts/gaps.mjs Disclosure requests (19-22) list only the years in which the official took an action listed on the site (Brit, Oct 26: required at the time of the action).",
  "requests": [
   {
    "n": 1,
@@ -193,6 +193,78 @@
     ["lucia-baez-geller", "mdcps-school-board"]
    ],
    "covers": ["actions"]
+  },
+  {
+   "n": 19,
+   "office": "Miami-Dade Elections Department",
+   "sent": null,
+   "status": "draft",
+   "covers": ["disclosure"],
+   "people": [
+    ["alix-desulme", "form1"],
+    ["ana-maria-rodriguez", "form1"],
+    ["charles-burkett", "form1"],
+    ["dana-goldman", "form1"],
+    ["larisa-svechin", "form1"],
+    ["daniel-samaria", "form1"],
+    ["howard-s-weinberg", "form1"],
+    ["edgar-ayala", "form1"],
+    ["ivan-pacheco", "form1"],
+    ["jay-r-chernoff", "form1"],
+    ["phyllis-smith", "form1"],
+    ["luis-gonzalez", "form1"],
+    ["mary-ann-mixon", "form1"],
+    ["david-m-singer", "form1"],
+    ["luis-f-de-la-cruz", "form1"],
+    ["rose-tydus", "form1"],
+    ["sherelean-bass", "form1"],
+    ["vince-c-lago", "form1"],
+    ["robert-duncan", "form1"],
+    ["ken-fairman", "form1"],
+    ["katrina-wilson", "form1"],
+    ["mary-estime-irvin", "form1"],
+    ["kassandra-timothe", "form1"],
+    ["natasha-l-ervin", "form1"],
+    ["oscar-sardinas", "form1"],
+    ["fernando-a-vazquez", "form1"],
+    ["steve-calle", "form1"],
+    ["suzy-lord", "form1"],
+    ["lisa-bonich", "form1"],
+    ["lizelh-rodriguez", "form1"]
+   ]
+  },
+  {
+   "n": 20,
+   "office": "Florida Commission on Ethics",
+   "sent": null,
+   "status": "draft",
+   "covers": ["disclosure"],
+   "people": [
+    ["bruno-a-barreiro", "form6"],
+    ["carlos-a-gimenez", "form6"],
+    ["jared-moskowitz", "form6"],
+    ["wilton-simpson", "form6"]
+   ]
+  },
+  {
+   "n": 21,
+   "office": "Palm Beach County Supervisor of Elections",
+   "sent": null,
+   "status": "draft",
+   "covers": ["disclosure"],
+   "people": [
+    ["scott-singer", "form1"]
+   ]
+  },
+  {
+   "n": 22,
+   "office": "Broward County Supervisor of Elections",
+   "sent": null,
+   "status": "draft",
+   "covers": ["disclosure"],
+   "people": [
+    ["jared-moskowitz", "form1"]
+   ]
   }
  ]
 }

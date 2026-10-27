@@ -105,14 +105,72 @@ for (const [pid, p] of Object.entries(MS)) {
 }
 // 3. 2026 city candidates whose city posts no reports
 const CR = opt('public/data/city-reports.json');
-const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 for (const c of (CR && CR.cities) || []) for (const k of c.candidates || []) {
   if (!k.none) continue; const pid = slug(k.name);
   if (out[pid] && out[pid].items.some(x => x.area === 'current' && x.kind === 'donors')) continue;
   const tx = typeof k.none === 'string' ? L3(k.none, k.none, k.none) : k.none;
   add(pid, k.name, { area: 'race', kind: 'donors', office: L3(c.label || c.city, c.label || c.city, c.label || c.city), text: tx, status: 'unlikely' });
 }
-// 4. hand-written extras
+// 4. financial disclosures: a gap only for a year in which the person took an official action listed on this site
+// (so a form covering that year was required) and that form is not online. Which form the law required decides
+// both the records request and what the form had to show.
+const FORM = body => /^(city-|aventura|coralgables|cutlerbay|doral|hialeah|keybiscayne|medley|nmb|northmiami|opalocka|pinecrest|southmiami|sunnyisles|biscayne|elportal|virginia|miamigardens|surfside)/.test(body) ? 'form1'
+  : /^(us-|ushouse|ussenate)/.test(body) ? 'federal' : 'form6';
+const FORMNAME = {
+  form1: L3('Form 1 (the shorter state form local officials file)', 'Formulario 1 (el formulario estatal más corto que presentan los funcionarios locales)', 'Fòm 1 (fòm Leta ki pi kout ofisyèl lokal yo ranpli)'),
+  form6: L3('Form 6 (the full state form, with net worth and every income source over $1,000)', 'Formulario 6 (el formulario estatal completo, con patrimonio neto y cada fuente de ingresos de más de $1,000)', 'Fòm 6 (fòm Leta konplè a, ak valè nèt ak chak sous revni plis pase $1,000)'),
+  federal: L3('annual federal financial disclosure report', 'informe federal anual de divulgación financiera', 'Rapò federal anyèl sou finans'),
+};
+const yearsText = ys => { const r = []; let a = ys[0], b = ys[0]; for (const y of ys.slice(1).concat([null])) { if (y === b + 1) { b = y; continue; } r.push(a === b ? String(a) : a + '–' + b); a = b = y; } return r.join(', '); };
+const actionYears = {}; // pid -> form -> Set(year)
+const mark = (pid, body, d) => { const y = Number(String(d || '').slice(0, 4)); if (!y) return; const f = FORM(body); ((actionYears[pid] = actionYears[pid] || {})[f] = actionYears[pid][f] || new Set()).add(y); };
+for (const f of readdirSync(P(PD)).filter(f => f.endsWith('.json') && f !== 'index.json')) {
+  const d = J(PD + f);
+  for (const o of d.offices || []) {
+    for (const x of o.actions || []) mark(d.pid, o.body, x.d);
+    for (const x of (o.requests || {}).list || []) mark(d.pid, o.body, x.d || String(x.fy || '').slice(0, 4));
+    for (const x of (o.laws || {}).list || []) mark(d.pid, o.body, x.d || x.ch);
+  }
+}
+for (const f of readdirSync(P('public/data/decisions/')).filter(f => f.endsWith('.json') && f !== 'index.json')) {
+  const d = J('public/data/decisions/' + f);
+  for (const body of d.bodies || [d]) {
+    const mem = {}; for (const m of body.members || []) if (m.person) mem[m.key] = m.person;
+    for (const a of body.actions || []) for (const k of Object.keys(a.roll || {})) if (mem[k]) mark(mem[k], body.key || f.replace('.json', ''), a.date);
+  }
+}
+const missing = {}; // pid -> Set(year) of forms not online
+for (const dir of readdirSync(P('scripts/data/business/')).filter(d => /^history-\d+$/.test(d))) {
+  const fp = 'scripts/data/business/' + dir + '/history.jsonl'; if (!existsSync(P(fp))) continue;
+  for (const l of readFileSync(P(fp), 'utf8').split('\n')) { if (!l.trim()) continue; let r; try { r = JSON.parse(l); } catch { continue; }
+    if (r.missing && r.pid && r.year) (missing[r.pid] = missing[r.pid] || new Set()).add(Number(r.year)); }
+}
+const WD = {
+  gap: (form, ys) => L3(`The ${FORMNAME[form].en} for ${ys} is required by law but is not online, so business interests in those years could not be checked against their official actions.`,
+    `El ${FORMNAME[form].es} de ${ys} es obligatorio por ley pero no está en línea, así que los intereses comerciales de esos años no se pudieron comparar con sus acciones oficiales.`,
+    `${FORMNAME[form].ht} pou ${ys} obligatwa dapre lalwa men li pa sou entènèt, kidonk nou pa t ka konpare enterè biznis ane sa yo ak aksyon ofisyèl li.`),
+  form1: L3('Form 1 has to list only income sources over $2,500, companies they own more than 5% of (and that company’s major customers), Florida property, investments and debts over $10,000, and roles in banks, insurers, utilities and similar regulated businesses. Smaller interests and a law firm’s or consultant’s clients do not have to appear, so a tie to those cannot be checked.',
+    'El Formulario 1 solo exige fuentes de ingresos de más de $2,500, empresas de las que posee más del 5% (y los clientes principales de esas empresas), propiedades en Florida, inversiones y deudas de más de $10,000, y cargos en bancos, aseguradoras, servicios públicos y negocios regulados similares. Los intereses menores y los clientes de un bufete o consultor no tienen que aparecer, así que un vínculo con ellos no se puede comprobar.',
+    'Fòm 1 mande sèlman sous revni plis pase $2,500, konpayi li posede plis pase 5% (ak gwo kliyan konpayi sa yo), pwopriyete nan Florid, envestisman ak dèt plis pase $10,000, ak wòl nan bank, asirans, sèvis piblik ak lòt biznis ki reglemante. Pi piti enterè ak kliyan yon kabinè avoka oswa yon konsiltan pa oblije parèt, kidonk nou pa ka verifye yon lyen ak yo.'),
+};
+const reqForm = (pid, form) => REQ.find(q => (q.covers || []).includes('disclosure') && q.people.some(([p, f]) => p === pid && f === form)) || null;
+for (const [pid, forms] of Object.entries(actionYears)) {
+  const name = (out[pid] && out[pid].name) || ((MS[pid] || {}).name) || (opt(PD + pid + '.json') || {}).name || pid;
+  for (const [form, ys] of Object.entries(forms)) {
+    const gapYears = [...ys].filter(y => missing[pid] && missing[pid].has(y) && y <= 2025).sort((a, b) => a - b);
+    const office = L3(form === 'federal' ? 'Financial disclosures (federal)' : 'Financial disclosures', form === 'federal' ? 'Declaraciones financieras (federales)' : 'Declaraciones financieras', form === 'federal' ? 'Deklarasyon finansye (federal)' : 'Deklarasyon finansye');
+    if (gapYears.length) {
+      const q = reqForm(pid, form);
+      const st = q ? { status: q.status === 'received' ? 'received' : q.status === 'denied' ? 'denied' : q.sent ? 'requested' : 'requestReady', req: { n: q.n, office: q.office, sent: q.sent || null } } : { status: 'unlikely' };
+      add(pid, name, { area: 'disclosure', kind: 'disclosure', office, text: WD.gap(form, yearsText(gapYears)), years: gapYears, ...st });
+    }
+    // what the law did not require: a limit, not a gap (only for people whose actions fall in Form 1 years)
+    if (form === 'form1' && ys.size) add(pid, name, { area: 'disclosure', kind: 'limit', office, text: WD.form1, status: 'notRequired' });
+  }
+}
+
+// 5. hand-written extras
 for (const [pid, xs] of Object.entries((opt('scripts/data/gaps/extra.json') || {}).people || {})) for (const x of xs) add(pid, x.name || pid, x);
 
 const people = Object.fromEntries(Object.entries(out).sort());
