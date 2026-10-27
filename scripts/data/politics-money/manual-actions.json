@@ -1,0 +1,67 @@
+{
+  "updated": "2026-10-27",
+  "what": "Official actions that directed public money to a named non-government recipient and are not yet in any actions file, each read from the official record itself. Merged into recipients.json by scripts/politics-money-recipients.mjs.",
+  "never": "The Leon County grand jury presentment on Hope Florida was expunged by the 1st DCA on Oct 7, 2026. Never cite it, quote it or rely on it.",
+  "actions": [
+    {
+      "id": "oag-2024-09-27-centene-settlement",
+      "pid": "ashley-moody",
+      "office": "Attorney General of Florida (2019-01-08 to 2025-01-21)",
+      "date": "2024-09-27",
+      "dateNote": "Execution date: every signature block on the State's signature page and Centene's is dated 9/27/2024.",
+      "kind": "settlement",
+      "title": "Settlement Agreement and Release between Centene Corporation (and subsidiaries incl. Sunshine State Health Plan, Envolve Pharmacy Solutions) and the State of Florida by and through its Attorney General, AHCA, OIR and DOH",
+      "recipient": "The Hope Florida Foundation, Inc.",
+      "amount": 10000000,
+      "amountTotal": 67048611,
+      "moneyIsPublic": "The $10M is part of the $67,048,611 Settlement Amount the State recovered to release its claims against Centene (Section B.2, Section C); Section B.2 says the whole Settlement Amount is paid \"as directed by AHCA\" and directs $10M of it to the foundation and the balance to AHCA.",
+      "officialRole": "The Attorney General is a party for the State and the Releasor (Sections intro, A.9, A.13); Section H.4 has the Attorney General warrant that \"she is authorized to enter into and execute this Agreement binding upon all Releasors.\" The direction of the $10M is stated as AHCA's (Section B.2). The Attorney General's Office block was signed by John Guard, Chief Deputy Attorney General, not by Moody personally.",
+      "signers": [
+        { "for": "Attorney General's Office", "name": "John Guard", "title": "Chief Deputy Attorney General", "date": "2024-09-27" },
+        { "for": "Florida Agency for Health Care Administration", "name": "Jason Weida", "title": "Secretary", "date": "2024-09-27" },
+        { "for": "Florida Office of Insurance Regulation", "name": "Michael Yaworsky", "title": "Florida Insurance Commissioner", "date": "2024-09-27" },
+        { "for": "Florida Department of Health", "name": "Cassandra Pasley", "title": "Chief of Staff", "date": "2024-09-27" },
+        { "for": "Centene Corporation", "name": "Christopher A. Koster", "title": "Executive Vice President, Secretary and General Counsel", "date": "2024-09-27" }
+      ],
+      "quotes": [
+        { "section": "Preamble (p. 1)", "text": "This Settlement Agreement and Release ... is made and entered among: (i) Centene Corporation (“Centene”) and each of its current and former subsidiaries and affiliates ... and (ii) the State of Florida by and through its Attorney General; the Florida Agency for Health Care Administration (“AHCA”); the Florida Office of Insurance Regulation (“FL OIR”); and the Florida Department of Health (“FL DOH”)" },
+        { "section": "Recitals (p. 3)", "text": "WHEREAS, Hope Florida, through The Hope Florida Foundation, Inc., serves a mission that is important to the policy goals of the State of Florida; and WHEREAS, AHCA desires an expanded role for Hope Florida in the Florida Medicaid program." },
+        { "section": "B.2 (p. 5)", "text": "the Centene Entities shall cause payments in the total aggregate amount of Sixty-Seven Million, Forty Eight Thousand, Six Hundred and Eleven Dollars ($67,048,611) (“Settlement Amount”) to be made as directed by AHCA. Specifically, AHCA directs that (i) the Centene Entities shall pay Ten Million Dollars ($10,000,000) as a one-time donation to The Hope Florida Foundation, Inc. (“Hope Florida Donation”), and (ii) the Centene Entities shall pay the balance of the Settlement Amount, Fifty-Seven Million, Forty Eight Thousand, Six Hundred and Eleven Dollars ($57,048,611), to AHCA (“Settlement Balance”)." },
+        { "section": "B.2 (p. 6)", "text": "As directed by AHCA, the Hope Florida Donation shall be paid within seven (7) days of the Execution Date by wire transfer to an account of The Hope Florida Foundation, Inc., in the manner to be directed in writing by AHCA pursuant to the Notice provisions of this Agreement." },
+        { "section": "H.4 (p. 11)", "text": "The Attorney General, on behalf of the State, represents and warrants that she is authorized to enter into and execute this Agreement binding upon all Releasors." },
+        { "section": "Signature page (p. 14)", "text": "THE STATE OF FLORIDA / Attorney General’s Office / By: [signature] Date: 9/27/2024 / Printed Name: John Guard / Title: Chief Deputy Attorney General" }
+      ],
+      "record": {
+        "what": "The executed agreement (DocuSign envelope ED60D886-D68E-4FD0-8D0C-6D6B696BD6EA, 16 pages, labeled EXECUTION VERSION, PDF created Sept. 27, 2024). Two public copies, same text: the first is the PDF the Florida Phoenix posted with its Apr. 9, 2025 story, the second the copy Snopes posted. The agreement itself is the record; the newsrooms only host it.",
+        "urls": [
+          "https://floridaphoenix.com/wp-content/uploads/2025/04/FL_Centene_Settlement_Agreeme-fully-executed-09.27.24-1.pdf",
+          "https://media.snopes.com/2025/04/centeneflorida_settlement_agreement.pdf"
+        ],
+        "sourceIds": ["421933d4033f21f0", "5fb93d37eeb6ee1b"],
+        "read": "2026-10-27",
+        "notFound": "A DocumentCloud copy was not located in this pass; the two copies above are the same executed document. An agency-hosted copy (AHCA or OAG public-records release) would be a better citation if one is found."
+      },
+      "notShown": "The agreement does not show the wire itself. Proof the $10M reached the foundation would be the foundation's own IRS Form 990 for the fiscal year that includes Sept./Oct. 2024 (its year ends June 30: the FY ending 2025-06-30 return), Part VIII contributions / Schedule B."
+    }
+  ],
+  "recipientIds": {
+    "The Hope Florida Foundation, Inc.": {
+      "ein": "93-3379025",
+      "irsName": "Hope Florida Foundation",
+      "irsAddress": "2415 N Monroe St Ste 400, Tallahassee, FL 32303-4185",
+      "irsSubsection": "501(c)(3)",
+      "source": "IRS Exempt Organizations Business Master File, as returned by ProPublica Nonprofit Explorer API (https://projects.propublica.org/nonprofits/api/v2/organizations/933379025.json), read 2026-10-27. Confirm on IRS TEOS (https://apps.irs.gov/app/eos/), which answered 403 from the container.",
+      "sunbiz": null,
+      "sunbizNote": "Sunbiz document number not looked up yet (search.sunbiz.org, Corporation search by name, then confirm the FEIN on the filing)."
+    }
+  },
+  "chain": {
+    "what": "Downstream organizations in the Hope Florida case. They received no public money from an official action directly; they are here so the DOE and FEC searches include them. A flag still needs an official record for each link (README.md, rule).",
+    "orgs": [
+      { "name": "Secure Florida's Future, Inc.", "ein": "82-3058657", "irsSubsection": "501(c)(4)", "irsAddress": "PO Box 11309, Tallahassee, FL 32302", "receivedFrom": "The Hope Florida Foundation, Inc.", "linkRecordNeeded": "Hope Florida Foundation IRS Form 990, FY ending 2025-06-30, Schedule I (grants), or Secure Florida's Future Form 990-O for calendar 2024 (filed; ProPublica lists it as IRS/823058657_202412_990O_2026041424092915.pdf, download answered 403 from the container)." },
+      { "name": "Save Our Society From Drugs", "ein": "59-3470019", "irsSubsection": "501(c)(4)", "irsAddress": "333 3rd Ave N Ste 200, St Petersburg, FL 33701-3833", "receivedFrom": "The Hope Florida Foundation, Inc.", "linkRecordNeeded": "Hope Florida Foundation IRS Form 990, FY ending 2025-06-30, Schedule I, or Save Our Society From Drugs Form 990-O for the fiscal year ending 2025-09-30 (not yet listed)." },
+      { "name": "Keep Florida Clean", "ein": null, "kind": "Florida political committee opposing 2024 Amendment 3 (exact registered name and DOE account number to be read from the DOE committee list)", "receivedFrom": "Secure Florida's Future, Inc.; Save Our Society From Drugs", "linkRecordNeeded": "Keep Florida Clean's own campaign finance reports at the Division of Elections (contributions received, 2024): the DOE contributor searches for the two 501(c)(4)s above return these rows." }
+    ],
+    "einSource": "IRS Business Master File via ProPublica Nonprofit Explorer API search, read 2026-10-27."
+  }
+}
