@@ -5,13 +5,13 @@
    "name": "City of Doral authorized lobbyist list (export dated 2025-12-18, with principals and issues)",
    "url": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
    "viewed": "2026-10-24",
-   "covers": "registrations listed 2024-01 to 2025-09 (the 2025 cycle); read via WebFetch, transcribed by principal"
+   "covers": "registrations listed 2024-01 to 2025-09 (the 2025 cycle); read via WebFetch, transcribed by principal; full table in lobbyists-2025-principals.json (re-read Oct 27, 2026)"
   },
   {
    "name": "City of Doral authorized lobbyists list (current)",
    "url": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
-   "viewed": "2026-10-22",
-   "covers": "2026 registrations, names/firms/dates only (scripts/data/city/doral/lobbyists-2026.json); used only for links carried from the hand-built cards"
+   "viewed": "2026-10-27",
+   "covers": "2026 registrations with each lobbyist's current principals and issues (lobbyists-2026-principals.json, read Oct 27, 2026; registration dates in lobbyists-2026.json). The portal does not say when each principal was authorized, so a pair ties only when the same lobbyist and principal are on the 2025 list or the item's record names the lobbyist; other pairs are listed in lobbyists-portal-only.json (scripts/lib/lobby-links.mjs PORTAL)"
   },
   {
    "name": "Doral City Council minutes (Granicus)",
@@ -232,7 +232,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-15",
-    "issue": null
+    "issue": "Consulting and planning for golf course",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Felix Lasarte",
@@ -270,7 +271,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-15",
-    "issue": null
+    "issue": "Consulting and planning for golf course",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Felix Lasarte",
@@ -308,7 +310,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-15",
-    "issue": null
+    "issue": "Consulting and planning for golf course",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Felix Lasarte",
@@ -549,7 +552,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-23",
-    "issue": null
+    "issue": "Development Approvals for Bridge Point Doral Property",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Benjamin Hedrick",
@@ -935,7 +939,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-05",
-    "issue": null
+    "issue": "7901 NW 14th Street (folio 35-3034-016-0100)",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Tracy Slavens",
@@ -944,7 +949,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-05",
-    "issue": null
+    "issue": "7901 NW 14th Street (folio 35-3034-016-0100)",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-25-6313-2025-09-10": [
@@ -1098,7 +1104,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-23",
-    "issue": null
+    "issue": "Modification of the Clubhouse and Park Donation Agreement",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -1107,7 +1114,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "modification of existing approvals",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Miriam Soler-Ramos",
@@ -1116,7 +1124,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-23",
-    "issue": null
+    "issue": "Modification of the Clubhouse and Park Donation Agreement",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Miriam Soler-Ramos",
@@ -1416,7 +1425,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Facility Services",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Max Losner",
@@ -1425,7 +1435,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Facility Services",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-25-6431-2025-12-10": [
@@ -1659,6 +1670,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2024-11-22",
     "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning. permitting and related matters.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning, permitting and related matters.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-25-6191-2026-01-15": [
@@ -1679,6 +1710,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2024-11-22",
     "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning. permitting and related matters.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning, permitting and related matters.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-25-6196-2026-01-15": [
@@ -1699,6 +1750,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2024-11-22",
     "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning. permitting and related matters.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning, permitting and related matters.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6460-2026-01-15": [
@@ -1719,6 +1790,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2024-11-22",
     "issue": "Land use, zoning and permitting"
+   },
+   {
+    "name": "Miguel Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning. permitting and related matters.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "MG3 Doral Office LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Land use, zoning, permitting and related matters.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6480-2026-02-18": [
@@ -1830,7 +1921,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-05",
-    "issue": null
+    "issue": "7901 NW 14th Street (folio 35-3034-016-0100)",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Tracy Slavens",
@@ -1839,7 +1931,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-05",
-    "issue": null
+    "issue": "7901 NW 14th Street (folio 35-3034-016-0100)",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6525-2026-03-11": [
@@ -1903,6 +1996,26 @@
     "date": "2024-11-22",
     "issue": "New store zoning approvals, 9755 NW 41 St",
     "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-04",
+    "issue": "Zoning approvals for new store at 9755 NW 41st Street, Doral, FL",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Zoning approvals for new store at 9755 NW 41st St., Doral, Florida.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6517": [
@@ -1955,6 +2068,26 @@
     "date": "2024-11-22",
     "issue": "New store zoning approvals, 9755 NW 41 St",
     "why": "Registration names 9755 NW 41 St; not confirmed as the Doral Plaza Publix site"
+   },
+   {
+    "name": "Mario Garcia-Serra",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-04",
+    "issue": "Zoning approvals for new store at 9755 NW 41st Street, Doral, FL",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Elinette Ruiz-Diaz de la Portilla",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Publix Super Markets, Inc.",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Zoning approvals for new store at 9755 NW 41st St., Doral, Florida.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-25-6431-2026-03-11": [
@@ -2170,6 +2303,46 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2024-11-14",
     "issue": "Oasis at Doral"
+   },
+   {
+    "name": "Mercy Arce",
+    "firm": "Holland & Knight",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": "Oasis at Doral",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Joseph G. Goldstein",
+    "firm": "Holland & Knight",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-23",
+    "issue": "Oasis at Doral",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Vanessa Madrid",
+    "firm": "Holland & Knight",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Oasis at Doral",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alessandria San Roman",
+    "firm": "Holland & Knight",
+    "for": "Doral Costa Capital, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-05",
+    "issue": "Oasis at Doral",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6562-2026-04-08": [
@@ -2446,6 +2619,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6617-2026-06-10": [
@@ -2512,6 +2745,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6616-2026-06-10": [
@@ -2578,6 +2871,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6618-2026-06-10": [
@@ -2644,6 +2997,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6620-2026-06-10": [
@@ -2710,6 +3123,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6621-2026-06-10": [
@@ -2776,6 +3249,66 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Catherine R. Carbonell",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-06",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Juan J. Mayol",
+    "firm": "Holland & Knight",
+    "for": "Greystar Development East, LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-01-09",
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Alberto Jose Torres",
+    "firm": "Gunster, Yoakley, & Stewart PA",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-02-19",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "James R. Williams",
+    "firm": "Gunster, Yoakley & Stewart, P.A.",
+    "for": "Greystar Development East LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2025-12-30",
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6723-2026-08-12": [
@@ -2887,7 +3420,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-29",
-    "issue": null
+    "issue": "Technology - Disaster Recovery, CJIS",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6707": [
@@ -2898,7 +3432,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-08-10",
-    "issue": null
+    "issue": "Retail Kiosks",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6693": [
@@ -2909,7 +3444,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-05",
-    "issue": null
+    "issue": "Land Use and Zoning for the Property Identified by Folio No. 35-3019-001-0370",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Melissa Tapanes Llahues",
@@ -2918,7 +3454,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Land Use and Zoning for the Property Identified by Folio No. 35-3019-001-0370",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Tom Robertson",
@@ -2927,7 +3464,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-06-17",
-    "issue": null
+    "issue": "Land Use and Zoning for the Property Identifies by Folio No. 35-3019-001-0370",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Mercy Arce",
@@ -2994,7 +3532,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3003,7 +3542,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3012,7 +3552,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3021,7 +3562,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3096,7 +3638,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3105,7 +3648,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3114,7 +3658,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3123,7 +3668,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3188,6 +3734,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6617-2026-08-12": [
@@ -3198,7 +3764,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3207,7 +3774,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3216,7 +3784,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3225,7 +3794,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3290,6 +3860,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6618-2026-08-12": [
@@ -3300,7 +3890,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3309,7 +3900,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3318,7 +3910,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3327,7 +3920,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3392,6 +3986,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6620-2026-08-12": [
@@ -3402,7 +4016,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3411,7 +4026,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3420,7 +4036,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3429,7 +4046,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3494,6 +4112,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6621-2026-08-12": [
@@ -3504,7 +4142,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3513,7 +4152,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3522,7 +4162,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3531,7 +4172,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3596,6 +4238,26 @@
     "src": "https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf",
     "date": "2025-04-24",
     "issue": "1625 NW 107 Ave multifamily development"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "JCP International I LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
+   },
+   {
+    "name": "Jorge L Navarro",
+    "firm": "Greenberg Traurig, P.A.",
+    "for": "EWE Retail II LTD",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-03-12",
+    "issue": "Mixed Use Zoning Approvals",
+    "asOf": "2026-10-27"
    }
   ],
   "doral-26-6695-2026-08-12": [
@@ -3606,7 +4268,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3615,7 +4278,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3624,7 +4288,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3633,7 +4298,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3708,7 +4374,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-06",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Juan J. Mayol",
@@ -3717,7 +4384,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-01-09",
-    "issue": null
+    "issue": "Redevelopment Sears Parcel Miami International Mall",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Alberto Jose Torres",
@@ -3726,7 +4394,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-02-19",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "James R. Williams",
@@ -3735,7 +4404,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2025-12-30",
-    "issue": null
+    "issue": "Assisting in obtaining land use and zoning entitlements for a multi-family development.",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Catherine Carbonell",
@@ -3810,7 +4480,8 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-03-03",
-    "issue": null
+    "issue": "General matters",
+    "asOf": "2026-10-27"
    },
    {
     "name": "Miguel Diaz de la Portilla",
@@ -3943,9 +4614,22 @@
     "basis": "registry",
     "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
     "date": "2026-04-17",
-    "issue": null
+    "issue": "Zoning/Entitlements - 2500 NW 107 Avenue",
+    "asOf": "2026-10-27"
+   }
+  ],
+  "doral-26-6703-2026-08-12": [
+   {
+    "name": "Jerry B. Proctor",
+    "firm": "Jerry B. Proctor, PA",
+    "for": "Emre Tuna Investment LLC",
+    "basis": "registry",
+    "src": "https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list",
+    "date": "2026-04-17",
+    "issue": "Zoning/Entitlements - 2500 NW 107 Avenue",
+    "asOf": "2026-10-27"
    }
   ]
  },
- "notFound": "Doral minutes (Granicus) could not be re-read here (robots block for WebFetch, proxy block for the shell), so record links come only from minutes notes already in actions.json (26-6698, Joe Jimenez). The 2026 current list (cityapps.cityofdoral.com) has no principals and was not readable, so 2026 registrations are only those carried from the hand-built cards. No registry match for: Collection Suites II (UF Communications), Prime Square, Smash Padel, Shelton Academy, Mediterranea Centre II (8300 Invest), Royal Atlantic Realty, Emre Tuna (card only), La Joya, Upland Park, Codina Partners debris sites, the 26-6681 sports facility applicant, Doral 10 settlement, and vendor contracts. Doral 2025 list dates are the \"date listed\" column in the 2025-12-18 export (not labeled as registration date). Publix 2025 registration issue is a new store at 9755 NW 41 St; matched to the Doral Plaza Publix items 26-6516/26-6517 on that basis (check address). otherBody rows are for review only."
+ "notFound": "Doral minutes (Granicus) could not be re-read here (robots block for WebFetch, proxy block for the shell), so record links come only from minutes notes already in actions.json (26-6698, Joe Jimenez). No registry match for: Collection Suites II (UF Communications), Prime Square, Smash Padel, Shelton Academy, Mediterranea Centre II (8300 Invest), Royal Atlantic Realty, Emre Tuna (card only), La Joya, Upland Park, Codina Partners debris sites, the 26-6681 sports facility applicant, Doral 10 settlement, and vendor contracts. Doral 2025 list dates are the \"date listed\" column in the 2025-12-18 export (not labeled as registration date). Publix 2025 registration issue is a new store at 9755 NW 41 St; matched to the Doral Plaza Publix items 26-6516/26-6517 on that basis (check address). otherBody rows are for review only."
 }

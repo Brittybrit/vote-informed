@@ -83,6 +83,7 @@ const NOTE = (who, src, firm, hand, occ) => ({
   es: `${who}, listado en ${firm} en el registro de cabilderos de ${src === 'Legislature' ? 'la Legislatura' : src === 'county' ? 'el condado' : src}` + (hand ? '; coincidencia solo por nombre, el reporte no indica ocupación ni dirección' : `; el reporte indica la ocupación “${occ}”`),
   ht: `${who}, nan lis ${firm} nan rejis lobiyis ${src === 'Legislature' ? 'Lejislati a' : src === 'county' ? 'konte a' : src}` + (hand ? '; koresponn sou non sèlman, rapò a pa bay okipasyon ni adrès' : `; rapò a di okipasyon an se “${occ}”`) });
 
+const offCard = [];
 let added = 0, total = 0, removed = 0, refundedOff = 0, refundedAmt = 0; const log = []; const nameOnly = [];
 // Gifts a refund cancelled come off every card of that body, whatever matched them (party, lobbyist, firm),
 // unless another live row with the same donor, amount and date still backs the gift
@@ -108,17 +109,23 @@ for (const B of d.bodies) {
   for (const a of B.actions) {
     // a lobbyist or firm gift whose lobbyist is no longer on the card (a link taken off on review) goes too
     const onCard = new Set((a.lobbied || []).map(l => norm(l.name)));
-    const before = a.gifts.length; a.gifts = a.gifts.filter(g => !['lobbyist', 'firm'].includes(g.kind) || !g.lobbyist || onCard.has(norm(g.lobbyist))); removed += before - a.gifts.length;
+    const before = a.gifts.length; a.gifts = a.gifts.filter(g => { if (!['lobbyist', 'firm'].includes(g.kind) || !g.lobbyist || onCard.has(norm(g.lobbyist))) return true; offCard.push({ body: B.key, action: a.id, g }); return false; }); removed += before - a.gifts.length;
     const b2 = a.gifts.length; a.gifts = a.gifts.filter(g => { if (!nameOnlyPerson(g)) return true; log.push(`${B.key} ${a.id}: name match only, taken off: ${g.donor} $${g.amount} ${g.date} ${g.to} (${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist})`); return false; }); nameOnlyOff += b2 - a.gifts.length;
     const have = new Set(a.gifts.map(gKey)); const n0 = a.gifts.length;
     const push = g => { if (!(g.to in (a.roll || {})) || have.has(gKey(g))) return; have.add(gKey(g)); a.gifts.push(g); added++; total += g.amount; log.push(`${B.key} ${a.id}: ${g.donor} $${g.amount} ${g.date} ${g.to} <- ${g.kind}${g.rel ? '/' + g.rel : ''} ${g.lobbyist} ${g.why ? '(' + g.why.en + ')' : ''}`); };
-    for (const l of a.lobbied || []) {
+    for (const l of a.lobbied || []) lineGifts(l, rows, push, B, a);
+    if (a.gifts.length !== n0) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
+  }
+}
+// The gifts one lobbyist line brings to a card: the lobbyist's own (occupation confirms), the firm's, and the
+// firm's other lobbyists'
+function lineGifts(l, rows, push, B, a) {
       const firm = firmOf(l); const fk = firm ? fkey(firm) : '';
       // the named lobbyist
       const [lasts, first] = parts(l.name);
       for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && r.hand) nameOnly.push(`${B.key} ${a.id}: ${r.donor} $${r.amount} ${r.date} to ${r.to} matches lobbyist ${l.name} by name only`);
       for (const r of rows) if (lasts.every(x => r.w.has(x)) && r.w.has(first) && !ORG.test(r.n) && occupationConfirmsLobbyist(r)) push({ to: r.to, acct: r.acct, kind: 'lobbyist', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, basis: r.hand ? 'name' : 'occ', ...(r.hand ? { why: { en: 'name match only; the report gives no occupation or address', es: 'coincidencia solo por nombre; el reporte no indica ocupación ni dirección', ht: 'koresponn sou non sèlman; rapò a pa bay okipasyon ni adrès' } } : {}) });
-      if (!fk || !roster[fk]) continue;
+      if (!fk || !roster[fk]) return;
       // the firm itself
       const ph = ' ' + norm(firm).split(' ').filter(x => !FSTOP.has(x)).slice(0, 2).join(' ') + ' ';
       for (const r of rows) if (ph.trim().length > 4 && (' ' + r.n + ' ').includes(ph)) push({ to: r.to, acct: r.acct, kind: 'firm', rel: 'firm', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, firmName: firm });
@@ -128,9 +135,22 @@ for (const B of d.bodies) {
         for (const r of rows) if (p.lasts.every(x => r.w.has(x)) && r.w.has(p.first) && !ORG.test(r.n) && occupationConfirmsLobbyist(r))
           push({ to: r.to, acct: r.acct, kind: 'firm', rel: 'firmlob', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ || undefined, lobbyist: l.name, forParty: l.for, firmName: firm, why: NOTE(p.name, p.src, p.firm, r.hand, r.occ) });
       }
-    }
-    if (a.gifts.length !== n0) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
+}
+// Portal pairs held back from the cards (scripts/data/city/<slug>/lobbyists-portal-only.json, city-enrich.mjs): the
+// gifts each would add to its card if it tied, other than gifts the card already shows. Written back for review.
+for (const B of d.bodies) {
+  const f = `scripts/data/city/${B.key}/lobbyists-portal-only.json`; if (!existsSync(P(f)) || !DON[B.key]) continue;
+  const PO = J(f);
+  for (const x of PO.pairs || []) {
+    const a = B.actions.find(y => y.id === x.action); const kept = (x.gifts || []).filter(g => g.from === 'card'); x.gifts = []; if (!a) continue;
+    const have = new Set((a.gifts || []).map(gKey));
+    const put = (g, from) => { if (!(g.to in (a.roll || {})) || have.has(gKey(g))) return; have.add(gKey(g)); x.gifts.push({ to: g.to, acct: g.acct, donor: g.donor, amount: g.amount, date: g.date, kind: g.kind, ...(g.rel ? { rel: g.rel } : {}), ...(g.occ ? { occ: g.occ } : {}), ...(g.firmName ? { firmName: g.firmName } : {}), ...(from ? { from } : {}) }); };
+    // gifts the card showed for this lobbyist before the pair was held back (matched on an earlier run or by hand)
+    for (const g of [...kept, ...offCard.filter(o => o.body === B.key && o.action === a.id && norm(o.g.lobbyist) === norm(x.lobbyist)).map(o => o.g)]) put(g, 'card');
+    lineGifts({ name: x.lobbyist, for: x.principal, firm: x.firm }, DON[B.key], g => put(g), B, a);
+    x.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
+  writeFileSync(P(f), JSON.stringify(PO, null, 1) + '\n');
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyist-name-only.txt'), [...new Set(nameOnly)].join('\n') + '\n');

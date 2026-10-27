@@ -12,10 +12,15 @@
 // are listed in scripts/data/city/lobbyists-dropped.json. Lobbyist lines a hand-built card carries without a basis
 // pass the same checks (handLinkProblem) or come off, logged there with hand: true. Two lines for one person
 // (names differing only by a middle initial, same firm or registration) become one.
+// Portal registrations (PORTAL in lobby-links.mjs: Doral's Lobbyist Portal, current principals only): every portal
+// pair whose principal is a party on an action and whose registration date is on or before the vote is added to
+// lobbyists.json (basis registry, src the portal, asOf the read date). It ties only when the same lobbyist and
+// principal are on the 2025 list or the item's record names the lobbyist; pairs that are only on the portal now are
+// written to scripts/data/city/<slug>/lobbyists-portal-only.json for review, never published.
 // Run after city-actions.mjs:  node scripts/city-enrich.mjs <slug> [...] && node scripts/city-firm-gifts.mjs
 import { writeFileSync, existsSync } from 'node:fs';
 import { P, J, norm, donorsFor, partyGifts } from './lib/city.mjs';
-import { registryLinkProblem, handLinkProblem, sameLobbyist, principalAliases } from './lib/lobby-links.mjs';
+import { registryLinkProblem, handLinkProblem, sameLobbyist, principalAliases, principalMatches, notInForce, namesDifferOnlyByMiddle, PORTAL, portalContext, priorPairFor, recordNames } from './lib/lobby-links.mjs';
 const PIX = principalAliases(existsSync(P('scripts/data/city/principal-aliases.json')) ? J('scripts/data/city/principal-aliases.json') : {});
 
 const FILE = 'public/data/decisions.json';
@@ -79,18 +84,42 @@ for (const slug of ONLY) {
   // Lines a hand-built card carries without a basis: kept only when the item's record names the lobbyist or a
   // registration on the line passes the party and in-force checks. A line dropped on an earlier run stays logged.
   const dr = dropped.cities[slug] = (dropped.cities[slug] || []).filter(x => x.hand);
+  const PT = PORTAL[slug] && existsSync(P(PORTAL[slug].principals)) && existsSync(P(PORTAL[slug].prior)) ? PORTAL[slug] : null;
+  const LF = `scripts/data/city/${slug}/lobbyists.json`;
+  const ctx = PT ? portalContext(slug, { principals: J(PT.principals), regs: J(PT.regs), prior: J(PT.prior), lobbyists: existsSync(P(LF)) ? J(LF) : {} }, pfx) : null;
   for (const a of B.actions) if (a.lobbied && a.lobbied.length) {
     a.lobbied = a.lobbied.filter(x => {
-      const why = handLinkProblem(x, a, PIX, slug); if (!why) return true;
+      const why = handLinkProblem(x, a, PIX, slug, ctx); if (!why) return true;
       if (!dr.some(y => y.hand && y.action === a.id && y.name === x.name && y.for === x.for)) dr.push({ action: a.id, date: a.date, name: x.name, for: x.for, regDate: (x.regs || [])[0] || x.reg || null, why, hand: true });
       n.handDropped = (n.handDropped || 0) + 1; return false;
     });
   }
   if (existsSync(P(`scripts/data/city/${slug}/lobbyists.json`))) {
     const L = J(`scripts/data/city/${slug}/lobbyists.json`);
+    if (ctx) {
+      ctx.L = L;
+      // Portal pairs for each action's parties, registered on or before the vote; existing portal links get the read date
+      const onPortal = l => ctx.pairs.find(p => namesDifferOnlyByMiddle(p.name, l.name) && (principalMatches(p.for, [l.for], PIX) || principalMatches(l.for, [p.for], PIX)));
+      for (const list of Object.values(L.byAction || {})) for (const l of list || []) if (l && l.basis === 'registry' && String(l.src || '') === PT.src) { const p = onPortal(l); if (p) { l.asOf = p.asOf; if (!l.issue && p.issue) l.issue = p.issue; } }
+      for (const a of B.actions) for (const p of ctx.pairs) {
+        if (!p.date || !principalMatches(p.for, a.parties, PIX) || notInForce(p, a.date, slug)) continue;
+        const k = Object.keys(L.byAction || {}).find(id => find(id) === a) || a.id;
+        const list = (L.byAction = L.byAction || {})[k] = L.byAction[k] || [];
+        if (list.some(l => l && l.basis === 'registry' && String(l.src || '') === PT.src && namesDifferOnlyByMiddle(l.name, p.name) && principalMatches(l.for, [p.for], PIX))) continue;
+        list.push({ name: p.name, firm: p.firm, for: p.for, basis: 'registry', src: p.src, date: p.date, issue: p.issue, asOf: p.asOf });
+        n.portal = (n.portal || 0) + 1;
+      }
+      writeFileSync(P(LF), JSON.stringify(L, null, 1) + '\n');
+    }
+    // What a portal link rests on, carried on the card line: the portal read date and the 2025 pair or the record
+    const portalBasis = (l, a) => {
+      if (!ctx || l.basis !== 'registry' || String(l.src || '') !== PT.src) return {};
+      const p = priorPairFor(l, ctx, PIX);
+      return { asOf: l.asOf || ctx.pairs[0].asOf, ...(p ? { prior: { src: p.src, name: p.name, for: p.for, listed: p.listed } } : recordNames(l, a, ctx) ? { recordNamed: true } : {}) };
+    };
     const rv = review.cities[slug] = {};
     // A registry link that fails the principal or in-force check is not used
-    const usable = (l, a) => { const why = registryLinkProblem(l, a, PIX, slug); if (why) dr.push({ action: a.id, date: a.date, name: l.name, for: l.for, regDate: l.date || l.regYear || null, why }); return !why; };
+    const usable = (l, a) => { const why = registryLinkProblem(l, a, PIX, slug, ctx); if (why) dr.push({ action: a.id, date: a.date, name: l.name, for: l.for, regDate: l.date || l.regYear || null, why }); return !why; };
     // Links this step added earlier (they carry a basis) that the file no longer supports are taken off
     const keep = new Map();
     for (const [id, list] of Object.entries(L.byAction || {})) { const a = find(id); if (a) for (const l of list || []) if (l && ['registry', 'record'].includes(l.basis) && usable(l, a)) (keep.get(a.id) || keep.set(a.id, new Map()).get(a.id)).set(norm(l.name) + '|' + l.basis, true); }
@@ -100,13 +129,13 @@ for (const slug of ONLY) {
       for (const l of list || []) {
         if (!l || !l.name) continue;
         if (!['registry', 'record'].includes(l.basis)) { (rv[a.id] = rv[a.id] || []).push(l); n.review++; continue; }
-        if (registryLinkProblem(l, a, PIX, slug)) continue;
+        if (registryLinkProblem(l, a, PIX, slug, ctx)) continue;
         a.lobbied = a.lobbied || [];
         const nk = norm(l.name);
-        const line = { name: l.name, for: l.for || '', ...(l.firm ? { firm: l.firm } : {}), ...(l.date ? { regs: [l.date] } : {}), basis: l.basis, ...(l.src ? { src: l.src } : {}) };
+        const line = { name: l.name, for: l.for || '', ...(l.firm ? { firm: l.firm } : {}), ...(l.date ? { regs: [l.date] } : {}), basis: l.basis, ...(l.src ? { src: l.src } : {}), ...portalBasis(l, a) };
         // a line with a basis for this person is already there; a hand-built line for them gives way below
         const ex = a.lobbied.find(x => x.basis && (norm(x.name) === nk || sameLobbyist(x, line)));
-        if (ex) { if (!ex.firm && l.firm) ex.firm = l.firm; continue; }
+        if (ex) { if (!ex.firm && l.firm) ex.firm = l.firm; if (ex.basis === 'registry' && ex.src === l.src) Object.assign(ex, portalBasis(l, a)); continue; }
         a.lobbied.push(line);
         n.lob++;
       }
@@ -115,9 +144,9 @@ for (const slug of ONLY) {
     for (const [id, list] of Object.entries(L.byAction || {})) {
       const a = find(id); if (!a || !a.lobbied) continue;
       for (const x of a.lobbied) if (x.basis === 'registry') {
-        const ds = (list || []).filter(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && l.date && !registryLinkProblem(l, a, PIX, slug)).map(l => l.date);
+        const ds = (list || []).filter(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && l.date && !registryLinkProblem(l, a, PIX, slug, ctx)).map(l => l.date);
         if (!x.regs || x.regs.every(r => ds.includes(r))) continue;
-        if (ds.length) x.regs = [...new Set(ds)].sort(); else if (x.regs && !(list || []).some(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && !registryLinkProblem(l, a, PIX, slug))) delete x.regs;
+        if (ds.length) x.regs = [...new Set(ds)].sort(); else if (x.regs && !(list || []).some(l => l && l.basis === 'registry' && norm(l.name) === norm(x.name) && !registryLinkProblem(l, a, PIX, slug, ctx))) delete x.regs;
       }
     }
   }
@@ -140,6 +169,16 @@ for (const slug of ONLY) {
     if (out.length !== a.lobbied.length) a.lobbied = a.lobbied.filter(x => out.includes(x));
   }
 
+  // Portal pairs that would tie only on being on the portal now: listed for review, not published
+  if (ctx) {
+    const only = dr.filter(x => /^portal only/.test(x.why || '')).map(x => { const a = B.actions.find(y => y.id === x.action) || {};
+      const byA = (ctx.L && ctx.L.byAction) || {}; const l = (byA[Object.keys(byA).find(id => find(id) === a)] || []).find(l => l.name === x.name && l.for === x.for) || {};
+      return { action: x.action, ref: a.ref, date: x.date, subject: a.subject && a.subject.en, parties: a.parties, lobbyist: x.name, firm: l.firm || null, principal: x.for, regDate: x.regDate, issue: l.issue || null, src: PT.src, asOf: l.asOf || null, why: x.why }; });
+    const OF = `scripts/data/city/${slug}/lobbyists-portal-only.json`;
+    const old = existsSync(P(OF)) ? J(OF) : {};
+    writeFileSync(P(OF), JSON.stringify({ note: 'Lobbyist-principal pairs read on the city lobbyist portal that would tie a lobbyist to a vote only because the pair is on the portal now: the pair is not on the 2025 list and the item\'s record does not name the lobbyist, and the portal does not say when the principal was authorized. Not published; for Brit to decide (scripts/lib/lobby-links.mjs PORTAL). gifts: what city-firm-gifts.mjs would add to the card if the pair tied (from: card marks a gift the card showed before the pair was held back).', pairs: only.map(x => ({ ...x, gifts: ((old.pairs || []).find(o => o.action === x.action && o.lobbyist === x.lobbyist && o.principal === x.principal) || {}).gifts || [] })) }, null, 1) + '\n');
+    n.portalOnly = only.length;
+  }
   // 4. Party gifts on every action of the list (newly named owners, newer donor data)
   const donors = donorsFor(slug, B, BJ.ballotNames || {});
   for (const a of B.actions) {
@@ -151,7 +190,7 @@ for (const slug of ONLY) {
     for (const g of partyGifts(a, donors)) if (!have.has(same(g))) { a.gifts.push(g); have.add(same(g)); n.party++; added = true; }
     if (added) a.gifts.sort((p, q) => String(p.date).localeCompare(String(q.date)));
   }
-  report.push(`${slug}: dropped ${n.dropped || 0}, hand lines dropped ${n.handDropped || 0}, merged ${n.merged || 0}, votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review), new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
+  report.push(`${slug}: dropped ${n.dropped || 0}, hand lines dropped ${n.handDropped || 0}, merged ${n.merged || 0}, votes ${n.votes}, owners ${n.owners}, lobbyists ${n.lob} (+${n.review} for review)${ctx ? `, portal pairs added ${n.portal || 0}, portal only ${n.portalOnly || 0}` : ''}, new party gifts ${n.party}${n.missing ? `, ${n.missing} ids not found` : ''}`);
 }
 writeFileSync(P(FILE), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyists-review.json'), JSON.stringify(review, null, 1) + '\n');

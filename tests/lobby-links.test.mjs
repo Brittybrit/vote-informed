@@ -1,11 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { principalMatches, notInForce, registryLinkProblem, principalAliases, handLinkProblem, sameLobbyist, namesDifferOnlyByMiddle, occupationConfirmsLobbyist, ANNUAL } from '../scripts/lib/lobby-links.mjs';
+import { principalMatches, notInForce, registryLinkProblem, principalAliases, handLinkProblem, sameLobbyist, namesDifferOnlyByMiddle, occupationConfirmsLobbyist, ANNUAL, PORTAL, portalContext, portalLinkProblem, priorPairFor } from '../scripts/lib/lobby-links.mjs';
 
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 const decisions = JSON.parse(read('../public/data/decisions.json'));
 const IX = principalAliases(JSON.parse(read('../scripts/data/city/principal-aliases.json')));
+// The portal context city-enrich builds for a body (null when the body has no portal registry)
+const ctxFor = key => { const p = PORTAL[key]; if (!p) return null; const j = f => JSON.parse(read('../' + f));
+  const lf = `../scripts/data/city/${key}/lobbyists.json`; return portalContext(key, { principals: j(p.principals), regs: j(p.regs), prior: j(p.prior), lobbyists: existsSync(new URL(lf, import.meta.url)) ? JSON.parse(read(lf)) : {} }); };
 
 test('a registration counts only for a principal named as a party on the item', () => {
   assert.ok(principalMatches('Creh Galiano LLC', ['CREH Galiano LLC (property owner)']));
@@ -46,6 +49,7 @@ test('registryLinkProblem leaves links named in the record alone', () => {
 
 test('every registry lobbyist on a city card rests on a registration that passes', () => {
   for (const B of decisions.bodies) {
+    const CTX = ctxFor(B.key);
     const f = new URL(`../scripts/data/city/${B.key}/lobbyists.json`, import.meta.url);
     if (!existsSync(f)) continue;
     const L = JSON.parse(readFileSync(f, 'utf8')).byAction || {};
@@ -59,7 +63,7 @@ test('every registry lobbyist on a city card rests on a registration that passes
       if (x.basis !== 'registry') continue;
       const mine = (links.get(a.id) || []).filter(l => nk(l.name) === nk(x.name));
       if (!mine.length) continue;   // linked under an older card id; city-enrich resolves those
-      assert.ok(mine.some(l => !registryLinkProblem(l, a, IX, B.key)), `${B.key} ${a.id}: ${x.name} has no registration that names the party and was in force`);
+      assert.ok(mine.some(l => !registryLinkProblem(l, a, IX, B.key, CTX)), `${B.key} ${a.id}: ${x.name} has no registration that names the party and was in force`);
     }
   }
 });
@@ -121,12 +125,13 @@ test('hand-built card lines pass the same party and in-force checks', () => {
 
 test('every lobbyist on every city card passes the party and in-force checks', () => {
   for (const B of decisions.bodies) {
+    const CTX = ctxFor(B.key);
     if (!existsSync(new URL(`../scripts/data/city/${B.key}/`, import.meta.url))) continue;
     for (const a of B.actions || []) for (const x of a.lobbied || []) {
       assert.ok(['record', 'registry', undefined].includes(x.basis), `${B.key} ${a.id}: ${x.name} basis ${x.basis}`);
-      if (!x.basis) assert.equal(handLinkProblem(x, a, IX, B.key), null, `${B.key} ${a.id}: hand line ${x.name}`);
+      if (!x.basis) assert.equal(handLinkProblem(x, a, IX, B.key, CTX), null, `${B.key} ${a.id}: hand line ${x.name}`);
       if (x.basis === 'registry' && x.regs && x.regs.length) {
-        const ok = x.regs.some(date => !registryLinkProblem({ basis: 'registry', name: x.name, for: x.for, date, src: x.src, issue: x.issue }, a, IX, B.key));
+        const ok = x.regs.some(date => !registryLinkProblem({ basis: 'registry', name: x.name, for: x.for, date, src: x.src, issue: x.issue }, a, IX, B.key, CTX));
         assert.ok(ok, `${B.key} ${a.id}: ${x.name} (${x.for}, ${x.regs.join(', ')}) has no registration in force that names the party`);
       }
     }
@@ -164,4 +169,44 @@ test('a name-only donor match counts neither as the lobbyist nor as the firm', (
       assert.ok(occupationConfirmsLobbyist(g), `${B.key} ${a.id}: ${g.donor} $${g.amount} (${g.kind}${g.rel ? '/' + g.rel : ''}) has no occupation confirming a lobbyist`);
     }
   }
+});
+
+test('Doral portal pairs tie only when continuous from the 2025 list or named in the record', () => {
+  const src = PORTAL.doral.src;
+  const ctx = portalContext('doral', {
+    principals: { asOf: '2026-10-27', source: src, lobbyists: { 'Juan J. Mayol': [['Greystar Development East, LLC', 'x']], 'Alberto Jose Torres': [['Greystar Development East LLC', 'x']], 'Pat Q. Lobby': [['Acme Doral LLC', 'x']] } },
+    regs: { lobbyists: [{ name: 'Juan J. Mayol', reg: '01/09/2026' }, { name: 'Alberto Jose Torres', reg: '02/19/2026' }, { name: 'Pat Q. Lobby', reg: '03/01/2026' }] },
+    prior: { source: 'https://www.cityofdoral.com/files/assets/city/v/1/city-hall/city-clerk/lobbyist-docs/authorized-lobbyist-list.pdf', lobbyists: { 'Juan Mayol': { listed: '11/14/2024', principals: [['Greystar Development East, LLC', 'Redevelopment Sears Parcel']] } } },
+    lobbyists: { byAction: { 'doral-26-9000': [{ name: 'Pat Lobby', basis: 'record', for: 'Acme Doral LLC' }] } },
+  });
+  const a = { id: 'doral-26-6615', date: '2026-08-12', parties: ['Greystar Development East, LLC'] };
+  const link = (name, f, date) => ({ basis: 'registry', name, for: f, date, src });
+  // (a) the same lobbyist and principal on the 2025 list: continuous, ties once the 2026 registration is filed
+  assert.equal(registryLinkProblem(link('Juan J. Mayol', 'Greystar Development East, LLC', '2026-01-09'), a, IX, 'doral', ctx), null);
+  assert.ok(priorPairFor(link('Juan J. Mayol', 'Greystar Development East, LLC', '2026-01-09'), ctx, IX));
+  assert.match(registryLinkProblem(link('Juan J. Mayol', 'Greystar Development East, LLC', '2026-01-09'), { ...a, date: '2026-01-08' }, IX, 'doral', ctx), /after the action/);
+  // on the portal now only: does not tie, and says why
+  assert.match(registryLinkProblem(link('Alberto Jose Torres', 'Greystar Development East LLC', '2026-02-19'), a, IX, 'doral', ctx), /^portal only/);
+  // (b) the item's record names the lobbyist (record line or namedLobbyist) and the registration names the principal
+  const b = { id: 'doral-26-9000', date: '2026-05-01', parties: ['Acme Doral, LLC'] };
+  assert.equal(registryLinkProblem(link('Pat Q. Lobby', 'Acme Doral LLC', '2026-03-01'), b, IX, 'doral', ctx), null);
+  assert.equal(portalLinkProblem(link('Alberto Jose Torres', 'Greystar Development East LLC', '2026-02-19'), { ...a, namedLobbyist: 'Alberto Torres' }, ctx, IX), null);
+  assert.match(registryLinkProblem(link('Pat Q. Lobby', 'Acme Doral LLC', '2026-03-01'), { ...b, id: 'doral-26-9001' }, IX, 'doral', ctx), /^portal only/);
+  // a principal the portal does not list for that lobbyist does not tie, and nothing ties without the portal read
+  assert.match(portalLinkProblem(link('Juan J. Mayol', 'Other Co', '2026-01-09'), a, ctx, IX), /not among/);
+  assert.match(registryLinkProblem(link('Juan J. Mayol', 'Greystar Development East, LLC', '2026-01-09'), a, IX, 'doral'), /^portal only/);
+  // the 2025 list's own links are not portal links and keep the annual rule
+  assert.equal(registryLinkProblem({ basis: 'registry', name: 'Juan Mayol', for: 'Greystar Development East, LLC', date: '2024-11-14', src: ctx.prior[0].src }, { ...a, date: '2025-06-10' }, IX, 'doral', ctx), null);
+});
+
+test('Doral cards: every portal line carries the read date and its 2025 pair or record; portal-only pairs stay off', () => {
+  const B = decisions.bodies.find(b => b.key === 'doral'); const ctx = ctxFor('doral');
+  const only = JSON.parse(read('../scripts/data/city/doral/lobbyists-portal-only.json')).pairs;
+  for (const a of B.actions) for (const x of a.lobbied || []) if (x.basis === 'registry' && x.src === PORTAL.doral.src) {
+    assert.equal(x.asOf, '2026-10-27', `${a.id} ${x.name}`);
+    assert.ok(x.prior || x.recordNamed, `${a.id} ${x.name}: no 2025 pair or record`);
+    if (x.prior) assert.ok(priorPairFor(x, ctx, IX), `${a.id} ${x.name}: 2025 pair not on the list`);
+    assert.ok(!only.some(o => o.action === a.id && o.lobbyist === x.name && o.principal === x.for), `${a.id} ${x.name} is portal only`);
+  }
+  for (const o of only) assert.match(o.why, /^portal only/);
 });

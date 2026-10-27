@@ -102,12 +102,59 @@ export function notInForce(l, date, city) {
   if (ys.has(date.slice(0, 4))) return null;
   return ys.size ? `listed only for ${[...ys].sort().join(', ')}` : 'no registration date or list year to show it was in force';
 }
-// null when the link can tie the lobbyist to the action; otherwise why not
-export function registryLinkProblem(l, a, ix = new Map(), city) {
+// Registries that show only each lobbyist's current principals, with no date for when each principal was
+// authorized: Doral's Lobbyist Portal (scripts/data/city/doral/lobbyists-2026-principals.json, registration dates in
+// lobbyists-2026.json). A pair read there ties only when the vote is on or after the lobbyist's registration date
+// (notInForce) and either (a) the same lobbyist and principal are on the prior list (prior: the 2025 Authorized
+// Lobbyist List, lobbyists-2025-principals.json), so the representation is continuous, or (b) the item's own
+// record names the lobbyist. A pair that is only on the portal now does not tie; city-enrich lists it in
+// scripts/data/city/<slug>/lobbyists-portal-only.json for review (Brit, Oct 27, 2026).
+export const PORTAL = {
+  doral: { src: 'https://cityapps.cityofdoral.com/Lobbyist/authorized-lobbyists-list', principals: 'scripts/data/city/doral/lobbyists-2026-principals.json', regs: 'scripts/data/city/doral/lobbyists-2026.json', prior: 'scripts/data/city/doral/lobbyists-2025-principals.json' },
+};
+export const isPortalLink = (l, city) => !!(city && PORTAL[city] && l && String(l.src || '').includes(PORTAL[city].src.replace(/^https?:\/\//, '')));
+// The pairs a portal read lists: { name, firm, for, issue, date (registration, ISO), src, asOf }
+export function portalPairs(principals, regs) {
+  const reg = new Map(((regs && regs.lobbyists) || []).map(r => [r.name, r]));
+  const out = [];
+  for (const [name, list] of Object.entries((principals && principals.lobbyists) || {})) {
+    const r = reg.get(name) || {};
+    for (const [p, issue] of list || []) if (p) out.push({ name, firm: r.firm || null, for: p, issue: issue || null, date: mdy(r.reg || '') || null, src: principals.source, asOf: principals.asOf });
+  }
+  return out;
+}
+// The pairs a prior list names: { name, for, issue, listed, src }
+export const priorPairs = prior => Object.entries((prior && prior.lobbyists) || {}).flatMap(([name, x]) => (x.principals || []).map(([p, issue]) => ({ name, for: p, issue: issue || null, listed: x.listed, src: prior.source })));
+// The same person (names differing only by middle names or initials) for the same principal (either side's names)
+const samePair = (x, y, ix) => namesDifferOnlyByMiddle(x.name, y.name) && (principalMatches(x.for, [y.for], ix) || principalMatches(y.for, [x.for], ix));
+// What a city-enrich run needs to check portal links: the portal's pairs, the prior list's pairs, and the lobbyists
+// each item's record names (record-basis lines in lobbyists.json, by action id with and without the body prefix)
+export function portalContext(city, { principals, regs, prior, lobbyists } = {}, pfx = city + '-') {
+  if (!PORTAL[city]) return null;
+  const record = new Map();
+  for (const [id, list] of Object.entries((lobbyists && lobbyists.byAction) || {})) for (const l of list || []) if (l && l.basis === 'record' && l.name)
+    for (const k of new Set([id, pfx + id, String(id).replace(pfx, '')])) (record.get(k) || record.set(k, []).get(k)).push(l.name);
+  return { city, pairs: portalPairs(principals, regs), prior: priorPairs(prior), record };
+}
+// The prior-list pair that shows the portal pair was already in place, or null
+export const priorPairFor = (l, ctx, ix = new Map()) => (ctx && ctx.prior.find(p => samePair(l, p, ix))) || null;
+// The item's record names this lobbyist (its namedLobbyist line, or a record-basis link for the item)
+export const recordNames = (l, a, ctx) => namedInRecord(l, a) || ((ctx && ctx.record.get(a.id)) || []).some(n => namesDifferOnlyByMiddle(n, l.name));
+// For a portal link that passes the party and date checks: null when (a) or (b) holds; otherwise why not.
+// The reason starts "portal only" when the pair is on the portal but neither holds.
+export function portalLinkProblem(l, a, ctx, ix = new Map()) {
+  if (!ctx) return 'portal only: no prior list or portal read to check the pair against';
+  if (!ctx.pairs.some(p => samePair(l, p, ix))) return `"${l.for}" is not among ${l.name}'s principals on the portal read`;
+  if (priorPairFor(l, ctx, ix) || recordNames(l, a, ctx)) return null;
+  return `portal only: ${l.name} for "${l.for}" is on the portal now, not on the 2025 list, and the item's record does not name the lobbyist; the portal does not say when the principal was authorized`;
+}
+// null when the link can tie the lobbyist to the action; otherwise why not. ctx: portalContext for the body, needed
+// to check links read from a portal (PORTAL); without it a portal link does not tie.
+export function registryLinkProblem(l, a, ix = new Map(), city, ctx) {
   if (!l || l.basis !== 'registry') return null;
   if (!principalMatches(l.for, a.parties, ix) && !registeredProjects(l).some(p => principalMatches(p, a.parties, ix)))
     return `registered principal "${l.for}" is not a party named on the item`;
-  return notInForce(l, a.date, city);
+  return notInForce(l, a.date, city) || (isPortalLink(l, city) ? portalLinkProblem(l, a, ctx, ix) : null);
 }
 
 // Name words of a person: lowercased, accents, punctuation, suffixes and single-letter initials dropped
@@ -122,11 +169,11 @@ export function namedInRecord(x, a) {
 // A lobbyist line on a card that carries no basis (hand-built card): null when it may stay, otherwise why not.
 // Named in the item's own record, it is the record; otherwise one of its registrations (reg, regs) must name the
 // item's party and be in force on the vote date, as a registry link would.
-export function handLinkProblem(x, a, ix = new Map(), city) {
+export function handLinkProblem(x, a, ix = new Map(), city, ctx) {
   if (!x || x.basis) return null;
   if (namedInRecord(x, a)) return null;
   const regs = [...(x.regs || []), ...(x.reg ? [x.reg] : [])];
-  const tries = (regs.length ? regs : [null]).map(date => registryLinkProblem({ basis: 'registry', name: x.name, for: x.for, date, src: x.src, issue: x.issue }, a, ix, city));
+  const tries = (regs.length ? regs : [null]).map(date => registryLinkProblem({ basis: 'registry', name: x.name, for: x.for, date, src: x.src, issue: x.issue }, a, ix, city, ctx));
   return tries.includes(null) ? null : tries[0];
 }
 
