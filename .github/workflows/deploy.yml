@@ -1,6 +1,6 @@
 name: Deploy
 # Manual deploy to Cloudflare from any device: GitHub -> Actions -> Deploy -> Run workflow.
-# Needs two repository secrets: CLOUDFLARE_DEPLOY_TOKEN (a token from the "Edit Cloudflare Workers" template)
+# Needs two repository secrets: CLOUDFLARE_TOKEN_DEPLOY_BALLOT305 (a token from the "Edit Cloudflare Workers" template)
 # and CLOUDFLARE_ACCOUNT_ID. Forks without these secrets can't deploy.
 on:
   workflow_dispatch:
@@ -20,5 +20,5 @@ jobs:
       - run: npm test
       - run: npx --yes wrangler@4 deploy
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN_DEPLOY_BALLOT305 }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

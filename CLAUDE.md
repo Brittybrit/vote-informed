@@ -4,8 +4,10 @@
 Architect everything so nobody needs memory, Brit's or Claude's, to translate a name. Every secret, token,
 bucket, branch, file, folder, worker and field is named for what it is and what uses it, specific enough that it
 can't be confused with a sibling.
-- Secrets and tokens are named for the one job they serve (`CLOUDFLARE_DEPLOY_TOKEN`, `CLOUDFLARE_R2_TOKEN`), and
+- Secrets and tokens are named for the one job they serve (`CLOUDFLARE_TOKEN_DEPLOY_BALLOT305`, `CLOUDFLARE_TOKEN_R2_WETHEPEOPLE305_SOURCES`), and
   one token does one job.
+- A Cloudflare token's name is the exact GitHub secret name that holds it, plus where that secret lives, e.g.
+  `CLOUDFLARE_TOKEN_DEPLOY_BALLOT305 (GitHub vote-informed)`. Same string in both places, nothing to look up.
 - Shared assets are named for their owner, not their first user (bucket `wethepeople305-sources` serves Ballot305
   and future We the People reports).
 - When something is renamed, rename it everywhere in the same change; no aliases left to remember.
