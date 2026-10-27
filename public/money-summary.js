@@ -68,7 +68,7 @@
       whatReq: 'request or vote', whatBill: 'vote', whatVote: 'vote or action',
       // 4. The actions
       req: function(p, R, fed){
-        var s = 'Those ' + (R.n === 1 ? 'request asked' : R.n + ' requests asked') + ' for ' + big(R.ask, 'en') + ' in all.';
+        var s = (R.n === 1 ? 'That request asked' : 'Those ' + R.n + ' requests asked') + ' for ' + big(R.ask, 'en') + ' in all.';
         if(fed) return s + (R.fedChecked ? ' Of the ' + R.fedChecked + ' made for FY2022-FY2025, which asked for ' + big(R.fedAsk, 'en') + ', ' + big(R.fedFunded, 'en') + ' was funded in the final laws.' + (R.fedChecked < R.n ? ' Whether the newer ones were funded is not checked here yet.' : '') : ' Whether they were funded is not checked here yet.');
         if(!R.inBudget) return s + ' None of it was in the final budget.';
         var share = pct(R.funded, R.ask);
@@ -173,8 +173,8 @@
       share: function(p, S, b){
         if(S.def === 'donorFirst') return 'La lista de esta ciudad se armó a partir de sus donantes, porque la ciudad no publica un registro de cabilderos utilizable. Así que no hay un conteo justo de los actos sin donantes.';
         var q = pair(S.tied, S.n), r = S.n - S.tied, s0 = since(S.from, 'es') + ', ';
-        var act = S.def === 'earmarks' ? 'presentó ' + S.tied + ' solicitudes de fondos federales para proyectos (' + q[0] + ') para grupos cuyos cabilderos le donaron'
-          : S.def === 'requests' ? 'presentó ' + S.tied + ' solicitudes de presupuesto (' + q[0] + ') en las que un cabildero, o el grupo que recibiría el dinero, le donó'
+        var act = S.def === 'earmarks' ? 'presentó ' + S.tied + (S.tied === 1 ? ' solicitud' : ' solicitudes') + ' de fondos federales para proyectos (' + q[0] + ') para grupos cuyos cabilderos le donaron'
+          : S.def === 'requests' ? 'presentó ' + S.tied + (S.tied === 1 ? ' solicitud' : ' solicitudes') + ' de presupuesto (' + q[0] + ') en las que un cabildero, o el grupo que recibiría el dinero, le donó'
           : S.def === 'cabinet' ? 'tomó ' + S.tied + ' votos del Gabinete y actos de su oficina (' + q[0] + ') que beneficiaron a uno de sus donantes'
           : 'votó a favor en ' + S.tied + ' acciones (' + q[0] + ') que beneficiaron a uno de sus donantes';
         var rest = S.def === 'earmarks' || S.def === 'requests' ? 'En ' + r + ' (' + q[1] + '), no.'
