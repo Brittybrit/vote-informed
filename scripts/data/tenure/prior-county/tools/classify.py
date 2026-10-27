@@ -144,7 +144,8 @@ def amount(t):
     if not m: return None
     try: v=float(m.group(1).replace(',',''))
     except: return None
-    if m.group(2): v*=1e6
+    # "$6,300,000 MILLION" in a county title is a clerical doubling: a figure already in full dollars stays as is
+    if m.group(2) and v<1e6: v*=1e6
     return v if v>0 else None
 def fmtamt(v):
     if v is None: return ''
