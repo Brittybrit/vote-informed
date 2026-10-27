@@ -599,6 +599,9 @@
         numbers: 'The numbers',
         n: [['Tax cut, statewide', 'at least $28.7 million a year (Revenue Estimating Conference, April 18, 2025)'], ['Who stops collecting it', 'counties, cities, school districts and special districts'], ['What the Florida Farm Bureau itself gets', 'nothing directly that any record shows: it is a membership group, and the cut goes to its member farms']],
         nNote: 'Votes: 110 to 1 in the House (Apr. 25, 2025) and 37 to 0 in the Senate (May 2, 2025). It needs 60% of the vote.',
+        voterHead: 'Miami-Dade lawmakers on your ballot who voted yes, and what farm businesses gave them',
+        vline: function(o){ return o.name + ' (' + o.race + '): ' + (o.total ? big(o.total, 'en') + ' from ' + o.donors + ' farm ' + (o.donors === 1 ? 'giver' : 'givers') + ', ' + yr(o.from) + (yr(o.to) !== yr(o.from) ? ' to ' + yr(o.to) : '') + '; ' + big(o.since, 'en') + ' after Feb. 26, 2025' : 'none found') + '.'; },
+        vNote: 'Every state campaign account and committee of theirs we hold, from their first state race (Omar Blanco: from 2025 only; his 2024 campaign is not in our files yet). Angie Nixon: her state accounts only (2020 to 2024); her U.S. Senate (federal) donors are not checked here. Same counting rules as above.',
         moneyHead: 'Money from farm businesses to the officials behind it',
         off: { simpson: 'Wilton Simpson, Commissioner of Agriculture, on your ballot; his department backs the amendment', truenow: 'Sen. Keith Truenow, who filed the Senate version (SJR 318); not on Miami-Dade ballots', alvarez: 'Rep. Danny Alvarez, who filed the amendment (HJR 1215); not on Miami-Dade ballots' },
         line: function(o, offName){ return offName + ': ' + big(o.total, 'en') + ' from ' + o.donors + ' farm companies, farm groups and farmers, ' + yr(o.from) + ' to ' + yr(o.to) + ', to his campaigns and the political committees he chairs. ' + big(o.since, 'en') + ' of it came after the amendment was filed on Feb. 26, 2025. Largest: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'en'); }).join(', ') + '.'; },
@@ -618,6 +621,9 @@
         numbers: 'Las cifras',
         n: [['Rebaja de impuestos, en todo el estado', 'al menos $28.7 millones al año (Conferencia de Estimación de Ingresos, 18 de abril de 2025)'], ['Quién deja de recaudarlo', 'condados, ciudades, distritos escolares y distritos especiales'], ['Lo que recibe el Florida Farm Bureau como tal', 'nada directo según ningún registro: es una asociación de miembros, y la rebaja va a sus fincas socias']],
         nNote: 'Votos: 110 a 1 en la Cámara (25 de abril de 2025) y 37 a 0 en el Senado (2 de mayo de 2025). Necesita el 60% de los votos.',
+        voterHead: 'Legisladores de Miami-Dade en su boleta que votaron a favor, y lo que les dieron los negocios agrícolas',
+        vline: function(o){ return o.name + ' (' + o.race + '): ' + (o.total ? big(o.total, 'es') + ' de ' + o.donors + ' ' + (o.donors === 1 ? 'donante agrícola' : 'donantes agrícolas') + ', ' + yr(o.from) + (yr(o.to) !== yr(o.from) ? ' a ' + yr(o.to) : '') + '; ' + big(o.since, 'es') + ' después del 26 de febrero de 2025' : 'ninguno encontrado') + '.'; },
+        vNote: 'Todas sus cuentas de campaña estatales y comités que tenemos, desde su primera carrera estatal (Omar Blanco: solo desde 2025; su campaña de 2024 aún no está en nuestros archivos). Angie Nixon: solo sus cuentas estatales (2020 a 2024); sus donantes para el Senado de EE. UU. (federal) no se revisan aquí. Mismas reglas de conteo que arriba.',
         moneyHead: 'Dinero de negocios agrícolas a los funcionarios que la impulsaron',
         off: { simpson: 'Wilton Simpson, Comisionado de Agricultura, en su boleta; su departamento apoya la enmienda', truenow: 'Senador Keith Truenow, que presentó la versión del Senado (SJR 318); no está en boletas de Miami-Dade', alvarez: 'Representante Danny Alvarez, que presentó la enmienda (HJR 1215); no está en boletas de Miami-Dade' },
         line: function(o, offName){ return offName + ': ' + big(o.total, 'es') + ' de ' + o.donors + ' empresas agrícolas, grupos agrícolas y agricultores, de ' + yr(o.from) + ' a ' + yr(o.to) + ', a sus campañas y a los comités políticos que preside. ' + big(o.since, 'es') + ' llegó después de que se presentó la enmienda el 26 de febrero de 2025. Los mayores: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'es'); }).join(', ') + '.'; },
@@ -637,6 +643,9 @@
         numbers: 'Chif yo',
         n: [['Diminisyon taks, nan tout Leta a', 'omwen $28.7 milyon pa ane (Konferans Estimasyon Revni, 18 avril 2025)'], ['Kiyès ki sispann ranmase l', 'konte, vil, distri lekòl ak distri espesyal'], ['Sa Florida Farm Bureau li menm jwenn', 'anyen dirèk okenn dosye pa montre: se yon gwoup manm, e diminisyon an ale bay fèm manm yo']],
         nNote: 'Vòt: 110 kont 1 nan Chanm nan (25 avril 2025) ak 37 kont 0 nan Sena a (2 me 2025). Li bezwen 60% vòt.',
+        voterHead: 'Lejislatè Miami-Dade sou bilten vòt ou ki te vote wi, ak sa biznis agrikòl te ba yo',
+        vline: function(o){ return o.name + ' (' + o.race + '): ' + (o.total ? big(o.total, 'ht') + ' nan men ' + o.donors + ' donatè agrikòl, ' + yr(o.from) + (yr(o.to) !== yr(o.from) ? ' rive ' + yr(o.to) : '') + '; ' + big(o.since, 'ht') + ' apre 26 fevriye 2025' : 'nou pa jwenn anyen') + '.'; },
+        vNote: 'Tout kont kanpay Leta ak komite yo nou genyen, depi premye kous Leta yo (Omar Blanco: sèlman depi 2025; kanpay 2024 li poko nan dosye nou yo). Angie Nixon: sèlman kont Leta li (2020 rive 2024); nou pa tcheke donatè kanpay Sena Etazini (federal) li isit la. Menm règ pou konte ak anwo a.',
         moneyHead: 'Lajan biznis agrikòl bay ofisyèl ki pote l yo',
         off: { simpson: 'Wilton Simpson, Komisè Agrikilti, sou bilten vòt ou; depatman li sipòte amannman an', truenow: 'Senatè Keith Truenow, ki te depoze vèsyon Sena a (SJR 318); li pa sou bilten Miami-Dade', alvarez: 'Reprezantan Danny Alvarez, ki te depoze amannman an (HJR 1215); li pa sou bilten Miami-Dade' },
         line: function(o, offName){ return offName + ': ' + big(o.total, 'ht') + ' nan men ' + o.donors + ' konpayi agrikòl, gwoup agrikòl ak agrikiltè, soti ' + yr(o.from) + ' rive ' + yr(o.to) + ', bay kanpay li ak komite politik li prezide. ' + big(o.since, 'ht') + ' ladan l te vini apre yo te depoze amannman an 26 fevriye 2025. Pi gwo yo: ' + o.top.map(function(t){ return t.name + ' ' + big(t.total, 'ht'); }).join(', ') + '.'; },
@@ -647,15 +656,18 @@
         whyReason: 'Moun ki sipòte l yo, tankou Florida Farm Bureau Federation, Florida Fruit & Vegetable Association ak Depatman Agrikilti Leta a (WLRN), di taks sou ekipman agrikòl peze sou yon endistri k ap soufri. Pou egzante yon kalite byen de taks lokal sou pwopriyete, fòk yo chanje konstitisyon Leta a, e se sèlman votè yo ki ka apwouve sa.'
       }
     }[L];
-    var money = [];
+    var money = [], votersItems = null;
     if(D){
       var order = ['simpson', 'truenow', 'alvarez'];
       order.forEach(function(k){ var o = D.officials.filter(function(x){ return x.key === k; })[0]; if(o) money.push(T.line(o, T.off[k])); });
-      money.push(T.fb(D.officials.reduce(function(s, o){ return s + (o.farmBureau || 0); }, 0)));
-      var un = {}; D.officials.forEach(function(o){ (o.unclear || []).forEach(function(u){ un[u.name] = (un[u.name] || 0) + u.total; }); });
+      var three = D.officials.filter(function(o){ return !o.voter; });
+      money.push(T.fb(three.reduce(function(s, o){ return s + (o.farmBureau || 0); }, 0)));
+      var un = {}; three.forEach(function(o){ (o.unclear || []).forEach(function(u){ un[u.name] = (un[u.name] || 0) + u.total; }); });
       var ul = Object.keys(un).map(function(n){ return { name: n, total: un[n] }; }).sort(function(a, b){ return b.total - a.total; });
       if(ul.length) money.push(T.unclear(ul));
       money.push(T.how);
+      var voters = D.officials.filter(function(o){ return o.voter; }).sort(function(a, b){ return b.total - a.total; });
+      if(voters.length) votersItems = voters.map(T.vline).concat([T.vNote]);
     }
     return {
       yes: [], no: [], approx: false, explainer: true, sources: A2SRC, why: [T.needs, T.whyReason],
@@ -666,7 +678,7 @@
         splitHead: T.numbers, split: T.n.map(function(x){ return { label: x[0], text: x[1] }; }),
         loss: T.whatTxt, fundsHead: '', funds: [], fundNote: T.nNote,
         respond: '', share: '',
-        extra: money.length ? [{ head: T.moneyHead, items: money }] : []
+        extra: (money.length ? [{ head: T.moneyHead, items: money }] : []).concat(votersItems ? [{ head: T.voterHead, items: votersItems }] : [])
       }
     };
   }

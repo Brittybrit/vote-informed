@@ -58,6 +58,28 @@ export const OFFICIALS = [
                { file: DIR + 'donors/pc88885.tsv', acct: 'pc88885', label: 'Home Grown PAC (political committee he chairs)' }] },
 ];
 
+// Lawmakers on Miami-Dade's Nov. 3, 2026 ballots who voted yes on HJR 1215 (House Apr. 25, 2025, 110-1; Senate May 2, 2025,
+// 37-0; vote PDFs on the bill page). Their state campaign accounts and the committees they chair, every year we hold
+// (the same files as their dossiers). Brit, Oct 27, 2026: "add the farm money check for all of them".
+const S = 'scripts/data/state/donors/', H = 'scripts/data/tenure/flhouse/donors/', SN = 'scripts/data/tenure/flsenate/donors/', DB = 'scripts/data/tenure/doe-browser/', CB = 'scripts/data/cabinet/';
+const voter = (key, name, race, vote, files) => ({ key, name, race, role: vote, onBallot: true, acted: null, voter: true,
+  accounts: files.map(([file, acct, keep, label]) => ({ file, acct, keep, label })) });
+const HOUSE = 'voted yes in the House, Apr. 25, 2025', SENATE = 'voted yes in the Senate, May 2, 2025';
+OFFICIALS.push(
+  voter('calatayud', 'Alexis Calatayud', 'State Senate, District 38', SENATE, [[SN + 'calatayud.tsv', 'calatayud', /^Calatayud/, 'campaign'], [S + 'calatayud.tsv', 'calatayud', /^Calatayud/, 'campaign'], [SN + 'pc80728.tsv', 'pc80728', null, 'Vision & Integrity for Florida (committee)'], [S + 'pc80728.tsv', 'pc80728', null, 'Vision & Integrity for Florida (committee)']]),
+  voter('garcia', 'Ileana Garcia', 'State Senate, District 36', SENATE, [[SN + 'garcia.tsv', 'garcia', /^Garcia/, 'campaign'], [S + 'garcia.tsv', 'garcia', /^Garcia/, 'campaign'], [SN + 'pc74696.tsv', 'pc74696', null, 'No More Socialism (committee)'], [S + 'pc74696.tsv', 'pc74696', null, 'No More Socialism (committee)'], [SN + 'pc83741.tsv', 'pc83741', null, 'Getting it Done for Florida (committee)'], [S + 'pc83741.tsv', 'pc83741', null, 'Getting it Done for Florida (committee)']]),
+  voter('rodriguez', 'Ana Maria Rodriguez', 'State Senate, District 40', SENATE, [[DB + 'amrodriguez-house.tsv', 'rodriguez', /^Rodriguez, Ana Maria/, 'campaign'], [SN + 'rodriguez.tsv', 'rodriguez', /^Rodriguez, Ana Maria/, 'campaign'], [S + 'rodriguez.tsv', 'rodriguez', /^Rodriguez, Ana Maria/, 'campaign'], [DB + 'pc70258-amr-pre2018.tsv', 'pc70258', /^Ethics/, 'Ethics and Honesty in Government (committee)'], [SN + 'pc70258.tsv', 'pc70258', null, 'Ethics and Honesty in Government (committee)'], [S + 'pc70258.tsv', 'pc70258', null, 'Ethics and Honesty in Government (committee)']]),
+  voter('ingoglia', 'Blaise Ingoglia', 'Chief Financial Officer', SENATE, [[DB + 'ingoglia-cand.tsv', 'ingoglia', /^Ingoglia/, 'campaign'], [SN + 'ingoglia.tsv', 'ingoglia', /^Ingoglia/, 'campaign'], [CB + 'ingoglia.tsv', 'ingoglia', /^Ingoglia/, 'campaign'], [DB + 'pc70076-ingoglia-pre2020.tsv', 'pc70076', /^Government Gone Wild/, 'Government Gone Wild PAC (committee)'], [SN + 'pc70076.tsv', 'pc70076', null, 'Government Gone Wild PAC (committee)'], [CB + 'pc70076.tsv', 'pc70076', null, 'Government Gone Wild PAC (committee)'], [SN + 'pc79506.tsv', 'pc79506', null, 'Friends of Blaise Ingoglia (committee)'], [CB + 'pc79506.tsv', 'pc79506', null, 'Friends of Blaise Ingoglia (committee)']]),
+  voter('lopez', 'Vicki L. Lopez', 'County Commission, District 5', HOUSE, [[DB + 'lopez-house.tsv', 'lopez', /^Lopez, Vicki/, 'campaign (State House)'], [DB + 'pc80020-lopez-pre2025.tsv', 'pc80020', /^Common Sense Government/, 'Common Sense Government (committee)']]),
+  voter('gantt', 'Ashley Viola Gantt', 'State Senate, District 34', HOUSE, [[H + 'gantt-pre2025.tsv', 'gantt', /^Gantt/, 'campaign'], [S + 'gantt.tsv', 'gantt', /^Gantt/, 'campaign']]),
+  voter('basabe', 'Fabián Basabe', 'State House, District 106', HOUSE, [[H + 'basabe-pre2025.tsv', 'basabe', /^Basabe/, 'campaign'], [S + 'basabe.tsv', 'basabe', /^Basabe/, 'campaign'], [H + 'pc83579-pre2025.tsv', 'pc83579', null, 'Common Sense For Florida (committee)'], [S + 'pc83579.tsv', 'pc83579', null, 'Common Sense For Florida (committee)']]),
+  voter('blanco', 'Omar Blanco', 'State House, District 115', HOUSE, [[S + 'blanco.tsv', 'blanco', /^Blanco/, 'campaign'], [S + 'pc84721.tsv', 'pc84721', null, 'committee']]),
+  voter('chambliss', 'Kevin Chambliss', 'State House, District 117', HOUSE, [[H + 'chambliss-2018.tsv', 'chambliss', /^Chambliss/, 'campaign'], [H + 'chambliss-pre2025.tsv', 'chambliss', /^Chambliss/, 'campaign'], [S + 'chambliss.tsv', 'chambliss', /^Chambliss/, 'campaign']]),
+  voter('redondo', 'Mike Redondo', 'State House, District 118', HOUSE, [[H + 'redondo-pre2025.tsv', 'redondo', /^Redondo/, 'campaign'], [S + 'redondo.tsv', 'redondo', /^Redondo/, 'campaign'], [H + 'pc84197-pre2025.tsv', 'pc84197', null, 'The Right Path For Florida (committee)'], [S + 'pc84197.tsv', 'pc84197', null, 'The Right Path For Florida (committee)']]),
+  voter('porras', 'Juan Carlos Porras', 'State House, District 119', HOUSE, [[H + 'porras-pre2025.tsv', 'porras', /^Porras/, 'campaign'], [S + 'porras.tsv', 'porras', /^Porras/, 'campaign'], [H + 'pc81066-pre2025.tsv', 'pc81066', null, 'Conservatives For A Better Miami-Dade (committee)'], [S + 'pc81066.tsv', 'pc81066', null, 'Conservatives For A Better Miami-Dade (committee)']]),
+  voter('nixon', 'Angie Nixon', 'U.S. Senate', HOUSE, [[H + 'nixon-2018.tsv', 'nixon', /^Nixon/, 'campaign (State House)'], [H + 'nixon-pre2025.tsv', 'nixon', /^Nixon/, 'campaign (State House)']]),
+);
+
 // Industry tags already assigned to donor names (scripts/data/industry and the tenure folders)
 const TAGS = {};
 for (const f of ['scripts/data/industry/state-donors.json', 'scripts/data/tenure/doe-browser/industry.json',
@@ -76,10 +98,13 @@ export const UNCLEAR = {
   'FLORIDIANS FOR SUSTAINABLE AGRICULTURE': 'a Florida not-for-profit corporation (Sunbiz N08000010899), not a registered political committee; who funds it is not public',
   'FLORIDA FARMERS': 'a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms',
   'ADVANCING FLORIDA AGRICULTURE': 'a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money',
+  'CONSERVATIVES FOR FLORIDA AGRICULTURE': 'a political committee whose funders are a petroleum company owner, law firms, a home builder, a property manager, the Seminole Tribe and other political committees: not farm money',
   'FLORIDA FARMERS AND RANCHERS UNITED': 'a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money',
 };
+// A name with FARM in it whose own reported business is something else (a restaurant, real estate, a market)
+const NOT_FARM_OCC = /RESTAURANT|R\.?\s?E\.? HOLDINGS|REAL ESTATE|FARMER'?S MARKET/;
 const SINCE = '2025-02-26';   // HJR 1215 filed
-const SELF = { alvarez: /^ALVAREZ DAN/, truenow: /^TRUENOW/, simpson: /^SIMPSON WILTON|^SIMPSON FARMS|^SIMPSON EGG/ };
+const SELF = { calatayud: /^CALATAYUD/, garcia: /^GARCIA ILEANA/, rodriguez: /^RODRIGUEZ ANA MARIA/, ingoglia: /^INGOGLIA/, lopez: /^LOPEZ VICKI/, gantt: /^GANTT/, basabe: /^BASABE/, blanco: /^BLANCO OMAR/, chambliss: /^CHAMBLISS/, redondo: /^REDONDO/, porras: /^PORRAS/, nixon: /^NIXON/, alvarez: /^ALVAREZ DAN/, truenow: /^TRUENOW/, simpson: /^SIMPSON WILTON|^SIMPSON FARMS|^SIMPSON EGG/ };
 
 function rowsOf(o) {
   const seen = new Set(), rows = [];
@@ -106,7 +131,7 @@ function rowsOf(o) {
 const out = { built: new Date().toISOString().slice(0, 10), class: CLASS, officials: [] };
 for (const o of OFFICIALS) {
   const rows = rowsOf(o);
-  const fits = r => !SELF[o.key].test(key(r.donor)) && !UNCLEAR[key(r.donor)] && fitsLaw(CLASS, r.donor, r.occ, TAGS[r.donor.toUpperCase()] || []);
+  const fits = r => !SELF[o.key].test(key(r.donor)) && !UNCLEAR[key(r.donor)] && !NOT_FARM_OCC.test(r.occ.toUpperCase()) && fitsLaw(CLASS, r.donor, r.occ, TAGS[r.donor.toUpperCase()] || []);
   const ag = rows.filter(fits);
   const by = new Map();
   for (const r of ag) { const k = key(r.donor); if (!by.has(k)) by.set(k, { donor: r.donor, org: isOrgDonor(r.donor, r.occ), gifts: [] }); by.get(k).gifts.push(r); }
@@ -120,7 +145,7 @@ for (const o of OFFICIALS) {
   const C = donors.filter(d => d.counts);
   const sum = xs => Math.round(xs.reduce((s, x) => s + x, 0) * 100) / 100;
   const allDates = rows.map(r => r.date).sort();
-  out.officials.push({ key: o.key, name: o.name, role: o.role, onBallot: o.onBallot, acted: o.acted,
+  out.officials.push({ key: o.key, name: o.name, role: o.role, race: o.race || null, voter: !!o.voter, onBallot: o.onBallot, acted: o.acted,
     accounts: [...new Set(o.accounts.map(a => a.label))], records: { from: allDates[0], to: allDates.at(-1), gifts: rows.length, dollars: sum(rows.map(r => r.amount)) },
     total: sum(C.map(d => d.total)), donors: C.length, gifts: C.reduce((s, d) => s + d.n, 0),
     sinceFiling: sum(C.map(d => d.since)), sinceFilingDonors: C.filter(d => d.since > 0).length,
@@ -140,7 +165,7 @@ const NICE = { 'UNITED STATES SUGAR CORPORATION': 'U.S. Sugar', 'FLORIDA CRYSTAL
   'FLORIDA FARMERS': 'Florida Farmers (political committee)', 'ADVANCING FLORIDA AGRICULTURE': 'Advancing Florida Agriculture', 'FLORIDA FARMERS AND RANCHERS UNITED': 'Florida Farmers and Ranchers United' };
 const nice = n => NICE[n.toUpperCase()] || n.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase()).replace(/,? (Inc|Llc|Corp|Corporation|Co)\.?$/, '');
 const page = { built: out.built, rec: { amount: 28.7e6, date: '2025-04-18', url: 'https://www.flsenate.gov/Session/Bill/2025/1215/Analyses/h1215e.SAC.PDF' }, officials: out.officials.map(o => ({
-  key: o.key, name: o.name, onBallot: o.onBallot, total: o.total, donors: o.donors, from: o.list.filter(d => d.counts).map(d => d.first).sort()[0], to: o.list.filter(d => d.counts).map(d => d.last).sort().at(-1),
+  key: o.key, name: o.name, race: o.race, voter: o.voter, onBallot: o.onBallot, total: o.total, donors: o.donors, from: o.list.filter(d => d.counts).map(d => d.first).sort()[0], to: o.list.filter(d => d.counts).map(d => d.last).sort().at(-1),
   since: o.sinceFiling, sinceDonors: o.sinceFilingDonors,
   farmBureau: Math.round(o.list.filter(d => d.counts && FB.test(d.donor.toUpperCase())).reduce((s, d) => s + d.total, 0)),
   top: o.list.filter(d => d.counts).slice(0, 5).map(d => ({ name: nice(d.donor), total: d.total })),

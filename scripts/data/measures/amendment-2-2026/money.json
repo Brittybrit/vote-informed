@@ -14,6 +14,8 @@
    "key": "alvarez",
    "name": "Danny Alvarez",
    "role": "State Representative, District 69; filed HJR 1215 on Feb. 26, 2025 and voted yes on Apr. 25, 2025",
+   "race": null,
+   "voter": false,
    "onBallot": false,
    "acted": "2025-02-26",
    "accounts": [
@@ -277,6 +279,8 @@
    "key": "truenow",
    "name": "Keith Truenow",
    "role": "State Senator, District 13; filed the Senate companion, SJR 318, and voted yes on HJR 1215 on May 2, 2025",
+   "race": null,
+   "voter": false,
    "onBallot": false,
    "acted": "2025-02-26",
    "accounts": [
@@ -649,6 +653,8 @@
    "key": "simpson",
    "name": "Wilton Simpson",
    "role": "Commissioner of Agriculture (on the Nov. 3, 2026 ballot); his department supports the amendment",
+   "race": null,
+   "voter": false,
    "onBallot": true,
    "acted": null,
    "accounts": [
@@ -666,9 +672,9 @@
     "gifts": 9405,
     "dollars": 72222790.61
    },
-   "total": 3254058.44,
-   "donors": 304,
-   "gifts": 513,
+   "total": 3252111.44,
+   "donors": 302,
+   "gifts": 511,
    "sinceFiling": 604985,
    "sinceFilingDonors": 39,
    "unclear": [
@@ -3344,21 +3350,6 @@
      "since": 0
     },
     {
-     "donor": "CONSOLIDATED CITRUS LIMITED PARTNERSHIP",
-     "org": true,
-     "counts": true,
-     "total": 1000,
-     "n": 1,
-     "first": "2021-12-06",
-     "last": "2021-12-06",
-     "occ": "REAL ESTATE",
-     "csz": "FORT MYERS, FL 33913",
-     "accounts": [
-      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
-     ],
-     "since": 0
-    },
-    {
      "donor": "RUNNING W, LTD",
      "org": true,
      "counts": true,
@@ -3793,21 +3784,6 @@
       "Friends of Wilton Simpson (political committee he chairs)"
      ],
      "since": 1000
-    },
-    {
-     "donor": "BUCKINGHAM FARMS",
-     "org": true,
-     "counts": true,
-     "total": 947,
-     "n": 1,
-     "first": "2022-06-15",
-     "last": "2022-06-15",
-     "occ": "RESTAURANT",
-     "csz": "FORT MYERS, FL 33905",
-     "accounts": [
-      "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
-     ],
-     "since": 0
     },
     {
      "donor": "STOREY-LUNDY CANE INC",
@@ -5653,6 +5629,2938 @@
      "csz": "TAMPA, FL 33609",
      "accounts": [
       "campaign (State Senate 2012-2022, Agriculture Commissioner 2022)"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "calatayud",
+   "name": "Alexis Calatayud",
+   "role": "voted yes in the Senate, May 2, 2025",
+   "race": "State Senate, District 38",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "Vision & Integrity for Florida (committee)"
+   ],
+   "records": {
+    "from": "2022-05-09",
+    "to": "2026-10-09",
+    "gifts": 2008,
+    "dollars": 5570370.79
+   },
+   "total": 28500,
+   "donors": 14,
+   "gifts": 18,
+   "sinceFiling": 14500,
+   "sinceFilingDonors": 11,
+   "unclear": [
+    {
+     "donor": "ADVANCING FLORIDA AGRICULTURE",
+     "why": "a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money",
+     "total": 16000,
+     "n": 3,
+     "first": "2022-05-16",
+     "last": "2022-10-11",
+     "accounts": [
+      "campaign",
+      "Vision & Integrity for Florida (committee)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "UNITED STATES SUGAR CORP",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2023-02-22",
+     "last": "2023-02-22",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "Vision & Integrity for Florida (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LYKES BROS INC",
+     "org": true,
+     "counts": true,
+     "total": 5500,
+     "n": 4,
+     "first": "2022-07-28",
+     "last": "2026-06-09",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign",
+      "Vision & Integrity for Florida (committee)"
+     ],
+     "since": 3500
+    },
+    {
+     "donor": "A. DUDA & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2026-07-13",
+     "last": "2026-08-25",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 2000
+    },
+    {
+     "donor": "FL NURSERY GROWERS & LANDSCAPE ASSOC PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-08-18",
+     "last": "2022-08-18",
+     "occ": "POLITICAL ACTON COMMITTE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FNGLA",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-12",
+     "last": "2022-10-12",
+     "occ": "AGRICULTURE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURAL MANAGEMENT CO.",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AMERICAS EXPORT CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURAL EXPORTS",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "VANDERGRIFT - WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "STOFIN CO., INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "YUMURI FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-07-07",
+     "last": "2026-07-07",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33135",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION-PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "PAC",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "DADE FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-09-17",
+     "last": "2026-09-17",
+     "occ": "PAC",
+     "csz": "HOMESTEAD, FL 33033",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-10-02",
+     "last": "2026-10-02",
+     "occ": "PAC",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    }
+   ]
+  },
+  {
+   "key": "garcia",
+   "name": "Ileana Garcia",
+   "role": "voted yes in the Senate, May 2, 2025",
+   "race": "State Senate, District 36",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "No More Socialism (committee)",
+    "Getting it Done for Florida (committee)"
+   ],
+   "records": {
+    "from": "2020-01-18",
+    "to": "2026-10-07",
+    "gifts": 1435,
+    "dollars": 3730925.71
+   },
+   "total": 24500,
+   "donors": 17,
+   "gifts": 26,
+   "sinceFiling": 10000,
+   "sinceFilingDonors": 10,
+   "unclear": [
+    {
+     "donor": "FLORIDIANS FOR SUSTAINABLE AGRICULTURE INC.",
+     "why": "a Florida not-for-profit corporation (Sunbiz N08000010899), not a registered political committee; who funds it is not public",
+     "total": 1000,
+     "n": 1,
+     "first": "2020-06-12",
+     "last": "2020-06-12",
+     "accounts": [
+      "campaign"
+     ]
+    },
+    {
+     "donor": "ADVANCING FLORIDA AGRICULTURE",
+     "why": "a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money",
+     "total": 68000,
+     "n": 7,
+     "first": "2020-06-10",
+     "last": "2026-09-25",
+     "accounts": [
+      "campaign",
+      "No More Socialism (committee)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "FLORIDA BIOMASS GROWERS ASSOCIATION INC.",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 3,
+     "first": "2020-10-28",
+     "last": "2022-08-30",
+     "occ": "AGRICULTURE",
+     "csz": "TALLAHASSEE, FL 32312",
+     "accounts": [
+      "campaign",
+      "No More Socialism (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CLOSTER FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-08-23",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "VANDERGRIFT - WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-08-23",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "STOFIN CO INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-08-23",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2022-10-10",
+     "last": "2025-12-19",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2022-10-10",
+     "last": "2025-12-19",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2022-10-10",
+     "last": "2025-12-19",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY LLC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2022-10-10",
+     "last": "2025-12-19",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "BENNY ALBRITTON GROVE SERVICE INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-06-10",
+     "last": "2020-06-10",
+     "occ": "AGRICULTURE",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AMERICAS EXPORT CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-08-23",
+     "last": "2021-08-23",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL POLTICAL COMMITTEE",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-03-06",
+     "last": "2023-03-06",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OSCEOLA FARMS CO.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-03-03",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "PAHOKEE, FL 33476",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "NEW HOPE SUGAR COMPANY",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-03-03",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "ST LUCIE RIVER COMPANY LTD",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-03-03",
+     "last": "2025-03-03",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "DIXIE GARDEN NURSERY INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-08-23",
+     "last": "2021-08-23",
+     "occ": "GARDEN NURSERY",
+     "csz": "HIALEAH GARDENS, FL 33018",
+     "accounts": [
+      "No More Socialism (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PEACE VALLEY PRODUCTS INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-06-13",
+     "last": "2022-06-13",
+     "occ": "AGRICULTURE",
+     "csz": "BARTOW, FL 33831",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BLU-HED CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2022-06-13",
+     "last": "2022-06-13",
+     "occ": "AGRICULTURE",
+     "csz": "MULBERRY, FL 33860",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "rodriguez",
+   "name": "Ana Maria Rodriguez",
+   "role": "voted yes in the Senate, May 2, 2025",
+   "race": "State Senate, District 40",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "Ethics and Honesty in Government (committee)"
+   ],
+   "records": {
+    "from": "2016-12-18",
+    "to": "2026-10-16",
+    "gifts": 3127,
+    "dollars": 5743520.57
+   },
+   "total": 81100,
+   "donors": 33,
+   "gifts": 60,
+   "sinceFiling": 4500,
+   "sinceFilingDonors": 5,
+   "unclear": [
+    {
+     "donor": "ADVANCING FLORIDA AGRICULTURE",
+     "why": "a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money",
+     "total": 14000,
+     "n": 5,
+     "first": "2019-08-01",
+     "last": "2026-10-02",
+     "accounts": [
+      "campaign",
+      "Ethics and Honesty in Government (committee)"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 22000,
+     "n": 4,
+     "first": "2018-10-31",
+     "last": "2023-02-27",
+     "occ": "AGRICULTURAL MANAGEMENT; AGRICULTURE; FARMING COMPANY",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign",
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AMERICAS EXPORT CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 9000,
+     "n": 5,
+     "first": "2018-02-22",
+     "last": "2022-05-17",
+     "occ": "AGRICULTURAL EXPORT; AGRICULTURE; FARMING; AGRICULTURE EXPORT CORP.",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign",
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 5,
+     "first": "2018-02-22",
+     "last": "2021-11-30",
+     "occ": "AGRICULTURAL MANAGEMENT; AGRICULTURE; FARMING",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "LYKES BROS, INC",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 4,
+     "first": "2019-09-19",
+     "last": "2020-10-07",
+     "occ": "AGRICULTURE",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign",
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA CITRUS MUTUAL PC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 3,
+     "first": "2020-09-18",
+     "last": "2023-03-06",
+     "occ": "PAC",
+     "csz": "LAKELAND, FL 33801",
+     "accounts": [
+      "campaign",
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2018-09-26",
+     "last": "2020-10-07",
+     "occ": "POLITICAL COMMITTEE (PC); PAC",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "CLOSTER FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2020-09-11",
+     "last": "2026-06-09",
+     "occ": "AGRICULTURE; FARMING; AGRICULTURAL INDUSTRY",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "EVERGLADES MANAGEMENT, INC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2019-11-30",
+     "last": "2019-11-30",
+     "occ": "AGRICULTURE MGMT CO.",
+     "csz": "FT. LAUDERDALE, FL 33309",
+     "accounts": [
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2018-10-31",
+     "last": "2019-10-31",
+     "occ": "CITRUS HOLDINGS; AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BENNY ALBRITTON GROVE SERVICE, INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2019-08-02",
+     "last": "2020-09-18",
+     "occ": "AGRICULTURE",
+     "csz": "WAUCHULA, FL 33873",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A. DUDA & SONS, INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2020-08-13",
+     "last": "2020-10-14",
+     "occ": "AGRICULTURE CO.; AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "VANDERGRIFT- WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2020-09-11",
+     "last": "2026-06-09",
+     "occ": "AGRICULTURE; AGRICULTURAL INDUSTRY",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "STOFIN CO. INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2020-09-11",
+     "last": "2021-11-30",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY GROWERS AND LANDSCAPE ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2020-10-07",
+     "last": "2026-08-13",
+     "occ": "PAC; NURSERY/LANDSCAPE ASSOC NPO-C6",
+     "csz": "TALLAHASSEE, FL 32302",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA BIOMASS GROWERS ASSOCIATION INC.",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 2,
+     "first": "2018-10-26",
+     "last": "2019-02-12",
+     "occ": "ENVIRO QUALITY & PROTECTION; BIOMASS GROWERS ASSOCIATION",
+     "csz": "TALLAHASSEE, FL 32312",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS PROCESSING CORP.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2018-10-31",
+     "last": "2018-10-31",
+     "occ": "CITRUS PROCESSING",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2019-10-31",
+     "last": "2019-10-31",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORP.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2019-10-31",
+     "last": "2019-10-31",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTH CENTRAL FLORIDA EXPRESS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2019-10-31",
+     "last": "2019-10-31",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DADE FARMS PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-07-01",
+     "last": "2020-07-01",
+     "occ": "PAC",
+     "csz": "HOMESTEAD, FL 33033",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "TORBERT PRODUCE, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-09-25",
+     "last": "2020-09-25",
+     "occ": "AGRICULTURE",
+     "csz": "FLORIDA CITY, FL 33034",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "PEACE RIVER VALLEY CITRUS GROWERS ASSOC. INC PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-10-07",
+     "last": "2020-10-07",
+     "occ": "PAC",
+     "csz": "ARCADIA, FL 34266",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GARCIA FAMILY FARM LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-10-28",
+     "last": "2020-10-28",
+     "occ": "AGRICULTURE",
+     "csz": "VIRGINIA BEACH, VA 23452",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "HELENA AGRI-ENTERPRISES, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-03-01",
+     "last": "2021-03-01",
+     "occ": "AGRICULTURAL PRODUCT WHOLESALE",
+     "csz": "COLLIERVILLE, TN 38017",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "VANDERGRIFT-WILLIAMS FARM",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-11-30",
+     "last": "2021-11-30",
+     "occ": "FARMING",
+     "csz": "LOXAHATCHEE, FL 40833",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRI BROTHERS CORP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-05-17",
+     "last": "2022-05-17",
+     "occ": "AGRICULTURE",
+     "csz": "MIAMI, FL 33173",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "YUMURI FARMS, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-09-30",
+     "last": "2026-09-30",
+     "occ": "AGRICULTURE FARM",
+     "csz": "MIAMI, FL 33135",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA NURSERY GROWERS AND LANDSCAPER ASSOCIATION PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2020-07-17",
+     "last": "2020-07-17",
+     "occ": "PAC",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ALGER FARMS INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2020-09-25",
+     "last": "2020-09-25",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33090",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA  POULTRY FEDERATION INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2026-09-28",
+     "last": "2026-09-28",
+     "occ": "AGRICULTURAL ASSOC - NPO-C6",
+     "csz": "DADE CITY, FL 33523",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 500
+    },
+    {
+     "donor": "QUALITY FIRST PRODUCE INC.",
+     "org": true,
+     "counts": true,
+     "total": 300,
+     "n": 1,
+     "first": "2020-09-25",
+     "last": "2020-09-25",
+     "occ": "AGRICULTURE",
+     "csz": "HOMESTEAD, FL 33090",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "MHKAP, LLC",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2019-10-31",
+     "last": "2019-10-31",
+     "occ": "AGRICULTURE",
+     "csz": "NAPLES, FL 34102",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WHITE TRAIL AT HIDEAWAY FARM LLC",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2023-12-31",
+     "last": "2023-12-31",
+     "occ": "FARM",
+     "csz": "JUPITER, FL 33478",
+     "accounts": [
+      "Ethics and Honesty in Government (committee)"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "ingoglia",
+   "name": "Blaise Ingoglia",
+   "role": "voted yes in the Senate, May 2, 2025",
+   "race": "Chief Financial Officer",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "Government Gone Wild PAC (committee)",
+    "Friends of Blaise Ingoglia (committee)"
+   ],
+   "records": {
+    "from": "2013-05-10",
+    "to": "2026-10-12",
+    "gifts": 5265,
+    "dollars": 15032927.92
+   },
+   "total": 253300,
+   "donors": 35,
+   "gifts": 96,
+   "sinceFiling": 139000,
+   "sinceFilingDonors": 9,
+   "unclear": [
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 25000,
+     "n": 1,
+     "first": "2025-12-29",
+     "last": "2025-12-29",
+     "accounts": [
+      "Friends of Blaise Ingoglia (committee)"
+     ]
+    },
+    {
+     "donor": "ADVANCING FLORIDA AGRICULTURE",
+     "why": "a political committee whose largest funders are Floridians for Sustainable Agriculture, NextEra Energy, Freedom First Committee, U.S. Sugar, Publix and Trulieve: mostly not farm money",
+     "total": 3000,
+     "n": 1,
+     "first": "2026-09-25",
+     "last": "2026-09-25",
+     "accounts": [
+      "campaign"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 145000,
+     "n": 11,
+     "first": "2016-10-03",
+     "last": "2026-06-03",
+     "occ": "AGRICULTURE; SUGAR CORPORATION",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)",
+      "Friends of Blaise Ingoglia (committee)"
+     ],
+     "since": 100000
+    },
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 30500,
+     "n": 8,
+     "first": "2014-10-09",
+     "last": "2026-10-05",
+     "occ": "PAC; PC; POLITICAL ORGANIZATION",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)",
+      "Friends of Blaise Ingoglia (committee)"
+     ],
+     "since": 20000
+    },
+    {
+     "donor": "CLOSTER FARMS, INC",
+     "org": true,
+     "counts": true,
+     "total": 7500,
+     "n": 6,
+     "first": "2014-04-09",
+     "last": "2026-08-11",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "AMERICAS EXPORT CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 6000,
+     "n": 4,
+     "first": "2018-10-30",
+     "last": "2026-08-11",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "LYKES BROS, INC",
+     "org": true,
+     "counts": true,
+     "total": 5500,
+     "n": 5,
+     "first": "2014-03-13",
+     "last": "2026-10-08",
+     "occ": "AGRICULTURE; CITRUS FRUIT PRODUCTS",
+     "csz": "TAMPA, FL 33602",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES, CORP",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 7,
+     "first": "2013-09-26",
+     "last": "2024-06-29",
+     "occ": "CITRUS; AGRICULTURE",
+     "csz": "CLEWISTON, FL",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 4500,
+     "n": 6,
+     "first": "2013-09-26",
+     "last": "2024-06-29",
+     "occ": "CITRUS; AGRICULTURE",
+     "csz": "CLEWISTON, FL",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT",
+     "org": true,
+     "counts": true,
+     "total": 4500,
+     "n": 3,
+     "first": "2014-04-09",
+     "last": "2026-08-11",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 5,
+     "first": "2014-10-14",
+     "last": "2024-06-29",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOFIN CO, INC",
+     "org": true,
+     "counts": true,
+     "total": 4000,
+     "n": 2,
+     "first": "2020-10-09",
+     "last": "2026-08-11",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "MARSHALL TREE FARM, INC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2021-08-26",
+     "last": "2021-08-26",
+     "occ": "AGRICULTURE",
+     "csz": "MORRISTON, FL 32668",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FISH BRANCH TREE FARM, INC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2021-08-26",
+     "last": "2021-08-26",
+     "occ": "AGRICULTURE",
+     "csz": "ZOLFO SPRINGS, FL 33890",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION PAC INC",
+     "org": true,
+     "counts": true,
+     "total": 3500,
+     "n": 2,
+     "first": "2020-10-07",
+     "last": "2024-08-09",
+     "occ": "PC; POLITICAL ORGANIZATION",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A. DUDA & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 1,
+     "first": "2025-09-26",
+     "last": "2025-09-26",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 3000
+    },
+    {
+     "donor": "VANDERGRIFT- WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 3,
+     "first": "2014-04-09",
+     "last": "2020-10-09",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS PROCESSING, CORP",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 4,
+     "first": "2015-02-18",
+     "last": "2018-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GROUNDWORKS OF PALM BEACH COUNTY, INC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 2,
+     "first": "2021-08-26",
+     "last": "2021-08-26",
+     "occ": "AGRICULTURE",
+     "csz": "BOYNTON BEACH, FL 33472",
+     "accounts": [
+      "campaign",
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "QUEEN B RANCH, INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 3,
+     "first": "2013-06-07",
+     "last": "2018-08-16",
+     "occ": "AGRICULTURE; RANCH",
+     "csz": "INGLIS, FL 34449",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FARM BUREAU CASUALTY INSURANCE CO.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2023-03-06",
+     "last": "2025-03-03",
+     "occ": "INSURANCE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "GLC FARMS, INC",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 2,
+     "first": "2014-04-09",
+     "last": "2016-10-05",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDINGS CORP",
+     "org": true,
+     "counts": true,
+     "total": 1500,
+     "n": 2,
+     "first": "2018-08-13",
+     "last": "2018-09-13",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ST. LUCIE RIVER COMPANY LTD",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2019-12-11",
+     "last": "2019-12-11",
+     "occ": "AGRICULTURE",
+     "csz": "LOXACHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "M & B OF TAMPA, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-06-01",
+     "last": "2022-06-01",
+     "occ": "DAIRY FARM",
+     "csz": "TAMPA, FL 33637",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "M & B PRODUCTS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-10-04",
+     "last": "2023-10-04",
+     "occ": "AGRICULTURE",
+     "csz": "TEMPLE TERRACE, FL 33637",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SUGAR CANE GROWERS COOPERATIVE",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-07-30",
+     "last": "2020-07-30",
+     "occ": "AGRICULTURE CO-OP",
+     "csz": "BELLE GLADE, FL 33430",
+     "accounts": [
+      "Government Gone Wild PAC (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "GROW-LAND, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-06-08",
+     "last": "2022-06-08",
+     "occ": "AGRICULTURE",
+     "csz": "INVERNESS, FL 34453",
+     "accounts": [
+      "Friends of Blaise Ingoglia (committee)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTH FLORIDA INDUSTRIES, INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2014-04-09",
+     "last": "2014-04-09",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "EVANS PROPERTIES, INC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2015-02-18",
+     "last": "2015-02-18",
+     "occ": "AGRICULTURE",
+     "csz": "VERO BEACH, FL 32963",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ALICO",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2016-01-11",
+     "last": "2016-01-11",
+     "occ": "AGRICULTURE BUSINESS",
+     "csz": "FORT MYERS, FL 33913",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS NURSERY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2017-02-23",
+     "last": "2017-02-23",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVE CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2017-02-23",
+     "last": "2017-02-23",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY GROWERS AND LANDSCAPE ASSOCIATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2019-11-06",
+     "last": "2019-11-06",
+     "occ": "PC",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "DAIRY FARM CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2023-08-29",
+     "last": "2023-08-29",
+     "occ": "FARM",
+     "csz": "TAMPA, FL 33629",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "BEN HILL GRIFFIN, INC",
+     "org": true,
+     "counts": true,
+     "total": 200,
+     "n": 1,
+     "first": "2014-10-21",
+     "last": "2014-10-21",
+     "occ": "AGRICULTURE",
+     "csz": "FROSTPROOF, FL 33843",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "WILDCAT GROVES, INC",
+     "org": true,
+     "counts": true,
+     "total": 100,
+     "n": 1,
+     "first": "2013-06-21",
+     "last": "2013-06-21",
+     "occ": "AGRICULTURE",
+     "csz": "ZEPHYRHILLS, FL 33545",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "lopez",
+   "name": "Vicki L. Lopez",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "County Commission, District 5",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign (State House)",
+    "Common Sense Government (committee)"
+   ],
+   "records": {
+    "from": "2022-03-22",
+    "to": "2025-11-17",
+    "gifts": 1325,
+    "dollars": 1768435.91
+   },
+   "total": 5500,
+   "donors": 6,
+   "gifts": 6,
+   "sinceFiling": 0,
+   "sinceFilingDonors": 0,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "A. DUDA & SONS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-08-21",
+     "last": "2024-08-21",
+     "occ": "FARM SUPPLY STORE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-22",
+     "last": "2024-10-22",
+     "occ": "FARM",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-22",
+     "last": "2024-10-22",
+     "occ": "FARM",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-22",
+     "last": "2024-10-22",
+     "occ": "FARM",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-22",
+     "last": "2024-10-22",
+     "occ": "FARM",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS, AND LANDSCAPE ASSOCIATION - PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2024-10-28",
+     "last": "2024-10-28",
+     "occ": "PAC",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign (State House)"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "gantt",
+   "name": "Ashley Viola Gantt",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State Senate, District 34",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign"
+   ],
+   "records": {
+    "from": "2022-03-16",
+    "to": "2026-09-26",
+    "gifts": 945,
+    "dollars": 319997.77
+   },
+   "total": 8000,
+   "donors": 8,
+   "gifts": 8,
+   "sinceFiling": 8000,
+   "sinceFilingDonors": 8,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-04",
+     "last": "2026-08-04",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-04",
+     "last": "2026-08-04",
+     "occ": "CITRUS GROWERS",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-04",
+     "last": "2026-08-04",
+     "occ": "CITRUS GROWERS",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-04",
+     "last": "2026-08-04",
+     "occ": "SUGAR COMPANY",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AGRO INDUSTRIAL MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "VANDERGRIFT-WILLIAMS FARM INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "STOFIN C0., INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33439",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    }
+   ]
+  },
+  {
+   "key": "basabe",
+   "name": "Fabián Basabe",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State House, District 106",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "Common Sense For Florida (committee)"
+   ],
+   "records": {
+    "from": "2022-03-10",
+    "to": "2026-10-14",
+    "gifts": 455,
+    "dollars": 1150529.96
+   },
+   "total": 1000,
+   "donors": 1,
+   "gifts": 1,
+   "sinceFiling": 0,
+   "sinceFilingDonors": 0,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "BREEZY OAKS FARM WEST, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-08-12",
+     "last": "2022-08-12",
+     "occ": "FARM",
+     "csz": "MIAMI BEACH, FL 33139",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "blanco",
+   "name": "Omar Blanco",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State House, District 115",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "committee"
+   ],
+   "records": {
+    "from": "2025-02-28",
+    "to": "2026-10-02",
+    "gifts": 172,
+    "dollars": 175774.04
+   },
+   "total": 5000,
+   "donors": 5,
+   "gifts": 5,
+   "sinceFiling": 5000,
+   "sinceFilingDonors": 5,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "GROW-LAND LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-11-04",
+     "last": "2025-11-04",
+     "occ": "AGRICULTURAL",
+     "csz": "IINVERNESS, FL 34453",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-06-05",
+     "last": "2026-06-05",
+     "occ": "AGRICULTURAL & INDUSTRIAL SRV",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "ST. LUCIE RIVER COMPANY",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-12",
+     "last": "2026-08-12",
+     "occ": "LAND HOLDING AND FARMING",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-12",
+     "last": "2026-08-12",
+     "occ": "FARM",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "VANDERGRIFT WILLIAMS FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-12",
+     "last": "2026-08-12",
+     "occ": "FARM",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    }
+   ]
+  },
+  {
+   "key": "chambliss",
+   "name": "Kevin Chambliss",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State House, District 117",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign"
+   ],
+   "records": {
+    "from": "2020-01-16",
+    "to": "2026-10-16",
+    "gifts": 443,
+    "dollars": 273550.83
+   },
+   "total": 15500,
+   "donors": 13,
+   "gifts": 16,
+   "sinceFiling": 2000,
+   "sinceFilingDonors": 2,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "CLOSTER FARMS INC",
+     "org": true,
+     "counts": true,
+     "total": 3000,
+     "n": 3,
+     "first": "2021-11-04",
+     "last": "2026-07-01",
+     "occ": "AGRICULTURE; FARMING AND AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2021-12-19",
+     "last": "2024-07-09",
+     "occ": "FARMING; AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FARMS PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2020-07-07",
+     "last": "2020-07-07",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA FARM BUREAU",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2021-10-19",
+     "last": "2021-10-19",
+     "occ": "",
+     "csz": "GAINESVILLE, FL 33034",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGAEMENT, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-06-28",
+     "last": "2024-06-28",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-07-09",
+     "last": "2024-07-09",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-07-09",
+     "last": "2024-07-09",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTH CENTRAL FLORIDA EXPRESS",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-07-09",
+     "last": "2024-07-09",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-07-11",
+     "last": "2024-07-11",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA COW PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-24",
+     "last": "2024-10-24",
+     "occ": "AGRICULTURE",
+     "csz": "KISSIMMEE, FL 34742",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOFIN CO., INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-25",
+     "last": "2024-10-25",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-07-01",
+     "last": "2026-07-01",
+     "occ": "FARMING AND AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "DADE FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 500,
+     "n": 1,
+     "first": "2020-06-29",
+     "last": "2020-06-29",
+     "occ": "PAC",
+     "csz": "HOMESTEAD, FL 33033",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    }
+   ]
+  },
+  {
+   "key": "redondo",
+   "name": "Mike Redondo",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State House, District 118",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "The Right Path For Florida (committee)"
+   ],
+   "records": {
+    "from": "2023-06-20",
+    "to": "2026-10-16",
+    "gifts": 1012,
+    "dollars": 4087887.82
+   },
+   "total": 43500,
+   "donors": 16,
+   "gifts": 22,
+   "sinceFiling": 33500,
+   "sinceFilingDonors": 11,
+   "unclear": [
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 10000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "accounts": [
+      "The Right Path For Florida (committee)"
+     ]
+    },
+    {
+     "donor": "CONSERVATIVES FOR FLORIDA AGRICULTURE",
+     "why": "a political committee whose funders are a petroleum company owner, law firms, a home builder, a property manager, the Seminole Tribe and other political committees: not farm money",
+     "total": 2500,
+     "n": 1,
+     "first": "2025-12-19",
+     "last": "2025-12-19",
+     "accounts": [
+      "The Right Path For Florida (committee)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS AND RANCHERS UNITED",
+     "why": "a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money",
+     "total": 1000,
+     "n": 1,
+     "first": "2023-07-10",
+     "last": "2023-07-10",
+     "accounts": [
+      "campaign"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 11000,
+     "n": 2,
+     "first": "2023-08-28",
+     "last": "2025-10-06",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign",
+      "The Right Path For Florida (committee)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "JAX-PALATKA FARMS LLC",
+     "org": true,
+     "counts": true,
+     "total": 10000,
+     "n": 1,
+     "first": "2026-09-25",
+     "last": "2026-09-25",
+     "occ": "AGRICULTURE",
+     "csz": "JACKSONVILLE, FL 32256",
+     "accounts": [
+      "The Right Path For Florida (committee)"
+     ],
+     "since": 10000
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT, INC.",
+     "org": true,
+     "counts": true,
+     "total": 5000,
+     "n": 3,
+     "first": "2024-05-23",
+     "last": "2026-05-15",
+     "occ": "AGRICULTURE MANAGEMENT; AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign",
+      "The Right Path For Florida (committee)"
+     ],
+     "since": 4000
+    },
+    {
+     "donor": "LEE TE KIM LAWN CARE & NURSERY INC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2025-12-22",
+     "last": "2025-12-22",
+     "occ": "NURSERY/MAINTENANCE",
+     "csz": "RUSKIN, FL 33570",
+     "accounts": [
+      "The Right Path For Florida (committee)"
+     ],
+     "since": 2500
+    },
+    {
+     "donor": "VANDERGRIFT - WILLIAMS FARMS",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2023-06-30",
+     "last": "2026-08-10",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS, INC.",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2023-06-30",
+     "last": "2025-11-10",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "STOFIN CO., INC",
+     "org": true,
+     "counts": true,
+     "total": 2000,
+     "n": 2,
+     "first": "2023-06-30",
+     "last": "2026-08-10",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "SUN CORN, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-06-30",
+     "last": "2023-06-30",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "NEW FARM, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-06-30",
+     "last": "2023-06-30",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDEN GROVES CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-08-28",
+     "last": "2023-08-28",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS HOLDING CORP.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-08-28",
+     "last": "2023-08-28",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUS NURSERY, LLC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2023-08-28",
+     "last": "2023-08-28",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "FLORIDA NURSERY, GROWERS & LANDSCAPE ASSOCIATION PAC, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-09-30",
+     "last": "2025-09-30",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "ORLANDO, FL 32835",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "FLORIDA FARM PAC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-09-30",
+     "last": "2025-09-30",
+     "occ": "POLITICAL COMMITTEE",
+     "csz": "GAINESVILLE, FL 32614",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AMERICAS EXPORT CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2025-11-10",
+     "last": "2025-11-10",
+     "occ": "AGRICULTURE EXPORT",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "ST. LUCIE RIVER COMPANY LTD.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-10",
+     "last": "2026-08-10",
+     "occ": "AGRICULTURE",
+     "csz": "LOXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    }
+   ]
+  },
+  {
+   "key": "porras",
+   "name": "Juan Carlos Porras",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "State House, District 119",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign",
+    "Conservatives For A Better Miami-Dade (committee)"
+   ],
+   "records": {
+    "from": "2022-04-05",
+    "to": "2026-10-09",
+    "gifts": 669,
+    "dollars": 937510.24
+   },
+   "total": 13500,
+   "donors": 12,
+   "gifts": 12,
+   "sinceFiling": 6500,
+   "sinceFilingDonors": 5,
+   "unclear": [
+    {
+     "donor": "FLORIDA FARMERS",
+     "why": "a political committee first funded in January 2026; its money came from other political committees (Florida PC, The Committee, Committee on Civic Knowledge), a developer (JMBI Development) and Organics Management, not from farms",
+     "total": 10000,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "accounts": [
+      "Conservatives For A Better Miami-Dade (committee)"
+     ]
+    },
+    {
+     "donor": "FLORIDA FARMERS AND RANCHERS UNITED",
+     "why": "a political committee whose largest funders are other political committees (Capitol Conservative Alliance, Florida Conservative Federation, Florida First Patriots), Associated Industries, Publix and NextEra: mostly not farm money",
+     "total": 1000,
+     "n": 1,
+     "first": "2022-07-26",
+     "last": "2022-07-26",
+     "accounts": [
+      "campaign"
+     ]
+    }
+   ],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "OUTPOST BRANDS LLC",
+     "org": true,
+     "counts": true,
+     "total": 2500,
+     "n": 1,
+     "first": "2026-01-12",
+     "last": "2026-01-12",
+     "occ": "AGRICULTURE",
+     "csz": "DAYTONA BEACH, FL 32117",
+     "accounts": [
+      "Conservatives For A Better Miami-Dade (committee)"
+     ],
+     "since": 2500
+    },
+    {
+     "donor": "UNITED STATES SUGAR CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-04",
+     "last": "2022-10-04",
+     "occ": "SUGAR",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "SOUTHERN GARDENS CITRUST HOLDINGS CORP",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-10-04",
+     "last": "2022-10-04",
+     "occ": "AGRICULTURE",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "AGRO INDSUTRIAL MANAGEMENT INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-07-03",
+     "last": "2024-07-03",
+     "occ": "AGRICULTURE",
+     "csz": "WES PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "A DUDA & SONS INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-08-23",
+     "last": "2024-08-23",
+     "occ": "AGRICULTURE",
+     "csz": "OVIEDO, FL 32762",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "OKEELANTA CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-29",
+     "last": "2024-10-29",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "ST LUCIE RIVER COMPNAY LTD",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-29",
+     "last": "2024-10-29",
+     "occ": "AGRICULTURE",
+     "csz": "LAXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "NEW HOPE SUGAR COMPANY",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2024-10-29",
+     "last": "2024-10-29",
+     "occ": "AGRICULTURE",
+     "csz": "LAXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 0
+    },
+    {
+     "donor": "STOFIN CO, INC.",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "SOUTH BAY, FL 33493",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "CLOSTER FARMS, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "FARMING",
+     "csz": "LAXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "AGRO-INDUSTRIAL MANAGEMENT INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "AGRICULTURE",
+     "csz": "WEST PALM BEACH, FL 33401",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    },
+    {
+     "donor": "VANDERGRIFT-WILLIAMS FARMS, INC",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2026-08-13",
+     "last": "2026-08-13",
+     "occ": "FARMING",
+     "csz": "LAXAHATCHEE, FL 33470",
+     "accounts": [
+      "campaign"
+     ],
+     "since": 1000
+    }
+   ]
+  },
+  {
+   "key": "nixon",
+   "name": "Angie Nixon",
+   "role": "voted yes in the House, Apr. 25, 2025",
+   "race": "U.S. Senate",
+   "voter": true,
+   "onBallot": true,
+   "acted": null,
+   "accounts": [
+    "campaign (State House)"
+   ],
+   "records": {
+    "from": "2020-03-11",
+    "to": "2024-10-31",
+    "gifts": 5260,
+    "dollars": 365862.2
+   },
+   "total": 1000,
+   "donors": 1,
+   "gifts": 1,
+   "sinceFiling": 0,
+   "sinceFilingDonors": 0,
+   "unclear": [],
+   "belowThreshold": {
+    "donors": 0,
+    "dollars": 0
+   },
+   "list": [
+    {
+     "donor": "SOUTHERN GARDENS GROVE CORPORATION",
+     "org": true,
+     "counts": true,
+     "total": 1000,
+     "n": 1,
+     "first": "2022-01-10",
+     "last": "2022-01-10",
+     "occ": "FARM CORP",
+     "csz": "CLEWISTON, FL 33440",
+     "accounts": [
+      "campaign (State House)"
      ],
      "since": 0
     }
