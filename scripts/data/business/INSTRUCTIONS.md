@@ -1,5 +1,7 @@
 # Business interests: every contract and every vote that ties to them
 
+Source capture rule: save every document you read (raw file, text, sidecar) to scripts/data/sources/inbox/ as described in scripts/data/SOURCES.md, and check the catalog before fetching.
+
 Goal: for every candidate on the Nov 3, 2026 Miami-Dade ballot (judges excluded), find their business
 interests from official records, then find every government contract, payment and vote that ties to
 those businesses. Every finding must cite an official record you opened yourself. News stories can point

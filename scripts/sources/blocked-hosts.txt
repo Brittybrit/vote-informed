@@ -1,0 +1,33 @@
+# Hosts that refuse automated fetches. catalog.mjs marks their URLs fetchable:false and archive.mjs skips them.
+# These documents have to be read in a browser and saved to scripts/data/sources/inbox/ (see scripts/data/SOURCES.md).
+# One host per line. A leading dot matches the host and every subdomain (.sunbiz.org). Text after # is a note.
+# Only list real site blocks (bot checks, Cloudflare challenges, robots.txt). Hosts that were only blocked by a
+# research session's own network proxy (flsenate.gov, disclosure.floridaethics.gov, api.usaspending.gov) are not here.
+# archive.mjs also reads robots.txt at run time and flips any other disallowed or challenged URL to fetchable:false.
+
+# Florida House: F5 bot check for scripts, robots.txt blocks fetch tools (needs-browser.md, prior-flhouse, history-*)
+www.flhouse.gov
+flhouse.gov
+www.myfloridahouse.gov
+myfloridahouse.gov
+# Sunbiz: Cloudflare challenge (403) to scripts (business/history-*/needs-browser.md)
+.sunbiz.org
+# Florida Division of Elections campaign documents: Cloudflare 403 (business/history-*/needs-browser.md)
+dos.elections.myflorida.com
+# Parkland Laserfiche WebLink: Cloudflare 403 (tenure/prior-congress)
+documents.cityofparkland.org
+# Cutler Bay eSCRIBE: HTTP 429 then Cloudflare "Verify you are human" after about 40 downloads (prior-cities-south)
+pub-cutlerbay-fl.escribemeetings.com
+# Broward County Commission portal: 403 (tenure/prior-county)
+www.broward.org
+# BoardDocs: 403 to every request (Collier school board)
+go.boarddocs.com
+# Florida Attorney General: 403 to scripts (prior-statewide)
+www.myfloridalegal.com
+myfloridalegal.com
+# State Board of Administration: 403 to scripts (prior-statewide)
+sbafla.com
+www.sbafla.com
+# Not listed: hosts where robots.txt disallows some paths (voterfocus.com, www.cityofaventura.com,
+# miamigardens.civicweb.net, *.granicus.com ViewPublisher, legistar1.granicus.com, www.fdacs.gov). archive.mjs
+# checks robots.txt per URL and marks the disallowed ones fetchable:false with error "robots".

@@ -1,5 +1,7 @@
 # Business interests by year, back to each official's first official action
 
+Source capture rule: save every document you read (raw file, text, sidecar) to scripts/data/sources/inbox/ as described in scripts/data/SOURCES.md, and check the catalog before fetching.
+
 Brit, Oct 26, 2026: read the financial disclosures as far back as the official actions go (budget requests,
 contracts and procurements, laws, grants, zoning), so every action can be checked against the business
 interests the official held at that time. This extends scripts/data/business/INSTRUCTIONS.md (read it first;

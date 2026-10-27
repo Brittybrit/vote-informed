@@ -64,6 +64,31 @@ for (const f of walk('scripts/data/').filter(f => /\/(progress|summary|needs-bro
     add({ type: 'log', status: src.split('/').slice(0, -1).join('/'), title: t.slice(0, 140), detail: t.length > 140 ? t : '', src });
   }
 }
+// 8. source library: every document the research cites (scripts/data/sources/catalog.jsonl, see scripts/data/SOURCES.md)
+{
+  const cat = lines('scripts/data/sources/catalog.jsonl');
+  const rec = e => ({
+    p: (e.people || [])[0], type: 'source', status: e.archived ? 'archived' : e.fetchable === false ? 'blocked' : 'not yet',
+    d: (e.dates || [])[1], dates: e.dates && e.dates[0] !== e.dates[1] ? e.dates : undefined,
+    title: e.title, url: e.url, host: e.host,
+    people: e.people && e.people.length > 1 ? e.people : undefined,
+    detail: e.people && e.people.length > 1 ? e.people.slice(1).map(p => names[p] || p).join(', ') : undefined,
+    text: e.textArchived ? 'r2' : e.text ? (e.text.startsWith('sources-archive:') ? 'tarball' : 'repo') : undefined,
+    raw: e.archived ? 'r2' : undefined,
+  });
+  // Keep the index near 15 MB: if all sources don't fit, keep those cited for a person plus every pdf;
+  // if that still doesn't fit, the pdfs without any text are left out.
+  const BUDGET = 16.5e6, base = JSON.stringify(R).length;
+  const tiers = [[() => true, ''], [e => (e.people && e.people.length) || e.kind === 'pdf', 'cited for a person, or a pdf'],
+    [e => (e.people && e.people.length) || (e.kind === 'pdf' && (e.text || e.textArchived)), 'cited for a person, or a pdf with text']];
+  let src = [];
+  for (const [keep, why] of tiers) {
+    src = cat.filter(keep).map(rec);
+    const size = src.reduce((s, r) => s + JSON.stringify(r).length + 1 + (r.p ? 30 : 0), 0);
+    if (base + size <= BUDGET || why === tiers[tiers.length - 1][1]) { if (why) console.log(`research-index: ${src.length} of ${cat.length} sources (${why}), to stay near 15 MB`); break; }
+  }
+  for (const r of src) add(r);
+}
 for (const r of R) if (r.p) r.n = names[r.p] || r.p;
 writeFileSync(P('scripts/data/research-index.json'), JSON.stringify({ updated: new Date().toISOString().slice(0, 10), records: R }) + '\n');
 const c = R.reduce((m, r) => (m[r.type] = (m[r.type] || 0) + 1, m), {});

@@ -1,0 +1,90 @@
+name: Archive sources
+# Stores every source document the research cites in Cloudflare R2 (bucket ballot305-sources): raw/<id>.<ext> and
+# text/<id>.txt, then commits the updated catalog (scripts/data/sources/catalog.jsonl). See scripts/data/SOURCES.md.
+# Needs repository secrets CLOUDFLARE_API_TOKEN (with Account > Workers R2 Storage > Edit) and CLOUDFLARE_ACCOUNT_ID.
+# Without them the job exits cleanly with a notice.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Most documents to archive in this run
+        required: false
+        default: '2000'
+  schedule:
+    - cron: '23 8 * * *'   # nightly, 4:23 am Miami (EDT)
+permissions:
+  contents: write
+concurrency:
+  group: archive-sources
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.repository == 'Brittybrit/vote-informed'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      LIMIT: ${{ github.event.inputs.limit || '2000' }}
+    steps:
+      - name: Check secrets
+        id: secrets
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID is not set; skipping the source archive."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.secrets.outputs.ok == 'true'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        if: steps.secrets.outputs.ok == 'true'
+        with:
+          node-version: 22
+      - name: Install text tools
+        if: steps.secrets.outputs.ok == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-eng ocrmypdf unzip > /dev/null
+          npx --yes wrangler@4 --version
+      - name: Unpack the interim text archive (branch sources-archive)
+        if: steps.secrets.outputs.ok == 'true'
+        run: |
+          mkdir -p "$RUNNER_TEMP/scratch"
+          git rev-parse -q --verify origin/sources-archive > /dev/null || git fetch -q origin sources-archive:refs/remotes/origin/sources-archive || true
+          git show origin/sources-archive:scratch-text.tar.xz | tar -xJ -C "$RUNNER_TEMP/scratch" || echo "::warning::could not unpack scratch-text.tar.xz"
+      - name: Rebuild catalog
+        if: steps.secrets.outputs.ok == 'true'
+        run: node scripts/sources/catalog.mjs
+      - name: Archive to R2
+        if: steps.secrets.outputs.ok == 'true'
+        run: |
+          node scripts/sources/archive.mjs --limit "$LIMIT" --max-minutes 300 \
+            --archive-dir "$RUNNER_TEMP/scratch" --cleared-list "$RUNNER_TEMP/inbox-cleared.txt"
+      - name: Commit catalog
+        if: always() && steps.secrets.outputs.ok == 'true'
+        run: |
+          set -e
+          G="git -c user.name=Brittybrit -c user.email=181224488+Brittybrit@users.noreply.github.com"
+          N=$(grep -c '"archived":true' scripts/data/sources/catalog.jsonl || true)
+          git add -A scripts/data/sources
+          if git diff --cached --quiet; then echo "No catalog changes."; exit 0; fi
+          $G commit -q -m "Sources: archive to R2 ($N documents stored)"
+          for i in 1 2 3; do
+            if git pull -q --rebase origin main && git push -q origin HEAD:main; then exit 0; fi
+            # The catalog changed on main meanwhile: rebuild from main's data, carrying this run's archive results.
+            git rebase --abort 2>/dev/null || true
+            cp scripts/data/sources/catalog.jsonl "$RUNNER_TEMP/catalog-run.jsonl"
+            git fetch -q origin main && git reset -q --hard origin/main
+            if [ -s "$RUNNER_TEMP/inbox-cleared.txt" ]; then
+              while read -r f; do [ -n "$f" ] && rm -f "$f"; done < "$RUNNER_TEMP/inbox-cleared.txt"
+            fi
+            node scripts/sources/catalog.mjs --quiet --carry "$RUNNER_TEMP/catalog-run.jsonl"
+            git add -A scripts/data/sources
+            git diff --cached --quiet && exit 0
+            $G commit -q -m "Sources: archive to R2 ($N documents stored)"
+          done
+          echo "::error::could not push the catalog after 3 tries"; exit 1

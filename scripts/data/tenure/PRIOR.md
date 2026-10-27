@@ -1,5 +1,7 @@
 # Prior offices: every official action from every office a candidate held before their current seat
 
+Source capture rule: save every document you read (raw file, text, sidecar) to scripts/data/sources/inbox/ as described in scripts/data/SOURCES.md, and check the catalog before fetching.
+
 Brit, Oct 25, 2026: "all of the candidates that have held offices have a record of official actions. this
 should be exhaustive." Current seats are already covered back to the start of each tenure (INSTRUCTIONS.md).
 This round covers the OTHER elected offices in scripts/data/tenure/careers/careers.jsonl: a seat the candidate
