@@ -340,9 +340,11 @@
           var view = Object.assign({}, B, {onBallot: ob}), home = homeGroup(B.key) === G.key, RQ = B.type === 'requests';
           B.actions.forEach(function(a){
             var mine = p.keys.some(function(k){ return k in a.roll; }), gave = (a.gifts || []).some(function(g){ return ob[g.to]; });
+            var sponsored = p.keys.some(function(k){ return ((a.roles || {})[k] || []).indexOf('sponsoredItem') >= 0; });
             // A body's own race shows all its actions (requests only the ones these candidates filed or voted on).
-            // In another race, a vote-only body shows just the actions tied to the candidate's donors.
-            if(RQ ? !mine : !(home || gave)) return;
+            // In another race, a vote-only body shows the actions tied to the candidate's donors and the items the
+            // candidate sponsored (a commissioner's own funding allocations).
+            if(RQ ? !mine : !(home || gave || sponsored)) return;
             cards.push({B: view, a: Object.assign({}, a, {gifts: (a.gifts || []).filter(function(g){ return ob[g.to]; })})});
           });
         });
