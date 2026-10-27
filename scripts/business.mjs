@@ -87,6 +87,8 @@ const privateTies = [];
 // business was dissolved is not published (Brit's rule 3, Oct 26, 2026)
 const SB = readLines(path.join(dir, 's9-history', 'sunbiz.jsonl'));
 const endedBefore = (t, d) => endedIn(SB, t, d, ALIAS);
+// A customer of their company is held back unless the official action itself names that customer as the party
+// (their own vote sent public money to their company's customer: Brit, Oct 27, 2026).
 // The disclosed interest a tie's business is, by exact name or curated alias
 const interestOf = t => interests.find(i => i.pid === t.pid && i.business && anySame(i.business, t.business, ALIAS));
 for (const t of ties) {
@@ -99,7 +101,7 @@ for (const t of ties) {
       : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business'
       : endedBefore(t, d) ? 'Sunbiz shows the business dissolved on ' + endedBefore(t, d).dissolved + ', before this date'
       : !voteCounts(t) ? 'no vote cast: the record shows ' + (t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : 'no vote by them') + ' on this action'
-      : t.kind !== 'abstention' && isCustomerOf(interestOf(t)) ? 'the disclosure lists the business as a customer or source of income of a company they own, not as their own business' : null;
+      : t.kind !== 'abstention' && isCustomerOf(interestOf(t)) && !(t.party && anySame(t.party, t.business, ALIAS)) ? 'the disclosure lists the business as a customer or source of income of a company they own, not as their own business' : null;
     if (why) { privateTies.push({ pid: t.pid, date: d, business: t.business, title: tidy(t.title), body: t.body, why, record: t.record }); continue; }
     if (!t.basis) { const e = evidence(t, Number(d.slice(0, 4))); if (e === 'lastDisclosed' || e === 'bridged') { t.basis = e; t.formYear = t.formYear || Math.max(...[...yearsFor(t.pid, t.business || '')].filter(y => y < Number(d.slice(0, 4)))); } }
   }
@@ -116,7 +118,7 @@ for (const t of ties) {
     rel = /former employer/i.test(nat) ? { r: 'formerEmployer' } : via ? { r: 'customerOf', of: tidy(via[1]).replace(/\s*,?\s*which he owns$/i, '') }
       : { r: ROLE[iv.role] || 'other' };
   }
-  p.ties.push({ ...(rel ? { rel } : {}), kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
+  p.ties.push({ ...(rel ? { rel } : {}), ...(t.party ? { party: t.party } : {}), kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
     amount: t.amount == null || t.amount === 'None' ? null : String(t.amount), vote: t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : null,
     business: t.business || null, label: t.record.label || '', url: t.record.url,
     ...(t.class ? { helps: t.class } : {}), ...(t.analysis && t.analysis.url ? { analysis: t.analysis.url } : {}),

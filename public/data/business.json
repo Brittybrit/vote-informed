@@ -656,6 +656,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "St. Thomas University",
      "kind": "grant",
      "date": "2025-06-30",
      "body": "Florida Legislature / Governor (FY 2025-26 budget, SB 2500)",
@@ -670,6 +671,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "ST. THOMAS UNIVERSITY INC",
      "kind": "contract",
      "date": "2021-06-30",
      "body": "Florida Department of Elder Affairs",
@@ -684,6 +686,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "St. Thomas University Center for Pandemic, Disaster, and Quarantine Research (STU/PDQ)",
      "kind": "grant",
      "date": "2020-10-26",
      "body": "Miami-Dade Board of County Commissioners",
@@ -777,7 +780,42 @@
      "url": "https://disclosure.floridaethics.gov/api/Report/RenderPdf/1054852"
     }
    ],
-   "ties": []
+   "ties": [
+    {
+     "rel": {
+      "r": "customerOf",
+      "of": "Hyannis Investments LLC"
+     },
+     "party": "The Goodyear Tire & Rubber Company",
+     "kind": "vote",
+     "date": "2026-02-10",
+     "body": "Boca Raton City Council",
+     "title": "Consent agenda item 9.A.1: Intergovernmental purchase, Tires & Related Services, The Goodyear Tire & Rubber Company, Michelin North America, Inc., Bridgestone Americas Tire Operations, LLC, budget amount $1,500,000",
+     "amount": "$1,500,000.00 (budget amount, shared by three vendors)",
+     "vote": "yes",
+     "business": "Goodyear Tire & Rubber",
+     "label": "Boca Raton City Council regular meeting minutes, Feb 10, 2026, item 9.A.1",
+     "url": "https://bocaraton.granicus.com/MinutesViewer.php?view_id=9&clip_id=3020&doc_id=5129904a-131a-11f1-bb28-005056a89546",
+     "basis": "lastDisclosed",
+     "formYear": 2025
+    },
+    {
+     "rel": {
+      "r": "customerOf",
+      "of": "Hyannis Investments LLC"
+     },
+     "party": "The Goodyear Tire & Rubber Company",
+     "kind": "vote",
+     "date": "2025-01-28",
+     "body": "Boca Raton City Council",
+     "title": "Consent agenda item 9.A.1: Intergovernmental purchase, Tires and Related Services, The Goodyear Tire & Rubber Company, budgeted estimate $1,500,000",
+     "amount": "$1,500,000.00 (budgeted estimate)",
+     "vote": "yes",
+     "business": "Goodyear Tire & Rubber",
+     "label": "Boca Raton City Council regular meeting minutes, Jan 28, 2025, item 9.A.1",
+     "url": "https://bocaraton.granicus.com/MinutesViewer.php?view_id=9&clip_id=2832&doc_id=aed5238e-0425-11f0-ab6a-005056a89546"
+    }
+   ]
   },
   "jared-moskowitz": {
    "interests": [
@@ -841,6 +879,7 @@
      "rel": {
       "r": "formerEmployer"
      },
+     "party": "AshBritt, Inc.",
      "kind": "contract",
      "date": "2026-06-02",
      "body": "City of Coral Gables Commission",
@@ -855,6 +894,7 @@
      "rel": {
       "r": "formerEmployer"
      },
+     "party": "ASHBRITT, INC.",
      "kind": "contract",
      "date": "2025-12-04",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -869,6 +909,7 @@
      "rel": {
       "r": "formerEmployer"
      },
+     "party": "ASHBRITT INC",
      "kind": "contract",
      "date": "2025-01-31",
      "body": "U.S. Army Corps of Engineers (Department of Defense)",
@@ -883,6 +924,7 @@
      "rel": {
       "r": "formerEmployer"
      },
+     "party": "ASHBRITT, INC.",
      "kind": "contract",
      "date": "2025-01-07",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -897,6 +939,7 @@
      "rel": {
       "r": "formerEmployer"
      },
+     "party": "ASHBRITT, INC.",
      "kind": "contract",
      "date": "2024-10-12",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -911,6 +954,7 @@
      "rel": {
       "r": "client"
      },
+     "party": "Lennar Homes, LLC",
      "kind": "abstention",
      "date": "2022-06-14",
      "body": "Broward County Commission",
@@ -1254,6 +1298,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "EARLY LEARNING COALITION OF MIA",
      "kind": "grant",
      "date": "2026-07-01",
      "body": "Florida Department of Education",
@@ -1268,6 +1313,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "EARLY LEARNING COALITION OF MIA",
      "kind": "grant",
      "date": "2025-07-01",
      "body": "Florida Department of Education",
@@ -1282,6 +1328,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "EARLY LEARNING COALITION OF MIA",
      "kind": "grant",
      "date": "2024-07-01",
      "body": "Florida Department of Education",
@@ -1296,6 +1343,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Early Learning Coalition of Miami-Dade/Monroe County",
      "kind": "grant",
      "date": "2024-05-07",
      "body": "Miami-Dade Board of County Commissioners",
@@ -1392,6 +1440,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "MIAMI ASSOCIATION OF REALTORS, INC.",
      "kind": "grant",
      "date": "2018-11-08",
      "body": "Miami-Dade Board of County Commissioners",
@@ -1671,6 +1720,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Miami-Dade County (Miami-Dade Fire Rescue)",
      "kind": "grant",
      "date": "2025-11-18",
      "body": "Florida House (APR 2129, FY 2026-27 budget HB 5001E)",
@@ -1685,6 +1735,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Miami-Dade County (Miami-Dade Fire Rescue)",
      "kind": "grant",
      "date": "2025-11-18",
      "body": "Florida House (APR 2139, FY 2026-27 budget HB 5001E)",
@@ -1986,6 +2037,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "BDI Construction Company (per CAO 2017-043); the minutes name the West Lab item",
      "kind": "abstention",
      "date": "2017-08-29",
      "body": "Coral Gables City Commission",
@@ -2212,6 +2264,7 @@
      "rel": {
       "r": "director"
      },
+     "party": "NORTH MIAMI FOUNDATION FOR SENIOR CITIZENS' SERVICES, INC.",
      "kind": "grant",
      "date": "2025-11-12",
      "body": "City of North Miami",
@@ -2226,6 +2279,7 @@
      "rel": {
       "r": "director"
      },
+     "party": "North Miami Foundation for Senior Citizens' Services, Inc. (named in the grant renewal, not in the minutes)",
      "kind": "vote",
      "date": "2025-09-25",
      "body": "North Miami City Council",
@@ -2300,6 +2354,7 @@
    ],
    "ties": [
     {
+     "party": "Applicant for [address] (not named in minutes; Property Appraiser owner Alta Bayshore LLC per repo owners.json)",
      "kind": "abstention",
      "date": "2025-02-25",
      "body": "North Miami City Council",
@@ -2461,6 +2516,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Florida International University (FIU) Jorge M. Perez Metropolitan Center",
      "kind": "vote",
      "date": "2026-07-15",
      "body": "Town of Cutler Bay Town Council",
@@ -2475,6 +2531,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "ZOETIC STAGE INC",
      "kind": "grant",
      "date": "2023-08-29",
      "body": "Florida Department of State (Division of Arts and Culture)",
@@ -2641,6 +2698,7 @@
      "rel": {
       "r": "owner"
      },
+     "party": "The Island House Apartments, Inc.",
      "kind": "zoning",
      "date": "2026-06-30",
      "body": "Village of Key Biscayne Village Council",
@@ -2652,6 +2710,7 @@
      "url": "https://d3n9y02raazwpg.cloudfront.net/keybiscayne/e1a888ad-6375-11f1-9b4d-005056a89546-43ce76d4-5f8d-410a-b24a-4c928f357aa8-1782762773.pdf"
     },
     {
+     "party": "none named (policy resolution)",
      "kind": "abstention",
      "date": "2026-03-17",
      "body": "City of South Miami City Commission",
@@ -2921,6 +2980,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Keith and Associates, d/b/a Keith",
      "kind": "contract",
      "date": "2026-09-17",
      "body": "City of Sunny Isles Beach Commission",
@@ -2935,6 +2995,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Keith and Associates, Inc., d/b/a Keith",
      "kind": "contract",
      "date": "2026-09-17",
      "body": "City of Sunny Isles Beach Commission",
@@ -2949,6 +3010,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Keith and Associates, Inc., d/b/a Keith",
      "kind": "contract",
      "date": "2025-09-18",
      "body": "City of Sunny Isles Beach Commission",
@@ -2963,6 +3025,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Keith and Associates, Inc., d/b/a Keith",
      "kind": "contract",
      "date": "2025-08-21",
      "body": "City of Sunny Isles Beach Commission",
@@ -2977,6 +3040,7 @@
      "rel": {
       "r": "employer"
      },
+     "party": "Keith and Associates, Inc., d/b/a Keith",
      "kind": "contract",
      "date": "2025-06-17",
      "body": "City of Sunny Isles Beach Commission",

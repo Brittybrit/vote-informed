@@ -75,12 +75,13 @@ test('a customer, client or source of income of the filer\'s company is held bac
   assert.ok(!isCustomerOf(undefined));
 });
 
-test('no published tie is to a business the filer lists as a customer of their company', () => {
+test('a published tie to a customer of their company only when the action names that customer as the party', () => {
   for (const [pid, p] of Object.entries(business.people)) for (const t of p.ties) {
     if (t.kind === 'abstention' || !t.business) continue;
     const iv = interests.find(i => i.pid === pid && i.business && anySame(i.business, t.business, ALIAS));
-    assert.ok(!isCustomerOf(iv), pid + ' ' + t.business);
-    assert.notEqual((t.rel || {}).r, 'customerOf', pid + ' ' + t.business);
+    if (!isCustomerOf(iv)) continue;
+    assert.ok(t.party && anySame(t.party, t.business, ALIAS), pid + ' ' + t.business + ': customer not named as the party');
+    assert.equal((t.rel || {}).r, 'customerOf', pid + ' ' + t.business + ': must be labeled as a customer of their company');
   }
 });
 
