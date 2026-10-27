@@ -47,8 +47,58 @@ const known = (pid, biz) => {
   const k = norm(biz); if (!k) return false;
   return p.interests.some(x => { const n = norm(x.business); return n === k || (n.length >= 8 && k.length >= 8 && (n.startsWith(k) || k.startsWith(n))); });
 };
+// Disclosure window (Brit, Oct 26, 2026): a tie is published only when, on the date of the action or payment, the person
+// held an office whose disclosure law required a form covering that year, and a form (or record) for that year shows the
+// business (or the latest form shows it, labeled "last disclosed"). Everything else goes to the private review list.
+const spans = {}; // pid -> [[from, to]]
+const addSpan = (pid, a, b) => { if (!pid || !a) return; (spans[pid] = spans[pid] || []).push([String(a).slice(0, 10), b ? String(b).slice(0, 10) : '9999-12-31']); };
+const pub = path.join(here, '..', 'public', 'data');
+const rj = f => JSON.parse(fs.readFileSync(f, 'utf8'));
+for (const f of fs.readdirSync(path.join(pub, 'prior')).filter(f => f.endsWith('.json') && f !== 'index.json')) {
+  const d = rj(path.join(pub, 'prior', f)); for (const o of d.offices || []) addSpan(d.pid, o.start, o.end);
+}
+for (const [pid, p] of Object.entries(rj(path.join(pub, 'offices-held.json')).people || {})) for (const t of p.terms || []) addSpan(pid, t.start, t.end);
+for (const f of fs.readdirSync(path.join(pub, 'decisions')).filter(f => f.endsWith('.json') && f !== 'index.json')) {
+  const d = rj(path.join(pub, 'decisions', f)), seen = {};
+  for (const body of d.bodies || [d]) {
+    const mem = {}; for (const m of body.members || []) if (m.person) mem[m.key] = m.person;
+    for (const a of body.actions || []) for (const k of Object.keys(a.roll || {})) { const pid = mem[k]; if (!pid || !a.date) continue;
+      const s = seen[pid] = seen[pid] || [a.date, a.date]; if (a.date < s[0]) s[0] = a.date; if (a.date > s[1]) s[1] = a.date; }
+  }
+  for (const [pid, [a, b]] of Object.entries(seen)) addSpan(pid, a.slice(0, 4) + '-01-01', b.slice(0, 4) + '-12-31');
+}
+const inWindow = (pid, d) => (spans[pid] || []).some(([a, b]) => d >= a && d <= b);
+// years each business is shown on that person's forms
+const formYears = {}; // pid|normbiz -> Set
+const addYear = (pid, biz, y) => { if (!pid || !biz || !y) return; const k = pid + '|' + norm(biz); (formYears[k] = formYears[k] || new Set()).add(Number(y)); };
+for (const d of fs.readdirSync(dir).filter(d => /^history-\d+$/.test(d))) for (const r of readLines(path.join(dir, d, 'history.jsonl'))) if (!r.missing && r.business && r.year) addYear(r.pid, r.business, r.year);
+for (const i of interests) { const y = Number(String((i.record || {}).date || '').slice(0, 4)); if (y) { addYear(i.pid, i.business, y - 1); addYear(i.pid, i.business, y); } }
+const yearsFor = (pid, biz) => { const out = new Set(); const k = norm(biz);
+  for (const [key, s] of Object.entries(formYears)) { const [p, n] = key.split('|'); if (p !== pid) continue;
+    if (n === k || (n.length >= 8 && k.length >= 8 && (n.startsWith(k) || k.startsWith(n)))) for (const y of s) out.add(y); }
+  return out; };
+const evidence = (t, y) => {
+  if (['listed', 'bridged', 'lastDisclosed', 'sunbiz'].includes(t.basis)) return t.basis;
+  if (t.kind === 'abstention') return 'record';
+  if (t.basisNote) return 'record';
+  const ys = new Set(); for (const b of String(t.business || '').split(/;\s*/)) for (const x of yearsFor(t.pid, b)) ys.add(x);
+  if (!ys.size) return null;
+  if (ys.has(y)) return 'listed';
+  if (ys.has(y - 1) && ys.has(y + 1)) return 'bridged';
+  if (y > Math.max(...ys)) return 'lastDisclosed';
+  return null;
+};
+const privateTies = [];
 for (const t of ties) {
   if (t.verified !== true || !t.pid || SKIP.has(t.pid)) continue;
+  if (RELIEF.test([t.title, t.body, t.kind, t.amount].join(' '))) continue;
+  {
+    const d = /^\d{4}-\d\d-\d\d/.test(t.date || '') ? String(t.date).slice(0, 10) : null;
+    const why = !d ? 'no date on the record' : !inWindow(t.pid, d) ? 'not in an office that required disclosure on that date'
+      : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business' : null;
+    if (why) { privateTies.push({ pid: t.pid, date: d, business: t.business, title: tidy(t.title), body: t.body, why, record: t.record }); continue; }
+    if (!t.basis) { const e = evidence(t, Number(d.slice(0, 4))); if (e === 'lastDisclosed' || e === 'bridged') { t.basis = e; t.formYear = t.formYear || Math.max(...[...String(t.business || '').split(/;\s*/).flatMap(b => [...yearsFor(t.pid, b)])].filter(y => y < Number(d.slice(0, 4)))); } }
+  }
   if (RELIEF.test([t.title, t.body, t.kind, t.amount].join(' '))) continue;
   if (!t.record || !/^https?:\/\//.test(t.record.url || '')) continue;
   // abstentions are about the candidate, not a named business; everything else needs a published interest
@@ -63,11 +113,13 @@ for (const t of ties) {
 for (const [pid, h] of Object.entries(headlines)) {
   if (pid.startsWith('_')) continue;
   const p = people[pid] || (people[pid] = { interests: [], ties: [] });
+  if (!p.ties.length) { privateTies.push({ pid, headline: h.headline.en, why: 'headline: every tie behind it is outside the disclosure window' }); continue; }
   p.headline = h.headline; if (h.note) p.headlineNote = h.note;
 }
 for (const p of Object.values(people)) p.ties.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 for (const [pid, p] of Object.entries(people)) if (!p.interests.length && !p.ties.length && !p.headline) delete people[pid];
 
+fs.writeFileSync(path.join(dir, 'private-ties.json'), JSON.stringify({ note: 'Not published: ties outside the disclosure window or without a form for that year (Brit, Oct 26, 2026).', ties: privateTies }, null, 1) + '\n');
 fs.writeFileSync(path.join(here, '..', 'public', 'data', 'business.json'), JSON.stringify({
   updated: new Date().toISOString().slice(0, 10),
   note: 'Business interests from each candidate\'s own filing (or a Sunbiz listing matching name and address) and the government contracts, grants, payments and votes tied to them, each from an official record. Relief programs open to any eligible business are not counted. Rebuild: node scripts/business.mjs.',
