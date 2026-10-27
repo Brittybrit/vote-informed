@@ -145,7 +145,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|LAND",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|LAND",
   "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
  },
  "2021-218": {
@@ -223,7 +223,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP|LAND",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|LAND",
   "not": "CAR |AUTO|EDUCATION|DEALER|LOGISTIC"
  },
  "2022-124": {
@@ -260,7 +260,7 @@
    "affordable-housing",
    "realestate-dev"
   ],
-  "re": "AFFORDABLE|HOUSING|DEVELOP|MULTIFAMILY|APARTMENT",
+  "re": "AFFORDABLE|HOUSING|DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|MULTIFAMILY|APARTMENT",
   "not": "AUTHORITY",
   "conditional": "Developers incorporating affordable housing into development projects"
  },

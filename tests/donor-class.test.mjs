@@ -260,9 +260,38 @@ test('other classes cut to what the analysis names', () => {
   assert.ok(!fits('HB 615 · 2025', '7501 PARKLAND LLC', 'PROPERTY MANAGEMENT'));
   // HB 705 (2024): contractors, not a construction materials supplier
   assert.ok(!fits('HB 705 · 2024', 'CEMEX MATERIALS LLC', 'CONSTRUCTION MATERIALS'));
-  // developers are not home builders (HB 927, 2026); SB 808 (2024) pays only authorized medical specialists, SB 784 (2025) helps
-  // only those whose plats are in process: both conditional, so no record, no tie
-  assert.ok(!fits('HB 927 · 2026', 'FLORIDA HOME BUILDERS PAC', 'PAC'));
+  // SB 808 (2024) pays only authorized medical specialists, SB 784 (2025) helps only those whose plats are in process:
+  // both conditional, so no record, no tie
   assert.ok(!fits('SB 808 · 2024', 'COWART JENNIFER', 'PHYSICIAN'));
   assert.ok(!fits('SB 784 · 2025', 'WOHL MICHAEL D.', 'REAL ESTATE DEVELOPER'));
+});
+
+// Brit, Oct 27, 2026: "developer" in an analysis includes home builders (same business); the other neighbouring trades stay out
+test('developer laws take home builders, not realtors, manufactured housing, property managers or materials suppliers', () => {
+  const dev = ['HB 399 · 2026', 'HB 927 · 2026', 'SB 102 · 2023', 'HB 487 · 2021', 'SB 706 · 2022'];
+  // tags as an industry file would give them, so only the class's own words decide
+  const ft = (ref, n, o, t) => fitsLaw(K(ref), n, o, t);
+  const HB = ['homebuilders', 'realestate-dev'];
+  for (const ref of dev) {
+    assert.match(K(ref).re, /DEVELOP/, ref);
+    assert.ok(fits(ref, 'FLORIDA HOME BUILDERS PAC', 'PAC'), ref);
+    assert.ok(fits(ref, 'HOMES BY WEST BAY, LLC', 'REAL ESTATE DEVELOPMENT CO. / HOME BUILDERS'), ref);
+    assert.ok(ft(ref, 'SMITH JOHN', 'HOME BUILDER', HB), ref);
+    assert.ok(ft(ref, 'SMITH JOHN', 'RESIDENTIAL BUILDER', HB), ref);
+    assert.ok(ft(ref, 'SMITH JOHN', 'OWNER, HOMEBUILDING COMPANY', HB), ref);
+    assert.ok(ft(ref, 'SUNSHINE HOMEBUILDERS INC', 'HOMEBUILDING', HB), ref);
+    assert.ok(fits(ref, 'WOHL MICHAEL D.', 'REAL ESTATE DEVELOPER'), ref);
+    assert.ok(!ft(ref, 'DAVIDSON ELSIE', 'REALTOR', HB), ref);
+    assert.ok(!ft(ref, 'REALTORS POLITICAL ADVOCACY COMMITTEE', 'POLITICAL COMMITTEE (PC)', HB), ref);
+    assert.ok(!ft(ref, 'SMITH JOHN', 'PROPERTY MANAGER', HB), ref);
+    assert.ok(!ft(ref, 'SUNCOAST PROPERTY MANAGEMENT LLC', 'PROPERTY MANAGEMENT', HB), ref);
+    assert.ok(!ft(ref, 'CEMEX MATERIALS LLC', 'CONSTRUCTION MATERIALS', HB), ref);
+    if (!/HOUSING/.test(K(ref).re)) assert.ok(!ft(ref, 'FLORIDA MANUFACTURED HOUSING ASSOCIATION', 'TRADE ASSOCIATION', HB), ref);
+  }
+  // every class tied to a developer analysis, current and earlier seats, carries the home-builder terms
+  const files = ['scripts/data/state/bills/classes.json', 'scripts/data/state/bills/classes-by-chapter.json', T + 'flhouse/bills/classes-2122.json',
+    T + 'flhouse/bills/classes-by-chapter.json', T + 'prior-flhouse/bills/classes-by-chapter.json'];
+  for (const f of files) for (const [k, c] of Object.entries(J(f)))
+    if (c.re && (c.tags || []).includes('homebuilders') && c.re.split('|').includes('DEVELOP')) assert.match(c.re, /BUILDER\|HOMEBUILD\|HOME BUILD/, f + ' ' + k);
+  for (const k of ['2019-110', '2019-157', '2019-165']) assert.match(J(T + 'prior-flhouse/bills/classes-by-chapter.json')[k].re, /BUILDER/, k);
 });

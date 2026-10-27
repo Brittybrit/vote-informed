@@ -1481,7 +1481,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
   "conditional": "an alternative mitigation option for projects"
  },
@@ -1536,7 +1536,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  },
  "2019-160": {
@@ -1548,7 +1548,7 @@
    "realestate-dev",
    "homebuilders"
   ],
-  "re": "DEVELOP",
+  "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER"
  }
 }
