@@ -1,5 +1,8 @@
 # Working rules for this repo
 
+## Only Brit deploys (Oct 27, 2026)
+Never run `wrangler deploy` or trigger the Deploy workflow. Push to main; Brit deploys ballot305.org herself.
+
 ## Names say what they are (Brit, Oct 27, 2026)
 Architect everything so nobody needs memory, Brit's or Claude's, to translate a name. Every secret, token,
 bucket, branch, file, folder, worker and field is named for what it is and what uses it, specific enough that it
