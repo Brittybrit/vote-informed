@@ -44,7 +44,7 @@ const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? '
 // - state legislators and Congress: every budget or earmark request the member filed
 // - Cabinet: every Board of Trustees item while seated plus the office's own actions reviewed
 // Cities whose lists start from donors (no registry online) get no share.
-const CAST = new Set(['yes', 'no']);
+export const CAST = new Set(['yes', 'no']);
 const DONOR_FIRST = new Set(['southmiami', 'pinecrest', 'medley']);
 function shareOf(B, key, tied) {
   const tiedIds = new Set(tied.map(([a]) => a.id));
