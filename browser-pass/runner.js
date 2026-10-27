@@ -38,9 +38,8 @@
       S.total = rows.length;
       for (const [id, url] of rows) {
         try {
-          const r = await fetch(url, { credentials: 'include' });
-          const ct = r.headers.get('content-type') || '';
-          const b = new Uint8Array(await r.arrayBuffer());
+          const g = window.__b305get ? await window.__b305get(url) : await (async () => { const r = await fetch(url, { credentials: 'include' }); return { ok: r.ok, status: r.status, ct: r.headers.get('content-type') || '', b: new Uint8Array(await r.arrayBuffer()) }; })();
+          const r = { ok: g.ok, status: g.status }, ct = g.ct, b = g.b;
           const head = new TextDecoder().decode(b.slice(0, 600)).toLowerCase();
           if (!r.ok || b.byteLength < 200 || /captcha|access denied|request unsuccessful|cf-chl/.test(head)) throw new Error(r.status + ' ' + b.byteLength);
           if (size + b.byteLength > CAP) await flush();
