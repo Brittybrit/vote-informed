@@ -22,6 +22,8 @@ const norm = s => String(s).toUpperCase().replace(/&/g, ' AND ').replace(/[.,'"(
 const SUFFIX = /\b(LLC|INC|PA|P A|PLLC|LLP|THE|CORP|CO)\b/g;
 const LOBOCC = /LOBBY|GOVERNMENT|GOVT|GOV\b|CONSULT|ATTORNEY|LAWYER|LAW FIRM|PUBLIC AFFAIRS|ADVOCA/i;
 const ORG = /\b(INC|LLC|PAC|COMMITTEE|CORP|GROUP|TRUST|ASSOCIATES|P A|PA)\b/;
+// Government bodies named as a form's recipient (they never give to campaigns; their names would only match by accident)
+const GOVT = /^(CITY|TOWN|VILLAGE|COUNTY)\b|\b(COUNTY|CITY|TOWN|VILLAGE) OF\b|BOARD OF COUNTY|SCHOOL BOARD|SCHOOL DISTRICT|PUBLIC SCHOOLS|DEPARTMENT OF|SHERIFF|DISTRICT$|AUTHORITY$|MIAMI DADE COUNTY|STATE OF FLORIDA/;
 // Firm-entity match: the firm's name (minus corporate suffixes and glue words) as a contiguous phrase in the donor's name.
 const phrase = s => ' ' + norm(s).replace(SUFFIX, '').replace(/\b(AND|OF)\b/g, ' ').replace(/\s+/g, ' ').trim() + ' ';
 // Judgment calls, kept explicit:
@@ -136,6 +138,21 @@ for (const B of d.bodies) {
           if (self) push({ to: filer, acct: r.acct, kind: 'firm', rel: 'named', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, firmName, lobbyist: l.name, forParty, ...(hid ? { why: { en: 'name and occupation match; the report withholds the address', es: 'coinciden nombre y ocupación; el reporte oculta la dirección', ht: 'non ak okipasyon koresponn; rapò a kache adrès la' } } : {}) });
           else push({ to: filer, acct: r.acct, kind: 'firm', rel: 'firmlob', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, firmName, lobbyist: l.name, forParty, why });
         }
+      }
+    }
+    // (c) the group the form says would receive the money, when it gave to the member who filed the form
+    // (Brit, Oct 27, 2026: a recipient giving to its own sponsor belongs on the card like its lobbyists' gifts).
+    // Organizations only, the same whole name (legal suffixes aside), never a government body (they don't give) or a name under 9 letters.
+    for (const party of a.parties || []) {
+      const pp = phrase(party);
+      if (pp.trim().length < 9 || GOVT.test(norm(party))) continue;
+      for (const r of mine) {
+        if (!ORG.test(r.n) && !/\b(CENTER|FOUNDATION|ASSOCIATION|SOCIETY|UNIVERSITY|COLLEGE|HOSPITAL|TRUST|COUNCIL|CHAMBER|ALLIANCE|CLUB|MUSEUM|INSTITUTE)\b/.test(r.n)) continue;
+        if (phrase(r.donor) !== pp) continue;   // the whole name, not a name that contains it (United Faculty of Miami Dade College is not the college)
+        if (have.has(gKey({ acct: r.acct, donor: r.donor, amount: r.amount, date: r.date }))) continue;
+        have.add(gKey({ acct: r.acct, donor: r.donor, amount: r.amount, date: r.date }));
+        a.gifts.push({ to: filer, acct: r.acct, kind: 'party', rel: 'party', donor: r.donor, amount: r.amount, date: r.date, addr: r.addr, occ: r.occ });
+        added++; total += r.amount; log.push(`${filer} ${a.ref}: ${r.donor} $${r.amount} ${r.date} -> recipient ${party}`);
       }
     }
     a.gifts.sort((p, q) => p.date.localeCompare(q.date));
