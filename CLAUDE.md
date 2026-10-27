@@ -16,5 +16,7 @@ can't be confused with a sibling.
 ### Known names that need translating
 - Cloudflare Worker `ballot-intel` (wrangler.toml) is the Ballot305 site. Old name from before the rebrand; renaming
   creates a new worker and moves the ballot305.org route, so it waits until after Nov 3, 2026.
+- workers.dev subdomain `ballot-intel.workers.dev` is the account-wide subdomain (every Worker's *.workers.dev URL,
+  including Ballot317's). Same post-election rename as the Worker.
 - Repo `vote-informed` is Ballot305.
 - Branch `sources-archive` holds interim source text and inbox batches for the R2 bucket `wethepeople305-sources`.
