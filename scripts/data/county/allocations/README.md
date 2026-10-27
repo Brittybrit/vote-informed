@@ -11,7 +11,7 @@ commissioner signs, attached to the agenda packet) or as Clerk's reports read in
 | `gilbert-selected.json` | Hand-checked lines for three groups: FYFL United, A3 Foundation and FANM, read from each item's agenda packet (`legistarfiles/Matters/Y20xx/<matter>.pdf`, memos OCR'd where scanned) or the minutes, plus the record facts about the groups. Built into cards by `scripts/county-allocations.mjs`. |
 
 Results (Oct 27, 2026):
-- FYFL United: at least $3,112,025 in 30 lines on 21 Commission items, May 2023 to March 2026 (including the
+- FYFL United: at least $3,112,025 in 30 lines on 20 Commission items, May 2023 to March 2026 (including the
   $50,000 Rescue Plan reallocation R-796-25 and a $2,325 office purchase-card reimbursement). One $100,000 allocation
   (file 260148) was rescinded and replaced by R-139-26; it is counted once. Florida Bulldog (Oct 2026) reported 28
   requests and about $3.2 million; the packets for every District 1 item were read, so a difference would be in items
