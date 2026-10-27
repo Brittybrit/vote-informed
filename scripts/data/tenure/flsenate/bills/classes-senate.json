@@ -11,7 +11,9 @@
    "waste-environment"
   ],
   "re": "WASTE|ENERGY FROM|REWORLD|COVANTA|WHEELABRATOR",
-  "conditional": "private companies that own a government affiliated waste-to-energy facility and qualify for a grant"
+  "conditional": "private companies that own a government affiliated waste-to-energy facility and qualify for a grant",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2022-210": {
   "tags": [
@@ -21,7 +23,9 @@
  },
  "2022-215": {
   "re": "MITIGATION|ENVIRONMENTAL|WATER QUALITY|NUTRIENT|WETLAND|ECOSYSTEM",
-  "conditional": "entities that establish WQEAs"
+  "conditional": "entities that establish WQEAs",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2021-22": {
   "re": "CHICKEE",

@@ -65,7 +65,9 @@
     }
    ],
    "universe": true,
-   "conditional": "certain energy-related facilities"
+   "conditional": "certain energy-related facilities",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
   },
   {
    "key": "sjres18",
@@ -449,7 +451,9 @@
      }
     }
    ],
-   "conditional": "certain small rural hospitals"
+   "conditional": "certain small rural hospitals",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only hospitals in a specific size and location band"
   },
   {
    "key": "hjres25",
@@ -1230,7 +1234,9 @@
      }
     }
    ],
-   "conditional": "qualified property"
+   "conditional": "qualified property",
+   "conditionBreadth": "broad",
+   "conditionBreadthReason": "every business in the class buys equipment and other qualified property in normal operations"
   },
   {
    "key": "hr2483",

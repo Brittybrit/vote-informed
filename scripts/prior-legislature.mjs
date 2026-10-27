@@ -16,7 +16,7 @@
 import { materiality } from './lib/materiality.mjs';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { pkey, dkey } from './lib/city.mjs';
-import { fitsLaw, execPending, recordFor } from './lib/donor-class.mjs';
+import { fitsLaw, execPending, recordFor, narrowCondition } from './lib/donor-class.mjs';
 import { voteStatus } from './lib/contested.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -248,8 +248,8 @@ export function buildLegislative(nameOf = x => x, pending = null) {
         if (v.chamber !== 'house' || !v.members || v.members[key] == null) continue;
         const vv = vote(v.members[key]); if (!vv) continue;
         const cls = classes[b.class];
-        // a conditional benefit ties no PAC (scripts/data/industry/INSTRUCTIONS.md, rule 7)
-        const g = cls && !b.conditional ? mine.filter(x => cls.donors.some(([re]) => new RegExp(re).test(x.contributor))).map(x => ({ n: x.contributor, amt: x.amount, dt: x.date, k: 'pac' })) : [];
+        // a narrow conditional benefit ties no PAC; a broad one counts (scripts/data/industry/INSTRUCTIONS.md, rule 7)
+        const g = cls && !narrowCondition(b) ? mine.filter(x => cls.donors.some(([re]) => new RegExp(re).test(x.contributor))).map(x => ({ n: x.contributor, amt: x.amount, dt: x.date, k: 'pac' })) : [];
         laws.push({ d: v.date, ch: b.law, t: (b.subject && b.subject.en) || '', r: b.ref + ' · ' + b.law, cat: (cls && cls.label && cls.label.en) || '', v: vv, vs: voteStatus(v.tally, v.members, false), u: b.bill, cls: !!cls, g });
       }
       laws.sort((a, b) => b.d.localeCompare(a.d));

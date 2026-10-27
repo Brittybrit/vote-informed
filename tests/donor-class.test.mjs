@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { fitsLaw, phrases, isOrg, execPending, recordFor, setExecRecords, donorKey } from '../scripts/lib/donor-class.mjs';
+import { fitsLaw, phrases, isOrg, execPending, recordFor, setExecRecords, donorKey, narrowCondition } from '../scripts/lib/donor-class.mjs';
 
 const J = p => JSON.parse(readFileSync(new URL('../' + p, import.meta.url), 'utf8'));
 const opt = p => existsSync(new URL('../' + p, import.meta.url)) ? J(p) : {};
@@ -220,7 +220,7 @@ test('conditional benefit: SB 7016 (2024) physicians do not tie without a record
   assert.ok(!fitsLaw({ ...k, subset: { [donorKey('KHATIB YAZAN')]: { recordUrl: '' } } }, 'KHATIB YAZAN', 'PHYSICIAN', tg('KHATIB YAZAN')));
 });
 
-test('conditional benefits: every marked class quotes words from its own analysis; federal conditional laws tie no PAC', () => {
+test('conditional benefits: every marked class quotes words from its own analysis; federal narrow-condition laws tie no PAC', () => {
   const law = {};
   for (const dir of [T + 'flhouse/', T + 'prior-flhouse/', T + 'prior-flsenate/']) for (const y of ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2122', '2023', '2024', '2025'])
     for (const b of (opt(dir + 'bills-' + y + '.json').bills || [])) if (b.benefits && b.benefits.quote) law[b.chapter] = b.benefits.quote;
@@ -230,7 +230,7 @@ test('conditional benefits: every marked class quotes words from its own analysi
     for (const [ch, c] of Object.entries(opt(f))) if (c.conditional && law[ch]) { n++; assert.ok(law[ch].includes(c.conditional), f + ' ' + ch); }
   assert.ok(n >= 100, 'conditional classes: ' + n);
   const us = d.bodies.filter(b => b.level === 'federal');
-  const cond = new Set([...J('scripts/data/federal/floor-votes.json').bills, ...(opt(T + 'congress/floor-votes-tenure.json').bills || [])].filter(b => b.conditional).map(b => b.ref));
+  const cond = new Set([...J('scripts/data/federal/floor-votes.json').bills, ...(opt(T + 'congress/floor-votes-tenure.json').bills || [])].filter(b => narrowCondition(b)).map(b => b.ref));
   assert.ok(cond.size > 5);
   for (const B of us) for (const a of B.actions) if (a.kind === 'bill' && cond.has(a.ref)) assert.equal(a.gifts.filter(g => g.kind === 'class').length, 0, a.id);
 });
@@ -294,4 +294,48 @@ test('developer laws take home builders, not realtors, manufactured housing, pro
   for (const f of files) for (const [k, c] of Object.entries(J(f)))
     if (c.re && (c.tags || []).includes('homebuilders') && c.re.split('|').includes('DEVELOP')) assert.match(c.re, /BUILDER\|HOMEBUILD\|HOME BUILD/, f + ' ' + k);
   for (const k of ['2019-110', '2019-157', '2019-165']) assert.match(J(T + 'prior-flhouse/bills/classes-by-chapter.json')[k].re, /BUILDER/, k);
+});
+
+// Rule 7, breadth (Brit, Oct 27, 2026): a NARROW condition (join or apply to a program, be eligible or selected, a place,
+// a size band, a license tier) needs a subset record; a BROAD one (met by nearly every business in normal operations)
+// counts like no condition
+const CONDFILES = ['scripts/data/state/bills/classes.json', 'scripts/data/state/bills/classes-by-chapter.json', T + 'flhouse/bills/classes-2122.json',
+  T + 'flhouse/bills/classes-by-chapter.json', T + 'flsenate/bills/classes-senate.json', T + 'prior-flhouse/bills/classes-by-chapter.json', T + 'prior-flsenate/bills/classes-by-chapter.json'];
+const FEDFILES = ['scripts/data/federal/floor-votes.json', T + 'congress/floor-votes-tenure.json', T + 'prior-congress/floor-votes.json'];
+test('every conditional class says whether its condition is narrow or broad, and why', () => {
+  let n = 0;
+  const all = [...CONDFILES.flatMap(f => Object.entries(J(f)).map(([k, c]) => [f + ' ' + k, c])), ...FEDFILES.flatMap(f => J(f).bills.map(b => [f + ' ' + b.ref, b]))];
+  for (const [k, c] of all) if (c.conditional) {
+    n++;
+    assert.ok(['narrow', 'broad'].includes(c.conditionBreadth), k);
+    assert.ok(typeof c.conditionBreadthReason === 'string' && c.conditionBreadthReason.length > 10, k);
+  }
+  assert.ok(n >= 180, 'conditional classes: ' + n);
+});
+
+test('H.R. 1 (2025) "qualified property" is a broad condition: oil and gas PACs tie', () => {
+  const b = J('scripts/data/federal/floor-votes.json').bills.find(b => b.ref === 'H.R. 1 · 2025');
+  assert.equal(b.conditional, 'qualified property');
+  assert.equal(b.conditionBreadth, 'broad');
+  assert.ok(!narrowCondition(b));
+  const cards = d.bodies.filter(B => B.level === 'federal').flatMap(B => B.actions.filter(a => a.kind === 'bill' && a.ref === 'H.R. 1 · 2025'));
+  assert.ok(cards.length > 0);
+  assert.ok(cards.some(a => a.gifts.some(g => g.kind === 'class')), 'H.R. 1 ties class PACs');
+  // the 2004 manufacturing deduction ("qualified production activities income") is broad too
+  const q = J(T + 'congress/floor-votes-tenure.json').bills.find(b => b.conditional === 'qualified production activities income');
+  assert.equal(q.conditionBreadth, 'broad');
+  // a broad state class ties without a subset record
+  const broad = { tags: [], re: 'DENTIST', conditional: 'dentists who may be able to benefit', conditionBreadth: 'broad', conditionBreadthReason: 'x' };
+  assert.ok(fitsLaw(broad, 'SMITH JOHN', 'DENTIST', []));
+  assert.ok(!fitsLaw({ ...broad, conditionBreadth: 'narrow' }, 'SMITH JOHN', 'DENTIST', []));
+  assert.ok(!fitsLaw({ ...broad, conditionBreadth: undefined }, 'SMITH JOHN', 'DENTIST', []), 'no breadth means narrow');
+});
+
+test('SB 7016 (2024) FRAME/DSLR stays narrow, and so do the other program, place, size and license conditions', () => {
+  assert.equal(K('SB 7016 · 2024').conditionBreadth, 'narrow');
+  assert.ok(!fits('SB 7016 · 2024', 'KHATIB YAZAN', 'PHYSICIAN'));
+  for (const ref of ['SB 2502 · 2025', 'SB 1662 · 2025', 'SB 1028 · 2026', 'SB 784 · 2025']) assert.equal(K(ref).conditionBreadth, 'narrow', ref);
+  const fed = FEDFILES.flatMap(f => J(f).bills);
+  for (const t of ['certain small rural hospitals', 'disproportionate-share hospital'])
+    for (const b of fed.filter(b => b.conditional === t)) assert.equal(b.conditionBreadth, 'narrow', b.ref);
 });

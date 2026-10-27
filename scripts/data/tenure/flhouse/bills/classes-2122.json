@@ -23,11 +23,15 @@
   ],
   "re": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING",
   "not": "AUTHORITY",
-  "conditional": "Owners of multifamily projects that provide housing to extremely-low-income, very-low-income, or low- income families"
+  "conditional": "Owners of multifamily projects that provide housing to extremely-low-income, very-low-income, or low- income families",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2021-56": {
   "re": "OUTDOOR RECREATION|CAMPGROUND|HUNTING|RANCH|PLANTATION|EQUESTRIAN",
-  "conditional": "private property owners that derive such revenue and retain the liability protection"
+  "conditional": "private property owners that derive such revenue and retain the liability protection",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only owners who open land to the public for a fee"
  },
  "2021-79": {
   "re": "AQUACULTURE|FISH FARM|HATCHERY|BASS"
@@ -52,7 +56,9 @@
    "credit-unions"
   ],
   "re": "BANK|CREDIT UNION|FINANCIAL INSTITUTION",
-  "conditional": "Financial institutions that participate in the Federally Assisted State Transmitted (FAST) Levy program"
+  "conditional": "Financial institutions that participate in the Federally Assisted State Transmitted (FAST) Levy program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2021-110": {
   "tags": [
@@ -78,7 +84,9 @@
    "waste-environment"
   ],
   "re": "WASTE|RECYCL|HAULER|SANITATION|DISPOSAL|REPUBLIC SERVICES|WASTE MANAGEMENT|WASTE PRO",
-  "conditional": "the displaced companies are assured three years"
+  "conditional": "the displaced companies are assured three years",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2021-135": {
   "tags": [
@@ -121,7 +129,9 @@
    "engineering"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD",
-  "conditional": "would no longer be required to meet certain pre-bid requirements"
+  "conditional": "would no longer be required to meet certain pre-bid requirements",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2021-197": {
   "tags": [
@@ -194,7 +204,9 @@
   ],
   "re": "UTILIT|ELECTRIC|POWER|ENERGY|CHESAPEAKE",
   "not": "COOPERATIVE|MUNICIPAL",
-  "conditional": "public electric utilities that become eligible"
+  "conditional": "public electric utilities that become eligible",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2022-90": {
   "tags": [
@@ -238,7 +250,9 @@
   ],
   "re": "CONSUMER FINANCE|LOAN|LENDING|FINANCE COMPANY|AMSCOT|CREDIT",
   "not": "CREDIT UNION|BANK",
-  "conditional": "companies with less liquid assets to become licensed"
+  "conditional": "companies with less liquid assets to become licensed",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific size band or hospital category"
  },
  "2022-138": {
   "tags": [
@@ -262,7 +276,9 @@
   ],
   "re": "AFFORDABLE|HOUSING|DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|MULTIFAMILY|APARTMENT",
   "not": "AUTHORITY",
-  "conditional": "Developers incorporating affordable housing into development projects"
+  "conditional": "Developers incorporating affordable housing into development projects",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2022-192": {
   "tags": [
@@ -276,7 +292,9 @@
    "waste-environment"
   ],
   "re": "WASTE|ENERGY FROM|RENEWABLE|COVANTA|REWORLD|RECYCL",
-  "conditional": "private companies that own a government affiliated waste-to-energy facility and qualify for a grant"
+  "conditional": "private companies that own a government affiliated waste-to-energy facility and qualify for a grant",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2022-210": {
   "tags": [
@@ -290,6 +308,8 @@
    "agriculture-other"
   ],
   "re": "ENVIRONMENTAL|WATER QUALITY|WETLAND|MITIGATION|RESTORATION|RANCH|CATTLE",
-  "conditional": "entities that establish WQEAs"
+  "conditional": "entities that establish WQEAs",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  }
 }

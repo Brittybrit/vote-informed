@@ -19,7 +19,9 @@
  "2025-35": {
   "tags": [],
   "re": "MARINA|BOAT|YACHT|MARINE MANUFACT|MARINE INDUSTR",
-  "conditional": "a Clean Marine Manufacturer under the Clean Marina Program"
+  "conditional": "a Clean Marine Manufacturer under the Clean Marina Program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only manufacturers that join the Clean Marina Program"
  },
  "2025-41": {
   "tags": [],
@@ -64,7 +66,9 @@
  "2025-115": {
   "tags": [],
   "re": "FIRE ALARM|FIRE PROTECT|FIRE SPRINK|SPRINKLER|FIRE SAFETY|ALARM",
-  "conditional": "contractors who use the simplified permitting process"
+  "conditional": "contractors who use the simplified permitting process",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2025-116": {
   "tags": [],
@@ -107,12 +111,16 @@
   ],
   "re": "FTBA|TRANSPORTATION BUILDER|ROAD|PAVING|ASPHALT|AGGREGATE|HIGHWAY|BRIDGE|SHIPBUILD|SHIPYARD",
   "not": "CRUISE|PILOT|LONGSHORE",
-  "conditional": "FDOT's contractors"
+  "conditional": "FDOT's contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding FDOT contracts"
  },
  "2025-160": {
   "tags": [],
   "re": "WARRANT",
-  "conditional": "non-publicly traded service warranty association"
+  "conditional": "non-publicly traded service warranty association",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only associations of one ownership type"
  },
  "2025-164": {
   "tags": [
@@ -121,7 +129,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "those relying on a local government to process applications"
+  "conditional": "those relying on a local government to process applications",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only those with plats in process"
  },
  "2025-190": {
   "tags": [
@@ -130,7 +140,9 @@
    "agriculture-citrus"
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
-  "conditional": "with agricultural equipment unable to be used due to hurricanes"
+  "conditional": "with agricultural equipment unable to be used due to hurricanes",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2025-199": {
   "tags": [
@@ -138,7 +150,9 @@
    "retail"
   ],
   "re": "PUBLIX|WALMART|7-ELEVEN|7 ELEVEN|CIRCLE K|WAWA|RACETRAC|SPEEDWAY|WINN-DIXIE|CONVENIENCE STORE",
-  "conditional": "the commission for lottery ticket sales"
+  "conditional": "the commission for lottery ticket sales",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only lottery retailers"
  },
  "2025-203": {
   "tags": [
@@ -151,7 +165,9 @@
    "hospitals"
   ],
   "re": "PACE|WELBE|CANCER|MOFFITT|SYLVESTER",
-  "conditional": "PACE provider to operate in a geographic service area which has an existing provider"
+  "conditional": "PACE provider to operate in a geographic service area which has an existing provider",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2025-208": {
   "tags": [
@@ -195,7 +211,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "certain qualifying infill parcels"
+  "conditional": "certain qualifying infill parcels",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only owners of specific qualifying infill parcels"
  },
  "2026-179": {
   "tags": [
@@ -250,7 +268,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "diversion of commercial residential and commercial nonresidential risks from Citizens"
+  "conditional": "diversion of commercial residential and commercial nonresidential risks from Citizens",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only insurers taking policies out of Citizens"
  },
  "2026-236": {
   "tags": [
@@ -258,12 +278,16 @@
    "nursing-homes"
   ],
   "re": "HOSPITAL|NURSING|REHAB|HEALTH SYSTEM|TENET|MOUNT SINAI|TAMPA GENERAL|HSA |SAFETY NET|HEALTH RESORT|HCA",
-  "conditional": "increasing the QIP pool percentage"
+  "conditional": "increasing the QIP pool percentage",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only nursing homes that score into the Quality Incentive Program"
  },
  "2026-103": {
   "tags": [],
   "re": "PHOSPHATE|MOSAIC",
-  "conditional": "landowners of former phosphate mines who may have a defense"
+  "conditional": "landowners of former phosphate mines who may have a defense",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only owners of former phosphate mine land"
  },
  "2026-50": {
   "tags": [],
@@ -272,12 +296,16 @@
  "2026-83": {
   "tags": [],
   "re": "ALZHEIMER",
-  "conditional": "The selected nonprofit"
+  "conditional": "The selected nonprofit",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2026-198": {
   "tags": [],
   "re": "DAY CARE|DAYCARE",
-  "conditional": "existing family day care homes"
+  "conditional": "existing family day care homes",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only Palm Beach County homes"
  },
  "2025-122": {
   "tags": [
@@ -292,7 +320,9 @@
    "health-other"
   ],
   "re": "HOSPITAL|HEALTH SYSTEM|NURSING|SENIOR LIVING|CONTINUING CARE|TENET|HCA|BAPTIST|ADVENTHEALTH|ORLANDO HEALTH|MOUNT SINAI",
-  "conditional": "assist private entities in acquiring, constructing, financing, and refinancing projects"
+  "conditional": "assist private entities in acquiring, constructing, financing, and refinancing projects",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only entities that apply for authority financing"
  },
  "2025-181": {
   "tags": [
@@ -312,7 +342,9 @@
  "2025-248": {
   "tags": [],
   "re": "EQUESTRIAN|HORSE PARK|WORLD EQUESTRIAN",
-  "conditional": "equestrian sport facilities in Marion County that meet certain conditions"
+  "conditional": "equestrian sport facilities in Marion County that meet certain conditions",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2026-63": {
   "tags": [
@@ -327,12 +359,16 @@
    "realestate-dev"
   ],
   "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|LANDLORD",
-  "conditional": "landlords who participate in the pilot program"
+  "conditional": "landlords who participate in the pilot program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2026-146": {
   "tags": [],
   "re": "REINSURANCE|REINSURER|INTERMEDIARY",
-  "conditional": "certain firms"
+  "conditional": "certain firms",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2026-157": {
   "tags": [],

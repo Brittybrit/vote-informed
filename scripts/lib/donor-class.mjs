@@ -31,7 +31,9 @@ import { readFileSync, existsSync } from 'node:fs';
 // 6. A conditional benefit (`conditional`: the analysis's own words that limit it to a subset: those who participate,
 //    qualify, apply, are eligible, are selected, take advantage of or use a program, are located in a place): a donor
 //    counts only when a record shows the donor is in that subset (`subset`: {donor key: {recordUrl, quote}}). Without
-//    one the law ties no one (Brit, Oct 27, 2026; scripts/data/industry/INSTRUCTIONS.md rule 7).
+//    one the law ties no one (Brit, Oct 27, 2026; scripts/data/industry/INSTRUCTIONS.md rule 7). Only a NARROW condition
+//    works this way; a BROAD one (`conditionBreadth: 'broad'`: a condition nearly every business in the class meets in
+//    normal operations, such as buying qualified property) counts like an unconditional benefit.
 const NOT_BUSINESS = /\b(?:ECONOMIC|BUSINESS|WORKFORCE|SOFTWARE|PRODUCT|CHILD|LEADERSHIP|PROFESSIONAL) DEVELOPMENT\b|\b(?:FOOD|BLOOD|DIAPER|MILK|EYE|TISSUE|SPERM|DATA|TIME|CLOTHING|TOY|BOOK|SEED|PIGGY|WEST|LEFT|RIVER|SOUTH|NORTH) BANKS?\b|\bSOCIAL SECURITY\b|\bBANKRUPTCY\b/g;
 const REALTY = /\bREALTORS?\b|\bREALTY\b|\bREAL ESTATE (?:BROKER(?:AGE)?|AGENT|AGENCY|SALES(?: ASSOCIATE)?|SALESPERSON|LICENSEE)S?\b|\bR\.?E\.? (?:BROKER|AGENT)S?\b|\bBROKER ASSOCIATE\b|\bSALES ASSOCIATE\b/g;
 const UNION = /\b(?:(?<!CREDIT )UNIONS?|AFL-?CIO|LABOR COUNCIL|TEAMSTERS|SEIU|IBEW|AFSCME|UNITED FACULTY|UNITED TEACHERS|TEACHERS UNION|EDUCATION ASSOCIATION|FRATERNAL ORDER OF POLICE|BENEVOLENT ASSOCIATION|PBA|FIRE ?FIGHTERS|PROFESSIONAL FIREFIGHTERS|BROTHERHOOD|LOCAL \d+|LABOR UNION)\b/;
@@ -147,7 +149,7 @@ const globalRe = new Map();
 const once = f => { const c = new Map(); return (...a) => { const k = a.join('\u0000'); if (!c.has(k)) c.set(k, f(...a)); return c.get(k); }; };
 const orgOf = once((N, O) => isOrg(N, O)), unionOf = once((N, O) => isUnion(N, O));
 function decide(K, name, occ, tags, mode) {
-  if (!Array.isArray(K) && K.conditional && !inSubset(K, name)) return false;
+  if (!Array.isArray(K) && narrowCondition(K) && !inSubset(K, name)) return false;
   const want = new Set(Array.isArray(K) ? K : (K.tags || []));
   const re = phrases(reOf(K)), nre = !Array.isArray(K) && K.not ? phrasesNot(K.not) : null;
   if (!want.size && !re) return false;
@@ -186,6 +188,9 @@ function decide(K, name, occ, tags, mode) {
   return mode === 'assume' ? 'exec' : !!execRecord(K, name, o);
 }
 
+// rule 6: a narrow condition needs a subset record; a broad one (met in normal operations) does not. A conditional class
+// without a breadth is treated as narrow.
+export const narrowCondition = K => !!(K && K.conditional && K.conditionBreadth !== 'broad');
 // rule 6: the record that shows this donor is in the subset a conditional benefit is limited to
 const inSubset = (K, name) => { const r = (K.subset || {})[donorKey(name)]; return !!(r && r.recordUrl && r.quote); };
 

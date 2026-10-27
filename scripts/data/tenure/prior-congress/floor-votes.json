@@ -150,7 +150,9 @@
      }
     }
    ],
-   "conditional": "for purposes of eligibility for VA service-disabled small business contracting goals"
+   "conditional": "for purposes of eligibility for VA service-disabled small business contracting goals",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only businesses in a specific size band or hospital category"
   },
   {
    "key": "s1635c114",
@@ -461,7 +463,9 @@
      }
     }
    ],
-   "conditional": "qualified census tracts in Puerto Rico"
+   "conditional": "qualified census tracts in Puerto Rico",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only businesses in a specific place"
   },
   {
    "key": "s1890c114",
@@ -612,7 +616,9 @@
      }
     }
    ],
-   "conditional": "certain other private sector entities that meet program requirements"
+   "conditional": "certain other private sector entities that meet program requirements",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
   },
   {
    "key": "hr22c114",
@@ -663,7 +669,9 @@
      }
     }
    ],
-   "conditional": "specified advisers of small business investment companies (SBICs)"
+   "conditional": "specified advisers of small business investment companies (SBICs)",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only businesses in a specific size band or hospital category"
   },
   {
    "key": "s1356c114",
@@ -1024,7 +1032,9 @@
      }
     }
    ],
-   "conditional": "certain small rural subsection (d) hospitals"
+   "conditional": "certain small rural subsection (d) hospitals",
+   "conditionBreadth": "narrow",
+   "conditionBreadthReason": "only businesses in a specific size band or hospital category"
   },
   {
    "key": "hr26c114",

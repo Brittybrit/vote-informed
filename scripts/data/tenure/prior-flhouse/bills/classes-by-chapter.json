@@ -14,7 +14,9 @@
  "2013-50": {
   "tags": [],
   "re": "CANCER (CENTER|INSTITUTE|CARE|SPECIALISTS|TREATMENT)|ONCOLOG|MOFFITT CANCER|SYLVESTER (COMPREHENSIVE|CANCER)",
-  "conditional": "Providers receiving the award"
+  "conditional": "Providers receiving the award",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2013-61": {
   "tags": [
@@ -23,7 +25,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|CASUALTY|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "insurers participating in the Citizens clearinghouse program"
+  "conditional": "insurers participating in the Citizens clearinghouse program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2013-66": {
   "tags": [
@@ -32,7 +36,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|CASUALTY|FCCI|DOCTORS COMPANY|MEDICAL PROTECTIVE|PROASSURANCE|FPIC|MEDICAL MALPRACTICE",
   "not": "TITLE|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "certain insurers"
+  "conditional": "certain insurers",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2013-73": {
   "tags": [],
@@ -45,7 +51,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "in certain local government jurisdictions"
+  "conditional": "in certain local government jurisdictions",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2013-82": {
   "tags": [],
@@ -73,18 +81,24 @@
   ],
   "re": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\.",
   "not": "INSURANCE|HEALTH PLAN|BEHAVIORAL HEALTH NETWORK|VETERINAR|ANIMAL|CANNABIS|CURALEAF|DENTAL PLAN|MCNA",
-  "conditional": "providers who serve this same population and are not receiving compensation or are receiving reduced compensation"
+  "conditional": "providers who serve this same population and are not receiving compensation or are receiving reduced compensation",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2013-125": {
   "tags": [],
   "re": "MUTUAL INSURANCE|MUTUAL INS|FINANCIAL GUARANTY|ASSURED GUARANTY|\\bMBIA\\b|BUILD AMERICA MUTUAL",
-  "conditional": "To the extent that mutual insurers become licensed to transact financial guaranty insurance business"
+  "conditional": "To the extent that mutual insurers become licensed to transact financial guaranty insurance business",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2013-129": {
   "tags": [],
   "re": "BANK|BANCORP|SAVINGS",
   "not": "FOOD BANK|BLOOD BANK|MITIGATION BANK",
-  "conditional": "banks and savings associations that use FHLBank letters of credit as collateral"
+  "conditional": "banks and savings associations that use FHLBank letters of credit as collateral",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2013-133": {
   "tags": [
@@ -113,7 +127,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "Some agricultural operations in particular may be able to acquire and sell credits"
+  "conditional": "Some agricultural operations in particular may be able to acquire and sell credits",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2013-147": {
   "tags": [],
@@ -137,7 +153,9 @@
  "2013-169": {
   "tags": [],
   "re": "WATER (UTILIT|SERVICE|COMPANY|SUPPLY|WORKS)|DESAL|AQUA UTILIT|UTILITIES,? INC",
-  "conditional": "under certain circumstances"
+  "conditional": "under certain circumstances",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2013-174": {
   "tags": [
@@ -204,7 +222,9 @@
    "construction"
   ],
   "re": "CONSTRUCT|CONTRACTOR|BUILDERS|PAVING|ENGINEERING",
-  "conditional": "more opportunities for the private sector to enter into contracts"
+  "conditional": "more opportunities for the private sector to enter into contracts",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2013-226": {
   "tags": [
@@ -226,7 +246,9 @@
   ],
   "re": "DENTAL|DENTIST|ORTHODONT",
   "not": "DENTAL PLAN|DENTAL INSURANCE|INSURANCE|MCNA|DELTA DENTAL",
-  "conditional": "dentists who may be able to benefit"
+  "conditional": "dentists who may be able to benefit",
+  "conditionBreadth": "broad",
+  "conditionBreadthReason": "nearly every dentist bills insurers, HMOs and PLHSOs in normal operations"
  },
  "2014-80": {
   "tags": [
@@ -235,7 +257,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|CASUALTY|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "additional private insurers offering flood insurance"
+  "conditional": "additional private insurers offering flood insurance",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only insurers that choose to enter the flood market"
  },
  "2014-91": {
   "tags": [
@@ -248,7 +272,9 @@
   "tags": [],
   "re": "CATASTROPHE MODEL|RISK MODEL|RISK MANAGEMENT SOLUTIONS|AIR WORLDWIDE|KAREN CLARK|CORELOGIC|VERISK|APPLIED RESEARCH ASSOC|IMPACT ?FORECASTING",
   "not": "ATLAS",
-  "conditional": "to participate in the processes of the methodology commission"
+  "conditional": "to participate in the processes of the methodology commission",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2014-99": {
   "tags": [],
@@ -344,12 +370,16 @@
  "2014-151": {
   "tags": [],
   "re": "BOAT RENTAL|KAYAK|CANOE|PADDLE|ECO.?TOUR|FISHING CHARTER|BOAT CHARTER|YACHT CHARTER|OUTFITTER|CONCESSION",
-  "conditional": "private parties who wish to provide goods or services"
+  "conditional": "private parties who wish to provide goods or services",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2014-157": {
   "tags": [],
   "re": "CANNABIS|MARIJUANA|TRULIEVE|CURALEAF|\\bMUV\\b|VIDACANN|SURTERRA|LIBERTY HEALTH|HACKNEY NURSERY|COSTA NURSERY|KNOX NURSERY|ALPHA FOLIAGE|CHESTNUT HILL TREE|PLANTS OF RUSKIN|SAN FELASCO|MODERN HEALTH CONCEPTS",
-  "conditional": "organizations that are approved by the DOH to become dispensing organizations"
+  "conditional": "organizations that are approved by the DOH to become dispensing organizations",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2014-167": {
   "tags": [],
@@ -414,7 +444,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "projects within the connected-city corridor"
+  "conditional": "projects within the connected-city corridor",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2015-33": {
   "tags": [
@@ -452,7 +484,9 @@
  "2015-61": {
   "tags": [],
   "re": "CHARIT|NONPROFIT|NON-PROFIT|NOT FOR PROFIT|NOT-FOR-PROFIT|UNITED WAY",
-  "conditional": "participation among previously ineligible non-profit charitable organizations"
+  "conditional": "participation among previously ineligible non-profit charitable organizations",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2015-63": {
   "tags": [
@@ -460,7 +494,9 @@
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
   "not": "FTBA|AGGREGATE",
-  "conditional": "more business being awarded to state certified contractors"
+  "conditional": "more business being awarded to state certified contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2015-64": {
   "tags": [
@@ -482,7 +518,9 @@
    "health-other"
   ],
   "re": "HOME HEALTH|HOME CARE|HOMECARE|NURSE REGISTR|NURSING SERVICES|NURSE STAFFING",
-  "conditional": "nurse registries and HHAs that operate multiple licenses within the same AHCA district"
+  "conditional": "nurse registries and HHAs that operate multiple licenses within the same AHCA district",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific size band or hospital category"
  },
  "2015-80": {
   "tags": [],
@@ -497,7 +535,9 @@
  "2015-104": {
   "tags": [],
   "re": "LITERACY",
-  "conditional": "The nonprofit organization selected by OEL"
+  "conditional": "The nonprofit organization selected by OEL",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2015-107": {
   "tags": [
@@ -512,7 +552,9 @@
   ],
   "re": "PHARMAC|DRUG STORE|WALGREEN|CVS",
   "not": "CAREMARK|EXPRESS SCRIPTS|OPTUM|PBM|BENEFIT MANAG",
-  "conditional": "Pharmacies that opt to allow"
+  "conditional": "Pharmacies that opt to allow",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2015-110": {
   "tags": [
@@ -539,7 +581,9 @@
  "2015-126": {
   "tags": [],
   "re": "ASSISTED LIVING|SENIOR LIVING|MEMORY CARE|\\bALF\\b",
-  "conditional": "Facilities with specialty licenses that meet licensure standards"
+  "conditional": "Facilities with specialty licenses that meet licensure standards",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2015-127": {
   "tags": [
@@ -563,13 +607,17 @@
  "2015-138": {
   "tags": [],
   "re": "\\bFLAGS?\\b",
-  "conditional": "that are domestically-produced and sourced"
+  "conditional": "that are domestically-produced and sourced",
+  "conditionBreadth": "broad",
+  "conditionBreadthReason": "the class is sellers of U.S.-made flags; producing or selling U.S.-made goods is their normal business"
  },
  "2015-141": {
   "tags": [],
   "re": "AGGREGATE|LIMESTONE|QUARR|MINING|\\bMINES?\\b|CEMEX|TITAN AMERICA|WHITE ROCK|VULCAN|MARTIN MARIETTA|FLORIDA ROCK|ROCK INDUSTR|ROCK PRODUCT|SAND AND GRAVEL|SAND & GRAVEL",
   "not": "HARD ROCK|SEMINOLE",
-  "conditional": "companies that mine limestone and sand in Lake Belt"
+  "conditional": "companies that mine limestone and sand in Lake Belt",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2015-143": {
   "tags": [
@@ -577,7 +625,9 @@
   ],
   "re": "RESTAURANT|FOOD|CATER|GRILL|CAFE|CONCESSION|BBQ|BARBECUE|KITCHEN|DINER|PIZZA|BURGER|TACO",
   "not": "HOTEL|RESORT|DISTRIBUT|WHOLESAL|SUPPLY|SYSCO|MCLANE",
-  "conditional": "establishments that operate at temporary food service events"
+  "conditional": "establishments that operate at temporary food service events",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2015-145": {
   "tags": [],
@@ -625,7 +675,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|CASUALTY|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "insurers who utilize the electronic delivery option"
+  "conditional": "insurers who utilize the electronic delivery option",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2015-171": {
   "tags": [],
@@ -648,7 +700,9 @@
   ],
   "re": "AGENT|AGENCY|AGENCIES|BROKER|BROWN & BROWN|INSURANCE SERVICES|INSURANCE ASSOCIATES|INSURANCE PROFESSIONAL",
   "not": "REAL ESTATE|TRAVEL|TALENT|TITLE",
-  "conditional": "agents that qualify for agent in charge designations"
+  "conditional": "agents that qualify for agent in charge designations",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2015-186": {
   "tags": [],
@@ -675,7 +729,9 @@
    "health-other"
   ],
   "re": "NURSING|SKILLED|REHAB|HEALTH CARE ASSOC|SENIOR LIVING|LONG.TERM CARE|CONTINUING CARE|RETIREMENT COMMUNIT|LIFE CARE|ASSISTED LIVING",
-  "conditional": "nursing homes that are part of corporate entities that operate a combination"
+  "conditional": "nursing homes that are part of corporate entities that operate a combination",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only nursing homes in one corporate structure"
  },
  "2016-44": {
   "tags": [
@@ -685,7 +741,9 @@
    "water-utility"
   ],
   "re": "UTILIT|ELECTRIC|POWER|ENERGY|GAS|TELECOM|AT&T|COMCAST|CHARTER|CABLE|WATER|PIPELINE|COMMUNICATIONS",
-  "conditional": "depending upon the number of eligible reimbursements for relocation made to utilities"
+  "conditional": "depending upon the number of eligible reimbursements for relocation made to utilities",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2016-53": {
   "tags": [
@@ -715,7 +773,9 @@
   ],
   "re": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER",
   "not": "ANIMAL|VETERINAR",
-  "conditional": "qualifying institutions eligible for the Statewide Medicaid Residency Program"
+  "conditional": "qualifying institutions eligible for the Statewide Medicaid Residency Program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-69": {
   "tags": [
@@ -743,7 +803,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "some farm structures used for agritourism activity"
+  "conditional": "some farm structures used for agritourism activity",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2016-86": {
   "tags": [
@@ -751,7 +813,9 @@
   ],
   "re": "RESTAURANT|FOOD|CATER|GRILL|CAFE|CONCESSION|BBQ|BARBECUE|KITCHEN|DINER|PIZZA|BURGER|TACO",
   "not": "HOTEL|RESORT|DISTRIBUT|WHOLESAL|SUPPLY|SYSCO|MCLANE",
-  "conditional": "persons who operate eating places at events hosted by a church, religious organization, or nonprofit fraternal or civic organization"
+  "conditional": "persons who operate eating places at events hosted by a church, religious organization, or nonprofit fraternal or civic organization",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only vendors at specific events"
  },
  "2016-88": {
   "tags": [
@@ -761,7 +825,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "land owners who participate in an eradication or quarantine program"
+  "conditional": "land owners who participate in an eradication or quarantine program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-89": {
   "tags": [
@@ -771,7 +837,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "Some owners of lands classified as agricultural"
+  "conditional": "Some owners of lands classified as agricultural",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2016-92": {
   "tags": [],
@@ -794,7 +862,9 @@
    "physicians"
   ],
   "re": "OBSTETR|OB.?GYN|GYNECOLOG|WOMEN.S (HEALTH|CARE)|MATERNAL|PERINATAL",
-  "conditional": "obstetrical physicians who receive this notice"
+  "conditional": "obstetrical physicians who receive this notice",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-115": {
   "tags": [
@@ -808,14 +878,18 @@
  "2016-120": {
   "tags": [],
   "re": "CULINARY|COOKING SCHOOL|CORDON BLEU|JOHNSON & WALES",
-  "conditional": "some culinary education programs may be able to generate additional revenue"
+  "conditional": "some culinary education programs may be able to generate additional revenue",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-129": {
   "tags": [
    "realestate-dev"
   ],
   "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD",
-  "conditional": "Apartment owners with communities of 100 or more apartments who have employees make minor repairs"
+  "conditional": "Apartment owners with communities of 100 or more apartments who have employees make minor repairs",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific size band or hospital category"
  },
  "2016-130": {
   "tags": [],
@@ -844,7 +918,9 @@
   ],
   "re": "PHYSICIAN|\\bM\\.?D\\b|MEDICAL|DOCTOR|SURGEON|HOSPITAL|HEALTH SYSTEM|NURSING|SKILLED|REHAB",
   "not": "ANIMAL|VETERINAR",
-  "conditional": "Physicians or institutions who use ARNPs or PAs"
+  "conditional": "Physicians or institutions who use ARNPs or PAs",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only practices that choose to employ ARNPs or PAs"
  },
  "2016-153": {
   "tags": [
@@ -852,7 +928,9 @@
    "engineering"
   ],
   "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP",
-  "conditional": "more opportunities for the private sector to enter into contracts"
+  "conditional": "more opportunities for the private sector to enter into contracts",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2016-158": {
   "tags": [],
@@ -862,7 +940,9 @@
  "2016-166": {
   "tags": [],
   "re": "VETERAN.OWNED|PERSONAL TRAIN|FITNESS|\\bGYM\\b",
-  "conditional": "majority-owned veteran businesses will qualify"
+  "conditional": "majority-owned veteran businesses will qualify",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-168": {
   "tags": [
@@ -904,7 +984,9 @@
  "2016-183": {
   "tags": [],
   "re": "NATURAL GAS|\\bCNG\\b|\\bLNG\\b|ALTERNATIVE FUEL|CLEAN ENERGY FUELS|NOPETRO|TRILLIUM",
-  "conditional": "commercial applicants, should funds be available to award additional rebates"
+  "conditional": "commercial applicants, should funds be available to award additional rebates",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-184": {
   "tags": [
@@ -913,7 +995,9 @@
   ],
   "re": "ENVIRONMENTAL|REMEDIAT|CLEANUP|CLEAN-UP|GEOLOG|SOIL|TANK",
   "not": "CONSERVATION VOTERS|CITIZENS FOR ENVIRONMENTAL|SIERRA|AUDUBON|DEFENDERS",
-  "conditional": "more rehabilitation contracts may be awarded"
+  "conditional": "more rehabilitation contracts may be awarded",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2016-190": {
   "tags": [
@@ -922,7 +1006,9 @@
   ],
   "re": "\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|LIQUOR|PACKAGE STORE|SALOON|NIGHTCLUB|GRILL|ABC FINE|TOTAL WINE",
   "not": "DISTRIBUT|WHOLESAL|BAR ASSOC",
-  "conditional": "facilities that are part of or serve the stations"
+  "conditional": "facilities that are part of or serve the stations",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses at specific stations"
  },
  "2016-195": {
   "tags": [
@@ -932,7 +1018,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|DREDG|MARINE CONSTRUCT|SEAWALL|DOCK",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "permit applicants"
+  "conditional": "permit applicants",
+  "conditionBreadth": "broad",
+  "conditionBreadthReason": "every dredge-and-fill project needs the permit, so every business in the class applies in normal operations"
  },
  "2016-200": {
   "tags": [],
@@ -961,7 +1049,9 @@
    "grocery"
   ],
   "not": "PUBLIX|WALMART|WINN-DIXIE|WINN DIXIE|SOUTHEASTERN GROCERS|KROGER|ALDI|TARGET|SPROUTS|WHOLE FOODS|TRADER JOE|COSTCO|SAM.S CLUB|BJ.S|AHOLD|FOOD LION|ALBERTSONS",
-  "conditional": "will be eligible to receive financial assistance in the form of grants and loans"
+  "conditional": "will be eligible to receive financial assistance in the form of grants and loans",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2016-224": {
   "tags": [],
@@ -979,7 +1069,9 @@
   ],
   "re": "PHYSICIAN|\\bM\\.?D\\b|DOCTOR|MEDICAL|DENTIST|PODIATR|DISPENS|LABORATOR|CLINICAL LAB",
   "not": "ANIMAL|VETERINAR",
-  "conditional": "dispensing practitioner license"
+  "conditional": "dispensing practitioner license",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2016-231": {
   "tags": [],
@@ -994,7 +1086,9 @@
  "2016-239": {
   "tags": [],
   "re": "PEDAL|MEGACYCLE|TROLLEY|AUTONOMOUS|SELF.DRIVING|TESLA|PLATOON|PELOTON TECH|BREWERY|BREWING|BREWPUB|BREW PUB|CRAFT BREW|\\bLNG\\b|NATURAL GAS FUEL",
-  "conditional": "qualifying breweries"
+  "conditional": "qualifying breweries",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2017-10": {
   "tags": [
@@ -1003,7 +1097,9 @@
   ],
   "re": "SUGAR|CRYSTALS|OKEELANTA|FANJUL|\\bCANE|EVERGLADES|BELLE GLADE|SOUTH BAY|CLEWISTON|PAHOKEE|WEDGWORTH|DUDA|HILLIARD|ROTH FARMS|FLORIDA SOD",
   "not": "SUGARMAN|LAW FIRM|EDUCATION",
-  "conditional": "Landowners within the EAA who sell their property"
+  "conditional": "Landowners within the EAA who sell their property",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2017-12": {
   "tags": [
@@ -1019,7 +1115,9 @@
   ],
   "re": "INSURANCE COMPANY|INSURANCE CO\\b|INSURANCE HOLDINGS|INSURER|UNDERWRIT|CASUALTY|MUTUAL|ASSURANCE|INDEMNITY|STATE FARM|ALLSTATE|GEICO|PROGRESSIVE|USAA|LIBERTY MUTUAL|TRAVELERS|NATIONWIDE|UNIVERSAL PROPERTY|HERITAGE|PEOPLE.S TRUST|FEDNAT|TOWER HILL|AMERICAN INTEGRITY|FCCI|FLORIDA BLUE|HUMANA",
   "not": "TITLE|AGENT|AGENCY|ADVISOR",
-  "conditional": "insurers who wish to consolidate coverage"
+  "conditional": "insurers who wish to consolidate coverage",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2017-29": {
   "tags": [
@@ -1047,7 +1145,9 @@
   ],
   "re": "DISTILL|CRAFT SPIRITS",
   "not": "DISTRIBUT|GLAZER|WHOLESAL|BACARDI|DIAGEO|PERNOD|BROWN.FORMAN|DISTILLED SPIRITS COUNCIL",
-  "conditional": "craft distilleries that sell their branded products directly to consumers from their gift shop"
+  "conditional": "craft distilleries that sell their branded products directly to consumers from their gift shop",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2017-51": {
   "tags": [],
@@ -1092,13 +1192,17 @@
  "2017-134": {
   "tags": [],
   "re": "\\bFMA\\b|\\bFOMA\\b|FLORIDA MEDICAL ASSOC|FLORIDA OSTEOPATHIC",
-  "conditional": "Professional associations that meet the qualifications to offer the 8-hour course"
+  "conditional": "Professional associations that meet the qualifications to offer the 8-hour course",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2017-137": {
   "tags": [
    "alcohol-beverage"
   ],
-  "conditional": "Craft distilleries that qualify for the craft distillery designation"
+  "conditional": "Craft distilleries that qualify for the craft distillery designation",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2017-141": {
   "tags": [
@@ -1116,7 +1220,9 @@
   ],
   "re": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\.",
   "not": "INSURANCE|HEALTH PLAN|BEHAVIORAL HEALTH NETWORK",
-  "conditional": "that have treated subscribers of an HMO that becomes insolvent"
+  "conditional": "that have treated subscribers of an HMO that becomes insolvent",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2017-144": {
   "tags": [],
@@ -1127,7 +1233,9 @@
    "electric-utility"
   ],
   "re": "UTILIT|ELECTRIC|POWER|ENERGY|COOPERATIVE|CHESAPEAKE",
-  "conditional": "to the extent that additional restitution is made to those utilities"
+  "conditional": "to the extent that additional restitution is made to those utilities",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2017-148": {
   "tags": [],
@@ -1169,7 +1277,9 @@
   ],
   "re": "INSURANCE COMPANY|INSURANCE CO\\b|INSURANCE HOLDINGS|INSURER|UNDERWRIT|CASUALTY|MUTUAL|ASSURANCE|INDEMNITY|STATE FARM|ALLSTATE|GEICO|PROGRESSIVE|USAA|LIBERTY MUTUAL|TRAVELERS|NATIONWIDE|UNIVERSAL PROPERTY|HERITAGE|PEOPLE.S TRUST|FEDNAT|TOWER HILL|AMERICAN INTEGRITY|FCCI|FLORIDA BLUE|HUMANA",
   "not": "TITLE|AGENT|AGENCY|ADVISOR",
-  "conditional": "if the insurers elect not to require preinsurance inspections"
+  "conditional": "if the insurers elect not to require preinsurance inspections",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2017-187": {
   "tags": [
@@ -1224,7 +1334,9 @@
  "2018-82": {
   "tags": [],
   "re": "PYTHON|TRAPPER|NUISANCE WILDLIFE|WILDLIFE (CONTROL|REMOVAL|SERVICES)|ANIMAL REMOVAL|INVASIVE SPECIES|IGUANA",
-  "conditional": "the entities or individuals who are awarded such contracts"
+  "conditional": "the entities or individuals who are awarded such contracts",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2018-84": {
   "tags": [
@@ -1234,7 +1346,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "Some owners of agricultural land"
+  "conditional": "Some owners of agricultural land",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2018-85": {
   "tags": [
@@ -1244,7 +1358,9 @@
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES",
   "not": "SUGARMAN|DEMOCRATIC|REPUBLICAN|LAW FIRM|STATE FARM|FARMERS INS",
-  "conditional": "young farmers, ranchers and veterans with new farming and ranch operations may benefit from the grant program"
+  "conditional": "young farmers, ranchers and veterans with new farming and ranch operations may benefit from the grant program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2018-88": {
   "tags": [
@@ -1254,7 +1370,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|DREDG|MARINE CONSTRUCT|SEAWALL|DOCK",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "Applicants seeking both an ERP and a state administered section 404 permit"
+  "conditional": "Applicants seeking both an ERP and a state administered section 404 permit",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2018-89": {
   "tags": [
@@ -1296,7 +1414,9 @@
   ],
   "re": "BREW|BEER|WINE|SPIRITS|DISTILL|LIQUOR|BEVERAGE|ANHEUSER|BACARDI|DIAGEO|MOLSON|CONSTELLATION|\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|NIGHTCLUB|SALOON|GRILL",
   "not": "DISTRIBUT|WHOLESAL|GLAZER|BAR ASSOC",
-  "conditional": "Vendors who receive free glassware"
+  "conditional": "Vendors who receive free glassware",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2018-139": {
   "tags": [],
@@ -1390,7 +1510,9 @@
  "2019-79": {
   "tags": [],
   "re": "STUDENT HOUSING|CAMPUS HOUSING|STUDENT LIVING",
-  "conditional": "a qualified nonprofit organization"
+  "conditional": "a qualified nonprofit organization",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2019-82": {
   "tags": [
@@ -1412,7 +1534,9 @@
    "construction"
   ],
   "re": "ELECTRIC",
-  "conditional": "those registered contractors that choose to take advantage of the grandfathering provision"
+  "conditional": "those registered contractors that choose to take advantage of the grandfathering provision",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2019-86": {
   "tags": [
@@ -1436,7 +1560,9 @@
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
   "not": "FTBA|AGGREGATE",
-  "conditional": "a prevailing contractor"
+  "conditional": "a prevailing contractor",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2019-99": {
   "tags": [
@@ -1446,7 +1572,9 @@
   ],
   "re": "PHARMACY|PHARMACIES|PHARMACIST|DRUG STORE|DRUGS\\b|WALGREEN|CVS|MCKESSON|CARDINAL HEALTH|AMERISOURCE|MORRIS & DICKSON|DISTRIBUT|WHOLESAL",
   "not": "CAREMARK|EXPRESS SCRIPTS|OPTUM|\\bPBM\\b|BENEFIT MANAG|CONTACT",
-  "conditional": "To the extent that such entities participate in the program"
+  "conditional": "To the extent that such entities participate in the program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2019-100": {
   "tags": [
@@ -1461,7 +1589,9 @@
    "health-other"
   ],
   "re": "PRIMARY CARE|FAMILY MEDICINE|FAMILY PRACTICE|INTERNAL MEDICINE|DIRECT PRIMARY|CONCIERGE|\\bDPC\\b",
-  "conditional": "may establish practices that use direct health care agreements"
+  "conditional": "may establish practices that use direct health care agreements",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2019-108": {
   "tags": [
@@ -1470,7 +1600,9 @@
   ],
   "re": "PROPERTY INSURANCE|INSURANCE COMPANY|INSURANCE HOLDINGS|MGA|UNDERWRIT|SURPLUS LINES|CASUALTY|FCCI",
   "not": "TITLE|DOCTORS|AGENT|ADVISOR|FOUNDATION RISK",
-  "conditional": "participating insurers"
+  "conditional": "participating insurers",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2019-109": {
   "tags": [],
@@ -1483,7 +1615,9 @@
   ],
   "re": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD",
   "not": "CAR |CAR$|AUTO|LOGISTIC|EDUCATION|DEALER",
-  "conditional": "an alternative mitigation option for projects"
+  "conditional": "an alternative mitigation option for projects",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only projects that need wetland mitigation and choose the option"
  },
  "2019-112": {
   "tags": [],
@@ -1497,7 +1631,9 @@
  "2019-132": {
   "tags": [],
   "re": "HEMP|\\bCBD\\b|CANNABI",
-  "conditional": "Some Florida farmers"
+  "conditional": "Some Florida farmers",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2019-136": {
   "tags": [
@@ -1520,7 +1656,9 @@
  "2019-149": {
   "tags": [],
   "re": "ELECTRIC (TRUCK|VEHICLE|BUS)|^TESLA|PROTERRA|NIKOLA (CORP|MOTOR)|RIVIAN|\\bBYD\\b|CITRUS HAUL|FRUIT HAUL|CANE HAUL|LIVESTOCK HAUL|AGRICULTURAL TRANSPORT|PRODUCE HAUL|TIMBER HAUL|LOG HAUL",
-  "conditional": "agricultural transporters who utilize the permitting program"
+  "conditional": "agricultural transporters who utilize the permitting program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2019-153": {
   "tags": [
@@ -1529,7 +1667,9 @@
   ],
   "re": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR",
   "not": "REAL ESTATE|REALTOR",
-  "conditional": "DOT contractors"
+  "conditional": "DOT contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2019-157": {
   "tags": [

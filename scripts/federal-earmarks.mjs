@@ -22,6 +22,7 @@
 // FEC receipts); employees' own gifts are not counted. Moody gets a U.S. Senate body with her votes.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { narrowCondition } from './lib/donor-class.mjs';
 
 const DIR = new URL('./data/federal/', import.meta.url);
 const TDIR = new URL('./data/tenure/congress/', import.meta.url);
@@ -169,8 +170,9 @@ export function floorVotes(chamber, members) {
     if (v.chamber !== chamber) continue;
     const cls = fv.classes[bill.class];
     // a conditional benefit (bill.conditional: the analysis's words limiting it to a subset, such as "certain small rural
-    // hospitals") ties no PAC: no record here shows a PAC's company is in that subset (scripts/data/industry/INSTRUCTIONS.md, rule 7)
-    const gifts = bill.conditional ? [] : members.filter(m => v.members[m.key] != null).flatMap(m => classGifts(cls, m, m.cmte, agg));
+    // hospitals") ties no PAC: no record here shows a PAC's company is in that subset (scripts/data/industry/INSTRUCTIONS.md, rule 7).
+    // A broad condition (met in normal operations, such as buying "qualified property") counts like no condition.
+    const gifts = narrowCondition(bill) ? [] : members.filter(m => v.members[m.key] != null).flatMap(m => classGifts(cls, m, m.cmte, agg));
     const links = [{ t: 'vote', url: voteUrl(v) }, { t: bill.quote.t, url: bill.quote.url }];
     if (bill.quote.url2) links.push({ t: 'crs', url: bill.quote.url2 });
     links.push({ t: 'bill', url: bill.bill });

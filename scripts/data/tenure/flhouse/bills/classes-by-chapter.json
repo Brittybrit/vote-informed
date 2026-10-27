@@ -39,17 +39,23 @@
    "alcohol-beverage"
   ],
   "re": "RESTAURANT|STEAKHOUSE|TAVERN|BAR & GRILL|BAR AND GRILL|BISTRO|HOSPITALITY",
-  "conditional": "may allow more restaurants to obtain an SFS license"
+  "conditional": "may allow more restaurants to obtain an SFS license",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2023-118": {
   "tags": [],
   "re": "MOTORCYCLE|RIDER EDUCATION|RIDER TRAINING",
-  "conditional": "the selected organization"
+  "conditional": "the selected organization",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-127": {
   "tags": [],
   "re": "BULLION|COIN|GOLD|PRECIOUS METAL|SECONDHAND|PAWN|JEWEL",
-  "conditional": "Secondhand dealers who purchase bullion"
+  "conditional": "Secondhand dealers who purchase bullion",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only dealers who buy one product line (bullion)"
  },
  "2023-134": {
   "tags": [
@@ -72,7 +78,9 @@
   "tags": [],
   "re": "PROPANE|LP GAS|LIQUEFIED PETROLEUM|GAS STATION|PETROLEUM|FUEL|SERVICE STATION|CONVENIENCE STORE|RACETRAC|WAWA|CIRCLE K|7-ELEVEN|SUNOCO|SHELL |MOBIL",
   "not": "SHELL CONTRACT",
-  "conditional": "certain LP gas licensees"
+  "conditional": "certain LP gas licensees",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2023-157": {
   "tags": [],
@@ -81,7 +89,9 @@
  "2023-162": {
   "tags": [],
   "re": "VETERAN.*(SERVICE|CARE|HOME|NURSING)|VETERANS HOME",
-  "conditional": "Qualifying private contractors"
+  "conditional": "Qualifying private contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2023-169": {
   "tags": [
@@ -107,7 +117,9 @@
  "2023-180": {
   "tags": [],
   "re": "SYNAGOGUE|TEMPLE|CHURCH|MOSQUE|JEWISH|CONGREGATION|FEDERATION|CHABAD|ISLAMIC CENTER",
-  "conditional": "which meet the application criteria may be eligible to receive a grant"
+  "conditional": "which meet the application criteria may be eligible to receive a grant",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-186": {
   "tags": [
@@ -127,7 +139,9 @@
  "2023-205": {
   "tags": [],
   "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND",
-  "conditional": "each offering that does not exceed the amount provided in s. 3(b)"
+  "conditional": "each offering that does not exceed the amount provided in s. 3(b)",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific size band or hospital category"
  },
  "2023-206": {
   "tags": [],
@@ -138,7 +152,9 @@
    "construction"
   ],
   "re": "ELECTRIC",
-  "conditional": "those registered electrical contractors"
+  "conditional": "those registered electrical contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2023-219": {
   "tags": [],
@@ -159,7 +175,9 @@
  "2023-225": {
   "tags": [],
   "re": "MONITORING|ELECTRONIC MONITOR|BI INC|SUPERCOM|SECURUS|ATTENTI|SENTINEL|BAIL BOND",
-  "conditional": "any contracted company providing such services"
+  "conditional": "any contracted company providing such services",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2023-226": {
   "tags": [
@@ -183,14 +201,18 @@
  "2023-249": {
   "tags": [],
   "re": "DAY CARE|DAYCARE|CHILD CARE",
-  "conditional": "select applicants"
+  "conditional": "select applicants",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-250": {
   "tags": [
    "nursing-homes"
   ],
   "re": "NURSING|SKILLED|REHAB|HEALTH CARE ASSOC|SENIOR LIVING|LONG-TERM CARE|LONG TERM CARE",
-  "conditional": "nursing homes that are able to utilize QMAs"
+  "conditional": "nursing homes that are able to utilize QMAs",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-269": {
   "tags": [
@@ -199,12 +221,16 @@
   ],
   "re": "GULFSTREAM|BESTBET|PARI|CASINO|HIALEAH PARK|MAGIC CITY|ISLE|CALDER|DANIA|THOROUGHBRED|HARNESS|JAI|CAESARS|DOWNS|TRACK|PCI GAMING|CARDROOM",
   "not": "SEMINOLE|MICCOSUKEE|VGW",
-  "conditional": "permitholders authorized to conduct pari-mutuel wagering who wish to sell, transfer, or assign"
+  "conditional": "permitholders authorized to conduct pari-mutuel wagering who wish to sell, transfer, or assign",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-276": {
   "tags": [],
   "re": "OPERATION NEW HOPE",
-  "conditional": "To the extent the bill allows Operation New Hope to be eligible for additional funding"
+  "conditional": "To the extent the bill allows Operation New Hope to be eligible for additional funding",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-288": {
   "tags": [
@@ -216,12 +242,16 @@
   "tags": [],
   "re": "UTILIT|WATER|WASTEWATER|SEWER",
   "not": "WATER MANAGEMENT|DISTRICT",
-  "conditional": "eligible utility systems"
+  "conditional": "eligible utility systems",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2023-292": {
   "tags": [],
   "re": "CANNABIS|MARIJUANA|MEDICAL CANNABIS|TRULIEVE|CURALEAF|MUV|FLUENT|VIDACANN|PLANET 13|SURTERRA|LIBERTY HEALTH|CULTIVAT",
-  "conditional": "applicants who obtain a license"
+  "conditional": "applicants who obtain a license",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2023-294": {
   "tags": [
@@ -234,7 +264,9 @@
    "realestate-dev"
   ],
   "re": "PROPERTY MANAGEMENT|APARTMENT|RENTAL|MULTIFAMILY|MULTI-FAMILY|LANDLORD",
-  "conditional": "If it is determined that certain apartment buildings are exempt"
+  "conditional": "If it is determined that certain apartment buildings are exempt",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2023-304": {
   "tags": [
@@ -249,20 +281,26 @@
    "agriculture-citrus"
   ],
   "re": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES|TIMBER|FOREST",
-  "conditional": "agricultural producers affected by Hurricane Idalia"
+  "conditional": "agricultural producers affected by Hurricane Idalia",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2023-352": {
   "tags": [],
   "re": "SECURITY|SYNAGOGUE|TEMPLE|JEWISH|CONGREGATION|FEDERATION|CHABAD|SCHOOL",
   "not": "SOCIAL SECURITY",
-  "conditional": "Certain eligible facilities and their contractors"
+  "conditional": "Certain eligible facilities and their contractors",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-12": {
   "tags": [
    "hospitals"
   ],
   "re": "HOSPITAL|HEALTH SYSTEM|BEHAVIORAL|PSYCHIATR|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|UF HEALTH|MOUNT SINAI",
-  "conditional": "each designated hospital"
+  "conditional": "each designated hospital",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only hospitals the state designates"
  },
  "2024-15": {
   "tags": [
@@ -270,7 +308,9 @@
    "health-other"
   ],
   "re": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE",
-  "conditional": "health care practitioners who are able to participate in FRAME or the DSLR Program"
+  "conditional": "health care practitioners who are able to participate in FRAME or the DSLR Program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only practitioners in the FRAME or DSLR program"
  },
  "2024-25": {
   "tags": [
@@ -278,7 +318,9 @@
    "grocery"
   ],
   "re": "RESTAURANT|RETAIL|GROCERY|PUBLIX|HOSPITALITY|THEME PARK|DISNEY|UNIVERSAL|FAST FOOD|MCDONALD|CHICK-FIL|BURGER",
-  "conditional": "certain employers"
+  "conditional": "certain employers",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "the analysis limits it to some members of the class without saying which"
  },
  "2024-28": {
   "tags": [
@@ -314,20 +356,26 @@
    "grocery"
   ],
   "re": "RETAIL|PUBLIX|WALMART|TARGET|HOME DEPOT|LOWE|CVS|WALGREEN|MERCHANT|STORE",
-  "conditional": "merchants who lose money from organized retail theft"
+  "conditional": "merchants who lose money from organized retail theft",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses hit by a specific event"
  },
  "2024-76": {
   "tags": [
    "aerospace"
   ],
-  "conditional": "located within the newly designated spaceport territory"
+  "conditional": "located within the newly designated spaceport territory",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific place"
  },
  "2024-80": {
   "tags": [
    "construction"
   ],
   "re": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING",
-  "conditional": "businesses that contract with local governments"
+  "conditional": "businesses that contract with local governments",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2024-81": {
   "tags": [
@@ -341,7 +389,9 @@
    "telecom"
   ],
   "re": "COMCAST|CHARTER|SPECTRUM|AT&T|AT & T|VERIZON|T-MOBILE|LUMEN|FRONTIER|CABLE|BROADBAND|TELECOM|COMMUNICATIONS",
-  "conditional": "for a mobile phone service provider to obtain ETC status for the Lifeline program"
+  "conditional": "for a mobile phone service provider to obtain ETC status for the Lifeline program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-96": {
   "tags": [
@@ -349,7 +399,9 @@
    "engineering"
   ],
   "re": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP",
-  "conditional": "contracting with RPEs through such means"
+  "conditional": "contracting with RPEs through such means",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2024-98": {
   "tags": [
@@ -369,14 +421,18 @@
    "affordable-housing"
   ],
   "re": "HABITAT|HOUSING|NEIGHBORHOOD|COMMUNITY DEVELOP|LOAN FUND",
-  "conditional": "Entities and employees of entities that meet the criteria for the proposed exemption"
+  "conditional": "Entities and employees of entities that meet the criteria for the proposed exemption",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only entities that meet the exemption criteria"
  },
  "2024-144": {
   "tags": [
    "realestate-dev"
   ],
   "re": "MITIGATION|WETLAND|ENVIRONMENTAL|ECOSYSTEM|CONSERVATION BANK",
-  "conditional": "applicants participating in the expanded water quality enhancement area (WQEA) credit program"
+  "conditional": "applicants participating in the expanded water quality enhancement area (WQEA) credit program",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-147": {
   "tags": [],
@@ -391,28 +447,36 @@
  "2024-168": {
   "tags": [],
   "re": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND",
-  "conditional": "reduce costs of conducting an exempt offering"
+  "conditional": "reduce costs of conducting an exempt offering",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only issuers using one securities exemption"
  },
  "2024-172": {
   "tags": [
    "insurance-other"
   ],
   "re": "RISK RETENTION|CAPTIVE|RRG",
-  "conditional": "businesses that save money by receiving coverage from the RRGs of which they are a member"
+  "conditional": "businesses that save money by receiving coverage from the RRGs of which they are a member",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-178": {
   "tags": [
    "construction"
   ],
   "re": "ASBESTOS|ABATEMENT|ENVIRONMENTAL",
-  "conditional": "reduce the cost to applicants"
+  "conditional": "reduce the cost to applicants",
+  "conditionBreadth": "broad",
+  "conditionBreadthReason": "every asbestos abatement business must hold the license, so every one applies in normal operations"
  },
  "2024-180": {
   "tags": [
    "engineering"
   ],
   "re": "ENGINEER|WATER|WASTEWATER|UTILIT|ENVIRONMENTAL CONSULT",
-  "conditional": "businesses which facilitate the preparation of reuse feasibility studies"
+  "conditional": "businesses which facilitate the preparation of reuse feasibility studies",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-190": {
   "tags": [],
@@ -429,19 +493,25 @@
    "health-other"
   ],
   "re": "DENTAL|DENTIST|ORTHODONT",
-  "conditional": "if they opt out of the payment of claims by credit card"
+  "conditional": "if they opt out of the payment of claims by credit card",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-199": {
   "tags": [],
   "re": "BANK|BANCORP|SAVINGS",
-  "conditional": "banking institutions that are not chartered or headquartered in Florida"
+  "conditional": "banking institutions that are not chartered or headquartered in Florida",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only banks chartered outside Florida"
  },
  "2024-201": {
   "tags": [
    "hospitals"
   ],
   "re": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER",
-  "conditional": "rural hospitals that convert to rural emergency hospitals"
+  "conditional": "rural hospitals that convert to rural emergency hospitals",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses that join, apply to, are selected for or opt into a program or option"
  },
  "2024-204": {
   "tags": [
@@ -468,7 +538,9 @@
    "physicians"
   ],
   "re": "PHYSICIAN|MEDICAL|ORTHOPED|ORTHOPAED|CARDIOLOG|ONCOLOG",
-  "conditional": "Authorized medical specialist providers"
+  "conditional": "Authorized medical specialist providers",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only providers the state authorizes as medical specialists"
  },
  "2024-212": {
   "tags": [
@@ -476,7 +548,9 @@
   ],
   "re": "CONTRACTOR|CONSTRUCTION|BUILDER",
   "not": "FTBA|AGGREGATE",
-  "conditional": "those contractors who chose registration in a local community"
+  "conditional": "those contractors who chose registration in a local community",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding a specific license tier or registration"
  },
  "2024-218": {
   "tags": [
@@ -508,7 +582,9 @@
   ],
   "re": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION",
   "not": "FTBA",
-  "conditional": "A private contractor that use iron or steel products that are produced in the United States"
+  "conditional": "A private contractor that use iron or steel products that are produced in the United States",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2024-270": {
   "tags": [],
@@ -519,12 +595,16 @@
    "engineering"
   ],
   "re": "ENGINEER|INSPECT",
-  "conditional": "a professional firm shielded by sovereign immunity protections"
+  "conditional": "a professional firm shielded by sovereign immunity protections",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses holding or winning a specific government contract"
  },
  "2024-276": {
   "tags": [],
   "re": "CONSUMER FINANCE|CONSUMER LOAN|INSTALLMENT LOAN|PERSONAL LOAN|CONSUMER LEND|TITLE LOAN|PAYDAY|ONEMAIN|WORLD ACCEPTANCE|REGIONAL MANAGEMENT|AMSCOT",
-  "conditional": "Applicants will no longer be required to pay a $200 background investigation fee for each additional location"
+  "conditional": "Applicants will no longer be required to pay a $200 background investigation fee for each additional location",
+  "conditionBreadth": "narrow",
+  "conditionBreadthReason": "only businesses in a specific size band or hospital category"
  },
  "2022-272": {
   "tags": [

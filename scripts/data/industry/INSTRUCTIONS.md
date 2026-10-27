@@ -51,6 +51,17 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
    donor is in that subset: `subset: {donor key: {recordUrl, quote}}` on the class. No record, the law ties no one.
    Federal laws: `conditional` on the bill in the floor-votes files; such a law ties no PAC. A qualifier that only
    describes the whole business ("companies that manufacture buoys", "craft brewers, who may pay less") is not one.
+   **Narrow or broad** (Brit, Oct 27, 2026). Every conditional class carries `conditionBreadth` and a one-line
+   `conditionBreadthReason`. The test: would nearly every business in the class meet the condition just by operating
+   normally? If yes, the condition is BROAD and the law counts like an unconditional benefit (no subset record needed):
+   buying equipment or "qualified property" (H.R. 1, 2025 expensing), producing goods in the U.S. ("qualified
+   production activities income", 2004 manufacturing deduction), holding the license every business in the trade must
+   hold, applying for the permit every project needs. If no, it is NARROW and needs the subset record above: joining
+   or applying to a program, being eligible, selected or awarded, a specific place, a size band or hospital category, a
+   specific license tier, a specific government contract, a one-time event (SB 7016 FRAME/DSLR participants, "certain
+   small rural hospitals", "disproportionate-share hospital", lottery retailers, "FDOT's contractors", Citizens
+   takeout insurers). A conditional class with no breadth is treated as narrow. Code: `narrowCondition` in
+   `scripts/lib/donor-class.mjs`.
 
 8. **The class names only what the analysis names** (Brit, Oct 27, 2026). Every term in `re` must be a kind of business
    the quoted analysis names, or a company that is one. A neighbouring trade does not count: HB 619 (2024) helps a
