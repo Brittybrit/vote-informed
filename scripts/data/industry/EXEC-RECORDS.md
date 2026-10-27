@@ -74,6 +74,11 @@ address equal to the gift address. Eight other names had SEC filings that did no
 
 ## Sunbiz pass (browser, same origin)
 
+Result (Oct 27, 2026): all 39 donors on the worklist searched; 0 tied. Most Sunbiz entries list the person only at a
+company address, or at the gift address only for a nonprofit or a company whose business the record does not state. The
+reason for each is in the `sunbiz_note` column of `exec-sunbiz-search.tsv`.
+
+
 search.sunbiz.org sits behind a Cloudflare challenge, so it is read in a browser tab (Claude in Chrome or the built-in
 browser), with `fetch` from a page already on search.sunbiz.org.
 
