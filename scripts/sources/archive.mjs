@@ -1,4 +1,4 @@
-// Archives source documents to Cloudflare R2 (bucket ballot305-sources): raw file at raw/<id>.<ext>, extracted text at
+// Archives source documents to Cloudflare R2 (bucket wethepeople305-sources): raw file at raw/<id>.<ext>, extracted text at
 // text/<id>.txt, and records the result in scripts/data/sources/catalog.jsonl. Runs nightly in GitHub Actions
 // (.github/workflows/archive-sources.yml); also runs locally.
 //

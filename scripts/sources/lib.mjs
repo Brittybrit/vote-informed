@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, existsSync, renameSync } from 'node:fs';
 export const ROOT = new URL('../../', import.meta.url).pathname;
 export const CATALOG = 'scripts/data/sources/catalog.jsonl';
 export const INBOX = 'scripts/data/sources/inbox/';
-export const BUCKET = 'ballot305-sources';
+export const BUCKET = 'wethepeople305-sources';
 // The interim text archive saved before the research scratch area was cleared (branch sources-archive).
 export const ARCHIVE_PREFIX = 'sources-archive:scratch-text.tar.xz:';
 

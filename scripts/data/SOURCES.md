@@ -33,7 +33,7 @@ scripts/data/sources/inbox/<id>.json    {"url": ..., "title": ..., "people": [pi
   extracted text already in the repo (or in the interim tarball on branch `sources-archive`), and whether it can
   be fetched by script.
 - The **Archive sources** GitHub Action (`.github/workflows/archive-sources.yml`, nightly and on demand) uploads the
-  inbox to the R2 bucket `ballot305-sources`, then deletes the inbox files and commits the catalog. It also
+  inbox to the R2 bucket `wethepeople305-sources`, then deletes the inbox files and commits the catalog. It also
   downloads every fetchable document not yet stored (politely: 2 s or more between requests to a host, robots.txt
   honored), extracts text (pdftotext, OCR with ocrmypdf when a PDF has no text layer, first 60 pages) and stores
   `raw/<id>.<ext>` and `text/<id>.txt`.

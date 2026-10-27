@@ -1,5 +1,5 @@
 name: Archive sources
-# Stores every source document the research cites in Cloudflare R2 (bucket ballot305-sources): raw/<id>.<ext> and
+# Stores every source document the research cites in Cloudflare R2 (bucket wethepeople305-sources): raw/<id>.<ext> and
 # text/<id>.txt, then commits the updated catalog (scripts/data/sources/catalog.jsonl). See scripts/data/SOURCES.md.
 # Needs repository secrets CLOUDFLARE_API_TOKEN (with Account > Workers R2 Storage > Edit) and CLOUDFLARE_ACCOUNT_ID.
 # Without them the job exits cleanly with a notice.
