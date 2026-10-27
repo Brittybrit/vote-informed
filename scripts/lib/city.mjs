@@ -1,6 +1,7 @@
 // Shared helpers for the city action lists: name keys and each on-ballot member's donors.
 // Used by scripts/city-actions.mjs, scripts/city-enrich.mjs and scripts/city-firm-gifts.mjs.
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { cancelRefunds } from './refunds.mjs';
 
 const root = new URL('../../', import.meta.url);
 export const P = p => new URL(p, root);
@@ -24,7 +25,12 @@ export const CITY = { aventura: 'Aventura', nmb: 'North Miami Beach', northmiami
 
 // Donors for each on-ballot member: VoterFocus exports in scripts/data/city/<slug>/<acct>.csv, else the
 // hand-typed reports in public/data/city-reports.json (no occupation there; marked hand: true).
-export function donorsFor(slug, B, ballotNames = {}) {
+// A refund (negative contribution row) cancels the latest earlier gift of the same amount from the same donor to
+// the same account (scripts/lib/refunds.mjs); neither is returned.
+export function donorsFor(slug, B, ballotNames = {}) { return donorRows(slug, B, ballotNames).live; }
+// The gifts a refund cancelled, so a list built before the refund was read can take them off (scripts/city-firm-gifts.mjs)
+export function refundedFor(slug, B, ballotNames = {}) { return donorRows(slug, B, ballotNames).refunded; }
+export function donorRows(slug, B, ballotNames = {}) {
   const out = [];
   const dir = `scripts/data/city/${slug}/`;
   const files = existsSync(P(dir)) ? readdirSync(P(dir)) : [];
@@ -36,7 +42,7 @@ export function donorsFor(slug, B, ballotNames = {}) {
       if (ix('Cont/Exp') < 0) continue;
       for (const r of rows) {
         if (r[ix('Cont/Exp')] !== 'C' || r[ix('Amend. code')] === 'D') continue;
-        const amt = Number(r[ix('amount')]); if (!(amt > 0)) continue;
+        const amt = Number(r[ix('amount')]); if (!amt) continue;
         out.push({ to: key, acct, donor: r[ix('name')].replace(/\s+/g, ' ').trim(), amount: amt, date: r[ix('item date')], addr: r[ix('address 1')], occ: r[ix('occupation')] || '' });
       }
     }
@@ -48,10 +54,10 @@ export function donorsFor(slug, B, ballotNames = {}) {
     if (out.some(g => g.to === key) || !reports) continue;
     const m = B.members.find(x => x.key === key) || {};
     const c = reports.candidates.find(x => x.name === (ballotNames[key] || m.name));
-    for (const r of (c && c.reports) || []) for (const x of r.rows) if (x[2] !== 'S' && !x[4] && x[3] > 0)
+    for (const r of (c && c.reports) || []) for (const x of r.rows) if (x[2] !== 'S' && !x[4] && x[3])
       out.push({ to: key, acct: ob.accounts[0], donor: String(x[1]).replace(/\s+/g, ' ').trim(), amount: x[3], date: x[0], addr: '', occ: '', hand: true });
   }
-  return out;
+  return cancelRefunds(out, dkey);
 }
 
 // Party gifts: a donor whose name is one of the action's parties, given to a member with a vote on it.

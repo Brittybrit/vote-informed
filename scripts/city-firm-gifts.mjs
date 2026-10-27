@@ -6,7 +6,8 @@
 // which carry no occupation, so those are name matches and say so. Idempotent.
 // Run: node scripts/city-firm-gifts.mjs && node scripts/money-summary.mjs
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { donorsFor } from './lib/city.mjs';
+import { donorRows } from './lib/city.mjs';
+import { cancelRefunds } from './lib/refunds.mjs';
 
 const root = new URL('../', import.meta.url);
 const P = p => new URL(p, root);
@@ -50,7 +51,7 @@ const FIRMS = J('scripts/data/state/lobbyfirms/firms.json').firms; for (const f 
 // Donors per body
 const vf = (file, to, acct) => table(readFileSync(P(file), 'utf8')).filter(r => r['Cont/Exp'] === 'C').map(r => ({ to, acct, date: r['item date'], amount: +r.amount, donor: r.name.replace(/\s+/g, ' ').trim(), addr: r['address 1'], occ: (r.occupation || '').replace(/<br>/g, ' '), typ: r['cont. type'] }));
 const reports = J('public/data/city-reports.json').cities;
-const hand = (city, cand, to, acct) => { const c = reports.find(x => x.city === city).candidates.find(x => x.name === cand); return (c.reports || []).flatMap(r => r.rows.filter(x => x[2] !== 'S' && !x[4]).map(x => ({ to, acct, date: x[0], amount: x[3], donor: x[1], addr: '', occ: '', typ: x[2], hand: true }))); };
+const hand = (city, cand, to, acct) => { const c = reports.find(x => x.city === city).candidates.find(x => x.name === cand); return (c.reports || []).flatMap(r => r.rows.filter(x => x[2] !== 'S' && !x[4] && x[3]).map(x => ({ to, acct, date: x[0], amount: x[3], donor: x[1], addr: '', occ: '', typ: x[2], hand: true }))); };
 const DON = {
   // every report export for each account (<acct>.csv for this cycle, <acct>_<year>.csv for earlier races)
   coralgables: [...['lago', 'lago_2021', 'lago_2023', 'lago_2025'].flatMap(f => vf(`scripts/data/city/coralgables/${f}.csv`, 'Lago', 'lago')), ...['castro', 'castro_2023'].flatMap(f => vf(`scripts/data/city/coralgables/${f}.csv`, 'Castro', 'castro'))],
@@ -58,10 +59,15 @@ const DON = {
   aventura: hand('Aventura', 'Howard S. Weinberg', 'Weinberg', 'weinberg'),
   nmb: [...hand('North Miami Beach', 'Jay R. Chernoff', 'Chernoff', 'chernoff'), ...hand('North Miami Beach', 'Phyllis Smith', 'Smith', 'smith')],
 };
-// Every other city list: its VoterFocus exports or hand-typed reports (scripts/lib/city.mjs)
+// A refund (negative row) cancels the latest earlier gift of the same amount from the same donor to the same
+// account; both drop out, and a card that already shows the cancelled gift loses it below (scripts/lib/refunds.mjs)
+const REFUNDED = {};
+for (const k in DON) { const { live, refunded } = cancelRefunds(DON[k], norm); DON[k] = live; REFUNDED[k] = refunded; }
+// Every other city list: its VoterFocus exports or hand-typed reports (scripts/lib/city.mjs, refunds already applied)
 for (const B of d.bodies) if (!DON[B.key] && B.universe && B.universe.built === 'actions' && existsSync(P(`scripts/data/city/${B.key}/actions.json`))) {
   const BJ = existsSync(P(`scripts/data/city/${B.key}/body.json`)) ? J(`scripts/data/city/${B.key}/body.json`) : {};
-  DON[B.key] = donorsFor(B.key, B, BJ.ballotNames || {}).map(r => ({ ...r, typ: '' }));
+  const { live, refunded } = donorRows(B.key, B, BJ.ballotNames || {});
+  DON[B.key] = live.map(r => ({ ...r, typ: '' })); REFUNDED[B.key] = refunded;
 }
 // Lobbyists each city's own registry or record names with their firm (scripts/data/city/<slug>/lobbyists.json)
 for (const B of d.bodies) if (existsSync(P(`scripts/data/city/${B.key}/lobbyists.json`)))
@@ -76,7 +82,21 @@ const NOTE = (who, src, firm, hand, occ) => ({
   es: `${who}, listado en ${firm} en el registro de cabilderos de ${src === 'Legislature' ? 'la Legislatura' : src === 'county' ? 'el condado' : src}` + (hand ? '; coincidencia solo por nombre, el reporte no indica ocupación ni dirección' : `; el reporte indica la ocupación “${occ}”`),
   ht: `${who}, nan lis ${firm} nan rejis lobiyis ${src === 'Legislature' ? 'Lejislati a' : src === 'county' ? 'konte a' : src}` + (hand ? '; koresponn sou non sèlman, rapò a pa bay okipasyon ni adrès' : `; rapò a di okipasyon an se “${occ}”`) });
 
-let added = 0, total = 0, removed = 0; const log = []; const nameOnly = [];
+let added = 0, total = 0, removed = 0, refundedOff = 0, refundedAmt = 0; const log = []; const nameOnly = [];
+// Gifts a refund cancelled come off every card of that body, whatever matched them (party, lobbyist, firm),
+// unless another live row with the same donor, amount and date still backs the gift
+const rKey = g => [g.to, g.acct, norm(g.donor), Number(g.amount), g.date].join('|');
+for (const B of d.bodies) {
+  const gone = new Map(); for (const r of REFUNDED[B.key] || []) gone.set(rKey(r), (gone.get(rKey(r)) || 0) + 1);
+  for (const r of DON[B.key] || []) if (gone.has(rKey(r))) gone.set(rKey(r), gone.get(rKey(r)) - 1);
+  for (const [k, n] of gone) if (n <= 0) gone.delete(k);
+  if (!gone.size) continue;
+  for (const a of B.actions) {
+    const n0 = a.gifts.length;
+    a.gifts = a.gifts.filter(g => { if (!gone.has(rKey(g))) return true; refundedAmt += Number(g.amount); log.push(`${B.key} ${a.id}: refunded, taken off: ${g.donor} $${g.amount} ${g.date} ${g.to}/${g.acct} (${g.kind})`); return false; });
+    refundedOff += n0 - a.gifts.length;
+  }
+}
 // A lobbyist's own gift counts only when the report's occupation (or address) confirms it is the lobbyist; a
 // name-only match from a hand-typed report is listed in scripts/data/city/lobbyist-name-only.txt for review.
 for (const B of d.bodies) {
@@ -109,4 +129,4 @@ for (const B of d.bodies) {
 }
 writeFileSync(P('public/data/decisions.json'), JSON.stringify(d, null, 1) + '\n');
 writeFileSync(P('scripts/data/city/lobbyist-name-only.txt'), [...new Set(nameOnly)].join('\n') + '\n');
-console.log(log.join('\n')); console.log(`removed ${removed} gifts no longer backed by a lobbyist on the card`); console.log(`added ${added} gifts, $${total.toLocaleString()}`);
+console.log(log.join('\n')); console.log(`removed ${removed} gifts no longer backed by a lobbyist on the card`); console.log(`removed ${refundedOff} card gifts a refund cancelled, $${refundedAmt.toLocaleString()}`); console.log(`added ${added} gifts, $${total.toLocaleString()}`);
