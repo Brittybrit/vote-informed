@@ -18,12 +18,17 @@ test('a donor share only where that office’s reports were read; otherwise a re
   }
 });
 
-test('the share counts only yes or no votes, and ties need a gift', () => {
+test('the share counts only yes or no votes, and ties need a gift and a yes vote (or an action taken)', () => {
   for (const p of all) for (const o of p.offices) {
     if (!o.share || o.kind === 'leg') continue;
     const cast = o.actions.filter(a => a.v === 'yes' || a.v === 'no' || a.v === 'acted');
     assert.equal(o.share.n, cast.length, p.pid);
-    assert.equal(o.share.tied, cast.filter(a => a.g.length).length, p.pid);
+    const favor = cast.filter(a => a.g.length && (a.v === 'yes' || a.v === 'acted'));
+    assert.equal(o.share.tied, favor.length, p.pid);
+    // money and donors only from in-favor actions (Brit, Oct 27, 2026)
+    const m = new Map(); for (const a of favor) for (const g of a.g) m.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
+    assert.equal(o.share.money, [...m.values()].reduce((s, x) => s + x, 0), p.pid);
+    if (o.share.against) for (const k of ['votes', 'money', 'donors']) assert.ok(o.share.against[k] > 0, p.pid + ' against.' + k);
   }
 });
 
@@ -44,7 +49,10 @@ test('earlier legislative seats: a share only when every item could be checked, 
     const L = o.laws, Q = o.requests;
     const cast = L.list.filter(x => x.v === 'yes' || x.v === 'no');
     assert.equal(L.cast, cast.length, p.pid);
-    if (L.share) { assert.equal(L.noClass, 0, p.pid); assert.equal(L.share.n, cast.length, p.pid); assert.equal(L.share.tied, cast.filter(x => x.g.length).length, p.pid); }
+    if (L.share) { assert.equal(L.noClass, 0, p.pid); assert.equal(L.share.n, cast.length, p.pid); assert.equal(L.share.tied, cast.filter(x => x.g.length && x.v === 'yes').length, p.pid); }
+    // money: requests and laws voted yes on only
+    const m = new Map(); for (const x of [...Q.list, ...cast.filter(x => x.v === 'yes')]) for (const g of x.g) m.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
+    assert.equal(o.money, Math.round([...m.values()].reduce((s, x) => s + x, 0)), p.pid + ' money');
     if (Q.share) { assert.equal(Q.unread, 0, p.pid); assert.equal(Q.share.n, Q.list.length, p.pid); }
     for (const x of L.list) if (!x.cls) assert.equal(x.g.length, 0, p.pid + ' gifts on a law with no donor class');
     for (const x of Q.list) if (!x.read) assert.equal(x.g.length, 0, p.pid + ' gifts on an unread request');

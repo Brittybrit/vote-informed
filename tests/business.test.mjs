@@ -34,14 +34,19 @@ test('curated aliases join names that differ by more than suffixes', () => {
   assert.ok(!sameEntity('Aventura Beach', 'Aventura Beach Associates', ix));
 });
 
-test('a tie to an official action counts only when a vote was cast', () => {
+test('a tie to an official action counts only when it went the business\'s way (yes, requested or acted)', () => {
   assert.ok(voteCounts({ kind: 'vote', candidateVote: 'yes' }));
-  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'no' }));
+  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'Yes' }));
+  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'requested' }));
+  assert.ok(voteCounts({ kind: 'vote', candidateVote: 'acted' }));
+  // a no vote went against the business: not a tie (Brit, Oct 27, 2026)
+  assert.ok(!voteCounts({ kind: 'vote', candidateVote: 'no' }));
+  assert.ok(!voteCounts({ kind: 'zoning', candidateVote: 'no' }));
   for (const v of ['absent', 'abstain', 'recused', 'excused', 'unknown', 'n/a', null]) assert.ok(!voteCounts({ kind: 'vote', candidateVote: v }), String(v));
   // another government's payment carries no vote of theirs and is not affected
   assert.ok(voteCounts({ kind: 'contract', candidateVote: 'n/a' }));
   assert.ok(voteCounts({ kind: 'payment' }));
-  // a vote given on a contract or zoning item must be yes or no
+  // a vote given on a contract or zoning item must be a yes
   assert.ok(!voteCounts({ kind: 'contract', candidateVote: 'absent' }));
   assert.ok(voteCounts({ kind: 'zoning', candidateVote: 'yes' }));
   // an abstention record is about the abstention

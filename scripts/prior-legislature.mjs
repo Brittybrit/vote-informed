@@ -7,8 +7,8 @@
 //   gave to the member (name match; a person needs a lobbying, government or legal occupation on the report).
 // - Laws: every enacted law in the seat's sessions whose own staff analysis (CRS summary for Congress) names a kind
 //   of business that benefits. It ties when donors in that kind of business (scripts/data/industry tags and the
-//   law's class pattern on name and occupation; federal: that industry's PACs) gave to the member. Only yes or no
-//   votes count toward the share.
+//   law's class pattern on name and occupation; federal: that industry's PACs) gave to the member. Yes and no votes
+//   make the share's pool; only a yes vote counts as tied and toward the money (Brit, Oct 27, 2026).
 // - Donors: that seat's campaign account and the political committees the state registers with the member as chair
 //   (scripts/data/tenure/doe-browser/README.md), from one cycle before the term to its end.
 // A share is given only when every item in it could be checked; otherwise the items are listed and the page says
@@ -133,6 +133,20 @@ const senateRequests = key => {
 
 // ---- build --------------------------------------------------------------------------------------------------------
 const pair = (t, n) => { const a = Math.round(t / n * 100); return t && !a ? ['<1%', '>99%'] : t < n && a === 100 ? ['>99%', '<1%'] : [a + '%', (100 - a) + '%']; };
+// Donors tied only to items voted no on, with gifts the headline (counted: key -> amount) does not already count.
+// Context only, never in the money total (Brit, Oct 27, 2026). null when there are none.
+export function againstOf(noActs, counted, gk) {
+  const fresh = new Map(); let votes = 0;
+  for (const a of noActs) {
+    const gs = a.g.filter(g => !counted.has(gk(g)));
+    if (!gs.length) continue;
+    votes++;
+    for (const g of gs) fresh.set(gk(g), g);
+  }
+  if (!votes) return null;
+  const gs = [...fresh.values()];
+  return { votes, money: Math.round(gs.reduce((s, g) => s + g.amt, 0) * 100) / 100, donors: new Set(gs.map(g => dkey(g.n))).size };
+}
 export function buildLegislative(nameOf = x => x) {
   const out = [];
   const offices = [...(opt(T + 'prior-flhouse/offices.json').length ? J(T + 'prior-flhouse/offices.json') : []), ...(opt(T + 'prior-flsenate/offices.json').length ? J(T + 'prior-flsenate/offices.json') : [])];
@@ -180,14 +194,17 @@ export function buildLegislative(nameOf = x => x) {
       const cs = ['prior-flhouse', 'prior-flsenate', 'flhouse'].map(d => T + d + '/bills-' + y + '.json').filter(has).map(f => J(f).counts || {}).filter(c => c.enacted);
       if (cs.length && !cs.some(c => c.screened >= c.enacted)) pendYears.push(y);
     }
-    const lawShare = castL.length && !noCls && !pendYears.length && gifts.length ? { n: castL.length, tied: castL.filter(x => x.g.length).length, from: (castL.map(x => x.d).filter(Boolean).sort()[0] || String(castL.map(x => x.ch).sort()[0]).slice(0, 4)) } : null;
+    // tied laws: a yes vote on a law that helps an industry whose donors gave (Brit, Oct 27, 2026)
+    const lawShare = castL.length && !noCls && !pendYears.length && gifts.length ? { n: castL.length, tied: castL.filter(x => x.g.length && x.v === 'yes').length, from: (castL.map(x => x.d).filter(Boolean).sort()[0] || String(castL.map(x => x.ch).sort()[0]).slice(0, 4)) } : null;
     const reqShare = reqs.length && !unread && gifts.length ? { n: reqs.length, tied: reqs.filter(x => x.g.length).length, from: reqs.map(x => x.d).filter(Boolean).sort()[0] || String(reqs.map(x => x.fy).sort()[0]) } : null;
-    const tiedGifts = new Map();
-    for (const x of [...reqs, ...castL]) for (const g of x.g) tiedGifts.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
+    const tiedGifts = new Map(), gk = g => g.n + '|' + g.amt + '|' + g.dt, yesL = castL.filter(x => x.v === 'yes');
+    for (const x of [...reqs, ...yesL]) for (const g of x.g) tiedGifts.set(gk(g), g.amt);
+    const against = againstOf(castL.filter(x => x.v === 'no'), tiedGifts, gk);
     out.push({ pid: o.pid, office: {
       kind: 'leg', body: o.body, start, end: end || null, office: o.office || '', district: o.district || null, source: o.source || null,
       donors: gifts.length ? 'files' : 'notCollected', gifts: gifts.length, giftTotal: Math.round(gifts.reduce((s, r) => s + r.amount, 0) * 100) / 100,
-      money: Math.round([...tiedGifts.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set([...[...reqs, ...castL].flatMap(x => x.g.map(g => dkey(g.n)))]).size,
+      money: Math.round([...tiedGifts.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set([...[...reqs, ...yesL].flatMap(x => x.g.map(g => dkey(g.n)))]).size,
+      ...(against ? { against } : {}),
       requests: { n: reqs.length, unread, share: reqShare, list: reqs, none: o.noRequestSystem || null },
       laws: { n: laws.length, cast: castL.length, noClass: noCls, share: lawShare, list: laws, pending: pendYears.length ? pendYears : (o.lawsPending || null) },
       counts: { actions: reqs.length + laws.length },
@@ -213,13 +230,16 @@ export function buildLegislative(nameOf = x => x) {
       }
       laws.sort((a, b) => b.d.localeCompare(a.d));
       const castL = laws.filter(x => x.v === 'yes' || x.v === 'no'), noCls = castL.filter(x => !x.cls).length;
-      const tied = new Map(); for (const x of castL) for (const g of x.g) tied.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
+      const tied = new Map(), gk = g => g.n + '|' + g.amt + '|' + g.dt, yesL = castL.filter(x => x.v === 'yes');
+      for (const x of yesL) for (const g of x.g) tied.set(gk(g), g.amt);
+      const against = againstOf(castL.filter(x => x.v === 'no'), tied, gk);
       out.push({ pid: o.pid, office: {
         kind: 'leg', body: 'us-house', start: o.start, end: o.end, office: o.office, district: o.district, source: o.source || null,
         donors: mine.length ? 'files' : 'notCollected', gifts: mine.length, giftTotal: Math.round(mine.reduce((s, x) => s + x.amount, 0)),
-        money: Math.round([...tied.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set(castL.flatMap(x => x.g.map(g => g.n))).size,
+        money: Math.round([...tied.values()].reduce((s, x) => s + x, 0)), moneyDonors: new Set(yesL.flatMap(x => x.g.map(g => g.n))).size,
+        ...(against ? { against } : {}),
         requests: { n: 0, unread: 0, share: null, list: [], none: 'earmarks' },
-        laws: { n: laws.length, cast: castL.length, noClass: noCls, share: castL.length && !noCls ? { n: castL.length, tied: castL.filter(x => x.g.length).length, from: castL.map(x => x.d).sort()[0] } : null, list: laws, fed: true },
+        laws: { n: laws.length, cast: castL.length, noClass: noCls, share: castL.length && !noCls ? { n: castL.length, tied: yesL.filter(x => x.g.length).length, from: castL.map(x => x.d).sort()[0] } : null, list: laws, fed: true },
         counts: { actions: laws.length },
       } });
     }

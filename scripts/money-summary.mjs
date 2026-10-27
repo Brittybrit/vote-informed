@@ -10,6 +10,11 @@
 // - A gift is counted once, however many actions it ties to.
 // - "Before": a gift dated before at least one action it ties to.
 // - State legislators: money tied to budget requests and money tied only to bill votes are kept apart.
+// - In the donor's favor only (Brit, Oct 27, 2026): every headline number (money, donors, gifts, before/after,
+//   items, the share line's tied count) counts only actions that went the donor's way: a yes vote on an item or
+//   law that helps the donor, a budget or earmark request the member filed for them, or an action the member
+//   took as head of the office (IN_FAVOR). A no vote, an absence, an abstention, a recusal or a vote the record
+//   does not give never counts. Donors tied only to items the member voted no on are kept apart in `against`.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -44,7 +49,19 @@ const pronOf = pid => PRON.she.includes(pid) ? 'she' : PRON.he.includes(pid) ? '
 // - state legislators and Congress: every budget or earmark request the member filed
 // - Cabinet: every Board of Trustees item while seated plus the office's own actions reviewed
 // Cities whose lists start from donors (no registry online) get no share.
+// CAST: votes the member cast, yes or no; the share line's pool of actions (the denominator).
+// IN_FAVOR: actions that went the donor's way; the only ones whose donors count toward any headline number.
 export const CAST = new Set(['yes', 'no']);
+export const IN_FAVOR = new Set(['yes', 'requested', 'acted']);
+export const inFavor = (a, key) => IN_FAVOR.has((a.roll || {})[key]);
+// Which actions a member's summary looks at, before the vote: a body's full bill list replaces bill cards picked
+// from donors earlier; a law voted before a member of Congress was seated has no vote for them.
+function considered(B, a, key) {
+  if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) return false;
+  if (B.level === 'federal' && a.kind === 'bill' && !(a.roll && a.roll[key] != null)) return false;
+  return true;
+}
+const giftsOf = (B, a, key, accts, G0) => (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
 const DONOR_FIRST = new Set(['southmiami', 'pinecrest', 'medley']);
 function shareOf(B, key, tied) {
   const tiedIds = new Set(tied.map(([a]) => a.id));
@@ -85,18 +102,15 @@ export function build(decisions, officesHeld) {
       if (!m.person) continue;
       const accts = new Set(ob.accounts);
       const G0 = giftStart(B, key);
-      const tied = [];
+      const tied = [], noVotes = [];
       for (const a of B.actions) {
-        // On a voting body (city, county), a tie needs a vote the member cast: absent, excused, abstained,
-        // recused or a vote the minutes do not give is not counted (Brit, Oct 24, 2026).
-        if (!state && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
-        // Once a body's bill cards are a full list, a bill card outside it (picked from donors earlier) no
-        // longer adds money or ties: only laws whose analysis names the business count
-        if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
-        // Congress cards span decades: a law voted before the member was seated has no vote for them
-        if (B.level === 'federal' && a.kind === 'bill' && !(a.roll && a.roll[key] != null)) continue;
-        const gs = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
-        if (gs.length) tied.push([a, gs]);
+        if (!considered(B, a, key)) continue;
+        const gs = giftsOf(B, a, key, accts, G0);
+        if (!gs.length) continue;
+        // A tie needs an action in the donor's favor (Brit, Oct 27, 2026): a yes vote, a request the member
+        // filed, or an action the member took. No, absent, excused, abstained, recused or unknown: not counted.
+        if (inFavor(a, key)) tied.push([a, gs]);
+        else if ((a.roll || {})[key] === 'no') noVotes.push([a, gs]);
       }
       const gifts = new Map(); // key -> {amount, date, acct, actionDates}
       for (const [a, gs] of tied) for (const g of gs) {
@@ -123,16 +137,27 @@ export function build(decisions, officesHeld) {
       e.committees = Object.keys(byAcct).filter(a => isCmte(a) && byAcct[a] > 0).length;
       // A committee the member reported soliciting for (Miami-Dade form MD-ED 28) but does not chair
       if (Object.keys(byAcct).some(a => isCmte(a) && (B.accounts[a] || {}).role === 'solicits')) e.cmteRole = 'solicits';
+      // Context, never in the headline: donors tied to items the member voted no on, counting only gifts the
+      // headline does not already count (a donor helped by one yes vote is in the total already)
+      const counted = new Set(all.map(g => g.key)), agGifts = new Map(), agActs = [];
+      for (const [a, gs] of noVotes) {
+        const fresh = gs.filter(g => !counted.has(giftKey(g)));
+        if (!fresh.length) continue;
+        agActs.push(a);
+        for (const g of fresh) if (!agGifts.has(giftKey(g))) agGifts.set(giftKey(g), { amount: Number(g.amount), donor: giverKey(g.donor) });
+      }
+      if (agActs.length) {
+        const ag = [...agGifts.values()];
+        e.against = { votes: agActs.length, money: sum(ag), donors: new Set(ag.map(g => g.donor)).size };
+        if (state) e.against.bills = new Set(agActs.map(a => a.ref)).size;
+      }
       if (state) {
         const req = tied.filter(([a]) => a.kind === 'request');
         const bills = tied.filter(([a]) => a.kind === 'bill');
         const reqKeys = new Set(req.flatMap(([, gs]) => gs.map(giftKey)));
-        // Bill money counts only donors tied to bills the member voted yes on, since the summary line
-        // says "voted yes on ... bills that help kinds of business that gave".
-        const yesKeys = new Set(bills.filter(([a]) => a.roll[key] === 'yes').flatMap(([, gs]) => gs.map(giftKey)));
-        const billOnly = all.filter(g => !reqKeys.has(g.key) && yesKeys.has(g.key));
-        // Donors tied only to bills the member did not vote yes on (voted no or did not vote)
-        const billOther = all.filter(g => !reqKeys.has(g.key) && !yesKeys.has(g.key));
+        // Bill money: donors tied to bills the member voted yes on (every bill tie is a yes vote), not already
+        // counted with a budget request
+        const billOnly = all.filter(g => !reqKeys.has(g.key));
         const funded = a => {
           const b = a.budget || {};
           return b.status === 'in' && b.amount ? Math.max(0, b.amount - (b.vetoed || 0)) : 0;
@@ -155,8 +180,6 @@ export function build(decisions, officesHeld) {
           bills: new Set(bills.map(([a]) => a.ref)).size, votes: bills.length,
           yes: bills.filter(([a]) => a.roll[key] === 'yes').length,
           money: sum(billOnly), donors: new Set(billOnly.map(g => g.donor)).size,
-          no: bills.filter(([a]) => a.roll[key] === 'no').length,
-          otherMoney: sum(billOther), otherDonors: new Set(billOther.map(g => g.donor)).size,
         };
         // When the body's bill cards are a full list (every enacted law whose analysis names a kind of business
         // it helps, built without looking at donors), count the laws the member voted on and how many drew
@@ -164,17 +187,16 @@ export function build(decisions, officesHeld) {
         const uni = B.actions.filter(a => a.kind === 'bill' && a.universe && ['yes', 'no'].includes(a.roll[key]));
         if (uni.length) {
           const laws = new Set(uni.map(a => a.ref));
-          const tiedLaws = new Set(uni.filter(a => (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= G0)).map(a => a.ref));
+          // tied: laws the member voted yes on that help an industry whose donors gave
+          const tiedLaws = new Set(uni.filter(a => a.roll[key] === 'yes' && giftsOf(B, a, key, accts, G0).length).map(a => a.ref));
           const u0 = uni.map(a => a.date).filter(Boolean).sort()[0];
           e.bills.universe = { n: laws.size, tied: tiedLaws.size, from: u0 ? String(u0).slice(0, 7) : undefined };
         }
       } else {
-        const v = { yes: 0, no: 0, away: 0, acted: 0, abst: 0, unk: 0 };
-        for (const [a] of tied) { const x = a.roll[key]; if (x === 'yes') v.yes++; else if (x === 'no') v.no++; else if (x === 'acted') v.acted++; else if (x === 'abstain' || x === 'recused') v.abst++; else if (x === 'unknown') v.unk++; else v.away++; }
-        e.items = tied.length; e.yes = v.yes; e.no = v.no; e.away = v.away;
-        if (v.abst) e.abst = v.abst;
-        if (v.unk) e.unk = v.unk;
-        if (B.cabinet) { e.acted = v.acted; e.votes = tied.length - v.acted; }
+        // every tied item is a yes vote, or (Cabinet) an action the member took as head of the office
+        const acted = tied.filter(([a]) => a.roll[key] === 'acted').length;
+        e.items = tied.length; e.yes = tied.length - acted;
+        if (B.cabinet) { e.acted = acted; e.votes = tied.length - acted; }
         e.split = tied.filter(([a]) => a.tally && a.tally[1] > 0).length;
         // The share line counts actions since January 2025; when older cards are in the items, say from when
         const y0 = tied.map(([a]) => a.date).sort()[0];
@@ -206,10 +228,8 @@ export function tiedActions(B, key) {
   const G0 = giftStart(B, key);
   const out = [];
   for (const a of B.actions) {
-    if (B.type !== 'requests' && !B.cabinet && !CAST.has((a.roll || {})[key])) continue;
-    if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
-    if (B.level === 'federal' && a.kind === 'bill' && !(a.roll && a.roll[key] != null)) continue;
-    const gifts = (a.gifts || []).filter(g => g.to === key && accts.has(g.acct) && g.date >= G0);
+    if (!considered(B, a, key) || !inFavor(a, key)) continue;
+    const gifts = giftsOf(B, a, key, accts, G0);
     if (!gifts.length) continue;
     const x = { ...a, gifts };
     if (a.giftNotes) { if (a.giftNotes[key]) x.giftNotes = { [key]: a.giftNotes[key] }; else delete x.giftNotes; }

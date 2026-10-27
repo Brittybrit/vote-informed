@@ -3,9 +3,10 @@
 //
 // Same standard as the current lists (scripts/data/tenure/STANDARD.md, PRIOR.md): every action of the body,
 // while the person sat, that benefits a named private party, with the person's vote from the body's own record.
-// Donors: that office's campaign reports, from one cycle before the term to its end. A tie needs a yes or no
-// vote the person cast and a gift from the action's party or from a lobbyist registered for (or named in the
-// record for) that party. Where the reports are not online, not collected yet, or the seat was appointed, the
+// Donors: that office's campaign reports, from one cycle before the term to its end. A gift is listed on an action
+// when it is from the action's party or from a lobbyist registered for (or named in the record for) that party. The
+// money, donors and share count only actions in the donor's favor: a yes vote, or an action the person took
+// (Brit, Oct 27, 2026); donors tied only to items voted no on are kept apart (share.against). Where the reports are not online, not collected yet, or the seat was appointed, the
 // actions are still listed and the page says why there is no donor share (Brit, Oct 26, 2026).
 // Voice votes: a member present is shown as voting yes only when the minutes give a tally that accounts for
 // every yes; otherwise the vote is "not given in the minutes".
@@ -13,7 +14,7 @@
 // the county mayor's recommendations and vetoes (how they count is Brit's call), and agency actions without votes.
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import { P, J, csv, pkey, dkey } from './lib/city.mjs';
-import { buildLegislative } from './prior-legislature.mjs';
+import { buildLegislative, againstOf } from './prior-legislature.mjs';
 
 const T = 'scripts/data/tenure/';
 const OUT = 'public/data/prior/';
@@ -224,12 +225,15 @@ for (const C0 of OFFICES) {
   const cnt = { actions: actions.length, yes: 0, no: 0, absent: 0, abstain: 0, unknown: 0, acted: 0 };
   for (const a of actions) cnt[a.v]++;
   const cast = actions.filter(a => a.v === 'yes' || a.v === 'no' || a.v === 'acted');
-  const tied = cast.filter(a => a.g.length);
-  const tiedGifts = new Map(); for (const a of tied) for (const g of a.g) tiedGifts.set(g.n + '|' + g.amt + '|' + g.dt, g.amt);
+  const favor = a => a.v === 'yes' || a.v === 'acted';
+  const tied = cast.filter(a => a.g.length && favor(a));
+  const gk = g => g.n + '|' + g.amt + '|' + g.dt;
+  const tiedGifts = new Map(); for (const a of tied) for (const g of a.g) tiedGifts.set(gk(g), g.amt);
+  const against = againstOf(cast.filter(a => a.v === 'no'), tiedGifts, gk);
   const share = C0.donors === 'files' && cast.length && gifts.length ? { n: cast.length, tied: tied.length, from: cast.map(a => a.d).sort()[0], to: cast.map(a => a.d).sort().pop(),
-    money: [...tiedGifts.values()].reduce((s, x) => s + x, 0), donors: new Set([...tied.flatMap(a => a.g.map(g => dkey(g.n)))]).size } : null;
+    money: [...tiedGifts.values()].reduce((s, x) => s + x, 0), donors: new Set([...tied.flatMap(a => a.g.map(g => dkey(g.n)))]).size, ...(against ? { against } : {}) } : null;
   // tied first, then newest first
-  const counted = a => a.g.length > 0 && (a.v === 'yes' || a.v === 'no');
+  const counted = a => a.g.length > 0 && favor(a);
   actions.sort((x, y) => counted(y) - counted(x) || String(y.d).localeCompare(String(x.d)));
   const P0 = people[C0.pid] || (people[C0.pid] = { pid: C0.pid, name: nameOf(C0.pid), pron: pron(C0.pid), offices: [] });
   P0.offices.push({

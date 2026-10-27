@@ -11,8 +11,9 @@
 //   Shuttered Venue grants, college emergency relief formula grants): not official acts (Brit, Oct 25, 2026)
 // - a tie matches a disclosed interest only by exact entity name (normalized: punctuation, Inc/LLC/Corp suffixes
 //   and "the" dropped) or a curated alias in scripts/data/business/aliases.json, never by prefix
-// - a tie to an official action of their own body counts only when they cast a vote on it (yes or no; the
-//   money-summary rule); absent, abstained or a vote the record does not give goes to the private list
+// - a tie to an official action of their own body counts only when they voted yes on it (or filed or took it; the
+//   money-summary rule, Brit, Oct 27, 2026); a no vote, absent, abstained or a vote the record does not give goes to
+//   the private list
 // - a business the disclosure lists as a customer, client, tenant or source of income OF the person's company
 //   (not the company itself) is held back to the private list
 // Rules live in scripts/lib/business-rules.mjs (tests/business.test.mjs).
@@ -100,7 +101,7 @@ for (const t of ties) {
       : t.kind !== 'abstention' && !entityNames(t.business).some(b => known(t.pid, b)) ? 'no published interest has this exact name'
       : !evidence(t, Number(d.slice(0, 4))) ? 'no disclosure form for that year shows the business'
       : endedBefore(t, d) ? 'Sunbiz shows the business dissolved on ' + endedBefore(t, d).dissolved + ', before this date'
-      : !voteCounts(t) ? 'no vote cast: the record shows ' + (t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : 'no vote by them') + ' on this action'
+      : !voteCounts(t) ? 'not a yes vote: the record shows ' + (t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : 'no vote by them') + ' on this action'
       : t.kind !== 'abstention' && isCustomerOf(interestOf(t)) && !(t.party && anySame(t.party, t.business, ALIAS)) ? 'the disclosure lists the business as a customer or source of income of a company they own, not as their own business' : null;
     if (why) { privateTies.push({ pid: t.pid, date: d, business: t.business, title: tidy(t.title), body: t.body, why, record: t.record }); continue; }
     if (!t.basis) { const e = evidence(t, Number(d.slice(0, 4))); if (e === 'lastDisclosed' || e === 'bridged') { t.basis = e; t.formYear = t.formYear || Math.max(...[...yearsFor(t.pid, t.business || '')].filter(y => y < Number(d.slice(0, 4)))); } }
@@ -133,7 +134,7 @@ for (const [pid, h] of Object.entries(headlines)) {
 for (const p of Object.values(people)) p.ties.sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 for (const [pid, p] of Object.entries(people)) if (!p.interests.length && !p.ties.length && !p.headline) delete people[pid];
 
-fs.writeFileSync(path.join(dir, 'private-ties.json'), JSON.stringify({ note: 'Not published: ties outside the disclosure window or without a form for that year (Brit, Oct 26, 2026), ties to an action they cast no vote on, ties whose business matches no published interest by exact name, and ties to a customer or source of income of their company.', ties: privateTies }, null, 1) + '\n');
+fs.writeFileSync(path.join(dir, 'private-ties.json'), JSON.stringify({ note: 'Not published: ties outside the disclosure window or without a form for that year (Brit, Oct 26, 2026), ties to an action they did not vote yes on (Brit, Oct 27, 2026), ties whose business matches no published interest by exact name, and ties to a customer or source of income of their company.', ties: privateTies }, null, 1) + '\n');
 fs.writeFileSync(path.join(here, '..', 'public', 'data', 'business.json'), JSON.stringify({
   updated: new Date().toISOString().slice(0, 10),
   note: 'Business interests from each candidate\'s own filing (or a Sunbiz listing matching name and address) and the government contracts, grants, payments and votes tied to them, each from an official record. Relief programs open to any eligible business are not counted. Rebuild: node scripts/business.mjs.',

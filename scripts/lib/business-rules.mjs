@@ -1,6 +1,6 @@
 // Rules for publishing a business tie (scripts/business.mjs). Pure functions, so tests/business.test.mjs can
 // check each rule on its own.
-import { CAST } from '../money-summary.mjs';
+import { IN_FAVOR } from '../money-summary.mjs';
 
 // An entity's name for matching: lower case, punctuation gone, "&" read as "and", anything in parentheses and any
 // d/b/a tail dropped, corporate suffixes (Inc, LLC, Corp, Co, Ltd, PA, PLLC ...) and "the" dropped.
@@ -39,17 +39,18 @@ export function isCustomerOf(interest) {
   return CUSTOMER_OF.test(String(interest.nature || ''));
 }
 
-// A tie to an official action of the person's own body counts only when they cast a vote on it: yes or no, the same
-// rule as scripts/money-summary.mjs (CAST). Absent, abstained, recused, excused, or a vote the record does not give
-// (no vote, "n/a") is not a vote. Abstention records (kind 'abstention') are about the abstention itself and stay.
+// A tie to an official action of the person's own body counts only when the action went the business's way: a yes
+// vote (or a request they filed, or an action they took), the same rule as scripts/money-summary.mjs (IN_FAVOR,
+// Brit, Oct 27, 2026). A no vote, absent, abstained, recused, excused, or a vote the record does not give (no vote,
+// "n/a") does not count. Abstention records (kind 'abstention') are about the abstention itself and stay.
 // Ties to other governments' payments, contracts and grants carry no vote of theirs and are not affected.
 export function voteCounts(t) {
   if (!t) return false;
   if (t.kind === 'abstention') return true;
   const v = t.candidateVote == null ? 'n/a' : String(t.candidateVote).toLowerCase();
-  if (t.kind === 'vote') return CAST.has(v);
+  if (t.kind === 'vote') return IN_FAVOR.has(v);
   if (v === 'n/a' || v === '') return true;
-  return CAST.has(v);
+  return IN_FAVOR.has(v);
 }
 
 // Disclosure window: on the date, the person held an office whose disclosure law required a form.

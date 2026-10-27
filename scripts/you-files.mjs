@@ -1,12 +1,14 @@
 // "What this means for you" data, one file per official on the ballot (public/data/you/<person>.json):
 // every action they cast a vote on (or filed, for budget and earmark requests) with its topics
-// (scripts/action-topics.mjs), whether a donor of theirs was tied to it, and the body's next meetings,
+// (scripts/action-topics.mjs), whether a donor of theirs was tied to it (tied: only when the action went the donor's
+// way, a yes vote or a request they filed, as in the money summary; against: a donor's item they voted no on), and the body's next meetings,
 // agenda items already posted (public/data/upcoming.json) and how to speak or write to the body
 // (public/data/cycles.json). The page matches topics to the household groups a voter picked on their own
 // device; nothing about the voter is in these files.
 // Run after action-topics.mjs and money-summary.mjs:  node scripts/you-files.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { topicsOf } from './action-topics.mjs';
+import { IN_FAVOR } from './money-summary.mjs';
 
 const root = new URL('../', import.meta.url);
 const J = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -39,10 +41,11 @@ for (const B of d.bodies) {
       if (a.kind === 'bill' && !a.universe && B.actions.some(x => x.kind === 'bill' && x.universe)) continue;
       // a city list built from the actions: only the actions in it, the same list the share line counts
       if (B.universe && B.universe.built === 'actions' && !a.universe) continue;
-      const tied = (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE);
+      const donor = (a.gifts || []).some(g => g.to === key && accts.has(g.acct) && g.date >= CYCLE);
+      const tied = donor && IN_FAVOR.has(v), against = donor && v === 'no';
       acts.push({
         id: a.id, date: a.date, kind: a.kind, title: L3(a.subject || a.title), topics: a.topics || [], vote: v,
-        ...(tied ? { tied: true } : {}), ...(a.tally && a.tally[1] > 0 ? { split: true } : {}),
+        ...(tied ? { tied: true } : {}), ...(against ? { against: true } : {}), ...(a.tally && a.tally[1] > 0 ? { split: true } : {}),
         ...(a.amount ? { amount: a.amount } : a.ask ? { amount: a.ask } : {}),
         link: ((a.links || []).find(l => ['minutes', 'matter', 'record', 'vote', 'clerk', 'analysis', 'bill'].includes(l.t)) || (a.links || [])[0] || {}).url || null,
       });
