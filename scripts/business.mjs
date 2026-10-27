@@ -109,7 +109,15 @@ for (const t of ties) {
   // abstentions are about the candidate, not a named business; everything else needs a published interest
   if (t.kind !== 'abstention' && !(t.business || '').split(/;\s*/).some(b => known(t.pid, b))) continue;
   const p = people[t.pid] || (people[t.pid] = { interests: [], ties: [] });
-  p.ties.push({ kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
+  // how the business relates to the person, from their own form: owner, employer, officer, or a customer of their company
+  const iv = interests.find(i => i.pid === t.pid && String(t.business || '').split(/;\s*/).some(b => { const a = norm(b), c = norm(i.business); return a && c && (a === c || (a.length >= 8 && c.length >= 8 && (a.startsWith(c) || c.startsWith(a)))); }));
+  let rel = null;
+  if (iv) {
+    const nat = String(iv.nature || ''), via = nat.match(/(?:customer|source of income)(?:\s*\([^)]*\))? of ([^,;(]+?)(?:,|;|\(|$)/i);
+    rel = /former employer/i.test(nat) ? { r: 'formerEmployer' } : via ? { r: 'customerOf', of: tidy(via[1]).replace(/\s*,?\s*which he owns$/i, '') }
+      : { r: ROLE[iv.role] || 'other' };
+  }
+  p.ties.push({ ...(rel ? { rel } : {}), kind: t.kind, date: /^\d{4}/.test(t.date || '') ? String(t.date).slice(0, 10) : null, body: t.body || '', title: tidy(t.title),
     amount: t.amount == null || t.amount === 'None' ? null : String(t.amount), vote: t.candidateVote && t.candidateVote !== 'n/a' ? t.candidateVote : null,
     business: t.business || null, label: t.record.label || '', url: t.record.url,
     ...(t.class ? { helps: t.class } : {}), ...(t.analysis && t.analysis.url ? { analysis: t.analysis.url } : {}),

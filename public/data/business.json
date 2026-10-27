@@ -366,6 +366,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2022-03-07",
      "body": "Florida House",
@@ -379,6 +382,9 @@
      "analysis": "https://www.flsenate.gov/Session/Bill/2022/706/Analyses/2022s00706.rc.PDF"
     },
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2021-04-29",
      "body": "Florida House",
@@ -392,6 +398,9 @@
      "analysis": "https://www.flsenate.gov/Session/Bill/2021/401/Analyses/h0401z1.RRS.PDF"
     },
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2015-04-22",
      "body": "Florida House",
@@ -501,6 +510,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2021-03-18",
      "body": "Florida Senate",
@@ -514,49 +526,9 @@
      "analysis": "https://www.flsenate.gov/Session/Bill/2021/88/Analyses/2021s00088.rc.PDF"
     },
     {
-     "kind": "vote",
-     "date": "2021-03-18",
-     "body": "Florida Senate",
-     "title": "SB 88 (Ch. 2021-7), Farming Operations",
-     "amount": null,
-     "vote": "yes",
-     "business": "Cal-Maine Foods, Inc.",
-     "label": "Florida Senate roll call, SB 88, 2021-03-18",
-     "url": "https://www.flsenate.gov/Session/Bill/2021/88/Vote/SenateVote_s00088e1006.PDF",
-     "helps": "farms",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2021/88/Analyses/2021s00088.rc.PDF"
-    },
-    {
-     "kind": "vote",
-     "date": "2019-05-03",
-     "body": "Florida Senate",
-     "title": "HB 6017 (Ch. 2019-157), Small-scale Comprehensive Plan Amendments",
-     "amount": null,
-     "vote": "yes",
-     "business": "Palmetto Zephyrhills-SR 54, LLC",
-     "label": "Florida Senate roll call, HB 6017, 2019-05-03",
-     "url": "https://www.flsenate.gov/Session/Bill/2019/6017/Vote/SenateVote_h06017__010.PDF",
-     "helps": "developers",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2019/6017/Analyses/h6017c.COM.PDF",
-     "basis": "lastDisclosed",
-     "formYear": 2016
-    },
-    {
-     "kind": "vote",
-     "date": "2019-05-03",
-     "body": "Florida Senate",
-     "title": "HB 7103 (Ch. 2019-165), Community Development and Housing",
-     "amount": null,
-     "vote": "yes",
-     "business": "Palmetto Zephyrhills-SR 54, LLC",
-     "label": "Florida Senate roll call, HB 7103, 2019-05-03",
-     "url": "https://www.flsenate.gov/Session/Bill/2019/7103/Vote/SenateVote_h07103e2015.PDF",
-     "helps": "property development",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2019/7103/Analyses/h7103z1.COM.PDF",
-     "basis": "lastDisclosed",
-     "formYear": 2016
-    },
-    {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2018-03-08",
      "body": "Florida Senate",
@@ -572,6 +544,9 @@
      "formYear": 2016
     },
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2017-04-28",
      "body": "Florida Senate",
@@ -587,6 +562,9 @@
      "formYear": 2016
     },
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2016-02-23",
      "body": "Florida Senate",
@@ -600,19 +578,9 @@
      "analysis": "https://www.flsenate.gov/Session/Bill/2016/1046/Analyses/2016s1046.fp.PDF"
     },
     {
-     "kind": "vote",
-     "date": "2016-02-23",
-     "body": "Florida Senate",
-     "title": "SB 1046 (Ch. 2016-115), Farm Vehicles",
-     "amount": null,
-     "vote": "yes",
-     "business": "Cal-Maine Foods, Inc.",
-     "label": "Florida Senate roll call, SB 1046, 2016-02-23",
-     "url": "https://www.flsenate.gov/Session/Bill/2016/1046/Vote/SenateVote_s1046c1011.PDF",
-     "helps": "farmers and ranchers",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2016/1046/Analyses/2016s1046.fp.PDF"
-    },
-    {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2015-06-15",
      "body": "Florida Senate",
@@ -624,32 +592,6 @@
      "url": "https://www.flsenate.gov/Session/Bill/2015A/33A/Vote/SenateVote_h0033Ae1002.PDF",
      "helps": "agricultural activities (agricultural sales tax exemption)",
      "analysis": "https://www.flsenate.gov/Session/Bill/2015A/33A/Analyses/h0033Az1.FTC.PDF"
-    },
-    {
-     "kind": "vote",
-     "date": "2015-06-15",
-     "body": "Florida Senate",
-     "title": "HB 33A (Ch. 2015-221), Taxation",
-     "amount": null,
-     "vote": "yes",
-     "business": "Cal-Maine Foods, Inc.",
-     "label": "Florida Senate roll call, HB 33A, 2015-06-15",
-     "url": "https://www.flsenate.gov/Session/Bill/2015A/33A/Vote/SenateVote_h0033Ae1002.PDF",
-     "helps": "agricultural activities (agricultural sales tax exemption)",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2015A/33A/Analyses/h0033Az1.FTC.PDF"
-    },
-    {
-     "kind": "vote",
-     "date": "2015-04-29",
-     "body": "Florida Senate",
-     "title": "HB 401 (Ch. 2015-143), Public Lodging & Public Food Service Establishments",
-     "amount": null,
-     "vote": "yes",
-     "business": "NOSNAWS Corporation",
-     "label": "Florida Senate roll call, HB 401, 2015-04-29",
-     "url": "https://www.flsenate.gov/Session/Bill/2015/401/Vote/SenateVote_h0401c1034.PDF",
-     "helps": "licensed public food service establishments",
-     "analysis": "https://www.flsenate.gov/Session/Bill/2015/401/Analyses/h0401z1.BPS.PDF"
     }
    ]
   },
@@ -711,6 +653,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2025-06-30",
      "body": "Florida Legislature / Governor (FY 2025-26 budget, SB 2500)",
@@ -722,6 +667,9 @@
      "url": "https://www.flgov.com/eog/sites/default/files/shared/2025/06/2025%20Final%20Veto%20List.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2021-06-30",
      "body": "Florida Department of Elder Affairs",
@@ -733,6 +681,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=650000&ContractId=X9241"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2020-10-26",
      "body": "Miami-Dade Board of County Commissioners",
@@ -828,6 +779,10 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "customerOf",
+      "of": "Hyannis Investments LLC"
+     },
      "kind": "vote",
      "date": "2026-02-10",
      "body": "Boca Raton City Council",
@@ -841,6 +796,10 @@
      "formYear": 2025
     },
     {
+     "rel": {
+      "r": "customerOf",
+      "of": "Hyannis Investments LLC"
+     },
      "kind": "vote",
      "date": "2025-01-28",
      "body": "Boca Raton City Council",
@@ -912,6 +871,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "formerEmployer"
+     },
      "kind": "contract",
      "date": "2026-06-02",
      "body": "City of Coral Gables Commission",
@@ -923,6 +885,9 @@
      "url": "https://coralgables.legistar.com/gateway.aspx?M=L&ID=29513"
     },
     {
+     "rel": {
+      "r": "formerEmployer"
+     },
      "kind": "contract",
      "date": "2025-12-04",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -934,6 +899,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=310000&ContractId=HM002"
     },
     {
+     "rel": {
+      "r": "formerEmployer"
+     },
      "kind": "contract",
      "date": "2025-01-31",
      "body": "U.S. Army Corps of Engineers (Department of Defense)",
@@ -945,6 +913,9 @@
      "url": "https://www.usaspending.gov/award/CONT_AWD_W912PM25F0027_9700_W912EK22D0002_9700"
     },
     {
+     "rel": {
+      "r": "formerEmployer"
+     },
      "kind": "contract",
      "date": "2025-01-07",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -956,6 +927,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=310000&ContractId=E4073"
     },
     {
+     "rel": {
+      "r": "formerEmployer"
+     },
      "kind": "contract",
      "date": "2024-10-12",
      "body": "Florida Division of Emergency Management (Executive Office of the Governor)",
@@ -967,6 +941,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=310000&ContractId=E0775"
     },
     {
+     "rel": {
+      "r": "client"
+     },
      "kind": "abstention",
      "date": "2022-06-14",
      "body": "Broward County Commission",
@@ -1307,6 +1284,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2026-07-01",
      "body": "Florida Department of Education",
@@ -1318,6 +1298,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=480000&ContractId=EL197"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2025-07-01",
      "body": "Florida Department of Education",
@@ -1329,6 +1312,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=480000&ContractId=EL196"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2024-07-01",
      "body": "Florida Department of Education",
@@ -1340,6 +1326,9 @@
      "url": "https://facts.fldfs.com/Search/ContractDetail.aspx?AgencyId=480000&ContractId=EL195"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2024-05-07",
      "body": "Miami-Dade Board of County Commissioners",
@@ -1433,6 +1422,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2018-11-08",
      "body": "Miami-Dade Board of County Commissioners",
@@ -1601,6 +1593,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2017-05-03",
      "body": "Florida Senate",
@@ -1614,6 +1609,9 @@
      "analysis": "https://www.flsenate.gov/Session/Bill/2017/6021/Analyses/h6021z1.HIS.PDF"
     },
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "vote",
      "date": "2017-05-03",
      "body": "Florida Senate",
@@ -1703,6 +1701,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2025-11-18",
      "body": "Florida House (APR 2129, FY 2026-27 budget HB 5001E)",
@@ -1714,6 +1715,9 @@
      "url": "https://www.flgov.com/eog/sites/default/files/shared/2026/06/2026%20Veto%20List.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2025-11-18",
      "body": "Florida House (APR 2139, FY 2026-27 budget HB 5001E)",
@@ -2012,6 +2016,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "abstention",
      "date": "2017-08-29",
      "body": "Coral Gables City Commission",
@@ -2235,6 +2242,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "director"
+     },
      "kind": "grant",
      "date": "2025-11-12",
      "body": "City of North Miami",
@@ -2246,6 +2256,9 @@
      "url": "https://www.northmiamifl.gov/DocumentCenter/View/22025/GPA-Foundation-for-Senior-Citizens-Services-Inc-PDF"
     },
     {
+     "rel": {
+      "r": "director"
+     },
      "kind": "vote",
      "date": "2025-09-25",
      "body": "North Miami City Council",
@@ -2478,6 +2491,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "vote",
      "date": "2026-07-15",
      "body": "Town of Cutler Bay Town Council",
@@ -2489,6 +2505,9 @@
      "url": "https://pub-cutlerbay-fl.escribemeetings.com/Meeting.aspx?Id=1253b4d4-70db-4e02-8217-3a922c506a15&Agenda=PostMinutes&lang=English"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "grant",
      "date": "2023-08-29",
      "body": "Florida Department of State (Division of Arts and Culture)",
@@ -2652,6 +2671,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "owner"
+     },
      "kind": "zoning",
      "date": "2026-06-30",
      "body": "Village of Key Biscayne Village Council",
@@ -2929,6 +2951,9 @@
    ],
    "ties": [
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2026-09-17",
      "body": "City of Sunny Isles Beach Commission",
@@ -2940,6 +2965,9 @@
      "url": "https://sibfl.granicus.com/services/legistar/download/pdf/4422941/DRAFT_091726_Summary_Mins_Reg.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2026-09-17",
      "body": "City of Sunny Isles Beach Commission",
@@ -2951,6 +2979,9 @@
      "url": "https://sibfl.granicus.com/services/legistar/download/pdf/4422941/DRAFT_091726_Summary_Mins_Reg.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "vote",
      "date": "2026-08-25",
      "body": "Village of Key Biscayne Council",
@@ -2962,6 +2993,9 @@
      "url": "https://d3n9y02raazwpg.cloudfront.net/keybiscayne/fee789f1-db86-11f0-bb28-005056a89546-4206a9c6-5dc6-45bb-9df3-1259d90bcd76-1787184676.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2025-09-18",
      "body": "City of Sunny Isles Beach Commission",
@@ -2973,6 +3007,9 @@
      "url": "https://legistarweb-production.s3.amazonaws.com/uploads/attachment/pdf/3666588/DRAFT_091825_Summary_Mins_Re_v2.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2025-08-21",
      "body": "City of Sunny Isles Beach Commission",
@@ -2984,6 +3021,9 @@
      "url": "https://legistarweb-production.s3.amazonaws.com/uploads/attachment/pdf/3666354/082125_Summary_Mins_Reg.pdf"
     },
     {
+     "rel": {
+      "r": "employer"
+     },
      "kind": "contract",
      "date": "2025-06-17",
      "body": "City of Sunny Isles Beach Commission",
