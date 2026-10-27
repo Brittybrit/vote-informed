@@ -20,9 +20,9 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
 2. **A person counts only when their own reported occupation shows they ARE the business**: a licensed practitioner
    or business noun the class names (PHYSICIAN for laws paying physicians, CONTRACTOR for laws helping contractors,
    PSYCHOLOGIST, FUNERAL DIRECTOR, DISTRIBUTOR, DEALER, FARMER), or an owner or principal role (OWNER, PRESIDENT, CEO,
-   FOUNDER, PARTNER, PROPRIETOR, SELF-EMPLOYED) next to the business itself. Employees do not count: banker, teller,
-   driver, staff, counselor employed by a provider, software or analytics engineer, "engineer" alone, director,
-   executive, CFO, administrator. Bare sector words ("CONSTRUCTION", "HEALTHCARE", "AGRICULTURE") do not say the person
+   FOUNDER, PARTNER, MANAGING MEMBER, PROPRIETOR, SELF-EMPLOYED) next to the business itself. Employees do not count:
+   banker, teller, driver, staff, counselor employed by a provider, software or analytics engineer, "engineer" alone,
+   administrator. An executive title (rule 6) does not count on its own. Bare sector words ("CONSTRUCTION", "HEALTHCARE", "AGRICULTURE") do not say the person
    is the business. A person's name is never matched (MARINA, WATERS, TEMPLE, BARBER are names). A donor is the business
    when any occupation they reported on a gift in the same reports shows it.
 3. **Committees, PACs and companies** count when their own name or reported business is that business or its trade
@@ -34,6 +34,14 @@ analysis names, as phrases) and `not`. Optional flags, set only when the analysi
 5. **"REAL ESTATE" alone** does not say which real estate business (developer, broker, investor, landlord). It counts
    only with a word that says which (REAL ESTATE DEVELOPER, COMMERCIAL REAL ESTATE). Realtors count only for a law with
    `realtors: true` (no Florida law in the lists names them as of Oct 27, 2026).
+
+6. **Executives count only with an official record of their stake** (Brit, Oct 27, 2026). EXECUTIVE, EXEC, CFO, COO,
+   VP, VICE PRESIDENT, CHAIRMAN, DIRECTOR, MANAGING DIRECTOR, GENERAL MANAGER, PRINCIPAL or a CHIEF ... OFFICER next to
+   the business counts only when Florida Sunbiz lists the person as an officer, director, manager/managing member or
+   registered agent-owner of a company in the class (name and company; address when Sunbiz gives one), or an SEC filing
+   (DEF 14A, 10-K Item 10, Form 3/4) names them an executive officer, director or 10% owner of it. Records:
+   `exec-records.json`; worklist and method: `EXEC-RECORDS.md`. A gift that counts through a record carries it on the
+   card (`record: {company, role, url}`).
 
 Federal law ties use company and trade-association PACs listed by name per class (`scripts/data/federal/floor-votes.json`
 and the tenure files); no individuals and no unions. The NRA was removed from the firearms class (it is not a

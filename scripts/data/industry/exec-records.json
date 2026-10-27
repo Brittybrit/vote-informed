@@ -1,0 +1,43 @@
+{
+ "about": "Official records of an executive donor's stake in a company (scripts/lib/donor-class.mjs rule 5; scripts/data/industry/EXEC-RECORDS.md). Key: the donor's name as reported, upper case, punctuation dropped. Each record: company, role, source (SEC or Sunbiz), recordUrl, quote (the exact line naming the person and title).",
+ "records": {
+  "MILLER STUART A": {
+   "company": "LENNAR CORPORATION",
+   "role": "Executive Chairman, director and 10% owner",
+   "source": "SEC",
+   "business": "SEC industry code 1520: General Bldg Contractors - Residential Bldgs",
+   "businessUrl": "https://data.sec.gov/submissions/CIK0000920760.json",
+   "recordUrl": "https://www.sec.gov/Archives/edgar/data/1049444/000120919123014744/doc4.xml",
+   "quote": "Form 4, LENNAR CORP /NEW/, period 2023-02-28: rptOwnerName MILLER STUART A; rptOwnerStreet1 5505 BLUE LAGOON DRIVE; rptOwnerCity MIAMI; rptOwnerZipCode 33126; isDirector 1; isOfficer 1; isTenPercentOwner 1; officerTitle Executive Chairman",
+   "address": "5505 BLUE LAGOON DRIVE, MIAMI, FL 33126 (same as the gift reports)",
+   "also": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/920760/000119312524051712/d511799ddef14a.htm",
+     "quote": "Stuart Miller Age: 66 Director Since: 1990 Executive Chairman Since: 2018 Co-Chief Executive Officer (effective September 1, 2023)"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/920760/000119312526073504/d940888ddef14a.htm",
+     "quote": "Stuart Miller Age: 68 Director Since: 1990 Executive Chairman Since: 2018 Chief Executive Officer"
+    }
+   ],
+   "checked": "2026-10-27"
+  },
+  "FELDENKREIS GEORGE": {
+   "company": "PERRY ELLIS INTERNATIONAL, INC",
+   "role": "Executive Chairman, director and 10% owner",
+   "source": "SEC",
+   "business": "10-K (fiscal 2016): We also distribute through our own retail stores. As of April 1, 2016, we operated 41 Perry Ellis, 12 Original Penguin and two multi-brand retail outlet stores",
+   "businessUrl": "https://www.sec.gov/Archives/edgar/data/900349/000119312516541296/d57310d10k.htm",
+   "recordUrl": "https://www.sec.gov/Archives/edgar/data/940664/000120919116151751/doc4.xml",
+   "quote": "Form 4, PERRY ELLIS INTERNATIONAL, INC (filed 2016-11-22): rptOwnerName FELDENKREIS GEORGE; rptOwnerStreet1 3000 N.W. 107TH AVENUE; rptOwnerCity MIAMI; rptOwnerZipCode 33172; isDirector 1; isOfficer 1; isTenPercentOwner 1; officerTitle Executive Chairman",
+   "address": "3000 NW 107TH AVE, MIAMI, FL 33172 (same as the gift reports)",
+   "also": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/900349/000119312516574968/d50872ddef14a.htm",
+     "quote": "George Feldenkreis 80 Executive Chairman of the Board 2016 2019"
+    }
+   ],
+   "checked": "2026-10-27"
+  }
+ }
+}

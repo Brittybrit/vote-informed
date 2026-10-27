@@ -17,7 +17,7 @@
 // Run: node scripts/state-tenure.mjs && node scripts/state-bills.mjs && node scripts/money-summary.mjs
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { topicsOf } from './action-topics.mjs';
-import { fitsLaw } from './lib/donor-class.mjs';
+import { fitsLaw, recordFor } from './lib/donor-class.mjs';
 
 const root = new URL('../', import.meta.url);
 const J = p => JSON.parse(readFileSync(new URL(p, root)));
@@ -101,7 +101,7 @@ const TENURE_S = (() => {
 })();
 const isoOf = s => { const m = String(s || '').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/); return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : s; };
 
-let added = 0, kept = 0, dropped = 0;
+let added = 0, kept = 0, dropped = 0, recAdded = 0;
 const removed = [];
 const report = [];
 for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 'senate', 'SV']]) {
@@ -128,21 +128,35 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
     const K = CLASSES[ref] || (ten && ten.classes[ref]) || {};
     // a donor is in the business when any occupation they reported (on any gift in these reports) shows it
     const fits = (name, occ) => [...new Set([occ, ...(OCCS.get(name.toUpperCase()) || [])])].some(o => fitsLaw(K, name, o, tagOf(name).tags || []));
+    // an executive who counts only through an official record of their stake (donor-class rule 5): the record, shown with the gift
+    const recOf = (name, occ) => { const os = [...new Set([occ, ...(OCCS.get(name.toUpperCase()) || [])])]; if (os.some(o => fitsLaw(K, name, o, tagOf(name).tags || []) && !recordFor(K, name, o, tagOf(name).tags || []))) return null; for (const o of os) { const r = recordFor(K, name, o, tagOf(name).tags || []); if (r) return r; } return null; };
+    const recNote = r => r ? { record: { company: r.company, role: r.role, url: r.recordUrl } } : {};
     const have = B.actions.filter(a => a.kind === 'bill' && a.ref === ref);
     if (have.length) {
       for (const a of have) {
         a.universe = true;
         // class gifts already on the card are held to the current rule (a hand-checked card with no class keeps its own)
         const before = a.gifts.length;
-        if (CLASSES[ref] || (ten && ten.classes[ref])) a.gifts = a.gifts.filter(g => g.kind !== 'class' || fits(g.donor, g.occ || ''));
+        if (CLASSES[ref] || (ten && ten.classes[ref])) a.gifts = a.gifts.filter(g => g.kind !== 'class' || fits(g.donor, g.occ || '')).map(g => { if (g.kind !== 'class') return g; const { record, ...rest } = g; return { ...rest, ...recNote(recOf(g.donor, g.occ || '')) }; });
         dropped += before - a.gifts.length;
+        // gifts that count through an executive's official record (rule 5), from the member's gift start, to members seated for the vote
+        {
+          const gk = g => [g.to, g.acct, g.donor, Number(g.amount), g.date].join('|'), seen = new Set(a.gifts.map(gk));
+          for (const k of members.filter(k => a.roll[k])) for (const r of donorRows[k]) {
+            if (r.date < G0(k) || !r.occ) continue;
+            const rec = recOf(r.donor, r.occ); if (!rec) continue;
+            const g = { to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, ...recNote(rec) };
+            if (!seen.has(gk(g))) { seen.add(gk(g)); a.gifts.push(g); recAdded++; }
+          }
+          a.gifts.sort((p, q) => p.date.localeCompare(q.date));
+        }
         // Cards already on the page keep their gifts; with a full tenure, add the earlier gifts (giftsFrom to
         // Dec 31, 2024) from donors in the same class, to members who were seated for the vote
         if (ten) {
           const gk = g => [g.to, g.acct, g.donor, Number(g.amount), g.date].join('|'), seen = new Set(a.gifts.map(gk));
           for (const k of members.filter(k => a.roll[k])) for (const r of donorRows[k]) {
             if (r.date < G0(k) || r.date >= CYCLE || !r.occ || !fits(r.donor, r.occ)) continue;
-            const g = { to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ };
+            const g = { to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, ...recNote(recOf(r.donor, r.occ)) };
             if (!seen.has(gk(g))) { seen.add(gk(g)); a.gifts.push(g); }
           }
           a.gifts.sort((p, q) => p.date.localeCompare(q.date));
@@ -164,7 +178,7 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
       for (const k of Object.keys(roll).filter(k => roll[k])) for (const r of donorRows[k]) {
         // A gift is shown with the occupation as reported; a row that reports none is not matched to a kind of business
         if (r.date < G0(k) || !r.occ) continue;
-        if (fits(r.donor, r.occ)) gifts.push({ to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ });
+        if (fits(r.donor, r.occ)) gifts.push({ to: k, acct: r.acct, kind: 'class', rel: 'cls', donor: r.donor, amount: r.amount, date: r.date, occ: r.occ, ...recNote(recOf(r.donor, r.occ)) });
       }
       gifts.sort((p, q) => p.date.localeCompare(q.date));
       const cat = bill.benefits.category || '';
@@ -191,4 +205,4 @@ for (const [bodyKey, chamber, pfx] of [['flhouse', 'house', 'HV'], ['flsenate', 
   report.push(`${bodyKey}: ${B.actions.filter(a => a.kind === 'bill' && a.universe).length} bill cards in the list`);
 }
 writeFileSync(new URL(FILE, root), JSON.stringify(d, null, 1) + '\n');
-console.log(report.join('\n') + `\nadded ${added}, kept ${kept} hand-checked; ${dropped} class gifts dropped by the donor rule; cards removed (no stated benefit): ${removed.join(', ') || 'none'}`);
+console.log(report.join('\n') + `\nadded ${added}, kept ${kept} hand-checked; ${dropped} class gifts dropped by the donor rule; ${recAdded} added through executive records; cards removed (no stated benefit): ${removed.join(', ') || 'none'}`);

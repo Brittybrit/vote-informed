@@ -38,8 +38,9 @@ regulated or burdened). The analysis sentence must state the benefit (payments, 
 reduced costs, less competition); laws whose sentence does not are in scripts/data/industry/not-a-benefit.json.
 Donors counted for a law: scripts/data/industry/INSTRUCTIONS.md (Brit, Oct 27, 2026). In short, an industry tag plus
 whole-word phrases (scripts/data/state/bills/classes-by-chapter.json; federal: floor-votes.json classes); a person
-only when their own reported occupation shows they are the business (a licensed practitioner it names, or an owner
-or principal), never an employee and never by their name; a company or committee by its own name or business; a
+only when their own reported occupation shows they are the business (a licensed practitioner it names, or an owner;
+an executive only with a Sunbiz or SEC record of their stake, scripts/data/industry/EXEC-RECORDS.md), never an employee
+and never by their name; a company or committee by its own name or business; a
 union only when the analysis names its workers as benefiting; realtors only for a law that names realtors.
 
 Lobbyist rules: a lobbyist counts for an action only when registered with that body for the party (same

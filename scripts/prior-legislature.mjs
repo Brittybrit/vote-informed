@@ -15,7 +15,7 @@
 // what is still being read.
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { pkey, dkey } from './lib/city.mjs';
-import { fitsLaw } from './lib/donor-class.mjs';
+import { fitsLaw, execPending, recordFor } from './lib/donor-class.mjs';
 import { voteStatus } from './lib/contested.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -32,7 +32,7 @@ const doe = (f, acct) => {
   if (!has(f)) return [];
   return readFileSync(P(f), 'utf8').split(/\r?\n/).filter(l => l.trim() && !l.startsWith('Candidate/Committee')).map(l => l.split('\t'))
     .filter(c => c.length >= 8 && (!acct || [].concat(acct).every(a => c[0].includes(a))) && !['INT', 'REF', 'LOA', 'COF'].includes(c[3]) && Number(c[2]) > 0)
-    .map(c => { const [m, d, y] = c[1].split('/'); return { donor: c[4].replace(/\s+/g, ' ').trim(), amount: Number(c[2]), date: `${y}-${m}-${d}`, occ: (c[7] || '').trim(), addr: c[5] || '', acct: f.split('/').pop().replace(/\.tsv$/, '') }; });
+    .map(c => { const [m, d, y] = c[1].split('/'); return { donor: c[4].replace(/\s+/g, ' ').trim(), amount: Number(c[2]), date: `${y}-${m}-${d}`, occ: (c[7] || '').trim(), addr: c[5] || '', city: c[6] || '', acct: f.split('/').pop().replace(/\.tsv$/, '') }; });
 };
 const SRC = {
   'vicki-l-lopez|fl-house': [[DOE + 'lopez-house.tsv', '(STR)'], [DOE + 'pc80020-lopez-pre2025.tsv'], ['scripts/data/county/donors/pc80020.tsv']],
@@ -148,7 +148,9 @@ export function againstOf(noActs, counted, gk) {
   const gs = [...fresh.values()];
   return { votes, money: Math.round(gs.reduce((s, g) => s + g.amt, 0) * 100) / 100, donors: new Set(gs.map(g => dkey(g.n))).size };
 }
-export function buildLegislative(nameOf = x => x) {
+// pending: optional list; gets every gift on a contested yes vote that would count with an executive's official
+// record (donor-class rule 5), for scripts/exec-candidates.mjs
+export function buildLegislative(nameOf = x => x, pending = null) {
   const out = [];
   const offices = [...(opt(T + 'prior-flhouse/offices.json').length ? J(T + 'prior-flhouse/offices.json') : []), ...(opt(T + 'prior-flsenate/offices.json').length ? J(T + 'prior-flsenate/offices.json') : [])];
   for (const o of offices) {
@@ -184,9 +186,18 @@ export function buildLegislative(nameOf = x => x) {
       const yr = Number(ch.slice(0, 4)), d = x.date || null;
       if (d ? !inTerm(d) : (yr < Number(start.slice(0, 4)) || (end && yr > Number(end.slice(0, 4))))) continue;
       const K = CLS[ch];
-      const g = K ? gifts.filter(r => r.occ && (occsOf.get(r.donor.toUpperCase()) || [r.occ]).some(o => fits(K, r.donor, o))).map(r => ({ n: r.donor, amt: r.amount, dt: r.date, k: 'class', occ: r.occ })) : [];
+      // an executive who counts through an official record of their stake (donor-class rule 5) carries the record
+      const recOf = r => { const os = occsOf.get(r.donor.toUpperCase()) || [r.occ]; if (os.some(o => fits(K, r.donor, o) && !recordFor(K, r.donor, o, tagOf(r.donor)))) return null; for (const o of os) { const x = recordFor(K, r.donor, o, tagOf(r.donor)); if (x) return { company: x.company, role: x.role, url: x.recordUrl }; } return null; };
+      const g = K ? gifts.filter(r => r.occ && (occsOf.get(r.donor.toUpperCase()) || [r.occ]).some(o => fits(K, r.donor, o))).map(r => { const rec = recOf(r); return { n: r.donor, amt: r.amount, dt: r.date, k: 'class', occ: r.occ, ...(rec ? { rec } : {}) }; }) : [];
       // vs: contested (a recorded no), unanimous or unknown tally; only a contested yes ties (Brit, Oct 27, 2026)
       laws.push({ d, ch, t: b.title || '', r: (b.bill || '') + ' · Ch. ' + ch, cat: (b.benefits || {}).category || '', v, vs: voteStatus(x.tally, null, false), u: x.url || b.url || null, cls: !!K, g });
+      if (pending && K && v === 'yes' && voteStatus(x.tally, null, false) === 'contested') for (const r of gifts) {
+        const occs = r.occ ? (occsOf.get(r.donor.toUpperCase()) || [r.occ]) : [];
+        // counts without a record: not a candidate; waits on a record or counts through one: listed
+        if (!occs.length || occs.some(o => fits(K, r.donor, o) && !recordFor(K, r.donor, o, tagOf(r.donor)))) continue;
+        if (!occs.some(o => execPending(K, r.donor, o, tagOf(r.donor)) || recordFor(K, r.donor, o, tagOf(r.donor)))) continue;
+        pending.push({ donor: r.donor, occ: r.occ, occs, addr: r.addr, city: r.city, amount: r.amount, date: r.date, acct: r.acct, pid: o.pid, office: o.body, card: (b.bill || '') + ' · Ch. ' + ch, ch, vote: x.url || null, cls: K });
+      }
     }
     laws.sort((a, b) => String(b.d || b.ch).localeCompare(String(a.d || a.ch)));
     reqs.sort((a, b) => String(b.d || b.fy).localeCompare(String(a.d || a.fy)));

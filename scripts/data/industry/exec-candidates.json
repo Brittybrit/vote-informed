@@ -1,0 +1,2476 @@
+{
+ "about": "Individual gifts that count for a law only with an official record of the executive donor's stake (scripts/lib/donor-class.mjs rule 5): occupation names the business with an executive title and no owner title; card is a contested floor vote the candidate voted yes on. Built by scripts/exec-candidates.mjs. resolved: the donor has a record in exec-records.json.",
+ "built": "2026-10-27",
+ "totals": {
+  "gifts": 85,
+  "donors": 52,
+  "dollars": 310925,
+  "resolved": {
+   "gifts": 6,
+   "donors": 2,
+   "dollars": 77500
+  }
+ },
+ "gifts": [
+  {
+   "key": "ALBRITTON PAMELA S",
+   "donor": "ALBRITTON PAMELA, S",
+   "occ": "CITRUS EXECUTIVE",
+   "occs": [
+    "CITRUS EXECUTIVE"
+   ],
+   "addr": "206 N 6TH AVENUE",
+   "city": "WAUCHULA, FL 33873",
+   "amount": 1000,
+   "date": "2020-06-10",
+   "acct": "garcia",
+   "candidate": "Garcia",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV25-180-1008",
+     "ref": "SB 180 · 2025",
+     "cls": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
+    },
+    {
+     "card": "SV21-88-1006",
+     "ref": "SB 88 · 2021",
+     "cls": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ALBRITTON PAMELA S",
+   "donor": "ALBRITTON PAMELA S.",
+   "occ": "CITRUS EXEC.",
+   "occs": [
+    "CITRUS EXEC."
+   ],
+   "addr": "206 N 6TH AVE",
+   "city": "WAUCHULA, FL 33873",
+   "amount": 1000,
+   "date": "2020-09-18",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV25-180-1008",
+     "ref": "SB 180 · 2025",
+     "cls": "AGRICULT|FARM|GROWER|CITRUS|SUGAR|RANCH|NURSERY|CATTLE|LYKES"
+    },
+    {
+     "card": "SV21-88-1006",
+     "ref": "SB 88 · 2021",
+     "cls": "FARM|AGRICULTUR|GROWER|CATTLE|CITRUS|SUGAR|NURSERY|DAIRY|RANCH"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ALONSO MARIA",
+   "donor": "ALONSO MARIA",
+   "occ": "COO OF HEALTH NETWORK",
+   "occs": [
+    "COO OF HEALTH NETWORK"
+   ],
+   "addr": "711 CATALONIA AVENUE",
+   "city": "CORAL GABLES, FL 33134",
+   "amount": 1000,
+   "date": "2024-10-12",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7016 · Ch. 2024-15",
+     "ref": "SB 7016 · Ch. 2024-15",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ALONSO MARIA A",
+   "donor": "ALONSO MARIA A.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "711 CATALONIA AVE",
+   "city": "MIAMI, FL 33134",
+   "amount": 1000,
+   "date": "2022-05-17",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ANTONUCCI LAWRENCE R",
+   "donor": "ANTONUCCI LAWRENCE R.",
+   "occ": "HOSPITAL EXECUTIVE",
+   "occs": [
+    "HOSPITAL EXECUTIVE"
+   ],
+   "addr": "10740 MIRASOL DRIVE, UNIT 203",
+   "city": "MIROMAR LAKES, FL 33913",
+   "amount": 1000,
+   "date": "2020-01-13",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BACHSCHMIDT WILLIAM",
+   "donor": "BACHSCHMIDT WILLIAM",
+   "occ": "VP OF CONSTRUCTORS CO",
+   "occs": [
+    "VP OF CONSTRUCTORS CO"
+   ],
+   "addr": "P.O. BOX 1396",
+   "city": "INGLIS, FL 34449",
+   "amount": 1000,
+   "date": "2016-01-11",
+   "acct": "simpson-cand",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7068 · Ch. 2019-43",
+     "ref": "SB 7068 · Ch. 2019-43",
+     "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BARNETT WESLEY",
+   "donor": "BARNETT WESLEY",
+   "occ": "EXECUTIVE HEALTH CARE",
+   "occs": [
+    "EXECUTIVE HEALTH CARE"
+   ],
+   "addr": "3830 GAINES COURT",
+   "city": "WINTER HAVEN, FL 33884",
+   "amount": 3000,
+   "date": "2021-11-08",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BARNETT WESLEY",
+   "donor": "BARNETT WESLEY",
+   "occ": "EXECUTIVE HEALTH CARE",
+   "occs": [
+    "EXECUTIVE HEALTH CARE"
+   ],
+   "addr": "3830 GAINES COURT",
+   "city": "WINTER HAVEN, FL 33884",
+   "amount": 3000,
+   "date": "2021-11-23",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BAUER CLIFF",
+   "donor": "BAUER CLIFF",
+   "occ": "MIAMI JEWISH HEALTH ADMIN EXEC",
+   "occs": [
+    "MIAMI JEWISH HEALTH ADMIN EXEC"
+   ],
+   "addr": "401 NW 127TH AVE, UNIT 5",
+   "city": "PLANTATION, FL 33325",
+   "amount": 1000,
+   "date": "2022-04-08",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7016 · Ch. 2024-15",
+     "ref": "SB 7016 · Ch. 2024-15",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BAUER CLIFFORD J",
+   "donor": "BAUER CLIFFORD J.",
+   "occ": "HEALTHCARE MGMT EXEC",
+   "occs": [
+    "HEALTHCARE MGMT EXEC"
+   ],
+   "addr": "401 NW 131ST AVE",
+   "city": "PLANTATION, FL 33325",
+   "amount": 250,
+   "date": "2017-08-25",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BELTRAN REBECCA",
+   "donor": "BELTRAN REBECCA",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "11190 SW 78 CT",
+   "city": "PINECREST, FL 33156",
+   "amount": 500,
+   "date": "2026-06-09",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BLISKO MICHAEL",
+   "donor": "BLISKO MICHAEL",
+   "occ": "HEALTH CARE EXECUTIVE",
+   "occs": [
+    "HEALTH CARE EXECUTIVE"
+   ],
+   "addr": "9390 BAY DRIVE",
+   "city": "SURFSIDE, FL 33154",
+   "amount": 500,
+   "date": "2023-12-17",
+   "acct": "basabe-pre2025",
+   "candidate": "Basabe",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV24-7016-1641",
+     "ref": "SB 7016 · 2024",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BODIE DONALD",
+   "donor": "BODIE DONALD",
+   "occ": "SENIOR VP FOR ENGINEERING FIRM",
+   "occs": [
+    "SENIOR VP FOR ENGINEERING FIRM"
+   ],
+   "addr": "6123 YEATS MANOR DRIVE",
+   "city": "TAMPA, FL 33616",
+   "amount": 1000,
+   "date": "2015-12-18",
+   "acct": "simpson-cand",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "HB 53 · Ch. 2021-194",
+     "ref": "HB 53 · Ch. 2021-194",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    },
+    {
+     "card": "SB 286 · Ch. 2013-28",
+     "ref": "SB 286 · Ch. 2013-28",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|MAPP|LANDSCAPE ARCH|AECOM|KIMLEY|STANTEC|HDR|JACOBS"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BONWITT GIL",
+   "donor": "BONWITT GIL",
+   "occ": "PRIVATE EQUITY FIRM PRINCIPAL",
+   "occs": [
+    "PRIVATE EQUITY FIRM PRINCIPAL"
+   ],
+   "addr": "1472 PRESIDENTIAL WAY",
+   "city": "MIAMI, FL 33179",
+   "amount": 250,
+   "date": "2026-09-06",
+   "acct": "calatayud",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-532-2016",
+     "ref": "SB 532 · 2024",
+     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BROCHARD LEILANI M",
+   "donor": "BROCHARD LEILANI M",
+   "occ": "TOWING EXECUTIVE",
+   "occs": [
+    "TOWING EXECUTIVE"
+   ],
+   "addr": "4710 HUNTING TRAIL",
+   "city": "LAKE WORTH, FL 33467",
+   "amount": 350,
+   "date": "2022-09-20",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "HB 1057 · Ch. 2019-92",
+     "ref": "HB 1057 · Ch. 2019-92",
+     "cls": "TOWING|WRECKER|COPART|INSURANCE AUTO AUCTION|\\bIAA\\b|AUTO AUCTION|TAG AGENC|TAG & TITLE|TAG AND TITLE|TITLE SERVICE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "BULLOCK BRIAN T",
+   "donor": "BULLOCK BRIAN T",
+   "occ": "CONSTRUCTION EXECUTIVE",
+   "occs": [
+    "CONSTRUCTION EXECUTIVE"
+   ],
+   "addr": "4491 NIGHT STAR TRAIL",
+   "city": "ODESSA, FL 33556",
+   "amount": 1000,
+   "date": "2024-07-31",
+   "acct": "pc79506",
+   "candidate": "Ingoglia",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-433-2011",
+     "ref": "HB 433 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
+    },
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "CUETO JOSENRIQUE",
+   "donor": "CUETO JOSENRIQUE",
+   "occ": "REAL ESTATE DEVELOPMENT CO. VP",
+   "occs": [
+    "REAL ESTATE DEVELOPMENT CO. VP"
+   ],
+   "addr": "1028 WEST 67TH ST",
+   "city": "HIALEAH, FL 33012",
+   "amount": 1000,
+   "date": "2026-09-23",
+   "acct": "calatayud",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV26-399-1009",
+     "ref": "HB 399 · 2026",
+     "cls": "DEVELOP|BUILDER|HOMEBUILD|HOME BUILD|REAL ESTATE|REALTOR|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DANIAL ETHAN",
+   "donor": "DANIAL ETHAN",
+   "occ": "EXECUTIVE",
+   "occs": [
+    "EXECUTIVE",
+    "PRIVATE EQUITY ANALYST EXEC.",
+    "EXECUTIVE EQUITY ANALYST"
+   ],
+   "addr": "202 CALLE TETUAN",
+   "city": "SAN JUAN, PUERTO RICO, XC 00901",
+   "amount": 1000,
+   "date": "2023-02-19",
+   "acct": "pc80728",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-532-2016",
+     "ref": "SB 532 · 2024",
+     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DANIAL ETHAN",
+   "donor": "DANIAL ETHAN",
+   "occ": "EXECUTIVE EQUITY ANALYST",
+   "occs": [
+    "EXECUTIVE EQUITY ANALYST",
+    "PRIVATE EQUITY ANALYST EXEC.",
+    "EXECUTIVE"
+   ],
+   "addr": "202 CALLE TETUAN",
+   "city": "SAN JUAN, XC 00901",
+   "amount": 1000,
+   "date": "2023-02-19",
+   "acct": "pc70258",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-532-2016",
+     "ref": "SB 532 · 2024",
+     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DANIAL ETHAN",
+   "donor": "DANIAL ETHAN",
+   "occ": "PRIVATE EQUITY ANALYST EXEC.",
+   "occs": [
+    "PRIVATE EQUITY ANALYST EXEC.",
+    "EXECUTIVE",
+    "EXECUTIVE EQUITY ANALYST"
+   ],
+   "addr": "5151 COLLINS AVE. APT. 1023",
+   "city": "MIAMI, FL 33140",
+   "amount": 650,
+   "date": "2026-04-30",
+   "acct": "calatayud",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-532-2016",
+     "ref": "SB 532 · 2024",
+     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DANIAL ETHAN",
+   "donor": "DANIAL ETHAN",
+   "occ": "PRIVATE EQUITY ANALYST EXEC.",
+   "occs": [
+    "PRIVATE EQUITY ANALYST EXEC.",
+    "EXECUTIVE",
+    "EXECUTIVE EQUITY ANALYST"
+   ],
+   "addr": "5151 COLLINS AVE",
+   "city": "MIAMI, FL 33140",
+   "amount": 650,
+   "date": "2026-04-30",
+   "acct": "pc80728",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-532-2016",
+     "ref": "SB 532 · 2024",
+     "cls": "SECURITIES|INVESTMENT BANK|BROKER-DEALER|BROKER DEALER|VENTURE CAPITAL|PRIVATE EQUITY|FINANCIAL ADVIS|WEALTH MANAGEMENT|CROWDFUND"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DE MOYA ALVARO",
+   "donor": "DE MOYA ALVARO",
+   "occ": "REAL ESTATE",
+   "occs": [
+    "REAL ESTATE",
+    "CONSTRUCTION COMPANY EXECUTIVE"
+   ],
+   "addr": "2811 S BAYSHORE DR, ONE PARK GROVE, APT. 14A",
+   "city": "MIAMI, FL 33133",
+   "amount": 1000,
+   "date": "2022-05-17",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV24-674-013",
+     "ref": "SB 674 · 2024",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    },
+    {
+     "card": "SV21-401-2005",
+     "ref": "HB 401 · 2021",
+     "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
+    },
+    {
+     "card": "SV21-53-1003",
+     "ref": "HB 53 · 2021",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DE MOYA ALVARO",
+   "donor": "DE MOYA ALVARO",
+   "occ": "CONSTRUCTION COMPANY EXECUTIVE",
+   "occs": [
+    "CONSTRUCTION COMPANY EXECUTIVE",
+    "REAL ESTATE"
+   ],
+   "addr": "2811 S BAYSHORE DR",
+   "city": "MIAMI, FL 33133",
+   "amount": 1000,
+   "date": "2026-07-09",
+   "acct": "calatayud",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV24-674-013",
+     "ref": "SB 674 · 2024",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "DUART CARLOS A",
+   "donor": "DUART CARLOS A.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE",
+    "EMERGENCY MANAGEMENT EXECUTIVE"
+   ],
+   "addr": "3915 W. MILLERS BRIDGE RD",
+   "city": "TALLAHASSEE, FL 32312",
+   "amount": 1000,
+   "date": "2025-03-03",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ELIAS NATHAN",
+   "donor": "ELIAS NATHAN",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "405 EL CAMINO REAL STE 248",
+   "city": "MENTO PARK, CA 94025",
+   "amount": 5000,
+   "date": "2026-05-11",
+   "acct": "pc84197",
+   "candidate": "Redondo",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV24-7016-1641",
+     "ref": "SB 7016 · 2024",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ESPINOSA FERNANDO",
+   "donor": "ESPINOSA FERNANDO",
+   "occ": "RETIRED",
+   "occs": [
+    "RETIRED",
+    "HEALTHCARE EXEC"
+   ],
+   "addr": "7801 SW 125 ST",
+   "city": "MIAMI, FL 33156",
+   "amount": 1000,
+   "date": "2022-05-12",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "ESPINOSA FERNANDO",
+   "donor": "ESPINOSA FERNANDO",
+   "occ": "HEALTHCARE EXEC",
+   "occs": [
+    "HEALTHCARE EXEC",
+    "RETIRED"
+   ],
+   "addr": "7801 SW 125 ST",
+   "city": "MIAMI, FL 33156",
+   "amount": 5000,
+   "date": "2022-12-08",
+   "acct": "pc70258",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FELDENKREIS GEORGE",
+   "donor": "FELDENKREIS GEORGE",
+   "occ": "CORP EXECUTIVE",
+   "occs": [
+    "CORP EXECUTIVE",
+    "PERRY ELLIS INTL CHAIRMAN",
+    "RETAIL CO. DIRECTOR"
+   ],
+   "addr": "3000 NW 107TH AVE",
+   "city": "MIAMI, FL 33172",
+   "amount": 500,
+   "date": "2014-03-28",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 1534 · Ch. 2022-192",
+     "ref": "SB 1534 · Ch. 2022-192",
+     "cls": "RETAIL|STORE|WALMART|PUBLIX|HOME DEPOT|TARGET|WALGREEN|CVS|SUPERMARKET"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "FELDENKREIS GEORGE",
+   "donor": "FELDENKREIS GEORGE",
+   "occ": "CORP EXECUTIVE",
+   "occs": [
+    "CORP EXECUTIVE",
+    "PERRY ELLIS INTL CHAIRMAN",
+    "RETAIL CO. DIRECTOR"
+   ],
+   "addr": "3000 NW 107TH AVE",
+   "city": "MIAMI, FL 33172",
+   "amount": 500,
+   "date": "2014-09-02",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 1534 · Ch. 2022-192",
+     "ref": "SB 1534 · Ch. 2022-192",
+     "cls": "RETAIL|STORE|WALMART|PUBLIX|HOME DEPOT|TARGET|WALGREEN|CVS|SUPERMARKET"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "FELDENKREIS GEORGE",
+   "donor": "FELDENKREIS GEORGE",
+   "occ": "PERRY ELLIS INTL CHAIRMAN",
+   "occs": [
+    "CORP EXECUTIVE",
+    "PERRY ELLIS INTL CHAIRMAN",
+    "RETAIL CO. DIRECTOR"
+   ],
+   "addr": "3000 NW 107 AVENUE",
+   "city": "MIAMI, FL 33172",
+   "amount": 1000,
+   "date": "2016-10-21",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 1534 · Ch. 2022-192",
+     "ref": "SB 1534 · Ch. 2022-192",
+     "cls": "RETAIL|STORE|WALMART|PUBLIX|HOME DEPOT|TARGET|WALGREEN|CVS|SUPERMARKET"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "FELDENKREIS GEORGE",
+   "donor": "FELDENKREIS GEORGE",
+   "occ": "RETAIL CO. DIRECTOR",
+   "occs": [
+    "CORP EXECUTIVE",
+    "PERRY ELLIS INTL CHAIRMAN",
+    "RETAIL CO. DIRECTOR"
+   ],
+   "addr": "3000 NW 107TH AVE",
+   "city": "MIAMI, FL 33172",
+   "amount": 500,
+   "date": "2017-12-11",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 1534 · Ch. 2022-192",
+     "ref": "SB 1534 · Ch. 2022-192",
+     "cls": "RETAIL|STORE|WALMART|PUBLIX|HOME DEPOT|TARGET|WALGREEN|CVS|SUPERMARKET"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "FERNANDEZ AURELIO M",
+   "donor": "FERNANDEZ AURELIO M.",
+   "occ": "HOSPITAL EXECUTIVE",
+   "occs": [
+    "HOSPITAL EXECUTIVE"
+   ],
+   "addr": "8540 N LAKE DASHA DRIVE",
+   "city": "PLANTATION, FL 33324",
+   "amount": 2500,
+   "date": "2020-01-13",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FERNANDEZ MANUEL",
+   "donor": "FERNANDEZ MANUEL",
+   "occ": "EXECUTIVE - BANYAN HEALTH",
+   "occs": [
+    "EXECUTIVE - BANYAN HEALTH"
+   ],
+   "addr": "2160 DENNY COURT",
+   "city": "BOCA RATON, FL 33486",
+   "amount": 1000,
+   "date": "2024-01-06",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7016 · Ch. 2024-15",
+     "ref": "SB 7016 · Ch. 2024-15",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FERNANDEZ MIGUEL B",
+   "donor": "FERNANDEZ MIGUEL B.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "121 ALHAMBRA PLAZA SUITE 1100",
+   "city": "CORAL GABLES, FL 33134",
+   "amount": 100000,
+   "date": "2017-05-16",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FERNANDEZ MIGUEL B",
+   "donor": "FERNANDEZ MIGUEL B.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "121 ALHAMBRA PLAZA SUITE 1100",
+   "city": "CORAL GABLES, FL 33134",
+   "amount": 25000,
+   "date": "2019-10-31",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FORD LEE T",
+   "donor": "FORD LEE T",
+   "occ": "VP CONSTRUCTION",
+   "occs": [
+    "VP CONSTRUCTION"
+   ],
+   "addr": "2809 W LEILA AVE",
+   "city": "TAMPA, FL 33611",
+   "amount": 1000,
+   "date": "2017-02-11",
+   "acct": "simpson-cand",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "HB 53 · Ch. 2021-194",
+     "ref": "HB 53 · Ch. 2021-194",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    },
+    {
+     "card": "HB 401 · Ch. 2021-201",
+     "ref": "HB 401 · Ch. 2021-201",
+     "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
+    },
+    {
+     "card": "SB 7070 · Ch. 2019-23",
+     "ref": "SB 7070 · Ch. 2019-23",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+    },
+    {
+     "card": "SB 7068 · Ch. 2019-43",
+     "ref": "SB 7068 · Ch. 2019-43",
+     "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FOREMAN ROBERT",
+   "donor": "FOREMAN ROBERT",
+   "occ": "HOSPITAL VP",
+   "occs": [
+    "HOSPITAL VP"
+   ],
+   "addr": "4201 TAMPICO TRL",
+   "city": "SPRING HILL, FL 34607",
+   "amount": 500,
+   "date": "2018-04-25",
+   "acct": "ingoglia-cand",
+   "candidate": "blaise-ingoglia",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 5101 · Ch. 2016-65",
+     "ref": "HB 5101 · Ch. 2016-65",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    },
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FOREMAN ROBERT LEE",
+   "donor": "FOREMAN ROBERT LEE",
+   "occ": "HOSPITAL EXECUTIVE",
+   "occs": [
+    "HOSPITAL EXECUTIVE",
+    "HOSPITAL ADMIN"
+   ],
+   "addr": "4201 TAMPICO TRL",
+   "city": "SPRING HILL, FL 34607",
+   "amount": 1000,
+   "date": "2014-06-18",
+   "acct": "ingoglia-cand",
+   "candidate": "blaise-ingoglia",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 5101 · Ch. 2016-65",
+     "ref": "HB 5101 · Ch. 2016-65",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    },
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "FOREMAN ROBERT LEE",
+   "donor": "FOREMAN ROBERT LEE",
+   "occ": "HOSPITAL ADMIN",
+   "occs": [
+    "HOSPITAL EXECUTIVE",
+    "HOSPITAL ADMIN"
+   ],
+   "addr": "4201 TAMPICO TRL",
+   "city": "SPRING HILL, FL 34607",
+   "amount": 500,
+   "date": "2016-04-29",
+   "acct": "ingoglia-cand",
+   "candidate": "blaise-ingoglia",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 5101 · Ch. 2016-65",
+     "ref": "HB 5101 · Ch. 2016-65",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL|SCHOOL|ACADEMY|PREPARATORY|CHARTER"
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    },
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "GUILLAMA NOEL J",
+   "donor": "GUILLAMA NOEL J",
+   "occ": "HEALTH CARE EXECUTIVE",
+   "occs": [
+    "HEALTH CARE EXECUTIVE"
+   ],
+   "addr": "929 CEDAR COVE ROAD",
+   "city": "WELLINGTON, FL 33414",
+   "amount": 1000,
+   "date": "2022-01-10",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HEDRICK DALE",
+   "donor": "HEDRICK DALE",
+   "occ": "CONSTRUCTION EXECUTIVE",
+   "occs": [
+    "CONSTRUCTION EXECUTIVE"
+   ],
+   "addr": "2200 CENTREPARK WEST DRIVE",
+   "city": "WEST PALM BEACH, FL 33409",
+   "amount": 5000,
+   "date": "2022-08-16",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "HB 53 · Ch. 2021-194",
+     "ref": "HB 53 · Ch. 2021-194",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    },
+    {
+     "card": "HB 401 · Ch. 2021-201",
+     "ref": "HB 401 · Ch. 2021-201",
+     "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
+    },
+    {
+     "card": "SB 7070 · Ch. 2019-23",
+     "ref": "SB 7070 · Ch. 2019-23",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+    },
+    {
+     "card": "SB 7068 · Ch. 2019-43",
+     "ref": "SB 7068 · Ch. 2019-43",
+     "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN/COLORECTAL CANC",
+   "occs": [
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 35,
+   "date": "2021-10-25",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN/COLORECTAL CANC",
+   "occs": [
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 35,
+   "date": "2021-11-25",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 25,
+   "date": "2022-01-04",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 25,
+   "date": "2022-01-10",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMINCOLORECTAL CANCE",
+   "occs": [
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 25,
+   "date": "2022-03-29",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN COLORECTAL CANC",
+   "occs": [
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 40,
+   "date": "2022-04-13",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PROGRAM DIR COLORECTAL CANCER",
+   "occs": [
+    "PROGRAM DIR COLORECTAL CANCER",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 75,
+   "date": "2022-04-28",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 250,
+   "date": "2022-06-01",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 50,
+   "date": "2022-06-23",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 175,
+   "date": "2022-07-08",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "RETIRED",
+   "occs": [
+    "RETIRED",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 440,
+   "date": "2022-07-14",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 100,
+   "date": "2022-08-26",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "INDIVIDUAL",
+   "occs": [
+    "INDIVIDUAL",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 50,
+   "date": "2022-09-13",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 125,
+   "date": "2022-10-04",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 25,
+   "date": "2022-10-18",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 50,
+   "date": "2022-10-29",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "PLATFORM ADMIN",
+   "occs": [
+    "PLATFORM ADMIN",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL",
+    "AFFORDABLE HOUSING DIRECTOR"
+   ],
+   "addr": "13885 IBIS POINT BLVD",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 25,
+   "date": "2022-11-03",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HICKS JOSHUA",
+   "donor": "HICKS JOSHUA",
+   "occ": "AFFORDABLE HOUSING DIRECTOR",
+   "occs": [
+    "AFFORDABLE HOUSING DIRECTOR",
+    "PLATFORM ADMIN/COLORECTAL CANC",
+    "PLATFORM ADMIN",
+    "PLATFORM ADMINCOLORECTAL CANCE",
+    "PLATFORM ADMIN COLORECTAL CANC",
+    "PROGRAM DIR COLORECTAL CANCER",
+    "RETIRED",
+    "INDIVIDUAL"
+   ],
+   "addr": "13885 IBIS POINT BLVD.",
+   "city": "JACKSONVILLE, FL 32224",
+   "amount": 125,
+   "date": "2024-04-21",
+   "acct": "nixon-pre2025",
+   "candidate": "Nixon",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV21-7061-458",
+     "ref": "HB 7061 · 2021",
+     "cls": "AFFORDABLE|MULTIFAMILY|MULTI-FAMILY|APARTMENT|HOUSING"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "HIRONS DALE",
+   "donor": "HIRONS DALE",
+   "occ": "CONSTRUCTION EXECUTIVE",
+   "occs": [
+    "CONSTRUCTION EXECUTIVE"
+   ],
+   "addr": "105 S. GUNLOCK AVENUE",
+   "city": "TAMPA, FL 33609",
+   "amount": 500,
+   "date": "2024-08-01",
+   "acct": "pc79506",
+   "candidate": "Ingoglia",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-433-2011",
+     "ref": "HB 433 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
+    },
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "JARDON MARIO E",
+   "donor": "JARDON MARIO E.",
+   "occ": "HEALTH CARE",
+   "occs": [
+    "HEALTH CARE",
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "2555 COLLINS AVE. 1010",
+   "city": "MIAMI BEACH, FL 33140",
+   "amount": 500,
+   "date": "2014-08-15",
+   "acct": "avila-cand",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "JARDON MARIO E",
+   "donor": "JARDON MARIO E.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTH CARE",
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "2555 COLLINS AVE., 1010",
+   "city": "MIAMI BEACH, FL 33140",
+   "amount": 5000,
+   "date": "2021-12-29",
+   "acct": "pc64489-avila",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "JARDON MARIO E",
+   "donor": "JARDON MARIO E.",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "2555 COLLINS AVE., #1010",
+   "city": "MIAMI BEACH, FL 33140",
+   "amount": 1000,
+   "date": "2022-05-17",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "KOBLINSKI MONICA",
+   "donor": "KOBLINSKI MONICA",
+   "occ": "SIMSTATE BANK VP",
+   "occs": [
+    "SIMSTATE BANK VP"
+   ],
+   "addr": "8251 SW 134TH ST",
+   "city": "MIAMI, FL 33156",
+   "amount": 100,
+   "date": "2022-04-28",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 85 · Ch. 2024-62",
+     "ref": "HB 85 · Ch. 2024-62",
+     "cls": "BANK|BANCORP|TRUST COMPANY|CAPITAL BANK|BANKERS"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "LINDBERG GREG E",
+   "donor": "LINDBERG GREG E",
+   "occ": "CHAIRMAN FOR INSURANCE CO",
+   "occs": [
+    "CHAIRMAN FOR INSURANCE CO"
+   ],
+   "addr": "2222 SEDWICK RD",
+   "city": "DURHAM, NC 27713",
+   "amount": 1000,
+   "date": "2017-12-06",
+   "acct": "ingoglia-cand",
+   "candidate": "blaise-ingoglia",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 465 · Ch. 2018-131",
+     "ref": "HB 465 · Ch. 2018-131",
+     "cls": "INSURANCE COMPANY|INSURANCE CO\\b|INSURANCE HOLDINGS|INSURER|UNDERWRIT|CASUALTY|MUTUAL|ASSURANCE|INDEMNITY|STATE FARM|ALLSTATE|GEICO|PROGRESSIVE|USAA|LIBERTY MUTUAL|TRAVELERS|NATIONWIDE|UNIVERSAL PROPERTY|HERITAGE|PEOPLE.S TRUST|FEDNAT|TOWER HILL|AMERICAN INTEGRITY|FCCI|FLORIDA BLUE|HUMANA"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "MARTINEZ DAVID",
+   "donor": "MARTINEZ DAVID",
+   "occ": "CONSTRUCTION COMPANY CFO",
+   "occs": [
+    "CONSTRUCTION COMPANY CFO"
+   ],
+   "addr": "4011 BLUE GRASS LANE",
+   "city": "DAVIE, FL 33330",
+   "amount": 1000,
+   "date": "2026-09-14",
+   "acct": "calatayud",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV24-674-013",
+     "ref": "SB 674 · 2024",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "MILLER STUART A",
+   "donor": "MILLER STUART A.",
+   "occ": "CONSTRUCTION",
+   "occs": [
+    "CONSTRUCTION",
+    "CONSTRUCTION COMPANY EXECUTIVE"
+   ],
+   "addr": "5505 BLUE LAGOON DRIVE",
+   "city": "MIAMI, FL 33126",
+   "amount": 25000,
+   "date": "2024-06-11",
+   "acct": "pc79506",
+   "candidate": "Ingoglia",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-433-2011",
+     "ref": "HB 433 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|ASSOCIATED BUILDERS|STAFFING|LANDSCAP|JANITORIAL|ROOF|PAVING"
+    },
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "MILLER STUART A",
+   "donor": "MILLER STUART A.",
+   "occ": "CONSTRUCTION COMPANY EXECUTIVE",
+   "occs": [
+    "CONSTRUCTION COMPANY EXECUTIVE",
+    "CONSTRUCTION"
+   ],
+   "addr": "5505 BLUE LAGOON DRIVE",
+   "city": "MIAMI, FL 33126",
+   "amount": 50000,
+   "date": "2026-06-17",
+   "acct": "pc80728",
+   "candidate": "Calatayud",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV24-674-013",
+     "ref": "SB 674 · 2024",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    }
+   ],
+   "resolved": true
+  },
+  {
+   "key": "MOSS CHAD",
+   "donor": "MOSS CHAD",
+   "occ": "EXECUTIVE VP/CONSTRUCTION COMP",
+   "occs": [
+    "EXECUTIVE VP/CONSTRUCTION COMP"
+   ],
+   "addr": "2101 N. ANDREWS AVENUE",
+   "city": "FT. LAUDERDALE, FL 33311",
+   "amount": 1000,
+   "date": "2017-05-24",
+   "acct": "amrodriguez-house",
+   "candidate": "ana-maria-rodriguez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 7070 · Ch. 2019-23",
+     "ref": "SB 7070 · Ch. 2019-23",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PRIVATE SCHOOL|ACADEMY|CHRISTIAN SCHOOL|PREPARATORY|PREP SCHOOL|CATHOLIC SCHOOL|DAY SCHOOL"
+    },
+    {
+     "card": "SB 7068 · Ch. 2019-43",
+     "ref": "SB 7068 · Ch. 2019-43",
+     "cls": "CONSTRUCT|CONTRACTOR|PAVING|ASPHALT|ROAD|BRIDGE|AGGREGATE|FTBA|FREIGHT|LOGISTIC|TRUCK|TRANSPORT|HAUL"
+    },
+    {
+     "card": "HB 1247 · Ch. 2019-94",
+     "ref": "HB 1247 · Ch. 2019-94",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "HB 905 · Ch. 2019-153",
+     "ref": "HB 905 · Ch. 2019-153",
+     "cls": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR"
+    },
+    {
+     "card": "SB 7018 · Ch. 2020-21",
+     "ref": "SB 7018 · Ch. 2020-21",
+     "cls": "CONSTRUCT|PAVING|ASPHALT|ROAD|BRIDGE|CONTRACTOR"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "MUNILLA PEDRO R",
+   "donor": "MUNILLA PEDRO R.",
+   "occ": "MUNILLA CONSTRUCTION VP",
+   "occs": [
+    "MUNILLA CONSTRUCTION VP"
+   ],
+   "addr": "7277 SUNSET DR.",
+   "city": "MIAMI, FL 33143",
+   "amount": 500,
+   "date": "2024-01-08",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 346 · Ch. 2023-134",
+     "ref": "SB 346 · Ch. 2023-134",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SB 250 · Ch. 2023-304",
+     "ref": "SB 250 · Ch. 2023-304",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "HB 705 · Ch. 2024-208",
+     "ref": "HB 705 · Ch. 2024-208",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SB 674 · Ch. 2024-267",
+     "ref": "SB 674 · Ch. 2024-267",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "HB 619 · Ch. 2024-271",
+     "ref": "HB 619 · Ch. 2024-271",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "PAULUS DAN",
+   "donor": "PAULUS DAN",
+   "occ": "ENGINEERING EXEC.",
+   "occs": [
+    "ENGINEERING EXEC."
+   ],
+   "addr": "1215 WALLACE DR",
+   "city": "DELRAY BEACH, FL 33444",
+   "amount": 500,
+   "date": "2020-06-23",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV21-53-1003",
+     "ref": "HB 53 · 2021",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "PEREZ PEDRO VILLAR",
+   "donor": "PEREZ PEDRO VILLAR",
+   "occ": "HEALTHCARE EXEC.",
+   "occs": [
+    "HEALTHCARE EXEC."
+   ],
+   "addr": "8201 SW 187TH ST",
+   "city": "CUTLER BAY, FL 33157",
+   "amount": 2500,
+   "date": "2020-10-02",
+   "acct": "pc70258",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "RABINOWITZ MATTHEW",
+   "donor": "RABINOWITZ MATTHEW",
+   "occ": "HEALTH CARE EXECUTIVE CHAIRMAN",
+   "occs": [
+    "HEALTH CARE EXECUTIVE CHAIRMAN"
+   ],
+   "addr": "17749 COLLINS AVENUE - APARTMENT 3802",
+   "city": "SUNNY ISLES BEACH, FL 33160",
+   "amount": 1000,
+   "date": "2026-10-14",
+   "acct": "basabe",
+   "candidate": "Basabe",
+   "body": "flhouse",
+   "cards": [
+    {
+     "card": "HV24-7016-1641",
+     "ref": "SB 7016 · 2024",
+     "cls": "PHYSICIAN|MEDICAL|CLINIC|HEALTH|DENTAL|DENTIST|NURSE"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "READ FRANCIS J",
+   "donor": "READ FRANCIS J.",
+   "occ": "HEALTH CARE EXECUTIVE",
+   "occs": [
+    "HEALTH CARE EXECUTIVE"
+   ],
+   "addr": "1548 LAKE POLO ROAD",
+   "city": "ODESSA, FL 33556",
+   "amount": 1000,
+   "date": "2018-01-08",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "REYES M JUDE",
+   "donor": "REYES M. JUDE",
+   "occ": "EXECUTIVE-BEER & FOOD DISTRIBU",
+   "occs": [
+    "EXECUTIVE-BEER & FOOD DISTRIBU"
+   ],
+   "addr": "777 SOUTH FLAGLER DRIVE, SUITE 1500",
+   "city": "WEST PALM BEACH, FL 33401",
+   "amount": 2500,
+   "date": "2021-03-01",
+   "acct": "pc64489-avila",
+   "candidate": "bryan-avila",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "HB 961 · Ch. 2018-135",
+     "ref": "HB 961 · Ch. 2018-135",
+     "cls": "BREW|BEER|WINE|SPIRITS|DISTILL|LIQUOR|BEVERAGE|ANHEUSER|BACARDI|DIAGEO|MOLSON|CONSTELLATION|\\bBAR\\b|\\bPUB\\b|TAVERN|LOUNGE|RESTAURANT|NIGHTCLUB|SALOON|GRILL"
+    },
+    {
+     "card": "HB 1459 · Ch. 2023-294",
+     "ref": "HB 1459 · Ch. 2023-294",
+     "cls": "BREW|BEER|ALE |CRAFT"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "SCHAFER ROBERT",
+   "donor": "SCHAFER ROBERT",
+   "occ": "RANGER CONSTRUCTION EXECUTIVE",
+   "occs": [
+    "RANGER CONSTRUCTION EXECUTIVE"
+   ],
+   "addr": "101 SANSBURYS WAY",
+   "city": "WEST PALM BEACH, FL 33411",
+   "amount": 500,
+   "date": "2022-04-08",
+   "acct": "lopez-house",
+   "candidate": "vicki-l-lopez",
+   "body": "fl-house",
+   "cards": [
+    {
+     "card": "SB 346 · Ch. 2023-134",
+     "ref": "SB 346 · Ch. 2023-134",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SB 250 · Ch. 2023-304",
+     "ref": "SB 250 · Ch. 2023-304",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "HB 705 · Ch. 2024-208",
+     "ref": "HB 705 · Ch. 2024-208",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SB 674 · Ch. 2024-267",
+     "ref": "SB 674 · Ch. 2024-267",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "HB 619 · Ch. 2024-271",
+     "ref": "HB 619 · Ch. 2024-271",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "SCHMEISER BRENT",
+   "donor": "SCHMEISER BRENT",
+   "occ": "VP- MANUFACTURER",
+   "occs": [
+    "VP- MANUFACTURER"
+   ],
+   "addr": "2805 RESNIK CIR E",
+   "city": "PALM HARBOR, FL 34683",
+   "amount": 250,
+   "date": "2013-12-16",
+   "acct": "simpson-cand",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "HB 7099 · Ch. 2016-220",
+     "ref": "HB 7099 · Ch. 2016-220",
+     "cls": "MANUFACTUR|FABRICAT|PACKING|SCRAP|METAL RECYCL|CRUISE|CARNIVAL|ROYAL CARIBBEAN|NORWEGIAN"
+    },
+    {
+     "card": "HB 7007 · Ch. 2013-39",
+     "ref": "HB 7007 · Ch. 2013-39",
+     "cls": "MANUFACTUR|FABRICAT"
+    },
+    {
+     "card": "HB 999 · Ch. 2013-92",
+     "ref": "HB 999 · Ch. 2013-92",
+     "cls": "MANUFACTUR|FABRICAT|WELL DRILL|WATER WELL|EVENT PROMOT|SPECIAL EVENTS"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "SHANAHAN KATHLEEN",
+   "donor": "SHANAHAN KATHLEEN",
+   "occ": "PAVEMENT/SOIL STABILIZATION",
+   "occs": [
+    "PAVEMENT/SOIL STABILIZATION",
+    "CONSTRUCTION EXEC."
+   ],
+   "addr": "2625 WEST SUNSET DRIVE",
+   "city": "TAMPA, FL 33629",
+   "amount": 250,
+   "date": "2013-08-07",
+   "acct": "simpson-cand",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 778 · Ch. 2015-63",
+     "ref": "SB 778 · Ch. 2015-63",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "HB 7095 · Ch. 2014-167",
+     "ref": "HB 7095 · Ch. 2014-167",
+     "cls": "STADIUM|ARENA|SPORTS|DOLPHINS|MARLINS|\\bHEAT\\b|LIGHTNING|PANTHERS|JAGUARS|BUCCANEERS|ORLANDO MAGIC|TAMPA BAY RAYS|SPEEDWAY|CONTRACTOR|CONSTRUCTION|BUILDER"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "SHANAHAN KATHLEEN",
+   "donor": "SHANAHAN KATHLEEN",
+   "occ": "CONSTRUCTION EXEC.",
+   "occs": [
+    "PAVEMENT/SOIL STABILIZATION",
+    "CONSTRUCTION EXEC."
+   ],
+   "addr": "2625 WEST SUNSET DRIVE",
+   "city": "TAMPA, FL 33629",
+   "amount": 250,
+   "date": "2014-09-17",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 778 · Ch. 2015-63",
+     "ref": "SB 778 · Ch. 2015-63",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "HB 7095 · Ch. 2014-167",
+     "ref": "HB 7095 · Ch. 2014-167",
+     "cls": "STADIUM|ARENA|SPORTS|DOLPHINS|MARLINS|\\bHEAT\\b|LIGHTNING|PANTHERS|JAGUARS|BUCCANEERS|ORLANDO MAGIC|TAMPA BAY RAYS|SPEEDWAY|CONTRACTOR|CONSTRUCTION|BUILDER"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "SOLOMON STEVEN",
+   "donor": "SOLOMON STEVEN",
+   "occ": "EXECUTIVE HEALTHCARE",
+   "occs": [
+    "EXECUTIVE HEALTHCARE"
+   ],
+   "addr": "3100 EAST PLANO PARKWAY",
+   "city": "DALLAS, TX 75205",
+   "amount": 25000,
+   "date": "2021-11-23",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "VANOSDOL THOMAS JOHN",
+   "donor": "VANOSDOL THOMAS JOHN",
+   "occ": "HOSPITAL EXECUTIVE",
+   "occs": [
+    "HOSPITAL EXECUTIVE"
+   ],
+   "addr": "3709 PINE STREET",
+   "city": "JACKSONVILLE, FL 32205",
+   "amount": 2500,
+   "date": "2020-01-13",
+   "acct": "pc60614-simpson",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    },
+    {
+     "card": "HB 21 · Ch. 2019-136",
+     "ref": "HB 21 · Ch. 2019-136",
+     "cls": "HOSPITAL|HEALTH SYSTEM|MEDICAL CENTER|HEALTH CARE|HEALTHCARE|BAPTIST|ADVENTHEALTH|TAMPA GENERAL|JACKSON|MOUNT SINAI|HCA|TENET|ORLANDO HEALTH|MEMORIAL"
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "VIDAL DUART TINA",
+   "donor": "VIDAL DUART TINA",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "3915 W MILLERS BRIDGE RD",
+   "city": "TALLAHASSEE, FL 32312",
+   "amount": 1000,
+   "date": "2026-09-24",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "WILSON CIRANNA TAMI",
+   "donor": "WILSON CIRANNA TAMI",
+   "occ": "CFO HEALTHCARE CO.",
+   "occs": [
+    "CFO HEALTHCARE CO."
+   ],
+   "addr": "435 STANFORD DR",
+   "city": "ARCADIA, CA 91007",
+   "amount": 750,
+   "date": "2020-10-22",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV22-7014-007",
+     "ref": "SB 7014 · 2022",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "WORKMAN RICHARD",
+   "donor": "WORKMAN RICHARD",
+   "occ": "HEALTHCARE EXECUTIVE",
+   "occs": [
+    "HEALTHCARE EXECUTIVE"
+   ],
+   "addr": "9800 WALZER COURT",
+   "city": "WINDERMERE, FL 34786",
+   "amount": 10000,
+   "date": "2021-12-09",
+   "acct": "pc79644-simpson-pre2025",
+   "candidate": "wilton-simpson",
+   "body": "fl-senate",
+   "cards": [
+    {
+     "card": "SB 7014 · Ch. 2022-10",
+     "ref": "SB 7014 · Ch. 2022-10",
+     "cls": "HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|ASSISTED LIVING|DOCTOR|CLINIC|M\\.D\\."
+    }
+   ],
+   "resolved": false
+  },
+  {
+   "key": "YOUNG LEE CHRISTINE",
+   "donor": "YOUNG LEE CHRISTINE",
+   "occ": "CONSTRUCTION EXEC.",
+   "occs": [
+    "CONSTRUCTION EXEC."
+   ],
+   "addr": "232 TIDE AVE",
+   "city": "TAVERNIER, FL 33070",
+   "amount": 500,
+   "date": "2020-09-04",
+   "acct": "rodriguez",
+   "candidate": "Rodriguez",
+   "body": "flsenate",
+   "cards": [
+    {
+     "card": "SV24-619-2037",
+     "ref": "HB 619 · 2024",
+     "cls": "ENGINEER|ARCHITECT|SURVEY|CONTRACTOR|CONSTRUCTION|DEBRIS"
+    },
+    {
+     "card": "SV24-705-1041",
+     "ref": "HB 705 · 2024",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER"
+    },
+    {
+     "card": "SV24-781-1048",
+     "ref": "HB 781 · 2024",
+     "cls": "CONSTRUCTION|CONTRACTOR|ENGINEER|INFRASTRUCTURE|DEVELOP|P3|PARTNERSHIP"
+    },
+    {
+     "card": "SV24-674-013",
+     "ref": "SB 674 · 2024",
+     "cls": "STEEL|IRON|METAL|CONTRACTOR|CONSTRUCTION"
+    },
+    {
+     "card": "SV23-360-1007",
+     "ref": "SB 360 · 2023",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD"
+    },
+    {
+     "card": "SV21-401-2005",
+     "ref": "HB 401 · 2021",
+     "cls": "BUILDER|HOMEBUILD|HOME BUILD|CONSTRUCTION|CONTRACTOR"
+    },
+    {
+     "card": "SV21-53-1003",
+     "ref": "HB 53 · 2021",
+     "cls": "CONTRACTOR|CONSTRUCTION|BUILDER|PAVING|CONCRETE|AGGREGATE|ASPHALT|MATERIAL|ENGINEER|FTBA|ROAD"
+    }
+   ],
+   "resolved": false
+  }
+ ]
+}

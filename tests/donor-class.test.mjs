@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { fitsLaw, phrases, isOrg } from '../scripts/lib/donor-class.mjs';
+import { fitsLaw, phrases, isOrg, execPending, recordFor, setExecRecords, donorKey } from '../scripts/lib/donor-class.mjs';
 
 const J = p => JSON.parse(readFileSync(new URL('../' + p, import.meta.url), 'utf8'));
 const opt = p => existsSync(new URL('../' + p, import.meta.url)) ? J(p) : {};
@@ -114,4 +114,91 @@ test('a company is told from a person by its name', () => {
   assert.ok(isOrg('REALTORS POLITICAL ADVOCACY COMMITTEE'));
   assert.ok(!isOrg('MINION JAMES', 'CONTRACTOR'));
   assert.ok(!isOrg('COWART JENNIFER', 'PHYSICIAN MAYO CLINIC FLORIDA'));
+});
+
+// Rule 5 (Brit, Oct 27, 2026): an executive title without ownership counts only with an official record of the person's
+// stake (Sunbiz officer listing or SEC filing). scripts/data/industry/EXEC-RECORDS.md
+const REC = J('scripts/data/industry/exec-records.json').records;
+const CONSTR = { tags: [], re: 'CONTRACTOR|CONSTRUCTION|BUILDER|HOMEBUILD|HOME BUILD' };
+const HOSP = { tags: [], re: 'HOSPITAL|HEALTH|MEDICAL|PHYSICIAN|NURSING|CLINIC' };
+const RETAIL = { tags: [], re: 'RETAIL|STORE|SUPERMARKET' };
+
+test('executives without a record do not count; they wait on a record', () => {
+  setExecRecords({});
+  for (const [K, occ] of [[CONSTR, 'CONSTRUCTION COMPANY EXECUTIVE'], [HOSP, 'HEALTHCARE EXECUTIVE'], [HOSP, 'HOSPITAL VP'], [CONSTR, 'CONSTRUCTION COMPANY CFO'],
+    [CONSTR, 'EXECUTIVE VP/CONSTRUCTION COMP'], [HOSP, 'HEALTH CARE EXECUTIVE CHAIRMAN'], [RETAIL, 'RETAIL CO. DIRECTOR'], [CONSTR, 'MUNILLA CONSTRUCTION VP']]) {
+    assert.ok(!fitsLaw(K, 'DOE JOHN', occ, []), occ);
+    assert.ok(execPending(K, 'DOE JOHN', occ, []), occ);
+  }
+  // CHAIRMAN and PRINCIPAL are executive titles, not ownership
+  assert.ok(!fitsLaw({ tags: [], re: 'PRIVATE EQUITY' }, 'BONWITT GIL', 'PRIVATE EQUITY FIRM PRINCIPAL', []));
+  assert.ok(execPending({ tags: [], re: 'PRIVATE EQUITY' }, 'BONWITT GIL', 'PRIVATE EQUITY FIRM PRINCIPAL', []));
+  // owners still count without a record, and are not waiting on one
+  for (const occ of ['OWNER CONSTRUCTION COMPANY', 'PRESIDENT, CONSTRUCTION CO', 'CEO HOMEBUILDER', 'MANAGING MEMBER CONSTRUCTION LLC']) {
+    assert.ok(fitsLaw(CONSTR, 'DOE JOHN', occ, []), occ);
+    assert.ok(!execPending(CONSTR, 'DOE JOHN', occ, []), occ);
+  }
+  // a vice president is not a president
+  assert.ok(!fitsLaw(CONSTR, 'DOE JOHN', 'VICE PRESIDENT CONSTRUCTION', []));
+  assert.ok(execPending(CONSTR, 'DOE JOHN', 'VICE PRESIDENT CONSTRUCTION', []));
+  // the title alone, or the business alone, is not a candidate; nor is a school principal or a plain employee
+  for (const [K, occ] of [[CONSTR, 'EXECUTIVE'], [CONSTR, 'CONSTRUCTION'], [CONSTR, 'PROJECT MANAGER CONSTRUCTION'], [{ tags: [], re: 'SCHOOL|ACADEMY' }, 'SCHOOL PRINCIPAL'], [HOSP, 'REGISTERED NURSE']])
+    assert.ok(!execPending(K, 'DOE JOHN', occ, []), occ);
+  // companies are never executives
+  assert.ok(!execPending(CONSTR, 'ACME CONSTRUCTION LLC', 'CONSTRUCTION EXECUTIVE', []));
+});
+
+test('an official record of the stake makes the executive count, only for a company in the class', () => {
+  const rec = { company: 'LENNAR CORPORATION', role: 'Executive Chairman', source: 'SEC', business: 'SEC industry code 1520: General Bldg Contractors - Residential Bldgs', recordUrl: 'https://www.sec.gov/x', quote: 'officerTitle Executive Chairman' };
+  setExecRecords({ 'DOE JOHN A': rec });
+  assert.equal(donorKey('Doe, John A.'), 'DOE JOHN A');
+  assert.ok(fitsLaw(CONSTR, 'DOE JOHN A', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  assert.equal(recordFor(CONSTR, 'DOE JOHN A', 'CONSTRUCTION COMPANY EXECUTIVE', []), rec);
+  assert.ok(fitsLaw(CONSTR, 'DOE, JOHN A.', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  // the record is per donor key: someone else with the same title is still out, and so is a shared surname
+  assert.ok(!fitsLaw(CONSTR, 'DOE JANE', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  // the occupation must still name the business the law helps
+  assert.ok(!fitsLaw(CONSTR, 'DOE JOHN A', 'EXECUTIVE', []));
+  assert.ok(!fitsLaw(HOSP, 'DOE JOHN A', 'HEALTHCARE EXECUTIVE', []));
+  // an owner does not need the record (recordFor is null), and the record does not turn an owner into anything else
+  assert.equal(recordFor(CONSTR, 'DOE JOHN A', 'OWNER CONSTRUCTION COMPANY', []), null);
+  // a company outside the class does not count, even with a record
+  setExecRecords({ 'DOE JOHN A': { ...rec, company: 'DOLPHIN DIGITAL MEDIA INC', business: 'Services-Motion Picture & Video Tape Production' } });
+  assert.ok(!fitsLaw(CONSTR, 'DOE JOHN A', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  // ... unless the occupation names that company itself
+  setExecRecords({ 'DOE JOHN A': { ...rec, company: 'MUNILLA CONSTRUCTION MANAGEMENT LLC', business: '' } });
+  assert.ok(fitsLaw(CONSTR, 'DOE JOHN A', 'MUNILLA CONSTRUCTION VP', []));
+  // a record without its link or the exact line does not count
+  setExecRecords({ 'DOE JOHN A': { ...rec, quote: '' } });
+  assert.ok(!fitsLaw(CONSTR, 'DOE JOHN A', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  setExecRecords({ 'DOE JOHN A': { ...rec, recordUrl: '' } });
+  assert.ok(!fitsLaw(CONSTR, 'DOE JOHN A', 'CONSTRUCTION COMPANY EXECUTIVE', []));
+  setExecRecords(REC);
+});
+
+test('SEC records on file: Stuart A. Miller (Lennar) and George Feldenkreis (Perry Ellis)', () => {
+  setExecRecords(REC);
+  for (const [k, r] of Object.entries(REC)) {
+    assert.equal(k, donorKey(k), k);
+    assert.match(r.recordUrl, /^https:\/\/(www\.sec\.gov|search\.sunbiz\.org)\//, k);
+    assert.ok(r.quote && r.company && r.role && r.source, k);
+  }
+  for (const ref of ['SB 360 · 2023', 'HB 619 · 2024', 'HB 705 · 2024']) {
+    assert.ok(fits(ref, 'MILLER STUART A.', 'CONSTRUCTION COMPANY EXECUTIVE'), ref);
+    assert.ok(!fits(ref, 'MILLER STUART', 'CONSTRUCTION COMPANY EXECUTIVE'), ref + ' (a different report spelling needs its own record)');
+  }
+  assert.ok(fitsLaw(RETAIL, 'FELDENKREIS GEORGE', 'RETAIL CO. DIRECTOR', []));
+  // on the cards, with the record attached, for members seated for the vote
+  const S = d.bodies.find(b => b.key === 'flsenate');
+  const card = S.actions.find(a => a.id === 'SV24-619-2037');
+  const g = card.gifts.filter(g => donorKey(g.donor) === 'MILLER STUART A');
+  assert.ok(g.some(x => x.to === 'Calatayud' && x.amount === 50000), 'Calatayud');
+  assert.ok(g.some(x => x.to === 'Ingoglia' && x.amount === 25000), 'Ingoglia');
+  for (const x of g) assert.equal(x.record.url, REC['MILLER STUART A'].recordUrl);
+  // executives without a record are not on any card
+  const C = J('scripts/data/industry/exec-candidates.json');
+  const open = new Set(C.gifts.filter(x => !x.resolved).map(x => x.donor));
+  for (const B of d.bodies.filter(b => ['flhouse', 'flsenate'].includes(b.key))) for (const a of B.actions.filter(a => a.kind === 'bill'))
+    for (const x of a.gifts) if (x.kind === 'class' && open.has(x.donor)) assert.ok(!execPending(K(a.ref) || {}, x.donor, x.occ, (TAGS[x.donor] || {}).tags || []), a.id + ' ' + x.donor);
+  assert.equal(C.totals.gifts, C.gifts.length);
 });

@@ -1,3 +1,4 @@
+import { readFileSync, existsSync } from 'node:fs';
 // Which donors count for a law whose staff analysis names a kind of business it helps (Brit, Oct 27, 2026).
 // Used by every state law tie: scripts/state-bills.mjs (Florida House and Senate, current and full tenure) and
 // scripts/prior-legislature.mjs (earlier Florida House and Senate seats). Federal law ties use company and trade
@@ -14,13 +15,19 @@
 //    Phrases that only look like a business are removed first (FOOD BANK is not a bank).
 // 2. A person counts only when their own reported occupation on that gift shows they ARE the business: a licensed
 //    practitioner or business noun the law's class names (PHYSICIAN, CONTRACTOR, PSYCHOLOGIST, DISTRIBUTOR), or an
-//    owner or principal role (OWNER, PRESIDENT, CEO, FOUNDER, PARTNER, SELF-EMPLOYED) next to the business itself.
-//    Employees of a company in the industry (banker, teller, driver, staff, counselor, software engineer, director)
-//    do not count. A person's name is never matched (MARINA, WATERS, TEMPLE, BARBER are surnames).
+//    owner role (OWNER, PRESIDENT, CEO, FOUNDER, PARTNER, MANAGING MEMBER, SELF-EMPLOYED) next to the business itself.
+//    Employees of a company in the industry (banker, teller, driver, staff, counselor, software engineer) do not
+//    count; executives only under rule 5. A person's name is never matched (MARINA, WATERS, TEMPLE, BARBER are surnames).
 // 3. Committees, PACs and companies count when their own name or reported business is that business or its trade
 //    group. A labor union counts only for a law with `unions: true`.
 // 4. Realtors, real estate brokers and sales associates count only for a law with `realtors: true`; a law that helps
 //    developers does not help realtors.
+// 5. An executive without ownership in the title (EXECUTIVE, CFO, COO, VP, CHAIRMAN, DIRECTOR, MANAGING DIRECTOR,
+//    GENERAL MANAGER, PRINCIPAL ...) next to the business itself counts only when an official record shows that person's
+//    stake in that company: Florida Sunbiz lists them as an officer, director, manager/managing member or registered
+//    agent-owner, or an SEC filing (DEF 14A, 10-K Item 10, Form 3/4) names them an executive officer, director or 10%
+//    owner. Records: scripts/data/industry/exec-records.json ({donor key: {company, role, recordUrl, quote}}), filled by
+//    hand from the record (scripts/data/industry/EXEC-RECORDS.md). No record, no tie (Brit, Oct 27, 2026).
 const NOT_BUSINESS = /\b(?:ECONOMIC|BUSINESS|WORKFORCE|SOFTWARE|PRODUCT|CHILD|LEADERSHIP|PROFESSIONAL) DEVELOPMENT\b|\b(?:FOOD|BLOOD|DIAPER|MILK|EYE|TISSUE|SPERM|DATA|TIME|CLOTHING|TOY|BOOK|SEED|PIGGY|WEST|LEFT|RIVER|SOUTH|NORTH) BANKS?\b|\bSOCIAL SECURITY\b|\bBANKRUPTCY\b/g;
 const REALTY = /\bREALTORS?\b|\bREALTY\b|\bREAL ESTATE (?:BROKER(?:AGE)?|AGENT|AGENCY|SALES(?: ASSOCIATE)?|SALESPERSON|LICENSEE)S?\b|\bR\.?E\.? (?:BROKER|AGENT)S?\b|\bBROKER ASSOCIATE\b|\bSALES ASSOCIATE\b/g;
 const UNION = /\b(?:(?<!CREDIT )UNIONS?|AFL-?CIO|LABOR COUNCIL|TEAMSTERS|SEIU|IBEW|AFSCME|UNITED FACULTY|UNITED TEACHERS|TEACHERS UNION|EDUCATION ASSOCIATION|FRATERNAL ORDER OF POLICE|BENEVOLENT ASSOCIATION|PBA|FIRE ?FIGHTERS|PROFESSIONAL FIREFIGHTERS|BROTHERHOOD|LOCAL \d+|LABOR UNION)\b/;
@@ -34,7 +41,9 @@ export const isOrg = (name, occ = '') => oneWord(name) || ORGNAME.test(' ' + Str
 export const isUnion = (name, occ = '') => UNION.test(String(name).toUpperCase() + ' | ' + String(occ).toUpperCase());
 
 // Owner or principal of a business (the business itself must also be named in the occupation)
-const OWNER = /\b(?:CO-?OWNER|OWNER|PROPRIETOR|CO-?FOUNDER|FOUNDER|(?<!VICE |ASST\.? |ASSISTANT )PRESIDENT|CEO|C\.E\.O\.?|CHIEF EXECUTIVE(?: OFFICER)?|MANAGING PARTNER|PARTNER|MANAGING MEMBER|CHAIRMAN|SELF[- ]?EMPLOYED|SELF|PRINCIPAL)\b/g;
+const OWNER = /\b(?:CO-?OWNER|OWNER|PROPRIETOR|CO-?FOUNDER|FOUNDER|(?<!VICE |ASST\.? |ASSISTANT |SR\.? |SENIOR |EXECUTIVE |EXEC\.? )PRESIDENT|CEO|C\.E\.O\.?|CHIEF EXECUTIVE(?: OFFICER)?|MANAGING PARTNER|PARTNER|MANAGING MEMBER|SELF[- ]?EMPLOYED|SELF)\b/g;
+// An executive title without ownership (rule 5): counts only with an official record of the person's stake
+const EXEC = /\b(?:(?:SR\.? |SENIOR |EXECUTIVE |EXEC\.? |ASST\.? |ASSISTANT )?VICE[- ]PRESIDENT|(?:S|E|A)?VP|V\.P\.?|EXECUTIVE|EXEC|CFO|COO|CTO|CIO|CMO|CHIEF (?:FINANCIAL|OPERATING|OPERATIONS|TECHNOLOGY|INFORMATION|MARKETING|COMMERCIAL|REVENUE|LEGAL|DEVELOPMENT|INVESTMENT) OFFICER|CO-?CHAIR(?:MAN|WOMAN|PERSON)?|CHAIR(?:MAN|WOMAN|PERSON)?|MANAGING DIRECTOR|(?:EXECUTIVE )?DIRECTOR|GENERAL MANAGER|PRINCIPAL)\b/g;
 const SCHOOLISH = /\bSCHOOL|ACADEMY|ELEMENTARY|EDUCATION|TEACH/;
 // Licensed practitioners and business nouns: the person is the business when the law's class names it
 const PRACT = new RegExp('\\b(?:' + [
@@ -110,18 +119,30 @@ const reOf = K => Array.isArray(K) ? (K.map(t => SECTOR[t]).filter(Boolean).join
 // Does this gift's donor count for the law with class K? tags: the donor's industry tags (scripts/data/industry)
 const notCache = new Map();
 const phrasesNot = src => { if (!notCache.has(src)) notCache.set(src, new RegExp(src, 'i')); return notCache.get(src); };
-const memo = new WeakMap();
+let memo = new WeakMap();
 export function fitsLaw(K, name, occ, tags = []) {
   if (!K) return false;
   let M = memo.get(K); if (!M) memo.set(K, M = new Map());
   const mk = name + '\u0000' + occ + '\u0000' + tags.join(',');
-  if (!M.has(mk)) M.set(mk, decide(K, name, occ, tags));
+  if (!M.has(mk)) M.set(mk, decide(K, name, occ, tags) === true);
   return M.get(mk);
+}
+// Would this gift count if an official record showed the executive's stake (rule 5)? For the records worklist
+// (scripts/data/industry/exec-candidates.json); true only for a person whose occupation names the business with an
+// executive title and no owner title, and who does not count today.
+export function execPending(K, name, occ, tags = []) {
+  if (!K || fitsLaw(K, name, occ, tags)) return false;
+  return decide(K, name, occ, tags, 'assume') === 'exec';
+}
+// The official record that makes this gift count (rule 5), or null when it counts without one or not at all
+export function recordFor(K, name, occ, tags = []) {
+  if (!K || !fitsLaw(K, name, occ, tags) || decide(K, name, occ, tags, 'assume') !== 'exec') return null;
+  return execRecord(K, name, bare(clean(String(occ || '').toUpperCase(), K)));
 }
 const globalRe = new Map();
 const once = f => { const c = new Map(); return (...a) => { const k = a.join('\u0000'); if (!c.has(k)) c.set(k, f(...a)); return c.get(k); }; };
 const orgOf = once((N, O) => isOrg(N, O)), unionOf = once((N, O) => isUnion(N, O));
-function decide(K, name, occ, tags) {
+function decide(K, name, occ, tags, mode) {
   const want = new Set(Array.isArray(K) ? K : (K.tags || []));
   const re = phrases(reOf(K)), nre = !Array.isArray(K) && K.not ? phrasesNot(K.not) : null;
   if (!want.size && !re) return false;
@@ -145,12 +166,39 @@ function decide(K, name, occ, tags) {
   if (!globalRe.has(re)) globalRe.set(re, new RegExp(re.source, 'gi'));
   const hits = [...o.matchAll(globalRe.get(re))].map(m => [m.index, m.index + m[0].length]);
   for (const p of o.matchAll(PRACT)) { const a = p.index, b = a + p[0].length; if (hits.some(([x, y]) => x < b && a < y)) return true; }
-  // an owner or principal role, next to the business itself (the role word is not the business)
-  const roles = [...o.matchAll(OWNER)].map(m => m[0]).filter(r => !(r === 'PRINCIPAL' && SCHOOLISH.test(o)));
-  if (!roles.length) return false;
-  const biz = o.replace(OWNER, ' ');
+  // an owner role, next to the business itself (the role word is not the business)
+  const roles = [...o.matchAll(OWNER)].map(m => m[0]);
+  // an executive title without ownership (rule 5); a school principal is not a business principal
+  const execs = [...o.matchAll(EXEC)].map(m => m[0]).filter(r => !(r === 'PRINCIPAL' && SCHOOLISH.test(o)));
+  if (!roles.length && !execs.length) return false;
+  const biz = o.replace(OWNER, ' ').replace(EXEC, ' ');
   // "REAL ESTATE" alone does not say which real estate business (developer, broker, investor, landlord)
   const words = biz.replace(/[^A-Z ]/g, ' ').replace(/\b(?:AND|OF|THE|AT|IN|CO)\b/g, ' ').replace(/\s+/g, ' ').trim();
   if (words === 'REAL ESTATE') return false;
-  return re.test(bare(biz));
+  if (!re.test(bare(biz))) return false;
+  if (roles.length) return true;
+  // an executive: only with an official record of their stake in that company
+  return mode === 'assume' ? 'exec' : !!execRecord(K, name, o);
+}
+
+// ---- rule 5: executive records ------------------------------------------------------------------------------------
+// donor key: the name as reported, upper case, punctuation dropped, single spaces ("SMITH JOHN A")
+export const donorKey = n => String(n || '').toUpperCase().replace(/[.,'"]/g, ' ').replace(/\s+/g, ' ').trim();
+const RECFILE = new URL('../data/industry/exec-records.json', import.meta.url);
+let RECORDS = existsSync(RECFILE) ? JSON.parse(readFileSync(RECFILE, 'utf8')).records || {} : {};
+// tests and tools can swap the records (clears the memo)
+export function setExecRecords(r) { RECORDS = r || {}; memo = new WeakMap(); }
+const CORP = /\b(?:INC|INCORPORATED|CORP|CORPORATION|CO|COMPANY|COMPANIES|LLC|L L C|LP|LLP|LTD|PA|P A|PLLC|THE|HOLDINGS?|GROUP)\b/g;
+const core = s => ' ' + String(s || '').toUpperCase().replace(/&/g, ' AND ').replace(/[^A-Z0-9 ]/g, ' ').replace(CORP, ' ').replace(/\s+/g, ' ').trim() + ' ';
+// The record counts for this occupation when its company is the business the law names: the company's name, or its
+// business as an official record states it (`business`: the SEC's industry code or the company's own 10-K line),
+// matches the class; or the company is the employer the occupation names (the occupation already names the business)
+export function execRecord(K, name, occ) {
+  const r = RECORDS[donorKey(name)];
+  if (!r || !r.company || !r.recordUrl || !r.quote) return null;
+  const re = phrases(reOf(K));
+  const c = core(r.company);
+  if (c.trim().length < 3) return null;
+  if ((re && re.test(bare(clean(r.company + ' | ' + (r.business || ''), K)))) || core(occ).includes(c)) return r;
+  return null;
 }
