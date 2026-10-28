@@ -294,15 +294,15 @@
   // the race, across every office they held (Brit, Oct 27, 2026)
   var FULL = {
     en: function(p, f){
-      return f.helped + ' of ' + f.decisions + ' decisions in office helped donors who paid ' + him(p) + '. ' + usd(f.amount) + ' came from ' + f.donors + ' donor' + (f.donors === 1 ? '' : 's') + ' tied to those decisions.'
+      return f.helped + ' of ' + f.decisions + ' decisions in office helped donors to ' + his(p) + ' campaign or committees. ' + usd(f.amount) + ' came from ' + f.donors + ' donor' + (f.donors === 1 ? '' : 's') + ' tied to those decisions.'
         + '<br>' + 'Record checked: ' + esc(L(f.record, 'en')) + '. Decisions are contested votes, budget requests, bills ' + he(p) + ' passed, and lawsuits, settlements, grants and contracts ' + his(p) + ' office chose. Uncontested votes and routine buying are not counted.';
     },
     es: function(p, f){
-      return f.helped + ' de ' + f.decisions + ' decisiones en el cargo ayudaron a donantes que le dieron dinero. ' + usd(f.amount) + ' vino de ' + f.donors + ' donante' + (f.donors === 1 ? '' : 's') + ' vinculado' + (f.donors === 1 ? '' : 's') + ' a esas decisiones.'
+      return f.helped + ' de ' + f.decisions + ' decisiones en el cargo ayudaron a donantes de su campaña o sus comités. ' + usd(f.amount) + ' vino de ' + f.donors + ' donante' + (f.donors === 1 ? '' : 's') + ' vinculado' + (f.donors === 1 ? '' : 's') + ' a esas decisiones.'
         + '<br>' + 'Historial revisado: ' + esc(L(f.record, 'es')) + '. Las decisiones son votos disputados, solicitudes de presupuesto, leyes que logró aprobar, y demandas, acuerdos, subvenciones y contratos que eligió su oficina. No se cuentan los votos sin oposición ni las compras de rutina.';
     },
     ht: function(p, f){
-      return f.helped + ' sou ' + f.decisions + ' desizyon pandan li nan pòs te ede donatè ki te ba li lajan. ' + usd(f.amount) + ' soti nan ' + f.donors + ' donatè ki lye ak desizyon sa yo.'
+      return f.helped + ' sou ' + f.decisions + ' desizyon pandan li nan pòs te ede donatè kanpay li oswa komite li yo. ' + usd(f.amount) + ' soti nan ' + f.donors + ' donatè ki lye ak desizyon sa yo.'
         + '<br>' + 'Dosye nou tcheke: ' + esc(L(f.record, 'ht')) + '. Desizyon yo se vòt ki te gen opozisyon, demann bidjè, lwa li te fè pase, ak pwosè, akò, sibvansyon ak kontra biwo li te chwazi. Nou pa konte vòt san opozisyon ni acha woutin.';
     }
   };

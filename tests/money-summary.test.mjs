@@ -257,7 +257,7 @@ test('no summary says a donor benefited; lobbying firms are named for their clie
     assert.doesNotMatch(render(p, 'es'), /beneficiaron|beneficiaran|se benefician/i, pid);
     assert.doesNotMatch(render(p, 'ht'), /benefisye/i, pid);
     const en = render(p, 'en');
-    if (p.fullCheck) { assert.match(en, /^\d+ of \d+ decisions in office helped donors who paid (him|her)\. \$[\d,]+ came from \d+ donors? tied to those decisions\./, pid); continue; }
+    if (p.fullCheck) { assert.match(en, /^\d+ of \d+ decisions in office helped donors to (his|her) campaign or committees\. \$[\d,]+ came from \d+ donors? tied to those decisions\./, pid); continue; }
     if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /came from the lobbying firm for the group that would get the money, or from that group, on \d+ budget requests?/, pid);
     // the request line still says whether the request was funded
     if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /final budget|vetoed/, pid);
