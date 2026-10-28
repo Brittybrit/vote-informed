@@ -5343,6 +5343,14 @@ function openGaps(who, G){
   if(d.showModal) d.showModal(); else d.setAttribute('open', '');
 }
 function loadPrior(ri, cand){
+  // the money summary says whether this person has a full check (renderPrior), so it loads first
+  if(SUMMARY === null){
+    summaryWait.push(function(){ loadPrior(ri, cand); });
+    if(summaryWait.length === 1) fetch('/data/money-summary.json').then(function(r){ return r.json(); })
+      .then(function(j){ SUMMARY = j; }).catch(function(){ SUMMARY = {people: {}, byBallot: {}}; })
+      .then(function(){ var w = summaryWait; summaryWait = []; w.forEach(function(f){ f(); }); });
+    return;
+  }
   if(HELD === null || PRIORI === null){
     priorWait.push(function(){ loadPrior(ri, cand); });
     if(priorWait.length === 1){
@@ -5363,14 +5371,19 @@ function loadPrior(ri, cand){
       .then(function(j){ PRIOR[pid] = j; }).catch(function(){ PRIOR[pid] = false; }).then(function(){ loadPrior(ri, cand); });
   }
   if(!PRIOR[pid] || PRIOR[pid].then){ box.hidden = true; return; }
-  renderPrior(box, PRIOR[pid]);
+  renderPrior(box, PRIOR[pid], pid);
 }
 function priorMonth(d){
   var m = String(d || '').match(/^(\d{4})(?:-(\d{2}))?/); if(!m) return '';
   if(!m[2]) return m[1];
   try { return new Date(+m[1], +m[2] - 1, 1).toLocaleDateString(LANG === 'ht' ? 'fr' : LANG, {month: 'long', year: 'numeric'}); } catch(e){ return m[1]; }
 }
-function renderPrior(box, P){
+// A person with a full check (money-summary.json fullCheck) has one count across every office, shown in the
+// summary above; the per-office money and share lines here would be a second, different count, so they are left
+// out and the lists stay as the receipts (Brit, Oct 27, 2026).
+var PRIOR_FC = false;
+function renderPrior(box, P, pid){
+  PRIOR_FC = !!(SUMMARY && SUMMARY.people && pid && SUMMARY.people[pid] && SUMMARY.people[pid].fullCheck);
   var nm = esc(P.name), she = P.pron === 'she', he = P.pron === 'he';
   // no pronoun on file: the last name, as the money summary does
   var last = esc(String(P.name).replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '').split(/\s+/).pop());
@@ -5384,7 +5397,7 @@ function renderPrior(box, P){
     if(o.kind === 'leg'){ h += priorLeg(o, oi, sub, num); return; }
     var c = o.counts || {};
     // 1. The donor line: the share, or why there is none
-    if(o.share){
+    if(o.share && !PRIOR_FC){
       var S = o.share, r = S.n - S.tied, a = Math.round(S.tied / S.n * 100), q = S.tied && !a ? '<1%' : a + '%', q2 = S.tied && !a ? '>99%' : (100 - a) + '%';
       // what ties first, then the percentage (Brit, Oct 26, 2026)
       if(S.tied) h += '<p class="tie-sum">' + sub(t('prior.money', {amt: usd(S.money), n: S.donors})) + '</p>';
@@ -5392,7 +5405,7 @@ function renderPrior(box, P){
       // donors tied only to items voted no on: never in the total (Brit, Oct 27, 2026)
       if(S.against && !o.mayor) h += '<p class="tie-sum">' + sub(priorAgainst(S.against, num)) + '</p>';
       if(o.missing) h += '<p class="sec-sub">' + sub(t('prior.missing', {years: esc(o.missing[LANG] || o.missing.en)})) + '</p>';
-    } else if(!o.noVotes && t('prior.donors.' + o.donors)){
+    } else if(!PRIOR_FC && !o.noVotes && t('prior.donors.' + o.donors)){
       h += '<p class="tie-status">' + sub(t('prior.donors.' + o.donors)) + '</p>';
     }
     // 2. What was listed, and their votes
@@ -5443,10 +5456,10 @@ function priorShare(key, S, sub, num, extra){
 }
 function priorLeg(o, oi, sub, num){
   var h = '', Q = o.requests || {}, L = o.laws || {}, fed = o.body === 'us-house';
-  if(o.money) h += '<p class="tie-sum">' + sub(t('prior.money', {amt: usd(o.money)})) + '</p>';
-  if(o.against) h += '<p class="tie-sum">' + sub(priorAgainst(o.against, num)) + '</p>';
-  if(Q.share) h += priorShare('prior.reqShare', Q.share, sub, num);
-  if(L.share) h += priorShare(fed ? 'prior.lawShareF' : 'prior.lawShare', L.share, sub, num);
+  if(o.money && !PRIOR_FC) h += '<p class="tie-sum">' + sub(t('prior.money', {amt: usd(o.money)})) + '</p>';
+  if(o.against && !PRIOR_FC) h += '<p class="tie-sum">' + sub(priorAgainst(o.against, num)) + '</p>';
+  if(Q.share && !PRIOR_FC) h += priorShare('prior.reqShare', Q.share, sub, num);
+  if(L.share && !PRIOR_FC) h += priorShare(fed ? 'prior.lawShareF' : 'prior.lawShare', L.share, sub, num);
   if(!o.gifts) h += '<p class="tie-status">' + sub(t('prior.donors.notCollected')) + '</p>';
   if(Q.none === 'earmarks') h += '<p class="sec-sub">' + t('prior.noEarmarks') + '</p>';
   else if(Q.n && Q.unread) h += '<p class="sec-sub">' + sub(t('prior.reqUnread', {n: num(Q.n)})) + '</p>';
@@ -5624,7 +5637,7 @@ function renderYou(ri, cand, sp, y, loading){
   if(sp && window.moneySummary){
     // the percentage lines, then the money line
     var nTop = (sp.share && (sp.share.def === 'donorFirst' || sp.share.n) ? 1 : 0) + (sp.bills && sp.bills.universe && sp.bills.universe.n ? 1 : 0);
-    var lines = window.moneySummary(sp, LANG).split('<br>').slice(0, nTop + 1);
+    var lines = window.moneySummary(sp, LANG).split('<br>').filter(Boolean).slice(0, nTop + 1);
     h += lines.map(function(x){ return '<p>' + x + '</p>'; }).join('');
   } else h += '<p>' + t('you.noRecord', {name: nm}) + '</p>';
   var nConn = sp && sp.pid ? (CONN.confirmed || []).filter(function(c){ return c.person === sp.pid; }).length : 0;
@@ -5709,7 +5722,8 @@ function renderTies(ri, cand, acts, shared, loading, city, dec){
   if(!acts.length && !decActs.length && !loading && !(ok && meFound) && !st && !sp){ box.hidden = true; box.innerHTML = ''; return; }
   box.hidden = false;
   var h = '<h4>' + t('sec.ties') + '</h4><p class="ties-sub">' + t('ties.sub') + '</p>';
-  if(sp && window.moneySummary) h += '<p class="tie-sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary" target="_blank" rel="noopener">' + esc(window.moneySummary.howLabel(LANG)) + '</a></p>';
+  var spLine = sp && window.moneySummary ? window.moneySummary(sp, LANG) : '';
+  if(spLine) h += '<p class="tie-sum">' + spLine + ' <a href="/methodology#' + (sp.fullCheck ? 'full-check' : 'summary') + '" target="_blank" rel="noopener">' + esc(window.moneySummary.howLabel(LANG)) + '</a></p>';
   if(st && !acts.length && !decActs.length){
     var nm = esc(cand.name), body = esc(st.body || '');
     h += '<p class="tie-status">' + (st.status === 'none' ? t('ties.notIn', {name: nm})
@@ -5717,7 +5731,7 @@ function renderTies(ri, cand, acts, shared, loading, city, dec){
       : st.reason === 'nodata' ? t('ties.noData', {name: nm, body: body})
       : st.reason === 'nogivers' ? t('ties.noGivers', {name: nm, body: body})
       : st.reason === 'nominutes' ? t('ties.noMinutes', {name: nm, body: body})
-      : st.reviewed ? t('ties.currentNone', {name: nm, body: body}) : t('ties.current', {name: nm, body: body})) + '</p>';
+      : st.reviewed ? '' : t('ties.current', {name: nm, body: body})) + '</p>';
   }
   if(acts.length || decActs.length){
     h += '<div class="fin-side">' + t('ties.actions', {name: esc(String(cand.name).split(/\s+and\s+/i)[0])}) + '</div>';

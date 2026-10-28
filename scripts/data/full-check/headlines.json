@@ -1,0 +1,13 @@
+{
+ "_about": "Headline counts from the full check (one standard for every candidate in a race; research files in the vote-informed Claude project, doc claude/full-check-standard.md). Read by scripts/money-summary.mjs into public/data/money-summary.json as fullCheck, which replaces the automatic one-line summary for these people. Decisions = contested votes, budget requests, bills they sponsored that became law, and actions their own office chose (lawsuits, settlements, grants, contracts it awarded by solicitation or signed directly). Not counted: uncontested votes and routine buying. Helped = an official record shows the donor benefited and the person voted yes or took the action. Checked Oct 27, 2026.",
+ "people": {
+  "james-uthmeier": {"name": "James Uthmeier", "pron": "he", "decisions": 66, "helped": 4, "amount": 634000, "donors": 8,
+   "record": {"en": "Attorney General since February 2025, and two acts as the Governor's chief of staff", "es": "Fiscal General desde febrero de 2025, y dos actos como jefe de gabinete del Gobernador", "ht": "Pwokirè Jeneral depi fevriye 2025, ak de aksyon kòm chèf kabinè Gouvènè a"}},
+  "jose-javier-rodriguez": {"name": "Jose Javier Rodriguez", "pron": "he", "decisions": 160, "helped": 41, "amount": 33800, "donors": 33,
+   "record": {"en": "State House 2012-2016, State Senate 2016-2020, and U.S. Assistant Secretary of Labor 2024-2025", "es": "Cámara estatal 2012-2016, Senado estatal 2016-2020, y subsecretario de Trabajo de EE. UU. 2024-2025", "ht": "Chanm Reprezantan Leta 2012-2016, Sena Leta 2016-2020, ak Sekretè Adjwen Travay Etazini 2024-2025"}},
+  "blaise-ingoglia": {"name": "Blaise Ingoglia", "pron": "he", "decisions": 708, "helped": 148, "amount": 1487110, "donors": 338,
+   "record": {"en": "State House 2014-2022, State Senate 2022-2025, and Chief Financial Officer since July 2025", "es": "Cámara estatal 2014-2022, Senado estatal 2022-2025, y Director Financiero desde julio de 2025", "ht": "Chanm Reprezantan Leta 2014-2022, Sena Leta 2022-2025, ak Chèf Ofisye Finansye depi jiyè 2025"}},
+  "annette-taddeo": {"name": "Annette Taddeo", "pron": "she", "decisions": 63, "helped": 20, "amount": 32500, "donors": 26,
+   "record": {"en": "State Senate 2017-2022", "es": "Senado estatal 2017-2022", "ht": "Sena Leta 2017-2022"}}
+ }
+}

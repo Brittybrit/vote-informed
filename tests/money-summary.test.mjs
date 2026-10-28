@@ -56,7 +56,7 @@ test('totals add up', () => {
   for (const [pid, p] of Object.entries(saved.people)) {
     if (p.kind === 'votes') assert.equal(p.yes, p.items, pid);
     if (p.kind === 'state') assert.ok(Math.abs(p.requests.money + p.bills.money - p.total) < 0.01, pid);
-    if (p.kind !== 'none') assert.ok(p.beforeAmt <= p.total && p.before <= p.gifts, pid);
+    if (p.kind !== 'none' && p.kind !== 'fullcheck') assert.ok(p.beforeAmt <= p.total && p.before <= p.gifts, pid);
   }
 });
 
@@ -64,7 +64,10 @@ test('renders in all three languages with no leftovers', () => {
   for (const lang of ['en', 'es', 'ht']) for (const [pid, p] of Object.entries(saved.people)) {
     const s = render(p, lang);
     assert.equal(typeof s, 'string', pid + ' ' + lang);
-    assert.ok(s.length > 20, pid + ' ' + lang);
+    // a person with nothing tied and no share line gets no summary: a line saying no donor was found is never shown
+    // (Brit, Oct 27, 2026)
+    assert.ok(s.length > 20 || (!p.total && !(p.share && p.share.n)), pid + ' ' + lang);
+    assert.doesNotMatch(s, /No donors found|No se encontraron donantes|Nou pa jwenn okenn donatè/, pid + ' ' + lang);
     assert.doesNotMatch(s, /undefined|NaN|null|\{\w+\}/, pid + ' ' + lang + ': ' + s);
   }
   // what ties first (Brit, Oct 26, 2026), then the percentages, then where the money came from and the actions
@@ -77,13 +80,14 @@ test('renders in all three languages with no leftovers', () => {
   for (const p of Object.values(saved.people)) {
     if ((p.kind === 'state' || p.kind === 'federal') && p.total)
       assert.equal(Math.round(p.requests.money + p.bills.money), Math.round(p.total), p.pid + ' parts');
-    if (p.total) {
+    if (p.total && p.kind !== 'fullcheck') {
       assert.equal(Math.round(p.beforeAmt + p.afterAmt), Math.round(p.total), p.pid + ' before + after');
       assert.equal(Math.round(p.campaignAmt + p.committeeAmt), Math.round(p.total), p.pid + ' accounts');
     }
   }
   // the share of actions tied to donors names its denominator and its two halves add up
-  for (const p of Object.values(saved.people)) if (p.share && p.share.n) {
+  // (a full check replaces the share line with its own count, checked in the next test)
+  for (const p of Object.values(saved.people)) if (p.share && p.share.n && !p.fullCheck) {
     assert.ok(p.share.tied <= p.share.n, p.pid);
     const line = render(p, 'en').split('<br>').find(x => /^Since |^This city/.test(x)) || '';
     if (p.share.def === 'donorFirst') continue;
@@ -253,10 +257,30 @@ test('no summary says a donor benefited; lobbying firms are named for their clie
     assert.doesNotMatch(render(p, 'es'), /beneficiaron|beneficiaran|se benefician/i, pid);
     assert.doesNotMatch(render(p, 'ht'), /benefisye/i, pid);
     const en = render(p, 'en');
+    if (p.fullCheck) { assert.match(en, /^\d+ of \d+ decisions in office helped donors who paid (him|her)\. \$[\d,]+ came from \d+ donors? tied to those decisions\./, pid); continue; }
     if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /came from the lobbying firm for the group that would get the money, or from that group, on \d+ budget requests?/, pid);
     // the request line still says whether the request was funded
     if (p.requests && p.requests.money && p.kind === 'state') assert.match(en, /final budget|vetoed/, pid);
   }
   const m = read('../public/methodology.html');
   assert.doesNotMatch(m, /donors who benefited from/);
+});
+
+// Full check (Brit, Oct 27, 2026): "the comparison blocks have to have the exact same numerator and denominator and
+// descriptor across two candidates". Every candidate in a race with a full check gets one, with the same words.
+test('full check: both candidates in a race get the same line, from headlines.json', () => {
+  const FC = JSON.parse(read('../scripts/data/full-check/headlines.json')).people;
+  const races = {};
+  for (const [k, pid] of Object.entries(saved.byBallot)) if (FC[pid]) (races[k.split('|')[0]] = races[k.split('|')[0]] || []).push(pid);
+  for (const [race, pids] of Object.entries(races)) {
+    const all = Object.entries(held.byBallot).filter(([k]) => k.split('|')[0] === race).map(([, pid]) => pid);
+    assert.deepEqual(pids.sort(), all.sort(), race + ': every candidate has a full check');
+    const shapes = pids.map(pid => {
+      const p = saved.people[pid], f = FC[pid];
+      assert.deepEqual([p.fullCheck.decisions, p.fullCheck.helped, p.fullCheck.amount, p.fullCheck.donors], [f.decisions, f.helped, f.amount, f.donors], pid);
+      for (const lang of ['en', 'es', 'ht']) assert.doesNotMatch(render(p, lang), /undefined|NaN|null/, pid + ' ' + lang);
+      return render(p, 'en').replace(/\$[\d,]+|\d[\d,]*/g, '#').replace(/\b(him|her|he|she|his)\b/g, 'P').split('Record checked')[0];
+    });
+    assert.ok(shapes.every(s => s === shapes[0]), race + ': same descriptor');
+  }
 });

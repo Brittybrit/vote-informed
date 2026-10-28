@@ -254,6 +254,17 @@ export function build(decisions, officesHeld) {
   // Years whose campaign reports are missing (scripts/data/donor-gaps.json): shown under the summary
   const gaps = JSON.parse(readFileSync(new URL('./data/donor-gaps.json', import.meta.url)));
   for (const [pid, g] of Object.entries(gaps)) if (!pid.startsWith('_') && people[pid]) people[pid].donorGap = g;
+  // Full-check headlines (scripts/data/full-check/headlines.json): one count for every candidate in a race, from
+  // every office they held (Brit, Oct 27, 2026: "the comparison blocks have to have the exact same numerator and
+  // denominator and descriptor across two candidates"). Replaces the automatic one-line summary for these people;
+  // candidates with no seat now (Rodriguez, Taddeo) get an entry so the dossier shows the same line for both.
+  const FC = JSON.parse(readFileSync(new URL('./data/full-check/headlines.json', import.meta.url))).people;
+  for (const [pid, f] of Object.entries(FC)) {
+    const fullCheck = { decisions: f.decisions, helped: f.helped, amount: f.amount, donors: f.donors, record: f.record };
+    if (people[pid]) { people[pid].fullCheck = fullCheck; continue; }
+    if (!(byPerson[pid] || []).length) continue;
+    add(pid, { pid, body: null, name: f.name, last: f.name.split(' ').pop(), kind: 'fullcheck', total: f.amount, pron: f.pron, fullCheck });
+  }
   return { updated: decisions.updated, cycleStart: CYCLE_START, people, byBallot };
 }
 

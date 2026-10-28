@@ -288,16 +288,35 @@
   // Groups of sentences, shown as short paragraphs: the money, where it came from, timing, the actions.
   function moneySummary(p, lang){
     var out = summaryBody(p, lang), g = p.donorGap;
-    return g && g.years ? out + '<br><em>' + (W[lang] || W.en).gap(p, g) + '</em>' : out;
+    return g && g.years ? (out ? out + '<br>' : '') + '<em>' + (W[lang] || W.en).gap(p, g) + '</em>' : out;
   }
+  // Full check (scripts/data/full-check/headlines.json): the same count, the same words, for every candidate in
+  // the race, across every office they held (Brit, Oct 27, 2026)
+  var FULL = {
+    en: function(p, f){
+      return f.helped + ' of ' + f.decisions + ' decisions in office helped donors who paid ' + him(p) + '. ' + usd(f.amount) + ' came from ' + f.donors + ' donor' + (f.donors === 1 ? '' : 's') + ' tied to those decisions.'
+        + '<br>' + 'Record checked: ' + esc(L(f.record, 'en')) + '. Decisions are contested votes, budget requests, bills ' + he(p) + ' passed, and lawsuits, settlements, grants and contracts ' + his(p) + ' office chose. Uncontested votes and routine buying are not counted.';
+    },
+    es: function(p, f){
+      return f.helped + ' de ' + f.decisions + ' decisiones en el cargo ayudaron a donantes que le dieron dinero. ' + usd(f.amount) + ' vino de ' + f.donors + ' donante' + (f.donors === 1 ? '' : 's') + ' vinculado' + (f.donors === 1 ? '' : 's') + ' a esas decisiones.'
+        + '<br>' + 'Historial revisado: ' + esc(L(f.record, 'es')) + '. Las decisiones son votos disputados, solicitudes de presupuesto, leyes que logró aprobar, y demandas, acuerdos, subvenciones y contratos que eligió su oficina. No se cuentan los votos sin oposición ni las compras de rutina.';
+    },
+    ht: function(p, f){
+      return f.helped + ' sou ' + f.decisions + ' desizyon pandan li nan pòs te ede donatè ki te ba li lajan. ' + usd(f.amount) + ' soti nan ' + f.donors + ' donatè ki lye ak desizyon sa yo.'
+        + '<br>' + 'Dosye nou tcheke: ' + esc(L(f.record, 'ht')) + '. Desizyon yo se vòt ki te gen opozisyon, demann bidjè, lwa li te fè pase, ak pwosè, akò, sibvansyon ak kontra biwo li te chwazi. Nou pa konte vòt san opozisyon ni acha woutin.';
+    }
+  };
   function summaryBody(p, lang){
+    if(p.fullCheck) return (FULL[lang] || FULL.en)(p, p.fullCheck);
     var w = W[lang] || W.en, b = esc(L(p.bodyName, lang)), groups = [];
-    if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : w.noneCity;
+    if(p.kind === 'none') return p.status === 'nogivers' ? w.nogivers(p) : p.status === 'nodata' ? w.nodata(p) : p.status === 'norequests' ? w.norequests(p) : '';
     // donors tied only to items voted no on: its own line, after the actions, never in the total
     var ag = p.against ? [w.against(p, p.against, p.kind === 'federal')] : [];
     if(p.kind === 'federal' || p.kind === 'state'){
       var fed = p.kind === 'federal', R = p.requests || {n: 0, money: 0}, Bl = p.bills || {votes: 0, yes: 0, money: 0};
-      if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + (fed ? (p.body === 'ussenate' && !R.n ? w.norequests(p) : w.noneF(p)) : p.against ? w.noneYes(p, b) : w.none(p, b)) + (ag.length ? '<br>' + ag[0] : '');
+      // Nothing tied: the share line only. A line saying no donor was found is never shown: it highlights meeting the
+      // bare minimum (Brit, Oct 27, 2026).
+      if(!p.total) return [p.share && p.share.n ? w.share(p, p.share, b) : '', fed && p.body === 'ussenate' && !R.n ? w.norequests(p) : '', ag[0] || ''].filter(Boolean).join('<br>');
       var onlyBills = Bl.money && !R.money && Bl.money === p.total;
       if(onlyBills){
         groups.push([w.tookBills(p, Bl, fed), w.timing(p, w.whatBill), Bl.votes ? w.bills(p, Bl) : ''].filter(Boolean));
@@ -317,7 +336,7 @@
       groups.push(ag);
       }
     } else {
-      if(!p.total) return (p.share && p.share.n ? w.share(p, p.share, b) + '<br>' : '') + (p.against ? w.noneYes(p, b) + '<br>' + ag[0] : w.none(p, b));
+      if(!p.total) return [p.share && p.share.n ? w.share(p, p.share, b) : '', ag[0] || ''].filter(Boolean).join('<br>');
       groups.push([w.took(p, p.kind === 'cabinet' ? w.whyAct(p) : w.whyBody(p, b))]);
       groups.push([w.timing(p, w.whatVote)]);
       var a2 = [p.kind === 'cabinet' ? w.cabinet(p) : w.voted(p, b)];

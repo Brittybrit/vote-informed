@@ -237,7 +237,7 @@
         people += '<div>' + (ob.race ? '<b>' + esc(dot(t('onBallotR', {name: mem(B, k), race: L(ob.race)}))) + '</b> ' : '<b>' + esc(mem(B, k)) + '.</b> ') +
           '<span class="serves">' + esc(dot(t(ob.former ? 'servedOn' : 'servesOn', {body: L(B.name)}))) + '</span> ' + esc(t('giftsIn')) + ' ' +
           (ob.accounts || []).map(function(x){ return B.accounts[x] ? link(B.accounts[x].url, L(B.accounts[x].name)) : ''; }).join(' · ') +
-          (sp && window.moneySummary ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#summary">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
+          (sp && window.moneySummary && window.moneySummary(sp, LANG) ? '<div class="sum">' + window.moneySummary(sp, LANG) + ' <a href="/methodology#' + (sp.fullCheck ? 'full-check' : 'summary') + '">' + esc(window.moneySummary.howLabel(LANG)) + '</a></div>' : '') + '</div>';
       });
       if(B.coverage) cov += '<p><b>' + esc(L(B.name)) + ':</b> ' + esc(L(B.coverage)) + '</p>';
       var n = t(B.level === 'federal' ? 'offBallotF' : B.type === 'requests' ? 'offBallotS' : 'offBallot2');

@@ -1531,7 +1531,18 @@
     "from": "2023-02"
    },
    "giftsFrom": "2020-11-04",
-   "pron": "he"
+   "pron": "he",
+   "fullCheck": {
+    "decisions": 708,
+    "helped": 148,
+    "amount": 1487110,
+    "donors": 338,
+    "record": {
+     "en": "State House 2014-2022, State Senate 2022-2025, and Chief Financial Officer since July 2025",
+     "es": "Cámara estatal 2014-2022, Senado estatal 2022-2025, y Director Financiero desde julio de 2025",
+     "ht": "Chanm Reprezantan Leta 2014-2022, Sena Leta 2022-2025, ak Chèf Ofisye Finansye depi jiyè 2025"
+    }
+   }
   },
   "mario-diaz-balart": {
    "pid": "mario-diaz-balart",
@@ -1895,28 +1906,39 @@
    "name": "James Uthmeier",
    "last": "Uthmeier",
    "kind": "cabinet",
-   "total": 730900,
-   "donors": 20,
-   "gifts": 27,
-   "before": 18,
-   "beforeAmt": 175100,
-   "afterAmt": 555800,
+   "total": 634000,
+   "donors": 9,
+   "gifts": 15,
+   "before": 8,
+   "beforeAmt": 94000,
+   "afterAmt": 540000,
    "accounts": 2,
-   "campaignAmt": 23100,
-   "committeeAmt": 707800,
+   "campaignAmt": 9000,
+   "committeeAmt": 625000,
    "committees": 1,
-   "items": 5,
+   "items": 4,
    "yes": 0,
-   "acted": 5,
+   "acted": 4,
    "votes": 0,
    "split": 0,
    "share": {
     "def": "cabinet",
     "n": 60,
-    "tied": 5,
+    "tied": 4,
     "from": "2025-01"
    },
-   "pron": "he"
+   "pron": "he",
+   "fullCheck": {
+    "decisions": 66,
+    "helped": 4,
+    "amount": 634000,
+    "donors": 8,
+    "record": {
+     "en": "Attorney General since February 2025, and two acts as the Governor's chief of staff",
+     "es": "Fiscal General desde febrero de 2025, y dos actos como jefe de gabinete del Gobernador",
+     "ht": "Pwokirè Jeneral depi fevriye 2025, ak de aksyon kòm chèf kabinè Gouvènè a"
+    }
+   }
   },
   "wilton-simpson": {
    "pid": "wilton-simpson",
@@ -2039,6 +2061,46 @@
    "name": "Michael Tur",
    "kind": "none",
    "status": "nodata"
+  },
+  "jose-javier-rodriguez": {
+   "pid": "jose-javier-rodriguez",
+   "body": null,
+   "name": "Jose Javier Rodriguez",
+   "last": "Rodriguez",
+   "kind": "fullcheck",
+   "total": 33800,
+   "pron": "he",
+   "fullCheck": {
+    "decisions": 160,
+    "helped": 41,
+    "amount": 33800,
+    "donors": 33,
+    "record": {
+     "en": "State House 2012-2016, State Senate 2016-2020, and U.S. Assistant Secretary of Labor 2024-2025",
+     "es": "Cámara estatal 2012-2016, Senado estatal 2016-2020, y subsecretario de Trabajo de EE. UU. 2024-2025",
+     "ht": "Chanm Reprezantan Leta 2012-2016, Sena Leta 2016-2020, ak Sekretè Adjwen Travay Etazini 2024-2025"
+    }
+   }
+  },
+  "annette-taddeo": {
+   "pid": "annette-taddeo",
+   "body": null,
+   "name": "Annette Taddeo",
+   "last": "Taddeo",
+   "kind": "fullcheck",
+   "total": 32500,
+   "pron": "she",
+   "fullCheck": {
+    "decisions": 63,
+    "helped": 20,
+    "amount": 32500,
+    "donors": 26,
+    "record": {
+     "en": "State Senate 2017-2022",
+     "es": "Senado estatal 2017-2022",
+     "ht": "Sena Leta 2017-2022"
+    }
+   }
   }
  },
  "byBallot": {
@@ -2094,6 +2156,8 @@
   "Virginia Gardens - Mayor|Fred Spencer Deno IV": "fred-spencer-deno-iv",
   "Virginia Gardens - Council|Jorge Arce": "jorge-arce",
   "Virginia Gardens - Council|Elizabeth K. Taylor-Martinez": "elizabeth-taylor-martinez",
-  "Virginia Gardens - Council|Michael Tur": "michael-tur"
+  "Virginia Gardens - Council|Michael Tur": "michael-tur",
+  "Attorney General|Jose Javier Rodriguez": "jose-javier-rodriguez",
+  "Chief Financial Officer|Annette Taddeo": "annette-taddeo"
  }
 }
