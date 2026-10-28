@@ -476,6 +476,7 @@
     { name: 'Florida TaxWatch, Taxpayer’s Guide to the 2026 Constitutional Amendments', url: 'https://floridataxwatch.org/the-florida-taxpayers-guide-for-the-2026-constitutional-amendments/' },
     { name: 'Florida Senate, HJR 5019 (2025) bill history', url: 'https://www.flsenate.gov/Session/Bill/2025/5019' },
     { name: 'Ballotpedia, Florida Budget Stabilization Fund Amendment (2026)', url: 'https://ballotpedia.org/Florida_Changes_to_Budget_Stabilization_Fund_Amendment_(2026)' },
+    { name: 'U.S. Census Bureau QuickFacts, Miami-Dade County and Florida, July 1, 2025 estimates', url: 'https://www.census.gov/quickfacts/fact/table/miamidadecountyflorida,FL/PST045225' },
     { name: 'WUWF, Ballot explainer: Amendment 1', url: 'https://www.wuwf.org/local-news/2026-10-23/ballot-explainer-amendment-1-budget-stabilization-fund' },
     { name: 'WUSF, Florida Democrats think they\u2019ll break Republican supermajorities', url: 'https://wusf.org/text/politics-issues/2026-10-01/florida-democrats-break-republican-supermajorities-what-does-that-mean' }
   ];
@@ -489,6 +490,7 @@
       allNo: 'That $750 million a year stays available for the yearly budget or tax cuts. The fund keeps today’s cushion of about $5.1 billion.',
       what: 'What it is',
       whatTxt: 'The Budget Stabilization Fund is the state’s savings account, created in 1993. Today it can only be used to cover a revenue shortfall or an emergency the Governor declares, like a hurricane.',
+      cost: 'What it costs', costItems: ['No study has measured what the deposits would cost in services or tax cuts that don\u2019t happen. Amendments the Legislature places get no state cost estimate.', 'Florida TaxWatch projects $16.4 billion in deposits over 22 years, filling the fund around 2049, if revenue grows 2.4% a year. If revenue grows 3% a year, the fund never reaches 25%: it peaks at 23.1% in 2052.', 'Miami-Dade has about 12% of Florida\u2019s people (Census, 2025), so about $90 million of each $750 million deposit is ours. That share is our estimate by population, not a study.'],
       numbers: 'The numbers',
       n: [['Fund today', '$5.06 billion'], ['Share of a year’s general revenue', '9.75% (the cap is 10%)'], ['Yearly deposit if YES', '$750 million, about 1.4% of general revenue'], ['Cap if YES', '25% of general revenue'], ['When it would be full, at $750 million a year', 'about 2049, after about $16.4 billion in deposits']],
       nNote: 'Projection is Florida TaxWatch’s. It also found that if revenue grows 3% a year, $750 million deposits never reach 25%. The 1.4% is our math from TaxWatch’s figures.',
@@ -514,6 +516,7 @@
       allNo: 'Esos $750 millones al año siguen disponibles para el presupuesto anual o rebajas de impuestos. El fondo mantiene el colchón actual de unos $5,100 millones.',
       what: 'Qué es',
       whatTxt: 'El Fondo de Estabilización Presupuestaria es la cuenta de ahorros del estado, creada en 1993. Hoy solo puede usarse para cubrir una caída de ingresos o una emergencia que declare el Gobernador, como un huracán.',
+      cost: 'Cuánto cuesta', costItems: ['Ningún estudio ha medido cuánto costarían los depósitos en servicios o rebajas de impuestos que no se darían. Las enmiendas que pone la Legislatura no reciben un cálculo de costo del estado.', 'Florida TaxWatch proyecta $16,400 millones en depósitos en 22 años, y que el fondo se llenaría hacia 2049, si los ingresos crecen 2.4% al año. Si crecen 3% al año, el fondo nunca llega al 25%: alcanza su máximo de 23.1% en 2052.', 'Miami-Dade tiene cerca del 12% de la población de Florida (Censo, 2025), así que unos $90 millones de cada depósito de $750 millones son nuestros. Esa parte es nuestro cálculo por población, no un estudio.'],
       numbers: 'Las cifras',
       n: [['Fondo hoy', '$5,060 millones'], ['Parte de los ingresos generales de un año', '9.75% (el tope es 10%)'], ['Depósito anual si gana el SÍ', '$750 millones, cerca del 1.4% de los ingresos generales'], ['Tope si gana el SÍ', '25% de los ingresos generales'], ['Cuándo se llenaría, con $750 millones al año', 'alrededor de 2049, tras unos $16,400 millones en depósitos']],
       nNote: 'La proyección es de Florida TaxWatch. También halló que si los ingresos crecen 3% al año, los depósitos de $750 millones nunca llegan al 25%. El 1.4% es nuestro cálculo con cifras de TaxWatch.',
@@ -539,6 +542,7 @@
       allNo: '$750 milyon sa a chak ane rete disponib pou bidjè anyèl la oswa pou diminye taks. Fon an kenbe kousen jodi a ki anviwon $5.1 milya.',
       what: 'Sa li ye',
       whatTxt: 'Fon Estabilizasyon Bidjè a se kont epay Leta a, yo te kreye l an 1993. Jodi a yo ka sèvi avè l sèlman pou kouvri yon mank revni oswa yon ijans Gouvènè a deklare, tankou yon siklòn.',
+      cost: 'Konbyen li koute', costItems: ['Okenn etid pa mezire konbyen depo yo ta koute nan sèvis oswa diminisyon taks ki pa ta fèt. Amannman Lejislati a mete pa jwenn okenn estimasyon kou nan men Leta.', 'Florida TaxWatch pwojte $16.4 milya depo sou 22 an, e fon an ta plen anviwon 2049, si revni grandi 2.4% pa ane. Si revni grandi 3% pa ane, fon an pa janm rive 25%: li rive nan pi wo 23.1% an 2052.', 'Miami-Dade gen anviwon 12% moun Florid (Resansman, 2025), kidonk anviwon $90 milyon nan chak depo $750 milyon se pa nou. Pati sa a se estimasyon pa nou dapre popilasyon, se pa yon etid.'],
       numbers: 'Chif yo',
       n: [['Fon an jodi a', '$5.06 milya'], ['Pati nan revni jeneral yon ane', '9.75% (plafon an se 10%)'], ['Depo chak ane si WI genyen', '$750 milyon, anviwon 1.4% revni jeneral'], ['Plafon si WI genyen', '25% revni jeneral'], ['Kilè li ta plen, ak $750 milyon pa ane', 'anviwon 2049, apre anviwon $16.4 milya depo']],
       nNote: 'Pwojeksyon an se pa Florida TaxWatch. Li jwenn tou si revni grandi 3% pa ane, depo $750 milyon yo pa janm rive 25%. 1.4% la se kalkil pa nou ak chif TaxWatch.',
@@ -568,7 +572,7 @@
         splitHead: w.numbers, split: w.n.map(function(x){ return { label: x[0], text: x[1] }; }),
         loss: w.whatTxt, fundsHead: '', funds: [], fundNote: w.nNote,
         respond: '', share: '',
-        extra: [{ head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.sidesTxt] }]
+        extra: [{ head: w.cost, items: w.costItems }, { head: w.rules, items: w.r }, { head: w.who, items: w.whoItems }, { head: w.sides, items: [w.sidesTxt] }]
       }
     };
   }

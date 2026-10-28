@@ -225,9 +225,16 @@ test('Amendment 1 is explained the same way for everyone, with no answers needed
     const c = MI.calc(A1, null, lang);
     assert.ok(c.explainer && c.general.yes && c.general.no, lang);
     assert.equal(c.reconcile.split.length, 5, lang);
-    assert.equal(c.reconcile.extra.length, 3, lang);
+    assert.equal(c.reconcile.extra.length, 4, lang);
+    // what it costs leads (Brit, Oct 28, 2026): no study of the trade-off, TaxWatch's projection, and our population
+    // share marked as our estimate
+    assert.equal(c.reconcile.extra[0].items.length, 3, lang);
     assert.ok(c.sources.every(s => s.url.startsWith('https://')));
   }
+  const cost = MI.calc(A1, null, 'en').reconcile.extra[0];
+  assert.equal(cost.head, 'What it costs');
+  assert.match(cost.items[0], /^No study has measured/);
+  assert.match(cost.items[2], /our estimate by population, not a study\.$/);
   assert.deepEqual(JSON.parse(JSON.stringify(MI.calc(A1, MI.normalize({ groups: { renter: true } }), 'en'))), JSON.parse(JSON.stringify(MI.calc(A1, null, 'en'))));
 });
 
