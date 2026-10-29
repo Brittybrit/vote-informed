@@ -19,7 +19,19 @@ OCR noise; candidate loans and refunds are left out. Coverage against each repor
 - Timothé 2021 (first council campaign, M10 2020 .. P7 May 2021): 248 rows, $37,324. M10-M1 reports were
   re-filed (9651/9768/10020/10259 = 10429-10432; later copy kept).
 - Desulme 2019 (council re-election, M10 2018 .. P7 May 2019): 218 rows, $72,505, against ~$94,000 in the summaries.
-- Desulme 2015 (first council campaign, 3955-3960): NOT loaded. The handwritten itemized pages give only a
-  handful of readable amounts (~$2,000 of ~$16,000 reported); left out rather than published as a partial list.
+- Desulme 2015 (first council campaign, 3955-3960): loaded 2026-10-29 as desulme_2015.csv (161 rows, $39,431).
+  The pages are typewritten scans with no text layer (not handwritten); every row was read from the page images
+  (https://www.northmiamifl.gov/DocumentCenter/View/<id>). Left out: the candidate's loans ($1,000 Feb, $1,000
+  Mar, $750 Apr, $4,500 + $1,000 May), his own $1,000 check (May 16) and two in-kind rows (Marie Joseph and
+  Daniel B. Calixte, consulting, $750 each, Feb). Against each summary's "Cash & Checks":
+  - 3955 2015-M02 (Feb): $235 of $235. 3956 G2 (Mar): $9,140 of $9,140.
+  - 3957 April (3958 is its amendment, which changes only expenditures): itemizes $6,691 against $6,891 ($200
+    short, not resolved). Its first page repeats four February checks dated 4/1 (Cindy Lerner $150, Stenley Jean
+    $10, Hope Buchanan $50, and JLB Consulting's $25 listed as Jimmie Brown at the same Davie address); those are
+    counted once, under February, so April loads $6,456.
+  - 3959 May: itemizes $24,600 including the candidate's $1,000 check, against $24,100 ($500 over, not resolved);
+    loaded $23,600 of outside gifts. Rudolph Moise's amount ($1,000) is under the clerk's stamp, read at 300 dpi.
+  - 3960 TR (June): no contributions.
+  Names are kept as typed on the reports (e.g. "Lubin's Discount Beauty Sulpies", "Greater Miami Health Trai Ct.").
   Desulme 2017 (council re-election, if any) reports were not found on the clerk's portal.
 - Not found online: any reports before 2015.

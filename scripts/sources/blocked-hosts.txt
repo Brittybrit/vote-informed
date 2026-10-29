@@ -31,3 +31,6 @@ www.sbafla.com
 # Not listed: hosts where robots.txt disallows some paths (voterfocus.com, www.cityofaventura.com,
 # miamigardens.civicweb.net, *.granicus.com ViewPublisher, legistar1.granicus.com, www.fdacs.gov). archive.mjs
 # checks robots.txt per URL and marks the disallowed ones fetchable:false with error "robots".
+
+# Sunny Isles Beach city site: Akamai "Access Denied" (403) to curl, Oct 29, 2026 (Elections pages; Svechin donor search)
+www.sibfl.gov

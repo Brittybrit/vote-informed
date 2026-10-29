@@ -1,5 +1,5 @@
 {
- "_note": "Public records requests drafted Oct 26, 2026 (Claude Doc 'Ballot305 public records requests'). Edit by hand when one is sent or answered: sent = YYYY-MM-DD, status = draft | sent | received | denied | partial. people = [pid, body] pairs the request covers (body as in public/data/prior/<pid>.json, or 'current' for the seat they hold now). covers = which gaps the request asks records for (donors = campaign reports, actions = minutes). Rebuild: node scripts/gaps.mjs Disclosure requests (19-22) list only the years in which the official took an action listed on the site (Brit, Oct 26: required at the time of the action).",
+ "_note": "Public records requests drafted Oct 26, 2026 (Claude Doc 'Ballot305 public records requests'). Edit by hand when one is sent or answered: sent = YYYY-MM-DD, status = draft | sent | received | denied | partial. people = [pid, body] pairs the request covers (body as in public/data/prior/<pid>.json, or 'current' for the seat they hold now). covers = which gaps the request asks records for (donors = campaign reports, actions = minutes). Rebuild: node scripts/gaps.mjs Disclosure requests (19-22) list only the years in which the official took an action listed on the site (Brit, Oct 26: required at the time of the action). Consolidated Oct 29, 2026 (Claude Doc review table): #16 dropped (posted scans read by OCR instead); #17 merged into #19 (same custodian); scan-only items removed from #10 (Sunny Isles Beach does not post Svechin 2021-2024 reports at all, checked in a browser Oct 29, so #2 keeps them); Parkland minutes (#12) are online in the city's archive; #22 optional (past retention).",
  "requests": [
   {
    "n": 1,
@@ -7,10 +7,18 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["oliver-g-gilbert-iii", "city-miami-gardens"],
-    ["katrina-wilson", "city-miami-gardens"]
+    [
+     "oliver-g-gilbert-iii",
+     "city-miami-gardens"
+    ],
+    [
+     "katrina-wilson",
+     "city-miami-gardens"
+    ]
    ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 2,
@@ -18,11 +26,22 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["dana-goldman", "city-sunny-isles-beach"],
-    ["larisa-svechin", "city-sunny-isles-beach"],
-    ["larisa-svechin", "current"]
+    [
+     "dana-goldman",
+     "city-sunny-isles-beach"
+    ],
+    [
+     "larisa-svechin",
+     "city-sunny-isles-beach"
+    ],
+    [
+     "larisa-svechin",
+     "current"
+    ]
    ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 3,
@@ -30,11 +49,23 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["sherelean-bass", "city-opa-locka"],
-    ["sherelean-bass", "current"],
-    ["rose-tydus", "city-opa-locka"]
+    [
+     "sherelean-bass",
+     "city-opa-locka"
+    ],
+    [
+     "sherelean-bass",
+     "current"
+    ],
+    [
+     "rose-tydus",
+     "city-opa-locka"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 4,
@@ -42,10 +73,19 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["daniel-samaria", "city-biscayne-park"],
-    ["daniel-samaria", "current"]
+    [
+     "daniel-samaria",
+     "city-biscayne-park"
+    ],
+    [
+     "daniel-samaria",
+     "current"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 5,
@@ -53,9 +93,14 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["howard-s-weinberg", "city-aventura"]
+    [
+     "howard-s-weinberg",
+     "city-aventura"
+    ]
    ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 6,
@@ -63,9 +108,15 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["luis-gonzalez", "city-hialeah"]
+    [
+     "luis-gonzalez",
+     "city-hialeah"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 7,
@@ -73,11 +124,23 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["edgar-ayala", "current"],
-    ["lizelh-rodriguez", "current"],
-    ["ivan-pacheco", "city-medley"]
+    [
+     "edgar-ayala",
+     "current"
+    ],
+    [
+     "lizelh-rodriguez",
+     "current"
+    ],
+    [
+     "ivan-pacheco",
+     "city-medley"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 8,
@@ -85,9 +148,15 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["mary-ann-mixon", "city-cutler-bay"]
+    [
+     "mary-ann-mixon",
+     "city-cutler-bay"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 9,
@@ -95,9 +164,14 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["david-m-singer", "city-palmetto-bay"]
+    [
+     "david-m-singer",
+     "city-palmetto-bay"
+    ]
    ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 10,
@@ -105,11 +179,14 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["luis-f-de-la-cruz", "city-key-biscayne"],
-    ["oscar-sardinas", "current"],
-    ["fernando-a-vazquez", "current"]
+    [
+     "luis-f-de-la-cruz",
+     "city-key-biscayne"
+    ]
    ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 11,
@@ -117,9 +194,15 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["scott-singer", "city-boca-raton"]
+    [
+     "scott-singer",
+     "city-boca-raton"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 12,
@@ -127,9 +210,14 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["jared-moskowitz", "city-parkland"]
+    [
+     "jared-moskowitz",
+     "city-parkland"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 13,
@@ -137,11 +225,23 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["charles-burkett", "city-surfside"],
-    ["ruben-a-coto", "city-surfside"],
-    ["howard-s-weinberg", "city-surfside"]
+    [
+     "charles-burkett",
+     "city-surfside"
+    ],
+    [
+     "ruben-a-coto",
+     "city-surfside"
+    ],
+    [
+     "howard-s-weinberg",
+     "city-surfside"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 14,
@@ -149,10 +249,19 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["jay-r-chernoff", "city-north-miami-beach"],
-    ["phyllis-smith", "city-north-miami-beach"]
+    [
+     "jay-r-chernoff",
+     "city-north-miami-beach"
+    ],
+    [
+     "phyllis-smith",
+     "city-north-miami-beach"
+    ]
    ],
-   "covers": ["donors", "actions"]
+   "covers": [
+    "donors",
+    "actions"
+   ]
   },
   {
    "n": 15,
@@ -160,29 +269,14 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["vince-c-lago", "current"]
+    [
+     "vince-c-lago",
+     "current"
+    ]
    ],
-   "covers": ["donors"]
-  },
-  {
-   "n": 16,
-   "office": "City of North Miami",
-   "sent": null,
-   "status": "draft",
-   "people": [
-    ["alix-desulme", "current"]
-   ],
-   "covers": ["donors"]
-  },
-  {
-   "n": 17,
-   "office": "Miami-Dade Elections Department",
-   "sent": null,
-   "status": "draft",
-   "people": [
-    ["bruno-a-barreiro", "mdc-commission"]
-   ],
-   "covers": ["donors"]
+   "covers": [
+    "donors"
+   ]
   },
   {
    "n": 18,
@@ -190,47 +284,149 @@
    "sent": null,
    "status": "draft",
    "people": [
-    ["lucia-baez-geller", "mdcps-school-board"]
+    [
+     "lucia-baez-geller",
+     "mdcps-school-board"
+    ]
    ],
-   "covers": ["actions"]
+   "covers": [
+    "actions"
+   ]
   },
   {
    "n": 19,
    "office": "Miami-Dade Elections Department",
    "sent": null,
    "status": "draft",
-   "covers": ["disclosure"],
+   "covers": [
+    "disclosure",
+    "donors"
+   ],
    "people": [
-    ["alix-desulme", "form1"],
-    ["ana-maria-rodriguez", "form1"],
-    ["charles-burkett", "form1"],
-    ["dana-goldman", "form1"],
-    ["larisa-svechin", "form1"],
-    ["daniel-samaria", "form1"],
-    ["howard-s-weinberg", "form1"],
-    ["edgar-ayala", "form1"],
-    ["ivan-pacheco", "form1"],
-    ["jay-r-chernoff", "form1"],
-    ["phyllis-smith", "form1"],
-    ["luis-gonzalez", "form1"],
-    ["mary-ann-mixon", "form1"],
-    ["david-m-singer", "form1"],
-    ["luis-f-de-la-cruz", "form1"],
-    ["rose-tydus", "form1"],
-    ["sherelean-bass", "form1"],
-    ["vince-c-lago", "form1"],
-    ["robert-duncan", "form1"],
-    ["ken-fairman", "form1"],
-    ["katrina-wilson", "form1"],
-    ["mary-estime-irvin", "form1"],
-    ["kassandra-timothe", "form1"],
-    ["natasha-l-ervin", "form1"],
-    ["oscar-sardinas", "form1"],
-    ["fernando-a-vazquez", "form1"],
-    ["steve-calle", "form1"],
-    ["suzy-lord", "form1"],
-    ["lisa-bonich", "form1"],
-    ["lizelh-rodriguez", "form1"]
+    [
+     "alix-desulme",
+     "form1"
+    ],
+    [
+     "ana-maria-rodriguez",
+     "form1"
+    ],
+    [
+     "charles-burkett",
+     "form1"
+    ],
+    [
+     "dana-goldman",
+     "form1"
+    ],
+    [
+     "larisa-svechin",
+     "form1"
+    ],
+    [
+     "daniel-samaria",
+     "form1"
+    ],
+    [
+     "howard-s-weinberg",
+     "form1"
+    ],
+    [
+     "edgar-ayala",
+     "form1"
+    ],
+    [
+     "ivan-pacheco",
+     "form1"
+    ],
+    [
+     "jay-r-chernoff",
+     "form1"
+    ],
+    [
+     "phyllis-smith",
+     "form1"
+    ],
+    [
+     "luis-gonzalez",
+     "form1"
+    ],
+    [
+     "mary-ann-mixon",
+     "form1"
+    ],
+    [
+     "david-m-singer",
+     "form1"
+    ],
+    [
+     "luis-f-de-la-cruz",
+     "form1"
+    ],
+    [
+     "rose-tydus",
+     "form1"
+    ],
+    [
+     "sherelean-bass",
+     "form1"
+    ],
+    [
+     "vince-c-lago",
+     "form1"
+    ],
+    [
+     "robert-duncan",
+     "form1"
+    ],
+    [
+     "ken-fairman",
+     "form1"
+    ],
+    [
+     "katrina-wilson",
+     "form1"
+    ],
+    [
+     "mary-estime-irvin",
+     "form1"
+    ],
+    [
+     "kassandra-timothe",
+     "form1"
+    ],
+    [
+     "natasha-l-ervin",
+     "form1"
+    ],
+    [
+     "oscar-sardinas",
+     "form1"
+    ],
+    [
+     "fernando-a-vazquez",
+     "form1"
+    ],
+    [
+     "steve-calle",
+     "form1"
+    ],
+    [
+     "suzy-lord",
+     "form1"
+    ],
+    [
+     "lisa-bonich",
+     "form1"
+    ],
+    [
+     "lizelh-rodriguez",
+     "form1"
+    ],
+    [
+     "bruno-a-barreiro",
+     "mdc-commission"
+    ]
    ]
   },
   {
@@ -238,12 +434,26 @@
    "office": "Florida Commission on Ethics",
    "sent": null,
    "status": "draft",
-   "covers": ["disclosure"],
+   "covers": [
+    "disclosure"
+   ],
    "people": [
-    ["bruno-a-barreiro", "form6"],
-    ["carlos-a-gimenez", "form6"],
-    ["jared-moskowitz", "form6"],
-    ["wilton-simpson", "form6"]
+    [
+     "bruno-a-barreiro",
+     "form6"
+    ],
+    [
+     "carlos-a-gimenez",
+     "form6"
+    ],
+    [
+     "jared-moskowitz",
+     "form6"
+    ],
+    [
+     "wilton-simpson",
+     "form6"
+    ]
    ]
   },
   {
@@ -251,9 +461,14 @@
    "office": "Palm Beach County Supervisor of Elections",
    "sent": null,
    "status": "draft",
-   "covers": ["disclosure"],
+   "covers": [
+    "disclosure"
+   ],
    "people": [
-    ["scott-singer", "form1"]
+    [
+     "scott-singer",
+     "form1"
+    ]
    ]
   },
   {
@@ -261,9 +476,14 @@
    "office": "Broward County Supervisor of Elections",
    "sent": null,
    "status": "draft",
-   "covers": ["disclosure"],
+   "covers": [
+    "disclosure"
+   ],
    "people": [
-    ["jared-moskowitz", "form1"]
+    [
+     "jared-moskowitz",
+     "form1"
+    ]
    ]
   }
  ]

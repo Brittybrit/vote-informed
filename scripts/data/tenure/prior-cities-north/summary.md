@@ -8,7 +8,7 @@ say the vote was unanimous or list the roll; a bare "motion passed" must become 
 | Gilbert, Miami Gardens Seat 6 | 2008-03-26..2012-10-24 | 301 (273) | needs browser | no minutes Sep 23-Dec 2009, regular Sep 2011; 26 unknown |
 | Gilbert, Miami Gardens Mayor | 2012-11-14..2020-11-17 | 593 (534) | needs browser | |
 | Wilson, Miami Gardens Seat 4 | 2018-11-06..Nov 2026 | 466 to 2026-05-27 (443) | needs browser | minutes posted to 2026-06-24 |
-| Smith, NMB Group 3 | 2007-05-01..2020-11-30 | 394 (349) | 295, $90,424.34 | actions 2013-05-28..2020-11-30 only |
+| Smith, NMB Group 3 | 2007-05-01..2020-11-30 | 394 (349) | 295, $90,424.34 | actions 2013-01-02..2020-11-30 (no minutes before Jan 2013 or for Jan 15, 2013; Jun 4 - Jul 16, 2013 online, not yet read) |
 | Chernoff, NMB Group 4 | 2001-05-01..2009-05-05 | 0 | 84, $31,554 | no minutes; 2001, 2003 reports not online |
 | Burkett, Surfside Mayor | 2006-03-21..2010-03-16 | 4 (4) | none online | records Jan 12-Mar 9 2010 only |
 | Burkett, Surfside Mayor | 2020-03-17..2022-03-15 | 70 (70) | self-funded | oath date not in records |
@@ -18,8 +18,8 @@ say the vote was unanimous or list the roll; a bare "motion passed" must become 
 | Weinberg, Surfside Seat 1 | 2006-03-21..2010-03-16 | 4 (4) | none online | records Jan-Mar 2010 only |
 | Weinberg, Aventura Seat 3 | 2012-11-13..2018-11-13 | 208 (208) | none online | archive starts 2020; Res. 2015-47 undated |
 | Samaria, Biscayne Park | 2018-11-06..2022-11-08 | 58 (53) | none online | no minutes Nov-Dec 2018 |
-| Bass, Opa-locka | 2018-11-06..Nov 2020 | 68 (68: 64 yes, 4 no) | none online | minutes May 16 - Nov 25, 2019 not online |
-| Tydus, Opa-locka | 2004-11-02..2012-11-06 | 125 (105: 97 yes, 8 no; 20 absent) | none online | minutes Nov 2004 - May 11, 2010 not online |
+| Bass, Opa-locka | 2018-11-06..Nov 2020 | 99 (98: 93 yes, 5 no; 1 out of room) | none online | none for minutes (May - Nov 2019 read from the Laserfiche portal) |
+| Tydus, Opa-locka | 2004-11-02..2012-11-06 | 230 (200: 189 yes, 11 no; 30 absent) | none online | minutes Nov 2004 - Dec 2008 not online (Laserfiche portal starts Jan 2009) |
 | Goldman, Sunny Isles Seat 3 then Mayor | 2014-12-02..2022-12-06 | 735 (Seat 3: 604, 479 with her yes/no; mayor: 131, none with a recorded vote) | not online (records request) | minutes not online for most of Feb 2020 - Dec 2022 (roll null), Apr 21 2016, May 16 / Oct 2 / Dec 19 2019 |
 | Svechin, Sunny Isles Seat 1 | 2016-11-08..2022-12-06 | 550 (294 with her yes/no) | not online (records request) | same minutes gaps |
 

@@ -84,10 +84,10 @@
   "rollKey": "Smith",
   "startNote": "Elected May 1, 2007 (only the election date is known; oath date not found). Re-elected 2011 (runoff May 17) and 2015 (runoff May 19).",
   "endNote": "Her last council meeting in the minutes is Nov 30, 2020 (careers.jsonl says 2019; the minutes show her seated through Nov 2020).",
-  "votesFrom": "2013-05-28",
+  "votesFrom": "2013-01-02",
   "votesTo": "2020-11-30",
   "giftsFrom": "2005-05-01",
-  "giftsNote": "Reports read for the 2007, 2009 (Group 3 race), 2011 and 2015 campaigns. No NMB council minutes online before May 28, 2013, so May 2007 to May 2013 has no actions.",
+  "giftsNote": "Reports read for the 2007, 2009 (Group 3 race), 2011 and 2015 campaigns. No NMB council minutes online before Jan 2, 2013 (nor for Jan 15, 2013), so May 2007 to Dec 2012 has no actions.",
   "source": {
    "label": "City of North Miami Beach council minutes (NovusAgenda) and candidate reports (city DocumentCenter); Miami-Dade Elections results",
    "url": "https://nmb.novusagenda.com/"
@@ -352,7 +352,7 @@
   "giftsFrom": "2016-11-06",
   "giftsNote": "Her 2018 and 2020 campaign reports are not online (the city EasyVote portal starts with 2022).",
   "source": {
-   "label": "City of Opa-locka commission minutes (Archive Center, Nov 2018 - May 2019; CivicClerk, Nov 2019 - Oct 2020)",
+   "label": "City of Opa-locka commission minutes (Archive Center, Nov 2018 - May 15, 2019; Laserfiche portal, May 22 - Nov 13, 2019; CivicClerk, Nov 26, 2019 - Oct 2020)",
    "url": "https://www.opalockafl.gov/Archive.aspx?AMID=36"
   },
   "files": [
@@ -360,10 +360,16 @@
    "opalocka/owners.json"
   ],
   "counts": {
-   "actions": 68,
-   "yesNo": 68
+   "actions": 99,
+   "yesNo": 98
   },
-  "minutesNote": "Minutes read Nov 29, 2018 - May 15, 2019 (17 meetings, City Archive Center; 34 actions) and Nov 26, 2019 - Oct 28, 2020 (CivicClerk; 34 actions). Not online: May 16 - Nov 25, 2019 (neither the Archive Center nor CivicClerk has those minutes)."
+  "minutesNote": "Minutes read Nov 29, 2018 - May 15, 2019 (17 meetings, City Archive Center; 34 actions), May 22 - Nov 13, 2019 (16 meetings, city Laserfiche portal, scanned and OCRed; 31 actions: 29 yes, 1 no, 1 out of the room) and Nov 26, 2019 - Oct 28, 2020 (CivicClerk; 34 actions). Every meeting in her term is now read.",
+  "minutesSources": [
+   {
+    "label": "City of Opa-locka Laserfiche portal, Commission Meeting Minutes (scanned; OCRed)",
+    "url": "https://portal.laserfiche.com/Portal/Browse.aspx?id=910&repo=r-6c489962"
+   }
+  ]
  },
  {
   "pid": "rose-tydus",
@@ -386,15 +392,15 @@
    "opalocka/owners.json"
   ],
   "counts": {
-   "actions": 125,
-   "yesNo": 105
+   "actions": 230,
+   "yesNo": 200
   },
-  "minutesNote": "Minutes read May 12, 2010 - Oct 24, 2012 (67 meetings; her last on the roll Oct 24, 2012): 125 actions with her vote recorded (97 yes, 8 no, 20 absent or out of the room). Not online: Nov 2, 2004 - May 11, 2010.",
-  "votesFrom": "2010-05-12",
+  "minutesNote": "Minutes read Jan 14, 2009 - Apr 28, 2010 (38 meetings, city Laserfiche portal; 87 actions: 75 yes, 2 no, 10 absent), May 12, 2010 - Oct 24, 2012 (67 meetings, Archive Center; 125 actions) plus 10 meetings the Archive Center lacks (Sep 8, 2010 regular; Jun 1 - Jul 13, 2011; Jun 13 - Jul 31, 2012; Laserfiche; 18 actions). In all 230 actions with her vote recorded (189 yes, 11 no, 30 absent or out of the room). Not online: Nov 2, 2004 - Dec 2008 (the Laserfiche minutes folder starts with 2009).",
+  "votesFrom": "2009-01-14",
   "votesTo": "2012-10-24",
   "minutesSource": {
-   "label": "City of Opa-locka commission minutes, Archive Center (May 2010 - Oct 2012, scanned; OCRed)",
-   "url": "https://www.opalockafl.gov/Archive.aspx?AMID=36"
+   "label": "City of Opa-locka commission minutes: Laserfiche portal (Jan 2009 - Apr 2010 and meetings missing from the Archive Center) and Archive Center (May 2010 - Oct 2012); scanned, OCRed",
+   "url": "https://portal.laserfiche.com/Portal/Browse.aspx?id=910&repo=r-6c489962"
   }
  },
  {
