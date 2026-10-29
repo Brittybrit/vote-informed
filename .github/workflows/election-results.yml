@@ -42,3 +42,4 @@ jobs:
           git add public/data/results-2026-11-03.json public/data/roster.json
           git commit -m "Results: $(node -e "const d=require('./public/data/results-2026-11-03.json');console.log(d.status+', county update '+(d.countyUpdated||'n/a')+', '+d.counts.applied+' applied, '+d.counts.needsReview+' need review')")"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
+          git add .github/workflows/election-results.yml && git commit -m "Election results: deploy when results change" && git push
