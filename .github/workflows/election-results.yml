@@ -1,0 +1,44 @@
+name: Election results
+# Pulls the county's Nov 3, 2026 results, updates public/data/results-2026-11-03.json and the roster (winners take
+# their seats on the day they take office), runs the tests and commits when anything changed. It does not deploy:
+# the site picks up the change at the next deploy (Brit adds a deploy step here if she wants it automatic).
+# Rules for what is applied and what is flagged for a person: scripts/lib/election-results.mjs.
+on:
+  workflow_dispatch:
+  schedule:
+    # Times are UTC. Polls close 7 p.m. Eastern = 00:00 UTC Nov 4.
+    - cron: '*/10 0-8 4 11 *'     # election night, every 10 minutes
+    - cron: '17 9-23 4 11 *'      # Nov 4, hourly
+    - cron: '17 */6 5-30 11 *'    # through certification and recounts, every 6 hours
+permissions:
+  contents: write
+concurrency:
+  group: deploy                 # never overlaps a manual deploy
+  cancel-in-progress: false
+jobs:
+  results:
+    if: github.repository == 'Brittybrit/vote-informed'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pull results and update the roster
+        run: node scripts/election-results.mjs
+      - name: Anything changed?
+        id: diff
+        run: |
+          if git status --porcelain public/data | grep -q .; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "changed=false" >> "$GITHUB_OUTPUT"; fi
+      - name: Tests
+        if: steps.diff.outputs.changed == 'true'
+        run: node --check src/worker.js && npm test
+      - name: Commit
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "election-results bot"
+          git config user.email "noreply@ballot305.org"
+          git add public/data/results-2026-11-03.json public/data/roster.json
+          git commit -m "Results: $(node -e "const d=require('./public/data/results-2026-11-03.json');console.log(d.status+', county update '+(d.countyUpdated||'n/a')+', '+d.counts.applied+' applied, '+d.counts.needsReview+' need review')")"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
