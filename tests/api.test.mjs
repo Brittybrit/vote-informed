@@ -142,14 +142,15 @@ test('cycleNow: yearly phases wrap the year and next meetings are in the future'
     { key: 'budget-hearings', start: '2026-09-01', end: '2026-09-30', repeats: 'yearly', source: 'x' },
     { key: 'recess', start: '2026-12-15', end: '2027-01-10', repeats: 'yearly', source: 'x' },
     { key: 'election', start: '2026-11-03', end: '2026-11-03', repeats: 'once', source: 'x' }
-  ], meetings: { schedule: [{ date: '2026-10-01', source: 'x' }, { date: '2026-11-05', source: 'x' }] }, levers: [{ key: 'public-comment', source: 'x' }] };
+  ], meetings: { schedule: [{ date: '2026-10-01', kind: 'regular', source: 'x' }, { date: '2026-11-04', kind: 'special', source: 'x' }, { date: '2026-11-05', kind: 'regular', source: 'x' }] }, levers: [{ key: 'public-comment', source: 'x' }] };
   const sept = cycleNow(c, '2027-09-15');
   assert.deepEqual(sept.phases.current.map(p => p.key), ['budget-hearings']);
   const jan = cycleNow(c, '2027-01-05');
   assert.deepEqual(jan.phases.current.map(p => p.key), ['recess']);
   const oct = cycleNow(c, '2026-10-23');
-  assert.deepEqual(oct.meetings.next.map(m => m.date), ['2026-11-05']);
+  assert.deepEqual(oct.meetings.next.map(m => m.date), ['2026-11-04', '2026-11-05']);
   assert.equal(oct.phases.upcoming[0].key, 'election');
+  // public comment skips the special session and points at the next regular meeting
   assert.equal(oct.levers[0].nextMeeting, '2026-11-05');
 });
 

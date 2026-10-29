@@ -641,7 +641,10 @@ export function cycleNow(c, today) {
     .map(x => ({ ...x.p, start: x.start }));
   const meetings = c.meetings.schedule.filter(m => m.date >= today).slice(0, 5);
   const next = meetings[0] || null;
-  const levers = c.levers.map(l => ({ ...l, nextMeeting: /comment/.test(l.key) && next ? next.date : null }));
+  // Public and written comment are taken at regular meetings and public hearings (budget, zoning), not at workshops or
+  // special sessions (ceremonies, single-subject meetings), so a comment lever points at the next meeting of those kinds.
+  const takesComment = c.meetings.schedule.find(m => m.date >= today && ['regular', 'budget-hearing', 'zoning'].includes(m.kind));
+  const levers = c.levers.map(l => ({ ...l, nextMeeting: /comment/.test(l.key) && takesComment ? takesComment.date : null }));
   return {
     key: c.key, checked: c.checked || null, links: c.links || {},
     meetings: { pattern: c.meetings.pattern || null, agendaLeadDays: c.meetings.agendaLeadDays == null ? null : c.meetings.agendaLeadDays, next: meetings, scheduleEnds: c.meetings.schedule.length ? c.meetings.schedule[c.meetings.schedule.length - 1].date : null },
