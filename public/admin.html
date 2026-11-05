@@ -35,6 +35,11 @@
   </div>
   <div id="status" role="status"></div>
   <div id="healthBox" style="display:none"><button id="healthBtn" type="button">Check data sources</button><div id="health"></div></div>
+  <div id="signupBox" style="display:none">
+    <h1 style="margin-top:22px">Next-ballot email list</h1>
+    <p class="sub">Voters who asked to hear when the next Miami-Dade ballots are loaded (from the post-election popup).</p>
+    <button id="signupBtn" type="button">Download list (CSV)</button> <span class="meta" id="signupStatus"></span>
+  </div>
   <div id="warmBox" style="display:none">
     <h1 style="margin-top:22px">Warm up research</h1>
     <p class="sub">Researches every candidate and question on the countywide ballot, and translates each into Spanish and Haitian Creole, so voters never wait. Skips anything already done. Safe to stop and start again.</p>
@@ -77,6 +82,7 @@ async function load(){
     $('login').style.display = 'none';
     $('healthBox').style.display = '';
     $('warmBox').style.display = '';
+    $('signupBox').style.display = '';
     $('status').textContent = d.reports.length ? d.reports.length + ' open report(s), newest first.' : 'No open reports.';
     $('list').innerHTML = d.reports.map(function(r){
       return '<div class="rep' + (r.held ? ' held' : '') + '" data-id="' + esc(r.id) + '" data-key="' + esc(r.key) + '">' +
@@ -104,6 +110,20 @@ $('list').addEventListener('click', async function(e){
     await call(act, act === 'resolve' ? { id: box.getAttribute('data-id') } : { key: box.getAttribute('data-key') });
     load();
   } catch(err) { $('status').textContent = err.message; b.disabled = false; }
+});
+$('signupBtn').addEventListener('click', async function(){
+  var b = this; b.disabled = true; $('signupStatus').textContent = 'Loading…';
+  try {
+    var d = await call('notify-signups');
+    var q = function(v){ return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; };
+    var csv = 'email,language,signed_up_at,source\n' + d.signups.map(function(r){ return [r.email, r.lang, r.at, r.source].map(q).join(','); }).join('\n') + '\n';
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    a.download = 'ballot305-next-ballot-signups-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.click();
+    $('signupStatus').textContent = d.signups.length + ' signup(s).';
+  } catch(err) { $('signupStatus').textContent = err.message; }
+  b.disabled = false;
 });
 $('healthBtn').addEventListener('click', async function(){
   var b = this; b.disabled = true; $('health').innerHTML = '<p class="meta">Checking each source (up to a minute)…</p>';

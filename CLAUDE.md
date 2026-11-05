@@ -27,4 +27,7 @@ can't be confused with a sibling.
 - workers.dev subdomain `ballot-intel.workers.dev` is the account-wide subdomain (every Worker's *.workers.dev URL,
   including Ballot317's). Same post-election rename as the Worker.
 - Repo `vote-informed` is Ballot305.
+- KV binding `CACHE` also holds the next-ballot email signups (keys `notify-signup:<email>`, from
+  public/thank-you-popup.js), so it is not only a cache. A dedicated namespace (e.g. `BALLOT305_NOTIFY_SIGNUPS`)
+  needs Brit to create it in Cloudflare first; until then the keys live in `CACHE` with no expiry.
 - Branch `sources-archive` holds interim source text and inbox batches for the R2 bucket `wethepeople305-sources`.

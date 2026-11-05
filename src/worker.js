@@ -107,6 +107,9 @@ export default {
       if (request.method === 'GET' && url.pathname === '/api/master') {
         return await handleMaster(env);
       }
+      if (request.method === 'POST' && url.pathname === '/api/notify-signup') {
+        return await handleNotifySignup(request, env);
+      }
       if (request.method === 'POST' && url.pathname === '/api/report') {
         return await handleReport(request, env);
       }
@@ -3898,6 +3901,38 @@ async function handleReport(request, env) {
   await env.CACHE.put(id, JSON.stringify(rec), { expirationTtl: REPORT_TTL });
   return json({ ok: true });
 }
+// Emails from voters who asked to hear when the next Miami-Dade ballots load (the post-election
+// thank-you popup, public/thank-you-popup.js). One KV record per address, keyed by the address so a
+// repeat signup overwrites instead of duplicating. No expiry: the list is kept until it is used.
+const NOTIFY_SIGNUP_PREFIX = 'notify-signup:';
+const EMAIL_RE = /^[^\s@<>()",;:]{1,64}@[A-Za-z0-9.-]{1,253}\.[A-Za-z]{2,24}$/;
+async function handleNotifySignup(request, env) {
+  const b = await request.json().catch(() => null);
+  const email = b && isStr(b.email) ? b.email.trim().toLowerCase() : '';
+  if (!email || email.length > 254 || !EMAIL_RE.test(email)) return json({ error: 'Enter a valid email address.' }, 400);
+  if (b.website) return json({ ok: true });   // hidden honeypot field: bots fill it, people never see it
+  if (!(await rateLimit(env, 'notify-signup', clientIP(request), 5))) return json({ error: 'Too many signups today from your connection.' }, 429);
+  const lang = isStr(b.lang) && ['en', 'es', 'ht'].includes(b.lang) ? b.lang : 'en';
+  const key = NOTIFY_SIGNUP_PREFIX + email;
+  const prev = await env.CACHE.get(key, 'json');
+  const rec = { email, lang, source: 'post-election-2026-popup', at: prev && prev.at ? prev.at : new Date().toISOString() };
+  await env.CACHE.put(key, JSON.stringify(rec));
+  return json({ ok: true });
+}
+async function listNotifySignups(env) {
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.CACHE.list({ prefix: NOTIFY_SIGNUP_PREFIX, cursor, limit: 1000 });
+    for (const k of page.keys) {
+      const v = await env.CACHE.get(k.name, 'json');
+      if (v) out.push(v);
+    }
+    cursor = page.list_complete ? null : page.cursor;
+  } while (cursor);
+  out.sort((a, b) => String(a.at).localeCompare(String(b.at)));
+  return out;
+}
 // Founder board: state shape, and a chat that answers from the board and changes it through tools.
 function adminOk(request, env) {
   const tok = env.ADMIN_TOKEN;
@@ -3957,6 +3992,7 @@ async function handleAdmin(request, env, url) {
     }
     return json({ reports: out });
   }
+  if (request.method === 'GET' && route === 'notify-signups') return json({ signups: await listNotifySignups(env) });
   if (request.method !== 'POST') return json({ error: 'Not found' }, 404);
   const b = await request.json().catch(() => ({}));
   const key = isStr(b.key) && /^(res[a-z0-9]*|resm2|resj1|resl4|res7):[0-9a-f]{64}$/.test(b.key) ? b.key : '';
