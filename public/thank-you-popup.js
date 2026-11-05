@@ -7,8 +7,10 @@
   var WTP_URL = 'https://wethepeople305.org';
   var WHATSAPP_URL = 'https://chat.whatsapp.com/KwOrWIfEqdsIZqMFfV3Ict';
 
-  try { if (localStorage.getItem(SEEN_KEY)) return; } catch(e) {}
+  // ?popup shows it again even after it was closed (for checking it); ?nopopup hides it.
+  var forced = /[?&]popup\b/.test(location.search);
   if (/[?&]nopopup\b/.test(location.search)) return;
+  try { if (!forced && localStorage.getItem(SEEN_KEY)) return; } catch(e) {}
 
   var STR = {
     en: {
