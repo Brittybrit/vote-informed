@@ -3,14 +3,30 @@
 // stored in KV under notify-signup:<email>; export from /admin.html) and links the WhatsApp community.
 // Self-contained: its own styles and strings, so pages only need <script src="/thank-you-popup.js" defer>.
 (function(){
-  var SEEN_KEY = 'ballot305.thankYouPopup2026.seen';
+  // Signing up or tapping WhatsApp ends it for good. Closing it brings it back a week later,
+  // at most 3 showings in all, so nobody gets nagged forever.
+  var DONE_KEY = 'ballot305.thankYouPopup2026.done';          // signed up or joined WhatsApp
+  var CLOSED_KEY = 'ballot305.thankYouPopup2026.closed';      // {last: ISO date, count: times closed}
+  var REPEAT_AFTER_DAYS = 7, MAX_SHOWINGS = 3;
   var WTP_URL = 'https://wethepeople305.org';
   var WHATSAPP_URL = 'https://chat.whatsapp.com/KwOrWIfEqdsIZqMFfV3Ict';
 
   // ?popup shows it again even after it was closed (for checking it); ?nopopup hides it.
   var forced = /[?&]popup\b/.test(location.search);
   if (/[?&]nopopup\b/.test(location.search)) return;
-  try { if (!forced && localStorage.getItem(SEEN_KEY)) return; } catch(e) {}
+  function readClosed(){ try { return JSON.parse(localStorage.getItem(CLOSED_KEY)) || { count: 0 }; } catch(e) { return { count: 0 }; } }
+  function markDone(){ try { localStorage.setItem(DONE_KEY, new Date().toISOString()); } catch(e) {} }
+  function markClosed(){ var c = readClosed(); try { localStorage.setItem(CLOSED_KEY, JSON.stringify({ last: new Date().toISOString(), count: (c.count || 0) + 1 })); } catch(e) {} }
+  if (!forced) {
+    try {   // the first version (Nov 5) kept one key for closed and signed up alike: count it as one closing
+      var old = localStorage.getItem('ballot305.thankYouPopup2026.seen');
+      if (old) { localStorage.setItem(CLOSED_KEY, JSON.stringify({ last: old, count: 1 })); localStorage.removeItem('ballot305.thankYouPopup2026.seen'); }
+    } catch(e) {}
+    try { if (localStorage.getItem(DONE_KEY)) return; } catch(e) {}
+    var c = readClosed();
+    if (c.count >= MAX_SHOWINGS) return;
+    if (c.last && Date.now() - Date.parse(c.last) < REPEAT_AFTER_DAYS * 864e5) return;
+  }
 
   var STR = {
     en: {
@@ -102,7 +118,8 @@
         go = form.querySelector('.ty305-go'), msg = back.querySelector('.ty305-msg');
 
     function close(){
-      try { localStorage.setItem(SEEN_KEY, new Date().toISOString()); } catch(e) {}
+      var done = false; try { done = !!localStorage.getItem(DONE_KEY); } catch(e) {}
+      if (!done && !forced) markClosed();
       document.removeEventListener('keydown', onKey, true);
       back.remove();
       document.body.classList.remove('ty305-open');
@@ -120,7 +137,7 @@
     back.addEventListener('click', function(e){ if (e.target === back) close(); });
     back.querySelector('.ty305-x').addEventListener('click', close);
     back.querySelector('.ty305-later').addEventListener('click', close);
-    back.querySelector('.ty305-wa').addEventListener('click', function(){ try { localStorage.setItem(SEEN_KEY, new Date().toISOString()); } catch(e) {} });
+    back.querySelector('.ty305-wa').addEventListener('click', markDone);
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -135,7 +152,7 @@
           var d = await r.json().catch(function(){ return {}; });
           throw new Error(r.status === 400 ? T.bad : (lang === 'en' && d.error) || T.err);
         }
-        try { localStorage.setItem(SEEN_KEY, new Date().toISOString()); } catch(e2) {}
+        markDone();
         form.style.display = 'none';
         msg.className = 'ty305-msg ok'; msg.textContent = T.done;
         back.querySelector('.ty305-later').textContent = T.close;
