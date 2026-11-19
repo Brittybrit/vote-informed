@@ -1,0 +1,2611 @@
+{
+ "election": "2026-11-03",
+ "electionId": 4087,
+ "status": "official",
+ "countyUpdated": "11/13/2026 4:45:48 pm",
+ "resultsUrl": "https://s3.amazonaws.com/results.voterfocus.com/enr/exports/reports/DAD/4087/CandidateSummaryResultsbyParty_2026-11-13T16:43:59_4033debe-4288-4588-b214-542db2ff6a35.csv",
+ "resultsPage": "https://enr.electionsfl.org/DAD/4087/Summary/",
+ "about": "County election-night results matched to the ballot. A race is applied to the roster only when the call is plain (votes in, margin above the 0.5% recount threshold, a majority for local races, single seat, sourced take-office date); everything else is listed as needs-review with the reason. Winners take their seats in the roster on the date they take office.",
+ "counts": {
+  "contests": 128,
+  "matched": 69,
+  "unmatched": 59,
+  "applied": 12,
+  "needsReview": 16
+ },
+ "decisions": [
+  {
+   "contest": "United States Senator",
+   "office": "United States Senator",
+   "officeId": "us-senate-fl",
+   "candidates": [
+    {
+     "name": "Ashley Moody",
+     "party": "REP",
+     "votes": 359992,
+     "pct": 45.87,
+     "person": "ashley-moody"
+    },
+    {
+     "name": "Angie Nixon",
+     "party": "DEM",
+     "votes": 416036,
+     "pct": 53.01,
+     "person": "angela-nixon"
+    },
+    {
+     "name": "Neil J. Gillespie",
+     "party": "NPA",
+     "votes": 8806,
+     "pct": 1.12,
+     "person": "neil-j-gillespie"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "angela-nixon",
+   "reason": "Multi-seat race: who fills which seat needs a person"
+  },
+  {
+   "contest": "Representative Congress District 24",
+   "office": "Representative in Congress, District 24",
+   "officeId": "us-house-fl-24",
+   "candidates": [
+    {
+     "name": "Te Mayonna Brown",
+     "party": "REP",
+     "votes": 24692,
+     "pct": 17.69,
+     "person": "te-mayonna-brown"
+    },
+    {
+     "name": "Oliver G. Gilbert III",
+     "party": "DEM",
+     "votes": 114461,
+     "pct": 82.01,
+     "person": "oliver-g-gilbert-iii"
+    },
+    {
+     "name": "Write-in",
+     "party": null,
+     "votes": 412,
+     "pct": 0.3,
+     "person": null
+    }
+   ],
+   "status": "elected",
+   "person": "oliver-g-gilbert-iii",
+   "incumbent": "frederica-s-wilson",
+   "reelected": false,
+   "winnerPct": 82.01,
+   "takesOffice": {
+    "date": "2027-01-03",
+    "source": "https://constitution.congress.gov/constitution/amendment-20/",
+    "rule": "U.S. Constitution, 20th Amendment: January 3"
+   }
+  },
+  {
+   "contest": "Representative Congress District 25",
+   "office": "Representative in Congress, District 25",
+   "officeId": "us-house-fl-25",
+   "candidates": [
+    {
+     "name": "Scott Singer",
+     "party": "REP",
+     "votes": 32464,
+     "pct": 44.97,
+     "person": "scott-singer"
+    },
+    {
+     "name": "Jared Moskowitz",
+     "party": "DEM",
+     "votes": 38157,
+     "pct": 52.86,
+     "person": "jared-moskowitz"
+    },
+    {
+     "name": "Peter Jassenoff",
+     "party": "LPF",
+     "votes": 1376,
+     "pct": 1.91,
+     "person": "peter-jassenoff"
+    },
+    {
+     "name": "Write-in",
+     "party": null,
+     "votes": 189,
+     "pct": 0.26,
+     "person": null
+    }
+   ],
+   "status": "elected",
+   "person": "jared-moskowitz",
+   "incumbent": "debbie-wasserman-schultz",
+   "reelected": false,
+   "winnerPct": 52.86,
+   "takesOffice": {
+    "date": "2027-01-03",
+    "source": "https://constitution.congress.gov/constitution/amendment-20/",
+    "rule": "U.S. Constitution, 20th Amendment: January 3"
+   }
+  },
+  {
+   "contest": "Representative Congress District 26",
+   "office": "Representative in Congress, District 26",
+   "officeId": "us-house-fl-26",
+   "candidates": [
+    {
+     "name": "Mario Diaz-Balart",
+     "party": "REP",
+     "votes": 72130,
+     "pct": 60.28,
+     "person": "mario-diaz-balart"
+    },
+    {
+     "name": "Nicole Locklin",
+     "party": "DEM",
+     "votes": 46331,
+     "pct": 38.72,
+     "person": "nicole-locklin"
+    },
+    {
+     "name": "Deborah Ann Meidinger Hosey",
+     "party": "NPA",
+     "votes": 1191,
+     "pct": 1,
+     "person": "deborah-ann-meidinger-hosey"
+    }
+   ],
+   "status": "elected",
+   "person": "mario-diaz-balart",
+   "incumbent": "mario-diaz-balart",
+   "reelected": true,
+   "winnerPct": 60.28,
+   "takesOffice": {
+    "date": "2027-01-03",
+    "source": "https://constitution.congress.gov/constitution/amendment-20/",
+    "rule": "U.S. Constitution, 20th Amendment: January 3"
+   }
+  },
+  {
+   "contest": "Representative Congress District 28",
+   "office": "Representative in Congress, District 28",
+   "officeId": "us-house-fl-28",
+   "candidates": [
+    {
+     "name": "Carlos A. Gimenez",
+     "party": "REP",
+     "votes": 107573,
+     "pct": 52.68,
+     "person": "carlos-a-gimenez"
+    },
+    {
+     "name": "Phil \"Felipe\" Ehr",
+     "party": "DEM",
+     "votes": 93544,
+     "pct": 45.81,
+     "person": "phil-ehr"
+    },
+    {
+     "name": "Eddy Rojas",
+     "party": "NPA",
+     "votes": 3076,
+     "pct": 1.51,
+     "person": "eddy-rojas"
+    }
+   ],
+   "status": "elected",
+   "person": "carlos-a-gimenez",
+   "incumbent": "carlos-a-gimenez",
+   "reelected": true,
+   "winnerPct": 52.68,
+   "takesOffice": {
+    "date": "2027-01-03",
+    "source": "https://constitution.congress.gov/constitution/amendment-20/",
+    "rule": "U.S. Constitution, 20th Amendment: January 3"
+   }
+  },
+  {
+   "contest": "Governor and Lieutenant Governor",
+   "office": "Governor and Lieutenant Governor",
+   "officeId": "fl-governor",
+   "candidates": [
+    {
+     "name": "Byron Donalds",
+     "party": "REP",
+     "votes": 360100,
+     "pct": 45.82,
+     "person": "byron-donalds"
+    },
+    {
+     "name": "David Jolly",
+     "party": "DEM",
+     "votes": 415328,
+     "pct": 52.85,
+     "person": "david-jolly"
+    },
+    {
+     "name": "Scott Eckhard Jewett",
+     "party": "LPF",
+     "votes": 2604,
+     "pct": 0.33,
+     "person": "scott-eckhard-jewett"
+    },
+    {
+     "name": "Charles Burkett",
+     "party": "NPA",
+     "votes": 1704,
+     "pct": 0.22,
+     "person": "charles-burkett"
+    },
+    {
+     "name": "Frank J. Russo",
+     "party": "NPA",
+     "votes": 2668,
+     "pct": 0.34,
+     "person": "frank-j-russo"
+    },
+    {
+     "name": "Moliere \"Moe\" Dimanche",
+     "party": "NPA",
+     "votes": 783,
+     "pct": 0.1,
+     "person": "moliere-dimanche"
+    },
+    {
+     "name": "Dean Ocean Abrams",
+     "party": "NPA",
+     "votes": 868,
+     "pct": 0.11,
+     "person": "dean-ocean-abrams"
+    },
+    {
+     "name": "Jeffrey Peter \"Dr. Jeff\" Datto",
+     "party": "NPA",
+     "votes": 1062,
+     "pct": 0.14,
+     "person": "jeffrey-peter-datto"
+    },
+    {
+     "name": "Write-in",
+     "party": null,
+     "votes": 745,
+     "pct": 0.09,
+     "person": null
+    }
+   ],
+   "status": "elected",
+   "person": "david-jolly",
+   "incumbent": "ron-desantis",
+   "reelected": false,
+   "winnerPct": 52.85,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A4S05",
+    "rule": "Fla. Const. art. IV, s. 5: first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "Attorney General",
+   "office": "Attorney General",
+   "officeId": "fl-attorney-general",
+   "candidates": [
+    {
+     "name": "James Uthmeier",
+     "party": "REP",
+     "votes": 345016,
+     "pct": 44.42,
+     "person": "james-uthmeier"
+    },
+    {
+     "name": "Jose Javier Rodriguez",
+     "party": "DEM",
+     "votes": 431755,
+     "pct": 55.58,
+     "person": "jose-javier-rodriguez"
+    }
+   ],
+   "status": "elected",
+   "person": "jose-javier-rodriguez",
+   "incumbent": "james-uthmeier",
+   "reelected": false,
+   "winnerPct": 55.58,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A4S05",
+    "rule": "Fla. Const. art. IV, s. 5: first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "Chief Financial Officer",
+   "office": "Chief Financial Officer",
+   "officeId": "fl-cfo",
+   "candidates": [
+    {
+     "name": "Blaise Ingoglia",
+     "party": "REP",
+     "votes": 351206,
+     "pct": 45.36,
+     "person": "blaise-ingoglia"
+    },
+    {
+     "name": "Annette Taddeo",
+     "party": "DEM",
+     "votes": 423070,
+     "pct": 54.64,
+     "person": "annette-taddeo"
+    }
+   ],
+   "status": "elected",
+   "person": "annette-taddeo",
+   "incumbent": "blaise-ingoglia",
+   "reelected": false,
+   "winnerPct": 54.64,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A4S05",
+    "rule": "Fla. Const. art. IV, s. 5: first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "Commissioner of Agriculture",
+   "office": "Commissioner of Agriculture",
+   "officeId": "fl-agriculture-commissioner",
+   "candidates": [
+    {
+     "name": "Wilton Simpson",
+     "party": "REP",
+     "votes": 358400,
+     "pct": 46.17,
+     "person": "wilton-simpson"
+    },
+    {
+     "name": "Joey Mendoza Atkins",
+     "party": "DEM",
+     "votes": 416957,
+     "pct": 53.71,
+     "person": "joey-mendoza-atkins"
+    },
+    {
+     "name": "Write-in",
+     "party": null,
+     "votes": 887,
+     "pct": 0.11,
+     "person": null
+    }
+   ],
+   "status": "elected",
+   "person": "joey-mendoza-atkins",
+   "incumbent": "wilton-simpson",
+   "reelected": false,
+   "winnerPct": 53.71,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A4S05",
+    "rule": "Fla. Const. art. IV, s. 5: first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "State Senator District 34",
+   "office": "State Senator, District 34",
+   "officeId": "fl-senate-34",
+   "candidates": [
+    {
+     "name": "Elizabeth Jeanty",
+     "party": "REP",
+     "votes": 30997,
+     "pct": 21.17,
+     "person": "elizabeth-jeanty"
+    },
+    {
+     "name": "Ashley Viola Gantt",
+     "party": "DEM",
+     "votes": 115457,
+     "pct": 78.83,
+     "person": "ashley-viola-gantt"
+    }
+   ],
+   "status": "elected",
+   "person": "ashley-viola-gantt",
+   "incumbent": "shevrin-d-jones",
+   "reelected": false,
+   "winnerPct": 78.83,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Senator District 36",
+   "office": "State Senator, District 36",
+   "officeId": "fl-senate-36",
+   "candidates": [
+    {
+     "name": "Ileana Garcia",
+     "party": "REP",
+     "votes": 71136,
+     "pct": 50.59,
+     "person": "ileana-garcia"
+    },
+    {
+     "name": "George Lavín",
+     "party": "DEM",
+     "votes": 69472,
+     "pct": 49.41,
+     "person": "george-lavin"
+    }
+   ],
+   "status": "elected",
+   "person": "ileana-garcia",
+   "incumbent": "ileana-garcia",
+   "reelected": true,
+   "winnerPct": 50.59,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Senator District 38",
+   "office": "State Senator, District 38",
+   "officeId": "fl-senate-38",
+   "candidates": [
+    {
+     "name": "Alexis Maria Calatayud",
+     "party": "REP",
+     "votes": 92972,
+     "pct": 49.51,
+     "person": "alexis-calatayud"
+    },
+    {
+     "name": "Richard Lamondin Jr.",
+     "party": "DEM",
+     "votes": 91425,
+     "pct": 48.69,
+     "person": "richard-lamondin-jr"
+    },
+    {
+     "name": "Jeffrey \"Doc\" Solomon",
+     "party": "NPA",
+     "votes": 3383,
+     "pct": 1.8,
+     "person": "jeffrey-solomon"
+    }
+   ],
+   "status": "elected",
+   "person": "alexis-calatayud",
+   "incumbent": "alexis-calatayud",
+   "reelected": true,
+   "winnerPct": 49.51,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Senator District 40",
+   "office": "State Senator, District 40",
+   "officeId": "fl-senate-40",
+   "candidates": [
+    {
+     "name": "Ana Maria Rodriguez",
+     "party": "REP",
+     "votes": 77685,
+     "pct": 55.22,
+     "person": "ana-maria-rodriguez"
+    },
+    {
+     "name": "Jose Antonio Stoute",
+     "party": "DEM",
+     "votes": 61388,
+     "pct": 43.64,
+     "person": "jose-antonio-stoute"
+    },
+    {
+     "name": "Ramiro Orta",
+     "party": "NPA",
+     "votes": 1610,
+     "pct": 1.14,
+     "person": "ramiro-orta"
+    }
+   ],
+   "status": "elected",
+   "person": "ana-maria-rodriguez",
+   "incumbent": "ana-maria-rodriguez",
+   "reelected": true,
+   "winnerPct": 55.22,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 106",
+   "office": "State Representative, District 106",
+   "officeId": "fl-house-106",
+   "candidates": [
+    {
+     "name": "Fabián Basabe",
+     "party": "REP",
+     "votes": 26381,
+     "pct": 46.03,
+     "person": "fabian-basabe"
+    },
+    {
+     "name": "Lucia Baez-Geller",
+     "party": "DEM",
+     "votes": 30932,
+     "pct": 53.97,
+     "person": "lucia-baez-geller"
+    }
+   ],
+   "status": "elected",
+   "person": "lucia-baez-geller",
+   "incumbent": "fabian-basabe",
+   "reelected": false,
+   "winnerPct": 53.97,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 108",
+   "office": "State Representative, District 108",
+   "officeId": "fl-house-108",
+   "candidates": [
+    {
+     "name": "Wancito Francius",
+     "party": "REP",
+     "votes": 9287,
+     "pct": 19.12,
+     "person": "wancito-francius"
+    },
+    {
+     "name": "Daphne Campbell",
+     "party": "DEM",
+     "votes": 39278,
+     "pct": 80.88,
+     "person": "daphne-campbell"
+    }
+   ],
+   "status": "elected",
+   "person": "daphne-campbell",
+   "incumbent": "dotie-joseph",
+   "reelected": false,
+   "winnerPct": 80.88,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 113",
+   "office": "State Representative, District 113",
+   "officeId": "fl-house-113",
+   "candidates": [
+    {
+     "name": "Bruno A. Barreiro",
+     "party": "REP",
+     "votes": 20556,
+     "pct": 45.29,
+     "person": "bruno-a-barreiro"
+    },
+    {
+     "name": "Gloria Romero Roses",
+     "party": "DEM",
+     "votes": 24778,
+     "pct": 54.59,
+     "person": "gloria-romero-roses"
+    },
+    {
+     "name": "Write-in",
+     "party": null,
+     "votes": 58,
+     "pct": 0.13,
+     "person": null
+    }
+   ],
+   "status": "elected",
+   "person": "gloria-romero-roses",
+   "incumbent": null,
+   "reelected": false,
+   "winnerPct": 54.59,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 115",
+   "office": "State Representative, District 115",
+   "officeId": "fl-house-115",
+   "candidates": [
+    {
+     "name": "Omar Blanco",
+     "party": "REP",
+     "votes": 37724,
+     "pct": 53.04,
+     "person": "omar-blanco"
+    },
+    {
+     "name": "Marcos Reyes",
+     "party": "DEM",
+     "votes": 33397,
+     "pct": 46.96,
+     "person": "marcos-reyes"
+    }
+   ],
+   "status": "elected",
+   "person": "omar-blanco",
+   "incumbent": "omar-blanco",
+   "reelected": true,
+   "winnerPct": 53.04,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 116",
+   "office": "State Representative, District 116",
+   "officeId": "fl-house-116",
+   "candidates": [
+    {
+     "name": "Ashley Perez-Biliskov",
+     "party": "REP",
+     "votes": 33536,
+     "pct": 59.2,
+     "person": "ashley-perez-biliskov"
+    },
+    {
+     "name": "Nicolas Ramos",
+     "party": "DEM",
+     "votes": 23111,
+     "pct": 40.8,
+     "person": "nicolas-ramos"
+    }
+   ],
+   "status": "elected",
+   "person": "ashley-perez-biliskov",
+   "incumbent": null,
+   "reelected": false,
+   "winnerPct": 59.2,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 117",
+   "office": "State Representative, District 117",
+   "officeId": "fl-house-117",
+   "candidates": [
+    {
+     "name": "Miguel Granda",
+     "party": "REP",
+     "votes": 16316,
+     "pct": 35.75,
+     "person": "miguel-granda"
+    },
+    {
+     "name": "Kevin Chambliss",
+     "party": "DEM",
+     "votes": 29319,
+     "pct": 64.25,
+     "person": "kevin-d-chambliss"
+    }
+   ],
+   "status": "elected",
+   "person": "kevin-d-chambliss",
+   "incumbent": "kevin-d-chambliss",
+   "reelected": true,
+   "winnerPct": 64.25,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 118",
+   "office": "State Representative, District 118",
+   "officeId": "fl-house-118",
+   "candidates": [
+    {
+     "name": "Mike Redondo",
+     "party": "REP",
+     "votes": 36165,
+     "pct": 58.32,
+     "person": "mike-redondo"
+    },
+    {
+     "name": "Armando \"A.C.\" Castillo",
+     "party": "DEM",
+     "votes": 25851,
+     "pct": 41.68,
+     "person": "armando-castillo"
+    }
+   ],
+   "status": "elected",
+   "person": "mike-redondo",
+   "incumbent": "mike-redondo",
+   "reelected": true,
+   "winnerPct": 58.32,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "State Representative District 119",
+   "office": "State Representative, District 119",
+   "officeId": "fl-house-119",
+   "candidates": [
+    {
+     "name": "Juan Carlos Porras",
+     "party": "REP",
+     "votes": 34206,
+     "pct": 55.82,
+     "person": "juan-carlos-porras"
+    },
+    {
+     "name": "Rey Lazaro Sordo",
+     "party": "DEM",
+     "votes": 27077,
+     "pct": 44.18,
+     "person": "rey-lazaro-sordo"
+    }
+   ],
+   "status": "elected",
+   "person": "juan-carlos-porras",
+   "incumbent": "juan-carlos-porras",
+   "reelected": true,
+   "winnerPct": 55.82,
+   "takesOffice": {
+    "date": "2026-11-03",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A3S15",
+    "rule": "Fla. Const. art. III, s. 15(d): legislators take office upon election"
+   }
+  },
+  {
+   "contest": "Justice Supreme Court Carlos G. Muñiz",
+   "office": "Justice of the Supreme Court: Carlos G. Muñiz",
+   "officeId": "fl-supreme-court",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 409268,
+     "pct": 57.42,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 303448,
+     "pct": 42.58,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "carlos-g-muniz",
+   "yesPct": 57.42,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "3rd Dist Court Appeal Kansas R. Gooden",
+   "office": "District Court of Appeal, 3rd District: Kansas R. Gooden",
+   "officeId": "fl-dca-3",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 419405,
+     "pct": 59.37,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 287006,
+     "pct": 40.63,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "kansas-r-gooden",
+   "yesPct": 59.37,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "3rd Dist Court Appeal Monica Gordo",
+   "office": "District Court of Appeal, 3rd District: Monica Gordo",
+   "officeId": "fl-dca-3",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 440344,
+     "pct": 62.37,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 265631,
+     "pct": 37.63,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "monica-gordo",
+   "yesPct": 62.37,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "3rd Dist Court Appeal Fleur Jeannine Lobree",
+   "office": "District Court of Appeal, 3rd District: Fleur Jeannine Lobree",
+   "officeId": "fl-dca-3",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 428920,
+     "pct": 60.97,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 274562,
+     "pct": 39.03,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "fleur-jeannine-lobree",
+   "yesPct": 60.97,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "3rd Dist Court Appeal Thomas Logue",
+   "office": "District Court of Appeal, 3rd District: Thomas Logue",
+   "officeId": "fl-dca-3",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 437884,
+     "pct": 62.41,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 263763,
+     "pct": 37.59,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "thomas-w-logue",
+   "yesPct": 62.41,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "3rd Dist Court Appeal Bronwyn C. Miller",
+   "office": "District Court of Appeal, 3rd District: Bronwyn Catherine Miller",
+   "officeId": "fl-dca-3",
+   "candidates": [
+    {
+     "name": "Yes",
+     "party": null,
+     "votes": 421705,
+     "pct": 60.13,
+     "person": null
+    },
+    {
+     "name": "No",
+     "party": null,
+     "votes": 279648,
+     "pct": 39.87,
+     "person": null
+    }
+   ],
+   "status": "retained",
+   "person": "bronwyn-catherine-miller",
+   "yesPct": 60.13,
+   "takesOffice": {
+    "date": "2027-01-05",
+    "source": "https://www.flsenate.gov/Laws/Constitution#A5S10",
+    "rule": "Fla. Const. art. V, s. 10(a): retained term begins the first Tuesday after the first Monday in January"
+   }
+  },
+  {
+   "contest": "Circuit Judge 11th Judicial Circuit Grp 5",
+   "office": "Circuit Judge, 11th Judicial Circuit, Group 5",
+   "officeId": "fl-circuit-11-group-5",
+   "candidates": [
+    {
+     "name": "Arthur LeMar \"Marty\" McNeil",
+     "party": null,
+     "votes": 349793,
+     "pct": 51.29,
+     "person": "arthur-lemar-mcneil"
+    },
+    {
+     "name": "Monica Segura",
+     "party": null,
+     "votes": 332188,
+     "pct": 48.71,
+     "person": "monica-segura"
+    }
+   ],
+   "status": "elected",
+   "person": "arthur-lemar-mcneil",
+   "incumbent": "angelica-d-zayas",
+   "reelected": false,
+   "winnerPct": 51.29,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Start date for a newly elected judge is not sourced yet"
+   }
+  },
+  {
+   "contest": "Circuit Judge 11th Judicial Circuit Grp 69",
+   "office": "Circuit Judge, 11th Judicial Circuit, Group 69",
+   "officeId": "fl-circuit-11-group-69",
+   "candidates": [
+    {
+     "name": "Rita Maria Baez",
+     "party": null,
+     "votes": 399047,
+     "pct": 58.33,
+     "person": "rita-maria-baez"
+    },
+    {
+     "name": "Bonita Jones-Peabody",
+     "party": null,
+     "votes": 285109,
+     "pct": 41.67,
+     "person": "bonita-jones-peabody"
+    }
+   ],
+   "status": "elected",
+   "person": "rita-maria-baez",
+   "incumbent": "richard-hersch",
+   "reelected": false,
+   "winnerPct": 58.33,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Start date for a newly elected judge is not sourced yet"
+   }
+  },
+  {
+   "contest": "County Commissioner District 5",
+   "office": "County Commissioner, District 5",
+   "officeId": "mdc-commission-5",
+   "candidates": [
+    {
+     "name": "Vicki L. Lopez",
+     "party": null,
+     "votes": 27392,
+     "pct": 60.48,
+     "person": "vicki-l-lopez"
+    },
+    {
+     "name": "Rob Piper",
+     "party": null,
+     "votes": 17896,
+     "pct": 39.52,
+     "person": "rob-piper"
+    }
+   ],
+   "status": "elected",
+   "person": "vicki-l-lopez",
+   "incumbent": "vicki-l-lopez",
+   "reelected": true,
+   "winnerPct": 60.48,
+   "takesOffice": {
+    "date": "2026-11-17",
+    "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/county-commissioners.pdf",
+    "rule": "New terms begin"
+   }
+  },
+  {
+   "contest": "School Board Member District 1",
+   "office": "School Board Member, District 1",
+   "officeId": "mdcps-board-district-1",
+   "candidates": [
+    {
+     "name": "Linda Cothiere",
+     "party": null,
+     "votes": 38635,
+     "pct": 51.58,
+     "person": "linda-cothiere"
+    },
+    {
+     "name": "Katrina Wilson",
+     "party": null,
+     "votes": 36262,
+     "pct": 48.42,
+     "person": "katrina-wilson"
+    }
+   ],
+   "status": "elected",
+   "person": "linda-cothiere",
+   "incumbent": "steve-gallon-iii",
+   "reelected": false,
+   "winnerPct": 51.58,
+   "takesOffice": {
+    "date": "2026-11-17",
+    "source": "https://www.miamidade.gov/elections/library/qualifying-handbook/school-board-members.pdf",
+    "rule": "New terms begin, Organization Meeting"
+   }
+  },
+  {
+   "contest": "Aventura Mayor",
+   "office": "Aventura - Mayor",
+   "officeId": "city-aventura-mayor",
+   "candidates": [
+    {
+     "name": "Howard S. Weinberg",
+     "party": null,
+     "votes": 9802,
+     "pct": 78.9,
+     "person": "howard-s-weinberg"
+    },
+    {
+     "name": "Alberto Zaltzberg",
+     "party": null,
+     "votes": 2622,
+     "pct": 21.1,
+     "person": "alberto-zaltzberg"
+    }
+   ],
+   "status": "elected",
+   "person": "howard-s-weinberg",
+   "incumbent": "howard-s-weinberg",
+   "reelected": true,
+   "winnerPct": 78.9,
+   "takesOffice": {
+    "date": "2026-11-10",
+    "source": "https://www.cityofaventura.com/calendar.aspx?view=list&year=2026&month=11&day=10&CID=14",
+    "rule": "Commission inauguration"
+   }
+  },
+  {
+   "contest": "Biscayne Park Commissioner",
+   "office": "Biscayne Park - Commissioner",
+   "officeId": "city-biscayne-park-member",
+   "candidates": [
+    {
+     "name": "Howard Goldmann",
+     "party": null,
+     "votes": 550,
+     "pct": 33.66,
+     "person": "howard-goldmann"
+    },
+    {
+     "name": "Judi Hamelburg",
+     "party": null,
+     "votes": 661,
+     "pct": 40.45,
+     "person": "judi-hamelburg"
+    },
+    {
+     "name": "Daniel Samaria",
+     "party": null,
+     "votes": 423,
+     "pct": 25.89,
+     "person": "daniel-samaria"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "judi-hamelburg",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Coral Gables for Mayor Group I",
+   "office": "Coral Gables - for Mayor - Group I",
+   "officeId": "city-coral-gables-group-1",
+   "candidates": [
+    {
+     "name": "Laureano Cancio",
+     "party": null,
+     "votes": 5125,
+     "pct": 25.73,
+     "person": "laureano-cancio"
+    },
+    {
+     "name": "Jackson Rip Holmes",
+     "party": null,
+     "votes": 3492,
+     "pct": 17.53,
+     "person": "jackson-rip-holmes"
+    },
+    {
+     "name": "Vince Lago",
+     "party": null,
+     "votes": 11302,
+     "pct": 56.74,
+     "person": "vince-c-lago"
+    }
+   ],
+   "status": "elected",
+   "person": "vince-c-lago",
+   "incumbent": "vince-c-lago",
+   "reelected": true,
+   "winnerPct": 56.74,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Coral Gables for Commissioner Group IV",
+   "office": "Coral Gables - for Commissioner - Group IV",
+   "officeId": "city-coral-gables-group-4",
+   "candidates": [
+    {
+     "name": "Melissa Castro",
+     "party": null,
+     "votes": 9920,
+     "pct": 49.7,
+     "person": "melissa-castro"
+    },
+    {
+     "name": "Nestor Menendez",
+     "party": null,
+     "votes": 10038,
+     "pct": 50.3,
+     "person": "nestor-menendez"
+    }
+   ],
+   "status": "elected",
+   "person": "nestor-menendez",
+   "incumbent": "melissa-castro",
+   "reelected": false,
+   "winnerPct": 50.3,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Coral Gables for Commissioner Group V",
+   "office": "Coral Gables - for Commissioner - Group V",
+   "officeId": "city-coral-gables-group-5",
+   "candidates": [
+    {
+     "name": "Gonzalo Sanabria",
+     "party": null,
+     "votes": 8489,
+     "pct": 44,
+     "person": "gonzalo-sanabria"
+    },
+    {
+     "name": "Nikki Whiting",
+     "party": null,
+     "votes": 10805,
+     "pct": 56,
+     "person": "nikki-whiting"
+    }
+   ],
+   "status": "elected",
+   "person": "nikki-whiting",
+   "incumbent": "ariel-fernandez",
+   "reelected": false,
+   "winnerPct": 56,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Cutler Bay Mayor",
+   "office": "Cutler Bay - Mayor",
+   "officeId": "city-cutler-bay-mayor",
+   "candidates": [
+    {
+     "name": "Ricardo De Melo Gomes",
+     "party": null,
+     "votes": 4262,
+     "pct": 28.55,
+     "person": "ricardo-de-melo-gomes"
+    },
+    {
+     "name": "Robert \"B.J.\" Duncan",
+     "party": null,
+     "votes": 4876,
+     "pct": 32.67,
+     "person": "robert-duncan"
+    },
+    {
+     "name": "Suzy Lord",
+     "party": null,
+     "votes": 5159,
+     "pct": 34.56,
+     "person": "suzy-lord"
+    },
+    {
+     "name": "Clint Rodriguez",
+     "party": null,
+     "votes": 630,
+     "pct": 4.22,
+     "person": "clint-rodriguez"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "suzy-lord",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Cutler Bay Res Area Council Member Seat 1",
+   "office": "Cutler Bay - Residential Area Council Member - Seat 1",
+   "officeId": "city-cutler-bay-seat-1",
+   "candidates": [
+    {
+     "name": "Ricky Fernandez",
+     "party": null,
+     "votes": 5059,
+     "pct": 36.16,
+     "person": "ricky-fernandez"
+    },
+    {
+     "name": "James Richie Hawkins",
+     "party": null,
+     "votes": 2824,
+     "pct": 20.19,
+     "person": "james-richie-hawkins"
+    },
+    {
+     "name": "Mary Ann Mixon",
+     "party": null,
+     "votes": 6106,
+     "pct": 43.65,
+     "person": "mary-ann-mixon"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "mary-ann-mixon",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Cutler Bay Res Area Council Member Seat 3",
+   "office": "Cutler Bay - Residential Area Council Member - Seat 3",
+   "officeId": "city-cutler-bay-seat-3",
+   "candidates": [
+    {
+     "name": "Rene Gomez",
+     "party": null,
+     "votes": 7269,
+     "pct": 53,
+     "person": "rene-gomez"
+    },
+    {
+     "name": "Richard Ramirez",
+     "party": null,
+     "votes": 6446,
+     "pct": 47,
+     "person": "richard-ramirez"
+    }
+   ],
+   "status": "elected",
+   "person": "rene-gomez",
+   "incumbent": "richard-ramirez",
+   "reelected": false,
+   "winnerPct": 53,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Doral Councilmember Seat 4",
+   "office": "Doral - Councilmember - Seat 4",
+   "officeId": "city-doral-seat-4",
+   "candidates": [
+    {
+     "name": "Peter Espinosa",
+     "party": null,
+     "votes": 11123,
+     "pct": 59.04,
+     "person": "peter-espinosa"
+    },
+    {
+     "name": "Gustavo Garagorry",
+     "party": null,
+     "votes": 7718,
+     "pct": 40.96,
+     "person": "gustavo-garagorry"
+    }
+   ],
+   "status": "elected",
+   "person": "peter-espinosa",
+   "incumbent": null,
+   "reelected": false,
+   "winnerPct": 59.04,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "El Portal Mayor",
+   "office": "El Portal - Mayor",
+   "officeId": "city-el-portal-mayor",
+   "candidates": [
+    {
+     "name": "George Alvarez",
+     "party": null,
+     "votes": 553,
+     "pct": 56.72,
+     "person": "george-alvarez"
+    },
+    {
+     "name": "Omarr C. Nickerson",
+     "party": null,
+     "votes": 422,
+     "pct": 43.28,
+     "person": "omarr-c-nickerson"
+    }
+   ],
+   "status": "elected",
+   "person": "george-alvarez",
+   "incumbent": "omarr-c-nickerson",
+   "reelected": false,
+   "winnerPct": 56.72,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "El Portal Councilperson Seat 1",
+   "office": "El Portal - Councilperson - Seat 1",
+   "officeId": "city-el-portal-seat-1",
+   "candidates": [
+    {
+     "name": "Kerby J. Altidor",
+     "party": null,
+     "votes": 395,
+     "pct": 41.19,
+     "person": "kerby-j-altidor"
+    },
+    {
+     "name": "Edna Edelman",
+     "party": null,
+     "votes": 266,
+     "pct": 27.74,
+     "person": "edna-edelman"
+    },
+    {
+     "name": "Thomas Pulliam",
+     "party": null,
+     "votes": 239,
+     "pct": 24.92,
+     "person": "thomas-pulliam"
+    },
+    {
+     "name": "Anders Urbom",
+     "party": null,
+     "votes": 59,
+     "pct": 6.15,
+     "person": "anders-urbom"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "kerby-j-altidor",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "El Portal Councilperson Seat 2",
+   "office": "El Portal - Councilperson - Seat 2",
+   "officeId": "city-el-portal-seat-2",
+   "candidates": [
+    {
+     "name": "Ashley Lucio",
+     "party": null,
+     "votes": 376,
+     "pct": 40.17,
+     "person": "ashley-lucio"
+    },
+    {
+     "name": "Edward \"Eddie\" Odabachian",
+     "party": null,
+     "votes": 321,
+     "pct": 34.29,
+     "person": "edward-odabachian"
+    },
+    {
+     "name": "Charles Winters",
+     "party": null,
+     "votes": 239,
+     "pct": 25.53,
+     "person": "charles-winters"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "ashley-lucio",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "El Portal Councilperson Seat 3",
+   "office": "El Portal - Councilperson - Seat 3",
+   "officeId": "city-el-portal-seat-3",
+   "candidates": [
+    {
+     "name": "Velvet S. Connally",
+     "party": null,
+     "votes": 239,
+     "pct": 25.29,
+     "person": "velvet-s-connally"
+    },
+    {
+     "name": "Denise White",
+     "party": null,
+     "votes": 706,
+     "pct": 74.71,
+     "person": "denise-white"
+    }
+   ],
+   "status": "elected",
+   "person": "denise-white",
+   "incumbent": "darian-martin",
+   "reelected": false,
+   "winnerPct": 74.71,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "El Portal Councilperson Seat 4",
+   "office": "El Portal - Councilperson - Seat 4",
+   "officeId": "city-el-portal-seat-4",
+   "candidates": [
+    {
+     "name": "Danny Rojas",
+     "party": null,
+     "votes": 620,
+     "pct": 66.31,
+     "person": "danny-rojas"
+    },
+    {
+     "name": "Nick Schmidt",
+     "party": null,
+     "votes": 315,
+     "pct": 33.69,
+     "person": "nick-schmidt"
+    }
+   ],
+   "status": "elected",
+   "person": "danny-rojas",
+   "incumbent": "charles-winters",
+   "reelected": false,
+   "winnerPct": 66.31,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Hialeah Councilmember Group II",
+   "office": "Hialeah - Councilmember - Group II",
+   "officeId": "city-hialeah-group-2",
+   "candidates": [
+    {
+     "name": "Mariana V. Chavez",
+     "party": null,
+     "votes": 19293,
+     "pct": 45.64,
+     "person": "mariana-v-chavez"
+    },
+    {
+     "name": "Luis Gonzalez",
+     "party": null,
+     "votes": 22979,
+     "pct": 54.36,
+     "person": "luis-gonzalez"
+    }
+   ],
+   "status": "elected",
+   "person": "luis-gonzalez",
+   "incumbent": "luis-gonzalez",
+   "reelected": true,
+   "winnerPct": 54.36,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Key Biscayne Village Council",
+   "office": "Key Biscayne - Village Council",
+   "officeId": "city-key-biscayne-member",
+   "candidates": [
+    {
+     "name": "Claire Amerena London",
+     "party": null,
+     "votes": 1129,
+     "pct": 10.29,
+     "person": "claire-amerena-london"
+    },
+    {
+     "name": "Luis F. \"Lucho\" de la Cruz",
+     "party": null,
+     "votes": 2411,
+     "pct": 21.97,
+     "person": "luis-f-de-la-cruz"
+    },
+    {
+     "name": "Oscar Sardinas",
+     "party": null,
+     "votes": 2354,
+     "pct": 21.45,
+     "person": "oscar-sardinas"
+    },
+    {
+     "name": "Silvia P. Tarafa",
+     "party": null,
+     "votes": 3016,
+     "pct": 27.49,
+     "person": "silvia-p-tarafa"
+    },
+    {
+     "name": "Fernando Vazquez",
+     "party": null,
+     "votes": 2063,
+     "pct": 18.8,
+     "person": "fernando-a-vazquez"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "silvia-p-tarafa",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Medley for Council Member",
+   "office": "Medley - for Council Member",
+   "officeId": "city-medley-member",
+   "candidates": [
+    {
+     "name": "Edgar Ayala",
+     "party": null,
+     "votes": 149,
+     "pct": 18.19,
+     "person": "edgar-ayala"
+    },
+    {
+     "name": "Gloria Hernandez",
+     "party": null,
+     "votes": 208,
+     "pct": 25.4,
+     "person": "gloria-hernandez"
+    },
+    {
+     "name": "Ivan Pacheco",
+     "party": null,
+     "votes": 110,
+     "pct": 13.43,
+     "person": "ivan-pacheco"
+    },
+    {
+     "name": "Lizelh Rodriguez",
+     "party": null,
+     "votes": 130,
+     "pct": 15.87,
+     "person": "lizelh-rodriguez"
+    },
+    {
+     "name": "Juan Stefano",
+     "party": null,
+     "votes": 222,
+     "pct": 27.11,
+     "person": "juan-stefano"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "juan-stefano",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "MiamiGardens Res Area Council Member Seat 4",
+   "office": "Miami Gardens - Residential Area Council Member - Seat 4",
+   "officeId": "city-miami-gardens-seat-4",
+   "candidates": [
+    {
+     "name": "Mykita Cherry-Prime",
+     "party": null,
+     "votes": 4357,
+     "pct": 59.85,
+     "person": "mykita-cherry-prime"
+    },
+    {
+     "name": "Rod Mack",
+     "party": null,
+     "votes": 2923,
+     "pct": 40.15,
+     "person": "rod-mack"
+    }
+   ],
+   "status": "elected",
+   "person": "mykita-cherry-prime",
+   "incumbent": "latoya-d-porter",
+   "reelected": false,
+   "winnerPct": 59.85,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "North Miami Councilperson District 3",
+   "office": "North Miami - Councilperson - District 3",
+   "officeId": "city-north-miami-district-3",
+   "candidates": [
+    {
+     "name": "Mary Estime-Irvin",
+     "party": null,
+     "votes": 1990,
+     "pct": 52.8,
+     "person": "mary-estime-irvin"
+    },
+    {
+     "name": "Jobans Jules",
+     "party": null,
+     "votes": 1348,
+     "pct": 35.77,
+     "person": "jobans-jules"
+    },
+    {
+     "name": "Carolina Matamoros",
+     "party": null,
+     "votes": 431,
+     "pct": 11.44,
+     "person": "carolina-matamoros"
+    }
+   ],
+   "status": "elected",
+   "person": "mary-estime-irvin",
+   "incumbent": "mary-estime-irvin",
+   "reelected": true,
+   "winnerPct": 52.8,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "North Miami Beach Group 2 Commissioner",
+   "office": "North Miami Beach - Group 2 - Commissioner",
+   "officeId": "city-north-miami-beach-group-2",
+   "candidates": [
+    {
+     "name": "Jay R. Chernoff",
+     "party": null,
+     "votes": 3279,
+     "pct": 32.64,
+     "person": "jay-r-chernoff"
+    },
+    {
+     "name": "Whitney Padote",
+     "party": null,
+     "votes": 2475,
+     "pct": 24.64,
+     "person": "whitney-padote"
+    },
+    {
+     "name": "Jasmine Rivera",
+     "party": null,
+     "votes": 4292,
+     "pct": 42.72,
+     "person": "jasmine-rivera"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "jasmine-rivera",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "North Miami Beach Group 4 Commissioner",
+   "office": "North Miami Beach - Group 4 - Commissioner",
+   "officeId": "city-north-miami-beach-group-4",
+   "candidates": [
+    {
+     "name": "Eunice Diona Flowers",
+     "party": null,
+     "votes": 968,
+     "pct": 9.61,
+     "person": "eunice-diona-flowers"
+    },
+    {
+     "name": "Linda Joseph",
+     "party": null,
+     "votes": 4838,
+     "pct": 48.04,
+     "person": "linda-joseph"
+    },
+    {
+     "name": "Margaret Mary ''Margie'' Love",
+     "party": null,
+     "votes": 1221,
+     "pct": 12.13,
+     "person": "margaret-mary-love"
+    },
+    {
+     "name": "Dayanara Torres",
+     "party": null,
+     "votes": 3043,
+     "pct": 30.22,
+     "person": "dayanara-torres"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "linda-joseph",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "North Miami Beach Group 6 Commissioner",
+   "office": "North Miami Beach - Group 6 - Commissioner",
+   "officeId": "city-north-miami-beach-group-6",
+   "candidates": [
+    {
+     "name": "Phyllis Smith",
+     "party": null,
+     "votes": 5427,
+     "pct": 54.18,
+     "person": "phyllis-smith"
+    },
+    {
+     "name": "Ariel E. Vasquez",
+     "party": null,
+     "votes": 4590,
+     "pct": 45.82,
+     "person": "ariel-e-vasquez"
+    }
+   ],
+   "status": "elected",
+   "person": "phyllis-smith",
+   "incumbent": "phyllis-smith",
+   "reelected": true,
+   "winnerPct": 54.18,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Opa-locka Mayor",
+   "office": "Opa-locka - Mayor",
+   "officeId": "city-opa-locka-mayor",
+   "candidates": [
+    {
+     "name": "Natasha L. Ervin",
+     "party": null,
+     "votes": 2027,
+     "pct": 71,
+     "person": "natasha-l-ervin"
+    },
+    {
+     "name": "Rose Tydus",
+     "party": null,
+     "votes": 828,
+     "pct": 29,
+     "person": "rose-tydus"
+    }
+   ],
+   "status": "elected",
+   "person": "natasha-l-ervin",
+   "incumbent": "jr-john-h-taylor",
+   "reelected": false,
+   "winnerPct": 71,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Opa-locka Commissioners",
+   "office": "Opa-locka - Commissioners",
+   "officeId": "city-opa-locka-member",
+   "candidates": [
+    {
+     "name": "Randolph Aikens",
+     "party": null,
+     "votes": 594,
+     "pct": 15.61,
+     "person": "randolph-aikens"
+    },
+    {
+     "name": "Sherelean Bass",
+     "party": null,
+     "votes": 1444,
+     "pct": 37.94,
+     "person": "sherelean-bass"
+    },
+    {
+     "name": "Brian Dennis",
+     "party": null,
+     "votes": 744,
+     "pct": 19.55,
+     "person": "brian-dennis"
+    },
+    {
+     "name": "Audrey Dominguez",
+     "party": null,
+     "votes": 1024,
+     "pct": 26.9,
+     "person": "audrey-dominguez"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "sherelean-bass",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Palmetto Bay Mayor",
+   "office": "Palmetto Bay - Mayor",
+   "officeId": "city-palmetto-bay-mayor",
+   "candidates": [
+    {
+     "name": "Karen Baez-Wallis",
+     "party": null,
+     "votes": 4900,
+     "pct": 45.72,
+     "person": "karen-baez-wallis"
+    },
+    {
+     "name": "Tamara Mourino",
+     "party": null,
+     "votes": 3368,
+     "pct": 31.42,
+     "person": "tamara-mourino"
+    },
+    {
+     "name": "David M. Singer",
+     "party": null,
+     "votes": 2450,
+     "pct": 22.86,
+     "person": "david-m-singer"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "karen-baez-wallis",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Palmetto Bay Council Member Seat 1",
+   "office": "Palmetto Bay - Councilmember - Seat 1",
+   "officeId": "city-palmetto-bay-seat-1",
+   "candidates": [
+    {
+     "name": "Pam Gorman",
+     "party": null,
+     "votes": 5234,
+     "pct": 52.54,
+     "person": "pam-gorman"
+    },
+    {
+     "name": "Tana Llinas",
+     "party": null,
+     "votes": 4727,
+     "pct": 47.46,
+     "person": "tana-llinas"
+    }
+   ],
+   "status": "elected",
+   "person": "pam-gorman",
+   "incumbent": null,
+   "reelected": false,
+   "winnerPct": 52.54,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Palmetto Bay Council Member Seat 3",
+   "office": "Palmetto Bay - Councilmember - Seat 3",
+   "officeId": "city-palmetto-bay-seat-3",
+   "candidates": [
+    {
+     "name": "Lasaly Changkachith",
+     "party": null,
+     "votes": 3440,
+     "pct": 34.7,
+     "person": "lasaly-changkachith"
+    },
+    {
+     "name": "Carl Crawford",
+     "party": null,
+     "votes": 2007,
+     "pct": 20.25,
+     "person": "carl-crawford"
+    },
+    {
+     "name": "Alan ''AlJohn'' Farquharson",
+     "party": null,
+     "votes": 2834,
+     "pct": 28.59,
+     "person": "alan-farquharson"
+    },
+    {
+     "name": "A.J. ''AL'' Lara",
+     "party": null,
+     "votes": 1632,
+     "pct": 16.46,
+     "person": "a-j-lara"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "lasaly-changkachith",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Pinecrest Councilmember Seat 3",
+   "office": "Pinecrest - Councilmember - Seat 3",
+   "officeId": "city-pinecrest-seat-3",
+   "candidates": [
+    {
+     "name": "Ralph Sanchez",
+     "party": null,
+     "votes": 4228,
+     "pct": 53.4,
+     "person": "ralph-sanchez"
+    },
+    {
+     "name": "James Suarez",
+     "party": null,
+     "votes": 3689,
+     "pct": 46.6,
+     "person": "james-suarez"
+    }
+   ],
+   "status": "elected",
+   "person": "ralph-sanchez",
+   "incumbent": "james-e-mcdonald",
+   "reelected": false,
+   "winnerPct": 53.4,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Pinecrest Councilmember Seat 4",
+   "office": "Pinecrest - Councilmember - Seat 4",
+   "officeId": "city-pinecrest-seat-4",
+   "candidates": [
+    {
+     "name": "Ramon Gonzalez Diez",
+     "party": null,
+     "votes": 1582,
+     "pct": 19.92,
+     "person": "ramon-gonzalez-diez"
+    },
+    {
+     "name": "Ken Fairman",
+     "party": null,
+     "votes": 2557,
+     "pct": 32.19,
+     "person": "ken-fairman"
+    },
+    {
+     "name": "Jill Lerner",
+     "party": null,
+     "votes": 3804,
+     "pct": 47.89,
+     "person": "jill-lerner"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "jill-lerner",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "South Miami Mayor",
+   "office": "South Miami - Mayor",
+   "officeId": "city-south-miami-mayor",
+   "candidates": [
+    {
+     "name": "Javier E. Fernandez",
+     "party": null,
+     "votes": 3857,
+     "pct": 100,
+     "person": "javier-fernandez"
+    }
+   ],
+   "status": "elected",
+   "person": "javier-fernandez",
+   "incumbent": "javier-fernandez",
+   "reelected": true,
+   "winnerPct": 100,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "South Miami Commissioner Group I",
+   "office": "South Miami - Commissioner - Group I",
+   "officeId": "city-south-miami-group-1",
+   "candidates": [
+    {
+     "name": "Steve Calle",
+     "party": null,
+     "votes": 3617,
+     "pct": 100,
+     "person": "steve-calle"
+    }
+   ],
+   "status": "elected",
+   "person": "steve-calle",
+   "incumbent": "steve-calle",
+   "reelected": true,
+   "winnerPct": 100,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "South Miami Commissioner Group IV",
+   "office": "South Miami - Commissioner - Group IV",
+   "officeId": "city-south-miami-group-4",
+   "candidates": [
+    {
+     "name": "Lisa Bonich",
+     "party": null,
+     "votes": 3555,
+     "pct": 100,
+     "person": "lisa-bonich"
+    }
+   ],
+   "status": "elected",
+   "person": "lisa-bonich",
+   "incumbent": "lisa-bonich",
+   "reelected": true,
+   "winnerPct": 100,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Sunny Isles Beach Mayor",
+   "office": "Sunny Isles Beach - Mayor",
+   "officeId": "city-sunny-isles-beach-mayor",
+   "candidates": [
+    {
+     "name": "Dana Goldman",
+     "party": null,
+     "votes": 2171,
+     "pct": 35.44,
+     "person": "dana-goldman"
+    },
+    {
+     "name": "Robert J. Spence III",
+     "party": null,
+     "votes": 508,
+     "pct": 8.29,
+     "person": "robert-j-spence-iii"
+    },
+    {
+     "name": "Larisa Svechin",
+     "party": null,
+     "votes": 3446,
+     "pct": 56.26,
+     "person": "larisa-svechin"
+    }
+   ],
+   "status": "elected",
+   "person": "larisa-svechin",
+   "incumbent": "larisa-svechin",
+   "reelected": true,
+   "winnerPct": 56.26,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "SunnyIslesBeach ResArea Commissioner Seat 2",
+   "office": "Sunny Isles Beach - Residential Area Commissioner - Seat 2",
+   "officeId": "city-sunny-isles-beach-seat-2",
+   "candidates": [
+    {
+     "name": "Robert Balciunas",
+     "party": null,
+     "votes": 1178,
+     "pct": 21.19,
+     "person": "robert-balciunas"
+    },
+    {
+     "name": "Alex Brisk",
+     "party": null,
+     "votes": 1240,
+     "pct": 22.31,
+     "person": "alex-brisk"
+    },
+    {
+     "name": "Steve Hirsch",
+     "party": null,
+     "votes": 2159,
+     "pct": 38.84,
+     "person": "steve-hirsch"
+    },
+    {
+     "name": "David Vergel",
+     "party": null,
+     "votes": 981,
+     "pct": 17.65,
+     "person": "david-vergel"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "steve-hirsch",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "SunnyIslesBeach ResArea Commissioner Seat 4",
+   "office": "Sunny Isles Beach - Residential Area Commissioner - Seat 4",
+   "officeId": "city-sunny-isles-beach-seat-4",
+   "candidates": [
+    {
+     "name": "Carolina Cruz Gonzalez",
+     "party": null,
+     "votes": 3569,
+     "pct": 66.07,
+     "person": "carolina-cruz-gonzalez"
+    },
+    {
+     "name": "Magaly \"Maggie\" Gordo",
+     "party": null,
+     "votes": 1833,
+     "pct": 33.93,
+     "person": "magaly-gordo"
+    }
+   ],
+   "status": "elected",
+   "person": "carolina-cruz-gonzalez",
+   "incumbent": "jeniffer-viscarra",
+   "reelected": false,
+   "winnerPct": 66.07,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Virginia Gardens Mayor",
+   "office": "Virginia Gardens - Mayor",
+   "officeId": "city-virginia-gardens-mayor",
+   "candidates": [
+    {
+     "name": "Tim Boylan",
+     "party": null,
+     "votes": 254,
+     "pct": 30.24,
+     "person": "tim-boylan"
+    },
+    {
+     "name": "Fred Spencer Deno IV",
+     "party": null,
+     "votes": 586,
+     "pct": 69.76,
+     "person": "fred-spencer-deno-iv"
+    }
+   ],
+   "status": "elected",
+   "person": "fred-spencer-deno-iv",
+   "incumbent": "fred-spencer-deno-iv",
+   "reelected": true,
+   "winnerPct": 69.76,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  },
+  {
+   "contest": "Virginia Gardens Council",
+   "office": "Virginia Gardens - Council",
+   "officeId": "city-virginia-gardens-member",
+   "candidates": [
+    {
+     "name": "Jorge Arce",
+     "party": null,
+     "votes": 423,
+     "pct": 38.11,
+     "person": "jorge-arce"
+    },
+    {
+     "name": "Elizabeth K. Taylor-Martinez",
+     "party": null,
+     "votes": 334,
+     "pct": 30.09,
+     "person": "elizabeth-taylor-martinez"
+    },
+    {
+     "name": "Michael Tur",
+     "party": null,
+     "votes": 353,
+     "pct": 31.8,
+     "person": "michael-tur"
+    }
+   ],
+   "status": "needs-review",
+   "leader": "jorge-arce",
+   "reason": "No majority; the charter may require a runoff"
+  },
+  {
+   "contest": "Coronado Community Development Dist Seat 1",
+   "office": "Coronado Community Development District - Seat 1",
+   "officeId": "coronado-cdd-seat-1",
+   "candidates": [
+    {
+     "name": "Erwin Santacruz",
+     "party": null,
+     "votes": 66,
+     "pct": 40.74,
+     "person": "erwin-santacruz"
+    },
+    {
+     "name": "Giovanna Sousa",
+     "party": null,
+     "votes": 96,
+     "pct": 59.26,
+     "person": "giovanna-sousa"
+    }
+   ],
+   "status": "elected",
+   "person": "giovanna-sousa",
+   "incumbent": "erwin-santacruz",
+   "reelected": false,
+   "winnerPct": 59.26,
+   "takesOffice": {
+    "date": null,
+    "source": null,
+    "rule": "Swearing-in date for this body is not sourced yet"
+   }
+  }
+ ],
+ "applied": [
+  {
+   "officeId": "us-house-fl-24",
+   "person": "oliver-g-gilbert-iii",
+   "status": "elected",
+   "start": "2027-01-03"
+  },
+  {
+   "officeId": "us-house-fl-25",
+   "person": "jared-moskowitz",
+   "status": "elected",
+   "start": "2027-01-03"
+  },
+  {
+   "officeId": "fl-governor",
+   "person": "david-jolly",
+   "status": "elected",
+   "start": "2027-01-05"
+  },
+  {
+   "officeId": "fl-attorney-general",
+   "person": "jose-javier-rodriguez",
+   "status": "elected",
+   "start": "2027-01-05"
+  },
+  {
+   "officeId": "fl-cfo",
+   "person": "annette-taddeo",
+   "status": "elected",
+   "start": "2027-01-05"
+  },
+  {
+   "officeId": "fl-agriculture-commissioner",
+   "person": "joey-mendoza-atkins",
+   "status": "elected",
+   "start": "2027-01-05"
+  },
+  {
+   "officeId": "fl-senate-34",
+   "person": "ashley-viola-gantt",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-106",
+   "person": "lucia-baez-geller",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-108",
+   "person": "daphne-campbell",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-113",
+   "person": "gloria-romero-roses",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-116",
+   "person": "ashley-perez-biliskov",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "mdcps-board-district-1",
+   "person": "linda-cothiere",
+   "status": "elected",
+   "start": "2026-11-17"
+  }
+ ],
+ "skipped": [
+  {
+   "officeId": "us-house-fl-26",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "us-house-fl-28",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-senate-36",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-senate-38",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-senate-40",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-house-115",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-house-117",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-house-118",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-house-119",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "fl-circuit-11-group-5",
+   "why": "Start date for a newly elected judge is not sourced yet"
+  },
+  {
+   "officeId": "fl-circuit-11-group-69",
+   "why": "Start date for a newly elected judge is not sourced yet"
+  },
+  {
+   "officeId": "mdc-commission-5",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-aventura-mayor",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-coral-gables-group-1",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-coral-gables-group-4",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-coral-gables-group-5",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-cutler-bay-seat-3",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-doral-seat-4",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-el-portal-mayor",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-el-portal-seat-3",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-el-portal-seat-4",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-hialeah-group-2",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-miami-gardens-seat-4",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-north-miami-district-3",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-north-miami-beach-group-6",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-opa-locka-mayor",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-palmetto-bay-seat-1",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-pinecrest-seat-3",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-south-miami-mayor",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-south-miami-group-1",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-south-miami-group-4",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-sunny-isles-beach-mayor",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "city-sunny-isles-beach-seat-4",
+   "why": "Swearing-in date for this body is not sourced yet"
+  },
+  {
+   "officeId": "city-virginia-gardens-mayor",
+   "why": "re-elected incumbent; term continues"
+  },
+  {
+   "officeId": "coronado-cdd-seat-1",
+   "why": "Swearing-in date for this body is not sourced yet"
+  }
+ ],
+ "unmatchedContests": [
+  "North Miami Councilperson District 2",
+  "ConsAmdt1 Budget Stabilization Fund",
+  "ConsAmdt2 Personal Property Agric Land Tax",
+  "ConsAmdt3 Increased Homestead Exemption",
+  "CntyChatAmdt Independent Salary Commission",
+  "CntyChatAmdt Residency County Commissioner",
+  "CntyChtrAmdt Vacancy Election/Muni Qualify",
+  "CntyChtrAmdt Rev Reestablish Cnty Const Ofc",
+  "CntyChtrAmdt Misc Matters/Technical Changes",
+  "CntyChtrAmdt Expand Allowable Advert Parks",
+  "SchBrd Renew Ad Valorem Safety and Security",
+  "Aventura Elected Official's Annual Salary",
+  "Aventura Ind Auditor Rotation Requirement",
+  "CGables Increase value public work projects",
+  "CGables ChatAmdt Residency Mayor/City Comm",
+  "CGables Four-year term of office City Mayor",
+  "CGables Sale of certain city-owned property",
+  "Doral Term Limits for Mayor/Councilmembers",
+  "KeyBiscayne Stormwater/Flood Prevention",
+  "Miami Safe and Ready: Bonds Police/Fire",
+  "Miami Gen Obligation Bonds Oversight Cmte",
+  "Miami Rickenbacker/Marine Stadium Marinas",
+  "MiamiBeach Lease Property 1691 Michigan Ave",
+  "MiamiLakes Fill Council/Mayoral Vacancies",
+  "MiamiLakes Jan Term/Annual ViceMayor Elec",
+  "MiamiLakes Resign-to-Run Vacancies Election",
+  "MiamiLakes Term Limit Mayor/Councilmembers",
+  "MiamiLakes Nov General Election/Dec Runoff",
+  "MiamiLakes Appointment of Town Clerk",
+  "MiamiLakes Recall Petition Sig Requirement",
+  "MiamiLakes Early Voting Req for Elections",
+  "MiamiLakes Terminology/Grammatical Cleanup",
+  "MiamiLakes Filling Council Vacancies",
+  "MiamiLakes Councilmember 6 to 4/CouncilVote",
+  "MiamiLakes Town Mgr Removal/Acting Mgr",
+  "MiamiLakes Comte/Intergovt Rel/Ann Address",
+  "MiamiLakes Chtr Revision Commission Process",
+  "MiamiLakes Interference with Administration",
+  "MiamiSprings Revitalizing NW 36 St District",
+  "NMiaBeach Comm Comp/COLA/Health Ins",
+  "NMiaBeach MeetingSch/SpMeeting/Comm Attend",
+  "NMiaBeach Development Proj/Recall Procedure",
+  "NMiaBeach Gen Elec/Qualify/Term/EarlyVoting",
+  "NMiaBeach Residence Requirement Candidates",
+  "NMiaBeach Runoff Election/General Election",
+  "NMiaBeach Muni Powers Public Health/Safety",
+  "NMiaBeach Status Continued Empl Dept Heads",
+  "Opa-locka Comp Mayor/City Commissioners",
+  "Opa-locka Comp Mayor/Comm Health/Life Ins",
+  "PalmettoBay Public Spkr Home Add Disclosure",
+  "PalmettoBay Village Owned Property",
+  "PalmettoBay Village Acq USDA Property",
+  "PalmettoBay Single Mbr Dist Councilmembers",
+  "PalmettoBay Council Term Limits/Service",
+  "PalmettoBay Roadway Improvements Projects",
+  "SMiami Franchise Definition City Property",
+  "SMiami Online Publication Ordinance Notices",
+  "SMiami City Purchases Policies City Comm",
+  "SMiami Special Elec to Fill Comm Vacancies"
+ ],
+ "ballotRacesWithoutResults": [
+  "Representative in Congress, District 27",
+  "Doral - Councilmember - Seat 2",
+  "North Miami - Mayor",
+  "North Miami - Councilperson - District 2"
+ ],
+ "fetchedAt": "2026-11-19T20:40:08.852Z"
+}
