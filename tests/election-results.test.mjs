@@ -3,12 +3,16 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { parseCsv, contestsFromCsv, sameName, matchContests, decide, applyToRoster, januaryTermStart, takeOffice } from '../scripts/lib/election-results.mjs';
+import { parseCsv, contestsFromCsv, sameName, matchContests, decide, applyToRoster, syncOfficesHeld, januaryTermStart, takeOffice } from '../scripts/lib/election-results.mjs';
+import { checkIdentities } from '../scripts/check-identities.mjs';
 
 const J = f => JSON.parse(readFileSync(new URL('../public/data/' + f, import.meta.url), 'utf8'));
-const roster = J('roster.json');
-const cycles = J('cycles.json');
 const E = '2026-11-03';
+// The hand-researched roster: roster.json with this election's results job changes taken out, so these tests hold
+// before and after the job has written its results.
+const roster = applyToRoster(J('roster.json'), [], { electionDate: E }).roster;
+const held = syncOfficesHeld(J('offices-held.json'), roster, { electionDate: E }).held;
+const cycles = J('cycles.json');
 const ctx = { offices: roster.offices, terms: roster.terms, cycleBodies: cycles.bodies, electionDate: E };
 const race = id => roster.ballot.find(r => r.officeId === id);
 const row = (contest, name, votes, pct) => [JSON.stringify(contest), JSON.stringify(name), '', 0, 0, votes, votes, pct].join(',');
@@ -121,4 +125,20 @@ test('every ballot race matches a contest in the county\'s real Nov 3 results fi
   const missing = roster.ballot.map(r => r.office).filter(o => !got.has(o));
   assert.deepEqual(missing, []);
   for (const m of matched) assert.equal(decide(m, ctx).status, 'no-results-yet');
+});
+
+test('offices-held.json gets the same term changes as the roster, so the identity check still passes, and re-running changes nothing', () => {
+  const ds = matchContests(contestsFromCsv(novemberCsv()), roster.ballot).matched.map(m => decide(m, ctx));
+  const opts = { electionDate: E, resultStatus: 'unofficial', resultsUrl: 'https://example.org/r.csv' };
+  const once = applyToRoster(roster, ds, opts).roster;
+  const h1 = syncOfficesHeld(held, once, opts);
+  assert.deepEqual(checkIdentities(once, h1.held, J('decisions.json')), []);
+  const fresh = once.terms.filter(t => t.fromResults === E && held.people[t.person]);
+  assert.ok(fresh.length > 0, 'the synthetic results seat someone listed in offices-held.json');
+  assert.equal(h1.added, fresh.length);
+  for (const t of fresh) assert.ok(h1.held.people[t.person].terms.some(x => x.fromResults === E && x.start === t.start && x.source === 'https://example.org/r.csv'));
+  // re-running on its own output changes nothing
+  assert.deepEqual(syncOfficesHeld(h1.held, applyToRoster(once, ds, opts).roster, opts).held, h1.held);
+  // undoing restores the hand-researched file exactly
+  assert.deepEqual(syncOfficesHeld(h1.held, roster, opts).held, held);
 });

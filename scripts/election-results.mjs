@@ -2,11 +2,12 @@
 // winners take their seats on the day they take office. Run by .github/workflows/election-results.yml; safe to re-run.
 //   node scripts/election-results.mjs                 fetch, decide, write
 //   node scripts/election-results.mjs --csv file.csv  use a local results file (testing, or a hand-downloaded file)
-// Writes public/data/results-<date>.json (every contest, decided or flagged, with reasons) and public/data/roster.json.
+// Writes public/data/results-<date>.json (every contest, decided or flagged, with reasons), public/data/roster.json and
+// public/data/offices-held.json (the same term changes, for the people listed there, so the identity check agrees).
 // The rules for what gets applied and what gets flagged are in scripts/lib/election-results.mjs.
 import fs from 'node:fs';
 import path from 'node:path';
-import { contestsFromCsv, matchContests, decide, applyToRoster } from './lib/election-results.mjs';
+import { contestsFromCsv, matchContests, decide, applyToRoster, syncOfficesHeld } from './lib/election-results.mjs';
 
 const ELECTION_DATE = '2026-11-03';
 const ENR = 'https://enr.electionsfl.org/DAD/';
@@ -62,6 +63,7 @@ async function main() {
   const ctx = { offices: roster.offices, terms: roster.terms, cycleBodies: cycles.bodies, electionDate: ELECTION_DATE };
   const decisions = matched.map(m => decide(m, ctx));
   const { roster: next, applied, skipped } = applyToRoster(roster, decisions, { electionDate: ELECTION_DATE, resultStatus: status, resultsUrl });
+  const { held } = syncOfficesHeld(readJson(P('offices-held.json')), next, { electionDate: ELECTION_DATE, resultsUrl });
 
   const matchedIds = new Set(matched.map(m => m.race.office));
   const out = {
@@ -79,6 +81,7 @@ async function main() {
   out.fetchedAt = new Date().toISOString();
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1));
   fs.writeFileSync(P('roster.json'), JSON.stringify(next, null, 1));
+  fs.writeFileSync(P('offices-held.json'), JSON.stringify(held));
   console.log(`Status ${status}. ${contests.length} contests, ${matched.length} matched, ${applied.length} applied to the roster, ${out.counts.needsReview} need review, ${unmatched.length} unmatched (ballot questions and races outside the roster).`);
 }
 

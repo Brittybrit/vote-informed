@@ -196,3 +196,40 @@ export function applyToRoster(roster, decisions, { electionDate, resultStatus, r
   }
   return { roster: { ...roster, terms }, applied, skipped };
 }
+
+// public/data/offices-held.json lists, for the people in it, every roster term (scripts/check-identities.mjs check 4
+// fails the tests when the two disagree). Mirror this election's roster changes into it the same way applyToRoster
+// makes them: remove this job's previous changes first, then add each new term and end each term the roster ended.
+// People who are not in offices-held.json are left out of it, as before. Returns { held, added, ended }.
+export function syncOfficesHeld(held, roster, { electionDate, resultsUrl }) {
+  const officeById = new Map(roster.offices.map(o => [o.id, o]));
+  const people = structuredClone(held.people || {});
+  for (const p of Object.values(people)) {
+    p.terms = (p.terms || [])
+      .filter(t => t.fromResults !== electionDate)
+      .map(t => {
+        if (t.endSetByResults !== electionDate) return t;
+        const { endSetByResults, endBeforeResults, ...rest } = t;
+        return { ...rest, end: endBeforeResults.end };
+      });
+  }
+  // level and kind as offices-held.json already words them for that office, else as the roster does
+  const wording = new Map();
+  for (const p of Object.values(people)) for (const t of p.terms) if (!wording.has(t.office)) wording.set(t.office, { level: t.level, kind: t.kind });
+  let added = 0, ended = 0;
+  for (const t of roster.terms) {
+    const p = people[t.person]; if (!p) continue;
+    const office = officeById.get(t.office); if (!office) continue;
+    if (t.endSetByResults === electionDate) {
+      const before = t.endBeforeResults.end ?? null;
+      const h = p.terms.find(x => x.office === office.name && (x.start ?? null) === (t.start ?? null) && (x.end ?? null) === before && !x.endSetByResults);
+      if (h) { h.endBeforeResults = { end: h.end }; h.end = t.end; h.endSetByResults = electionDate; ended++; }
+    }
+    if (t.fromResults === electionDate) {
+      const w = wording.get(office.name) || { level: office.level, kind: office.kind };
+      p.terms.unshift({ office: office.name, level: w.level, kind: w.kind, start: t.start, end: t.end, via: t.via, source: resultsUrl || (t.sources || [])[0] || null, fromResults: electionDate });
+      added++;
+    }
+  }
+  return { held: { ...held, people }, added, ended };
+}
