@@ -1,5 +1,5 @@
 name: Election results
-# Pulls the county's Nov 3, 2026 results, updates public/data/results-2026-11-03.json and the roster (winners take
+# Pulls the county's Nov 3, 2026 results, updates public/data/results-2026-11-03.json, the roster and offices-held.json (winners take
 # their seats on the day they take office), runs the tests and commits when anything changed. It does not deploy:
 # the site picks up the change at the next deploy (Brit adds a deploy step here if she wants it automatic).
 # Rules for what is applied and what is flagged for a person: scripts/lib/election-results.mjs.
@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name "election-results bot"
           git config user.email "noreply@ballot305.org"
-          git add public/data/results-2026-11-03.json public/data/roster.json
+          git add public/data/results-2026-11-03.json public/data/roster.json public/data/offices-held.json
           git commit -m "Results: $(node -e "const d=require('./public/data/results-2026-11-03.json');console.log(d.status+', county update '+(d.countyUpdated||'n/a')+', '+d.counts.applied+' applied, '+d.counts.needsReview+' need review')")"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
       - name: Deploy ballot305.org
