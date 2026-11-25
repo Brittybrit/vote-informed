@@ -10,7 +10,7 @@
   "contests": 128,
   "matched": 69,
   "unmatched": 59,
-  "applied": 7,
+  "applied": 12,
   "needsReview": 16
  },
  "decisions": [
@@ -406,8 +406,8 @@
    ],
    "status": "elected",
    "person": "ashley-viola-gantt",
-   "incumbent": "ashley-viola-gantt",
-   "reelected": true,
+   "incumbent": "shevrin-d-jones",
+   "reelected": false,
    "winnerPct": 78.83,
    "takesOffice": {
     "date": "2026-11-03",
@@ -544,8 +544,8 @@
    ],
    "status": "elected",
    "person": "lucia-baez-geller",
-   "incumbent": "lucia-baez-geller",
-   "reelected": true,
+   "incumbent": "fabian-basabe",
+   "reelected": false,
    "winnerPct": 53.97,
    "takesOffice": {
     "date": "2026-11-03",
@@ -575,8 +575,8 @@
    ],
    "status": "elected",
    "person": "daphne-campbell",
-   "incumbent": "daphne-campbell",
-   "reelected": true,
+   "incumbent": "dotie-joseph",
+   "reelected": false,
    "winnerPct": 80.88,
    "takesOffice": {
     "date": "2026-11-03",
@@ -613,8 +613,8 @@
    ],
    "status": "elected",
    "person": "gloria-romero-roses",
-   "incumbent": "gloria-romero-roses",
-   "reelected": true,
+   "incumbent": null,
+   "reelected": false,
    "winnerPct": 54.59,
    "takesOffice": {
     "date": "2026-11-03",
@@ -675,8 +675,8 @@
    ],
    "status": "elected",
    "person": "ashley-perez-biliskov",
-   "incumbent": "ashley-perez-biliskov",
-   "reelected": true,
+   "incumbent": null,
+   "reelected": false,
    "winnerPct": 59.2,
    "takesOffice": {
     "date": "2026-11-03",
@@ -2362,6 +2362,36 @@
    "start": "2027-01-05"
   },
   {
+   "officeId": "fl-senate-34",
+   "person": "ashley-viola-gantt",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-106",
+   "person": "lucia-baez-geller",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-108",
+   "person": "daphne-campbell",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-113",
+   "person": "gloria-romero-roses",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
+   "officeId": "fl-house-116",
+   "person": "ashley-perez-biliskov",
+   "status": "elected",
+   "start": "2026-11-03"
+  },
+  {
    "officeId": "mdcps-board-district-1",
    "person": "linda-cothiere",
    "status": "elected",
@@ -2378,10 +2408,6 @@
    "why": "re-elected incumbent; term continues"
   },
   {
-   "officeId": "fl-senate-34",
-   "why": "re-elected incumbent; term continues"
-  },
-  {
    "officeId": "fl-senate-36",
    "why": "re-elected incumbent; term continues"
   },
@@ -2394,23 +2420,7 @@
    "why": "re-elected incumbent; term continues"
   },
   {
-   "officeId": "fl-house-106",
-   "why": "re-elected incumbent; term continues"
-  },
-  {
-   "officeId": "fl-house-108",
-   "why": "re-elected incumbent; term continues"
-  },
-  {
-   "officeId": "fl-house-113",
-   "why": "re-elected incumbent; term continues"
-  },
-  {
    "officeId": "fl-house-115",
-   "why": "re-elected incumbent; term continues"
-  },
-  {
-   "officeId": "fl-house-116",
    "why": "re-elected incumbent; term continues"
   },
   {
@@ -2597,5 +2607,5 @@
   "North Miami - Mayor",
   "North Miami - Councilperson - District 2"
  ],
- "fetchedAt": "2026-11-25T08:38:56.295Z"
+ "fetchedAt": "2026-11-25T21:43:52.339Z"
 }
